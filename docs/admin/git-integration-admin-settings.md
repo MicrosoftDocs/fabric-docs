@@ -41,9 +41,6 @@ Enable this setting to allow all users, or a specific group or users, to export 
 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations." lightbox="./media/git-integration-admin-settings/multi-geo-switch.png":::
 
-> [!NOTE]
-> This setting isn't available for trial capacities.
-
 ## Enable export of items that have sensitivity labels
 
 Sensitivity labels aren't included when exporting an item. Therefore, the Fabric admin can choose whether to block the export of items that have sensitivity labels, or to allow it even though the sensitivity label won't be included.  

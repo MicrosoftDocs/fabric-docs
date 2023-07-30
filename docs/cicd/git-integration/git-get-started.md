@@ -163,7 +163,9 @@ Only a workspace admin can disconnect a workspace from an Azure Repo. If you’r
 
 ## Permissions
 
-The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
+- The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps. For a more detailed discussion of permissions, see [Permissions](./git-integration-process.md#permissions).
+
+- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Enable git actions on workspaces residing in other geographical locations](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
 
 ## Considerations and limitations
 
