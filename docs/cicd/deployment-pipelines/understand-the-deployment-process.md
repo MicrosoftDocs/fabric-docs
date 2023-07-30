@@ -320,6 +320,8 @@ Permissions are required for the pipeline, and for the workspaces that are assig
 
 * Workspaces have different permissions, also called [roles](../../get-started/roles-workspaces.md). Workspace roles determine the level of access to a workspace in a pipeline.
 
+* Deployment pipelines do not support [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) as pipeline admins.
+
 To deploy from one stage to another in the pipeline, you must be a pipeline admin, and either a member or an admin of the workspaces assigned to the stages involved. For example, a pipeline admin that isn't assigned a workspace role, will be able to view the pipeline and share it with others. However, this user won't be able to view the content of the workspace in the pipeline, or in the service, and won't be able to perform deployments.
 
 ### Permissions table
@@ -377,6 +379,8 @@ This section lists most of the limitations in deployment pipelines.
 * The maximum number of items that can be deployed in a single deployment is 300.
 
 * Downloading a *.pbix* file after deployment isn't supported.
+
+* [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
 
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
 
