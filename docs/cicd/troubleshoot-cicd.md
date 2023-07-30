@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 06/12/2023
+ms.date: 07/30/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -25,6 +25,7 @@ To understand the considerations and limitations of various lifecycle management
 | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 * [Git integration](#git-integration)  
+  * [Admin](#admin-issues)
   * [Connect](#connect-issues)
   * [Commit](#commit-issues)
   * [Update](#update-issues)
@@ -38,6 +39,14 @@ To understand the considerations and limitations of various lifecycle management
   * [Rules](#rules)
 
 ## Git integration
+
+### Admin issues
+
+#### Admin settings: Can't enable cross-region connections
+
+**Description of problem**: The workspace and repo are in different regions, but I can't find the switch to enable cross-region connections.
+**Cause**: You're using a trial capacity. This option isn't available for trial capacities.
+**Solution**: Upgrade to a [Premium](../enterprise/licenses.md) license.
 
 ### Connect issues
 

@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 07/30/2023
 ---
 
 # Tenant admin settings for git integration
@@ -40,6 +40,9 @@ If a workspace capacity is in one geographic location (for example, Central US) 
 Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
 
 :::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of the Admin portal tenant switch that enables exporting items to other geographical locations." lightbox="./media/git-integration-admin-settings/multi-geo-switch.png":::
+
+> [!NOTE]
+> This setting isn't available for trial capacities.
 
 ## Enable export of items that have sensitivity labels
 
