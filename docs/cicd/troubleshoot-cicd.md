@@ -73,6 +73,12 @@ To understand the considerations and limitations of various lifecycle management
 
 :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
 
+#### Connect failure: It says I need a Premium license to connect to git
+
+**Description of problem**: My workspace was previously connected to a git repo, but now it says that I need a premium license to connect.  
+**Cause**: You can only connect to git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include git integration, you will not be able to connect to that repo anymore. This applies to trial licenses as well.  
+**Solution**: Dusconnect from git and work without source control, or purchase a Premium license.
+
 ### Commit issues
 
 #### The Commit button is disabled
