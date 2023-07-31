@@ -24,3 +24,8 @@ When viewing OneLake file explorer for the Windows Desktop application, "My work
 None
 
 ## Next steps
+
+None
+
+
+- [About known issues](https://support.fabric.microsoft.com/known-issues) 

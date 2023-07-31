@@ -20,9 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
 |  462  | Administration & Management
- |[known-issue-462-fabric-user-git-column-synced-activity.md](known-issues/known-issue-462-fabric-user-git-column-synced-activity.md)    |  July 26, 2023  |
-|  458  | Data Factory |[known-issue-458-unable-add-lookup-activity-office-activity.md](known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md)    |  July 26, 2023  |
-|  456  | OneLake |[known-issue-456-onelake-file-not-available-under-myworkspace.md](known-issues/known-issue-456-onelake-file-not-available-under-myworkspace.md)    |  July 26, 2023  |
+ |[Fabric users see the workspace git status column display synced for unsupported artifacts](known-issues/known-issue-462-fabric-user-git-column-synced-activity.md)    |  July 26, 2023  |
+|  458  | Data Factory |[not able to add Lookup activity output to body object of Office 365](known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md)    |  July 26, 2023  |
+|  456  | OneLake |[OneLake file explorer doesn't contain items under My workspace](known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md)    |  July 26, 2023  |
 |  454  | Data Warehouse | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
 |  453  | Data Warehouse | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md)    |  July 10, 2023  |
 |  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  |
