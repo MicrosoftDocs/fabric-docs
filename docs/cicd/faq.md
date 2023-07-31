@@ -60,11 +60,11 @@ The deployment pipelines permissions model is described the [permissions](deploy
 
 To configure deployment rules in deployment pipelines, you must be the dataset owner.
 
+## Git integration questions
+
 ### Can I connect to a repository that's in a different region than my workspace?
 
 If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Enable git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
-
-## Git integration questions
 
 ### How do I get started with git integration ?
 
