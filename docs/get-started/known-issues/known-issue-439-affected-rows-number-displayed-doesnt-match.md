@@ -2,9 +2,9 @@
 title: Known issue - 'Affected rows' number displayed doesn't match the real row number
 description: A known issue is posted where 'Affected rows' number displayed doesn't match the real row number
 author: mihart
-ms.author: mihart
+ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 06/26/2023
+ms.date: 07/19/2023
 ms.custom: known-issue-439
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-439
 
 In SQL Server Management Studio (SSMS) with the COPY statement, you may see an incorrect row count reported in the Messages tab.
 
-**Status:** Open
+**Status:** Fixed: July 19, 2023
 
 **Product Experience:** Data Warehouse
 
