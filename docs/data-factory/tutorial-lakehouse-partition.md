@@ -16,7 +16,7 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 
 ## Prerequisite
 
-- Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces).
+- Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 - Create a data pipeline follow steps in [Create a data pipeline](tutorial-load-sample-data-to-data-warehouse.md#create-a-data-pipeline) section.
 
 ## Load data to Lakehouse using one partition column
