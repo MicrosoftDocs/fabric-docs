@@ -35,3 +35,7 @@ Try to switch to branch with unsupported artifact
 1. Use the [lineage view](../../governance/lineage.md) to help you figure out which unsupported item has the dependency (in the above example, it's the .pbix file).
 1. Manually remove the dependency. The easiest way to do this is to delete the item.
 1. Switch branches or update again.
+
+## Next steps
+
+[Maintain your git branches](./manage-branches.md)
