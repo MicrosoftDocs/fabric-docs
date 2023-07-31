@@ -17,7 +17,7 @@ OneLake file explorer for the Windows Desktop application doesn't contain items 
 
 ## Symptoms
 
-When viewing OneLake file explorer for the Windows Desktop application, "My workspace" appears in the list of workspaces but the folder is empty.
+ The "My workspace" appears in the list of workspaces but the folder is empty, when user view OneLake file explorer from the Windows Desktop application.
 
 ## Solutions and workarounds
 

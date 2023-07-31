@@ -59,7 +59,7 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
-    - name: fabric user see workspace git status column display synced for unsupported artifacts.
+    - name: fabric user sees workspace git status column display synced for unsupported artifacts.
       href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
     - name: not able to add lookup activity output to body of Office 365 activity
       href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 

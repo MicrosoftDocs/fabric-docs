@@ -22,7 +22,7 @@ Office 365 activity hangs indefinitely when output of Lookup activity is added a
 
 ## Solutions and workarounds
 
-Wrap the output of the lookup activity in a string, for example @string(activity('Lookup1').output.firstRow).
+Wrap the output of the lookup activity in a string, for example @string(activity('Lookup 1').output.firstRow).
 
 ## Next steps
 
