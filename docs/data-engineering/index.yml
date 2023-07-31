@@ -10,8 +10,8 @@ metadata:
   ms.subservice: data-engineering 
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: SnehaGunda
-  ms.author: sngun
+  author: jingzh
+  ms.author: jingzh
   ms.date: 05/23/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
@@ -98,7 +98,7 @@ landingContent:
             url: spark-detail-monitoring.md
           - text: Manage Apache Spark libraries
             url: library-management.md
-          - text: Spark utilities for file management tasks
+          - text: How to use Fabric MSSparkUtils
             url: microsoft-spark-utilities.md
           - text: Configure capacity settings
             url: capacity-settings-management.md
