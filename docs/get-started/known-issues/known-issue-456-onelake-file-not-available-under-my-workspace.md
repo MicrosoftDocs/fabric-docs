@@ -27,5 +27,4 @@ None
 
 None
 
-
 - [About known issues](https://support.fabric.microsoft.com/known-issues) 
