@@ -241,6 +241,8 @@
         href: tutorial-move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Data Warehouse
         href: tutorial-load-sample-data-to-data-warehouse.md     
+      - name: Load data to Lakehouse using partition
+        href: tutorial-lakehouse-partition.md  
   - name: Dataflows
     items:
     - name: Concepts
