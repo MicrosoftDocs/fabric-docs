@@ -51,7 +51,9 @@ items:
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
-    href: connectivity.md    
+    href: connectivity.md
+  - name: Setup dbt with warehouse
+    href: tutorial-setup-dbt.md      
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
