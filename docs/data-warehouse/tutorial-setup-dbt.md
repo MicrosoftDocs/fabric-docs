@@ -141,7 +141,7 @@ It's simple move the dbt project between different warehouses. A dbt project on 
 
 Important things to consider when using dbt-fabric adapter:
 
-- [Limitations and known issues](limitations.md)
+- Review [the current limitations in Microsoft Fabric data warehousing](limitations.md).
 
 - Fabric supports Azure Active Directory (Azure AD) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
