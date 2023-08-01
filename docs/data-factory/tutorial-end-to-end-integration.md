@@ -56,7 +56,7 @@ We use the pipeline you created in [Module 1: Create a pipeline in Data Factory]
 
 1. The **Pipeline expression builder** dialog appears. Enter the following expression, then select **OK**:
      
-   _@concat('DI in an Hour Pipeline Succeeded with Pipeline Run Id', pipeline ().RunId)_
+   _@concat('DI in an Hour Pipeline Succeeded with Pipeline Run Id', pipeline().RunId)_
 
    :::image type="content" source="media/tutorial-end-to-end-integration/pipeline-expression-builder.png" alt-text="Screenshot showing the pipeline expression builder with the expression provided for the Subject line of the email.":::
 

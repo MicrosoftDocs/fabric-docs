@@ -261,6 +261,8 @@
       items:  
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
+      - name: Incremental refresh with Dataflow Gen2
+        href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
   - name: FAQ and Troubleshooting
     items:
     - name: Gateway considerations for data destinations in Dataflow Gen2
