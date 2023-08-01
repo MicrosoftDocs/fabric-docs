@@ -32,7 +32,7 @@ Follow this list to install and set up the dbt prerequisites:
 
 1. The [Microsoft ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server#download-for-windows).
 
-1. Latest version of the dbt-fabric adapter from [PyPI (Python Package Index) repository](https://pypi.org/project/dbt-fabric) using `pip install dbt-fabric`.
+1. Latest version of the dbt-fabric adapter from the [PyPI (Python Package Index) repository](https://pypi.org/project/dbt-fabric) using `pip install dbt-fabric`.
 
     ```powershell
     pip install dbt-fabric
@@ -48,8 +48,6 @@ Follow this list to install and set up the dbt prerequisites:
     ```
 
     :::image type="content" source="media/tutorial-setup-dbt\powershell-pip-list.png" alt-text="A screenshot from the Visual Studio Code, showing the pip list.":::
-
-    :::image type="content" source="media/tutorial-setup-dbt\list-python-packages.png" alt-text="A screenshot from the Visual Studio Code, showing a list of python packages.":::
 
 1. Create a warehouse if you haven't done so already. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
