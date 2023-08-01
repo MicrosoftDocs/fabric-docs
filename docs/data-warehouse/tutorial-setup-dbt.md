@@ -1,6 +1,6 @@
 ---
-title: Set up dbt with a Fabric data warehouse
-description: In this tutorial step, learn how to use dbt with Fabric data warehouse.
+title: Set up dbt for Fabric Data Warehouse
+description: In this tutorial, learn how to use the dbt adapter for Fabric Data Warehouse. dbt (Data Build Tool) is an open-source framework for SQL-first transformation.
 author: MarkPryceMaherMSFT
 ms.author: maprycem
 ms.reviewer: wiassaf
@@ -8,7 +8,7 @@ ms.date: 08/01/2023
 ms.topic: tutorial
 ---
 
-# Tutorial: Set up dbt to work with Fabric Data Warehouse
+# Tutorial: Set up dbt for Fabric Data Warehouse
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
@@ -51,7 +51,7 @@ Follow this list to install and set up the dbt prerequisites:
 
     :::image type="content" source="media/tutorial-setup-dbt\list-python-packages.png" alt-text="A screenshot from the Visual Studio Code, showing a list of python packages.":::
 
-1. Create a data warehouse if you haven't done so already. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
+1. Create a warehouse if you haven't done so already. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
 ## Get started with dbt-fabric adapter
 
@@ -145,7 +145,7 @@ Important things to consider when using dbt-fabric adapter:
 
 - [Limitations and known issues](limitations.md)
 
-- Fabric supports Azure Active Directory (Azure AD) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on data warehouse is CLI (command-line interfaces) and use service principals for automation.
+- Fabric supports Azure Active Directory (Azure AD) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
 - Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Synapse Data Warehouse in Microsoft Fabric.
 

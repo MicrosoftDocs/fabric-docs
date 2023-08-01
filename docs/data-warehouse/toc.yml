@@ -52,8 +52,6 @@ items:
   items: 
   - name: Connectivity
     href: connectivity.md
-  - name: Setup dbt with warehouse
-    href: tutorial-setup-dbt.md      
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
@@ -84,6 +82,8 @@ items:
     href: ingest-data-copy.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Use dbt with data warehouse
+    href: tutorial-setup-dbt.md          
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
