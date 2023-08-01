@@ -47,7 +47,7 @@ Follow this list to install and set up the dbt prerequisites:
     pip list
     ```
 
-    :::image type="content" source="media/tutorial-setup-dbt\powershell-pip-list.png" alt-text="A screenshot from the Visual Studio Code, showing the pip list.":::
+    A long list of the packages and current versions should be returned from this command.
 
 1. Create a warehouse if you haven't done so already. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
