@@ -134,7 +134,7 @@ To add a lakehouse destination to your eventstream that includes real-time event
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/manage-fields-operator.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu.":::
 
-1. Select the line between the eventstream and the lakehouse and press the **Delete** key to remove the connection between them. You must delete this connection before you can insert the manage fields operator between them.
+1. Select the line between the eventstream and the lakehouse and press the **Delete** key to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" alt-text="Screenshot showing where to select and delete the operator connection between the eventstream and the lakehouse." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" :::
 

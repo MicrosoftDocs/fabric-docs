@@ -16,7 +16,6 @@ Once you have created an eventstream, you can route data to different destinatio
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-
 ## Prerequisites
 
 To get started, complete the following prerequisites:
