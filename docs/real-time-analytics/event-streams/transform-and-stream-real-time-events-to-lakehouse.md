@@ -36,7 +36,7 @@ Before you start, you must complete the following prerequisites:
 
 ## Create a lakehouse and an eventstream
 
-You can create an Eventstream item (eventstream) and a Lakehouse item (lakehouse) from the **Workspace** page or the **Create hub** page. Follow these steps to create a lakehouse, and then again to create an eventstream:
+You can create an eventstream and a lakehouse from the **Workspace** page or the **Create hub** page. Follow these steps to create a lakehouse, and then again to create an eventstream:
 
 1. Change your Fabric experience to **Real-time Analytics** and select **Lakehouse** or **Eventstream** to create these items in your workspace or the Create hub. (For best results, create the Lakehouse item first and the Eventstream item second.)
 
@@ -50,7 +50,7 @@ You can create an Eventstream item (eventstream) and a Lakehouse item (lakehouse
 
         :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" alt-text="Screenshot showing where to select the Lakehouse tile in the Create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" :::
 
-1. Enter the name for the new eventstream or lakehouse and select **Create**. For example, **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
+1. Enter the name for the new eventstream or lakehouse and select **Create**. For the examples in this article, we're using **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" alt-text="Screenshot showing where to enter a name in the New Eventstream dialog box.":::
 
