@@ -24,11 +24,11 @@ The data that a customer sees when querying the Delta table by using either a sh
 ## Solutions and workarounds
 
  To ensure that the data in the Delta tables references the shortcut, try the following steps.
- 1. Create Table as Select (CTAS) 
- 1. Drop the old table 
- 1. CTAS again to the original table name 
- 1. Drop the existing shortcut 
- 1. Re-create the shortcut to Lakehouse
+ 1. Create Table as Select (CTAS)
+ 2. Drop the old table
+ 3. CTAS again to the original table name
+ 4. Drop the existing shortcut
+ 5. Re-create the shortcut to Lakehouse
 
 ## Next steps
 
