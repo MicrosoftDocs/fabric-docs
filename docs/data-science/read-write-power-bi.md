@@ -191,19 +191,18 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 
 ## Special parameters
 
-SemPy `read_table` and SemPy `evaluate_measure` have additional available parameters to manipulate the output.
+The SemPy `read_table` and `evaluate_measure` methods have more parameters that are useful for manipulating the output. These parameters include:
 
-- `fully_qualified_columns`: If True, outputs columns names in the form `TableName[ColumnName]`.
+- `fully_qualified_columns`: If the value is "True", the methods return columns names in the form `TableName[ColumnName]`.
 - `num_rows`: Number of rows to output in the result.
-- `pandas_convert_dtypes`: If True, casts resulting DataFrame colums to the best possible dtype using pandas
+- `pandas_convert_dtypes`: If the value is "True", the resulting DataFrame's columns are cast to the best possible _dtype_, using pandas
 [convert_dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html).
-Turning this off may result in type incompatibility issues between columns of related tables that may not have been detected in the PowerBI model due to
+If this parameter is turned off, type incompatibility issues may result between columns of related tables that may not have been detected in the Power BI model due to
 [DAX implicit type conversion](<https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion>).
 
-SemPy `read_table` also leverages the model information provided by PowerBI.
+SemPy `read_table` also leverages the model information provided by Power BI.
 
- - `multiindex_hierarchies`: If True, converts [PowerBI Hierarchies](https://learn.microsoft.com/en-us/power-bi/create-reports/service-metrics-get-started-hierarchies)
- to pandas MultiIndex structure.
+ - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](https://learn.microsoft.com/en-us/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
 
 ## Read-access limitations
 
