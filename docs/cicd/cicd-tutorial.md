@@ -10,7 +10,7 @@ ms.date: 07/12/2023
 
 # Tutorial: Lifecycle management in Fabric
 
-This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports.
+This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
 ## Prerequisites
 
@@ -75,13 +75,13 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
     :::image type="content" source="media/cicd-tutorial/set-credentials.png" alt-text="Screenshot of dataset credentials.":::
 
-1. Select **Sign in**. The connection is tested and credentials set. You won't have to edit the credentials again for this dataset.
+1. Select **Sign in**. The connection is tested and credentials set. This is a one time action. You won't have to edit the credentials again for this dataset.
 
 You can now create a deployment pipeline.
 
 ## Step 3: Connect the team's development workspace to git
 
-This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
+This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
 Read more about version control with git in [Introduction to git integration](./git-integration/intro-to-git-integration.md).
 
 Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests.
@@ -115,7 +115,7 @@ For more information about connecting to git, see [Connect a workspace to an Azu
 ## Step 4: Create a deployment pipeline
 
 In order to share this workspace with others and use it for various stages of testing and development, we need to create a deployment pipeline. You can read about how deployment pipelines work in [Introduction to deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md).
-In this step we create a deployment pipeline and assign the workspace to the development stage.
+To create a deployment pipeline and assign the workspace to the development stage, do the following:
 
 1. From the workspace home page, select **Create deployment pipeline**.
 
@@ -212,7 +212,7 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 ## Step 8: Commit changes
 
-To commit this change from teh workspace into the git branch, go back to the workspace home page.
+To commit this change from the workspace into the git branch, go back to the workspace home page.
 
 The source control icon now shows `1` because one item in the workspace was changed but not committed to the git repo. The *FoodSales* dataset shows a status of *Uncommitted*.
 
@@ -244,7 +244,7 @@ In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 
 ## Step 10: Update shared workspace
 
-Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace) and refresh the page.  
+Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace)) and refresh the page.  
 The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the FoodSales workspace. The FoodSales dataset shows a status of *Update required*.
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
@@ -255,23 +255,23 @@ The source control icon now shows 1 because one item in the git repo was changed
 
    :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
 
-The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch..
+The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch.
 
 ## Step 11: Compare stages in deployment pipeline
 
-Select View deployment pipelines to compare the content in the development stage with the content in the test stage.
+1. Select **View deployment pipelines** to compare the content in the development stage with the content in the test stage.
 
-:::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipelines icon.":::
+   :::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipelines icon.":::
 
-Notice the orange `x` icon between the stages indicating that changes were made to the content in one of the stages since the last deployment.
+   Notice the orange `X` icon between the stages indicating that changes were made to the content in one of the stages since the last deployment.
 
-:::image type="content" source="media/cicd-tutorial/compare-stages-different.png" alt-text="Screenshot showing pipeline stages are different.":::
+   :::image type="content" source="media/cicd-tutorial/compare-stages-different.png" alt-text="Screenshot showing pipeline stages are different.":::
 
-Select the down arrow > **Review Changes** to view the changes. The **Change Review** screen shows the difference between the datasets in the two stages.
+1. Select the down arrow > **Review Changes** to view the changes. The **Change Review** screen shows the difference between the datasets in the two stages.
 
-:::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
+   :::image type="content" source="media/cicd-tutorial/change-review.png" alt-text="Screenshot of change review.":::
 
-Review the changes and close the window.
+1. Review the changes and close the window.
 
 For more information about comparing stages in a deployment pipeline, see [Compare stages in a deployment pipeline](deployment-pipelines/compare-pipeline-content.md).
 
@@ -285,7 +285,7 @@ In this tutorial, you learned how to use deployment pipelines along with git int
 In particular, you learned how to:
 
 * Setup workspaces and add content for managing their lifecycle in Fabric.
-* Leverage git best practices to work alone and collaborate with teammates on changes.
+* Apply git best practices to work alone and collaborate with teammates on changes.
 * Combine git and deployment pipelines for an efficient end to end release process.
 
 ## Next steps
