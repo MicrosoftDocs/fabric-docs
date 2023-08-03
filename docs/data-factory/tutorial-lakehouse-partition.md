@@ -14,6 +14,8 @@ ms.search.form: Pipeline Tutorials
 
 This tutorial helps you learn how to load data to Lakehouse using partition in a pipeline. As an example, you will try to load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
 
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
 ## Prerequisite
 
 - Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
