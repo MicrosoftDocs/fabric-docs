@@ -8,11 +8,11 @@ ms.custom: build-2023
 ms.date: 08/03/2023
 ---
 
-# What is Microsoft Fabric?
+# Microsoft Fabric concepts and licenses
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [capacity license](#capacity-licenses) and at least one [per-user license](#per-user-licenses).
+Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [capacity license](#capacity-license) and at least one [per-user license](#per-user-licenses).
 
 Microsoft Fabric consists of tenants, capacities, and workspaces and can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization.
 
@@ -28,7 +28,7 @@ Microsoft Fabric is deployed to a tenant. Each tenant is tied to a specific Doma
 
 ### Capacity
 
-A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a specific tenant is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power available. Before you purchase Microsoft Fabric, review the [capacity and SKUs](#capacity-and-skus) section, to establish which capacity is right for your use case.
+A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a specific tenant is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power available. Before you purchase Microsoft Fabric, review the [capacity license](#capacity-license) section, to establish which capacity is right for your use case.
 
 ### Workspace
 
@@ -37,13 +37,13 @@ A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a
 >[!NOTE]
 >If you're using a Power BI Premium capacity, Microsoft Fabric items aren't supported. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
 
-Workspaces can be created in (or assigned to) capacities that belong to a Microsoft Fabric [capacity license](#capacity-licenses). The workspace license mode dictates what kind of capacity the workspace can be hosted in and as a result the capabilities available.
+Workspaces can be created in (or assigned to) capacities that belong to a Microsoft Fabric [capacity license](#capacity-license). The workspace license mode dictates what kind of capacity the workspace can be hosted in and as a result the capabilities available.
 
 | Workspace license mode<sup>*</sup> | User capabilities | Access | Supports Fabric<sup>**</sup> |
 |--|--|--|--|
 | [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) | Use basic Power BI features and collaborate on reports, dashboards, and scorecards. |To access a Pro workspace, you need a Pro per-user license. | :::image type="icon" source="../media/no-icon.svg" border="false"::: |
 | [Premium per-user](/power-bi/enterprise/service-premium-per-user-faq) (PPU) | Collaborate using most of the [Power BI Premium features](/power-bi/enterprise/service-premium-features), including paginated reports, dataflows, and datamarts. |To collaborate and share content you need a Premium per-user (PPU) license. | :::image type="icon" source="../media/no-icon.svg" border="false"::: |
-| [Premium capacity]((/power-bi/enterprise/service-premium-what-is)) (P SKUs)   | Create Power BI content. Share, collaborate on, and distribute Power BI content. | To create workspaces and share content you need a Pro or PPU license. To view content, you can use a Free license. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| [Premium capacity](/power-bi/enterprise/service-premium-what-is) (P SKUs)   | Create Power BI content. Share, collaborate on, and distribute Power BI content. | To create workspaces and share content you need a Pro or PPU license. To view content, you can use a Free license. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | [Embedded](/power-bi/developer/embedded/embedded-capacity#power-bi-embedded) (A SKUs) | Embed content in an Azure capacity. | To create workspaces and share content you need a Pro license. To view content, you can use a Free license. | :::image type="icon" source="../media/no-icon.svg" border="false"::: |
 | Fabric capacity (F SKUs) | Create, share, collaborate on, and distribute Fabric content. | To create workspaces and share content you need a Pro license. To view content, you can use a Free license. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Trial | Try Fabric features and experiences for 60 days. | A Free license | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |

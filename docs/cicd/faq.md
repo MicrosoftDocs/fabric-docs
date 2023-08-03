@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 07/30/2023
+ms.date: 08/03/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -43,7 +43,7 @@ For information on licenses, see [Fabric licenses](../enterprise/licenses.md).
 
 All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
 
-For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
+For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
 
 >[!NOTE]
 >

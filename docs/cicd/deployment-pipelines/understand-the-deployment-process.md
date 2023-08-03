@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 05/24/2023
+ms.date: 08/03/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -128,7 +128,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 ### Requirements for deploying to a stage with an existing workspace
 
-Any [licensed user](../../enterprise/licenses.md#organizational-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-and-skus) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
 ## Deployed items
 
