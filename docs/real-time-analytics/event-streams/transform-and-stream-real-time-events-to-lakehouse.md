@@ -65,11 +65,11 @@ After you've created both your new eventstream and lakehouse successfully, these
 
 After you have created the lakehouse and eventstream, follow these steps to add an Azure event hub as your eventstream source.
 
-1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then select Azure Event Hubs.
+1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then select **Azure Event Hubs**.
 
 1. Enter a source name for the new source and select **Create new connection** to your Azure event hub.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hub source creation screen.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source creation screen.":::
 
 1. Fill in the information about your Azure event hub on the **New connection** page.
 
