@@ -170,7 +170,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
 ## Build a Power BI report with the ingested events data
 
-1. Go to your workspace, select the **citypwrdata** dataset, which the system automatically added when you created the new **citypwrdata** lakehouse.
+1. Go to your workspace and select the **citypwrdata** dataset, which the system automatically added when you created the new **citypwrdata** lakehouse.
 
 1. From the **Create a report** menu in the ribbon, select **Auto-create** or **Start from scratch**.
 
@@ -188,7 +188,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/enable-auto-refresh.png" alt-text="Screenshot showing how to enable auto refresh." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/enable-auto-refresh.png" :::
 
-1. After the report adjustment is complete, select the **Save** button and enter a report to save it.
+1. When you're done adjusting the report, select the **Save** button and enter a name to save it.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" alt-text="Screenshot showing the final edited report." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" :::
 
