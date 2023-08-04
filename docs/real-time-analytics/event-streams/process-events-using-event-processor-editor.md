@@ -27,11 +27,11 @@ Before you start, you must complete the following prerequisites:
 
 To design your event processing with the event processor editor:
 
-1. Create a **Lakehouse** destination and enter the necessary parameters in the right pane. (See [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md) for detailed instructions. )
+1. Add a **Lakehouse** destination and enter the necessary parameters in the right pane. (See [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md) for detailed instructions. )
 
 1. Select **Open event processor**. The **Event processing editor** screen appears.
 
-   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing where to select Open event processor in the Lakehouse destination creation screen.":::
+   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing where to select Open event processor in the Lakehouse destination configuration screen.":::
 
 1. In the Event processing editor canvas, select the eventstream node. You can preview the data schema, rename the column, or change the data type in the right **Eventstream** pane.
 
@@ -67,7 +67,7 @@ To design your event processing with the event processor editor:
 
 ## Event processor editor
 
-The Event processor enables you to transform the data that you're ingesting into a lakehouse destination. When you configure your lakehouse destination, you find the **Open event processor** option in the middle of the **Lakehouse** destination creation screen.
+The Event processor enables you to transform the data that you're ingesting into a lakehouse destination. When you configure your lakehouse destination, you find the **Open event processor** option in the middle of the **Lakehouse** destination configuration screen.
 
 :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing where to open the event processor editor." lightbox="./media/event-processor-editor/event-processor-editor-entrypoint.png" :::
 
@@ -83,7 +83,7 @@ The screen layout is like the main editor. It consists of three sections, shown 
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-overview.png" alt-text="Screenshot of the Event processing editor screen, indicating the three main sections." lightbox="./media/event-processor-editor/event-processor-editor-overview.png":::
 
-1. **Canvas with diagram view**: In this pane, you can design your data transformation logic by selecting an operator (from the **Operations** menu) and connecting the nodes. You can drag and drop connecting lines or select and delete connections.
+1. **Canvas with diagram view**: In this pane, you can design your data transformation logic by selecting an operator (from the **Operations** menu) and connecting the eventstream and the destination nodes via the newly created operator node. You can drag and drop connecting lines or select and delete connections.
 
 1. **Right editing pane**: This pane allows you to configure the selected operation node or view the schema of the eventstream and destination.
 

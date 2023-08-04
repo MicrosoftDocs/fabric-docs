@@ -1,6 +1,6 @@
 ---
-title: Ingest, filter, and transform real-time events and send them to a lakehouse
-description: Use the Microsoft Fabric event streams feature to work with real-time events and send them in Delta Lake format from Azure Event Hubs to a lakehouse.
+title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
+description: Use Microsoft Fabric eventstreams to ingest, filter, and transform the event data and send them in Delta Lake format from Azure Event Hubs to a Microsoft Fabric lakehouse.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 ms.search.form: product-kusto
 ---
 
-# Ingest, filter, and transform real-time events and send them to a lakehouse
+# Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
 
 This tutorial shows you how to use the Microsoft Fabric event streams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
 
@@ -29,10 +29,10 @@ In this tutorial, you learn how to:
 
 ## Prerequisites
 
-Before you start, you must complete the following prerequisites:
+Before you start, you must have:
 
-- Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream and lakehouse item are located.
-- For an Azure Event Hubs source, you need an Azure event hub with event data and appropriate permission to access its policy keys. It must be publicly accessible and not behind a firewall or secured in a virtual network.
+- Access to a **premium workspace** with **Contributor** or above permissions where your Eventstream and Lakehouse items are located.
+- An Azure event hub with event data and appropriate permission available to access the policy keys. The event hub must be publicly accessible and not be behind a firewall or secured in a virtual network. To create an event hub, see [Quickstart: Create an event hub using Azure portal](/azure/event-hubs/event-hubs-create).
 
 ## Create a lakehouse and an eventstream
 
@@ -50,11 +50,11 @@ You can create an eventstream and a lakehouse from the **Workspace** page or the
 
         :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" alt-text="Screenshot showing where to select the Lakehouse tile in the Create hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/lakehouse-creation-in-hub.png" :::
 
-1. Enter the name for the new eventstream or lakehouse and select **Create**. For the examples in this article, we're using **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
+1. Enter the name for the new eventstream or lakehouse and select **Create**. For the examples in this article, we use **citypwr-es** for the eventstream and **citypwrdata** for the lakehouse.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/creating-dialog.png" alt-text="Screenshot showing where to enter a name in the New Eventstream dialog box.":::
 
-After you've created both your new eventstream and lakehouse successfully, these items appear in your workspace:
+After you create both your new eventstream and lakehouse successfully, these items appear in your workspace:
 
 - **citypwr-es**: an Eventstream item
 - **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
@@ -63,13 +63,13 @@ After you've created both your new eventstream and lakehouse successfully, these
 
 ## Add an Azure Event Hubs source to the eventstream
 
-After you have created the lakehouse and eventstream, follow these steps to add an Azure event hub as your eventstream source.
+After you create the lakehouse and eventstream, follow these steps to add an Azure event hub as your eventstream source.
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then select **Azure Event Hubs**.
 
 1. Enter a source name for the new source and select **Create new connection** to your Azure event hub.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source creation screen.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen.":::
 
 1. Fill in the information about your Azure event hub on the **New connection** page.
 
@@ -88,7 +88,7 @@ After you have created the lakehouse and eventstream, follow these steps to add 
 
 1. Select a **Consumer group** that reads the event data from your Azure event hub and then **Add**.
 
-1. You see the new source node appears in the canvas after the event hub source is created successfully. You can select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
+1. The new source node appears in the canvas after the event hub source is created successfully. Select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/event-hub-source-preview.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/event-hub-source-preview.png" :::
 
@@ -100,7 +100,7 @@ After you have created the lakehouse and eventstream, follow these steps to add 
 
 ## Add a lakehouse destination to the eventstream
 
-After your event hub events have been ingested into your eventstream, you can add a lakehouse destination to receive the events from your eventstream. Follow these steps to add a lakehouse destination.
+After your eventstream ingests your event hub events, you can add a lakehouse destination to receive the events from your eventstream. Follow these steps to add a lakehouse destination.
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas, and then select **Lakehouse**.
 
@@ -112,7 +112,7 @@ After your event hub events have been ingested into your eventstream, you can ad
    1. **Delta table**: Select an existing delta table or create a new one to receive data. For this example, we selected the new delta table **citypwrtbl**.
    1. **Input data format**: Select the format for your data.
 
-1. If you don't want to process your events while ingesting them to your lakehouse, select **Add** to complete the creation of your lakehouse destination. If you would like to process your events, skip to the [next section](#define-real-time-events-processing-logic-with-event-processor).
+1. If you don't want to process your events while ingesting them to your lakehouse, select **Add** to complete the configuration of your lakehouse destination. If you would like to process your events, skip to the [next section](#define-real-time-events-processing-logic-with-event-processor).
 
 1. A Lakehouse destination node appears on the canvas with a spinning status indicator. The system takes a few minutes to change the status to **Ingesting**.
 
@@ -124,7 +124,7 @@ After your event hub events have been ingested into your eventstream, you can ad
 
 ## Define real-time events processing logic with event processor
 
-To add a lakehouse destination to your eventstream that includes real-time events processing logic, start the process in the [previous section](#add-a-lakehouse-destination-to-the-eventstream) and continue with these steps. For our example, we don't want to store the sensor IDs data in the lakehouse. We can use the event processor editor to remove those columns.
+In this section, after you have started the process of adding a lakehouse destination in the [previous section](#add-a-lakehouse-destination-to-the-eventstream), you'll define event processing logic using the event processor editor. For our example, we don't want to store the sensor IDs data in the lakehouse, so we use the event processor to remove the column.
 
 1. From the completed Lakehouse destination screen (don't select **Add** yet), select **Open event processor** . The **Event processing editor** screen opens.
 
@@ -152,7 +152,7 @@ To add a lakehouse destination to your eventstream that includes real-time event
 
 1. Select **Done** to save the event processing logic and return to the **Lakehouse** destination configuration screen.
 
-1. Select **Add** to complete the creation of your lakehouse destination.
+1. Select **Add** to complete the configuration of your lakehouse destination.
 
 1. A Lakehouse destination node appears on the canvas with a spinning status indicator. The system takes a few minutes to change the status to **Ingesting**.
 

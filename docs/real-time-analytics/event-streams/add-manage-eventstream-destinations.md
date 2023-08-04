@@ -28,14 +28,14 @@ Before you start, you must complete the following prerequisites:
 
 If you have a KQL database created in the workspace, follow these steps to add the KQL database as eventstream destination:
 
-1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination creation screen appears.
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination configuration screen appears.
 
 1. Enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
 
    > [!NOTE]
    > You can only select workspaces that have the same region Fabric capacity as the eventstream.
 
-   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database destination creation screen.":::
+   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
 
 1. On the **Ingest data** page, navigate through the tabs to complete the configuration:
    1. **Destination**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next: Source**.
@@ -57,7 +57,7 @@ If you have a KQL database created in the workspace, follow these steps to add t
 
        :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream.
+1. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream.
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
@@ -65,17 +65,17 @@ After you configure everything and select **Done**, a KQL database destination a
 
 If you have a lakehouse created in your workspace, follow these steps to add the lakehouse to your eventstream as a destination:
 
-1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Lakehouse**. The **Lakehouse** destination creation screen appears.
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Lakehouse**. The **Lakehouse** destination configuration screen appears.
 
 1. Enter a name for the eventstream destination and complete the information about your lakehouse.
 
-   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot of the Lakehouse destination creation screen.":::
+   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot of the Lakehouse destination configuration screen.":::
 
    1. **Lakehouse**: Select an existing lakehouse from the workspace you specified.
    1. **Delta table**: Select an existing delta table or create a new one to receive data.
 
       > [!NOTE]
-      > When writing data into the lakehouse table, there is **Schema enforcement**. This means all new writes to a table are must be compatible with the target table's schema at write time, ensuring data quality.
+      > When writing data into the lakehouse table, there is **Schema enforcement**. This means all new writes to a table must be compatible with the target table's schema at write time, ensuring data quality.
       >
       > All records of the output data are projected onto the schema of the existing table. When writing the output to a new delta table, the table schema is created based on the first record. If the incoming data has an additional column compared to the existing table schema, it writes to the table without including the extra column. Conversely, if the incoming data is missing a column compared to the existing table schema, it writes to the table with the column's value set to null.
 
@@ -84,7 +84,7 @@ If you have a lakehouse created in your workspace, follow these steps to add the
       > [!NOTE]
       > The supported input event data formats are JSON, Avro, and CSV (with header).
 
-   1. **Event processing**: You can use the event processing editor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination creation screen.
+   1. **Event processing**: You can use the event processing editor to specify how the data should be processed before it's sent to your lakehouse. Select **Open event processor** to open the event processing editor. To learn more about real-time processing using the event processor, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md). When you're done with the editor, select **Done** to return to the **Lakehouse** destination configuration screen.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" alt-text="Screenshot showing the event processor editor." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse-event-processor-editor.png" :::
 
@@ -92,17 +92,17 @@ If you have a lakehouse created in your workspace, follow these steps to add the
 
 1. A lakehouse destination appears on the canvas, with a spinning status indicator. The system takes a few minutes to change the status to **Ingesting**.
 
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" alt-text="Screenshot showing the lakehouse destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-lakehouse.png" :::
 
 ## Add a custom application as a destination
 
-If you want to route event data to your application, you can add a custom app as your eventstream destination. Follow these steps to create a custom app destination:
+If you want to route event data to your application, you can add a custom app as your eventstream destination. Follow these steps to add a custom app destination:
 
-1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Custom App**. The **Custom App** destination creation screen appears.
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Custom App**. The **Custom App** destination configuration screen appears.
 
 1. Enter a destination name for the custom app and select **Add**.
 
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot of the Custom App destination creation screen.":::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot of the Custom App destination configuration screen.":::
 
 After you have successfully created the custom application destination, you can view details like **connection string** on the **Information** tab in the lower pane.
 
@@ -122,7 +122,7 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 ## Supported destinations
 
-When you create eventstream destinations, you can route real-time events to custom applications, KQL databases, or lakehouses in Microsoft Fabric without writing a single line of code.
+When you add eventstream destinations, you can route real-time events to custom applications, KQL databases, or lakehouses in Microsoft Fabric without writing a single line of code.
 
 > [!NOTE]
 > The maximum number of sources and destinations for one eventstream is **11**.
@@ -137,7 +137,7 @@ With this destination, you can easily route your real-time events to a custom ap
 
 - **Destination name** - A meaningful destination name that appears in your eventstream.
 
-    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the Custom App destination creation screen.":::
+    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the Custom App destination configuration screen.":::
 
 ### KQL database
 
@@ -147,7 +147,7 @@ This destination provides direct ingestion of your real-time event data into a K
 - **Workspace** - The workspace name where your KQL Database is located.
 - **KQL Database** - The KQL Database where you want to route the event data.
 
-    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL Database destination creation screen.":::
+    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL Database destination configuration screen.":::
 
 After you select **Add and configure**, the **Ingest data** wizard appears. You navigate through four tabs:
 
@@ -171,7 +171,7 @@ This destination provides you with the ability to transform your real-time event
 - **Input data format** - The format of real-time events that is sent to your lakehouse.
 - **Open event processor** - The entry point to the event processor editor, where you can define event transformation.
 
-    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination creation screen.":::
+    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination configuration screen.":::
 
 If you select **Open event processor**, the **Event processing editor** screen appears:
 
