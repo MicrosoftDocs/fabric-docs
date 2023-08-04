@@ -30,4 +30,4 @@ Some of the errors that could be triggered because of this issue:
 
 ## Solutions and workarounds
 
-Download version 3000.174.13 or later of the on-premises data gateway.
+Download version 3000.182.5 or later of the on-premises data gateway.
