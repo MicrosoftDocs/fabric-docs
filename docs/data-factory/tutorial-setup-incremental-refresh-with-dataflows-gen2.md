@@ -10,6 +10,9 @@ ms.date: 07/20/2023
 
 # Pattern to incrementally amass data with Dataflow Gen2
 
+> [!IMPORTANT]
+> This is a pattern to incrementally amass data with Dataflow Gen2. This is not the same as incremental refresh. Incremental refresh is a feature that is currently in development. This feature is one of the top voted ideas on our ideas website. You can vote for this feature [here](https://ideas.fabric.microsoft.com/ideas/idea/?ideaid=4814b098-efff-ed11-a81c-6045bdb98602).
+
 This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 
 Incrementally amass data in a data destination require a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This tutorial shows how to create a dataflow to load data from an OData source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
