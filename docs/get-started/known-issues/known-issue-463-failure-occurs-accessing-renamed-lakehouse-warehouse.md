@@ -22,7 +22,7 @@ You'll see an HTTP status code 500 failure after renaming your Lakehouse or Ware
 
 ## Solutions and workarounds
 
-There's no workaround at this time. The engineering team is aware of this behavior and a fix is coming soon. We apologize for the inconvenience caused, and we encourage customers not to rename the Lakehouse or Warehouse artifacts.
+There's no workaround at this time. We are aware of the issue and are working on a fix. We apologize for the inconvenience caused and encourage you not to rename the Lakehouse or Warehouse items.
 
 ## Next steps
 
