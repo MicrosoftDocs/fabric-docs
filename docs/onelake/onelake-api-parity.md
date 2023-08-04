@@ -1,6 +1,6 @@
 ---
 title: OneLake API Parity
-description: Microsoft OneLake supports ADLS Gen2 APIs, with a few small differnces.
+description: Microsoft OneLake supports ADLS Gen2 APIs, with a few differences.
 ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
@@ -15,21 +15,21 @@ ms.date: 08/04/2023
 
 ## Overview
 
-OneLake supports the same APIs as ADLS Gen2, enabling users to read, write, and manage their data in OneLake.  However, not all functionality in ADLS Gen2 maps directly to OneLake, and OneLake also enforces a set folder structure to support Fabric workspaces and items.  This page will review the changes between ADLS Gen2 and OneLake when calling DFS APIs and other differences between the two services.  For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](/rest/api/storageservices/data-lake-storage-gen2).
+OneLake supports the same APIs as ADLS Gen2, enabling users to read, write, and manage their data in OneLake.  However, not all functionality in ADLS Gen2 maps directly to OneLake, and OneLake also enforces a set folder structure to support Fabric workspaces and items.  This page details the changes between ADLS Gen2 and OneLake when calling DFS APIs and other differences between the two services.  For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](/rest/api/storageservices/data-lake-storage-gen2).
 
 ## Protected OneLake folders
 
 OneLake doesn't support creating, updating, or deleting workspaces or items through the ADLS Gen2 APIs. Only HEAD calls are supported at the workspace level and account level, as you must make changes to the Fabric tenant and Fabric workspaces in the Fabric administration portal.
 
-OneLake also enforces a folder structure for Fabric items, protecting items and their managed sub folders from creation, deletion, or renaming through ADLS Gen2 APIs., even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse.lakehouse*) and the first level of folders within it (for example, */MyLakehouse.lakehouse/Files* and */MyLakehouse.lakehouse/Tables*).
+OneLake also enforces a folder structure for Fabric items, protecting items and their managed sub folders from creation, deletion, or renaming through ADLS Gen2 APIs. You must perform these operations via Fabric experiences, such as the Fabric portal. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse.lakehouse*) and the first level of folders within it (for example, */MyLakehouse.lakehouse/Files* and */MyLakehouse.lakehouse/Tables*).
 
 You can perform CRUD operations on any folder or file created within these managed folders, and perform read-only operations on workspace and item folders.
 
 ## Unsupported request headers and parameters
 
-Even in user-created  files and folders, OneLake restricts some Fabric management operations through ADLS Gen2 APIs. You cannot update permissions, edit items or workspaces, or set access tiers.
+Even in user-created  files and folders, OneLake restricts some Fabric management operations through ADLS Gen2 APIs. You can't update permissions, edit items or workspaces, or set access tiers.
 
-OneLake will reject or ignore an API call if it contains a disallowed header or parameter value. OneLake ignores headers if the header doesn't change the behavior of the call, and returns the rejected header in a new 'x-ms-rejected-headers' response header.  OneLake rejects requests containing unallowed query parameters.  OneLake doesn’t allow the following behaviors and their associated request headers and URI parameters:
+OneLake rejects or ignores an API call if it contains a disallowed header or parameter value. OneLake ignores headers if the header doesn't change the behavior of the call, and returns the rejected header in a new 'x-ms-rejected-headers' response header.  OneLake rejects requests containing unallowed query parameters.  OneLake doesn’t allow the following behaviors and their associated request headers and URI parameters:
 
 - Set access control
   - URI Parameter:

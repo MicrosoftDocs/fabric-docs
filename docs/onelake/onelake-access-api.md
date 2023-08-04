@@ -65,7 +65,7 @@ OneLake regional endpoints all follow the same format: 'https://\<region\>-onela
 
 ## Common issues
 
-If a tool or package you've used over ADLS Gen2 is not working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (dfs.fabric.microsoft.com) than ADLS Gen2 (dfs.core.windows.net), some tools don't recognize the OneLake endpoint and block it.  Some tools will allow you to use custom endpoints (such as PowerShell).  Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint.  If you find a URL validation issue or have any other issues connecting to OneLake, please [let us know](aka.ms/fabricideas).
+If a tool or package you've used over ADLS Gen2 is not working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (dfs.fabric.microsoft.com) than ADLS Gen2 (dfs.core.windows.net), some tools don't recognize the OneLake endpoint and block it.  Some tools will allow you to use custom endpoints (such as PowerShell).  Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint.  If you find a URL validation issue or have any other issues connecting to OneLake, please [let us know](https://ideas.fabric.microsoft.com/).
 
 ## Samples
 
