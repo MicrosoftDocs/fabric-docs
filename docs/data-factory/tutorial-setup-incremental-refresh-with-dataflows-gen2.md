@@ -1,6 +1,6 @@
 ---
-title: Incremental refresh with Dataflow Gen2
-description: This tutorial takes 15 minutes, and describes how to incrementally load data into a lakehouse using Dataflow Gen2.
+title: Pattern to incrementally amass data with Dataflow Gen2
+description: This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
@@ -8,11 +8,11 @@ ms.topic: tutorial
 ms.date: 07/20/2023
 ---
 
-# Incremental refresh with Dataflow Gen2
+# Pattern to incrementally amass data with Dataflow Gen2
 
-This tutorial takes 15 minutes, and describes how to incrementally load data into a lakehouse using Dataflow Gen2.
+This tutorial takes 15 minutes, and describes how to incrementally amass data into a lakehouse using Dataflow Gen2.
 
-Incremental refresh is a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This tutorial shows how to create a dataflow to load data from an OData source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
+Incrementally amass data in a data destination require a technique to load only new or updated data into your data destination. This can be done by using a query to filter the data based on the data destination. This tutorial shows how to create a dataflow to load data from an OData source into a lakehouse and how to add a query to the dataflow to filter the data based on the data destination.
 
 The high-level steps in this tutorial are as follows:
 
