@@ -24,6 +24,7 @@ Some of the errors that could be triggered because of this issue:
 
 * *An exception occurred: The given data source kind is not supported. Data source kind: Lakehouse*
 * *null Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error*
+* *We cannot convert the value null to type Table*
 
 >[!Note]
 >Other errors might not be listed here at the time this article was written.
