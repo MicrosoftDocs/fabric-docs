@@ -169,13 +169,13 @@ With the **event hub compatible connection string** readily available in your cu
     2023/06/12 20:35:47 [Send events to Fabric Eventstream]: All 5 batches have been sent to eventstream
     ```
 
-1. Go to your eventstream main editor and select your eventstream in the middle, and then select the **Data preview** tab in the lower pane.
+1. Go to your eventstream main editor canvas and select your eventstream node, and then select the **Data preview** tab in the lower pane.
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-preview.png" alt-text="Screenshot showing where to find the eventstream tile and the eventstream Data preview tab." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-preview.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-preview.png" alt-text="Screenshot showing where to find the eventstream node and the eventstream Data preview tab." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-preview.png" :::
 
    You can also view the data metrics to confirm that the data streamed into your eventstream by selecting the **Data insights** tab.
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-insights.png" alt-text="Screenshot showing where to select the eventstream tile and find the eventstream Data insights tab." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-insights.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-insights.png" alt-text="Screenshot showing where to select the eventstream node and find the eventstream Data insights tab." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/eventstream-data-insights.png" :::
 
 ## Add a KQL Database destination to the eventstream
 
@@ -207,9 +207,9 @@ While the custom application is streaming events into your eventstream, you can 
 
 To verify the event data in your new KQL database:
 
-1. On the canvas, select the KQL database destination tile and then select the **Information** tab in the lower pane.
+1. On the canvas, select the KQL database destination node and then select the **Information** tab in the lower pane.
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" alt-text="Screenshot showing where to select the KQL destination tile and then select Open item." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" alt-text="Screenshot showing where to select the KQL destination node and then select Open item." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/open-kql-database-from-eventstream.png" :::
 
 1. In the **Information tab**, select **Open item** next to **Related item citytempdb** to open the citytempdb KQL database.
 
