@@ -40,8 +40,6 @@ The following metrics appear for an eventstream node on the **Data insights** ta
 | **IncomingBytes** | Bytes | Incoming bytes for an eventstream over a specified period. |
 | **OutgoingBytes** | Bytes | Outgoing bytes for an eventstream over a specified period. |
 
-:::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
-
 To view data insights for an eventstream:
 
 1. Select the eventstream node in the main editor canvas.
@@ -51,6 +49,8 @@ To view data insights for an eventstream:
 1. If there's data inside the eventstream, the metrics chart appears on the **Data insights** tab.
 
 1. On the right side of the tab, select the checkboxes next to the metrics you want to display.
+
+:::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
 ### Data insights in Azure event hub source and lakehouse destination nodes
 
@@ -66,8 +66,6 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
 
-:::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
-
 To view the data insights for an Azure event hub source or a lakehouse destination:
 
 1. Select the Azure event hub source node or lakehouse destination node in the main editor canvas
@@ -78,13 +76,11 @@ To view the data insights for an Azure event hub source or a lakehouse destinati
 
 1. On the right side of the tab, select the checkboxes next to the metrics you want to display.
 
+:::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
+
 ## Runtime logs
 
-Runtime logs enable you to check the detailed errors occurring in the eventstream engine. Runtime log errors have three severity levels: warning, error, and information. When you select an Azure event hub source node or a lakehouse destination node in the main canvas, the **Runtime logs** tab appears in the lower pane.
-
-In the **Runtime logs** tab, you can search the logs with a keyword. You can also filter the logs according to the severity and type. To get the most current logs, select Refresh.
-
-:::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
+Runtime logs enable you to check the detailed errors occurring in the eventstream engine. Runtime log errors have three severity levels: warning, error, and information.
 
 To view the runtime logs for an Azure event hub source or a lakehouse destination:
 
@@ -95,6 +91,10 @@ To view the runtime logs for an Azure event hub source or a lakehouse destinatio
 1. If there's data inside the Azure event hub source or lakehouse destination, the logs appear on the **Runtime logs** tab.
 
 1. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
+
+1. To see the most current logs, select **Refresh**.
+
+:::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
 
 ## Next steps
 
