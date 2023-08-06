@@ -124,11 +124,11 @@ The OneLake shortcut has been created. You can now query this data.
 
 To query data from the OneLake shortcut, use the [`external_table()` function](/azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context).
 
-1. On the rightmost side of your database, select **Explore your data**. The window opens with a few sample queries you can run to get an initial look at your data.
+1. On the rightmost side of your database, select **Check your data**. The window opens with a few sample queries you can run to get an initial look at your data.
 1. Replace the table name placeholder with `external_table('`*Shortcut name*`')`.
 1. Select **Run** or press **Shift+ Enter** to run a selected query.
 
-:::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the Explore your data window showing the results of a sample query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
+:::image type="content" source="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png" alt-text="Screenshot of the check your data window showing the results of a sample query."  lightbox="media/onelake-shortcuts/amazon-s3-shortcut/query-shortcut.png":::
 
 ## Next steps
 
