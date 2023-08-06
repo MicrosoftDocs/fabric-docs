@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/03/2023
 ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report
@@ -42,8 +42,6 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     * **Latitude** > **Latitude**
     * **Longitude** > **Longitude**
     * **Count** > **Bubble size**
-1. Under **Latitude**, select **V** to expand the dropdown menu, and then select **Don't summarize**.
-1. Repeat the previous step for **Longitude**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/create-power-bi-second-report.png" alt-text="Screenshot of creating second Power BI report in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/create-power-bi-second-report.png":::
 

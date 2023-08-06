@@ -55,6 +55,10 @@ The types of industries that benefit from data analysis in Real-Time Analytics i
 
 As a marketing specialist implementing a new campaign, Real-Time Analytics allows you to analyze the immediate impact of your campaign on sales, inventory, and logistics. You can stream large volumes of data into your KQL database through Eventstream with a latency of a few seconds, then use a KQL queryset to analyze your campaign's performance and visualize your findings in a shareable Power BI report. You can use these insights to immediately modify the different aspects of your campaign and easily view the effect in real-time. You can also grant view access for your KQL database to different teams in your company, such as the finance and production teams to analyze your streaming data and make adjustments to the cost and production of the product accordingly.
 
+### Sales
+
+As a business analyst working for a global retail chain, you're responsible for analyzing the incoming data and communicating your insights to key stakeholders in your business. You can collect and store data from a variety of different sources, such as manufacturers, shippers, suppliers, and in a variety of formats, such as structured, semi-structured, and unstructured data. All this actionable data is captured in a KQL database, providing a scalable data solution for your growing data that can hold billions of records that can be retained for years on end for you to query and compare with the streaming data. Not only can you use a KQL queryset to perform time series analysis, but you can also create Power BI reports visualizing geospatial analytics of land and maritime routes, quickly detect anomalies, and collaborate with project managers on dashboards to make better business decisions.
+
 ## How to work in Real-Time Analytics?
 
 The main items available in Real-Time Analytics include:
