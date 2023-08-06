@@ -7,7 +7,7 @@ author: SnehaGunda
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: product-trident
-ms.date: 08/01/2023
+ms.date: 08/06/2023
 ---
 
 # End-to-end tutorials in Microsoft Fabric
