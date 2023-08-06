@@ -6,11 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-<<<<<<< HEAD
 ms.date: 08/06/2023
-=======
-ms.date: 07/30/2023
->>>>>>> 23aafb9de82d75bb7e669700ce601cfbf1c6333e
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
