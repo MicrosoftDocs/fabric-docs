@@ -12,7 +12,7 @@ ms.date: 08/03/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [capacity license](#capacity-license) and at least one [per-user license](#per-user-licenses).
+Microsoft Fabric is a platform that allows users to get, create, share, and visualize data using various tools. To share content and collaborate in Microsoft Fabric, your organization needs to have a [capacity license](#capacity-license) and at least one [per-user license](#per-user-licenses).
 
 Microsoft Fabric consists of tenants, capacities, and workspaces and can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization.
 
