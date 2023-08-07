@@ -104,7 +104,7 @@ Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)]
 
 ## Next steps
 
-- Get started with end-to-end data science samples, see Data Science Tutorials
+- Get started with end-to-end data science samples, see [Data Science Tutorials](tutorial-data-science-introduction.md)
 - Learn more about data preparation and cleansing with Data Wrangler, see [Data Wrangler](data-wrangler.md)
 - Learn more about tracking experiments, see [Machine learning experiment](machine-learning-experiment.md)
 - Learn more about managing models, see [Machine learning model](machine-learning-model.md)

@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 07/15/2023
 ---
 
 # Endorsement
@@ -27,6 +27,9 @@ There are two kinds of endorsement: **promotion** and **certification**.
     Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
 
     **Certification is available only if a Fabric administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+
+    > [!NOTE]
+    > Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
 
 The following image illustrates how endorsed, promoted, and certified datasets are clearly identified when you're searching for an item.
 

@@ -116,17 +116,15 @@ ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
 > [!NOTE]
-> ADLS shortcuts don't support private endpoints.
+> Access to storage account endpoint can't be blocked by storage firewall or VNET.
 
 *Authorization:*
 
-ADLS shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut will be authorized using that credential.  The supported delegated types are Account Key, SAS Token, OAuth and Service Principal.
+ADLS shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut will be authorized using that credential. The supported delegated types are Organizational account, Account Key, Shared Access Signature (SAS), and Service Principal.
 
-- **SAS Token** - must include at least the following permissions: Read, List, Execute
-
-- **OAuth identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
-
-- **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, Execute.
+-  **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
 
 ### S3 shortcuts
 
@@ -138,13 +136,17 @@ S3 shortcuts must point to the https endpoint for the S3 bucket.
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> S3 shortcuts don't support private endpoints.
+> Access to storage account endpoint can't be blocked by storage firewall or VPC.
 
 *Authorization:*
 
 S3 shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the S3 shortcut and all access to that shortcut will be authorized using that credential.  The supported delegated credential is a Key and Secret for an IAM user.
 
-The IAM must have at least read only (Get, List) permissions on the bucket that the shortcut is pointing to.
+The IAM user must have the following permissions on the bucket that the shortcut is pointing to.
+
+- `S3:GetObject`
+- `S3:GetBucketLocation`
+- `S3:ListBucket`
 
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
@@ -208,7 +210,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 > [!NOTE]
 > The lineage view is scoped to a single workspace. Shortcuts to locations outside the selected workspace won't appear.
 
-## Known issues and limitations
+## Limitations and Considerations
 
 - The maximum number of shortcuts per Fabric item is 10,000.
 - The maximum number of shortcuts in a single OneLake path is 10.

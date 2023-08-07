@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/25/2023
 ms.search.form: product-kusto
 ---
 # One logical copy
@@ -24,11 +24,11 @@ This shortcut is a two-step process that requires you to do the following:
 
 Use this shortcut if you want to access your data in other [!INCLUDE [product-name](../includes/product-name.md)] experiences.
 
-To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcut.md).
+To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut](onelake-shortcuts.md?tab=onelake-shortcut)
 
 ## How it works
 
-* When you **enable the policy on your KQL database**, existing tables aren't affected. New tables are available OneLake.
+* When you **enable the policy on your KQL database**, existing tables aren't affected. New tables are available in OneLake.
 * When you **disable the policy on your KQL database**, existing tables aren't affected. New tables won't be available in OneLake.
 * When you **enable the policy on your table**, new data is available in OneLake. Existing data isn't backfilled. Table schema can't be altered and the table can't be renamed.
 * When you **disable the policy on your table**, the data is no longer available in OneLake.

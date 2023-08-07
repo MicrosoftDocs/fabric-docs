@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL Endpoint and Warehouse in Microsoft F
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 07/12/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -49,7 +49,6 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - SELECT - FOR (except JSON)
 - SET ROWCOUNT
 - SET TRANSACTION ISOLATION LEVEL
-- `sp_showmemo_xml`
 - `sp_showspaceused`
 - `sp_rename`
 - Temp Tables
@@ -59,4 +58,4 @@ At this time, the following list of commands is NOT currently supported. Don't t
 ## Next steps
 
 - [Data types in Microsoft Fabric](data-types.md)
-- [Limitations and known issues in Microsoft Fabric](limitations.md)
+- [Limitations in Microsoft Fabric](limitations.md)

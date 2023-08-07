@@ -213,6 +213,8 @@ items:
       href: install-synapseml.md
   - name: How-to guides
     items:
+    - name: Use OpenAI for big data with SynapseML
+      href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
     - name: Use Cognitive Services with SynapseML
