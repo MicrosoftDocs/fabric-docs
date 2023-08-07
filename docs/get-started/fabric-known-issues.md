@@ -4,7 +4,7 @@ description: Identify issues that are affecting your Fabric trial.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/03/2023
+ms.date: 08/07/2023
 ms.custom: build-2023
 ---
 # Fabric (Preview) trial known issues
@@ -19,6 +19,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|---------------------|
+|  473  | OneLake                     | [Fabric items can't be created in a workspace moved to a capacity in a different region](known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)    |  August 7, 2023  |
 |  467  | Data Engineering            | [Notebook fails to load after workspace migration](known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md)    |  August 3, 2023  |
 |  463  | Data Warehouse              | [Failure occurs when accessing a renamed Lakehouse or Warehouse](known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md)    |  August 3, 2023  |
 |  462  | Administration & Management | [Fabric users see the workspace git status column display synced for unsupported artifacts](known-issues/known-issue-462-fabric-user-git-column-synced-activity.md)    |  July 26, 2023  |
