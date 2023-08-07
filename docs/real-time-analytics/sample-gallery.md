@@ -31,6 +31,9 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
 
     :::image type="content" source="media/sample-gallery/sample-gallery.png" alt-text="Screenshot of the Real-Time Analytics sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery.png":::
 
+> [!NOTE]
+> You can also load data from the **Real-Time Analytics Sample Gallery** as a table in an existing database. Doing so loads the sample dataset without creating a KQL queryset with sample queries.
+
 ## Run queries
 
 A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.
