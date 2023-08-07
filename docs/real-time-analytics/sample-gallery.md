@@ -33,9 +33,12 @@ In this article, you learn how to query the sample data gallery in Real-Time Ana
 
 ## Run queries
 
-A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators. For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.
+
+For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 In the query editor window, place your cursor anywhere on the query text and select the **Run** button, or press **Shift** + **Enter** to run a query. Results are displayed in the query results pane, directly below the query editor window.
+
 Before running any query or command, take a moment to read the comments above it. The comments include important information.
 
 :::image type="content" source="media/sample-gallery/sample-queryset.png" alt-text="Screenshot of a sample KQL queryset showing sample queries for the Storm Events table." lightbox="media/sample-gallery/sample-queryset.png":::
@@ -48,6 +51,8 @@ Before running any query or command, take a moment to read the comments above it
 Clean up the items created by navigating to the workspace in which they were created.
 
 1. In your workspace, hover over the KQL Database or KQL Queryset you want to delete, select the **More menu** [...] > **Delete**.
+
+    :::image type="content" source="media/sample-gallery/clean-up-resources.png" alt-text="Screenshot of Microsoft Fabric workspace showing the resources created from the sample gallery. The more menu option titled delete is highlighted.":::
 
 1. Select **Delete**. You can't recover deleted items.
 
