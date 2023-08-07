@@ -14,7 +14,7 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Real-Time Analytics offers various types of sample data for you to practice loading and and writing queries in Real-Time Analytics. Each dataset in the **Real-Time Analytics Sample Gallery** is loaded into your workspace as a KQL database with an attached KQL queryset containing sample queries unique to the dataset you selected.
+Real-Time Analytics in Microsoft Fabric offers a sample data gallery containing various types of data for you to practice loading and and writing queries. Each dataset in the **Real-Time Analytics Sample Gallery** is loaded into your workspace as a KQL database with an attached KQL queryset containing sample queries unique to the dataset you selected.
 
 In this article, you learn how to query data from the sample gallery in Real-Time Analytics to get started with analyzing your data.
 
