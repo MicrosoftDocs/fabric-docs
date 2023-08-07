@@ -1,6 +1,6 @@
 ---
 title: Query sample data in Real-Time Analytics
-description: Learn how to load sample data into Real-Time Analytics and explore it using a KQL queryset. 
+description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset. 
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -14,7 +14,7 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Real-Time Analytics offers a variety of telemetry and IoT sample data for you to get started with Real-Time Analytics in Microsoft Fabric. Each sample data represents a KQL database that is associated with a KQL queryset with sample queries unique to the selected dataset for you to query and gain insights into your data.
+Real-Time Analytics offers a variety of sample telemetry and IoT data for you to get started with loading data and running queries in Real-Time Analytics. Each sample of data from the sample gallery is loaded into your workspace as an individual KQL database, and a KQL queryset with a sample set of queries unique to the sample data you selected opens for you to query and gain insights into your data.
 
 In this article, you learn how to query the sample data gallery in Real-Time Analytics.
 
@@ -25,21 +25,22 @@ In this article, you learn how to query the sample data gallery in Real-Time Ana
 ## Get data
 
 1. On the bottom left experience switcher, select **Real-Time Analytics**.
-1. On the **Real-Time Analytics** homepage, Select **Use a sample (Preview)**.
-1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Each tile in the sample gallery represents a database. Once selected, a KQL database and KQL queryset are created.
+1. On the **Real-Time Analytics** homepage, select **Use a sample (Preview)**.
+    :::image type="content" source="media/sample-gallery/use-sample.png" alt-text="Screenshot of the Real-Time Analytics homepage showing the different items that can be created in this experience. The item titled Use a sample is highlighted." lightbox="media/sample-gallery/use-sample.png":::
+1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the dataset is automatically generated.
 
     :::image type="content" source="media/sample-gallery/sample-gallery.png" alt-text="Screenshot of the Real-Time Analytics sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery.png":::
-Once you select a tile, the data is loaded into your workspace, and a KQL queryset with sample queries is automatically generated.
 
 ## Run queries
 
-A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators.
+A query is a read-only request to process data and return results. The request is stated in plain text, using a data-flow model that is easy to read, author, and automate. Queries always run in the context of a particular table or database. At a minimum, a query consists of a source data reference and one or more query operators applied in sequence, indicated visually by the use of a pipe character (|) to delimit operators. For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
-For more information on the Kusto Query Language, see [Kusto Query Language (KQL) Overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+In the query editor window, place your cursor anywhere on the query text and select the **Run** button, or press **Shift** + **Enter** to run a query. Results are displayed in the query results pane, directly below the query editor window.
+Before running any query or command, take a moment to read the comments above it. The comments include important information.
 
-Select the **Run** button, or press **Shift**+**Enter** to run the query.
+:::image type="content" source="media/sample-gallery/sample-queryset.png" alt-text="Screenshot of a sample KQL queryset showing sample queries for the Storm Events table." lightbox="media/sample-gallery/sample-queryset.png":::
 
->[!TIP]
+> [!TIP]
 > Select **Recall** at the top of the query window to show the result set from the first query without having to rerun the query. Often during analysis, you run multiple queries, and **Recall** allows you to retrieve the results of previous queries.
 
 ## Clean up resources
