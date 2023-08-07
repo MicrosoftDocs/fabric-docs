@@ -14,9 +14,9 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Real-Time Analytics offers a variety of sample telemetry and IoT data for you to get started with loading data and running queries in Real-Time Analytics. Each sample of data from the sample gallery is loaded into your workspace as an individual KQL database, and a KQL queryset with a sample set of queries unique to the sample data you selected opens for you to query and gain insights into your data.
+Real-Time Analytics offers various types of sample data for you to practice loading and and writing queries in Real-Time Analytics. Each dataset in the **Real-Time Analytics Sample Gallery** is loaded into your workspace as a KQL database with an attached KQL queryset containing sample queries unique to the dataset you selected.
 
-In this article, you learn how to query the sample data gallery in Real-Time Analytics.
+In this article, you learn how to query data from the sample gallery in Real-Time Analytics to get started with analyzing your data.
 
 ## Prerequisites
 
