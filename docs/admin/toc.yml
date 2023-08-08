@@ -50,9 +50,7 @@ items:
   - name: Enable service principal authentication for read-only admin APIs
     href: metadata-scanning-enable-read-only-apis.md
 - name: Fabric tenant settings
-  items:    
-  - name: About tenant settings
-    href: about-fabric-tenant-settings.md
+  items:
   - name: Tenant settings index
     href: tenant-settings-index.md
 
