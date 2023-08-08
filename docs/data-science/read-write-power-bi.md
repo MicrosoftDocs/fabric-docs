@@ -22,6 +22,7 @@ You'll also learn how to write data that Power BI datasets can consume.
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 - Download the _Customer Profitability Sample.pbix_ Power BI dataset from the [datasets folder](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets) of the fabric-samples repository, and save the dataset locally.
 

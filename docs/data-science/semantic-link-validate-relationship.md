@@ -15,6 +15,8 @@ ms.search.form: Semantic Link
 
 In this article, you'll learn to discover and validate relationships within your Power BI datasets and pandas DataFrames by using SemPy modules.
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 In data science and machine learning, it's important to understand the structure and relationships within your dataset.
 Although Power BI is a powerful tool that allows you to model and visualize your data, you sometimes need to dive deeper into a dataset's structure to gain more insights or build machine learning models.
 Data scientists and business analysts can explore the relationships within a Power BI dataset or pandas DataFrames by using various functions in the SemPy library.
@@ -25,7 +27,13 @@ You'll learn to:
 > * Find, visualize, and explore relationships in a Power BI dataset
 > * Find and validate relationships in a pandas DataFrame
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+## Prerequisites
+
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
+- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Find relationships in a Power BI dataset
 

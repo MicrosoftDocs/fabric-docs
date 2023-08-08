@@ -43,6 +43,13 @@ This metadata includes:
 - Relationships between tables
 - Hierarchies
 
+> [!NOTE]
+> To use the `SemPy` Python library, you need to install it in your notebook kernel by executing this code in a notebook cell:
+> 
+> ```python
+> %pip install semantic-link
+> ```
+
 ## Data connectivity through Semantic Link Spark native connector
 
 Support for Spark (PySpark, Spark SQL, R and Scala)

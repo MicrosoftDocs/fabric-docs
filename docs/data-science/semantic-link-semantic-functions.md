@@ -16,6 +16,12 @@ This article covers semantic functions and how they can help data scientists and
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
+
+```python
+%pip install semantic-link
+```
+
 [FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function.
 For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
 

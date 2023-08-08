@@ -14,6 +14,9 @@ ms.search.form: Semantic Link
 
 Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
+Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll use Semantic Link to:
 
@@ -24,22 +27,15 @@ In this article, you'll use Semantic Link to:
 > * Visualize data quality issues
 > * Enforce functional constraints between columns in a dataset
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 - Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
+- [!INCLUDE [sempy-notebook-installation](includes/sempy-notebook-installation.md)]
 - [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
-- TODO: add info on getting SemPy? Or is it included in Fabric by default? (Fyi, @Markus)
-<!-- SemPy will require "%pip install semantic-link" we'll no more in 1-2 weeks  -->
 
-## Use functional dependencies to find and fix data quality issues
-
-Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
-
-### Find functional dependencies in data
+## Find functional dependencies in data
 
 The `find_dependencies` function in SemPy detects functional dependencies between the columns of a FabricDataFrame.
 The function uses a threshold on conditional entropy to discover approximate functional dependencies, where low conditional entropy indicates strong dependence between columns.
@@ -82,7 +78,7 @@ In some cases, the dependency chain can form cycles when you specify the `dropna
 | 1   | NaN | 1   |
 | 1   | NaN | 2   |
 
-### Visualize dependencies in data
+## Visualize dependencies in data
 
 After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependencies` function.
 This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
@@ -107,7 +103,7 @@ Columns that belong to a single group are put into a single cell. If no suitable
 
 :::image type="content" source="media/semantic-link-validate-data/plot_dependencies.png" alt-text="Screenshot showing the output of the plot_dependencies function." lightbox="media/semantic-link-validate-data/plot_dependencies.png":::
 
-### Identify data quality issues
+## Identify data quality issues
 
 Data quality issues can arise in various forms, such as missing values, inconsistencies, or inaccuracies.
 Identifying and addressing these issues is crucial for ensuring the reliability and validity of any analysis or model built on the data.
@@ -146,7 +142,7 @@ The output of `list_dependency_violations` can help identify data quality issues
 However, it's essential to carefully examine the results and consider the context of your data to determine the most appropriate course of action for addressing the identified issues.
 This may involve further data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
 
-### Visualize data quality issues
+## Visualize data quality issues
 
 Data quality issues can negatively impact the reliability and validity of any analysis or model built on the data.
 Identifying and addressing these issues is crucial for ensuring the accuracy of your results.
@@ -180,7 +176,7 @@ By examining the graph, you can gain insights into the relationships between det
 
 :::image type="content" source="media/semantic-link-validate-data/plot_dependency_violations.png" alt-text="Screenshot showing the output of the plot_dependency_violations function." lightbox="media/semantic-link-validate-data/plot_dependency_violations.png":::
 
-### Enforce functional constraints
+## Enforce functional constraints
 
 Data quality is crucial for ensuring the reliability and validity of any analysis or model built on a dataset.
 One way to improve data quality is by enforcing functional constraints between columns in a dataset.
