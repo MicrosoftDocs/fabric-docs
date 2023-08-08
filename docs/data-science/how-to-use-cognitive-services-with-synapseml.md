@@ -208,7 +208,7 @@ display(
 
 ## Analyze and tag images
 
-[Computer Vision](https://azure.microsoft.com/services/cognitive-services/computer-vision/) analyzes images to identify structure such as faces, objects, and natural-language descriptions.
+[Computer Vision](https://azure.microsoft.com/products/ai-services/ai-vision/) analyzes images to identify structure such as faces, objects, and natural-language descriptions.
 
 The following code sample analyzes images and labels them with *tags*. Tags are one-word descriptions of things in the image, such as recognizable objects, people, scenery, and actions.
 
