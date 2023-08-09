@@ -1,12 +1,12 @@
 ---
-title: Develop, execute, and debug notebook in VS Code
+title: Work with Notebook resource in VS Code
 description: Learn about the VS Code extension for Synapse, which enable a pro-developer authoring experience, including editing file in the Notebook resource folder.
 ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 00/09/2023
+ms.date: 08/09/2023
 ms.search.form: VSCodeExtension
 ---
 
@@ -50,4 +50,4 @@ User can click the **Update Resource Folder** button to download the notebook re
 
 In the below screenshot, the **util.py** file is moved to the **_backup** subfolder under the **localLib** folder because it is deleted in the remote workspace.
 
-:::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Download notebook resource in VS Code.":::
+:::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Sample of Download notebook resource in VS Code.":::
