@@ -24,15 +24,15 @@ This page is updated monthly, so revisit it regularly.
 
 ### Dataflows Gen2
 
-- Manage connections in the Power Query editor [Learn more](/power-query/manage-connections.md)
-- Column pair suggestion for Merge operations [Learn more](/power-query/merge-queries-overview#use-the-column-pair-suggestion.md)
-- Power Query templates [Learn more](/power-query/power-query-template.md)
+- Manage connections in the Power Query editor [Learn more](/power-query/manage-connections)
+- Column pair suggestion for Merge operations [Learn more](/azure/power-query/merge-queries-overview#use-the-column-pair-suggestion)
+- Power Query templates [Learn more](/power-query/power-query-template)
 
 ### Data pipeline activities
 
-- Fail Activity [Learn more](/azure/data-factory/control-flow-fail-activity.md)
-- Web Activity [Learn more](/azure/data-factory/control-flow-web-activity.md)
-- Webhook Activity [Learn more](/azure/data-factory/control-flow-webhook-activity.md)
+- Fail Activity [Learn more](/data-factory/control-flow-fail-activity)
+- Web Activity [Learn more](/data-factory/control-flow-web-activity)
+- Webhook Activity [Learn more](/data-factory/control-flow-webhook-activity)
 
 ### Data pipeline management
 
