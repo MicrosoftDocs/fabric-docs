@@ -41,7 +41,7 @@ Both implementations are subject to Power BI backend limitations (see [details](
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information.
 These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
 - intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
-- innovative integration for augmenting data with Power BI measures through the use of [add-measures](./semantic-link-power-bi.md#add-measure).
+- innovative integration for augmenting data with Power BI measures through the use of [add-measures](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures).
 - tools for [data quality validation](semantic-link-validate-data.md) based on the relationships between tables and functional dependencies within tables.
 
 Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment.
@@ -56,7 +56,7 @@ FabricDataFrame is the primary data structure that Semantic Link uses to propaga
 :::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabricdataframes.svg" alt-text="A diagram that shows data flow from connectors to Power BI datasets to FabricDataFrame to Semantic Functions.":::
 
 FabricDataFrame supports all pandas operations and more.
-It exposes semantic functions and [add-measure](./semantic-link-power-bi.md#add-measure) that enable you to use Power BI measures in your data science work.
+It exposes semantic functions and [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 
