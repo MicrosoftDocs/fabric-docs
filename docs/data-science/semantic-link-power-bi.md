@@ -85,7 +85,7 @@ GROUP BY
     `Industry[Industry]`
 ```
 
-## Add measure
+## Data augmentation with Power BI measures
 
 The `add_measure` operation is a powerful feature of Semantic Link that enables you to augment data with measures from Power BI datasets.
 The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector.

@@ -199,11 +199,11 @@ The SemPy `read_table` and `evaluate_measure` methods have more parameters that 
 - `pandas_convert_dtypes`: If the value is "True", the resulting DataFrame's columns are cast to the best possible _dtype_, using pandas
 [convert_dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html).
 If this parameter is turned off, type incompatibility issues may result between columns of related tables that may not have been detected in the Power BI model due to
-[DAX implicit type conversion](<https://learn.microsoft.com/en-us/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion>).
+[DAX implicit type conversion](/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion).
 
 SemPy `read_table` also leverages the model information provided by Power BI.
 
- - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](https://learn.microsoft.com/en-us/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
+ - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
 
 ## Read-access limitations
 
