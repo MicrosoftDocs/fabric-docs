@@ -51,7 +51,6 @@ In this guide, you will:
    :::image type="content" source="media\onelake-onecopy-quickstart\new-notebook-quickstart.png" alt-text="Screenshot of creating new notebook in Fabric." lightbox="media\onelake-onecopy-quickstart\new-notebook-quickstart.png":::
 
 1. Using the Fabric notebook, convert the CSV files to delta format. The following code snippet reads data from user created directory /Files/dimension_city and converts it to a delta table dim_city.
-   - Please note as for tables inside of Lakehouse: they should be created inside of the Table folder, only, and not using intermediate folders in between.
 
     ```python
     import os
