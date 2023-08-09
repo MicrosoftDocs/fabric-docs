@@ -34,6 +34,12 @@ Thereby, providing a way for business analysts and data scientists to collaborat
 The SemPy Python library is part of the Semantic Link feature and serves pandas users.
 SemPy provides functionalities that include data retrieval from tables, computation of measures, and execution of DAX queries and metadata. <!-- (#TODO link to API docs) -->
 
+To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
+
+```python
+%pip install semantic-link
+```
+
 SemPy also extends pandas DataFrames with additional metadata propagated from the Power BI data source.
 This metadata includes:
 - Power BI data categories:
@@ -42,13 +48,6 @@ This metadata includes:
   - Barcode
 - Relationships between tables
 - Hierarchies
-
-> [!NOTE]
-> To use the `SemPy` Python library, you need to install it in your notebook kernel by executing this code in a notebook cell:
-> 
-> ```python
-> %pip install semantic-link
-> ```
 
 ## Data connectivity through Semantic Link Spark native connector
 
@@ -90,6 +89,12 @@ GROUP BY
 
 The `add_measure` operation is a powerful feature of Semantic Link that enables you to augment data with measures from Power BI datasets.
 The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector.
+
+To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
+
+```python
+%pip install semantic-link
+```
 
 The following example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
 
