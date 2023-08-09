@@ -30,7 +30,7 @@ In this guide, you will:
 - Download the WideWorldImportersDW dataset to your computer to follow along with the instructions in this guide.  You can use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to connect to "https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/csv/full/dimension_city" and download the set of csv files. You can also use your own csv data and update the details as required.
 
 [!Note]
-> When creating, loading, or using shortcut Delta-Parquet data directly under the Table section of the lakehouse. Keep in mind that you should not nest your tables under additional subfolders in the Tables section as the Lakehouse will not automatically recognize it as a table and they will be labeled as Unidentified.
+>Create, load, or shortcut Delta-Parquet data directly under the Table section of the Lakehouse. Do not nest your tables under additional subfolders in the Tables section as the Lakehouse will not automatically recognize it as a table and label it as Unidentified.
 
 ## Steps
 
