@@ -29,7 +29,6 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
 
-
     > [!IMPORTANT]
     > * Folder paths aren't supported.
     > * Wildcards aren't supported.
