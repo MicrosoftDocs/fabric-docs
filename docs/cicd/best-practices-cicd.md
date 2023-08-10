@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.date: 05/23/2023
+ms.date: 08/10/2023
 ms.custom: intro-deployment, build-2023
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
@@ -217,5 +217,6 @@ If you are using deployment from git, we recommend following the practices descr
 
 ## Next steps
 
+* [End to end lifecycle management tutorial](./cicd-tutorial.md)
 * [Get started with git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
