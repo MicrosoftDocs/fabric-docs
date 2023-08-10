@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 08/04/2023
 ---
 
-# Use Python to manage files and folders in Microsoft OneLake 
+# Use Python to manage files and folders in Microsoft OneLake
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -91,5 +91,5 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
 ## Learn more
 
 - [Use Python to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
-- [OneLake API Parity](/onelake-api-parity.md)
-- [Sync OneLake with your Windows File Explorer](/onelake-file-explorer.md)
+- [OneLake API Parity](onelake-api-parity.md)
+- [Sync OneLake with your Windows File Explorer](onelake-file-explorer.md)
