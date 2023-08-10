@@ -265,6 +265,8 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
   - name: FAQ and Troubleshooting
     items:
+    - name: What's new in Data Factory
+      href: whats-new.md
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
     - name: Getting from Azure Data Factory to Data Factory in Fabric
