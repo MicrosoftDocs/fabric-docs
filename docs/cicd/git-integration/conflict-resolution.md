@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 08/09/2023
+ms.date: 05/23/2023
 ms.custom: build-2023
 ---
 
@@ -17,14 +17,15 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-You can resolve a conflict in one of two ways:
+There are three ways to resolve a conflict:
 
-- [Select which version of each conflicted item you want to keep](#decide-which-version-to-keep) either the workspace or the git repository to a previous synced state.
-- [Resolve the conflicts in git](#resolve-conflict-in-git).
+- [Select which version to keep](#resolve-conflict-in-ui) through the UI.
+- [Revert](#revert-to-a-previous-state) either the workspace or the git repository to a previous synced state.
+- [Resolve](#resolve-conflict-in-git) the conflict in git.
 
-## Decide which version to keep
+## Resolve conflict in UI
 
-When a conflict occurs, you can decide which version of each conflicted item you want to keep. You can keep the version in the workspace or the version in the git repository. You can't keep both versions. You can't keep the version in the workspace for one item and the version in the git repository for another item. You must choose one version for all conflicted items.
+## Revert to a previous state
 
 You can revert either the workspace or the git branch to last synced state. If you revert the git branch to a previous commit, you can still see the changes made to the unsynced branch. If you revert the workspace, the changes are lost completely.
 
