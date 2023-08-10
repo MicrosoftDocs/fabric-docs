@@ -31,7 +31,12 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
     :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
+
     :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted." lightbox="media/get-data-onelake/lakehouse-file-properties.png":::
+
+    > [!IMPORTANT]
+    > * Folder paths aren't supported.
+    > * Wildcards aren't supported.
 
 1. Return to your workspace and select a KQL database.
 
@@ -112,3 +117,5 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)
+
+
