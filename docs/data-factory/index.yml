@@ -27,6 +27,8 @@ landingContent:
             url: data-factory-overview.md
           - text: Connector overview
             url: connector-overview.md
+          - text: What's new in Data Factory?
+            url: whats-new.md
 
   # Card 
   - title: Get started
