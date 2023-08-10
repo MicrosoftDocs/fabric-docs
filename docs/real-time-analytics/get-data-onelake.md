@@ -31,7 +31,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
     > [!IMPORTANT]
     > * Folder paths aren't supported.
-    > * Wildcards aren't supported.
+    > * Wildcards (*) aren't supported.
 
     :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
 
