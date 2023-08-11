@@ -30,7 +30,7 @@ This page is updated monthly, so revisit it regularly.
 
 ### Data pipeline activities
 
-- Fail Activity [Learn more](/azure/data-factory/control-flow-fail-activity)
+- Fail Activity [Learn more](https://blog.fabric.microsoft.com/en-SG/blog/data-factory-june-2023-monthly-update/#fail-activity)
 - Web Activity [Learn more](/azure/data-factory/control-flow-web-activity)
 - Webhook Activity [Learn more](/azure/data-factory/control-flow-webhook-activity)
 
