@@ -27,7 +27,7 @@ Before you start, you must complete the following prerequisites:
 
 To preview the source data of an event hub or sample data in the eventstream:
 
-1. In the main editing canvas, select one of the source nodes in your eventstream.
+1. In the main editor canvas, select one of the source nodes in your eventstream.
 
 1. In the lower pane, select the **Data preview** tab.
 
@@ -39,7 +39,7 @@ To preview the source data of an event hub or sample data in the eventstream:
 
 To preview the destination data of a KQL database or lakehouse in the eventstream:
 
-1. In the main editing canvas, select one of the destination nodes in your eventstream.
+1. In the main editor canvas, select one of the destination nodes in your eventstream.
 
 1. In the lower pane, select the **Data preview** tab.
 
@@ -53,7 +53,7 @@ You can preview the data in your eventstream and see how different data sources 
 
 To preview your eventstream data:
 
-1. In the main editing canvas, select the eventstream node.
+1. In the main editor canvas, select the eventstream node.
 
 1. In the lower pane, select the **Data preview** tab.
 

@@ -80,7 +80,7 @@ To view the data insights for an Azure event hub source or a lakehouse destinati
 
 ## Runtime logs
 
-Runtime logs enable you to check the detailed errors occurring in the eventstream engine. Runtime log errors have three severity levels: warning, error, and information.
+The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
 To view the runtime logs for an Azure event hub source or a lakehouse destination:
 
