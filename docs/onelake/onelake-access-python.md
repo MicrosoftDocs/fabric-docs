@@ -15,7 +15,7 @@ ms.date: 08/04/2023
 
 This article shows how you can use the Azure Storage Python SDK to manage files and directories in OneLake.  This walkthrough covers the same content as [this walkthrough](/azure/storage/blobs/data-lake-storage-directory-file-acl-python?tabs=azure-ad) and highlights the differences when connecting to OneLake.
 
-## Prerequsities
+## Prerequisites
 
 Before starting your project, make sure you have the following:
     - A workspace in your Fabric tenant with Contributor permissions
@@ -85,7 +85,7 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
     file_client = directory_client.get_file_client(file_name)
 
     with open(file=os.path.join(local_path, file_name), mode="rb") as data:
-        file_client.upload_data(data, overwrite=True)
+        file_client.upload_data(dataW, overwrite=True)
 ```
 
 ## Learn more

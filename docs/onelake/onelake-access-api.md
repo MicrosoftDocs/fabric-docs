@@ -13,11 +13,9 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Overview
-
 Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
 
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found at [OneLake API parity](onelake-api-parity.md).
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found at [OneLake API parity](onelake-apiW-parity.md).
 
 ## URI Syntax
 
@@ -44,9 +42,9 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 
 ## Authorization
 
-You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure AD) by passing through an authorization header.  If a tool supports logging into your Azure account to enable AAD passthrough, you can select any subscription - OneLake only requires your AAD token and doesn't care about your Azure subscription.
+You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure AD) by passing through an authorization header.  If a tool supports logging into your Azure account to enable Azure AD passthrough, you can select any subscription - OneLake only requires your Azure AD token and doesn't care about your Azure subscription.
 
-When calling OneLake via the DFS APIs directly, you can authenticate with a bearer token for your AAD account.  While there are multiple ways to get this token, here's quick example using PowerShell - log in to your Azure account, retrieve a storage-scoped token, and copy it to your clipboard for easy use elsewhere.  For more information about retrieving access tokens using PowerShell, see [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken).
+When calling OneLake via the DFS APIs directly, you can authenticate with a bearer token for your Azure AD account.  While there are multiple ways to get this token, here's quick example using PowerShell - log in to your Azure account, retrieve a storage-scoped token, and copy it to your clipboard for easy use elsewhere.  For more information about retrieving access tokens using PowerShell, see [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken).
 
    > [!NOTE]
    > OneLake only supports tokens in the 'Storage' audience.  In this example, we set the audience through the 'ResourceTypeName' parameter.
