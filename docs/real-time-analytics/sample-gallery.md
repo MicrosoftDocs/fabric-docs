@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/06/2023
+ms.date: 08/13/2023
 ms.search.form: product-kusto
 ---
 
@@ -32,7 +32,9 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
     :::image type="content" source="media/sample-gallery/sample-gallery.png" alt-text="Screenshot of the Real-Time Analytics sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery.png":::
 
 > [!NOTE]
-> You can also load data from the **Real-Time Analytics Sample Gallery** as a table in an existing database. Doing so loads the sample dataset without creating a KQL queryset with sample queries.
+> You can also load data from the **Real-Time Analytics Sample Gallery** as a table in an existing KQL database. Doing so loads the sample dataset without creating a KQL queryset with sample queries.
+>
+> To load sample datasets without the sample queries, open an existing KQL database and select **Get data** > **Sample**.
 
 ## Run queries
 
