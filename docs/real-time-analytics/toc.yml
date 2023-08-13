@@ -78,7 +78,7 @@ items:
     href: customize-results.md
 - name: Query data
   items:
-  - name: Use sample queries
+  - name: Use example queries
     href: query-table.md
   - name: Kusto Query Language
     href: kusto-query-language/toc.yml
