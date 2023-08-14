@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 06/19/2023
+ms.date: 08/14/2023
 ms.custom: build-2023
 ---
 
@@ -21,7 +21,7 @@ When disconnect - goes back to ws with no source control
 
 ## What happens when your license expires
 
-If your workspace is connected to a git repo and then your license expires, or you change to a different license that doesn't include git-integration, you won't be able to connect to that repo anymore. You'll see the following changes in your workspace homepage:
+If your workspace is connected to a git repo and then your license expires, or you change to a different license that doesn't include git-integration, the git-integration feature stops working and you'll see the following changes in your workspace homepage:
 
 ### Source control view
 
@@ -31,7 +31,7 @@ The source control view opens automatically and shows the following error:
 
 ### Git status
 
-The **[Git status** column](./git-integration-process.md#git-status) is blank instead of showing which of the items are synched.
+The **[Git status** column](./git-integration-process.md#git-status) is blank and no longer displays the item's status.
 
 :::image type="content" source="media/license-change/blank-git-status.png" alt-text="Screenshot showing a dash next to each item in the Git status column of the workspace.":::
 
@@ -43,8 +43,8 @@ At the bottom of the workspace, instead of the [sync information](./git-integrat
 
 ## Remove the git connection
 
-When you don't have a valid Premium license, you can't connect to git repo nor can you switch branches. You need to [disconnect](./git-get-started.md#disconnect-a-workspace-from-git) from the current repo. To do this, go to the **Git integration** settings and select **Disconnect**.  
-Your workspace returns to the state it was in before you connected to the git repo and you can continue working.
+Without a valid Premium license, none of the git integration features will work. Unless you renew or upgrade your license, all you can do is [disconnect](./git-get-started.md#disconnect-a-workspace-from-git). To do this, go to the **Git integration** settings and select **Disconnect**.  
+Your workspace returns to a disconnected state and you can continue working in the workspace without git.
 
 ## Next steps
 
