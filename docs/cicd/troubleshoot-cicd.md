@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 06/12/2023
+ms.date: 07/30/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -25,6 +25,7 @@ To understand the considerations and limitations of various lifecycle management
 | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 * [Git integration](#git-integration)  
+
   * [Connect](#connect-issues)
   * [Commit](#commit-issues)
   * [Update](#update-issues)
@@ -40,6 +41,12 @@ To understand the considerations and limitations of various lifecycle management
 ## Git integration
 
 ### Connect issues
+
+#### Connect failure: Unable to connect to repository
+
+**Description of problem**: Whe I try to connect to a git repo I get a message that it can't connect because the workspace is i a different region.  
+**Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
+**Solution**: [Enable git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
 
 #### Connect failure: It says something went wrong when I try to connect
 
