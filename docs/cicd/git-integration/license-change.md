@@ -31,7 +31,7 @@ The source control view opens automatically and shows the following error:
 
 ### Git status
 
-The **[Git status** column](./git-integration-process.md#git-status) is blank and no longer displays the item's status.
+The [**Git status**](./git-integration-process.md#git-status) column is blank and no longer displays the item's status.
 
 :::image type="content" source="media/license-change/blank-git-status.png" alt-text="Screenshot showing a dash next to each item in the Git status column of the workspace.":::
 
