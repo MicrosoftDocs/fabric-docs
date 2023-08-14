@@ -20,7 +20,7 @@ In this tutorial, you learn how to incrementally load data from Data Warehouse t
 
 Here is the high-level solution diagram:
 
-:::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/logic-introduction.png" alt-text="Screenshot showing incrementally load data logic.":::
+:::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/logic-introduction.png" alt-text="Diagram showing incrementally load data logic.":::
 
 Here are the important steps to create this solution:
 
