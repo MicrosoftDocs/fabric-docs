@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/13/2023
+ms.date: 08/14/2023
 ms.search.form: product-kusto
 ---
 
@@ -34,4 +34,4 @@ The plugin is disabled by default.
 
 ## Next steps
 
-* For examples of user-defined functions that use the Python plugin, see the [Functions library](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/functions-library/functions-library?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+* For examples of user-defined functions that use the Python plugin, see the [Functions library](/azure/data-explorer/kusto/functions-library/functions-library?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric)
