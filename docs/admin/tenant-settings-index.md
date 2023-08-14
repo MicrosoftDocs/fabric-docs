@@ -5,15 +5,17 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 07/23/2023
+ms.date: 08/13/2023
 ---
 
 # Fabric tenant settings index
 
+Updated August 13, 2023
+
 | Name | Description |
 |------|-------|
 | **[Microsoft Fabric (Preview)](./fabric-switch.md)** |  |
-| Users can create Fabric items (public preview) | Users can create Fabric items with new capabilities in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2205006" target="_blank">Learn More</a> |
+| Users can create Fabric items (public preview) | Users can create Fabric items with new capabilities in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels. By using Microsoft Fabric, you accept the &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2240767" target="_blank">Preview Terms of Use</a>. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2205006" target="_blank">Learn More</a> |
 | **[Help and support settings](/power-bi/support/service-admin-portal-help-support)** |  |
 | Publish "Get Help" information | Users in the organization can go to internal help and support resources from the Power BI help menu. |
 | Receive email notifications for service outages or incidents | Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident. |
@@ -105,8 +107,8 @@ ms.date: 07/23/2023
 | Allow service principals to use read-only admin APIs | Web apps registered in Azure Active Directory (Azure AD) will use an assigned service principal to access read-only admin APIs without a signed in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group. By including the service principal in the allowed security group, you're giving the service principal read-only access to all the information available through admin APIs (current and future). For example, user names and emails, dataset and report detailed metadata. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2110545" target="_blank">Learn More</a> |
 | Enhance admin APIs responses with detailed metadata | Users and service principals allowed to call Power BI admin APIs may get detailed metadata about Power BI items. For example, responses from GetScanResult APIs will contain the names of dataset tables and columns. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2153790" target="_blank">Learn More</a><br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2110545" target="_blank">Learn More</a> |
 | Enhance admin APIs responses with DAX and mashup expressions | Users and service principals eligible to call Power BI admin APIs will get detailed metadata about queries and expressions comprising Power BI items. For example, responses from GetScanResult API will contain DAX and mashup expressions. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2153889" target="_blank">Learn More</a><br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2110545" target="_blank">Learn More</a> |
-| **[Dataflow settings](/power-bi/admin/service-admin-portal-dataflow)** |  |
-| Create and use dataflows | Users in the organization can create and use dataflows. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=869491" target="_blank">Learn More</a> |
+| **[Gen1 dataflow settings](/power-bi/admin/service-admin-portal-dataflow)** |  |
+| Create and use Gen1 dataflows | Users in the organization can create and use Gen1 dataflows. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=869491" target="_blank">Learn More</a> |
 | **[Template app settings](/power-bi/admin/service-admin-portal-template-app)** |  |
 | Publish template apps | Users in the organization can publish template apps for distribution to clients outside of the organization. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2091856" target="_blank">Learn More</a>. |
 | Install template apps | Users in the organization can install template apps created outside the organization. When a template app is installed, an upgraded workspace is created. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2091014" target="_blank">Learn More</a> |
@@ -117,14 +119,14 @@ ms.date: 07/23/2023
 | **[Dataset Security](/power-bi/admin/service-admin-portal-dataset-security)** |  |
 | Block republish and disable package refresh | Disable package refresh, and only allow the dataset owner to publish updates. |
 | **[Advanced networking](/power-bi/admin/service-admin-portal-advanced-networking)** |  |
-| Azure Private Link | Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. &nbsp;<a href="https://aka.ms/PrivateLinksLearnMore" target="_blank">Learn More</a>  &nbsp;<a href="https://aka.ms/PrivateLinksSetupInstructions" target="_blank">Set-up instructions</a> |
+| Azure Private Link | Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. &nbsp;<a href="https://aka.ms/PrivateLinksLearnMore" target="_blank">Learn More</a> &nbsp;<a href="https://aka.ms/PrivateLinksSetupInstructions" target="_blank">Set-up instructions</a> |
 | Block Public Internet Access | For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect.&nbsp;<a href="https://aka.ms/PrivateLinksLearnMore" target="_blank">Learn More</a>&nbsp;<a href="https://aka.ms/PrivateLinksSetupInstructions" target="_blank">Set-up instructions</a> |
 | **[Metrics settings](/power-bi/admin/service-admin-portal-goals-settings)** |  |
 | Create and use Metrics | Users in the organization can create and use Metrics |
 | **[User experience experiments](/power-bi/admin/service-admin-portal-user-experience-experiments)** |  |
 | Help Power BI optimize your experience | Users in this organization will get minor user experience variations that the Power BI team is experimenting with, including content, layout, and design, before they go live for all users. |
 | **[Share data with your Microsoft 365 services](/power-bi/admin/service-admin-portal-share-data-microsoft-365-services)** |  |
-| Users can see Microsoft Fabric metadata in Microsoft 365 | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2202379" target="_blank">Learn More</a><br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2237979" target="_blank">Where is my Microsoft Fabric tenant located?</a> |
+| Users can see Microsoft Fabric metadata in Microsoft 365 | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2202379" target="_blank">Learn More</a><br><br>This setting is automatically enabled only if your Microsoft Fabric and M365 tenants are in the same geographical region. You may disable this setting.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2237979" target="_blank">Where is my Microsoft Fabric tenant located?</a> |
 | **[Insights settings](/power-bi/admin/service-admin-portal-insights)** |  |
 | Receive notifications for top insights (preview) | Users in the organization can enable notifications for top insights in report settings |
 | Show entry points for insights (preview) | Users in the organization can use entry points for requesting insights inside reports |
@@ -141,7 +143,7 @@ ms.date: 07/23/2023
 | Users can access data stored in OneLake with apps external to Fabric | Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231198" target="_blank">Learn More</a> |
 | Users can sync data in OneLake with the OneLake File Explorer app | Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231052" target="_blank">Learn More</a> |
 | **[Git integration](/power-bi/admin/service-admin-portal-git-integration)** |  |
-| Users can synchronize workspace items with their Git repositories (Preview) | Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. |
+| Users can synchronize workspace items with their Git repositories (Preview) | Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2240844" target="_blank">Learn More</a> |
 | Users can export items to Git repositories in other geographical locations (Preview) | The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies. |
 | Users can export workspace items with applied sensitivity labels to Git repositories (Preview) | Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories. |
 
