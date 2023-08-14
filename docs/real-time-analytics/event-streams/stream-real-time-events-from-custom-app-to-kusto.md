@@ -90,9 +90,7 @@ With a connection string to an event hub readily available in the custom app sou
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/connection-string-example.png" alt-text="Screenshot of the connection string example, with the connection string highlighted yellow and the entity name highlighted blue." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/connection-string-example.png" :::
 
-   - `CONNECTION STRING`: The string highlighted in yellow in the example, which is
-      `Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx`
-   - `ENTITY NAME`: The string highlighted in blue after `EntityPath=` in the example, which is `es_xxxxxxxx`.
+   In this example, the connection string is `Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxx;SharedAccessKey=xxxxxxxx`. The entity name is the string after `EntityPath=`, which is `es_xxxxxxxx`.
 
     ```javascript
     const { EventHubProducerClient } = require("@azure/event-hubs");
@@ -188,7 +186,7 @@ While the custom application is streaming events into your eventstream, you can 
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" alt-text="Screenshot that shows the Destination tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" :::
 
-1. On the **Source** tab, verify your evenstream source and then select **Next: Schema**.
+1. On the **Source** tab, verify your eventstream source and then select **Next: Schema**.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" alt-text="Screenshot that shows the Source tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" :::
 
