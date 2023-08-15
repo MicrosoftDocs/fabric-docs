@@ -40,6 +40,17 @@ To understand the considerations and limitations of various lifecycle management
 
 ## Git integration
 
+### Access issues
+
+#### I can't access my Azure DevOps repository
+
+**Description of problem**: When I go to the git integration tab, I get an error message that I don't have access to Azure DevOps.
+
+:::image type="content" source="./media/troubleshoot-cicd/no-access.png" alt-text="Screenshot of error message when the user doesn't have access to Azure DevOps.":::
+
+**Cause**: If the authentication method in Power BI is lower than the authentication method in Azure DevOps, the functionalities between the 2 wont work.
+**Solution**: To resolve this issue, the admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies are defined in Azure AD as described in [Manage authentication methods](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy).
+
 ### Connect issues
 
 #### Connect failure: Unable to connect to repository
