@@ -4,7 +4,6 @@ description: Include file for Amazon S3 shortcut in Microsoft Fabric.
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
 ms.date: 07/16/2023
 ---
 ## Select a source
@@ -18,7 +17,7 @@ ms.date: 07/16/2023
       |Field | Description| Value|
       |-----|-----| -----|
       | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com` |
-      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection*. |
+      |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection* |
       |**Connection name** | The Amazon S3 connection name.| A name for your connection.|
       |**Authentication kind**| The *Identity and Access Management (IAM)* policy. The policy must have read and list permissions. For more information, see [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html).| Dependent on the bucket policy.|
       |**Access Key ID**| The *Identity and Access Management (IAM)* user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html). | Your access key.|
