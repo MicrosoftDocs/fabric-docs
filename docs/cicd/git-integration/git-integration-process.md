@@ -53,7 +53,7 @@ When you [connect a workspace to git](./git-get-started.md#connect-a-workspace-t
 If both the workspace and git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the git branch, all supported workspace content is exported to git and overwrites the current git content.
-- If you update the workspace with the git content, the workspace content is overwritten, and you lose your workspace content. Since a git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you are asked to confirm.
+- If you update the workspace with the git content, the workspace content is overwritten, and you lose your workspace content. Since a git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
@@ -125,7 +125,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
-- The [authentication method](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be compatible with the authentication method in Azure DevOps. For example, if Power BI only requires a password, but Azure DevOps requires multi factor authentication, the functionality between the two doesn't work.
+- The [authentication method](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multi factor authentication, Power BI needs to require multi factor authentication as well.
 - Direct Query and proxy models aren't supported at this time.
 - Private custom visuals aren't supported.
 
