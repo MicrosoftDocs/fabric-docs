@@ -33,20 +33,27 @@ Select **Update all** to see a list of all the items that have conflicts. You ca
 
 :::image type="content" source="./media/conflict-resolution/choose-version.png" alt-text="Screenshot of UI to select which version of a conflicted item to keep.":::
 
+- Choose **Accept incoming changes** to override the changes in the workspace. The workspace changes are lost and the git status changes to *synced* if the import succeeds.
+
+- Choose **Keep current content** to keep the version in the workspace. After the update is complete, the git status becomes *uncommitted changes* as the changes in the workspace aren't yet committed to the branch.
+
 ## Revert to a previous state
 
 You can revert either the entire workspace or git branch to last synced state. If you revert the git branch to a previous commit, you can still see the changes made to the unsynced branch. If you revert the workspace, you lose all the changes made to the workspace since the last commit.
 
 To revert to the prior synced state, do *one* of the following actions:
 
-- Use the [Undo](./git-get-started.md#commit-changes-to-git) command to return all items in the workspace to their last synced state.
+- Use the [Undo](./git-get-started.md#commit-changes-to-git) command to return conflicted items in the workspace to their last synced state.
 - Revert to the last synced state in git using the `git revert` command in Azure DevOps.
 
  You can also resolve conflicts by disconnecting and reconnecting the workspace. When you reconnect, [select the direction](./git-integration-process.md#connect-and-sync) you want to sync. Note, however, that when you reconnect, it overwrites all items in the workspace or branch and not just the conflicted ones. It doesn't return the workspace or branch to the last synced state. Rather, it overwrites all the content in one location with the content of the other.
 
 ## Resolve conflict in git
 
-If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the git repo by creating a new branch and syncing it with the current one. **Only a workspace admin can create a new branch**:
+If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the git repo by creating a new branch and syncing it with the current one.
+
+>[!NOTE]
+>Only a workspace admin can reconnect the workspace to the new branch.
 
 1. From the **Source control** pane, check out a new branch using the last synced branch ID shown on bottom of screen
 
@@ -54,12 +61,12 @@ If you're not sure what changes were made and which version to choose and don’
 
    :::image type="content" source="./media/conflict-resolution/sync-info.png" alt-text="Screenshot of branch ID information shown on bottom of the screen.":::
 
-   This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there's nothing to update from the git branch.
+   This step creates a new branch from the conflicted branch using the last synced git state, before changes were made that conflict with your changes. You can see your changes in the **Source control** pane, but there's nothing to update from the git branch. The *checkout branch* keeps the current workspace state, so uncommitted changes are retained when changing the branch.
 
 1. Commit your changes into the new branch. This new branch now has the changes you made to the items connected to an earlier version of the git branch that doesn't conflict with your changes.
 1. In git, resolve the conflicts between the original branch and the new branch.
 1. In git, merge the new branch into the original branch
-1. In Fabric, disconnect and reconnect your workspace to the original branch.
+1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
 
 ## Next steps
 
