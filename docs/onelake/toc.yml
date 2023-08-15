@@ -19,11 +19,11 @@ items:
   items:
   - name: What are shortcuts?
     href: onelake-shortcuts.md
-  - name: How-to create a OneLake shortcut
+  - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
-  - name: How-to create an ADLS Gen2 shortcut
+  - name: Create an Azure Data Lake Storage Gen2 shortcut
     href: create-adls-shortcut.md
-  - name: How-to create an Amazon S3 shortcut
+  - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
 - name: Access data with APIs
   items:
