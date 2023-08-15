@@ -8,7 +8,7 @@ ms.date: 06/25/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Azure Synapse Analytics Connector Overview
+# Azure Synapse Analytics connector overview
 
 This Azure Synapse Analytics connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 

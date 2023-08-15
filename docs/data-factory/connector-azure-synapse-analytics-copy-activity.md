@@ -39,7 +39,7 @@ The following properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**:  Select an Azure Synapse Analytics connection from the connection list. If the connection doesn't exist, then create a new Azure Synapse Analytics connection by selecting **New**.
 - **Connection type**: Select **Azure Synapse Analytics**.
-- **Use query**: You can choose **Table**, **Query**, or **Stored procedure**. The following list describes the configuration of each setting：
+- **Use query**: You can choose **Table**, **Query**, or **Stored procedure** to read your source data. The following list describes the configuration of each setting：
 
   - **Table**: Read data from the table you specified in **Table** if you select this button. Select your table from the drop-down list or select **Edit** to enter the schema and table name manually.
 
@@ -53,7 +53,7 @@ The following properties are **required**:
   
     :::image type="content" source="./media/connector-azure-synapse-analytics/stored-procedure.png" alt-text="Screenshot showing stored procedure settings." lightbox="./media/connector-azure-synapse-analytics/stored-procedure.png":::
 
-    - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when select **Edit** box to read data from the source table.
+    - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when select **Edit**.
     - **Stored procedure parameters**: Select **Import parameters** to import the parameter in your specified stored procedure, or add parameters for the stored procedure by selecting **+ New**. Allowed values are name or value pairs. Names and casing of parameters must match the names and casing of the stored procedure parameters.
     
 
@@ -68,8 +68,8 @@ Under **Advanced**, you can specify the following fields:
 - **Partition option**: Specify the data partitioning options used to load data from Azure Synapse Analytics. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Azure Synapse Analytics is controlled by the [parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy) setting on the copy activity.
 
   - **None**: Choose this setting to not use a partition.
-  - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
-  - **Dynamic range**: When using query with parallel enabled, the range partition parameter(`?AdfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
+  - **Physical partitions of table**: Choose this setting if you want to use a physical partition. The partition column and mechanism are automatically determined based on your physical table definition.
+  - **Dynamic range**: Choose this setting if you want to use dynamic range partition. When using query with parallel enabled, the range partition parameter(`?AdfDynamicRangePartitionCondition`) is needed. Sample query: `SELECT * FROM <TableName> WHERE ?AdfDynamicRangePartitionCondition`.
 
       :::image type="content" source="./media/connector-azure-synapse-analytics/dynamic-range.png" alt-text="Screenshot showing Dynamic range settings.":::
 
@@ -92,7 +92,7 @@ The following properties are **required**:
 - **Connection type**: Select **Azure Synapse Analytics**.
 - **Table option**: You can choose **Use existing**, **Auto create table**. The following list describes the configuration of each setting：
   - **Use existing**: Select the table in your database from the drop-down list. Or check **Edit** to enter your schema and table name manually.
-  - **Auto create table**：It automatically creates the table (if nonexistent) in source schema.
+  - **Auto create table**: It automatically creates the table (if nonexistent) in source schema.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -203,16 +203,16 @@ The following tables contain more information about the copy activity in Azure S
 |**Copy method** |The method used to copy data.|• Copy command<br> • PolyBase<br> • Bulk insert<br> • Upsert|No | /  |
 | When selecting **Copy command** | Use COPY statement to load data from Azure storage into Azure Synapse Analytics or SQL Pool. | / | No.<br>Apply when using COPY. | allowCopyCommand: true<br>copyCommandSettings | 
 | **Default values** | Specify the default values for each target column in Azure Synapse Analytics. The default values in the property overwrite the DEFAULT constraint set in the data warehouse, and identity column cannot have a default value. | < default values > | No | defaultValues:<br>&nbsp; - columnName<br>&nbsp; - defaultValue | 
-| **Additional options** | Additional options that will be passed to an Azure Synapse Analytics COPY statement directly in "With" clause in [COPY statement](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Quote the value as needed to align with the COPY statement requirements. | < additional options > | No | additionalOptions:<br>- \<property name\> : \<value\> | 
+| **Additional options** | Additional options that will be passed to an Azure Synapse Analytics COPY statement directly in "With" clause in [COPY statement](/sql/t-sql/statements/copy-into-transact-sql). Quote the value as needed to align with the COPY statement requirements. | < additional options > | No | additionalOptions:<br>- \<property name\> : \<value\> | 
 | When selecting **PolyBase** | PolyBase is a high-throughput mechanism. Use it to load large amounts of data into Azure Synapse Analytics or SQL Pool. | / | No.<br>Apply when using PolyBase. |  allowPolyBase: true <br>polyBaseSettings | 
 | **Reject type** | The type of the reject value. | •  Value<br>•  Percentage | No | rejectType: <br> - value<br>- percentage | 
 | **Reject value** | The number or percentage of rows that can be rejected before the query fails. | 0 (default), 1, 2, etc. | No |  rejectValue |
 | **Reject sample value** | Determines the number of rows to retrieve before PolyBase recalculates the percentage of rejected rows.| 1, 2, etc. | Yes when you specify **Percentage** as your reject type |  rejectSampleValue | 
-| **Use type default** | Use this to handle missing values in delimited text files when PolyBase retrieves data from the text file. Learn more about this property from the Arguments section in [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql?view=sql-server-ver16&tabs=delimited) |  selected (default) or unselected. | No | useTypeDefault:<br>true (default) or false | 
+| **Use type default** | Specify how to handle missing values in delimited text files when PolyBase retrieves data from the text file. Learn more about this property from the Arguments section in [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql) | selected (default) or unselected. | No | useTypeDefault:<br>true (default) or false | 
 | When selecting **Bulk insert** | Insert data to destination in bulk. | / | No | writeBehavior: Insert | 
 | **Bulk insert table lock** | Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql). |  selected  or unselected (default) | No | sqlWriterUseTableLock: <br>  true or false (default) | 
 | When selecting **Upsert** | Specify the group of the settings for write behavior when you want to upsert data to your destination. | / | No |  writeBehavior: Upsert | 
-| **Key columns** | Indicates which column is used to determine if a row from the source matches a row from the destination. | < column name> | No | upsertSettings:<br>&nbsp; - keys: \<Value\><br>&nbsp; - interimSchemaName | 
+| **Key columns** | Indicates which column is used to determine if a row from the source matches a row from the destination. | < column name> | No | upsertSettings:<br>&nbsp; - keys: \< column name \><br>&nbsp; - interimSchemaName | 
 | **Bulk insert table lock** | Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql). |  selected  or unselected (default) | No | sqlWriterUseTableLock: <br> true or false (default) |  
 |**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.| < pre-copy script ><br>(string)|No |preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).|timespan |No |writeBatchTimeout|
