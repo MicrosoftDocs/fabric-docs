@@ -125,6 +125,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
+- The [authentication method](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be compatible with the authentication method in Azure DevOps. For example, if Power BI only requires a password, but Azure DevOps requires multi factor authentication, the functionality between the two doesn't work.
 - Direct Query and proxy models aren't supported at this time.
 - Private custom visuals aren't supported.
 
