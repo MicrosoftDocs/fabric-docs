@@ -638,7 +638,7 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
 
 1. Update any dependencies that may be impacted by the new version of Apache Spark or other Fabric Runtime 1.1 related components. This could include third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
 
-1. Update Apache Spark Configuration on your workload. This could include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
+1. Update the Apache Spark Configuration on your workload. This could include updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
 
 1. Modify your Apache Spark applications (notebooks and Apache Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. This may involve updating your code to accommodate any deprecated or removed APIs, and refactoring your applications to take advantage of performance improvements and new functionalities.
 
