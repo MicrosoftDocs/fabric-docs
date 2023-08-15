@@ -30,7 +30,7 @@ The plugin is disabled by default.
     > [!WARNING]
     > Enabling plugins requires a refresh of the cached data in SSD (disk), which can take up to 1 hour. Enabling a language extension allocated 20 GB of SSD per instance.
 
-:::image type="content" source="media/python-plugin/enable-python-plugin.png" alt-text="Screenshot of the plugins pane showing the Python language extension. The toggle button is highlighted." lightbox="media/python-plugin/enable-python-plugin.png":::
+    :::image type="content" source="media/python-plugin/enable-python-plugin.png" alt-text="Screenshot of the plugins pane showing the Python language extension. The toggle button is highlighted." lightbox="media/python-plugin/enable-python-plugin.png":::
 
 ## Next steps
 
