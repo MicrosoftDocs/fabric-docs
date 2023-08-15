@@ -25,10 +25,16 @@ items:
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
-- name: Access data with APIs
+- name: Open access
   items:
-  - name: OneLake access and APIs
+  - name: How do I connect to OneLake?
     href: onelake-access-api.md
+  - name: OneLake API parity
+    href: onelake-api-parity.md
+  - name: How to
+    items:
+    - name: Use Python to manage OneLake
+      href: onelake-access-python.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
