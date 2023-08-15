@@ -96,7 +96,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Copy method**: You can choose **Copy command**, **PolyBase**, **Bulk insert** or **Upsert**. The following list describes the configuration of each setting：
+- **Copy method** Choose the method that you want to use to copy data. You can choose **Copy command**, **PolyBase**, **Bulk insert** or **Upsert**. The following list describes the configuration of each setting：
 
     - **Copy command**: Use COPY statement to load data from Azure storage into Azure Synapse Analytics or SQL Pool.
 
@@ -104,7 +104,7 @@ Under **Advanced**, you can specify the following fields:
 
       - **Allow copy command**: It is mandatory to be selected when you choose **Copy command**.
       - **Default values**: Specify the default values for each target column in Azure Synapse Analytics. The default values in the property overwrite the DEFAULT constraint set in the data warehouse, and identity column cannot have a default value.
-      - **Additional options**: Additional options that will be passed to an Azure Synapse Analytics COPY statement directly in "With" clause in [COPY statement](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Quote the value as needed to align with the COPY statement requirements.
+      - **Additional options**: Additional options that will be passed to an Azure Synapse Analytics COPY statement directly in "With" clause in [COPY statement](/sql/t-sql/statements/copy-into-transact-sql). Quote the value as needed to align with the COPY statement requirements.
 
     - **PolyBase**: PolyBase is a high-throughput mechanism. Use it to load large amounts of data into Azure Synapse Analytics or SQL Pool.
 
@@ -112,14 +112,15 @@ Under **Advanced**, you can specify the following fields:
 
       - **Allow PolyBase**: It is mandatory to be selected when you choose **PolyBase**.
       - **Reject type**: Specify whether the **rejectValue** option is a literal value or a percentage. Allowed values are **Value** (default) and **Percentage**.
-      - **Reject value**: Specify the number or percentage of rows that can be rejected before the query fails. Learn more about PolyBase's reject options in the Arguments section of [CREATE EXTERNAL TABLE (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql?view=sql-server-ver16&tabs=dedicated). Allowed values are 0 (default), 1, 2, etc.
-      - **Use type default**: Specify how to handle missing values in delimited text files when PolyBase retrieves data from the text file. Learn more about this property from the Arguments section in [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql?view=sql-server-ver16&tabs=delimited). Allowed values are selected (default) or unselected.
+      - **Reject value**: Specify the number or percentage of rows that can be rejected before the query fails. Learn more about PolyBase's reject options in the Arguments section of [CREATE EXTERNAL TABLE (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql). Allowed values are 0 (default), 1, 2, etc.
+      - **Reject sample value**: Determines the number of rows to retrieve before PolyBase recalculates the percentage of rejected rows. Allowed values are 1, 2, etc. If you choose **Percentage** as your reject type, this property is required.
+      - **Use type default**: Specify how to handle missing values in delimited text files when PolyBase retrieves data from the text file. Learn more about this property from the Arguments section in [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql). Allowed values are selected (default) or unselected.
 
     - **Bulk insert**: Use **Bulk insert** to insert data to destination in bulk.
 
       :::image type="content" source="./media/connector-azure-synapse-analytics/bulk-insert.png" alt-text="Screenshot showing Bulk insert settings.":::
 
-      - **Bulk insert table lock**: Use this to improve copy performance during bulk insert operation on table with no index from multiple clients.
+      - **Bulk insert table lock**: Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql).
 
     - **Upsert**: Specify the group of the settings for write behavior when you want to upsert data to your destination.
     
@@ -127,7 +128,7 @@ Under **Advanced**, you can specify the following fields:
 
       - **Key columns**: Choose which column is used to determine if a row from the source matches a row from the destination.
 
-      - **Bulk insert table lock**: Use this to improve copy performance during bulk insert operation on table with no index from multiple clients.
+      - **Bulk insert table lock**: Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql).
 
 - **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.
 
@@ -137,7 +138,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Max concurrent connections**: Specify the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-- **Disable performance metrics analytics**: This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.
+- **Disable performance metrics analytics**: This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox. It is unselected by default.
 
 #### Direct copy by using COPY command
 
@@ -188,7 +189,7 @@ The following tables contain more information about the copy activity in Azure S
 |**Use query** |The way to read data.|• Table <br>• Query<br>• Stored procedure |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• sqlReaderQuery <br>• sqlReaderStoredProcedureName<br>&nbsp;  storedProcedureParameters<br>&nbsp; - name<br>&nbsp;  - value<br>|
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
 |**Isolation level** |The transaction locking behavior for the SQL source.|• None<br>• Read committed<br>• Read uncommitted<br>• Repeatable read<br>• Serializable<br>• Snapshot|No |isolationLevel: <br> &nbsp;<br>• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|
-|**Partition option** |The data partitioning options used to load data from Azure SQL Database. |• None<br>• Physical partitions of table<br>• Dynamic range<br>&nbsp;  Partition column name<br>&nbsp; Partition upper bound<br>&nbsp; Partition lower bound |No |partitionOption:<br>&nbsp;<br>• PhysicalPartitionsOfTable<br>• DynamicRange<br>&nbsp;  partitionSettings<br>&nbsp; - partitionColumnName<br>&nbsp; - partitionUpperBound<br>&nbsp; - partitionLowerBound|
+|**Partition option** |The data partitioning options used to load data from Azure SQL Database. |• None<br>• Physical partitions of table<br>• Dynamic range<br>&nbsp; - Partition column name<br>&nbsp;- Partition upper bound<br>&nbsp;- Partition lower bound |No |partitionOption:<br>&nbsp;<br>• PhysicalPartitionsOfTable<br>• DynamicRange<br>&nbsp;  partitionSettings:<br>&nbsp; - partitionColumnName<br>&nbsp; - partitionUpperBound<br>&nbsp; - partitionLowerBound|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
 ### Destination
@@ -198,14 +199,26 @@ The following tables contain more information about the copy activity in Azure S
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
 |**Connection type** |Your destination connection type.|**Azure Synapse Analytics** |Yes|/|
-|**Table option**|Your destination data table option.|• Use existing<br> • Auto create table|Yes|• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table<br>• tableOption: autoCreate<br>&nbsp; typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table|
-|**Copy command** |Copy statement to load data from Azure storage into Azure Synapse Analytics or SQL Pool.|• Copy command<br> • PolyBase<br> • Bulk insert<br> • Upsert|No | • copyCommandSettings: <br>&nbsp;   defaultValues<br>&nbsp; - columnName<br>&nbsp; - defaultValue<br>• allowPolyBase: true <br>&nbsp;  polyBaseSettings<br>&nbsp; - rejectValue<br>&nbsp; - rejectType: value or percentage<br>&nbsp; - rejectSampleValue<br>&nbsp; - useTypeDefault: true (default) or false<br> • writeBehavior: Insert<br>&nbsp; sqlWriterUseTableLock: true or false (default)<br>• writeBehavior: Upsert<br>&nbsp;upsertSettings<br>&nbsp; - keys: \<Value\>   |
-|**Bulk insert table lock** |Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|
+|**Table option**|Your destination data table option.|• Use existing<br> • Auto create table|Yes|• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table<br>• tableOption:<br>&nbsp; - autoCreate<br>&nbsp; typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp;  - schema<br>&nbsp;  - table|
+|**Copy method** |The method used to copy data.|• Copy command<br> • PolyBase<br> • Bulk insert<br> • Upsert|No | /  |
+| When selecting **Copy command** | Use COPY statement to load data from Azure storage into Azure Synapse Analytics or SQL Pool. | / | No.<br>Apply when using COPY. | allowCopyCommand: true<br>copyCommandSettings | 
+| **Default values** | Specify the default values for each target column in Azure Synapse Analytics. The default values in the property overwrite the DEFAULT constraint set in the data warehouse, and identity column cannot have a default value. | < default values > | No | defaultValues:<br>&nbsp; - columnName<br>&nbsp; - defaultValue | 
+| **Additional options** | Additional options that will be passed to an Azure Synapse Analytics COPY statement directly in "With" clause in [COPY statement](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Quote the value as needed to align with the COPY statement requirements. | < additional options > | No | additionalOptions:<br>- \<property name\> : \<value\> | 
+| When selecting **PolyBase** | PolyBase is a high-throughput mechanism. Use it to load large amounts of data into Azure Synapse Analytics or SQL Pool. | / | No.<br>Apply when using PolyBase. |  allowPolyBase: true <br>polyBaseSettings | 
+| **Reject type** | The type of the reject value. | •  Value<br>•  Percentage | No | rejectType: <br> - value<br>- percentage | 
+| **Reject value** | The number or percentage of rows that can be rejected before the query fails. | 0 (default), 1, 2, etc. | No |  rejectValue |
+| **Reject sample value** | Determines the number of rows to retrieve before PolyBase recalculates the percentage of rejected rows.| 1, 2, etc. | Yes when you specify **Percentage** as your reject type |  rejectSampleValue | 
+| **Use type default** | Use this to handle missing values in delimited text files when PolyBase retrieves data from the text file. Learn more about this property from the Arguments section in [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](/sql/t-sql/statements/create-external-file-format-transact-sql?view=sql-server-ver16&tabs=delimited) |  selected (default) or unselected. | No | useTypeDefault:<br>true (default) or false | 
+| When selecting **Bulk insert** | Insert data to destination in bulk. | / | No | writeBehavior: Insert | 
+| **Bulk insert table lock** | Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql). |  selected  or unselected (default) | No | sqlWriterUseTableLock: <br>  true or false (default) | 
+| When selecting **Upsert** | Specify the group of the settings for write behavior when you want to upsert data to your destination. | / | No |  writeBehavior: Upsert | 
+| **Key columns** | Indicates which column is used to determine if a row from the source matches a row from the destination. | < column name> | No | upsertSettings:<br>&nbsp; - keys: \<Value\><br>&nbsp; - interimSchemaName | 
+| **Bulk insert table lock** | Use this to improve copy performance during bulk insert operation on table with no index from multiple clients. Learn more from [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql). |  selected  or unselected (default) | No | sqlWriterUseTableLock: <br> true or false (default) |  
 |**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.| < pre-copy script ><br>(string)|No |preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).|timespan |No |writeBatchTimeout|
 |**Write batch size**|The number of rows to insert into the SQL table per batch. By default, the service dynamically determines the appropriate batch size based on the row size.|< number of rows ><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
-|**Disable performance metrics analytics**|This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.| select or unselect |No |disableMetricsCollection：<br> true or false|
+|**Disable performance metrics analytics**|This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.| select or unselect (default) |No |disableMetricsCollection：<br> true or false (default)|
 
 ## Next steps
 

@@ -85,6 +85,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Azure Synapse Analytics
+      items:
+      - name: Overview
+        href: connector-azure-synapse-analytics-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-synapse-analytics-copy-activity.md
     - name: Data Warehouse
       items:
       - name: Overview
