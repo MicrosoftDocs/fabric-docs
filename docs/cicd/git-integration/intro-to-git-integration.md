@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, build-2023
-ms.date: 05/30/2023
+ms.date: 08/06/2023
 ms.search.form: 
 ---
 
@@ -46,7 +46,8 @@ Before you enable git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-* Reports (except paginated reports)
+* Reports
+* Paginated reports
 * Datasets (except push datasets, live connections, and model v1)
 
 If the workspace or git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
@@ -66,7 +67,8 @@ A typical workflow for a developer using Fabric git integration may look like th
 
 ## Considerations and limitations
 
-* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.
+* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.  
+* If the workspace and git repo are in two different geographical regions, [cross-geo exports must be enabled](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations) by the tenant admin.  
 * Azure DevOps **on-prem** is not supported.
 
 ## Next steps

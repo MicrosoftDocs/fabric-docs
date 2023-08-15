@@ -20,7 +20,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+ [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -102,7 +102,7 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
-After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**. 
+After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
 
 ### [Undo saved change](#tab/undo-save)
 
@@ -151,11 +151,15 @@ After the update is completed successfully, the status of the items changes to *
 
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
-1. Go to Workspace settings
+1. Go to **Workspace settings**
 1. Select **Git integration**
 1. Select **Disconnect workspace**
 
     :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
+
+1. Select **Disconnect** again to confirm.
+
+    :::image type="content" source="media/git-get-started/disconnect-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to disconnect.":::
 
 ## Permissions
 

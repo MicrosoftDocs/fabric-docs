@@ -17,6 +17,10 @@ items:
     href: roles.md
   - name: What is the admin portal?
     href: admin-center.md         
+- name: Manage Fabric in the admin portal
+  items:
+  - name: Using Monitoring hub
+    href: monitoring-hub.md 
 - name: Monitoring
   items:
   - name: Using Monitoring hub
@@ -45,5 +49,9 @@ items:
     href: metadata-scanning-setup.md
   - name: Enable service principal authentication for read-only admin APIs
     href: metadata-scanning-enable-read-only-apis.md
+- name: Fabric tenant settings
+  items:
+  - name: Tenant settings index
+    href: tenant-settings-index.md
 
 
