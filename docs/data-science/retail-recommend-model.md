@@ -84,7 +84,7 @@ EXPERIMENT_NAME = "aisample-recommendation"  # mlflow experiment name
 
 The following code downloads the dataset and then stores it in the Lakehouse.
 > [!IMPORTANT]
-> Please [add a Lakehouse to the notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebook) before running this code.
+> Please [add a Lakehouse to the notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before running this code.
 
 ```python
 if not IS_CUSTOM_DATA:
