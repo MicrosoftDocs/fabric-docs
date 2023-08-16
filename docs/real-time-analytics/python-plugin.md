@@ -6,13 +6,16 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/14/2023
+ms.date: 08/16/2023
 ms.search.form: product-kusto
 ---
 
 # Enable Python plugin
 
 The Python plugin runs a user-defined function (UDF) using a Python script. The Python script gets tabular data as its input, and produces tabular output. For more information on the Python plugin, see [Python plugin](/azure/data-explorer/kusto/query/pythonplugin?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+
+> [!IMPORTANT]
+> Enabling the Python plugin consumes more compute resources and may increase cost.
 
 ## Prerequisite
 
