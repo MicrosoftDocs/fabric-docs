@@ -104,7 +104,7 @@ For the **Settings** tab configuration, go to [Configure your other settings und
 
 ## Table summary
 
-The following tables contain more information about a copy activity for Dataverse.
+See the following table for the summary and more information for the Dataverse copy activity.
 
 ### Source information
 
