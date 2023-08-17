@@ -15,6 +15,8 @@ This article tries to list the limitations and considerations when using the Dat
 
 Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour.
 
+Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](https://learn.microsoft.com/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
+
 ## Network issues with port 1433
 
 When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before copying it to the desired data destination. This issue can occur regardless of the type of data destination being used.
