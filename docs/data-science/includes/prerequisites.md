@@ -14,4 +14,4 @@ ms.date: 06/08/2023
 
 * Switch to the Data Science experience using the experience switcher icon at the left corner of your homepage.
 
-   :::image type="content" source="../media/tutorial-data-science-prepare-system\switch-to-data-science.png" alt-text="Screenshot of the experience switcher menu, showing where to select Data Science." lightbox="media\tutorial-data-science-prepare-system\switch-to-data-science.png":::
+   :::image type="content" source="../media/tutorial-data-science-prepare-system/switch-to-data-science.png" alt-text="Screenshot of the experience switcher menu, showing where to select Data Science." lightbox="../media/tutorial-data-science-prepare-system/switch-to-data-science.png":::
