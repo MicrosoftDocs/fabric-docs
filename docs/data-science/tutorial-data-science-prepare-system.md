@@ -26,7 +26,7 @@ Before you begin the data science end-to-end tutorial series, learn about prereq
 We utilize the notebook item in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
 
 1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
-    * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). Make sure to download the files by using the "Raw" file link in GitHub.
+    * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). 
     * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [data-science-ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-ai-samples).
 
 1. On the Data science experience homepage, select **Import notebook** and upload the notebook files for parts 1- 5 that you downloaded in step 1.
