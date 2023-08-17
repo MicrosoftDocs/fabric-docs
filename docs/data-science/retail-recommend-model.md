@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 08/16/2023
 ---
 
-# Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
+# Create, evaluate, and deploy a recommendation system in Microsoft Fabric
 
 In this tutorial, you walk through the data engineering and data science workflow with an end-to-end tutorial. The scenario is to build a recommender for online book recommendation. The steps you'll take are:
 
@@ -42,23 +42,23 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Step 1: Load the data
 
-The book recommendation dataset in this scenario consists of three separate datasets, Books.csv, Ratings.csv, and Users.csv.
+The book recommendation dataset in this scenario consists of three separate datasets, _Books.csv_, _Ratings.csv_, and _Users.csv_.
 
-- Books.csv - Each book is identified with an International Standard Book Number (ISBN), with invalid dates already removed. Additional information, such as the title, author, and publisher, has also been added. If a book has multiple authors, only the first is listed. URLs point to Amazon for cover images in three different sizes.
+- _Books.csv_ - Each book is identified with an International Standard Book Number (ISBN), with invalid dates already removed. Additional information, such as the title, author, and publisher, has also been added. If a book has multiple authors, only the first is listed. URLs point to Amazon for cover images in three different sizes.
 
     | ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
     |---|---|---|---|---|---|---|---|
     | 0195153448 | Classical Mythology | Mark P. O. Morford | 2002 | Oxford University Press | [http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg) |
     | 0002005018 | Clara Callan | Richard Bruce Wright | 2001 | HarperFlamingo Canada | [http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg) |
 
-- Ratings.csv - Ratings for each book are either explicit (provided by users on a scale of 1-10) or implicit (observed without user input, and indicated by 0).
+- _Ratings.csv_ - Ratings for each book are either explicit (provided by users on a scale of 1-10) or implicit (observed without user input, and indicated by 0).
 
     | User-ID | ISBN | Book-Rating |
     |---|---|---|
     | 276725 | 034545104X | 0 |
     | 276726 | 0155061224 | 5 |
 
-- Users.csv - User IDs, which have been anonymized and mapped to integers. Demographic data such as location and age, are provided if available. If unavailable, the value is *null*.
+- _Users.csv_ - User IDs, which have been anonymized and mapped to integers. Demographic data such as location and age, are provided if available. If unavailable, the value is *null*.
 
     | User-ID | Location | Age |
     |---|---|---|
@@ -155,7 +155,7 @@ df_users = (
 )
 ```
 
-## Step 2. Exploratory data analysis
+## Step 2. Perform exploratory data analysis
 
 ### Display raw data
 
@@ -320,7 +320,7 @@ plt.xlabel("Number of Ratings for the Item")
 plt.show()
 ```
 
-## Step 3. Model development and deploy
+## Step 3. Develop and deploy the Model
 
 You've explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an Alternating Least Squares (ALS) recommender to give users personalized recommendations
 
@@ -421,7 +421,7 @@ als = ALS(
 )
 ```
 
-### Model training and hyperparameter tuning
+### Train model and perform hyperparameter tuning
 To search over the hyperparameters, use the following code to construct a grid of parameters. It also creates a regression evaluator that uses the root mean square error as the evaluation metric.
 
 ```python
@@ -466,7 +466,7 @@ else:
     raise ValueError(f"Unknown model_tuning_method: {model_tuning_method}")
 ```
 
-### Model evaluation
+### Evaluate model
 
 Modules should be evaluated against the test data. If a model is well trained, it should have high metrics on the dataset.
 
@@ -513,7 +513,7 @@ def evaluate(model, data, verbose=0):
 
 
 
-### Experiment tracking with MLflow
+### Perform experiment tracking with MLflow
 
 MLflow is used to track all the experiments and log parameters, metrics, and the models. To start training and evaluating models, use the following code:
 
