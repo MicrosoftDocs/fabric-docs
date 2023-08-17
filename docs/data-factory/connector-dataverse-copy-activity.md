@@ -75,7 +75,7 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-dataverse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." lightbox="./media/connector-amazon-s3/source.png":::
+:::image type="content" source="./media/connector-dataverse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." lightbox="./media/connector-dataverse/source.png":::
 
 The following properties are **required**:
 
