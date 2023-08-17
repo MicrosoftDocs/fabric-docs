@@ -201,6 +201,8 @@
         href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Delete data activity
+        href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
       - name: Pipeline lookup activity
