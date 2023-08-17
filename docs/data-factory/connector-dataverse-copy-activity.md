@@ -29,18 +29,18 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to [General](activity-overview.md#general-settings).
+For **General** tab configuration, go to [General settings](activity-overview.md#general-settings).
 
 ### Source
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-dataverse/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-dataverse/source.png":::
+:::image type="content" source="./media/connector-dataverse/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an **Dataverse** connection from the connection list. If no connection exists, then create a new Dataverse connection by selecting **New**.
+- **Connection**: Select an existing Dataverse connection from the connection list. If no connection exists, then create a new Dataverse connection by selecting **New**.
 - **Connection type**: Select **Dataverse**.
 - **Use query**: Specify the way used to read data. You can choose **Entity name** to read data using entity name or **Query** to use query to read data.
   - **Entity name**: Select your entity name from the drop-down list, or select **Edit** to enter it manually. It is the logical name of the entity to retrieve.
@@ -75,18 +75,18 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-dataverse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." lightbox="./media/connector-dataverse/source.png":::
+:::image type="content" source="./media/connector-dataverse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." :::
 
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an **Dataverse** connection from the connection list. If no connection exists, then create a new Dataverse connection by selecting **New**.
+- **Connection**: Select an existing Dataverse connection from the connection list. If no connection exists, then create a new Dataverse connection by selecting **New**.
 - **Connection type**: Select **Dataverse**.
 - **Entity name**: Specify the name of the entity to write data. Select your entity name from the drop-down list, or select **Edit** to enter it manually. This is the logical name of the entity to retrieve.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Write behavior**: The write behavior of the operation. This property is required, and you must select **Upsert**.
+- **Write behavior**: The write behavior of the operation. This property is required, and you must select **Upsert**. If you use **Add dynamic content**, specify the value to Upsert.
 - **Alternate key name**: Specify the alternate key name defined on your entity to upsert records. 
 - **Ignore null values**: Indicates whether to ignore null values from input data during write operation. It is selected by default. 
     - When it is selected: Leave the data in the destination object unchanged when doing upsert/update operation, and insert defined default value when doing insert operation. 
@@ -112,7 +112,7 @@ See the following table for the summary and more information for the Dataverse c
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|External|Yes|/|
 |**Connection**|Your connection to the source Dataverse.| < your connection >|Yes|connection|
-|**Connection type**|Your connection type. |**Dataverse**|Yes|type:<br>CommonDataServiceForAppsSource|
+|**Connection type**|Your connection type. |**Dataverse**|Yes|type (under `typeProperties` -> `source` -> `datasetSettings`):<br>CommonDataServiceForAppsEntity|
 |**Use query**|The way to read data from Dataverse|• Tables<br>• Query|Yes|/|
 |**Entity name**|The logical name of the entity to retrieve.|< your entity name >|Yes|entityName|
 |**Query**| Use FetchXML to read data from Dataverse. FetchXML is a proprietary query language that is used in Dynamics online and on-premises. To learn more, see [Build queries with FetchXML](/previous-versions/dynamicscrm-2016/developers-guide/gg328332(v=crm.8)).|< your query > |Yes|query|
@@ -124,13 +124,13 @@ See the following table for the summary and more information for the Dataverse c
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|External|Yes|/|
 |**Connection**|Your connection to the destination Dataverse.|&lt; your connection &gt;|Yes|connection|
-|**Connection type**|Your connection type. |**Dataverse**|Yes|type:<br>CommonDataServiceForAppsSource|
+|**Connection type**|Your connection type. |**Dataverse**|Yes|type (under `typeProperties` -> `sink` -> `datasetSettings`):<br>CommonDataServiceForAppsEntity|
 |**Entity name**|The logical name of the entity to retrieve.|&lt; your entity &gt;|Yes|entityName|
-|**Write behavior**|The write behavior of the operation. The value must be **Upsert**.| Upsert|Yes|writeBehavior|
+|**Write behavior**|The write behavior of the operation. The value must be **Upsert**.| Upsert|Yes|writeBehavior: upsert|
 |**Alternate key name**|The alternate key name defined on your entity to upsert records.|&lt; alternate key name &gt;|No|alternateKeyName|
 |**Ignore null values**|Indicates whether to ignore null values from input data during write operation. <br> - Selected (true): Leave the data in the destination object unchanged when doing upsert/update operation, and insert defined default value when doing insert operation.<br> - Unselected (false): Update the data in the destination object to NULL when doing upsert/update operation, and insert NULL value when doing insert operation.|selected or unselected (default)|No|ignoreNullValues:<br>true or false (default)|
 |**Write batch size**|The row count of data written to Dataverse in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
-|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|&lt;max concurrent connections&gt;|No|maxConcurrentConnections|
+|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|&lt; max concurrent connections &gt;|No|maxConcurrentConnections|
 
 ## Next steps
 
