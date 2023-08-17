@@ -11,7 +11,13 @@ ms.date: 08/16/2023
 
 # Creating, evaluating, and deploying a recommendation system in Microsoft Fabric
 
-In this article, you walk through the data engineering and data science workflow with an end-to-end tutorial. The scenario is to build a recommender for online book recommendation.
+In this tutorial, you walk through the data engineering and data science workflow with an end-to-end tutorial. The scenario is to build a recommender for online book recommendation. The steps you'll take are:
+
+> [!div class="checklist"]
+> * Upload the data into a Lakehouse
+> * Perform exploratory data analysis on the data
+> * Train a model and log it with MLflow
+> * Load the model and make predictions
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,7 +25,7 @@ There are different types of recommendation algorithms. This tutorial uses a mod
 
 :::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Chart showing different types of recommendation algorithms." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
-ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, X and Y, X * Yt = R. Typically these approximations are called 'factor' matrices.
+ALS attempts to estimate the ratings matrix R as the product of two lower-rank matrices, U and V, U * Vt = R. Typically these approximations are called 'factor' matrices.
 
 The general approach is iterative. During each iteration, one of the factor matrices is held constant, while the other is solved for using least squares. The newly solved factor matrix is then held constant while solving for the other factor matrix.
 
@@ -27,36 +33,39 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Prerequisites
 
-- An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
-- Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you want to copy/paste code into cells.
-- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks). Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+[!INCLUDE [prerequisites](includes/prerequisites.md)]
+- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
+- Open the sample notebook or create a new notebook.
+    - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you want to copy/paste code into cells.
+    - Or, Select **Use a sample** > **Book recommendation** to open the sample notebook.
+- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Step 1: Load the data
 
-The book recommendation dataset in this scenario consists of three separate datasets, `Books.csv`, `Ratings.csv`, and `Users.csv`.
+The book recommendation dataset in this scenario consists of three separate datasets, Books.csv, Ratings.csv, and Users.csv.
 
 - Books.csv - Each book is identified with an International Standard Book Number (ISBN), with invalid dates already removed. Additional information, such as the title, author, and publisher, has also been added. If a book has multiple authors, only the first is listed. URLs point to Amazon for cover images in three different sizes.
 
-| ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
-|---|---|---|---|---|---|---|---|
-| 0195153448 | Classical Mythology | Mark P. O. Morford | 2002 | Oxford University Press | [http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg) |
-| 0002005018 | Clara Callan | Richard Bruce Wright | 2001 | HarperFlamingo Canada | [http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg) |
+    | ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
+    |---|---|---|---|---|---|---|---|
+    | 0195153448 | Classical Mythology | Mark P. O. Morford | 2002 | Oxford University Press | [http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg) |
+    | 0002005018 | Clara Callan | Richard Bruce Wright | 2001 | HarperFlamingo Canada | [http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg) |
 
 - Ratings.csv - Ratings for each book are either explicit (provided by users on a scale of 1-10) or implicit (observed without user input, and indicated by 0).
 
-| User-ID | ISBN | Book-Rating |
-|---|---|---|
-| 276725 | 034545104X | 0 |
-| 276726 | 0155061224 | 5 |
+    | User-ID | ISBN | Book-Rating |
+    |---|---|---|
+    | 276725 | 034545104X | 0 |
+    | 276726 | 0155061224 | 5 |
 
 - Users.csv - User IDs, which have been anonymized and mapped to integers. Demographic data such as location and age, are provided if available. If unavailable, the value is *null*.
 
-| User-ID | Location | Age |
-|---|---|---|
-| 1 | "nyc new york usa" |  |
-| 2 | "stockton california usa" | 18.0 |
+    | User-ID | Location | Age |
+    |---|---|---|
+    | 1 | "nyc new york usa" |  |
+    | 2 | "stockton california usa" | 18.0 |
 
-**By defining below parameters, we can apply this notebook on different datasets easily.**
+By defining below parameters, we can more easily apply the code in this tutorial to different datasets.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually
@@ -83,8 +92,9 @@ EXPERIMENT_NAME = "aisample-recommendation"  # mlflow experiment name
 ### Download dataset and upload to Lakehouse
 
 The following code downloads the dataset and then stores it in the Lakehouse.
+
 > [!IMPORTANT]
-> Please [add a Lakehouse to the notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before running this code.
+> [Add a Lakehouse to the notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before running this code.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -108,18 +118,8 @@ if not IS_CUSTOM_DATA:
     print("Downloaded demo data files into lakehouse.")
 ```
 
-Use the following code to start recording the time it takes to run the notebook:
-
-```python
-# to record the notebook running time
-import time
-
-ts = time.time()
-```
-
 ### Set up the MLflow experiment tracking
-
-Use the following code to set up the MLflow experiment tracking. Autologging is disabled for this example. For more information, see the [Autologging](/fabric/data-science/mlflow-autologging) article.
+Use the following code to set up the MLflow experiment tracking. Autologging is disabled for this examgle. For more information, see the [Autologging](/fabric/data-science/mlflow-autologging) articleg
 
 ```python
 # Setup mlflow for experiment tracking
@@ -589,6 +589,10 @@ with mlflow.start_run(run_name="als"):
     )
 ```
 
+To view the logged information for the training run, select the experiment named `aisample-recommendation` from your workspace. If you changed the experiment name, select the experiment with the name you specified. The logged information appears similiar to the following image:
+
+:::image type="content" source="./media/retail-recommend-model/experiment-logs.png" alt-text="Screenshot of the experiment logs." lightbox="./media/retail-recommend-model/experiment-logs.png":::
+
 ## Step 4: Load the final model for scoring and make predictions
 
 Once the training has completed and the best model is selected, load the model for scoring. The following code loads the model and generates predictions to recommend the top 10 books for each user:
@@ -635,10 +639,6 @@ To write the recommendations back to the Lakehouse, use the following code:
 userRecs.write.format("delta").mode("overwrite").save(
     f"{DATA_FOLDER}/predictions/userRecs"
 )
-```
-
-```python
-print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
 ## Next steps
