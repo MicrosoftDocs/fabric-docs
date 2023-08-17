@@ -38,6 +38,8 @@ The following section lists various numerical limits for Spark workloads based o
 | F128 | P2 | 128 | 256 | 32 | 128 |
 | F256 | P3 | 256 | 512 | 64 | 256 |
 | F512 | P4 | 512 | 1024 | 128 | 512 |
+| F1024 | - | 1024 | 2048 | 256 | 1024 |
+| F2048 | - | 2048 | 4096 | 512 | 2048 |
 
 The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. As there are different items like notebooks, Spark job definition, and lakehouse which users could use in any workspace. As the usage varies across different enterprise teams, users could run into starvation scenarios where there's dependency on only type of item, such as a Spark job definition. This situation could result in users sharing the capacity from running a notebook based job or any lakehouse based operation like load to table.
 

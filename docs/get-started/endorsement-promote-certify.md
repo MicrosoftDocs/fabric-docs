@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Promote or certify items
@@ -18,7 +18,7 @@ Fabric provides two ways you can endorse your valuable, high-quality items to in
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable, authoritative, and ready for use across the organization.
 
-    Only [authorized reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) can certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting items certified.
+    Only [authorized reviewers (defined by the Fabric administrator)](../admin/endorsement-setup.md) can certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting items certified.
 
 Currently it's possible to endorse all Fabric items except Power BI dashboards.
 
@@ -69,10 +69,10 @@ If you would like to certify your item but aren't authorized to do so, follow th
     :::image type="content" source="./media/endorsement-promote-certify/request-item-certification.png" alt-text="Screenshot of how to request certification link.":::
     <a name="no-info-redirect"></a>
     >[!NOTE]
-    >If you clicked the link above but got redirected back to this note, it means that your Power BI admin has not made any information available. In this case, contact the Power BI admin directly.
+    >If you clicked the link above but got redirected back to this note, it means that your Fabric admin has not made any information available. In this case, contact the Fabric admin directly.
 
 ## Next steps
 
 * [Read more about endorsement](../governance/endorsement-overview.md)
-* [Enable content certification](../admin/endorsement-setup.md) (Power BI admins)
+* [Enable content certification](../admin/endorsement-setup.md) (Fabric admins)
 * [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)

@@ -42,3 +42,4 @@ For Pipeline Spark Activity Inline Monitoring, deep links have been built into t
 - [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
 - [Run an Apache Spark job definition](run-spark-job-definition.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
+- [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

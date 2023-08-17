@@ -1,11 +1,11 @@
 ---
-title: Manage a workspace with git
+title: Manage a workspace with git.
 description: Learn how to connect a workspace to a git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/30/2023
+ms.date: 06/19/2023
 ms.custom: build-2023
 ---
 
@@ -20,7 +20,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of git integration](./intro-to-git-integration.md) before you begin.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+ [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -29,14 +29,14 @@ To integrate git with your Microsoft Fabric workspace, you need to set up the fo
 ### Azure DevOps prerequisites
 
 - An active Azure account registered to the same user that is using the Fabric workspace. [Create a free account](https://azure.microsoft.com/products/devops/).
-- Access to an existing repository
+- Access to an existing repository.
 
 ### Fabric prerequisites
 
-To access the git integration feature, you need one of the following licenses:
+To access the git integration feature, you need one of the following:
 
-- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license will continue to work for all Power BI features.
-- [Fabric license](../../enterprise/licenses.md#capacity-and-skus). A Fabric license is necessary to use all supported Fabric items.
+- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license still works for all Power BI features.
+- [Fabric capacity](../../enterprise/licenses.md#capacity-and-skus). A Fabric capacity is required to use all supported Fabric items.
 
 In addition, your organization’s administrator has to [enable the Fabric switch](../../admin/fabric-switch.md). If this switch is disabled, contact your administrator.
 
@@ -51,7 +51,7 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     :::image type="content" source="./media/git-get-started/workspace-settings-new.png" alt-text="Screenshot of workspace with workspace settings icon displayed on top.":::
 
     > [!NOTE]
-    > If you don't see the Workspace settings icon, select the ellipsis (three dots) the then workspace settings.
+    > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
 1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
@@ -102,7 +102,7 @@ After the changes are committed, the items that were committed are removed from 
 
 :::image type="content" source="./media/git-get-started/no-changes.png" alt-text="Screenshot of source control window stating that there are no changes to commit.":::
 
-After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**. 
+After the commit is completed successfully, the status of the selected items changes from **Uncommitted** to **Synced**.
 
 ### [Undo saved change](#tab/undo-save)
 
@@ -151,11 +151,15 @@ After the update is completed successfully, the status of the items changes to *
 
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
-1. Go to Workspace settings
+1. Go to **Workspace settings**
 1. Select **Git integration**
 1. Select **Disconnect workspace**
 
     :::image type="content" source="media/git-get-started/disconnect-workspace.png" alt-text="Screenshot of workspace settings screen with disconnect workspace option.":::
+
+1. Select **Disconnect** again to confirm.
+
+    :::image type="content" source="media/git-get-started/disconnect-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to disconnect.":::
 
 ## Permissions
 
@@ -163,7 +167,14 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to git* process, the Fabric service deletes any files inside the item folder that are not part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder are not deleted.
+
+- After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
+
+  - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a dataset column in git and import this change to the workspace, the next time you commit changes to the dataset, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
+  
+  - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to git using *CRLF*.
+
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the git integration feature.
 
 ## Next steps

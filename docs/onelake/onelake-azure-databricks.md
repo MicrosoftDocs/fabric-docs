@@ -52,7 +52,7 @@ Before you connect, complete these steps:
 1. Load data from a Databricks public dataset into a dataframe. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
 
    ```python
-   yellowTaxiDF = (spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")
+   yellowTaxiDF = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")
    ```
 
 1. Filter, transform, or prep your data. For this scenario, you can trim down your dataset for faster loading, join with other datasets, or filter down to specific results.
@@ -65,13 +65,13 @@ Before you connect, complete these steps:
 1. Write your filtered dataframe to your Fabric Lakehouse using your OneLake path.
 
    ```python
-   filteredTaxiDF.write.format("csv").mode("overwrite").csv(oneLakePath)
+   filteredTaxiDF.write.format("csv").option("header", "true").mode("overwrite").csv(oneLakePath)
    ```
 
 1. Test that your data was successfully written by reading your newly loaded file.
 
    ```python
-   lakehouseRead = spark.read.format('csv').load(oneLakePath)
+   lakehouseRead = spark.read.format('csv').option("header", "true").load(oneLakePath)
    display(lakehouseRead.limit(10))
    ```
 

@@ -6,32 +6,35 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 06/23/2023
 ---
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
 
-Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your workloads using Microsoft Fabric.
+Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your Microsoft Fabric workloads.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data warehouse and lakehouse properties
 
-| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  |
-|---|:---:|:---:|:---:|
-| **Data volume** | Unlimited | Unlimited |Up to 100 GB|
-| **Type of data** | Structured | Unstructured,<br>semi-structured,<br>structured |Structured|
-| **Primary developer persona** | Data warehouse developer,<br>SQL engineer | Data engineer,<br>data scientist |Citizen developer|
-| **Primary developer skill set** | SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |No code, SQL|
-| **Data organized by** | Databases, schemas, and tables | Folders and files,<br>databases and tables |Database, tables, queries|
-| **Read operations** | Spark,<br>T-SQL | Spark,<br>T-SQL |Spark,<BR>T-SQL,<BR>Power BI|
-| **Write operations** | T-SQL | Spark<br>(Scala, PySpark, Spark SQL, R) |Dataflows, T-SQL|
-| **Multi-table transactions** | Yes | No |No|
-| **Primary development interface** | SQL scripts | Spark notebooks,<br>Spark job definitions | Power BI |
-| **Security** | Object level (table, view, function, stored procedure, etc.),<br>column level,<br>row level,<br>DDL/DML | Row level,<br>table level (when using T-SQL),<br>none for Spark | Built-in RLS editor|
-| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No|
-| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No|
-| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;<br>query across lakehouses (including shortcuts using Spark) | No|
+| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** |
+|---|:---:|:---:|:---:|:---:|
+| **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
+| **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
+| **Primary developer persona** | Data warehouse developer,SQL engineer | Data engineer,data scientist | Citizen developer | Citizen Data scientist, Data engineer, Data scientist, SQL engineer |
+| **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | No code, KQL, SQL |
+| **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
+| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
+| **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
+| **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
+| **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
+| **Security** | Object level (table, view, function, stored procedure, etc.),column level,row level,DDL/DML | Row level,table level (when using T-SQL),none for Spark | Built-in RLS editor | Row-level Security |
+| **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
+| **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
+| **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |
+| **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
+| **Advanced formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
+| **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
 
 ## Scenarios
 
@@ -45,7 +48,7 @@ Susan has spent many years building data warehouses on relational database engin
 
 ### Scenario 2
 
-Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax. 
+Rob, a data engineer, needs to store and model several terabytes of data in Fabric. The team has a mix of PySpark and T-SQL skills. Most of the team running T-SQL queries are consumers, and therefore don't need to write INSERT, UPDATE, or DELETE statements. The remaining developers are comfortable working in notebooks, and because the data is stored in Delta, they're able to interact with a similar SQL syntax.
 
 Rob decides to use a **lakehouse**, which allows the data engineering team to use their diverse skills against the data, while allowing the team members who are highly skilled in T-SQL to consume the data.
 
@@ -55,9 +58,16 @@ Ash, a citizen developer, is a Power BI developer. They're familiar with Excel, 
 
 Ash works with business analysts familiar with Power BI and Microsoft Office, and knows that they already have a Premium capacity subscription. As they think about their larger team, they realize the primary consumers of this data may be analysts, familiar with no-code and SQL analytical tools. Ash decides to use a **Power BI datamart**, which allows the team to interact build the capability fast, using a no-code experience. Queries can be executed via Power BI and T-SQL, while also allowing any Spark users in the organization to access the data as well.
 
+### Scenario 4
+
+Daisy is a business analyst experienced with using SQL and DAX to analyze supply chain bottlenecks for a large global retail chain. They need to build a scalable data solution that can handle billions of rows of data and can be used to build dashboards and reports that can be used to make business decisions. The data comes from plants, suppliers, shippers, and other sources in various structured, semi-structured, and unstructured formats.
+
+Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast data refresh in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
+
 ## Next steps
 
 - [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)
 - [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md)
 - [Introduction to Power BI datamarts](/power-bi/transform-model/datamarts/datamarts-overview)
+- [Create a KQL database](../real-time-analytics/create-database.md)

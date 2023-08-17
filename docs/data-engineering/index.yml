@@ -98,7 +98,7 @@ landingContent:
             url: spark-detail-monitoring.md
           - text: Manage Apache Spark libraries
             url: library-management.md
-          - text: Spark utilities for file management tasks
+          - text: How to use Fabric MSSparkUtils
             url: microsoft-spark-utilities.md
           - text: Configure capacity settings
             url: capacity-settings-management.md
@@ -132,6 +132,8 @@ landingContent:
         links:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
+          - text: Use notebooks from VS Code with resource
+            url: author-notebook-resource-with-vs-code.md
           - text: Use Spark job definitions from VS Code
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code

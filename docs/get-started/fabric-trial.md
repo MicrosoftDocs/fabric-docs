@@ -5,7 +5,7 @@ author: mihart
 ms.author: mihirwagle
 ms.topic: concept
 ms.custom: build-2023
-ms.date: 05/25/2023
+ms.date: 06/22/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -30,7 +30,7 @@ Follow these steps to start your Fabric (Preview) trial.
 
     :::image type="content" source="media/fabric-trial/fabric-home-page.png" alt-text="Screenshot of the Microsoft Fabric homepage with the Account manager outlined in red.":::
 
-1. In the Account manager, select **Start trial**.
+1. In the Account manager, select **Start trial**. If you don't see the *Start trial* button, trials may be disabled for your tenant. To enable trials for your tenant, see [Administer user access to a Fabric (Preview) trial](#administer-user-access-to-a-fabric-preview-trial).
 
     :::image type="content" source="media/fabric-trial/me-control.png" alt-text="Screenshot of the Microsoft Fabric Account manager.":::
 
@@ -49,7 +49,7 @@ Follow these steps to start your Fabric (Preview) trial.
 Congratulations! You now have a Fabric (Preview) trial that includes a Power BI individual trial (if you didn't already have a Power BI *paid* license) and a Fabric (Preview) trial capacity.
 
 ## Other ways to start a Microsoft Fabric (Preview) trial
-If your Power BI administrator has [enabled the preview of Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you do not have access to a capacity that has Fabric enabled, you have another option for enabling a Fabric (Preview) trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric (Preview) trial. If you agree, your Fabric (Preview) trial starts and your workspace is upgraded to a trial capacity workspace.
+If your Fabric administrator has [enabled the preview of Microsoft Fabric for the tenant](../admin/fabric-switch.md#enable-for-your-tenant) but you do not have access to a capacity that has Fabric enabled, you have another option for enabling a Fabric (Preview) trial. When you try to create a Fabric item in a workspace that you own (such as **My Workspace**) and that workspace doesn't support Fabric items, you're prompted to start a Fabric (Preview) trial. If you agree, your Fabric (Preview) trial starts and your workspace is upgraded to a trial capacity workspace.
 
 :::image type="content" source="media/fabric-trial/fabric-prompt.png" alt-text="Screenshot of the prompt to Upgrade to a free Microsoft Fabric (preview) trial.":::
 
@@ -93,11 +93,11 @@ Additionally, if you cancel your trial, you may not be able to start another tri
 
 ## Administer user access to a Fabric (Preview) trial
 
-Power BI administrators can enable and disable trials for paid features for Fabric. This setting is at a tenant level and is applied to all users or to specific security groups. This one tenant setting applies to **both** Power BI and Fabric trials, so Power BI administrators should carefully evaluate the impact of making a change to this setting.
+Fabric administrators can enable and disable trials for paid features for Fabric. This setting is at a tenant level and is applied to all users or to specific security groups. This one tenant setting applies to **both** Power BI and Fabric trials, so Fabric administrators should carefully evaluate the impact of making a change to this setting.
 
  :::image type="content" source="media/fabric-trial/tenant-trial-settings.png" alt-text="Screenshot of the Microsoft Fabric trial settings.":::
 
-Each trial user is the capacity admin for their trial capacity. Microsoft currently doesn't support multiple capacity administrators per trial capacity. Therefore, Power BI administrators can't view metrics for individual capacities. We do have plans to support this capability in an upcoming admin monitoring feature.
+Each trial user is the capacity admin for their trial capacity. Microsoft currently doesn't support multiple capacity administrators per trial capacity. Therefore, Fabric administrators can't view metrics for individual capacities. We do have plans to support this capability in an upcoming admin monitoring feature.
 
 ## Considerations and limitations
 
@@ -105,9 +105,9 @@ Each trial user is the capacity admin for their trial capacity. Microsoft curren
 
 If you don't see the **Start trial** button in your Account manager:
 
-- Your Power BI administrator may have disabled access, and you can't start a Fabric (Preview) trial. Contact your Power BI administrator to request access.  You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
+- Your Fabric administrator may have disabled access, and you can't start a Fabric (Preview) trial. Contact your Fabric administrator to request access.  You can also start a trial using your own tenant. For more information, see [Sign up for Power BI with a new Microsoft 365 account](/power-bi/enterprise/service-admin-signing-up-for-power-bi-with-a-new-office-365-trial).
 
-- If you're an existing Power BI trial user, you don't see **Start trial** in your Account manager. You can start a Fabric (Preview) trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-preview-trial). When you attempt to create a Fabric item, you're prompted to start a Fabric (Preview) trial. If you don't see this prompt, your Power BI administrator may have disabled the Fabric (Preview) feature. 
+- If you're an existing Power BI trial user, you don't see **Start trial** in your Account manager. You can start a Fabric (Preview) trial by attempting to [create a Fabric item](#other-ways-to-start-a-microsoft-fabric-preview-trial). When you attempt to create a Fabric item, you're prompted to start a Fabric (Preview) trial. If you don't see this prompt, your Fabric administrator may have disabled the Fabric (Preview) feature. 
 
 If you do see the **Start trial** button in your Account manager:
 
@@ -115,13 +115,13 @@ If you do see the **Start trial** button in your Account manager:
 
     - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
 
-    - Request another trial capacity user to share their trial capacity with you.
+    - Request another trial capacity user to share their trial capacity workapce with you. [Give users access to workspaces](give-access-workspaces.md)
 
-    - To increase tenant trial capacity limits, reach out to your Power BI administrator to create a Microsoft support ticket.
+    - To increase tenant trial capacity limits, reach out to your Fabric administrator to create a Microsoft support ticket.
 
 **In Workplace settings, I can't assign a workspace to the trial capacity**
 
-This known bug occurs when the Power BI administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here. 
+This known bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here. 
 
 :::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal."::: 
 

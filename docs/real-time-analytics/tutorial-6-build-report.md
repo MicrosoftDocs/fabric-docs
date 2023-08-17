@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/03/2023
 ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report

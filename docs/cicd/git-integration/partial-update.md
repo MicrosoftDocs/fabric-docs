@@ -1,17 +1,17 @@
 ---
-title: Manual updates with Git integration
+title: Manual updates with git integration
 description: Learn how to update your workspace manually when there's an internal inconsistency.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 06/12/2023
 ms.custom: build-2023
 ---
 
 # Manual update
 
-When updating items in a workspace, there’s always a chance that one of them will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. When an item fails to update, the update process stops. If the item that failed is the first (or only) item that was updating, the update fails, but the workspace is still synced with the original branch. If an item fails after one or more items succeeded in updating, you're left in a situation where some items are synced and some aren't so your workspace isn't synced to any git branch.
+When updating items in a workspace or *undo*ing a commit, there’s always a chance that one or more items will fail. The workspace fails to update if the incoming update from the git branch causes inconsistencies or other problems in the workspace that are difficult to determine in advance. When an item fails to update, the update process stops. If the item that failed is the first (or only) item that was updating, the update fails, but the workspace is still synced with the original branch. If an item fails after one or more items succeeded in updating, you're left in a situation where some items are synced and some aren't so your workspace isn't synced to any git branch.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -56,6 +56,7 @@ To update the workspace manually after it failed to update automatically:
    * Revert the item to an earlier version that doesn't fail
    * Edit the item so it doesn't fail
    * Restore a dependant item that was deleted
+   * delete unsupported item that depends on the deleted item
 1. Go back to the workspace and [**Update**](./git-get-started.md#update-workspace-from-git) the entire workspace again
 
 ## Considerations and limitations
