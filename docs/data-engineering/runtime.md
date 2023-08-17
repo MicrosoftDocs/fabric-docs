@@ -54,7 +54,7 @@ Following is an extended summary of key new features related to Apache Spark ver
 
 - Error message improvements to identify problems faster and take the necessary steps to resolve them. ([SPARK-38781](https://issues.apache.org/jira/browse/SPARK-38781))
 
-- Support **complex types for Parquet vectorized reader*.* Previously, Parquet vectorized reader didn't support nested column types like struct, array, and map. The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvements compared to a nonvectorized reader when reading nested columns. In addition, this implementation can help improve the non-nested column performance when reading non-nested and nested columns together in one query. ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
+- Support **complex types for Parquet vectorized reader**. Previously, Parquet vectorized reader didn't support nested column types like struct, array, and map. The Apache Spark 3.3 contains an implementation of nested column vectorized reader for FB-ORC in our internal fork of Spark. It impacts performance improvements compared to a nonvectorized reader when reading nested columns. In addition, this implementation can help improve the non-nested column performance when reading non-nested and nested columns together in one query. ([SPARK-34863](https://issues.apache.org/jira/browse/SPARK-34863))
 
 - Allows users to query the metadata of the input files for all file formats, expose them as **built-in hidden columns**, meaning **users can only see them when they explicitly reference them.** (For example, file path and file name.) ([SPARK-37273](https://issues.apache.org/jira/browse/SPARK-37273))
 
