@@ -35,7 +35,7 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one and add it to your notebook by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in notebook
 
