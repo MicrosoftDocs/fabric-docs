@@ -65,7 +65,7 @@ The book recommendation dataset in this scenario consists of three separate data
     | 1 | "nyc new york usa" |  |
     | 2 | "stockton california usa" | 18.0 |
 
-By defining below parameters, we can more easily apply the code in this tutorial to different datasets.
+By defining the following parameters, you can more easily apply the code in this tutorial to different datasets.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually
@@ -159,7 +159,7 @@ df_users = (
 
 ### Display raw data
 
-We can explore each of the DataFrames using the `display` command. This command allows you to view high-level statistics of the DataFramkes and understand how different columns in the datasets are related to each other. Before exploring the datasets, use the following code to import the required libraries.
+You can explore each of the DataFrames using the `display` command. This command allows you to view high-level statistics of the DataFramkes and understand how different columns in the datasets are related to each other. Before exploring the datasets, use the following code to import the required libraries.
 
 ```python
 import pyspark.sql.functions as F
@@ -218,7 +218,7 @@ display(df_users, summary=True)
 
 Add a `_user_id` column for later usage. The `_user_id` must be integer for recommendation models. In the following code, you use `StringIndexer` to transform `USER_ID_COL` to indices.
 
-In the book dataset, we already have a `User-ID` column, which is integer. But we still add a `_user_id` column for compatibility to different datasets, making this example more robust.
+The book dataset already contains a `User-ID` column, which is integer. However adding a `_user_id` column for compatibility to different datasets makes this example more robust. To add the `_user_id` column, use the following code:
 
 ```python
 df_users = (
