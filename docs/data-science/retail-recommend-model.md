@@ -33,12 +33,15 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Prerequisites
 
-[!INCLUDE [prerequisites](includes/prerequisites.md)]
-- Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
-- Open the sample notebook or create a new notebook.
-    - Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) if you want to copy/paste code into cells.
-    - Or, Select **Use a sample** > **Book recommendation** to open the sample notebook.
-- [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* If you don't have a Microsoft Fabric lakehouse, create one and add it to your notebook by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+
+## Follow along in notebook
+
+[yournotebookname.ipynb](lGitHub link here) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Step 1: Load the data
 
