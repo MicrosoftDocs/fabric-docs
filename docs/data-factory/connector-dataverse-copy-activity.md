@@ -123,14 +123,14 @@ See the following table for the summary and more information for the Dataverse c
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|External|Yes|/|
-|**Connection**|Your connection to the destination Dataverse.|&lt; your connection &gt;|Yes|connection|
+|**Connection**|Your connection to the destination Dataverse.|< your connection >|Yes|connection|
 |**Connection type**|Your connection type. |**Dataverse**|Yes|type (under `typeProperties` -> `sink` -> `datasetSettings`):<br>CommonDataServiceForAppsEntity|
-|**Entity name**|The logical name of the entity to retrieve.|&lt; your entity &gt;|Yes|entityName|
+|**Entity name**|The logical name of the entity to retrieve.|< your entity >|Yes|entityName|
 |**Write behavior**|The write behavior of the operation. The value must be **Upsert**.| Upsert|Yes|writeBehavior: upsert|
-|**Alternate key name**|The alternate key name defined on your entity to upsert records.|&lt; alternate key name &gt;|No|alternateKeyName|
+|**Alternate key name**|The alternate key name defined on your entity to upsert records.|< alternate key name >|No|alternateKeyName|
 |**Ignore null values**|Indicates whether to ignore null values from input data during write operation. <br> - Selected (true): Leave the data in the destination object unchanged when doing upsert/update operation, and insert defined default value when doing insert operation.<br> - Unselected (false): Update the data in the destination object to NULL when doing upsert/update operation, and insert NULL value when doing insert operation.|selected or unselected (default)|No|ignoreNullValues:<br>true or false (default)|
 |**Write batch size**|The row count of data written to Dataverse in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
-|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|&lt; max concurrent connections &gt;|No|maxConcurrentConnections|
+|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 
 ## Next steps
 
