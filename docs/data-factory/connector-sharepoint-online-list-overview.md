@@ -18,8 +18,8 @@ The SharePoint Online List connector is supported in Data Factory for [!INCLUDE 
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Service Principal |
-| **Lookup activity** | None | Service Principal |
+| **Copy activity (source/-)** | None | Service principal |
+| **Lookup activity** | None | Service principal |
 
 ## Next steps
 
