@@ -19,7 +19,7 @@ Before you begin the data science end-to-end tutorial series, learn about prereq
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* A Microsoft Fabric lakehouse. Create a lakehouse by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Import tutorial notebooks
 
