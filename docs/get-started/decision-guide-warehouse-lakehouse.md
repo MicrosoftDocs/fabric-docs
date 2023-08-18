@@ -11,7 +11,7 @@ ms.date: 06/23/2023
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
 
-Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your workloads using Microsoft Fabric.
+Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your Microsoft Fabric workloads.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
