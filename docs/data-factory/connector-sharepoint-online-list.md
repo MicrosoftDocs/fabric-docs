@@ -64,8 +64,6 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The SharePoint Online List connector supports the following authentication types.
 
-- [Anonymous](#anonymous-authentication)
-- [OAuth2](#oauth2-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::

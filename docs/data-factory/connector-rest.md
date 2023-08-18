@@ -67,7 +67,6 @@ In the **New connection** pane, choose **Cloud**, and then specify the following
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The REST connector supports the following authentication types:
 
 - [Anonymous](#anonymous-authentication)
-- [Basic](#basic-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-rest/authentication-method.png" alt-text="Screenshot showing the authentication methods of REST.":::
