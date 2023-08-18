@@ -56,7 +56,7 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 1. Once a lakehouse is added, it's visible in the lakehouse pane in the notebook UI where tables and files stored in the lakehouse can be viewed.
 
 > [!NOTE]
-> Before executing each notebooks, you need to perform these steps that notebook.
+> Before executing each notebooks, you need to perform these steps on that notebook.
 
 :::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
