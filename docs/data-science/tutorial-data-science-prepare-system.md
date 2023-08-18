@@ -29,7 +29,7 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
     * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). 
     * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [data-science-ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-ai-samples).
 
-1. On the Data science experience homepage, select **Import notebook** and upload the notebook files for parts 1- 5 that you downloaded in step 1.
+1. On the Data science experience homepage, select **Import notebook** and upload the notebook files that you downloaded in step 1.
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\select-import-notebook.png" alt-text="Screenshot showing where to select Import notebook on the Data science home page." lightbox="media\tutorial-data-science-prepare-system\select-import-notebook.png":::
 
@@ -47,7 +47,7 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
 
 To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add an existing lakehouse to a notebook in a Fabric-enabled workspace.
 
-1. Open the notebook for the first part **01 Ingest data into Lakehouse using Apache Spark** in the workspace.
+1. Open the notebook in the workspace.
 
 1. Select **Add lakehouse** in the left pane and select **Existing lakehouse** to open the **Data hub** dialog box.
 
