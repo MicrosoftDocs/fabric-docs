@@ -32,6 +32,10 @@ In the following steps, you use the Apache spark to read data from Azure Open Da
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
+## Sample dataset
+
+In this tutorial, we use the [NYC Taxi and Limousine yellow dataset](/azure/open-datasets/dataset-taxi-yellow?tabs=pyspark), which is a large-scale dataset containing taxi trips in the city from 2009 to 2018. The dataset includes various features such as pick-up and drop-off dates, times, locations, fares, payment types, and passenger counts. The dataset can be used for various purposes such as analyzing traffic patterns, demand trends, pricing strategies, and driver behavior.
+
 ## Ingest the data
 
 1. In the first step of this part, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
