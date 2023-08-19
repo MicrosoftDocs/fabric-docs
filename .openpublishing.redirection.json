@@ -16,6 +16,16 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
           "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
           "redirect_document_id": false
@@ -26,8 +36,18 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
+          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
           "redirect_url": "/fabric/data-factory/data-factory-limitations",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
+          "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
           "redirect_document_id": false
         }
     ]

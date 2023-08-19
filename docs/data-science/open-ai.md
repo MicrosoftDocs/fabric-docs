@@ -1,6 +1,6 @@
 ---
 title: Azure OpenAI for big data
-description: Use Azure OpenAI service to solve a large number of natural language tasks through prompting the completion API.
+description: Use Azure OpenAI Service to solve a large number of natural language tasks through prompting the completion API.
 ms.topic: how-to
 ms.custom: build-2023
 ms.reviewer: jessiwang
@@ -26,7 +26,7 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 
 The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. Or download the notebook and import it into Synapse Analytics
 
-1.	[Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/master/notebooks/features/cognitive_services/CognitiveServices%20-%20OpenAI.ipynb) (click Raw, then save the file)
+1.	[Download this demo as a notebook](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/OpenAI/) (click Raw, then save the file)
 1.	Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Databricks [import into the Databricks Workspace](/en-us/azure/databricks/notebooks/notebooks-manage#create-a-notebook). If using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
 1. Install SynapseML on your cluster. Please see the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If using Fabric, please check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This requires pasting an extra cell at the top of the notebook you imported. 
 1.	Connect your notebook to a cluster and follow along, editing and running the cells.
@@ -127,7 +127,7 @@ Your output should look something like this. Please note completion text will be
 
 ### Generating Text Embeddings
 
-In addition to completing text, we can also embed text for use in downstream algorithms or vector retrieval architectures. Creating embeddings allows you to search and retrieve documents from large collections and can be used when prompt engineering isn't sufficient for the task. For more information on using `OpenAIEmbedding`, see our [embedding guide](https://microsoft.github.io/SynapseML/docs/features/cognitive_services/CognitiveServices%20-%20OpenAI%20Embedding/).
+In addition to completing text, we can also embed text for use in downstream algorithms or vector retrieval architectures. Creating embeddings allows you to search and retrieve documents from large collections and can be used when prompt engineering isn't sufficient for the task. For more information on using `OpenAIEmbedding`, see our [embedding guide](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/OpenAI/).
 
 
 ```python
