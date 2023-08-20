@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/20/2023
 ms.custom: build-2023
 ---
 
@@ -17,7 +17,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-When you select **Update** when there are conflicts, A message notifies you that you need to resolve the conflicts before you can update.
+When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
 
 :::image type="content" source="./media/conflict-resolution/source-control-resolve-conflict.png" alt-text="Screenshot of error message from source control tab informing about conflicts.":::
 
