@@ -8,6 +8,7 @@ ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 06/16/2023
 ms.search.form: product-kusto
+#CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
 ---
 
 # Stream real-time events from a custom app to a Microsoft Fabric KQL database
