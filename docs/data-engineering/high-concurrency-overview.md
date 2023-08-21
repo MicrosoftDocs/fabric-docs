@@ -2,8 +2,8 @@
 title: High Concurrency Mode in Fabric Spark Compute
 description: Learn about sharing spark sessions using High Concurrency Mode in Microsoft Fabric for Data Engineering and Data Science workloads
 ms.reviewer: snehagunda
-ms.author: santhoshravindran7
-author: saravi
+ms.author: saravi
+author: santhoshravindran7
 ms.topic: concepts
 ms.date: 07/16/2023
 ---
