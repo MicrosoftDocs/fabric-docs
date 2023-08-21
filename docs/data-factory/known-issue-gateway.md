@@ -31,4 +31,4 @@ Some of the errors that could be triggered because of this issue:
 
 ## Solutions and workarounds
 
-Download the July 2023 version or later of the on-premises data gateway.
+Download the version 3000.182.5 or later of the on-premises data gateway.
