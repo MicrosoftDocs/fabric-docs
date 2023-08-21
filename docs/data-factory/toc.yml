@@ -85,6 +85,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Dataverse
+      items:
+      - name: Overview
+        href: connector-dataverse-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-dataverse-copy-activity.md 
     - name: Data Warehouse
       items:
       - name: Overview
@@ -201,6 +207,8 @@
         href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Delete data activity
+        href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
       - name: Pipeline lookup activity
