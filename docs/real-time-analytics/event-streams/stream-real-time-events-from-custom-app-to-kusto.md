@@ -17,6 +17,14 @@ In this tutorial, you learn how to use the Microsoft Fabric event streams featur
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
+In this tutorial, you learn how to:
+
+> [!div class="checklist"]
+> - Create a KQL database and an eventstream in Microsoft Fabric.
+> - Configure a source (custom app) and a destination (KQL database) for the eventstream.
+> - Send events to the eventstream.
+> - Build a near-real-time Power BI report on data in the KQL database.
+
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:
