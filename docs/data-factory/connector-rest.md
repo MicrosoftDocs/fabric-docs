@@ -21,6 +21,7 @@ This REST connector supports the following authentication types for copy and Dat
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|
 |Anonymous| √| √|
+|Basic| | √|
 |Service principal|√||
 |Organizational account| | √|
 |Windows| | √|
