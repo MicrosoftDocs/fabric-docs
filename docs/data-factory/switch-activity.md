@@ -34,7 +34,7 @@ To use a Switch activity in a pipeline, complete the following steps:
 
 1. Select the new Switch activity on the canvas if it isn't already selected.
 
-   :::image type="content" source="media/lookup-activity/switch-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Switch activity.":::
+   :::image type="content" source="media/switch-activity/switch-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Switch activity.":::
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
