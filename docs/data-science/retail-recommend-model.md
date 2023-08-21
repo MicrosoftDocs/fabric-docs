@@ -1,5 +1,5 @@
 ---
-title: Create, evaluate, and deploy a recommendation system
+title: Create, evaluate, and score a recommendation system
 description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
 ms.reviewer: lagayhar
 ms.author: narsam
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 08/16/2023
 ---
 
-# Create, evaluate, and deploy a recommendation system in Microsoft Fabric
+# Create, evaluate, and score a recommendation system in Microsoft Fabric
 
 In this tutorial, you walk through the data engineering and data science workflow with an end-to-end tutorial. The scenario is to build a recommender for online book recommendation. The steps you'll take are:
 
@@ -122,7 +122,7 @@ if not IS_CUSTOM_DATA:
 ```
 
 ### Set up the MLflow experiment tracking
-Use the following code to set up the MLflow experiment tracking. Autologging is disabled for this examgle. For more information, see the [Autologging](/fabric/data-science/mlflow-autologging) articleg
+Use the following code to set up the MLflow experiment tracking. Autologging is disabled for this example. For more information, see the [Autologging](/fabric/data-science/mlflow-autologging) article.
 
 ```python
 # Setup mlflow for experiment tracking
@@ -323,10 +323,6 @@ plt.xlabel("Number of Ratings for the Item")
 plt.show()
 ```
 
-## Step 3. Develop and deploy the Model
-
-You've explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an Alternating Least Squares (ALS) recommender to give users personalized recommendations
-
 ### Prepare training and testing datasets
 
 Before training, you need to perform some data preparation steps for the ALS recommender. Use the following code to prepare the data. The code performs the following actions:
@@ -391,6 +387,10 @@ get_mat_sparsity(df_all)
 print(f"max user_id: {df_all.agg({'_user_id': 'max'}).collect()[0][0]}")
 print(f"max user_id: {df_all.agg({'_item_id': 'max'}).collect()[0][0]}")
 ```
+
+## Step 3. Develop and train the Model
+
+You've explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an Alternating Least Squares (ALS) recommender to give users personalized recommendations.
 
 ### Define the model
 
@@ -592,13 +592,14 @@ with mlflow.start_run(run_name="als"):
     )
 ```
 
-To view the logged information for the training run, select the experiment named `aisample-recommendation` from your workspace. If you changed the experiment name, select the experiment with the name you specified. The logged information appears similiar to the following image:
+To view the logged information for the training run, select the experiment named `aisample-recommendation` from your workspace. If you changed the experiment name, select the experiment with the name you specified. The logged information appears similar to the following image:
 
 :::image type="content" source="./media/retail-recommend-model/experiment-logs.png" alt-text="Screenshot of the experiment logs." lightbox="./media/retail-recommend-model/experiment-logs.png":::
 
 ## Step 4: Load the final model for scoring and make predictions
 
-Once the training has completed and the best model is selected, load the model for scoring. The following code loads the model and generates predictions to recommend the top 10 books for each user:
+Once the training has completed and the best model is selected, load the model for scoring (sometimes called inferencing). The following code loads the model and uses predictions to recommend the top 10 books for each user:
+
 ```python
 # Load the best model
 # Note that mlflow uses the PipelineModel to wrap the original model, thus we extract the original ALSModel from the stages
