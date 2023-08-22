@@ -73,6 +73,12 @@ The following three properties are **required**:
  
 Under **Advanced**, you can specify the following fields:
 
+- **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as List of files.
+  - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
+  - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
+
+  When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the dataset.
+
 - **Disable chunking**: When copying data from FTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your FTP server supports getting file length or seeking to read from a certain offset. It is unselected by default. 
 
 - **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
@@ -87,7 +93,7 @@ Under **Advanced**, you can specify the following fields:
     - If you specify partition root path as `root/folder/year=2020`, copy activity will generate two more columns month and day with value "08" and "27" respectively, in addition to the columns inside the files.
     - If partition root path is not specified, no extra column will be generated. 
         
-    :::image type="content" source="./media/connector-ftp/partition-discovery.png" alt-text="Screenshot showing list of files.":::
+    :::image type="content" source="./media/connector-ftp/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
 
 - **Use binary transfer**: Specify whether to use the binary transfer mode. Select it to use binary mode (default) or unselect it to use ASCII.
 
@@ -120,6 +126,7 @@ The following table contains more information about the copy activity in FTP.
 | **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < your folder path> | No | folderPath | 
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > |  Yes when you select **List of files** | fileListPath | 
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 
+| **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd | 
 | **Disable chunking** | When copying data from FTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your FTP server supports getting file length or seeking to read from a certain offset. | selected or unselected (default) |No  | disableChunking:<br>true or false (default)| 
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) | 
 | **Partition root path** | The absolute partition root path in order to read partitioned folders as data columns. Specify it when partition discovery is enabled.| < partition root path >  | No | partitionRootPath | 
