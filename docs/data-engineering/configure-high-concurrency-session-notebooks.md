@@ -22,7 +22,7 @@ If you already have a High Concurrency session running, you could attach noteboo
 > The high concurrency mode-based session sharing is always within a single user boundary.
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session.
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-sharing-conditions-overview.png" alt-text="Animation showing sharing conditions for high concurrency session for notebooks.":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-sharing-conditions-definition.png" alt-text="Animation showing sharing conditions for high concurrency session for notebooks.":::
 
 ## Configure high concurrency mode
 
