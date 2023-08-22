@@ -16,13 +16,13 @@ When you run a notebook in Microsoft Fabric, an Apache Spark session is started 
 
 If you already have a High Concurrency session running, you could attach notebooks to the high concurrency session getting a spark session instantly to run the queries and achieve a greater session utilization rate.
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-session.gif" alt-text="GIF showing high concurrency session for notebooks.":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-session.gif" alt-text="Animation showing high concurrency session for notebooks.":::
 
 > [!NOTE]
 > The high concurrency mode-based session sharing is always within a single user boundary.
 > The notebooks need to have matching spark configurations, should be part of the same workspace, share the same default lakehouse and libraries to share a single spark session.
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-sharing-conditions-overview.png" alt-text="Image showing sharing conditions for high concurrency session for notebooks.":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-sharing-conditions-overview.png" alt-text="Animation showing sharing conditions for high concurrency session for notebooks.":::
 
 ## Configure high concurrency mode
 
