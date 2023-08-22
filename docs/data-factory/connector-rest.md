@@ -21,7 +21,7 @@ This REST connector supports the following authentication types for copy and Dat
 |Authentication type |Copy |Dataflow Gen2 (Web API) |
 |:---|:---|:---|
 |Anonymous| √| √|
-|Basic| √| √|
+|Basic| | √|
 |Service principal|√||
 |Organizational account| | √|
 |Windows| | √|
@@ -68,7 +68,6 @@ In the **New connection** pane, choose **Cloud**, and then specify the following
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The REST connector supports the following authentication types:
 
 - [Anonymous](#anonymous-authentication)
-- [Basic](#basic-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-rest/authentication-method.png" alt-text="Screenshot showing the authentication methods of REST.":::
@@ -78,13 +77,6 @@ Under **Authentication method**, select your authentication from the drop-down l
 Select **Anonymous** under **Authentication method**.
 
 :::image type="content" source="./media/connector-rest/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
-
-#### Basic authentication
-
-- **Username**: The user name to use to access the REST endpoint.
-- **Password**: The password for the specified username.
-
-:::image type="content" source="media/connector-rest/authentication-basic.png" alt-text="Screenshot showing that basic authentication method.":::
 
 #### Service Principal authentication
 
