@@ -58,11 +58,47 @@ The connector is language-agnostic and supports PySpark, Spark SQL, R, and Scala
 
 To use the Spark native connector, Power BI datasets are represented as Spark namespaces and transparently expose Power BI tables as Spark tables.
 
+# [Spark SQL](#tab/sql)
+
 ```sql
+%%sql
 SHOW TABLES pbi.`Sales Dataset`
 
 SELECT * FROM pbi.`Sales Dataset`.Customer
 ```
+
+# [PySpark](#tab/pyspark)
+
+```python
+df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
+
+display(df)
+```
+
+```python
+df = spark.table("pbi.`Sales Dataset`.Customer")
+
+display(df)
+```
+
+# [R](#tab/r)
+
+```R
+%%sparkr
+
+df = sql("SHOW TABLES pbi.`Sales Dataset`")
+
+display(df)
+```
+
+```R
+%%sparkr
+
+df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
+
+display(df)
+```
+---
 
 Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI.
 In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` dataset, while the remaining columns are dimensions.
@@ -84,6 +120,8 @@ GROUP BY
     `Customer[Country/Region]`,
     `Industry[Industry]`
 ```
+
+
 
 ## Data augmentation with Power BI measures
 
