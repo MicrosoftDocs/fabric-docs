@@ -8,7 +8,7 @@ ms.topic: concepts
 ms.date: 07/16/2023
 ---
 
-# High Concurrency Mode in Fabric Spark
+# High Concurrency mode in Fabric Spark
 
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
@@ -23,9 +23,9 @@ As the session is already running, this provides users with an instant run exper
 
 > [!IMPORTANT]
 > Session Sharing Conditions include
->  1. Sessions should be within a single user boundary.
->  2. Sessions should have the same default lakehouse configuration.
->  3. Sessions should have the same Spark compute properties.
+>  - Sessions should be within a single user boundary.
+>  - Sessions should have the same default lakehouse configuration.
+>  - Sessions should have the same Spark compute properties.
 
 As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in FAIR based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
  
