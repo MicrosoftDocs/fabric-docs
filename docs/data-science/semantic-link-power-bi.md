@@ -60,20 +60,31 @@ To use the Spark native connector, Power BI datasets are represented as Spark na
 
 # [Spark SQL](#tab/sql)
 
+List all tables in the Power BI dataset `Sales Dataset`:
+
 ```sql
 %%sql
 SHOW TABLES pbi.`Sales Dataset`
+```
 
+Display data from the table `Customer` in the Power BI dataset `Sales Dataset`:
+
+```sql
+%%sql
 SELECT * FROM pbi.`Sales Dataset`.Customer
 ```
 
-# [PySpark](#tab/pyspark)
+# [Python](#tab/python)
+
+List all tables in the Power BI dataset `Sales Dataset`:
 
 ```python
 df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
 
 display(df)
 ```
+
+Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the Spark DataFrame `df`:
 
 ```python
 df = spark.table("pbi.`Sales Dataset`.Customer")
@@ -83,6 +94,8 @@ display(df)
 
 # [R](#tab/r)
 
+List all tables in the Power BI dataset `Sales Dataset`:
+
 ```R
 %%sparkr
 
@@ -90,6 +103,8 @@ df = sql("SHOW TABLES pbi.`Sales Dataset`")
 
 display(df)
 ```
+
+Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the dataframe `df`:
 
 ```R
 %%sparkr
