@@ -22,7 +22,7 @@ As the session is already running, this provides users with an instant run exper
 
 The session sharing is always within a single user boundary, where a user will be able to share High Concurrency sessions among the data engineering and data science items they have created and not with a different user. 
 
-:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-securityandmultitask-overview.png" alt-text="Diagram showing the working of high concurrency mode in Fabric." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-securityandmultitask-overview.png":::
+:::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png" alt-text="Diagram showing the working of high concurrency mode in Fabric." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png":::
 
 As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in F.A.I.R to these notebooks running in these REPL cores inside the spark application. 
  
