@@ -217,6 +217,8 @@
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Stored procedure activity
+        href: stored-procedure-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
