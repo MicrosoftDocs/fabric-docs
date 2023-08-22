@@ -13,7 +13,7 @@ ms.date: 07/16/2023
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-High Concurrency mode allows users to share the same Spark sessions in Fabric Spark for data engineering and data science workloads. A standard Spark session is used by an item like notebook for its execution. In High Concurrency mode the Spark session can support independent execution of multiple items within individual repl cores which exist within the Spark application. These repl cores provide the isolation for each item and prevent local variables declared in a notebook to not be overwritten by variables with the same variable name from other notebooks sharing the same session. 
+High Concurrency mode allows users to share the same Spark sessions in Fabric Spark for data engineering and data science workloads. A standard Spark session is used by an item like notebook for its execution. In High Concurrency mode the Spark session can support independent execution of multiple items within individual REPL cores which exist within the Spark application. These REPL cores provide the isolation for each item and prevent local variables declared in a notebook to not be overwritten by variables with the same variable name from other notebooks sharing the same session. 
 As the session is already running, this provides users with an instant run experience when reusing the session across multiple notebooks. 
 
 > [!NOTE]
@@ -27,7 +27,7 @@ As the session is already running, this provides users with an instant run exper
 >  2. Sessions should have the same default lakehouse configuration.
 >  3. Sessions should have the same Spark compute properties.
 
-As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in F.A.I.R based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
+As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in FAIR based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
  
 
 ## Next steps
