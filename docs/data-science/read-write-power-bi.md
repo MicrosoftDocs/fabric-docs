@@ -151,7 +151,7 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 
 1. List tables of all Power BI datasets in the workspace, using PySpark.
 
-    ```sql
+    ```python
     df = spark.sql("SHOW TABLES FROM pbi")
     df
     ```
@@ -163,6 +163,8 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
     > Use aggregate pushdown to reduce the amount of data transferred. The supported aggregates are: COUNT, SUM, AVG, MIN, and MAX.
 
     ```R
+    %%sparkr
+    
     df = sql("SELECT * FROM pbi.`Customer Profitability Sample`.Customer")
     df
     ```
@@ -170,6 +172,8 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 1. Power BI measures are available through the virtual table *_Metrics*. The following query computes the *total revenue* and *revenue budget* by *region* and *industry*.
 
     ```sql
+    %%sql
+
     SELECT
         `Customer[Country/Region]`,
         `Industry[Industry]`,
