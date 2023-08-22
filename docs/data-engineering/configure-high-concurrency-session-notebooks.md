@@ -1,5 +1,5 @@
 ---
-title: Configure high concurrency mode for notebooks.
+title: Configure high concurrency mode for notebooks
 description: Learn how to configure and run high concurrency mode to reuse session across multiple notebooks for Data Engineering and Data Science workloads in Fabric
 ms.reviewer: snehagunda
 ms.author: saravi
