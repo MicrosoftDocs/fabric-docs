@@ -19,8 +19,6 @@ As the session is already running, this provides users with an instant run exper
 > [!NOTE]
 > In the case of Custom Pools with High Concurrency Mode, users get 36X faster session start experience compared to a standard Spark session.
 
-The session sharing is always within a single user boundary, where a user will be able to share High Concurrency sessions among the data engineering and data science items they have created and not with a different user. 
-
 :::image type="content" source="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png" alt-text="Diagram showing the working of High Concurrency mode in Fabric." lightbox="media\high-concurrency-mode-for-notebooks\high-concurrency-mode-security-multitask-overview.png":::
 
 > [!IMPORTANT]
@@ -29,7 +27,7 @@ The session sharing is always within a single user boundary, where a user will b
 >  2. Sessions should have the same default lakehouse configuration.
 >  3. Sessions should have the same Spark compute properties.
 
-As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in F.A.I.R to these notebooks running in these REPL cores inside the Spark application. 
+As part of Spark session initialization,  a REPL core is created and every time a new item starts sharing the same session and the executors are allocated in F.A.I.R based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
  
 
 ## Next steps
