@@ -56,7 +56,7 @@ The dataset contains churn status of 10,000 customers along with 14 attributes t
 
 The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. The event that defines the customer's churn is the closing of the customer's bank account, therefore, the column "exit" in the dataset refers to customer's abandonment. Since you don't have much context about these attributes, you'll proceed without having background information about the dataset. Your aim is to understand how these attributes contribute to the "exit" status.
 
-Out of the 10,000 customers, only 2037 customers (around 20%) have left the bank. Therefore, given the class imbalance ratio, we recommend to generate synthetic data. Moreover, confusion matrix accuracy may not be meaningful for imbalanced classification and it might be better to also measure the accuracy using the Area Under the Precision-Recall Curve (AUPRC). 
+Out of the 10,000 customers, only 2037 customers (around 20%) have left the bank. Therefore, given the class imbalance ratio, we recommend generating synthetic data. Moreover, confusion matrix accuracy may not be meaningful for imbalanced classification and it might be better to also measure the accuracy using the Area Under the Precision-Recall Curve (AUPRC). 
 
 - churn.csv
 
@@ -72,11 +72,11 @@ Out of the 10,000 customers, only 2037 customers (around 20%) have left the bank
 
 The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. Learn more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
 
-We'll use `imblearn` which is a library for SMOTE.
+We'll use `imblearn`, a library for SMOTE.
 
 #### Download dataset and upload to lakehouse
 
-This code will download a publicly available version of the the dataset and then store it in a Fabric Lakehouse.
+This code downloads a publicly available version of the dataset and then stores it in a Fabric Lakehouse.
 
 > [!IMPORTANT]
 > **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
@@ -117,7 +117,7 @@ ts = time.time()
 
 ### Read raw data from the lakehouse
 
-This code reads raw data from the _Files_ section of the lakehouse, adds additional columns for different date parts and the same information is being used to create partitioned delta table.
+This code reads raw data from the _Files_ section of the lakehouse, adds extra columns for different date parts, and uses this information to create a partitioned delta table.
 
 
 ```python
@@ -141,7 +141,7 @@ df = df.toPandas()
 
 ### Display raw data
 
-Explore the raw data with `display`, do some basic statistics and show chart views. You first need to import required libraries for data visualization such as `seaborn` which is a Python data visualization library to provide a high-level interface for building visuals on dataframes and arrays. Learn more about [seaborn](https://seaborn.pydata.org/). 
+Explore the raw data with `display`, do some basic statistics and show chart views. You first need to import required libraries for data visualization such as `seaborn` which is a Python data visualization library to provide a high-level interface for building visuals on dataframes and arrays. Learn more about [`seaborn`](https://seaborn.pydata.org/). 
 
 
 ```python
@@ -162,14 +162,14 @@ display(df, summary=True)
 
 ### Use Data Wrangler to perform initial data cleansing
 
-You can launch Data Wrangler directly from the notebook to explore and transform any Pandas dataframe. As shown below, under the notebook ribbon "Data" tab, you can use the Data Wrangler dropdown prompt to browse the activated Pandas dataframes available for editing and select the one you wish to open in Data Wrangler. 
+Launch Data Wrangler directly from the notebook to explore and transform any Pandas dataframe. Under the notebook ribbon "Data" tab, you can use the Data Wrangler dropdown prompt to browse the activated Pandas dataframes available for editing and select the one you wish to open in Data Wrangler. 
 
 >[!NOTE]
 >Data Wrangler can not be opened while the notebook kernel is busy. The cell execution must complete prior to launching Data Wrangler.  [Learn more about Data Wrangler](https://aka.ms/fabric/datawrangler).
 
 <img src="https://sdkstorerta.blob.core.windows.net/churnblob/select_datawrangler.png"  width="40%" height="10%" title="Screenshot shows where to access the Data Wrangler.">
 
-Once the Data Wrangler is launched, a descriptive overview of the displayed data panel is generated as shown in the following images. It includes information about the dataframe's dimension, missing values, etc. You can then use Data Wrangler to generate the script for dropping the rows with missing values, the duplicate rows and the columns with specific names and then copy the script into a cell.  The next cell shows that copied script.
+Once the Data Wrangler is launched, a descriptive overview of the displayed data panel is generated as shown in the following images. It includes information about the dataframe's dimension, missing values, etc. You can then use Data Wrangler to generate the script for dropping the rows with missing values, the duplicate rows and the columns with specific names, then copy the script into a cell.  The next cell shows that copied script.
 
 <img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/menu_datawrangler.png"  width="45%" height="10%" title="Screenshot shows Data Wrangler menu."> 
 <img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/missing_data_datawrangler.png"  width="45%" height="10%" title="Screenshot shows Data Wrangler missing data display.">
@@ -265,7 +265,7 @@ df_clean["NeyoustSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels
 
 ### Use Data Wrangler to perform one-hot encoding
 
-Following the same instructions discussed earlier to launch Data Wrangler, use the Data Wrangler to perform one-hot encoding. The next cells shows the copied  generated script for one-hot encoding.
+Following the same instructions discussed earlier to launch Data Wrangler, use the Data Wrangler to perform one-hot encoding. The next cell shows the copied  generated script for one-hot encoding.
 <img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/1hotencoding_data_wrangler.png"  width="45%" height="20%" title="Screenshot shows one-hot encoding in the Data Wrangler"> 
 <img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/1hotencoding_selectcolumns_data_wrangler.png"  width="45%" height="20%" title="Screenshot shows selection of columns in the Data Wrangler.">
 
@@ -295,14 +295,14 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 - Most of the customers have credit cards.
 - There are customers whose age and credit score are above 60 and below 400, respectively, but they can't be considered as outliers.
 - Very few customers have more than two of the bank's products.
-- Customers who are not active have a higher churn rate.
+- Customers who aren't active have a higher churn rate.
 - Gender and tenure years don't seem to have an impact on customer's decision to close the bank account.
 
 ## Step 4: Model training and tracking
 
 With your data in place, you can now define the model. You'll apply Random Forrest and LightGBM models in this notebook. 
 
-You'll leverage scikit-learn and lightgbm to implement the models within a few lines of code. yYou'll also leverage MLFLow and Fabric Autologging to track the experiments.
+Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. Also use MLFLow and Fabric Autologging to track the experiments.
 
 Here you'll load the delta table from the lakehouse. You may use other delta tables considering the lakehouse as the source.
 
@@ -326,7 +326,7 @@ EXPERIMENT_NAME = "bank-churn-experiment"  # mlflow experiment name
 
 Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
 
-When complete, your experiment will look like this image. All the experiments with their respective names are logged and you will be able to track their parameters and performance metrics. To learn more about  autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+When complete, your experiment will look like this image. All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about  autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 <img src="https://sdkstorerta.blob.core.windows.net/churnblob/experiment_runs.png"  width="70%" height="10%" title="Screenshot shows the experiment page for the bank-churn-experiment.">
 
@@ -361,7 +361,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 #### Apply SMOTE to the training data to synthesize new samples for the minority class
 
-Note that SMOTE should only be applied to the training dataset and you must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the model will perform on the original data, which is representing the situation in production.
+SMOTE should only be applied to the training dataset. You must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the model will perform on the original data, which is representing the situation in production.
 
 
 ```python
@@ -375,7 +375,7 @@ new_train = pd.concat([X_res, y_res], axis=1)
 
 ## Model training
 
-Train the model using Random Forest with maximum depth of 4 and 4 features.
+Train the model using Random Forest with maximum depth of four, and four features.
 
 
 ```python
@@ -393,7 +393,7 @@ with mlflow.start_run(run_name="rfc1_sm") as run:
     roc_auc_rfc1_sm = roc_auc_score(y_res, rfc1_sm.predict_proba(X_res)[:, 1])
 ```
 
-Train the model using Random Forest with maximum depth of 8 and 6 features.
+Train the model using Random Forest with maximum depth of eight, and six features.
 
 
 ```python
@@ -438,7 +438,7 @@ with mlflow.start_run(run_name="lgbm_sm") as run:
 
 ### Experiments artifact for tracking model performance
 
-The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They are named based on the name used for setting the experiment. All of the trained models, their runs, performance metrics and model parameters are logged as can be seen from the experiment page shown in the image below.   
+The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained models, their runs, performance metrics and model parameters are logged as can be seen from the experiment page shown in the following image.
 
 To view your experiments:
 1. On the left panel, select your workspace.
@@ -470,7 +470,7 @@ ypred_lgbm1_sm = load_model_lgbm1_sm.predict(X_test) # LightGBM
 
  ### Show True/False Positives/Negatives using the Confusion Matrix
 
-Develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification. Note that confusion matrix can also be plotted using SynapseML tools as well which is shown in the  [Fraud Detection sample](https://aka.ms/samples/frauddectection).
+Develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification. You can also plot a confusion matrix  using SynapseML tools, which is shown in the [Fraud Detection sample](https://aka.ms/samples/frauddectection).
 
 
 ```python
@@ -500,7 +500,7 @@ def plot_confusion_matrix(cm, classes,
     plt.xlabel('Predicted label')
 ```
 
-Create a confusion matrix for Random Forest Classifier with maximum depth of 4 and 4 features.**
+Create a confusion matrix for Random Forest Classifier with maximum depth of four, with four features.
 
 
 ```python
@@ -510,7 +510,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-Create a confusion matrix for Random Forest Classifier with maximum depth of 8 and 6 features.**
+Create a confusion matrix for Random Forest Classifier with maximum depth of eight, with six features.
 
 
 ```python
@@ -557,17 +557,17 @@ Use these steps to access your saved table in Power BI.
 1. Select New Power BI dataset on the top ribbon and select df_pred_results, then select **Continue** to create a new Power BI dataset linked to the predictions.
 1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
 
-Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions e.g. sum or average of the table column.
+Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.
 
 > [!NOTE]
-> you show an illustrated example of how you would analyze the saved prediction results in Power BI. Hoyouver, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
+> We show an illustrated example of how you would analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
 
 <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/PBIviz3.png"  width="100%" height="100%" title="Screenshot shows a Power BI dashboard example.">
 
-The Power BI report shows that customers who use more than two of the bank products will have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate additional features correlated with more products (*see the plot in the bottom left panel).
-It can be realized that bank customers in Germany would have a higher churn rate than in France and Spain (*see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
+The Power BI report shows that customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
+Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
 There are more middle aged customers (between 25-45) and customers between 45-60 tend to exit more.
-Finally, you can see that customers with lower credit scores would most likely leave the bank for other financial institutes so the bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
+Finally, customers with lower credit scores would most likely leave the bank for other financial institutes. The bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
 
 
 ```python
