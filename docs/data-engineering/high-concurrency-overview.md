@@ -31,4 +31,4 @@ As part of Spark session initialization,  a REPL core is created and every time 
 
 In this document, you get a basic understanding of a session sharing through high concurrency mode in Fabric Spark. Advance to the next articles to learn how to create and get started with your own Data Engineering experiences using High Concurrency Mode in Notebooks:
 
-- To get started with High Concurrency mode in Notebooks, see [Run Notebooks in High Concurrency Session](configure-highconcurrency-session-notebooks.md).
+- To get started with High Concurrency mode in Notebooks, see [Run Notebooks in High Concurrency Session](configure-high-concurrency-session-notebooks.md).
