@@ -11,7 +11,7 @@ ms.date: 05/23/2023
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-In this notebook, we will demonstrate Microsoft Fabric end-to-end data science workflow for a text classification model. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
+This notebook demonstrates Microsoft Fabric end-to-end data science workflow for a text classification model. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -40,9 +40,9 @@ The main steps in this notebook are:
 
 ## Step 1: Install custom libraries
 
-When developing a machine learning model or doing ad-hoc data analysis, we may need to quickly install a custom library for your Apache Spark session. To do this, you could use `%pip install` or `%conda install` or you can install the required libraries into the workspace.  
+When developing a machine learning model or doing ad-hoc data analysis, we may need to quickly install a custom library for your Apache Spark session. To do so, you could use `%pip install` or `%conda install` or you can install the required libraries into the workspace.  
 
-To install in the workspace, select your workspace, then **Workspace settings**. In the settings, you can install the required libraries, such as add from PyPi or add from .yml file.  This setting will install all selected libraries in the workspace, for all notebooks in the workspace to use.
+To install in the workspace, select your workspace, then **Workspace settings**. In the settings, you can install the required libraries, such as add from PyPi or add from .yml file.  This setting installs all selected libraries in the workspace, for all notebooks in the workspace to use.
 
 For the classification model, you'll use the `wordcloud` library to represent the frequency of words in a text where the size of the word represents its frequency. In order to install `wordcloud`, you'll install it here to use in just this notebook.
 
@@ -59,12 +59,12 @@ For the classification model, you'll use the `wordcloud` library to represent th
 
 ### Dataset 
 
-The dataset is from the [British Library book dataset](https://huggingface.co/datasets/blbooksgenre) and comprises of metadata about books that have been digitized through collaboration between the British Library and Microsoft. The dataset consists of classifications which were created by humans to indicate whether a book is "fiction" or "non-fiction." Using this dataset, our goal is to train a classification model that determines a book's genre solely based on its title.
+The dataset is from the [British Library book dataset](https://huggingface.co/datasets/blbooksgenre) and comprises of metadata about books that have been digitized through collaboration between the British Library and Microsoft. The dataset consists of classifications, created by humans to indicate whether a book is "fiction" or "nonfiction." With this dataset, our goal is to train a classification model that determines a book's genre solely based on its title.
 
-|BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitised book|annotated|
+|BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|014602826|Monograph|Yearsley, Ann|1753-1806|person||More, Hannah, 1745-1833 [person] ; Yearsley, Ann, 1753-1806 [person]|Poems on several occasions [With a prefatory letter by Hannah More.]||||England|London||1786|Fourth edition MANUSCRIPT note|||Digital Store 11644.d.32|||English||003996603||||||||||||||||||||||False|
-|014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person] ; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
+|014602826|Monograph|Yearsley, Ann|1753-1806|person||More, Hannah, 1745-1833 [person]; Yearsley, Ann, 1753-1806 [person]|Poems on several occasions [With a prefatory letter by Hannah More.]||||England|London||1786|Fourth edition MANUSCRIPT note|||Digital Store 11644.d.32|||English||003996603||||||||||||||||||||||False|
+|014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
 
 Define parameters, making it easy to use this notebook with different datasets.
@@ -85,7 +85,7 @@ EXPERIMENT_NAME = "aisample-textclassification"  # MLflow experiment name
 
 ### Download dataset and upload to lakehouse
 
-The following code will download a publicly available version of the the dataset and then store it in a Fabric Lakehouse.
+The following code downloads a publicly available version of the dataset and then store it in a Fabric Lakehouse.
 
 > [!IMPORTANT]
 > **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
@@ -145,7 +145,8 @@ import mlflow
 ```
 
 ### Define hyperparameters
-You'll also define some hyperparameters for model training.
+
+Define some hyperparameters for model training.
 
 >[!IMPORTANT]
 > Only modify these hyperparameters if you have an understanding of each parameter.
@@ -205,7 +206,7 @@ Data Preparation includes the following steps:
 
 - Clean the dataset
 - Deal with dataset imbalance
-- Tokekenize the dataset
+- Tokenize the dataset
 - Display the wordcloud
 - Vectorize the dataset
 
@@ -238,7 +239,7 @@ df = cb.fit(df).transform(df)
 display(df.limit(20))
 ```
 
-Tokenize by splitting the paragraphs and sentences into smaller units that can be more easily assigned meaning. Then remove the stopwords in order to improve the performance. Stopword removal is one of the most commonly used pre-processing steps in Natural Language Processing (NLP) applications, where the idea is to simply remove the words that occur commonly across all the documents in the corpus. 
+Tokenize by splitting the paragraphs and sentences into smaller units that can be more easily assigned meaning. Then remove the stopwords in order to improve the performance. Stopword removal is one of the most commonly used preprocessing steps in Natural Language Processing (NLP) applications, where the idea is to remove the words that occur commonly across all the documents in the corpus. 
 
 
 ```python
@@ -256,7 +257,7 @@ display(token_df.limit(20))
 
 Display the wordcloud for each class.
 
-A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. This is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
+A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
 
 
 
@@ -287,7 +288,7 @@ for label in LABELS:
     plt.imshow(wordcloud, interpolation="bilinear")
 ```
 
-Finally, use `word2vec` to vectorize the text. `word2vec` creates a representation of each word present in your text into a vector. Words used in similar contexts or having semantic relationships are captured effectively through their closeness in the vector space, indicating that similar words will have similar word vectors.
+Finally, use `word2vec` to vectorize the text. `word2vec` creates a representation of each word present in your text into a vector. Words used in similar contexts or having semantic relationships are captured effectively through their closeness in the vector space, indicating that similar words have similar word vectors.
 
 
 ```python
@@ -313,7 +314,7 @@ display(vec_df.limit(20))
 
 ## Step 4: Model training and evaluation
 
-With your data in place, now define the model. In this section, you'll train a logistic regression model to classify the vectorized text.
+With your data in place, now define the model. In this section, train a logistic regression model to classify the vectorized text.
 
 ### Prepare training and test datasets
 
@@ -325,7 +326,7 @@ With your data in place, now define the model. In this section, you'll train a l
 
 ### Model training and machine learning experiments
 
-A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models and other artifacts and it enables to organize all the the required  components of a specific machine learning experiment as well as reproducing past results (easily) using saved experiments. Learn more about [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
+A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results using saved experiments. Learn more about [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
 
 
@@ -342,7 +343,7 @@ lr = (
 
 ### Model training and hyperparameter tuning
 
-Construct a grid of parameters to search over the hyperparameters as well as a cross evaluator estimator to produce a CrossValidatorModel.
+Construct a grid of parameters to search over the hyperparameters and a cross evaluator estimator to produce a CrossValidatorModel.
 
 
 ```python
@@ -453,7 +454,7 @@ with mlflow.start_run(run_name="lr"):
 To view your experiments:
 
 1. On the left, select your workspace.
-1. Find and select the experiment name, in this case "aisample-textclassification".
+1. Find and select the experiment name, in this case _aisample-textclassification_.
 
 <img src="https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification/TextClassification-experiment.png"  width="70%" height="30%" title="Screenshot of an experiment.">
 
@@ -463,7 +464,7 @@ Microsoft Fabric offers a scalable function called PREDICT that supports batch s
 
 From the above evaluation results, model 1 has the largest Area Under the Precision-Recall Curve (AUPRC) and Area Under the Curve Receiver Operating Characteristic (AUC-ROC) metrics. Thus you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to assess the performance of binary classifiers. However, sometimes, it is more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR) whereas AUPRC is a curve that combines precision (PPV) and Recall (TPR) in a single visualization.
+The AUC-ROC measure is widely used to assess the performance of binary classifiers. However, sometimes, it's more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (PPV) and Recall (TPR) in a single visualization.
 
 
 
