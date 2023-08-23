@@ -205,19 +205,25 @@
       items:
       - name: Activity overview
         href: activity-overview.md
+      - name: Append Variable activity
+        href: append-variable-activity.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: Delete data activity
         href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
-      - name: Pipeline lookup activity
+      - name: Get Metadata activity
+        href: get-metadata-activity.md
+      - name: Invoke Pipeline activity
+        href: invoke-pipeline-activity.md
+      - name: Pipeline Lookup activity
         href: lookup-activity.md
       - name: Notebook activity
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
-      - name: Stored procedure activity
+      - name: Stored Procedure activity
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
