@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has issues trying to refre
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
-ms.date: 06/5/2023
+ms.date: 08/17/2023
 ms.custom: 
 ---
 
@@ -31,4 +31,4 @@ Some of the errors that could be triggered because of this issue:
 
 ## Solutions and workarounds
 
-Download version 3000.182.5 or later of the on-premises data gateway.
+Download the version 3000.182.5 or later of the on-premises data gateway.

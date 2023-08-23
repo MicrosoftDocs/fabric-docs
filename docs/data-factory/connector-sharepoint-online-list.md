@@ -20,8 +20,6 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| √| |
-|OAuth2| √| |
 |Service Principal| √| |
 |Organizational account| | √|
 
@@ -66,23 +64,10 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The SharePoint Online List connector supports the following authentication types.
 
-- [Anonymous](#anonymous-authentication)
-- [OAuth2](#oauth2-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::
 
-#### Anonymous authentication
-
-Select **Anonymous** under **Authentication method**.
-
-:::image type="content" source="./media/connector-sharepoint-online-list/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
-
-#### OAuth2 authentication
-
-Select **OAuth2** under **Authentication method**.
-
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-oauth2.png" alt-text="Screenshot showing that OAuth2 authentication method.":::
 
 #### Service Principal authentication
 
