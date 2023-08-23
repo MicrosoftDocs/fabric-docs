@@ -34,7 +34,7 @@ To use a Append variable activity in a pipeline, complete the following steps:
 
 1. Now that you have an array type variable in your pipeline, search for **Append variable** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. You may need to expand the list of available activities using the dropdown **+** button at the far right of the toolbar.
 
-   :::image type="content" source="media/add-append-variable-activity/add-append-variable-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Append variable activity highlighted.":::
+   :::image type="content" source="media/append-variable-activity/add-append-variable-activity.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Append variable activity highlighted.":::
 
 1. Select the new activity on the canvas if it isn't already selected.
 
