@@ -38,7 +38,7 @@ To use a Append variable activity in a pipeline, complete the following steps:
 
 1. Select the new activity on the canvas if it isn't already selected.
 
-   :::image type="content" source="media/append-variable-activity/append-variable-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Append variable activity.":::
+   :::image type="content" source="media/append-variable-activity/append-variable-general-settings.png" alt-text="Screenshot showing the General settings tab of the Append variable activity.":::
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
