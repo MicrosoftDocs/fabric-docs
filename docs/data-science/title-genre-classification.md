@@ -257,7 +257,7 @@ display(token_df.limit(20))
 
 Display the wordcloud for each class.
 
-A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
+A wordcloud is a visually prominent presentation of "keywords" that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
 
 
 
@@ -456,7 +456,7 @@ To view your experiments:
 1. On the left, select your workspace.
 1. Find and select the experiment name, in this case _aisample-textclassification_.
 
-<img src="https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification/TextClassification-experiment.png"  width="70%" height="30%" title="Screenshot of an experiment.">
+:::image type="content" source="./media/title-genre-classification/Title_Genre_Classification/TextClassification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/TextClassification-experiment.png":::
 
 ## Step 5: Score and save prediction results
 
