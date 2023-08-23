@@ -30,6 +30,6 @@ ms.date: 07/16/2023
     > [!NOTE]
     > Shortcut paths are case sensitive.
 
-    :::image type="content" source="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="../real-time-analytics/media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png":::
+    :::image type="content" source="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png":::
 
 1. Select **Create**.
