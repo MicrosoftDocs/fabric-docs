@@ -31,7 +31,7 @@ To use an Invoke pipeline activity in a pipeline, complete the following steps:
 1. Create a new pipeline in your workspace.
 1. Search for **Invoke pipeline** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
-   :::image type="content" source="media/invoke-pipeline-activity/add-invoke-pipeline-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Invoke pipeline activity highlighted.":::
+   :::image type="content" source="media/invoke-pipeline-activity/add-invoke-pipeline-activity-to-pipeline.png" lightbox=="media/invoke-pipeline-activity/add-invoke-pipeline-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Invoke pipeline activity highlighted.":::
 
    > [!NOTE]
    > Information the user should notice even if skimmingIf your window size is not wide enough, the icon may appear without the text **Invoke pipeline** on the toolbar, although hovering over it will display its name.
