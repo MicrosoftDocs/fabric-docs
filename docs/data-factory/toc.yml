@@ -205,6 +205,8 @@
       items:
       - name: Activity overview
         href: activity-overview.md
+      - name: Append variable activity
+        href: append-variable-activity.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: Delete data activity
