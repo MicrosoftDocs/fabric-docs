@@ -6,7 +6,7 @@ ms.author: narsam
 author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 08/16/2023
+ms.date: 08/23/2023
 ---
 
 # Create, evaluate, and score a recommendation system in Microsoft Fabric
@@ -206,6 +206,8 @@ sns.countplot(y="Book-Author",palette = 'Paired', data=df_books,order=df_books['
 plt.title("Top 10 authors with maximum number of books")
 ```
 
+:::image type="content" source="./media/retail-recommend-model/top-authors.png" alt-text="Graph of the top 10 authors.":::
+
 Next, display the DataFrame that contains the user data:
 
 ```python
@@ -259,6 +261,8 @@ plt.title("Top 10 books per number of ratings")
 ```
 
 "Selected Poems" is most favorable among users according to ratings. The books "Adventures of Huckleberry Finn", "The Secret Garden", and "Dracula", have the same rating.
+
+:::image type="content" source="./media/retail-recommend-model/top-books.png" alt-text="Graph of the top rated books.":::
 
 ### Merge data
 
@@ -322,6 +326,8 @@ ax.tick_params(axis='x', rotation=45)
 plt.xlabel("Number of Ratings for the Item")
 plt.show()
 ```
+
+:::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Graph of the most popular books.":::
 
 ### Prepare training and testing datasets
 
