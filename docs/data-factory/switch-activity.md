@@ -44,7 +44,7 @@ Select the **Activities** tab, and you will see the **Default** case already add
 
 The **Expression** clause is where you provide an expression to be evaluated and compared to the **Case** options, and supports dynamic content that allows you to use parameters, system variables, functions, and local variables from your project to compare against the various cases. 
 
-You can use use the pencil icon to the right of each case on the **Activities** tab to configure the activities that will execute when that case matches the **Expression**. You can use the **+ Add case** button to add new cases besides the default that executes if no other case matches the **Expression** result. You can also add cases and activities directly on the Switch activity interface on the pipeline canvas itself by selecting the **+** button to add a case, or the pencil icon beside the listed cases to configure activities for each case.
+You can use the pencil icon to the right of each case on the **Activities** tab to configure the activities that will execute when that case matches the **Expression**. You can use the **+ Add case** button to add new cases besides the default that executes if no other case matches the **Expression** result. You can also add cases and activities directly on the Switch activity interface on the pipeline canvas itself by selecting the **+** button to add a case, or the pencil icon beside the listed cases to configure activities for each case.
 
 :::image type="content" source="media/switch-activity/configure-activities-cases.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
