@@ -213,6 +213,8 @@
         href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
+      - name: Invoke pipeline activity
+        href: invoke-pipeline-activity.md
       - name: Pipeline lookup activity
         href: lookup-activity.md
       - name: Notebook activity
