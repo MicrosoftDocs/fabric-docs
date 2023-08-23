@@ -47,17 +47,17 @@ Select the **Settings** tab, and then select an existing connection from the **C
 
 ### Using the Get Metadata activity
 
-You can use the output of the Get Metadata activity in any other activities where dynamic content is supported. In this example, it is used as the **Expression** for a Switch activity.
+You can use the output of the Get Metadata activity in any other activities where dynamic content is supported. In this example, it's used as the **Expression** for a Switch activity.
 
 :::image type="content" source="get-metadata-activity/switch-activity-expression.png" alt-text="Screenshot showing a Get Metadata activity used in a Switch activity to provide a dynamic expression.":::
 
 Select the **Add dynamic content** link that appears under the **Expression** text box for the Switch activity. Then you can browse the activity outputs in the expression builder and select them to add them to the expression.
 
-:::image type="content" source="get-metadata-activity/output-expression.png" alt-text="Screenshot showing the Pipeline expression builder window with the Activity outputs from the Get Metadata activity higlighted.":::
+:::image type="content" source="get-metadata-activity/output-expression.png" alt-text="Screenshot showing the Pipeline expression builder window with the Activity outputs from the Get Metadata activity highlighted.":::
 
 ## Save and run or schedule the pipeline
 
-After adding any additional activities, you can save and run the pipeline. Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+After adding any other activities necessary to your pipeline, you can save and run it. Switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
