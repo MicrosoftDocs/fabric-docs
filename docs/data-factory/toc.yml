@@ -85,6 +85,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Dataverse
+      items:
+      - name: Overview
+        href: connector-dataverse-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-dataverse-copy-activity.md 
     - name: Data Warehouse
       items:
       - name: Overview
@@ -201,6 +207,8 @@
         href: activity-overview.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Delete data activity
+        href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
       - name: Pipeline lookup activity
@@ -209,6 +217,8 @@
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Stored procedure activity
+        href: stored-procedure-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
@@ -240,7 +250,9 @@
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
         href: tutorial-move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Data Warehouse
-        href: tutorial-load-sample-data-to-data-warehouse.md     
+        href: tutorial-load-sample-data-to-data-warehouse.md
+      - name: Incrementally load data from Data Warehouse to Lakehouse
+        href: tutorial-incremental-copy-data-warehouse-lakehouse.md        
   - name: Dataflows
     items:
     - name: Concepts
