@@ -50,7 +50,7 @@ The following three properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select an FTP connection from the connection list. If no connection exists, then create a new FTP connection by selecting **New**.
-- **File path type**: Select from **File path**, **Wildcard file path** and **List of files** based on your source data.
+- **File path type**: Select from **File path**, **Wildcard file path** and **List of files** based on the way that you want to read files.
     - **File path**: If you choose this type, specify your source file path. You can select **Browse** to select your source files or enter your file path manually.
     - **Wild file path**: If you choose this type, specify the **Wildcard paths** to filter your source folders or files.
 
@@ -122,8 +122,8 @@ The following table contains more information about the copy activity in FTP.
 | **Connection** | Your FTP connection to the source data store. | < your FTP connection > | Yes | connection | 
 | **File path type** | The file path type used to get source data. | File path<br>Wildcard file path<br>List of files | Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes when you select **File path** | fileName<br>folderpath | 
-| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard file name** | wildcardFolderPath<br>wildcardFileName | 
-| **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < your folder path> | No | folderPath | 
+| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard paths** | wildcardFolderPath<br>wildcardFileName | 
+| **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < common home folder path> | No | folderPath | 
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > |  Yes when you select **List of files** | fileListPath | 
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd | 
