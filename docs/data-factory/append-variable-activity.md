@@ -23,7 +23,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add an Append variable activity to a pipeline with UI
 
-To use a Append variable activity in a pipeline, complete the following steps:
+To use an Append variable activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
