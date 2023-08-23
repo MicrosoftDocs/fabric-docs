@@ -46,7 +46,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Invoke pipeline settings
 
-Select the **Settings** tab, and choose an existing pipeline from the **Invoked pipeline** dropdown, or use the **+ New** button to create a new pipeline directly. You can choose to wait on completion, or continue directly, in which case the invoked pipeline will execute in parallel with activities following it within the parent pipeline's execution flow.
+Select the **Settings** tab, and choose an existing pipeline from the **Invoked pipeline** dropdown, or use the **+ New** button to create a new pipeline directly. You can choose to wait on completion, or continue directly, in which case the invoked pipeline executes in parallel with activities following it within the parent pipeline's execution flow.
 
 :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-settings.png" alt-text="Screenshot showing the Invoke pipeline activity settings tab, highlighting the tab.":::
 
