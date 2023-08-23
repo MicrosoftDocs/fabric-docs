@@ -36,7 +36,7 @@ To use an Invoke pipeline activity in a pipeline, complete the following steps:
    > [!NOTE]
    > Information the user should notice even if skimmingIf your window size is not wide enough, the icon may appear without the text **Invoke pipeline** on the toolbar, although hovering over it will display its name.
 
-   :::image type="content" source="invoke-pipeline-activity/invoke-pipeline-button-without-text.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline button on the activities tab without its descriptive text.":::
+   :::image type="content" source="media/invoke-pipeline-activity/invoke-pipeline-button-without-text.png" alt-text="Screenshot showing the pipeline editor window with the Invoke pipeline button on the activities tab without its descriptive text.":::
 
 1. Select the new Invoke pipeline activity on the canvas if it isn't already selected.
 
