@@ -219,6 +219,8 @@
         href: script-activity.md
       - name: Stored procedure activity
         href: stored-procedure-activity.md
+      - name: Switch activity
+        href: switch-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
