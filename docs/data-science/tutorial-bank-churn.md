@@ -167,12 +167,12 @@ Launch Data Wrangler directly from the notebook to explore and transform any Pan
 >[!NOTE]
 >Data Wrangler can not be opened while the notebook kernel is busy. The cell execution must complete prior to launching Data Wrangler.  [Learn more about Data Wrangler](https://aka.ms/fabric/datawrangler).
 
-<img src="https://sdkstorerta.blob.core.windows.net/churnblob/select_datawrangler.png"  width="40%" height="10%" title="Screenshot shows where to access the Data Wrangler.">
+:::image type="content" source="./media/tutorial-bank-churn/select-data-wrangler.png" alt-text="Screenshot shows where to access the Data Wrangler.":::
 
 Once the Data Wrangler is launched, a descriptive overview of the displayed data panel is generated as shown in the following images. It includes information about the dataframe's dimension, missing values, etc. You can then use Data Wrangler to generate the script for dropping the rows with missing values, the duplicate rows and the columns with specific names, then copy the script into a cell.  The next cell shows that copied script.
 
-<img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/menu_datawrangler.png"  width="45%" height="10%" title="Screenshot shows Data Wrangler menu."> 
-<img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/missing_data_datawrangler.png"  width="45%" height="10%" title="Screenshot shows Data Wrangler missing data display.">
+:::image type="content" source="./media/tutorial-bank-churn/menu-data-wrangler.png" alt-text="Screenshot shows Data Wrangler menu."::: 
+:::image type="content" source="./media/tutorial-bank-churn/missing-data-data-wrangler.png" alt-text="Screenshot shows Data Wrangler missing data display.":::
 
 
 
@@ -221,6 +221,7 @@ for ax,col in zip(axes.flatten(), df_num_cols.columns):
 fig.delaxes(axes[1,2])
 
 ```
+:::image type="content" source="media/tutorial-bank-churn/boxplots.jpg" alt-text="Notebook display of the boxplot for numerical attributes.":::
 
 Show the distribution of exited versus non-exited customers across the categorical attributes.
 
@@ -232,6 +233,7 @@ for ind, item in enumerate (attr_list):
     sns.countplot(x = item, hue = 'Exited', data = df_clean, ax = axarr[ind%2][ind//2])
 fig.subplots_adjust(hspace=0.7)
 ```
+:::image type="content" source="media/tutorial-bank-churn/boxplots.jpg" alt-text="Notebook display of the distribution of exited versus non-exited customers.":::
 
 Show the distribution of numerical attributes.
 
@@ -250,6 +252,8 @@ for i,j in itertools.zip_longest(columns, range(length)):
 plt.show()
 ```
 
+:::image type="content" source="media/tutorial-bank-churn/numerical-attributes.jpg" alt-text="Notebook display of numerical attributes.":::
+
 ### Perform feature engineering 
 
 The following feature engineering generates new attributes based on current attributes.
@@ -266,8 +270,8 @@ df_clean["NeyoustSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels
 ### Use Data Wrangler to perform one-hot encoding
 
 Following the same instructions discussed earlier to launch Data Wrangler, use the Data Wrangler to perform one-hot encoding. The next cell shows the copied  generated script for one-hot encoding.
-<img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/1hotencoding_data_wrangler.png"  width="45%" height="20%" title="Screenshot shows one-hot encoding in the Data Wrangler"> 
-<img style="float: left;" src="https://sdkstorerta.blob.core.windows.net/churnblob/1hotencoding_selectcolumns_data_wrangler.png"  width="45%" height="20%" title="Screenshot shows selection of columns in the Data Wrangler.">
+:::image type="content" source="./media/tutorial-bank-churn/1hotencoding-data-wrangler.png" alt-text="Screenshot shows one-hot encoding in the Data Wrangler"::: 
+:::image type="content" source="./media/tutorial-bank-churn/1hotencoding-selectcolumns-data-wrangler.png" alt-text="Screenshot shows selection of columns in the Data Wrangler.":::
 
 
 
@@ -328,7 +332,7 @@ Extending the MLflow autologging capabilities, autologging works by automaticall
 
 When complete, your experiment will look like this image. All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about  autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
-<img src="https://sdkstorerta.blob.core.windows.net/churnblob/experiment_runs.png"  width="70%" height="10%" title="Screenshot shows the experiment page for the bank-churn-experiment.">
+:::image type="content" source="./media/tutorial-bank-churn/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment.":::
 
 ### Set experiment and autologging specifications
 
@@ -444,7 +448,7 @@ To view your experiments:
 1. On the left panel, select your workspace.
 1. Find and select the experiment name, in this case _bank-churn-experiment_.
 
-<img src="https://sdkstorerta.blob.core.windows.net/churnblob/experiment_runs.png"  width="400%" height="100%" title="Screenshot shows logged values for one of the models.">
+:::image type="content" source="./media/tutorial-bank-churn/experiment-runs-expanded.png" alt-text="Screenshot shows logged values for one of the models.":::
 
 ## Step 5: Evaluate and save the final machine learning model
 
@@ -509,6 +513,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 4')
 tn, fp, fn, tp = cfm.ravel()
 ```
+:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-4.jpg" alt-text="Notebook display of confusion matrix for Random Forest with max depth of four.":::
 
 Create a confusion matrix for Random Forest Classifier with maximum depth of eight, with six features.
 
@@ -516,9 +521,10 @@ Create a confusion matrix for Random Forest Classifier with maximum depth of eig
 ```python
 cfm = confusion_matrix(y_test, y_pred=ypred_rfc2_sm)
 plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
-                      title='Random Firext with max depth of 5')
+                      title='Random Forest with max depth of 8')
 tn, fp, fn, tp = cfm.ravel()
 ```
+:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Notebook display of confusion matrix for Random Forest with max depth of eight.":::
 
 Create the confusion matrix for LightGBM.
 
@@ -529,6 +535,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='LightGBM')
 tn, fp, fn, tp = cfm.ravel()
 ```
+:::image type="content" source="media/tutorial-bank-churn/confusion-lgbm.jpg" alt-text="Notebook display of confusion matrix for LightGBM.":::
 
 ### Save results for Power BI
 
@@ -562,7 +569,7 @@ Some example visualizations are shown here. The data panel shows the delta table
 > [!NOTE]
 > We show an illustrated example of how you would analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
 
-<img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/PBIviz3.png"  width="100%" height="100%" title="Screenshot shows a Power BI dashboard example.">
+:::image type="content" source="./media/tutorial-bank-churn/power-bi-dashboard.png" alt-text="Screenshot shows a Power BI dashboard example.":::
 
 The Power BI report shows that customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
 Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
