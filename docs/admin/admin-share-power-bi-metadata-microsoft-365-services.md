@@ -14,8 +14,6 @@ LocalizationGroup: Admin
 
 # Share data with your Microsoft 365 services
 
-[!INCLUDE [applies-no-desktop-yes-service](/power-bi/includes/applies-no-desktop-yes-service.md)]
-
 This article is aimed at Fabric administrators and decision makers who need to know how and where Fabric metadata is being used.
 
 Fabric metadata sharing with Microsoft 365 services is a feature that allows metadata from Fabric to be shared with Microsoft 365 services (typically via [Microsoft Graph](/graph/overview)) and combined with data from across Microsoft 365, Windows, and Enterprise Mobility + Security (EMS) to build apps for organizations and consumers that interact with millions of users. The feature is enabled by default.

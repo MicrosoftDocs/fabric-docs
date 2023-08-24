@@ -338,7 +338,7 @@ The automatic installation happens for a user under the following conditions:
 - The user has a Microsoft Teams license.
 - The user opens the Power BI service (e.g. app.powerbi.com) in a web browser.
 
-Read more about automatic installation in [Power BI app for Microsoft Teams](../collaborate-share/service-microsoft-teams-app.md).
+Read more about automatic installation in [Power BI app for Microsoft Teams](/power-bi/collaborate-share/service-microsoft-teams-app).
 
 ## Enable Power BI add-in for PowerPoint
 

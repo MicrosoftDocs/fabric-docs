@@ -40,4 +40,4 @@ Note: For this setting to apply to service principals, make sure the tenant sett
 
 ## Next steps
 
-* [About tenant settings](service-admin-portal-about-tenant-settings.md)
+* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)

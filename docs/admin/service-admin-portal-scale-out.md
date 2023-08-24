@@ -25,4 +25,4 @@ Scale-out is enabled on a tenant by default.
 ## Next steps
 
 * [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
-* [Power BI Dataset Scale-Out](../enterprise/service-premium-scale-out.md)
+* [Power BI Dataset Scale-Out](/power-bi/enterprise/service-premium-scale-out)

@@ -21,7 +21,7 @@ Updated August 23, 2023
 | Receive email notifications for service outages or incidents | Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident. |
 | Users can try Microsoft Fabric paid features | When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2227896" target="_blank">Learn More</a> |
 | Show a custom message before publishing reports | When people attempt to publish a report, they'll see a custom message before it gets published. |
-| **[Workspace settings](service-admin-portal-workspace.md)** |  |
+| **[Workspace settings](portal-workspace.md)** |  |
 | Create workspaces (new workspace experience) | Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace will be created when a template app is installed. |
 | Use datasets across workspaces | Users in the organization can use datasets across workspaces if they have the required Build permission. |
 | Block users from reassigning personal workspaces (My Workspace) | Turn on this setting to prevent users from reassigning their personal workspaces (My Workspace) from Premium capacities to shared capacities. &nbsp;<a href="https://aka.ms/RestrictMyFolderCapacity" target="_blank">Learn More</a> |

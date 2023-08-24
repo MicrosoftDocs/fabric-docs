@@ -68,7 +68,7 @@ Enable SSO capability for Dremio. By enabling, user access token information, in
 
 For dataset owners to be able to enable single sign-on for DirectQuery connections to Snowflake in dataset settings, a Power BI admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization. See [Connect to Snowflake in the Power BI Service](/power-bi/connect-data/service-connect-snowflake) for more detail.
 
-![Screenshot of Snowflake (SSO)tenant switch.](media/tenant-settings/powerbi-admin-portal-snowflake-sso-setting.png)
+![Screenshot of Snowflake (SSO)tenant switch.](media/tenant-settings/power-bi-admin-portal-snowflake-sso-setting.png)
 
 ## Redshift SSO
 
@@ -92,7 +92,7 @@ An important security-related consideration is that gateway owners have full con
 
 Because of this possible threat, the Azure AD single sign-on feature is disabled by default for on-premises data gateways. As a Power BI admin, you must enable the **Azure AD Single Sign-On (SSO) for Gateway** tenant setting (shown below) in the Power BI admin portal before data sources can be enabled for Azure AD SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
 
-![Screenshot of Azure AD Single Sign-On (SSO) for Gateway tenant switch.](media/tenant-settings/powerbi-admin-portal-azure-ad-sso-for-gateway-setting.png)
+![Screenshot of Azure AD Single Sign-On (SSO) for Gateway tenant switch.](media/tenant-settings/power-bi-admin-portal-azure-ad-sso-for-gateway-setting.png)
 
 ## Power Platform Solutions Integration (Preview)
 

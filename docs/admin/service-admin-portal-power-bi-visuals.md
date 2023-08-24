@@ -32,4 +32,4 @@ Enabling this setting will let custom visuals download any information available
 
 ## Next steps
 
-* [About tenant settings](service-admin-portal-about-tenant-settings.md)
+* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)

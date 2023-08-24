@@ -36,4 +36,4 @@ The following image shows the **My entire organization** option when creating a 
 
 ## Next steps
 
-* [About tenant settings](service-admin-portal-about-tenant-settings.md)
+* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
