@@ -35,11 +35,11 @@ For more information on the `.create materialized-view` command, see [.create ma
 
     :::image type="content" source="media/materialized-view/materialized-view.png" alt-text="Screenshot of a KQL database landing page showing the New option dropdown menu, with the option titled Materialized view highlighted."  lightbox="media/materialized-view/materialized-view-extended.png":::
 
-    The materialized view command is populated in the **Check your data** window.
+    The materialized view command is populated in the **Explore your data** window.
 
 1. Enter the table name and query statement of your materialized view instead of the placeholder text, and then select **Run**.
 
-    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Check your data window showing an example of a materialized view command." lightbox="media/materialized-view/mv-example.png":::
+    :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Explore your data window showing an example of a materialized view command." lightbox="media/materialized-view/mv-example.png":::
 
     Materialized views appear under **Materialized views** in the **Data tree**.
 

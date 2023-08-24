@@ -33,7 +33,7 @@ Select the **Title** to view more information about that specific known issue.
 
 | Area                              |  Title           |  Issues publish date |  Status  |
 |------------------------------------|------------------|---------------------|-----------|
-|Data Gateway            |  [Gateway issues with Lakehouse connector](known-issue-gateway.md)   |  May 27, 2023   |  Fixed: June 6, 2023  |
+|Data Gateway            |  [Gateway issues with Lakehouse connector](known-issue-gateway.md)   |  May 27, 2023   |  Fixed: July 31, 2023  |
 |Publish a Dataflow Gen2| [Error when publishing a Dataflow gen2](known-issue-publish-dataflow.md) | June 7, 2023| Fixed: July 31, 2023|
 |  Authoring a Dataflow Gen2                  |  [Power Query template has extra queries from output destination](known-issue-template.md)    |   July 31, 2023    |
 

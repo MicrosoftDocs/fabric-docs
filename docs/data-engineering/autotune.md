@@ -13,9 +13,12 @@ ms.date: 05/23/2023
 
 Autotune automatically tunes Apache Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which necessitate considerable effort and experimentation.
 
-It leverages historical data execution from your workloads to iteratively learn the optimal configurations for a given workload and its execution time.
+It leverages historical data execution from your workloads (Spark SQL queries) to iteratively learn the optimal configurations for a given workload and its execution time.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+> [!NOTE]
+> Autotune Preview Availability: available in two production regions: West Central US and East US 2.
 
 ## Query tuning
 
@@ -25,7 +28,7 @@ Currently, autotune configures three query-level of Apache Spark configurations:
 - `spark.sql.autoBroadcastJoinThreshold` - configures the maximum size in bytes for a table that will be broadcasted to all worker nodes when performing a join. Default is 10 MB.
 - `spark.sql.files.maxPartitionBytes` - the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON and ORC file-based sources. Default is 128 MB.
 
-Since there's no historical data available during the first run of autotune, configurations will be set based on a baseline model. This model relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from autotune. As the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload.
+Since there's no historical data available during the first run of autotune, configurations will be set based on a baseline model. This model relies on heuristics related to the content and structure of the workload itself. However, as the same query or workload is run repeatedly, we'll observe increasingly significant improvements from autotune. As the results of previous runs are used to fine-tune the model and tailor it to a specific workspace or workload. Autotune Query Tuning works for Spark SQL queries. 
 
 > [!NOTE]
 > As the algorithm explores various configurations, you may notice minor differences in results. This is expected, as autotune operates iteratively and improves with each repetition of the same query.
@@ -38,7 +41,7 @@ Based on the performance of the second run per suggested configuration, we retra
 
 ## Enable or disable autotune
 
-Autotune is disabled by default and it's controlled by Apache Spark Configuration Settings. Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code:
+Autotune is disabled by default in two mentioned regions, and it's controlled by Apache Spark Configuration Settings. Easily enable Autotune within a session by running the following code in your notebook or adding it in your spark job definition code:
 
 # [Spark SQL](#tab/sparksql)
 

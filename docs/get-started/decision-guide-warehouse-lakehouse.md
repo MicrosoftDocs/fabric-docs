@@ -11,7 +11,7 @@ ms.date: 06/23/2023
 
 # Microsoft Fabric decision guide: data warehouse or lakehouse
 
-Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your workloads using Microsoft Fabric.
+Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your Microsoft Fabric workloads.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -26,9 +26,9 @@ Use this reference guide and the example scenarios to help you choose between th
 | **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
 | **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
-| **Multi-table transactions** | Yes | No | No | No |
+| **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
-| **Security** | Object level (table, view, function, stored procedure, etc.),column level,row level,DDL/DML | Row level,table level (when using T-SQL),none for Spark | Built-in RLS editor | Row-Level Security |
+| **Security** | Object level (table, view, function, stored procedure, etc.),column level,row level,DDL/DML | Row level,table level (when using T-SQL),none for Spark | Built-in RLS editor | Row-level Security |
 | **Access data via shortcuts** | Yes (indirectly through the lakehouse) | Yes | No | Yes |
 | **Can be a source for shortcuts** | Yes (tables) | Yes (files and tables) | No | Yes |
 | **Query across items** | Yes, query across lakehouse and warehouse tables | Yes, query across lakehouse and warehouse tables;query across lakehouses (including shortcuts using Spark) | No | Yes, query across KQL Databases, lakehouses, and warehouses with shortcuts |

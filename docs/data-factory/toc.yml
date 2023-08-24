@@ -85,6 +85,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Dataverse
+      items:
+      - name: Overview
+        href: connector-dataverse-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-dataverse-copy-activity.md 
     - name: Data Warehouse
       items:
       - name: Overview
@@ -199,16 +205,28 @@
       items:
       - name: Activity overview
         href: activity-overview.md
+      - name: Append Variable activity
+        href: append-variable-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Delete data activity
+        href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
-      - name: Pipeline lookup activity
+      - name: Get Metadata activity
+        href: get-metadata-activity.md
+      - name: Invoke Pipeline activity
+        href: invoke-pipeline-activity.md
+      - name: Pipeline Lookup activity
         href: lookup-activity.md
       - name: Notebook activity
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Stored Procedure activity
+        href: stored-procedure-activity.md
+      - name: Switch activity
+        href: switch-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
@@ -240,7 +258,9 @@
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
         href: tutorial-move-data-lakehouse-copy-assistant.md        
       - name: Load sample data to Data Warehouse
-        href: tutorial-load-sample-data-to-data-warehouse.md     
+        href: tutorial-load-sample-data-to-data-warehouse.md
+      - name: Incrementally load data from Data Warehouse to Lakehouse
+        href: tutorial-incremental-copy-data-warehouse-lakehouse.md        
   - name: Dataflows
     items:
     - name: Concepts
@@ -265,6 +285,8 @@
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
   - name: FAQ and Troubleshooting
     items:
+    - name: What's new in Data Factory
+      href: whats-new.md
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
     - name: Getting from Azure Data Factory to Data Factory in Fabric
