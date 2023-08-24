@@ -149,6 +149,12 @@ All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
 
+1. Configure Spark to use the Power BI Spark native connector:
+
+    ```Python
+    spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+    ```
+
 1. List tables of all Power BI datasets in the workspace, using PySpark.
 
     ```python
