@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
-## Create workspaces (new workspace experience)
+## Create workspaces
 
 Workspaces are places where users collaborate on dashboards, reports, and other content. [!INCLUDE [product-name](../includes/product-name.md)] admins can use the **Create workspaces (new workspace experience)** setting to designate which users in the organization can create workspaces. Admins can let everybody or nobody in an organization create workspaces. Workspace creation can also be limited to members of specific security groups. Learn more about [workspaces](../get-started/workspaces.md).
 

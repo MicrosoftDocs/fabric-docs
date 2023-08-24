@@ -18,6 +18,18 @@ These settings are configured in the tenant settings section of the Admin portal
 
 [Discoverability](/power-bi/collaborate-share/service-discovery) is a feature that dataset owners can use to make their endorsed content discoverable by users who don't yet have access to it. See [Discoverability](/power-bi/collaborate-share/service-discovery) for more detail.
 
+## Make promoted content discoverable
+
+Allow users in this org who can promote content to make content they promote discoverable by users who don't have access to it.
+
+## Make certified content discoverable
+
+Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it.
+
+## Discover content
+
+Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.
+
 ## Next steps
 
 * [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
