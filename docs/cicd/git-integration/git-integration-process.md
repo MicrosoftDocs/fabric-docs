@@ -17,9 +17,9 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-In order to use Git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-
-The actions you can take on a workspace depend on the permissions you have in both the workspace and Azure DevOps.
+- In order to use git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
+- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Enable git actions on workspaces residing in other geographical locations](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+- The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
 
 ### Azure DevOps permissions
 

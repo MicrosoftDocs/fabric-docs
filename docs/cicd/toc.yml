@@ -41,6 +41,8 @@ items:
       href: git-integration/conflict-resolution.md
     - name: Manually fix a failed update
       href: git-integration/partial-update.md
+    - name: Expired licenses
+      href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Lifecycle management best practices
