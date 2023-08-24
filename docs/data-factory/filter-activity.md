@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 08/24/2023
 ---
 
-# Use the Filter activity to look up data from a data source
+# Use the Filter activity to filter items from an array
 
 You can use a Filter activity in a pipeline to apply a filter expression to an input array.
 
@@ -21,9 +21,9 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
-## Add a lookup activity to a pipeline with UI
+## Add a Filter activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Filter activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
