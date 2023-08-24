@@ -18,7 +18,7 @@ The FTP connector is supported in Data Factory for [!INCLUDE [product-name](../i
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Anonymous<br>Basic |
+| **Copy activity (source/-)** | None | Anonymous<br>Basic |
 | **Lookup activity** | None | Anonymous<br>Basic |
 | **GetMetadata activity** | None | Anonymous<br>Basic |
 | **Delete activity** | None | Anonymous<br>Basic |
