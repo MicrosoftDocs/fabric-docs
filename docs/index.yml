@@ -140,8 +140,8 @@ productDirectory:
           text: Machine learning experiment
         - url: data-science/use-ai-samples.md
           text: Use end-to-end AI samples
-        - url: data-science/read-write-pandas.md
-          text: Use SemPy library for faster analytics
+        - url: data-science/semantic-link-overview.md
+          text: Use Semantic Link to connect with Power BI
         - url: data-science/index.yml
           text: See more
 

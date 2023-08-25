@@ -244,5 +244,5 @@ items:
 - name: Reference
   items:
     - name: SemPy Python SDK
-      href: data-science-overview.md # python/api/semantic-link/overview-semantic-link
+      href: /python/api/semantic-link-sempy.md
       
