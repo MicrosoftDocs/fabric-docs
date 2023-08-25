@@ -1,6 +1,6 @@
 ---
 title: A guide to learning Dataflows for Mapping Data Flow users
-description: 
+description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Dataflows
 author: itsnotaboutthecell
 ms.topic: overview
 ms.custom: 
@@ -18,7 +18,8 @@ When first starting to author Dataflows, you can also leverage the Global search
 
 ![Global search box](media/guide-to-dataflows-for-mapping-data-flow-users/GlobalSearchBox.png)
 
-Learn more about [Global search box](https://learn.microsoft.com/power-query/search-box)
+>[!NOTE]
+>Learn more about [Global search box](/power-query/search-box).
 
 ## Transformations
 
@@ -68,7 +69,7 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Rank.svg" alt-text="Screenshot of the Rank transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/RankColumn.png" alt-text="Screenshot of the Rank column transformation icon."::: |
 | | **Navigation:**<br> Add column > Rank column |
 | **External Call** | **Custom column** |
-:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ExternalCall.svg" alt-text="Screenshot of the External Call transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/CustomColumn.png" alt-text="Screenshot of the Custom column transformation icon."::: <br><br> **Navigation:**<br>Add column > Custom column<br><br>**Expression:**<br>[Web.Contents](https://learn.microsoft.com/powerquery-m/web-contents) |
+:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ExternalCall.svg" alt-text="Screenshot of the External Call transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/CustomColumn.png" alt-text="Screenshot of the Custom column transformation icon."::: <br><br> **Navigation:**<br>Add column > Custom column<br><br>**Expression:**<br>[Web.Contents](/powerquery-m/web-contents) |
 | **Cast** | **Data type** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Cast.svg" alt-text="Screenshot of the Cast transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/DataType.png" alt-text="Screenshot of the Data type transformation icon."::: <br><br> **Navigation:**<br>Transform > Data type |
 
@@ -87,7 +88,7 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | **Filter** | **Filter rows** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Filter.svg" alt-text="Screenshot of the Filter transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/FilterRows.png" alt-text="Screenshot of the Filter rows transformation icon."::: <br><br> **Navigation:**<br>Home > Filter rows |
 | **Sort** | **Sort** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.png" alt-text="Screenshot of the Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.png" alt-text="Screenshot of the Power Query Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
 | **Alter row** | **Replace values** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/AlterRow.svg" alt-text="Screenshot of the Alter Row transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ReplaceValues.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 
@@ -95,7 +96,7 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Flowlet** | **(Custom functions)** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Flowlet.svg" alt-text="Screenshot of the Flowlet transformation icon."::: | Learn more about how to [Create a custom function](https://learn.microsoft.com/power-query/custom-function) |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Flowlet.svg" alt-text="Screenshot of the Flowlet transformation icon."::: | Learn more about how to [Create a custom function](/power-query/custom-function) |
 
 #### Destination
 | Mapping Data Flow | Dataflow Gen2 |
