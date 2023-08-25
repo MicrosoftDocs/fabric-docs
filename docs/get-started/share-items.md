@@ -149,7 +149,9 @@ Depending on the item being shared, you may find a different set of permissions 
 
 ## Considerations and limitations
 
-- The **Shared with me** option in the **Browse** pane currently only displays Power BI items that have been shared with you. It doesn't show you non-Power BI Fabric items that have been shared with you.
+The **Shared with me** option in the **Browse** pane currently only displays Power BI items that have been shared with you. It doesn't show you non-Power BI Fabric items that have been shared with you.
+
+:::image type="content" source="./media/share-items/shared-with-me.png" alt-text="Screenshot of Shared with me option in Browse pane..":::
 
 ## Next steps
 
