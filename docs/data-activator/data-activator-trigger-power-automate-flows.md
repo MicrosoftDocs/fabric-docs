@@ -12,7 +12,7 @@ ms.date: 09/15/2023
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 
-1. Sending notifications via systems other than Teams and Email
+1. Sending notifications using systems other than Teams and Email
 2. Creating action items in ticketing systems
 3. Calling line-of-business apps
 

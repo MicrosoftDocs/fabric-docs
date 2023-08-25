@@ -16,7 +16,7 @@ ms.date: 09/15/2023
 Once you [get data](data-activator-get-data.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
 
 > [!NOTE]
-> if you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from EventStreams.
+> If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from EventStreams.
 
 ## Assign data to a new object
 

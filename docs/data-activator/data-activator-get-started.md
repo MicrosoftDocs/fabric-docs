@@ -24,7 +24,7 @@ A reflex holds all the information necessary to connect to data, monitor for con
 
 To get started, you create a reflex item in your Fabric workspace. From the New menu in the workspace, choose the reflex item.
 
-## Navigate between Data Mode & Design Mode
+## Navigate between Data Mode and Design Mode
 
 When you open a reflex, you see two tabs at the bottom of the screen that switch between **data mode** and **design mode**. In data mode, you can see your incoming data and assign it to objects. In design mode, you build triggers from your objects. At first, these will be empty; the next step after creating a reflex is to populate it with your data.
 
