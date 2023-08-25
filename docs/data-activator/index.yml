@@ -42,6 +42,8 @@ landingContent:
             url: data-activator-create-triggers-design-mode.md
           - text: Detection conditions in Data Activator
             url: data-activator-detection-conditions.md
+          - text: Use custom actions to trigger Power Automate flows
+            url: data-activator-trigger-power-automate-flows.md           
 
   - title: Data Activator tutorial
     linkLists:

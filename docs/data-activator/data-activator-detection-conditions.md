@@ -5,7 +5,7 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 09/15/2023
 ---
 
 # Detection conditions in Data Activator
@@ -89,76 +89,16 @@ After you specify a condition type, you can specify a condition timer.
 
 The condition timer indicates how long, or how many times, the condition must be true before the trigger fires.
 
-|                 |                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------- |
-| Timer           | Description                                                                                                     |
-| Each time       | Activate the trigger each time the condition is true                                                            |
-| Number of times | Count how many times the condition is true, and activate the trigger only when it has been true this many times |
-| Stays           | Activate the trigger if the condition is continuously true for this amount of time                              |
-
-# Use Custom Actions to trigger Power Automate Flows
-
-Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
-
-1. Sending notifications via systems other than Teams and Email
-2. Creating action items in ticketing systems
-3. Calling line-of-business apps
-
-To trigger Power Automate flows from your triggers, you first create a *custom action*. Then, you call your custom action from your triggers. 
-
-## Create a Custom Action
-
-A custom action is a reusable action template that you can use in multiple triggers, in multiple Reflex items. Creating a custom action requires familiarity with Power Automate. However, once you have created a custom action, other Data Activator users can use the action in any trigger, without requiring any knowledge of Power Automate. 
-
-A custom action defines how to call a specific external system from a Data Activator trigger using a flow. It defines a set of* input fields* to pass from your triggers to the flow, so that the flow can call the external system. For example, suppose you wanted to define a custom action that sends an SMS message. The input fields for such an action might be “Phone number” and “Message”. This custom action would link to a flow that uses an SMS connector to send the message to the recipient.
-
-### Name your action and add input fields
-
-To create a custom action, select “new custom action” from the ribbon in the design pane. Then, give your action a name such as “Send SMS message” and define the input fields (such as “Phone number” and “Message”). 
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-05.png" alt-text="Screenshot of creating a data activator new custom action.":::
 
 
-The next step is to define your flow in Power Automate. Select the “copy connection string” button, then select *Create Flow in Power Automate*. This creates a flow in Power Automate, and takes you to it so that you can define your flow.
-
-### Define your flow
-
-The flow is pre-populated with an action for data activator. 
-
-> [!IMPORTANT]
-> You must paste the connection string from the previous step into this action, as shown in the screenshot below. Once you have done so, add further steps to your flow as needed, and save the flow.
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-06.png" alt-text="Screenshot of defining a flow for data activator.":::
+|Timer  |Description  |
+|---------|---------|
+|Each time |Activate the trigger each time the condition is true |
+|Number of times |Count how many times the condition is true, and activate the trigger only when it has been true this many times |
+|Stays |Activate the trigger if the condition is continuously true for this amount of time |
 
 
-To access your input fields in the flow, use a Power Automate expression of the form shown below. Use the “Expression” tab in the field editor to add your expression. Replace NAME\_OF\_INPUT\_FIELD with the name of
-your input field. 
 
-triggerBody()?\['customProperties/NAME\_OF\_INPUT\_FIELD'\].
-
-> [!NOTE]
-> A future release of Data Activator will support dynamic properties, so that you don't have to use expressions to access your input fields.
-
-### Complete your custom action
-
-After you save your flow, return to Data Activator. Upon successful saving of the flow, you'll see a confirmation box in Data Activator as follows. At this point, your custom action is complete, and you may move on to the next step, [calling your custom action from a trigger](#call-your-custom-action-from-a-trigger). If you need to rename your action, or edit the list of input fields, you can still do so at this point. Select “Done” when you're ready.
-
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for data activator.":::
-
-
-## Call your Custom Action from a Trigger
-
-Once you have created a custom action, it will be available for use by all Data Activator users, in all triggers and reflexes. To call your custom action, from a trigger, click the “Custom Action” tile in the trigger’s “Act” card, and select your custom action from the list:
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-08.png" alt-text="Screenshot of calling a custom action for data activator.":::
-
-
-You'll then get a card for your custom action, containing the input fields for your custom action. Fill them out as appropriate for your trigger definition:
-
-:::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-09.png" alt-text="Screenshot of custom action input for data activator.":::
-
-When your trigger activates, it will call your flow, sending it the values of the input fields that you defined.
 
 ## Next steps
 
@@ -167,6 +107,7 @@ When your trigger activates, it will call your flow, sending it the values of th
 * [Get data for Data Activator](data-activator-get-data.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
+* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

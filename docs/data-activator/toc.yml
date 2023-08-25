@@ -19,7 +19,9 @@ items:
     href: data-activator-create-triggers-design-mode.md        
   - name: Detection conditions in Data Activator
     href: data-activator-detection-conditions.md            
-  - name: Data Activator tutorial
+  - name: Use custom actions to trigger Power Automate flows
+    href: data-activator-trigger-power-automate-flows.md         
     items:
     - name: Data Activator tutorial using sample data
       href: data-activator-tutorial.md
+        

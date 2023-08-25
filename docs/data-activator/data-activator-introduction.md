@@ -6,7 +6,7 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: product-reflex
-ms.date: 10/03/2023
+ms.date: 09/15/2023
 ---
 
 # What is Data Activator?
@@ -15,7 +15,7 @@ ms.date: 10/03/2023
 
 Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and EventStreams items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
-Data Activator allows customers to build a digital nervous system that acts across all their data, at scale and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as Email, Teams notifications, Power Automate flows and call into 3rd party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and/or developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
+Data Activator allows customers to build a digital nervous system that acts across all their data, at scale and in a timely manner. Business users can describe business conditions in a no-code experience to launch actions such as Email, Teams notifications, Power Automate flows and call into third party action systems. Business users can self-serve their needs and reduce their reliance on internal IT and/or developer teams, either of which is often costly and hinders agility. Customer organizations don’t need a developer team to manage and maintain custom in-house monitoring or alerting solutions.
 
 Some common use cases are:
 
@@ -24,7 +24,7 @@ Some common use cases are:
 * Retain customers who had a bad experience by tracking their journey through apps, websites etc.
 * Help logistics companies find lost shipments proactively by starting an investigation workflow when package status isn’t updated for a certain length of time.
 * Alert account teams when customers fall into arrears, with customized time or value limits per customer.
-* Track data pipeline quality, either re-running jobs or alerting when pipelines fail or anomalies are detected.
+* Track data pipeline quality, either rerunning jobs or alerting when pipelines fail or anomalies are detected.
 
 ## Core Concepts
 
@@ -33,9 +33,9 @@ The following concepts are used to build and trigger automated actions and respo
 ### Events
 
 Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields
-you’re monitoring. Event streams will vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
+you’re monitoring. Event streams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
 
-Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule that would typically match the refresh frequency of your Power BI dataset. This might only happen once a day, or even once a week – it’s just a very slowly changing event stream.
+Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule that would typically match the refresh frequency of your Power BI dataset. This might only happen once a day, or even once a week – it’s just a slowly changing event stream.
 
 ### Objects
 
@@ -45,7 +45,7 @@ The term ‘object instance’ means a specific Freezer/Vehicle/Package etc. whe
 
 ### Triggers
 
-Triggers define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. When a trigger activates, it is always for a specific object instance. A trigger on a Freezer object might detect the freezer being too warm, and send an email to the relevant technician. 
+Triggers define the conditions you want to detect on your objects, and the actions that you want to take when those conditions are met. When a trigger activates, it's always for a specific object instance. A trigger on a Freezer object might detect the freezer being too warm, and send an email to the relevant technician. 
 
 ### Properties
 
@@ -58,10 +58,10 @@ Properties are useful when you want to reuse logic across multiple triggers. You
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
+* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
 
-[Buy a Microsoft Fabric subscription](buy-subscription.md)

@@ -6,7 +6,7 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Design Mode
-ms.date: 10/03/2023
+ms.date: 09/15/2023
 ---
 
 # Create Data Activator triggers in design mode
@@ -79,6 +79,7 @@ Once you have defined a property, you can reference it from one or more triggers
 * [Get data for Data Activator](data-activator-get-data.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
+* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

@@ -5,14 +5,14 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 09/15/2023
 ---
 
 # Get started with Data Activator
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-To get started with Data Activator, select the Data Activator experience in Microsoft Fabric, select it from the menu at the bottom of the screen. This will tailor your Fabric experience to Data Activator.
+To get started with Data Activator, select the Data Activator experience in Microsoft Fabric, select it from the menu at the bottom of the screen to tailor your Fabric experience to Data Activator.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-01.png" alt-text="Screenshot of data activator fabric experience.":::
 
@@ -20,25 +20,26 @@ To get started with Data Activator, select the Data Activator experience in Micr
 
 As with all Fabric experiences, you begin using Data Activator by creating an item in a Fabric Workspace. Data Activator’s items are called *reflexes.*
 
-A reflex holds all the information necessary to connect to data, monitor for conditions, and act. You will typically create a reflex for each business process or area you’re monitoring.
+A reflex holds all the information necessary to connect to data, monitor for conditions, and act. You'll typically create a reflex for each business process or area you’re monitoring.
 
 To get started, you create a reflex item in your Fabric workspace. From the New menu in the workspace, choose the reflex item.
 
 ## Navigate between Data Mode & Design Mode
 
-When you open a reflex, you will see two tabs at the bottom of the screen that switch between **data mode** and **design mode**. In data mode, you can see your incoming data and assign it to objects. In design mode, you build triggers from your objects. At first these will be empty; the next step after creating a reflex is to populate it with your data.
+When you open a reflex, you see two tabs at the bottom of the screen that switch between **data mode** and **design mode**. In data mode, you can see your incoming data and assign it to objects. In design mode, you build triggers from your objects. At first, these will be empty; the next step after creating a reflex is to populate it with your data.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-02.png" alt-text="Screenshot of data activator switch between data mode and design mode.":::
 
 ## Next steps
 
-Once you have created a reflex, you will need to populate it with your data. Learn how to get data into your reflex in the [Get data for Data Activator](data-activator-get-data.md) article. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
+Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex in the [Get data for Data Activator](data-activator-get-data.md) article. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get data for Data Activator](data-activator-get-data.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
+* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:

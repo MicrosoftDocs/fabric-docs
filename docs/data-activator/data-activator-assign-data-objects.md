@@ -6,7 +6,7 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Data Mode
-ms.date: 10/03/2023
+ms.date: 09/15/2023
 ---
 
 # Assign data to objects in Data Activator
@@ -61,6 +61,7 @@ To assign an event stream to multiple objects, you follow the procedures describ
 * [Get data for Data Activator](data-activator-get-data.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
+* [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)
 
 You can also learn more about Microsoft Fabric:
