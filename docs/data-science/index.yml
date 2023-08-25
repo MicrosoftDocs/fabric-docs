@@ -137,4 +137,4 @@ landingContent:
       - linkListType: reference
         links:
         - text: SemPy Python SDK
-          url: /python/api/semantic-link-sempy.md
+          url: /python/api/semantic-link-sempy

@@ -244,5 +244,5 @@ items:
 - name: Reference
   items:
     - name: SemPy Python SDK
-      href: /python/api/semantic-link-sempy.md
+      href: /python/api/semantic-link-sempy
       
