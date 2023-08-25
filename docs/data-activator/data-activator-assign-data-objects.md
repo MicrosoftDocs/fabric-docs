@@ -20,9 +20,9 @@ Once you [get data](data-activator-get-data.md) into Data Activator, the next st
 
 ## Assign data to a new object
 
-To create an object, pick the events that you wish to monitor, then hit “Assign your data” in the ribbon in the data pane. Data Activator prompts you for an Object name and a Key Column. Choose an object name that reflects the type of object to which your events refer. The Key Column must be a column in your events that uniquely identifies the objects being monitored. Optionally, you can use “Assign Properties” to import other columns from your event stream and convert them into properties on your objects. Refer to [create properties](data-activator-create-triggers-design-mode.md#create-properties) for more information on properties.
+To create an object, pick the events that you wish to monitor, then select **Assign your data** in the ribbon in the data pane. Data Activator prompts you for an Object name and a Key Column. Choose an object name that reflects the type of object to which your events refer. The Key Column must be a column in your events that uniquely identifies the objects being monitored. Optionally, you can use *Assign Properties* to import other columns from your event stream and convert them into properties on your objects. Refer to [create properties](data-activator-create-triggers-design-mode.md#create-properties) for more information on properties.
 
-The example below is based on the sample “Packages” data that comes with Data Activator. Since this data is monitoring packages, we choose “Package” as our object name. We choose “Package ID” as our key column
+The example below is based on the sample *Packages* data that comes with Data Activator. Since this data is monitoring packages, we choose *Package* as our object name. We choose *Package ID* as our key column
 because it uniquely identifies packages.
 
 :::image type="content" source="media/data-activator-assign-data-objects/data-activator-assign-data-objects-01.png" alt-text="Screenshot of assign your data window.":::
@@ -40,7 +40,7 @@ By default the events for five random instances for the previous 24 hours are di
 You can assign multiple data streams to a single object, which can be useful if data about an object is spread across multiple streams. A typical reason is that you have slowly changing reference
 data about an object in one event stream, and fast-moving updates about an object in another event stream. 
  
-You achieve this using the “Assign to Existing” option in the “Assign Data” pane. The process is the same as for assigning data to a new object, except that you select an existing object to assign the events to. 
+You achieve this using the *Assign to Existing* option in the *Assign Data* pane. The process is the same as for assigning data to a new object, except that you select an existing object to assign the events to. 
 
 > [!NOTE]
 > When assigning to an existing object, it is essential that you choose a key column that references the same object IDs that you used when creating the object in the first place, otherwise you will get unexpected results from your properties and triggers.
@@ -50,7 +50,7 @@ You achieve this using the “Assign to Existing” option in the “Assign Data
 
 ## Assign data to multiple objects
 
-You can assign a single event source to multiple objects, which is useful if your event source references multiple object types. The sample “Packages” event streams used in the [tutorial](data-activator-tutorial.md) reference both a Package ID and a City, so it can be useful to create both a “Package” and a “City” object from the packages streams. Since there are multiple packages in each City, this lets you create aggregate measures at the City level, such as the number of packages currently in transit for a given City.
+You can assign a single event source to multiple objects, which is useful if your event source references multiple object types. The sample *Packages* event streams used in the [tutorial](data-activator-tutorial.md) reference both a Package ID and a City, so it can be useful to create both a *Package* and a *City* object from the packages streams. Since there are multiple packages in each City, this lets you create aggregate measures at the City level, such as the number of packages currently in transit for a given City.
 
 To assign an event stream to multiple objects, you follow the procedures described in the previous two sections, for each object to which you want to assign the event stream.
 

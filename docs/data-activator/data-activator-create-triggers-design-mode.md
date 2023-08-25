@@ -49,8 +49,8 @@ Different action types have different parameters, such as the email address you 
 
 After you have created a trigger, you can test it by selecting *Send me a test alert*. This finds a past event for which the trigger activation is true, then send you an alert so that you can see what the alert would have looked like for that event. Note that:
 
-* The test alert will always go to you, regardless of the recipient field in the “Act” card
-* The “Send me a test alert” option is only enabled if you have had at least one past event for which the trigger condition is true.
+* The test alert will always go to you, regardless of the recipient field in the *Act* card
+* The *Send me a test alert* option is only enabled if you have had at least one past event for which the trigger condition is true.
 
 ## Start and stop your trigger
 
@@ -66,10 +66,10 @@ When you delete a trigger (or Object) it can take up to 5 minutes for any back-e
 
 Sometimes, you need to reuse trigger logic across multiple triggers. This is where properties come in. You can create a property that defines a reusable condition or measure, then reference that property from multiple triggers.
 
-To create a property, select “New Property” from the ribbon, then define your property logic. Here, we define a property called “Maximum Temp last hour” on a package object:
+To create a property, select *New Property* from the ribbon, then define your property logic. Here, we define a property called *Maximum Temp last hour* on a package object:
 
 
-Once you have defined a property, you can reference it from one or more triggers, via the select card. Here, we reference the property we made earlier in a “Package too warm” trigger:
+Once you have defined a property, you can reference it from one or more triggers, via the select card. Here, we reference the property we made earlier in a *Package too warm* trigger:
 
 
 ## Next steps
