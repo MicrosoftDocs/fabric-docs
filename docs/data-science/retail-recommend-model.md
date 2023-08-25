@@ -327,7 +327,7 @@ plt.xlabel("Number of Ratings for the Item")
 plt.show()
 ```
 
-:::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Graph of the most popular books.":::
+:::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Graph of the most popular books." lightbox="./media/retail-recommend-model/most-popular-books.png":::
 
 ### Prepare training and testing datasets
 
