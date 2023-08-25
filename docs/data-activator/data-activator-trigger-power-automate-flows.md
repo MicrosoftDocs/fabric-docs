@@ -46,10 +46,12 @@ The flow is prepopulated with an action for data activator.
 To access your input fields in the flow, use a Power Automate expression of the form shown below. Use the *Expression* tab in the field editor to add your expression. Replace NAME\_OF\_INPUT\_FIELD with the name of
 your input field. 
 
+```
 triggerBody()?\['customProperties/NAME\_OF\_INPUT\_FIELD'\].
+```
 
 > [!NOTE]
-> A future release of Data Activator will support dynamic properties, so that you don't have to use expressions to access your input fields.
+> Future releases of Data Activator may support dynamic properties, preventing the need to use expressions to access your input fields.
 
 ### Complete your custom action
 

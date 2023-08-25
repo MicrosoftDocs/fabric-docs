@@ -46,7 +46,7 @@ You can specify multiple filters on a card.
 
 You specify a condition in the **detect** card.
 
-#### Condition types
+### Condition types
 
 The condition type specifies what type of condition should cause the trigger to activate:
 
@@ -54,33 +54,17 @@ The condition type specifies what type of condition should cause the trigger to 
 
 Condition types fall into the following categories:
 
-<table>
-<tbody>
-<tr class="odd">
-<td>Condition type</td>
-<td>Description</td>
-</tr>
-<tr class="even">
-<td><strong>“Is” </strong>conditions</td>
-<td>“Is” conditions activate for each event for which the condition is true.</td>
-</tr>
-<tr class="odd">
-<td><strong>“Becomes” </strong>conditions</td>
-<td>“Becomes” conditions activate only when the condition becomes true, after having previously been false. For example, “Becomes greater than 10” will activate if the value of the property changes from a value of 5 (less than 10) to a value of 11 (greater than 10). It will only activate again when the condition goes from being false to true.</td>
-</tr>
-<tr class="even">
-<td><strong>Enters/Exits Range </strong>conditions</td>
-<td><p>The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range.</p>
-<p>The exits range condition is similar, except that it activates when the property value goes outside of the range.</p></td>
-</tr>
-<tr class="odd">
-<td><strong>Changes, Changes to, Changes from</strong></td>
-<td>These conditions activate when </td>
-</tr>
-</tbody>
-</table>
 
-#### Condition Timers
+|Condition type  |Description  |
+|---------|---------|
+|**Is** conditions     |**Is** conditions activate for each event for which the condition is true. |
+|**Becomes** conditions     |**Becomes** conditions activate only when the condition becomes true, after having previously been false. For example, “Becomes greater than 10” will activate if the value of the property changes from a value of 5 (less than 10) to a value of 11 (greater than 10). It will only activate again when the condition goes from being false to true. |
+|**Enters/Exits Range** conditions     |The Enters range condition specifies a range of values, and activates at the point when a property value enters the range. It only activates when the previous value of the property was outside of the range, and the current value is within the range.</p>
+<p>The exits range condition is similar, except that it activates when the property value goes outside of the range. |
+|**Changes, Changes to, Changes from**     |These conditions activate when a condition changes, changes to, or changes from condition activation boundaries.   |
+
+
+### Condition Timers
 
 After you specify a condition type, you can specify a condition timer.
 
