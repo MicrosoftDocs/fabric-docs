@@ -1,0 +1,25 @@
+items:
+- name: Data Activator documentation
+  href: index.yml
+- name: Overview
+  items:
+  - name: Introduction to Data Activator
+    href: data-activator-introduction.md
+- name: Get started
+  items:
+  - name: Get started with Data Activator
+    href: data-activator-get-started.md    
+- name: Data Activator concepts
+  items:
+  - name: Get data for Data Activator
+    href: data-activator-get-data.md
+  - name: Assign data to objects in Data Activator
+    href: data-activator-assign-data-objects.md    
+  - name: Create Data Activator triggers in design mode
+    href: data-activator-create-triggers-design-mode.md        
+  - name: Detection conditions in Data Activator
+    href: data-activator-detection-conditions.md            
+  - name: Data Activator tutorial
+    items:
+    - name: Data Activator tutorial using sample data
+      href: data-activator-tutorial.md

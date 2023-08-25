@@ -1,0 +1,51 @@
+### YamlMime:Landing
+
+title: Data Activator documentation
+summary: Learn about Data Activator, and how to create events and triggers for your data.
+
+metadata:
+  title: Data Activator documentation
+  description: Browse the Data Activator documentation.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: enterprise
+  ms.topic: landing-page
+  author: davidiseminger
+  ms.author: davidi
+  ms.date: 10/03/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  - title: Introduction
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Introduction to Data Activator
+            url: data-activator-introduction.md
+      - linkListType: get-started
+        links:
+          - text: Get started with Data Activator
+            url: data-activator-get-started.md
+
+  - title: Data Activator concepts
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Get data for Data Activator
+            url: data-activator-get-data.md
+      - linkListType: concept
+        links:
+          - text: Assign data to objects in Data Activator 
+            url: data-activator-assign-data-objects.md
+          - text: Create triggers in Data Activator
+            url: data-activator-create-triggers-design-mode.md
+          - text: Detection conditions in Data Activator
+            url: data-activator-detection-conditions.md
+
+  - title: Data Activator tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Data Activator tutorial
+            url: data-activator-tutorial.md
