@@ -23,7 +23,7 @@ Furthermore, they can encode their domain knowledge and business logic into Powe
 On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
 In such cases, it may become necessary for the data scientists to duplicate the business logic, which can lead to critical errors.
 
-Semantic Link bridges this gap between the Power BI datasets and the Microsoft Fabric Data Science experience.
+Semantic Link bridges this gap between the Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
 Thereby, providing a way for business analysts and data scientists to collaborate seamlessly and reduce data mismatch. Semantic Link offers connectivity to the:
 
 - Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, and

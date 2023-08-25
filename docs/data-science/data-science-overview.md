@@ -38,7 +38,7 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier. 
 
-## Data Discovery and pre-processing 
+## Data discovery and pre-processing
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
@@ -84,23 +84,25 @@ In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can 
 
 Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Data Exploration with SemPy
+## Data exploration with Semantic Link
 
-Data scientists and business analysts spend a lot of time trying to understand, clean and transform their data, before they can even start any meaningful analysis. SemPy simplifies data analytics. It captures and exploits the data semantics as the users perform various transformations on their datasets. By exploiting data semantics, SemPy can simplify various tedious tasks, for example
+Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with Power BI datasets and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
+
+Semantic Link allows data scientists to establish a connection between Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on their datasets. By leveraging data semantics, SemPy can simplify various tedious tasks, such as:
 
 - automatic data transformation while joining heterogeneous datasets
-- handle underlying schema changes
-- enforce semantic constraints and identify data that violates them
-- enrich the data with new knowledge
+- changes to underlying schema
+- enforcement of semantic constraints and identifying data that violates them
+- data enrichment using new knowledge
 
-SemPy users can register new information about the data, and share it with other users. This allows for faster collaboration across teams that operate on the same datasets, and increases productivity. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
+SemPy users can register new information about data and share it with other users. This increases productivity and allows for faster collaboration across teams that operate on the same datasets. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
 
-- Reduce the time needed to preprocess and validate the data, before meaningful analysis starts.
-- Increase productivity across teams that operate on same datasets, through registration and sharing data of semantics and transformations; this reduces the time needed to extract value from a dataset.
-- Increase cross-org collaboration, to bring the BI and AI teams together.
+- Reduce the time needed to preprocess and validate data before analysis.
+- Increase productivity across teams that operate on the same datasets.
+- Increase cross-collaboration across an organization, to bring the business intelligence and AI teams together.
 - Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
 
-Learn more about SemPy in [!INCLUDE [product-name](../includes/product-name.md)], in the following sections.
+For more information on Semantic Link, see [What is Semantic Link?](semantic-link-overview.md).
 
 ## Next steps
 
