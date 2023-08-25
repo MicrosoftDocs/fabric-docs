@@ -39,8 +39,6 @@ Semantic functions are available in the autocomplete suggestions when you work w
 In the following example, the metadata for the FabricDataFrame is manually specified.
 
 ```Python
-%pip install geopandas
-
 from sempy.fabric import FabricDataFrame
 
 df = FabricDataFrame(
@@ -60,8 +58,6 @@ df_geo.explore()
 Alternatively, you could read from a Power BI dataset into a FabricDataFrame, and in that case, the metadata will be autopopulated.
 
 ```Python
-%pip install geopandas
-
 from sempy.fabric import FabricDataFrame
 
 # Alternative: reading from Power BI dataset
