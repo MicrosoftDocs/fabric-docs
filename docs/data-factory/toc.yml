@@ -311,3 +311,5 @@
         href: known-issue-lineage-view-edit.md
       - name: Staging artifacts
         href: known-issue-staging-artifact.md
+      - name: In progress tables refresh history
+        href: known-issue-inprogress-refresh-history.md

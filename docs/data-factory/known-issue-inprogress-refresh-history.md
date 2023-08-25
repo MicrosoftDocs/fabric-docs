@@ -1,6 +1,6 @@
 ---
 title: Known issue - In progress tables refresh history
-description: A known issue is posted where a customer has issues with refresh history reports in progress for some tables while failed.
+description: A known issue is posted where a customer has issues with refresh history reports in progress for some tables that failed.
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting  
@@ -20,7 +20,7 @@ Users are experiencing an intermittent issue. Refresh history reports in progres
 
 ## Symptoms
 
-Failed dataflows show in progress refresh history for some tables, while it is not refreshing anymore.
+Failed dataflows show in progress refresh history for some tables, while it's not refreshing anymore.
 
 ## Solutions and workarounds
 
