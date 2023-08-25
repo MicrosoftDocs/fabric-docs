@@ -16,7 +16,7 @@ Microsoft Fabric’s Data Factory experience provides an intuitive and user-frie
 ## Global search box
 When first starting to author Dataflows, you can also leverage the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.
 
-![Global search box](media/guide-to-dataflows-for-mapping-data-flow-users/GlobalSearchBox.png)
+![Global search box](media/guide-to-dataflows-for-mapping-data-flow-users/global-search-box.png)
 
 >[!NOTE]
 >Learn more about [Global search box](/power-query/search-box).
@@ -30,79 +30,79 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **New branch** | **Reference** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/NewBranch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Reference.png" alt-text="Screenshot of the Reference transformation icon.":::<br><br>**Important:** Right click a query and select Reference. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/new-branch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/reference.png" alt-text="Screenshot of the Reference transformation icon.":::<br><br>**Important:** Right click a query and select Reference. |
 | **Join** | **Merge queries** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Join.svg" alt-text="Screenshot of the Join transformation icon.":::  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/MergeQueries.png" alt-text="Screenshot of the Merge queries transformation icon."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:**<br>Merge queries – Merge this query into another query in this project.<br>Merge queries as new – Merge this query into another query in this project to create a new query. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/join.svg" alt-text="Screenshot of the Join transformation icon.":::  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/merge-queries.png" alt-text="Screenshot of the Merge queries transformation icon."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:**<br>Merge queries – Merge this query into another query in this project.<br>Merge queries as new – Merge this query into another query in this project to create a new query. |
 | **Conditional Split** | **Reference** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ConditionalSplit.svg" alt-text="Screenshot of the Conditional Split transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Reference.png" alt-text="Screenshot of the Reference transformation icon."::: <br><br> **Important:** Right click a query and select Reference, you can then apply additional transformation logic to limit specific rows manually. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/conditional-split.svg" alt-text="Screenshot of the Conditional Split transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Reference.png" alt-text="Screenshot of the Reference transformation icon."::: <br><br> **Important:** Right click a query and select Reference, you can then apply additional transformation logic to limit specific rows manually. |
 | **Union** | **Append queries** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Union.svg" alt-text="Screenshot of the Union transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/AppendQueries.png" alt-text="Screenshot of the Append queries transformation icon."::: <br><br> **Navigation:**<br>Home > Append queries<br><br>**Important:**<br>Append queries – Append this query into another query in this project.<br>Append queries as new – Append this query into another query in this project to create a new query. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Union.svg" alt-text="Screenshot of the Union transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/append-queries.png" alt-text="Screenshot of the Append queries transformation icon."::: <br><br> **Navigation:**<br>Home > Append queries<br><br>**Important:**<br>Append queries – Append this query into another query in this project.<br>Append queries as new – Append this query into another query in this project to create a new query. |
 | **Lookup** | **Merge queries** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Lookup.svg" alt-text="Screenshot of the Lookup transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/MergeQueries.png" alt-text="Screenshot of the Merge queries transformation icon.":::<br>:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/LeftOuter.png" alt-text="Screenshot of the Join kinds."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:** Select Left outer from the Join kind options. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/look-up.svg" alt-text="Screenshot of the Lookup transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/MergeQueries.png" alt-text="Screenshot of the Merge queries transformation icon.":::<br>:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/left-outer.png" alt-text="Screenshot of the Join kinds."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:** Select Left outer from the Join kind options. |
 
 #### Schema modifier
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Derived Column** | **Custom column** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/DerivedColumn.svg" alt-text="Screenshot of the Derived Column transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/CustomColumnOptions.png" alt-text="Screenshot of the Custom Column options transformation icons."::: <br><br> **Navigation:** <br>Add column > Custom column<br><br>**Important:**<br>Column from examples - Use examples to create a new column in this table. (Ctrl + E)<br>Custom column - Create a new column based on other columns, or a custom expression.<br>Invoke custom function - Invoke a custom function for each row of this table.<br>Conditional column - Create a new column that conditionally adds the values in the currently selected column. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/derived-column.svg" alt-text="Screenshot of the Derived Column transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/custom-column-options.png" alt-text="Screenshot of the Custom Column options transformation icons."::: <br><br> **Navigation:** <br>Add column > Custom column<br><br>**Important:**<br>Column from examples - Use examples to create a new column in this table. (Ctrl + E)<br>Custom column - Create a new column based on other columns, or a custom expression.<br>Invoke custom function - Invoke a custom function for each row of this table.<br>Conditional column - Create a new column that conditionally adds the values in the currently selected column. |
 | **Select** | **Choose columns** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Select.svg" alt-text="Screenshot of the Select transformation icon.":::<br>**Note:** Includes the ability to select, drop and rename (Name as) columns and whether to drop or pass on duplicate columns | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ChooseColumns.png" alt-text="Screenshot of the Choose columns transformation icon."::: <br><br> **Navigation:**<br>Home > Choose columns |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/select.svg" alt-text="Screenshot of the Select transformation icon.":::<br>**Note:** Includes the ability to select, drop and rename (Name as) columns and whether to drop or pass on duplicate columns | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/choose-columns.png" alt-text="Screenshot of the Choose columns transformation icon."::: <br><br> **Navigation:**<br>Home > Choose columns |
 | **(Remove Mapping)** | **Remove columns** |
-| | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/RemoveColumns.png" alt-text="Screenshot of the Remove columns transformation icon."::: |
+| | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/remove-columns.png" alt-text="Screenshot of the Remove columns transformation icon."::: |
 | | **Navigation:**<br>Home > Remove columns |
 | **(Name as)** | **Rename** |
-|  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/RenameColumns.png" alt-text="Screenshot of the Rename columns transformation icon."::: |
+|  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/rename-columns.png" alt-text="Screenshot of the Rename columns transformation icon."::: |
 | | **Navigation:**<br>Transform > Rename |
 | **Aggregate** | **Group by** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Aggregate.svg" alt-text="Screenshot of the Aggregate transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/GroupBy.png" alt-text="Screenshot of the Group by transformation icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/aggregate.svg" alt-text="Screenshot of the Aggregate transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/group-by.png" alt-text="Screenshot of the Group by transformation icon."::: |
 | | **Navigation:**<br>Transform > Group by |
 | **Surrogate Key** | **Index column** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/SurrogateKey.svg" alt-text="Screenshot of the Surrogate Key transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/IndexColumn.png" alt-text="Screenshot of the Index column transformation icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/surrogate-key.svg" alt-text="Screenshot of the Surrogate Key transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/index-column.png" alt-text="Screenshot of the Index column transformation icon."::: |
 | | **Navigation:**<br>Add column > Index column<br><br>**Important:**<br>From 0 - Create a new column with an index starting at 0.<br>From 1 - Create a new column with an index starting at 1.<br>Custom... - Create a new column with an index starting at a specified value and a specified increment. |
 | **Pivot** | **Pivot column** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Pivot.svg" alt-text="Screenshot of the Pivot transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/PivotColumn.png" alt-text="Screenshot of the Pivot column transformation icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/pivot.svg" alt-text="Screenshot of the Pivot transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/pivot-column.png" alt-text="Screenshot of the Pivot column transformation icon."::: |
 | | **Navigation:**<br>Transform > Pivot column |
 | **Unpivot** | **Unpivot columns** | 
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Unpivot.svg" alt-text="Screenshot of the Unpivot transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/UnpivotColumns.png" alt-text="Screenshot of the Unpivot columns transformation icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Unpivot.svg" alt-text="Screenshot of the Unpivot transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/unpivot-columns.png" alt-text="Screenshot of the Unpivot columns transformation icon."::: |
 | | **Navigation:**<br>Transform > Unpivot columns<br><br>**Important:**<br>Unpivot columns - Translate all but the currently unselected columns into attribute-value pairs.<br>Unpivot other columns - Select all but the currently selected columns into attribute-value pairs.<br>Unpivot only selected columns - Translate only the currently selected columns into attribute-value pairs. |
 | **Rank** | **Rank column** | 
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Rank.svg" alt-text="Screenshot of the Rank transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/RankColumn.png" alt-text="Screenshot of the Rank column transformation icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/rank.svg" alt-text="Screenshot of the Rank transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/rank-column.png" alt-text="Screenshot of the Rank column transformation icon."::: |
 | | **Navigation:**<br> Add column > Rank column |
 | **External Call** | **Custom column** |
-:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ExternalCall.svg" alt-text="Screenshot of the External Call transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/CustomColumn.png" alt-text="Screenshot of the Custom column transformation icon."::: <br><br> **Navigation:**<br>Add column > Custom column<br><br>**Expression:**<br>[Web.Contents](/powerquery-m/web-contents) |
+:::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/external-call.svg" alt-text="Screenshot of the External Call transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/custom-column.png" alt-text="Screenshot of the Custom column transformation icon."::: <br><br> **Navigation:**<br>Add column > Custom column<br><br>**Expression:**<br>[Web.Contents](/powerquery-m/web-contents) |
 | **Cast** | **Data type** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Cast.svg" alt-text="Screenshot of the Cast transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/DataType.png" alt-text="Screenshot of the Data type transformation icon."::: <br><br> **Navigation:**<br>Transform > Data type |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/cast.svg" alt-text="Screenshot of the Cast transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/data-type.png" alt-text="Screenshot of the Data type transformation icon."::: <br><br> **Navigation:**<br>Transform > Data type |
 
 #### Formatters
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Flatten** | **(Expand column)** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Flatten.svg" alt-text="Screenshot of the Flatten transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Expand.png" alt-text="Screenshot of the Expand column icon."::: |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/flatten.svg" alt-text="Screenshot of the Flatten transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/expand.png" alt-text="Screenshot of the Expand column icon."::: |
 | | **Important:**<br>The expand option is available when structured data types exist in your column. |
-| **Parse** | **(Get data connectors)** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Parse.svg" alt-text="Screenshot of the Parse transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Files.png" alt-text="Screenshot of the various File connector icons."::: <br><br> **Navigation:**<br>Home > Get data |
+| **Parse** | **Parse** |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/parse.svg" alt-text="Screenshot of the Parse transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/parse.png" alt-text="Screenshot of the various File connector icons."::: <br><br> **Navigation:**<br>Transform > Text column > Parse |
 
 #### Row modifier
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Filter** | **Filter rows** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Filter.svg" alt-text="Screenshot of the Filter transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/FilterRows.png" alt-text="Screenshot of the Filter rows transformation icon."::: <br><br> **Navigation:**<br>Home > Filter rows |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter.svg" alt-text="Screenshot of the Filter transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter-rows.png" alt-text="Screenshot of the Filter rows transformation icon."::: <br><br> **Navigation:**<br>Home > Filter rows |
 | **Sort** | **Sort** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sort.png" alt-text="Screenshot of the Power Query Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.png" alt-text="Screenshot of the Power Query Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
 | **Alter row** | **Replace values** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/AlterRow.svg" alt-text="Screenshot of the Alter Row transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/ReplaceValues.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/alter-row.svg" alt-text="Screenshot of the Alter Row transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/replace-values.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 
 #### Flowlets
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Flowlet** | **(Custom functions)** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Flowlet.svg" alt-text="Screenshot of the Flowlet transformation icon."::: | Learn more about how to [Create a custom function](/power-query/custom-function) |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/flowlet.svg" alt-text="Screenshot of the Flowlet transformation icon."::: | Learn more about how to [Create a custom function](/power-query/custom-function) |
 
 #### Destination
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **Sink** | **Add data destination** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/Sink.svg" alt-text="Screenshot of the Sink transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/AddDataDestination.png" alt-text="Screenshot of the Add data destination icon."::: <br><br> **Navigation:**<br>Home > Add data destination |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sink.svg" alt-text="Screenshot of the Sink transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/add-data-destination.png" alt-text="Screenshot of the Add data destination icon."::: <br><br> **Navigation:**<br>Home > Add data destination |
 
 ### Considerations and limitations
 The following mapping data flow transformations are not supported in Dataflows Gen2. To vote for support of these operations, please visit [Fabric ideas](https://aka.ms/fabricideas).
