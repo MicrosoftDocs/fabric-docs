@@ -40,14 +40,9 @@ The main steps in this notebook are:
 
 ## Step 1: Install custom libraries
 
-When developing a machine learning model or doing ad-hoc data analysis, we may need to quickly install a custom library for your Apache Spark session. To do so, you could use `%pip install` or `%conda install` or you can install the required libraries into the workspace.  
+When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library for your Apache Spark session. To do so, use %pip install or %conda install. Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
 
-To install in the workspace, select your workspace, then **Workspace settings**. In the settings, you can install the required libraries, such as add from PyPi or add from .yml file.  This setting installs all selected libraries in the workspace, for all notebooks in the workspace to use.
-
-For the classification model, you'll use the `wordcloud` library to represent the frequency of words in a text where the size of the word represents its frequency. In order to install `wordcloud`, you'll install it here to use in just this notebook.
-
-> [!NOTE] 
-> The PySpark kernel will be restarted after `%pip install`. You should install libraries before you run any other cells.
+For the classification model, you'll use the `wordcloud` library to represent the frequency of words in a text where the size of the word represents its frequency. Here, you'll use %pip install to install `wordcloud`.
 
 
 ```python
@@ -67,7 +62,7 @@ The dataset is from the [British Library book dataset](https://huggingface.co/da
 |014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
 
-Define parameters, making it easy to use this notebook with different datasets.
+Define the data details in parameters to make it easy to use this notebook with different datasets.
 
 
 ```python
