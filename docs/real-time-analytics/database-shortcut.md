@@ -67,8 +67,15 @@ The leader and database shortcuts use the same storage account to fetch the data
  
     :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Analytics.":::
 
-The new shortcut database is created. You can view the [Database details](create-database.md#database-details) of the new database shortcut.
+You are taken to the [database details](create-database.md#database-details) view of the new database shortcut.
 
-## Remove database shortcut
+## Delete database shortcut 
+
+## Detach database shortcut
+
+[Detach database](/rest/api/azurerekusto/clusters/detach-follower-databases?tabs=HTTP)
 
 ## Related content
+
+* [Query data in a KQL queryset](kusto-query-set.md)
+* [Create a KQL database](create-database.md)
