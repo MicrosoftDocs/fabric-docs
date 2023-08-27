@@ -35,9 +35,11 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 ### Source tab
 
-1. In the **Link to source** field, paste the connection string of your bucket in the following format.
+1. In the **Link to source** field, paste the connection string of your bucket, or individual object in the following format.
 
-    > `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com/`*ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
+    > Bucket: `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com`
+    >
+    > Object: *ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
      :::image type="content" source="media/get-data-amazon-s3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
    
