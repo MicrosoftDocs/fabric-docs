@@ -104,7 +104,7 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-sftp/destination.png" alt-text="Screenshot showing source tab and the list of properties.":::
+:::image type="content" source="./media/connector-sftp/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
 
 - **Data store type**: Select **External**.
 - **Connection**: Select an SFTP connection from the connection list. If no connection exists, then create a new SFTP connection by selecting **New**.
