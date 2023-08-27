@@ -65,8 +65,8 @@ The following three properties are **required**:
 
     - **List of files**: If you select this type, you can specify the **Folder path** and  **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. For more examples, go to [File list examples](/azure/data-factory/connector-sftp#file-list-examples).
 
-      **Folder path**: Specify your common home folder for paths in the text file specified in **Path to file list** if it has.<br>
-      **Path to file list**: Specify the path of the text file that includes a list of files you want to copy. 
+      - **Folder path**: Specify your common home folder for paths in the text file specified in **Path to file list** if it has.<br>
+      - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy. 
 
         :::image type="content" source="./media/connector-sftp/list-of-files.png" alt-text="Screenshot showing list of files.":::
 
