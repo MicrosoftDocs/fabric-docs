@@ -63,9 +63,9 @@ The following three properties are **required**:
 
         **Wildcard file name**: Specify the file name with wildcard characters under the given folderPath/wildcard folder path to filter source files.
 
-    - **List of files**: If you select this type, you can specify the **Folder path** and  **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. For more examples, go to [File list examples](/azure/data-factory/connector-sftp#file-list-examples).
+    - **List of files**: If you select this type, specify the **Folder path** and  **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. For more examples, go to [File list examples](/azure/data-factory/connector-sftp#file-list-examples).
 
-      - **Folder path**: Specify your common home folder for paths in the text file specified in **Path to file list** if it has.<br>
+      - **Folder path**: Specify the path to your source folder. It is required.<br>
       - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy. 
 
         :::image type="content" source="./media/connector-sftp/list-of-files.png" alt-text="Screenshot showing list of files.":::
@@ -150,9 +150,9 @@ The following table contains more information about the copy activity in SFTP.
 | **Connection** | Your SFTP connection to the source data store. | < your SFTP connection > | Yes | connection | 
 | **File path type** | The file path type used to get source data. |•  **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes when you select **File path** | fileName<br>folderpath | 
-| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard file path** | wildcardFolderPath<br>wildcardFileName | 
-| **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < your folder path> | No | folderPath | 
-| **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > |  Yes when you select **List of files** | fileListPath | 
+| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName | 
+| **Folder path** | The path to your source folder. | < your folder path> | Yes | folderPath | 
+| **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath | 
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd | 
 | **Disable chunking** | The chunking is designed to optimize the performance and happens underneath. This option allows you to disable chunking within each file. When copying data from SFTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your SFTP server supports getting file length or seeking to read from a certain offset. | selected or unselected (default) |No  | disableChunking:<br>true or false (default)| 
