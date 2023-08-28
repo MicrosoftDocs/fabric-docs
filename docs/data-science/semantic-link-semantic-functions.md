@@ -71,9 +71,6 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-> [!NOTE]
-> Semantic functions may have additional dependencies that need to be installed. For example the `to_geopandas` function requires the `geopandas` package to be installed.
-
 ## Built-in semantic functions
 
 The SemPy Python library provides a set of built-in semantic functions that are available out of the box. A few examples are
