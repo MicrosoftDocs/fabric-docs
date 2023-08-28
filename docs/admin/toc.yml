@@ -110,5 +110,7 @@ items:
       href: service-admin-portal-quick-measure-suggestions-settings.md
     - name: Scale-out settings
       href: service-admin-portal-scale-out.md
+    - name: OneLake settings
+      href: service-admin-portal-onelake.md
     - name: Git integration settings
       href: git-integration-admin-settings.md

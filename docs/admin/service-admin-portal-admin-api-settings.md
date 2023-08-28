@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
-## Allow service principals to use read-only admin API
+## Allow service principals to use read-only admin APIs
 
 :::image type="content" source="media/tenant-settings/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
