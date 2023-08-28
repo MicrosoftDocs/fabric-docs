@@ -66,8 +66,6 @@ Configure Spark to use the Power BI Spark native connector:
 spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
 ```
 
-```sql
-
 List all tables in the Power BI dataset `Sales Dataset`:
 
 ```sql
@@ -133,6 +131,7 @@ df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
 
 display(df)
 ```
+
 ---
 
 Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI.
@@ -155,8 +154,6 @@ GROUP BY
     `Customer[Country/Region]`,
     `Industry[Industry]`
 ```
-
-
 
 ## Data augmentation with Power BI measures
 
