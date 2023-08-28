@@ -74,13 +74,13 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as List of files.
+- **Filter by last modified**: Files are filtered based on the last modified dates that you specified. This property doesn't apply when you configure your file path type as **List of files**.
   - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
   - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
 
   When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the dataset.
 
-- **Disable chunking**: When copying data from SFTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your SFTP server supports getting file length or seeking to read from a certain offset. It is unselected by default. 
+- **Disable chunking**: The chunking is designed to optimize the performance and happens underneath. This option allows you to disable chunking within each file. When copying data from SFTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your SFTP server supports getting file length or seeking to read from a certain offset. It is unselected by default. 
 
 - **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
 
@@ -108,7 +108,7 @@ Go to **Destination** tab to configure your copy activity destination. See the f
 
 - **Data store type**: Select **External**.
 - **Connection**: Select an SFTP connection from the connection list. If no connection exists, then create a new SFTP connection by selecting **New**.
-- **File path**: Specify the file path to write your data to.
+- **File path**: Specify the file path to write your data to. You can select **Browse** to select your source files or enter your file path manually.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
@@ -148,14 +148,14 @@ The following table contains more information about the copy activity in SFTP.
 |:---|:---|:---|:---|:---|
 | **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your SFTP connection to the source data store. | < your SFTP connection > | Yes | connection | 
-| **File path type** | The file path type used to get source data. | File path<br>Wildcard file path<br>List of files | Yes | / | 
+| **File path type** | The file path type used to get source data. |•  **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes when you select **File path** | fileName<br>folderpath | 
 | **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard file name** | wildcardFolderPath<br>wildcardFileName | 
 | **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < your folder path> | No | folderPath | 
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > |  Yes when you select **List of files** | fileListPath | 
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd | 
-| **Disable chunking** | When copying data from SFTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your SFTP server supports getting file length or seeking to read from a certain offset. | selected or unselected (default) |No  | disableChunking:<br>true or false (default)| 
+| **Disable chunking** | The chunking is designed to optimize the performance and happens underneath. This option allows you to disable chunking within each file. When copying data from SFTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your SFTP server supports getting file length or seeking to read from a certain offset. | selected or unselected (default) |No  | disableChunking:<br>true or false (default)| 
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) | 
 | **Partition root path** | The absolute partition root path in order to read partitioned folders as data columns. Specify it when partition discovery is enabled.| < partition root path >  | No | partitionRootPath | 
 | **Max concurrent connections** | The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections. | < upper limit of concurrent connections ><br>(integer) | No | maxConcurrentConnections | 
@@ -174,8 +174,6 @@ The following table contains more information about the copy activity in SFTP.
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 |**Operation timeout (minutes)**|The timeout for writing each chunk to SFTP server.|< your operation timeout ><br>The default value is 60|No|operationTimeout|
 |**Upload with temp file**|Indicates whether to upload temporary file(s) and rename. Disable this option if your SFTP server doesn't support rename operation.|selected (default) or unselected |No|useTempFileRename:<br>true (default) or false |
-
-
 
 ## Next steps
 
