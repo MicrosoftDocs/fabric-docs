@@ -149,7 +149,7 @@ The following table contains more information about the copy activity in SFTP.
 | **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your SFTP connection to the source data store. | < your SFTP connection > | Yes | connection | 
 | **File path type** | The file path type used to get source data. |•  **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
-| **File path** | The path to the source file. | < file path> | Yes when you select **File path** | fileName<br>folderpath | 
+| **File path** | The path to the source file. | < file path> | Yes | fileName<br>folderpath | 
 | **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName | 
 | **Folder path** | The path to your source folder. | < your folder path> | Yes | folderPath | 
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath | 
