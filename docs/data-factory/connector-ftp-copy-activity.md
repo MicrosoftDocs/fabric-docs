@@ -44,7 +44,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-ftp/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-http/source.png":::
+:::image type="content" source="./media/connector-ftp/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
 The following three properties are **required**:
 
@@ -77,7 +77,7 @@ Under **Advanced**, you can specify the following fields:
   - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
   - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
 
-  When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the dataset.
+  When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
 
 - **Disable chunking**: The chunking is designed to optimize the performance and happens underneath. This option allows you to disable chunking within each file. When copying data from FTP, the service tries to get the file length first, then divide the file into multiple parts and read them in parallel. Specify whether your FTP server supports getting file length or seeking to read from a certain offset. It is unselected by default. 
 
@@ -120,9 +120,9 @@ The following table contains more information about the copy activity in FTP.
 |:---|:---|:---|:---|:---|
 | **Data store type** | Your data store type. | **External** | Yes | / | 
 | **Connection** | Your FTP connection to the source data store. | < your FTP connection > | Yes | connection | 
-| **File path type** | The file path type used to get source data. | File path<br>Wildcard file path<br>List of files | Yes | / | 
+| **File path type** | The file path type used to get source data. | • **File path**<br>• **Wildcard file path**<br>• **List of files**| Yes | / | 
 | **File path** | The path to the source file. | < file path> | Yes when you select **File path** | fileName<br>folderpath | 
-| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard paths** | wildcardFolderPath<br>wildcardFileName | 
+| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** when you select **Wildcard file path** | wildcardFolderPath<br>wildcardFileName | 
 | **Folder path** | The common home folder for paths in the file specified in **Path to file list** if it has.| < common home folder path> | No | folderPath | 
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > |  Yes when you select **List of files** | fileListPath | 
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / | 
