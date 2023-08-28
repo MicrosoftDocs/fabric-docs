@@ -152,17 +152,6 @@ To turn this setting on or off:
 1. Under **Apply to**, select the scope of users that the setting will affect.
 1. Select **Apply** to save your changes.
 
-## Allow live connections
-
-Users in the organization can use Power BI service Live Connect. If you turn this setting on to allow live connections, this also allows users to Analyze in Excel.
-
-To turn this setting on or off:
-
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow live connections**.
-1. Turn the switch on or off.
-1. Under **Apply to**, select the scope of users that the setting will affect.
-1. Select **Apply** to save your changes.
-
 ## Export reports as PowerPoint presentations or PDF documents
 
 Users in the organization can export reports as PowerPoint files or PDF documents.
@@ -265,15 +254,15 @@ If this setting is off, only users in your organization can create and receive e
 > [!IMPORTANT]
 > The **Allow email subscriptions to be sent to external users users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-## Allow email subscriptions to be sent to external users
+## Users can send email subscriptions to external users
 
-The **Allow email subscriptions to be sent to external users** setting helps organizations choose whether external users can be included as recipients of email subscriptions.
+The **Users can send email subscriptions to external userss** setting helps organizations choose whether external users can be included as recipients of email subscriptions.
 
 External users are users outside of the organization that have not been added as Azure Active Directory business-to-business (B2B) guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
 
 To turn on this setting:
 
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow email subscriptions to be sent to external users**.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Users can send email subscriptions to external users**.
 1. Turn the switch on.
 1. Under **Apply to**, select the scope of users that the setting will affect.
 1. Select **Apply** to save your changes.  
@@ -307,20 +296,35 @@ To turn this setting on:
 >[!NOTE]
 >Connections to featured tables are also disabled if the [Allow live connections](service-admin-portal-export-sharing.md#allow-live-connections) setting is set to Disabled.
 
-## Enable Microsoft Teams integration in the Power BI service
+## Allow shareable links to grant access to everyone in your organization
+
+This tenant setting is available for admins looking to disable creating shareable links to **People in your organization**.
+
+To turn on this setting:
+
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow shareable links to grant access to everyone in your organization**.
+1. Turn the switch on.
+1. Under **Apply to**, select the scope of users that the setting will affect.
+1. Select **Apply** to save your changes.
+
+If this setting is turned off for a user with share permissions to a report, that user can only share the report via link to **Specific people** or **People with existing access**. The following image shows what that user will see if they attempt to share the report via link:
+
+![Screenshot showing share option disabled.](media/tenant-settings/admin-share-option-disabled.png)
+
+## Enable Microsoft Teams integration
 
 This setting allows organizations to access features that work with Microsoft Teams and the Power BI service. These features include launching Teams experiences from Power BI like chats, the Power BI app for Teams, and getting Power BI notifications from Teams. To completely enable or disable Teams integration, work with your Teams admin.
 
 To turn this setting on:
 
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Enable Microsoft Teams integration in the Power BI service**.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Enable Microsoft Teams integration**.
 1. Turn the switch on.
 1. Under **Apply to**, select the scope of users that the setting will affect.
 1. Select **Apply** to save your changes.
 
 Read more about [collaborating in Microsoft Teams with Power BI](/power-bi/collaborate-share/service-collaborate-microsoft-teams).
 
-## Install the Power BI app for Teams automatically
+## Install Power BI app for Microsoft Teams automatically
 
 Automatic installation makes it easier to install the Power BI app for Microsoft Teams, without needing to change Microsoft Teams app setup policies. This change speeds up the installation and removes admin hassles of configuring and maintaining infrastructure needed by an app setup policy.
 
@@ -356,21 +360,6 @@ To turn this setting on:
 >[!NOTE]
 > If you turn this setting off, that doesn't prevent people from using the add-in starting from PowerPoint. To completely block adding live Power BI report pages to PowerPoint slides using the add-in, the add-in must be turned off in both Power BI and PowerPoint.
 
-## Allow shareable links to grant access to everyone in your organization
-
-This tenant setting is available for admins looking to disable creating shareable links to **People in your organization**.
-
-To turn on this setting:
-
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow shareable links to grant access to everyone in your organization**.
-1. Turn the switch on.
-1. Under **Apply to**, select the scope of users that the setting will affect.
-1. Select **Apply** to save your changes.
-
-If this setting is turned off for a user with share permissions to a report, that user can only share the report via link to **Specific people** or **People with existing access**. The following image shows what that user will see if they attempt to share the report via link:
-
-![Screenshot showing share option disabled.](media/tenant-settings/admin-share-option-disabled.png)
-
 ## Allow DirectQuery connections to Power BI datasets
 
 When this setting is turned on (default), users can use DirectQuery to connect to Azure Analysis Services or Power BI datasets. See [Using DirectQuery for Power BI datasets and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services) for more detail.
@@ -387,13 +376,13 @@ If you turn this switch off, it effectively stops users from publishing new comp
 >[!NOTE]
 > Live connections to Power BI datasets aren't affected by this switch, nor are live or DirectQuery connections to Azure Analysis Services. These'll continue to work regardless of whether the setting is on or off. In addition, any published reports that leverage a composite model on a Power BI dataset will continue to work even if the setting has been turned off after they were published.
 
-## Allow B2B guest users to work with shared datasets in their own tenants
+## Guest users can work with shared datasets in their own tenants
 
 When this setting is turned on, Azure AD B2B guest users of datasets shared with them by users in your organization will be able to access and build on those datasets in their own tenant. See [Use in-place dataset sharing to enable external users to view and share datasets in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin) for detailed information.
 
 To turn on this setting:
 
-1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow guest users to work with shared datasets in their own tenants**.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Guest users can work with shared datasets in their own tenants**.
 1. Turn the switch on.
 1. Select **Apply** to save your changes.
 

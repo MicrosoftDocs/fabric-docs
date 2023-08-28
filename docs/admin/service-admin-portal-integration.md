@@ -82,7 +82,7 @@ Enable SSO capability for Google BigQuery. By enabling, user access token inform
 
 Enable SSO capability for Oracle. By enabling, user access token information, including name and email, will be sent to Oracle for authentication.
 
-## Azure AD single sign-on (SSO) for Gateway
+## Azure AD Single Sign-On (SSO) for Gateway
 
 This setting enables Azure Active Directory (Azure AD) single sign-on (SSO) through on-premises data gateways to cloud data sources that rely on Azure AD-based authentication. It gives seamless Azure AD SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
 

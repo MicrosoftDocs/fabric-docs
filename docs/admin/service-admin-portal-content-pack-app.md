@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
 
-## Create template apps and organizational content packs
+## Create template organizational content packs and apps
 
 Users in the organization can create template apps and organizational content packs that use datasets built on one data source in Power BI Desktop. Learn more about [template apps](/power-bi/connect-data/service-template-apps-create).
 

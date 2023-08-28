@@ -20,13 +20,13 @@ Three settings control template apps ability to publish or install template apps
 
 :::image type="content" source="media/tenant-settings/template-app-settings.png" alt-text="Screenshot that shows the Power BI admin portal template app settings.":::
 
-## Publish Template Apps
+## Publish template Apps
 
 Users in the organization can create template apps workspaces. Control which users can publish template apps or distribute them to clients outside your organization by way of [AppSource](https://appsource.microsoft.com) or other distribution methods.
 
 ![Screenshot of Publish template apps setting enabled for entire organization.](media/tenant-settings/power-bi-admin-portal-template-app-settings.png)
 
-## Install template apps listed on AppSource
+## Install template apps
 
 Users in the organization can download and install template apps **only** from [AppSource](https://appsource.microsoft.com). Control which specific users or security groups can install template apps from AppSource.
 

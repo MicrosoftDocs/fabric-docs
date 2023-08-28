@@ -22,7 +22,7 @@ When enabled, users use natural language to generate suggested measures. See [mo
 
 :::image type="content" source="media/tenant-settings/allow-quick-measure-suggestions-admin-setting.png" alt-text="Screenshot of allow quick measure suggestions admin setting.":::
 
-## Allow use data to leave their geography
+## Allow user data to leave their geography
 
 Quick measure suggestions are currently processed in the US. When this setting is enabled, users will get quick measure suggestions for data outside the US. See [more information](/power-bi/transform-model/quick-measure-suggestions).
 

@@ -22,7 +22,7 @@ Increase security by allowing people to use a Private Link to access your Power 
 
 ![Screenshot of the Azure Private Link tenant setting.](media/tenant-settings/azure-private-link-tenant-setting.png)
 
-## Block public internet access
+## Block Public Internet Access
 
 For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. 
 
