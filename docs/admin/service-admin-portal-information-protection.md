@@ -26,7 +26,7 @@ To enable this setting:
 1. In the tenant settings, scroll down to the **Information protection** section.
 1. Find the setting called **Allow users to apply sensitivity labels for content**. By default, this setting is off, which means sensitivity labels can't be used in Power BI. To allow users to apply sensitivity labels, turn the setting on.
 
-## Apply sensitivity labels from data sources to their data in Power BI (preview)
+## Apply sensitivity labels from data sources to their data in Power BI
 
 When this setting is enabled, Power BI datasets that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.  For detail about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
 

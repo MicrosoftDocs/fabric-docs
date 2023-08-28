@@ -139,7 +139,7 @@ Updated August 23, 2023
 | Allow user data to leave their geography | Quick measure suggestions are currently processed in the US. When this setting is enabled, users will get quick measure suggestions for data outside the US. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2177910" target="_blank">Learn More</a> |
 | **[Scale-out settings](service-admin-portal-scale-out.md)** |  |
 | Scale out queries for large datasets (Preview) | For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across additional dataset replicas when query volume is high. |
-| **[OneLake settings](../onelake/onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake)** |  |
+| **[OneLake settings](service-admin-portal-onelake.md)** |  |
 | Users can access data stored in OneLake with apps external to Fabric | Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231198" target="_blank">Learn More</a> |
 | Users can sync data in OneLake with the OneLake File Explorer app | Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231052" target="_blank">Learn More</a> |
 | **[Git integration](git-integration-admin-settings.md)** |  |

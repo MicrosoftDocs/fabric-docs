@@ -286,15 +286,15 @@ You can also manage featured content on the **Featured content** page in the Adm
 
 This setting lets Power BI admins control who in the organization can use featured tables in the Excel Data Types Gallery. Read more about [Power BI featured tables in Excel](/power-bi/collaborate-share/service-excel-featured-tables). 
 
+> [!NOTE]
+> Connections to featured tables are also disabled if the **Allow live connections** setting is set to Disabled.
+
 To turn this setting on:
 
 1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Allow connections to featured tables**.
 1. Turn the switch on.
 1. Under **Apply to**, select the scope of users that the setting will affect.
 1. Select **Apply** to save your changes.
-
->[!NOTE]
->Connections to featured tables are also disabled if the [Allow live connections](service-admin-portal-export-sharing.md#allow-live-connections) setting is set to Disabled.
 
 ## Allow shareable links to grant access to everyone in your organization
 
