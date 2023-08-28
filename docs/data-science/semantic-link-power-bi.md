@@ -31,7 +31,7 @@ Thereby, providing a way for business analysts and data scientists to collaborat
 
 ## Data connectivity through SemPy Python library for pandas users
 
-The SemPy Python library is part of the Semantic Link feature and serves pandas users.
+The [SemPy Python library](/python/api/semantic-link-sempy) is part of the Semantic Link feature and serves pandas users.
 SemPy provides functionalities that include data retrieval from tables, computation of measures, and execution of DAX queries and metadata. <!-- (#TODO link to API docs) -->
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
@@ -158,7 +158,7 @@ GROUP BY
 ## Data augmentation with Power BI measures
 
 The `add_measure` operation is a powerful feature of Semantic Link that enables you to augment data with measures from Power BI datasets.
-The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector.
+The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector. For more information on the `add_measure` method, see [add_measure in the FabricDataFrame Class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
 
@@ -187,7 +187,7 @@ The `add_measure` operation performs these steps:
 - **Filters** the result by the existing rows in the FabricDataFrame.
 
 ## Next steps
-Learn how to use semantic information
 
+- [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)

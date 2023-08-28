@@ -218,5 +218,6 @@ By using the `drop_dependency_violations` function, you can enforce functional c
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
 
 ## Next steps
+- [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
 - [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)

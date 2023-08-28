@@ -31,35 +31,36 @@ The output of your data science work can be stored in [OneLake](../onelake/onela
 
 Power BI datasets serve as the single [semantic model](/analysis-services/tom/introduction-to-the-tabular-object-model-tom-in-analysis-services-amo), providing a reliable source for semantic definitions, such as Power BI measures. To connect to Power BI datasets:
 
-- Semantic Link offers data connectivity to the Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, making it easy for data scientists to work with the data.
+- Semantic Link offers data connectivity to the Python [pandas](https://pandas.pydata.org/) ecosystem via the [SemPy Python library](/python/api/semantic-link-sempy/), making it easy for data scientists to work with the data.
 - Semantic Link provides access to Power BI datasets through the **Spark native connector** for data scientists that are more familiar with the [Apache Spark](https://spark.apache.org/) ecosystem. This implementation supports various languages, including PySpark, Spark SQL, R, and Scala.
 
-Both implementations are subject to Power BI backend limitations (see [details](read-write-power-bi.md#read-access-limitations)).
+Both implementations are subject to Power BI [read-access limitations](read-write-power-bi.md#read-access-limitations).
 
 ## Applications of semantic information
 
 Semantic information in data includes Power BI [data categories](/power-bi/transform-model/desktop-data-categorization) such as address and postal code, relationships between tables, and hierarchical information.
 These data categories comprise metadata that Semantic Link propagates into the Data Science environment to enable new experiences and maintain data lineage. Some example applications of Semantic Link are:
-- intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
-- innovative integration for augmenting data with Power BI measures through the use of [add-measures](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures).
-- tools for [data quality validation](semantic-link-validate-data.md) based on the relationships between tables and functional dependencies within tables.
+- Intelligent suggestions of built-in [semantic functions](semantic-link-semantic-functions.md).
+- Innovative integration for augmenting data with Power BI measures through the use of [add-measures](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures).
+- Tools for [data quality validation](semantic-link-validate-data.md) based on the relationships between tables and functional dependencies within tables.
 
 Semantic Link is a powerful tool that enables business analysts to use data effectively in a comprehensive data science environment.
 Semantic Link facilitates seamless collaboration between data scientists and business analysts by eliminating the need to reimplement business logic embedded in [Power BI measures](/power-bi/transform-model/desktop-measures#understanding-measures). This approach ensures that both parties can work efficiently and productively, maximizing the potential of their data-driven insights.
 
 ## `FabricDataFrame` data structure
 
-[FabricDataFrame](data-science-overview.md) is the core data structure of Semantic Link.
+[FabricDataFrame](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) is the core data structure of Semantic Link.
 It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
 FabricDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
 
 :::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabricdataframes.svg" alt-text="A diagram that shows data flow from connectors to Power BI datasets to FabricDataFrame to Semantic Functions.":::
 
 FabricDataFrame supports all pandas operations and more.
-It exposes semantic functions and [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) that enable you to use Power BI measures in your data science work.
+It exposes semantic functions and the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that enable you to use Power BI measures in your data science work.
 
 ## Next steps
 
+- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
 - [Learn more about Semantic Link and Power BI connectivity](semantic-link-power-bi.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
