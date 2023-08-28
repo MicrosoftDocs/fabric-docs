@@ -24,9 +24,9 @@ JSON format is supported for the following activities and connectors as a source
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
 |  | Azure Data Lake Storage Gen1 |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
+|  | FTP |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
-|  | FTP |
 |  | SFTP |
 | **Supported activity** | [Copy activity](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
@@ -60,14 +60,13 @@ After you select **Settings** in the **File format** section, the following prop
     - If this box is checked (default), the service writes decompressed files to `<specified file path>/<folder named as source compressed file>/`.
     - If this box is unchecked, the service writes decompressed files directly to `<specified file path>`. Make sure you don't have duplicated file names in different source zip files to avoid racing or unexpected behavior.
 
-- **Compression level**: The compression ratio. You can choose from **Optimal** or **Fastest**.
+- **Compression level**: The compression ratio. You can choose from **Fastest** or **Optimal**.
 
-  - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, go to the [Compression Level](/dotnet/api/system.io.compression.compressionlevel) article.
-  
   - **Fastest**: The compression operation should complete as quickly as possible, even if the resulting file isn't optimally compressed.
 
+  - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, go to the [Compression Level](/dotnet/api/system.io.compression.compressionlevel) article.
 
-- **Encoding**: Specify the encoding type used to read/write test files. Select one type from the drop-down list. The default value is **UTF-8**.
+- **Encoding**: Specify the encoding type used to read test files. Select one type from the drop-down list. The default value is **UTF-8**.
 
 ### JSON format as destination
 
@@ -82,7 +81,7 @@ After you select **Settings**, the following properties are shown in the pop-up 
 
   - **Optimal**: The compression operation should be optimally compressed, even if the operation takes a longer time to complete. For more information, go to the [Compression Level](/dotnet/api/system.io.compression.compressionlevel) article.
 
-- **Encoding**: Specify the encoding type used to read/write test files. Select one type from the drop-down list. The default value is **UTF-8**.
+- **Encoding**: Specify the encoding type used to write test files. Select one type from the drop-down list. The default value is **UTF-8**.
 
 Under **Advanced** settings in the **Destination** tab, the following JSON format related properties are displayed.
 
