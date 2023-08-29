@@ -45,7 +45,7 @@ The source and database shortcuts use the same storage account to fetch the data
 1. Select **Share**.
 1. Select **Copy token** to copy the sharing token. Save this string for use in a later step.
 
-    :::image type="content" source="media/database-shortcut/copy-token.png" alt-text="Screenshot of Azure portal copying of token to create database shortcut in Real-Time Analytics.":::
+    :::image type="content" source="media/database-shortcut/copy-token.png" alt-text="Screenshot of Azure portal copying of token to create database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/copy-token.png":::
 
 ## Create database shortcut
 
@@ -66,7 +66,7 @@ The source and database shortcuts use the same storage account to fetch the data
 1. The **Source cluster URI** and **Database** name will auto-populate from the information in the invitation token.
 1. Select **Create**.
  
-    :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Analytics.":::
+    :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database-shortcut.png":::
 
 You are taken to the [database details](create-database.md#database-details) view of the new database shortcut.
 
