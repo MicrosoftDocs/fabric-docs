@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 07/13/2023
-ms.search.form: product-kusto, create Real-Time Analytics solution
+ms.search.form: product-kusto, Overview
 ---
 # What is Real-Time Analytics in Fabric?
 
