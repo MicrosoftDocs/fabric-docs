@@ -99,6 +99,10 @@
         href: connector-data-warehouse-copy-activity.md 
     - name: Format
       items:
+      - name: Avro
+        items:
+        - name: Configure in Data pipeline
+          href: format-avro.md
       - name: Binary
         items:
         - name: Configure in Data pipeline
