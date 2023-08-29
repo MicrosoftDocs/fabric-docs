@@ -31,7 +31,7 @@ https://onelake.dfs.fabric.microsoft.com/<workspace>/<item>.<itemtype>/<path>/<f
 OneLake also supports referencing workspaces and items with GUIDs. OneLake assigns GUIDs and GUIDs don't change, even if the workspace or item name changes. You can find the associated GUID for your workspace or item in the URL on the Fabric portal.  You must use GUIDs for both the workspace and the item, and don't need the item type.
 
 ```http
-https://onelake.dfs.fabric.microsoft.com/<workspaceGUID>/<itemGUID>/Files/test.csv
+https://onelake.dfs.fabric.microsoft.com/<workspaceGUID>/<itemGUID>/<path>/<fileName>
 ```
 
 When adopting a tool for use over OneLake instead of ADLS Gen2, use the following mapping:
@@ -39,6 +39,12 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 - The account name is always 'onelake'.
 - The container name is your workspace name.
 - The data path starts at the item.  For example: '/mylakehouse.lakehouse/Files/'.
+
+OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for even more compatability with ADLS Gen2 and Azure Blob Storage.  The ABFS driver uses its own scheme identifier abfs and a slightly different URI format to address files and directories in ADLS Gen2 accounts.  As before, simply swap filesystem for workspace and include the item and item type to use this URI format with OneLake.
+
+```http
+abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
+```
 
 ## Authorization
 
