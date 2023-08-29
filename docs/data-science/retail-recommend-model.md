@@ -162,7 +162,7 @@ df_users = (
 
 ### Display raw data
 
-You can explore each of the DataFrames using the `display` command. This command allows you to view high-level statistics of the DataFramkes and understand how different columns in the datasets are related to each other. Before exploring the datasets, use the following code to import the required libraries.
+You can explore each of the DataFrames using the `display` command. This command allows you to view high-level statistics of the DataFrames and understand how different columns in the datasets are related to each other. Before exploring the datasets, use the following code to import the required libraries.
 
 ```python
 import pyspark.sql.functions as F
