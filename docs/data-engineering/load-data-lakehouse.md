@@ -33,9 +33,9 @@ In Microsoft Fabric, there are a few ways you can get data into a lakehouse:
 
 ### Local file upload
 
-You can also upload data stored on your local machine. You can do it directly in the lakehouse explorer.
+You can also upload data stored on your local machine. You can do it directly in the Lakehouse explorer.
 
-:::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in Lakehouse Explorer." lightbox="media/get-data/file-upload-dialog.png":::
+:::image type="content" source="media/get-data/file-upload-dialog.png" alt-text="Screenshot of file upload dialog in the Lakehouse explorer." lightbox="media/get-data/file-upload-dialog.png":::
 
 ### Copy tool in pipelines
 
@@ -43,11 +43,11 @@ The Copy tool is a highly scalable Data Integration solution that allows you to 
 
 ### Dataflows
 
-For users that are familiar with Power BI dataflows, the same tool is available to land data in Lakehouse. You can quickly access it from Lakehouse explorer "Get data" option, and land data from over 200 connectors. See, [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
+For users that are familiar with Power BI dataflows, the same tool is available to load data into your lakehouse. You can quickly access it from the Lakehouse explorer "Get data" option, and load data from over 200 connectors. See, [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
 ### Notebook code
 
-You can use available Spark libraries to connect to a data source directly, load data to data frame and then save it in a lakehouse. It's the most open way to load data in the lakehouse that user code is fully managing.
+You can use available Spark libraries to connect to a data source directly, load data to a data frame, and then save it in a lakehouse. This method is the most open way to load data in the lakehouse that user code is fully managing.
 
 > [!NOTE]
 > External Delta tables created with Spark code won't be visible to SQL endpoint. Use shortcuts in Table space to make external Delta tables visible for SQL endpoint.
@@ -63,7 +63,7 @@ You can use available Spark libraries to connect to a data source directly, load
 
 ## Next steps
 
-- [Overview: Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
-- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
-- [How to: How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md).
-- [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md).
+- [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
+- [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)
+- [How to copy data using copy activity](../data-factory/copy-data-activity.md)
+- [Move data from Azure SQL DB into Lakehouse via copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)

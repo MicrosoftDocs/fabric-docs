@@ -20,10 +20,10 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 ## Lakehouse SQL endpoint
 
-The Lakehouse creates a serving layer by automatically generating a SQL Endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
+The Lakehouse creates a serving layer by automatically generating a SQL endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
 
 An important distinction between default warehouse is that it's a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
-Note that only the tables in Delta format are available in the SQL Endpoint. Parquet, CSV, and other formats can't be queried using the SQL Endpoint. If you don't see your table, convert it to Delta format.
+Note that only the tables in Delta format are available in the SQL endpoint. Parquet, CSV, and other formats can't be queried using the SQL endpoint. If you don't see your table, convert it to Delta format.
 
 ## Automatic table discovery and registration
 
@@ -33,9 +33,9 @@ The automatic table discovery and registration is a feature of Lakehouse that pr
 
 A data engineer can interact with the lakehouse and the data within the lakehouse in several ways:
 
-- **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigating the Lakehouse explorer](navigate-lakehouse-explorer.md).
+- **The Lakehouse explorer**: The explorer is the main Lakehouse interaction page. You can load data in your Lakehouse, explore data in the Lakehouse using the object explorer, set MIP labels & various other things. Learn more about the explorer experience: [Navigate the Fabric Lakehouse explorer](navigate-lakehouse-explorer.md).
 
-- **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your Lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your Lakehouse](lakehouse-notebook-load-data.md).
+- **Notebooks**: Data engineers can use the notebook to write code to read, transform and write directly to Lakehouse as tables and/or folders. You can learn more about how to use notebooks for Lakehouse: [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md) and [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md).
 
 - **Pipelines**: Data engineers can use data integration tools such as pipeline copy tool to pull data from other sources and land into the Lakehouse. Find more information on how to use the copy activity: [How to copy data using copy activity](../data-factory/copy-data-activity.md).
 
@@ -43,7 +43,7 @@ A data engineer can interact with the lakehouse and the data within the lakehous
 
 - **Dataflows Gen 2**: Data engineers can use Dataflows Gen 2 to ingest and prepare their data. Find more information on load data using dataflows: [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
-Learn more about the different ways to load data into your lakehouse: [Get data experience for Lakehouse](load-data-lakehouse.md).
+Learn more about the different ways to load data into your lakehouse: [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
 
 ## Next steps
 

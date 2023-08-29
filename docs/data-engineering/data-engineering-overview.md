@@ -47,14 +47,14 @@ Data pipelines are a series of steps that can collect, process, and transform da
 
 Get started with the Data Engineering experience:
 
-- To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md).
+- To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
 
-- To get started with a Lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
+- To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
 
-- To learn more about Apache Spark job definitions, see [What is an Apache Spark job definition?](spark-job-definition.md).
+- To learn more about Apache Spark job definitions, see [What is an Apache Spark job definition?](spark-job-definition.md)
 
 - To get started with an Apache Spark job definition, see [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md).
 
 - To learn more about notebooks, see [Author and execute the notebook](author-execute-notebook.md).
 
-- To get started with Pipelines copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
+- To get started with pipeline copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
