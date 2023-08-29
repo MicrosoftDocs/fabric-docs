@@ -16,7 +16,7 @@ A database shortcut in Real-Time Analytics is an embedded reference within a KQL
 
 ## When is the database shortcut useful?
 
-If you have data in an Azure Data Explorer database and want to use this data in Real-Time Analytics, you can create a database shortcut to expose this data. This feature is also useful to segregate compute resources to protect a production environment from non-production use cases. A database shortcut can also be used to associate the costs with the party that runs queries on the data.
+If you have data in an Azure Data Explorer database and want to use this data in Real-Time Analytics, you can create a database shortcut to expose this data. This feature is also useful to segregate compute resources to protect a production environment from nonproduction use cases. A database shortcut can also be used to associate the costs with the party that runs queries on the data.
 
 ## How does the database shortcut work?
 
@@ -41,7 +41,7 @@ The source and database shortcuts use the same storage account to fetch the data
 
     :::image type="content" source="media/database-shortcut/database-share.png" alt-text="Screenshot of database in the Azure portal and the share button." lightbox="media/database-shortcut/database-share.png":::
 
-1. Enter the recipient email address. This should be the email address associated with the Fabric user account in which you'll later create the database shortcut. This email address may be your own, or someone else's.
+1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you'll later create the database shortcut. This email address may be your own, or someone else's.
 1. Select **Share**.
 1. Select **Copy token** to copy the sharing token. Save this string for use in a later step.
 
@@ -63,12 +63,12 @@ The source and database shortcuts use the same storage account to fetch the data
     :::image type="content" source="media/database-shortcut/new-shortcut-window.png" alt-text="Screenshot of new database shortcut window in Real-Time Analytics.":::
 
 1. Optionally, modify the default [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).  
-1. The **Source cluster URI** and **Database** name will auto-populate from the information in the invitation token.
+1. The **Source cluster URI** and **Database** name autopopulates from the information in the invitation token.
 1. Select **Create**.
  
     :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database-shortcut.png":::
 
-You are taken to the [database details](create-database.md#database-details) view of the new database shortcut.
+You're taken to the [database details](create-database.md#database-details) view of the new database shortcut.
 
 ## Delete database shortcut
 
