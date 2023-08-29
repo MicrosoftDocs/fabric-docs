@@ -15,7 +15,7 @@ ms.date: 05/23/2023
 
 Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
 
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found at [OneLake API parity](onelake-api-parity.md).
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences instead of the ADLS Gen2 APIs. A full list of changes to these APIs can be found at [OneLake API parity](onelake-api-parity.md).
 
 ## URI Syntax
 
@@ -40,7 +40,7 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 - The container name is your workspace name.
 - The data path starts at the item.  For example: '/mylakehouse.lakehouse/Files/'.
 
-OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for even more compatability with ADLS Gen2 and Azure Blob Storage.  The ABFS driver uses its own scheme identifier abfs and a slightly different URI format to address files and directories in ADLS Gen2 accounts.  As before, simply swap filesystem for workspace and include the item and item type to use this URI format with OneLake.
+OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for  more compatibility with ADLS Gen2 and Azure Blob Storage.  The ABFS driver uses its own scheme identifier abfs and a slightly different URI format to address files and directories in ADLS Gen2 accounts.  To use this URI format over OneLake, swap workspace for filsystem and include the item and item type.
 
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
