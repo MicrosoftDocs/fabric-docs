@@ -40,7 +40,7 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 - The container name is your workspace name.
 - The data path starts at the item.  For example: '/mylakehouse.lakehouse/Files/'.
 
-OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for  more compatibility with ADLS Gen2 and Azure Blob Storage.  The ABFS driver uses its own scheme identifier abfs and a slightly different URI format to address files and directories in ADLS Gen2 accounts.  To use this URI format over OneLake, swap workspace for filsystem and include the item and item type.
+OneLake also supports the [Azure Blob Filesystem driver](/azure/storage/blobs/data-lake-storage-abfs-driver) (ABFS) for  more compatibility with ADLS Gen2 and Azure Blob Storage.  The ABFS driver uses its own scheme identifier 'abfs' and a different URI format to address files and directories in ADLS Gen2 accounts.  To use this URI format over OneLake, swap workspace for filesystem and include the item and item type.
 
 ```http
 abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<path>/<fileName>
