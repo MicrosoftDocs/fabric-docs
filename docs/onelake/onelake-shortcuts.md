@@ -212,8 +212,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 
 ## Limitations and Considerations
 
-- The maximum number of shortcuts per Fabric item is 10,000.In this context the term item refers to: apps, lakehouses, 
-   warehouses, reports, and more.
+- The maximum number of shortcuts per Fabric item is 10,000. In this context the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcut to shortcut links is 5.
 - ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
