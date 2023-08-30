@@ -39,11 +39,11 @@ You can also upload data stored on your local machine. You can do it directly in
 
 ### Copy tool in pipelines
 
-The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a Delta table. Copy tool is a part of pipelines activities that you can modify in multiple ways, such as scheduling or triggering based on an event. See, [How to copy data using copy activity](../data-factory/copy-data-activity.md).
+The Copy tool is a highly scalable Data Integration solution that allows you to connect to different data sources and load the data either in original format or convert it to a Delta table. Copy tool is a part of pipelines activities that you can modify in multiple ways, such as scheduling or triggering based on an event. For more information, see [How to copy data using copy activity](../data-factory/copy-data-activity.md).
 
 ### Dataflows
 
-For users that are familiar with Power BI dataflows, the same tool is available to load data into your lakehouse. You can quickly access it from the Lakehouse explorer "Get data" option, and load data from over 200 connectors. See, [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
+For users that are familiar with Power BI dataflows, the same tool is available to load data into your lakehouse. You can quickly access it from the Lakehouse explorer "Get data" option, and load data from over 200 connectors. For more information, see [Quickstart: Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
 ### Notebook code
 
