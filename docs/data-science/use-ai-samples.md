@@ -20,11 +20,11 @@ In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!IN
 Some of the end-to-end AI samples require use of custom libraries when developing machine learning models or doing ad-hoc data analysis. You can quickly install these libraries for your Apache Spark session in one of two ways:
 
 - Use the in-line installation capabilities (such as `pip` or `conda`) in your notebook
-- Install libraries directly in your current [workspace](../get-started/workspaces.md)
+- Install libraries directly in your [current workspace](../get-started/workspaces.md#current-workspace)
 
 #### Install with in-line installation capabilities
 
-You can use the in-line installation capabilities (e.g., `pip` or `conda`) within your notebook to install new libraries. Use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
+You can use the in-line installation capabilities (e.g., `%pip` or `%conda`) within your notebook to install new libraries. Use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
 
 ```python
 # Use pip to install libraries
@@ -38,7 +38,8 @@ You can use the in-line installation capabilities (e.g., `pip` or `conda`) withi
 
 Alternatively, you can install libraries in your workspace.
 
-1. Select **Workspace settings**.
+1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace. 
+1. Select **Workspace settings** for your current workspace.
 1. Select **Data Engineering/Science** to open the dropdown.
 1. Select **Library management**.
 
