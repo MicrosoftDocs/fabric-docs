@@ -15,7 +15,7 @@ This article tries to list the limitations and considerations when using the Dat
 
 Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour.
 
-Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](https://learn.microsoft.com/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
+Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
 
 ## Network issues with port 1433
 
