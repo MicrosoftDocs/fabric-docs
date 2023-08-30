@@ -35,18 +35,20 @@ The source and database shortcuts use the same storage account to fetch the data
 
 ## Create database shortcut
 
-You can create a database shortcut in Real-Time Analytics from any source database in Azure Data Explorer using an invitation link, or by using a cluster URI and database name. Select the desired tab that corresponds with the way you'd like to create a shortcut.
+You can create a database shortcut in Real-Time Analytics from any source database in Azure Data Explorer using an invitation link, or by using a cluster URI and database name.
+
+Select the desired tab that corresponds with the way you'd like to create a shortcut.
 
 ### [Using an invitation link](#tab/link)
 
-To create a shortcut using an invitation link, you must first [create the link](#create-an-invitation-token). Once created, use the link to open Real-Time Analytics with the **New database shortcut** dialog box, and then follow these steps:
+To create a shortcut using an invitation link, you must first [create the link](#create-an-invitation-token). Once created, use the link to open Real-Time Analytics showing the **New database shortcut** dialog box, and then follow these steps:
 
 1. Enter a name for your database shortcut.
 1. Specify the **Workspace** in which you want to create the database shortcut.
 1. Optionally, modify the default [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
 1. Check that the **Invitation token** is populated with the token you created and verified.
 
-    :::image type="content" source="media/database-shortcut/new-shortcut-with-link.png" alt-text="Screenshot of new database shortcut from link dialog in Real-Time Analytics.":::
+    :::image type="content" source="media/database-shortcut/new-shortcut-with-link.png" alt-text="Screenshot of new database shortcut from link dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-link.png":::
 
 1. Select **Create**.
 
@@ -60,26 +62,26 @@ To create a shortcut using a cluster URI and database name, follow these steps:
 1. Enter a name for your database shortcut.
 1. Select **Type** > **New shortcut database (Follower)**
 
-    :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics.":::
+    :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database.png":::
 
-1. In the **Method** dropdown, select **Cluster URI**.
+1. Select **Method** > **Cluster URI**.
 1. Enter the URI of the source cluster.
 1. Specify the source **Database**.
 1. Optionally, modify the default [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
 
-  :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster U R I dialog in Real-Time Analytics.":::
+    :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster U R I dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-uri.png":::
 
 1. Select **Create**.
+
+---
 
 Once the shortcut is created, you're taken to the [database details](create-database.md#database-details) view of the new database shortcut.
 
 :::image type="content" source="media/database-shortcut/new-database-shortcut.png" alt-text="Screenshot of resulting database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database-shortcut.png":::
 
----
-
 ## Create an invitation token
 
-You can create an invitation token to create a database shortcut for yourself or for another user.
+You can create an invitation token for a new database shortcut for yourself or for another user.
 
 To create an invitation token, follow these steps:
 
@@ -91,14 +93,14 @@ To create an invitation token, follow these steps:
 
 1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you later create the database shortcut. This email address may be your own, or someone else's.
 1. Select **Share**.
-1. Choose one of the following options:
+1. Choose one of the following options to create a link for a new shortcut. We recommend using a link to create a shortcut as it opens the **New database shortcuts** dialog box and with the **Source cluster URI** and **Database** name autopopulated from the information in the invitation token.
     * If you used your own email address to create the token and want to create the shortcut immediately, select **Open link**.
     * Otherwise, select **Copy link**. The person who the token was created for can later paste this link into a browser to create the shortcut.
 
-    > [!NOTE]
-    > The options open the **New database shortcuts** dialog box and with the **Source cluster URI** and **Database** name autopopulated from the information in the invitation token and is the recommended way to create a shortcut. Optionally, you can select **Copy token** to copy the token to the clipboard and us the token string to manually create a shortcut in your workspace. You can do this by selecting **+ New** > **KQL Database (Preview)**, setting **Type** > **New shortcut database (Follower)**, and then pasting the token into the **Invitation token** box.
-
     :::image type="content" source="media/database-shortcut/create-token.png" alt-text="Screenshot of Azure portal select the open option to create a database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/create-token.png":::
+
+    > [!NOTE]
+    > Optionally, you can choose to manually create the shortcut. To do so, select **Copy token**. Go to your workspace, select **+ New** > **KQL Database (Preview)**, and then select **Type** > **New shortcut database (Follower)**. Select **Method** > **Invitation token**, in **Invitation token** paste the token, and then select **Create**.
 
 ## Delete database shortcut
 
