@@ -93,7 +93,10 @@ To create an invitation token, follow these steps:
 
 1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you later create the database shortcut. This email address may be your own, or someone else's.
 1. Select **Share**.
-1. Choose one of the following options to create a link for a new shortcut. We recommend using a link to create a shortcut as it opens the **New database shortcuts** dialog box and with the **Source cluster URI** and **Database** name autopopulated from the information in the invitation token.
+1. Choose one of the following options to create a link for a new shortcut.
+
+    We recommend using a link to create a shortcut as it opens the **New database shortcuts** dialog box and with the **Source cluster URI** and **Database** name autopopulated from the information in the invitation token.
+
     * If you used your own email address to create the token and want to create the shortcut immediately, select **Open link**.
     * Otherwise, select **Copy link**. The person who the token was created for can later paste this link into a browser to create the shortcut.
 
