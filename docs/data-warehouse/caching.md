@@ -52,7 +52,7 @@ Given that the in-memory cache has a smaller capacity compared to the SSD cache,
 
 Caching remains consistently active and operates seamlessly in the background, requiring no intervention on your part. Disabling caching is not needed, as doing so would inevitably lead to a noticeable deterioration in query performance.
 
-The caching mechanism is orchestrated and upheld by the Fabric itself, and it doesn't offer users the capability to manually clear the cache.
+The caching mechanism is orchestrated and upheld by the [!INCLUDE [product-name](../includes/product-name.md)] itself, and it doesn't offer users the capability to manually clear the cache.
 
 Full cache transactional consistency ensures that any modifications to the data in storage, such as through Data Manipulation Language (DML) operations, after it has been initially loaded into the in-memory cache, will result in consistent data.
 
