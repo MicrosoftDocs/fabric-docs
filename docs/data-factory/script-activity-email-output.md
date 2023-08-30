@@ -71,9 +71,11 @@ Select the Script activity, and then drag it's **On success** output (a green ch
 
    :::image type="content" source="media/script-activity-email-output/sign-in-to-outlook.png" alt-text="Screenshot showing the Office 365 Outlook (Preview) activity Settings tab with the Sign in to Outlook prompt.":::
 
-1. After you sign in, you see the outgoing email template. Provide a list of emails for the email to go to in the **To** text box, and a **Subject** in that text box. Note that all fields in the template support dynamic content. Select the **Body** text area and then select **Add dynamic content**, to customize what we will add. Select **Activity outputs** if it isn't already selected, and then select the output of the activity. Select OK to use this dynamic content as the **Body** of the email. You can use any combination of outputs to generate emails of any level of complexity you need.
+1. After you sign in, you see the outgoing email template. Provide a list of emails for the email to go to in the **To** text box, and a **Subject** in that text box. Note that all fields in the template support dynamic content. Select the **Body** text area and then select **Add dynamic content**, to customize what we will add. Select **Activity outputs** if it isn't already selected, and then select the output of the activity. Select OK to use this dynamic content as the **Body** of the email. You can use any combination of outputs to generate emails of any level of complexity you need. In this case we use the following expression to output the returned value from the SQL script:
 
-:::image type="content" source="media/script-activity-email-output/configure-dynamic-content-with-script-output.png" alt-text="Screenshot showing the Pipeline expression builder with the output of the Script activity selected for its dynamic text from the Activity outputs tab.":::
+   ```@concat('Output from script activity: ', activity('Script1').output.resultSets[0].rows[0].OutputText)```
+
+   :::image type="content" source="media/script-activity-email-output/configure-dynamic-content-with-script-output.png" alt-text="Screenshot showing the Pipeline expression builder with the output of the Script activity selected for its dynamic text from the Activity outputs tab.":::
 
 1. You can also specify advanced settings for the email if you wish, including an alternate **From (Send as)** value, **CC**, **BCC**, **Sensitivity**, **Reply To**, or **Importance** fields:
 
@@ -88,6 +90,10 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 ## Check the email
 
 After the pipeline runs successfully, check the account(s) you specified in the **To** box of the Office 365 Outlook (Preview) activity settings to validate the output.
+
+:::image type="content" source="media/script-activity-email-output/pipeline-succeeded.png" alt-text="Screenshot showing successful execution of the pipeline.":::
+
+
 
 ## Next steps
 
