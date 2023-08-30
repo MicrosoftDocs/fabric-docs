@@ -43,6 +43,9 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available notebooks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
 
+1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
+
+   :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
 ## Attach a lakehouse to the notebooks
 
 To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add an existing lakehouse to a notebook in a Fabric-enabled workspace.
