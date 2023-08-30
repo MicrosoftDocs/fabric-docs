@@ -54,7 +54,7 @@ To create a shortcut using an invitation link, you must first [create the link](
 
 ### [Using a cluster URI](#tab/workspace)
 
-To create a shortcut using a cluster URI and database name, follow these steps:
+To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the Azure Data Explorer source cluster, and then follow these steps:
 
 1. Browse to your workspace in Microsoft Fabric.
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
