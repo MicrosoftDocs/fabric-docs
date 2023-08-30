@@ -46,9 +46,9 @@ Certain datasets are too large to be accommodated within an in-memory cache. To 
 
 Given that the in-memory cache has a smaller capacity compared to the SSD cache, data that is removed from the in-memory cache remains within the SSD cache for an extended period. When subsequent query requests this data, it is retrieved from the SSD cache into the in-memory cache at a significantly quicker rate than if fetched from remote storage, ultimately providing you with more consistent query performance.
 
-![Populating in-memory cache from SSD cache](C:\Storage\docs\fabric-docs-pr-fipopovi\docs\data-warehouse\media\caching\populating-in-memory-cache-from-ssd-cache.png)
+![Populating in-memory cache from SSD cache](media\caching\populating-in-memory-cache-from-ssd-cache.png)
 
-# Cache management
+## Cache management
 
 Caching remains consistently active and operates seamlessly in the background, requiring no intervention on your part. Disabling caching is not needed, as doing so would inevitably lead to a noticeable deterioration in query performance.
 
