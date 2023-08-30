@@ -162,5 +162,6 @@ By using the `list_relationship_violations` function with pandas DataFrames, you
 
 
 ## Next steps
+- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
 - [Detect, explore and validate functional dependencies in your data](semantic-link-validate-data.md)
 - [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)

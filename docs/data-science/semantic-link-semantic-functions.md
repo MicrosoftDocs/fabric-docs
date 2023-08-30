@@ -22,7 +22,7 @@ To use semantic functions, install the `SemPy` Python library in your notebook k
 %pip install semantic-link
 ```
 
-[FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function.
+[FabricDataFrames](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically expose semantic functions based on logic defined by each function.
 For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
 
 Each semantic function uses information about the data types, metadata (such as Power BI data categories), and the data in a FabricDataFrame or FabricSeries to determine its relevance to the particular data on which you're working.
@@ -71,9 +71,6 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-> [!NOTE]
-> Semantic functions may have additional dependencies that need to be installed. For example the `to_geopandas` function requires the `geopandas` package to be installed.
-
 ## Built-in semantic functions
 
 The SemPy Python library provides a set of built-in semantic functions that are available out of the box. A few examples are
@@ -118,5 +115,6 @@ The following points provide a breakdown of the code snippet:
 
 ## Next steps
 
+- [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-power-bi.md)
 - [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)

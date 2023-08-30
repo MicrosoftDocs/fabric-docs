@@ -94,13 +94,13 @@ By leveraging semantic link, data scientists can:
 - avoid the need to re-implement business logic and domain knowledge in their code
 - easily access and use Power BI measures in their code
 - use semantics to power new experiences, such as semantic functions
-- explore and validated functional dependencies and relationships between data
+- explore and validate functional dependencies and relationships between data
 
-SemPy increases productivity and allows for faster collaboration across teams that operate on the same datasets. SemPy explores data semantics to simplify data science analytics. Through SemPy we can expect to:
+Through the use of SemPy, organizations can expect to see:
 
-- Increase productivity across teams that operate on the same datasets.
-- Increase cross-collaboration across an organization, to bring the business intelligence and AI teams together.
-- Decrease ambiguity and the learning curve when onboarding onto a new model/dataset.
+- increased productivity and faster collaboration across teams that operate on the same datasets
+- increased cross-collaboration across business intelligence and AI teams
+- reduced ambiguity and an easier learning curve when onboarding onto a new model or dataset
 
 For more information on Semantic Link, see [What is Semantic Link?](semantic-link-overview.md).
 
