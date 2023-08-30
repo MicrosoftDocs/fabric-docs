@@ -38,9 +38,9 @@ You can use the in-line installation capabilities (e.g., `pip` or `conda`) withi
 
 Alternatively, you can install libraries in your workspace.
 
-- Select **Workspace settings**.
-- select **Data Engineering/Science** to open the dropdown.
-- Select **Library management**.
+1. Select **Workspace settings**.
+1. Select **Data Engineering/Science** to open the dropdown.
+1. Select **Library management**.
 
 :::image type="content" source="media/use-ai-samples/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/use-ai-samples/library-management-page.png":::
 
