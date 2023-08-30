@@ -1,6 +1,6 @@
 ---
-title: Cognitive Services in SynapseML
-description: Learn about the capabilities of Azure Cognitive Services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
+title: AI services in SynapseML
+description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: mopeakande
@@ -8,11 +8,11 @@ author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
-# What is Cognitive Services in SynapseML?
+# What is Azure AI services in SynapseML?
 
-[Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. Cognitive Services empowers developers even when they don't have direct AI or data science skills or knowledge. The goal of Cognitive Services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure Cognitive Services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
+[Azure AI services](https://azure.microsoft.com/services/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. AI services empowers developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
 
-## Usage of Cognitive Services
+## Usage of Azure AI services
 
 ### Vision
 [**Computer Vision**](https://azure.microsoft.com/products/ai-services/ai-vision/)
@@ -32,14 +32,14 @@ ms.date: 05/08/2023
 - Group: divides a group of faces into disjoint groups based on similarity ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/face/GroupFaces.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.face.html#module-synapse.ml.cognitive.face.GroupFaces))
 
 ### Speech
-[**Speech Services**](https://azure.microsoft.com/services/cognitive-services/speech-services/)
+[**Speech Services**](https://azure.microsoft.com/services/ai-services/speech-services/)
 - Speech-to-text: transcribes audio streams ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/SpeechToText.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.SpeechToText))
 - Conversation Transcription: transcribes audio streams into live transcripts with identified speakers. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/ConversationTranscription.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.ConversationTranscription))
 - Text to Speech: Converts text to realistic audio ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/speech/TextToSpeech.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.speech.html#module-synapse.ml.cognitive.speech.TextToSpeech))
 
 
 ### Language
-[**Text Analytics**](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
+[**Text Analytics**](https://azure.microsoft.com/services/ai-services/text-analytics/)
 - Language detection: detects language of the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/LanguageDetector.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.LanguageDetector))
 - Key phrase extraction: identifies the key talking points in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/KeyPhraseExtractor.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.KeyPhraseExtractor))
 - Named entity recognition: identifies known entities and general named entities in the input text ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/text/NER.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.text.html#module-synapse.ml.cognitive.text.NER))
@@ -48,7 +48,7 @@ ms.date: 05/08/2023
 
 
 ### Translation
-[**Translator**](https://azure.microsoft.com/services/cognitive-services/translator/)
+[**Translator**](https://azure.microsoft.com/services/ai-services/translator/)
 - Translate: Translates text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Translate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Translate))
 - Transliterate: Converts text in one language from one script to another script. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Transliterate.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Transliterate))
 - Detect: Identifies the language of a piece of text. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/translate/Detect.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.translate.html#module-synapse.ml.cognitive.translate.Detect))
@@ -69,16 +69,16 @@ ms.date: 05/08/2023
 - List Custom Models: Get information about all custom models. ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/form/ListCustomModels.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.form.html#module-synapse.ml.cognitive.form.ListCustomModels))
 
 ### Decision
-[**Anomaly Detector**](https://azure.microsoft.com/services/cognitive-services/anomaly-detector/)
+[**Anomaly Detector**](https://azure.microsoft.com/services/ai-services/anomaly-detector/)
 - Anomaly status of latest point: generates a model using preceding points and determines whether the latest point is anomalous ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectLastAnomaly.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectLastAnomaly))
 - Find anomalies: generates a model using an entire series and finds anomalies in the series ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectAnomalies.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectAnomalies))
 
 ### Search
-- [Bing Image search](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/bing/BingImageSearch.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.bing.html#module-synapse.ml.cognitive.bing.BingImageSearch))
+- [Bing Image search](https://azure.microsoft.com/services/ai-services/bing-image-search-api/) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/bing/BingImageSearch.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.bing.html#module-synapse.ml.cognitive.bing.BingImageSearch))
 - [Azure Cognitive search](/azure/search/search-what-is-azure-search) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/search/AzureSearchWriter$.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.search.html#module-synapse.ml.cognitive.search.AzureSearchWriter))
 
 ## Next steps
 
-- [Use Cognitive Services with SynapseML in Microsoft Fabric](how-to-use-cognitive-services-with-synapseml.md)
-- [Use Cognitive Services with SynapseML for multivariate anomaly detection](cognitive-services-multivariate-anomaly-detection.md)
+- [Use Azure AI services with SynapseML in Microsoft Fabric](how-to-use-cognitive-services-with-synapseml.md)
+- [Use Azure AI services with SynapseML for multivariate anomaly detection](cognitive-services-multivariate-anomaly-detection.md)
 - [Create a custom search engine and question-answering system](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
