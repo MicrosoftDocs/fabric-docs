@@ -89,7 +89,7 @@ To create an invitation token, follow these steps:
 
     :::image type="content" source="media/database-shortcut/database-share.png" alt-text="Screenshot of database in the Azure portal and the share button." lightbox="media/database-shortcut/database-share.png":::
 
-1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you'll later create the database shortcut. This email address may be your own, or someone else's.
+1. Enter the recipient email address. This address should be the email address associated with the Fabric user account in which you later create the database shortcut. This email address may be your own, or someone else's.
 1. Select **Share**.
 1. Choose one of the following options:
     * If you used your own email address to create the token and want to create the shortcut immediately, select **Open link**.
