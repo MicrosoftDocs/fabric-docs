@@ -45,9 +45,9 @@ Alternatively, you can install libraries in your workspace.
 
 :::image type="content" source="media/use-ai-samples/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/use-ai-samples/library-management-page.png":::
 
-You can then select how to install the required libraries. For example, **Add from PyPi** or **Add from .yml**.
+You can then select how to install the required libraries. For example, **Add from PyPI** or **Add from .yml**.
 
-To install from PyPi:
+To install from PyPI:
 1. Select **+ Add from PyPI**.
 1. Start typing the desired library name and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
 1. When you're done, select **Apply** to install all selected libraries into the workspace.
