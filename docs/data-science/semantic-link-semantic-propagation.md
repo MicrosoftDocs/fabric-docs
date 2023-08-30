@@ -45,6 +45,11 @@ When you perform concatenation on multiple FabricDataFrames, for each column, Se
 
 You can also propagate concatenations of FabricDataFrames with regular pandas DataFrames by placing the FabricDataFrame first.
 
+## Semantic propagation for Spark users
+The Semantic Link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
+Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated.
+For example, column aggregation strips the metadata.
+
 ## Next steps
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
