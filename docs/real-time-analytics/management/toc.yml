@@ -20,6 +20,9 @@ items:
     - name: .show database schema command
       displayName: .show databases schema
       href: /azure/data-explorer/kusto/management/show-schema-database?context=/fabric/context/context-rta&pivots=fabric
+    - name: .show databases entities command
+      displayName: .show databases entities
+      href: /azure/data-explorer/kusto/management/show-databases-entities?context=/fabric/context/context-rta&pivots=fabric
     - name: .execute database script command
       href: /azure/data-explorer/kusto/management/execute-database-script?context=/fabric/context/context-rta&pivots=fabric
   - name: Tables
@@ -381,6 +384,8 @@ items:
     - name: .show table policy partitioning command
       displayName: .show table partitioning policy
       href: /azure/data-explorer/kusto/management/show-table-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: .show database extents partitioning statistics command
+      href: /azure/data-explorer/kusto/management/show-database-extents-partitioning-statistics?context=/fabric/context/context-rta&pivots=fabric
   - name: Retention
     items:
     - name: Retention policy
@@ -509,6 +514,8 @@ items:
     - name: .show table policy update command
       displayName: .show table update policy
       href: /azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: Use a managed identity
+      href: /azure/data-explorer/kusto/management/update-policy-with-managed-identity?context=/fabric/context/context-rta&pivots=fabric
 - name: Security roles
   items:
   - name: Security roles overview

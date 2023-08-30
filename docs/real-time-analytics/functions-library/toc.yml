@@ -78,6 +78,9 @@ items:
 - name: quantize_fl()
   displayName: functions library, binning
   href: /azure/data-explorer/kusto/functions-library/quantize-fl?context=/fabric/context/context-rta&pivots=fabric
+- name: series_clean_anomalies_fl()
+  displayName: functions library, anomalies, outliers
+  href: /azure/data-explorer/kusto/functions-library/series-clean-anomalies-fl?context=/fabric/context/context-rta&pivots=fabric
 - name: series_cosine_similarity_fl()
   displayName: functions library, embedding, vector, cosine, similarity
   href: /azure/data-explorer/kusto/functions-library/series-cosine-similarity-fl?context=/fabric/context/context-rta&pivots=fabric
