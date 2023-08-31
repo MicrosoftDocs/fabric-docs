@@ -216,7 +216,7 @@
       - name: Get Metadata activity
         href: get-metadata-activity.md
       - name: If Condition activity
-        href: if-condition.activity.md
+        href: if-condition-activity.md
       - name: Invoke Pipeline activity
         href: invoke-pipeline-activity.md
       - name: Pipeline Lookup activity
