@@ -1,6 +1,6 @@
 ---
 title: Analyze time series
-description: Use SynapseML and Azure Cognitive Services for multivariate anomaly detection.
+description: Use SynapseML and Azure AI services for multivariate anomaly detection.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
@@ -8,10 +8,10 @@ author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
-# Recipe: Cognitive Services - Multivariate Anomaly Detection 
-This recipe shows how you can use SynapseML and Azure Cognitive Services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure Cognitive Services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors. 
+# Recipe: Azure AI services - Multivariate Anomaly Detection 
+This recipe shows how you can use SynapseML and Azure AI services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure AI services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors. 
 
-To learn more about the Anomaly Detector Cognitive Service, refer to [this documentation page](/azure/cognitive-services/anomaly-detector/). 
+To learn more about the Azure AI Anomaly Detector, refer to [this documentation page](/azure/ai-services/anomaly-detector/). 
 
 ## Prerequisites
 * An Azure subscription - [Create one for free](https://azure.microsoft.com/free/)
@@ -311,5 +311,5 @@ Finally, the last plot shows the contribution of the data from each sensor to th
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to use AI services with SynapseML](overview-cognitive-services.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)
