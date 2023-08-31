@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.date: 08/22/2023
 ---
 
-# Create, evaluate, and score a churn prediction model
+# Tutorial: Create, evaluate, and score a churn prediction model
 
 In this notebook, you'll see a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
@@ -38,11 +38,11 @@ The main steps in this notebook are:
 
 
 ## Step 1: Install custom libraries
+
 When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library for your Apache Spark session. To do so, use `%pip install` or `%conda install`.
 Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
 
 Here, you'll use `%pip install` to install `imblearn`. 
-
 
 
 ```python
@@ -264,12 +264,13 @@ df_clean["NewTenure"] = df_clean["Tenure"]/df_clean["Age"]
 df_clean["NewCreditsScore"] = pd.qcut(df_clean['CreditScore'], 6, labels = [1, 2, 3, 4, 5, 6])
 df_clean["NewAgeScore"] = pd.qcut(df_clean['Age'], 8, labels = [1, 2, 3, 4, 5, 6, 7, 8])
 df_clean["NewBalanceScore"] = pd.qcut(df_clean['Balance'].rank(method="first"), 5, labels = [1, 2, 3, 4, 5])
-df_clean["NeyoustSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+df_clean["NewSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 ```
 
 ### Use Data Wrangler to perform one-hot encoding
 
 Following the same instructions discussed earlier to launch Data Wrangler, use the Data Wrangler to perform one-hot encoding. The next cell shows the copied  generated script for one-hot encoding.
+
 :::image type="content" source="./media/tutorial-bank-churn/1hotencoding-data-wrangler.png" alt-text="Screenshot shows one-hot encoding in the Data Wrangler"::: 
 :::image type="content" source="./media/tutorial-bank-churn/1hotencoding-selectcolumns-data-wrangler.png" alt-text="Screenshot shows selection of columns in the Data Wrangler.":::
 
@@ -379,7 +380,7 @@ new_train = pd.concat([X_res, y_res], axis=1)
 
 ## Model training
 
-Train the model using Random Forest with maximum depth of four, and four features.
+Train the model using Random Forest with maximum depth of four, with four features.
 
 
 ```python
@@ -397,7 +398,7 @@ with mlflow.start_run(run_name="rfc1_sm") as run:
     roc_auc_rfc1_sm = roc_auc_score(y_res, rfc1_sm.predict_proba(X_res)[:, 1])
 ```
 
-Train the model using Random Forest with maximum depth of eight, and six features.
+Train the model using Random Forest with maximum depth of eight, with six features.
 
 
 ```python
@@ -442,7 +443,7 @@ with mlflow.start_run(run_name="lgbm_sm") as run:
 
 ### Experiments artifact for tracking model performance
 
-The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained models, their runs, performance metrics and model parameters are logged as can be seen from the experiment page shown in the following image.
+The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained models, their runs, performance metrics and model parameters are logged as can be seen from the experiment page shown in the image below.   
 
 To view your experiments:
 1. On the left panel, select your workspace.
@@ -474,7 +475,7 @@ ypred_lgbm1_sm = load_model_lgbm1_sm.predict(X_test) # LightGBM
 
  ### Show True/False Positives/Negatives using the Confusion Matrix
 
-Develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification. You can also plot a confusion matrix  using SynapseML tools, which is shown in the [Fraud Detection sample](https://aka.ms/samples/frauddectection).
+Develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification. You can also plot a confusion matrix using SynapseML tools, which is shown in the [Fraud Detection sample](https://aka.ms/samples/frauddectection).
 
 
 ```python
@@ -513,6 +514,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 4')
 tn, fp, fn, tp = cfm.ravel()
 ```
+
 :::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-4.jpg" alt-text="Notebook display of confusion matrix for Random Forest with max depth of four.":::
 
 Create a confusion matrix for Random Forest Classifier with maximum depth of eight, with six features.
@@ -524,6 +526,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 8')
 tn, fp, fn, tp = cfm.ravel()
 ```
+
 :::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Notebook display of confusion matrix for Random Forest with max depth of eight.":::
 
 Create the confusion matrix for LightGBM.
@@ -583,3 +586,4 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
 <!-- nbend -->
+
