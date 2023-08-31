@@ -47,12 +47,12 @@ To turn on the setting:
 1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Invite external users to your organization**.
 1. Turn this setting on if you want to invite guest users to your organization with Power BI. If the setting is off, an external user who isn't already a guest user in the organization, can’t be added to the organization through Power BI.
 1. Under **Apply to**, select the scope of users that the setting will affect:
-    1. Choose **The entire organization** or **Specific security groups**. In addition, you can also choose one of the options check the box next to **Except specific security groups** and then add the security groups you wish to exclude.
+    1. Choose **The entire organization** or **Specific security groups**. In addition, you can also choose one of the options, check the box next to **Except specific security groups** and then add the security groups you wish to exclude.
 1. Select **Apply** to save your changes.
 
 ## Allow Azure Active Directory guest users to edit and manage content in the organization
 
-This setting allows Azure AD B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions will continue to have those roles and/or permissions, even if the this setting is disabled. To learn more about sending Power BI content to Azure AD B2B guest users, read [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+This setting allows Azure AD B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions will continue to have those roles and/or permissions, even if this setting is disabled. To learn more about sending Power BI content to Azure AD B2B guest users, read [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
 To turn on the setting:
 
@@ -74,7 +74,7 @@ To turn this setting on or off:
 1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Show Azure Active Directory guests in lists of suggested people**.
 1. Turn the switch on if you want to show guests a suggested list of users, or turn the switch off you don't want guests to see this list.
 1. Under **Apply to**, select the scope of users that the setting will affect:
-    1. Choose **The entire organization** or **Specific security groups**. In addition, you can also choose one of the options check the box next to **Except specific security groups** and then add the security groups you wish to exclude.
+    1. Choose **The entire organization** or **Specific security groups**. In addition, you can also choose one of the options, check the box next to **Except specific security groups** and then add the security groups you wish to exclude.
 1. Select **Apply** to save your changes.
 
 ## Publish to web
@@ -256,7 +256,7 @@ If this setting is off, only users in your organization can create and receive e
 
 ## Users can send email subscriptions to external users
 
-The **Users can send email subscriptions to external userss** setting helps organizations choose whether external users can be included as recipients of email subscriptions.
+The **Users can send email subscriptions to external users** setting helps organizations choose whether external users can be included as recipients of email subscriptions.
 
 External users are users outside of the organization that have not been added as Azure Active Directory business-to-business (B2B) guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
 
