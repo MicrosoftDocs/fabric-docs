@@ -58,7 +58,7 @@ After you select **Settings** in the **File format** section, the following prop
 
   - **Preserve compression file name as folder**: Indicates whether to preserve the source compressed file name as a folder structure during copy.
     - If this box is checked (default), the service writes decompressed files to `<specified file path>/<folder named as source compressed file>/`.
-    - If this box is unchecked, the service writes decompressed files directly to `<specified file path>`. Make sure you don't have duplicated file names in different source zip files to avoid racing or unexpected behavior.
+    - If this box is unchecked, the service writes decompressed files directly to `<specified file path>`. Make sure you don't have duplicated file names in different source files to avoid racing or unexpected behavior.
 
 - **Compression level**: The compression ratio. You can choose from **Fastest** or **Optimal**.
 
