@@ -42,7 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 On the **Settings** tab, you can choose either a pipeline variable, or you can specify a return value for the pipeline directly. This example shows a single return value called MyVariable, with a string data type, and value "Some value".
 
-:::image type="content" source="media/append-variable-activity/configure-append-variable-settings.png" lightbox="media/append-variable-activity/configure-append-variable-settings.png" alt-text="Screenshot showing the Append variable activity settings tab, highlighting the tab.":::
+:::image type="content" source="media/set-variable-activity/set-variable-pipeline-return-value.png" alt-text="Screenshot showing the Append variable activity settings tab, highlighting the tab.":::
 
 You can add multiple values for the **Pipeline return value** using the **+ New** button (or the **Delete** button to remove them). Likewise, when setting a **Pipeline variable**, you can choose any previously defined variables from the **Name** dropdown box, or add new one(s) with the **+ New** button. If you want to create pipeline variables independently of the Set Variable activity, select the background in the pipeline canvas (to show the pipeline properties pages), and then use the **Variables** tab in the pipeline settings to create them. Then you can select them from the dropdown list in the Set Variable **Settings** when choosing **Pipeline variable**.
 
