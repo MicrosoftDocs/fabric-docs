@@ -19,7 +19,7 @@ This article introduces how to build your first machine learning model using Syn
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure AI services key by following the [Create an Azure AI services resource using the Azure portal](/azure/ai-services/cognitive-services-apis-create-account) quickstart. You'll need this key for the [Use Azure AI services to transform data in one step](#use-azure-ai-services-to-transform-data-in-one-step) section of this article.
+* Obtain an Azure AI services key by following the [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource) quickstart. You'll need this key for the [Use Azure AI services to transform data in one step](#use-azure-ai-services-to-transform-data-in-one-step) section of this article.
 
 ## Set up the environment
 Import SynapseML libraries and initialize your Spark session.

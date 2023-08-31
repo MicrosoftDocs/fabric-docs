@@ -281,7 +281,7 @@ display(pipeline.transform(bingParameters))
 ```
 
 ## Transform speech to text
-The [Speech-to-text](https://azure.microsoft.com/services/ai-services/speech-services/) service converts streams or files of spoken audio to text. The following code sample transcribes one audio file to text.
+The [Speech-to-text](https://azure.microsoft.com/products/ai-services/ai-speech/) service converts streams or files of spoken audio to text. The following code sample transcribes one audio file to text.
 
 ```python
 # Create a dataframe with our audio URLs, tied to the column called "url"
@@ -344,7 +344,7 @@ display(tts.transform(df))
 
 ## Detect anomalies in time series data
 
-[Anomaly Detector](https://azure.microsoft.com/products/ai-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the Anomaly Detector service to find anomalies in entire time series data.
+[Anomaly Detector](https://azure.microsoft.com/products/ai-services/ai-anomaly-detector) is great for detecting irregularities in your time series data. The following code sample uses the Anomaly Detector service to find anomalies in entire time series data.
 
 ```python
 # Create a dataframe with the point data that Anomaly Detector requires
