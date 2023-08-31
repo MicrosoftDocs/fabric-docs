@@ -20,15 +20,15 @@ All the Power BI visuals admin settings, including Power BI visuals tenant setti
 
 ## Allow visuals created using the Power BI SDK
 
-Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page are not affected by this setting. 
+Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting. 
 
 ## Add and use certified visuals only (block uncertified)
 
-Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the *Organizational visuals* page are not affected by this setting, regardless of certification.
+Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the *Organizational visuals* page aren't affected by this setting, regardless of certification.
 
 ## Allow downloads from custom visuals
 
-Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.
+Enabling this setting lets custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It's not affected by download restrictions applied in your organization's Export and sharing settings.
 
 ## Next steps
 
