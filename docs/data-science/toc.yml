@@ -39,6 +39,8 @@ items:
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
+  - name: Customer churn prediction
+    href: customer-churn.md
   - name: Retail recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
