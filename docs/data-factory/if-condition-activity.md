@@ -29,13 +29,13 @@ To use an If condition activity in a pipeline, complete the following steps:
 ### Creating the activity
 
 1. Create a new pipeline in your workspace.
-1. Search for Lookup in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
+1. Search for If condition in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    :::image type="content" source="media/if-condition-activity/add-if-condition-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and If condition activity highlighted.":::
 
 1. Select the new If condition activity on the canvas if it isn't already selected.
 
-   :::image type="content" source="media/if-condition-activity/if-condition-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Lookup activity.":::
+   :::image type="content" source="media/if-condition-activity/if-condition-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the If condition activity.":::
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
