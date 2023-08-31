@@ -19,7 +19,7 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-* An Azure OpenAI resource: request access [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/cognitive-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
+* An Azure OpenAI resource: request access [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
 
 
 ## Step 2: Import this guide as a notebook
@@ -263,7 +263,7 @@ display(completed_autobatch_df)
 
 ### Prompt engineering for translation
 
-The Azure OpenAI service can solve many different natural language tasks through [prompt engineering](/en-us/azure/cognitive-services/openai/how-to/completions). Here we show an example of prompting for language translation:
+The Azure OpenAI service can solve many different natural language tasks through [prompt engineering](/en-us/azure/ai-services/openai/how-to/completions). Here we show an example of prompting for language translation:
 
 
 ```python
@@ -297,6 +297,6 @@ display(completion.transform(qa_df))
 ```
 ## Next steps
 
-- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
-- [How to use SynapseML and Cognitive Services for multivariate anomaly detection - Analyze time series](cognitive-services-multivariate-anomaly-detection.md)
+- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
+- [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
