@@ -11,7 +11,7 @@ ms.date: 05/08/2023
 
 # Use Azure AI services with SynapseML in Microsoft Fabric
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure AI services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from web APIs.
+[Azure AI services](https://azure.microsoft.com/products/ai-services/) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with out-of-the-box and pre-built and customizable APIs and models. In this article, you'll use the various services available in Azure AI services to perform tasks that include: text analytics, translation, document intelligence, vision, image search, speech to text and text to speech conversion, anomaly detection, and data extraction from web APIs.
 
 ## Prerequisites
 
