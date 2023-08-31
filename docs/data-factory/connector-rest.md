@@ -4,7 +4,7 @@ description: This article provides information about how to do create a REST con
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 08/30/2023
+ms.date: 08/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -105,9 +105,6 @@ The following the following table contains the properties for supported authenti
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
-|**Basic**||||✓|
-|- Username|The user name to use to access the REST endpoint.|Yes |||
-|- Password|The password for the specified username.|Yes |||
 
 ## Next steps
 

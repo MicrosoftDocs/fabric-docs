@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Web API connector 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -37,7 +37,6 @@ To connect to REST APIs in a dataflow:
 1. Select the authentication type to use in **Authentication kind**, and then enter your credentials. The authentication kinds supported by the Web page connector are:
 
    - Anonymous
-   - Basic
    - Organizational account
    - Windows
 
