@@ -215,6 +215,8 @@
         href: foreach-activity.md
       - name: Get Metadata activity
         href: get-metadata-activity.md
+      - name: If Condition activity
+        href: if-condition-activity.md
       - name: Invoke Pipeline activity
         href: invoke-pipeline-activity.md
       - name: Pipeline Lookup activity
@@ -223,6 +225,8 @@
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Set Variable Activity
+        href: set-variable-activity.md
       - name: Stored Procedure activity
         href: stored-procedure-activity.md
       - name: Switch activity
