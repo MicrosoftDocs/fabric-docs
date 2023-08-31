@@ -79,6 +79,6 @@ ms.date: 05/08/2023
 
 ## Next steps
 
-- [Use Azure AI services with SynapseML in Microsoft Fabric](how-to-use-cognitive-services-with-synapseml.md)
-- [Use Azure AI services with SynapseML for multivariate anomaly detection](cognitive-services-multivariate-anomaly-detection.md)
-- [Create a custom search engine and question-answering system](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
+- [Use Azure AI services with SynapseML in Microsoft Fabric](how-to-use-ai-services-with-synapseml.md)
+- [Use Azure AI services with SynapseML for multivariate anomaly detection](multivariate-anomaly-detection.md)
+- [Create a custom search engine and question-answering system](create-a-multilingual-search-engine-from-forms.md)
