@@ -4,7 +4,7 @@ description: This article explains the overview of using SharePoint Online List.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/16/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -18,8 +18,8 @@ The SharePoint Online List connector is supported in Data Factory for [!INCLUDE 
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Anonymous<br>OAuth2<br>Service Principal |
-| **Lookup activity** | None | Anonymous<br>OAuth2<br>Service Principal |
+| **Copy activity (source/-)** | None | Service principal |
+| **Lookup activity** | None | Service principal |
 
 ## Next steps
 
