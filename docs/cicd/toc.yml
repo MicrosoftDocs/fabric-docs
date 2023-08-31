@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
-- name: End to end lifecycle management tutorial
+- name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: Deployment pipelines
   items:
@@ -41,6 +41,8 @@ items:
       href: git-integration/conflict-resolution.md
     - name: Manually fix a failed update
       href: git-integration/partial-update.md
+    - name: Expired licenses
+      href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Lifecycle management best practices

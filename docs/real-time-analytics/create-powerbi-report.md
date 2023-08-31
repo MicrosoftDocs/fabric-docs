@@ -39,7 +39,6 @@ There are three possible ways to create a report:
 
     :::image type="content" source="media/create-powerbi-report/build-report-from-table.png" alt-text="Screenshot of building a Power BI report from a table. The table menu is open with Build Power BI report selected.":::
 
-
 >[!NOTE]
 > When you build a report, a dataset is created and saved in your workspace. You can create multiple reports from a single dataset.
 >
