@@ -11,7 +11,7 @@ ms.date: 05/08/2023
 
 # Use Azure AI services with SynapseML in Microsoft Fabric
 
-[Azure AI services](https://azure.microsoft.com/services/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure AI services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from web APIs.
+[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. In this article, you'll use the various services available in Azure AI services to perform tasks that include: text analytics, translation, form recognition, computer vision, image search, speech-to-text and text-to-speech conversion, anomaly detection, and data extraction from web APIs.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ ms.date: 05/08/2023
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure AI services key by following the [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/cognitive-services-apis-create-account) quickstart.
+* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
 
 ## Prepare your system
 
@@ -70,7 +70,7 @@ search_key = find_secret("azure-search-key") # Replace it with your cognitive se
 
 ## Perform sentiment analysis on text
 
-The [Text Analytics](https://azure.microsoft.com/services/ai-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, you can use the service to find the sentiment of some input text. The service will return a score between 0.0 and 1.0, where low scores indicate negative sentiment and high scores indicate positive sentiment.
+The [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) service provides several algorithms for extracting intelligent insights from text. For example, you can use the service to find the sentiment of some input text. The service will return a score between 0.0 and 1.0, where low scores indicate negative sentiment and high scores indicate positive sentiment.
 
 The following code sample returns the sentiment for three simple sentences.
 
@@ -132,7 +132,7 @@ display(healthcare.transform(df))
 ```
 
 ## Translate text into a different language
-[Translator](https://azure.microsoft.com/services/ai-services/translator/) is a cloud-based machine translation service and is part of the Azure AI services family of cognitive APIs used to build intelligent apps. Translator is easy to integrate in your applications, websites, tools, and solutions. It allows you to add multi-language user experiences in 90 languages and dialects and can be used for text translation with any operating system.
+[Translator](https://azure.microsoft.com/products/ai-services/translator/) is a cloud-based machine translation service and is part of the Azure AI services family of cognitive APIs used to build intelligent apps. Translator is easy to integrate in your applications, websites, tools, and solutions. It allows you to add multi-language user experiences in 90 languages and dialects and can be used for text translation with any operating system.
 
 The following code sample does a simple text translation by providing the sentences you want to translate and target languages you want to translate them to.
 
@@ -245,7 +245,7 @@ display(analysis.transform(df).select("image", "analysis_results.description.tag
 
 ## Search for images that are related to a natural language query
 
-[Bing Image Search](https://azure.microsoft.com/services/ai-services/bing-image-search-api/) searches the web to retrieve images related to a user's natural language query. 
+[Bing Image Search](https://www.microsoft.com/bing/apis/bing-image-search-api) searches the web to retrieve images related to a user's natural language query. 
 
 The following code sample uses a text query that looks for images with quotes. The output of the code is a list of image URLs that contain photos related to the query.
 
@@ -305,7 +305,7 @@ display(speech_to_text.transform(df).select("url", "text.DisplayText"))
 ```
 
 ## Transform text to speech
-[Text to speech](https://azure.microsoft.com/services/ai-services/text-to-speech/#overview) is a service that allows you to build apps and services that speak naturally, choosing from more than 270 neural voices across 119 languages and variants.
+[Text to speech](https://azure.microsoft.com/products/ai-services/text-to-speech/#overview) is a service that allows you to build apps and services that speak naturally, choosing from more than 270 neural voices across 119 languages and variants.
 
 The following code sample transforms text into an audio file that contains the content of the text.
 
@@ -344,7 +344,7 @@ display(tts.transform(df))
 
 ## Detect anomalies in time series data
 
-[Anomaly Detector](https://azure.microsoft.com/services/ai-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the Anomaly Detector service to find anomalies in entire time series data.
+[Anomaly Detector](https://azure.microsoft.com/products/ai-services/anomaly-detector/) is great for detecting irregularities in your time series data. The following code sample uses the Anomaly Detector service to find anomalies in entire time series data.
 
 ```python
 # Create a dataframe with the point data that Anomaly Detector requires
