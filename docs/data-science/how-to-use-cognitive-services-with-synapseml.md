@@ -49,7 +49,7 @@ Import Azure AI services libraries and replace the keys in the following code sn
 ```python
 from synapse.ml.cognitive import *
 
-# A general Azure AI services key for Text Analytics, Computer Vision and Form Recognizer (or use separate keys that belong to each service)
+# A general Azure AI services key for Text Analytics, Vision and Document Intelligence (or use separate keys that belong to each service)
 service_key = find_secret("cognitive-api-key") # Replace it with your cognitive service key, check prerequisites for more details
 service_loc = "eastus"
 
