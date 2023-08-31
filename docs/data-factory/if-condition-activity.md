@@ -31,7 +31,7 @@ To use an If condition activity in a pipeline, complete the following steps:
 1. Create a new pipeline in your workspace.
 1. Search for If condition in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
-   :::image type="content" source="media/if-condition-activity/add-if-condition-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and If condition activity highlighted.":::
+   :::image type="content" source="media/if-condition-activity/add-if-condition-activity-to-pipeline.png" lightbox="media/if-condition-activity/add-if-condition-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and If condition activity highlighted.":::
 
 1. Select the new If condition activity on the canvas if it isn't already selected.
 
@@ -45,7 +45,7 @@ Select the **Activities** tab and provide a dynamic boolean **Expression** for t
 
 After providing the expression for the If condition, selecting the pencil icon beside each case (True/False) allows you to add as many activities as necessary to be conditionally executed whenever the expression evaluates.
 
-:::image type="content" source="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" alt-text="Screenshot showing the If condition Activity settings tab and showing where to provide the Expression and choose Activities for when the expression evaluates to True or False.":::
+:::image type="content" source="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" lightbox="media/if-condition-activity/provide-if-condition-expression-and-configure-activities.png" alt-text="Screenshot showing the If condition Activity settings tab and showing where to provide the Expression and choose Activities for when the expression evaluates to True or False.":::
 
 ## Save and run or schedule the pipeline
 
