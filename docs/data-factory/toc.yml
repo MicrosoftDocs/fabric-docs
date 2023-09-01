@@ -193,6 +193,12 @@
         href: connector-rest-copy-activity.md    
       - name: Configure in Dataflow Gen2
         href: connector-rest-dataflows.md 
+    - name: SFTP
+      items:
+      - name: Overview
+        href: connector-sftp-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-sftp-copy-activity.md
     - name: SharePoint online list
       items:
       - name: Overview
