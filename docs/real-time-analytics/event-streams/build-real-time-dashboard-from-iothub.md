@@ -69,7 +69,7 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 ## Add a Kusto destination to the eventstream
 
 1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
-   :::image type="content" source="./media/add-iothub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to preview IoT Hub data.":::
+   :::image type="content" source="./media/add-iothub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination.":::
 
 2. On the **KQL Database** configuration pane, enter the details for your Kusto database:
    :::image type="content" source="./media/add-iothub-source/configure-kusto.png" alt-text="Screenshot that shows how to configure a Kusto database for an eventstream.":::
