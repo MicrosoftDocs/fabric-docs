@@ -168,7 +168,7 @@ display(
 ```
 
 ## Extract information from a document into structured data
-[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. With Form Recognizer, you can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
+[Azure AI Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/) is a part of Azure AI services that lets you build automated data processing software using machine learning technology. With Azure AI Document Intelligence, you can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
 
 The following code sample analyzes a business card image and extracts its information into structured data.
 
