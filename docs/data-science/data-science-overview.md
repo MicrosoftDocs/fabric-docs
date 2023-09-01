@@ -72,7 +72,7 @@ MLflow experiments and runs can track the ML model training. [!INCLUDE [product-
 
 ### SynapseML
  
-The SynapseML (previously known as MMLSpark) open-source library, that Microsoft owns and maintains, simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for development of predictive models, as well as leveraging pre-trained AI models from Azure Cognitive Services. Learn more about [SynapseML](https://aka.ms/spark).
+The SynapseML (previously known as MMLSpark) open-source library, that Microsoft owns and maintains, simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for development of predictive models, as well as leveraging pre-trained AI models from Azure AI services. Learn more about [SynapseML](https://aka.ms/spark).
 
 
 ## Enrich and operationalize
