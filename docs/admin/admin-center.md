@@ -10,6 +10,8 @@ ms.date: 06/15/2023
 
 # What is the admin portal?
 
+[!INCLUDE [applies-no-desktop-yes-service](~/powerbi-repo/includes/applies-no-desktop-yes-service.md)]
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric [admin portal](/power-bi/admin/service-admin-portal), includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
