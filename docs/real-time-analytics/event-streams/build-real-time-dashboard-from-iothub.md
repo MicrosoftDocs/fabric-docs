@@ -67,7 +67,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
         :::image type="content" source="./media/add-iothub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
 
     2. **Connection name**. Enter a name for the new cloud connection, such as **iothub-connection**.
-    3. **IoT Hub** and **Authentication**. Enter the authentication information for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints. More information can be found [here](https://learn.microsoft.com/azure/iot-hub/iot-hub-dev-guide-sas).
+    3. **IoT Hub** and **Authentication**. Enter the authentication information for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints.
 
        :::image type="content" source="./media/add-iothub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
 
