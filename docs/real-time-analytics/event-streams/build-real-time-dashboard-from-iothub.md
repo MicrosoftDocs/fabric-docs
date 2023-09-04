@@ -1,6 +1,6 @@
 ---
 title: Build a real-time dashboard by streaming data from Azure IoT Hub
-description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream. 
+description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -13,7 +13,7 @@ ms.search.form: product-kusto
 
 # Build a real-time dashboard by streaming data from Azure IoT Hub
 
-If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoTHub data using Eventstream. In this tutorial, we walk you through the process of setting up an Eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
+If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -21,45 +21,59 @@ If you have IoT devices that are connected to your Azure IoT Hub, you can ingest
 
 Before you begin, make sure you have:
 
-1. An Azure account with access to Fabric Eventstream.
-2. Successfully configured IoT devices to your Azure IoT Hub.
+1. Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
+2. An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
-## Create an eventstream and add an IoTHub source
+## Create a KQL database and an eventstream
 
-Follow these steps to create an eventstream in your workspace:
+Follow these steps to create a KQL database and an eventstream in your workspace:
 
 1. Navigate to **My workspace**, and under the **New** drop-down menu, select **Show all**.
 
-     :::image type="content" source="./media/add-iothub-source/my-workspace-showall.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
+    :::image type="content" source="./media/add-iothub-source/my-workspace-showall.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
 
-2. Scroll down to the **Real-Time Analytics** section and select **Eventstream**, then enter a name for this new eventstream.
-     :::image type="content" source="./media/add-iothub-source/select-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and enter a name for it.":::
+2. Scroll down to the **Real-Time Analytics** section, select **KQL Database** or **Eventstream**.
 
-3. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+    :::image type="content" source="./media/add-iothub-source/add-kusto-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database.":::
+
+3. Enter the name for the new KQL database or eventstream, and then select **Create**. The examples in this article use **my-kqldb** for the KQL database and **my-eventstream** for the eventstream. Confirm that these two items appear in your workspace.
+
+    :::image type="content" source="./media/add-iothub-source/workspace-kql-and-eventstream.png" alt-text="Screenshot that shows where to find the eventstream and KQL database in the workspace.":::
+
+## Add an IoT source to the eventstream
+
+1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+
    :::image type="content" source="./media/add-iothub-source/add-iothub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
 
-4. On the **Azure IoT Hub** configuration pane, enter the following details:
+2. On the **Azure IoT Hub** configuration pane, enter the following details:
+
    :::image type="content" source="./media/add-iothub-source/iothub-configuration-pane.png" alt-text="Screenshot that shows where to configure Azure IoT Hub in the eventstream.":::
 
     1. **Source name**: Enter a name for your Azure IoT Hub, such as **iothub-source**.
-    2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 5 to create a new cloud connection.
+    2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
     3. **Data format**. Choose a data format (AVRO, JSON, or CSV) for streaming your IoT Hub data into the eventstream.
     4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
-    5. You see an IoTHub source added to your eventstream in the editor.
+    5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
+
        :::image type="content" source="./media/add-iothub-source/successfully-added-iothub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
 
-5. To create a new cloud connection for your Azure IoT Hub, follow these steps:
+3. To create a new cloud connection for your Azure IoT Hub, follow these steps:
+
    :::image type="content" source="./media/add-iothub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
     1. Select **Create new connection** from the drop down menu, and you're directed to the **Manage connections and gateway** page for creating a new cloud connection.
+
         :::image type="content" source="./media/add-iothub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
 
-    2. Enter a name for the new cloud connection, such as **iothub-connection**.
-    3. Enter the access key information from your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal.
+    2. **Connection name**. Enter a name for the new cloud connection, such as **iothub-connection**.
+    3. **IoT Hub** and **Authentication**. Enter the authentication information for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints. More information can be found [here](https://learn.microsoft.com/azure/iot-hub/iot-hub-dev-guide-sas).
+
        :::image type="content" source="./media/add-iothub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
 
-    4. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
-    5. You can return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
+    4. **General**. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
+    5. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
+
        :::image type="content" source="./media/add-iothub-source/refresh-iothub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub.":::
 
 Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
@@ -69,9 +83,11 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 ## Add a Kusto destination to the eventstream
 
 1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
+
    :::image type="content" source="./media/add-iothub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination.":::
 
 2. On the **KQL Database** configuration pane, enter the details for your Kusto database:
+
    :::image type="content" source="./media/add-iothub-source/configure-kusto.png" alt-text="Screenshot that shows how to configure a Kusto database for an eventstream.":::
 
     1. **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
@@ -79,27 +95,38 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
     3. **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
 
 3. You see a popup window helping you to complete the Kusto configuration. Select an existing table or create a new one for your IoTHub data stream. Enter the table name and select **Next**.
+
    :::image type="content" source="./media/add-iothub-source/kusto-enter-table-name.png" alt-text="Screenshot that shows where to enter Kusto table name.":::
 
 4. Set up a data connection linking your eventstream to the Kusto database. Enter a name for this new data connection and select **Next**.
+
    :::image type="content" source="./media/add-iothub-source/kusto-data-connection.png" alt-text="Screenshot that shows where to set up Kusto connection.":::
 
 5. Choose the correct data format of your IoTHub data stream, and change the schema data type to suit your requirement for this new table within the Kusto database.
+
    :::image type="content" source="./media/add-iothub-source/kusto-create-schema.png" alt-text="Screenshot that shows create a Kusto schema.":::
 
 6. Once the configuration is complete, you can see the KQL Database is added to your eventstream.
+
    :::image type="content" source="./media/add-iothub-source/successfully-added-kusto.png" alt-text="Screenshot that shows where the Kusto database is added successfully.":::
 
 ## Build a Power BI dashboard
 
 1. In the Eventstream editor, select the **KQL Database** you've added, then choose **Open item**. You're directed to the Kusto database within Fabric.
+
    :::image type="content" source="./media/add-iothub-source/open-kusto-destination.png" alt-text="Screenshot that shows where to open Kusto destination in Eventstream.":::
 
 2. In the Kusto database interface, select the IoTHub table and select **Build Power BI report** to start building a dashboard for your IoTHub data stream.
+
    :::image type="content" source="./media/add-iothub-source/build-powerbi-dashboard.png" alt-text="Screenshot that shows where to build a Power BI dashboard in Kusto database.":::
 
-3. Select the **Line chart** for your dashboard and drag the schema of the IoTHub table onto the X and Y axes. In this example, the dashboard shows the real-time temperature data of IoT devices. Any anomalies detected in the dashboard enable you to make timely decisions.
+3. Select the **Line chart** for your dashboard and drag the schema of the IoTHub table onto the X and Y axes. In this example, the dashboard shows the temperature data of IoT devices. Any anomalies detected in the dashboard enable you to make timely decisions.
+
    :::image type="content" source="./media/add-iothub-source/setup-powerbi-dashboard.png" alt-text="Screenshot that shows where to set up a Power BI dashboard.":::
+
+4. To enable data refreshes for real-time monitoring, select **Format page**, and turn on **Page refresh**. Change the refresh interval to 1 second. With these settings in place, you're able to monitor the temperature of your IoT device in real-time.
+
+    :::image type="content" source="./media/add-iothub-source/powerbi-refresh-every-second.png" alt-text="Screenshot that shows where to enable data refresh in every second.":::
 
 Congratulations! You've successfully learned how to build a real-time dashboard by using Eventstream to ingest and monitor your IoTHub data stream. Additionally, Eventstream offers the capability to process your data before it's sent to your database.
 
