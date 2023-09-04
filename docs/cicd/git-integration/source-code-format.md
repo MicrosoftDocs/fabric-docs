@@ -1,6 +1,6 @@
 ---
 title: Git source code format
-description: Understand how the items in Microsoft Fabric's git integration tool are structured
+description: Understand how the items in Microsoft Fabric's Git integration tool are structured
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -13,7 +13,7 @@ ms.custom: build-2023
 
 Items in Microsoft Fabric are stored in a folder. They can either be in the root directory or a subdirectory. When you connect your workspace to git, connect to the folder containing the items. Each item in the folder is represented in its own subdirectory. These item directories have the same name as the item followed by the item type.
 
-:::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of git directory containing items.":::
+:::image type="content" source="./media/source-code-format/item-directory-names.png" alt-text="Screenshot of Git directory containing items.":::
 
 Inside each item directory are the [mandatory system files that define the item](/power-bi/developer/projects/projects-overview). Besides these files, there are two automatically generated system files in each directory:
 
@@ -54,7 +54,7 @@ The `item.config.json` file contains the following attributes:
 - `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
 - `logicalId`: an automatically generated cross-workspace identifier representing an item and its source control representation.
 
-The logicalId connects an item in a workspace with its corresponding item in a git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a git branch or a new item is synced. The logicalId is necessary for git integration to function properly. Therefore, it’s essential not to change it in any way.
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
 
 ## Item definition files
 
@@ -84,4 +84,4 @@ For more information about report folders and a complete list of their contents,
 
 ## Next steps
 
-[Get started with git integration](./git-get-started.md)
+[Get started with Git integration](./git-get-started.md)
