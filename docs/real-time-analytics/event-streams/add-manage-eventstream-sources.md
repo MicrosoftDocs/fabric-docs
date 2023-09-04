@@ -21,13 +21,13 @@ Once you have created an eventstream, you can connect it to various data sources
 Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- For an Azure Event Hubs source, you need an Azure event hub with event data and appropriate permission to access its policy keys. It must be publicly accessible and not behind a firewall or secured in a virtual network.
+- To add an Azure Event Hubs or Azure IoT Hub as eventstream source, you need to have appropriate permission to access its policy keys. They must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 ## Supported sources
 
 The following sources are supported by Fabric Eventstream:
 
-| Source          | Description |
+| Sources          | Description |
 | --------------- | ---------- |
 | Azure Event Hubs | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
 | Azure IoT Hub | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
