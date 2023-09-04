@@ -29,11 +29,11 @@ items:
   items:
   - name: Introduction to Git integration
     href: git-integration/intro-to-git-integration.md
-  - name: Get started with git integration
+  - name: Get started with Git integration
     href: git-integration/git-get-started.md
   - name: "Git integration process"
     href: git-integration/git-integration-process.md
-  - name: Manage git branches
+  - name: Manage Git branches
     href: git-integration/manage-branches.md
   - name: Handle errors and conflicts
     items:
