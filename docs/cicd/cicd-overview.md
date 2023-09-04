@@ -17,9 +17,9 @@ Microsoft Fabric's lifecycle management tools provide a standardized system for 
 
 ## Git integration
 
-:::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote git branch and the live workspace.":::
+:::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote Git branch and the live workspace.":::
 
-With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
+With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging Git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
 
 ## Delivery through deployment pipelines
 
