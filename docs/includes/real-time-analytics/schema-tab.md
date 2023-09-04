@@ -5,7 +5,7 @@ author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/23/2023
 ---
 
 Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** drop-down menu to select the correct format.
@@ -61,6 +61,6 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 To verify that you have ingested data into your database, select **Explore your data** on the right-hand side of the database landing page. You can then save your query as a KQL Queryset by selecting **Save as KQL QuerySet**.
 
-:::image type="content" source="../../real-time-analytics/media/get-data-blob/quick-query.png" alt-text="Screenshot of the Quick query button.":::
+:::image type="content" source="../../real-time-analytics/media/get-data-blob/quick-query.png" alt-text="Screenshot of the Explore your data button.":::
 
 For more information on KQL Queryset, see [Query data in a KQL Queryset](../../real-time-analytics/kusto-query-set.md).
