@@ -17,8 +17,8 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Enable git actions on workspaces residing in other geographical locations](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+- In order to use Git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
+- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Enable Git actions on workspaces residing in other geographical locations](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
 - The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
 
 ### Azure DevOps permissions
@@ -53,7 +53,7 @@ When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-t
 If both the workspace and Git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
-- If you update the workspace with the git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
+- If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
