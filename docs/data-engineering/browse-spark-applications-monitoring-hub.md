@@ -1,4 +1,4 @@
- ---
+---
 title: Use the Monitoring hub to manage Apache Spark applications
 description: Learn how to access the monitoring hub and use it to sort, search, filter, manage, and cancel Apache Spark applications.
 author: jejiang
