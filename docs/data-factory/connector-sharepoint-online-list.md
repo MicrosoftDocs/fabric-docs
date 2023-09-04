@@ -4,7 +4,7 @@ description: This article provides information about how to create a SharePoint 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -107,8 +107,6 @@ The following table contains the supported authentication type properties.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Anonymous**||||✓|
-|**OAuth2**||||✓|
 |**Service Principal**||||✓|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
 |- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||

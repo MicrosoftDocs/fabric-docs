@@ -4,7 +4,7 @@ description: This article provides information about how to do create a REST con
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 06/14/2023
+ms.date: 08/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -22,7 +22,6 @@ This REST connector supports the following authentication types for copy and Dat
 |:---|:---|:---|
 |Anonymous| √| √|
 |Basic| | √|
-|Service principal|√||
 |Organizational account| | √|
 |Windows| | √|
 
@@ -68,7 +67,6 @@ In the **New connection** pane, choose **Cloud**, and then specify the following
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The REST connector supports the following authentication types:
 
 - [Anonymous](#anonymous-authentication)
-- [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-rest/authentication-method.png" alt-text="Screenshot showing the authentication methods of REST.":::
 
@@ -77,22 +75,6 @@ Under **Authentication method**, select your authentication from the drop-down l
 Select **Anonymous** under **Authentication method**.
 
 :::image type="content" source="./media/connector-rest/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
-
-#### Service Principal authentication
-
-:::image type="content" source="./media/connector-rest/authentication-service-principal.png" alt-text="Screenshot showing service principal authentication method page.":::
-
-- **Tenant Id**: Specify the tenant information (domain name or tenant ID) under which your application resides. Retrieve it by hovering the mouse in the top-right corner of the Azure portal.
-- **Service principal ID**: Specify the application's client ID.
-- **Service principal key**: Specify the application's key.
-
-To use service principal authentication, follow these steps:
-
-Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
-
-   - Tenant ID
-   - Application ID
-   - Application key
 
 ### Step 3: Specify the privacy level that you want to apply
 
@@ -123,13 +105,6 @@ The following the following table contains the properties for supported authenti
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
-|**Basic**||||✓|
-|- Username|The user name to use to access the REST endpoint.|Yes |||
-|- Password|The password for the specified username.|Yes |||
-|**Service Principal**||||✓|
-|- Tenant ID|The tenant information (domain name or tenant ID).|Yes |||
-|- Service Principal ID|The application's client ID.|Yes |||
-|- Service Principal key|The application's key.|Yes |||
 
 ## Next steps
 
