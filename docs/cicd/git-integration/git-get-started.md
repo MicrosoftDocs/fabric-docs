@@ -1,5 +1,5 @@
 ---
-title: Manage a workspace with git.
+title: Manage a workspace with Git.
 description: Learn how to connect a workspace to a Git repo and branch, commit changes and sync.
 author: mberdugo
 ms.author: monaberdugo
@@ -9,14 +9,14 @@ ms.date: 06/19/2023
 ms.custom: build-2023
 ---
 
-# Manage a workspace with git
+# Manage a workspace with Git
 
 This article walks you through the following basic tasks in Microsoft Fabric’s Git integration tool:
 
 - [Connect to a Git repo](#connect-a-workspace-to-an-azure-repo)
 - [Commit changes](#commit-changes-to-git)
-- [Update from git](#update-workspace-from-git)
-- [Disconnect from git](#disconnect-a-workspace-from-git)
+- [Update from Git](#update-workspace-from-git)
+- [Disconnect from Git](#disconnect-a-workspace-from-git)
 
 It’s recommended to read the [overview of Git integration](./intro-to-git-integration.md) before you begin.
 
@@ -128,7 +128,7 @@ The selected items in your workspace revert to how they were when the workspace 
 
 ---
 
-## Update workspace from git
+## Update workspace from Git
 
 Whenever anyone commits a new change to the connected Git branch, a notification appears in the relevant workspace. Use the **Source control** pane to pull the latest changes, merges, or reverts into the workspace and update live items. Read more about [updating](git-integration-process.md#update).
 
@@ -147,7 +147,7 @@ After it updates successfully, the list of items is removed, and the workspace w
 
 After the update is completed successfully, the status of the items changes to **Synced**.
 
-## Disconnect a workspace from git
+## Disconnect a workspace from Git
 
 Only a workspace admin can disconnect a workspace from an Azure Repo. If you’re not an admin, ask your admin for help with disconnecting. If you’re an admin and want to disconnect your repo, follow these steps:
 
@@ -167,7 +167,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 ## Considerations and limitations
 
-- During the *Commit to git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder are not deleted.
+- During the *Commit to Git* process, the Fabric service deletes any files *inside the item folder* that aren't part of the item definition. Unrelated files not in an item folder are not deleted.
 
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
 
