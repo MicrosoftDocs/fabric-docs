@@ -118,9 +118,9 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
 2. In the Kusto database interface, find the **iothub-stream** table, select **Query table**, and then choose **Records ingested in the last 24 hour**. This action opens the query editor with the results at the bottom.
 
-   :::image type="content" source="./media/add-iothub-source/kusto-query-table.png" alt-text="Screenshot that shows where to query table in the Kusto database.":::
+   :::image type="content" source="./media/add-iothub-source/kusto-query-table.png" alt-text="Screenshot that shows where to select query table and records in the last 24 hours.":::
 
-   :::image type="content" source="./media/add-iothub-source/open-kusto-query-editor.png" alt-text="Screenshot that shows where to query table in the Kusto database.":::
+   :::image type="content" source="./media/add-iothub-source/open-kusto-query-editor.png" alt-text="Screenshot that shows where to open the query editor in the Kusto database.":::
 
    Select **Build Power BI report** in the top right corner of the editor to start building a dashboard for your IoTHub data stream.
 
