@@ -20,7 +20,7 @@ If you have data in an Azure Data Explorer database and want to use this data in
 
 **How does a database shortcut work?**
 
-The owner of the source database in Azure Data Explorer, the data provider, shares the database with the creator of the shortcut in Real-Time Analytics, the data consumer. The owner and the creator can be the same person. Once a shortcut is created, the data can be shared with consumers on other tenants.
+The owner of the source database in Azure Data Explorer, the data provider, shares the database with the creator of the shortcut in Real-Time Analytics, the data consumer. The owner and the creator can be the same person. Once a shortcut is created, the data can be shared with consumers in other tenants.
 
 The database shortcut is attached in read-only mode, making it possible to view and run queries on the data that was ingested into the source Azure Data Explorer database. The database shortcut synchronizes changes in the source database. Because of the synchronization, there's a data lag of a few seconds to a few minutes in data availability. The length of the time lag depends on the overall size of the source database metadata.
 
