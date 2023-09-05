@@ -81,7 +81,7 @@
                 "real-time-analytics/**/*.yml": "real-time-analytics",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security"
-            }
+            },
             "feedback_help_link_url": {
                 "admin/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "admin/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
