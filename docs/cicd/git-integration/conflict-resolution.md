@@ -25,7 +25,7 @@ There are three ways to resolve a conflict:
 
 - [Select which version to keep](#resolve-conflict-in-ui) through the UI.
 - [Revert](#revert-to-a-previous-state) either the workspace or the Git repository to a previous synced state.
-- [Resolve](#resolve-conflict-in-git) the conflict in git.
+- [Resolve](#resolve-conflict-in-git) the conflict in Git.
 
 ## Resolve conflict in UI
 

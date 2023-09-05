@@ -52,7 +52,7 @@ The status bar at the bottom of the screen that shows the latest sync status is 
 To update the workspace manually after it failed to update automatically:
 
 1. Figure out which item is causing the update to fail and what the problem is using the error dialog that says which item failed and error message.
-1. Fix the problem in git. This can mean doing one or more of the following depending on what the issue is:
+1. Fix the problem in Git. This can mean doing one or more of the following depending on what the issue is:
    * Revert the item to an earlier version that doesn't fail
    * Edit the item so it doesn't fail
    * Restore a dependant item that was deleted
