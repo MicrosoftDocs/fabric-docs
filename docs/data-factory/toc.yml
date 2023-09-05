@@ -315,6 +315,22 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Connectors
+      items:
+      - name: Azure Data Explorer
+        href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Table Storage
+        href: connector-troubleshoot-azure-table-storage.md
+      - name: PostgreSQL
+        href: connector-troubleshoot-postgresql.md
+      - name: Sharepoint Online list
+        href: connector-troubleshoot-sharepoint-online-list.md
+      - name: Format
+        items:
+        - name: Delimited text
+          href: connector-troubleshoot-delimited-text.md
+        - name: XML
+          href: connector-troubleshoot-xml.md
     - name: Data Factory limitations
       items:
       - name: Data Factory limitations overview
