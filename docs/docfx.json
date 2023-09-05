@@ -47,7 +47,7 @@
             "breadcrumb_path": "/fabric/breadcrumb/toc.json",
             "uhfHeaderId": "MSDocsHeader-Fabric",
             "feedback_system": "Standard",
-            "feedback _help_link_url": "https://community.fabric.microsoft.com/powerbi",
+            "feedback_help_link_url": "https://community.fabric.microsoft.com/powerbi",
             "feedback_help_link_type": "ask-the-community",
             "ms.service": "fabric",
             "searchScope": [
@@ -81,6 +81,32 @@
                 "real-time-analytics/**/*.yml": "real-time-analytics",
                 "security/**/*.md": "security",
                 "security/**/*.yml": "security"
+            }
+            "feedback_help_link_url": {
+                "admin/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "admin/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "cicd/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "cicd/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "data-engineering/**/*.md": "https://community.fabric.microsoft.com/synapse",
+                "data-engineering/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "data-factory/**/*.md": "https://community.fabric.microsoft.com/datafactory",
+                "data-factory/**/*.yml": "https://community.fabric.microsoft.com/datafactory",
+                "data-science/**/*.md": "https://community.fabric.microsoft.com/synapse",
+                "data-science/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "data-warehouse/**/*.md": "https://community.fabric.microsoft.com/synapse",
+                "data-warehouse/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "enterprise/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "enterprise/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "get-started/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "get-started/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "governance/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "governance/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "onelake/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "onelake/**/*.yml": "https://community.fabric.microsoft.com/powerbi",
+                "real-time-analytics/**/*.md": "https://community.fabric.microsoft.com/synapse",
+                "real-time-analytics/**/*.yml": "https://community.fabric.microsoft.com/synapse",
+                "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
+                "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
             }
         },
         "search.app": {
