@@ -6,7 +6,7 @@ ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/05/2023
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
@@ -44,17 +44,19 @@ When developing a machine learning model or doing ad-hoc data analysis, you may 
 
 For the classification model, you'll use the `wordcloud` library to represent the frequency of words in a text where the size of the word represents its frequency. Here, you'll use %pip install to install `wordcloud`.
 
+> [!NOTE]
+> The PySpark kernel will rstart after `%pip install`. Install libraries before you run any other cells.
 
 ```python
-# Install wordcloud for text visualization
+# Install wordcloud for text visualization using pip
 %pip install wordcloud
 ```
 
-## Step 2: Load and process the data
+## Step 2: Load the data
 
 ### Dataset 
 
-The dataset is from the [British Library book dataset](https://huggingface.co/datasets/blbooksgenre) and comprises of metadata about books that have been digitized through collaboration between the British Library and Microsoft. The dataset consists of classifications, created by humans to indicate whether a book is "fiction" or "nonfiction." With this dataset, our goal is to train a classification model that determines a book's genre solely based on its title.
+The dataset is from the British Library book dataset and comprises of metadata about books that have been digitized through collaboration between the British Library and Microsoft. The dataset consists of classifications, created by humans to indicate whether a book is "fiction" or "nonfiction." With this dataset, the goal is to train a classification model that determines a book's genre solely based on its title.
 
 |BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -62,7 +64,10 @@ The dataset is from the [British Library book dataset](https://huggingface.co/da
 |014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
 
-Define the data details in parameters to make it easy to use this notebook with different datasets.
+
+> [!TIP]
+> By defining the following parameters, you can apply this notebook on different datasets easily.
+
 
 
 ```python
@@ -75,12 +80,12 @@ TEXT_COL = "Title"
 LABEL_COL = "annotator_genre"
 LABELS = ["Fiction", "Non-fiction"]
 
-EXPERIMENT_NAME = "aisample-textclassification"  # MLflow experiment name
+EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 ```
 
 ### Download dataset and upload to lakehouse
 
-The following code downloads a publicly available version of the dataset and then store it in a Fabric Lakehouse.
+The following code downloads a publicly available version of the dataset and then store it in a Fabric lakehouse.
 
 > [!IMPORTANT]
 > **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
@@ -111,7 +116,7 @@ if not IS_CUSTOM_DATA:
 
 ### Import required libraries
 
-Prior to any processing, you need to import required libraries for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML).
+Prior to any processing, you need to import required libraries including those for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML).
 
 
 ```python
@@ -149,10 +154,10 @@ Define some hyperparameters for model training.
 
 ```python
 # Hyper-parameters 
-word2vec_size = 128  # the length of the vector for each word
-min_word_count = 3  # the minimum number of times that a word must appear to be considered
-max_iter = 10  # maximum number of training iterations
-k_folds = 3  # number of folds for cross-validation
+word2vec_size = 128  # The length of the vector for each word
+min_word_count = 3  # The minimum number of times that a word must appear to be considered
+max_iter = 10  # The maximum number of training iterations
+k_folds = 3  # The number of folds for cross-validation
 ```
 
 Start recording the time it takes to run this notebook.
@@ -188,7 +193,7 @@ raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSche
 
 ## Step 3: Exploratory Data Analysis
 
-Explore the dataset using the `display` command to view high-level statistics of the dataset.
+Explore the dataset using the `display` command to view high-level statistics of the dataset and show the chart views.
 
 
 ```python
@@ -252,7 +257,7 @@ display(token_df.limit(20))
 
 Display the wordcloud for each class.
 
-A wordcloud is a visually prominent presentation of "keywords" that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
+A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
 
 
 
@@ -446,20 +451,22 @@ with mlflow.start_run(run_name="lr"):
 
 ```
 
+
+
 To view your experiments:
 
 1. On the left, select your workspace.
-1. Find and select the experiment name, in this case _aisample-textclassification_.
+1. Find and select the experiment name, in this case _sample_aisample-textclassification_.
 
 :::image type="content" source="./media/title-genre-classification/Title_Genre_Classification/TextClassification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/TextClassification-experiment.png":::
 
 ## Step 5: Score and save prediction results
 
-Microsoft Fabric offers a scalable function called PREDICT that supports batch scoring in any compute engine and enables customers to operationalize machine learning models. You can create batch predictions straight from a notebook or the item page for a particular model. Learn more [about PREDICT](https://aka.ms/fabric-predict) and how to use it in Microsoft Fabric.
+Microsoft Fabric offers a scalable function called PREDICT that supports batch scoring in any compute engine and enables customers to operationalize machine learning models. You can create batch predictions straight from a notebook or the item page for a particular model. Learn more about [PREDICT](https://aka.ms/fabric-predict) and how to use it in Microsoft Fabric.
 
 From the above evaluation results, model 1 has the largest Area Under the Precision-Recall Curve (AUPRC) and Area Under the Curve Receiver Operating Characteristic (AUC-ROC) metrics. Thus you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to assess the performance of binary classifiers. However, sometimes, it's more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (PPV) and Recall (TPR) in a single visualization.
+The AUC-ROC measure is widely used to assess the performance of binary classifiers. However, sometimes, it's more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (positive predictive value or PPV) and Recall (true positive rate or TPR) in a single visualization.
 
 
 
@@ -483,7 +490,9 @@ batch_predictions.write.format("delta").mode("overwrite").save(
 
 
 ```python
+# Determine the entire runtime
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
 <!-- nbend -->
+

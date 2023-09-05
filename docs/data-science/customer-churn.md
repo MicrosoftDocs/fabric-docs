@@ -45,6 +45,9 @@ Alternatively, you could install the required libraries into the workspace, by n
 
 Here, you'll use `%pip install` to install `imblearn`. 
 
+> [!NOTE]
+> The PySpark kernel will restart after `%pip install`.  Install libraries before you run any other cells.
+
 ```python
 # Use pip to install libraries
 %pip install imblearn
