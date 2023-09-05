@@ -13,28 +13,28 @@ ms.date: 08/24/2023
 > [!TIP]
 > Contents of _AIsample%20-%20Fraud%20Detection.ipynb_. **[Open in GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb)**.
 
-# Creating, Evaluating, and Deploying a Fraud Detection System
+# Create, evaluate, and deploy a fraud detection system
 
 ## Introduction
 
-In this notebook, we'll demonstrate the Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a fraud detection system that relies on ML algorithms trained on historical data consisting of previous examples of fraud in order to understand the characteristic patterns of the fraudulent events to recognize them once they recur.
+In this notebook, you'll see the Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a fraud detection model, using ML algorithms trained on historical data and then use the model to detect future fraudulent transactions.
 
-The summary of main steps we take in this notebook are as following:
+The main steps in this notebook are:
 
 1. Install custom libraries
-2. Load and process the data
-3. Understand the data using exploratory data analysis
-4. Train a machine learning model using Scikit-Learn and MLflow
+2. Load the data 
+3. Understand and process the data through exploratory data analysis
+4. Train a machine learning model using Scikit-Learn and track experiments using MLflow and Fabric Autologging feature
 5. Save and register the best performing machine learning model
-6. Load the machine learning model for scoring and make predictions
+6. Load the machine learning model for scoring and making predictions
 
 #### Prerequisites
-- Have a lakehouse added to this notebook. We will be downloading data from a public blob, and storing that in the lakehouse. 
+- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. You'll be downloading data from a public blob and storing the data in the lakehouse. 
 
-## Step 1: Install Custom Libraries
-When developing a machine learning model or doing ad-hoc data analysis, we may need to quickly install a custom library for your Apache Spark session. To do this, we have two choices. 
+## Step 1: Install custom libraries
+When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. To install libraries, you have two choices. 
 
-1. We can use the in-line installation capabilities (e.g., pip, conda, etc.) to quickly get started with new libraries. In this notebook, we'll use `imblearn` which first needs to be installed.
+1. You can use the inline installation capabilities (such as `%pip` and `%conda`) to quickly get started with new libraries.
 
 ```python
 # Use pip to install libraries
@@ -42,76 +42,31 @@ When developing a machine learning model or doing ad-hoc data analysis, we may n
 
 # Use conda to install libraries
 %conda install <library name>
- 
 ```
-2. Alternatively, we can install the required libraries in the workspace. Navigate to the workspace setting as shown below and then click on Library management.
+
+2. Alternatively, you can install the required libraries into the workspace, by navigating into the workspace setting to find **Library management**, as shown in the following images.
 
 <img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement2.png"  width="45%" height="10%">
 <img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement1.png"  width="45%" height="10%"> 
 
+From the Library Management page, you can select how to install the required libraries. For example, **Add from PyPI** or **Add from .yml**. 
 
-We can then select how to install the required libraries, e.g., add from PyPi, add from .yml file, etc. Since we are using PyPi, we click on + Add from PyPi and then select the desired libraries and their corresponding versions from the drop down and then click on the Apply. This will automatically install all selected libraries in the workspace.
+To install from PyPI:
+1. Select **+ Add from PyPI**.
+1. Select the desired libraries and their corresponding versions from the dropdown. For this notebook, you'll select `imblearn` and it's corresponding version.
+1. Select **Apply** to automatically install all selected libraries in the workspace.
 
 <img src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement3.png"  width="40%" height="10%">
 
-#### Introduction to SMOTE
-
-The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. You can read more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
-
-In order to install Imbalanced-learn (imported as imblearn) which is a library for SMOTE, we will proceed with the first approach in Step 1.
-
-
-
-```python
-# Install imblearn for SMOTE using pip
-%pip install imblearn
-```
-
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 8, Finished, Available)
-
-
-
-
-
-
-
-    Collecting imblearn
-      Downloading imblearn-0.0-py2.py3-none-any.whl (1.9 kB)
-    Collecting imbalanced-learn
-      Downloading imbalanced_learn-0.11.0-py3-none-any.whl (235 kB)
-    [2K     [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m235.6/235.6 kB[0m [31m3.2 MB/s[0m eta [36m0:00:00[0ma [36m0:00:01[0m
-    [?25hRequirement already satisfied: joblib>=1.1.1 in /home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages (from imbalanced-learn->imblearn) (1.2.0)
-    Requirement already satisfied: scikit-learn>=1.0.2 in /home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages (from imbalanced-learn->imblearn) (1.2.0)
-    Requirement already satisfied: threadpoolctl>=2.0.0 in /home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages (from imbalanced-learn->imblearn) (3.1.0)
-    Requirement already satisfied: numpy>=1.17.3 in /home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages (from imbalanced-learn->imblearn) (1.23.5)
-    Requirement already satisfied: scipy>=1.5.0 in /home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages (from imbalanced-learn->imblearn) (1.10.1)
-    Installing collected packages: imbalanced-learn, imblearn
-    Successfully installed imbalanced-learn-0.11.0 imblearn-0.0
-    
-    [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m A new release of pip is available: [0m[31;49m23.0[0m[39;49m -> [0m[32;49m23.2[0m
-    [1m[[0m[34;49mnotice[0m[1;39;49m][0m[39;49m To update, run: [0m[32;49m/nfs4/pyenv-9b9b582b-c6fa-4634-a3b8-6e6f7a56aa25/bin/python -m pip install --upgrade pip[0m
-    Note: you may need to restart the kernel to use updated packages.
-    
-
-
-
-
-
-
-    Warning: PySpark kernel has been restarted to use updated packages.
-    
-    
-
 ## Step 2: Load the Data
-The fraud detection dataset contains credit card transactions made by European cardholders in September 2013 over the course of two days. The dataset only contains numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was done on the original features. The only features that haven't been transformed with PCA are "Time" and "Amount". In order to protect confidentiality, we can't provide the original features or more background information about the dataset.
+The fraud detection dataset contains credit card transactions made by European cardholders in September 2013 over the course of two days. The dataset contains only numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was done on the original features. The only features that haven't been transformed with PCA are `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
 
-- The features "V1, V2, V3, …, V28" are the principal components obtained with PCA.
-- The feature "Time" contains the seconds elapsed between each transaction and the first transaction in the dataset.
-- The feature "Amount" is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
-- The column "Class" is the response (target) variable and take the value 1 for fraud and 0 otherwise.
+- The features `V1`, `V2`, `V3`, …, `V28` are the principal components obtained with PCA.
+- The feature `Time` contains the elapsed seconds between each transaction and the first transaction in the dataset.
+- The feature `Amount` is the transaction amount. This feature can be used for example-dependent cost-sensitive learning.
+- The column `Class` is the response (target) variable and takes the value `1` for fraud and `0` otherwise.
 
-Note that out of the 284,807 transactions, only 492 are fraudulent. Therefore, the minority class (fraud) only accounts for around 0.172% of the data which makes the dataset highly imbalanced.
+Out of the 284,807 transactions, only 492 are fraudulent. Therefore, the minority class (fraud) accounts for only about 0.172% of the data, thereby making the dataset highly imbalanced.
 
 - creditcard.csv
 
@@ -121,8 +76,21 @@ Note that out of the 284,807 transactions, only 492 are fraudulent. Therefore, t
 |0|1.19185711131486|0.26615071205963|0.16648011335321|0.448154078460911|0.0600176492822243|-0.0823608088155687|-0.0788029833323113|0.0851016549148104|-0.255425128109186|-0.166974414004614|1.61272666105479|1.06523531137287|0.48909501589608|-0.143772296441519|0.635558093258208|0.463917041022171|-0.114804663102346|-0.183361270123994|-0.145783041325259|-0.0690831352230203|-0.225775248033138|-0.638671952771851|0.101288021253234|-0.339846475529127|0.167170404418143|0.125894532368176|-0.00898309914322813|0.0147241691924927|2.69|"0"|
 
 
-**By defining below parameters, we can apply this notebook on different datasets easily.**
+### Introduction to SMOTE
 
+`imblearn` (imbalanced learn) is a library that uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class. You can read more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
+
+For this notebook, you'll use `%pip` to install `imblearn`, the library for SMOTE. Note that the PySpark kernel will be restarted after you run `%pip install`, thus you should install the library before you run any other cells.
+
+1. Install `imblearn`.
+
+```python
+# Use pip to install imblearn
+%pip install imblearn
+```
+
+> [!TIP]
+> By defining the following parameters, you can apply this notebook on different datasets easily.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually
@@ -137,22 +105,16 @@ DATA_FILE = "creditcard.csv"  # data file name
 EXPERIMENT_NAME = "aisample-fraud"  # mlflow experiment name
 ```
 
+### Download the dataset and upload to the lakehouse
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 10, Finished, Available)
+The following code will download a publicly available version of the the dataset and then store it in a Fabric lakehouse.
 
-
-### Download dataset and Upload to lakehouse
-
-The following code will download a publicly available version of the the dataset and then store it in a Fabric Lakehouse.
-
-**Please add a lakehouse to the notebook before running it. Failure to do so will result in an error.**
-
-Instructions to add a lakehouse to the notebook can be found [here](https://aka.ms/fabric/addlakehouse).
-
+> [!IMPORTANT]
+> **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
 
 ```python
 if not IS_CUSTOM_DATA:
-    # Download data files into lakehouse if not exist
+    # Download data files into lakehouse if not already there
     import os, requests
 
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection"
@@ -170,52 +132,35 @@ if not IS_CUSTOM_DATA:
 
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 11, Finished, Available)
-
-
-    Downloaded demo data files into lakehouse.
-    
-
-We start recording the time it takes to run this notebook.
-
+Start recording the time it takes to run this notebook.
 
 ```python
 # Record the notebook running time
 import time
 
 ts = time.time()
-
 ```
 
+### Set up MLflow experiment tracking
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 12, Finished, Available)
+Experiment tracking is the process of saving all relevant experiment-related information for every experiment we run. Sometimes, it's easy to observe that there is no way to get better results when running a particular experiment. In such a situation, you're better off simply stopping the experiment and trying a new one. 
 
-
-### Setup the MLflow experiment tracking
-
-Experiment tracking is the process of saving all experiment related information that we care about for every experiment we run. This is important because for some experiments, we can easily observe that there is no way we will be able to get better results. Therefore, we will be better off simply stopping them and trying a new experiment. 
-
-Synapse Data Science in Microsoft Fabric includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. This feature extends MLflow autologging capabilities and is deeply integrated into the Synapse Data Science in Microsoft Fabric experience. Using autologging, we can easily track and compare the performance of different models and experiments without the need for manual tracking. Further information about how to perform autologging can be found [here](https://aka.ms/fabric-autologging).
-
+Synapse Data Science in Microsoft Fabric includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. This feature extends MLflow autologging capabilities and is deeply integrated into the Synapse Data Science in Microsoft Fabric experience. Using autologging, you can easily track and compare the performance of different models and experiments without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 ```python
-# Setup mlflow for experiment tracking
+# Set up Mlflow for experiment tracking
 import mlflow
 
 mlflow.set_experiment(EXPERIMENT_NAME)
-mlflow.autolog(disable=True)  # disable mlflow autologging
+mlflow.autolog(disable=True)  # Disable Mlflow autologging
 ```
 
+> [!NOTE]
+> You can disable Microsoft Fabric autologging in a notebook session by calling `mlflow.autolog()` and setting `disable=True` as shown in the previous code cell.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 13, Finished, Available)
+### Read raw data from the lakehouse
 
-
-    2023/07/17 05:29:29 INFO mlflow.tracking.fluent: Experiment with name 'aisample-fraud' does not exist. Creating a new experiment.
-    
-
-### Read raw date data from the lakehouse
-
+This code reads raw data from the lakehouse.
 
 ```python
 df = (
@@ -227,27 +172,18 @@ df = (
 )
 ```
 
+## Step 3: Perform exploratory data analysis
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 14, Finished, Available)
+### Display the raw data
 
-
-## Step 3: Exploratory Data Analysis
-
-We can explore using the `display` command to view high-level statistics of the dataset. You can learn more about visualization in Microsoft Fabric [here](https://aka.ms/fabric/visualization).
+1. Explore the raw data and view high-level statistics by using the `display` command. For more information, see [Notebook visualization in Microsoft Fabric](https://aka.ms/fabric/visualization).
 
 
 ```python
 display(df)
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 15, Finished, Available)
-
-
-
-    SynapseWidget(Synapse.DataFrame, 3138d659-5ac5-4402-b84d-cb02bc7e0952)
-
-
+2. Print some basic information about the dataset.
 
 ```python
 # Print dataset basic information
@@ -256,49 +192,9 @@ print("Schema: ")
 df.printSchema()
 ```
 
+### Transform the data
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 16, Finished, Available)
-
-
-    records read: 284807
-    Schema: 
-    root
-     |-- Time: double (nullable = true)
-     |-- V1: double (nullable = true)
-     |-- V2: double (nullable = true)
-     |-- V3: double (nullable = true)
-     |-- V4: double (nullable = true)
-     |-- V5: double (nullable = true)
-     |-- V6: double (nullable = true)
-     |-- V7: double (nullable = true)
-     |-- V8: double (nullable = true)
-     |-- V9: double (nullable = true)
-     |-- V10: double (nullable = true)
-     |-- V11: double (nullable = true)
-     |-- V12: double (nullable = true)
-     |-- V13: double (nullable = true)
-     |-- V14: double (nullable = true)
-     |-- V15: double (nullable = true)
-     |-- V16: double (nullable = true)
-     |-- V17: double (nullable = true)
-     |-- V18: double (nullable = true)
-     |-- V19: double (nullable = true)
-     |-- V20: double (nullable = true)
-     |-- V21: double (nullable = true)
-     |-- V22: double (nullable = true)
-     |-- V23: double (nullable = true)
-     |-- V24: double (nullable = true)
-     |-- V25: double (nullable = true)
-     |-- V26: double (nullable = true)
-     |-- V27: double (nullable = true)
-     |-- V28: double (nullable = true)
-     |-- Amount: double (nullable = true)
-     |-- Class: integer (nullable = true)
-    
-    
-
-We need to cast the columns into the correct types.
-
+1. Cast the dataset's columns into the correct types.
 
 ```python
 import pyspark.sql.functions as F
@@ -313,39 +209,25 @@ if IS_SAMPLE:
     df = df.limit(SAMPLE_ROWS)
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 17, Finished, Available)
-
-
+2. Convert Spark DataFrame to Pandas DataFrame for easier visualization and processing.
 
 ```python
-df_pd = df.toPandas() # Convert Spark dataframe to Pandas dataframe for easier visualization and processing
+df_pd = df.toPandas()
 ```
 
+### Explore the  class distribution in the dataset
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 18, Finished, Available)
-
-
+1. Display the class distribution in the dataset.
 
 ```python
 # The distribution of classes in the dataset
-
 print('No Frauds', round(df_pd['Class'].value_counts()[0]/len(df_pd) * 100,2), '% of the dataset')
 print('Frauds', round(df_pd['Class'].value_counts()[1]/len(df_pd) * 100,2), '% of the dataset')
 ```
 
+The class distribution shows that most of the transactions are non-fraudulent. Therefore, data prepropcessing is required prior to model training in order to avoid overfitting.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 19, Finished, Available)
-
-
-    No Frauds 99.83 % of the dataset
-    Frauds 0.17 % of the dataset
-    
-
-This shows that most of the transactions are non-fraudulent and therefore pre-processing is required prior to train any model to avoid any overfitting.
-
-**Distribution of fraudulent versus non-fraudulent transactions.**
-
+2. View the distribution of fraudulent versus non-fraudulent transactions.
 
 ```python
 import seaborn as sns
@@ -356,27 +238,9 @@ sns.countplot(x='Class', data=df_pd, palette=colors)
 plt.title('Class Distributions \n (0: No Fraud || 1: Fraud)', fontsize=10)
 ```
 
+The distribution plot clearly shows the class imbalance in the dataset.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 20, Finished, Available)
-
-
-
-
-
-    Text(0.5, 1.0, 'Class Distributions \n (0: No Fraud || 1: Fraud)')
-
-
-
-
-    
-![png](temp_files/temp_26_2.png)
-    
-
-
-This clearly shows how imbalanced the dataset is.
-
-**Show the five-number summary (the minimum score, first quartile, median, third quartile, the maximum score) for the transaction amount using Box plots.**
-
+3. Show the five-number summary (the minimum score, first quartile, median, third quartile, the maximum score) for the transaction amount, using Box plots.
 
 ```python
 fig, (ax1, ax2) = plt.subplots(ncols=2, figsize=(12,5))
@@ -385,26 +249,15 @@ s = sns.boxplot(ax = ax2, x="Class", y="Amount", hue="Class",data=df_pd, palette
 plt.show()
 ```
 
+When the data is highly imbalanced, these plots may not demonstrate accurate insights because they will be affected by the imbalance between the classes. Alternatively, you can address the class imbalance problem first and then create the same plots for more accurate insights.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 21, Finished, Available)
+## Step 4: Train and evaluate the model
 
+In this section, you'll train a LightGBM model to classify the fraud transactions. You'll train a LightGBM model on the imbalanced dataset and also on the balanced dataset (via SMOTE) and compare the performance of both models.
 
-
-    
-![png](temp_files/temp_29_1.png)
-    
-
-
-Note that when the data is highly imbalanced, these plots may not demonstrate accurate insights because they will be affected by the imbalance between the classes. An alternative solution is to tackle the imbalance issue first and then create the same plots for more accurate insights.
-
-## Step 4: Model Training and Evaluation
-
-In this section, we train a LightGBM model to classify the fraud transactions. Note that we'll train the LightGBM model on both the imbalanced dataset as well as the balanced dataset (via SMOTE) and compare their performances.
-
-Prior to start the training, we split the data to the training and test datasets. Note that SMOTE should only be applied to the training dataset and we must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the model will perform on the original data, which is representing the situation in production.
+Before training, split the data into the training and test datasets. Be sure to apply SMOTE only to the training dataset. You must leave the test dataset in its original imbalanced distribution, so that when you score the model with the test dataset, you can get a valid approximation of the model's performance on the original data, which represents unseen data in production.
 
 ### Prepare training and test datasets
-
 
 ```python
 # Split the dataset into training and test sets
@@ -415,12 +268,7 @@ feature_cols = [c for c in df_pd.columns.tolist() if c not in [TARGET_COL]]
 
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 22, Finished, Available)
-
-
 ### Apply SMOTE to the training data to synthesize new samples for the minority class
-
 
 ```python
 # Apply SMOTE to the training data
@@ -439,40 +287,19 @@ print("Resampled dataset shape %s" % Counter(y_res))
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
+### Train machine learning models and run experiments
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 23, Finished, Available)
+Apache Spark in Microsoft Fabric enables machine learning with big data, providing the ability to obtain valuable insights from large amounts of structured, unstructured, and fast-moving data. There are several options when training machine learning models using Apache Spark in Microsoft Fabric: Apache Spark MLlib, SynapseML, and various other open-source libraries. For more information, see [Train machine learning models in Microsoft Fabric](https://aka.ms/fabric/MLTrain). 
 
+A **machine learning experiment** is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models and other artifacts. Experiment tracking allows you to organize all the the required components of a specific machine learning experiment and to easily reproduce past results, using saved experiments. For more information, see [Machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
-    Original dataset shape Counter({0: 241667, 1: 418})
-    Resampled dataset shape Counter({0: 241667, 1: 241667})
-    
-
-### Model Training and Machine Learning Experiments
-
-Apache Spark in Microsoft Fabric enables machine learning with big data, providing the ability to obtain valuable insight from large amounts of structured, unstructured, and fast-moving data. There are several options when training machine learning models using Apache Spark in Microsoft Fabric: Apache Spark MLlib, SynapseML, and various other open-source libraries. You can learn about how to train machine learning models in Microsoft Fabric [here](https://aka.ms/fabric/MLTrain). 
-
-A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models and other artifacts and it enables to organize all the the required  components of a specific machine learning experiment as well as reproducing past results (easily) using saved experiments. You can learn more about machine learning experiments in Microsoft Fabric [here](https://aka.ms/synapse-experiment).
-
-Update the MLflow autologging configuration to track additional metrics, parameters, files by setting  `exclusive=False`.
-
+1. Update the MLflow autologging configuration to track additional metrics, parameters, and files, by setting `exclusive=False`.
 
 ```python
 mlflow.autolog(exclusive=False)
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 24, Finished, Available)
-
-
-    2023/07/17 05:29:54 INFO mlflow.tracking.fluent: Autologging successfully enabled for sklearn.
-    2023/07/17 05:29:56 INFO mlflow.tracking.fluent: Autologging successfully enabled for statsmodels.
-    2023/07/17 05:29:56 INFO mlflow.tracking.fluent: Autologging successfully enabled for pyspark.ml.
-    
-
-**Train the model using LightGBM.**
-
-We train using both the imbalanced dataset as well as the balanced dataset (via SMOTE) and then compare their performances.
-
+2. Train two models using **LightGBM**: one model on the imbalanced dataset and the other on the balanced dataset (via SMOTE). Then compare the performance of the two models.
 
 ```python
 import lightgbm as lgb
@@ -481,17 +308,8 @@ model = lgb.LGBMClassifier(objective="binary") # imbalanced dataset
 smote_model = lgb.LGBMClassifier(objective="binary") # balanced dataset
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 25, Finished, Available)
-
-
-    2023/07/17 05:29:57 INFO mlflow.tracking.fluent: Autologging successfully enabled for lightgbm.
-    
-
-
 ```python
 # Train LightGBM for both imbalanced and balanced datasets and define the evaluation metrics
-
 print("Start training with imbalanced data:\n")
 with mlflow.start_run(run_name="raw_data") as raw_run:
     model = model.fit(
@@ -517,43 +335,9 @@ with mlflow.start_run(run_name="smote_data") as smote_run:
     )
 ```
 
+### Determine feature importance for training
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 26, Finished, Available)
-
-
-    Start training with imbalanced data:
-    
-    [10]    valid_0's auc: 0.816244    valid_0's binary_logloss: 0.0176888
-    [20]    valid_0's auc: 0.840098    valid_0's binary_logloss: 0.0262594
-    [30]    valid_0's auc: 0.844251    valid_0's binary_logloss: 0.0381959
-    [40]    valid_0's auc: 0.763075    valid_0's binary_logloss: 0.0612438
-    [50]    valid_0's auc: 0.748436    valid_0's binary_logloss: 0.0775722
-    [60]    valid_0's auc: 0.697948    valid_0's binary_logloss: 0.0656759
-    [70]    valid_0's auc: 0.717529    valid_0's binary_logloss: 0.195873
-    [80]    valid_0's auc: 0.715519    valid_0's binary_logloss: 0.102958
-    [90]    valid_0's auc: 0.666755    valid_0's binary_logloss: 0.136029
-    [100]    valid_0's auc: 0.654642    valid_0's binary_logloss: 0.100774
-    
-    
-    Start training with balanced data:
-    
-    [10]    valid_0's auc: 0.972668    valid_0's binary_logloss: 0.224593
-    [20]    valid_0's auc: 0.973589    valid_0's binary_logloss: 0.0962729
-    [30]    valid_0's auc: 0.973279    valid_0's binary_logloss: 0.0485668
-    [40]    valid_0's auc: 0.973477    valid_0's binary_logloss: 0.0277949
-    [50]    valid_0's auc: 0.972537    valid_0's binary_logloss: 0.0177743
-    [60]    valid_0's auc: 0.9729    valid_0's binary_logloss: 0.012371
-    [70]    valid_0's auc: 0.967701    valid_0's binary_logloss: 0.00954162
-    [80]    valid_0's auc: 0.965544    valid_0's binary_logloss: 0.00789014
-    [90]    valid_0's auc: 0.964789    valid_0's binary_logloss: 0.00662283
-    [100]    valid_0's auc: 0.949676    valid_0's binary_logloss: 0.00635726
-    
-
-    2023/07/17 05:30:07 WARNING mlflow.utils.autologging_utils: MLflow autologging encountered a warning: "/home/trusted-service-user/cluster-env/trident_env/lib/python3.10/site-packages/_distutils_hack/__init__.py:33: UserWarning: Setuptools is replacing distutils."
-    
-
-**Determine the feature importance for training with imbalanced dataset.**
-
+1. First determine feature importance for the model that you trained on the imbalanced dataset.
 
 ```python
 with mlflow.start_run(run_id=raw_run.info.run_id):
@@ -564,18 +348,7 @@ with mlflow.start_run(run_id=raw_run.info.run_id):
     mlflow.log_figure(importance.figure, "feature_importance.png")
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 27, Finished, Available)
-
-
-
-    
-![png](temp_files/temp_43_1.png)
-    
-
-
-**Determine feature importance for training with balanced (via SMOTE) dataset.**
-
+2. Now determine feature importance for the model that you trained on balanced data (generated using SMOTE).
 
 ```python
 with mlflow.start_run(run_id=smote_run.info.run_id):
@@ -586,22 +359,17 @@ with mlflow.start_run(run_id=smote_run.info.run_id):
     mlflow.log_figure(smote_importance.figure, "feauture_importance_smote.png")
 ```
 
+A comparison of the feature importance plots shows that the important features are drastically different when you train with the imbalanced dataset versus the balanced dataset.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 28, Finished, Available)
+### Evaluate the models
 
+In this section, you'll evaluate the two trained models:
+- `model` trained on raw, __imbalanced data__, and
+- `smote_model` trained on __balanced data__.
 
+#### Compute model metrics
 
-    
-![png](temp_files/temp_45_1.png)
-    
-
-
-Comparison of the above plots clearly demonstrates that the importance of features is drastically different between imbalanced versus balanced datasets.
-
-#### Model Evaluation
-
-Below, we define a function that performs predictions and converts the prediction results into a Spark DataFrame so that we can later compute model statistics using [SynapseML](https://aka.ms/fabric/SynapseEval).
-
+1. First define a function `prediction_to_spark` that performs predictions and converts the prediction results into a Spark DataFrame. You can later compute model statistics on the prediction results using [SynapseML](https://aka.ms/fabric/SynapseEval).
 
 ```python
 from pyspark.sql.functions import col
@@ -620,12 +388,7 @@ def prediction_to_spark(model, test):
     return predictions
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 29, Finished, Available)
-
-
-Below we perform predictions and compute the metrics for the model trained with raw data (imbalanced) and the model trained with balanced (via SMOTE) data.
-
+2. Use the `prediction_to_spark` function to perform predictions with the two models `model` and `smote_model`.
 
 ```python
 predictions = prediction_to_spark(model, test)
@@ -633,92 +396,7 @@ smote_predictions = prediction_to_spark(smote_model, test)
 predictions.limit(10).toPandas()
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 30, Finished, Available)
-
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Class</th>
-      <th>prediction</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
+3. Compute metrics for the two models.
 
 ```python
 from synapse.ml.train import ComputeModelStatistics
@@ -733,17 +411,11 @@ smote_metrics = ComputeModelStatistics(
 display(metrics)
 ```
 
+#### Evaluate model performance with a confusion matrix
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 31, Finished, Available)
+A **confusion matrix** displays the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) that a model produces when scored with test data. For binary classification, you get a `2x2` confusion matrix. For multi-class classification, you get an `nxn` confusion matrix, where `n` is the the number of classes. 
 
-
-
-    SynapseWidget(Synapse.DataFrame, 39cb6f96-1589-49db-a03d-b4eb4869c55b)
-
-
-#### Confusion Matrix
-We use the confusion matrix in order to summarize the performances of the trained machine learning models on the test data. The matrix displays the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) produced by the model on the test data. Note that for binary classification, the matrix will be of a 2X2 table, For multi-class classification, the matrix shape will be equal to the number of classes i.e for n classes it will be a nXn table. 
-
+1. Use a confusion matrix to summarize the performances of the trained machine learning models on the test data. 
 
 ```python
 # Collect confusion matrix value
@@ -752,14 +424,7 @@ smote_cm = smote_metrics.select("confusion_matrix").collect()[0][0].toArray()
 print(cm)
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 32, Finished, Available)
-
-
-    [[4.252e+04 1.280e+02]
-     [3.300e+01 4.100e+01]]
-    
-
+2. Plot the confusion matrix for the predictions of `smote_model` (trained on __balanced data__).
 
 ```python
 # Plot confusion matrix
@@ -781,16 +446,7 @@ with mlflow.start_run(run_id=smote_run.info.run_id):
     mlflow.log_figure(ax.figure, "ConfusionMatrix.png")
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 33, Finished, Available)
-
-
-
-    
-![png](temp_files/temp_55_1.png)
-    
-
-
+3. Plot the confusion matrix for the predictions of `model` (trained on raw, __imbalanced data__).
 
 ```python
 with mlflow.start_run(run_id=raw_run.info.run_id):
@@ -798,20 +454,13 @@ with mlflow.start_run(run_id=raw_run.info.run_id):
     mlflow.log_figure(ax.figure, "ConfusionMatrix.png")
 ```
 
+#### Evaluate model performance with AUC-ROC and AUPRC measures
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 34, Finished, Available)
+The **Area Under the Curve Receiver Operating Characteristic (AUC-ROC)** measure is widely used to assess the performance of binary classifiers. AUC-ROC is a chart that visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
 
-
-
-    
-![png](temp_files/temp_56_1.png)
-    
-
-
-#### Receiver Operating Characteristic Area Under the Curve and Area Under the Precision-Recall Curve
-
-The Area Under the Curve Receiver Operating Characteristic (AUC-ROC) measure is widely used to assess the performance of binary classifiers. However, sometimes, it is more appropriate to evaluate your classifier based on measuring the Area Under the Precision-Recall Curve (AUPRC). AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR) whereas AUPRC is a curve that combines precision (PPV) and Recall (TPR) in a single visualization.
-
+In some cases, it's more appropriate to evaluate your classifier based on the **Area Under the Precision-Recall Curve (AUPRC)** measure. The AUPRC is a curve that combines two rates: 
+- the precision, also called the positive predictive value (PPV), and 
+- the recall, also called the true positive rate (TPR).
 
 ```python
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -838,12 +487,7 @@ def evaluate(predictions):
 
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 35, Finished, Available)
-
-
-**Log the AUC-ROC and AUPRC metrics for model that is trained on the imbalanced dataset.**
-
+1. Log the AUC-ROC and AUPRC metrics for the model trained on __imbalanced data__.
 
 ```python
 with mlflow.start_run(run_id=raw_run.info.run_id):
@@ -852,16 +496,7 @@ with mlflow.start_run(run_id=raw_run.info.run_id):
     mlflow.log_params({"Data_Enhancement": "None", "DATA_FILE": DATA_FILE})
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 36, Finished, Available)
-
-
-    The AUROC is: 0.7755
-    The AUPRC is: 0.1889
-    
-
-**Log the AUC-ROC and AUPRC metrics for the model that is trained on the balanced (via SMOTE) dataset.**
-
+2. Log the AUC-ROC and AUPRC metrics for the model trained on __balanced data__.
 
 ```python
 with mlflow.start_run(run_id=smote_run.info.run_id):
@@ -870,27 +505,16 @@ with mlflow.start_run(run_id=smote_run.info.run_id):
     mlflow.log_params({"Data_Enhancement": "SMOTE", "DATA_FILE": DATA_FILE})
 ```
 
+The computed AUC-ROC and AUPRC scores indicate that the model trained on the balanced dataset outperforms the model that is trained on the imbalanced dataset. These results suggests that SMOTE is an effective technique for enhancing model performance when working with highly imbalanced data.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 37, Finished, Available)
-
-
-    The AUROC is: 0.9118
-    The AUPRC is: 0.5921
-    
-
-As shown in the image below, any experiment with its respective name is logged and we will be able to track its parameters and performance metrics. We can also see that the models performs much better on the balanced dataset, since a higher AUROC indicates that the model is better at predicting 0 classes as 0 and 1 classes as 1.
-
+As shown in the following image, any experiment is logged along with its respective name, and you can track the experiment's parameters and performance metrics in your workspace. You can also see that the model performs much better on the balanced dataset, since a higher AUROC indicates that the model is better at correctly predicting `0` classes as `0` and `1` classes as `1`.
 
 <img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/fraud-mlflow.png"  width="45%" height="10%">
 <img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/fraud-logging.png"  width="45%" height="10%"> 
 
+## Step 5: Register the model
 
-
-
-## Step 5: Register the Model
-
-Use MLflow to register the models trained on both the imbalanced and balanced (via SMOTE) datasets.
-
+Use MLflow to register the two models.
 
 ```python
 # Register the model
@@ -902,34 +526,13 @@ mlflow.register_model(raw_model_uri, registered_model_name)
 smote_model_uri = "runs:/{}/model".format(smote_run.info.run_id)
 mlflow.register_model(smote_model_uri, registered_model_name)
 ```
+## Step 6: Save the prediction results
 
+Microsoft Fabric allows users to operationalize machine learning models with a scalable function called `PREDICT`, which supports batch scoring (or batch inferencing) in any compute engine.
 
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 38, Finished, Available)
+You can generate batch predictions directly from the Microsoft Fabric notebook or from a given model's item page. For more information on how to use `PREDICT`, see [Model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
 
-
-    Successfully registered model 'aisample-fraud-lightgbm'.
-    2023/07/17 05:30:48 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: aisample-fraud-lightgbm, version 1
-    Created version '1' of model 'aisample-fraud-lightgbm'.
-    Successfully registered model 'aisample-fraud-lightgbm'.
-    2023/07/17 05:30:50 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: aisample-fraud-lightgbm, version 2
-    Created version '2' of model 'aisample-fraud-lightgbm'.
-    
-
-
-
-
-    <ModelVersion: creation_timestamp=1689571849691, current_stage='None', description='', last_updated_timestamp=1689571849691, name='aisample-fraud-lightgbm', run_id='c3f7aa87-fa23-4713-a2f1-0640d90e1a0c', run_link='', source='abfss://d2a85142-94be-4d6a-b988-13da340ac6b3@olswestch7x2f49bqoy8a5n7.dfs.core.windows.net/2771826d-e977-4876-a6e6-344430e5dc18/7522f1b1-9436-400f-b0a7-e6cf9b6df5fa/artifacts', status='READY', status_message='', tags={}, user_id='', version='2'>
-
-
-
-## Step 6: Save the Prediction Results
-
-Microsoft Fabric allows users to operationalize machine learning models with a scalable function called ```PREDICT```, which supports batch scoring in any compute engine.
-
-We can generate batch predictions directly from the Microsoft Fabric notebook or from a given model's item page. You can learn more about ```PREDICT``` and how to use it within Microsoft Fabric [here](https://aka.ms/fabric-predict).
-
-In this section, we'll deploy the model and save the prediction results.
-
+1. Load the model for batch scoring and generate the prediction results.
 
 ```python
 from synapse.ml.predict import MLFlowTransformer
@@ -948,25 +551,12 @@ test_spark = spark.createDataFrame(data=test, schema=test.columns.to_list())
 batch_predictions = model.transform(test_spark)
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 39, Finished, Available)
-
-
-    /opt/spark/python/lib/pyspark.zip/pyspark/sql/pandas/functions.py:394: UserWarning: In Python 3.6+ and Spark 3.0+, it is preferred to specify type hints for pandas UDF instead of specifying pandas UDF type which will be deprecated in the future releases. See SPARK-28264 for more details.
-    /opt/spark/python/lib/pyspark.zip/pyspark/sql/pandas/conversion.py:604: FutureWarning: iteritems is deprecated and will be removed in a future version. Use .items instead.
-      [(c, t) for (_, c), t in zip(pdf_slice.iteritems(), arrow_types)]
-    
-
+2. Save predictions into the lakehouse.
 
 ```python
 # Save the predictions into the lakehouse
 batch_predictions.write.format("delta").mode("overwrite").save(f"{DATA_FOLDER}/predictions/batch_predictions")
 ```
-
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 40, Finished, Available)
-
-
 
 ```python
 # Determine the entire runtime
@@ -974,14 +564,8 @@ batch_predictions.limit(5).toPandas()
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
-
-    StatementMeta(, 563940d7-ec44-4e7f-9d02-3f4cc0d218d1, 41, Finished, Available)
-
-
-    Full run cost 100 seconds.
-    
-
 <!-- nbend -->
+
 
 ## Next Steps
 
