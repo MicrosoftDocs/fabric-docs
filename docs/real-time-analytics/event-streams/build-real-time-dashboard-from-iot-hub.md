@@ -21,8 +21,8 @@ If you have IoT devices that are connected to your Azure IoT Hub, you can ingest
 
 Before you begin, make sure you have:
 
-1. Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
-2. An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
+- Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL database are located.
+- An Azure IoT hub with event data and the necessary permission to access the policy keys. The IoT hub must be publicly accessible and not behind a firewall or secured in a virtual network.
 
 ## Create a KQL database and an eventstream
 
@@ -30,7 +30,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 1. Navigate to **My workspace**, and under the **New** drop-down menu, select **Show all**.
 
-    :::image type="content" source="./media/add-iothub-source/my-workspace-showall.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
+    :::image type="content" source="./media/add-iothub-source/my-workspace-show-all.png" alt-text="Screenshot that shows where to select my workspace and select show all to find eventstream.":::
 
 2. Scroll down to the **Real-Time Analytics** section, select **KQL Database** or **Eventstream**.
 
@@ -90,9 +90,9 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
    :::image type="content" source="./media/add-iothub-source/configure-kusto.png" alt-text="Screenshot that shows how to configure a Kusto database for an eventstream.":::
 
-    1. **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
-    2. **Workspace**: Select the workspace associated with your Kusto database.
-    3. **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
+    - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
+    - **Workspace**: Select the workspace associated with your Kusto database.
+    - **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
 
 3. You see a popup window helping you to complete the Kusto configuration. Select an existing table or create a new one for your IoTHub data stream. Enter the table name and select **Next**.
 
