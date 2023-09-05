@@ -32,7 +32,7 @@ Admins can specify internal URLs to override the destination of links on the Pow
 
 ## Receive email notifications for service outages or incidents
 
-Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident. Learn more about [Service interruption notifications](/power-bi/support/service-interruption-notifications).
+Mail-enabled security groups receive email notifications if this tenant is impacted by a service outage or incident. Learn more about [Service interruption notifications](/power-bi/support/service-interruption-notifications).
 
 ## Users can try Microsoft Fabric paid features
 
@@ -40,7 +40,7 @@ Mail-enabled security groups will receive email notifications if this tenant is 
 
 The setting to **Users can try Microsoft Fabric paid features** is enabled by default. This setting increases your control over how users get license upgrades. In scenarios where you have [blocked self-service purchase](/power-bi/enterprise/service-admin-disable-self-service), this setting lets users use more features free for 60 days. Users who have a Power BI (free) license and users with a Power BI Pro license can start a Power BI Premium Per User trial. Changing **Users can try Microsoft Fabric paid features** from **enabled** to **disabled** blocks self-service purchase of new licenses. It doesn't impact purchases that were already made.
 
-The user's license upgrade experience depends on how you combine license settings. The table below shows how the upgrade experience is affected by different setting combinations:
+The user's license upgrade experience depends on how you combine license settings. The following table shows how the upgrade experience is affected by different setting combinations:
 
 | Self-service purchase setting | Users can try Microsoft Fabric paid features | End-user experience |
 | ------ | ------ | ----- |
@@ -50,7 +50,7 @@ The user's license upgrade experience depends on how you combine license setting
 | Disabled | Enabled | User can start a trial, but must contact the IT admin to get a paid license |
 
 > [!NOTE]
-> You can add an internal URL for licensing requests in **Help and support settings**. If you set the URL, it overrides the default self-service purchase experience. It doesn't redirect signup for a trial license. Users who can buy a license in the scenarios described in the table above are redirected to your internal URL.
+> You can add an internal URL for licensing requests in **Help and support settings**. If you set the URL, it overrides the default self-service purchase experience. It doesn't redirect signup for a trial license. Users who can buy a license in the scenarios described in the table are redirected to your internal URL.
 
 To learn more, see [Enable or disable self-service sign-up and purchasing](/power-bi/enterprise/service-admin-disable-self-service).
 
