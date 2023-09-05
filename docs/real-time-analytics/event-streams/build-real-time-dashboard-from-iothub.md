@@ -1,5 +1,5 @@
 ---
-title: Build a real-time dashboard by streaming data from Azure IoT Hub
+title: Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
 description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
@@ -11,7 +11,7 @@ ms.search.form: product-kusto
 #CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a real-time dashboard to monitor the health my devices. 
 ---
 
-# Build a real-time dashboard by streaming data from Azure IoT Hub
+# Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
 
 If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
 
@@ -112,13 +112,17 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
 ## Build a Power BI dashboard
 
-1. In the Eventstream editor, select the **KQL Database** you've added, then choose **Open item**. You're directed to the Kusto database within Fabric.
+1. In the Eventstream editor, select the **KQL Database** you've added, then choose **Open item**. This action directs you to the Kusto database within Fabric.
 
    :::image type="content" source="./media/add-iothub-source/open-kusto-destination.png" alt-text="Screenshot that shows where to open Kusto destination in Eventstream.":::
 
-2. In the Kusto database interface, select the IoTHub table and select **Build Power BI report** to start building a dashboard for your IoTHub data stream.
+2. In the Kusto database interface, find the **iothub-stream** table, select **Query table**, and then choose **Records ingested in the last 24 hour**. This action opens the query editor with the results at the bottom.
 
-   :::image type="content" source="./media/add-iothub-source/build-powerbi-dashboard.png" alt-text="Screenshot that shows where to build a Power BI dashboard in Kusto database.":::
+   :::image type="content" source="./media/add-iothub-source/kusto-query-table.png" alt-text="Screenshot that shows where to query table in the Kusto database.":::
+
+   :::image type="content" source="./media/add-iothub-source/open-kusto-query-editor.png" alt-text="Screenshot that shows where to query table in the Kusto database.":::
+
+   Select **Build Power BI report** in the top right corner of the editor to start building a dashboard for your IoTHub data stream.
 
 3. Select the **Line chart** for your dashboard and drag the schema of the IoTHub table onto the X and Y axes. In this example, the dashboard shows the temperature data of IoT devices. Any anomalies detected in the dashboard enable you to make timely decisions.
 
@@ -127,6 +131,11 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 4. To enable data refreshes for real-time monitoring, select **Format page**, and turn on **Page refresh**. Change the refresh interval to 1 second. With these settings in place, you're able to monitor the temperature of your IoT device in real-time.
 
     :::image type="content" source="./media/add-iothub-source/powerbi-refresh-every-second.png" alt-text="Screenshot that shows where to enable data refresh in every second.":::
+
+   > [!NOTE]
+   > You may need to change the Power BI settings to adjust the minimum refresh interval.
+
+   After you finish building the report, select **File > Save** to save this report to your workspace.
 
 Congratulations! You've successfully learned how to build a real-time dashboard by using Eventstream to ingest and monitor your IoTHub data stream. Additionally, Eventstream offers the capability to process your data before it's sent to your database.
 
