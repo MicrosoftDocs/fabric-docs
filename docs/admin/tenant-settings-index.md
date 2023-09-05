@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/05/2023
 ---
 
 # Fabric tenant settings index
@@ -22,9 +22,9 @@ Updated August 23, 2023
 | Users can try Microsoft Fabric paid features | When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2227896" target="_blank">Learn More</a> |
 | Show a custom message before publishing reports | When people attempt to publish a report, they'll see a custom message before it gets published. |
 | **[Workspace settings](portal-workspace.md)** |  |
-| Create workspaces (new workspace experience) | Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace will be created when a template app is installed. |
-| Use datasets across workspaces | Users in the organization can use datasets across workspaces if they have the required Build permission. |
-| Block users from reassigning personal workspaces (My Workspace) | Turn on this setting to prevent users from reassigning their personal workspaces (My Workspace) from Premium capacities to shared capacities. &nbsp;<a href="https://aka.ms/RestrictMyFolderCapacity" target="_blank">Learn More</a> |
+| [Create workspaces (new workspace experience)](portal-workspace.md#create-workspaces-new-workspace-experience) | Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace is created when a template app is installed. |
+| [Use datasets across workspaces](portal-workspace.md#use-datasets-across-workspaces) | Users in the organization can use datasets across workspaces if they have the required Build permission. |
+| [Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace) | Turn on this setting to prevent users from reassigning their personal workspaces (My workspace) from Premium capacities to shared capacities. |
 | **[Information protection](service-admin-portal-information-protection.md)** |  |
 | Allow users to apply sensitivity labels for content | With this setting enabled, Microsoft Purview Information Protection sensitivity labels published to users by your organization can be applied. All &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2144840" target="_blank">prerequisite steps</a> must be completed before enabling this setting.<br><br>Note: Sensitivity label settings, such as encryption and content marking for files and emails, are not applied to content. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2143053" target="_blank">Learn More</a><br><br>Visit the &nbsp;<a href="https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels" target="_blank">Microsoft Purview compliance portal</a> to view sensitivity label settings for your organization.<br><br>Note: Sensitivity labels and protection are only applied to files exported to Excel, PowerPoint, or PDF files, that are controlled by "Export to Excel" and "Export reports as PowerPoint presentation or PDF documents" settings. All other export and sharing options do not support the application of sensitivity labels and protection. |
 | Apply sensitivity labels from data sources to their data in Power BI | Only sensitivity labels from supported data sources will be applied. Please see the documentation for details about supported data sources and how their sensitivity labels are applied in Power BI. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2149746" target="_blank">Learn about supported data sources</a> |
