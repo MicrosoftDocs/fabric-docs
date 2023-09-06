@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 09/06/2023
 ms.custom: 
 ---
 
@@ -149,9 +149,11 @@ Depending on the item being shared, you may find a different set of permissions 
 
 ## Considerations and limitations
 
-The **Shared with me** option in the **Browse** pane currently only displays Power BI items that have been shared with you. It doesn't show you non-Power BI Fabric items that have been shared with you.
+* When a user's permission on an item is revoked through the manage permissions experience, it can take up to two hours for the change to take effect if the user is signed-in. If the user is not signed in, their permissions will be evaluated the next time they sign in, and any changes will only take effect at that time.
 
-:::image type="content" source="./media/share-items/shared-with-me.png" alt-text="Screenshot of Shared with me option in Browse pane.":::
+* The **Shared with me** option in the **Browse** pane currently only displays Power BI items that have been shared with you. It doesn't show you non-Power BI Fabric items that have been shared with you.
+
+    :::image type="content" source="./media/share-items/shared-with-me.png" alt-text="Screenshot of Shared with me option in Browse pane.":::
 
 ## Next steps
 
