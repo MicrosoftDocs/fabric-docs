@@ -17,10 +17,8 @@ ms.date: 09/06/2023
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
+* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 ## Prepare your system
 
@@ -50,22 +48,22 @@ Import Azure AI services libraries and replace the keys in the following code sn
 from synapse.ml.cognitive import *
 
 # A general Azure AI services key for Text Analytics, Vision and Document Intelligence (or use separate keys that belong to each service)
-service_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
+service_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your Azure AI service key, check prerequisites for more details
 service_loc = "eastus"
 
-# A Bing Search v7 su<"YOUR-KEY-VALUE">bscription key
-bing_search_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
+# A Bing Search v7 subscription key
+bing_search_key =  "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your Bing v7 subscription key, check prerequisites for more details
 
 # An Anomaly Detector subscription key
-anomaly_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
+anomaly_key = <"YOUR-KEY-VALUE"> # "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your anomaly service key, check prerequisites for more details
 anomaly_loc = "westus2"
 
 # A Translator subscription key
-translator_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
+translator_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your translator service key, check prerequisites for more details
 translator_loc = "eastus"
 
 # An Azure search key
-search_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
+search_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your search key, check prerequisites for more details
 ```
 
 ## Perform sentiment analysis on text
