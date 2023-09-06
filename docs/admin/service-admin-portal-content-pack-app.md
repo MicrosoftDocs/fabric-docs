@@ -34,7 +34,7 @@ Admins use this setting to decide which users can publish content packs and apps
 
 :::image type="content" source="media/tenant-settings/power-bi-admin-publish-entire-org.png" alt-text="Screenshot of Publish content pack to organization.":::
 
-To learn more, see [Publish an app in Power BI](/power-bi/collaborate-share/service-create-distribute-apps).
+To learn more, see [Publish an app in Power BI](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization).
 
 ## Next steps
 
