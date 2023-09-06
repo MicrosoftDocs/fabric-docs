@@ -43,7 +43,7 @@ To learn more about sending Fabric content to Azure AD B2B guest users, read [Di
 
 ## Show Azure Active Directory guests in lists of suggested people
 
-This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Azure AD guest users are not shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
+This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Azure AD guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
 > [!IMPORTANT]
 > When the setting is set to disabled, you can still give permission to a guest user by providing their full email address in people pickers.
@@ -132,7 +132,7 @@ To learn more, see [Export Power BI paginated report to an Image File](/power-bi
 
 ## Print dashboards and reports
 
-This settings lets users in the organization print dashboards and reports.
+This setting lets users in the organization print dashboards and reports.
 
 To learn more, see [Print from the Power BI service](/power-bi/consumer/end-user-print).
 
@@ -162,7 +162,7 @@ If this setting is off, only users in your organization can create and receive e
 
 This setting helps organizations choose whether external users can be included as recipients of email subscriptions.
 
-External users are users outside of the organization that have not been added as Azure Active Directory business-to-business (B2B) guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
+External users are users outside of the organization that haven't been added as Azure AD B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
 
 ## Featured content
 
@@ -238,7 +238,7 @@ To learn more about composite models, see [Use composite models in Power BI Desk
 
 ## Guest users can work with shared datasets in their own tenants
 
-When this setting is turned on, Azure AD B2B guest users of datasets shared with them by users in your organization will be able to access and build on those datasets in their own tenant.
+When this setting is turned on, Azure AD B2B guest users of datasets shared with them by users in your organization can access and build on those datasets in their own tenant.
 
 This setting is off by default for customers. If this setting is disabled, a guest user can still access the dataset in the provider tenant but not in their own tenant.
 
