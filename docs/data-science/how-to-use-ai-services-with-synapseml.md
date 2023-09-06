@@ -42,7 +42,7 @@ from synapse.ml.core.platform import *
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Import Azure AI services libraries and replace the keys in the following code snippet with your Azure AI services key.
+Import Azure AI services libraries and replace the keys in and locations in the following code snippet with your Azure AI services key and location.
 
 ```python
 from synapse.ml.cognitive import *
