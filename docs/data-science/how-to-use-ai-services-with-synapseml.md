@@ -55,15 +55,15 @@ service_loc = "eastus"
 bing_search_key =  "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your Bing v7 subscription key, check prerequisites for more details
 
 # An Anomaly Detector subscription key
-anomaly_key = <"YOUR-KEY-VALUE"> # "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your anomaly service key, check prerequisites for more details
+anomaly_key = <"YOUR-KEY-VALUE"> # "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your anomaly service key, check prerequisites for more details
 anomaly_loc = "westus2"
 
 # A Translator subscription key
-translator_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your translator service key, check prerequisites for more details
+translator_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your translator service key, check prerequisites for more details
 translator_loc = "eastus"
 
 # An Azure search key
-search_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE>  with your search key, check prerequisites for more details
+search_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your search key, check prerequisites for more details
 ```
 
 ## Perform sentiment analysis on text
