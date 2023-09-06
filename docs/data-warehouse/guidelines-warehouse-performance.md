@@ -4,7 +4,7 @@ description: This article contains a list of performance guidelines for warehous
 author: SQLAdventurer
 ms.author: trichter
 ms.reviewer: wiassaf
-ms.date: 06/01/2023
+ms.date: 09/06/2023
 ms.topic: conceptual
 ---
 # Synapse Data Warehouse in Microsoft Fabric performance guidelines
@@ -19,7 +19,7 @@ Included in this document are some specific articles devoted to guidelines that 
 
 ## Cold run (cold cache) performance during public preview
 
-[Caching with local SSD and memory](caching.md) is automatically enabled. Cold run or first run query performance will be continuously improved during the Preview period. If you are experiencing cold run performance issues during your preview experience (for example, the first 1-3 executions of a query perform noticeably slower than subsequent executions) here are a couple of things you can do that may improve your cold run performance:
+[Caching with local SSD and memory](caching.md) is automatic. Cold run or first run query performance will be continuously improved during the Preview period. If you are experiencing cold run performance issues during your preview experience (for example, the first 1-3 executions of a query perform noticeably slower than subsequent executions) here are a couple of things you can do that may improve your cold run performance:
 
 - Manually create statistics. Auto-statistics is not available in preview at this time. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance during preview.
 
@@ -92,7 +92,7 @@ For more [!INCLUDE [fabric-dw](includes/fabric-dw.md)] design guidance, see [Tab
 
 Reducing query result set sizes helps you avoid client-side issues caused by large query results. The [SQL Query editor](sql-query-editor.md) results sets are limited to the first 10,000 rows to avoid these issues in this browser-based UI. If you need to return more than 10,000 rows, use SQL Server Management Studio (SSMS) or Azure Data Studio.
 
-## Choosing the best data type for performance
+## Choose the best data type for performance
 
 When defining your tables, use the smallest data type that supports your data as doing so will improve query performance. This recommendation is important for CHAR and VARCHAR columns. If the longest value in a column is 25 characters, then define your column as VARCHAR(25). Avoid defining all character columns with a large default length.
 
