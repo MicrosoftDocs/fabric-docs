@@ -6,7 +6,7 @@ ms.custom: build-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 09/06/2023
 ---
 
 # Use Azure AI services with SynapseML in Microsoft Fabric
@@ -50,22 +50,22 @@ Import Azure AI services libraries and replace the keys in the following code sn
 from synapse.ml.cognitive import *
 
 # A general Azure AI services key for Text Analytics, Vision and Document Intelligence (or use separate keys that belong to each service)
-service_key = find_secret("cognitive-api-key") # Replace it with your cognitive service key, check prerequisites for more details
+service_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
 service_loc = "eastus"
 
-# A Bing Search v7 subscription key
-bing_search_key = find_secret("bing-search-key") # Replace it with your cognitive service key, check prerequisites for more details
+# A Bing Search v7 su<"YOUR-KEY-VALUE">bscription key
+bing_search_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
 
 # An Anomaly Detector subscription key
-anomaly_key = find_secret("anomaly-api-key") # Replace it with your cognitive service key, check prerequisites for more details
+anomaly_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
 anomaly_loc = "westus2"
 
 # A Translator subscription key
-translator_key = find_secret("translator-key") # Replace it with your cognitive service key, check prerequisites for more details
+translator_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
 translator_loc = "eastus"
 
 # An Azure search key
-search_key = find_secret("azure-search-key") # Replace it with your cognitive service key, check prerequisites for more details
+search_key = <"YOUR-KEY-VALUE"> # Replace it with your cognitive service key, check prerequisites for more details
 ```
 
 ## Perform sentiment analysis on text
