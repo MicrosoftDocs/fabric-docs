@@ -83,11 +83,11 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
 
 1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
 
-   :::image type="content" source="./media/add-iothub-source/add-iothub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
+   :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
 
 2. On the **Azure IoT Hub** configuration pane, enter the following details:
 
-   :::image type="content" source="./media/add-iothub-source/iothub-configuration-pane.png" alt-text="Screenshot that shows where to configure Azure IoT Hub in the eventstream.":::
+   :::image type="content" source="./media/add-iot-hub-source/iot-hub-configuration-pane.png" alt-text="Screenshot that shows where to configure Azure IoT Hub in the eventstream.":::
 
     1. **Source name**: Enter a name for your Azure IoT Hub, such as **iothub-source**.
     2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
@@ -95,29 +95,29 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
     4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
     5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
 
-       :::image type="content" source="./media/add-iothub-source/successfully-added-iothub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
+       :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
 
 3. To create a new cloud connection for your Azure IoT Hub, follow these steps:
 
-   :::image type="content" source="./media/add-iothub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
+   :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
     1. Select **Create new connection** from the drop down menu, and you're directed to the **Manage connections and gateway** page for creating a new cloud connection.
 
-        :::image type="content" source="./media/add-iothub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
+        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
 
     2. **Connection name**. Enter a name for the new cloud connection, such as **iothub-connection**.
     3. **IoT Hub** and **Authentication**. Enter the authentication information for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints.
 
-       :::image type="content" source="./media/add-iothub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
+       :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
 
     4. **General**. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
     5. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
 
-       :::image type="content" source="./media/add-iothub-source/refresh-iothub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub.":::
+       :::image type="content" source="./media/add-iot-hub-source/refresh-iot-hub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub.":::
 
 Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
 
-:::image type="content" source="./media/add-iothub-source/preview-iothub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data.":::
+:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data.":::
 
 ## Add a sample data as a source
 
