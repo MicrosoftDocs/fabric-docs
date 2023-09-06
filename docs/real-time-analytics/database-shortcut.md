@@ -39,7 +39,7 @@ The source and database shortcuts use the same storage account to fetch the data
 
 A data consumer who wants to create a database shortcut using invitation tokens must obtain a token from the data provider. A token is a code that lets a data consumer create a shortcut to the source database. You don't need a token if you create a database shortcut using the cluster URI method.
 
-To create an invitation token, the data provider can use the follow steps:
+To create an invitation token, the data provider can use the following steps:
 
 1. Browse to the [Azure portal](https://ms.portal.azure.com).
 1. Browse to the Azure Data Explorer database you wish to use as source.
