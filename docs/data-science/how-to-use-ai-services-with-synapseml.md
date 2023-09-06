@@ -18,6 +18,7 @@ ms.date: 09/06/2023
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
+* Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
 * Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 ## Prepare your system
