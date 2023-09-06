@@ -207,6 +207,34 @@ See the following table for the description of each setting.
 |**Enable staging** | Specify whether to copy data via an interim staging store. Enable staging only for the beneficial scenarios.|
 |**Staging account connection**| When selecting **Enable staging**, specify the connection of an Azure storage data source as an interim staging store. Select **+ New** to create a staging connection if you don't have it.|
 
+### Configure parameters in a copy activity
+
+Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse as an example to see how to use it.
+
+1. In your source or destination, after selecting **Workspace** as data store type and specify **Lakehouse**/**Data Warehouse** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse**.
+1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
+
+    :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
+
+1. Specify the name for your parameter and give it a default value if you want, or you can specify the value for the parameter after selecting **Run** in the pipeline. 
+
+    :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot showing createing a new parameter.":::
+
+    Note that the parameter value should be Lakehouse/Data Warehouse object ID. To get your Lakehouse/Data Warehouse object ID, open your Lakehouse/Data Warehouse in your workspace, and the ID is after `/lakehouses/`or `/datawarehouses/` in your URL.
+    
+    - **Lakehouse object ID**:
+    
+        :::image type="content" source="./media/copy-data-activity/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+
+    - **Data Warehouse object ID**:
+    
+        :::image type="content" source="./media/copy-data-activity/data-warehouse-object-id.png" alt-text="Screenshot showing the Data Warehouse object ID.":::
+
+1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**.
+
+    :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
+
+
 ## Next steps
 
 - [Connector overview](connector-overview.md)
