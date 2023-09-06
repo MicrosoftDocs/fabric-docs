@@ -100,7 +100,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 1. Specify the source **Database**.
 1. Optionally, modify the default cache policy.
 
-    :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster U R I dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-uri.png":::
+    :::image type="content" source="media/database-shortcut/new-shortcut-with-uri.png" alt-text="Screenshot of new database shortcut from a cluster URI dialog in Real-Time Analytics." lightbox="media/database-shortcut/new-shortcut-with-uri.png":::
 
 1. Select **Create**.
 
