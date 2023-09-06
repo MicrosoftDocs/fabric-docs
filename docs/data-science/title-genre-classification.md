@@ -85,7 +85,7 @@ EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 
 ### Download dataset and upload to lakehouse
 
-The following code downloads a publicly available version of the dataset and then store it in a Fabric lakehouse.
+The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
 > **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
@@ -326,7 +326,7 @@ With your data in place, now define the model. In this section, train a logistic
 
 ### Model training and machine learning experiments
 
-A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results using saved experiments. Learn more about [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
+A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code. Machine learning experiment tracking refers to the process of managing all the different experiments and their components, such as parameters, metrics, models, and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results using saved experiments. Learn more about [machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
 
 
@@ -456,7 +456,7 @@ with mlflow.start_run(run_name="lr"):
 To view your experiments:
 
 1. On the left, select your workspace.
-1. Find and select the experiment name, in this case _sample_aisample-textclassification_.
+1. In the list, find and select the experiment name, in this case _sample_aisample-textclassification_.
 
 :::image type="content" source="./media/title-genre-classification/Title_Genre_Classification/TextClassification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/TextClassification-experiment.png":::
 
