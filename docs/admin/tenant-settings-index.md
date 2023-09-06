@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/06/2023
 ---
 
 # Fabric tenant settings index
-
-Updated August 23, 2023
 
 | Name | Description |
 |------|-------|
@@ -66,9 +64,9 @@ Updated August 23, 2023
 | Make certified content discoverable | Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2156467" target="_blank">Learn More</a> |
 | Discover content | Allow users to find and request access to content they don't have access to if it was made discoverable by its owners. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2156467" target="_blank">Learn More</a> |
 | **[Content pack and app settings](service-admin-portal-content-pack-app.md)** |  |
-| Create template organizational content packs and apps | Users in the organization can create template content packs and apps that use datasets built on one data source in Power BI Desktop. |
-| Push apps to end users | Users can share apps directly with end users without requiring installation from AppSource. |
-| Publish content packs and apps to the entire organization | Users in the organization can publish content packs and apps to the entire organization. |
+| [Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create) | Users in the organization can create template content packs and apps that use datasets built on one data source in Power BI Desktop. |
+| [Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users) | Report creators can share apps directly with end users without requiring installation from [AppSource](https://appsource.microsoft.com). |
+| [Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps) | This setting lets you choose which users can publish content packs and apps to the entire organization. |
 | **[Integration settings](service-admin-portal-integration.md)** |  |
 | Allow XMLA endpoints and Analyze in Excel with on-premises datasets | Users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to XMLA endpoints. |
 | Dataset Execute Queries REST API | Users in the organization can query datasets by using Data Analysis Expressions (DAX) through Power BI REST APIs. |
