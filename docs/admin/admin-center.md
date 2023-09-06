@@ -10,7 +10,7 @@ ms.date: 06/15/2023
 
 # What is the admin portal?
 
-[!INCLUDE [applies-no-desktop-yes-service](~/powerbi-repo/includes/applies-no-desktop-yes-service.md)]
+[!INCLUDE [applies-no-desktop-yes-service](~/powerbi-repo/powerbi-docs/includes/applies-no-desktop-yes-service.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
