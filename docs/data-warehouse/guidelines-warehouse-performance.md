@@ -19,14 +19,14 @@ Included in this document are some specific articles devoted to guidelines that 
 
 ## Cold run (cold cache) performance during public preview
 
-Cold run or first run query performance will be continuously improved during the Preview period. If you are experiencing cold run performance issues during your preview experience (for example, the first 1-3 executions of a query perform noticeably slower than subsequent executions) here are a couple of things you can do that may improve your cold run performance:
+[Caching with local SSD and memory](caching.md) is automatically enabled. Cold run or first run query performance will be continuously improved during the Preview period. If you are experiencing cold run performance issues during your preview experience (for example, the first 1-3 executions of a query perform noticeably slower than subsequent executions) here are a couple of things you can do that may improve your cold run performance:
 
 - Manually create statistics. Auto-statistics is not available in preview at this time. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance during preview.
 
 - If using Power BI, use [Direct Lake](../data-engineering/lakehouse-pbi-reporting.md) mode where possible.
 
 - During this preview, execute your query several times and focus on the performance of later executions.
-
+ 
 ## Metrics for monitoring performance
 
 Currently, the [Monitoring Hub](../admin/monitoring-hub.md) does not include [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you choose the Data Warehouse experience, you will not be able to access the **Monitoring Hub** from the left nav menu.
@@ -108,3 +108,4 @@ For supported data types and more information, see [data types](data-types.md#au
 - [Data types](data-types.md)
 - [T-SQL surface area](tsql-surface-area.md)
 - [Tables in data warehouse](tables.md)
+- [Caching in Fabric data warehousing](caching.md)
