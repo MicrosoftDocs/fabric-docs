@@ -1,6 +1,6 @@
 ---
 title: Lifecycle management tutorial
-description: Understand the workflow of using git integration with deployment pipelines to manage the lifecycle of your apps.
+description: Understand the workflow of using Git integration with deployment pipelines to manage the lifecycle of your apps.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -10,7 +10,7 @@ ms.date: 07/12/2023
 
 # Tutorial: Lifecycle management in Fabric
 
-This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with git integration to collaborate with others in the development, testing, and publication of your data and reports.
+This tutorial takes you through the whole process of loading data into your workspace, and using deployment pipelines together with Git integration to collaborate with others in the development, testing, and publication of your data and reports.
 
 ## Prerequisites
 
@@ -18,8 +18,8 @@ Before you start, make sure of the following:
 
 * If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
 * If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Access to an Azure git repo. If you don't have one, see [Set up a git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
-* Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
+* Access to an Azure Git repo. If you don't have one, see [Set up a Git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
+* Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
 
@@ -82,7 +82,7 @@ You can now create a deployment pipeline.
 ## Step 3: Connect the team's development workspace to git
 
 This workspace is shared by the entire team and each member of the team can edit it. By connecting this workspace to git, you can keep track of all the changes and revert back to previous versions if necessary. When all the changes are merged into this shared branch, the workspace is deployed to production using the deployment pipeline.  
-Read more about version control with git in [Introduction to git integration](./git-integration/intro-to-git-integration.md).
+Read more about version control with Git in [Introduction to Git integration](./git-integration/intro-to-git-integration.md).
 
 Let's connect this workspace to the main branch of your Azure repo so all team members can edit it and create pull requests.
 
@@ -100,15 +100,15 @@ Let's connect this workspace to the main branch of your Azure repo so all team m
    * Select *main* (or *master*) branch.
    * Type the name of folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
 
-     :::image type="content" source="./media/cicd-tutorial/git-connect-main.png" alt-text="Screenshot of workspace settings git integration window with workspace connected to main branch of repo.":::
+     :::image type="content" source="./media/cicd-tutorial/git-connect-main.png" alt-text="Screenshot of workspace settings Git integration window with workspace connected to main branch of repo.":::
 
 1. Select **Connect and sync**.
 
-After you connect, the Workspace displays information about source control that allows you to view the connected branch, the status of each item in the branch and the time of the last sync. The Source control icon shows `0` because the items in the workspace git repo are identical.
+After you connect, the Workspace displays information about source control that allows you to view the connected branch, the status of each item in the branch and the time of the last sync. The Source control icon shows `0` because the items in the workspace Git repo are identical.
 
-:::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other git information.":::
+:::image type="content" source="./media/cicd-tutorial/git-sync-information.png" alt-text="Screenshot of source control icon and other Git information.":::
 
-Now the workspace is synced with the main branch of your git repo making it easy to keep track of changes.
+Now the workspace is synced with the main branch of your Git repo making it easy to keep track of changes.
 
 For more information about connecting to git, see [Connect a workspace to an Azure repo](git-integration/git-get-started.md#connect-a-workspace-to-an-azure-repo).
 
@@ -171,7 +171,7 @@ In order to edit the workspace without interfering with other team members' chan
 
    :::image type="content" source="./media/cicd-tutorial/isolated-workspace.png" alt-text="Screenshot of workspace with new workspace link displayed.":::
 
-1. Connect this new workspace to a new branch of the git repo:
+1. Connect this new workspace to a new branch of the Git repo:
 
    From the dropdown menu, specify the following details about the branch you want to connect to:
 
@@ -186,7 +186,7 @@ In order to edit the workspace without interfering with other team members' chan
 
 1. Select **Connect and sync**.
 
-The new workspace now contains the content of the git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the git repo when we synced.  
+The new workspace now contains the content of the Git repo folder. Notice it doesn't contain the *.pbix* file. Since *.pbix* files are unsupported, this file wasn't copied to the Git repo when we synced.  
 This is the workspace you use to make changes to the dataset and report until you're ready to share them with your team.
 
 ## Step 7: Edit the workspace
@@ -208,27 +208,27 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 1. From the **Properties** pane, change the **Format** from *General* to *Percentage*.
 
-    :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in git.":::
+    :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in Git.":::
 
 ## Step 8: Commit changes
 
-To commit this change from the workspace into the git branch, go back to the workspace home page.
+To commit this change from the workspace into the Git branch, go back to the workspace home page.
 
-The source control icon now shows `1` because one item in the workspace was changed but not committed to the git repo. The *FoodSales* dataset shows a status of *Uncommitted*.
+The source control icon now shows `1` because one item in the workspace was changed but not committed to the Git repo. The *FoodSales* dataset shows a status of *Uncommitted*.
 
 :::image type="content" source="media/cicd-tutorial/source-control-icon.png" alt-text="Screenshot of source control icon showing one uncommitted change.":::
 
-1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of *Modified*.
+1. Select the source control icon to view the changed items in the Git repo. The dataset shows a status of *Modified*.
 1. Select the item to commit and add an optional message.
 1. Select **Commit**.
 
    :::image type="content" source="media/cicd-tutorial/commit-changes.png" alt-text="Screenshot of committing changes.":::
 
-The Git status of the dataset changes to *Synced* and the workspace and git repo are in sync.
+The Git status of the dataset changes to *Synced* and the workspace and Git repo are in sync.
 
 ## Step 9: Create PR and merge
 
-In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
+In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
 
 1. Select **Create a pull request**.
 
@@ -245,17 +245,17 @@ In the git repo, [create a pull request](/azure/devops/repos/git/pull-requests#c
 ## Step 10: Update shared workspace
 
 Go back to the shared workspace connected to the dev stage of the deployment pipeline (the one we created in [Step 1](#step-1-create-a-premium-workspace)) and refresh the page.  
-The source control icon now shows 1 because one item in the git repo was changed and is different from the items in the FoodSales workspace. The FoodSales dataset shows a status of *Update required*.
+The source control icon now shows 1 because one item in the Git repo was changed and is different from the items in the FoodSales workspace. The FoodSales dataset shows a status of *Update required*.
 
 :::image type="content" source="media/cicd-tutorial/update-required-icon.png" alt-text="Screenshot of source control icon showing one difference.":::
 
-1. Select the source control icon to view the changed items in the git repo. The dataset shows a status of Modified.
+1. Select the source control icon to view the changed items in the Git repo. The dataset shows a status of Modified.
 
 1. Select **Update all**.
 
    :::image type="content" source="media/cicd-tutorial/update-workspace.png" alt-text="Screenshot of update workspace.":::
 
-The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* git branch.
+The Git status of the dataset changes to *Synced* and the workspace is synced with the *main* Git branch.
 
 ## Step 11: Compare stages in deployment pipeline
 
@@ -281,13 +281,13 @@ When you’re satisfied with the changes, deploy the changes to the test and/or 
 
 ## Summary
 
-In this tutorial, you learned how to use deployment pipelines along with git integration to manage the lifecycle of an app, report, or other content in a workspace.  
+In this tutorial, you learned how to use deployment pipelines along with Git integration to manage the lifecycle of an app, report, or other content in a workspace.  
 In particular, you learned how to:
 
 * Setup workspaces and add content for managing their lifecycle in Fabric.
-* Apply git best practices to work alone and collaborate with teammates on changes.
-* Combine git and deployment pipelines for an efficient end to end release process.
+* Apply Git best practices to work alone and collaborate with teammates on changes.
+* Combine Git and deployment pipelines for an efficient end to end release process.
 
 ## Next steps
 
-[Manage git branches](./git-integration/manage-branches.md)
+[Manage Git branches](./git-integration/manage-branches.md)

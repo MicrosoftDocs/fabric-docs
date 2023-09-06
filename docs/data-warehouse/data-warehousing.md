@@ -47,9 +47,9 @@ Compute and storage are decoupled in a [!INCLUDE [fabric-dw](includes/fabric-dw.
 
 Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor. 
 
-## What types of warehouses are available in Microsoft Fabric? 
+## Data Warehousing experiences in Microsoft Fabric
 
-This section provides an overview of two distinct data warehousing experiences: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This section provides an overview of two distinct data warehousing experiences in Microsoft Fabric: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ### SQL Endpoint of the Lakehouse
 

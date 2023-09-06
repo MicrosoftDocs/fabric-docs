@@ -43,6 +43,6 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 ## Next steps
 
 - [How to use LightGBM models with SynapseML in Microsoft Fabric](how-to-use-lightgbm-with-synapseml.md)
-- [How to use Cognitive Services with SynapseML](overview-azure-ai-services.md)
+- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
