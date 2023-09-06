@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/05/2023
 ---
 
 # Fabric tenant settings index
-
-Updated August 23, 2023
 
 | Name | Description |
 |------|-------|
@@ -62,9 +60,9 @@ Updated August 23, 2023
 | Guest users can work with shared datasets in their own tenants | Authorized guest users can discover datasets shared with them in the OneLake data hub (in Power BI Desktop), and then work with these datasets in their own Power BI tenants. |
 | Allow specific users to turn on external data sharing | Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared datasets in their own Power BI tenants. |
 | **[Discovery settings](service-admin-portal-discovery.md)** |  |
-| Make promoted content discoverable | Allow users in this org who can promote content to make content they promote discoverable by users who don't have access to it. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2156467" target="_blank">Learn More</a> |
-| Make certified content discoverable | Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2156467" target="_blank">Learn More</a> |
-| Discover content | Allow users to find and request access to content they don't have access to if it was made discoverable by its owners. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2156467" target="_blank">Learn More</a> |
+| [Make promoted content discoverable](/power-bi/collaborate-share/service-discovery) | Allow users you specify who have permissions to [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to also mark that content as discoverable. |
+| [Make certified content discoverable](/power-bi/collaborate-share/service-discovery)  | Allow users who can [certify content](/power-bi/collaborate-share/service-endorse-content#certify-content) to make that content discoverable by users who don't have access to it. |
+| [Discover content](../get-started/onelake-data-hub.md#find-recommended-items) | Allow specified users to find endorsed content that's marked as discoverable, even if they don't yet have access to it. |
 | **[Content pack and app settings](service-admin-portal-content-pack-app.md)** |  |
 | Create template organizational content packs and apps | Users in the organization can create template content packs and apps that use datasets built on one data source in Power BI Desktop. |
 | Push apps to end users | Users can share apps directly with end users without requiring installation from AppSource. |
