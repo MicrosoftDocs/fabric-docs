@@ -1,6 +1,6 @@
 ---
-title: Create, evaluate, and deploy a fraud detection model
-description: This article shows the data engineering and data science workflows for building a model that detects credit card fraud.
+title: Create, evaluate, and score a fraud detection model
+description: This article shows the data science workflow for building a model that detects credit card fraud.
 ms.reviewer: mopeakande
 ms.author: amjafari
 author: amhjf
@@ -8,57 +8,47 @@ ms.topic: tutorial
 ms.date: 08/24/2023
 ---
 
+# Create, evaluate, and score a fraud detection model
+
+In this tutorial, you'll walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. The scenario is to build a fraud detection model, using ML algorithms trained on historical data, and then use the model to detect future fraudulent transactions. The steps you'll take are:
+
+> [!div class="checklist"]
+> * Install custom libraries
+> * Load the data
+> * Understand and process the data through exploratory data analysis
+> * Train a machine learning model using Scikit-Learn and track experiments using MLflow and Fabric Autologging feature
+> * Save and register the best performing machine learning model
+> * Load the machine learning model for scoring and making predictions
+
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+
+### Follow along in notebook
+
+[AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
+
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb -->
 
-> [!TIP]
-> Contents of _AIsample%20-%20Fraud%20Detection.ipynb_. **[Open in GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb)**.
-
-# Create, evaluate, and deploy a fraud detection system
-
-## Introduction
-
-In this notebook, you'll see the Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a fraud detection model, using ML algorithms trained on historical data and then use the model to detect future fraudulent transactions.
-
-The main steps in this notebook are:
-
-1. Install custom libraries
-2. Load the data 
-3. Understand and process the data through exploratory data analysis
-4. Train a machine learning model using Scikit-Learn and track experiments using MLflow and Fabric Autologging feature
-5. Save and register the best performing machine learning model
-6. Load the machine learning model for scoring and making predictions
-
-#### Prerequisites
-- [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to this notebook. You'll be downloading data from a public blob and storing the data in the lakehouse. 
-
 ## Step 1: Install custom libraries
-When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. To install libraries, you have two choices. 
 
-1. You can use the inline installation capabilities (such as `%pip` and `%conda`) to quickly get started with new libraries.
+When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries directly in your workspace, to be available for or use by notebooks in your workspace, or you can use the in-line installation capabilities of your notebook to install libraries in your current notebook only. For more information on library installation, see [Install custom libraries](use-ai-samples.md#install-custom-libraries).
+
+For this notebook, you'll install the `imblearn` library using `%pip install`. Note that the PySpark kernel will be restarted after `%pip install`, thus you'll need to install the library before you run any other cells.
 
 ```python
-# Use pip to install libraries
-%pip install <library name>
-
-# Use conda to install libraries
-%conda install <library name>
+# Use pip to install imblearn
+%pip install imblearn
 ```
 
-2. Alternatively, you can install the required libraries into the workspace, by navigating into the workspace setting to find **Library management**, as shown in the following images.
+## Step 2: Load the data
 
-<img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement2.png"  width="45%" height="10%">
-<img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement1.png"  width="45%" height="10%"> 
-
-From the Library Management page, you can select how to install the required libraries. For example, **Add from PyPI** or **Add from .yml**. 
-
-To install from PyPI:
-1. Select **+ Add from PyPI**.
-1. Select the desired libraries and their corresponding versions from the dropdown. For this notebook, you'll select `imblearn` and it's corresponding version.
-1. Select **Apply** to automatically install all selected libraries in the workspace.
-
-<img src="https://synapseaisolutionsa.blob.core.windows.net/public/Credit_Card_Fraud_Detection/librarymanagement3.png"  width="40%" height="10%">
-
-## Step 2: Load the Data
 The fraud detection dataset contains credit card transactions made by European cardholders in September 2013 over the course of two days. The dataset contains only numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was done on the original features. The only features that haven't been transformed with PCA are `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
 
 - The features `V1`, `V2`, `V3`, …, `V28` are the principal components obtained with PCA.
@@ -75,19 +65,13 @@ Out of the 284,807 transactions, only 492 are fraudulent. Therefore, the minorit
 |0|-1.3598071336738|-0.0727811733098497|2.53634673796914|1.37815522427443|-0.338320769942518|0.462387777762292|0.239598554061257|0.0986979012610507|0.363786969611213|0.0907941719789316|-0.551599533260813|-0.617800855762348|-0.991389847235408|-0.311169353699879|1.46817697209427|-0.470400525259478|0.207971241929242|0.0257905801985591|0.403992960255733|0.251412098239705|-0.018306777944153|0.277837575558899|-0.110473910188767|0.0669280749146731|0.128539358273528|-0.189114843888824|0.133558376740387|-0.0210530534538215|149.62|"0"|
 |0|1.19185711131486|0.26615071205963|0.16648011335321|0.448154078460911|0.0600176492822243|-0.0823608088155687|-0.0788029833323113|0.0851016549148104|-0.255425128109186|-0.166974414004614|1.61272666105479|1.06523531137287|0.48909501589608|-0.143772296441519|0.635558093258208|0.463917041022171|-0.114804663102346|-0.183361270123994|-0.145783041325259|-0.0690831352230203|-0.225775248033138|-0.638671952771851|0.101288021253234|-0.339846475529127|0.167170404418143|0.125894532368176|-0.00898309914322813|0.0147241691924927|2.69|"0"|
 
-
 ### Introduction to SMOTE
 
 `imblearn` (imbalanced learn) is a library that uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class. You can read more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
 
-For this notebook, you'll use `%pip` to install `imblearn`, the library for SMOTE. Note that the PySpark kernel will be restarted after you run `%pip install`, thus you should install the library before you run any other cells.
+You will be able to access SMOTE using the `imblearn` library that you installed in Step 1.
 
-1. Install `imblearn`.
-
-```python
-# Use pip to install imblearn
-%pip install imblearn
-```
+### Download the dataset and upload to the lakehouse
 
 > [!TIP]
 > By defining the following parameters, you can apply this notebook on different datasets easily.
@@ -104,8 +88,6 @@ DATA_FILE = "creditcard.csv"  # data file name
 
 EXPERIMENT_NAME = "aisample-fraud"  # mlflow experiment name
 ```
-
-### Download the dataset and upload to the lakehouse
 
 The following code will download a publicly available version of the the dataset and then store it in a Fabric lakehouse.
 
@@ -130,15 +112,6 @@ if not IS_CUSTOM_DATA:
             f.write(r.content)
     print("Downloaded demo data files into lakehouse.")
 
-```
-
-Start recording the time it takes to run this notebook.
-
-```python
-# Record the notebook running time
-import time
-
-ts = time.time()
 ```
 
 ### Set up MLflow experiment tracking
@@ -177,7 +150,6 @@ df = (
 ### Display the raw data
 
 1. Explore the raw data and view high-level statistics by using the `display` command. For more information, see [Notebook visualization in Microsoft Fabric](https://aka.ms/fabric/visualization).
-
 
 ```python
 display(df)
@@ -526,6 +498,7 @@ mlflow.register_model(raw_model_uri, registered_model_name)
 smote_model_uri = "runs:/{}/model".format(smote_run.info.run_id)
 mlflow.register_model(smote_model_uri, registered_model_name)
 ```
+
 ## Step 6: Save the prediction results
 
 Microsoft Fabric allows users to operationalize machine learning models with a scalable function called `PREDICT`, which supports batch scoring (or batch inferencing) in any compute engine.
@@ -558,14 +531,7 @@ batch_predictions = model.transform(test_spark)
 batch_predictions.write.format("delta").mode("overwrite").save(f"{DATA_FOLDER}/predictions/batch_predictions")
 ```
 
-```python
-# Determine the entire runtime
-batch_predictions.limit(5).toPandas()
-print(f"Full run cost {int(time.time() - ts)} seconds.")
-```
-
 <!-- nbend -->
-
 
 ## Next Steps
 
