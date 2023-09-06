@@ -203,7 +203,7 @@ items:
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: What is Cognitive Services in SynapseML?
+    - name: What is Azure AI services in SynapseML?
       href: overview-azure-ai-services.md
   - name: Get started
     items:
@@ -217,7 +217,7 @@ items:
       href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
-    - name: Use Cognitive Services with SynapseML
+    - name: Use Azure AI services with SynapseML
       href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
@@ -231,7 +231,7 @@ items:
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
       href: create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
+    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
       href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
@@ -239,4 +239,3 @@ items:
   items:
     - name: SemPy Python SDK
       href: data-science-overview.md # python/api/semantic-link/overview-semantic-link
-      
