@@ -1,5 +1,5 @@
 ---
-title: Access an existing KQL database and copy URI
+title: Access an existing KQL database
 description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
