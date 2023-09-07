@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 09/07/2023
 ms.search.form: product-kusto
 ---
-# Access an existing KQL database and copy URI
+# Access an existing KQL database
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -19,7 +19,7 @@ In this article, you learn how to access an existing KQL database and optionally
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 
-## Access an existing KQL database
+## Access a KQL database
 
 To access your existing KQL databases:
 
