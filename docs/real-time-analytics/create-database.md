@@ -49,8 +49,8 @@ The main page of your KQL database shows an overview of the contents in your dat
 | | Region | Shows the region of the data and services.|
 | | Created on | Date of database creation.|
 | | Last ingestion | Date on which data was ingested last into the database.|
-| | Query URI | URI that can be used for sending/ running queries.|
-| | Ingestion URI | URI that can be used for programmatic ingestion.|
+| | Query URI | URI that can be used for running queries or to store management commands.|
+| | Ingestion URI | URI that can be used for ingestion.|
 | | OneLake folder | OneLake folder path that can be used for creating shortcuts. You can also activate and deactivate data copy to OneLake.|
 | **Size**|
 | | Compressed| Total size of compressed data.|

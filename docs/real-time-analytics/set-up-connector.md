@@ -1,6 +1,6 @@
 ---
 title: Connectors
-description: Learn how to access an existing KQL database and copy the ingestion or query URI to set up connectors in Real-Time Analytics.
+description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
@@ -13,11 +13,7 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Data ingestion is the process used to load data from one or more sources into Real-Time Analytics. Once ingested, the data becomes available for query. Real-Time Analytics provides several connectors for data ingestion.
-
-In this article, you learn how to access an existing KQL database and copy the **Query URI** and the **ingestion URI** to get data using connectors in Real-Time Analytics.
-
-For the list of supported connectors in Real-Time Analytics, see #TODO.
+In this article, you learn how to access an existing KQL database and optionally copy the **Query URI** and the **Ingestion URI** to run queries, store management commands, or to get data.
 
 ## Prerequisites
 
@@ -39,17 +35,18 @@ To access your existing KQL databases:
 
 ## Copy URI
 
-The main page of your KQL database shows an overview of the contents in your database. From the **Database details** card, you can copy URIs to use when your get data using a connector in Real-Time Analytics.
+The main page of your KQL database shows an overview of the contents in your database.
 
 :::image type="content" source="media/set-up-connectors/copy-uri.png" alt-text="Screenshot of the database details card showing the database details. The options titled Query URI and Ingestion URI are highlighted.":::
 
-The following table lists the two types of URIs that you can copy from your KQL database.
+The following table lists the two types of URIs that you can copy from the **Database details** card in your KQL database.
 
 |URI type |Usage |
 |---|---|
-|Query URI |URI that can be used for sending/ running queries.|
-|Ingestion URI |URI that can be used for programmatic ingestion.|
+|Query URI |URI that can be used for running queries or to store management commands.|
+|Ingestion URI |URI that can be used for ingestion.|
 
+1. Access an [existing KQL database](#access-an-existing-kql-database).
 1. Copy the desired URI type from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
 ## See also

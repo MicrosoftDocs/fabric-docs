@@ -32,6 +32,8 @@ items:
   items:
   - name: Create a KQL database
     href: create-database.md
+  - name: Connectors
+    href: set-up-connector.md
   - name: Create an empty table
     href: create-empty-table.md
   - name: Get data
@@ -48,8 +50,6 @@ items:
       href: get-data-onelake.md
   - name: Connectors
     items:
-    - name: Connectors
-      href: set-up-connector.md
     - name: Configure KQL Database in a data pipeline
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
