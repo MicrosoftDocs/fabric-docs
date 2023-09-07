@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/05/2023
 ---
 
 # Fabric tenant settings index
-
-Updated August 23, 2023
 
 | Name | Description |
 |------|-------|
@@ -87,9 +85,9 @@ Updated August 23, 2023
 | Users can view Power BI items saved in OneDrive and SharePoint (Preview) | Users in the organization can view Power BI items they save in OneDrive for Business or SharePoint document libraries |
 | Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop | Users who have saved Power BI files (.pbix) to OneDrive and SharePoint can share links to those files using Power BI Desktop.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2227462" target="_blank">Learn More</a> |
 | **[Power BI visuals](service-admin-portal-power-bi-visuals.md)** |  |
-| Allow visuals created using the Power BI SDK | Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the "Organizational visuals" page are not affected by this setting. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2121300" target="_blank">Learn More</a> |
-| Add and use certified visuals only (block uncertified) | Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2036068" target="_blank">Learn More</a> |
-| Allow downloads from custom visuals | Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409" target="_blank">Learn More</a> |
+| [Allow visuals created using the Power BI SDK](/power-bi/admin/organizational-visuals#visuals-from-appsource-or-a-file) | Users in the organization can add, view, share, and interact with visuals imported from [AppSource or from a file](/power-bi/developer/visuals/import-visual). Visuals allowed in the *Organizational visuals* page aren't affected by this setting. |
+| [Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals) | Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the *Organizational visuals* page aren't affected by this setting, regardless of certification. |
+| [Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file) | This setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) download any information available to the visual (such as summarized data and visual configuration) upon user consent. It's not affected by download restrictions applied in your organization's export and sharing settings. |
 | **[R and Python visuals settings](service-admin-portal-r-python-visuals.md)** |  |
 | Interact with and share R and Python visuals | Users in the organization can interact with and share visuals created with R or Python scripts. |
 | **[Audit and usage settings](service-admin-portal-audit-usage.md)** |  |
