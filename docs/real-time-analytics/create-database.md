@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/07/2023
 ms.search.form: product-kusto, KQL Database
 ---
 # Create a KQL database
@@ -68,20 +68,6 @@ The main page of your KQL database shows an overview of the contents in your dat
 | | | Lists the recently used KQL queryset and the time it was last accessed.|
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
-
-## Access an existing KQL database
-
-To access your existing KQL databases:
-
-1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
-
-    :::image type="content" source="media/create-database/access-existing-database-1.png" alt-text="Screenshot of the left menu of UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
-
-1. Select **Filter** on the right side of the ribbon > **KQL Database**.
-
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
-
-1. Select the desired database.
 
 ## Next steps
 
