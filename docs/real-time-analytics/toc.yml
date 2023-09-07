@@ -32,7 +32,7 @@ items:
   items:
   - name: Create a KQL database
     href: create-database.md
-  - name: Connectors
+  - name: Access an existing KQL database and copy URI
     href: access-database-copy-uri.md
   - name: Create an empty table
     href: create-empty-table.md

@@ -1,5 +1,5 @@
 ---
-title: Connectors
+title: Access an existing KQL database and copy URI
 description: Learn how to access an existing KQL database and optionally copy the query URI and the ingestion URI run queries or get data in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 09/07/2023
 ms.search.form: product-kusto
 ---
-# Connectors
+# Access an existing KQL database and copy URI
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
