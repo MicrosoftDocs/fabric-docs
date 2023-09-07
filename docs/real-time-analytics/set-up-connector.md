@@ -43,8 +43,8 @@ The following table lists the two types of URIs that you can copy from the **Dat
 
 |URI type |Usage |
 |---|---|
-|Query URI |URI that can be used for running queries or to store management commands.|
-|Ingestion URI |URI that can be used for ingestion.|
+|Query URI |URI that can be used to run queries or to store management commands.|
+|Ingestion URI |URI that can be used to get data.|
 
 1. Access an [existing KQL database](#access-an-existing-kql-database).
 1. Copy the desired URI type from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.

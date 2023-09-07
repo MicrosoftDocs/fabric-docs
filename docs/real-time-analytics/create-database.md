@@ -38,7 +38,7 @@ The KQL database has now been created within the context of the selected workspa
 
 ## Database details
 
-The main page of your KQL database shows an overview of the contents in your database. The following table lists the information you'll see.
+The main page of your KQL database shows an overview of the contents in your database. The following table lists the available information.
 
 :::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard.png":::
 
@@ -49,8 +49,8 @@ The main page of your KQL database shows an overview of the contents in your dat
 | | Region | Shows the region of the data and services.|
 | | Created on | Date of database creation.|
 | | Last ingestion | Date on which data was ingested last into the database.|
-| | Query URI | URI that can be used for running queries or to store management commands.|
-| | Ingestion URI | URI that can be used for ingestion.|
+| | Query URI | URI that can be used to run queries or to store management commands.|
+| | Ingestion URI | URI that can be used to get data.|
 | | OneLake folder | OneLake folder path that can be used for creating shortcuts. You can also activate and deactivate data copy to OneLake.|
 | **Size**|
 | | Compressed| Total size of compressed data.|
