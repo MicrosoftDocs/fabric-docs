@@ -30,7 +30,7 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | Mapping Data Flow | Dataflow Gen2 |
 | :---- | :---- |
 | **New branch** | **Reference** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/new-branch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/reference.png" alt-text="Screenshot of the Reference transformation icon.":::<br><br>**Important:** Right click a query and select Reference. |
+| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/new-branch.svg" alt-text="Screenshot of the New branch transformation icon." ::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/reference.png" alt-text="Screenshot of the Reference transformation icon in Power Query.":::<br><br>**Important:** Right click a query and select Reference. |
 | **Join** | **Merge queries** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/join.svg" alt-text="Screenshot of the Join transformation icon.":::  | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/merge-queries.png" alt-text="Screenshot of the Merge queries transformation icon."::: <br><br> **Navigation:** <br>Home > Merge queries<br><br>**Important:**<br>Merge queries – Merge this query into another query in this project.<br>Merge queries as new – Merge this query into another query in this project to create a new query. |
 | **Conditional Split** | **Reference** |
