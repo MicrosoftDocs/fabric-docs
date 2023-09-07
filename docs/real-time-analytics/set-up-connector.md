@@ -13,9 +13,9 @@ ms.search.form: product-kusto
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Data ingestion is the process used to load data from one or more source into Real-Time Analytics. Once ingested, the data becomes available for query. Real-Time Analytics provides several connectors for data ingestion.
+Data ingestion is the process used to load data from one or more sources into Real-Time Analytics. Once ingested, the data becomes available for query. Real-Time Analytics provides several connectors for data ingestion.
 
-In this article you learn how to access an existing KQL database and copy the **Query URI** and the **ingestion URI** to get data using connectors in Real-Time Analytics.
+In this article, you learn how to access an existing KQL database and copy the **Query URI** and the **ingestion URI** to get data using connectors in Real-Time Analytics.
 
 For the list of supported connectors in Real-Time Analytics, see #TODO.
 
