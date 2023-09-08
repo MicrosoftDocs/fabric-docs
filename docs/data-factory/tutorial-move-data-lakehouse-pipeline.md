@@ -1,3 +1,15 @@
+---
+title: Move data from Azure SQL DB to Lakehouse via pipeline
+description: Learn steps to move data as files or tables into Lakehouse.
+ms.reviewer: jonburchel
+ms.author: jianleishen
+author: jianleishen
+ms.topic: tutorial
+ms.custom: build-2023
+ms.date: 09/08/2023
+ms.search.form: Pipeline Copy Assistant
+---
+
 # Move data from Azure SQL DB to Lakehouse via pipeline
 
 In this tutorial, you build a data pipeline to move a table in Azure SQL Database to Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
