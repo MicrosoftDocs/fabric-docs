@@ -60,7 +60,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
 **Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
-**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 
 #### Connect failure: It says something went wrong when I try to connect
 
