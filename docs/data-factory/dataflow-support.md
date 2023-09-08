@@ -2,9 +2,11 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 9/5/2023
+ms.date: 9/8/2023
 ms.author: dougklo
-ms.custom: intro-internal
+ms.topic: overview
+ms.custom: build-2023
+ms.search.form: product-data-factory
 ---
 
 # Dataflow Gen2 connectors in Microsoft Fabric
@@ -35,7 +37,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [![CData Connect Cloud.](media/dataflow-support/cdata-64.png)<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [![Celonis EMS (Beta).](media/dataflow-support/celonis-64.png)<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | ![Cherwell (Beta).](media/dataflow-support/cherwell-64.png)<br/>**Cherwell (Beta)**<br/>By Cherwell | [![CloudBluePSA (Beta).](media/dataflow-support/cloudbluepsa-64.png)<br/>**CloudBluePSA (Beta)**](/power-query/connectors/cloudbluepsa)<br/>By CloudBlue PSA (Beta) | ![Cognite Data Fusion.](media/dataflow-support/cdf-64.png)<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
+| [![CData Connect Cloud.](media/dataflow-support/cdata-64.png)<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [![Celonis EMS (Beta).](media/dataflow-support/celonis-64.png)<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | ![Cherwell (Beta).](media/dataflow-support/cherwell-64.png)<br/>**Cherwell (Beta)**<br/>By Cherwell | [![CloudBluePSA (Beta).](media/dataflow-support/cloudbluepsa-64.png)<br/>**CloudBluePSA<br/>(Beta)**](/power-query/connectors/cloudbluepsa)<br/>By CloudBluePSA | ![Cognite Data Fusion.](media/dataflow-support/cdf-64.png)<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
 | [![Common Data Service (legacy).](media/dataflow-support/cds-to-data64.png)<br/>**Common Data<br/>Service (legacy)**](/power-query/connectors/common-data-service-legacy)<br/>By Microsoft | | | | |
 
 ## D
@@ -43,7 +45,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Data Virtuality LDW.](media/dataflow-support/data-virtuality-64.png)<br/>**Data Virtuality<br/>LDW**<br/>By Data Virtuality | [![Databricks.](media/dataflow-support/databricks-64.png)<br/>**Databricks<br/>**](/power-query/connectors/databricks)<br/>By Databricks | [![Dataflows.](media/dataflow-support/power-platform-dataflows-64.png)<br/>**Dataflows**](/power-query/connectors/dataflows)<br/>By Microsoft | [![Dataverse.](media/dataflow-support/dataverse-64.png)<br/>**Dataverse**](/power-query/connectors/dataverse)<br/>By Microsoft | [![Delta Sharing.](media/dataflow-support/delta-sharing-64.png)<br/>**Delta Sharing**](/power-query/connectors/delta-sharing)<br/>By Databricks |
-| [![Denodo.](media/dataflow-support/denodo-for-powerbi-64.png)<br/>**Denodo**](/power-query/connectors/denodo)<br/>By Denodo | [![Digial Construction Works Insights](media/dataflow-support/dcwinsights-64.png)<br/>**Digital<br/>Construction<br/>Works Insights**](/power-query/connectors/digital-construction-works-insights)<br/>By Digital Construction Works | ![Dremio Cloud.](media/dataflow-support/dremio-64.png)<br/>**Dremio Cloud**<br/>By Dremio | ![Dremio Software.](media/dataflow-support/dremio-64.png)<br/>**Dremio Software**<br/>By Dremio | ![Dynamics 365 Business Central.](media/dataflow-support/dynamics365-business-central-64.png)<br/>**Dynamics 365<br/>Business Central**<br/>By Microsoft |
+| [![Denodo.](media/dataflow-support/denodo-for-powerbi-64.png)<br/>**Denodo**](/power-query/connectors/denodo)<br/>By Denodo | [![Digial Construction Works Insights](media/dataflow-support/dcwinsights-64.png)<br/>**Digital<br/>Construction<br/>Works Insights**](/power-query/connectors/digital-construction-works-insights)<br/>By Digital<br/>Construction<br/> Works | ![Dremio Cloud.](media/dataflow-support/dremio-64.png)<br/>**Dremio Cloud**<br/>By Dremio | ![Dremio Software.](media/dataflow-support/dremio-64.png)<br/>**Dremio Software**<br/>By Dremio | ![Dynamics 365 Business Central.](media/dataflow-support/dynamics365-business-central-64.png)<br/>**Dynamics 365<br/>Business Central**<br/>By Microsoft |
 | ![Dynamics 365 Customer Insights (Beta).](media/dataflow-support/customer-insights-64.png)<br/>**Dynamics 365<br/>Customer Insights<br/>(Beta)**<br/>By Microsoft | | | | |
 
 ## E
@@ -67,7 +69,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## H
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![HDInsight Interactive Query.](media/dataflow-support/hadoop-hdinsight-64.png)<br/>**HDInsight<br/>Interactive Query**<br/>By Microsoft | ![Hexagon PPM Smart API.](media/dataflow-support/hexagon-64.png)<br/>**Hexagon PPM <br/> Smart API**<br/>By Hexagon PPM | [![Hive LLAP.](media/dataflow-support/hive-64.png)<br/>**Hive LLAP**](/power-query/connectors/hive-llap)<br/>By Microsoft | | |
 
@@ -80,19 +82,19 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## J
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Jamf Pro (Beta).](media/dataflow-support/jamf-pro-64.png)<br/>**Jamf Pro<br/>(Beta)**<br/>By Jamf | ![Jethro (Beta).](media/dataflow-support/jethro-data-connector-64.png)<br/>**Jethro<br/>(Beta)**<br/>By JethroData | [![JSON.](media/dataflow-support/json-document-64.png)<br/>**JSON**](/power-query/connectors/json)<br/>By Microsoft | | |
 
 ## K
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Kognitwin.](media/dataflow-support/kognitwin-64.png)<br/>**Kognitwin**<br/>By Kongsberg | [![KQL Database.](media/dataflow-support/kql-database-64.png)<br/>**KQL Database**](/power-query/connectors/kql-database)<br/>By Microsoft | ![Kyligence.](media/dataflow-support/kyligence-64.png)<br/>**Kyligence**<br/>By Kyligence | | |
 
 ## L
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Lakehouse.](media/dataflow-support/lakehouse-64.png)<br/>**Lakehouse<br/>(Beta)**<br/>By Microsoft | ![Linkar PICK Style/MultiValue Databases (Beta).](media/dataflow-support/linkar-connector-64.png)<br/>**Linkar PICK<br/>Style/MultiValue<br/>Databases<br/>(Beta)**<br/>By Kosday Solutions | | | |
 
@@ -105,7 +107,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## O
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | [![OData.](media/dataflow-support/odata-64.png)<br/>**OData**](/power-query/connectors/odata-feed)<br/>By Microsoft | [![ODBC.](media/dataflow-support/odbc-64.png)<br/>**ODBC**](/power-query/connectors/odbc)<br/>By Microsoft | [![OpenSearchProject.](media/dataflow-support/opensearch-project-64.png)<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
 
@@ -119,13 +121,13 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## Q
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![QubolePresto (Beta).](media/dataflow-support/qubolepresto-64.png)<br/>**QubolePresto (Beta)**<br/>By Qubole | ![Quickbase.](media/dataflow-support/qbconnector-64.png)<br/>**Quickbase**<br/>By Quick Base | | | |
 
 ## R
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Roamler (Beta).](media/dataflow-support/roamler-icon-64.png)<br/>**Roamler (Beta)**<br/>By Roamler | | | | |
 
@@ -147,7 +149,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## U
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | [![Usercube (Beta).](media/dataflow-support/usercube-64.png)<br/>**Usercube (Beta)](/power-query/connectors/usercube)**<br/>By Usercube | | | | |
 
@@ -159,18 +161,18 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 ## W
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | [![Web.](media/dataflow-support/web-64.png)<br/>**Web**](/power-query/connectors/web/web)<br/>By Microsoft | ![Webtrends Analytics (Beta).](media/dataflow-support/webtrends-64.png)<br/>**Webtrends<br/>Analytics<br/>(Beta)**<br/>By Microsoft | ![Witivio (Beta).](media/dataflow-support/witivio-64.png)<br/>**Witivio (Beta)**</br>By Witivio | | |
 
 ## X
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | [![XML.](media/dataflow-support/xml-document-64.png)<br/>**XML**](/power-query/connectors/xml)<br/>By Microsoft | | | | |
 
 ## Z
 
-| &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
+| &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | ![Zoho Creator.](media/dataflow-support/zoho-creator-64.png)<br/>**Zoho Creator**<br/>By Zoho | ![Zucchetti HR Infinity (Beta).](media/dataflow-support/zucchetti-64.png)<br/>**Zucchetti HR<br/>Infinity (Beta)**<br/>By Zucchetti | | | |
