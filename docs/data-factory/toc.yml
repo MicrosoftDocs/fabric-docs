@@ -129,6 +129,10 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: JSON
+        items:
+        - name: Configure in Data pipeline
+          href: format-json.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
@@ -309,6 +313,8 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+    - name: Guide to dataflow for mapping dataflow users
+      href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
     - name: What's new in Data Factory
