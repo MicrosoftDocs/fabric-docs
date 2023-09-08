@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: index-page
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/05/2023
 ---
 
 # Fabric tenant settings index
-
-Updated August 23, 2023
 
 | Name | Description |
 |------|-------|
@@ -119,32 +117,32 @@ Updated August 23, 2023
 | **[Dataset security](service-admin-portal-dataset-security.md)** |  |
 | Block republish and disable package refresh | Disable package refresh, and only allow the dataset owner to publish updates. |
 | **[Advanced networking](service-admin-portal-advanced-networking.md)** |  |
-| Azure Private Link | Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. &nbsp;<a href="https://aka.ms/PrivateLinksLearnMore" target="_blank">Learn More</a> &nbsp;<a href="https://aka.ms/PrivateLinksSetupInstructions" target="_blank">Set-up instructions</a> |
-| Block public internet access | For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect.&nbsp;<a href="https://aka.ms/PrivateLinksLearnMore" target="_blank">Learn More</a>&nbsp;<a href="https://aka.ms/PrivateLinksSetupInstructions" target="_blank">Set-up instructions</a> |
+| [Azure Private Link](/power-bi/enterprise/service-security-private-links) | Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. |
+| [Block Public Internet Access](/power-bi/enterprise/service-security-private-links) | For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. |
 | **[Metrics settings](service-admin-portal-goals-settings.md)** |  |
-| Create and use Metrics | Users in the organization can create and use Metrics |
+| [Create and use Metrics](/power-bi/create-reports/service-goals-introduction) | Users in the organization can create and use metrics in Power BI. |
 | **[User experience experiments](service-admin-portal-user-experience-experiments.md)** |  |
-| Help Power BI optimize your experience | Users in this organization will get minor user experience variations that the Power BI team is experimenting with, including content, layout, and design, before they go live for all users. |
-| **[Share data with your Microsoft 365 services](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)** |  |
-| Users can see Microsoft Fabric metadata in Microsoft 365 | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2202379" target="_blank">Learn More</a><br><br>This setting is automatically enabled only if your Microsoft Fabric and M365 tenants are in the same geographical region. You may disable this setting.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2237979" target="_blank">Where is my Microsoft Fabric tenant located?</a> |
+| Help Power BI optimize your experience | Users in this organization get minor user experience variations that the Power BI team is experimenting with, including content, layout, and design, before they go live for all users. |
+| **[Share data with your Microsoft 365 services](admin-share-power-bi-metadata-microsoft-365-services.md)** |  |
+| [Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off) | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>This setting is automatically enabled only if your Microsoft Fabric and M365 tenants are in the same [geographical region](/power-bi/admin/service-admin-where-is-my-tenant-located). |
 | **[Insights settings](service-admin-portal-insights.md)** |  |
-| Receive notifications for top insights (preview) | Users in the organization can enable notifications for top insights in report settings |
-| Show entry points for insights (preview) | Users in the organization can use entry points for requesting insights inside reports |
+| [Receive notifications for top insights (preview)](/power-bi/create-reports/insights) | Users in the organization can enable notifications for top insights in report settings. |
+| Show entry points for insights (preview) | Users in the organization can use entry points for requesting insights inside reports. |
 | **[Datamart settings](service-admin-portal-datamart.md)** |  |
-| Create Datamarts (Preview) | Users in the organization can create Datamarts |
+| [Create Datamarts (Preview)](/power-bi/transform-model/datamarts/datamarts-administration) | Users in the organization can create Datamarts. |
 | **[Data model settings](service-admin-portal-data-model.md)** |  |
-| Users can edit data models in the Power BI service (preview) | Turn on this setting to allow users to edit data models in the service. This setting doesn't apply to DirectLake datasets or editing a dataset through an API or XMLA endpoint. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2227332" target="_blank">Learn More</a> |
+| [Users can edit data models in the Power BI service (preview)](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal) | Turn on this setting to allow users to edit data models in the service. This setting doesn't apply to DirectLake datasets or editing a dataset through an API or XMLA endpoint. |
 | **[Quick measure suggestions](service-admin-portal-quick-measure-suggestions-settings.md)** |  |
-| Allow quick measure suggestions (preview) | Allow users to use natural language to generate suggested measures. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2177910" target="_blank">Learn More</a> |
-| Allow user data to leave their geography | Quick measure suggestions are currently processed in the US. When this setting is enabled, users will get quick measure suggestions for data outside the US. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2177910" target="_blank">Learn More</a> |
+| [Allow quick measure suggestions (preview)](/power-bi/transform-model/quick-measure-suggestions) | Allow users to use natural language to generate suggested measures. |
+| [Allow user data to leave their geography](/power-bi/transform-model/quick-measure-suggestions#limitations-and-considerations) | Quick measure suggestions are currently processed in the US. When this setting is enabled, users get quick measure suggestions for data outside the US. |
 | **[Scale-out settings](service-admin-portal-scale-out.md)** |  |
-| Scale out queries for large datasets (Preview) | For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across additional dataset replicas when query volume is high. |
+| [Scale out queries for large datasets (Preview)](/power-bi/enterprise/service-premium-scale-out) | For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across additional dataset replicas when query volume is high. |
 | **[OneLake settings](service-admin-portal-onelake.md)** |  |
-| Users can access data stored in OneLake with apps external to Fabric | Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231198" target="_blank">Learn More</a> |
-| Users can sync data in OneLake with the OneLake File Explorer app | Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2231052" target="_blank">Learn More</a> |
+| [Users can access data stored in OneLake with apps external to Fabric](../onelake/onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake) | Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse. |
+| [Users can sync data in OneLake with the OneLake File Explorer app](../onelake/onelake-file-explorer.md) | Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive. |
 | **[Git integration](git-integration-admin-settings.md)** |  |
-| Users can synchronize workspace items with their Git repositories (Preview) | Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories.&nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2240844" target="_blank">Learn More</a> |
-| Users can export items to Git repositories in other geographical locations (Preview) | The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies. |
+| [Users can synchronize workspace items with their Git repositories (Preview)](../cicd/git-integration/intro-to-git-integration.md) | Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. |
+| [Users can export items to Git repositories in other geographical locations (Preview)](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) | The workspace and the Git repository might reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies. |
 | Users can export workspace items with applied sensitivity labels to Git repositories (Preview) | Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories. |
 
 ## Next steps
