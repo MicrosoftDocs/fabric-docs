@@ -76,7 +76,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
 | [![IBM DB2 database.](media/dataflow-support/database-64.png)<br/>**IBM DB2<br/>database**](/power-query/connectors/ibm-db2-database)<br/>By Microsoft | [![Impala.](media/dataflow-support/odbc-64.png)<br/>**Impala**](/power-query/connectors/impala-database)<br/>By Microsoft | ![Indexima.](media/dataflow-support/indexima-64.png)<br/>**Indexima**<br/>By Indexima | ![Industrial App Store.](media/dataflow-support/industrial-app-store-64.png)<br/>**Industrial<br/>App Store**<br/>By Intelligent Plant | ![Information Grid (Beta).](media/dataflow-support/information-grid-64.png)<br/>**Information<br/>Grid (Beta)**<br/>By Luminis |
-| ![InterSystems IRIS (Beta).](media/dataflow-support/iris-powerbi-connector-64.png)<br/>**InterSystems<br/>IRIS (Beta)**<br/>By Intersystems | ![Intune Data Warehouse (Beta).](media/dataflow-support/intune-64.png)<br/>**Intune Data<br/>Warehouse (Beta)**<br/>By Microsoft | | | | |
+| ![InterSystems IRIS (Beta).](media/dataflow-support/iris-powerbi-connector-64.png)<br/>**InterSystems<br/>IRIS (Beta)**<br/>By Intersystems | ![Intune Data Warehouse (Beta).](media/dataflow-support/intune-64.png)<br/>**Intune Data<br/>Warehouse (Beta)**<br/>By Microsoft | | | |
 
 ## J
 
@@ -137,7 +137,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 | [![SharePoint folder.](media/dataflow-support/sharepoint-64.png)<br/>**SharePoint folder**](/power-query/connectors/sharepoint-folder)<br/>By Microsoft | [![SharePoint list.](media/dataflow-support/sharepoint-64.png)<br/>**SharePoint list**](/power-query/connectors/sharepoint-list)<br/>By Microsoft | [![SharePoint Online list.](media/dataflow-support/sharepoint-64.png)<br/>**SharePoint Online<br/>list**](/power-query/connectors/sharepoint-online-list)<br/>By Microsoft | ![Shortcuts Business Insights (Beta).](media/dataflow-support/shortcuts-logo-64.png)<br/>**Shortcuts Business<br/>Insights (Beta)**<br/>By Shortcuts  | [![SingleStore.](media/dataflow-support/singlestore-64.png)<br/>**SingleStore (Beta)**](/power-query/connectors/singlestore)<br/>By SingleStore |
 | [![SIS-CC SDMX (Beta)](media/dataflow-support/sdmx-64.png)<br/>**SIS-CC SDMX<br/>(Beta)](/power-query/connectors/sis-cc-sdmx)**<br/>By SIS-CC | ![SiteImprove.](media/dataflow-support/siteimprove-64.png)<br/>**SiteImprove**<br/>By SiteImprove | [![Smartsheet.](media/dataflow-support/smartsheet-64.png)<br/>**Smartsheet**](/power-query/connectors/smartsheet)<br/>By Microsoft | [![Snowflake.](media/dataflow-support/database-64.png)<br/>**Snowflake**](/power-query/connectors/snowflake)<br/>By Microsoft | [![Socialbakers Metrics (Beta).](media/dataflow-support/socialbakers-64.png)<br/>**Socialbakers Metrics (Beta)**](/power-query/connectors/socialbakers)<br/>By Emplifi |
 | [![SoftOneBI (Beta).](media/dataflow-support/softone-64.png)<br/>**SoftOneBI (Beta)**](/power-query/connectors/softone-bi)<br/>By SoftOne | [![SolarWinds Service Desk (Beta).](media/dataflow-support/solarwinds-service-desk-64.png)<br/>**SolarWinds Service<br/>Desk (Beta)**](/power-query/connectors/solarwinds-service-desk)<br/>By SolarWinds | ![Solver.](media/dataflow-support/solver-64.png)<br/>**Solver**<br/>By BI360 | ![Spark.](media/dataflow-support/spark-64.png)<br/>**Spark**<br/>By Microsoft | [![SQL Server Analysis Services database.](media/dataflow-support/cube-database-64.png)<br/>**SQL Server Analysis<br/>Services database**](/power-query/connectors/sql-server-analysis-services)<br/>By Microsoft |
-| [![SQL Server database.](media/dataflow-support/database-64.png)<br/>**SQL Server<br/>database**](/power-query/connectors/sql-server)<br/>By Microsoft | ![Starburst Enterprise.](media/dataflow-support/starburstpresto-64.png)<br/>**Starburst <br/> Enterprise**<br/>By Starburst Data | [![SumTotal.](media/dataflow-support/sumtotal-64.png)<br/>**SumTotal**](/power-query/connectors/sumtotal)<br/>By SumTotal | ![SurveyMonkey.](media/dataflow-support/surveymonkey-64.png)<br/>**SurveyMonkey**<br/>By SurveyMonkey | | |
+| [![SQL Server database.](media/dataflow-support/database-64.png)<br/>**SQL Server<br/>database**](/power-query/connectors/sql-server)<br/>By Microsoft | ![Starburst Enterprise.](media/dataflow-support/starburstpresto-64.png)<br/>**Starburst <br/> Enterprise**<br/>By Starburst Data | [![SumTotal.](media/dataflow-support/sumtotal-64.png)<br/>**SumTotal**](/power-query/connectors/sumtotal)<br/>By SumTotal | ![SurveyMonkey.](media/dataflow-support/surveymonkey-64.png)<br/>**SurveyMonkey**<br/>By SurveyMonkey | |
 
 ## T
 
@@ -155,13 +155,13 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| ![Vena.](media/dataflow-support/vena-64.png)<br/>**Vena**<br/>By Vena | ![Vertica.](media/dataflow-support/vertica-64.png)<br/>**Vertica**<br/>By Microsoft | [![Vessel Insight](media/dataflow-support/vessel-insights-64.png)<br/>**Vessel Insight**](/power-query/connectors/vessel-insight)<br/>By Kongsberg | ![Viva Insights.](media/dataflow-support/workplace-analytics-64.png)<br/>**Viva Insights**<br/>By Microsoft | | |
+| ![Vena.](media/dataflow-support/vena-64.png)<br/>**Vena**<br/>By Vena | ![Vertica.](media/dataflow-support/vertica-64.png)<br/>**Vertica**<br/>By Microsoft | [![Vessel Insight](media/dataflow-support/vessel-insights-64.png)<br/>**Vessel Insight**](/power-query/connectors/vessel-insight)<br/>By Kongsberg | ![Viva Insights.](media/dataflow-support/workplace-analytics-64.png)<br/>**Viva Insights**<br/>By Microsoft | |
 
 ## W
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [![Web.](media/dataflow-support/web-64.png)<br/>**Web**](/power-query/connectors/web/web)<br/>By Microsoft | ![Webtrends Analytics (Beta).](media/dataflow-support/webtrends-64.png)<br/>**Webtrends<br/>Analytics<br/>(Beta)**<br/>By Microsoft | ![Witivio (Beta).](media/dataflow-support/witivio-64.png)<br/>**Witivio (Beta)**</br>By Witivio | | | |
+| [![Web.](media/dataflow-support/web-64.png)<br/>**Web**](/power-query/connectors/web/web)<br/>By Microsoft | ![Webtrends Analytics (Beta).](media/dataflow-support/webtrends-64.png)<br/>**Webtrends<br/>Analytics<br/>(Beta)**<br/>By Microsoft | ![Witivio (Beta).](media/dataflow-support/witivio-64.png)<br/>**Witivio (Beta)**</br>By Witivio | | |
 
 ## X
 
