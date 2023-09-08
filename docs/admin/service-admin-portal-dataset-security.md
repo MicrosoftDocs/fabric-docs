@@ -20,7 +20,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Disable package refresh, and only allow the dataset owner to publish updates.
 
-To learn more about dataset security, see [Dataset permissions](https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-permissions).
+To learn more about dataset security, see [Dataset permissions](/power-bi/connect-data/service-datasets-permissions).
 
 ## Next steps
 
