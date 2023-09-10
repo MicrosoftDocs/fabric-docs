@@ -15,7 +15,7 @@ The deployment process lets you clone content from one stage in the deployment p
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
+During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
@@ -23,7 +23,7 @@ You can also deploy content programmatically, using the [deployment pipelines RE
 
 When you deploy content to an empty stage, a new workspace is created on a capacity for the stage you deploy to. All the metadata in the reports, dashboards, and datasets of the original workspace is copied to the new workspace in the stage you're deploying to.
 
-There are two ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
+There are several ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
 
 You can also deploy content backwards, from a later stage in the deployment pipeline, to an earlier one.
 
@@ -259,7 +259,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 * Enable incremental refresh in a dataset that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by assigning the workspace to a new pipeline's *production* stage, and using [backwards deployment](deploy-content.md#backwards-deployment) to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a dataset that uses incremental refresh to a workspace that's part of an existing pipeline.
 

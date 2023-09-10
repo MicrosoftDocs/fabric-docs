@@ -53,12 +53,12 @@ Since dashboards, reports, datasets, and dataflows are related and have dependen
 
 >[!NOTE]
 >
-> * You can't deploy a Fabric item to the next stage if the items it's dependent on doesn't exist in the stage you are deploying to. For example, deploying a report without a dataset will fail, unless the dataset already exists in the target stage.
-> * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a dataset or a dataflow in the target stage, has changed and is no longer identical to the one in the stage you're deploying from.
+> * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a dataset will fail, unless the dataset already exists in the target stage.
+> * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a dataset or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
 
 #### Backwards deployment
 
-You can choose to deploy to a previous stage, for example in a scenario where you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development one.
+You may sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage.
 
 Deploying to a previous stage works only if the previous stage is empty. When deploying to a previous stage, you can't select specific items. All content in the stage will be deployed.
 
@@ -74,9 +74,9 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to ten different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-When you're deploying content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item will be overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report will be deployed. If you want to deploy everything connected to the report, use the **Select related** button.
+When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item will be overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report will be deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 
