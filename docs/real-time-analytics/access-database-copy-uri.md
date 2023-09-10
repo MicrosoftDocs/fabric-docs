@@ -29,7 +29,7 @@ To access your existing KQL databases:
 
 1. Select **Filter** on the right side of the ribbon > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
+    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace window that shows the dropdown menu of the Filter option. The entry titled KQL Database is selected."  lightbox="media/database-editor/access-existing-database-2.png":::
 
 1. Select the desired database.
 
