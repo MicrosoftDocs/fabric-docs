@@ -35,6 +35,7 @@ The plugin is disabled by default.
 
     :::image type="content" source="media/python-plugin/enable-python-plugin.png" alt-text="Screenshot of the plugins pane showing the Python language extension. The toggle button is highlighted.":::
 
-## Next steps
+## Related content
 
 * For examples of user-defined functions that use the Python plugin, see the [Functions library](/azure/data-explorer/kusto/functions-library/functions-library?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric)
+* [Query data in a KQL queryset](kusto-query-set.md)

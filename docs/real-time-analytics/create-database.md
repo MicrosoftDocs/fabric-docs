@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/10/2023
 ms.search.form: product-kusto, KQL Database
 ---
 # Create a KQL database
@@ -83,9 +83,9 @@ To access your existing KQL databases:
 
 1. Select the desired database.
 
-## Next steps
+## Related content
 
 * [Get data from a blob](get-data-blob.md)
-* [Get data from a blob container](get-data-blob-container.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in a KQL queryset](kusto-query-set.md)
+* [Get data from OneLake](get-data-onelake.md)
