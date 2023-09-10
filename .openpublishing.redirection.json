@@ -69,6 +69,11 @@
           "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
           "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/decision-guide-warehouse-lakehouse.md",
+          "redirect_url": "/fabric/get-started/decision-guide-data-store",
+          "redirect_document_id": true
         }
     ]
 }

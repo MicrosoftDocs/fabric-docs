@@ -1,6 +1,6 @@
 ---
-title:  Fabric decision guide - lakehouse or data warehouse
-description: Review a reference table and some quick scenarios to help in choosing whether to use a data warehouse or a lakehouse for your data in Fabric.
+title:  Fabric decision guide - choose a data store
+description: Review a reference table and some quick scenarios to help in choosing whether to use a data warehouse, lakehouse, Power BI Datamart, or KQL Database for your data in Fabric.
 ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 06/23/2023
 ---
 
-# Microsoft Fabric decision guide: data warehouse or lakehouse
+# Microsoft Fabric decision guide: choose a data store
 
 Use this reference guide and the example scenarios to help you choose between the data warehouse or a lakehouse for your Microsoft Fabric workloads.
 
