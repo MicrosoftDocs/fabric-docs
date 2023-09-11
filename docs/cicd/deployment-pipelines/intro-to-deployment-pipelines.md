@@ -28,7 +28,7 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 ## Pipeline structure
 
-When you create a deployment pipeline, you can define how many stages you want there to be. There can be anywhere between two and tem stages to your pipeline. The default pipeline has three stages:
+When you create a deployment pipeline, you can define how many stages you want there to be. There can be anywhere between two and ten stages to your pipeline. The default pipeline has three stages, but regardless of how many stages you have, the general concept is the same.:
 
 * **<a name="development"></a>Development**
 
