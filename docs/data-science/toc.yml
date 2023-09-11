@@ -49,6 +49,8 @@ items:
     href: title-genre-classification.md
   - name: Uplift modeling
     href: uplift-modeling.md
+  - name: Predictive maintenance
+    href: predictive-maintenance.md
 - name: Governance
   items:
   - name: Roles and permissions
