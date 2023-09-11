@@ -307,7 +307,7 @@ df_test_X.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-### Oversampling to balance the training dataset
+### Oversample to balance classes in the training dataset
 
 The previous analysis showed that the dataset is highly imbalanced. The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary.
 
