@@ -554,7 +554,7 @@ Accuracy_train: 0.998375
 Recall_train: 0.998375
 ```
 
-## Step 5: Model selection and prediction
+## Step 5: Select model and predict outputs
 
 In the previous section, you trained three different classifiers: Random Forest, Logistic Regression, and XGBoost. You have the choice to either programatically access the results or use the user interface (UI).
 
