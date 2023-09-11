@@ -89,6 +89,12 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 
 Follow along in the [Healthcare causal impact of treatments](uplift-modeling.md) tutorial.
 
+## Predictive maintenance
+
+In this tutorial, you proactively predict mechanical failures. This is accomplished by training multiple models on historical data such as temperature and rotational speed, then determining which model is the best fit for predicting future failures.
+
+Follow along in the [Predictive maintenance](predictive-maintenance.md) tutorial.
+
 
 ## Next steps
 

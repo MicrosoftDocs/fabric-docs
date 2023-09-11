@@ -168,26 +168,6 @@ df = df.rename(columns = {'Target': "IsFail"})
 df.info()
 ```
 
-The following information is returned about the dataset:
-
-```python
-<class 'pandas.core.frame.DataFrame'>
-RangeIndex: 10000 entries, 0 to 9999
-Data columns (total 8 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   Type                     10000 non-null  object 
- 1   Air_temperature_[K]      10000 non-null  float64
- 2   Process_temperature_[K]  10000 non-null  float64
- 3   Rotational_speed_[rpm]   10000 non-null  int32  
- 4   Torque_[Nm]              10000 non-null  float64
- 5   Tool_wear_[min]          10000 non-null  int32  
- 6   IsFail                   10000 non-null  int32  
- 7   Failure_Type             10000 non-null  object 
-dtypes: float64(3), int32(3), object(2)
-memory usage: 507.9+ KB
-```
-
 Convert specific columns of the dataset to floats and integer types and map strings such as ['L', 'M', 'H'] to numerical values [0, 1, 2].
 
 ```python
@@ -222,11 +202,9 @@ sns.heatmap(corr_matrix, annot=True)
 plt.show()
 ```
 
-    
-![png](temp_files/temp_23_1.png)
-    
-As expected, failure (`IsFail`) has correlation with the selected features. 
+:::image type="content" source="media/predictive-maintenance/correlation-matrix.png" alt-text="A plot of the correlation matrix of features.":::
 
+As expected, failure (`IsFail`) has correlation with the selected features (columns). The correlation matrix shows that `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` have the highest correlation with the `IsFail` variable.
 
 ```python
 # Plot histograms of select features
@@ -242,10 +220,7 @@ fig.subplots_adjust(hspace=0.2)
 fig.delaxes(axes[1,2])
 ```
 
-    
-![png](temp_files/temp_25_1.png)
-    
-
+:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="A graph plot of the features":::
 
 As can be seen from the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
 
@@ -272,15 +247,7 @@ plt.show()
 
 ```
 
-![png](temp_files/temp_29_1.png)
-    
-
-
-
-    
-![png](temp_files/temp_29_2.png)
-    
-
+:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Plot showing that samples are imbalanced.":::
 
 The plots indicate that the no failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset.
 
@@ -329,10 +296,7 @@ for p in ax.patches:
 plt.show()
 ```
 
-    
-![png](temp_files/temp_38_1.png)
-    
-
+:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Plot showing samples are balanced.":::
 
 You have successfully balanced the dataset and can move to model training.
 
@@ -403,28 +367,7 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-The following text is the output of this code:
-
-```python
-2023/07/17 05:26:35 INFO mlflow.tracking.fluent: Experiment with name 'Machine_Failure_Classification' does not exist. Creating a new experiment.
-2023/07/17 05:26:42 INFO mlflow.tracking.fluent: Autologging successfully enabled for sklearn.
-2023/07/17 05:26:42 INFO mlflow.tracking.fluent: Autologging successfully enabled for statsmodels.
-2023/07/17 05:26:42 INFO mlflow.tracking.fluent: Autologging successfully enabled for pyspark.ml.
-Successfully registered model 'machine_failure_model_rf'.
-2023/07/17 05:26:58 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: machine_failure_model_rf, version 1
-Created version '1' of model 'machine_failure_model_rf'.
-
-
-run_id 312a1e83-88a3-4b79-a85c-b21d459d81a8, status: RUNNING
-F1 score_train: 0.9346797901072346
-Accuracy_train: 0.912375
-Recall_train: 0.912375
-F1 score_test: 0.9191783895384354
-Accuracy_test: 0.891
-Recall_test: 0.891
-```
-
-As you can see, both train and test dataset yield F1 score, accuracy and recall of approximately 0.9 using Random Forest classifier. 
+From the output, both train and test dataset yield F1 score, accuracy and recall of approximately 0.9 using Random Forest classifier. 
 
 ### Train a logistic regression classifier
 
@@ -475,19 +418,6 @@ with mlflow.start_run() as run:
 
 ```
 
-The following text is the output of this code:
-
-```python
-run_id 4cb17cae-7f7b-49c1-b53d-325d23810e66, status: RUNNING
-F1 score_train: 0.8892891488665593
-Accuracy_train: 0.8415
-Recall_train: 0.8415
-
-Successfully registered model 'machine_failure_model_lr'.
-2023/07/17 05:27:17 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: machine_failure_model_lr, version 1
-Created version '1' of model 'machine_failure_model_lr'.
-```
-
 ### Train an XGBoost classifier
 
 
@@ -536,38 +466,19 @@ with mlflow.start_run() as run:
     mlflow.log_metric("recall_test", recall_test)
 ```
 
-The following text is the output of this code:
-
-```python
-2023/07/17 05:27:23 INFO mlflow.tracking.fluent: Autologging successfully enabled for xgboost.
-Successfully registered model 'machine_failure_model_xgb'.
-2023/07/17 05:27:31 INFO mlflow.tracking._model_registry.client: Waiting up to 300 seconds for model version to finish creation.                     Model name: machine_failure_model_xgb, version 1
-Created version '1' of model 'machine_failure_model_xgb'.
-
-
-run_id d2ce840e-62e4-4d0b-a8e6-5755eb124a68, status: RUNNING
-F1 score_train: 0.9983879937642015
-Accuracy_train: 0.998375
-Recall_train: 0.998375
-```
-
 ## Step 5: Select model and predict outputs
 
 In the previous section, you trained three different classifiers: Random Forest, Logistic Regression, and XGBoost. You have the choice to either programatically access the results or use the user interface (UI).
 
-To use the UI path, navigate to your workspace and filter the models. Then select individual models for details of the model performance. 
+To use the UI path, navigate to your workspace and filter the models.
 
+:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="A screenshot of the filter, with models selected.":::
 
-<img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection/Model_inspection.png"  width="60%" height="10%"> 
+ Then select individual models for details of the model performance.
 
-
-
-<img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection/Model_metrics.png"  width="60%" height="10%">
-
-
+:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="A screenshot of the model performance.":::
 
 The following example shows how to programatically access the models through MLflow.
-
 
 ```python
 runs = {'random forest classifer':   rfc_id,
@@ -585,30 +496,6 @@ for run_name, run_id in runs.items():
 
 # Print the DataFrame
 print(df_metrics)
-```
-
-The following text is the output of this code:
-
-```python
-   training_f1_score  training_precision_score  training_recall_score  \
-0           0.937937                  0.938971               0.937972   
-1           0.853847                  0.853951               0.853857   
-2                NaN                       NaN                    NaN   
-
-   training_log_loss  training_accuracy_score  training_roc_auc  \
-0           0.211785                 0.937972          0.982984   
-1           0.334941                 0.853857          0.930670   
-2                NaN                      NaN               NaN   
-
-   training_score  f1_score_train  accuracy_train  recall_train  \
-0        0.937972        0.934680        0.912375      0.912375   
-1        0.853857        0.889289        0.841500      0.841500   
-2             NaN        0.998388        0.998375      0.998375   
-
-   f1_score_test  accuracy_test  recall_test                        run_name  
-0       0.919178         0.8910       0.8910         random forest classifer  
-1       0.883883         0.8355       0.8355  logistic regression classifier  
-2       0.968540         0.9665       0.9665              xgboost classifier  
 ```
 
 Although XGBoost yielded the best results on the training set, it does perform poorly on the test data set, which indicates overfitting. Logistic Regression classifier performs poorly on both training and test datasets. Overall, Random Forest strikes a good balance between training performance and avoiding overfitting.
@@ -672,7 +559,7 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 You can demonstrate the results in an offline format using a Power BI dashboard. 
 
-<img style="float: left;" src="https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection/PowerBI_report_machine_maintenance.png"  width="75%" height="10%"> 
+:::image type="content" source="media/predictive-maintenance-power-bi.png" alt-text="A screenshot of the data displayed as a Power BI dashboard.":::
 
 The dashboard shows that the Tool_wear and Torque create a noticeable boundary between failed and unfailed cases as was expected from the earlier correlation analysis in Step 2.
 
