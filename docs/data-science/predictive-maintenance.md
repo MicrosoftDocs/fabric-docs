@@ -52,8 +52,6 @@ For this tutorial, you install the `imblearn` library in your notebook, using `%
 
 ## Step 2: Load the data
 
-### Dataset
-
 The dataset simulates logging of a manufacturing machine's parameters as a function of time, which is common in industrial settings. It consists of 10,000 data points stored as rows with features as columns. The features include:
 
 1. A Unique Identifier (UID) ranging from 1 to 10000.
@@ -78,9 +76,8 @@ The dataset simulates logging of a manufacturing machine's parameters as a funct
 
 Connect to Azure Open Datasets Container and load the Predictive Maintenance dataset. The following code downloads a publicly available version of the dataset and then stores it in a Fabric Lakehouse.
 
-**Add a lakehouse to the notebook before running it. Failure to do so results in an error.**
-
-Instructions to add a lakehouse to the notebook can be found [here](https://aka.ms/fabric/addlakehouse).
+> [!IMPORTANT]
+> Add a lakehouse to the notebook before running it. Failure to do so results in an error. For information on adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
 
 ```python
 # Download demo data files into lakehouse if not exist
