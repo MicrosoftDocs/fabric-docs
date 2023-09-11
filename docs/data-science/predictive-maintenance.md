@@ -629,7 +629,7 @@ model = MLFlowTransformer(
 )
 ```
 
-Now that you have created an MLFLowTransformer object to load the model for inferencing, use Transform to get model scoring for the test dataset.
+Now that you've created an MLFlowTransformer object to load the model for inferencing, use the Transformer API to score the model on the test dataset.
 
 
 ```python
