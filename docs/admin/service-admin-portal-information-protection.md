@@ -18,7 +18,7 @@ Information protection tenant settings help you to protect sensitive information
 
 ## Allow users to apply sensitivity labels for content
 
-With this setting enabled, users can apply Microsoft Purview Information Protection sensitivity labels. Applying sensitivity labels to content ensures that information is only seen and accessed by the appropriate users.
+With this setting enabled, specified users can apply sensitivity labels from Microsoft Purview Information Protection.
 
 All [prerequisite steps](/power-bi/enterprise/service-security-enable-data-sensitivity-labels#licensing-and-requirements) must be completed before enabling this setting.
 
