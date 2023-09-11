@@ -12,7 +12,7 @@ ms.search.form: Pipeline Copy Assistant
 
 # Move data from Azure SQL DB to Lakehouse via pipeline
 
-In this tutorial, you build a data pipeline to move a table in Azure SQL Database to Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
+In this tutorial, you build a data pipeline to move data in Azure SQL Database to Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
 
 ## Prerequisites
 
