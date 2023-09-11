@@ -11,7 +11,7 @@ ms.date: 08/23/2023
 
 # Create, Evaluate, and score a Machine Fault Detection Model
 
-In this notebook, you learn the data science work flow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
+In this tutorial, you learn the data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
 
 The summary of main steps you take in this notebook are:
 
@@ -101,7 +101,7 @@ for fname in file_list:
 print("Downloaded demo data files into lakehouse.")
 ```
 
-Once the dataset is downloaded into the lakehouse, you can load it as a spark dataframe. 
+Once the dataset is downloaded into the lakehouse, you can load it as a Spark DataFrame. 
 
 
 ```python
@@ -151,7 +151,7 @@ df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-## Step 3: Preprocessing and exploratory data analysis 
+## Step 3: Preprocess data and perform exploratory data analysis 
 
 Convert spark dataframe to pandas dataframe to use pandas compatible popular plotting libraries.
 
@@ -204,7 +204,7 @@ df['IsFail'] = df['IsFail'].astype(int)
 df['Type'] = df['Type'].map({'L': 0, 'M': 1, 'H': 2})
 ```
 
-### Data exploration through visualizations
+### Explore data through visualizations
 
 ```python
 # Import packages and set plotting style
@@ -225,7 +225,7 @@ plt.show()
     
 ![png](temp_files/temp_23_1.png)
     
-As expected, failure (IsFail) has correlation with the selected features. 
+As expected, failure (`IsFail`) has correlation with the selected features. 
 
 
 ```python
@@ -247,9 +247,9 @@ fig.delaxes(axes[1,2])
     
 
 
-As can be seen from the plotted graphs, the Air_temperature, Process_temperature, Rotational_speed, Torque, and Tool_wear variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
+As can be seen from the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
 
-### Inspection of the target variable and its class balance 
+### Inspect the target variable for class imbalance 
 
 Count the number of samples for failed and unfailed machines and inspect the data balance for each class (IsFail=0, IsFail=1). 
 
@@ -282,7 +282,7 @@ plt.show()
     
 
 
-The plots indicate that the no failure (shown as IsFail=0 in the second plot) constitutes most of the samples. Use oversampling technique to create a more balanced training dataset.
+The plots indicate that the no failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset.
 
 
 ```python
@@ -304,7 +304,7 @@ df_test_X.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-### Oversampling to balance the training dataset
+### Oversample to balance classes in the training dataset
 
 The previous analysis showed that the dataset is highly imbalanced. The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary.
 
@@ -344,7 +344,7 @@ You have successfully balanced the dataset and can move to model training.
 2. Logistic regression classifier 
 3. XGBoost classifier 
 
-### 1. Random forest classifier
+### Train a random forest classifier
 
 
 ```python
@@ -426,7 +426,7 @@ Recall_test: 0.891
 
 As you can see, both train and test dataset yield F1 score, accuracy and recall of approximately 0.9 using Random Forest classifier. 
 
-### 2. Logistic regression classifier
+### Train a logistic regression classifier
 
 
 ```python
@@ -488,7 +488,7 @@ Successfully registered model 'machine_failure_model_lr'.
 Created version '1' of model 'machine_failure_model_lr'.
 ```
 
-### 3. XGBoost classifier
+### Train an XGBoost classifier
 
 
 ```python
@@ -551,7 +551,7 @@ Accuracy_train: 0.998375
 Recall_train: 0.998375
 ```
 
-## Step 5: Model selection and prediction
+## Step 5: Select model and predict outputs
 
 In the previous section, you trained three different classifiers: Random Forest, Logistic Regression, and XGBoost. You have the choice to either programatically access the results or use the user interface (UI).
 
@@ -626,7 +626,7 @@ model = MLFlowTransformer(
 )
 ```
 
-Now that you have created an MLFLowTransformer object to load the model for inferencing, use Transform to get model scoring for the test dataset.
+Now that you've created an MLFlowTransformer object to load the model for inferencing, use the Transformer API to score the model on the test dataset.
 
 
 ```python
