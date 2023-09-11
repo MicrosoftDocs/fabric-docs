@@ -31,6 +31,15 @@ Workspace level libraries allow data scientists to standardize the sets of libra
    > [!IMPORTANT]
    > Only Workspace admin has access to update the Workspace level settings.
 
+To install libraries in your workspace:
+
+1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
+1. Select **Workspace settings** for your current workspace.
+1. Select **Data Engineering/Science** to open the dropdown.
+1. Select **Library management**.
+
+:::image type="content" source="media/python-library-management/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/python-library-management/library-management-page.png":::
+
 You can use the workspace settings to install both Python feed and custom libraries. To learn more, you can visit [manage libraries in Fabric](../../data-engineering/library-management.md).
 
 ### Use workspace settings to manage feed libraries
@@ -39,8 +48,16 @@ In some cases, you may want to pre-install certain Python feed libraries from Py
 
 From the Workspace setting, you can do the following:
 
-- **View and search feed library**: The installed library list appears when you open the **library management panel**. From this view, you can see the library name, version, and related dependencies. You can also search to quickly find a library from this list.
-- **Add new feed library**: You can add a new Python feed library from PyPI or Conda. Once the installation source is selected, you can select the **+** button and a new line appears. To add a library, you need to provide the library name and, optionally, specify th eversion in the next line. To upload a list of libraries at the same time, you can upload a ```.yml``` file containing the required dependencies.
+- **View and search feed library**. The installed library list appears when you open the **library management panel**. From this view, you can see the library name, version, and related dependencies. You can also search to quickly find a library from this list.
+- **Add new feed library**. You can add a new Python feed library from PyPI or Conda. For example, if you're installing from PyPI:
+
+   1. Select **+ Add from PyPI**. A new line appears for you to add the library.
+   1. Start typing the desired library name, and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
+   1. When you're done, select **Apply** to install all selected libraries into the workspace.
+
+   :::image type="content" source="media/python-library-management/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="media/python-library-management/install-library-into-workspace.png":::
+
+   To upload a list of libraries at the same time, you can also upload a ```.yml``` file containing the required dependencies.
 
 ### Use workspace settings to manage custom libraries
 
@@ -62,8 +79,8 @@ The ```%pip``` command in Microsoft Fabric is equivalent to the commonly used [p
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*:
 
    ```python
-   %conda install altair          # install latest version through conda command
-   %conda install vega_datasets   # install latest version through conda command
+   %pip install altair          # install latest version through pip command
+   %pip install vega_datasets   # install latest version through pip command
    ```
 
    The log in the cell output indicates the result of installation.

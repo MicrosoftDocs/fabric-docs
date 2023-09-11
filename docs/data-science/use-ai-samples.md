@@ -15,11 +15,11 @@ In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!IN
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Install custom libraries
+## Install Python libraries
 
-Some of the end-to-end AI samples require use of custom libraries when developing machine learning models or doing ad-hoc data analysis. You can quickly install these libraries for your Apache Spark session in one of two ways:
+Some of the end-to-end AI samples require use of additional libraries when developing machine learning models or doing ad-hoc data analysis. You can quickly install these libraries for your Apache Spark session in one of two ways:
 
-- Use the in-line installation capabilities (such as `pip` or `conda`) in your notebook
+- Use the in-line installation capabilities (such as `%pip` or `%conda`) in your notebook
 - Install libraries directly in your [current workspace](../get-started/workspaces.md#current-workspace)
 
 #### Install with in-line installation capabilities
@@ -36,13 +36,18 @@ To install a library, use the following code, replacing `<library name>` with th
 %conda install <library name>
 ```
 
+For more information on in-line installation capabilities, see [In-line installation](python-guide/python-library-management.md#in-line-installation).
+
 #### Install directly in your workspace
 
 Alternatively, you can install libraries in your workspace so that they're available for use in any notebooks that are in the workspace.
 
-To install libraries in your workspace:
+   > [!IMPORTANT]
+   > Only your Workspace admin has access to update the Workspace-level settings.
 
-1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace. 
+For more information on installing libraries in your workspace, see [Install workspace libraries](python-guide/python-library-management.md#install-workspace-libraries).
+
+1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 1. Select **Workspace settings** for your current workspace.
 1. Select **Data Engineering/Science** to open the dropdown.
 1. Select **Library management**.
