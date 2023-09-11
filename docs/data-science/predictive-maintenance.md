@@ -154,7 +154,7 @@ df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-## Step 3: Preprocessing and exploratory data analysis 
+## Step 3: Preprocess data and perform exploratory data analysis 
 
 Convert spark dataframe to pandas dataframe to use pandas compatible popular plotting libraries.
 
