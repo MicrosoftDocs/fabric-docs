@@ -1,0 +1,9 @@
+{
+    "redirections": [
+        {
+            "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
+            "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
+            "redirect_document_id": true
+          }
+    ]
+}
