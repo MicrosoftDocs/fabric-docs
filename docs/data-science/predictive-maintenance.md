@@ -429,7 +429,7 @@ Recall_test: 0.891
 
 As you can see, both train and test dataset yield F1 score, accuracy and recall of approximately 0.9 using Random Forest classifier. 
 
-### 2. Logistic regression classifier
+### Train a logistic regression classifier
 
 
 ```python
