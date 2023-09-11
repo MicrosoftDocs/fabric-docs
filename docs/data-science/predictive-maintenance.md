@@ -347,7 +347,7 @@ You have successfully balanced the dataset and can move to model training.
 2. Logistic regression classifier 
 3. XGBoost classifier 
 
-### 1. Random forest classifier
+### Train a random forest classifier
 
 
 ```python
