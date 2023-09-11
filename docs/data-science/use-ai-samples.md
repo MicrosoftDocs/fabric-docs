@@ -47,22 +47,6 @@ Alternatively, you can install libraries in your workspace so that they're avail
 
 For more information on installing libraries in your workspace, see [Install workspace libraries](python-guide/python-library-management.md#install-workspace-libraries).
 
-1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
-1. Select **Workspace settings** for your current workspace.
-1. Select **Data Engineering/Science** to open the dropdown.
-1. Select **Library management**.
-
-:::image type="content" source="media/use-ai-samples/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/use-ai-samples/library-management-page.png":::
-
-You can then select how to install the required libraries. For example, **Add from PyPI** or **Add from .yml**.
-
-To install from PyPI:
-1. Select **+ Add from PyPI**.
-1. Start typing the desired library name and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
-1. When you're done, select **Apply** to install all selected libraries into the workspace.
-
-:::image type="content" source="media/use-ai-samples/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="media/use-ai-samples/install-library-into-workspace.png":::
-
 ## Recommender
 
 An online bookstore is looking to increase sales by providing customized recommendations. Using customer book rating data in this sample you'll see how to clean, explore the data leading to developing and deploying a recommendation to provide predictions.

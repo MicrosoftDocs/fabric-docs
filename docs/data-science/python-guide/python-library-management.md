@@ -38,7 +38,7 @@ To install libraries in your workspace:
 1. Select **Data Engineering/Science** to open the dropdown.
 1. Select **Library management**.
 
-:::image type="content" source="media/python-library-management/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/python-library-management/library-management-page.png":::
+:::image type="content" source="../media/python-library-management/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="../media/python-library-management/library-management-page.png":::
 
 You can use the workspace settings to install both Python feed and custom libraries. To learn more, you can visit [manage libraries in Fabric](../../data-engineering/library-management.md).
 
@@ -55,7 +55,7 @@ From the Workspace setting, you can do the following:
    1. Start typing the desired library name, and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
    1. When you're done, select **Apply** to install all selected libraries into the workspace.
 
-   :::image type="content" source="media/python-library-management/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="media/python-library-management/install-library-into-workspace.png":::
+   :::image type="content" source="../media/python-library-management/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="../media/python-library-management/install-library-into-workspace.png":::
 
    To upload a list of libraries at the same time, you can also upload a ```.yml``` file containing the required dependencies.
 
