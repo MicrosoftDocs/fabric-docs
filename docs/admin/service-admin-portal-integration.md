@@ -54,7 +54,8 @@ When enabled, users in the organization can use map and filled map visualization
 
 :::image type="content" source="media/tenant-settings/admin-integration-map-filled-map-visuals-setting.png" alt-text="Screenshot of the map and filled map visuals admin setting.":::
 
-Note: In a future release, Power BI plans to deprecate older map visuals and migrate existing reports to Azure Maps. Learn about [converting to Azure Maps](/azure/azure-maps/power-bi-visual-conversion).
+>[!Note]
+>In a future release, Power BI plans to deprecate older map visuals and migrate existing reports to Azure Maps. Learn about [converting to Azure Maps](/azure/azure-maps/power-bi-visual-conversion).
 
 ## Integration with SharePoint and Microsoft Lists
 
