@@ -491,7 +491,7 @@ Successfully registered model 'machine_failure_model_lr'.
 Created version '1' of model 'machine_failure_model_lr'.
 ```
 
-### 3. XGBoost classifier
+### Train an XGBoost classifier
 
 
 ```python
