@@ -15,7 +15,7 @@ This article walks you through the basic settings required for using deployment 
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) Learn module, which shows how to create a deployment pipeline.
+You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
 >In a deployment pipeline, one Premium workspace is assigned to each stage. Before you start working with your pipeline in production, review the [capacity requirements](../faq.md#what-type-of-capacity-do-i-need) for the pipeline's workspaces.
@@ -29,15 +29,15 @@ To access the deployment pipelines feature, you must meet the following conditio
 * You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
 
 >[!NOTE]
-> You'll also be able to see the deployment pipelines button, if you previously created a pipeline, or if a pipeline was shared with you.
+> You'll also be able to see the deployment pipelines button if you previously created a pipeline or if a pipeline was shared with you.
 
 ## Step 1 - Create a deployment pipeline
 
 To create a pipeline, select the **Deployment pipelines** button.
 
-After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, they are given access to the pipeline and become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
+After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, they receive access to the pipeline and become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
 
-### Create a pipeline from the deployment pipelines button in Fabric
+### [Create a pipeline from the deployment pipelines button in Fabric](#tab/from-fabric)
 
 To create a pipeline from anywhere in Fabric:
 
@@ -48,9 +48,15 @@ To create a pipeline from anywhere in Fabric:
 1. Select **Create pipeline**.
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/create-pipeline.png" alt-text="A screenshot of the create pipeline button.":::
-1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
+1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
 
-### Create a pipeline from a workspace in Power BI
+    :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
+
+1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. Select **+Add** to add another stage, delete stages or rename them by typing a new name in the box. Select **Create** when you're done.
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+
+### [Create a pipeline from a workspace in Power BI](#tab/from-workspace)
 
 From Power BI, you also have the option of creating a pipeline from inside an existing workspace, if you're the admin of that [workspace](../../get-started/create-workspaces.md).
 
@@ -58,19 +64,27 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/workspace-deploy.png" alt-text="A screenshot of the create a pipeline button in a workspace.":::
 
-1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Create**.
+1. In the *Create a deployment pipeline* dialog box, enter a name and description for the pipeline, and select **Next**.
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
 
 >[!NOTE]
 >If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
 
+1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. Select **+Add** to add another stage, delete stages or rename them by typing a new name in the box. Select **Create** when you're done.
+
+    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+
+---
+
 ## Step 2 - Assign a workspace
+
+>[!NOTE]
+>If you're creating a pipeline directly from a workspace, you can skip this stage as the workspace is already selected.
 
 After creating a pipeline, you need to add the content you want to manage to the pipeline. Adding content to the pipeline is done by assigning a workspace to the pipeline stage. You can assign a workspace to any stage.
 
 Follow the instructions in the link to [assign a workspace to a pipeline](assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
-
->[!NOTE]
->If you're creating a pipeline from a workspace, you can skip this stage as the workspace is already selected.
 
 ## Step 3 - Deploy to an empty stage
 
