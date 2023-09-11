@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 08/23/2023
 ---
 
-# Create, Evaluate, and score a Machine Fault Detection Model
+# Create, evaluate, and score a machine fault detection model
 
 In this tutorial, you learn the data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
 
@@ -220,7 +220,7 @@ fig.subplots_adjust(hspace=0.2)
 fig.delaxes(axes[1,2])
 ```
 
-:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="A graph plot of the features":::
+:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="A graph plot of the features.":::
 
 As can be seen from the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
 
