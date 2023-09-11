@@ -48,10 +48,10 @@ Fabric provides availability zone support in various regions as follows:
 | **Asia Pacific**     | **Power BI**                                                          | **Datamarts**                                                         | **Data Warehouses**                                                   | **Real-Time Analytics**                                               |
 | Australia East       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       |                                                                       |
 | Japan East           | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| **Southeast Asia**   | **Power BI**                                                          | **Datamarts**                                                         | **Data Warehouses**                                                   | **Real-Time Analytics**                                               |
-| Southeast east       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       |
+| Southeast Asia       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       |                                                                       |
 
 ### Fault tolerance
+
 To prepare for availability zone failure, customers should over-provision capacity of service to ensure that the solution can tolerate ⅓ loss of capacity and continue to function without degraded performance during zone-wide outages.
 
 ### Zone down experience

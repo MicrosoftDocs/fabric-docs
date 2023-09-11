@@ -69,6 +69,9 @@ Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports 
 |  | SharePoint Online List | ✓/- | ✓ | - | - | - | - |
 |  | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
 
+> [!NOTE]
+> Currently, a pipeline on managed VNet and on-premises data access with a gateway aren't supported in Data Factory for Microsoft Fabric.
+
 ## Next steps
 
 - [How to copy data using copy activity](copy-data-activity.md)

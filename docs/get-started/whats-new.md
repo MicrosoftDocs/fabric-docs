@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 09/01/2023
+ms.date: 09/06/2023
 ms.topic: conceptual
 ---
 
@@ -19,6 +19,7 @@ This page is continuously updated with a recent review of what's new in [Microso
 >
 > - Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 > - Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
+> - Explore the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
 
 <!-- ## Features currently in preview
 
@@ -66,15 +67,6 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 |June 2023|**Microsoft Fabric MVP Corner – June 2023**| The Fabric MVP Corner blog series to [highlight selected content related to Fabric and created by MVPs in June 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-june-2023/). |
 |May 2023|**Learn about Microsoft Fabric from MVPs**|Prior to our official announcement of Microsoft Fabric at Build 2023, MVPs had the opportunity to familiarize themselves with the product. For several months, they have been actively testing Fabric and gaining valuable insights. Now, their enthusiasm for the product is evident as they eagerly [share their knowledge and thoughts about Microsoft Fabric with the community](https://blog.fabric.microsoft.com/blog/learn-about-microsoft-fabric-from-mvps). |
 
-## Samples and guidance
-
-This section summarizes new guidance and sample project resources for Microsoft Fabric.
-
-|**Month** | **Feature** |  **Learn more**|
-|:-- |:-- | :-- |
-|July 2023|**Connecting to OneLake**|How do I connect to OneLake? This blog covers [how to connect and interact with OneLake, including how OneLake achieves its compatibility with any tool used over ADLS Gen2!](https://blog.fabric.microsoft.com/blog/connecting-to-onelake?ft=All:) |
-|June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post answers that question and more details on how the two systems can work together.|
-
 ## Power BI
 
 Updates to Power BI Desktop and the Power BI service are summarized at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
@@ -85,10 +77,16 @@ This section summarizes recent new features and capabilities of data engineering
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|August 2023|**Introducing High Concurrency Mode in Notebooks for Data Engineering and Data Science workloads in Microsoft Fabric**| High concurrency mode allows sharing of Spark compute across multiple notebooks and allows their queries to execute in parallel. [High concurrency mode offers several benefits](https://blog.fabric.microsoft.com/blog/introducing-high-concurrency-mode-in-notebooks-for-data-engineering-and-data-science-workloads-in-microsoft-fabric?ft=All) for Fabric Spark users.|
+|August 2023|**Secure input/output for logs**|We've added advanced settings for the Set Variable activity called Secure input and Secure output. When you enable secure input or output, you can hide sensitive information from being captured in logs.|
+|August 2023|**Pipeline run status added to Output panel**|We've recently added **Pipeline status** so that developers can easily see the status of the pipeline run. You can now view your Pipeline run status from the **Output** panel.|
+|August 2023|**Data pipelines FTP connector**|The [FTP connector](/azure/data-factory/connector-ftp) is now available to use in your Data Factory data pipelines in Microsoft Fabric. Look for it in the **New connection** menu.|
+|August 2023|**Maximum number of entities in a Dataflow**|The new maximum number of entities that can be part of a Dataflow has been raised to 50. |
+|August 2023|**Manage connections feature**|The [Manage Connections option](/power-query/manage-connections) now allows you to view the linked connections to your dataflow, unlink a connection, or edit connection credentials and gateway. |
+|August 2023|**Power BI Lakehouses connector**|An update to the Lakehouses connector in the August version of the Power BI Desktop and Gateway includes significant performance improvements. |
+|August 2023|**Introducing High Concurrency Mode in Notebooks for Data Engineering and Data Science workloads in Microsoft Fabric**| [High concurrency mode](../data-engineering/high-concurrency-overview.md) allows you to run notebooks simultaneously on the same cluster without compromising performance or security when paying for a single session. [High concurrency mode offers several benefits](https://blog.fabric.microsoft.com/blog/introducing-high-concurrency-mode-in-notebooks-for-data-engineering-and-data-science-workloads-in-microsoft-fabric?ft=All) for Fabric Spark users.|
 |August 2023|**Service principal support to connect to data in Dataflow, Datamart, Dataset and Dataflow Gen 2**| [Azure service principal has been added as an authentication type](https://blog.fabric.microsoft.com/blog/service-principal-support-to-connect-to-data-in-dataflow-datamart-dataset-and-dataflow-gen-2?ft=All) for a set of data sources that can be used in Dataset, Dataflow, Dataflow Gen2 and Datamart. |
 |August 2023|**Fabric changing the game: Logging your workload using Notebooks** | Learn more about [logging your workload into OneLake using notebooks](https://blog.fabric.microsoft.com/blog/fabric-changing-game-logging-your-workload-using-notebooks?ft=All), using the OneLake API Path inside the notebook. |
-|August 2023|**Announcing XMLA Write support for Direct Lake datasets**|Direct Lake datasets now support XMLA-Write operations. Now you can use your favorite BI Pro tools and scripts to create and [manage Direct Lake datasets using XMLA endpoints](https://blog.fabric.microsoft.com/blog/announcing-xmla-write-support-for-direct-lake-datasets?ft=All). |
+|August 2023|**Announcing XMLA Write support for Direct Lake datasets**|Direct Lake datasets now [support XMLA-Write operations](/power-bi/enterprise/service-premium-connect-tools). Now you can use your favorite BI Pro tools and scripts to create and [manage Direct Lake datasets using XMLA endpoints](https://blog.fabric.microsoft.com/blog/announcing-xmla-write-support-for-direct-lake-datasets?ft=All). |
 |July 2023|**Lakehouse Sharing and Access Permission Management**| [Share a lakehouse and manage permissions](https://blog.fabric.microsoft.com/blog/lakehouse-sharing-and-access-permission-management?ft=All:) so that users can access lakehouse data through the Data Hub, the SQL Endpoint, and the default dataset. |
 |July 2023|**New modern data connectivity and discovery experience in Dataflows**| An improved experience aims to expedite the [process of discovering data in Dataflow, Dataflow Gen2, and Datamart](https://blog.fabric.microsoft.com/blog/modern-get-data-in-dataflows?ft=All:).|
 |June 2023|**Virtualize your existing data into OneLake with shortcuts** | Connect data silos without moving or copying data with OneLake, which allows you to create [special folders called shortcuts that point to other storage locations](https://blog.fabric.microsoft.com/blog/virtualize-your-existing-data-into-onelake-with-shortcuts).|
@@ -104,7 +102,7 @@ This section summarizes recent new features and capabilities of data engineering
 |August 2023|**Using Data pipelines for copying data to/from KQL Databases and crafting workflows with the Lookup activity**|[Real-Time Analytics' KQL DB is supported as both a destination and a source with data pipelines](https://blog.fabric.microsoft.com/blog/using-data-pipelines-for-copying-data-to-from-kql-databases-and-crafting-workflows-with-the-lookup-activity?ft=All), allowing you to build and manage various extract, transform, and load (ETL) activities, leveraging the power and capabilities of KQL DBs. |
 |August 2023|**Incrementally amass data**|With Dataflows Gen2 that comes with support for data destinations, you can [setup your own pattern to load new data incrementally](https://blog.fabric.microsoft.com/blog/wondering-how-to-incrementally-amass-data-in-your-data-destination-this-is-how?ft=All), replace some old data and keep your reports up to date with your source data. |
 |August 2023|**Data Pipeline Performance Improvement Part 3: Gaining more than 50% improvement for Historical Loads**|Learn how to account for pagination given the current state of Fabric Data Pipelines in Public Preview. This pipeline is performant when the number of paginated pages isn't too large. Read more at [Gaining more than 50% improvement for Historical Loads](https://blog.fabric.microsoft.com/blog/data-pipeline-performance-improvement-part-3-gaining-more-than-50-improvement-for-historical-loads?ft=All). |
-|August 2023|**Data Pipeline Performance Improvements Part 2: Creating an Array of JSONs**|Examples from this blog series include how to merge two arrays into an array of JSON objects, and how to take a date range and create multiple sub-ranges then store these as an array of JSONs. Read more at [Creating an Array of JSONs](https://blog.fabric.microsoft.com/blog/data-pipeline-performance-improvements-part-2-creating-an-array-of-jsons?ft=All).|
+|August 2023|**Data Pipeline Performance Improvements Part 2: Creating an Array of JSONs**|Examples from this blog series include how to merge two arrays into an array of JSON objects, and how to take a date range and create multiple subranges then store these as an array of JSONs. Read more at [Creating an Array of JSONs](https://blog.fabric.microsoft.com/blog/data-pipeline-performance-improvements-part-2-creating-an-array-of-jsons?ft=All).|
 |July 2023|**Data Pipeline Performance Improvements Part 1: How to convert a time interval (dd.hh:mm:ss) into seconds**|Part one of a series of blogs on moving data with multiple Copy Activities moving smaller volumes in parallel: [How to convert a time interval (dd.hh:mm:ss) into seconds](https://blog.fabric.microsoft.com/blog/data-pipeline-performance-improvements-part-1-how-to-convert-a-time-interval-dd-hhmmss-into-seconds?ft=All:). |
 |July 2023|**Construct a data analytics workflow with a Fabric Data Factory data pipeline**| A blog covering data pipelines in Data Factory and the advantages you find by [using pipelines to orchestrate your Fabric data analytics projects and activities](https://blog.fabric.microsoft.com/blog/construct-a-data-analytics-workflow-with-a-fabric-data-factory-data-pipeline?ft=All:).|
 |July 2023|**Data Pipelines Tutorial: Ingest files into a Lakehouse from a REST API with pagination ft. AVEVA Data Hub** | In this blog, we will act in the persona of an AVEVA customer who needs to [retrieve operations data from AVEVA Data Hub into a Microsoft Fabric Lakehouse](https://blog.fabric.microsoft.com/blog/data-pipelines-tutorial-ingest-files-into-a-lakehouse-from-a-rest-api-with-pagination-ft-aveva-data-hub?ft=All:). |
@@ -123,7 +121,8 @@ This section summarizes recent improvements and features for the [Data Science e
 #### Fabric Data Science samples and guidance
 
 |**Month** | **Feature** |  **Learn more**|
-|:-- |:-- | :-- | 
+|:-- |:-- | :-- |
+|August 2023|**New Machine failure and Customer churn samples**|More samples have been added to the Microsoft Fabric Synapse Data Science **Use a sample** menu. To check these Data Science samples, select **Synapse Data Science**, then **Use a sample**. |
 |August 2023|**Use Semantic Kernel with Lakehouse in Microsoft Fabric** |Learn how Fabric allows data scientists to [use Semantic Kernel with Lakehouse in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/use-semantic-kernel-with-lakehouse-in-microsoft-fabric?ft=All).|
 
 
@@ -133,6 +132,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|August 2023|**SSD Caching enabled**|[Local SSD caching](../data-warehouse/caching.md) stores frequently accessed data on local disks in highly optimized format, significantly reducing I/O latency. This benefits you immediately, with no action required or configuration necessary. |
 |July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](../data-warehouse/share-warehouse-manage-permissions.md). |
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
 |May 2023|**Introducing Synapse Data Warehouse in Microsoft Fabric**|[Synapse Data Warehouse is the next generation of data warehousing in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-synapse-data-warehouse-in-microsoft-fabric) that is the first transactional data warehouse to natively support an open data format, Delta-Parquet.|
@@ -150,7 +150,9 @@ This section summarizes recent improvements and features for [real-time analytic
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|July 2023|**Microsoft Fabric event streams: Generating Real-time Insights with Python, KQL and Power BI**| [Microsoft Fabric event streams](https://blog.fabric.microsoft.com/blog/microsoft-fabric-event-streams-generating-real-time-insights-with-python-kql-and-powerbi?ft=All:) are [a high-throughput, low-latency data ingestion and transformation service](../real-time-analytics/event-streams/overview.md). |
+|August 2023|**Provisioning optimization** | The KQL Database provisioning process has been optimized. Now you can provision a KQL Database within a few seconds.|
+|August 2023|**KQL Database support for inline Python** | Fabric KQL Database supports running Python code embedded in Kusto Query Language (KQL) using the [python() plugin](/azure/data-explorer/kusto/query/pythonplugin?pivots=fabric). The plugin is disabled by default. Before you start, [enable the Python plugin in your KQL database](../real-time-analytics/python-plugin.md). |
+|July 2023|**Microsoft Fabric event streams: Generating Real-time Insights with Python, KQL, and Power BI**| [Microsoft Fabric event streams](https://blog.fabric.microsoft.com/blog/microsoft-fabric-event-streams-generating-real-time-insights-with-python-kql-and-powerbi?ft=All:) are [a high-throughput, low-latency data ingestion and transformation service](../real-time-analytics/event-streams/overview.md). |
 |July 2023|**Stream Real-time Events to Microsoft Fabric with event streams from a custom application**|[Event streams under Real-Time Analytics](https://blog.fabric.microsoft.com/blog/stream-real-time-events-to-microsoft-fabric-with-event-streams-from-custom-application?ft=All:) are a centralized platform within Fabric, allowing you to capture, transform, and route real-time events to multiple destinations effortlessly, all through a user-friendly, no-code experience.|
 |June 2023|**Unveiling the Epic Opportunity: A Fun Game to Explore the Synapse Real-Time Analytics**|As part of [the Kusto Detective Agency Season 2](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/unveiling-the-epic-opportunity-a-fun-game-to-explore-the-synapse/ba-p/3839297), we're excited to introduce an epic opportunity for all investigators and data enthusiasts to learn about the new portfolio in a fun and engaging way. Recruiting now at [https://detective.kusto.io/](https://detective.kusto.io/)! |
 |May 2023|**What's New in Kusto – Build 2023!**|Announcing the [Synapse Real Time Analytics in Microsoft Fabric (Preview)](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/what-s-new-in-kusto-build-2023/ba-p/3829467)!|
@@ -181,6 +183,7 @@ This section summarizes recent new features and capabilities of Data Activator i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|August 2023|**Updated preview experience for trigger design**| We have been working on a [new experience for designing triggers](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=All#post-3622-_Toc144766694) and it's now available in our preview! You now see three cards in every trigger: Select, Detect, and Act.|
 |May 2023|**Driving actions from your data with Data Activator**| [Data Activator is a new no-code Microsoft Fabric experience](https://blog.fabric.microsoft.com/blog/driving-actions-from-your-data-with-data-activator) that empowers the business analyst to drive actions automatically from your data. To learn more, sign up for the [Data Activator limited preview](https://aka.ms/dataActivatorPreview). |
 
 ## Fabric and Microsoft 365
@@ -209,6 +212,7 @@ This section includes guidance and documentation updates on monitoring your Micr
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|August 2023|**Monitoring Hub support for personalized column options**|We have updated Monitoring Hub to allow users to personalize activity-specific columns. You now have the flexibility to display columns that are relevant to the activities you're focused on.|
 |May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8) and make data-driven scale-up decisions.|
 
 ## Microsoft Purview
@@ -219,6 +223,15 @@ This section summarizes recent announcements about governance and compliance cap
 |:-- |:-- | :-- | 
 |May 2023|**Administration, Security and Governance in Microsoft Fabric**|Microsoft Fabric provides [built-in enterprise grade governance and compliance capabilities](https://blog.fabric.microsoft.com/blog/administration-security-and-governance-in-microsoft-fabric), powered by [Microsoft Purview](../governance/use-microsoft-purview-hub.md). |
 
+## Samples and guidance
+
+This section summarizes new guidance and sample project resources for Microsoft Fabric.
+
+|**Month** | **Feature** |  **Learn more**|
+|:-- |:-- | :-- |
+|July 2023|**Connecting to OneLake**|How do I connect to OneLake? This blog covers [how to connect and interact with OneLake, including how OneLake achieves its compatibility with any tool used over ADLS Gen2!](https://blog.fabric.microsoft.com/blog/connecting-to-onelake?ft=All:) |
+|June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post answers that question and more details on how the two systems can work together.|
+
 ## Learn more
 
 <!-- For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md).-->
@@ -228,9 +241,8 @@ This section summarizes recent announcements about governance and compliance cap
 - [Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
 - [Microsoft Training Learning Paths for Fabric](/training/browse/?terms=fabric&resource_type=learning%20path)
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
-- [Microsoft Fabric community](https://community.fabric.microsoft.com/t5/General-Discussion/bd-p/ac_generaldiscussion)
+- [Microsoft Fabric community](https://community.fabric.microsoft.com/)
 - [Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/)
-<!-- - [Microsoft Fabric in Microsoft Q&A](/answers/topics/azure-synapse-analytics.html)-->
 
 ## Next steps
 
