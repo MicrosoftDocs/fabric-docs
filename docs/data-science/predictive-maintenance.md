@@ -207,7 +207,7 @@ df['IsFail'] = df['IsFail'].astype(int)
 df['Type'] = df['Type'].map({'L': 0, 'M': 1, 'H': 2})
 ```
 
-### Data exploration through visualizations
+### Explore data through visualizations
 
 ```python
 # Import packages and set plotting style
