@@ -11,7 +11,7 @@ ms.date: 08/23/2023
 
 # Create, Evaluate, and score a Machine Fault Detection Model
 
-In this notebook, you learn the data science work flow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
+In this tutorial, you learn the data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
 
 The summary of main steps you take in this notebook are:
 
