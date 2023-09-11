@@ -17,11 +17,11 @@
   ],
   "notification_subscribers": [
     "sngun@microsoft.com",
-    " cl-github-maintainer@microsoft.com"
+    "cl-github-maintainer@microsoft.com"
   ],
   "sync_notification_subscribers": [
     "sngun@microsoft.com",
-    " jasonh@microsoft.com"
+    "jasonh@microsoft.com"
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/fabric-docs",
@@ -68,6 +68,9 @@
   },
   "skip_source_output_uploading": false,
   "need_generate_pdf_url_template": true,
-  "redirection_files": ".openpublishing.redirection.json"
+  "redirection_files": [
+    ".openpublishing.redirection.json",
+    "docs/data-factory/.openpublishing.redirection.data-factory.json"
+  ]
 }
 
