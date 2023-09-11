@@ -132,6 +132,8 @@ landingContent:
         links:
           - text: Use notebooks from VS Code
             url: author-notebook-with-vs-code.md
+          - text: Use notebooks from VS Code with resource
+            url: author-notebook-resource-with-vs-code.md
           - text: Use Spark job definitions from VS Code
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code

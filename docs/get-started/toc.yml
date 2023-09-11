@@ -59,6 +59,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Admin monitoring dataset refresh fails and credentials expire
+      href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
+    - name: Fabric items can't be created in a workspace moved to a capacity in a different region
+      href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
     - name: Notebook fails to load after workspace migration
       href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
     - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
