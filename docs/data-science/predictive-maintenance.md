@@ -104,7 +104,7 @@ for fname in file_list:
 print("Downloaded demo data files into lakehouse.")
 ```
 
-Once the dataset is downloaded into the lakehouse, you can load it as a spark dataframe. 
+Once the dataset is downloaded into the lakehouse, you can load it as a Spark DataFrame. 
 
 
 ```python
