@@ -559,7 +559,7 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 You can demonstrate the results in an offline format using a Power BI dashboard. 
 
-:::image type="content" source="media/predictive-maintenance-power-bi.png" alt-text="A screenshot of the data displayed as a Power BI dashboard.":::
+:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="A screenshot of the data displayed as a Power BI dashboard.":::
 
 The dashboard shows that the Tool_wear and Torque create a noticeable boundary between failed and unfailed cases as was expected from the earlier correlation analysis in Step 2.
 
