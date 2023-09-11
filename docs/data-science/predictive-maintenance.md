@@ -228,7 +228,7 @@ plt.show()
     
 ![png](temp_files/temp_23_1.png)
     
-As expected, failure (IsFail) has correlation with the selected features. 
+As expected, failure (`IsFail`) has correlation with the selected features. 
 
 
 ```python
