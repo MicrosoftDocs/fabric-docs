@@ -250,7 +250,7 @@ fig.delaxes(axes[1,2])
     
 
 
-As can be seen from the plotted graphs, the Air_temperature, Process_temperature, Rotational_speed, Torque, and Tool_wear variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
+As can be seen from the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
 
 ### Inspection of the target variable and its class balance 
 
