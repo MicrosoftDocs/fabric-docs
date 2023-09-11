@@ -285,7 +285,7 @@ plt.show()
     
 
 
-The plots indicate that the no failure (shown as IsFail=0 in the second plot) constitutes most of the samples. Use oversampling technique to create a more balanced training dataset.
+The plots indicate that the no failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset.
 
 
 ```python
