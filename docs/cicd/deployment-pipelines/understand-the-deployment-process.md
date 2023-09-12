@@ -384,7 +384,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment fails.
 
-* For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#limitations).
+* For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
