@@ -54,19 +54,19 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
+1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into Fabric.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 
     > [!NOTE]
-    > You can only connect a workspace to one branch and folder at a time.
+    > You can only connect a workspace to one branch and one folder at a time.
 
     - [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
     - [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
     - [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-    - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only be connected to one branch at a time.)
+    - Branch (Select an existing branch using the drop-down menu, or select **+ New Branch** to create a new branch. You can only connect to one branch at a time.)
     - Folder (Select an existing folder in the branch or enter a name to create a new folder. If you don’t select a folder, content will be created in the root folder. You can only connect to one folder at a time.)
 
 1. Select **Connect and sync**.
@@ -106,7 +106,7 @@ After the commit is completed successfully, the status of the selected items cha
 
 ### [Undo saved change](#tab/undo-save)
 
-After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous (unsaved) status. To undo your changes, follow these steps:
+After saving changes to the workspace, if you decide that you don’t want to commit those changes to git, you can undo the changes and revert those items to the previous status. To undo your changes, follow these steps:
 
 1. Go to the workspace.
 1. Select the **Source control** button. This button also shows the number of uncommitted changes.

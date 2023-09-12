@@ -358,3 +358,5 @@
         href: known-issue-lineage-view-edit.md
       - name: Staging artifacts
         href: known-issue-staging-artifact.md
+      - name: Gateway refreshes longer than an hour fail
+        href: known-issue-gateway-refreshes.md
