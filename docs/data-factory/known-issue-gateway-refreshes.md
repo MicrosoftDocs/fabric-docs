@@ -1,6 +1,6 @@
 ---
 title: Known issue - Gateway Refreshes longer than an hour fail
-description: A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized".
+description: A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized" error reasons.
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: troubleshooting  
@@ -10,11 +10,11 @@ ms.custom:
 
 # Known issue - Gateway refreshes longer than an hour fail
 
-A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized".
+A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized" error reasons.
 
 **APPLIES TO:** 
 ✔️ Dataflow Gen2 in Microsoft Fabric
-✔️ On-presmises data gateway in Microsoft Fabric
+✔️ On-premises data gateway in Microsoft Fabric
 ✔️ VNET data gateway in Microsoft Fabric
 
 **Status:** Open
