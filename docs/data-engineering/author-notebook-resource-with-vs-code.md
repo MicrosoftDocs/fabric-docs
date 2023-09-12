@@ -16,18 +16,17 @@ Microsoft Fabric notebook now supports a new feature as "Notebook Resources". Wi
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+## Open Notebook resource
 
-## Open Notebook resource 
-
-After the notebook artifact content has been downloaded to local, user can click the **Open Notebook Folder** button to open the notebook folder with the VS Code Explorer. The notebook folder contains the notebook artifact file and the resource folder. The resource folder contains all the resource files that are uploaded to the notebook resource.
+After the notebook content has been downloaded to local, user can click the **Open Notebook Folder** button to open the notebook folder with the VS Code Explorer. The notebook folder contains the notebook file and the resource folder. The resource folder contains all the resource files that are uploaded to the notebook resource.
 
 :::image type="content" source="media\vscode\open-nb-folder.png" alt-text="Screenshot of open notebook folder in VS Code.":::
 
-Once the notebook folder is opened, user can start to edit the notebook artifact file and the resource files. The resource files should be stored under the pre-defined **builtin** folder. If user need to create a new file or subfolder, they should be all created under the **builtin** folder. Any other files or folders created outside the **builtin** folder won't be uploaded to the notebook resource.
+Once the notebook folder is opened, user can start to edit the notebook file and the resource files. The resource files should be stored under the pre-defined **builtin** folder. If user need to create a new file or subfolder, they should be all created under the **builtin** folder. Any other files or folders created outside the **builtin** folder won't be uploaded to the notebook resource.
 
 :::image type="content" source="media\vscode\nb-folder-sample.png" alt-text="Screenshot of notebook resource folder in VS Code.":::
 
-From the above screenshot, there's a **localLib** folder created under the **builtin** folder. This folder contains a **util.py** file. This file can be imported in the notebook artifact file as a local module, as shown in the following sample code. Once imported, the functions defined in the **util.py** file can be called in the notebook artifact file.
+From the above screenshot, there's a **localLib** folder created under the **builtin** folder. This folder contains a **util.py** file. This file can be imported in the notebook file as a local module, as shown in the following sample code. Once imported, the functions defined in the **util.py** file can be called in the notebook file.
 
 ```python
 
@@ -38,7 +37,7 @@ util.func1()
 
 ## Upload Notebook Resource
 
-After the notebook artifact file and the resource files are edited, user can click the **Publish Resource Folder** button to upload the notebook resource to the remote workspace. The upload process uploads all the files and subfolders under the **builtin** folder to the notebook resource. The upload process overwrites the version of the resource files in the remote workspace, including deleting the resource files that are deleted in the local side.
+After the notebook file and the resource files are edited, user can click the **Publish Resource Folder** button to upload the notebook resource to the remote workspace. The upload process uploads all the files and subfolders under the **builtin** folder to the notebook resource. The upload process overwrites the version of the resource files in the remote workspace, including deleting the resource files that are deleted in the local side.
 
 :::image type="content" source="media\vscode\publish-nb-resource.png" alt-text="Screenshot of upload notebook resource in VS Code.":::
 

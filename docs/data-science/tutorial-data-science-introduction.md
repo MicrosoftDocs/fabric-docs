@@ -11,7 +11,7 @@ ms.date: 5/4/2023
 
 # Data science end-to-end scenario: introduction and architecture
 
-This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience.  You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI. 
+This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience. You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -68,7 +68,7 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 **Explore, clean, and prepare** - The data science experience on Fabric supports data cleansing, transformation, exploration and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using Python library `seaborn` and data cleansing and preparation using Apache Spark.
 
-**Models and experiments** - Fabric enables you to train, evaluate and score machine learning models by using built-in experiment and model artifacts with seamless integration with [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
+**Models and experiments** - Fabric enables you to train, evaluate, and score machine learning models by using built-in experiment and model items with seamless integration with [**MLflow**](https://mlflow.org/docs/latest/index.html) for experiment tracking and model registration/deployment. Fabric also features capabilities for model prediction at scale (PREDICT) to gain and share business insights.
 
 **Storage** - Fabric standardizes on [Delta Lake](https://docs.delta.io/latest/index.html), which means all the engines of Fabric can interact with the same dataset stored in a lakehouse. This storage layer allows you to store both structured and unstructured data that support both file-based storage and tabular format. The datasets and files stored can be easily accessed via all Fabric experience items like notebooks and pipelines.
 
