@@ -21,7 +21,7 @@ You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelin
 
 If you already have a workspace that you'd like to use with a specific stage, instead of deploying you can [assign](assign-pipeline.md) that workspace to the appropriate stage.
 
-When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, will be cloned alongside its dataset, and the clones will be similarly bound in the target workspace.
+When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, is cloned alongside its dataset, and the clones are similarly bound in the target workspace.
 
 Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
 
@@ -29,7 +29,7 @@ Once the deployment is complete, refresh the dataset. For more information, see 
 
 Deployment pipelines offer three options when it comes to deploying your Fabric content:
 
-* [Deploying all content](#deploy-all-content) - Deploy all your content to the target stage.
+* [Deploy all content](#deploy-all-content) - Deploy all your content to the target stage.
 
 * [Selective deployment](#selective-deployment) - Select which content to deploy to the target stage.
 
@@ -60,7 +60,7 @@ Since dashboards, reports, datasets, and dataflows are related and have dependen
 
 You may sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage.
 
-Deploying to a previous stage works only if the previous stage is empty. When deploying to a previous stage, you can't select specific items. All content in the stage will be deployed.
+Deploying to a previous stage works only if the previous stage is empty. When deploying to a previous stage, you can't select specific items. All content in the stage is deployed.
 
 :::image type="content" source="media/deploy-content/deploy-back.png" alt-text="A screenshot showing the deploy to previous stage button, available from the test or production stage menus." lightbox="media/deploy-content/deploy-back.png":::
 
@@ -74,13 +74,13 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 ## Deploy content from one stage to another
 
-Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to ten different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
+Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item will be overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report will be deployed. If you want to deploy everything connected to the report, use the **Select related** button.
+When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item is overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report is deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 
-When reviewing the test and production stage cards, you can see the last deployment time. This indicates the last time content was deployed to the stage.
+When reviewing the test and production stage cards, you can see the last deployment time. This time indicates the last time content was deployed to the stage.
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
 
