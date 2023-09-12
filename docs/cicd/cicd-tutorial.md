@@ -27,7 +27,7 @@ If you already have admin rights to a workspace with data, you can skip to [step
 
 To create a new workspace and assign it a license:
 
-1. From the left navigation bar of the Power BI experience, select **Workspaces > + New workspace**.
+1. From the left navigation bar of the **Power BI** experience, select **Workspaces > + New workspace**.
 
    :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
 
