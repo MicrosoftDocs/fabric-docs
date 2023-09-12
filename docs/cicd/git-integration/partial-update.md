@@ -54,9 +54,9 @@ To update the workspace manually after it failed to update automatically:
 1. Figure out which item is causing the update to fail and what the problem is using the error dialog that says which item failed and error message.
 1. Fix the problem in Git. This can mean doing one or more of the following depending on what the issue is:
    * Revert the item to an earlier version that doesn't fail
-   * Edit the item so it doesn't fail
+   * Edit the item resolve the problem
    * Restore a dependant item that was deleted
-   * delete unsupported item that depends on the deleted item
+   * Delete unsupported item that depends on the deleted item
 1. Go back to the workspace and [**Update**](./git-get-started.md#update-workspace-from-git) the entire workspace again
 
 ## Considerations and limitations
