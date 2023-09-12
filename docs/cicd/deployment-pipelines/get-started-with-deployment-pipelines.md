@@ -68,12 +68,12 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
     :::image type="content" source="media/get-started-with-deployment-pipelines/name-pipeline.png" alt-text="Screenshot of the name and describe pipeline dialog.":::
 
->[!NOTE]
->If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
+   >[!NOTE]
+   >If the workspace isn't assigned to your organization's capacity, or to your PPU capacity, you'll get a notification to [assign it to a capacity](/power-bi/enterprise/service-admin-premium-manage#assign-a-workspace-to-a-capacity).  
 
 1. By default, the pipeline has three stages named **Development**, **Test**, and **Production**. You can accept these default stages or change the number of stages and their names. You can have anywhere between 2-10 stages in a pipeline. Select **+Add** to add another stage, delete stages or rename them by typing a new name in the box. Select **Create** when you're done.
 
-    :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
+   :::image type="content" source="media/get-started-with-deployment-pipelines/customize-pipeline.png" alt-text="Screenshot of the customize pipeline dialog. The Add and delete options are outlined, as is the name of the development stage.":::
 
 ---
 
