@@ -28,15 +28,15 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 ## Pipeline structure
 
-When you create a deployment pipeline, you can define how many stages you want there to be. There can be anywhere between two and ten stages to your pipeline. The default pipeline has three stages, but regardless of how many stages you have, the general concept is the same.:
+When you create a deployment pipeline, you can decide how many stages you want there to be. The default pipeline has three stages, but there can be anywhere between two and ten stages to your pipeline. Regardless of how many stages there are, the general concepts are the same.:
 
 * **<a name="development"></a>Development**
 
-    This stage is used to design, build, and upload new content with  fellow creators. This is the first stage in deployment pipelines.
+    The first stage in deployment pipelines where you upload new content with your fellow creators. You can design build, and develop here, or in a different stage.
 
 * **<a name="test"></a>Test**
 
-    You're ready to enter the test stage after you've made all the needed changes to your content. You upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
+    After you've made all the needed changes to your content, you're ready to enter the test stage. Upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
 
   * Share content with testers and reviewers
 
