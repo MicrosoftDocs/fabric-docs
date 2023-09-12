@@ -31,6 +31,14 @@ To open the data hub, select the OneLake data hub icon in the navigation pane.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
+> [!Note]
+> Currently, the OneLake datahub's icon and label may differ slightly for different users. The icon/label combinations you might see are shown in the following image.
+>
+> :::image type="content" source="fabric-datahub-icons-abtesting.png" alt-text="Images showing currently datahub icon alternates.":::
+>
+> Datahub functionality is the same no matter which icon/label combination appears.
+
+
 ## Find items in the data items list
 
 The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get to the item's details page. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
