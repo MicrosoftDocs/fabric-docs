@@ -1,6 +1,6 @@
 ---
 title: Power BI visuals admin settings
-description: Learn how to configure visuals admin settings in Fabric.
+description: Learn how to configure Power BI visuals admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
