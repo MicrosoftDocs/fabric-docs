@@ -92,7 +92,7 @@ RATINGS_FILE = "Ratings.csv"  # file containing the ratings information
 EXPERIMENT_NAME = "aisample-recommendation"  # mlflow experiment name
 ```
 
-### Download dataset and upload to Lakehouse
+### Download data and store it in a lakehouse
 
 The following code downloads the dataset and then stores it in the Lakehouse.
 
@@ -430,7 +430,8 @@ als = ALS(
 )
 ```
 
-### Train model and perform hyperparameter tuning
+### Tune model hyperparmeters
+
 To search over the hyperparameters, use the following code to construct a grid of parameters. It also creates a regression evaluator that uses the root mean square error as the evaluation metric.
 
 ```python
@@ -522,7 +523,7 @@ def evaluate(model, data, verbose=0):
 
 
 
-### Perform experiment tracking with MLflow
+### Track the experiment with MLflow
 
 MLflow is used to track all the experiments and log parameters, metrics, and the models. To start training and evaluating models, use the following code:
 

@@ -24,7 +24,9 @@ Some of the end-to-end AI samples require use of custom libraries when developin
 
 #### Install with in-line installation capabilities
 
-You can use the in-line installation capabilities (e.g., `%pip` or `%conda`) within your notebook to install new libraries. Use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
+You can use the in-line installation capabilities (for example, `%pip` or `%conda`) within your notebook to install new libraries. This installation option would install the libraries only in the current notebook and not in the workspace.
+
+To install a library, use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
 
 ```python
 # Use pip to install libraries
@@ -36,7 +38,9 @@ You can use the in-line installation capabilities (e.g., `%pip` or `%conda`) wit
 
 #### Install directly in your workspace
 
-Alternatively, you can install libraries in your workspace.
+Alternatively, you can install libraries in your workspace so that they're available for use in any notebooks that are in the workspace.
+
+To install libraries in your workspace:
 
 1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace. 
 1. Select **Workspace settings** for your current workspace.
@@ -88,6 +92,12 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 - Evaluation module: evaluates the effect of the uplift model on test data.
 
 Follow along in the [Healthcare causal impact of treatments](uplift-modeling.md) tutorial.
+
+## Predictive maintenance
+
+In this tutorial, you proactively predict mechanical failures. This is accomplished by training multiple models on historical data such as temperature and rotational speed, then determining which model is the best fit for predicting future failures.
+
+Follow along in the [Predictive maintenance](predictive-maintenance.md) tutorial.
 
 
 ## Next steps
