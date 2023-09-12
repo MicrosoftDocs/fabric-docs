@@ -46,7 +46,7 @@ Use the following commands to control usage of V-Order writes.
 
 ```sql
 %%sql 
-GET spark.sql.parquet.vorder.enabled 
+SET spark.sql.parquet.vorder.enabled 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -147,7 +147,7 @@ sparkR.conf("spark.sql.parquet.vorder.enabled", "true")
 Enable V-Order table property during table creation:
 ```sql
 %%sql 
-CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 ```
 
 > [!IMPORTANT]
@@ -157,9 +157,9 @@ Enable or disable V-Order by altering the table property:
 
 ```sql
 %%sql 
-ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 
-ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "false");
 
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```

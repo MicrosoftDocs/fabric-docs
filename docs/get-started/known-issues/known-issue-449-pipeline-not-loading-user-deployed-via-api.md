@@ -4,7 +4,7 @@ description: A known issue is posted where the pipeline isn't loading if a user 
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/05/2023
+ms.date: 08/24/2023
 ms.custom: known-issue-449
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-449
 
 When the pipeline is deployed via public API with the 'update app' option (/rest/api/power-bi/pipelines/deploy-all#pipelineupdateappsettings), opening the pipeline page gets stuck on loading.
 
-**Status:** Open
+**Status:** Fixed: August 24, 2023
 
 **Product Experience:** Administration & Management
 

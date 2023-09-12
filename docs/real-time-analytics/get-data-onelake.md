@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 07/09/2023
-ms.search.form: product-kusto
+ms.search.form: product-kusto, Get data
 ---
 
 # Get data from OneLake

@@ -23,15 +23,15 @@ ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, 
 
 ### What is lifecycle management in Microsoft Fabric?
 
-Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the Git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
 
-### How do I get started with git integration?
+### What is Git integration?
 
-Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
+For a short explanation of Git integration, see the [Git integration overview](./git-integration/intro-to-git-integration.md).
 
-### How do I get started with deployment pipelines?
+### What is deployment pipelines?
 
-Get started with deployment pipelines using the [get started instructions](deployment-pipelines/get-started-with-deployment-pipelines.md).
+For a short explanation of deployment pipelines, see the [deployment pipelines overview](./deployment-pipelines/intro-to-deployment-pipelines.md).
 
 ## Licensing questions
 
@@ -64,11 +64,11 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 ### Can I connect to a repository that's in a different region than my workspace?
 
-If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Enable git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
 
-### How do I get started with git integration ?
+### How do I get started with Git integration?
 
-Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
+Get started with Git integration using the [get started instructions](git-integration/git-get-started.md).
 
 ### Why was my item removed from the workspace?
 
@@ -152,5 +152,5 @@ Deployment pipelines don't display datasets that belong to datamarts in the pipe
 
 ## Next steps
 
-* [Get started with git integration](git-integration/git-get-started.md)
+* [Get started with Git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)

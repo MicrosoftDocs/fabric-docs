@@ -69,6 +69,8 @@ items:
       href: runtime.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
+    - name: High Concurrency mode
+      href: high-concurrency-overview.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
@@ -131,6 +133,8 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md
+  - name: Run notebooks in High Concurrency mode
+    href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
     href: notebook-visualization.md
   - name: Explore data in lakehouse

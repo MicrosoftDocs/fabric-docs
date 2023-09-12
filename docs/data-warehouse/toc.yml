@@ -122,6 +122,8 @@ items:
   items:
   - name: Statistics
     href: statistics.md
+  - name: Caching
+    href: caching.md
   - name: Workload Management
     href: workload-management.md
 - name: Monitor the warehouse
