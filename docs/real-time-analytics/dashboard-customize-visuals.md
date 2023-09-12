@@ -10,13 +10,11 @@ ms.date: 09/12/2023
 
 Visuals are essential part of any Real-Time Analytics dashboard. In this article, you'll learn how to customize different visuals.
 
-> [!NOTE]
-> You must have dashboard editing permissions to customize dashboards.
-
 ## Prerequisites
 
 <!-- TODO: Link to the doc on how to create dashboard. -->
 * A Real-Time Analytics dashboard
+* Permissions to edit the dashboard
 
 ## Customize visuals
 
