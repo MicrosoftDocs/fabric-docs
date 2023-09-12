@@ -110,4 +110,4 @@ User can hover over any value in the visual to see operartion level data. user c
 
 ## Next steps
 
-[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+[Understand the metrics app onelake page](metrics-app-onelake-page.md)
