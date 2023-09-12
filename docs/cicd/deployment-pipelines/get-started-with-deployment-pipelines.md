@@ -29,7 +29,7 @@ To access the deployment pipelines feature, you must meet the following conditio
 * You're an admin of a Fabric [workspace](../../get-started/create-workspaces.md)
 
 >[!NOTE]
-> You'll also be able to see the deployment pipelines button if you previously created a pipeline or if a pipeline was shared with you.
+> You can also see the deployment pipelines button if you previously created a pipeline or if a pipeline was shared with you.
 
 ## Step 1 - Create a deployment pipeline
 
