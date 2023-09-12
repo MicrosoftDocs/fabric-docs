@@ -34,7 +34,7 @@ To be operative, [sensitivity label inheritance from data sources must be enable
     * The scope of the labels must be **Files and emails** and **Azure Purview assets**. See [Extending sensitivity labels to Azure Purview](/azure/purview/create-sensitivity-label#extending-sensitivity-labels-to-azure-purview) and [Creating new sensitivity labels or modifying existing labels](/azure/purview/create-sensitivity-label#creating-new-sensitivity-labels-or-modifying-existing-labels).
 * [Sensitivity labels must be enabled in Power BI](/power-bi/enterprise/service-security-enable-data-sensitivity-labels).
 * A Power BI Pro or Premium Per User (PPU) license is required for the user whose credentials are used to connect to the data source. In addition, [all other conditions for applying a label must be met](/power-bi/enterprise/service-security-apply-data-sensitivity-labels#apply-sensitivity-labels-in-the-power-bi-service).
-* The **[Apply sensitivity labels from data sources to their data in Power BI (preview)](../admin/service-admin-portal-information-protection.md#apply-sensitivity-labels-from-data-sources-to-their-data-in-power-bi-preview)** tenant admin setting must be enabled. **Note**: This requirement applies to the Power BI service only. In Desktop, a *.pbix* file inherits the label from the data source even if the tenant admin setting is off. However, after publishing to the service, upon refresh, changes to the label in the data source are only inherited by the report and dataset if the setting is enabled. 
+* The **[Apply sensitivity labels from data sources to their data in Power BI (preview)](../admin/service-admin-portal-information-protection.md#apply-sensitivity-labels-from-data-sources-to-their-data-in-power-bi)** tenant admin setting must be enabled. **Note**: This requirement applies to the Power BI service only. In Desktop, a *.pbix* file inherits the label from the data source even if the tenant admin setting is off. However, after publishing to the service, upon refresh, changes to the label in the data source are only inherited by the report and dataset if the setting is enabled. 
 
 ## Inheritance behavior
 * In the Power BI service, when the dataset is connected to the data source, Power BI inherits the label and applies it automatically to the dataset. After, inheritance occurs upon dataset refresh. In Power BI Desktop, when you connect to the data source via **Get data**, Power BI inherits the label and automatically applies it to the *.pbix* file (both the dataset and report). Subsequently inheritance occurs upon refresh. 
@@ -55,13 +55,13 @@ To make sure sensitivity label inheritance from an Excel file works:
 
 1. Store the Excel file on OneDrive or SharePoint Online.
 
-1. In Power BI Desktop, connect to the Excel file using the web connector, as described in [Use OneDrive for work or school links in Power BI Desktop](/power-bi/connect-data/desktop-use-onedrive-business-links.md). The process described in that article applies to both OneDrive and SharePoint Online.
+1. In Power BI Desktop, connect to the Excel file using the web connector, as described in [Use OneDrive for work or school links in Power BI Desktop](/power-bi/connect-data/desktop-use-onedrive-business-links). The process described in that article applies to both OneDrive and SharePoint Online.
 
 1. After publishing the dataset, to enable refresh, reconfigure the authentication credentials for the dataset, also as described in the above article. Be sure to select **OAuth2** as the authentication method, otherwise you might encounter an error when you attempt to connect or refresh.
 
 ## Considerations and limitations
 
-* Inheritance from data sources is supported only for datasets with enhanced metadata. See [Using enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata.md) for more information.
+* Inheritance from data sources is supported only for datasets with enhanced metadata. See [Using enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata) for more information.
 * Inheritance from data sources is supported only for datasets using the Import data connectivity mode. Live connection and DirectQuery connectivity isn't supported.
 * Inheritance from data sources isn't supported in connections via gateways or Azure Virtual Network (VNet). This means that inheritance from an Excel file located on a local machine doesn't work, because it requires a gateway. 
 
