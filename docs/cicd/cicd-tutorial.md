@@ -27,7 +27,7 @@ If you already have admin rights to a workspace with data, you can skip to [step
 
 To create a new workspace and assign it a license:
 
-1. From the left navigation bar, select **Workspaces > + New workspace**.
+1. From the left navigation bar of the Power BI experience, select **Workspaces > + New workspace**.
 
    :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
 
@@ -179,7 +179,7 @@ In order to edit the workspace without interfering with other team members' chan
    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
    * Select **+ New Branch** to create a new branch.
-   * Name the new branch *MyFoods_FeatureBranch*, branch it from *main* (or *master*), and Select **Create**.
+   * Name the new branch *MyFoodEdits*, branch it from *main* (or *master*), and Select **Create**.
    * The folder in the repo where the *.pbix* file located.
 
     :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
@@ -228,7 +228,7 @@ The Git status of the dataset changes to *Synced* and the workspace and Git repo
 
 ## Step 9: Create PR and merge
 
-In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
+In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoodEdits* branch with the *main* branch.
 
 1. Select **Create a pull request**.
 
@@ -259,7 +259,7 @@ The Git status of the dataset changes to *Synced* and the workspace is synced wi
 
 ## Step 11: Compare stages in deployment pipeline
 
-1. Select **View deployment pipelines** to compare the content in the development stage with the content in the test stage.
+1. Select **View deployment pipeline** to compare the content in the development stage with the content in the test stage.
 
    :::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipelines icon.":::
 
