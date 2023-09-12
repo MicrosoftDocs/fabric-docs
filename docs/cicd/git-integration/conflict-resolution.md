@@ -50,7 +50,7 @@ To revert to the prior synced state, do *one* of the following actions:
 
 ## Resolve conflict in git
 
-If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the Git repo by creating a new branch and syncing it with the current one.
+If you're not sure what changes were made and which version to choose and don’t want to revert to a previous state, you can try resolving the conflict in the Git repo by creating a new branch, resolving the conflict in that branch, and syncing it with the current one.
 
 >[!NOTE]
 >Only a workspace admin can reconnect the workspace to the new branch.
