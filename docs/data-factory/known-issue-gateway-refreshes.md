@@ -8,11 +8,12 @@ ms.date: 09/11/2023
 ms.custom: 
 ---
 
-# Known issue - Gateway Refreshes longer than an hour fail
+# Known issue - Gateway refreshes longer than an hour fail
 
 A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized".
 
-**APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
+**APPLIES TO:** 
+✔️ Dataflow Gen2 in Microsoft Fabric
 ✔️ On-presmises data gateway in Microsoft Fabric
 ✔️ VNET data gateway in Microsoft Fabric
 
