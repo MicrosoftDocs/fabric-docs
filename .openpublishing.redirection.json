@@ -69,6 +69,11 @@
           "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
           "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
+          "redirect_url": "/fabric/data-factory/known-issue-staging-item",
+          "redirect_document_id": true
         }
     ]
 }
