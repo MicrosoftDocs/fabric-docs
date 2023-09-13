@@ -8,13 +8,15 @@ items:
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
-    href: buy-subscription.md    
+    href: buy-subscription.md
+  - name: Service interruption notifications
+    href: service-interruption-notifications.md
 - name: Capacity operations
   items:
   - name: Pause and resume your capacity
     href: pause-resume.md
   - name: Scale your capacity
-    href: scale-capacity.md    
+    href: scale-capacity.md
   - name: Metrics app
     items:
     - name: What is the utilization and metrics app?
