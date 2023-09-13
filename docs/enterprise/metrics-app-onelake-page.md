@@ -12,7 +12,7 @@ ms.date: 09/17/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's onelake page provides an information of your capacity's storage. It's divided into the three sections listed below. The top section is for different cards, middle section is a table visual and bottom section has two different column charts.
+The Microsoft Fabric Capacity Metrics app's onelake page provides an information of your capacity's storage. It's divided into the three sections as mentioned. The top section is for different cards, middle section is a table visual and bottom section has two different column charts.
 
 At the top of the page, the **Capacity Name** field allows for the selection of the capacity for which results are displayed by the app. Furthermore, the **Date Range** and **Top N** slicer options can be utilized to filter the page in accordance with a specific date range or the top workspaces by their consumed storage.
 
