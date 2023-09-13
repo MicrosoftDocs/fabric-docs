@@ -96,7 +96,7 @@ To display the options menu, select **More options (...)** on one of the items s
 
 The OneLake data hub's icon and label is currently undergoing evaluation, and its appearance may vary slightly for different users. However, data hub functionality is not affected and is the same no matter which icon/label variation appears. The icon/label variations you might encounter are shown in the following images.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-datahub-icons-abtesting.png" alt-text="Screenshot of data hub icon alternates" border="false":::
+:::image type="content" source="./media/onelake-data-hub/onelake-datahub-icons-abtesting.png" alt-text="Screenshot of data hub icon alternates." border="false":::
 
 ## Next steps
 
