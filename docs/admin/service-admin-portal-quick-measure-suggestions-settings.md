@@ -18,15 +18,15 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Allow quick measure suggestions (preview)
 
-When enabled, users use natural language to generate suggested measures. See [more information](/power-bi/transform-model/quick-measure-suggestions).
+When enabled, users use natural language to generate suggested measures. Quick measure suggestions assist creation of DAX measures using natural language instead of using templates or writing DAX from scratch.
 
-:::image type="content" source="media/tenant-settings/allow-quick-measure-suggestions-admin-setting.png" alt-text="Screenshot of allow quick measure suggestions admin setting.":::
+To learn more, see [Quick measure suggestions](/power-bi/transform-model/quick-measure-suggestions).
 
 ## Allow user data to leave their geography
 
-Quick measure suggestions are currently processed in the US. When this setting is enabled, users will get quick measure suggestions for data outside the US. See [more information](/power-bi/transform-model/quick-measure-suggestions).
+Quick measure suggestions are currently processed in the US. When this setting is enabled, users get quick measure suggestions for data outside the US. 
 
-:::image type="content" source="media/tenant-settings/allow-user-data-leave-geography-admin-setting.png" alt-text="Screenshot of allow user data to leave their geography admin setting.":::
+To learn more, see [Limitations and considerations](/power-bi/transform-model/quick-measure-suggestions#limitations-and-considerations).
 
 ## Next steps
 

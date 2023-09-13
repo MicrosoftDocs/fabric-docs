@@ -1,6 +1,6 @@
 ---
 title: Insights admin settings
-description: Learn how to configure Power BI insights admin settings.
+description: Learn how to configure insights admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 03/10/2022
+ms.date: 09/08/2023
 LocalizationGroup: Administration
 ---
 
@@ -20,13 +20,13 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Users in the organization can enable notifications for top insights in report settings.
 
-![Screenshot of the Receive notifications for top insights tenant setting.](media/tenant-settings/receive-notifications-top-insights-tenant-setting.png)
+To learn more about insights, see [Find Insights in your reports](/power-bi/create-reports/insights).
 
 ## Show entry points for insights (preview)
 
 Users in the organization can use entry points for requesting insights inside reports.
 
-![Screenshot of the Show entry points for insights tenant setting.](media/tenant-settings/show-entry-points-insights-tenant-setting.png)
+To learn more about insights, see [Find Insights in your reports](/power-bi/create-reports/insights).
 
 ## Next steps
 
