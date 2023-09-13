@@ -41,7 +41,7 @@ The table visual displays the four values listed below.
 
 * **Cumulative storage (GB)** - The cumulative billed storage in GB for workspace.
 
-* **Cumulative utilization (GB) %** -The cumulative billed storage in GB divided by sum of cumulative billed storage in GB for the capacity.
+* **Cumulative storage (GB) %** -The cumulative billed storage in GB divided by sum of cumulative billed storage in GB for the capacity.
 
 ## Daily utilization (GB) by date
 
@@ -49,7 +49,7 @@ This is a column chart visual which shows average point in time storage in GB by
 
 By default, this visual shows the daily average storage for the entire capacity for last 30 days. The hourly distribution can be viewed by drilling into any day.
 
-## Cumulative utilization (GB) by date
+## Cumulative storage (GB) by date
 
 This is a column chart visual which shows cumulative billed storage in GB by day and hours.
 
