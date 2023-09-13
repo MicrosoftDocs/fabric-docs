@@ -13,12 +13,12 @@ ms.date: 09/05/2023
 | Name | Description |
 |------|-------|
 | **[Microsoft Fabric (Preview)](./fabric-switch.md)** |  |
-| Users can create Fabric items (public preview) | Users can create Fabric items with new capabilities in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels. By using Microsoft Fabric, you accept the &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2240767" target="_blank">Preview Terms of Use</a>. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2205006" target="_blank">Learn More</a> |
+| Users can create Fabric items (public preview) | Users can create Fabric items with new capabilities in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels. By using Microsoft Fabric, you accept the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms). |
 | **[Help and support settings](service-admin-portal-help-support.md)** |  |
-| Publish "Get Help" information | Users in the organization can go to internal help and support resources from the Power BI help menu. |
-| Receive email notifications for service outages or incidents | Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident. |
-| Users can try Microsoft Fabric paid features | When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up. &nbsp;<a href="https://go.microsoft.com/fwlink/?linkid=2227896" target="_blank">Learn More</a> |
-| Show a custom message before publishing reports | When people attempt to publish a report, they'll see a custom message before it gets published. |
+| [Publish "Get Help" information](service-admin-portal-help-support.md#publish-get-help-information) | Users in the organization can go to internal help and support resources from the Power BI help menu. |
+| [Receive email notifications for service outages or incidents](../enterprise/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents) | Mail-enabled security groups receive email notifications if this tenant is impacted by a service outage or incident. |
+| [Users can try Microsoft Fabric paid features](service-admin-portal-help-support.md#users-can-try-microsoft-fabric-paid-features) | When users [sign up for a Microsoft Fabric trial](/power-bi/fundamentals/service-self-service-signup-purchase-for-power-bi), they can try Fabric paid features for free for 60 days. |
+| [Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports) | When people attempt to publish a report, they see a custom message before it gets published. |
 | **[Workspace settings](portal-workspace.md)** |  |
 | [Create workspaces (new workspace experience)](portal-workspace.md#create-workspaces-new-workspace-experience) | Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace is created when a template app is installed. |
 | [Use datasets across workspaces](portal-workspace.md#use-datasets-across-workspaces) | Users in the organization can use datasets across workspaces if they have the required Build permission. |
