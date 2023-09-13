@@ -93,9 +93,9 @@ The following code shows how to list relationship violations:
 import sempy.fabric as fabric
 
 tables = {
-    "Sales": fabric.read_table("Sales", "my_dataset"),
-    "Products": fabric.read_table("Products", "my_dataset"),
-    "Customers": fabric.read_table("Customers", "my_dataset"),
+    "Sales": fabric.read_table("my_dataset", "Sales"),
+    "Products": fabric.read_table("my_dataset", "Products"),
+    "Customers": fabric.read_table("my_dataset", "Customers"),
 }
 
 fabric.list_relationship_violations(tables)
