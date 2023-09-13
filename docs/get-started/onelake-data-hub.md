@@ -32,7 +32,7 @@ To open the data hub, select the OneLake data hub icon in the navigation pane.
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
 > [!Note]
-> Currently, the OneLake data hub's icon and label may differ slightly for different users. Data hub functionality is not impacted, however, and is the same no matter which icon/label variation appears. For more information, see [Considerations and limitations](#considerations-and-limitations).
+> The OneLake data hub icon and label you see may differ slightly from that shown above, and may also differ slightly from that seen by other users. The data hub functionality is the same, however no matter which icon/label appears. For more information, see [Considerations and limitations](#considerations-and-limitations).
 
 ## Find items in the data items list
 
