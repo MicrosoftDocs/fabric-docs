@@ -12,12 +12,13 @@ ms.date: 09/17/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity storage information. It is divided into the following four sections:
+The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity storage information. It is divided into the following sections:
 
 - Filters
 - Cards
-- Table Visual 
-- Column Charts
+- Table visual 
+- Column charts
+- Export data
 
 ## Filters
 There are three report filters located at the top of the page.
@@ -38,38 +39,41 @@ This page includes three cards that display storage information related to the f
 
 * **Billed storage (GB)** - Displays the billed storage in GB for workspaces in selected capacity. 
 
-## Top n workspaces by billed storage %
+## Table visual
+
+### Top n workspaces by billed storage %
 
 This table visual shows top n workspaces by their billed storage %. Top n value can be changed by using Top filter.
 The table visual displays the four values listed below. 
 
 * **Workspace name** - The name of the workspace.
 
-* **Workspace Id** - The unique identifier for the workspace.
+* **Workspace ID** - The unique identifier for the workspace.
 
-* **Current storage (GB)** - Displays the latest hourly point in time storage in GB by workspace.
+* **Current storage (GB)** - The current storage of a specific workspace.
 
-* **Billed storage (GB)** - The billed storage in GB for workspace.
+* **Billed storage (GB)** - The billed storage in GB of a specific workspace.
 
-* **Billed storage %** - The billed storage in GB divided by sum of billed storage in GB for the capacity. 
+* **Billed storage %** -  The workspace billed storage divided by the sum of billed storages in the capacity.
 
-## Column Charts 
+## Column charts 
 
-There are two column charts present in this page to show the storage trend for last 30 days. By default, both the column charts shows storage information at day level. But the hourly distribution can be viewed by drilling down into any day.
+There are two column charts in this page showing the storage trend for last 30 days. Both column charts show storage information per day. User can view the hourly distribution by drilling down into a specific day.
 
 ### Storage (GB) by date
 
-This is a column chart visual which shows average point in time storage in GB by day and hours.
+A column chart that shows item average storage in GB by date and hours.
 
 ### Cumulative billed storage (GB) by date
 
-This is a column chart visual which shows cumulative billed storage in GB by day and hours.
-
-Cumulative billed storage is sum of billed storage from start of date time period to selected date time value.
-
+A column chart that shows cumulative billed storage by date and hour.Cumulative billed storage is calculated as a sum of billed storage from the start of the selected date time period.
 
 >[!NOTE]
->There is an export button on top of the page to go to a page for exporting data.The matrix visual in the export shows billed storage in GB details for workspaces in selected capacity by day or week.
+>Billed storage is the storage users are charged for every hour for fabric billable items. Current storage is calculated by taking the monthly average storage in GB based on the most recent hour. This is why the cumulative billed storage can be less than the current storage. Since current storage is reported for the most recent hour, its value can be zero if the latest hour has already begun, even if the workspaces haven't started reporting for that same hour yet.
+
+## Export Data
+
+User can export the report's data by selecting the Export Data button. Selecting Export Data takes you to a page with a matrix visual that displays billed storage details for workspaces in the selected capacity. Hover over the matrix and select more options to export or share the data.
 
 ## Next steps
 
