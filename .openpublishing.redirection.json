@@ -71,6 +71,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/get-started/decision-guide-warehouse-lakehouse.md",
+          "redirect_url": "/fabric/get-started/decision-guide-data-store",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
           "redirect_document_id": true
