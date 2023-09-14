@@ -14,15 +14,15 @@ The following list describes the current limitations of pipelines in Data Factor
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
 - Pipelines don't support Continuous Integration and Continuous Delivery (CI/CD).
 - Connectors don't support OAuth, Azure key vault (AKV), and Managed System Identity (MSI).
-- Connectors can't leverage parameters.
-- The on-premises data gateway or VNet data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
-- Using a pipeline on a managed VNet isn't supported.
-- Using a gateway with on-premises data access isn't supported.
+- Connectors can't use parameters.
 - GetMetaData activity can't have a source from Fabric KQL databases.
 - Script activity can't have a source from Fabric KQL databases.
-- Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
 - Copy activity uses a Web connector, whereas Web/Webhook activities use a Web v2 connector that supports richer functionality, like audience and resource URI.
-- Custom activities in Fabric pipelines are not yet available.
+- Custom activities aren't available in Fabric pipelines.
+- Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
+- The on-premises data gateway or VNet data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
+- A pipeline using a managed VNet isn't supported.
+- A gateway using on-premises data access isn't supported.
 
 ## Next steps
 
