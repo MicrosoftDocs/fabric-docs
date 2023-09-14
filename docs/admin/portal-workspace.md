@@ -33,7 +33,7 @@ The admin portal has another section of settings about the workspaces in your te
 
 **Publish content packs and apps**
 
-In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) in this article for details.
+In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) for details.
 
 ## Use datasets across workspaces
 

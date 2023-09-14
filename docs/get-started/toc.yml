@@ -67,7 +67,7 @@ items:
       href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
     - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
       href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
-    - name: Fabric user sees workspace git status column display synced for unsupported artifacts
+    - name: Fabric user sees workspace git status column display synced for unsupported items
       href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
     - name: Not able to add lookup activity output to body of Office 365 activity
       href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 
