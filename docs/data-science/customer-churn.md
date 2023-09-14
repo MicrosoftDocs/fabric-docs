@@ -30,11 +30,11 @@ The main steps in this notebook are:
 
 ## Follow along in notebook
 
- [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Bank%20Customer%20Churn.ipynb) is the notebook that accompanies this tutorial.
+ [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
-<!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-bank-churn/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Bank%20Customer%20Churn.ipynb -->
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb -->
 
 
 ## Step 1: Install custom libraries
@@ -631,5 +631,11 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
 <!-- nbend -->
+
+## Next steps
+
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
+- [Train machine learning models](model-training/model-training-overview.md)
+- [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 
 
