@@ -42,7 +42,7 @@ When you enable sensitivity labels on your tenant, you specify which users can a
 
 Default labeling is fully supported in Power BI and is described in [Default label policy for Power BI](service-security-sensitivity-label-default-label-policy.md). In Fabric, there are some limitations.
 
-* When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label applies to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **isn't** applied.
+* When a non-Power BI Fabric item is created, if there's a clear, substantive create dialog, the default sensitivity label will be applied to the item if the user doesn't choose a label. If the item is created in a process where there's no clear create dialog, the default label **won't** be applied.
 
 * When a Fabric item that has no label is updated, if the item is a Power BI item, a change to any of its attributes causes the default label to be applied if the user doesn't apply a label. If the item is a non-Power BI Fabric item, only changes to certain attributes, such as name and description, cause the default label to be applied. And this is only if the change is made in the item's [flyout menu](../get-started/apply-sensitivity-labels.md#apply-a-label). For changes made in the experience interface, default labeling isn't currently supported.
 
@@ -50,7 +50,7 @@ Default labeling is fully supported in Power BI and is described in [Default lab
 
 Mandatory labeling is currently supported for Power BI items only. Mandatory labeling isn’t enforced if changes are made via the [flyout menu](../get-started/apply-sensitivity-labels.md#apply-a-label).
 
-For lakehouses, pipelines, and data warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it's possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the experience itself requires that a label be set.
+For lakehouses, pipelines, and data warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it will be possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the experience itself requires that a label be set.
 
 For more information about mandatory labeling, see [Mandatory label policy for Power BI](service-security-sensitivity-label-mandatory-label-policy.md).
 
