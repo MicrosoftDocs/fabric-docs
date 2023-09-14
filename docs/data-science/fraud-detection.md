@@ -31,11 +31,11 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 
 ### Follow along in notebook
 
-[AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
+[AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
-<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Fraud%20Detection.ipynb -->
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb -->
 
 ## Step 1: Install custom libraries
 
@@ -44,7 +44,7 @@ When developing a machine learning model or doing ad-hoc data analysis, you may 
 - Use the in-line installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
 - Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
 
-For more information on installing libraries, see [Install custom libraries](use-ai-samples.md#install-custom-libraries).
+For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 
 For this tutorial, you install the `imblearn` library in your notebook, using `%pip install`. When you run `%pip install`, the PySpark kernel restarts; therefore, you should install the library before you run any other cells in the notebook.
 
