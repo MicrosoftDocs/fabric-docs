@@ -21,8 +21,8 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
-  - name: Decision guide - data warehouse or lakehouse
-    href: decision-guide-warehouse-lakehouse.md
+  - name: Decision guide - choose a data store
+    href: decision-guide-data-store.md
 - name: Find your way around Fabric
   items:
   - name: Find your items from Fabric Home
