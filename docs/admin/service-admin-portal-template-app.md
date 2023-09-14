@@ -1,6 +1,6 @@
 ---
 title: Template app admin settings
-description: Learn how to configure template app admin settings in Fabric.
+description: Learn how to configure Power BI template app admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''

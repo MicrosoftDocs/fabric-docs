@@ -1,6 +1,6 @@
 ---
 title: Dashboard admin settings
-description: Learn how to configure Fabric dashboard admin settings.
+description: Learn how to configure Power BI dashboard admin settings.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
