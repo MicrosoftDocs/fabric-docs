@@ -39,7 +39,7 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Follow along in notebook
 
-[AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-ai-samples/AIsample%20-%20Book%20Recommendation.ipynb) is the notebook that accompanies this tutorial.
+[AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Book%20Recommendation.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
