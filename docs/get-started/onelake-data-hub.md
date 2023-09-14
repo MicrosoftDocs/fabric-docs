@@ -31,6 +31,9 @@ To open the data hub, select the OneLake data hub icon in the navigation pane.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
+> [!Note]
+> The OneLake data hub icon and label you see may differ slightly from that shown above, and may also differ slightly from that seen by other users. The data hub functionality is the same, however, no matter which icon/label appears. For more information, see [Considerations and limitations](#considerations-and-limitations).
+
 ## Find items in the data items list
 
 The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get to the item's details page. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
@@ -88,6 +91,12 @@ To display the options menu, select **More options (...)** on one of the items s
 
 > [!NOTE]
 >The Explorer pane may list workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the data items list.
+
+## Considerations and limitations
+
+The OneLake data hub's icon and label is currently undergoing evaluation, and its appearance may vary slightly for different users. However, data hub functionality is not affected and is the same no matter which icon/label variation appears. The icon/label variations you might encounter are shown in the following images.
+
+:::image type="content" source="./media/onelake-data-hub/onelake-datahub-icons-abtesting.png" alt-text="Screenshot of data hub icon alternates." border="false":::
 
 ## Next steps
 

@@ -104,10 +104,9 @@ display(analyzed_df)
 
 ## 4 - Simplify form recognition output
 
-This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer), a transformer that analyzes the output of Form Recognizer transformers and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
+This code uses the [FormOntologyLearner](https://mmlspark.blob.core.windows.net/docs/0.10.0/pyspark/synapse.ml.cognitive.html#module-synapse.ml.cognitive.FormOntologyTransformer), a transformer that analyzes the output of Form Recognizer transformers (for Azure AI Document Intelligence) and infers a tabular data structure. The output of AnalyzeInvoices is dynamic and varies based on the features detected in your content.
 
 FormOntologyLearner extends the utility of the AnalyzeInvoices transformer by looking for patterns that can be used to create a tabular data structure. Organizing the output into multiple columns and rows makes for simpler downstream analysis.
-
 
 ```python
 from synapse.ml.cognitive import FormOntologyLearner

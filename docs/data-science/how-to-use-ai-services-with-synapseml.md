@@ -6,7 +6,7 @@ ms.custom: build-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 09/06/2023
 ---
 
 # Use Azure AI services with SynapseML in Microsoft Fabric
@@ -17,10 +17,9 @@ ms.date: 05/08/2023
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 
-* Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).
+* Obtain an Azure AI services key by following [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource).  Copy the value of the key to use in the code samples below.
 
 ## Prepare your system
 
@@ -44,28 +43,28 @@ from synapse.ml.core.platform import *
 spark = SparkSession.builder.getOrCreate()
 ```
 
-Import Azure AI services libraries and replace the keys in the following code snippet with your Azure AI services key.
+Import Azure AI services libraries and replace the keys and locations in the following code snippet with your Azure AI services key and location.
 
 ```python
 from synapse.ml.cognitive import *
 
 # A general Azure AI services key for Text Analytics, Vision and Document Intelligence (or use separate keys that belong to each service)
-service_key = find_secret("cognitive-api-key") # Replace it with your cognitive service key, check prerequisites for more details
+service_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your Azure AI service key, check prerequisites for more details
 service_loc = "eastus"
 
 # A Bing Search v7 subscription key
-bing_search_key = find_secret("bing-search-key") # Replace it with your cognitive service key, check prerequisites for more details
+bing_search_key =  "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your Bing v7 subscription key, check prerequisites for more details
 
 # An Anomaly Detector subscription key
-anomaly_key = find_secret("anomaly-api-key") # Replace it with your cognitive service key, check prerequisites for more details
+anomaly_key = <"YOUR-KEY-VALUE"> # Replace <YOUR-KEY-VALUE> with your anomaly service key, check prerequisites for more details
 anomaly_loc = "westus2"
 
 # A Translator subscription key
-translator_key = find_secret("translator-key") # Replace it with your cognitive service key, check prerequisites for more details
+translator_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your translator service key, check prerequisites for more details
 translator_loc = "eastus"
 
 # An Azure search key
-search_key = find_secret("azure-search-key") # Replace it with your cognitive service key, check prerequisites for more details
+search_key = "<YOUR-KEY-VALUE>" # Replace <YOUR-KEY-VALUE> with your search key, check prerequisites for more details
 ```
 
 ## Perform sentiment analysis on text
@@ -168,7 +167,7 @@ display(
 ```
 
 ## Extract information from a document into structured data
-[Form Recognizer](https://azure.microsoft.com/services/form-recognizer/) is a part of Azure Applied AI Services that lets you build automated data processing software using machine learning technology. With Form Recognizer, you can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
+[Azure AI Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/) is a part of Azure AI services that lets you build automated data processing software using machine learning technology. With Azure AI Document Intelligence, you can identify and extract text, key/value pairs, selection marks, tables, and structure from your documents. The service outputs structured data that includes the relationships in the original file, bounding boxes, confidence and more.
 
 The following code sample analyzes a business card image and extracts its information into structured data.
 

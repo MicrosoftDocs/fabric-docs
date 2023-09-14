@@ -24,6 +24,19 @@ Before you start, you must complete the following prerequisites:
 - For a KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
 - For a lakehouse destination, get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
 
+## Supported destinations
+
+The following destinations are supported by Fabric Eventstream:
+
+| Destinations          | Description |
+| --------------- | ---------- |
+| Custom app | With this destination, you can easily route your real-time events to a custom application. It allows you to connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to ingest data from external system into Microsoft Fabric.  |
+| KQL database | This destination provides direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has successfully loaded. With the data in the KQL database, you can perform queries and analysis to gain deeper insights into your event data.  |
+| Lakehouse | This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events convert into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario. To learn more about how to use the event processor for real-time data processing, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).|
+
+> [!NOTE]
+> The maximum number of sources and destinations for one eventstream is **11**.
+
 ## Add a KQL database as a destination
 
 If you have a KQL database created in the workspace, follow these steps to add the KQL database as eventstream destination:
@@ -119,74 +132,6 @@ The connection string is an **event hub compatible connection string** and you c
 When you select **Edit**, the edit pane opens in the right side of the main editor. You can modify the configuration as you wish, including the event transformation logic through the event processor editor.
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
-
-## Supported destinations
-
-When you add eventstream destinations, you can route real-time events to custom applications, KQL databases, or lakehouses in Microsoft Fabric without writing a single line of code.
-
-> [!NOTE]
-> The maximum number of sources and destinations for one eventstream is **11**.
-
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations.png" alt-text="Screenshot of the New destination menu containing the available eventstream destination types.":::
-
-Learn more about the destinations that are currently available:
-
-### Custom application
-
-With this destination, you can easily route your real-time events to a custom application. With this option, a consumer group is created, allowing custom applications to connect to your eventstream and consume the event data in real-time. It's useful for applications outside of Microsoft Fabric that need to consume the event data to respond to events as they occur.
-
-- **Destination name** - A meaningful destination name that appears in your eventstream.
-
-    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot showing the Custom App destination configuration screen.":::
-
-### KQL database
-
-This destination provides direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has successfully loaded. With the data in the KQL database, you can perform queries and analysis to gain deeper insights into your event data.
-
-- **Destination name** - A meaningful destination name that appears in your eventstream.
-- **Workspace** - The workspace name where your KQL Database is located.
-- **KQL Database** - The KQL Database where you want to route the event data.
-
-    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot showing the KQL Database destination configuration screen.":::
-
-After you select **Add and configure**, the **Ingest data** wizard appears. You navigate through four tabs:
-
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" alt-text="Screenshot showing the Ingest data screen for the KQL database destination type." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-ingestion-wizard.png" :::
-
-- **Destination** - Use an existing table of your KQL database or create a new one to route and ingest your real-time data.
-- **Source** - Verify the real-time data source for creating a data connection to ingest data from your eventstream.
-- **Schema** - Select a compression type and data format, and preview how the data is sent to your KQL database. By performing this step, you can ensure you have properly formatted your data and it adheres to the expected schema, which helps prevent data loss or inaccuracies during ingestion.
-- **Summary** -  Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
-
-After you complete the steps, real-time event data begins ingesting into your selected KQL table.
-
-### Lakehouse
-
-This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events convert into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario.
-
-- **Name** - Meaningful destination name that appears in your eventstream.
-- **Workspace** - The workspace name where your lakehouse is located.
-- **Lakehouse** - The lakehouse where you want to route transformed data for data analysis/warehousing.
-- **Delta table** - Destination table within the lakehouse.
-- **Input data format** - The format of real-time events that is sent to your lakehouse.
-- **Open event processor** - The entry point to the event processor editor, where you can define event transformation.
-
-    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse.png" alt-text="Screenshot showing the lakehouse destination configuration screen.":::
-
-If you select **Open event processor**, the **Event processing editor** screen appears:
-
-:::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-overview.png" alt-text="Screenshot showing the event processor that's an option for the lakehouse destination type." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-overview.png" :::
-
-- **Schema columns** - All the columns in the event data of the selected node appear in the right pane. Modify any column by removing/renaming or changing its data type when you have selected the eventstream node.
-- **Operations** - To add a transformation operation to your real-time event data, select the transformation in the **Operations** menu. The selected transformation is created on the event data. In the following example,  we've applied **Filter**.
-
-  :::image type="content" source="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-operator.png" alt-text="Screenshot of a selected event processor operator on the Event processing editor canvas." lightbox="./media/event-streams-destination/eventstream-destinations-lakehouse-event-processor-operator.png" :::
-
-- **Data preview** - This live preview shows data coming into the selected node in the bottom pane. You can pause and resume the preview. You can also see the details of a specific record, a cell in the table, by selecting it and then selecting **Show/Hide details**.
-
-To learn more about how to use the event processor editor to define your data transformation logic, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).
-
-After you complete the event processor wizard, real-time event data begins ingesting into your selected Delta table.
 
 ## Next steps
 
