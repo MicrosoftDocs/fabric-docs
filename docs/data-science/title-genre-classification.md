@@ -19,9 +19,9 @@ The main steps in this notebook are:
 
 > [!div class="checklist"]
 > 1. Install custom libraries
-> 1. Load and process the data
-> 1. Understand the data using exploratory data analysis
-> 1. Train a machine learning model using word2vec and logistic regression
+> 1. Load the data
+> 1. Understand and process the data using exploratory data analysis
+> 1. Train a machine learning model using `word2vec` and logistic regression and track experiments using MLflow and Fabric Autologging feature
 > 1. Load the machine learning model for scoring and make predictions
 
 ## Prerequisites
@@ -456,7 +456,7 @@ with mlflow.start_run(run_name="lr"):
 To view your experiments:
 
 1. On the left, select your workspace.
-1. In the list, find and select the experiment name, in this case _sample_aisample-textclassification_.
+1. Find and select the experiment name, in this case _sample_aisample-textclassification_.
 
 :::image type="content" source="./media/title-genre-classification/Title_Genre_Classification/TextClassification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/TextClassification-experiment.png":::
 
@@ -495,6 +495,7 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
 <!-- nbend -->
+
 
 ## Next steps
 
