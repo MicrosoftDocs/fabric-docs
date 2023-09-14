@@ -1,6 +1,6 @@
 ---
-title: Understand the metrics app onelake page
-description: Learn how to read the Microsoft Fabric Capacity metrics app's onelake page.
+title: Understand the metrics app OneLake page
+description: Learn how to read the Microsoft Fabric Capacity metrics app's OneLake page.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
@@ -8,29 +8,39 @@ ms.custom: build-2023
 ms.date: 09/17/2023
 ---
 
-# Understand the metrics app onelake page
+# Understand the metrics app OneLake page
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's onelake page provides an information of your capacity's storage. It's divided into the three sections as mentioned. The top section is for different cards, middle section is a table visual and bottom section has two different column charts.
+The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity storage information. It is divided into the following four sections:
 
-At the top of the page, the **Capacity Name** field allows for the selection of the capacity for which results are displayed by the app. Furthermore, the **Date Range** and **Top N** slicer options can be utilized to filter the page in accordance with a specific date range or the top workspaces by their consumed storage.
+- Filters
+- Cards
+- Table Visual 
+- Column Charts
 
-## Top row cards
+## Filters
+There are three report filters located at the top of the page.
 
-In this page, there are three cards present to provide specific information on storage.
+* **Capacity Name** - Select a capacity. The app displays information related to the selected capacity.
+
+* **Date Range** - Select the date range. The app displays results for the selected date range.
+
+* **Top** - The number of workspaces that needs to be displayed in the app is to be selected. The workspaces are ordered according to storage volume. The workspaces that have the highest storage volume appear at the top of the list.
+
+## Cards
+
+This page includes three cards that display storage information related to the filter selection.
 
 * **Workspaces** - Total number of workspaces present on the capacity on the selected date range.
 
-* **Current storage in GB** - Displays the latest hourly point in time storage used by capacity.
+* **Current storage (GB)** - Displays the latest hourly point in time storage used by capacity.
 
-* **Cumulative storage in GB** - Displays the cumulative billed storage in GB for workspaces in selected capacity. 
+* **Billed storage (GB)** - Displays the billed storage in GB for workspaces in selected capacity. 
 
+## Top n workspaces by billed storage %
 
-## Top workspaces by cumulative utilization (GB) %
-
-This table visual shows storage information on top n workspaces by their cumulative utilization (GB). Top N value can be changed by using Top N slicer on the top.
-
+This table visual shows top n workspaces by their billed storage %. Top n value can be changed by using Top filter.
 The table visual displays the four values listed below. 
 
 * **Workspace name** - The name of the workspace.
@@ -39,27 +49,27 @@ The table visual displays the four values listed below.
 
 * **Current storage (GB)** - Displays the latest hourly point in time storage in GB by workspace.
 
-* **Cumulative storage (GB)** - The cumulative billed storage in GB for workspace.
+* **Billed storage (GB)** - The billed storage in GB for workspace.
 
-* **Cumulative storage (GB) %** -The cumulative billed storage in GB divided by sum of cumulative billed storage in GB for the capacity.
+* **Billed storage %** - The billed storage in GB divided by sum of billed storage in GB for the capacity. 
 
-## Daily utilization (GB) by date
+## Column Charts 
+
+There are two column charts present in this page to show the storage trend for last 30 days. By default, both the column charts shows storage information at day level. But the hourly distribution can be viewed by drilling down into any day.
+
+### Storage (GB) by date
 
 This is a column chart visual which shows average point in time storage in GB by day and hours.
 
-By default, this visual shows the daily average storage for the entire capacity for last 30 days. The hourly distribution can be viewed by drilling into any day.
-
-## Cumulative storage (GB) by date
+### Cumulative billed storage (GB) by date
 
 This is a column chart visual which shows cumulative billed storage in GB by day and hours.
 
-By default, this visual shows the cumulative storage for the entire capacity for last 30 days. The hourly distribution can be viewed by drilling into any day.
+Cumulative billed storage is sum of billed storage from start of date time period to selected date time value.
 
-## Export Page 
 
-There is an export button on top of the page to go to a new page for exporting data.
-
-This matrix visual in the export shows consumed billed storage in GB details for workspaces in selected capacity by day or week.
+>[!NOTE]
+>There is an export button on top of the page to go to a page for exporting data.The matrix visual in the export shows billed storage in GB details for workspaces in selected capacity by day or week.
 
 ## Next steps
 
