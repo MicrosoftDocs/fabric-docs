@@ -7,9 +7,9 @@ ms.topic: troubleshooting
 ms.date: 9/13/2023
 ---
 
-# Data Factory data pipeline limitations in Microsoft Fabric
+# Data Factory data pipeline limitations in Microsoft Fabric (preview)
 
-The following list describes the limitations for pipelines in Data Factory in Microsoft Fabric.
+The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
 - Most of the Azure Data Factory copy and orchestration patterns are applicable to Fabric pipelines, but [tumbling window](/azure/data-factory/how-to-create-tumbling-window-trigger) and [event triggers](/azure/data-factory/how-to-create-custom-event-trigger) aren't yet available.
 - Currently, pipelines don't support Continuous Integration and Continuous Delivery (CI/CD).
