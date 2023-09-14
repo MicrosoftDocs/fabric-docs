@@ -1,6 +1,6 @@
 ---
 title: OneLake tenant settings
-description: Learn how to configure OneLake tenant settings as the Power BI administrator. 
+description: Learn how to configure OneLake tenant settings as the Fabric administrator. 
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 06/05/2023
+ms.date: 09/08/2023
 LocalizationGroup: Administration
 ---
 
@@ -25,6 +25,8 @@ To learn more, see [Allow apps running outside of Fabric to access data via OneL
 ## Users can sync data in OneLake with the OneLake File Explorer app
 
 Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive.
+
+To learn more, see [OneLake File Explorer](../onelake/onelake-file-explorer.md).
 
 ## Next steps
 
