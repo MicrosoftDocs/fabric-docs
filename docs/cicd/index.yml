@@ -58,7 +58,7 @@ landingContent:
             url: git-integration/manage-branches.md
           - text: Resolve conflicts in Git
             url: git-integration/conflict-resolution.md
-          - text: Create deployment pipleline rules
-            url: deployment-pipelines/create-rules.md
           - text: Automate deployment pipelines
             url: deployment-pipelines/pipeline-automation.md
+          - text: Lifecycle management tutorial
+            url: cicd-tutorial.md
