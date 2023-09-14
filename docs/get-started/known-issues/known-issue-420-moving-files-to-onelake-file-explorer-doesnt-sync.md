@@ -4,7 +4,7 @@ description: A known issue is posted where moving files from outside of OneLake 
 author: mihart
 ms.author: mihart
 ms.topic: troubleshooting  
-ms.date: 06/08/2023
+ms.date: 07/31/2023
 ms.custom: known-issue-420
 ---
 
@@ -14,7 +14,7 @@ Within OneLake file explorer, moving a folder (cut and paste or drag and drop) f
 
 **APPLIES TO:** ✔️ OneLake
 
-**Status:** Open
+**Status:** Fixed: July 31, 2023
 
 **Product Experience:** Administration & Management
 
@@ -24,7 +24,7 @@ Within OneLake file explorer, moving a folder (cut and paste or drag and drop) f
 
 ## Solutions and workarounds
 
-You must trigger a sync by either opening the files and saving them or moving them back out of OneLake and then copying and pasting (versus moving).
+The fix is available in [OneLake file explorer v1.0.9.0](https://www.microsoft.com/download/details.aspx?id=105222) and later versions.
 
 ## Next steps
 

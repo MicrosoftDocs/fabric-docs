@@ -67,6 +67,7 @@ For example, imagine you have a team of SQL engineers building a fully transacti
 Business users can build Power BI reports directly on top of OneLake using the new direct lake mode in the Analysis Services engine. The Analysis Services engine is what powers Power BI Datasets and has always offered two modes of accessing data, import and direct query. Direct lake mode gives users all the speed of import without needing to copy the data, combining the best of import and direct query. Learn more about direct lake: https://aka.ms/DirectLake.
 
 :::image type="content" source="media\onelake-overview\use-same-copy-of-data.png" alt-text="Diagram showing how multiple items and engines use the same copy of data." lightbox="media\onelake-overview\use-same-copy-of-data.png":::
+
 *Example diagram showing loading data using Spark, querying using T-SQL and viewing the data in a Power BI report.*
 
 ## Next steps

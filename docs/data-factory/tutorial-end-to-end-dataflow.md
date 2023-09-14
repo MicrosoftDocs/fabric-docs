@@ -43,9 +43,9 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/lakehouse-settings.png" alt-text="Screenshot showing the configuration of the data source settings for your new Lakehouse with your current signed in user, and the Next button selected.":::
 
-1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module, and select the nyc_taxi data  table.
+1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module, and select the **Tutorial_Lakehouse** data table.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-nyc-taxi-lakehouse-table.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1.":::
 
 1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this is useful for data profiling. You can apply the right transformation and target the right data values based on it.
 
@@ -234,7 +234,7 @@ With the output query now fully prepared and with data ready to output, we can d
 In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 
 > [!div class="checklist"]
-> - Dreate a new Dataflow Gen2.
+> - Create a new Dataflow Gen2.
 > - Import and transform sample data.
 > - Import and transform text/CSV data.
 > - Merge data from both data sources into a new query.

@@ -4,7 +4,7 @@ description: Learn how to use the statistics features.
 author: mstehrani
 ms.author: emtehran
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 06/22/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
@@ -13,7 +13,7 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O and memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow query optimizer to estimate these costs.
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O, CPU, memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow query optimizer to estimate these costs.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -24,7 +24,7 @@ To achieve optimal query performance, it is important to have accurate statistic
 - User-defined statistics
     - [User issues DDL](#manual-statistics-for-all-tables) to create, update, and drop statistics as needed
 - Automatic statistics
-    - Engine automatically [creates statistics at querytime](#automatic-statistics-at-query)
+    - Engine automatically [creates and maintains statistics at querytime](#automatic-statistics-at-query)
 
 ## Manual statistics for all tables
 
@@ -74,11 +74,11 @@ The following T-SQL objects can also be used to check both manually created and 
 
 ## Automatic statistics at query
 
-Whenever you issue a query and query optimizer requires statistics for plan exploration, [!INCLUDE [product-name](../includes/product-name.md)] will automatically create those statistics if they don't already exist. Once statistics have been created, query optimizer can utilize them in estimating the plan costs of the triggering query. Because this creation is done synchronously, you can expect the first query run to include this statistics creation time.
+Whenever you issue a query and query optimizer requires statistics for plan exploration, [!INCLUDE [product-name](../includes/product-name.md)] will automatically create those statistics if they don't already exist. Once statistics have been created, query optimizer can utilize them in estimating the plan costs of the triggering query. In addition, if the query engine determines that existing statistics relevant to query no longer accurately reflect the data, those statistics will be automatically refreshed. Because these automatic operations are done synchronously, you can expect the query duration to include this time if the needed statistics do not yet exist or significant data changes have happened since the last statistics refresh. 
 
-### To verify automatic statistics creation at querytime
+### To verify automatic statistics at querytime
 
-There are various cases where you can expect some type of statistics to be automatically created. The most common are histogram-based system statistics, which are often created for columns referenced in GROUP BYs, JOINs, DISTINCT clauses, filters (WHERE clauses), and ORDER BYs. For example, if you want to see the automatic creation of these statistics, a query will trigger creation if statistics for `COLUMN_NAME` do not yet exist. For example:
+There are various cases where you can expect some type of automatic statistics. The most common are histogram-based statistics, which are requested by the query optimizer for columns referenced in GROUP BYs, JOINs, DISTINCT clauses, filters (WHERE clauses), and ORDER BYs. For example, if you want to see the automatic creation of these statistics, a query will trigger creation if statistics for `COLUMN_NAME` do not yet exist. For example:
 
 ```sql
 SELECT <COLUMN_NAME>
@@ -129,8 +129,7 @@ DBCC SHOW_STATISTICS ('sales.FactInvoice', '_WA_Sys_00000007_3B75D760');
 
 The `Updated` value in the result set of [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=fabric&preserve-view=true) should be a date (in UTC) similar to when you ran the original GROUP BY query.
 
-> [!NOTE]
-> [!INCLUDE [product-name](../includes/product-name.md)] does not currently support the automatic update of statistics at querytime.
+These automatically generated statistics can then be leveraged in subsequent queries by the query engine to improve plan costing and execution efficiency. If enough changes occur in table, the query engine will also refresh those statistics to improve query optimization. The same exercise above can be applied after changing the table significantly. In Fabric preview, the SQL query engine uses the same recompilation threshold as SQL Server 2016 (13.x) to refresh statistics.
 
 ### Types of automatically generated statistics
 

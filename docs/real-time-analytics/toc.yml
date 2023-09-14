@@ -32,6 +32,9 @@ items:
   items:
   - name: Create a KQL database
     href: create-database.md
+  - name: Access an existing KQL Database
+    displayName: copy URI, copy query URI, copy ingestion URI
+    href: access-database-copy-uri.md
   - name: Create an empty table
     href: create-empty-table.md
   - name: Get data
@@ -64,6 +67,8 @@ items:
       href: materialized-view.md
     - name: Create stored functions
       href: create-functions.md 
+    - name: Enable Python plugin
+      href: python-plugin.md
   - name: Management commands
     href: management/toc.yml
   - name: API
@@ -76,7 +81,7 @@ items:
     href: customize-results.md
 - name: Query data
   items:
-  - name: Use sample queries
+  - name: Use example queries
     href: query-table.md
   - name: Kusto Query Language
     href: kusto-query-language/toc.yml
@@ -94,8 +99,8 @@ items:
     items:
     - name: One logical copy
       href: onelake-mirroring.md
-    - name: Create a shortcut to access data in OneLake
-      href: onelake-shortcut.md
+    - name: Create OneLake shortcuts
+      href: onelake-shortcuts.md
   - name: Notebooks
     items:
     - name: Use a notebook with Kqlmagic to query a KQL database

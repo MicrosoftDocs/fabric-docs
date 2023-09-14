@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/23/2023
 ms.search.form: product-kusto
 ---
 
@@ -41,7 +41,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. Enter the function name and query parameters of your function instead of the placeholder text, and then select **Run**.
 
-    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
+    :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of the Explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
 
     Stored functions appear under **Functions** in the **Data tree**.
 
@@ -49,7 +49,7 @@ This feature allows you to create or alter an existing function using the `.crea
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 
-    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the explore your data window showing query results of a stored function in Real-Time Analytics." lightbox="media/create-functions/function-example.png":::
+    :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Analytics." lightbox="media/create-functions/function-example.png":::
 
 ## Next steps
 

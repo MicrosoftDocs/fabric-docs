@@ -31,7 +31,7 @@ A [star schema](/power-bi/guidance/star-schema) organizes data into fact and dim
 
 - **Integration tables** provide a place for integrating or staging data. For example, you can load data to a staging table, perform transformations on the data in staging, and then insert the data into a production table.
 
-A table stores data in [OneLake overview](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
+A table stores data in [OneLake](../onelake/onelake-overview.md) as part of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The table and the data persist whether or not a session is open.
 
 
 ## Tables in the Warehouse
@@ -112,14 +112,15 @@ The following list shows some of the table features that aren't currently suppor
 
 - Computed columns
 - Indexed views
+- Partitioned tables
 - Sequence
 - Sparse columns
 - Surrogate keys on number sequences with Identity columns
 - Synonyms
+- Temporary tables
 - Triggers
 - Unique indexes
 - User-defined types
-- Temporary tables
 
 ## Next steps
 

@@ -90,3 +90,4 @@ You can also hide the entire table and individual columns by using the **Model v
 
 - [Define relationships in data models](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
+- [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)

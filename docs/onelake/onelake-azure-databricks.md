@@ -65,13 +65,13 @@ Before you connect, complete these steps:
 1. Write your filtered dataframe to your Fabric Lakehouse using your OneLake path.
 
    ```python
-   filteredTaxiDF.write.format("csv").mode("overwrite").csv(oneLakePath)
+   filteredTaxiDF.write.format("csv").option("header", "true").mode("overwrite").csv(oneLakePath)
    ```
 
 1. Test that your data was successfully written by reading your newly loaded file.
 
    ```python
-   lakehouseRead = spark.read.format('csv').load(oneLakePath)
+   lakehouseRead = spark.read.format('csv').option("header", "true").load(oneLakePath)
    display(lakehouseRead.limit(10))
    ```
 

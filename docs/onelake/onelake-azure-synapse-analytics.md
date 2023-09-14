@@ -17,7 +17,7 @@ Azure Synapse is a limitless analytics service that brings together enterprise d
 
 ## Write data from Synapse using Apache Spark
 
-Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics. 
+Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics.
 
 1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio) with your preferred parameters.
 
@@ -29,7 +29,7 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
 
 1. In a separate tab, navigate to your Microsoft Fabric lakehouse and find the top-level **Tables** folder.
 
-1. Right click on the **Tables** folder and click **Properties**.
+1. Right click on the **Tables** folder and select **Properties**.
 
    :::image type="content" source="media\onelake-azure-synapse-analytics\properties-context-menu.png" alt-text="Screenshot showing where to open the Properties pane lakehouse explorer." lightbox="media\onelake-azure-synapse-analytics\properties-context-menu.png":::
 
@@ -44,7 +44,7 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
    oneLakePath = 'abfss://WorkspaceName@onelake.dfs.fabric.microsoft.com/LakehouseName.lakehouse/Tables'
    ```
 
-1. In a new code cell, load data from an Azure open dataset into a dataframe. This is the dataset you will load into your lakehouse. Run the cell.
+1. In a new code cell, load data from an Azure open dataset into a dataframe. This dataset is the one you'll load into your lakehouse. Run the cell.
 
    ```python
    yellowTaxiDf = spark.read.parquet('wasbs://nyctlc@azureopendatastorage.blob.core.windows.net/yellow/puYear=2018/puMonth=2/*.parquet')
@@ -73,13 +73,13 @@ Follow these steps to use Apache Spark to write sample data to OneLake from Azur
 
 Congratulations! You can now read and write data in OneLake using Apache Spark in Azure Synapse Analytics.
 
-## Write data from Synapse using SQL
+## Read data from Synapse using SQL
 
 Follow these steps to use SQL serverless to read data from OneLake from Azure Synapse Analytics.
 
 1. Open a Fabric lakehouse and identify a table that you'd like to query from Synapse.
 
-1. Right-click on the table and click **Properties**.
+1. Right click on the table and select **Properties**.
 
 1. Copy the **ABFS path** for the table.
 

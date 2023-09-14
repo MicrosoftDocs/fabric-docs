@@ -1,6 +1,6 @@
 ---
 title: Compare content in different stages before deployment
-description: Learn how to compare the content of the source stage and target stage before deployment with the Fabric Application lifecycle management (ALM) tool
+description: Learn how to compare the content of the source stage and target stage before deployment with the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
@@ -25,7 +25,7 @@ A comparison icon indicator appears between two sequential stages to give a quic
 
 - **Orange indicator** - Appears if one of these conditions is true:
   - Some of the content items in each stage were changed or updated (have different metadata).
-  - There's a difference in the number of items between the stages.
+  - There's a difference in the number of items in each stage.
 
 When two sequential stages are different, a **Compare** link appears underneath the orange comparison icon. Select **Compare** to open the content item list in both stages. This *Compare view* helps you track changes or differences between items in each pipeline stage.
 
@@ -56,7 +56,7 @@ If there's [nothing to compare](#considerations-and-limitations), the button is 
 
 When you select the **Change review** button, a pop-up window opens with a line by line comparison of the item's content as it [currently looks in the two stages being compared](#file-modifications-before-comparison).
 
-On top of the screen you'll see:
+The top of the screen has the following information:
 
 1. The workspace name followed by name of the item as it appears in the source (*to be deployed*) stage.
 1. The total number of changes made to the file in the *to be modified* stage (green) and the *to be deployed* stage (red).
