@@ -1,12 +1,12 @@
 ---
 title: Create, train, and evaluate an uplift model
 description: Review this notebook to learn how to create, train, and evaluate uplift models and apply uplift modeling technique.
-ms.reviewer: larryfr
+ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/15/2023
 ---
 
 # Creating, training, and evaluating uplift models in Microsoft Fabric
@@ -17,39 +17,47 @@ In this article, learn how to create, train and evaluate uplift models and apply
 
 - What is uplift modeling?
 
-    It's a family of causal inference technology that uses machine learning models to estimate the causal effect of some treatment on an individual's behavior.
+    Uplift modeling is a family of causal inference technology that uses machine learning models to estimate the causal effect of some treatment on an individual's behavior.
 
   - **Persuadables** only respond positive to the treatment
   - **Sleeping-dogs** have a strong negative response to the treatment
   - **Lost causes** never reach the outcome even with the treatment
   - **Sure things** always reach the outcome with or without the treatment
 
-  The goal of uplift modeling is to identify the "persuadables", not waste efforts on "sure things" and "lost causes", and avoid bothering "sleeping dogs"
+  The goal is to identify the "persuadables," avoid wasted effort on "sure things" and "lost causes," and avoid bothering "sleeping dogs."
 
 - How does uplift modeling work?
 
-  - **Meta Learner**: predicts the difference between an individual's behavior when there's a treatment and when there's no treatment
-  - **Uplift Tree**: a tree-based algorithm where the splitting criterion is based on differences in uplift
-  - **NN-based Model**：a neural network model that usually works with observational data
+  - **Meta Learner**: predicts the difference between an individual's behavior when the individual undergoes a treatment, and when not undergoing a treatment
+  - **Uplift Tree**: a tree-based algorithm that combines both treatment/control group assignment information and response information directly into decisions about splitting criterion for a node.
+  - **NN-based Model**：a neural network model that usually works with observational data. It uses deep learning to help determine the distribution of a latent variable. The latent variable represents the cofounder in the uplift modeling.
 
 - Where can uplift modeling work?
 
-  - Marketing: help to identify persuadables to apply a treatment such as a coupon or an online advertisement
-  - Medical Treatment: help to understand how a treatment can affect certain groups differently
+  - Marketing: uplift modeling can help identify persuadables who can potentially be swayed to try the treatment. The outreach to identify persuadables could involve a coupon or an online advertisement, for example
+  - Medical Treatment: uplift modeling can help measure how a particular treatment can impact distinct groups. This allows for optimized target selection, to maximize the impact
 
 ## Prerequisites
 
 - A familiarity with [How to use Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
 - A Lakehouse. The Lakehouse is used to store data for this example. For more information, see [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
+### Follow along in notebook
+
+[AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modeling.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
+
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modeling.ipynb -->
+
 ## Step 1: Load the data
 
 > [!TIP]
-> The following examples assume that you are running the code from cells in a notebook. For information on creating and using notebooks, see [How to use notebooks](../data-engineering/how-to-use-notebook.md).
+> The following examples assume that you run the code from cells in a notebook. For information on creating and using notebooks, see [How to use notebooks](../data-engineering/how-to-use-notebook.md).
 
 ### Notebook configurations
 
-By defining below parameters, you can apply this example to different datasets.
+With these parameters, you can apply this example to different datasets.
 
 ```python
 IS_CUSTOM_DATA = False  # if True, dataset has to be uploaded manually by user
@@ -100,7 +108,7 @@ import mlflow
 
 - Dataset description: The Criteo AI Lab created this dataset. The dataset consists of 13M rows, each one representing a user with 12 features, a treatment indicator and 2 binary labels (visits and conversions).
   - f0, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11: feature values (dense, float)
-  - treatment: treatment group (1 = treated, 0 = control) which indicates if a customer was targeted by advertising randomly
+  - treatment: treatment group (1 = treated, 0 = control) which indicates if advertising randomly targeted a customer
   - conversion: whether a conversion occurred for this user (binary, label)
   - visit: whether a visit occurred for this user (binary, label)
 
@@ -306,7 +314,7 @@ test_ranked_df = test_ranked_df.withColumn(
 display(test_ranked_df.limit(20))
 ```
 
-Now you can plot the uplift curve on the prediction of the test dataset. You need to convert the pyspark dataframe to pandas dataframe before plotting.
+Now, plot the uplift curve on the prediction of the test dataset. You must convert the pyspark dataframe to pandas dataframe before plotting.
 
 ```python
 def uplift_plot(uplift_df):
@@ -344,7 +352,7 @@ uplift_plot(test_ranked_pd_df)
 
 :::image type="content" source="media\uplift-modeling\criteo-uplift-curve.png" alt-text="Chart showing a normalized uplift model curve versus random treatment." lightbox="media\uplift-modeling\criteo-uplift-curve.png":::
 
-From the uplift curve in the previous example, notice that the top 20% population ranked by your prediction have a large gain if they were given the treatment, which means they're the **persuadables**. Therefore, you can print the cutoff score at 20% percentage to identify the target customers.
+From the uplift curve in the previous example, the top 20% population, ranked by your prediction, has a large gain with the treatment. This means they're the **persuadables**. Therefore, you can print the cutoff score at 20% percentage to identify the target customers.
 
 ```python
 cutoff_percentage = 0.2
@@ -357,7 +365,7 @@ print("Uplift score higher than {:.4f} are Persuadables".format(cutoff_score))
 
 ### Log and load model with MLflow
 
-Now that you have a trained model, save it for later use. In the following example, MLflow is used to log metrics and models. You can also use this API to load models for prediction.
+Now that you have a trained model, save it for later use. In this example, MLflow logs metrics and models. You can also use this API to load models for prediction.
 
 ```python
 # setup mlflow
