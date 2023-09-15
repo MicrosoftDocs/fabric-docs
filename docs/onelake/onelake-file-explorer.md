@@ -33,7 +33,7 @@ To install:
 
 Once you have installed and launched the application, you can now see your OneLake data in Windows File Explorer.
 
-## Limitations and Considerations
+## Limitations and considerations
 
 - Workspace names with the "/" character, encoded escape characters such as `%23`, and names that look like GUIDs fail to sync.
 
