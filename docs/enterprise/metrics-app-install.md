@@ -78,6 +78,8 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
 3. Select **Install**.
 
+---
+
 ## Run the app for the first time
 
 To complete the installation, configure the Microsoft Fabric Capacity Metrics app by running it for the first time.

@@ -105,4 +105,3 @@ All the columns in the background operations table are similar to the ones in th
 ## Next steps
 
 [Understand the metrics app overview page?](metrics-app-overview-page.md)
-
