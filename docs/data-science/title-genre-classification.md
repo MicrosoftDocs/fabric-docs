@@ -460,7 +460,7 @@ To view your experiments:
 1. On the left, select your workspace.
 1. Find and select the experiment name, in this case _sample_aisample-textclassification_.
 
-:::image type="content" source="./media/title-genre-classification/Title_Genre_Classification/TextClassification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/TextClassification-experiment.png":::
+:::image type="content" source="./media/title-genre-classification/text-classification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/text-classification-experiment.png":::
 
 ## Step 5: Score and save prediction results
 

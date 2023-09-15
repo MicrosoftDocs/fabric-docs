@@ -102,12 +102,6 @@ DATA_FOLDER = "Files/churn"  # folder with data files
 DATA_FILE = "churn.csv"  # data file name
 ```
 
-
-    StatementMeta(, ad4a141b-253f-4dc0-93ea-dbe0e2584e86, 36, Finished, Available)
-
-
-
-
 This code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
