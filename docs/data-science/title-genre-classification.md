@@ -1,28 +1,30 @@
 ---
-title: Create, evaluate, and score a text classification model
-description: This article is an AI sample for training and evaluating a text classification model. It uses a sample dataset that consists of metadata relating to digitized books.
+title: "Tutorial: Create, evaluate, and score a text classification model"
+description: This tutorial demonstrates training and evaluating a text classification model. Uses a sample dataset that consists of metadata relating to digitized books.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 09/05/2023
+ms.date: 09/15/2023
+#customer intent: As a data scientist, I want to create, evaluate, and score a text classification model.
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-This notebook demonstrates Microsoft Fabric end-to-end data science workflow for a text classification model. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
+In this tutorial, you'll see an end-to-end data science workflow for a text classification model using Microsoft Fabric. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The main steps in this notebook are:
 
 > [!div class="checklist"]
-> 1. Install custom libraries
-> 1. Load the data
-> 1. Understand and process the data using exploratory data analysis
-> 1. Train a machine learning model using `word2vec` and logistic regression and track experiments using MLflow and Fabric Autologging feature
-> 1. Load the machine learning model for scoring and make predictions
+
+> - Install custom libraries
+> - Load the data
+> - Understand and process the data using exploratory data analysis
+> - Train a machine learning model using `word2vec` and logistic regression and track experiments using MLflow and Fabric Autologging feature
+> - Load the machine learning model for scoring and make predictions
 
 ## Prerequisites
 

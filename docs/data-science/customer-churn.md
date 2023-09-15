@@ -1,26 +1,30 @@
 ---
 title: "Tutorial: Create, evaluate, and score a churn prediction model"
-description: Demonstrates Microsoft Fabric data science work flow with an end-to-end example, building a model to predict churn. 
+description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn. 
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.date: 09/05/2023
+ms.date: 09/15/2023
+# customer intent: As a data scientist, I want to create a model to predict churn.
 ---
 
 # Tutorial: Create, evaluate, and score a churn prediction model
 
-In this notebook, you'll see a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
+In this tutorial, you'll see a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-The main steps in this notebook are:
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
+The main steps in this tutorial are
 
 > [!div class="checklist"]
-> 1. Install custom libraries
-> 1. Load and process the data
-> 1. Understand the data through exploratory data analysis and demonstrate the use of Fabric Data Wrangler feature
-> 1. Train machine learning models using `Scikit-Learn` and `LightGBM`, and track experiments using MLflow and Fabric Autologging feature
-> 1. Evaluate and save the final machine learning model
-> 1. Demonstrate the model performance via visualizations in Power BI
+
+> - Install custom libraries
+> - Load the data
+> - Understand and process the data through exploratory data analysis and demonstrate the use of Fabric Data Wrangler feature
+> - Train machine learning models using `Scikit-Learn` and `LightGBM`, and track experiments using MLflow and Fabric Autologging feature
+> - Evaluate and save the final machine learning model
+> - Demonstrate the model performance via visualizations in Power BI
 
 ## Prerequisites
 
@@ -219,6 +223,7 @@ def clean_data(df):
 
 df_clean = clean_data(df.copy())
 ```
+
 ### Determine attributes
 
 Use this code to determine categorical, numerical, and target attributes.
@@ -570,6 +575,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='Random Forest with max depth of 8')
 tn, fp, fn, tp = cfm.ravel()
 ```
+
 
 :::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Notebook display of confusion matrix for Random Forest with max depth of eight.":::
 
