@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 09/22/2023
+ms.date: 09/18/2023
 ms.topic: conceptual
 ---
 
@@ -132,7 +132,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|September 2023|**Usage reporting**|[Utilization and billing reporting](../data-warehouse/usage-reporting.md) is available for Fabric data warehousing in the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app. | 
+|September 2023|**Usage reporting**|[Utilization and billing reporting](../data-warehouse/usage-reporting.md) is available for Fabric data warehousing in the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app. For more information, read about [Utilization and billing reporting Fabric data warehousing](https://blog.fabric.microsoft.com/blog/data-warehouse-utilization-reporting-in-fabric-capacity-metrics-app).| 
 |August 2023|**SSD Caching enabled**|[Local SSD caching](../data-warehouse/caching.md) stores frequently accessed data on local disks in highly optimized format, significantly reducing I/O latency. This benefits you immediately, with no action required or configuration necessary. |
 |July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](../data-warehouse/share-warehouse-manage-permissions.md). |
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
@@ -184,7 +184,7 @@ This section summarizes recent new features and capabilities of Data Activator i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|August 2023|**Updated preview experience for trigger design**| We have been working on a [new experience for designing triggers](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=All#post-3622-_Toc144766694) and it's now available in our preview! You now see three cards in every trigger: Select, Detect, and Act.|
+|August 2023|**Updated preview experience for trigger design**| We have been working on a [new experience for designing triggers](https://blog.fabric.microsoft.com/blog/microsoft-fabric-august-2023-update?ft=All#post-3622-_Toc144766694) and it's now available in our preview! You now see three cards in every trigger: Select, Detect, and Act.|
 |May 2023|**Driving actions from your data with Data Activator**| [Data Activator is a new no-code Microsoft Fabric experience](https://blog.fabric.microsoft.com/blog/driving-actions-from-your-data-with-data-activator) that empowers the business analyst to drive actions automatically from your data. To learn more, sign up for the [Data Activator limited preview](https://aka.ms/dataActivatorPreview). |
 
 ## Fabric and Microsoft 365
