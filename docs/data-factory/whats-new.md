@@ -20,6 +20,46 @@ Data Factory for Microsoft Fabric is improved on an ongoing basis. To stay up to
 
 This page is updated monthly, so revisit it regularly.  
 
+## August 2023
+
+### Dataflows Gen2
+
+#### Power Query editor
+
+- Edit connection in Manage Connections [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766676)
+- Enable Staging labels [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766677)
+- Publish dataflow without staged queries [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766678)
+- Limit to number of queries in a Dataflow when publishing [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766679)
+
+#### Refresh history
+
+- Direct navigation to last failed refresh [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766681)
+- Statistics for tables [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766682)
+
+#### Connectors
+
+- Lakehouse connector update [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766684)
+
+#### Other improvements
+
+[Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766685)
+- Better error messages
+- Improved multitasking
+- Improvements to reliability and performance
+
+### Data pipelines
+
+#### Connectors
+
+FTP connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766688)
+
+#### Productivity
+
+- Lookup activity for Lakehouse, Data Warehouse, and KQL Database [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766690)
+- Get Metadata activity for Lakehouse and Data Warehouse [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766691)
+- Pipeline run status now available [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766692)
+- Secure input and output options for Set Variable activity [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-august-2023-update?ft=Data-factory:category#post-3622-_Toc144766693)
+
 ## July 2023
 
 ### Dataflows Gen2
