@@ -19,7 +19,7 @@ In this tutorial, you'll see an end-to-end data science workflow for a text clas
 The main steps in this notebook are:
 
 > [!div class="checklist"]
-
+>
 > - Install custom libraries
 > - Load the data
 > - Understand and process the data using exploratory data analysis

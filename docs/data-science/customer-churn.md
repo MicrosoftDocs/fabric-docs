@@ -18,7 +18,7 @@ In this tutorial, you'll see a Microsoft Fabric data science workflow with an en
 The main steps in this tutorial are
 
 > [!div class="checklist"]
-
+>
 > - Install custom libraries
 > - Load the data
 > - Understand and process the data through exploratory data analysis and demonstrate the use of Fabric Data Wrangler feature
@@ -254,7 +254,7 @@ for ax,col in zip(axes.flatten(), df_num_cols.columns):
 fig.delaxes(axes[1,2])
 
 ```
-:::image type="content" source="media/tutorial-bank-churn/boxplots.jpg" alt-text="Notebook display of the boxplot for numerical attributes.":::
+:::image type="content" source="media/tutorial-bank-churn/box-plots.jpg" alt-text="Notebook display of the boxplot for numerical attributes.":::
 
 ### Distribution of exited and non-exited customers 
 
@@ -268,12 +268,12 @@ for ind, item in enumerate (attr_list):
     sns.countplot(x = item, hue = 'Exited', data = df_clean, ax = axarr[ind%2][ind//2])
 fig.subplots_adjust(hspace=0.7)
 ```
-:::image type="content" source="media/tutorial-bank-churn/boxplots.jpg" alt-text="Notebook display of the distribution of exited versus non-exited customers.":::
+:::image type="content" source="media/tutorial-bank-churn/bar-charts.jpg" alt-text="Notebook display of the distribution of exited versus non-exited customers.":::
 
 
 ### Distribution of numerical attributes
 
-Show the the frequency distribution of numerical attributes using histogram.
+Show the frequency distribution of numerical attributes using histogram.
 
 
 
@@ -310,8 +310,8 @@ df_clean["NewEstSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels 
 
 Following the same instructions discussed earlier to launch Data Wrangler, use the Data Wrangler to perform one-hot encoding. The next cell shows the copied  generated script for one-hot encoding.
 
-:::image type="content" source="./media/tutorial-bank-churn/1hotencoding-data-wrangler.png" alt-text="Screenshot shows one-hot encoding in the Data Wrangler"::: 
-:::image type="content" source="./media/tutorial-bank-churn/1hotencoding-selectcolumns-data-wrangler.png" alt-text="Screenshot shows selection of columns in the Data Wrangler.":::
+:::image type="content" source="./media/tutorial-bank-churn/1-hot-encoding-data-wrangler.png" alt-text="Screenshot shows one-hot encoding in the Data Wrangler."::: 
+:::image type="content" source="./media/tutorial-bank-churn/1-hot-encoding-select-columns-data-wrangler.png" alt-text="Screenshot shows selection of columns in the Data Wrangler.":::
 
 
 
@@ -546,6 +546,7 @@ def plot_confusion_matrix(cm, classes,
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
 ```
+
 
 Create a confusion matrix for Random Forest Classifier with maximum depth of four, with four features.
 
