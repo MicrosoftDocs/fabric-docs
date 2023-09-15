@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 07/16/2023
 ---
 
 # What is Microsoft Fabric admin?
@@ -57,7 +57,7 @@ As a capacity admin, you can perform these tasks on the capacity you're an admin
 
 ## Admin tasks and tools
 
-Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
+Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/admin/service-admin-portal), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
 * **[Microsoft Fabric admin portal](admin-center.md)**
     * Acquire and work with capacities

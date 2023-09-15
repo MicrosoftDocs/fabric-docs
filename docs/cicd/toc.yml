@@ -3,6 +3,8 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
+- name: End to end lifecycle management tutorial
+  href: cicd-tutorial.md
 - name: Deployment pipelines
   items:
   - name: Introduction to deployment pipelines

@@ -40,7 +40,7 @@ Run the **conda.sh** in the terminal:
 
 1. Open the terminal window, change the directory to the folder where conda is installed, then change to the subdirectory **etc/profile.d**. The subdirectory should contain a file named conda.sh.
 
-1. Execute `Source conda.sh`.
+1. Execute `source conda.sh`.
 
 1. In the same terminal window, run `sudo conda init`.
 

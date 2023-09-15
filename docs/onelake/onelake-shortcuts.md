@@ -120,13 +120,11 @@ Example: `https://accountname.dfs.core.windows.net/`
 
 *Authorization:*
 
-ADLS shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut will be authorized using that credential.  The supported delegated types are Account Key, SAS Token, OAuth and Service Principal.
+ADLS shortcuts utilize a delegated authorization model.  In this model, the shortcut creator specifies a credential for the ADLS shortcut and all access to that shortcut will be authorized using that credential. The supported delegated types are Organizational account, Account Key, Shared Access Signature (SAS), and Service Principal.
 
-- **SAS Token** - must include at least the following permissions: Read, List, Execute
-
-- **OAuth identity** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
-
-- **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
+- **Organizational account** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
+- **Shared Access Signature (SAS)** - must include at least the following permissions: Read, List, Execute.
+-  **Service Principal** - must have Storage Blob Data Reader, Storage Blob Data Contributor or Storage Blob Data Owner role on storage account.
 
 ### S3 shortcuts
 

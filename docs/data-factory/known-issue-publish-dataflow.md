@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has issues trying to publi
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
-ms.date: 06/07/2023
+ms.date: 07/31/2023
 ms.custom: 
 ---
 
@@ -14,7 +14,7 @@ Users are experiencing an intermittent issue. An unexpected error with status co
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
-**Status:** Open
+**Status:** Resolved
 
 **Problem area:** Data Factory
 

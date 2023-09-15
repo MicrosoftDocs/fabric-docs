@@ -57,6 +57,8 @@ items:
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
 - name: Apache Spark
   items:
   - name: Spark compute
@@ -141,6 +143,8 @@ items:
     href: setup-vs-code-extension.md
   - name: Notebook with VS Code extension
     href: author-notebook-with-vs-code.md
+  - name: Notebook resource with VS Code extension
+    href: author-notebook-resource-with-vs-code.md
   - name: Spark job definition with VS Code extension
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension

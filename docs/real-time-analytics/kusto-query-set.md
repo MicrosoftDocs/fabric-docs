@@ -6,8 +6,8 @@ author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 08/13/2023
+ms.search.form: product-kusto, create a KQL Query Set
 ---
 # Query data in a KQL queryset
 
@@ -121,4 +121,4 @@ This is a one-time method to export a CSV file containing the query results.
 
 * [Customize results in the KQL Queryset results grid](customize-results.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)
-* [Use sample queries to query your table](query-table.md)
+* [Use example queries to query your table](query-table.md)

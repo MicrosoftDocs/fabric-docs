@@ -51,7 +51,7 @@ items:
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
-    href: connectivity.md    
+    href: connectivity.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
@@ -82,6 +82,8 @@ items:
     href: ingest-data-copy.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Use dbt with data warehouse
+    href: tutorial-setup-dbt.md          
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
@@ -100,6 +102,8 @@ items:
     href: workspace-roles.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
+  - name: Share your Warehouse
+    href: share-warehouse-manage-permissions.md    
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -128,7 +132,7 @@ items:
   items:
   - name: Troubleshooting your Warehouse
     href: troubleshoot-synapse-data-warehouse.md
-  - name: Limitations and known issues
+  - name: Limitations
     href: limitations.md      
 - name: Reference
   items: 

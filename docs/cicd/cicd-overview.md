@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.custom: build-2023
 ms.topic: conceptual
-ms.date: 05/23/2023
+ms.date: 08/10/2023
 ---
 
 # What is lifecycle management in Microsoft Fabric?
@@ -31,5 +31,6 @@ For the most efficient lifecycle management experience in Fabric, connect your d
 
 ## Next steps
 
+* [End to end lifecycle management tutorial](./cicd-tutorial.md)
 * [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
 * [Git integration](./git-integration/intro-to-git-integration.md)

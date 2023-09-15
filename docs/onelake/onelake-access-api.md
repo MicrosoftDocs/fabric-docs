@@ -1,6 +1,6 @@
 ---
-title: OneLake access and APIs
-description: Microsoft OneLake supports a subset of Azure Data Lake Storage (ADLS) Gen2 and Blob Storage APIs. Learn about the differences.
+title: How do I connect to OneLake?
+description: Microsoft OneLake provides open access to your files and folders through the same APIs and SDKs as ADLS Gen2.
 ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
@@ -9,15 +9,13 @@ ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
-# OneLake access and APIs
+# Connecting to Microsoft OneLake
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Overview
+Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any API, SDK, or tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
 
-Microsoft OneLake provides open access to all of your Fabric items through existing ADLS Gen2 APIs and SDKs. You can access your data in OneLake through any tool compatible with ADLS Gen2 just by using a OneLake URI instead.  You can upload data to a lakehouse through Azure Storage Explorer, or read a delta table through a shortcut from Azure Databricks.  
-
-As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found in the 'Supported API operations' section.
+As OneLake is software as a service (SaaS), some operations, such as managing permissions or updating items, must be done through Fabric experiences, and can't be done via ADLS Gen2 APIs. A full list of changes to these APIs can be found at [OneLake API parity](onelake-api-parity.md).
 
 ## URI Syntax
 
@@ -42,60 +40,30 @@ When adopting a tool for use over OneLake instead of ADLS Gen2, use the followin
 - The container name is your workspace name.
 - The data path starts at the item.  For example: '/mylakehouse.lakehouse/Files/'.
 
-## OneLake and ADLS Gen2 Parity
-
-While OneLake matches all ADLS Gen2 behavior wherever possible, not every concept in ADLS Gen2 has a direct correlation to OneLake. The following sections describe how OneLake differs from ADLS Gen2, from unsupported request headers to changes in response headers.  For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](/rest/api/storageservices/data-lake-storage-gen2).
-
-### Protected OneLake folders
-
-OneLake doesn't support creating, updating, or deleting workspaces or items through the ADLS Gen2 APIs. Only HEAD calls are supported at the workspace level and account level, as you must make changes to the Fabric tenant and Fabric workspaces in the Fabric administration portal.
-
-OneLake does enforce the Fabric item structure, meaning you can't create, read, update, or delete (CRUD) certain folders, even if you're the item or workspace owner. You must perform these operations via Fabric experiences, such as the Fabric portal or Fabric management APIs. Fabric-managed folders include the top-level folder in an item (for example, */MyLakehouse.lakehouse*) and the first level of folders within it (for example, */MyLakehouse.lakehouse/Files* and */MyLakehouse.lakehouse/Tables*).
-
-You can perform CRUD operations on any folder or file created within these managed folders.
-
-### Unsupported request headers and parameters
-
-Even in user-created and owned files and folders, OneLake restricts some management operations through ADLS Gen2 APIs. You cannot update permissions, edit items or workspaces, or set access tiers, as these operations must be managed through Fabric.
-
-OneLake will reject or ignore an API call if it contains a disallowed header or parameter value. OneLake ignores headers if the header doesn't change the behavior of the call, and returns the rejected header in a new 'x-ms-rejected-headers' response header.  OneLake rejects requests containing unallowed query parameters.  OneLake doesn’t allow the following behaviors and their associated request headers and URI parameters:
-
-- Set access control
-  - URI Parameter:
-    - action: setAccessControl (Request rejected)
-    - action: setAccessControlRecursive (Request rejected)
-  - Request headers:
-    - x-ms-owner (Header ignored)
-    - x-ms-group (Header ignored)
-    - x-ms-permissions (Header ignored)
-    - x-ms-group (Header ignored)
-    - x-ms-acls (Header ignored)
-- Set encryption scope
-  - Request headers:
-    - x-ms-encryption-key (Header ignored)
-    - x-ms-encryption-key (Header ignored)
-    - x-ms-encryption-algorithm:AES256 (Header ignored)
-- Set access tier
-  - Request headers:
-    - x-ms-access-tier (Header ignored)
-
-### Response header differences
-
-Since OneLake uses a different permission model than ADLS Gen2, there are changes to the response headers related to permissions:
-
-- 'x-ms-owner' and 'x-ms-group' always returns '$superuser', as OneLake doesn't have owning users or groups.
-- 'x-ms-permissions' always returns '---------], as OneLake doesn't have owning users, groups, or public access permissions.
-- 'x-ms-acl' returns the Fabric permissions for the calling user converted to a POSIX access control list (ACL), in the form 'rwx'
-
 ## Authorization
 
-You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure AD) by passing through an authorization header.  If a tool supports logging into your Azure account to enable AAD passthrough, you can select any subscription - OneLake only requires your AAD token and doesn't care about your Azure subscription.
+You can authenticate OneLake APIs using Microsoft Azure Active Directory (Azure AD) by passing through an authorization header.  If a tool supports logging into your Azure account to enable Azure AD passthrough, you can select any subscription - OneLake only requires your Azure AD token and doesn't care about your Azure subscription.
+
+When calling OneLake via the DFS APIs directly, you can authenticate with a bearer token for your Azure AD account.  While there are multiple ways to get this token, here's quick example using PowerShell - log in to your Azure account, retrieve a storage-scoped token, and copy it to your clipboard for easy use elsewhere.  For more information about retrieving access tokens using PowerShell, see [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken).
+
+   > [!NOTE]
+   > OneLake only supports tokens in the 'Storage' audience.  In this example, we set the audience through the 'ResourceTypeName' parameter.
+
+  ```powershell
+  az login --allow-no-subscriptions
+  $bearerToken = Get-AzAccessToken -ResourceTypeName Storage
+  $testToken.Token | Set-Clipboard
+  ```
 
 ## Data residency
 
 OneLake doesn't currently guarantee data residency in a particular region when using the global endpoint ('https://onelake.dfs.fabric.microsoft.com'). When you query data in a region different than your workspace's region, there's a possibility that data could leave your region during the endpoint resolution process. If you're concerned about data residency, using the correct regional endpoint for your workspace ensures your data stays within its current region and doesn't cross any regional boundaries. You can discover the correct regional endpoint by checking the region of the capacity that the workspace is attached to.
 
 OneLake regional endpoints all follow the same format: 'https://\<region\>-onelake.dfs.fabric.microsoft.com'. For example, a workspace attached to a capacity in the West US 2 region would be accessible through the regional endpoint 'https://westus-onelake.dfs.fabric.microsoft.com.
+
+## Common issues
+
+If a tool or package you've used over ADLS Gen2 is not working over OneLake, the most common issue is URL validation. As OneLake uses a different endpoint (dfs.fabric.microsoft.com) than ADLS Gen2 (dfs.core.windows.net), some tools don't recognize the OneLake endpoint and block it.  Some tools will allow you to use custom endpoints (such as PowerShell).  Otherwise, it's often a simple fix to add OneLake's endpoint as a supported endpoint.  If you find a URL validation issue or have any other issues connecting to OneLake, please [let us know](https://ideas.fabric.microsoft.com/).
 
 ## Samples
 
@@ -108,4 +76,6 @@ Create file
 
 ## Next steps
 
+- [OneLake API parity](onelake-api-parity.md)
+- [Connect to OneLake with Python](onelake-access-python.md)
 - [OneLake integration with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)

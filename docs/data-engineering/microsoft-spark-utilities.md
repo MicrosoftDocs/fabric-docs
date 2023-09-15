@@ -334,7 +334,24 @@ mssparkutils.fs.mount(
 )
 ```
 
-> [!NOTE]
+> [!NOTE]   
+> You might need to import `mssparkutils` if it's not available: 
+> ```python
+> from notebookutils import mssparkutils
+> ```
+> Mount parameters:
+> - fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+> - timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+>
+> You can use these parameters like this:
+> ```python
+> mssparkutils.fs.mount(
+>    "abfss://mycontainer@<accountname>.dfs.core.windows.net",
+>    "/test",
+>    {"fileCacheTimeout": 120, "timeout": 120}
+> )
+> ```
+>
 > For security reasons, it's not recommended to store credentials in code. To further protect your credentials, we will redact your secret in notebook output, for more details please check [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse

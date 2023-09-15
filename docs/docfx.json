@@ -94,6 +94,9 @@
     ],
       "data-science/**.*": [
       "fabric-datascience-docs"
+    ],
+      "data-activator/**.*": [
+      "fabric-dataactivator-docs"
     ]
   },
     "template": [],

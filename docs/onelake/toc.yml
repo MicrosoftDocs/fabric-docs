@@ -19,16 +19,22 @@ items:
   items:
   - name: What are shortcuts?
     href: onelake-shortcuts.md
-  - name: How-to create a OneLake shortcut
+  - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
-  - name: How-to create an ADLS Gen2 shortcut
+  - name: Create an Azure Data Lake Storage Gen2 shortcut
     href: create-adls-shortcut.md
-  - name: How-to create an Amazon S3 shortcut
+  - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
-- name: Access data with APIs
+- name: Open access
   items:
-  - name: OneLake access and APIs
+  - name: How do I connect to OneLake?
     href: onelake-access-api.md
+  - name: OneLake API parity
+    href: onelake-api-parity.md
+  - name: How to
+    items:
+    - name: Use Python to manage OneLake
+      href: onelake-access-python.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
@@ -48,6 +54,10 @@ items:
   - name: Get started with securing data in OneLake
     href: get-started-security.md
 - name: OneLake file explorer for Windows
-  href: onelake-file-explorer.md
+  items:
+  - name: OneLake file explorer overview
+    href: onelake-file-explorer.md
+  - name: Release notes
+    href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json

@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 05/24/2023
+ms.date: 07/30/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -62,9 +62,20 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 ## Git integration questions
 
+### Can I connect to a repository that's in a different region than my workspace?
+
+If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Enable git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+
 ### How do I get started with git integration ?
 
 Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
+
+### Why was my item removed from the workspace?
+
+There could be several reasons why an item was removed from the workspace.
+
+* If the item wasn't committed and you selected it in an *undo* action, the item is removed from the workspace.
+* If the item was committed, it could get removed if you switch branches and the item doesn't exist in the new branch.
 
 ## Deployment pipeline questions
 
@@ -79,7 +90,7 @@ These are some important considerations to keep in mind:
 
 ### How can I assign workspaces to all the stages in a pipeline?
 
-You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
+You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
 
 ### Does deployment pipelines support multi-geo?
 

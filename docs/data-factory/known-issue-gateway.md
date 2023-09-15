@@ -24,10 +24,11 @@ Some of the errors that could be triggered because of this issue:
 
 * *An exception occurred: The given data source kind is not supported. Data source kind: Lakehouse*
 * *null Error: Couldn't refresh the entity because of an issue with the mashup document MashupException.Error*
+* *We cannot convert the value null to type Table*
 
 >[!Note]
 >Other errors might not be listed here at the time this article was written.
 
 ## Solutions and workarounds
 
-Download version 3000.174.13 or later of the on-premises data gateway.
+Download version 3000.182.5 or later of the on-premises data gateway.
