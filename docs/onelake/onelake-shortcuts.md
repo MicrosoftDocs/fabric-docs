@@ -153,7 +153,7 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### Dataverse shortcuts
+### Dataverse shortcuts (preview)
 
 Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
 
