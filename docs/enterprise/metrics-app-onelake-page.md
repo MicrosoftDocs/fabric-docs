@@ -40,10 +40,10 @@ This page includes three cards that display storage information related to the f
 
 * **Current storage (GB)** - Displays the latest hourly point in time storage in GB used by capacity.
 
-* **Billed storage (GB)** - Displays the storage in GB that is billed for selected capacity. 
+* **Billed storage (GB)** - Displays the storage in GB that is billed for selected capacity. Billed storage for a given hour is actual storage divided by number of hours in that month.
 
 >[!NOTE]
->Billed storage can be less than the current storage. Current storage is latest point in time storage usage and cumulative billed storage calculated at hour level.
+>Billed storage can be less than current storage. If the capacity had less storage usage at the start of reporting period, billed storage would be less than current storage.
 
 >[!NOTE]
 >Current storage may display a zero value. This could occur if the workspaces have not yet begun reporting data for that specific hour.

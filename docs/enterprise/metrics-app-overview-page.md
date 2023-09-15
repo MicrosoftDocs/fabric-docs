@@ -72,6 +72,9 @@ The CU over time chart displays the following elements:
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
+>[!NOTE]
+>Non billable usage does not drain capacity or lead to throttling or auto scale. 
+
 ## Matrix by item and operation
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed below. The colors in the table represent your *performance delta*.
@@ -109,9 +112,12 @@ User can hover over any value in the visual to see operation level data. user ca
 
     * **Non-Billable**  - Indicates that operations for this item are non-billable.
 
-    * **Both** - Indicates that item has both billable and non-billable operations. On hover, a breakdown is shown of which operations are billable or non billable. If an operation is in transition period from being non-billable to billable, it will show "Both" at operation level.
+    * **Both** - There are two scenarios when item can have both as billable type:
+        - If item has both billable and non-billable operations
+        - If item has operations that are in transition period from non-billable to billable.
 
 ## Next steps
 
 [Understand the metrics app onelake page](metrics-app-onelake-page.md)
+
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
