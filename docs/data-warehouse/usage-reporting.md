@@ -20,9 +20,11 @@ In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capa
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
 
-CUs consumed by data warehousing include read and write activity against the Warehouse, and read activity on the SQL Endpoint of the Lakehouse.
+### Capacity in Fabric Synapse Data Warehouse
 
 In the capacity-based SaaS model, Fabric data warehousing aims to make the most of the purchased capacity and provide visibility into usage.
+
+CUs consumed by data warehousing include read and write activity against the Warehouse, and read activity on the SQL Endpoint of the Lakehouse.
 
 The "CPU time" metric captures usage of compute resources when requests are executed. "CPU time" is not the same as elapsed time, it's the time spent by compute cores in execution of a request. Similar to how Windows accounts for Processor Time, multi-threaded workloads record more than one second of "CPU time" per second.
 
@@ -42,7 +44,7 @@ Both the Warehouse and SQL Endpoint roll up under **Warehouse** in the Metrics a
 
 - **Warehouse Query**: Compute charge for all user generated and system generated T-SQL statements within a warehouse.
 - **SQL Endpoint Query**: Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint.
-- **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
+- **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
 
 For example:
 
