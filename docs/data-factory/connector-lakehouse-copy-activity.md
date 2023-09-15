@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/11/2023
+ms.date: 09/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -147,7 +147,7 @@ The following properties are **required**:
 
 For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
 
-If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the **Type** for your destination columns. After selecting **Import schemas** to import your data schema, you can select the type that you want to apply in your destination column from the **Type** drop-down list.
+If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas** to import your data schema, you can select the type that you want to apply in your destination column from the **Type** drop-down list.
 
 For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
 
