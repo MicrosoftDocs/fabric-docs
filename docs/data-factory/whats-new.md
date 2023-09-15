@@ -20,6 +20,41 @@ Data Factory for Microsoft Fabric is improved on an ongoing basis. To stay up to
 
 This page is updated monthly, so revisit it regularly.  
 
+## July 2023
+
+### Dataflows Gen2
+
+#### Power Query editor
+
+- Enhancements to the output destination experience [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024345)
+- Improvements to existing experiences [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024346)
+
+#### Connectors
+
+- Updates to the Google Analytics connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024348)
+- Updates to the Oracle Database connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024349)
+- Updates to the Azure Databricks and Databricks connectors [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024350)
+- Updates to the Denodo connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024351)
+- Updates to the EQuIS connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024352)
+- Updates to the Snowflake connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024353)
+- Updates to the Anaplan connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024354)
+
+#### Gateway and connections
+
+- SSO option in cloud connections [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024356)
+- Flag in cloud connections to allow them to be used through a gateway [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024357)
+
+### Data pipeline activities
+
+Teams activity [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024360)
+
+### Productivity
+
+- Artifact parameterization support [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024362)
+- Performance improvement for moving parquet files to Lakehouse tables [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024363)
+- “Save as” support now available from your workspace [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024364)
+- Support column mapping for Lakehouse destination in Copy activity [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-july-2023-update?ft=Data-factory:category#post-3015-_Toc142024365)
+
 ## June 2023
 
 ### Dataflows Gen2
