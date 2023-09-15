@@ -39,7 +39,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 
 ## Step 1: Install custom libraries
 
-When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries in one of two ways:
+When you're developing a machine learning model or doing unplanned data analysis, you might need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries in one of two ways:
 
 * Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
 * Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
@@ -282,7 +282,7 @@ A *machine learning experiment* is the primary unit of organization and control 
 
 When you use experiment tracking, you can organize all the required components of a specific machine learning experiment. You can also easily reproduce past results, by using saved experiments. For more information on machine learning experiments, see [Machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
-1. Update the MLflow autologging configuration to track additional metrics, parameters, and files, by setting `exclusive=False`:
+1. Update the MLflow autologging configuration to track more metrics, parameters, and files, by setting `exclusive=False`:
 
     ```python
     mlflow.autolog(exclusive=False)
@@ -448,10 +448,12 @@ A *confusion matrix* displays the number of true positives (TP), true negatives 
 
 The *Area Under the Curve Receiver Operating Characteristic (AUC-ROC)* measure is widely used to assess the performance of binary classifiers. AUC-ROC is a chart that visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
 
-In some cases, it's more appropriate to evaluate your classifier based on the *Area Under the Precision-Recall Curve (AUPRC)* measure. AUPRC is a curve that combines two rates:
+In some cases, it's more appropriate to evaluate your classifier based on the *Area Under the Precision-Recall Curve (AUPRC)* measure. AUPRC is a curve that combines these rates:
 
 * The precision, also called the positive predictive value (PPV)
 * The recall, also called TPR
+
+To evaluate performance by using the two measures:
 
 1. Define a function that returns the AUC-ROC and AUPRC measures:
 
@@ -504,7 +506,7 @@ As shown in the following image, any experiment is logged along with its respect
 
 :::image type="content" source="media/fraud-detection/fraud-detection-experiment-mlflow.png" alt-text="Screenshot of the tracked experiment." lightbox="media/fraud-detection/fraud-detection-experiment-mlflow.png":::
 
-The following image also shows performance metrics for the model trained on the balanced dataset (in **Version 2**). You can select **Version 1** to see the metrics for the model trained on the imbalanced dataset. When you compare the metrics, you notice that the AUROC is higher for the model trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0` and predicting `1` classes as `1`.
+The following image also shows performance metrics for the model trained on the balanced dataset (in **Version 2**). You can select **Version 1** to see the metrics for the model trained on the imbalanced dataset. When you compare the metrics, you notice that AUROC is higher for the model trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0` and predicting `1` classes as `1`.
 
 :::image type="content" source="media/fraud-detection/fraud-detection-model-mlflow.png" alt-text="Screenshot of logged model performance metrics and model parameters." lightbox="media/fraud-detection/fraud-detection-model-mlflow.png":::
 
