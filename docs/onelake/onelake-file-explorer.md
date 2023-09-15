@@ -53,9 +53,9 @@ The following scenarios provide details for working with the OneLake file explor
 
 ### Starting and exiting OneLake file explorer
 
-OneLake file explorer starts automatically at startup of Windows. You can disable the application from starting automatically by selecting Startup apps in Windows Task Manager and then right clicking OneLake and select **Disable**.
+OneLake file explorer starts automatically at startup of Windows. You can disable the application from starting automatically by selecting **Startup apps** in Windows Task Manager and then right-clicking **OneLake**, and selecting **Disable**.
 
-- To manually start the application, search for OneLake using Windows search (Windows + S) and select the OneLake application. The views for any folders that were previously synced refresh automatically.
+- To manually start the application, search for OneLake using Windows search (Windows+S) and select the OneLake application. The views for any folders that were previously synced refresh automatically.
 
 - To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**. The sync pauses, and you can't access placeholder files and folders. You continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
@@ -67,9 +67,9 @@ When you create, update, or delete a file via OneLake file explorer, it automati
 
 ### Sign in to different accounts
 
-When you install OneLake file explorer, you can choose which account to sign-in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then **Sign Out**. Signing out exits OneLake file explorer and pause the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
+When you install OneLake file explorer, you can choose which account to sign in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then **Sign Out**. Signing out exits OneLake file explorer and pauses the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
 
-When you sign in with another account, you see the list of workspaces and items refresh in OneLake file explorer. If you continue to workspaces associated with the previous account, you can manually refresh the view by selecting **Sync from OneLake**. Those workspaces are inaccessible while you're signed into a different account.
+When you sign in with another account, you see the list of workspaces and items refresh in OneLake file explorer. If you navigate to workspaces associated with the previous account, you can manually refresh the view by selecting **Sync from OneLake**. Those workspaces are inaccessible while you're signed in to a different account.
 
 ### Offline support
 
@@ -77,18 +77,18 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Create files or folders in OneLake file explorer
 
-1. Navigate to the OneLake section in Windows File Explorer.
+1. Navigate to the **OneLake** section in Windows File Explorer.
 
 1. Navigate to the appropriate folder in your item.
 
 1. Right-click and select **New folder** or **New file type**.
 
 > [!NOTE]
-> If you write data to locations where you don't have write permission, such as the root of the item or workspace, the sync will fail. Clean up files or folders that failed to sync by moving them to the correct location or deleting them.
+> If you write data to locations where you don't have write permission, such as the root of the item or workspace, the sync will fail. Clean up files or folders that fail to sync by moving them to the correct location or deleting them.
 
 ### Delete files or folders in OneLake file explorer
 
-1. Navigate to the OneLake section in Windows File Explorer.
+1. Navigate to the **OneLake** section in Windows File Explorer.
 
 1. Navigate to the **Files** or **Tables** folder in your item.
 
@@ -127,7 +127,7 @@ You can find client-side logs on your local machine under `%temp%\OneLake\Diagno
 
 ### Uninstall instructions
 
-To uninstall the app, in Windows, search for OneLake. Select **Uninstall** in the list of options under OneLake.
+To uninstall the app, search for OneLake in Windows. Select **Uninstall** in the list of options under **OneLake**.
 
 ### Tenant setting enables access to OneLake file explorer
 
@@ -135,7 +135,7 @@ Tenant admins can restrict access to OneLake file explorer for their organizatio
 
 ## OneLake file explorer icons
 
-These OneLake file explorer icons are visible in Windows File Explorer and tell you the sync state of the file or folder.
+These OneLake file explorer icons appear in Windows File Explorer to indicate the sync state of the file or folder.
 
 | Icon | Icon description | Meaning |
 | --- | --- | ---|
