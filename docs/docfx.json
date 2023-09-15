@@ -49,6 +49,7 @@
             "feedback_system": "Standard",
             "feedback_help_link_url": "https://community.fabric.microsoft.com/powerbi",
             "feedback_help_link_type": "ask-the-community",
+            "feedback_product_url": "https://ideas.fabric.microsoft.com/",
             "ms.service": "fabric",
             "searchScope": [
                 "Microsoft Fabric"
