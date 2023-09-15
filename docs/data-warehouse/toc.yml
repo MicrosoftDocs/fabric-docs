@@ -6,8 +6,8 @@ items:
 - name: Get started with Warehouse
   expanded: true
   items:
-  - name: Decision guide - data warehouse or lakehouse
-    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -122,6 +122,8 @@ items:
   items:
   - name: Statistics
     href: statistics.md
+  - name: Caching
+    href: caching.md
   - name: Workload Management
     href: workload-management.md
 - name: Monitor the warehouse

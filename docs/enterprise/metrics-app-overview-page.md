@@ -5,16 +5,16 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 06/22/2023
+ms.date: 09/14/2023
 ---
 
 # Understand the metrics app overview page
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line chart, and the bottom visual is a matrix table.
+The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
-At the top of each page, the **CapacityID** field allows you to select the capacity the app shows results for.
+At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
 ## Multi metric ribbon chart
 
@@ -54,7 +54,7 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 The CU over time chart displays the following elements:
 
 >[!NOTE]
->Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background Preview* and *Interactive Preview* columns.
+>Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background non-billable* and *Interactive non-billable* columns.
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
     
@@ -64,9 +64,9 @@ The CU over time chart displays the following elements:
 
     [*Interactive*](/power-bi/enterprise/service-premium-interactive-background-operations#interactive-operations) operations cover a wide range of resources triggered by users. These operations are associated with interactive page loads.
 
-* **Background Preview %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
+* **Background non-billable %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
 
-* **Interactive Preview %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
+* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
 
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
@@ -76,9 +76,11 @@ The CU over time chart displays the following elements:
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed below. The colors in the table represent your *performance delta*.
 
-* **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `item name \ item type \ workspace name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
+User can hover over any value in the visual to see operartion level data. user can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
 
-* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that consumed items over the past two weeks.
+* **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
+
+* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
 
 * **Duration (s)** - Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks.
 
@@ -100,6 +102,9 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
     You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
 
     Sorting the matrix by the *performance delta* column helps identify datasets that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small datasets with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
+
+* **Billing type** - Displays information if the item is billable or not.
+
 
 [!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
 

@@ -1,5 +1,25 @@
 {
     "redirections": [
+      {
+      "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
+      "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
+      "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/cognitive-services-create-a-multilingual-search-engine-from-forms.md",
+        "redirect_url": "/fabric/data-science/create-a-multilingual-search-engine-from-forms",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
+        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
+        "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
         {
             "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
             "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
@@ -49,6 +69,16 @@
           "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
           "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/decision-guide-warehouse-lakehouse.md",
+          "redirect_url": "/fabric/get-started/decision-guide-data-store",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
+          "redirect_url": "/fabric/data-factory/known-issue-staging-item",
+          "redirect_document_id": true
         }
     ]
 }
