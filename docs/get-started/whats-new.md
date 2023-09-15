@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 09/06/2023
+ms.date: 09/22/2023
 ms.topic: conceptual
 ---
 
@@ -132,6 +132,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|September 2023|**Usage reporting**|[Utilization and billing reporting](../data-warehouse/usage-reporting.md) is available for Fabric data warehousing in the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app. | 
 |August 2023|**SSD Caching enabled**|[Local SSD caching](../data-warehouse/caching.md) stores frequently accessed data on local disks in highly optimized format, significantly reducing I/O latency. This benefits you immediately, with no action required or configuration necessary. |
 |July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](../data-warehouse/share-warehouse-manage-permissions.md). |
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
@@ -212,6 +213,7 @@ This section includes guidance and documentation updates on monitoring your Micr
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|September 2023|**Microsoft Fabric Capacity Metrics**|The [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app is available in App Source for a variety of billing and utilization reporting.|
 |August 2023|**Monitoring Hub support for personalized column options**|We have updated Monitoring Hub to allow users to personalize activity-specific columns. You now have the flexibility to display columns that are relevant to the activities you're focused on.|
 |May 2023|**Capacity metrics in Microsoft Fabric**|Learn more about the [universal compute capacities and Fabric's capacity metrics governance features](https://blog.fabric.microsoft.com/blog/capacity-metrics-in-microsoft-fabric) that admins can use to [monitor usage](https://appsource.microsoft.com/product/power-bi/pbi_pcmm.microsoftpremiumfabricpreviewreport?exp=ubp8) and make data-driven scale-up decisions.|
 
