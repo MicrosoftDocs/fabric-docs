@@ -88,9 +88,11 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 * **% Of Base Capacity** - Interactive CU operations as a proportion of the base capacity allowance.
 
-[!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
-
 * **Billing type** - Displays information if the item is billable or not.
+
+    * **Billable** - Indicates that operations for this item are billable.
+
+    * **Non-Billable**  - Indicates that operations for this item are non-billable.
 
 * **Operation ID** - A unique identifier assigned to an individual operation.
 
@@ -103,3 +105,4 @@ All the columns in the background operations table are similar to the ones in th
 ## Next steps
 
 [Understand the metrics app overview page?](metrics-app-overview-page.md)
+

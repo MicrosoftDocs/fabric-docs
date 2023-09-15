@@ -20,6 +20,9 @@ The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity stora
 - Column charts
 - Export data
 
+>[!NOTE]
+> OneLake storage will not be billable till October 1, 2023.
+
 ## Filters
 There are three report filters located at the top of the page.
 
@@ -35,26 +38,31 @@ This page includes three cards that display storage information related to the f
 
 * **Workspaces** - Total number of workspaces present on the capacity on the selected date range.
 
-* **Current storage (GB)** - Displays the latest hourly point in time storage used by capacity.
+* **Current storage (GB)** - Displays the latest hourly point in time storage in GB used by capacity.
 
-* **Billed storage (GB)** - Displays the billed storage in GB for workspaces in selected capacity. 
+* **Billed storage (GB)** - Displays the storage in GB that is billed for selected capacity. 
+
+>[!NOTE]
+>Billed storage can be less than the current storage. Current storage is latest point in time storage usage and cumulative billed storage calculated at hour level.
+
+>[!NOTE]
+>Current storage may display a zero value. This could occur if the workspaces have not yet begun reporting data for that specific hour.
 
 ## Table visual
 
 ### Top n workspaces by billed storage %
 
-This table visual shows top n workspaces by their billed storage %. Top n value can be changed by using Top filter.
-The table visual displays the four values listed below. 
+This table visual shows top n workspaces with below information by their billed storage %. Top n value can be changed by using Top filter.
 
-* **Workspace name** - The name of the workspace.
+* **Workspace name** - Name of the workspace.
 
-* **Workspace ID** - The unique identifier for the workspace.
+* **Workspace ID** - Unique identifier for the workspace.
 
-* **Current storage (GB)** - The current storage of a specific workspace.
+* **Current storage (GB)** - Current storage of a specific workspace.
 
-* **Billed storage (GB)** - The billed storage in GB of a specific workspace.
+* **Billed storage (GB)** -  Billed storage in GB of a specific workspace.
 
-* **Billed storage %** -  The workspace billed storage divided by the sum of billed storages in the capacity.
+* **Billed storage %** -  Billed storage divided by the sum of billed storages in the capacity. This can help determine contribution of the current workspace in the overall capacity storage utilization.
 
 ## Column charts 
 
@@ -62,19 +70,16 @@ There are two column charts in this page showing the storage trend for last 30 d
 
 ### Storage (GB) by date
 
-A column chart that shows item average storage in GB by date and hours.
+A column chart that shows average storage in GB by date and hours.
 
 ### Cumulative billed storage (GB) by date
 
-A column chart that shows cumulative billed storage by date and hour.Cumulative billed storage is calculated as a sum of billed storage from the start of the selected date time period.
-
->[!NOTE]
->Billed storage is the storage users are charged for every hour for fabric billable items. Current storage is calculated by taking the monthly average storage in GB based on the most recent hour. This is why the cumulative billed storage can be less than the current storage. Since current storage is reported for the most recent hour, its value can be zero if the latest hour has already begun, even if the workspaces haven't started reporting for that same hour yet.
+A column chart that shows cumulative billed storage by date and hour. Cumulative billed storage is calculated as a sum of billed storage from the start of the selected date time period.
 
 ## Export Data
 
-User can export the report's data by selecting the Export Data button. Selecting Export Data takes you to a page with a matrix visual that displays billed storage details for workspaces in the selected capacity. Hover over the matrix and select more options to export or share the data.
+User can export the report's data by selecting the Export Data button. Selecting Export Data button takes you to a page with a matrix visual that displays billed storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
 
 ## Next steps
 
-[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+[Understand the metrics app overview page?](metrics-app-overview-page.md)

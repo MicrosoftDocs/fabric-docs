@@ -34,6 +34,10 @@ When using the Microsoft Fabric utilization and metrics app, consider the follow
 
 * Warehouse utilization reporting shows only OneLake related compute usage.
 
+* Updates from version 1 to version 1.1 will be installed in a new workspace.
+
+* Some sampling my occur while exporting data from Export Data page due to power bi limitation.
+
 ## Next steps
 
 [Install the utilization and metrics app](metrics-app-install.md)

@@ -105,9 +105,13 @@ User can hover over any value in the visual to see operation level data. user ca
 
 * **Billing type** - Displays information if the item is billable or not.
 
+    * **Billable** - Indicates that operations for this item are billable.
 
-[!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
+    * **Non-Billable**  - Indicates that operations for this item are non-billable.
+
+    * **Both** - Indicates that item has both billable and non-billable operations. On hover, a breakdown is shown of which operations are billable or non billable. If an operation is in transition period from being non-billable to billable, it will show "Both" at operation level.
 
 ## Next steps
 
 [Understand the metrics app onelake page](metrics-app-onelake-page.md)
+[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
