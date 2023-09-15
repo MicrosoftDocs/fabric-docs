@@ -47,6 +47,12 @@ Alternatively, you can install libraries in your workspace so that they're avail
 
 For more information on installing libraries in your workspace, see [Install workspace libraries](python-guide/python-library-management.md#install-workspace-libraries).
 
+## Bank customer churn
+
+Build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
+
+Follow along in the [Customer churn prediction](customer-churn.md) tutorial.
+
 ## Recommender
 
 An online bookstore is looking to increase sales by providing customized recommendations. Using customer book rating data in this sample you'll see how to clean, explore the data leading to developing and deploying a recommendation to provide predictions.
