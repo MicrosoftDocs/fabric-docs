@@ -101,7 +101,7 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
-    - name: Spark monitoring overview
+    - name: Apache Spark monitoring overview
       href: spark-monitoring-overview.md
     - name: Apache Spark Advisor
       href: spark-advisor-introduction.md
