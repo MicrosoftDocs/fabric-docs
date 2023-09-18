@@ -5,7 +5,6 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
-
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
 - name: Get started
@@ -81,6 +80,10 @@ items:
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
+- name: Real-Time Dashboard
+  items:
+  - name: Visualize data with Real-Time Dashboards
+    href: real-time-dashboard.md
 - name: Query data
   items:
   - name: Use example queries
