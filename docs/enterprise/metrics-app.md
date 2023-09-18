@@ -36,7 +36,7 @@ When using the Microsoft Fabric utilization and metrics app, consider the follow
 
 * Updates from version 1 to version 1.1 will be installed in a new workspace.
 
-* Some sampling may occur while exporting data from Export Data page due to Power BI limitation.
+* Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
 
 ## Next steps
 

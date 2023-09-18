@@ -52,13 +52,13 @@ A table showing storage information for the selected top workspaces. Use the Top
 
 * **Workspace name** - Name of the workspace.
 
-* **Workspace ID** - Unique identifier for the workspace.
+* **Workspace ID** - Workspace unique identifier.
 
-* **Current storage (GB)** - Current storage of a specific workspace.
+* **Current storage (GB)** - Current storage in GB of a specific workspace.
 
 * **Billed storage (GB)** -  Billed storage in GB of a specific workspace.
 
-* **Billed storage %** -  Billed storage divided by the sum of billed storages in the capacity. This can help determine contribution of the current workspace in the overall capacity storage utilization.
+* **Billed storage %** -  Workspace billed storage divided by the sum of billed storages in the capacity. Use to determine the contribution of the workspace to the overall capacity storage use.
 
 ## Column charts 
 
@@ -74,7 +74,7 @@ A column chart that shows cumulative billed storage by date and hour. Cumulative
 
 ## Export Data
 
-User can export the report's data by selecting the Export Data button. Selecting Export Data button takes you to a page with a matrix visual that displays billed storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
+User can export the report's data by selecting Export Data. Selecting Export Data takes you to a page with a matrix visual that displays billed storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
 
 ## Next steps
 
