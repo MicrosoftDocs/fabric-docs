@@ -3,12 +3,12 @@ title: Customize Real-Time Analytics dashboard visuals
 description: Easily customize your Real-Time Analytics dashboard visuals
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 09/12/2023
+ms.date: 09/18/2023
 ---
 
 # Customize Real-Time Analytics dashboard visuals
 
-Visuals are essential part of any Real-Time Analytics dashboard. In this article, you'll learn how to customize different visuals.
+Visuals are essential part of any Real-Time Analytics dashboard. This article covers how to customize different visuals.
 
 ## Prerequisites
 
@@ -20,11 +20,17 @@ Visuals are essential part of any Real-Time Analytics dashboard. In this article
 
 To make changes in your dashboard:
 
-1. On the top menu, select **Viewing** and toggle to **Editing** mode.
+1. In the top menu, select **Viewing** and toggle to **Editing** mode.
+
+    :::image type="content" source="media/dashboard-customize-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/dashboard-customize-visuals/viewing-to-editing-mode.png":::
 
 1. Browse to the tile you wish to change. Select the **Edit** icon.
 
-1. Once you've finished making changes in the visual pane, select **Apply changes** to return to the dashboard and view your changes.
+    :::image type="content" source="media/dashboard-customize-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/dashboard-customize-visuals/tile-edit-icon.png":::
+
+1. To save your changes and return to the dashboard, select **Apply changes**.
+
+    :::image type="content" source="media/dashboard-customize-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/dashboard-customize-visuals/apply-changes.png":::
 
 ## Properties for customization
 
@@ -39,7 +45,6 @@ Use the following properties to customize visuals.
 |**X Axis**     |    Allows customization of X-axis properties. <br>**Label**: Text for a custom label.    | [Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), [Area](../kusto/query/visualization-areachart.md), [Line](../kusto/query/visualization-linechart.md), [Scatter](../kusto/query/visualization-scatterchart.md), [Anomaly](../kusto/query/visualization-anomalychart.md), and [Time charts](../kusto/query/visualization-timechart.md)|
 |**Render links**     |    Toggle to make links that start with "https://" in tables, clickable. <br>**Apply on columns**: Select columns containing URL.   | [Table](../kusto/query/visualization-table.md)|
 |**Layout**     |    Select the layout configuration for multi stat visual. <br>**Apply on columns**: Select columns containing URL.     | Multi stat|
-
 
 ## Conditional formatting
 
