@@ -117,8 +117,7 @@ This is a one-time method to export a CSV file containing the query results.
 
 :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing how to delete a KQL Queryset."  lightbox="media/kusto-query-set/clean-up-query-set.png":::
 
-## Next steps
+## Next step
 
-* [Customize results in the KQL Queryset results grid](customize-results.md)
-* [Visualize data in a Power BI report](create-powerbi-report.md)
-* [Use example queries to query your table](query-table.md)
+> [!div class="nextstepaction"]
+> [Customize results in the KQL Queryset results grid](customize-results.md)

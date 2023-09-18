@@ -48,8 +48,8 @@ This feature allows you to create or alter an existing function using the `.crea
 
 For more information, see [Create stored functions](create-functions.md)
 
-## Next steps
+## Related content
 
 * [Create a database](create-database.md)
 * [Get data from a blob](get-data-blob.md)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
