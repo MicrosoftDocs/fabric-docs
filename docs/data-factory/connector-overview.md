@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: overview 
 ms.custom: build-2023
-ms.date: 09/08/2023
+ms.date: 09/18/2023
 ms.search.form: product-data-factory
 ---
 
@@ -15,6 +15,14 @@ ms.search.form: product-data-factory
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
+## Prerequisites
+
+Before you can begin creating connections in Dataflow Gen2 or data pipelines, the following prerequisites are required:
+
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Supported data connectors in dataflows
 
