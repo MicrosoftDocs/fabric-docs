@@ -210,7 +210,7 @@ In this section, you begin by exploring the raw data and high-level statistics. 
     print('Frauds', round(df_pd['Class'].value_counts()[1]/len(df_pd) * 100,2), '% of the dataset')
     ```
 
-    The code returns the following class distribution of the dataset: 99.83% `No Frauds` and 0.17% `Frauds`. This class distribution shows that most of the transactions are nonfraudulent. Data preprocessing is required before model training, to avoid overfitting.
+    The code returns the following class distribution of the dataset: 99.83% `No Frauds` and 0.17% `Frauds`. This class distribution shows that most of the transactions are nonfraudulent. Therefore, data preprocessing is required before model training, to avoid overfitting.
 
 1. Use a plot to show the class imbalance in the dataset, by viewing the distribution of fraudulent versus nonfraudulent transactions:
 
