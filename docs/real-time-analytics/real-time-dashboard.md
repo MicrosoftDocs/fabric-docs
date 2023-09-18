@@ -1,7 +1,9 @@
 ---
 title: Visualize data with Real-Time Dashboards
 description: Learn how to visualize data with Real-Time dashboards
-ms.reviewer: gabil
+ms.reviewer: tzgitlin
+author: YaelSchuster
+ms.author: yaschust
 ms.topic: how-to
 ms.date: 05/16/2023
 ms.search.form: product-kusto, Real-Time Dashboard
@@ -84,14 +86,7 @@ Parameters significantly improve dashboard rendering performance, and enable you
 
 ## Share dashboards
 
-Use the share menu to [grant permissions](#grant-permissions) for an Azure Active Directory (Azure AD) user or Azure AD group to access the dashboard, [change a user's permission level](#change-a-user-permission-level), and [share the dashboard link](#share-the-dashboard-link).
-
-> [!IMPORTANT]
-> To access the dashboard, a dashboard viewer needs the following:
->
-> * Dashboard link for access
-> * Dashboard permissions
-> * Access to the underlying database in the Real-Time Dashboard cluster
+no idea how this works
 
 ### Share the dashboard
 
