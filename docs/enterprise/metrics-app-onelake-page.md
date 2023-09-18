@@ -20,9 +20,6 @@ The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity stora
 - Column charts
 - Export data
 
->[!NOTE]
-> OneLake storage will not be billable till October 1, 2023.
-
 ## Filters
 There are three report filters located at the top of the page.
 
@@ -30,29 +27,28 @@ There are three report filters located at the top of the page.
 
 * **Date Range** - Select the date range. The app displays results for the selected date range.
 
-* **Top** - The number of workspaces that needs to be displayed in the app is to be selected. The workspaces are ordered according to storage volume. The workspaces that have the highest storage volume appear at the top of the list.
+* **Top** - The number of workspaces that Top N workspaces visual displays. The workspaces are ordered according to storage volume. The workspaces that have the highest storage volume appear at the top of the list.
 
 ## Cards
 
-This page includes three cards that display storage information related to the filter selection.
+In this page, there are three cards present to provide specific information on storage. The information on the cards is filtered according to your capacity and date range selection.
 
-* **Workspaces** - Total number of workspaces present on the capacity on the selected date range.
+* **Workspaces** -  The total number of workspaces using storage.
 
-* **Current storage (GB)** - Displays the latest hourly point in time storage in GB used by capacity.
+* **Current storage (GB)** - Displays the latest storage in GB.
 
-* **Billed storage (GB)** - Displays the storage in GB that is billed for selected capacity. Billed storage for a given hour is actual storage divided by number of hours in that month.
-
->[!NOTE]
->Billed storage can be less than current storage. If the capacity had less storage usage at the start of reporting period, billed storage would be less than current storage.
+* **Billed storage (GB)** - Displays the billed storage in GB.
 
 >[!NOTE]
->Current storage may display a zero value. This could occur if the workspaces have not yet begun reporting data for that specific hour.
+>* At present storage isn't billed.
+>* Billed storage volume can be lower than current storage volume. If the capacity had less storage usage at the start of reporting period, the billed storage volume would be less than current storage.
+>* Current storage can display a zero value. This occurs when the workspaces have not yet begun reporting data for that specific hour.
 
 ## Table visual
 
 ### Top n workspaces by billed storage %
 
-This table visual shows top n workspaces with below information by their billed storage %. Top n value can be changed by using Top filter.
+A table showing storage information for the selected top workspaces. Use the Top slicer to change the number of workspaces with the largest storage volume you want to review.
 
 * **Workspace name** - Name of the workspace.
 
