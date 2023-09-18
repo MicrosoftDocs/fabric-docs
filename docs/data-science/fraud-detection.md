@@ -274,7 +274,7 @@ new_train = pd.concat([X_res, y_res], axis=1)
 
 ### Train machine learning models and run experiments
 
-Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)] enables machine learning with big data. That means you can get valuable insights from large amounts of structured, unstructured, and fast-moving data.
+Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)] enables machine learning with big data. By using Apache Spark, you can get valuable insights from large amounts of structured, unstructured, and fast-moving data.
 
 There are several options for training machine learning models by using Apache Spark in Microsoft Fabric: Apache Spark MLlib, SynapseML, and other open-source libraries. For more information, see [Train machine learning models in Microsoft Fabric](https://aka.ms/fabric/MLTrain).
 
