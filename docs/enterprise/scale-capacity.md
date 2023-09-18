@@ -36,9 +36,9 @@ To scale your capacity you need:
 
 6. Confirm your tier by viewing the overview tab. The current pricing tier is listed.
 
-## Known issues
+## Considerations and limitations
 
-Currently, when you scale a capacity from less than a F64 to an F64 or above, it may take up to 3 hours for this to be reflected in licensing verification. What this means is that Fabric Free users may see a request to upgrade to a Power BI Pro license when they try to access a Power BI report. We are working on a fix.
+Scaling up a capacity that’s smaller than F64, may take up to three hours. During this time, Fabric Free users may see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
 
 ## Next steps
 
