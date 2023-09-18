@@ -69,9 +69,9 @@ The main page of your KQL database shows an overview of the contents in your dat
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
 
-## Next steps
+## Related content
 
 * [Get data from a blob](get-data-blob.md)
-* [Get data from a blob container](get-data-blob-container.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in a KQL queryset](kusto-query-set.md)
+* [Get data from OneLake](get-data-onelake.md)
