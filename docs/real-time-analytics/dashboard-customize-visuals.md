@@ -32,19 +32,85 @@ To make changes in your dashboard:
 
     :::image type="content" source="media/dashboard-customize-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/dashboard-customize-visuals/apply-changes.png":::
 
-## Properties for customization
+## Table
 
-Use the following properties to customize visuals.
+|Property|Description|
+|--|--|
+|URL column|
+|Apply link on column|
+|Conditional formatting|
 
-|Section  |Description | Visual types
-|---------|---------|-----|
-|**General**    |    Select the **stacked** or **non stacked** chart format  | [Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), and [Area charts](../kusto/query/visualization-areachart.md) |
-|**Data**    |   Select source data **Y and X Columns** for your visual. Keep the selection as **Infer** if you want the platform to automatically select a column based on the query result    |[Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), [Scatter](../kusto/query/visualization-scatterchart.md), and [Anomaly charts](../kusto/query/visualization-anomalychart.md)|
-|**Legend**    |   Toggle to show or hide the display of legends on your visuals   |[Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), [Area](../kusto/query/visualization-areachart.md), [Line](../kusto/query/visualization-linechart.md), [Scatter](../kusto/query/visualization-scatterchart.md), [Anomaly chart](../kusto/query/visualization-anomalychart.md) and [Time charts](../kusto/query/visualization-timechart.md) |
-|**Y Axis**     |   Allows customization of Y-Axis properties: <br>**Label**: Text for a custom label. <br>**Maximum Value**: Change the maximum value of the Y axis.  <br>**Minimum Value**: Change the minimum value of the Y axis.        |[Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), [Area](../kusto/query/visualization-areachart.md), [Line](../kusto/query/visualization-linechart.md), [Scatter](../kusto/query/visualization-scatterchart.md), [Anomaly](../kusto/query/visualization-anomalychart.md), and [Time charts](../kusto/query/visualization-timechart.md) |
-|**X Axis**     |    Allows customization of X-axis properties. <br>**Label**: Text for a custom label.    | [Bar](../kusto/query/visualization-barchart.md), [Column](../kusto/query/visualization-columnchart.md), [Area](../kusto/query/visualization-areachart.md), [Line](../kusto/query/visualization-linechart.md), [Scatter](../kusto/query/visualization-scatterchart.md), [Anomaly](../kusto/query/visualization-anomalychart.md), and [Time charts](../kusto/query/visualization-timechart.md)|
-|**Render links**     |    Toggle to make links that start with "https://" in tables, clickable. <br>**Apply on columns**: Select columns containing URL.   | [Table](../kusto/query/visualization-table.md)|
-|**Layout**     |    Select the layout configuration for multi stat visual. <br>**Apply on columns**: Select columns containing URL.     | Multi stat|
+## Bar chart
+
+|Section|Property|Description|
+|--|--|--|
+|General|Visual format|
+
+|Data|Y columns|
+||X columns|
+||Series columns|
+
+|Legend|
+
+|Y Axis|Label|
+||Maximum value|
+||Minimum value|
+||Y axis scale|
+||Reference lines|
+
+|X Axis|Label|
+||X axis scale|
+||Vertical line value|
+
+## Column chart
+
+Exact same as bar.
+
+## Area chart
+
+Exact same as bar.
+
+## Line chart
+
+same as bar minus the general section.
+
+## Stat
+
+|Section|Property|Description|
+|--|--|--|
+|General|Text size|
+|Data|Value column|
+|Conditional formatting|
+
+## Multi Stat
+
+|Section|Property|Description|
+|--|--|--|
+|General|Text size|
+||Display orientation|
+|Layout|Slot configuration|
+|Data|Label column|
+||Value column|
+|Conditional formatting|
+
+## Pie chart
+
+## Scatter chart
+
+## Time chart
+
+## Anomaly chart
+
+## Funnel chart
+
+## Map
+
+## Markdown
+
+## Heatmap
+
+## Plotly
+
 
 ## Conditional formatting
 
