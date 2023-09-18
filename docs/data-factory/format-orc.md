@@ -68,7 +68,7 @@ The following properties are supported in the copy activity **Source** section w
 
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
-|**File format**|The file format that you want to use.|**ORC**|Yes|type (under *`datasetSettings`*):<br>Orc|
+|**File format**|The file format that you want to use.|**ORC**|Yes|type *(under `datasetSettings`)*:<br>Orc|
 |**Compression type**|The compression codec used to read ORC files.|**None**<br>**zlib**<br>**snappy**|No|orcCompressionCodec:<br>none<br>zlib<br>snappy|
 
 ### ORC as destination
@@ -77,7 +77,7 @@ The following properties are supported in the copy activity **Destination** sect
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**File format**|The file format that you want to use.|**ORC**|Yes|type (under *`datasetSettings`*):<br>Orc|
+|**File format**|The file format that you want to use.|**ORC**|Yes|type *(under `datasetSettings`)*:<br>Orc|
 |**Compression type**|The compression codec used to write ORC files.|**None**<br>**zlib**<br>**snappy**|No|orcCompressionCodec:<br>none<br>zlib<br>snappy|
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.|\<your max rows per file> | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.|\<your file name prefix> |No| fileNamePrefix|
