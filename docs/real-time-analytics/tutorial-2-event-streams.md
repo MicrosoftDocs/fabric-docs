@@ -101,7 +101,7 @@ ms.search.form: product-kusto
 > [!NOTE]
 > You may need to refresh the page to view your table after the Eventstream connection has been established.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

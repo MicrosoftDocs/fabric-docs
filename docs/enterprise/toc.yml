@@ -23,7 +23,9 @@ items:
       href: metrics-app.md
     - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the metrics app overview page
+    - name: Understand the Microsoft Fabric Capacity Metrics app overview page
       href: metrics-app-overview-page.md
+    - name: Understand the metrics app OneLake page
+      href: metrics-app-onelake-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md                  
+    - name: Understand the Microsoft Fabric Capacity Metrics app timepoint page               

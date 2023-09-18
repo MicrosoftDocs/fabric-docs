@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 09/10/2023
 ms.search.form: product-kusto
 ---
 
@@ -51,6 +51,8 @@ This feature allows you to create or alter an existing function using the `.crea
 
     :::image type="content" source="media/create-functions/function-example.png" alt-text="Screenshot of the Explore your data window showing query results of a stored function in Real-Time Analytics." lightbox="media/create-functions/function-example.png":::
 
-## Next steps
+## Related content
 
-[Query data in a KQL queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
+* [Change the data retention policy](data-retention-policy.md)
+* [Create a table update policy](table-update-policy.md)
