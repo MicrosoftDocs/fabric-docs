@@ -78,7 +78,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
     The Power BI report now autorefreshes on streaming data arriving in a KQL database from an eventstream.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 
