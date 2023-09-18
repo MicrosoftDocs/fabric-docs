@@ -1,6 +1,6 @@
 ---
 title: Advanced networking admin settings 
-description: Learn how to configure Power BI advanced networking admin settings.
+description: Learn how to configure advanced networking admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 03/10/2022
+ms.date: 09/08/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,15 +18,15 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Azure Private Link
 
-Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.
+Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.
 
-![Screenshot of the Azure Private Link tenant setting.](media/tenant-settings/azure-private-link-tenant-setting.png)
+To learn how to set up Private Link, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
 
 ## Block Public Internet Access
 
-For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. 
+For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect.
 
-![Screenshot of the block public internet access tenant setting.](media/tenant-settings/block-public-internet-access-tenant-setting.png)
+To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
 
 ## Next steps
 

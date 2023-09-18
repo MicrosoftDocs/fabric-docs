@@ -208,7 +208,7 @@ Make changes to the workspace by creating, deleting, or editing an item. In this
 
 1. From the **Properties** pane, change the **Format** from *General* to *Percentage*.
 
-    :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in git.":::
+    :::image type="content" source="media/cicd-tutorial/change-format.png" alt-text="Screenshot of publishing changes in Git.":::
 
 ## Step 8: Commit changes
 

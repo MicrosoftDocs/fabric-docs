@@ -32,6 +32,9 @@ items:
   items:
   - name: Create a KQL database
     href: create-database.md
+  - name: Access an existing KQL Database
+    displayName: copy URI, copy query URI, copy ingestion URI
+    href: access-database-copy-uri.md
   - name: Create a database shortcut
     href: database-shortcut.md
   - name: Create an empty table

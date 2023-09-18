@@ -201,7 +201,7 @@ Deployment in a pipeline updates the workspace content, but it can also update t
 
 ### Deploying into production using Git branches
 
-As the repo serves as the ‘single-source-of-truth’, some teams might want to deploy updates into different stages directly from git. This is possible with Git integration, with a few considerations:
+As the repo serves as the ‘single-source-of-truth’, some teams might want to deploy updates into different stages directly from Git. This is possible with Git integration, with a few considerations:
 
 * It’s recommended to use release branches. You will be required to continuously change the connection of workspace to the new release branches before every deployment.
 
