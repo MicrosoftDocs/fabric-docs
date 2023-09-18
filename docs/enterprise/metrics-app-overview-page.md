@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 06/22/2023
+ms.date: 09/14/2023
 ---
 
 # Understand the metrics app overview page
@@ -80,7 +80,7 @@ User can hover over any value in the visual to see operartion level data. user c
 
 * **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
 
-* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that consumed items over the past two weeks.
+* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
 
 * **Duration (s)** - Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks.
 

@@ -27,7 +27,7 @@ Items always live within workspaces and workspaces always live directly under th
 
 ## Workspace permissions
 
-Workspace roles in Microsoft Fabric allow granting permissions across all items in a workspace. Use workspace roles when the user being granted access will be frequently accessing most of the artifacts in that workspace.
+Workspace roles in Microsoft Fabric allow granting permissions across all items in a workspace. Use workspace roles when the user being granted access will be frequently accessing most of the items in that workspace.
 
 To view the workspace, a user needs to be a member of a Fabric [workspace role](../get-started/roles-workspaces.md). This membership will then grant them the same permissions across all of the items in that workspace. Fabric has two types of roles: read-only and read-write. Viewer is the read-only role and allows users to query data from SQL or Power BI reports but not create items or write data. Admin, Member, and Contributor are the read-write roles and can view data directly in OneLake, write data to OneLake, and create and manage items. Note that the Warehouse item can be viewed in OneLake by read-write roles, but can only be written to using SQL queries.
 
@@ -42,6 +42,7 @@ Using [sharing](../get-started/share-items.md), a user can be given access direc
 The last way to configure permissions is via the manage permissions page for an item. This page allows permissions for the ReadAll permission to be added or removed from a user or group. This approach is ideal if you have workspace Viewers that need OneLake access. Alternatively, you can use this page to adjust permissions after sharing the item.
 
 ## Compute permissions
+
 In addition to the workspace permissions, data access can be given through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but this security can be used to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas with row level security planned in a future release.
 
 In the below example, a user is shared a Lakehouse but with only Viewer access. They are then granted SELECT through the SQL endpoint. When that user tries to read data through the OneLake APIs the access gets denied since they don’t have sufficient permissions, but reads made through SQL SELECT statements would succeed.
@@ -49,6 +50,7 @@ In the below example, a user is shared a Lakehouse but with only Viewer access. 
 :::image type="content" source="media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but get denied access when querying OneLake directly." lightbox="media\get-started-security\sql.png":::
 
 ## Securing OneLake
+
 Now that we understand the permissions available in Microsoft Fabric, let us look at an example of how to best structure data in OneLake. To start, we build a standard medallion architecture. In this approach, we typically want to have a limited set of users that have access to the Bronze and Silver layers, with broader access to the Gold layer. One way to structure that is as follows:
 
 :::image type="content" source="media\get-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each. The gold layer is broken into several different workspaces for each data domain." lightbox="media\get-started-security\medallion-architecture.png":::
