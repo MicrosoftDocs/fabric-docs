@@ -55,11 +55,11 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 1. Use the **Add data destination** button on the **Home** tab of the Power Query editor to add a destination for your data from the on-premises source.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/add-destination.png" alt-text="Screenshot showing the Power Query editor with the Add data destination button selected, showing the available destination types.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/add-destination.png" lightbox="media/how-to-access-on-premises-data/add-destination.png" alt-text="Screenshot showing the Power Query editor with the Add data destination button selected, showing the available destination types.":::
 
 1. Publish the Dataflow Gen2.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/publish-dataflow.png" alt-text="Screenshot showing the Power Query editor with the Publish button highlighted.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/publish-dataflow.png" lightbox="media/how-to-access-on-premises-data/publish-dataflow.png" alt-text="Screenshot showing the Power Query editor with the Publish button highlighted.":::
 
 You have now created a Dataflow Gen2 to load data from an on-premises data source into a cloud destination.
 
