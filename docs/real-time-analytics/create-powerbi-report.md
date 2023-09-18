@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 09/10/2023
 ms.search.form: product-kusto
 ---
 
@@ -68,6 +68,7 @@ To view and edit your report, select **Open the file in Power BI to view, edit, 
 
 :::image type="content" source="media/create-powerbi-report/open-report.png" alt-text="Screenshot of report preview showing that the report has been saved. The link to open the report in Power BI is highlighted." lightbox="media/create-powerbi-report/open-report.png":::
 
-## Next steps
+## Next step
 
-[Visualizations in Power BI reports](/power-bi/visuals/power-bi-report-visualizations)
+> [!div class="nextstepaction"]
+> [Visualizations in Power BI reports](/power-bi/visuals/power-bi-report-visualizations)

@@ -128,6 +128,9 @@ items:
     href: workload-management.md
 - name: Monitor the warehouse
   items:
+  - name: Monitor using Capacity Metrics app
+    href: usage-reporting.md
+    displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
 - name: Troubleshoot
