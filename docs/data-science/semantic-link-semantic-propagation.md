@@ -41,7 +41,7 @@ When you merge two FabricDataFrames, the order of the DataFrames determines how 
 
 ### Semantic propagation with concatenation
 
-When you perform concatenation on multiple FabricDataFrames, for each column, SemPy copies the metadata from the first FabricDataFrame that matches the column name. If there are multiple matches and the metadata is not the same, a warning will be issued. 
+When you perform concatenation on multiple FabricDataFrames, for each column, SemPy copies the metadata from the first FabricDataFrame that matches the column name. If there are multiple matches and the metadata is not the same, a warning will be issued.
 
 You can also propagate concatenations of FabricDataFrames with regular pandas DataFrames by placing the FabricDataFrame first.
 

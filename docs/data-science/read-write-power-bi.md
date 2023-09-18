@@ -86,21 +86,21 @@ To read data from Power BI datasets:
     df_measure = fabric.evaluate_measure(
         "Customer Profitability Sample",
         "Total Revenue",
-        [("Customer", "State"), ("Calendar", "Date")])
+        ["'Customer'[State]", "Calendar[Date]"])
     df_measure
     ```
 
-1. You can also add filters to the measure calculation by specifying a list of values that a certain column should be in. 
+1. You can also add filters to the measure calculation by specifying a list of values that a certain column should be in.
 
     ```python
     filters = {
-        ('State', 'Region'):    ["East", "Central"],
-        ('State', 'State'):     ["FLORIDA", "NEW YORK"]
+        "State[Region]": ["East", "Central"],
+        "State[State]": ["FLORIDA", "NEW YORK"]
     }
     df_measure = fabric.evaluate_measure(
         "Customer Profitability Sample",
         "Total Revenue",
-        [("Customer", "State"), ("Calendar", "Date")],
+        ["Customer[State]", "Calendar[Date]"],
         filters=filters)
     df_measure
     ```
