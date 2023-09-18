@@ -34,6 +34,10 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Warehouse utilization reporting shows only OneLake related compute usage.
 
+* Updates from version 1 to version 1.1 will be installed in a new workspace.
+
+* Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
+
 ## Next steps
 
 [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)
