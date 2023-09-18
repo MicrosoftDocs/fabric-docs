@@ -39,7 +39,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 
 ## Step 1: Install custom libraries
 
-When you're developing a machine learning model or doing unplanned data analysis, you might need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries in one of two ways:
+When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries in one of two ways:
 
 * Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
 * Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
