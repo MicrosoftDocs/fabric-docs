@@ -6,6 +6,7 @@ ms.author: sosivara
 ms.reviewer: wiassaf
 ms.topic: conceptual
 ms.date: 09/18/2023
+ms.search.form: Warehouse billing and utilization
 ---
 
 # Billing and utilization reporting
