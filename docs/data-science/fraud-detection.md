@@ -57,7 +57,7 @@ For this tutorial, you install the `imblearn` library in your notebook by using 
 
 The fraud detection dataset contains credit card transactions that European cardholders made in September 2013 over the course of two days. The dataset contains only numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was applied to the original features. The only features that haven't been transformed with PCA are `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
 
-Here are basic points about the dataset:
+Here are some details about the dataset:
 
 * The features `V1`, `V2`, `V3`, …, `V28` are the principal components obtained with PCA.
 * The feature `Time` contains the elapsed seconds between a transaction and the first transaction in the dataset.
