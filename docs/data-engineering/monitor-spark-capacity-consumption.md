@@ -34,7 +34,7 @@ The following operations from Lakehouse, Notebook, and Spark job definitions wil
 | **Spark job pipeline run** | Spark Job Definition | Public preview | Synapse batch job runs triggered by pipeline. |
 | **Spark job VS Code run** | Spark Job Definition | Public preview | Synapse Spark job definition submitted from VS Code. |
 
-## Spark capacity consumption that isn’t reported
+## Spark capacity consumption that isn't reported
 
 There are some Spark capacity consumption activities that aren't reported in the metrics app. These activities include system Spark jobs for Library Management and certain system Spark jobs for Spark Live pool or live sessions.
 
