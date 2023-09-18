@@ -5,7 +5,6 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.custom: build-2023
 ms.date: 06/20/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
@@ -107,3 +106,4 @@ Row level security is currently not supported. As a workaround, views and system
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)
+- [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)

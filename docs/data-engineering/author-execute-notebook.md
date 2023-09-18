@@ -98,20 +98,17 @@ The IntelliSense features are at different levels of maturity for different lang
 
 Snippets appear in [Shortcut keys of IDE style IntelliSense](#ide-style-intellisense) mixed with other suggestions. The code snippets contents align with the code cell language. You can see available snippets by typing **Snippet** or any keywords appear in the snippet title in the code cell editor. For example, by typing **read** you can see the list of snippets to read data from various data sources.
 
-
 ![Animated GIF of code snippets.](media/author-execute-notebook/code-snippet.gif)
 
 ### Drag and drop to insert snippets
 
 You can use drag and drop to read data from Lakehouse explorer conveniently. Multiple file types are supported here, you can operate on text files, tables, images, etc. You can either drop to an existing cell or to a new cell. The notebook generates the code snippet accordingly to preview the data.
 
-
 ![Animated GIF of drag and drop to insert snippets.](media/author-execute-notebook/drag-drop-insert-snippet.gif)
 
 ### Drag and drop to insert images
 
 You can use drag and drop to insert images from your browser or local computer to a markdown cell conveniently.
-
 
 ![Animated GIF of drag and drop to insert images.](media/author-execute-notebook/drag-drop-insert-image.gif)
 
@@ -163,7 +160,6 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse current cell's output. To expand it, select the **Show output** while the cell's output is hidden.
 
-
 <!--![Animated GIF of collapsing cell output.](media/author-execute-notebook/collapse-cell-output.gif) -->
 
 ### Lock or freeze a cell
@@ -188,15 +184,14 @@ The Outlines or Table of Contents presents the first markdown header of any mark
 
 ### Markdown folding
 
-The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations. 
+The markdown folding allows you to hide cells under a markdown cell that contains a heading. The markdown cell and its hidden cells are treated the same as a set of contiguous multi-selected cells when performing cell operations.
 ![Animated GIF of markdown folding.](media/author-execute-notebook/markdown-folding.gif)
 
 ### Find and replace
 
-Find and replace can help you easily match and locate the keywords or expression within your notebook content, and you can replace the target string with a new string. 
+Find and replace can help you easily match and locate the keywords or expression within your notebook content, and you can replace the target string with a new string.
 
 :::image type="content" source="media\author-execute-notebook\find-replace.png" alt-text="Screenshot showing find and replace pane." lightbox="media\author-execute-notebook\find-replace.png":::
-
 
 ## Run notebooks
 
@@ -226,14 +221,14 @@ Select the **Cancel All** button to cancel the running cells or cells waiting in
 
 ### Stop session
 
-**Stop session** cancels the running and waiting cells and stops the current session, you can restart a brand new session if you click the run button again.
+**Stop session** cancels the running and waiting cells and stops the current session. You can restart a brand new session by selecting the run button again.
 
 :::image type="content" source="media\author-execute-notebook\cancel-all-stop-session.png" alt-text="Screenshot showing where to select Cancel all runs and stop a session." lightbox="media\author-execute-notebook\cancel-all-stop-session.png":::
 
 ### Notebook reference run
 
 Besides using [mssparkutils reference run API](microsoft-spark-utilities.md)
-You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You'll receive an exception if the statement depth is larger than **five**.  
+You can also use ```%run <notebook name>``` magic command to reference another notebook within current notebook's context. All the variables defined in the reference notebook are available in the current notebook. ```%run``` magic command supports nested calls but not support recursive calls. You receive an exception if the statement depth is larger than **five**.
 
 Example:
 ``` %run Notebook1 { "parameterInt": 1, "parameterFloat": 2.5, "parameterBool": true,  "parameterString": "abc" } ```.
@@ -241,10 +236,11 @@ Example:
 Notebook reference works in both interactive mode and pipeline.
 
 > [!NOTE]
-> - ```%run``` command currently only supports reference notebooks that in the same workspace with current notebook. 
+>
+> - ```%run``` command currently only supports reference notebooks that in the same workspace with current notebook.
 > - ```%run``` command currently only supports to 4 parameter value types: `int`, `float`, `bool`, `string`, variable replacement operation is not supported.
 > - ```%run``` command do not support nested reference that depth is larger than **five**.
->
+
 ### Variable explorer
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook provides a built-in variables explorer for you to see the list of the variables name, type, length, and value in the current Spark session for PySpark (Python) cells. More variables show up automatically as they're defined in the code cells. Clicking on each column header sorts the variables in the table.
@@ -271,11 +267,12 @@ You can also find the **Cell level real-time log** next to the progress indicato
 :::image type="content" source="media\author-execute-notebook\spark-progress-details.png" alt-text="Screenshot of details of Spark jobs progress." lightbox="media\author-execute-notebook\spark-progress-details.png":::
 
 In **More actions**, you can easily navigate to the **Spark application details** page and **Spark web UI** page.
+
 :::image type="content" source="media\author-execute-notebook\inline-monitor-more-actions.png" alt-text="Screenshot of details of more actions." lightbox="media\author-execute-notebook\inline-monitor-more-actions.png":::
 
 ### Secret redaction
 
-To prevent the credentials being accidentally leaked when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**. 
+To prevent the credentials being accidentally leaked when running notebooks, Fabric notebook support **Secret redaction** to replace the secret values that are displayed in the cell output with ```[REDACTED]```, Secret redaction is applicable for **Python**, **Scala** and **R**.
 
 :::image type="content" source="media\author-execute-notebook\secret-redaction.png" alt-text="Screenshot of secret redaction." lightbox="media\author-execute-notebook\secret-redaction.png":::
 
@@ -283,35 +280,30 @@ To prevent the credentials being accidentally leaked when running notebooks, Fab
 
 ### Built-in magics
 
-You can use familiar Ipython magic commands in Fabric notebooks. Review the following list as the current available magic commands. 
+You can use familiar Ipython magic commands in Fabric notebooks. Review the following list as the current available magic commands.
 
 > [!NOTE]
-> Only following magic commands are supported in Fabric pipeline : %%pyspark, %%spark, %%csharp, %%sql. 
->
+> Only following magic commands are supported in Fabric pipeline : %%pyspark, %%spark, %%csharp, %%sql.
 
 Available line magics:
-[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode. 
-
+[%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
 
 Fabric notebook also supports improved library management commands **%pip**, **%conda**, check [Manage Apache Spark libraries in Microsoft Fabric](library-management.md) for the usage.
 
 Available cell magics:
 [%%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%%capture](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-capture), [%%writefile](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-writefile), [%%sql](#use-multiple-languages), [%%pyspark](#use-multiple-languages), [%%spark](#use-multiple-languages), [%%csharp](#use-multiple-languages), [%%html](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-html), [%%bash](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-bash), [%%markdown](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-markdown), [%%perl](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-perl), [%%script](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-script), [%%sh](https://ipython.readthedocs.io/en/stable/interactive/magics.html#cellmagic-sh).
 
-
 ### Custom magics
 
-You can also build out more custom magic commands to meet your specific needs as the below example shows.
+You can also build out more custom magic commands to meet your specific needs as the following example shows.
 
 1. Create a notebook with name *"MyLakehouseModule"*.
 
+   :::image type="content" source="media\author-execute-notebook\custom-magic-define.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\custom-magic-define.png":::
 
-:::image type="content" source="media\author-execute-notebook\custom-magic-define.png" alt-text="Screenshot of define a custom magic." lightbox="media\author-execute-notebook\custom-magic-define.png":::
+1. In another notebook reference the *"MyLakehouseModule"* and its magic commands, by this way you can organize your project with notebooks that using different languages conveniently.
 
-
-2. In another notebook reference the *"MyLakehouseModule"* and its magic commands, by this way you can organize your project with notebooks that using different languages conveniently.
-
-:::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of use custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
+   :::image type="content" source="media\author-execute-notebook\consume-custom-magic.png" alt-text="Screenshot of use custom magic." lightbox="media\author-execute-notebook\consume-custom-magic.png":::
 
 ## IPython Widgets
 
@@ -383,7 +375,7 @@ IPython Widgets are eventful python objects that have a representation in the br
    | *widgets.jslink()* | You can use *widgets.link()* function to link two similar widgets.
    | *FileUpload* widget | Not supported yet. |
 
-1. Global *display* function provided by [!INCLUDE [product-name](../includes/product-name.md)] doesn't support displaying multiple widgets in one call (i.e. *display(a, b)*), which is different from IPython *display* function.
+1. Global *display* function provided by Fabric doesn't support displaying multiple widgets in one call (for example, *display(a, b)*), which is different from IPython *display* function.
 1. If you close a notebook that contains IPython Widget, you can't see or interact with it until you execute the corresponding cell again.
 
 ## Python logging in Notebook
@@ -426,23 +418,23 @@ customizedLogger.critical("customized critical message")
 
 ### Designate a parameters cell
 
-To parameterize your notebook, select the ellipses (...) to access the **more commands** at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
+To parameterize your notebook, select the ellipses (...) to access the **More** commands at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
 
 :::image type="content" source="media\author-execute-notebook\toggle-parameter-cell.png" alt-text="Screenshot showing where to select the Toggle parameter cell option." lightbox="media\author-execute-notebook\toggle-parameter-cell.png":::
 
-The parameter cell is useful for integrating notebook in pipeline, pipeline activity looks for the parameters cell and treats this cell as defaults for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
+The parameter cell is useful for integrating a notebook in a pipeline. Pipeline activity looks for the parameters cell and treats this cell as the default for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
 
 ## Shortcut keys
 
-Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.md)] notebooks have a modal user interface. The keyboard does different things depending on which mode the notebook cell is in. [!INCLUDE [product-name](../includes/product-name.md)] notebooks support the following two modes for a given code cell: command mode and edit mode.
+Similar to Jupyter Notebooks, Fabric notebooks have a modal user interface. The keyboard does different things depending on which mode the notebook cell is in. Fabric notebooks support the following two modes for a given code cell: Command mode and Edit mode.
 
-1. A cell is in command mode when there's no text cursor prompting you to type. When a cell is in Command mode, you can edit the notebook as a whole but not type into individual cells. Enter command mode by pressing ESC or using the mouse to select outside of a cell's editor area.
+1. A cell is in Command mode when there's no text cursor prompting you to type. When a cell is in Command mode, you can edit the notebook as a whole but not type into individual cells. Enter Command mode by pressing ESC or using the mouse to select outside of a cell's editor area.
 
-   :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
+   :::image type="content" source="media\author-execute-notebook\cell-command-mode.png" alt-text="Screenshot of a cell in Command mode." lightbox="media\author-execute-notebook\cell-command-mode.png":::
 
-1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in edit mode, you can type into the cell. Enter edit mode by pressing Enter or using the mouse to select on a cell's editor area.
+1. Edit mode can be indicated from a text cursor that prompting you to type in the editor area. When a cell is in Edit mode, you can type into the cell. Enter Edit mode by pressing Enter or using the mouse to select on a cell's editor area.
 
-   :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
+   :::image type="content" source="media\author-execute-notebook\cell-edit-mode.png" alt-text="Screenshot of a cell in Edit mode." lightbox="media\author-execute-notebook\cell-edit-mode.png":::
 
 ### Shortcut keys under command mode
 
@@ -462,7 +454,7 @@ Similar to Jupyter Notebooks, [!INCLUDE [product-name](../includes/product-name.
 
 ### Shortcut keys under edit mode
 
-Using the following keystroke shortcuts, you can more easily navigate and run code in [!INCLUDE [product-name](../includes/product-name.md)] notebooks when in Edit mode.
+Using the following keystroke shortcuts, you can easily navigate and run code in Fabric notebooks when in Edit mode.
 
 | **Action** | **Notebook shortcuts** |
 |---|---|
@@ -482,7 +474,7 @@ Using the following keystroke shortcuts, you can more easily navigate and run co
 | Dedent | Ctrl + [ |
 | Switch to command mode | Esc |
 
-You can easily find all shortcut keys from notebook ribbon *View* -> *Keybindings*.
+You can easily find all shortcut keys from the notebook ribbon **View** -> **Keybindings**.
 
 ## Next steps
 

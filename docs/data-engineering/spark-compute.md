@@ -14,27 +14,42 @@ ms.date: 02/24/2023
 
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, and no need for manual setup. Furthermore, you also get the flexibility to customize Spark pools according to the specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
 
+[ ![Image of a Spark Compute Platform with Starter Pools and Custom Spark Pools.](media/spark-compute/spark-compute-overview.png) ](media/spark-compute/spark-compute-overview.png#lightbox)
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Starter pools
 
 Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
-:::image type="content" source="media\spark-compute\starter-pool-configuration.png" alt-text="Image of a table showing starter pool configuration.":::
+[ ![Image of a table showing starter pool configuration.](media/spark-compute/starter-pool-configuration.png) ](media/spark-compute/starter-pool-configuration.png#lightbox)
 
 Starter pools have Spark clusters that are always on and ready for your requests. They use medium nodes that dynamically scale up based on your Spark job needs.
 
-:::image type="content" source="media\spark-compute\starter-pool-high-level.png" alt-text="Diagram showing the high-level design of starter pools.":::
+[ ![Diagram showing the high-level design of starter pools.](media/spark-compute/starter-pool.png) ](media/spark-compute/starter-pool.png#lightbox)
 
-Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Spark properties or libraries from your workspace or capacity settings, it may take longer for Spark to get the nodes for you. You only pay for starter pools when you're using Spark sessions to run queries. You don't pay for the time when Spark is keeping the nodes ready for you.
+Starter pools also have default settings that let you install libraries quickly without slowing down the session start time. However, if you want to use extra custom Spark properties or libraries from your workspace or capacity settings, it may take longer for Spark to get the nodes for you. When it comes to billing and capacity consumption, you  are charged for the capacity consumption when you start executing your notebook or spark job definition. You are not charged for the time the clusters are idle in the pool. 
+
+[ ![Diagram showing the high-level stages in billing of starter pools.](media/spark-compute/starter-pool-billing-states-high-level.png) ](media/spark-compute/starter-pool-billing-states-high-level.png#lightbox)
+
+
+For example if a notebook job is submitted to a Starter Pool, you are billed only for the time period where the notebook session is active and this does not include the idle time or the time taken to personalize the session with the spark context. 
 
 ## Spark pools
 
 A Spark pool is a way of telling Spark what kind of resources you need for your data analysis tasks. You can give your Spark pool a name, and choose how many and how large the nodes (the machines that do the work) are. You can also tell Spark how to adjust the number of nodes depending on how much work you have. Creating a Spark pool is free; you only pay when you run a Spark job on the pool, and then Spark sets up the nodes for you.
 
-If you don't use your Spark pool for 2 minutes after your job is done, Spark will automatically delete it. This property is called the "time to live" property, and you can change it if you want. If you're a workspace admin, you can also create custom Spark pools for your workspace, and make them the default option for other users. This way, you can save time and avoid setting up a new Spark pool every time you run a notebook or a Spark job. Custom Spark pools take about three minutes to start, because Spark has to get the nodes from Azure.
+If you don't use your Spark pool for 2 minutes after your session expires, your spark pool will be deallocated. This default session expiration time period is set to 20 minutes, and you can change it if you want. If you're a workspace admin, you can also create custom Spark pools for your workspace, and make them the default option for other users. This way, you can save time and avoid setting up a new Spark pool every time you run a notebook or a Spark job. Custom Spark pools take about three minutes to start, because Spark has to get the nodes from Azure.
+
+You can even create Single Node Spark Pools, by setting the min number of nodes to 1, in which case the driver and executor would run in a single node which comes with restorable HA and is suited for small workloads.
 
 The size and number of nodes you can have in your custom Spark pool depends on your Microsoft Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. You can use these Spark VCores to create nodes of different sizes for your custom Spark pool, as long as the total number of Spark VCores doesn't exceed 128.
+
+Billing of Spark pools is similar to that of the Starter pools, where you don't pay for the Custom spark pools that you have created unless you have an active spark session created for running a notebook or spark job definition. You are only billed for the duration of your job runs and are not billed for stages like the cluster creation, and deallocation after the job has been completed. 
+
+[ ![Diagram showing the high-level stages in billing of custom pools.](media/spark-compute/custom-pool-billing-states-high-level.png) ](media/spark-compute/custom-pool-billing-states-high-level.png#lightbox)
+
+For example if you submit a notebook job to a Custom Spark Pool, you will be only charged for the time period when the session is active and the billing for that notebook session will be stopped once the spark session has stopped or expired. You will not be charged for the time taken to acquire cluster instances from the cloud and for the time taken for initializing the spark context. 
 
 Possible custom pool configurations for F64 based on the previous example:
 
@@ -51,7 +66,7 @@ Possible custom pool configurations for F64 based on the previous example:
 
 ## Nodes
 
-An Apache Spark pool instance consists of one head node and two or more worker nodes, with a minimum of three nodes in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Spark Executor service.
+An Apache Spark pool instance consists of one head node and worker nodes, could start a minimum of one node in a Spark instance. The head node runs extra management services such as Livy, Yarn Resource Manager, Zookeeper, and the Spark driver. All nodes run services such as Node Agent and Yarn Node Manager. All worker nodes run the Spark Executor service.
 
 ## Node sizes
 

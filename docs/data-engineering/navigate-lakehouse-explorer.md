@@ -22,7 +22,7 @@ The Lakehouse explorer page is the main Lakehouse interaction page; you can use 
 
 The Lakehouse explorer provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
 
-- The **Table Section** is a UI representation of the managed area of your lake which is typically organized and governed to facilitate efficient data processing and analysis. All tables, whether automatically or explicitly created and registered in SyMS, are displayed here. You can preview table data, view the table schema, access underlying files of selected table, and perform various other actions.
+- The **Table Section** is a UI representation of the managed area of your lake which is typically organized and governed to facilitate efficient data processing and analysis. All tables, whether automatically or explicitly created and registered in the metastore, are displayed here. You can preview table data, view the table schema, access underlying files of selected table, and perform various other actions.
 
 - The **Unidentified Area** is a part of the managed area of your lake which displays any folders or files in the managed area with no associated tables in SyMS. For example, if a user were to drop an unsupported folder/file in the managed area, eg: a directory full of pictures or audio, this would not get picked up by our auto-detection process and hence not have an associated table. In this case, this folder would be found in this unidentified area. The main purpose of this new section is to promote either deleting these files from the managed area or moving them to the file section for further processing.
 
@@ -62,4 +62,4 @@ There are several ways to load data into your Lakehouse from the explorer page:
 
 - [Create your first dataflow to get and transform data](../data-factory/create-first-dataflow-gen2.md).
 
-- [Create a OneLake shortcut](../real-time-analytics/onelake-shortcut.md).
+- [Create a OneLake shortcut](../real-time-analytics/onelake-shortcuts.md?tab=onelake-shortcut)

@@ -4,7 +4,7 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 4/12/2023
+ms.date: 07/12/2023
 ms.custom: template-how-to, build-2023
 ---
 

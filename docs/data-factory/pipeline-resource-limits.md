@@ -27,9 +27,8 @@ The following table describes the resource limitations for pipelines in Data Fac
 | Maximum queued runs per pipeline | 100 | 100 |
 | Characters per expression | 8,192 | 8,192 |
 | Maximum timeout for pipeline activity runs | 24 hours | 24 hours |
-| Bytes per object for pipeline objects3 | 200 KB | 200 KB |
-| Bytes per object for dataset and linked service objects3 | 100 KB | 2,000 KB |
-| Bytes per payload for each activity run4 | 896 KB | 896 KB |
+| Bytes per object for pipeline objects | 200 KB | 200 KB |
+| Bytes per payload for each activity run | 896 KB | 896 KB |
 | Data Integration Units per copy activity run | Auto | 256 |
 | Write API calls | 1,200/h | 1,200/h |
 | Read API calls | 12,500/h | 12,500/h |

@@ -13,10 +13,12 @@ ms.search.form: Semantic Link
 # What is Semantic Link?
 
 Semantic Link is a feature that allows you to establish a connection between [Power BI datasets](/power-bi/connect-data/service-datasets-understand) and [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in Microsoft Fabric.
-The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md).
-Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
+Use of Semantic Link is only supported in Microsoft Fabric.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
+The primary goals of Semantic Link are to facilitate data connectivity, enable the propagation of semantic information, and seamlessly integrate with established tools used by data scientists, such as [notebooks](../data-engineering/how-to-use-notebook.md).
+Semantic Link helps you to preserve domain knowledge about data semantics in a standardized way that can speed up data analysis and reduce errors.
 
 ## Overview of Semantic Link
 

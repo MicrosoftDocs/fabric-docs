@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 ms.search.form: csv load to delta to pbi report
 ---
 
-# CSV file upload to Delta for Power BI reporting
+# CSV file upload to Delta table for Power BI reporting
 
 [!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) is a data architecture platform for storing, managing, and analyzing structured and unstructured data in a single location.
 
@@ -45,15 +45,15 @@ In this tutorial you learn to:
 
 ## Load the file to a Delta table
 
-1. Right-click or use the ellipsis on the CSV file to access the contextual menu, and select **Load to Delta**.
+1. Right-click or use the ellipsis on the CSV file to access the contextual menu. Select **Load to Tables** and choose the **New table** option.
 1. The load to tables user interface shows up with the suggested table name. Real time validations on special characters apply during typing.
-1. Select **Confirm** to execute the load.
+1. Select **Load** to execute the load.
 1. The table now shows up in the lakehouse explorer, expand the table to see the columns and its types. Select the table to see a preview.
 
    :::image type="content" source="media\get-started-csv-upload\load-to-table.gif" alt-text="Animated image showing load to table and table preview" lightbox="media\get-started-csv-upload\load-to-table.gif":::
 
 > [!NOTE]
-> If the table already exists, different __load mode__ options are show. __Overwrite__ will drop and recreate the table. __Append__ will insert all CSV content as new data. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Tables](load-to-tables.md) article.
+> If the table already exists, different __load mode__ options are shown. __Overwrite__ will drop and recreate the table. __Append__ will insert all CSV content as new data. For an in-depth guide on the __Load to Tables__ feature, read the [Load to Tables](load-to-tables.md) article.
 
 ## Generate a dataset and create a Power BI report
 

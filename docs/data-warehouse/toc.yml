@@ -6,8 +6,8 @@ items:
 - name: Get started with Warehouse
   expanded: true
   items:
-  - name: Decision guide - data warehouse or lakehouse
-    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -32,24 +32,26 @@ items:
     href: tutorial-create-tables.md
   - name: 5. Load data using T-SQL
     href: tutorial-load-data.md
-  - name: 6. Transform data using stored procedure
+  - name: 6. Clone a table using T-SQL
+    href: tutorial-clone-table.md
+  - name: 7. Transform data using stored procedure
     href: tutorial-transform-data.md
-  - name: 7. Create queries with visual query builder
+  - name: 8. Create queries with visual query builder
     href: tutorial-visual-query.md
-  - name: 8. Analyze data with a notebook
+  - name: 9. Analyze data with a notebook
     href: tutorial-analyze-data-notebook.md
-  - name: 9. Create queries with the SQL query editor
+  - name: 10. Create queries with the SQL query editor
     href: tutorial-sql-cross-warehouse-query-editor.md
-  - name: 10. Create Power BI reports
+  - name: 11. Create Power BI reports
     href: tutorial-power-bi-report.md
-  - name: 11. Build a report from the OneLake data hub
+  - name: 12. Build a report from the OneLake data hub
     href: tutorial-build-report-onelake-data-hub.md
-  - name: 12. Clean up resources
+  - name: 13. Clean up resources
     href: tutorial-clean-up.md        
 - name: Connect to the warehouse
   items: 
   - name: Connectivity
-    href: connectivity.md    
+    href: connectivity.md
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
@@ -80,6 +82,8 @@ items:
     href: ingest-data-copy.md
   - name: Ingest data with TSQL
     href: ingest-data-tsql.md
+  - name: Use dbt with data warehouse
+    href: tutorial-setup-dbt.md          
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
@@ -98,6 +102,8 @@ items:
     href: workspace-roles.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
+  - name: Share your Warehouse
+    href: share-warehouse-manage-permissions.md    
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -108,10 +114,16 @@ items:
     href: data-preview.md
   - name: Query Delta Lake logs
     href: query-delta-lake-logs.md
+- name: Data recovery
+  items:
+  - name: Clone tables
+    href: clone-table.md
 - name: Manage performance
   items:
   - name: Statistics
     href: statistics.md
+  - name: Caching
+    href: caching.md
   - name: Workload Management
     href: workload-management.md
 - name: Monitor the warehouse
@@ -122,7 +134,7 @@ items:
   items:
   - name: Troubleshooting your Warehouse
     href: troubleshoot-synapse-data-warehouse.md
-  - name: Limitations and known issues
+  - name: Limitations
     href: limitations.md      
 - name: Reference
   items: 

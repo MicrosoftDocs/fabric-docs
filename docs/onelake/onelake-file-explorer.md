@@ -39,7 +39,9 @@ Once the application is installed and launched, you can now see your OneLake dat
 
 - Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- Updating Office files (.xlsx, .pptx, .docx etc.) isn't currently supported.
+- Updating Office files (.xlsx, .pptx, .docx etc.) isn't supported.
+
+- If Windows search is disabled, OneLake file explorer will fail to start.
 
 - Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
 
@@ -55,13 +57,19 @@ OneLake file explorer starts automatically at startup of Windows.  You can disab
 
 - To manually start the application, search for "OneLake" using Windows search (Windows + S) and select the OneLake application.  The views for any folders that were previously synced are then refreshed automatically.  
 
-- To exit, right-click on the OneLake icon in the Windows System Tray and select **Exit**.  The sync is paused and placeholder files and folders cannot be accessed.  You will continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
+- To exit, right-click on the OneLake icon in the Windows notification area, located at the far right of the taskbar, and select **Exit**.  The sync is paused and placeholder files and folders can't be accessed.  You'll continue to see the blue cloud icon for placeholders that were previously synced but not downloaded.
 
 ### Sync updates from OneLake
 
 To optimize performance during the initial sync, OneLake file explorer syncs the placeholder files for the top-level workspaces and item names.  When you open an item, OneLake file explorer syncs the files directly in that folder. Then, opening a folder within the item syncs the files directly in that folder.  This allows you to navigate your OneLake content seamlessly, without having to wait for all files to sync before starting to work.
 
 When you create, update, or delete a file via OneLake file explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your OneLake file explorer aren't automatically synced. To pull these updates, you need to right click on the workspace name, item name, folder name or file in OneLake file explorer and select **Sync from** **OneLake**. This action refreshes the view for any folders that were previously synced.  To pull updates for all workspaces, right click on the OneLake root folder and select **Sync from** **OneLake**.
+
+### Sign in to different accounts
+
+When you install OneLake file explorer, you can choose which account to sign-in with.  To switch accounts, right click the OneLake icon in the Windows notification area, select “Account” and then “Sign Out”.  Signing out will exit OneLake file explorer and pause the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
+
+When you sign in with another account, you'll see the list of workspaces and items refresh in OneLake file explorer.  If you continue to workspaces associated with the previous account, you can manually refresh the view by clicking “Sync from OneLake”.  Those workspaces are inaccessible while you're signed into a different account.
 
 ### Offline support
 
@@ -120,6 +128,9 @@ Client-side logs can be found on your local machine under `%temp%\OneLake\Diagno
 ### Uninstall instructions
 
 To uninstall the app, in Windows, search for “OneLake”. Select **Uninstall** in the list of options under OneLake.
+
+### Tenant setting enables access to OneLake file explorer
+Tenant admins can restrict access to OneLake file explorer for their organization in the [Microsoft Fabric admin portal](../admin/admin-center.md). When the setting is disabled, no one in your organization will be able to start the OneLake file explorer app.  If the application is already running and the tenant admin disabled the setting, the application exits.  Placeholders and any downloaded content remain on the local machine, but the user won't be able to sync data to or from OneLake. 
 
 ## OneLake file explorer icons
 

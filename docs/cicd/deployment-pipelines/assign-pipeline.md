@@ -9,11 +9,11 @@ ms.date: 05/24/2023
 ms.search.form: Deployment pipelines operations
 ---
 
-# Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
+# Assign a workspace to a Microsoft Fabric deployment pipeline
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
+Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 <!---
 >[!NOTE]
@@ -65,7 +65,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 ## Item connections
 
-After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [I can't assign the workspace to a stage?](../troubleshoot-cicd.md#i-cant-assign-a-workspace-to-a-stage)
+After assigning a workspace to a deployment pipeline stage, if there are any adjacent stages already assigned, deployment pipelines attempts to create the connections between the items (such as reports, dashboards, and datasets) in the adjacent stages. During this process, deployment pipelines checks the names of the items in the source stage and the stages adjacent to it. Connections to items in adjacent stages, are established according to the item's type and name. If there are multiple items of the same type with the same name in the adjacent stages, assigning the workspace will fail. To understand why this happens and resolve such cases, see [I can't assign the workspace to a stage?](../troubleshoot-cicd.md#i-cant-assign-a-workspace-to-a-stage)
 
 Connections between items are only established when you assign a workspace to a pipeline stage. Adding a new item to a workspace that's part of a pipeline, doesn't trigger the creation of connections between that item and identical items in adjacent stages. To trigger forming a connection between a newly added item in a workspace stage and its equivalent item in an adjacent stage, unassign and reassign the workspace that contains the newly added item.
 

@@ -7,7 +7,7 @@ author: SnehaGunda
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: product-trident
-ms.date: 5/23/2023
+ms.date: 08/06/2023
 ---
 
 # End-to-end tutorials in Microsoft Fabric
@@ -33,10 +33,11 @@ The following tutorials walk you through scenarios within specific Fabric experi
 
 |Tutorial name  |Scenario |
 |---------|---------|
-|[Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
-|[Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
+| [Power BI](/power-bi/fundamentals/fabric-get-started) |  In this tutorial, you build a dataflow and pipeline to bring data into a lakehouse, create a dimensional model, and generate a compelling report. |
+| [Data Factory](../data-factory/tutorial-end-to-end-introduction.md) | In this tutorial, you ingest data with data pipelines and transform data with dataflows, then use the automation and notification to create a complete data integration scenario. |
 | [Data Science end-to-end AI samples](../data-science/use-ai-samples.md) | In this set of tutorials, learn about the different Data Science experience capabilities and examples of how ML models can address your common business problems. |
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
+| [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports. |
 
 ## Next steps
 

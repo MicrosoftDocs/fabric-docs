@@ -79,7 +79,7 @@ To investigate what happened, you can drill down into an activity or table. The 
 
 ## Monitoring hub
 
-The monitoring hub is available using the side menu in your workspace. You can access it by selecting the **Monitoring hub** button.
+The monitoring hub is available using the side menu. You can access it by selecting the **Monitoring hub** button.
 
 :::image type="content" source="./media/dataflows-gen2-monitor/open-monitoring-hub.png" alt-text="Screenshot of the monitoring hub button.":::
 

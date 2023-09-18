@@ -22,7 +22,7 @@ Dataflows provide data ingestion and transformation capabilities over a wide ran
 
 :::image type="content" source="media/connector-overview/choose-data-source.png" alt-text="Screenshot of the Choose data source screen." lightbox="media/connector-overview/choose-data-source.png":::
 
-You can find a comprehensive list of all connectors supported through our [public Power Query connectors reference](/power-query/connectors/). Supported connectors match the ones marked as supported in the **Power BI (Dataflows)** column in the Power Query reference table.
+You can find a comprehensive list of all connectors supported through our [public Power Query connectors reference](/power-query/connectors/). Supported connectors are located in the **Fabric (Dataflow Gen2)** column in the Power Query reference table.
 
 The following connectors are currently available for output destinations in Dataflow Gen2:
 
@@ -68,6 +68,9 @@ Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports 
 |  | Microsoft 365 | ✓/- | - | - | - | - | - |
 |  | SharePoint Online List | ✓/- | ✓ | - | - | - | - |
 |  | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
+
+> [!NOTE]
+> Currently, a pipeline on managed VNet and on-premises data access with a gateway aren't supported in Data Factory for Microsoft Fabric.
 
 ## Next steps
 
