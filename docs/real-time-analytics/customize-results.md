@@ -156,7 +156,7 @@ You can look for a specific expression within a result table.
 
     :::image type="content" source="media/kusto-query-set/search-results.png" alt-text="Screenshot of a table containing highlighted expressions from search results."  lightbox="media/kusto-query-set/search-results.png":::
 
-## Next steps
+## Related content
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)
