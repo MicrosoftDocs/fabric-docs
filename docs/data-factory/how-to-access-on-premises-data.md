@@ -18,7 +18,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 ## Create an on-premises data gateway
 
-1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, please refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install.md).
+1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, please refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
 
