@@ -453,7 +453,7 @@ In some cases, it's more appropriate to evaluate your classifier based on the *A
 * The precision, also called the positive predictive value (PPV)
 * The recall, also called TPR
 
-To evaluate performance by using the two measures:
+To evaluate performance by using the AUC-ROC and AUPRC measures:
 
 1. Define a function that returns the AUC-ROC and AUPRC measures:
 
