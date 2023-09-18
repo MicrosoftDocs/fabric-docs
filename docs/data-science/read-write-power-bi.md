@@ -161,7 +161,7 @@ from sempy.fabric import FabricDataFrame
 
 df_forecast = FabricDataFrame({'ForecastedRevenue': [1, 2, 3]})
 
-df_forecast.to_onelake("ForecastTable")
+df_forecast.to_lakehouse_table("ForecastTable")
 ```
 
 By using Power BI, the *ForecastTable* table can be added to a composite dataset using the Lakehouse dataset.
