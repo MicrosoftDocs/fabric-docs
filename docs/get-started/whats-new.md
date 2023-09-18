@@ -19,7 +19,7 @@ This page is continuously updated with a recent review of what's new in [Microso
 >
 > - Learn about this exciting new preview and discover [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 > - Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
-> - Explore the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
+> - [Power BI User Groups are now Fabric User Groups](https://aka.ms/FabricUserGroupsAnnouncement)! Join a local [Fabric User Group](https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups) or [join a local event](https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events).
 
 <!-- ## Features currently in preview
 
@@ -97,6 +97,7 @@ This section summarizes recent new features and capabilities of data engineering
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|September 2023|**Microsoft Fabric Data Factory Webinar Series – September 2023**|[Join our Data Factory webinar series](https://blog.fabric.microsoft.com/blog/microsoft-fabric-data-factory-webinar-series-september-2023?ft=All) where we will show you how to use Data Factory to transform and orchestrate your data in various scenarios.|
 |August 2023|**Metadata Driven Pipelines for Microsoft Fabric – Part 2, Data Warehouse Style**|An overview of a Metadata driven pipeline in [Microsoft Fabric that follows the medallion architecture with Data Warehouse serving as the Gold layer](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/metadata-driven-pipelines-for-microsoft-fabric-part-2-data/ba-p/3906749). |
 |August 2023|**Metadata Driven Pipelines for Microsoft Fabric**|An overview of a [Metadata driven pipeline in Microsoft Fabric](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/metadata-driven-pipelines-for-microsoft-fabric/ba-p/3891651) that follows the medallion architecture (Bronze, Silver, Gold). |
 |August 2023|**Using Data pipelines for copying data to/from KQL Databases and crafting workflows with the Lookup activity**|[Real-Time Analytics' KQL DB is supported as both a destination and a source with data pipelines](https://blog.fabric.microsoft.com/blog/using-data-pipelines-for-copying-data-to-from-kql-databases-and-crafting-workflows-with-the-lookup-activity?ft=All), allowing you to build and manage various extract, transform, and load (ETL) activities, leveraging the power and capabilities of KQL DBs. |
@@ -132,7 +133,7 @@ This section summarizes recent improvements and features for [Data Warehousing i
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
-|September 2023|**Usage reporting**|[Utilization and billing reporting](../data-warehouse/usage-reporting.md) is available for Fabric data warehousing in the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app. For more information, read about [Utilization and billing reporting Fabric data warehousing](https://blog.fabric.microsoft.com/blog/data-warehouse-utilization-reporting-in-fabric-capacity-metrics-app).| 
+|September 2023|**Usage reporting**|[Utilization and billing reporting](../data-warehouse/usage-reporting.md) is available for Fabric data warehousing in the [Microsoft Fabric Capacity Metrics](../enterprise/metrics-app.md) app. For more information, read about [Utilization and billing reporting Fabric data warehousing](https://aka.ms/fabricdwutilization).|
 |August 2023|**SSD Caching enabled**|[Local SSD caching](../data-warehouse/caching.md) stores frequently accessed data on local disks in highly optimized format, significantly reducing I/O latency. This benefits you immediately, with no action required or configuration necessary. |
 |July 2023|**Sharing** | Any Admin or Member within a workspace can [share a Warehouse with another recipient](https://blog.fabric.microsoft.com/blog/data-warehouse-sharing?ft=All:) within your organization. You can also grant these permissions using [the "Manage permissions" experience](../data-warehouse/share-warehouse-manage-permissions.md). |
 |July 2023|**Table clone**|A [zero-copy clone](https://blog.fabric.microsoft.com/blog/table-clone-in-warehouse-within-microsoft-fabric) creates a replica of the table by copying the metadata, while referencing the same data files in One Lake. This avoids the need to store multiple copies of data, thereby saving on storage costs. For more information, see [Clone table](../data-warehouse/clone-table.md).|
@@ -150,7 +151,8 @@ This section summarizes recent improvements and features for [Data Warehousing i
 This section summarizes recent improvements and features for [real-time analytics in Microsoft Fabric](../real-time-analytics/overview.md).
 
 |**Month** | **Feature** |  **Learn more**|
-|:-- |:-- | :-- | 
+|:-- |:-- | :-- |
+|September 2023|**Real-Time Data Sharing in Microsoft Fabric**|A [database shortcut in Real-Time Analytics](https://blog.fabric.microsoft.com/en-us/blog/introducing-real-time-data-sharing-in-microsoft-fabric?ft=All) is an embedded reference within a KQL database to a source database in Azure Data Explorer (ADX) allowing in-place data sharing. The behaviour exhibited by the database shortcut is similar to that of [an Azure Data Explorer follower database](/azure/data-explorer/follower).|
 |August 2023|**Provisioning optimization** | The KQL Database provisioning process has been optimized. Now you can provision a KQL Database within a few seconds.|
 |August 2023|**KQL Database support for inline Python** | Fabric KQL Database supports running Python code embedded in Kusto Query Language (KQL) using the [python() plugin](/azure/data-explorer/kusto/query/pythonplugin?pivots=fabric). The plugin is disabled by default. Before you start, [enable the Python plugin in your KQL database](../real-time-analytics/python-plugin.md). |
 |July 2023|**Microsoft Fabric event streams: Generating Real-time Insights with Python, KQL, and Power BI**| [Microsoft Fabric event streams](https://blog.fabric.microsoft.com/blog/microsoft-fabric-event-streams-generating-real-time-insights-with-python-kql-and-powerbi?ft=All:) are [a high-throughput, low-latency data ingestion and transformation service](../real-time-analytics/event-streams/overview.md). |
@@ -231,6 +233,7 @@ This section summarizes new guidance and sample project resources for Microsoft 
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|September 2023|**Fabric Readiness repository**|The [Fabric Readiness repository](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-readiness-repo-empowering-communities-with-microsoft-fabric-resources?ft=All) is a treasure trove of resources for anyone interested in exploring the exciting world of Microsoft Fabric.|
 |July 2023|**Connecting to OneLake**|How do I connect to OneLake? This blog covers [how to connect and interact with OneLake, including how OneLake achieves its compatibility with any tool used over ADLS Gen2!](https://blog.fabric.microsoft.com/blog/connecting-to-onelake?ft=All:) |
 |June 2023|**Using Azure Databricks with Microsoft Fabric and OneLake**|[How does Azure Databricks work with Microsoft Fabric?](https://blog.fabric.microsoft.com/blog/using-azure-databricks-with-microsoft-fabric-and-onelake) This blog post answers that question and more details on how the two systems can work together.|
 
