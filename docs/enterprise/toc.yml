@@ -23,5 +23,7 @@ items:
       href: metrics-app-install.md
     - name: Understand the metrics app overview page
       href: metrics-app-overview-page.md
+    - name: Understand the metrics app OneLake page
+      href: metrics-app-onelake-page.md
     - name: Understand the metrics app timepoint page
       href: metrics-app-timepoint-page.md                  

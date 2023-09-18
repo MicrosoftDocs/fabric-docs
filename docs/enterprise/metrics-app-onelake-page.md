@@ -1,5 +1,5 @@
 ---
-title: Understand the metrics app onelake page
+title: Understand the metrics app OneLake page
 description: Learn how to read the Microsoft Fabric Capacity metrics app's OneLake page.
 author: KesemSharabi
 ms.author: kesharab

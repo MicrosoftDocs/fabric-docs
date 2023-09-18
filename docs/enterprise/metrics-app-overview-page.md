@@ -79,7 +79,7 @@ The CU over time chart displays the following elements:
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed below. The colors in the table represent your *performance delta*.
 
-User can hover over any value in the visual to see operation level data. user can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
+User can hover over any value in the visual to see operation level data. User can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
 
 * **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
 
@@ -118,6 +118,6 @@ User can hover over any value in the visual to see operation level data. user ca
 
 ## Next steps
 
-[Understand the metrics app onelake page](metrics-app-onelake-page.md)
+[Understand the metrics app OneLake page](metrics-app-onelake-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
