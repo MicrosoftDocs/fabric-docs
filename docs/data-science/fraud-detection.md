@@ -403,7 +403,7 @@ In this section, you evaluate the two trained models:
 
 #### Evaluate model performance by using a confusion matrix
 
-A *confusion matrix* displays the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) that a model produces when it's scored with test data. For binary classification, you get a `2x2` confusion matrix. For multiple-class classification, you get an `nxn` confusion matrix, where `n` is the number of classes.
+A *confusion matrix* displays the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) that a model produces when it's scored with test data. For binary classification, you get a `2x2` confusion matrix. For multiclass classification, you get an `nxn` confusion matrix, where `n` is the number of classes.
 
 1. Use a confusion matrix to summarize the performances of the trained machine learning models on the test data:
 
