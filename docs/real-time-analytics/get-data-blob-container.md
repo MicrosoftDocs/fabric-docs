@@ -55,8 +55,8 @@ To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
 [!INCLUDE [schema-tab](../includes/real-time-analytics/schema-tab.md)]
 
-## Next steps
+## Related content
 
-* To create an empty table, see [Create an empty table](create-empty-table.md)
-* To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* [Manage data](data-management.md)
+* [Enable Python plugin](python-plugin.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
