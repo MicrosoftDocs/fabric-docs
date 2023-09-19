@@ -1,11 +1,11 @@
 ---
 title: Manage Premium Per User
-description: Learn how to manage and understand how to use Power BI Premium Per User settings in the Admin portal.
+description: Learn how to manage and understand how to use Power BI Premium Per User settings in the admin portal.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/15/2023

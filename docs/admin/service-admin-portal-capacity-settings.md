@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/15/2023
@@ -35,7 +35,7 @@ The capacity management process is described in [Configure and manage capacities
 
 ## Power BI Embedded
 
-The **Power BI Embedded** tab enables you to view your Power BI Embedded (A SKU) capacities that you've purchased for your customer. Because you can only purchase A SKUs from Azure, you [manage embedded capacities in Azure](/developer/embedded/azure-pbie-create-capacity) from **the Azure portal**.
+The **Power BI Embedded** tab enables you to view your Power BI Embedded (A SKU) capacities that you've purchased for your customer. Because you can only purchase A SKUs from Azure, you [manage embedded capacities in Azure](/power-bi/developer/embedded/azure-pbie-create-capacity) from **the Azure portal**.
 
 For more information about Power BI Embedded, see:
 

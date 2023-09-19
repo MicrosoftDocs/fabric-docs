@@ -5,16 +5,16 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
-ms.custom: admin-portal, fabric
+ms.subservice: powerbi-admin, fabric
+ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/18/2023
 LocalizationGroup: Administration
 ---
 
-# Manage workspaces
+# View workspaces
 
-Go to the **Admin portal** to access this feature. For information about how to get to and use the Fabric Admin portal, see [What is the admin portal?](admin-center.md).
+Go to the Fabric admin portal to access this feature. For information about how to get to and use the admin portal, see [What is the admin portal?](admin-center.md).
 
 As a Fabric administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab. On this tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -82,13 +82,13 @@ These features are described in the following sections.
 
 To gain access to a particular My workspace
 
-1. In the Fabric Admin portal, open the Workspaces page and find the personal workspace you want to get access to.
+1. In the Fabric admin portal, open the Workspaces page and find the personal workspace you want to get access to.
 1. Select the workspace and then choose **Get Access** from the ribbon, or select **More options (...)** and choose **Get Access**.
 
 > [!NOTE]
 > Once access is obtained, the ribbon and the **More options (...)** menu show **Remove Access** for the same My workspace. If you don't remove access by selecting one of these options, access is automatically revoked for the admin after 24-hours. The My workspace owner's access remains intact.
 
-Once you have access, the My workspace shows up in the list of workspaces accessible from the navigation pane. The icon ![Screenshot of personal workspace icon in the list of workspaces table explanation.](media/service-admin-portal-workspaces/personal-workspace-icon.png) indicates that it's a My workspace.
+Once you have access, the My workspace shows up in the list of workspaces accessible from the navigation pane. The icon ![Screenshot of personal workspace icon.](media/service-admin-portal-workspaces/personal-workspace-icon.png) indicates that it's a My workspace.
 
 Once you go inside the My workspace, you can perform any actions as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
 
@@ -102,13 +102,13 @@ Fabric admins can designate a default capacity for My workspaces. However, even 
 
 ### Restore a deleted My workspace as an app workspace
 
-When users are deleted from the company's Active Directory, their My workspaces show up as *Deleted* in the State column on the Workspaces page in the Admin portal. Fabric admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
+When users are deleted from the company's Active Directory, their My workspaces show up as *Deleted* in the State column on the Workspaces page in the admin portal. Fabric admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
 
-During this restoration process, the Fabric admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it shows up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
+During this restoration process, the Fabric admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it shows up as *Workspace* in the Type column on the Workspaces page in the admin portal.
 
 To restore a deleted My workspace as an app workspace:
 
-1. In the Fabric Admin portal, open the Workspaces page and find the deleted personal workspace you want to restore.
+1. In the Fabric admin portal, open the Workspaces page and find the deleted personal workspace you want to restore.
 1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
 1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
 1. When done, select **Restore**.

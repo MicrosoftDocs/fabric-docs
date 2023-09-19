@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/15/2023
@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Manage embed codes
 
-As an administrator, you can view the embed codes that are generated for sharing reports publicly, using the [Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) feature. You can also disable or delete embed codes.
+As a Fabric administrator, you can view the embed codes that are generated for sharing reports publicly, using the [Publish to web from Power BI](/power-bi/collaborate-share/service-publish-to-web) feature. You can also disable or delete embed codes.
 
 :::image type="content" source="media/service-admin-portal-embed-codes/power-bi-settings-embed-codes.png" alt-text="Screenshot that shows the embed codes within the Fabric admin portal.":::
 
