@@ -36,7 +36,7 @@ To learn how to use example SQL queries, see [Example SQL queries](tutorial-4-ex
 
     :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of example queries in Real-Time Analytics."  lightbox="media/query-table/run-query.png":::
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

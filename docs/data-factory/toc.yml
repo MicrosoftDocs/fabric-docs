@@ -129,6 +129,10 @@
         items:
         - name: Configure in Data pipeline
           href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
@@ -356,7 +360,7 @@
         href: data-factory-known-issues.md
       - name: Lineage view edit button
         href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
+      - name: Staging items
+        href: known-issue-staging-item.md
       - name: Gateway refreshes longer than an hour fail
         href: known-issue-gateway-refreshes.md

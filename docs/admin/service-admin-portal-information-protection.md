@@ -1,6 +1,6 @@
 ---
 title: Information protection tenant settings
-description: Learn how to configure Power BI information protection tenant settings as the Power BI tenant admin.
+description: Learn how to configure information protection tenant settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 04/04/2023
+ms.date: 09/05/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,33 +18,33 @@ Information protection tenant settings help you to protect sensitive information
 
 ## Allow users to apply sensitivity labels for content
 
-This setting must be enabled so that you can add sensitivity labels from Microsoft Purview Information Protection in Power BI.
+With this setting enabled, specified users can apply sensitivity labels from Microsoft Purview Information Protection.
 
-To enable this setting:
+All [prerequisite steps](/power-bi/enterprise/service-security-enable-data-sensitivity-labels#licensing-and-requirements) must be completed before enabling this setting.
 
-1. Go to the Power BI Admin portal and select **Tenant settings**.
-1. In the tenant settings, scroll down to the **Information protection** section.
-1. Find the setting called **Allow users to apply sensitivity labels for content**. By default, this setting is off, which means sensitivity labels can't be used in Power BI. To allow users to apply sensitivity labels, turn the setting on.
+Sensitivity label settings, such as encryption and content marking for files and emails, aren't applied to content. Sensitivity labels and protection are only applied to files exported to Excel, PowerPoint, or PDF files that are controlled by **Export to Excel** and **Export reports as PowerPoint presentation or PDF documents** settings. All other export and sharing options don't support the application of sensitivity labels and protection.
+
+To learn more, see [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview).
+
+To view sensitivity label settings for your organization, visit the [Microsoft Purview compliance portal](https://protection.officeppe.com/sensitivity?flight=EnableMIPLabels).
 
 ## Apply sensitivity labels from data sources to their data in Power BI
 
-When this setting is enabled, Power BI datasets that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.  For detail about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
+When this setting is enabled, Power BI datasets that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI.
 
-To enable sensitivity label inheritance from data sources go to the [Power BI tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings), and enable the toggle under **Information protection > Apply sensitivity labels from data sources to their data in Power BI (preview)**:
+To learn more about sensitivity label inheritance from data sources, see [Sensitivity label inheritance from data sources (preview)](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources).
 
 ## Automatically apply sensitivity labels to downstream content
 
-To enable this setting:
+When a sensitivity label is applied to a dataset or report in the Power BI service, it's possible to have the label trickle down and be applied to content that's built from that dataset or report.
 
-1. If you've followed the steps in the previous sections you should already be in the Power BI tenant settings. Scroll down to the **Information protection** section.
-1. Find the setting called **Automatically apply sensitivity labels to downstream content**. By default, this setting is off, which means sensitivity labels won't be automatically applied to downstream content in Power BI. To allow automatic application of sensitivity labels to downstream content, turn the setting on.
+To learn more, see [Sensitivity label downstream inheritance](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance).
 
 ## Allow workspace admins to override automatically applied sensitivity labels
 
-To enable this setting:
+Fabric admins can enable the **Allow workspace admins to override automatically applied sensitivity labels** tenant setting. This makes it possible for workspace admins to override automatically applied sensitivity labels without regard to label change enforcement rules.
 
-1. If you've followed the steps in the previous sections you should already be in the Power BI tenant settings. Scroll down to the **Information protection** section.
-1. Find the setting called **Allow workspace admins to override automatically applied sensitivity labels**. By default, this setting is off, which means workspace admins won't be able to override sensitivity labels set by users. To allow workspace admins to override sensitivity labels assigned to content in Power BI, turn the setting on.
+To learn more, see [Relaxations to accommodate automatic labeling scenarios](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement#relaxations-to-accommodate-automatic-labeling-scenarios).
 
 ## Restrict content with protected labels from being shared via link with everyone in your organization
 
@@ -53,11 +53,11 @@ When this setting is enabled, users can't generate a sharing link for **People i
 > [!NOTE]
 > This setting is disabled if you haven't enabled both the **Allow users to apply sensitivity labels for Power BI content** setting and the **Allow shareable links to grant access to everyone in your organization** setting.
 
-Sensitivity labels with protection settings include encryption or content markings. For example, your organization may have a "Highly Confidential" label that includes encryption and applies a "Highly Confidential" watermark to content with this label. Therefore, when this tenant setting is enabled and a report has a sensitivity label with protection settings, then users can't create sharing links for **People in your organization**: 
+Sensitivity labels with protection settings include encryption or content markings. For example, your organization might have a *Highly Confidential* label that includes encryption and applies a *Highly Confidential* watermark to content with this label. Therefore, when this tenant setting is enabled and a report has a sensitivity label with protection settings, then users can't create sharing links for **People in your organization**:
 
-![Screenshot of disabled sharing link to People in your organization.](media/tenant-settings/admin-organization-doesnt-allow-option.png)
+:::image type="content" source="media/tenant-settings/admin-organization-doesnt-allow-option.png" alt-text="Screenshot of disabled sharing link to people in your organization.":::
 
-To learn more about protection settings for sensitivity labels, check out the Microsoft 365 article [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
+To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
 ## Next steps
 

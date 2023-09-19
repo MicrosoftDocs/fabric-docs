@@ -36,7 +36,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 ## Licensing
 
-Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items artifacts located in non-Premium workspaces.
+Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
 ## Next steps
 
