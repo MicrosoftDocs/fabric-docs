@@ -129,6 +129,10 @@
         items:
         - name: Configure in Data pipeline
           href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
