@@ -46,25 +46,22 @@ When **Visual type** is set to **Table**, the following properties are available
 
 When **Visual type** is set to **Bar chart**, the following properties are available for customization:
 
-|Section|Property|Description|
-|--|--|--|
-|General|Visual format|
+| Section     | Property                | Description                                                             |
+|-------------|-------------------------|-------------------------------------------------------------------------|
+| **General** | **Visual format**       | Determines the format for the chart: standard, stacked, or stacked 100. |
+| **Data**    | **Y columns**           | The columns that provide data for the vertical axis.                    |
+|             | **X columns**           | The columns that provide data for the horizontal axis.                  |
+|             | **Series columns**      | The columns used to categorize data into different series.              |
+| **Legend**  | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.        |
+| **Y Axis**  | **Label**               | Sets a custom label for the vertical axis.                              |
+|             | **Maximum value**       | Defines the maximum value on the vertical axis.                         |
+|             | **Minimum value**       | Defines the minimum value on the vertical axis.                         |
+|             | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.        |
+|             | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.   |
+| **X Axis**  | **Label**               | Sets a custom label for the horizontal axis.                            |
+|             | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.      |
+|             | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines.  |
 
-|Data|Y columns|
-||X columns|
-||Series columns|
-
-|Legend|
-
-|Y Axis|Label|
-||Maximum value|
-||Minimum value|
-||Y axis scale|
-||Reference lines|
-
-|X Axis|Label|
-||X axis scale|
-||Vertical line value|
 
 ## Column chart
 
