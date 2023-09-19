@@ -16,7 +16,7 @@ ms.date: 07/16/2023
 
       |Field | Description| Value|
       |-----|-----| -----|
-      | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com` |
+      | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionCode*`.amazonaws.com` |
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection* |
       |**Connection name** | The Amazon S3 connection name.| A name for your connection.|
       |**Authentication kind**| The *Identity and Access Management (IAM)* policy. The policy must have read and list permissions. For more information, see [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html).| Dependent on the bucket policy.|
