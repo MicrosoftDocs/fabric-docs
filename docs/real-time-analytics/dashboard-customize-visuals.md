@@ -3,7 +3,7 @@ title: Customize Real-Time Analytics dashboard visuals
 description: Easily customize your Real-Time Analytics dashboard visuals
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.date: 09/19/2023
 ---
 
 # Customize Real-Time Analytics dashboard visuals
@@ -36,11 +36,11 @@ To make changes in your dashboard:
 
 When **Visual type** is set to **Table**, the following properties are available for customization:
 
-|Property|Description|
-|--|--|
-|URL column|
-|Apply link on column|
-|Conditional formatting|
+| Section | Property | Description |
+|--|--|--|
+| **URLs** | **URL column** | The column that contains a URL. |
+|  | **Apply link on column** | When selected, this column directs to the URL from the previous property. |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. To learn more, see [Conditional formatting](). |
 
 ## Bar chart
 
