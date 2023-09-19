@@ -125,6 +125,14 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: JSON
+        items:
+        - name: Configure in Data pipeline
+          href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
@@ -305,6 +313,8 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+    - name: Guide to dataflow for mapping dataflow users
+      href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
     - name: What's new in Data Factory
@@ -315,6 +325,25 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Connectors
+      items:
+      - name: Azure Data Explorer
+        href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Database for PostgreSQL
+        href: connector-troubleshoot-azure-database-for-postgresql.md        
+      - name: Azure Table Storage
+        href: connector-troubleshoot-azure-table-storage.md
+      - name: Format
+        items:
+        - name: Delimited text
+          href: connector-troubleshoot-delimited-text.md
+        - name: XML
+          href: connector-troubleshoot-xml.md
+      - name: Rest
+        href: connector-troubleshoot-rest.md        
+      - name: Sharepoint Online list
+        href: connector-troubleshoot-sharepoint-online-list.md
+
     - name: Data Factory limitations
       items:
       - name: Data Factory limitations overview
@@ -331,5 +360,7 @@
         href: data-factory-known-issues.md
       - name: Lineage view edit button
         href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
+      - name: Staging items
+        href: known-issue-staging-item.md
+      - name: Gateway refreshes longer than an hour fail
+        href: known-issue-gateway-refreshes.md

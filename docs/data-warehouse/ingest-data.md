@@ -78,6 +78,9 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 - Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
 - If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
+> [!NOTE]
+> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. [Unlike in Fabric Data Engineering](../data-engineering/delta-optimization-and-v-order.md), V-Order is a global setting in Synapse Data Warehouse that cannot be disabled.
+
 ## Next steps
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)

@@ -6,6 +6,7 @@ ms.author: ajagadish
 ms.reviewer: wiassaf
 ms.date: 06/13/2023
 ms.topic: tutorial
+ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Tutorial: Clone table using T-SQL in Microsoft Fabric
 

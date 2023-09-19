@@ -47,6 +47,7 @@ You can query data from your KQL database in the query editor of Azure Data Expl
 |  | Power BI connectivity | Power BI report Quick create allows for online creation of reports without the desktop application.  Power BI connector | Power BI connector |
 | **Pricing** | Business model | Included in the Power BI Premium workspace consumption model. Billing per use. | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, with passthrough of infrastructure (Compute, Storage, and Networking) expenses. Leverages Azure reserved instances plans when in place. |
 
-## Next steps
+## Next step
 
-* Get started with [Real-Time Analytics](tutorial-introduction.md)
+> [!div class="nextstepaction"]
+> [Get started with Real-Time Analytics](tutorial-introduction.md)

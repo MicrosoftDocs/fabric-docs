@@ -15,16 +15,18 @@ In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!IN
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Install custom libraries
+## Install Python libraries
 
-Some of the end-to-end AI samples require use of custom libraries when developing machine learning models or doing ad-hoc data analysis. You can quickly install these libraries for your Apache Spark session in one of two ways:
+Some of the end-to-end AI samples require use of additional libraries when developing machine learning models or doing ad-hoc data analysis. You can quickly install these libraries for your Apache Spark session in one of two ways:
 
-- Use the in-line installation capabilities (such as `pip` or `conda`) in your notebook
+- Use the in-line installation capabilities (such as `%pip` or `%conda`) in your notebook
 - Install libraries directly in your [current workspace](../get-started/workspaces.md#current-workspace)
 
 #### Install with in-line installation capabilities
 
-You can use the in-line installation capabilities (e.g., `%pip` or `%conda`) within your notebook to install new libraries. Use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
+You can use the in-line installation capabilities (for example, `%pip` or `%conda`) within your notebook to install new libraries. This installation option would install the libraries only in the current notebook and not in the workspace.
+
+To install a library, use the following code, replacing `<library name>` with the name of your desired library, such as `imblearn`, `wordcloud`, etc.
 
 ```python
 # Use pip to install libraries
@@ -34,25 +36,22 @@ You can use the in-line installation capabilities (e.g., `%pip` or `%conda`) wit
 %conda install <library name>
 ```
 
+For more information on in-line installation capabilities, see [In-line installation](python-guide/python-library-management.md#in-line-installation).
+
 #### Install directly in your workspace
 
-Alternatively, you can install libraries in your workspace.
+Alternatively, you can install libraries in your workspace so that they're available for use in any notebooks that are in the workspace.
 
-1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace. 
-1. Select **Workspace settings** for your current workspace.
-1. Select **Data Engineering/Science** to open the dropdown.
-1. Select **Library management**.
+   > [!IMPORTANT]
+   > Only your Workspace admin has access to update the Workspace-level settings.
 
-:::image type="content" source="media/use-ai-samples/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="media/use-ai-samples/library-management-page.png":::
+For more information on installing libraries in your workspace, see [Install workspace libraries](python-guide/python-library-management.md#install-workspace-libraries).
 
-You can then select how to install the required libraries. For example, **Add from PyPI** or **Add from .yml**.
+## Bank customer churn
 
-To install from PyPI:
-1. Select **+ Add from PyPI**.
-1. Start typing the desired library name and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
-1. When you're done, select **Apply** to install all selected libraries into the workspace.
+Build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-:::image type="content" source="media/use-ai-samples/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="media/use-ai-samples/install-library-into-workspace.png":::
+Follow along in the [Customer churn prediction](customer-churn.md) tutorial.
 
 ## Recommender
 
@@ -88,6 +87,12 @@ In this sample, we'll estimate the causal impact of certain treatments on an ind
 - Evaluation module: evaluates the effect of the uplift model on test data.
 
 Follow along in the [Healthcare causal impact of treatments](uplift-modeling.md) tutorial.
+
+## Predictive maintenance
+
+In this tutorial, you proactively predict mechanical failures. This is accomplished by training multiple models on historical data such as temperature and rotational speed, then determining which model is the best fit for predicting future failures.
+
+Follow along in the [Predictive maintenance](predictive-maintenance.md) tutorial.
 
 
 ## Next steps

@@ -1,6 +1,6 @@
 ---
 title: Integration admin settings
-description: Learn how to configure Power BI integration admin settings.
+description: Learn how to configure integration admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 03/08/2023
+ms.date: 09/07/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,29 +18,33 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Allow XMLA endpoints and Analyze in Excel with on-premises datasets
 
-When enabled, users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to XMLA endpoints. Learn more about [analyzing in Excel](/power-bi/collaborate-share/service-analyze-in-excel).
+When enabled, users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools).
 
-:::image type="content" source="media/tenant-settings/admin-integration-allow-xmla-endpoints-setting.png" alt-text="Screenshot of the allow XMLA endpoints and analyze in Excel with on-premises datasets admin setting.":::
+To learn more, see [Create Excel workbooks with refreshable Power BI data](/power-bi/collaborate-share/service-analyze-in-excel).
 
 ## Dataset Execute Queries REST API
 
 When enabled, users in the organization can query datasets by using Data Analysis Expressions (DAX) through Power BI REST APIs.
 
+To learn more, see [Datasets - Execute Queries](/rest/api/power-bi/datasets/execute-queries).
+
 ## Use ArcGIS Maps for Power BI
 
-When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri. Learn more about [ArcGIS maps](/power-bi/visuals/power-bi-visualizations-arcgis).
+When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri. 
 
-:::image type="content" source="media/tenant-settings/admin-integration-use-arcgis-maps-setting.png" alt-text="Screenshot of the use arc gis maps for Power BI admin setting.":::
+To learn more, see [Create ArcGIS maps in Power BI](/power-bi/visuals/power-bi-visualizations-arcgis).
 
 ## Use global search for Power BI
 
-When enabled, users in the organization can use external search features that rely on Azure Search. See [Navigation for Power BI business users: global search](/power-bi/consumer/end-user-search-sort) for more information.
+When enabled, users in the organization can use external search features that rely on Azure Search.
 
-:::image type="content" source="media/tenant-settings/admin-integration-use-global-search-setting.png" alt-text="Screenshot of the use global search for Power BI admin setting.":::
+To learn more, see [Navigation for Power BI business users: global search](/power-bi/consumer/end-user-search-sort).
 
 ## Use Azure Maps Visual
 
-When enabled, users in the organization can use the Azure Maps visual for Power BI. See [Get started with Azure Maps Power BI visual](/azure/azure-maps/power-bi-visual-get-started) for more information.
+When enabled, users in the organization can use the Azure Maps visual for Power BI.
+
+To learn more, see [Get started with Azure Maps Power BI visual](/azure/azure-maps/power-bi-visual-get-started).
 
 :::image type="content" source="media/tenant-settings/admin-integration-use-azure-maps-visual-setting.png" alt-text="Screenshot of the Use Azure Maps visual admin setting.":::
 
@@ -50,13 +54,14 @@ When enabled, users in the organization can use map and filled map visualization
 
 :::image type="content" source="media/tenant-settings/admin-integration-map-filled-map-visuals-setting.png" alt-text="Screenshot of the map and filled map visuals admin setting.":::
 
+>[!Note]
+>In a future release, Power BI plans to deprecate older map visuals and migrate existing reports to Azure Maps. Learn about [converting to Azure Maps](/azure/azure-maps/power-bi-visual-conversion).
+
 ## Integration with SharePoint and Microsoft Lists
 
-Users in the organization can create Power BI reports directly from SharePoint and Microsoft Lists. Then they can build Power BI reports on the data in those lists and publish them back to the lists, to be visible to others who can access the list. This setting is in **Tenant settings** > **Integration settings**.
+Users in the organization can create Fabric reports directly from SharePoint and Microsoft Lists. Then they can build Fabric reports on the data in those lists and publish them back to the lists, to be visible to others who can access the list.
 
-:::image type="content" source="media/tenant-settings/admin-integration-sharepoint-lists.png" alt-text="Screenshot of Allow integration with SharePoint and Microsoft Lists.":::
-
-This feature is on by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users will still see **Power BI** > **Visualize the list**, and any existing Power BI reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin has disabled the feature.
+This setting is enabled by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users can still see **Power BI** > **Visualize the list**, and any existing reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin has disabled the feature.
 
 Learn more about [creating reports from SharePoint and Microsoft Lists](/power-bi/create-reports/service-quick-create-sharepoint-list).
 
@@ -64,63 +69,79 @@ Learn more about [creating reports from SharePoint and Microsoft Lists](/power-b
 
 Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.
 
+To learn more, see [Azure AD-based Single Sign-On for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
+
 ## Snowflake SSO
 
-For dataset owners to be able to enable single sign-on for DirectQuery connections to Snowflake in dataset settings, a Power BI admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization. See [Connect to Snowflake in the Power BI Service](/power-bi/connect-data/service-connect-snowflake) for more detail.
+For dataset owners to be able to enable single sign-on for DirectQuery connections to Snowflake in dataset settings, a Fabric admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization.
 
-![Screenshot of Snowflake (SSO)tenant switch.](media/tenant-settings/power-bi-admin-portal-snowflake-sso-setting.png)
+To learn more, see [Connect to Snowflake in the Power BI Service](/power-bi/connect-data/service-connect-snowflake).
 
 ## Redshift SSO
 
 Enable SSO capability for Redshift. By enabling, user access token information, including name and email, will be sent to Redshift for authentication.
 
+To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
+
 ## Google BigQuery SSO
 
 Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.
+
+To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-bigquery-aad).
 
 ## Oracle SSO
 
 Enable SSO capability for Oracle. By enabling, user access token information, including name and email, will be sent to Oracle for authentication.
 
+To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
+
 ## Azure AD Single Sign-On (SSO) for Gateway
 
-This setting enables Azure Active Directory (Azure AD) single sign-on (SSO) through on-premises data gateways to cloud data sources that rely on Azure AD-based authentication. It gives seamless Azure AD SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
+This setting enables Azure Active Directory (Azure AD) SSO through on-premises data gateways to cloud data sources that rely on Azure AD-based authentication. It gives seamless Azure AD SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
 
 This feature is important for users who work with reports that require SSO connectivity in DirectQuery mode to data sources deployed in an Azure virtual network (Azure VNet). When you configure SSO for an applicable data source, queries execute under the Azure AD identity of the user that interacts with the Power BI report.
 
-An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Azure AD SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft). 
+An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Azure AD SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft).
 
-Because of this possible threat, the Azure AD single sign-on feature is disabled by default for on-premises data gateways. As a Power BI admin, you must enable the **Azure AD Single Sign-On (SSO) for Gateway** tenant setting (shown below) in the Power BI admin portal before data sources can be enabled for Azure AD SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
+Because of this possible threat, the Azure AD SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Azure AD Single Sign-On (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Azure AD SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
 
-![Screenshot of Azure AD Single Sign-On (SSO) for Gateway tenant switch.](media/tenant-settings/power-bi-admin-portal-azure-ad-sso-for-gateway-setting.png)
+To learn more, see [Azure Active Directory SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 
 ## Power Platform Solutions Integration (Preview)
 
-This setting enables the Power BI/Power Platform Solutions integration from the Power BI side (admin settings also have to be turned on in Power Platform). When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and dataset that are being to create the component. For more detail, see [Power BI content management in Power Apps solutions](/power-apps/maker/model-driven-apps/power-bi-content-management-power-apps-solutions) and [About Power BI in Power Apps Solutions](/power-bi/collaborate-share/service-power-bi-powerapps-integration-about).
+This setting enables the Power BI/Power Platform Solutions integration from the Power BI side. Admin settings also have to be turned on in Power Platform.
 
-This setting is on by default. To change the setting, go to the Power BI Admin portal, select **Tenant settings > Integration settings > Power Platform Solutions Integration (Preview)**, and set the toggle as desired.
+When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and dataset that are being to create the component. 
 
-## Users can view Power BI items saved in OneDrive and SharePoint (Preview)
+To learn more, see [Power BI content management in Power Apps solutions](/power-apps/maker/model-driven-apps/power-bi-content-management-power-apps-solutions) and [About Power BI in Power Apps Solutions](/power-bi/collaborate-share/service-power-bi-powerapps-integration-about).
 
-This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization. 
+## Users can view Power BI files saved in OneDrive and SharePoint (Preview)
+
+This setting will be removed from the admin portal the first week of October, 2023. The state of the setting directly below this one, **User can view Power BI files saved in OneDrive and SharePoint (Preview) - UPDATE** will then go into effect.
+
+This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization.
+
+:::image type="content" source="media/service-admin-portal-integration/admin-integration-viewer.png" alt-text="Screenshot of admin setting called: Users can view Power BI items saved in OneDrive and SharePoint.":::
 
 Learn more about [viewing Power BI files saved in OneDrive and SharePoint](/power-bi/collaborate-share/service-sharepoint-viewer).
 
-:::image type="content" source="media/tenant-settings/admin-integration-viewer.png" alt-text="Screenshot of admin setting called: Users can view Power BI items saved in OneDrive and SharePoint.":::
+## Users can view Power BI files saved in OneDrive and SharePoint (Preview) - UPDATE
 
-This setting is **off** by default. To change the setting, go to the Power BI Admin portal, select **Tenant settings > Integration settings > Users can view Power BI items saved in OneDrive and SharePoint (Preview)**, and set the toggle as desired.
+The state of this setting is not currently in effect in your tenant. If you don't want this setting on by default in your tenant, you need to disable it *before September 29th, 2023*. During the first week of October, this setting will take effect and the setting directly above this one, **Users can view Power BI files saved in OneDrive and SharePoint (Preview)** will be removed from the admin portal.
+
+This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization.
+
+:::image type="content" source="media/service-admin-portal-integration/admin-integration-viewer-update.png" alt-text="Screenshot of admin setting called Users can view Power BI files saved in OneDrive and SharePoint (Preview).":::
+
+Learn more about [viewing Power BI files saved in OneDrive and SharePoint](/power-bi/collaborate-share/service-sharepoint-viewer).
 
 ## Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop
 
-Users can share links to Power BI Desktop files (.pbix) saved to OneDrive and SharePoint through Power BI Desktop. Sharing uses standard OneDrive and SharePoint sharing functionality. When enabled, this setting applies to all users in your organization. 
+Users can share links to Power BI Desktop files (.pbix) saved to OneDrive and SharePoint through Power BI Desktop. Sharing uses standard OneDrive and SharePoint sharing functionality. When enabled, this setting applies to all users in your organization.
+
+During public preview, if a user has enabled share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
 
 Learn more about [sharing links through Power BI Desktop](/power-bi/create-reports/desktop-sharepoint-save-share).
-
-:::image type="content" source="media/tenant-settings/admin-integration-desktop-sharing.png" alt-text="Screenshot of admin setting called: Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop.":::
-
-During public preview, if a user has enabled share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button will still appear in Power BI Desktop, but the user will be notified that the capability is disabled when they attempt to share. 
-
-This setting is **on** by default. To change the setting, go to the Power BI Admin portal, select **Tenant settings > Integration settings > Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop**.
 
 ## Next steps
 

@@ -17,8 +17,8 @@ This article explains basic Git concepts and the process of integrating Git with
 
 ## Permissions
 
-- In order to use git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
-- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Enable git actions on workspaces residing in other geographical locations](../../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+- In order to use Git integration, [it has to be enabled](../../admin/git-integration-admin-settings.md) by your organization's administrator.
+- If the workspace and repo are in two different regions, cross-geo export must be enabled by the tenant admin. For more information, see [Users can export items to Git repositories in other geographical locations](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 - The actions you can take on a workspace depend on the [permissions](#azure-devops-permissions) you have in both the workspace and Azure DevOps.
 
 ### Azure DevOps permissions
@@ -53,7 +53,7 @@ When you [connect a workspace to Git](./git-get-started.md#connect-a-workspace-t
 If both the workspace and Git branch have content, you have to decide which direction the sync should go.
 
 - If you commit your workspace to the Git branch, all supported workspace content is exported to Git and overwrites the current Git content.
-- If you update the workspace with the git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
+- If you update the workspace with the Git content, the workspace content is overwritten, and you lose your workspace content. Since a Git branch can always be restored to a previous stage while a workspace can’t, if you choose this option, you're asked to confirm.
 
 :::image type="content" source="./media/git-integration-process/git-sync-direction.png" alt-text="Screenshot of dialog asking which direction to sync if both Git and the workspace have content.":::
 
@@ -152,7 +152,7 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 
 - The size limit for a commit is 125 MB.
 - You can only sync in one direction at a time. You can’t commit and update at the same time.
-- Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#enable-export-of-items-that-have-sensitivity-labels) for help.
+- Sensitivity labels aren't supported and exporting items with sensitivity labels might be disabled. To commit items that have sensitivity labels without the sensitivity label, [ask your administrator](../../admin/git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview) for help.
 - Works with [limited items](./intro-to-git-integration.md#supported-items). If unsupported items are in the folder, they're ignored.
 - Duplicating names isn't allowed – even if Power BI allows it, the update, commit, or undo action fails.
 - B2B isn’t supported.
