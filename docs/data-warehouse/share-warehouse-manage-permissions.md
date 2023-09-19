@@ -7,7 +7,7 @@ ms.reviewer: wiassaf
 ms.date: 07/12/2023
 ms.topic: how-to
 ms.custom: build-2023
-ms.search.form: Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Share your warehouse and manage permissions
 
