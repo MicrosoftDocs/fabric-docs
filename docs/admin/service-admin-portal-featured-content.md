@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/15/2023
@@ -20,7 +20,7 @@ As a Fabric admin, you can monitor this featured content and remove it from the 
 
 ## Monitor and manage featured content
 
-In the [Admin portal](admin-center.md), select **Featured content**.
+In the [admin portal](admin-center.md), select **Featured content**.
 
 ![Screenshot of manage featured content page in the Fabric admin portal.](media/service-admin-portal-featured-content/powerbi-admin-portal-manage-featured-content.png)
 

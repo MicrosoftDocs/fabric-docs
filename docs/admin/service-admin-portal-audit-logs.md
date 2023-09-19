@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/18/2023
@@ -14,11 +14,11 @@ LocalizationGroup: Administration
 
 # View audit logs
 
-Go to the **Admin portal** to access this feature. For information about how to get to and use the Fabric Admin portal, see [What is the admin portal?](admin-center.md)
+Go to the Fabric admin portal to access this feature. For information about how to get to and use the admin portal, see [What is the admin portal?](admin-center.md)
 
 You manage Power BI audit logs in the Microsoft Purview compliance portal. The Audit logs tab provides a link to the Microsoft Purview compliance portal. To learn more, see [Track user activities in Power BI](/power-bi/admin/service-admin-auditing).
 
-To use audit logs, make sure the [Create audit logs for internal activity auditing and compliance](/fabric/admin/service-admin-portal-audit-usage.md#create-audit-logs-for-internal-activity-auditing-and-compliance) setting is enabled.
+To use audit logs, make sure the [Create audit logs for internal activity auditing and compliance](service-admin-portal-audit-usage.md#azure-log-analytics-connections-for-workspace-administrators) setting is enabled.
 
 ## Next steps
 

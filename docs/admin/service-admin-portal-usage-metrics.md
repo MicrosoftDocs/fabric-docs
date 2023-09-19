@@ -5,8 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
-ms.custom: admin-portal, fabric
+ms.subservice: powerbi-admin, fabric
+ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/19/2023
 LocalizationGroup: Administration
@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # View usage metrics
 
-The *usage metrics* page in the Fabric Admin settings allows you to monitor Power BI usage for your organization. It also shows which users and groups in your organization are the most active in Power BI. With this information, you can get real insights into how people are using Power BI across your organization.
+The *usage metrics* page in the Fabric admin settings allows you to monitor Power BI usage for your organization. It also shows which users and groups in your organization are the most active in Power BI. With this information, you can get real insights into how people are using Power BI across your organization.
 
 To learn how to access the Fabric admin portal settings, see [What is the admin portal?](admin-center.md)
 

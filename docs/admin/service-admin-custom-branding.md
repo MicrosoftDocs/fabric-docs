@@ -4,7 +4,7 @@ description: Custom branding lets you change the look and feel of the Power BI s
 author: kfollis
 ms.author: kfollis
 ms.service: powerbi
-ms.subservice: powerbi-admin
+ms.subservice: powerbi-admin, fabric
 ms.topic: how-to 
 ms.date: 09/15/2023
 ms.custom: template-how-to
@@ -18,7 +18,7 @@ Custom branding changes the look of Power BI for your whole organization. Users 
 
 ## Before you begin
 
-- Make sure you're a Fabric Administrator.
+- Make sure you're a Fabric administrator.
 - Prepare your images for upload. You need these files:
   - A logo file that's saved in *.png* format, is 10 KB or smaller, and is at least 200 x 30 pixels. Choosing a PNG file makes sure your logo has a high-resolution appearance on all screens and at all zoom levels. The logo appears on every page.
   - A cover image that's saved in *.jpg* or *.png* format, is 1 MB or smaller, and is at least 1920 x 160 pixels. Get creative with your choice with an image that complements your theme color and feels welcoming. The cover image appears only at the top of Home.

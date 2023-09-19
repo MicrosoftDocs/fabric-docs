@@ -5,8 +5,8 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
-ms.subservice: powerbi-admin
-ms.custom: admin-portal, fabric
+ms.subservice: powerbi-admin, fabric
+ms.custom: admin-portal
 ms.topic: how-to
 ms.date: 09/19/2023
 LocalizationGroup: Administration

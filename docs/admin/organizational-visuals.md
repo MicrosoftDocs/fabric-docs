@@ -14,11 +14,11 @@ ms.date: 09/15/2023
 
 As a Fabric administrator for your organization, you can control the type of Power BI visuals that users can access across the organization and limit the actions users can perform.
 
-To manage Power BI visuals, you must be a Global Administrator in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understanding Power BI administration roles](service-admin-role.md).
+To manage Power BI visuals, you must be a Global Administrator in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
 
 ## Power BI visuals tenant settings
 
-To manage the tenant settings for Power BI visuals from the Admin Portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
+To manage the tenant settings for Power BI visuals from the admin portal, go to **Tenant settings** and scroll down to **Power BI visuals**.
 
 :::image type="content" source="media/organizational-visuals/power-bi-visuals-tenant-settings.png" alt-text="Screenshot of the Power BI visuals tenant settings location.":::
 
@@ -84,7 +84,7 @@ When this setting is enabled, all visuals created with an API earlier than v4.6.
 
 ### Export data to file
 
-When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](/service-admin-portal-export-sharing.md) tenant settings.
+When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings.
 
 >[!NOTE]
 >When this setting is enabled, a custom visual can export to files of the following types:
