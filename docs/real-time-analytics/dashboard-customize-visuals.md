@@ -34,6 +34,8 @@ To make changes in your dashboard:
 
 ## Table
 
+When **Visual type** is set to **Table**, the following properties are available for customization:
+
 |Property|Description|
 |--|--|
 |URL column|
@@ -41,6 +43,8 @@ To make changes in your dashboard:
 |Conditional formatting|
 
 ## Bar chart
+
+When **Visual type** is set to **Bar chart**, the following properties are available for customization:
 
 |Section|Property|Description|
 |--|--|--|
@@ -64,17 +68,25 @@ To make changes in your dashboard:
 
 ## Column chart
 
+When **Visual type** is set to **Column chart**, the following properties are available for customization:
+
 Exact same as bar.
 
 ## Area chart
+
+When **Visual type** is set to **Area chart**, the following properties are available for customization:
 
 Exact same as bar.
 
 ## Line chart
 
+When **Visual type** is set to **Line chart**, the following properties are available for customization:
+
 same as bar minus the general section.
 
 ## Stat
+
+When **Visual type** is set to **Stat**, the following properties are available for customization:
 
 |Section|Property|Description|
 |--|--|--|
@@ -83,6 +95,8 @@ same as bar minus the general section.
 |Conditional formatting|
 
 ## Multi Stat
+
+When **Visual type** is set to **Multi Stat**, the following properties are available for customization:
 
 |Section|Property|Description|
 |--|--|--|
@@ -95,22 +109,86 @@ same as bar minus the general section.
 
 ## Pie chart
 
+When **Visual type** is set to **Pie chart**, the following properties are available for customization:
+
+|Section|Property|Description|
+|--|--|--|
+|General|Visual format|
+|Data|Category column|
+||Numeric column|
+
+|Legend|
+|Label|Text|
+|Tooltip|Text|
+|Display options|Order by|
+||Top N|
+
 ## Scatter chart
+
+When **Visual type** is set to **Scatter chart**, the following properties are available for customization:
+
+Same as bar minus general.
 
 ## Time chart
 
+When **Visual type** is set to **Time chart**, the following properties are available for customization:
+
+Same as bar minus general.
+
 ## Anomaly chart
+
+When **Visual type** is set to **Anomaly chart**, the following properties are available for customization:
+
+Same as bar minus general.
 
 ## Funnel chart
 
+When **Visual type** is set to **Funnel chart**, the following properties are available for customization:
+
+|Section|Property|Description|
+|--|--|--|
+|Data|Category column|
+||Value column|
+
 ## Map
+
+When **Visual type** is set to **Map**, the following properties are available for customization:
+
+|Section|Property|Description|
+|--|--|--|
+|Data|Define location by|
+||Label column|
+|Size|Hide|
+||Size column|
 
 ## Markdown
 
+When **Visual type** is set to **Markdown**, the following properties are available for customization:
+
+|Property|Description|
+|--|--|
+|Column||
+
 ## Heatmap
+
+When **Visual type** is set to **Heatmap**, the following properties are available for customization:
+
+|Section|Property|Description|
+|--|--|--|
+|Data|Y column|
+||X column|
+||Value|
+|X axis|Label|
+|Y axis|Label|
+|Colors|Color palette|
 
 ## Plotly
 
+When **Visual type** is set to **Plotly**, the following properties are available for customization:
+
+|Property|Description|
+|--|--|
+|Column||
 
 ## Conditional formatting
 
