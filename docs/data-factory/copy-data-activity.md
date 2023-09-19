@@ -209,9 +209,9 @@ See the following table for the description of each setting.
 
 ### Configure parameters in a copy activity
 
-Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse as an example to see how to use it.
+Parameters can be used to control the behavior of a pipeline and its activities. You can use **Add dynamic content** to specify parameters for your copy activity properties. Let's take specifying Lakehouse/Data Warehouse/KQL Database as an example to see how to use it.
 
-1. In your source or destination, after selecting **Workspace** as data store type and specify **Lakehouse**/**Data Warehouse** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse**.
+1. In your source or destination, after selecting **Workspace** as data store type and specify **Lakehouse**/**Data Warehouse**/**KQL Database** as workspace data store type, select **Add dynamic content** in the drop-down list of **Lakehouse** or **Data Warehouse** or **KQL Database**.
 1. In the pop-up **Add dynamic content** pane, under **Parameters** tab, select **+**.
 
     :::image type="content" source="./media/copy-data-activity/add-dynamic-content-page.png" alt-text="Screenshot showing the Add dynamic content page.":::
@@ -220,7 +220,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
 
     :::image type="content" source="./media/copy-data-activity/new-parameter.png" alt-text="Screenshot showing createing a new parameter.":::
 
-    Note that the parameter value should be Lakehouse/Data Warehouse object ID. To get your Lakehouse/Data Warehouse object ID, open your Lakehouse/Data Warehouse in your workspace, and the ID is after `/lakehouses/`or `/datawarehouses/` in your URL.
+    Note that the parameter value should be Lakehouse/Data Warehouse/KQL Database object ID. To get your Lakehouse/Data Warehouse/KQL Database object ID, open your Lakehouse/Data Warehouse/KQL Database in your workspace, and the ID is after `/lakehouses/`or `/datawarehouses/` or `/databases/` in your URL.
     
     - **Lakehouse object ID**:
     
@@ -230,7 +230,11 @@ Parameters can be used to control the behavior of a pipeline and its activities.
     
         :::image type="content" source="./media/copy-data-activity/data-warehouse-object-id.png" alt-text="Screenshot showing the Data Warehouse object ID.":::
 
-1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**.
+    - **KQL Database object ID**:
+    
+        :::image type="content" source="./media/copy-data-activity/kql-database-object-id.png" alt-text="Screenshot showing the KQL Database object ID.":::
+
+1. Select **Save** to go back to the **Add dynamic content** pane. Then select your parameter so it appears in the expression box. Then select **OK**. You'll go back to the pipeline page and can see the parameter expression is specified after **Lakehouse object ID**/**Data Warehouse object ID**/**KQL Database object ID**.
 
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
 
