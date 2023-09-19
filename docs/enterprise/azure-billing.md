@@ -12,7 +12,7 @@ ms.date: 09/19/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Azure Cost Management](/cost-management-billing/costs/reporting-get-started) experience.
+When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Azure Cost Management](/azure/cost-management-billing/cost-management-billing-overview) experience.
 
 ## Invoice meters
 
