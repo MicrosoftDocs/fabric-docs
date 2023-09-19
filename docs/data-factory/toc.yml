@@ -31,6 +31,8 @@
     items:
     - name: Connector overview
       href: connector-overview.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
