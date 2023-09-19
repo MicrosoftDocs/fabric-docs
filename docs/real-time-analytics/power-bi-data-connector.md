@@ -85,6 +85,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted." lightbox="media/power-bi-data-connector/select-table.png":::
 
-## Next steps
+## Next step
 
-[Create reports and dashboards in Power BI](/power-bi/create-reports/).
+> [!div class="nextstepaction"]
+> [Create reports and dashboards in Power BI](/power-bi/create-reports/).
