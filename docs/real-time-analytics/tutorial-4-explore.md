@@ -72,7 +72,7 @@ The query editor supports the use of T-SQL in addition to its primary query lang
 
     :::image type="content" source="media/realtime-analytics-tutorial/sql-count.png" alt-text="Screenshot of using the count SQL operator in a KQL quick query.":::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

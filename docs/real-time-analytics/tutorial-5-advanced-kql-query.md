@@ -82,7 +82,7 @@ This section walks you through some of the query and visualization capabilities 
 
     :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/forecast-results.png":::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

@@ -31,3 +31,9 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 1. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
 
     :::image type="content" source="media/data-management/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
+
+## Related content
+
+* [Get data from a blob](get-data-blob.md)
+* [Create materialized views](materialized-view.md)
+* [Create a table update policy](table-update-policy.md)

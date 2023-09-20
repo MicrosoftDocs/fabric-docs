@@ -152,7 +152,20 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-## How shortcuts use cloud connections
+### Dataverse shortcuts (preview)
+
+Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+
+> [!NOTE]
+> Dataverse shortcuts can't be created through the Fabric UX.  They must be created through the PowerApps maker portal.
+
+*Authorization:*
+
+Dataverse shortcuts utilize a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut and all access to that shortcut will be authorized using that credential. The supported delegated credential type is Organizational account(OAuth2).  The organizational account must have permissions to access data in Dataverse Managed Lake
+> [!NOTE]
+> Service Principals are currently not supported for Dataverse shortcut authorization.
+
+## How shortcuts utilize cloud connections
 
 ADLS and S3 shortcut authorization is delegated by using cloud connections. When you create a new ADLS or S3 shortcut, you either create a new connection or select an existing connection for the data source. Setting a connection for a shortcut is a bind operation. Only users with permission on the connection can perform the bind operation. If you don't have permissions on the connection, you can't create new shortcuts using that connection.
 

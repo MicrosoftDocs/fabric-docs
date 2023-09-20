@@ -42,7 +42,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
     > Object: *ObjectName*`;AwsCredentials=`*AwsAccessID*`,`*AwsSecretKey*
 
      :::image type="content" source="media/get-data-amazon-s3/source-tab.png" alt-text="Screenshot of the source tab in the Ingest data window showing the source type and link. The source link is highlighted.":::
-   
+
 1. Select **Next: Schema** to view and edit your table column configuration.
 
 ### Schema tab
@@ -92,7 +92,7 @@ The partial data preview is automatically inferred based on your data. You can c
 
 In the **Data ingestion completed** window, all three steps are marked with green check marks when data ingestion finishes successfully.
 
-## Next steps
+## Related content
 
 * To manage your database, see [Manage data](data-management.md)
 * To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
