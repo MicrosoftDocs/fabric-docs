@@ -154,7 +154,7 @@ For example, the type for *PersonID* column in source is int, and you can change
    :::image type="content" source="media/connector-lakehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
 > [!NOTE]
-> If you use decimal type in your source, editing the destination type is not supported.
+> Decimal type currently doesn't support column type customization.
 
 If you choose Binary as your file format, mapping isn't supported.
 
