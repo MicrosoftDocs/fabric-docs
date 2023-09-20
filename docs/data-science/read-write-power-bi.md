@@ -135,6 +135,70 @@ To read data from Power BI datasets:
     joined_df = df.add_measure("Total Revenue", dataset="Customer Profitability Sample")
     ```
 
+## Read data, using Spark in Python, R, SQL, and Scala
+
+As with the SemPy python API, by default, the workspace used to access Power BI datasets is:
+
+- the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
+- the workspace of the notebook, if no Lakehouse is attached.
+
+Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
+All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+
+> [!TIP]
+> Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
+
+1. Configure Spark to use the Power BI Spark native connector:
+
+    ```Python
+    spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+    ```
+
+1. List tables of all Power BI datasets in the workspace, using PySpark.
+
+    ```python
+    df = spark.sql("SHOW TABLES FROM pbi")
+    df
+    ```
+
+1. Retrieve the data from the *Customer* table in the *Customer Profitability Sample* Power BI dataset, using SparkR.
+
+    > [!NOTE]
+    > Retrieving tables is subject to strict limitations (see [Read Limitations](#read-access-limitations)) and the results might be incomplete.
+    > Use aggregate pushdown to reduce the amount of data transferred. The supported aggregates are: COUNT, SUM, AVG, MIN, and MAX.
+
+    ```R
+    %%sparkr
+    
+    df = sql("SELECT * FROM pbi.`Customer Profitability Sample`.Customer")
+    df
+    ```
+
+1. Power BI measures are available through the virtual table *_Metrics*. The following query computes the *total revenue* and *revenue budget* by *region* and *industry*.
+
+    ```sql
+    %%sql
+
+    SELECT
+        `Customer[Country/Region]`,
+        `Industry[Industry]`,
+        AVG(`Total Revenue`),
+        AVG(`Revenue Budget`)
+    FROM
+        pbi.`Customer Profitability Sample`.`_Metrics`
+    WHERE
+        `Customer[State]` in ('CA', 'WA')
+    GROUP BY
+        `Customer[Country/Region]`,
+        `Industry[Industry]`
+    ```
+
+1. Inspect available measures and dimensions, using Spark schema.
+
+    ```python
+    spark.table("pbi.`Customer Profitability Sample`._Metrics").printSchema()
+    ```
+
 ## Special parameters
 
 The SemPy `read_table` and `evaluate_measure` methods have more parameters that are useful for manipulating the output. These parameters include:
@@ -150,6 +214,19 @@ SemPy `read_table` also leverages the model information provided by Power BI.
 
  - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
 
+## Read-access limitations
+
+The read access APIs have the following limitations:
+
+- Power BI table access using Spark SQL are subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+- Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
+- Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
+  - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)
+  - [IS_NOT_NULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnotnull)
+  - [STARTS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#startswith)
+  - [ENDS_WITH](https://spark.apache.org/docs/3.3.0/api/sql/#endswith)
+  - [CONTAINS](https://spark.apache.org/docs/3.3.0/api/sql/#contains).
+- The Spark session must be restarted to make new Power BI datasets accessible in Spark SQL.
 
 ## Write data consumable by Power BI datasets
 

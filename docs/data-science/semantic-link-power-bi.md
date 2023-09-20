@@ -49,6 +49,111 @@ This metadata includes:
 - Relationships between tables
 - Hierarchies
 
+## Data connectivity through Semantic Link Spark native connector
+
+Support for Spark (PySpark, Spark SQL, R and Scala)
+
+The Semantic Link Spark native connector enables Spark users to access Power BI tables and measures.
+The connector is language-agnostic and supports PySpark, Spark SQL, R, and Scala.
+
+To use the Spark native connector, Power BI datasets are represented as Spark namespaces and transparently expose Power BI tables as Spark tables.
+
+# [Spark SQL](#tab/sql)
+
+Configure Spark to use the Power BI Spark native connector:
+
+```Python
+spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+```
+
+List all tables in the Power BI dataset `Sales Dataset`:
+
+```sql
+%%sql
+SHOW TABLES pbi.`Sales Dataset`
+```
+
+Display data from the table `Customer` in the Power BI dataset `Sales Dataset`:
+
+```sql
+%%sql
+SELECT * FROM pbi.`Sales Dataset`.Customer
+```
+
+# [Python](#tab/python)
+
+Configure Spark to use the Power BI Spark native connector:
+
+```Python
+spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+```
+
+List all tables in the Power BI dataset `Sales Dataset`:
+
+```python
+df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
+
+display(df)
+```
+
+Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the Spark DataFrame `df`:
+
+```python
+df = spark.table("pbi.`Sales Dataset`.Customer")
+
+display(df)
+```
+
+# [R](#tab/r)
+
+Configure Spark to use the Power BI Spark native connector:
+
+```Python
+spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+```
+
+List all tables in the Power BI dataset `Sales Dataset`:
+
+```R
+%%sparkr
+
+df = sql("SHOW TABLES pbi.`Sales Dataset`")
+
+display(df)
+```
+
+Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the dataframe `df`:
+
+```R
+%%sparkr
+
+df = sql("SELECT * FROM pbi.`Sales Dataset`.Customer")
+
+display(df)
+```
+
+---
+
+Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI.
+In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` dataset, while the remaining columns are dimensions.
+The aggregation function (for example, `AVG`) is ignored for measures and only serves for consistency with SQL.
+
+The connector supports predicate push down of computation from Spark expressions into the Power BI engine; for example, `Customer[State] in ('CA', 'WA')`, thereby enabling utilization of Power BI optimized engine.
+
+```sql
+SELECT
+    `Customer[Country/Region]`,
+    `Industry[Industry]`,
+    AVG(`Total Revenue`),
+    AVG(`Revenue Budget`)
+FROM
+    pbi.`Sales Dataset`.`_Metrics`
+WHERE
+    `Customer[State]` in ('CA', 'WA')
+GROUP BY
+    `Customer[Country/Region]`,
+    `Industry[Industry]`
+```
 
 ## Data augmentation with Power BI measures
 
