@@ -47,9 +47,9 @@ items:
     href: onelake-azure-hdinsight.md
   - name: PowerShell
     href: onelake-powershell.md
-- name: Security
+- name: Secure and manage data
   items:
-  - name: Secure and manage data
+  - name: Secure data
     href: onelake-security.md
   - name: Get started with securing data in OneLake
     href: get-started-security.md
