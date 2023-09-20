@@ -89,6 +89,9 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 
 <sup>*</sup>SKUs that are smaller than F64 require a Pro license to consume Power BI content.
 
+## Known Issue
+If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration. We are working on a fix.
+
 ### Individual licenses
 
 Individual licenses allow users to work in Microsoft Fabric. There are two types of individual licenses:
