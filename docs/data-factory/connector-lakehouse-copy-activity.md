@@ -149,12 +149,12 @@ For the **Mapping** tab configuration, if you don't apply Lakehouse table as you
 
 If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
-> [!NOTE]
-> If you use decimal type in your source, editing the destination type is not supported.
-
 For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
 
    :::image type="content" source="media/connector-lakehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
+> [!NOTE]
+> If you use decimal type in your source, editing the destination type is not supported.
 
 If you choose Binary as your file format, mapping isn't supported.
 
