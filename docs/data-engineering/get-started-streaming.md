@@ -84,6 +84,9 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. Specify time between each retry attempt and select **Apply**.
 
+> [!NOTE]
+> There is a lifetime limit of 90 days for the retry policy setup. Once the retry policy is enabled, the job will be restarted according to the policy within 90 days. After this period, the retry policy will automatically cease to function, and the job will be terminated. Users will then need to manually restart the job, which will, in turn, re-enable the retry policy.
+
 ## Execute and monitor the Spark Job Definition
 
 1. From the top menu, select the **Run** icon.
