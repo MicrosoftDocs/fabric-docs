@@ -34,7 +34,7 @@ In the **Files** folder, there are no restrictions on where you can create short
 
 :::image type="content" source="media\onelake-shortcuts\lake-view-table-view.png" alt-text="Diagram showing the Lake view and the Table view side by side.":::
 
-### KQL Database
+### KQL database
 
 When you create a shortcut in a KQL database, it appears in the **Shortcuts** folder of the database. The KQL database treats shortcuts like external tables. To query the shortcut, use the `external_table` function of the Kusto Query Language.
 
@@ -154,14 +154,15 @@ The IAM user must have the following permissions on the bucket that the shortcut
 
 ### Dataverse shortcuts (preview)
 
-Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
+Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature, which is built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
 
 > [!NOTE]
-> Dataverse shortcuts can't be created through the Fabric UX.  They must be created through the PowerApps maker portal.
+> Dataverse shortcuts can't be created through the Fabric UX. They must be created through the PowerApps maker portal.
 
-*Authorization:*
+#### Authorization
 
-Dataverse shortcuts utilize a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut and all access to that shortcut will be authorized using that credential. The supported delegated credential type is Organizational account(OAuth2).  The organizational account must have permissions to access data in Dataverse Managed Lake
+Dataverse shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the Dataverse shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential type is Organizational account (OAuth2). The organizational account must have permissions to access data in Dataverse Managed Lake.
+
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
 
