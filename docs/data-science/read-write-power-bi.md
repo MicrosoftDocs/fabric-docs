@@ -120,7 +120,29 @@ To read data from Power BI datasets:
         """)
     ```
 
-1. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
+1. You can also evaluate the same DAX query without the need to import the library by using a cell magic.
+   The workspace parameter is optional and follows the same rules as the workspace parameter of the `evaluate_dax` function.
+   The cell magic also supports accessing python variables using `{variable_name}` syntax.
+
+    ```dax
+    %%dax "Customer Profitability Sample" -w "Your Workspace"
+    EVALUATE SUMMARIZECOLUMNS(
+        'State'[Region],
+        'Calendar'[Date].[Year],
+        'Calendar'[Date].[Month],
+        "Total Revenue",
+        CALCULATE([Total Revenue]))
+    ```
+
+    The resulting FabricDataFrame is available via the `_` variable, which captures the output of the last excuted cell.
+
+    ```python
+    df_dax = _
+
+    df_dax.head()
+    ``````
+
+2. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
 
     ```python
     from sempy.fabric import FabricDataFrame
