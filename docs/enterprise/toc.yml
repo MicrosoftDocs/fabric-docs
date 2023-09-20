@@ -13,6 +13,8 @@ items:
     href: service-interruption-notifications.md
 - name: Capacity operations
   items:
+  - name: Understand your Azure bill
+    href: azure-billing.md
   - name: Pause and resume your capacity
     href: pause-resume.md
   - name: Scale your capacity
