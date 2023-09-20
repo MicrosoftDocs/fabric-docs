@@ -18,7 +18,13 @@ In this article, you learn how to create an Amazon S3 shortcut inside a Fabric L
 
 ## Prerequisite
 
-Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+1. Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+
+1. The IAM user must have the following permissions on the bucket that the shortcut is pointing to.
+
+    - `S3:GetObject`
+    - `S3:GetBucketLocation`
+    - `S3:ListBucket`
 
 ## Create a shortcut
 
