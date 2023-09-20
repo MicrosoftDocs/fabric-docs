@@ -49,10 +49,12 @@ items:
     href: onelake-powershell.md
 - name: Security
   items:
-  - name: Secure data
+  - name: Secure and manage data
     href: onelake-security.md
   - name: Get started with securing data in OneLake
     href: get-started-security.md
+  - name: Plan for disaster recovery
+    href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
   - name: OneLake file explorer overview
