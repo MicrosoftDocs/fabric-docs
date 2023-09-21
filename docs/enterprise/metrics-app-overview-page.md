@@ -32,13 +32,13 @@ The Multi metric column ribbon displays the four values listed below. It shows t
 
 ## Capacity utilization and throttling
 
-It has three features. use the tabs at the top of the visuals to toggle.
+    It has three features. use the tabs at the top of the visuals to toggle.
 
-### CU % over time  
+### Utilization  
 
-Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+    Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
-The CU over time chart displays the following elements:
+The utilization chart displays the following elements:
 
 >[!NOTE]
 >Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background non-billable* and *Interactive non-billable* columns.
@@ -61,33 +61,37 @@ The CU over time chart displays the following elements:
 
 ### Throttling
 
-  Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. 
+    Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turns into darker shades.
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - The column chart shows Interactive delay if it cross 100 %.
+  * **Interactive delay** - The column chart shows Interactive delay indicator that becomes active when it crosses 100% threshold.
   
-  * **Interactive rejection** - The column chart shows Interactive rejection if it cross 100 %. 
+  * **Interactive rejection** - The column chart shows Interactive rejection indicator that becomes active when it crosses 100% threshold. 
 
-  * **Background rejection** - The column chart shows background rejection if it cross 100 %. 
+  * **Background rejection** - The column chart shows Background rejection indicator that becomes active when it crosses 100% threshold.
 
-### Overages % over time
-  
-  Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. user can zoom into visual by using x and y axis zoom slicer.
-
-The overages % over time chart displays the following elements:
-
-  * **Add %** - Green columns represent the carryforward % added during current 30 second period for billable interactive and background operations.
-  
-  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period for billable interactive and background operations.. 
-  
-  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period for billable interactive and background operations..  
-  
-CU % over time and Throttling has below view:
+Utilization and Throttling has below view:
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
+
+### Overages 
+  
+    Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. Use x and y axis zoom slicer to zoom visual.
+
+The overages chart displays the following elements:
+
+>[!NOTE]
+>Carryforward only consider billable Interactive and Background opreations.
+
+  * **Add %** - Green columns represent the carryforward % added during current 30 second period for billable interactive and background operations.
+  
+  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period for billable interactive and background operations.
+  
+  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period for billable interactive and background operations. 
+  
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
 

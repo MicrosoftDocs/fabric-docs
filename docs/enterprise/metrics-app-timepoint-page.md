@@ -114,6 +114,9 @@ A table showing cumulative carryforward % by experiences in last 30 seconds.
 
 Overages visual has switch for 24 hours, 60 minutes and 10 minutes view to visualize carryforward % in different scale. 
 
+>[!NOTE]
+>Carryforward only consider billable Interactive and Background opreations.
+
 * **Add %** - Green columns represent the percentage of carryforward added for billable interactive and background operations within the specified timepoint window.
 * **Burndown %** - Blue columns represent the percentage of carryforward burned down within the specified timepoint window.
 * **Cumulative %** - Red line represent the cumulative carryforward.
