@@ -40,7 +40,7 @@ When **Visual type** is set to **Table**, the following properties are available
 |--|--|--|
 | **URLs** | **URL column** | The column that contains URL values. |
 |  | **Apply link on column** | When this option is set, selecting the value in this column directs to the URL from the **URL column**. |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. To learn more, see [Conditional formatting](#conditional-formatting). |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. To learn more, see [Conditional formatting](#conditional-formatting). |
 
 ## Bar chart
 
@@ -127,24 +127,24 @@ When **Visual type** is set to **Line chart**, the following properties are avai
 
 When **Visual type** is set to **Stat**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|General|Text size|
-|Data|Value column|
-|Conditional formatting|
+| **General** | **Text size** | The size of the text: **Recommended**, **Small**, or **Large**. |
+| **Data** | **Value column** | The column that provides data for the visualization. |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. To learn more, see [Conditional formatting](#conditional-formatting). |
 
 ## Multi Stat
 
 When **Visual type** is set to **Multi Stat**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|General|Text size|
-||Display orientation|
-|Layout|Slot configuration|
-|Data|Label column|
-||Value column|
-|Conditional formatting|
+| **General** | **Text size** | The size of the text: **Recommended**, **Small**, or **Large**. |
+|  | **Display orientation** | The orientation of the display: **Horizontal** or **Vertical**. |
+| **Layout** | **Slot configuration** | Customizes the grid layout with options ranging from 1 column by 1 row (1 slot) to 5 columns by 5 rows (25 slots). |
+| **Data** | **Label column** | Assigns labels to each slot using the designated column. |
+|  | **Value column** | The column that provides data for the visualization. |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. To learn more, see [Conditional formatting](#conditional-formatting). |
 
 ## Pie chart
 
@@ -155,7 +155,6 @@ When **Visual type** is set to **Pie chart**, the following properties are avail
 |General|Visual format|
 |Data|Category column|
 ||Numeric column|
-
 |Legend|
 |Label|Text|
 |Tooltip|Text|
