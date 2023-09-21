@@ -85,13 +85,13 @@ Displays the carryforward add, carryforward burndown and cumulative carryforward
 The overages chart displays the following elements:
 
 >[!NOTE]
->Carryforward only consider billable Interactive and Background opreations.
+>Carryforward only consider billable Interactive and Background operations.
 
-  * **Add %** - Green columns represent the carryforward % added during current 30 second period for billable interactive and background operations.
+  * **Add %** - Green columns represent the carryforward % added during current 30 second period.
   
-  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period for billable interactive and background operations.
+  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period.
   
-  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period for billable interactive and background operations. 
+  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period. 
   
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.

@@ -102,26 +102,26 @@ A table showing every background operation that contributed CU usage to the view
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
 
-## Burndown table
+## Burndown Table
 
-A table showing cumulative carryforward % by experiences in last 30 seconds.
+A table showing cumulative carryforward % by experiences in the last 30 seconds.
 
 * **Experience** - The name of the experience.
 
-* **Cumulative carryforward** - The cumulative carryforward for last 30 seconds.
+* **Cumulative carryforward** - The cumulative carryforward for the last 30 seconds.
 
 * **Cumulative carryforward %** - The percentage of cumulative carryforward compared to SKU of capacity.
 
 ## Overages 
 
-Overages visual has switch for 24 hours, 60 minutes and 10 minutes view to visualize carryforward % in different scale. 
+Overages visual has switch for 24 hours, 60 minutes and 10 minutes view to visualize carryforward % on different scale. 
 
 >[!NOTE]
 >Carryforward only consider billable Interactive and Background opreations.
 
-* **Add %** - Green columns represent the percentage of carryforward added for billable interactive and background operations within the specified timepoint window.
+* **Add %** - Green columns represent the percentage of carryforward added within the specified timepoint window.
 * **Burndown %** - Blue columns represent the percentage of carryforward burned down within the specified timepoint window.
-* **Cumulative %** - Red line represent the cumulative carryforward.
+* **Cumulative %** - Red line represents the cumulative carryforward within the specified timepoint window.
 
 
 
