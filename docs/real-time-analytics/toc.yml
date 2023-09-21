@@ -1,111 +1,117 @@
 items:
-- name: Real-Time Analytics documentation
-  href: index.yml
-- name: Overview
-  items:
-  - name: What is Real-Time Analytics?
-    href: overview.md
+  - name: Real-Time Analytics documentation
+    href: index.yml
+  - name: Overview
+    items:
+      - name: What is Real-Time Analytics?
+        href: overview.md
 
-  - name: Compare with Azure Data Explorer
-    href: realtime-analytics-compare.md
-- name: Get started
-  items:
-  - name: Tutorial - Introduction
-    href: tutorial-introduction.md
-  - name: 1- Create resources
-    href: tutorial-1-resources.md
-  - name: 2- Get data with Eventstream
-    href: tutorial-2-event-streams.md
-  - name: 3- Get historical data
-    href: tutorial-3-get-historical-data.md
-  - name: 4- Explore data with KQL and SQL
-    href: tutorial-4-explore.md
-  - name: 5- Use advanced KQL queries
-    href: tutorial-5-advanced-kql-query.md
-  - name: 6- Build a Power BI report
-    href: tutorial-6-build-report.md
-  - name: 7- Clean up resources
-    href: tutorial-7-clean-up-resources.md
-- name: Event streams
-  href: event-streams/toc.yml
-- name: KQL Database
-  items:
-  - name: Create a KQL database
-    href: create-database.md
-  - name: Access an existing KQL database
-    displayName: copy URI, copy query URI, copy ingestion URI
-    href: access-database-copy-uri.md
-  - name: Create a database shortcut
-    href: database-shortcut.md
-  - name: Create an empty table
-    href: create-empty-table.md
-  - name: Get data
+      - name: Compare with Azure Data Explorer
+        href: realtime-analytics-compare.md
+  - name: Get started
     items:
-    - name: Get data from a blob
-      href: get-data-blob.md
-    - name: Get data from a blob container
-      href: get-data-blob-container.md
-    - name: Get data from Amazon S3
-      href: get-data-amazon-s3.md
-    - name: Get data from Azure Event Hubs
-      href: get-data-event-hub.md
-    - name: Get data from OneLake
-      href: get-data-onelake.md
-  - name: Connectors
+      - name: Tutorial - Introduction
+        href: tutorial-introduction.md
+      - name: 1- Create resources
+        href: tutorial-1-resources.md
+      - name: 2- Get data with Eventstream
+        href: tutorial-2-event-streams.md
+      - name: 3- Get historical data
+        href: tutorial-3-get-historical-data.md
+      - name: 4- Explore data with KQL and SQL
+        href: tutorial-4-explore.md
+      - name: 5- Use advanced KQL queries
+        href: tutorial-5-advanced-kql-query.md
+      - name: 6- Build a Power BI report
+        href: tutorial-6-build-report.md
+      - name: 7- Clean up resources
+        href: tutorial-7-clean-up-resources.md
+  - name: Event streams
+    href: event-streams/toc.yml
+  - name: KQL Database
     items:
-    - name: Configure KQL Database in a data pipeline
-      href: ../data-factory/connector-kql-database-copy-activity.md
-    - name: Connect to KQL Database in dataflows
-      href: ../data-factory/connector-kusto-dataflows.md
-  - name: Data management
+      - name: Create a KQL database
+        href: create-database.md
+      - name: Access an existing KQL database
+        displayName: copy URI, copy query URI, copy ingestion URI
+        href: access-database-copy-uri.md
+      - name: Create a database shortcut
+        href: database-shortcut.md
+      - name: Create an empty table
+        href: create-empty-table.md
+      - name: Get data
+        items:
+          - name: Get data from a blob
+            href: get-data-blob.md
+          - name: Get data from a blob container
+            href: get-data-blob-container.md
+          - name: Get data from Amazon S3
+            href: get-data-amazon-s3.md
+          - name: Get data from Azure Event Hubs
+            href: get-data-event-hub.md
+          - name: Get data from OneLake
+            href: get-data-onelake.md
+      - name: Connectors
+        items:
+          - name: Configure KQL Database in a data pipeline
+            href: ../data-factory/connector-kql-database-copy-activity.md
+          - name: Connect to KQL Database in dataflows
+            href: ../data-factory/connector-kusto-dataflows.md
+      - name: Data management
+        items:
+          - name: Data management overview
+            href: data-management.md
+          - name: Change the data retention policy
+            href: data-retention-policy.md
+          - name: Create a table update policy
+            href: table-update-policy.md
+          - name: Create materialized views
+            href: materialized-view.md
+          - name: Create stored functions
+            href: create-functions.md
+          - name: Enable Python plugin
+            href: python-plugin.md
+      - name: Management commands
+        href: management/toc.yml
+      - name: API
+        href: api/toc.yml
+  - name: KQL Queryset
     items:
-    - name: Data management overview  
-      href: data-management.md
-    - name: Change the data retention policy
-      href: data-retention-policy.md
-    - name: Create a table update policy
-      href: table-update-policy.md
-    - name: Create materialized views
-      href: materialized-view.md
-    - name: Create stored functions
-      href: create-functions.md 
-    - name: Enable Python plugin
-      href: python-plugin.md
-  - name: Management commands
-    href: management/toc.yml
-  - name: API
-    href: api/toc.yml
-- name: KQL Queryset
-  items:
-  - name: Query data in a KQL Queryset
-    href: kusto-query-set.md
-  - name: Customize results in the KQL Queryset results grid
-    href: customize-results.md
-- name: Query data
-  items:
-  - name: Use example queries
-    href: query-table.md
-  - name: Kusto Query Language
-    href: kusto-query-language/toc.yml
-  - name: Functions library
-    href: functions-library/toc.yml
-- name: Integrate with other experiences
-  items:
-  - name: Power BI
+      - name: Query data in a KQL Queryset
+        href: kusto-query-set.md
+      - name: Customize results in the KQL Queryset results grid
+        href: customize-results.md
+  - name: Real-Time Dashboard
     items:
-    - name: Visualize data in a Power BI report
-      href: create-powerbi-report.md
-    - name: Use data from a KQL database in Power BI Desktop
-      href: power-bi-data-connector.md
-  - name: OneLake
+      - name: Visualize data with Real-Time Dashboards
+        href: real-time-dashboard.md
+      - name: Customize Real-Time Dashboard visuals
+        href: customize-dashboard-visuals.md
+  - name: Query data
     items:
-    - name: One logical copy
-      href: onelake-mirroring.md
-    - name: Create OneLake shortcuts
-      href: onelake-shortcuts.md
-  - name: Notebooks
+      - name: Use example queries
+        href: query-table.md
+      - name: Kusto Query Language
+        href: kusto-query-language/toc.yml
+      - name: Functions library
+        href: functions-library/toc.yml
+  - name: Integrate with other experiences
     items:
-    - name: Use a notebook with Kqlmagic to query a KQL database
-      href: jupyter-notebook.md
-    - name: Use a notebook with Apache Spark to query a KQL database
-      href: spark-connector.md
+      - name: Power BI
+        items:
+          - name: Visualize data in a Power BI report
+            href: create-powerbi-report.md
+          - name: Use data from a KQL database in Power BI Desktop
+            href: power-bi-data-connector.md
+      - name: OneLake
+        items:
+          - name: One logical copy
+            href: onelake-mirroring.md
+          - name: Create OneLake shortcuts
+            href: onelake-shortcuts.md
+      - name: Notebooks
+        items:
+          - name: Use a notebook with Kqlmagic to query a KQL database
+            href: jupyter-notebook.md
+          - name: Use a notebook with Apache Spark to query a KQL database
+            href: spark-connector.md

@@ -1,20 +1,19 @@
 ---
-title: Customize Real-Time Analytics dashboard visuals
-description: Easily customize your Real-Time Analytics dashboard visuals
+title: Customize Real-Time Dashboard visuals
+description: Learn how to customize your Real-Time Dashboard visuals.
 ms.reviewer: gabil
 ms.topic: how-to
 ms.date: 09/21/2023
 ---
 
-# Customize Real-Time Analytics dashboard visuals
+# Customize Real-Time Dashboard visuals
 
 Visuals are essential part of any Real-Time Dashboard. This article covers how to customize different visuals.
 
 ## Prerequisites
 
-<!-- TODO: Link to the doc on how to create dashboard. -->
-* A Real-Time Analytics dashboard
-* Permissions to edit the dashboard
+* A Real-Time Dashboard. For more information, see [Visualize data with Real-Time Dashboards](real-time-dashboards.md).
+* Permissions to edit the dashboard.
 
 ## Customize visuals
 
