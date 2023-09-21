@@ -220,6 +220,8 @@ When **Visual type** is set to **Anomaly chart**, the following properties are a
 
 ## Funnel chart
 
+A funnel chart visualizes a linear process that has sequential, connected stages.
+
 When **Visual type** is set to **Funnel chart**, the following properties are available for customization:
 
 | Section | Property | Description |
@@ -267,7 +269,7 @@ When **Visual type** is set to **Plotly**, the following properties are availabl
 
 |Property|Description|
 |--|--|
-|Column||
+|**Column**||
 
 ## Conditional formatting
 
