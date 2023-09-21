@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Create, evaluate, and score a churn prediction model with R"
-description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn. 
+description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn. 
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
@@ -21,8 +21,8 @@ The main steps in this tutorial are
 >
 > - Install custom libraries
 > - Load the data
-> - Understand and process the data through exploratory data analysis and demonstrate the use of Fabric Data Wrangler feature
-> - Train machine learning models using `Scikit-Learn` and `LightGBM`, and track experiments using MLflow and Fabric Autologging feature
+> - Understand and process the data through exploratory data analysis
+> - Train machine learning models using `Scikit-Learn` and `LightGBM`
 > - Evaluate and save the final machine learning model
 > - Demonstrate the model performance via visualizations in Power BI
 
@@ -34,14 +34,11 @@ The main steps in this tutorial are
 
 ## Follow along in the notebook
 
- [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb is the notebook that accompanies this tutorial.
+ [AIsample - R Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb -->
-
-> [!TIP]
-> Contents of _AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb_. **[Open in GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb)**.
 
 ## Step 1: Install Custom Libraries
 
@@ -64,13 +61,12 @@ The dataset also includes columns such as row number, customer ID, and customer 
 
 Out of the 10000 customers, only 2037 customers (around 20%) have left the bank. Therefore, given the class imbalance ratio, it is recommended to generate synthetic data.
 
-- churn.csv
+The following table shows a preview of the `churn.csv` data:
 
 |"CustomerID"|"Surname"|"CreditScore"|"Geography"|"Gender"|"Age"|"Tenure"|"Balance"|"NumOfProducts"|"HasCrCard"|"IsActiveMember"|"EstimatedSalary"|"Exited"|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 |15634602|Hargrave|619|France|Female|42|2|0.00|1|1|1|101348.88|1|
 |15647311|Hill|608|Spain|Female|41|1|83807.86|1|0|1|112542.58|0|
-
 
 
 ### Introduction to SMOTE
@@ -539,7 +535,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-4.png" alt-text="Graph shows confusion matrix for Random Forest with 4 features":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-4.png" alt-text="Graph shows confusion matrix for Random Forest with 4 features.":::
 
 Create the confusion matrix for Random Forest Classifier with six features:
 
@@ -552,7 +548,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-6.png" alt-text="Graph shows confusion matrix for Random Forest with 6 features":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-6.png" alt-text="Graph shows confusion matrix for Random Forest with 6 features.":::
 
 Create the confusion matrix for LightGBM:
 
@@ -565,7 +561,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-lightgbm.png" alt-text="Graph shows confusion matrix for LightGBM":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-lightgbm.png" alt-text="Graph shows confusion matrix for LightGBM.":::
 
 ### Save results for Power BI
 
@@ -601,7 +597,7 @@ Some example visualizations are shown here. The data panel shows the delta table
 > [!NOTE]
 > This shows an illustrated example of how you would analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
 
-<img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/PBIviz3.png"  width="100%" height="100%">
+:::image type="content" source="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/PBIviz3.png" alt-text="Screenshot shows a Power BI dashboard of the data.":::
 
 The Power BI report shows that customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
 Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
