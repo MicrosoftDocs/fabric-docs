@@ -134,7 +134,7 @@ To read data from Power BI datasets:
         CALCULATE([Total Revenue]))
     ```
 
-    The resulting FabricDataFrame is available via the `_` variable, which captures the output of the last excuted cell.
+    The resulting FabricDataFrame is available via the `_` variable, which captures the output of the last executed cell.
 
     ```python
     df_dax = _
@@ -165,7 +165,7 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the notebook, if no Lakehouse is attached.
 
 Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
-All Spark SQL commands can be executed in Python, R and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+All Spark SQL commands can be executed in Python, R, and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -232,7 +232,7 @@ The SemPy `read_table` and `evaluate_measure` methods have more parameters that 
 If this parameter is turned off, type incompatibility issues may result between columns of related tables that may not have been detected in the Power BI model due to
 [DAX implicit type conversion](/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion).
 
-SemPy `read_table` also leverages the model information provided by Power BI.
+SemPy `read_table` also uses the model information provided by Power BI.
 
  - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
 
@@ -240,7 +240,7 @@ SemPy `read_table` also leverages the model information provided by Power BI.
 
 The read access APIs have the following limitations:
 
-- Power BI table access using Spark SQL are subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+- Power BI table access using Spark SQL is subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
 - Predicate pushdown for Spark *_Metrics* queries is limited to a single [IN](https://spark.apache.org/docs/3.3.0/api/sql/index.html#in) expression. Extra IN expressions and unsupported predicates are evaluated in Spark after data transfer.
 - Predicate pushdown for Power BI tables accessed using Spark SQL doesn't support the following expressions:
   - [ISNULL](https://spark.apache.org/docs/3.3.0/api/sql/#isnull)
