@@ -38,89 +38,89 @@ When **Visual type** is set to **Table**, the following properties are available
 
 | Section | Property | Description |
 |--|--|--|
-| **URLs** | **URL column** | The column that contains a URL. |
-|  | **Apply link on column** | When selected, this column directs to the URL from the previous property. |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. To learn more, see [Conditional formatting](). |
+| **URLs** | **URL column** | The column that contains URL values. |
+|  | **Apply link on column** | When this option is set, selecting the value in this column directs to the URL from the **URL column**. |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. To learn more, see [Conditional formatting](#conditional-formatting). |
 
 ## Bar chart
 
 When **Visual type** is set to **Bar chart**, the following properties are available for customization:
 
-| Section     | Property                 | Description                                                            |
-|-------------|--------------------------|------------------------------------------------------------------------|
-| **General** | **Visual format**        | Determines the format for the chart: **Bar chart**, **Stacked bar chart**, or **Stacked 100% bar chart**. |
-| **Data**    | **Y columns**           | The columns that provide data for the vertical axis.                    |
-|             | **X column**            | The column that provides data for the horizontal axis.                  |
-|             | **Series columns**      | The columns used to categorize data into different series.              |
-| **Legend**  | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.        |
-| **Y Axis**  | **Label**               | Sets a custom label for the vertical axis.                              |
-|             | **Maximum value**       | Defines the maximum value on the vertical axis.                         |
-|             | **Minimum value**       | Defines the minimum value on the vertical axis.                         |
-|             | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.        |
-|             | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.   |
-| **X Axis**  | **Label**               | Sets a custom label for the horizontal axis.                            |
-|             | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.      |
-|             | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines.  |
+| Section | Property | Description |
+|--|--|--|
+| **General** | **Visual format** | Determines the format for the chart: **Bar chart**, **Stacked bar chart**, or **Stacked 100% bar chart**. |
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 ## Column chart
 
 When **Visual type** is set to **Column chart**, the following properties are available for customization:
 
-| Section     | Property                 | Description                                                            |
-|-------------|--------------------------|------------------------------------------------------------------------|
-| **General** | **Visual format**        | Determines the format for the chart: **Column chart**, **Stacked column chart**, or **Stacked 100% column chart**. |
-| **Data**    | **Y columns**           | The columns that provide data for the vertical axis.                    |
-|             | **X column**            | The column that provides data for the horizontal axis.                  |
-|             | **Series columns**      | The columns used to categorize data into different series.              |
-| **Legend**  | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.        |
-| **Y Axis**  | **Label**               | Sets a custom label for the vertical axis.                              |
-|             | **Maximum value**       | Defines the maximum value on the vertical axis.                         |
-|             | **Minimum value**       | Defines the minimum value on the vertical axis.                         |
-|             | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.        |
-|             | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.   |
-| **X Axis**  | **Label**               | Sets a custom label for the horizontal axis.                            |
-|             | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.      |
-|             | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines.  |
+| Section | Property | Description |
+|--|--|--|
+| **General** | **Visual format** | Determines the format for the chart: **Column chart**, **Stacked column chart**, or **Stacked 100% column chart**. |
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 ## Area chart
 
 When **Visual type** is set to **Area chart**, the following properties are available for customization:
 
-| Section     | Property                 | Description                                                            |
-|-------------|--------------------------|------------------------------------------------------------------------|
-| **General** | **Visual format**       | Determines the format for the chart: **Area chart**, **Stacked area chart**, or **Stacked 100% area chart**. |
-| **Data**    | **Y columns**           | The columns that provide data for the vertical axis.                    |
-|             | **X column**            | The column that provides data for the horizontal axis.                  |
-|             | **Series columns**      | The columns used to categorize data into different series.              |
-| **Legend**  | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.        |
-| **Y Axis**  | **Label**               | Sets a custom label for the vertical axis.                              |
-|             | **Maximum value**       | Defines the maximum value on the vertical axis.                         |
-|             | **Minimum value**       | Defines the minimum value on the vertical axis.                         |
-|             | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.        |
-|             | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.   |
-| **X Axis**  | **Label**               | Sets a custom label for the horizontal axis.                            |
-|             | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.      |
-|             | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines.  |
+| Section | Property | Description |
+|--|--|--|
+| **General** | **Visual format** | Determines the format for the chart: **Area chart**, **Stacked area chart**, or **Stacked 100% area chart**. |
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 
 ## Line chart
 
 When **Visual type** is set to **Line chart**, the following properties are available for customization:
 
-| Section    | Property                | Description                                                            |
-|------------|-------------------------|------------------------------------------------------------------------|
-| **Data**   | **Y columns**           | The columns that provide data for the vertical axis.                   |
-|            | **X column**            | The column that provides data for the horizontal axis.                 |
-|            | **Series columns**      | The columns used to categorize data into different series.             |
-| **Legend** | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.       |
-| **Y Axis** | **Label**               | Sets a custom label for the vertical axis.                             |
-|            | **Maximum value**       | Defines the maximum value on the vertical axis.                        |
-|            | **Minimum value**       | Defines the minimum value on the vertical axis.                        |
-|            | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.       |
-|            | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.  |
-| **X Axis** | **Label**               | Sets a custom label for the horizontal axis.                           |
-|            | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.     |
-|            | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
+| Section | Property | Description |
+|--|--|--|
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 
 ## Stat
@@ -166,58 +166,58 @@ When **Visual type** is set to **Pie chart**, the following properties are avail
 
 When **Visual type** is set to **Scatter chart**, the following properties are available for customization:
 
-| Section    | Property                | Description                                                            |
-|------------|-------------------------|------------------------------------------------------------------------|
-| **Data**   | **Y columns**           | The columns that provide data for the vertical axis.                   |
-|            | **X column**            | The column that provides data for the horizontal axis.                 |
-|            | **Series columns**      | The columns used to categorize data into different series.             |
-| **Legend** | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.       |
-| **Y Axis** | **Label**               | Sets a custom label for the vertical axis.                             |
-|            | **Maximum value**       | Defines the maximum value on the vertical axis.                        |
-|            | **Minimum value**       | Defines the minimum value on the vertical axis.                        |
-|            | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.       |
-|            | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.  |
-| **X Axis** | **Label**               | Sets a custom label for the horizontal axis.                           |
-|            | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.     |
-|            | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
+| Section | Property | Description |
+|--|--|--|
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 ## Time chart
 
 When **Visual type** is set to **Time chart**, the following properties are available for customization:
 
-| Section    | Property                | Description                                                            |
-|------------|-------------------------|------------------------------------------------------------------------|
-| **Data**   | **Y columns**           | The columns that provide data for the vertical axis.                   |
-|            | **X column**            | The column that provides data for the horizontal axis.                 |
-|            | **Series columns**      | The columns used to categorize data into different series.             |
-| **Legend** | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.       |
-| **Y Axis** | **Label**               | Sets a custom label for the vertical axis.                             |
-|            | **Maximum value**       | Defines the maximum value on the vertical axis.                        |
-|            | **Minimum value**       | Defines the minimum value on the vertical axis.                        |
-|            | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.       |
-|            | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.  |
-| **X Axis** | **Label**               | Sets a custom label for the horizontal axis.                           |
-|            | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.     |
-|            | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
+| Section | Property | Description |
+|--|--|--|
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 ## Anomaly chart
 
 When **Visual type** is set to **Anomaly chart**, the following properties are available for customization:
 
-| Section    | Property                | Description                                                            |
-|------------|-------------------------|------------------------------------------------------------------------|
-| **Data**   | **Y columns**           | The columns that provide data for the vertical axis.                   |
-|            | **X column**            | The column that provides data for the horizontal axis.                 |
-|            | **Series columns**      | The columns used to categorize data into different series.             |
-| **Legend** | **Hide** or **Show**    | Hides or shows a legend to explain the data series in the chart.       |
-| **Y Axis** | **Label**               | Sets a custom label for the vertical axis.                             |
-|            | **Maximum value**       | Defines the maximum value on the vertical axis.                        |
-|            | **Minimum value**       | Defines the minimum value on the vertical axis.                        |
-|            | **Y axis scale**        | Adjusts the scale of the vertical axis to linear or logarithmic.       |
-|            | **Reference lines**     | A value to mark on the chart as a reference line for visual guidance.  |
-| **X Axis** | **Label**               | Sets a custom label for the horizontal axis.                           |
-|            | **X axis scale**        | Adjusts the scale of the horizontal axis to linear or logarithmic.     |
-|            | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
+| Section | Property | Description |
+|--|--|--|
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
+|  | **X column** | The column that provides data for the horizontal axis. |
+|  | **Series columns** | The columns used to categorize data into different series. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. |
+|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
+|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
 
 ## Funnel chart
 
