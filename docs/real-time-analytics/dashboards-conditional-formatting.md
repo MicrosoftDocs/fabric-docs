@@ -12,7 +12,7 @@ ms.date: 09/21/2023
 
 Conditional formatting allows you to format the visual representation of data points based on their values, utilizing colors, tags, and icons. Conditional formatting can be applied either to a specific set of cells within a designated column or to entire rows.
 
-For each visual, you have the flexibility to define one or more conditional formatting rules. In cases where multiple rules conflict, the last rule defined will take precedence over any previous ones.
+For each visual, you have the flexibility to define one or more conditional formatting rules. In cases where multiple rules conflict, the last rule defined takes precedence over any previous ones.
 
 ## Prerequisites
 
@@ -38,7 +38,7 @@ The color by condition rule allows you to set one or more logical conditions tha
 
 To color your results by condition:
 
-1. In the **Conditional formatting** window, set the **Rule type** to **Color by condition**. For stat and multi stat visuals, this is the only option.
+1. In the **Conditional formatting** window, set the **Rule type** to **Color by condition**. For stat and multi stat visuals, color by condition is the only option.
 
     :::image type="content" source="media/dashboard-conditional-formatting/color-by-condition.png" alt-text="Screenshot of option to color by condition." lightbox="media/dashboard-conditional-formatting/color-by-condition.png":::
 
