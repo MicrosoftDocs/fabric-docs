@@ -129,7 +129,7 @@ When **Visual type** is set to **Stat**, the following properties are available 
 
 | Section | Property | Description |
 |--|--|--|
-| **General** | **Text size** | The size of the text: **Recommended**, **Small**, or **Large**. |
+| **General** | **Text size** | Determines the size of the text: **Recommended**, **Small**, or **Large**. |
 | **Data** | **Value column** | The column that provides data for the visualization. |
 | **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. To learn more, see [Conditional formatting](#conditional-formatting). |
 
@@ -139,8 +139,8 @@ When **Visual type** is set to **Multi Stat**, the following properties are avai
 
 | Section | Property | Description |
 |--|--|--|
-| **General** | **Text size** | The size of the text: **Recommended**, **Small**, or **Large**. |
-|  | **Display orientation** | The orientation of the display: **Horizontal** or **Vertical**. |
+| **General** | **Text size** | Determines the size of the text: **Recommended**, **Small**, or **Large**. |
+|  | **Display orientation** | Determines the orientation of the display: **Horizontal** or **Vertical**. |
 | **Layout** | **Slot configuration** | Customizes the grid layout with options ranging from 1 column by 1 row (1 slot) to 5 columns by 5 rows (25 slots). |
 | **Data** | **Label column** | Assigns labels to each slot using the designated column. |
 |  | **Value column** | The column that provides data for the visualization. |
@@ -152,12 +152,12 @@ When **Visual type** is set to **Pie chart**, the following properties are avail
 
 | Section | Property | Description |
 |--|--|--|
-| **General** | **Visual format** | The format for the chart: **Pie** or **Donut**. |
+| **General** | **Visual format** | Determines the format for the chart: **Pie** or **Donut**. |
 | **Data** | **Category column** | The column that determines the data categories. |
-|  | **Numeric column** | The column that contains the numeric value for the data category. |
+|  | **Numeric column** | The column that provides the numeric value for the data category. |
 | **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Label** | **Text** | A dropdown list of what to include in the label: **Name**, **Percentage**, and **Value**. |
-| **Tooltip** | **Text** | A dropdown list of what to include in the tooltip, which can be seen when hovering over a section of the chart: **Name**, **Percentage**, and **Value**. |
+| **Label** | **Text** | Determines what to include in the label: **Name**, **Percentage**, and **Value**. |
+| **Tooltip** | **Text** | Determines what to include in the tooltip, which can be seen when hovering over a section of the chart: **Name**, **Percentage**, and **Value**. |
 | **Display options** | **Order by** | How to order the results in the chart: **Name**, **Size**, or **None**. |
 |  | **Top N** | Option to only show sections for the top *n* values in the chart. |
 
@@ -222,21 +222,21 @@ When **Visual type** is set to **Anomaly chart**, the following properties are a
 
 When **Visual type** is set to **Funnel chart**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|Data|Category column|
-||Value column|
+| **Data** | **Category column** | The column that determines the data categories. |
+|  | **Value column** | The column that provides the value for the data category. |
 
 ## Map
 
 When **Visual type** is set to **Map**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|Data|Define location by|
-||Label column|
-|Size|Hide|
-||Size column|
+| **Data** | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. |
+|  | **Label column** | The column to use for the map point label. |
+| **Size** | **Hide** | A toggle option to turn off or turn on sizing for the map points. |
+|  | **Size column** | The column to use to determine the size of the map point. |
 
 ## Markdown
 
@@ -244,20 +244,22 @@ When **Visual type** is set to **Markdown**, the following properties are availa
 
 |Property|Description|
 |--|--|
-|Column||
+|**Column**|**The first row of this column is rendered as Markdown.**|
 
 ## Heatmap
 
+A heatmap shows values for a main variable of interest across two axis variables as a grid of colored squares.
+
 When **Visual type** is set to **Heatmap**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|Data|Y column|
-||X column|
-||Value|
-|X axis|Label|
-|Y axis|Label|
-|Colors|Color palette|
+| **Data** | **Y column** | The column providing data for the vertical axis. If this column contains `string` values, the corresponding **X column** must also contain `string` values. If it contains `datetime` values, the **X column** must be numeric. |
+|  | **X column** | The column providing data for the horizontal axis. |
+|  | **Value** | The numeric column that serves as the primary variable for the heatmap. |
+| **X axis** | **Label** | Sets a custom label for the horizontal axis. |
+| **Y axis** | **Label** | Sets a custom label for the vertical axis. |
+| **Colors** | **Color palette** | Determines the set of colors to use for the heatmap: **blue**, **green**, **purple**, **orange**, **pink**, or **yellow**. |
 
 ## Plotly
 
