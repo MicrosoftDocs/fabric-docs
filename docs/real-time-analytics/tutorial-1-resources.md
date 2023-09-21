@@ -39,7 +39,7 @@ ms.search.form: product-kusto
 
     :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Analytics in Microsoft Fabric." :::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

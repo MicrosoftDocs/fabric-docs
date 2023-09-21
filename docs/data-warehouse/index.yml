@@ -117,6 +117,8 @@ landingContent:
         links:
           - text: Monitor 
             url: monitor-using-dmv.md
+          - text: Capacity Metrics app
+            url: usage-reporting.md
           - text: Workload Management
             url: workload-management.md            
           - text: Statistics 

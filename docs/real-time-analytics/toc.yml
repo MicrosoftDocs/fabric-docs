@@ -32,6 +32,11 @@ items:
   items:
   - name: Create a KQL database
     href: create-database.md
+  - name: Access an existing KQL database
+    displayName: copy URI, copy query URI, copy ingestion URI
+    href: access-database-copy-uri.md
+  - name: Create a database shortcut
+    href: database-shortcut.md
   - name: Create an empty table
     href: create-empty-table.md
   - name: Get data
@@ -64,6 +69,8 @@ items:
       href: materialized-view.md
     - name: Create stored functions
       href: create-functions.md 
+    - name: Enable Python plugin
+      href: python-plugin.md
   - name: Management commands
     href: management/toc.yml
   - name: API
@@ -76,7 +83,7 @@ items:
     href: customize-results.md
 - name: Query data
   items:
-  - name: Use sample queries
+  - name: Use example queries
     href: query-table.md
   - name: Kusto Query Language
     href: kusto-query-language/toc.yml

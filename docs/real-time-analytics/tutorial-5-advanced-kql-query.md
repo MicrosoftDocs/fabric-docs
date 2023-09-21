@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/13/2023
 ms.search.form: product-kusto
 ---
 # Real-Time Analytics tutorial part 5: Use advanced KQL queries
@@ -26,7 +26,7 @@ In the following step, you use the advanced data analysis capabilities of Kusto 
     :::image type="content" source="media/realtime-analytics-tutorial/new-kql-queryset.png" alt-text="Screenshot of the New related item dropdown showing the option to create a new related KQL queryset."  lightbox="media/realtime-analytics-tutorial/new-kql-queryset.png":::
 
 1. Enter *nyctaxiqs* as the KQL queryset name.
-1. Select **Create**. The KQL queryset opens with several autopopulated sample queries.
+1. Select **Create**. The KQL queryset opens with several autopopulated example queries.
 
 ## Query data
 
@@ -82,7 +82,7 @@ This section walks you through some of the query and visualization capabilities 
 
     :::image type="content" source="media/realtime-analytics-tutorial/forecast-results.png" alt-text="Screenshot of forecast results in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/forecast-results.png":::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

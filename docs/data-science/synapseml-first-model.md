@@ -19,7 +19,7 @@ This article introduces how to build your first machine learning model using Syn
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
 * Attach your notebook to a lakehouse. On the left side of your notebook, select **Add** to add an existing lakehouse or create a new one.
-* Obtain an Azure Cognitive Services key by following the [Create a Cognitive Services resource using the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account) quickstart. You'll need this key for the [Use Cognitive Services to transform data in one step](#use-cognitive-services-to-transform-data-in-one-step) section of this article.
+* Obtain an Azure AI services key by following the [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource) quickstart. You'll need this key for the [Use Azure AI services to transform data in one step](#use-azure-ai-services-to-transform-data-in-one-step) section of this article.
 
 ## Set up the environment
 Import SynapseML libraries and initialize your Spark session.
@@ -74,8 +74,8 @@ Call the `transform` function on the model to predict and display the output of 
 display(model.transform(test))
 ```
 
-## Use Cognitive Services to transform data in one step
-Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Cognitive Services to transform your data in one step.
+## Use Azure AI services to transform data in one step
+Alternatively, for these kinds of tasks that have a prebuilt solution, you can use SynapseML's integration with Azure AI services to transform your data in one step.
 
 
 ```python
@@ -94,6 +94,6 @@ display(model.transform(test))
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
-- [Quickstart: Create a Cognitive Services resource using the Azure portal](/azure/cognitive-services/cognitive-services-apis-create-account)
+- [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource)

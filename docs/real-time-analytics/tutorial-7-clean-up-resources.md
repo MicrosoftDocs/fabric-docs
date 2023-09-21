@@ -31,7 +31,7 @@ Once you're finished with the tutorial, you may want to delete all resources you
 
 1. On the warning, select **Delete**. Once a workspace is deleted, it can't be recovered.
 
-## See also
+## Related content
 
 * [What is Real-Time Analytics in Fabric?](overview.md)
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
