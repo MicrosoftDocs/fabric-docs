@@ -8,7 +8,7 @@ ms.date: 09/21/2023
 
 # Customize Real-Time Analytics dashboard visuals
 
-Visuals are essential part of any Real-Time Analytics dashboard. This article covers how to customize different visuals.
+Visuals are essential part of any Real-Time Dashboard. This article covers how to customize different visuals.
 
 ## Prerequisites
 
@@ -242,11 +242,7 @@ When **Visual type** is set to **Map**, the following properties are available f
 
 ## Markdown
 
-When **Visual type** is set to **Markdown**, the following properties are available for customization:
-
-|Property|Description|
-|--|--|
-|**Column**|**The first row of this column is rendered as Markdown.**|
+When **Visual type** is set to **Markdown**, the first row of the column specified in the **Column** property is rendered as Markdown.
 
 ## Heatmap
 
@@ -265,11 +261,11 @@ When **Visual type** is set to **Heatmap**, the following properties are availab
 
 ## Plotly
 
-When **Visual type** is set to **Plotly**, the following properties are available for customization:
+The Plotly graphics library offers extensive support for a wide range of chart types useful for advanced charting needs, including geographic, scientific, machine learning, 3D, and animation, and more. For more information, see [Plotly](https://plotly.com/python/).
 
-|Property|Description|
-|--|--|
-|**Column**||
+To display a Plotly visualization in your Real-Time Dashboard, your query must generate a table with a single string cell containing [Plotly JSON](https://plotly.com/chart-studio-help/json-chart-schema/). 
+
+When **Visual type** is set to **Plotly**, the **Column** property should be set to the column containing the Plotly JSON for rendering.
 
 ## Conditional formatting
 
