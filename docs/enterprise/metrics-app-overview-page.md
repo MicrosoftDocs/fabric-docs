@@ -32,11 +32,11 @@ The Multi metric column ribbon displays the four values listed below. It shows t
 
 ## Capacity utilization and throttling
 
-    It has three features. use the tabs at the top of the visuals to toggle.
+It has three features. Use the tabs at the top of the visuals to toggle.
 
 ### Utilization  
 
-    Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
 The utilization chart displays the following elements:
 
@@ -62,7 +62,7 @@ The utilization chart displays the following elements:
 
 ### Throttling
 
-    Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turns into darker shades.
+Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turns into darker shades.
 
 The throttling chart displays the following elements:
 
@@ -80,7 +80,7 @@ Utilization and Throttling has below view:
 
 ### Overages 
   
-    Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. Use x and y axis zoom slicer to zoom visual.
+Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. Use x and y axis zoom slicer to zoom visual.
 
 The overages chart displays the following elements:
 
