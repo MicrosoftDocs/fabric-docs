@@ -30,26 +30,13 @@ The Multi metric column ribbon displays the four values listed below. It shows t
 
 * **Users** - The number of users that performed operations.
 
-## CU over time
+## Capacity utilization and throttling
 
-Displays the CU usage of the selected capacity over time. Use the tabs at the top of the visual to toggle how the visual is displayed:
+It has three features. use the tabs at the top of the visuals to toggle.
 
-* **Linear** - Display the information using a linear scale that starts at 0 percent.
+### CU % over time  
 
-* **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
-
-Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
-
-Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
-
-* *No filters applied* - Columns display the peak timepoint per hour.
-
-* *Filters are applied* -  The visuals displays every 30 second timepoint.
-
->[!NOTE]
->Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
-
-To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
+Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
 The CU over time chart displays the following elements:
 
@@ -71,6 +58,49 @@ The CU over time chart displays the following elements:
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
+
+### Throttling
+
+  Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. 
+
+The throttling chart displays the following elements:
+
+  * **Interactive delay** - The column chart shows Interactive delay if it cross 100 %.
+  
+  * **Interactive rejection** - The column chart shows Interactive rejection if it cross 100 %. 
+
+  * **Background rejection** - The column chart shows background rejection if it cross 100 %. 
+
+### Overages % over time
+  
+  Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. user can zoom into visual by using x and y axis zoom slicer.
+
+The overages % over time chart displays the following elements:
+
+  * **Add %** - Green columns represent the carryforward % added during current 30 second period for billable interactive and background operations.
+  
+  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period for billable interactive and background operations.. 
+  
+  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period for billable interactive and background operations..  
+  
+CU % over time and Throttling has below view:
+
+* **Linear** - Display the information using a linear scale that starts at 0 percent.
+
+* **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
+
+Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
+
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+
+* *No filters applied* - Columns display the peak timepoint per hour.
+
+* *Filters are applied* -  The visuals displays every 30 second timepoint.
+
+>[!NOTE]
+>Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
+
+To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
 ## Matrix by item and operation
 
