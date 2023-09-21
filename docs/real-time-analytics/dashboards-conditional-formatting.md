@@ -68,7 +68,7 @@ To color your results by condition:
 
 1. Select **Save**. In the following example, the cells of a multi stat visual with `Count` values above 10 are colored red with a warning icon.
 
-    :::image type="content" source="media/dashboard-conditional-formatting/color-by-condition.png" alt-text="Screenshot of a multi stat visual colored by condition." lightbox="media/dashboard-conditional-formatting/color-by-condition.png":::
+    :::image type="content" source="media/dashboard-conditional-formatting/color-by-condition-example.png" alt-text="Screenshot of a multi stat visual colored by condition." lightbox="media/dashboard-conditional-formatting/color-by-condition-example.png":::
 
 ## Color by value
 
