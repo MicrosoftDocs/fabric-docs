@@ -69,7 +69,7 @@ loaded.
 
 Select **Close** to return to your database landing page.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 
