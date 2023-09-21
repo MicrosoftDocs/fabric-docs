@@ -11,7 +11,7 @@ ms.date: 5/12/2023
 
 # Microsoft Fabric decision guide: copy activity, dataflow, or Spark
 
-Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your workloads using Microsoft Fabric.
+Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your Microsoft Fabric workloads.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

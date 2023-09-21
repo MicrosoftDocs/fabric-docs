@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 06/22/2023
+ms.date: 09/14/2023
 ---
 
 # Understand the metrics app overview page
@@ -59,6 +59,7 @@ The CU over time chart displays the following elements:
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
+
 ### Throttling
 
   Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. 
@@ -102,15 +103,19 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 
 To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, select a timepoint you want to explore and then select **Explore**.
 
+>[!NOTE]
+>Non billable usage does not drain capacity or lead to throttling or auto scale. 
+
+
 ## Matrix by item and operation
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed below. The colors in the table represent your *performance delta*.
 
-User can hover over any value in the visual to see operartion level data. user can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
+User can hover over any value in the visual to see operation level data. User can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
 
 * **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
 
-* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that consumed items over the past two weeks.
+* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
 
 * **Duration (s)** - Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks.
 
@@ -135,9 +140,16 @@ User can hover over any value in the visual to see operartion level data. user c
 
 * **Billing type** - Displays information if the item is billable or not.
 
+    * **Billable** - Indicates that operations for this item are billable.
 
-[!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
+    * **Non-Billable**  - Indicates that operations for this item are non-billable.
+
+    * **Both** - There are two scenarios when item can have both as billable type:
+        - If item has both billable and non-billable operations
+        - If item has operations that are in transition period from non-billable to billable.
 
 ## Next steps
+
+[Understand the metrics app OneLake page](metrics-app-onelake-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)

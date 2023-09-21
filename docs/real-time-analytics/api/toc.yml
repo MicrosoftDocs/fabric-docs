@@ -1,6 +1,4 @@
 items:
-- name: Client libraries
-  href: /azure/data-explorer/kusto/api/client-libraries?context=/fabric/context/context-rta&pivots=fabric
 - name: REST API
   items:
   - name: REST API overview

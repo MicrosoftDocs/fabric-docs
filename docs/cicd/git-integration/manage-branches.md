@@ -1,6 +1,6 @@
 ---
 title: Git integration branches
-description: Learn how to use git branches to work in your own isolated environment.
+description: Learn how to use Git branches to work in your own isolated environment.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -11,14 +11,14 @@ ms.custom: build-2023
 
 # Manage branches in Microsoft Fabric workspaces
 
-The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
+The Fabric workspace is a shared environment that accesses live items. Any changes made directly in the workspace override and affect all other workspace users. Therefore, Git best practice is for developers to work in isolation outside of the shared workspaces. There are two ways for a developer to work in their own protected workspace.
 
 - [Develop using client tools](#develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and datasets, or [VS Code](https://code.visualstudio.com/) for Notebooks.
 - [Develop in a separate workspace](#develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-To work with branches using git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
+To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
 
 Then, each developer can choose the isolated environment in which to work.
 
@@ -36,7 +36,7 @@ The workflow for developers using a client tool like Power BI Desktop should loo
 
 1. Once the changes are merged, the shared team’s workspace is prompted to accept the new commit. The changes are updated into the shared workspace and everyone can see the changes to those datasets and reports.
 
-:::image type="content" source="./media/manage-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote git repo to the Fabric workspace.":::
+:::image type="content" source="./media/manage-branches/branches-using-client-tools.png" alt-text="Diagram showing the workflow of pushing changes from a remote Git repo to the Fabric workspace.":::
 
 For a specific guidance on how to use the new Power BI Desktop file format in git, see [Source code format](./source-code-format.md).
 
@@ -61,7 +61,7 @@ Once the review and merge are complete, a new commit is created to the *main* br
 
 ## Switch branches
 
-If your workspace is connected to a git branch and you want to switch to another branch, you can do so quickly from the workspace settings without disconnecting and reconnecting.  
+If your workspace is connected to a Git branch and you want to switch to another branch, you can do so quickly from the workspace settings without disconnecting and reconnecting.  
 When you switch branches, the workspace syncs with the new branch and all items in the workspace are overridden. If there are different versions of the same item in each branch, the item is replaced. If an item is in the old branch, but not the new one, it gets deleted.
 To switch between branches, follow these steps:
 

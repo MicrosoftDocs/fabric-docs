@@ -161,7 +161,7 @@ After uploading, you can use the following command to install the custom library
 Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
 
 > [!TIP]
-> All available R in-line commands and its clarifications can be found: [install.packages command](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html) and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
+> All available R in-line commands and its clarifications can be found: [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html) and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
 
 Follow this example to walk through the steps of installing an R feed library:
 
