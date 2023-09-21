@@ -42,7 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **Settings** tab of the Wait activity. Specify a number of seconds for execution to wait before continuing. You can directly enter a number, or use a dynamic expression to derive a value from any of the available functions and variables for expressions.
 
-:::image type="content" source="media/wait-activity/wait-settings.png" alt-text="Screenshot showing the Until activity Settings tab.":::
+:::image type="content" source="media/wait-activity/wait-activity-settings.png" alt-text="Screenshot showing the Until activity Settings tab.":::
 
 ## Save and run or schedule the pipeline
 
