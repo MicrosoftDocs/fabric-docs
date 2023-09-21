@@ -23,15 +23,15 @@ To make changes in your dashboard:
 
 1. In the top menu, select **Viewing** and toggle to **Editing** mode.
 
-    :::image type="content" source="media/dashboard-customize-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/dashboard-customize-visuals/viewing-to-editing-mode.png":::
+    :::image type="content" source="media/customize-dashboard-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/customize-dashboard-visuals/viewing-to-editing-mode.png":::
 
 1. On the tile that you'd like to customize, select the **Edit** icon.
 
-    :::image type="content" source="media/dashboard-customize-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/dashboard-customize-visuals/tile-edit-icon.png":::
+    :::image type="content" source="media/customize-dashboard-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/customize-dashboard-visuals/tile-edit-icon.png":::
 
 1. To save your changes and return to the dashboard, select **Apply changes**.
 
-    :::image type="content" source="media/dashboard-customize-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/dashboard-customize-visuals/apply-changes.png":::
+    :::image type="content" source="media/customize-dashboard-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/customize-dashboard-visuals/apply-changes.png":::
 
 ## Table
 

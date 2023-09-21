@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 09/21/2023
 ---
 
-## Apply conditional formatting to Real-Time Dashboard visuals
+# Apply conditional formatting to Real-Time Dashboard visuals
 
 Conditional formatting allows you to format the visual representation of data points based on their values, utilizing colors, tags, and icons. Conditional formatting can be applied either to a specific set of cells within a designated column or to entire rows.
 
@@ -94,7 +94,7 @@ To color your results by value:
 
 1. Select **Save**. In the following example, the cells of a table are colored from green to red based on the `Count` column.
 
-    :::image type="content" source="media/dashboard-conditional-formatting/color-by-value-example.png" alt-text="Screenshot of option to color by value." lightbox="media/dashboard-conditional-formatting/color-by-value-example.png":::
+    :::image type="content" source="media/dashboard-conditional-formatting/color-by-value-example.png" alt-text="Screenshot of example table of color by value." lightbox="media/dashboard-conditional-formatting/color-by-value-example.png":::
 
 ## Related content
 
