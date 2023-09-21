@@ -3,7 +3,7 @@ title: Microsoft Fabric licenses
 description: Understand how licenses in Microsoft Fabric work, and what are tenants, capacities and SKUs.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 06/07/2023
 ---
