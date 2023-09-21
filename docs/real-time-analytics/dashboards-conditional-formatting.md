@@ -34,30 +34,45 @@ For each visual, you have the flexibility to define one or more conditional form
 
 ## Color by condition
 
-1. In this example, we're going to create a rule that will color the cells of states in which the damage column is a value greater than zero. Enter the following information:
+The color by condition rule allows you to set one or more logical conditions that must be met for a value to be colored. This option is available for table, stat, and multi stat visuals.
 
-    Field | Description | Suggested value
-    |---|---|---|
-    | Rule type | Condition-based rules or absolute value-based rules. | Color by condition
-    | Rule name | Enter a name for this rule. If not defined, the condition column will be used by default. | Nonzero damage
-    | Color style | Color formatting cell fill or text. |Bold
-    | **Conditions**
-    | Column | The column to be used for the condition definition. |  Damage
-    | Operator | The operator to be used to define the condition. | Greater than ">"
-    | Value | The value to be compared to the condition. |
-    |**Formatting**
-    | Apply options | Apply the formatting to cells in a specific column or to the entire row. | Apply to cells
-    | Column | The column on which the formatting is applied. By default, this column is the condition column. This option is only available when **Formatting: Apply options** is set to *Apply to cells*. | State
-    | Hide text | Hides the text in the formatted column. This option is only available when **Formatting: Apply options** is set to *Apply to cells*. | Off
-    | Color | The color to apply to the formatted column/rows. | Red
-    | Tag | Optional tag to add to the formatted column. This option is only available when **Formatting: Apply options** is set to *Apply to cells*. | Blank
-    | Icon | Optional icon to add to the formatted column. This option is only available when **Formatting: Apply options** is set to *Apply to cells*. | No icon
+To color your results by condition:
 
-1. Select **Save**. The visual will now be colored conditionally. Note in this example that the *State* column is highlighted when the *Damage* column is greater than zero.
+1. In the **Conditional formatting** window, set the **Rule type** to **Color by condition**. For stat and multi stat visuals, this is the only option.
+
+    :::image type="content" source="media/dashboard-conditional-formatting/color-by-condition.png" alt-text="Screenshot of option to color by condition." lightbox="media/dashboard-conditional-formatting/color-by-condition.png":::
+
+1. Enter information for the following fields:
+
+    | Field | Required | Description |
+    |--|--|--|
+    | **Rule name** |  | A name for the rule. If not defined, the condition column is used. |
+    | **Color style** | &check; | Determines the color formatting: **Bold** or **Light**. |
+    | **Column** | &check; | The column for the condition definition. |
+    | **Operator** | &check; | The operator for the condition definition. |
+    | **Value** | &check; | The value for the condition definition. |
+    | **Color** | &check; | The color to apply to the rows that meet the condition: **Red**, **Yellow**, **Green**, or **Blue**. |
+    | **Tag** |  | A tag to add to the formatted column. |
+    | **Icon** |  | An icon to add to the formatted column. |
+
+    For table visuals, enter information for the following extra fields:
+
+    | Field | Required | Description |
+    |--|--|--|
+    | **Apply options** | &check; | Apply the formatting to cells in a specific column or to the entire row. |
+    | **Column**| &check; | The column to which to apply the formatting.|
+    | **Hide text** | | A toggle option to hide text within a formatted column. This option is only available when applying formatting to cells, not to rows. Instead of coloring the cell and displaying the text, the cell is colored without revealing its content.|
+
+    > [!NOTE]
+    > To define more than one condition, select **Add condition** at the end of the **Conditions** section.
+
+1. Select **Save**. In the following example, the cells of a multi stat visual with `Count` values above 10 are colored red with a warning icon.
+
+    :::image type="content" source="media/dashboard-conditional-formatting/color-by-condition.png" alt-text="Screenshot of a multi stat visual colored by condition." lightbox="media/dashboard-conditional-formatting/color-by-condition.png":::
 
 ## Color by value
 
-The color by value conditional formatting option allows you to visualize values on a color gradient. This option is available for table visuals.
+The color by value rule allows you to visualize values on a color gradient. This option is available for table visuals.
 
 To color your results by value:
 
@@ -77,7 +92,7 @@ To color your results by value:
     | **Reverse colors** |  | A toggle option that defines the direction of the gradient. |
     | **Apply options** | &check; | Apply the formatting to cells in a specific column or to the entire row. |
 
-1. Select **Save**. In the following example, the cells of a table are colored based on the `Count` column.
+1. Select **Save**. In the following example, the cells of a table are colored from green to red based on the `Count` column.
 
     :::image type="content" source="media/dashboard-conditional-formatting/color-by-value-example.png" alt-text="Screenshot of option to color by value." lightbox="media/dashboard-conditional-formatting/color-by-value-example.png":::
 
