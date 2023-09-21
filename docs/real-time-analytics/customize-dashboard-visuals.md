@@ -1,6 +1,8 @@
 ---
 title: Customize Real-Time Dashboard visuals
 description: Learn how to customize your Real-Time Dashboard visuals.
+ms.author: yaschust
+author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
 ms.date: 09/21/2023
@@ -323,9 +325,6 @@ Each visual can have one or more conditional formatting rules defined. When mult
 
 1. Select **Save**. The visual will now be colored conditionally. Note the color changes based on the value in the **event** column.
 
-## Next steps
+## Related content
 
-* [Use parameters in Real-Time Analytics dashboards](dashboard-parameters.md)
-* Explore query results with the [web UI results grid](web-results-grid.md)
-* [Write Kusto Query Language queries in the web UI](web-ui-kql.md)
-* Use [Dashboard-specific visuals](dashboard-visuals.md)
+* [Visualize data with Real-Time Dashboards](real-time-dashboards.md)
