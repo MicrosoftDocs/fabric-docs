@@ -12,19 +12,19 @@ ms.date: 07/16/2023
 
 # Create a OneLake shortcut
 
-In this article, you learn how to create a OneLake shortcut inside a Fabric Lakehouse. You can use Lakehouse, Data Warehouse or KQL Database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
+In this article, you learn how to create a OneLake shortcut inside a Fabric Lakehouse. You can use a lakehouse, a data warehouse, or a KQL database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisite
 
-Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+Create a lakehouse by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
 ## Create a shortcut
 
 1. Open a lakehouse.
 
-1. Right click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on a directory within the **Lake view** of the lakehouse.
 
 1. Select **New shortcut**.
 
@@ -38,5 +38,5 @@ The lakehouse automatically refreshes. The shortcut appears under **Files** in t
 
 ## Next steps
 
-* [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
-* [Create an Amazon S3 shortcut](create-s3-shortcut.md)
+- [Create an Azure Data Lake Storage Gen2 shortcut](create-adls-shortcut.md)
+- [Create an Amazon S3 shortcut](create-s3-shortcut.md)

@@ -1,6 +1,6 @@
 ---
 title: OneCopy quickstart, transform data with Spark and query with SQL
-description: Learn how to load data with OneLake file explorer, use a Fabric notebook to transform the data and then query with SQL
+description: Learn how to load data with OneLake file explorer, and use a Fabric notebook to transform the data and then query with SQL.
 ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
@@ -9,13 +9,13 @@ ms.custom: build-2023
 ms.date: 05/23/2023
 ---
 
-# OneCopy: Transform data with Spark and query with SQL
+# Transform data with Spark and query with SQL
 
 In this guide, you will:
 
-- Upload data to OneLake using OneLake file explorer.
+- Use OneLake file explorer to upload data to OneLake.
 
-- Use a Fabric notebook to read data on OneLake and write back as a delta table.
+- Use a Fabric notebook to read data on OneLake and write back as a Delta table.
 
 - Analyze and transform data with Spark using a Fabric notebook.
 
@@ -26,11 +26,13 @@ In this guide, you will:
 ## Prerequisites
 
 - Download and install [OneLake file explorer](onelake-file-explorer.md).
-- A workspace with a lakehouse item
-- Download the WideWorldImportersDW dataset to your computer to follow along with the instructions in this guide.  You can use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to connect to "https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/csv/full/dimension_city" and download the set of csv files. You can also use your own csv data and update the details as required.
+
+- Create a workspace with a Lakehouse item.
+
+- Download the WideWorldImportersDW dataset to your computer to follow along with the instructions in this guide. You can use [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) to connect to `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/csv/full/dimension_city` and download the set of csv files. You can also use your own csv data and update the details as required.
 
 > [!NOTE]
-> Create, load, or create a shortcut Delta-Parquet data directly under the Tables section of the Lakehouse. Do not nest your tables under additional subfolders in the Tables section as the Lakehouse will not automatically recognize it as a table and label it as Unidentified.
+> Create, load, or create a shortcut to Delta-Parquet data *directly* under the **Tables** section of the lakehouse. Do not nest your tables under additional subfolders in the **Tables** section as the lakehouse will not automatically recognize it as a table and label it as Unidentified.
 
 ## Steps
 
@@ -40,7 +42,7 @@ In this guide, you will:
 
 1. Copy your sample csv files to the OneLake directory /Files/dimension_city using OneLake file explorer.
 
-    :::image type="content" source="media\onelake-onecopy-quickstart\onelake-file-explorer-quickstart.png" alt-text="Screenshot of copying files to OneLake in file explorer." lightbox="media\onelake-onecopy-quickstart\onelake-file-explorer-quickstart.png":::
+   :::image type="content" source="media\onelake-onecopy-quickstart\onelake-file-explorer-quickstart.png" alt-text="Screenshot of copying files to OneLake in file explorer." lightbox="media\onelake-onecopy-quickstart\onelake-file-explorer-quickstart.png":::
 
 1. Navigate to your lakehouse in the Power BI service and view your files.
 
@@ -50,45 +52,49 @@ In this guide, you will:
 
    :::image type="content" source="media\onelake-onecopy-quickstart\new-notebook-quickstart.png" alt-text="Screenshot of creating new notebook in Fabric." lightbox="media\onelake-onecopy-quickstart\new-notebook-quickstart.png":::
 
-1. Using the Fabric notebook, convert the CSV files to delta format. The following code snippet reads data from user created directory /Files/dimension_city and converts it to a delta table dim_city.
+1. Using the Fabric notebook, convert the CSV files to Delta format. The following code snippet reads data from user created directory /Files/dimension_city and converts it to a Delta table dim_city.
 
-    ```python
-    import os
-    from pyspark.sql.types import *
-    for filename in os.listdir("/lakehouse/default/Files/<replace with your folder path>"):
-    df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
-    df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
-    ```
+   ```python
+   import os
+   from pyspark.sql.types import *
+   for filename in os.listdir("/lakehouse/default/Files/<replace with your folder path>"):
+   df=spark.read.format('csv').options(header="true",inferSchema="true").load("abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Files/<folder name>/"+filename,on_bad_lines="skip")
+   df.write.mode("overwrite").format("delta").save("Tables/<name of delta table>")
+   ```
 
-1. Refresh your view of the /Tables directory to see your new table.
+1. To see your new table, refresh your view of the /Tables directory.
 
-   :::image type="content" source="media\onelake-onecopy-quickstart\view-table-quickstart.png" alt-text="Screenshot of viewing table in lakehouse in Fabric." lightbox="media\onelake-onecopy-quickstart\view-table-quickstart.png":::
+   :::image type="content" source="media\onelake-onecopy-quickstart\view-table-quickstart.png" alt-text="Screenshot of a viewing table in a lakehouse in Fabric." lightbox="media\onelake-onecopy-quickstart\view-table-quickstart.png":::
 
 1. Query your table with SparkSQL in the same Fabric notebook.
 
-    ```python
-    %%sql
-    SELECT * from <replace with item name>.dim_city LIMIT 10;
-    ```
+   ```python
+   %%sql
+   SELECT * from <replace with item name>.dim_city LIMIT 10;
+   ```
 
-1. Modify the delta table by adding a new column named newColumn with data type integer.  Set the value of 9 for all of the records for this newly added column.
+1. Modify the Delta table by adding a new column named newColumn with data type integer. Set the value of 9 for all the records for this newly added column.
 
-    ```python
-    %%sql
-    
-    ALTER TABLE <replace with item name>.dim_city ADD COLUMN newColumn int;
-    
-    UPDATE <replace with item name>.dim_city SET newColumn = 9;
-    
-    SELECT City,newColumn FROM <replace with item name>.dim_city LIMIT 10;
-    ```
+   ```python
+   %%sql
+   
+   ALTER TABLE <replace with item name>.dim_city ADD COLUMN newColumn int;
+  
+   UPDATE <replace with item name>.dim_city SET newColumn = 9;
+  
+   SELECT City,newColumn FROM <replace with item name>.dim_city LIMIT 10;
+   ```
 
-1. Any delta table on OneLake can also be accessed via a SQL Endpoint. This SQL endpoint references the same physical copy of delta table on OneLake and offers T-SQL experience. Select the SQL Endpoint for lakehouse1 and then select "New SQL Query" to query the table using T-SQL
+1. You can also access any Delta table on OneLake via a SQL endpoint. This SQL endpoint references the same physical copy of Delta table on OneLake and offers the T-SQL experience. Select the SQL endpoint for lakehouse1 and then select **New SQL Query** to query the table using T-SQL.
 
-    ```sql
-    SELECT TOP (100) * FROM [<replace with item name>].[dbo].[dim_city];
-    ```
+   ```sql
+   SELECT TOP (100) * FROM [<replace with item name>].[dbo].[dim_city];
+   ```
 
 ## Summary
 
-In this quickstart guide, you used OneLake File explorer to copy external datasets to OneLake. The datasets were then transformed to delta table and analyzed using lakehouse and T-SQL experiences.
+In this quickstart guide, you used OneLake file explorer to copy external datasets to OneLake. You then transformed the datasets to Delta tables and used lakehouse and T-SQL experiences to analyze them.
+
+## Next steps
+
+- [Connect to ADLS using a OneLake shortcut](onelake-shortcuts-adb-quickstart.md)
