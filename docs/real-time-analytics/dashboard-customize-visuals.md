@@ -150,16 +150,16 @@ When **Visual type** is set to **Multi Stat**, the following properties are avai
 
 When **Visual type** is set to **Pie chart**, the following properties are available for customization:
 
-|Section|Property|Description|
+| Section | Property | Description |
 |--|--|--|
-|General|Visual format|
-|Data|Category column|
-||Numeric column|
-|Legend|
-|Label|Text|
-|Tooltip|Text|
-|Display options|Order by|
-||Top N|
+| **General** | **Visual format** | The format for the chart: **Pie** or **Donut**. |
+| **Data** | **Category column** | The column that determines the data categories. |
+|  | **Numeric column** | The column that contains the numeric value for the data category. |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
+| **Label** | **Text** | A dropdown list of what to include in the label: **Name**, **Percentage**, and **Value**. |
+| **Tooltip** | **Text** | A dropdown list of what to include in the tooltip, which can be seen when hovering over a section of the chart: **Name**, **Percentage**, and **Value**. |
+| **Display options** | **Order by** | How to order the results in the chart: **Name**, **Size**, or **None**. |
+|  | **Top N** | Option to only show sections for the top *n* values in the chart. |
 
 ## Scatter chart
 
