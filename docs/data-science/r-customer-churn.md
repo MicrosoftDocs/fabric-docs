@@ -597,7 +597,7 @@ Some example visualizations are shown here. The data panel shows the delta table
 > [!NOTE]
 > This shows an illustrated example of how you would analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
 
-:::image type="content" source="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/PBIviz3.png" alt-text="Screenshot shows a Power BI dashboard of the data.":::
+:::image type="content" source="media/r-customer-churn/power-bi.png" alt-text="Screenshot shows a Power BI dashboard of the data.":::
 
 The Power BI report shows that customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
 Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
