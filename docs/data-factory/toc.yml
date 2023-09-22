@@ -261,6 +261,8 @@
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
+      - name: Until activity
+        href: until-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
