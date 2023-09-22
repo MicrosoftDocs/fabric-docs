@@ -53,7 +53,7 @@ Semantic Link facilitates seamless collaboration between data scientists and bus
 It subclasses the [pandas DataFrame](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html) and adds metadata, such as semantic information and lineage.
 FabricDataFrame is the primary data structure that Semantic Link uses to propagate semantic information from Power BI datasets into the Data Science environment.
 
-:::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.svg" alt-text="A diagram that shows data flow from connectors to Power BI datasets to FabricDataFrame to Semantic Functions." lightbox="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.svg":::
+:::image type="content" source="media/semantic-link-overview/semantic-link-overview-fabric-dataframes.svg" alt-text="A diagram that shows data flow from connectors to Power BI datasets to FabricDataFrame to Semantic Functions.":::
 
 FabricDataFrame supports all pandas operations and more.
 It exposes semantic functions and the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that enable you to use Power BI measures in your data science work.
