@@ -259,6 +259,12 @@
         href: switch-activity.md
       - name: Until activity
         href: until-activity.md
+      - name: Wait activity
+        href: wait-activity.md
+      - name: Web activity
+        href: web-activity.md
+      - name: WebHook activity
+        href: webhook-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
