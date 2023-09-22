@@ -43,7 +43,7 @@ Microsoft Fabric also supports managing permissions directly for items within a 
 
 With the [sharing](../get-started/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. You can configure the share to grant the user connect-only permissions, full SQL access, or access to OneLake and Apache Spark. You can't use sharing to assign write access to users. You can manage sharing through a security group, which allows you to easily provide multiple users access to a specific item in a single action.
 
-Another way to configure permissions is via an item's **Manage permissions** page. This page allows you to add or remove permissions for ReadAll access for a user or group. This approach is ideal if you have workspace viewers that need OneLake access. Alternatively, you can use this page to adjust permissions after sharing the item.
+Another way to configure permissions is via an item's **Manage permissions** page. This page allows you to add or remove permissions for *ReadAll* access for a user or group. This approach is ideal if you have workspace viewers that need OneLake access. Alternatively, you can use this page to adjust permissions after sharing the item.
 
 ## Compute permissions
 
