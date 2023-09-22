@@ -26,7 +26,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a Web activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Web activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
