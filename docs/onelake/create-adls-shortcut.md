@@ -18,7 +18,7 @@ In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 
 
 ## Prerequisite
 
-Create a lakehouse by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
+If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
 ## Create a shortcut
 
@@ -28,7 +28,7 @@ Create a lakehouse by following these steps: [Create a lakehouse with OneLake](c
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
+   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view.":::
 
 [!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 

@@ -24,10 +24,12 @@ In this guide, you will:
 Before you start, you must have:
 
 - A workspace with a Lakehouse item.
+
 - A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
+
 - A sample dataset.
 
-## Steps
+## Ingest data and modify the Delta table
 
 1. Navigate to your lakehouse in the Power BI service and select **Get data** and then select **New data pipeline**.
 
@@ -63,7 +65,7 @@ Before you start, you must have:
     df.show(5)
     ```
 
-1. Update data in the Delta table on OneLake by updating a field value.
+1. Update the Delta table data by changing a field value.
 
     ```python
     %sql
