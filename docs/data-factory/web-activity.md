@@ -50,15 +50,15 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/web-activity/choose-web-connection-and-configure.png" alt-text="Screenshot showing the Lookup activity settings tab highlighting the tab, and where to choose a new connection.":::
 
-1. When you choose **+ New** to create a new connection, you will see the connection creation dialog where you can provide the base URL as well as credentials to connect.
+1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the base URL and credentials to connect.
 
    :::image type="content" source="media/web-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the Web activity.":::
 
-1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE and PATCH methods.
+1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
 ## Save and run or schedule the pipeline
 
-Typically, you will use the output of the Web activity in conjunction with other activities, but once configured, it can be run directly. If you are running it to invoke a REST API that performs some action and don't require any output from the activity, your pipeline might contain only the Web activity, too. To run the activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+Typically, you use the output of the Web activity with other activities, but once configured, it can be run directly without other activities, too. If you're running it to invoke a REST API that performs some action and don't require any output from the activity, your pipeline might contain only the Web activity, too. To run the activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
