@@ -62,7 +62,7 @@ The utilization chart displays the following elements:
 
 ### Throttling
 
-Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turns into darker shades.
+Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turn into darker shades.
 
 The throttling chart displays the following elements:
 
@@ -100,7 +100,7 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 
 * *No filters applied* - Columns display the peak timepoint per hour.
 
-* *Filters are applied* -  The visuals displays every 30 second timepoint.
+* *Filters are applied* - The visuals displays every 30 second timepoint.
 
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.

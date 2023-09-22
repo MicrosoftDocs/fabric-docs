@@ -19,7 +19,7 @@ All the activities in the capacity are ranked according to their compute impact.
 
 When the total combined CU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [CU over time](metrics-app-overview-page.md#cu-over-time) chart and CU (s) card will changes its color to yellow.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-overview-page.md#capacity-utilization-and-throttling) chart and CU (s) card will changes its color to yellow.
 
     >[!NOTE]
     >When autoscale is enabled, if the capacity reaches the maximum number of capacity units (CUs) allowed by the autoscale operation, throttling is applied.
