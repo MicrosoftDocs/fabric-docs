@@ -132,3 +132,11 @@ landingContent:
             url: r-library-management.md 
           - text: R visualization
             url: r-visualization.md 
+
+# Card
+  - title: Reference docs     
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: SemPy Python SDK
+          url: /python/api/semantic-link-sempy

@@ -67,6 +67,10 @@ items:
     href: data-wrangler.md
   - name: Read from Power BI and write data usable by Power BI
     href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -201,6 +205,10 @@ items:
     items:
     - name: Read from Power BI and write data usable by Power BI
       href: read-write-power-bi.md
+    - name: Explore and validate functional dependencies in your data
+      href: semantic-link-validate-data.md
+    - name: Explore and validate relationships in datasets
+      href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:
   - name: Overview
@@ -242,4 +250,4 @@ items:
 - name: Reference
   items:
     - name: SemPy Python SDK
-      href: data-science-overview.md # python/api/semantic-link/overview-semantic-link
+      href: /python/api/semantic-link-sempy

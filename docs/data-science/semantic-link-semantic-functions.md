@@ -1,5 +1,5 @@
 ---
-title: Semantic functions in MIcrosoft Fabric
+title: Semantic functions in Microsoft Fabric
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -16,11 +16,19 @@ This article covers semantic functions and how they can help data scientists and
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-[FabricDataFrames](data-science-overview.md) dynamically expose semantic functions based on logic defined by each function. For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a datetime column or a country column of a FabricDataFrame.
+To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
+
+```python
+%pip install semantic-link
+```
+
+[FabricDataFrames](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe) dynamically expose semantic functions based on logic defined by each function.
+For example, the `is_holiday` function shows up in the autocomplete suggestions when you're working on a FabricDataFrame containing both a datetime column and a country column.
 
 Each semantic function uses information about the data types, metadata (such as Power BI data categories), and the data in a FabricDataFrame or FabricSeries to determine its relevance to the particular data on which you're working.
 
-Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator. You can think of semantic functions as being similar to [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the popular DataFrame concept.
+Semantic functions are automatically discovered when annotated with the `@semantic_function` decorator.
+You can think of semantic functions as being similar to [C# extension methods](/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) applied to the popular DataFrame concept.
 
 ## Semantic function usage: autocomplete suggestions
 
@@ -31,8 +39,6 @@ Semantic functions are available in the autocomplete suggestions when you work w
 In the following example, the metadata for the FabricDataFrame is manually specified.
 
 ```Python
-%pip install geopandas
-
 from sempy.fabric import FabricDataFrame
 
 df = FabricDataFrame(
@@ -52,8 +58,6 @@ df_geo.explore()
 Alternatively, you could read from a Power BI dataset into a FabricDataFrame, and in that case, the metadata will be autopopulated.
 
 ```Python
-%pip install geopandas
-
 from sempy.fabric import FabricDataFrame
 
 # Alternative: reading from Power BI dataset
@@ -67,9 +71,6 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-> [!NOTE]
-> Semantic functions may have additional dependencies that need to be installed. For example the `to_geopandas` function requires the `geopandas` package to be installed.
-
 ## Built-in semantic functions
 
 The SemPy Python library provides a set of built-in semantic functions that are available out of the box. A few examples are
@@ -81,16 +82,19 @@ The SemPy Python library provides a set of built-in semantic functions that are 
 
 ## Custom semantic functions
 
-Semantic functions are built for extensibility. You can define your own semantic functions within your notebook or as a separate Python module. To use a semantic function outside of a notebook, the semantic function needs to be declared within the `sempy.functions` module.
+Semantic functions are built for extensibility.
+You can define your own semantic functions within your notebook or as a separate Python module.
+To use a semantic function outside of a notebook, the semantic function needs to be declared within the `sempy.functions` module.
 
 This code example shows the definition of a semantic function `_is_captial` that returns `true` if the city is a capital of the country.
 
 ```Python
-from sempy.fabric import FabricDataFrame, PowerBICountryMatcher, PowerBICityMatcher
+from sempy.fabric import FabricDataFrame, FabricSeries
+from sempy.fabric.matcher import CountryMatcher, CityMatcher
 from sempy.functions import semantic_function, semantic_paramters
 
 @semantic_function("is_capital")
-@semantic_parameters(col_country=PowerBICountryMatcher, col_city=PowerBICityMatcher)
+@semantic_parameters(col_country=CountryMatcher, col_city=CityMatcher)
 def _is_captial(df: FabricDataFrame, col_country: str, col_city: str) -> FabricSeries:
     """Returns true if the city is a capital of the country"""
     capitals = {
@@ -105,11 +109,12 @@ def _is_captial(df: FabricDataFrame, col_country: str, col_city: str) -> FabricS
 
 The following points provide a breakdown of the code snippet:
 
-- The `col_country` and `col_city` parameters are annotated with `PowerBICountryMatcher` and `PowerBICityMatcher`, respectively. This annotation allows the semantic function to be automatically discovered when working with a FabricDataFrame that has the corresponding metadata.
+- The `col_country` and `col_city` parameters are annotated with `CountryMatcher` and `CityMatcher`, respectively. This annotation allows the semantic function to be automatically discovered when working with a FabricDataFrame that has the corresponding metadata.
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
 - The type annotation of the first parameter (`df`) shows that the function is applicable to a FabricDataFrame, rather than a FabricSeries.
 
 ## Next steps
 
+- [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-power-bi.md)
 - [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)
