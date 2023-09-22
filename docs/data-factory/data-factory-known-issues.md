@@ -26,6 +26,7 @@ Select the **Title** to view more information about that specific known issue.
 |  Edit a Dataflow Gen2                  |  [Lineage view edit dataflow button takes user to Dataflow Gen1 experience](known-issue-lineage-view-edit.md)    |   June 6, 2023    |
 |  Output destination in Dataflows Gen2               |  [Staging items aren't available or are misconfigured](known-issue-staging-item.md)    |   June 6, 2023    |
 | Refreshes through a gateway | [Gateway refreshes longer than an hour fail](known-issue-gateway-refreshes.md) | August 3, 2023 |
+| Refresh history reports in progress for some tables that failed | [Refresh history reports in progress for some tables that failed](known-issue-inprogress-refresh-history.md) | August 24, 2023 |
 
 ## Recently closed known issues
 
