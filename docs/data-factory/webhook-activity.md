@@ -57,7 +57,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Save and run or schedule the pipeline
 
-Typically, you use the output of the WebHook activity with other activities, but once configured, it can be run directly without other activities, too. If you're running it to invoke a REST API that performs some action and you don't require any output from the activity, your pipeline might contain only the Web activity, too. To run the activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+Typically, you use the output of the WebHook activity with other activities, but once configured, it can be run directly without other activities, too. If you're running it to invoke a REST API that performs some action and you don't require any output from the activity, your pipeline might contain only the Web activity, too. To run the activity, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
