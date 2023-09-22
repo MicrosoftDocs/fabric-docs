@@ -368,3 +368,5 @@
         href: known-issue-staging-item.md
       - name: Gateway refreshes longer than an hour fail
         href: known-issue-gateway-refreshes.md
+      - name: In progress tables refresh history
+        href: known-issue-inprogress-refresh-history.md
