@@ -3,7 +3,7 @@ title: What is the Microsoft Fabric Capacity Metrics app?
 description: Learn how to evaluate your Microsoft Fabric capacity's health, by reading the metrics app.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 05/23/2023
 ---
@@ -33,6 +33,10 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
 
 * Warehouse utilization reporting shows only OneLake related compute usage.
+
+* Updates from version 1 to version 1.1 will be installed in a new workspace.
+
+* Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
 
 ## Next steps
 

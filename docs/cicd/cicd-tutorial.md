@@ -14,11 +14,11 @@ This tutorial takes you through the whole process of loading data into your work
 
 ## Prerequisites
 
-Before you start, make sure of the following:
+Before you start, make sure of the following prerequisites:
 
-* If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
-* If you aren't signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
-* Access to an Azure Git repo. If you don't have one, see [Set up a Git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
+* Fabric is enabled. If you don't have Fabric enabled yet, ask your admin to [enable Fabric for your organization](../admin/fabric-switch.md).
+* You're signed up. If you're not signed up yet, [sign up for a free trial](../get-started/fabric-trial.md).
+* You have access to an Azure Git repo. If you don't have one, see [Set up a Git repository](/devops/develop/git/set-up-a-git-repository) for information on creating one.
 * Download the [FoodSales.pbix](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/cicd/FoodSales.pbix) file into a Git repo that you can edit. This is the sample file we use in this tutorial. Alternatively, you can use your own dataset and report, if you prefer.
 
 If you already have admin rights to a workspace with data, you can skip to [step 3](#step-3-connect-the-teams-development-workspace-to-git).
@@ -27,7 +27,7 @@ If you already have admin rights to a workspace with data, you can skip to [step
 
 To create a new workspace and assign it a license:
 
-1. From the left navigation bar, select **Workspaces > + New workspace**.
+1. From the left navigation bar of the **Power BI** experience, select **Workspaces > + New workspace**.
 
    :::image type="content" source="media/cicd-tutorial/create-workspace.png" alt-text="Screenshot of Create workspace.":::
 
@@ -61,7 +61,7 @@ You now have a workspace with content in it for you and your team to work on.
 
 ### Edit credentials - first time only
 
-Before you create a deployment pipeline, you need to set the credentials. This step only needs to be done once. After your credentials are set, you won't have to set them again.
+Before you create a deployment pipeline, you need to set the credentials. This step only needs to be done once for each dataset. After your credentials are set for this dataset, you won't have to set them again.
 
 1. Go to **Settings > Power BI settings**.
 
@@ -75,7 +75,7 @@ Before you create a deployment pipeline, you need to set the credentials. This s
 
     :::image type="content" source="media/cicd-tutorial/set-credentials.png" alt-text="Screenshot of dataset credentials.":::
 
-1. Select **Sign in**. The connection is tested and credentials set. This is a one time action. You won't have to edit the credentials again for this dataset.
+1. Select **Sign in**. The connection is tested and credentials set.
 
 You can now create a deployment pipeline.
 
@@ -97,7 +97,7 @@ Let's connect this workspace to the main branch of your Azure repo so all team m
    * [Organization](/azure/devops/user-guide/plan-your-azure-devops-org-structure)
    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
-   * Select *main* (or *master*) branch.
+   * Select *main* (or *master*) branch
    * Type the name of folder in the repo where the *.pbix* file located. This is the folder that will be synced with the workspace.
 
      :::image type="content" source="./media/cicd-tutorial/git-connect-main.png" alt-text="Screenshot of workspace settings Git integration window with workspace connected to main branch of repo.":::
@@ -179,7 +179,7 @@ In order to edit the workspace without interfering with other team members' chan
    * [Project](/azure/devops/user-guide/plan-your-azure-devops-org-structure#how-many-projects-do-you-need)
    * [Git repository](/azure/devops/user-guide/plan-your-azure-devops-org-structure#structure-repos-and-version-control-within-a-project)
    * Select **+ New Branch** to create a new branch.
-   * Name the new branch *MyFoods_FeatureBranch*, branch it from *main* (or *master*), and Select **Create**.
+   * Name the new branch *MyFoodEdits*, branch it from *main* (or *master*), and Select **Create**.
    * The folder in the repo where the *.pbix* file located.
 
     :::image type="content" source="./media/cicd-tutorial/git-create-branch.png" alt-text="Screenshot of workspace settings window with create new branch.":::
@@ -228,7 +228,7 @@ The Git status of the dataset changes to *Synced* and the workspace and Git repo
 
 ## Step 9: Create PR and merge
 
-In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoods* branch with the *main* branch.
+In the Git repo, [create a pull request](/azure/devops/repos/git/pull-requests#create-a-pull-request) to merge the *MyFoodEdits* branch with the *main* branch.
 
 1. Select **Create a pull request**.
 
@@ -259,7 +259,7 @@ The Git status of the dataset changes to *Synced* and the workspace is synced wi
 
 ## Step 11: Compare stages in deployment pipeline
 
-1. Select **View deployment pipelines** to compare the content in the development stage with the content in the test stage.
+1. Select **View deployment pipeline** to compare the content in the development stage with the content in the test stage.
 
    :::image type="content" source="media/cicd-tutorial/view-pipeline.png" alt-text="Screenshot of View deployment pipelines icon.":::
 

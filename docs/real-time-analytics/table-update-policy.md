@@ -37,7 +37,7 @@ This article describes how to create an update policy on a table in Real-Time An
 
 1. Enter the parameters of your table update policy, and then select **Run**. For more information on these parameters, see [.alter table update policy](/azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context&pivots=fabric).
 
-## Next steps
+## Related content
 
 * [`.show table update policy`](/azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context&pivots=fabric)
 * [Query data in a KQL queryset](kusto-query-set.md)
