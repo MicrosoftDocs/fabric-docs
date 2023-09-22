@@ -36,7 +36,7 @@ It has three features. Use the tabs at the top of the visuals to toggle.
 
 ### Utilization  
 
-Displays the CU usage of the selected capacity over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+Displays the CU usage over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
 The utilization chart displays the following elements:
 
@@ -62,15 +62,15 @@ The utilization chart displays the following elements:
 
 ### Throttling
 
-Displays the Interactive delay, Interactive rejection and Background rejection for selected capacity over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Delays and rejections will happen after columns turn into darker shades.
+Displays the Interactive delay, Interactive rejection and Background rejection over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Timepoints with above 100% value are rendered with darker color. 
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - The column chart shows Interactive delay indicator that becomes active when it crosses 100% threshold.
+  * **Interactive delay** - Billable interactive Operations are delayed if the value is above 100%.
   
-  * **Interactive rejection** - The column chart shows Interactive rejection indicator that becomes active when it crosses 100% threshold. 
+  * **Interactive rejection** - Billable interactive operations are rejected if the value is above 100%.
 
-  * **Background rejection** - The column chart shows Background rejection indicator that becomes active when it crosses 100% threshold.
+  * **Background rejection** - Billable background operations are rejected if the value is above 100%.
 
 Utilization and Throttling has below view:
 
@@ -80,12 +80,9 @@ Utilization and Throttling has below view:
 
 ### Overages 
   
-Displays the carryforward add, carryforward burndown and cumulative carryforward for selected capacity over time. Use x and y axis zoom slicer to zoom visual.
+Displays the carryforward add, carryforward burndown and cumulative carryforward over time. Use x and y axis zoom slicer to zoom visual. Carryforward only consider billable Interactive and Background operations.
 
 The overages chart displays the following elements:
-
->[!NOTE]
->Carryforward only consider billable Interactive and Background operations.
 
   * **Add %** - Green columns represent the carryforward % added during current 30 second period.
   
