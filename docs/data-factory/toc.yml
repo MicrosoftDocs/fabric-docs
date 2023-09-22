@@ -31,6 +31,8 @@
     items:
     - name: Connector overview
       href: connector-overview.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -85,6 +87,12 @@
         href: connector-azure-sql-database-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-sql-database-dataflow.md
+    - name: Azure Synapse Analytics
+      items:
+      - name: Overview
+        href: connector-azure-synapse-analytics-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-synapse-analytics-copy-activity.md
     - name: Dataverse
       items:
       - name: Overview
@@ -99,6 +107,10 @@
         href: connector-data-warehouse-copy-activity.md 
     - name: Format
       items:
+      - name: Avro
+        items:
+        - name: Configure in Data pipeline
+          href: format-avro.md
       - name: Binary
         items:
         - name: Configure in Data pipeline
@@ -115,6 +127,14 @@
           href: format-excel.md
         - name: Configure in Dataflow Gen2
           href: connector-excel-dataflows.md
+      - name: JSON
+        items:
+        - name: Configure in Data pipeline
+          href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
@@ -183,6 +203,12 @@
         href: connector-rest-copy-activity.md    
       - name: Configure in Dataflow Gen2
         href: connector-rest-dataflows.md 
+    - name: SFTP
+      items:
+      - name: Overview
+        href: connector-sftp-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-sftp-copy-activity.md
     - name: SharePoint online list
       items:
       - name: Overview
@@ -215,6 +241,8 @@
         href: foreach-activity.md
       - name: Get Metadata activity
         href: get-metadata-activity.md
+      - name: If Condition activity
+        href: if-condition-activity.md
       - name: Invoke Pipeline activity
         href: invoke-pipeline-activity.md
       - name: Pipeline Lookup activity
@@ -223,10 +251,14 @@
         href: notebook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Set Variable Activity
+        href: set-variable-activity.md
       - name: Stored Procedure activity
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
+      - name: Until activity
+        href: until-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
@@ -247,6 +279,8 @@
         href: monitor-pipeline-runs.md
       - name: Browse pipeline runs in the Monitoring Hub
         href: monitoring-hub-pipeline-runs.md
+      - name: Run a Script activity and send output by email
+        href: script-activity-email-output.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
@@ -283,6 +317,8 @@
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
+    - name: Guide to dataflow for mapping dataflow users
+      href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
     - name: What's new in Data Factory
@@ -293,6 +329,25 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Connectors
+      items:
+      - name: Azure Data Explorer
+        href: connector-troubleshoot-azure-data-explorer.md
+      - name: Azure Database for PostgreSQL
+        href: connector-troubleshoot-azure-database-for-postgresql.md        
+      - name: Azure Table Storage
+        href: connector-troubleshoot-azure-table-storage.md
+      - name: Format
+        items:
+        - name: Delimited text
+          href: connector-troubleshoot-delimited-text.md
+        - name: XML
+          href: connector-troubleshoot-xml.md
+      - name: Rest
+        href: connector-troubleshoot-rest.md        
+      - name: Sharepoint Online list
+        href: connector-troubleshoot-sharepoint-online-list.md
+
     - name: Data Factory limitations
       items:
       - name: Data Factory limitations overview
@@ -309,7 +364,9 @@
         href: data-factory-known-issues.md
       - name: Lineage view edit button
         href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
+      - name: Staging items
+        href: known-issue-staging-item.md
+      - name: Gateway refreshes longer than an hour fail
+        href: known-issue-gateway-refreshes.md
       - name: In progress tables refresh history
         href: known-issue-inprogress-refresh-history.md
