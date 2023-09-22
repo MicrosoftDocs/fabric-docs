@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Avocado price prediction with R"
+title: "Tutorial: Use R to predict avocado prices"
 description: End to end example of using R to analyze, visualize the avocado prices in the US and predict which city has the cheapest Avocado.
 ms.reviewer: sgilley
 author: ruixinxu
@@ -10,7 +10,7 @@ ms.date: 04/24/2023
 ms.search.form: R Language
 ---
 
-# Tutorial: Avocado price prediction with R
+# Tutorial: Use R to predict avocado price
 
 
 This articles shows an end to end example of using R to analyze, visualize the avocado prices in the US, and predict future avocado prices.

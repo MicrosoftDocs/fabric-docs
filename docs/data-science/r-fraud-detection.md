@@ -1,15 +1,17 @@
 ---
-title: "Tutorial: Create, evaluate, and score a fraud detection model R"
+title: "Tutorial: Use R to detect fraud"
+
 description: This tutorial shows a data science work flow in R, with an end-to-end example, building a model to detect fraud. 
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.date: 09/21/2023
+ms.search.form: R Language
 # customer intent: As a data scientist, I want to create a model to predict churn with R
 ---
 
-# Tutorial: Create, evaluate, and score a fraud detection model R
+# Tutorial: Use R to create, evaluate, and score a fraud detection model
 
 In this tutorial, you'll walk through the Synapse Data Science in Microsoft Fabric workflow with an end-to-end example. The scenario is to build a fraud detection model, using ML algorithms trained on historical data and then use the model to detect future fraudulent transactions.
 

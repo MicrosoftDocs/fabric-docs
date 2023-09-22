@@ -1,5 +1,6 @@
 ---
-title: "Tutorial: Create, evaluate, and score a churn prediction model with R"
+title: "Tutorial: Use R to predict churn"
+
 description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn. 
 ms.reviewer: sgilley
 ms.author: amjafari
@@ -9,7 +10,7 @@ ms.date: 09/21/2023
 # customer intent: As a data scientist, I want to create a model to predict churn with R
 ---
 
-# Tutorial: Create, evaluate, and score a churn prediction model with R
+# Tutorial: Use R to create, evaluate, and score a churn prediction model
 
 In this tutorial, you'll see a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 

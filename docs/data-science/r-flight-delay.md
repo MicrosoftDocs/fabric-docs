@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Predict flight delay with R"
+title: "Tutorial: Use R to predict flight delay"
 description: How to predict flight delay using tidymodels packages and build a Power BI report on the results.
 ms.reviewer: sgilley
 author: ruixinxu
@@ -8,9 +8,10 @@ ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
+# customer intent: As a data scientist, I want to use R to predict flight delay
 ---
 
-# Flight delay prediction
+# Tutorial: Use R to predict flight delay
 
 This article uses the [nycflights13](https://github.com/hadley/nycflights13) data to predict whether a plane arrives more than 30 minutes late. We then use the prediction results to build an interactive Power BI dashboard. 
 
