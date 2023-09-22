@@ -166,7 +166,7 @@ items:
   - name: Tutorials
     items:
     - name: Customer churn
-    - href: r-customer-churn.md
+      href: r-customer-churn.md
     - name: Fraud detection
       href: r-fraud-detection.md
     - name: Avocado price prediction
