@@ -165,8 +165,8 @@ items:
     href: r-overview.md
   - name: Tutorials
     items:
-    - name: Bank customer churn
-    - href: r-bank-customer-churn.md
+    - name: Customer churn
+    - href: r-customer-churn.md
     - name: Fraud detection
       href: r-fraud-detection.md
     - name: Avocado price prediction
