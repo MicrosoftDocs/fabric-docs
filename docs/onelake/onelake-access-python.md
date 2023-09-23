@@ -13,17 +13,18 @@ ms.date: 08/04/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-This article shows how you can use the Azure Storage Python SDK to manage files and directories in OneLake.  This walkthrough covers the same content as [this walkthrough](/azure/storage/blobs/data-lake-storage-directory-file-acl-python?tabs=azure-ad) and highlights the differences when connecting to OneLake.
+This article shows how you can use the Azure Storage Python SDK to manage files and directories in OneLake. This walkthrough covers the same content as [Use Python to manage directories and files in ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python?tabs=azure-ad) and highlights the differences when connecting to OneLake.
 
 ## Prerequisites
 
-Before starting your project, make sure you have the following:
-    - A workspace in your Fabric tenant with Contributor permissions
-    - A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
+Before starting your project, you must have:
+
+- A workspace in your Fabric tenant with Contributor permissions.
+- A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
 
 ## Set up your project
 
-From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries.  As mentioned, OneLake supports the same SDKs as ADLS Gen2 and supports Azure Active Directory authentication, provided by the azure-identity package.
+From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries. OneLake supports the same SDKs as Azure Data Lake Storage (ADLS) Gen2 and supports Azure Active Directory authentication, which is provided by the azure-identity package.
 
 ```console
 pip install azure-storage-file-datalake azure-identity
@@ -43,7 +44,7 @@ from azure.identity import DefaultAzureCredential
 
 ## Authorize access to OneLake
 
-To authenticate your requests to OneLake, create an authorized DataLakeServiceClient instance that represents OneLake and uses the default Azure credential. When building the DataLakeServiceClient,  pass in a OneLake URL ('dfs.fabric.microsoft.com') instead of an ADLS Gen2 URL (dfs.core.windows.net). When you call this function, remember that the account name for OneLake is always 'onelake'.
+To authenticate your requests to OneLake, create an authorized DataLakeServiceClient instance that represents OneLake and uses the default Azure credential. When you build the DataLakeServiceClient, pass in a OneLake URL (`dfs.fabric.microsoft.com`) instead of an ADLS Gen2 URL (`dfs.core.windows.net`). When you call this function, remember the account name for OneLake is always **onelake**.
 
 ```python
 def get_service_client_token_credential(self, account_name) -> DataLakeServiceClient:
@@ -61,7 +62,7 @@ To learn more about using DefaultAzureCredential to authorize access to data, se
 
 ## List items in a workspace
 
-You can list items in your workspace by first creating a file system client for your workspace.  
+You can list items in your workspace by first creating a file system client for your workspace.
 
 ```python
 def create_file_system_client

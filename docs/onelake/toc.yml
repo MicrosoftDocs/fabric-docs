@@ -21,6 +21,8 @@ items:
     href: onelake-shortcuts.md
   - name: Create a OneLake shortcut
     href: create-onelake-shortcut.md
+  - name: Access OneLake shortcuts in a Spark notebook
+    href: access-onelake-shortcuts.md
   - name: Create an Azure Data Lake Storage Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
@@ -31,10 +33,8 @@ items:
     href: onelake-access-api.md
   - name: OneLake API parity
     href: onelake-api-parity.md
-  - name: How to
-    items:
-    - name: Use Python to manage OneLake
-      href: onelake-access-python.md
+  - name: Use Python to manage OneLake
+    href: onelake-access-python.md
 - name: Integrate with Azure services
   items:
   - name: Azure Synapse Analytics
