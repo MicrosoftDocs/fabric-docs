@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 07/13/2023
-ms.search.form: product-kusto, create Real-Time Analytics solution
+ms.search.form: product-kusto, Overview
 ---
 # What is Real-Time Analytics in Fabric?
 
@@ -83,7 +83,7 @@ See how these items work together in the end-to-end streaming data consumption a
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
 
-## See also
+## Related content
 
 * [Microsoft Fabric event streams - overview](event-streams/overview.md)
 * [Compare Real-Time Analytics to Azure Data Explorer](realtime-analytics-compare.md)

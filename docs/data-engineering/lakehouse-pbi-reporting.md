@@ -1,6 +1,6 @@
 ---
-title: Direct lake mode and PBI reporting
-description: Learn how to build PBI reports on top of lakehouse data.
+title: Direct lake mode and Power BI reporting
+description: Learn how to build Power BI reports on top of lakehouse data in Microsoft Fabric 
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
@@ -10,7 +10,7 @@ ms.date: 05/23/2023
 ms.search.form: Lakehouse PBI Reporting
 ---
 
-# How direct lake mode works with PBI reporting
+# How direct lake mode works with Power BI reporting
 
 In Microsoft Fabric, when the user creates a lakehouse, the system also provisions the associated SQL endpoint and default dataset. The default dataset is a semantic model with metrics on top of lakehouse data. The dataset allows Power BI to load data for reporting.
 

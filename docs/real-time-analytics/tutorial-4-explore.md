@@ -30,7 +30,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 
     :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Data tree showing the More menu of a table. The option titled Query table is highlighted." lightbox="media/realtime-analytics-tutorial/kql-sample-queries.png":::
 
-1. The example opens in the **Check your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. The autopopulated example queries are automatically run. You can see the query results in the results pane.
+1. The example opens in the **Explore your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. The autopopulated example queries are automatically run. You can see the query results in the results pane.
 
     :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first example query result in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/take-100.png":::
 
@@ -72,7 +72,7 @@ The query editor supports the use of T-SQL in addition to its primary query lang
 
     :::image type="content" source="media/realtime-analytics-tutorial/sql-count.png" alt-text="Screenshot of using the count SQL operator in a KQL quick query.":::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

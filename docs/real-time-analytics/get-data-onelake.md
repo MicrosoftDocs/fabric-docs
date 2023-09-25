@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 07/09/2023
-ms.search.form: product-kusto
+ms.search.form: product-kusto, Get data
 ---
 
 # Get data from OneLake
@@ -30,6 +30,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
 
     > [!IMPORTANT]
+    >
     > * Folder paths aren't supported.
     > * Wildcards (*) aren't supported.
 
@@ -114,9 +115,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/get-data-onelake/onelake-summary.png" alt-text="Screenshot of the Summary pane showing the successful completion of data ingestion.":::
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)
-
-

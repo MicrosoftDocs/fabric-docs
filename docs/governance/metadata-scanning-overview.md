@@ -3,7 +3,7 @@ title: Metadata scanning overview
 description: Learn how metadata scanning can help you govern your organizations Fabric data.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 06/15/2023
 ---
@@ -36,7 +36,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 ## Licensing
 
-Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items artifacts located in non-Premium workspaces.
+Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
 ## Next steps
 

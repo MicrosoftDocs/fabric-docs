@@ -9,14 +9,14 @@ ms.date: 07/16/2023
 ## Select a source
 
 1. Under **External sources**, select **Amazon S3**.
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="media/onelake-shortcuts/amazons3-shortcut/new-shortcut-expanded.png":::
+    :::image type="content" source="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/new-shortcut.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 is highlighted."  lightbox="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/new-shortcut-expanded.png":::
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-details.png":::
+    :::image type="content" source="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials."  lightbox="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
-      | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionName*`.amazonaws.com` |
+      | **URL**| The connection string for your Amazon S3 bucket. | `https://`*BucketName*`.s3.`*RegionCode*`.amazonaws.com` |
       |**Connection** | Previously defined connections for the specified storage location appear in the drop-down. If none exist, create a new connection.| *Create new connection* |
       |**Connection name** | The Amazon S3 connection name.| A name for your connection.|
       |**Authentication kind**| The *Identity and Access Management (IAM)* policy. The policy must have read and list permissions. For more information, see [IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html).| Dependent on the bucket policy.|
@@ -30,6 +30,6 @@ ms.date: 07/16/2023
     > [!NOTE]
     > Shortcut paths are case sensitive.
 
-    :::image type="content" source="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="media/onelake-shortcuts/amazons3-shortcut/shortcut-settings.png":::
+    :::image type="content" source="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png" alt-text="Screenshot of the New shortcut window showing the shortcut settings."  lightbox="../real-time-analytics/media/onelake-shortcuts/amazon-s3-shortcut/shortcut-settings.png":::
 
 1. Select **Create**.

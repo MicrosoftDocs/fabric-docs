@@ -32,11 +32,11 @@ To learn how to use example SQL queries, see [Example SQL queries](tutorial-4-ex
 
     :::image type="content" source="media/query-table/query-table.png" alt-text="Screenshot of Data tree showing the More menu of a table. The Query table option is highlighted."  lightbox="media/query-table/query-table.png":::
 
-1. Select a single query to populate the **Check your data** window. The query will automatically run and display results.
+1. Select a single query to populate the **Explore your data** window. The query will automatically run and display results.
 
-    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Check your data window showing query results of example queries in Real-Time Analytics."  lightbox="media/query-table/run-query.png":::
+    :::image type="content" source="media/query-table/run-query.png" alt-text="Screenshot of the Explore your data window showing query results of example queries in Real-Time Analytics."  lightbox="media/query-table/run-query.png":::
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Create stored functions](create-functions.md)

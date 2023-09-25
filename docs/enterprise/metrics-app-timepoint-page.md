@@ -19,7 +19,7 @@ All the activities in the capacity are ranked according to their compute impact.
 
 When the total combined CU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [CU over time](metrics-app-overview-page.md#cu-over-time) chart.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [CU over time](metrics-app-overview-page.md#cu-over-time) chart and CU (s) card will changes its color to yellow.
 
     >[!NOTE]
     >When autoscale is enabled, if the capacity reaches the maximum number of capacity units (CUs) allowed by the autoscale operation, throttling is applied.
@@ -57,7 +57,7 @@ This section describes the operations of the visuals in the top row of the timep
 
 * **SKU card** - Displays the current SKU.
 
-* **Capacity CU card** - Displays the total number of CU seconds allowed for this capacity, for a given 30 second timepoint window.
+* **Capacity CU card** - Displays the total number of CU seconds allowed for this capacity, for a given 30 second timepoint window. User can hover over card to see bifurcation of Base CU (s) and Autoscale CU (s). When autoscale is enabled, the card will change its color to yellow.
 
 ## Interactive Operations
 
@@ -78,17 +78,21 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 * **User** - The name of the user that triggered the interactive operation.
 
-* **Duration** - The number of seconds the interactive operation took to complete.
+* **Duration (s)** - The number of seconds the interactive operation took to complete.
 
-* **Total CU** - The number of CU seconds used by the interactive operation. This metric contributes to determine if the capacity exceeds the total number of CU seconds allowed for the capacity.
+* **Total CU (s)** - The number of CU seconds used by the interactive operation. This metric contributes to determine if the capacity exceeds the total number of CU seconds allowed for the capacity.
 
-* **Timepoint CU** - The number of CU seconds assigned to the interactive operation in the current timepoint.
+* **Timepoint CU (s)** - The number of CU seconds assigned to the interactive operation in the current timepoint.
 
-* **Throttling** - The number of seconds of throttling applied to this interactive operation because of the capacity being overloaded in the previous timepoint.
+* **Throttling (s)** - The number of seconds of throttling applied to this interactive operation because of the capacity being overloaded in the previous timepoint.
 
-* **% Of Capacity** - Interactive CU operations as a proportion of the overall capacity allowance.
+* **% Of Base Capacity** - Interactive CU operations as a proportion of the base capacity allowance.
 
-[!INCLUDE [product-name](../includes/metrics-app-preview-status.md)]
+* **Billing type** - Displays information if the item is billable or not.
+
+    * **Billable** - Indicates that operations for this item are billable.
+
+    * **Non-Billable**  - Indicates that operations for this item are non-billable.
 
 * **Operation ID** - A unique identifier assigned to an individual operation.
 

@@ -84,6 +84,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    from pyspark.sql.types import *
    def loadFullDataFromSource(table_name):
        df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
+       df = df.drop("Photo")
        df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
     
    full_tables = [
