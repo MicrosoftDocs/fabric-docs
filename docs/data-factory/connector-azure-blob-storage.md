@@ -1,5 +1,5 @@
 ---
-title: Set up an Azure Blob Storage connection
+title: Set up your Azure Blob Storage connection
 description: This article provides information about how to create an Azure Blob Storage connection.
 author: lrtoyou1223
 ms.author: lle
@@ -8,7 +8,7 @@ ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Set up an Azure Blob Storage connection
+# Set up your Azure Blob Storage connection
 
 [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
 

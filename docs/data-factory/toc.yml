@@ -33,12 +33,6 @@
       href: connector-overview.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
-    - name: Adobe Analytics
-      items:
-      - name: Overview
-        href: connector-adobe-analytics-overview.md
-      - name: Set up your connection
-        href: connector-adobe-analytics.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -47,6 +41,12 @@
         href: connector-amazon-s3.md
       - name: Configure in Data pipeline Copy activity
         href: connector-amazon-s3-copy-activity.md
+    - name: Azure Analysis Services
+      items:
+      - name: Overview
+        href: connector-azure-analysis-services-overview.md
+      - name: Set up your connection
+        href: connector-azure-analysis-services.md
     - name: Azure Blob Storage
       items:
       - name: Overview

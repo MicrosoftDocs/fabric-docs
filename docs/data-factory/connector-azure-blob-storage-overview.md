@@ -16,7 +16,7 @@ The Azure Blob Storage connector is supported in Data Factory in [!INCLUDE [prod
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-blob-storage#set-up-your-connection-in-dataflow-gen2.md).
+For information on how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-blob-storage.md#set-up-your-connection-in-dataflow-gen2).
 
 ## Supported in data pipelines
 
