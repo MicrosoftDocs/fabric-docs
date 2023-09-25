@@ -4,7 +4,7 @@ description: This article explains the overview of using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -14,7 +14,11 @@ The Azure Blob Storage connector is supported in Data Factory in [!INCLUDE [prod
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in Dataflow Gen2
+
+For information on how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set up your connection](connector-azure-blob-storage.md).
+
+## Supported in data pipelines
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -24,6 +28,5 @@ The Azure Blob Storage connector is supported in Data Factory in [!INCLUDE [prod
 
 ## Next steps
 
-- [How to create Azure Blob connection](connector-azure-blob-storage.md)
-- [Copy data in Azure Blob Storage](connector-azure-blob-storage-copy-activity.md)
-- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)
+- [Set up your connection](connector-azure-blob-storage.md)
+- [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md)

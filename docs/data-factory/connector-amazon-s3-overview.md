@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -14,7 +14,11 @@ This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-nam
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in Data Factory
+
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 in Dataflow Gen2.
+
+## Support in data pipelines
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -25,5 +29,5 @@ This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-nam
 
 ## Next steps
 
-- [How to create an Amazon S3 connection](connector-amazon-s3.md)
-- [How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
+- [Set up your connection](connector-amazon-s3.md)
+- [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)
