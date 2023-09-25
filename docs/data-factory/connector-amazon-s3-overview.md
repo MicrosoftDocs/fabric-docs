@@ -29,5 +29,5 @@ Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't c
 
 ## Next steps
 
-- [Set up your connection](connector-amazon-s3.md)
+- [Set up your Amazon S3 connection](connector-amazon-s3.md)
 - [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)

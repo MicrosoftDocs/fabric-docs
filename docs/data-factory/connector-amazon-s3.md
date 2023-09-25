@@ -1,5 +1,5 @@
 ---
-title: Set up your connection
+title: Set up your Amazon S3 connection
 description: This article provides information about how to create an Amazon S3 connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.date: 09/18/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Set up your connection connection
+# Set up your Amazon S3 connection
 
 This article outlines the steps to create an Amazon S3 connection.
 
@@ -101,4 +101,4 @@ The following table contains properties for the supported authentication type.
 
 ## Next steps
 
-- [How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
+- [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)

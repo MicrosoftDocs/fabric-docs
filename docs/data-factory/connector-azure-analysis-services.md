@@ -1,5 +1,5 @@
 ---
-title: Set up your connection
+title: Set up your Azure Analysis Services connection
 description: This article provides information about how to create an Azure Analysis Services connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
@@ -8,7 +8,7 @@ ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Set up your connection
+# Set up your Azure Analysis Services connection
 
 This article outlines the steps to create an Azure Analysis Services connection.
 
