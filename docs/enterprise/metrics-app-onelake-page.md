@@ -21,7 +21,7 @@ The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity stora
 - Export data
 
 ## Filters
-There are three report filters located at the top of the page.
+There are two report filters located at the top of the page and one filter located at top right corner of table visual.
 
 * **Capacity Name** - Select a capacity. The app displays information related to the selected capacity.
 
