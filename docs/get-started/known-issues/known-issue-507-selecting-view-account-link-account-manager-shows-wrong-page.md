@@ -1,6 +1,6 @@
 ---
-title: Known issue - Selecting view account link in account manager shows wrong page
-description: A known issue is posted where selecting the view account link in the account manager shows the wrong page
+title: Known issue - Selecting **View account** link in account manager shows wrong page
+description: A known issue is posted where selecting the **View account** link in the account manager shows the wrong page
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
@@ -8,7 +8,7 @@ ms.date: 09/25/2023
 ms.custom: known-issue-507
 ---
 
-# Known issue - Selecting view account link in account manager shows wrong page
+# Known issue - Selecting **View account** link in account manager shows wrong page
 
 When you open the Account manager on any Microsoft Fabric page, you can select the **View account** link.  When you select the **View account** link, the page redirects to the wrong page instead of the user account information page.
 

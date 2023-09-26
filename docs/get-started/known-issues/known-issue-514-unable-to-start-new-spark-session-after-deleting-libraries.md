@@ -10,7 +10,7 @@ ms.custom: known-issue-514
 
 # Known issue - Unable to start new Spark session after deleting all libraries
 
-You may not be able to start a new Spark session in a Fabric notebook and receive a message that the session has failed.  The failure occurs when you installed libraries through **Workspace settings** > **Data engineering** > **Library management** and then removed all the libraries.
+You may not be able to start a new Spark session in a Fabric notebook.  You receive a message that the session has failed.  The failure occurs when you installed libraries through **Workspace settings** > **Data engineering** > **Library management**, and then you removed all the libraries.
 
 **Status:** Open
 
