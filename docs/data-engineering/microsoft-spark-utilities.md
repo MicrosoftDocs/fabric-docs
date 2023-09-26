@@ -103,7 +103,7 @@ mssparkutils.fs.cp('source file or directory', 'destination file or directory', 
 Provide a faster way of copying or moving files, especially large volume of data.
 
 ```python
-mssparkutils.fs.fastcp('source file or directory', 'destination file or directory')# Set the third parameter as True to copy all files and directories recursively
+mssparkutils.fs.fastcp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
 
 ### Preview file content
