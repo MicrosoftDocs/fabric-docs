@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 07/27/2023
+ms.date: 09/26/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -16,13 +16,11 @@ The *Admin monitoring* workspace is designed to provide admins with monitoring c
 
 ## Prerequisites
 
-To use the admin monitoring workspace, you need:
+To use the admin monitoring workspace, you need to be an admin with one of these roles.
 
-* To be an admin with one of these roles.
-    * Microsoft 365 *Global administrator*
-    * *Fabric administrator*
+* Microsoft 365 *Global administrator*
 
-* A *Pro* license
+* *Fabric administrator*
 
 ## Access the admin monitoring workspace
 
