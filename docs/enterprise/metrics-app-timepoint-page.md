@@ -108,9 +108,11 @@ A table showing cumulative carryforward % by experiences in the last 30 seconds.
 
 * **Experience** - The name of the experience.
 
-* **Cumulative carryforward** - The cumulative carryforward for the last 30 seconds.
+* **Add %** - The percentage of carryforward added compared to SKU of capacity for the last 30 seconds.
 
-* **Cumulative carryforward %** - The percentage of cumulative carryforward compared to SKU of capacity.
+* **Burndown %** - The percentage of carryforward burned down compared to SKU of capacity for the last 30 seconds. 
+
+* **Cumulative %** - The percentage of cumulative carryforward compared to SKU of capacity for the last 30 seconds..
 
 ## Overages 
 
