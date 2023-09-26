@@ -103,7 +103,7 @@ Now you'll create a trigger that alerts you if the average time in transit, for 
 
 ### Congratulations on completing the tutorial
 
-Congratulations on creating your first object and trigger. As next steps, you might want to try setting up some other triggers on either the *City* or *Package* objects. When you're ready to try using Data Activator on real data, follow the steps in the [Get data for Data Activator](data-activator-get-data.md) article.
+Congratulations on creating your first object and trigger. As next steps, you might want to try setting up some other triggers on either the *City* or *Package* objects. When you're ready to try using Data Activator on real data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
 
 ## Next steps
 

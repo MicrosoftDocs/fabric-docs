@@ -15,7 +15,7 @@ ms.date: 10/03/2023
 > [!IMPORTANT]
 > Microsoft Fabric and Data Activator are in preview.
 
-Once you [get data](data-activator-get-data.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
+Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
 
 > [!NOTE]
 > If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from EventStreams.
