@@ -26,7 +26,7 @@ First, you may deactivate a single activity from its **General** tab.
 - Pick a state for _Mark activity as_. Choose from _Succeeded_, _Failed_ or _Skipped_
 
 
-:::image type="content" source="./media/deactivate-activity/deactivate-03-setup-single.png" alt-text="Deactive one activity at a time":::
+:::image type="content" source="./media/deactivate-activity/deactivate-03-setup-single.png" alt-text="Screenshot of how to deactivate one activity at a time.":::
 
 Alternatively, you can deactivate multiple activities with right click.
 
