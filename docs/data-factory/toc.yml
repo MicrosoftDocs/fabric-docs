@@ -8,7 +8,7 @@
     - name: Data Factory training
       href: /training/paths/get-started-fabric
     - name: Frequently asked questions
-      href: frequently-asked-questions.md
+      href: frequently-asked-questions.yml
   - name: Get started
     items:
     - name: Create a dataflow
