@@ -51,7 +51,7 @@ Before you start, you must have:
 
 1. In the **New shortcut** screen, select the **Azure Data Lake Storage Gen2** tile.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-shortcut-tile-options-v2.png" alt-text="Screenshot of the tile options in the New shortcut screen.":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-shortcut-tile-options-v2.png" alt-text="Screenshot of the tile options in the New shortcut screen." lightbox="media\onelake-shortcuts-adb-quickstart\new-shortcut-tile-options-v2.png":::
 
 1. Specify the connection details for the shortcut and select **Next**.
 
