@@ -44,7 +44,7 @@ In this article, learn how to create, train and evaluate uplift models and apply
 
 ### Follow along in notebook
 
-[AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modeling.ipynb) is the notebook that accompanies this tutorial.
+[AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
