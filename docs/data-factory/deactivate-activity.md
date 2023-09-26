@@ -31,7 +31,7 @@ First, you may deactivate a single activity from its **General** tab.
 Alternatively, you can deactivate multiple activities with right click.
 
 1. Press down _Ctrl_ key to multi-select. Using your mouse, left click on all activities you want to deactivate
-- Right click to bring up the drop down menu
+1. Right click to bring up the drop down menu
 - Select _Deactivate_ to deactivate them all
 - To fine tune the settings for _Mark activity as_, go to **General** tab of the activity, and make appropriate changes
 
