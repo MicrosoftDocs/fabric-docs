@@ -17,6 +17,10 @@ To get started with Data Activator, select the Data Activator experience in Micr
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-01.png" alt-text="Screenshot of data activator fabric experience.":::
 
+Your administrator must enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
+
+:::image type="content" source="media/data-activator-get-started/data-activator-get-started-04.png" alt-text="Screenshot of enabling data activator in the admin portal.":::
+
 ## Create a reflex item
 
 As with all Fabric experiences, you begin using Data Activator by creating an item in a Fabric Workspace. Data Activator’s items are called *reflexes.*
