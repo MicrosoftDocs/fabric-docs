@@ -26,8 +26,8 @@ Before you begin the data science end-to-end tutorial series, learn about prereq
 We utilize the notebook item in the Data Science experience to demonstrate various Fabric capabilities. The notebooks are available as Jupyter notebook files that can be imported to your Fabric-enabled workspace.
 
 1. Download your notebook(s).  Make sure to download the files by using the "Raw" file link in GitHub.
-    * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial). 
-    * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [data-science-ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-ai-samples).
+    * For the **Get started** notebooks, download the notebook(.ipynb) files from the parent folder: [data-science-tutorial](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/data-science-tutorial).
+    * For the **Tutorials** notebooks, download the notebooks(.ipynb) files from the parent folder [ai-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/ai-samples).
 
 1. On the Data science experience homepage, select **Import notebook** and upload the notebook files that you downloaded in step 1.
 
@@ -46,6 +46,7 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
 1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
+
 ## Attach a lakehouse to the notebooks
 
 To demonstrate Fabric lakehouse features, many of the tutorials require attaching a default lakehouse to the notebooks. The following steps show how to add an existing lakehouse to a notebook in a Fabric-enabled workspace.
@@ -65,4 +66,4 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 
 ## Next steps
 
-- [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+* [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
