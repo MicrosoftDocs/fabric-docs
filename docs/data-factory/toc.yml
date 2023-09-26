@@ -31,6 +31,10 @@
     items:
     - name: Connector overview
       href: connector-overview.md
+    - name: Dataflow Gen2 connectors
+      href: dataflow-support.md
+    - name: Data pipeline connectors
+      href: pipeline-support.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
     - name: Amazon S3
