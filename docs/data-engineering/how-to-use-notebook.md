@@ -133,7 +133,7 @@ Sharing a notebook is a convenient way for you to collaborate with team members.
 
 1. After "Apply" the selection, you could either send directly or copy link to others, then the recipients can open the notebook with corresponding view by the permission.
 
-   :::image type="content" source="media\how-to-use-notebook\create-and-send-link.png" alt-text="Screenshot showing where to create and send link.":::
+   :::image type="content" source="media\how-to-use-notebook\create-or-send-link.png" alt-text="Screenshot showing where to create and send link.":::
 
 1. To further manage your notebook permissions, you can find the “Manage permissions” entry in the *Workspace item list -> More options* to update the existing notebook access and permission.
 
