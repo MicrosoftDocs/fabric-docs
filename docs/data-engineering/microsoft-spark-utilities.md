@@ -98,6 +98,15 @@ Copies a file or directory. Supports copy across file systems.
 mssparkutils.fs.cp('source file or directory', 'destination file or directory', True)# Set the third parameter as True to copy all files and directories recursively
 ```
 
+### Performant Copy file
+
+Provide a faster way of copying or moving files, especially large volume of data.
+
+```python
+mssparkutils.fs.fastcp('source file or directory', 'destination file or directory')# Set the third parameter as True to copy all files and directories recursively
+
+```
+
 ### Preview file content
 
 Returns up to the first 'maxBytes' bytes of the given file as a String encoded in UTF-8.
