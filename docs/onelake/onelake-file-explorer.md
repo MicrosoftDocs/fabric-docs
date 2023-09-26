@@ -43,9 +43,7 @@ Once you have installed and launched the application, you can now see your OneLa
 
 - If Windows search is disabled, OneLake file explorer fails to start.
 
-- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
-
-- [Known issue - Moving files from outside of OneLake to OneLake with file explorer doesn't sync files](../get-started/known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md).
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).  
 
 ## Scenarios
 
@@ -67,9 +65,14 @@ When you create, update, or delete a file via OneLake file explorer, it automati
 
 ### Sign in to different accounts
 
-When you install OneLake file explorer, you can choose which account to sign in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then **Sign Out**. Signing out exits OneLake file explorer and pauses the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
+Starting in version 1.0.9.0, when you install OneLake file explorer, you can choose which account to sign in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then **Sign Out**. Signing out exits OneLake file explorer and pauses the sync. To sign in with another account, start OneLake file explorer again and choose the desired account.
 
 When you sign in with another account, you see the list of workspaces and items refresh in OneLake file explorer. If you navigate to workspaces associated with the previous account, you can manually refresh the view by selecting **Sync from OneLake**. Those workspaces are inaccessible while you're signed in to a different account.
+
+### Option to open workspaces and items on the web portal
+
+Starting in version 1.0.10.0, you can seamlessly transition between using OneLake file explorer and the Fabric web portal. When browsing your OneLake data using OneLake file explorer, right click on a workspace and select “OneLake->View Workspace Online.”  This opens the workspace browser on the Fabric web portal.  
+In addition, you can right click on an item, subfolder or file and select “OneLake->View Item Online.”  This opens the item browser on the Fabric web portal.  If you select a subfolder or file, the Fabric web portal always opens the root folder of the item.
 
 ### Offline support
 
@@ -123,7 +126,11 @@ All folders in your items including [OneLake shortcuts](onelake-shortcuts.md) ar
 
 ### Client-side logs
 
-You can find client-side logs on your local machine under `%temp%\OneLake\Diagnostics\`.
+Starting in version 1.0.10, you can find your client-side logs by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **Diagnostic Operations** > **Open logs directory**. This opens your logs directory in a new Windows file explorer window.  
+
+Client-side logs are stored on your local machine under `%temp%\OneLake\Diagnostics\`.
+
+You can enable additional client-side logging by selecting **Diagnostic Operations** > **Enable tracing**.
 
 ### Uninstall instructions
 
