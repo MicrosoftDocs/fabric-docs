@@ -38,7 +38,6 @@ In this page, there are three cards present to provide specific information on s
 * **Billed storage (GB)** - Displays the billed storage in GB.
 
 >[!NOTE]
->* At present storage isn't billed.
 >* Billed storage volume can be lower than current storage volume. If the capacity had less storage usage at the start of reporting period, the billed storage volume would be less than current storage.
 >* Current storage can display a zero value. This occurs when the workspaces have not yet begun reporting data for that specific hour.
 

@@ -102,7 +102,7 @@ All the columns in the background operations table are similar to the ones in th
 
 ## Burndown Table
 
-A table showing cumulative carryforward % by experiences in the last 30 seconds.
+A table showing add %, burndown % and cumulative % by experiences for last 30 seconds
 
 * **Experience** - The name of the experience.
 
