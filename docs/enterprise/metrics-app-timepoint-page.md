@@ -10,8 +10,6 @@ ms.date: 05/23/2023
 
 # Understand the metrics app timepoint page
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
 >[!NOTE]

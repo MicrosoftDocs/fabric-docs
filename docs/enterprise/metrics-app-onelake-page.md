@@ -10,8 +10,6 @@ ms.date: 09/17/2023
 
 # Understand the metrics app OneLake page
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity storage information. It is divided into the following sections:
 
 - Filters

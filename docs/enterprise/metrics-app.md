@@ -10,7 +10,8 @@ ms.date: 05/23/2023
 
 # What is the Microsoft Fabric Capacity Metrics app?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+>[!NOTE]
+>The Microsoft Fabric Capacity Metrics app has been updated to include support for both EM/A and P SKU's.
 
 The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Monitoring your capacities is essential for making informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
 
