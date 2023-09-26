@@ -231,6 +231,8 @@
       items:
       - name: Activity overview
         href: activity-overview.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md
       - name: Append Variable activity
         href: append-variable-activity.md
       - name: Copy activity
