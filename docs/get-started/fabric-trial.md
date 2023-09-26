@@ -3,7 +3,7 @@ title: Fabric (preview) trial
 description: Understand how the Fabric (preview) trial works
 author: mihart
 ms.author: mihirwagle
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 08/03/2023
 ---

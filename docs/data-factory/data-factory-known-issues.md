@@ -23,9 +23,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |    Area                              |  Title  |  Issue publish date |  
 |------------------------------------|---------|---------------------|
-|  Edit a Dataflow Gen2                  |  [Lineage view edit dataflow button takes user to Dataflow Gen1 experience](known-issue-lineage-view-edit.md)    |   June 6, 2023    |
 |  Output destination in Dataflows Gen2               |  [Staging items aren't available or are misconfigured](known-issue-staging-item.md)    |   June 6, 2023    |
 | Refreshes through a gateway | [Gateway refreshes longer than an hour fail](known-issue-gateway-refreshes.md) | August 3, 2023 |
+| Refresh history reports in progress for some tables that failed | [Refresh history reports in progress for some tables that failed](known-issue-inprogress-refresh-history.md) | August 24, 2023 |
 
 ## Recently closed known issues
 
@@ -36,6 +36,7 @@ Select the **Title** to view more information about that specific known issue.
 |Data Gateway            |  [Gateway issues with Lakehouse connector](known-issue-gateway.md)   |  May 27, 2023   |  Fixed: July 31, 2023  |
 |Publish a Dataflow Gen2| [Error when publishing a Dataflow gen2](known-issue-publish-dataflow.md) | June 7, 2023| Fixed: July 31, 2023|
 |  Authoring a Dataflow Gen2                  |  [Power Query template has extra queries from output destination](known-issue-template.md)    |   July 31, 2023    |
+|  Edit a Dataflow Gen2                  |  [Lineage view edit dataflow button takes user to Dataflow Gen1 experience](known-issue-lineage-view-edit.md)    |   September 25, 2023    |
 
 ## Next steps
 

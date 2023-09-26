@@ -3,7 +3,7 @@ title: Microsoft Fabric concepts
 description: Understand Microsoft Fabric concepts such as tenants, capacities and SKUs.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 09/04/2023
 ---
@@ -62,9 +62,12 @@ A capacity license provides the infrastructure for Microsoft Fabric. Your capaci
 
 * Create Microsoft Fabric items and connect to other Microsoft Fabric items
 
-* Save your items to a workspace and share them with a user that has a fitting licensed
+    >[!NOTE]
+    >To create Power BI items in workspaces that are not *My workspace*, you need a *Pro* license.
 
-Capacity licenses, such as Premium licenses in Power BI, are split into Stock Keeping Units (SKUs). Each SKU provides a set of Fabric resources for your organization. Your organization can have as many capacity licenses as needed.
+* Save your items to a workspace and share them with a user that has an appropriate licensed
+
+Capacity licenses, are split into Stock Keeping Units (SKUs). Each SKU provides a set of Fabric resources for your organization. Your organization can have as many capacity licenses as needed.
 
 A capacity is a dedicated set of resources reserved for exclusive use. It offers dependable, consistent performance for your content. Each capacity offers a selection of SKUs, and each SKU provides different resource tiers for memory and computing power. The type of SKU you require, depends on the type of solution you wish to deploy.
 
@@ -82,17 +85,24 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F256 | 256 | P3/A6 | 32 |
 | F512 | 512 | P4/A7 | 64 |
 | F1024 | 1024 | P5/A8 | 128 |
-| F2048 | 2048 | - | 256 |
+| F2048<sup>**</sup> | 2048 | - | 256 |
 
-<sup>*</sup>SKUs that are smaller than F64 require a Pro, Premium Per User (PPU), or a Power BI individual trial license to consume Power BI content.
+<sup>*</sup>SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
 
-### Per-user licenses
+<sup>**</sup>If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration.
+
+### Individual licenses
 
 Per-user licenses allow users to work in Microsoft Fabric. There are three types of individual licenses:
 
-* **Free** - A free license allows you to create and share Fabric content in Microsoft Fabric if you have access to a Fabric capacity (either trial or paid).
+* **Free** - A free license allows you to create and share Fabric content other than Power BI items in Microsoft Fabric, if you have access to a Fabric capacity (either trial or paid).
 
-* **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric. If you're purchasing a Microsoft Fabric capacity license for your organization and intend to use Power BI, ensure you purchase at least one Pro or Premium Per User (PPU) license too.
+    >[!NOTE]
+    >To create Power BI items in a workspace other than *My workspace* and share them, you need a Power BI Pro or a Premium Per-User (PPU) license, or a Power BI individual trial.
+
+* **Pro** - A [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) license lets you share Power BI content with other users. Every organization needs at least one user with a [Pro](/power-bi/enterprise/service-admin-purchasing-power-bi-pro) or a Premium Per User (PPU) license, if they intend to use Power BI within Fabric.
+
+    SKUs smaller than F64 require a Power BI Pro or Premium Per User license for each user consuming Power BI content. Content in workspaces on F64 or larger Fabric capacities can be consumed by users with a Free license if they have viewer role on the workspace.
 
 * **Premium per-user (PPU)** - PPU licenses allow organizations to access Power BI [Premium features](/power-bi/enterprise/service-premium-features) by licensing every user with a PPU license instead of purchasing a Power BI Premium capacity. PPU can be more cost effective when Power BI Premium features are needed for less than 250 users. PPU uses a shared capacity across the organization, which provides the computing power for the Power BI operations. PPU licenses provide partial access to Microsoft Fabric. If you're using a PPU license, you'll only be able to access Power BI items in Microsoft Fabric.
 
@@ -106,7 +116,7 @@ This table lists the main differences between the capabilities of per-user licen
 | Create Pro workspaces |:::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Create PPU workspaces |:::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/no-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Create, update, delete or manage Power BI items in workspaces other than their "My Workspace" | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) and where they have a viewer role | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| View Power BI items in Pro workspaces or Fabric Capacity workspaces (where the Fabric Capacity SKU is less than a F64) | :::image type="icon" source="../media/no-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |View Power BI items in Power BI Premium Per Capacity or Fabric Capacity workspaces (where the Fabric capacity SKU is greater than or equal to a F64) | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Create non-Power BI Fabric items in Fabric / Trial / Power BI Premium capacity workspaces | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/no-icon.svg" border="false"::: |
 | Share non-Power BI Fabric items | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |:::image type="icon" source="../media/no-icon.svg" border="false"::: |
