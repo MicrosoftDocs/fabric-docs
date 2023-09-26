@@ -1,18 +1,19 @@
 ---
-title: Get data for Data Activator
-description: Learn how to get data for use in Data Activator.
+title: Get data for Data Activator from Power BI
+description: Learn how to get data from Power BI for use in Data Activator.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
-# Get data for Data Activator
+# Get data for Data Activator from Power BI
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
-You can get data for use in Data Activator from many sources. This article begins with describing how to get data from Power BI.
+You can get data for use in Data Activator from many sources. This article describes how to get data from Power BI.
 
 ## Get data from Power BI
 
@@ -60,38 +61,11 @@ The final step is to go to Data Activator to define the notification that Data A
 
 Pressing **Start your trigger** takes you to Data Activator to start your trigger. Refer to [start and stop your trigger](data-activator-create-triggers-design-mode.md#start-and-stop-your-trigger) for information on how to do start your trigger.
 
-## Get Data from EventStreams 
-
-If you have real-time streaming data in Fabric EventStreams, you can connect it to Data Activator. This section explains how.
-
-### Prerequisites
-
-Before you begin, you need an EventStream item in Fabric with an existing connection to a Source. Each event in the source must consist of a JSON dictionary, and one of the dictionary keys must represent a unique object ID. Here's an example of an event that meets these criteria:
-
-```
-{
-"PackageID": "PKG\_123",
-"Temperature": 25
-}
-```
-
-In this example, *PackageID* is the unique ID key.
-
-### Connect your EventStream item to Data Activator
-
-To connect your EventStream item to data activator:
-
-1. Open your EventStream item
-2. Add a destination to your EventStream item, of type *Reflex*
-    :::image type="content" source="media/data-activator-get-data/data-activator-get-data-04.png" alt-text="Screenshot of reflex event stream item.":::
-3. In the side panel, select an existing reflex item, or make a new one, as appropriate, then select *Add.*
-4. Open your reflex item. You'll see the data flowing from your EventStream item in the data pane.
-    :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of trigger created.":::
 
 
 ### Next steps
 
-Once you have connected your EventStream item to data activator, the next step is to assign your data to some objects. To do this, follow the steps described in the [Assign data to objects in Data Activator](data-activator-assign-data-objects.md) article.
+The next step is to assign your data to some objects. To do this, follow the steps described in the [Assign data to objects in Data Activator](data-activator-assign-data-objects.md) article.
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

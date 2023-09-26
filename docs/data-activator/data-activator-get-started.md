@@ -5,12 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
 # Get started with Data Activator
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
 To get started with Data Activator, select the Data Activator experience in Microsoft Fabric, select it from the menu at the bottom of the screen to tailor your Fabric experience to Data Activator.
 
@@ -22,7 +23,9 @@ As with all Fabric experiences, you begin using Data Activator by creating an it
 
 A reflex holds all the information necessary to connect to data, monitor for conditions, and act. You'll typically create a reflex for each business process or area you’re monitoring.
 
-To get started, you create a reflex item in your Fabric workspace. From the New menu in the workspace, choose the reflex item.
+To get started, you create a reflex item in your Fabric workspace. From the New menu in the workspace, choose the **Reflex** item.
+
+:::image type="content" source="media/data-activator-get-started/data-activator-get-started-03.png" alt-text="Screenshot of selecting a new data activator reflex item.":::
 
 ## Navigate between Data Mode and Design Mode
 
@@ -32,10 +35,11 @@ When you open a reflex, you see two tabs at the bottom of the screen that switch
 
 ## Next steps
 
-Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex in the [Get data for Data Activator](data-activator-get-data.md) article. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
+Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex from the [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md) and [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md) articles. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
 
 * [What is Data Activator?](data-activator-introduction.md)
-* [Get data for Data Activator](data-activator-get-data.md)
+* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)

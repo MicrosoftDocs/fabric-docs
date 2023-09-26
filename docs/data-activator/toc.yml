@@ -1,27 +1,29 @@
 items:
 - name: Data Activator documentation
   href: index.yml
-- name: Overview
+- name: Introduction
   items:
-  - name: Introduction to Data Activator
+  - name: What is Data Activator?
     href: data-activator-introduction.md
-- name: Get started
-  items:
   - name: Get started with Data Activator
     href: data-activator-get-started.md    
-- name: Data Activator concepts
+- name: Get Data
   items:
-  - name: Get data for Data Activator
-    href: data-activator-get-data.md
-  - name: Assign data to objects in Data Activator
+  - name: Get data from Power BI
+    href: data-activator-get-data-power-bi.md
+  - name: Get data from EventStreams
+    href: data-activator-get-data-eventstreams.md        
+- name: Create objects and triggers
+  items:
+  - name: Assign data to objects in Data Mode
     href: data-activator-assign-data-objects.md    
-  - name: Create Data Activator triggers in design mode
+  - name: Create triggers in design mode
     href: data-activator-create-triggers-design-mode.md        
-  - name: Detection conditions in Data Activator
+  - name: Detection conditions
     href: data-activator-detection-conditions.md            
   - name: Use custom actions to trigger Power Automate flows
     href: data-activator-trigger-power-automate-flows.md         
-  - name: Data Activator tutorial    
+  - name: Tutorial    
     items:
     - name: Data Activator tutorial using sample data
       href: data-activator-tutorial.md

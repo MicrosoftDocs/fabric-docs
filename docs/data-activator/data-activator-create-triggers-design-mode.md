@@ -6,12 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Design Mode
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
 # Create Data Activator triggers in design mode
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
 Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen. 
 
@@ -97,7 +98,8 @@ Once you have defined a property, you can reference it from one or more triggers
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator](data-activator-get-data.md)
+* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 * [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)

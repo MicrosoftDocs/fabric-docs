@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
 # Use Custom Actions to trigger Power Automate Flows
+
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 
@@ -47,11 +50,8 @@ To access your input fields in the flow, use a Power Automate expression of the 
 your input field. 
 
 ```
-triggerBody()?\['customProperties/NAME\_OF\_INPUT\_FIELD'\].
+triggerBody()?['customProperties/NAME_OF_INPUT_FIELD'].
 ```
-
-> [!NOTE]
-> Future releases of Data Activator may support dynamic properties, preventing the need to use expressions to access your input fields.
 
 ### Complete your custom action
 
@@ -78,7 +78,8 @@ When your trigger activates, it calls your flow, sending it the values of the in
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator](data-activator-get-data.md)
+* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)

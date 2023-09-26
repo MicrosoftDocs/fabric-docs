@@ -6,12 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: product-reflex
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
 # What is Data Activator?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
 Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and EventStreams items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 
@@ -54,7 +55,8 @@ Properties are useful when you want to reuse logic across multiple triggers. You
 ## Next steps
 
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator](data-activator-get-data.md)
+* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)

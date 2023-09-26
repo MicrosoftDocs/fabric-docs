@@ -21,33 +21,40 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: Introduction to Data Activator
+          - text: What is Data Activator?
             url: data-activator-introduction.md
       - linkListType: get-started
         links:
           - text: Get started with Data Activator
             url: data-activator-get-started.md
 
-  - title: Data Activator concepts
+  - title: Get Data
     linkLists:
-      - linkListType: how-to-guide
+      - linkListType: overview
         links:
-          - text: Get data for Data Activator
-            url: data-activator-get-data.md
+          - text: Get data from Power BI
+            url: data-activator-get-data-power-bi.md
+      - linkListType: get-started
+        links:
+          - text: Get data from EventStreams
+            url: data-activator-get-data-eventstreams.md
+
+  - title: Create objects and triggers
+    linkLists:
       - linkListType: concept
         links:
-          - text: Assign data to objects in Data Activator 
+          - text: Assign data to objects in Data Mode
             url: data-activator-assign-data-objects.md
-          - text: Create triggers in Data Activator
+          - text: Create triggers in Design Mode
             url: data-activator-create-triggers-design-mode.md
           - text: Detection conditions in Data Activator
             url: data-activator-detection-conditions.md
           - text: Use custom actions to trigger Power Automate flows
             url: data-activator-trigger-power-automate-flows.md           
 
-  - title: Data Activator tutorial
+  - title: Tutorial
     linkLists:
       - linkListType: tutorial
         links:
-          - text: Data Activator tutorial
+          - text: Data Activator tutorial using sample data
             url: data-activator-tutorial.md

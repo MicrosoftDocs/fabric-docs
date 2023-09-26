@@ -5,12 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 09/15/2023
+ms.date: 10/03/2023
 ---
 
 # Data Activator tutorial using sample data
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!IMPORTANT]
+> Microsoft Fabric and Data Activator are in preview.
 
 This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
 
@@ -108,7 +109,8 @@ Congratulations on creating your first object and trigger. As next steps, you mi
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
-* [Get data for Data Activator](data-activator-get-data.md)
+* [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
+* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
