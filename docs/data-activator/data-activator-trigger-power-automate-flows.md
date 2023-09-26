@@ -79,7 +79,7 @@ When your trigger activates, it calls your flow, sending it the values of the in
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
+* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Data Activator tutorial using sample data](data-activator-tutorial.md)

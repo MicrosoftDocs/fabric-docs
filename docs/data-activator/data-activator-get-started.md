@@ -35,11 +35,11 @@ When you open a reflex, you see two tabs at the bottom of the screen that switch
 
 ## Next steps
 
-Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex from the [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md) and [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md) articles. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
+Once you have created a reflex, you need to populate it with your data. Learn how to get data into your reflex from the [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md) and [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md) articles. Alternatively, if you just want to learn about Data Activator using sample data, you can try the [Data Activator tutorial using sample data](data-activator-tutorial.md).
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
+* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
 * [Assign data to objects in Data Activator](data-activator-assign-data-objects.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)

@@ -36,7 +36,7 @@ landingContent:
             url: data-activator-get-data-power-bi.md
       - linkListType: get-started
         links:
-          - text: Get data from EventStreams
+          - text: Get data from Eventstreams
             url: data-activator-get-data-eventstreams.md
 
   - title: Create objects and triggers

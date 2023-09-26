@@ -11,7 +11,7 @@ items:
   items:
   - name: Get data from Power BI
     href: data-activator-get-data-power-bi.md
-  - name: Get data from EventStreams
+  - name: Get data from Eventstreams
     href: data-activator-get-data-eventstreams.md        
 - name: Create objects and triggers
   items:

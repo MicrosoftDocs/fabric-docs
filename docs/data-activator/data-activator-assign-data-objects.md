@@ -18,7 +18,7 @@ ms.date: 10/03/2023
 Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
 
 > [!NOTE]
-> If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from EventStreams.
+> If you started from Power BI, then Data Activator automatically creates an object for you and assign your Power BI data to it. You can skip this section unless you wish to combine your Power BI data with other events coming from Eventstreams.
 
 ## Assign data to a new object
 
@@ -61,7 +61,7 @@ To assign an event stream to multiple objects, you follow the procedures describ
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
-* [Get data for Data Activator from EventStreams](data-activator-get-data-eventstreams.md)
+* [Get data for Data Activator from Eventstreams](data-activator-get-data-eventstreams.md)
 * [Create Data Activator triggers in design mode](data-activator-create-triggers-design-mode.md)
 * [Detection conditions in Data Activator](data-activator-detection-conditions.md)
 * [Use Custom Actions to trigger Power Automate Flows](data-activator-trigger-power-automate-flows.md)
