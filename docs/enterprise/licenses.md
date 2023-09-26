@@ -91,7 +91,7 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 
 <sup>**</sup>If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration.
 
-### Individual licenses
+### Per user licenses
 
 Per-user licenses allow users to work in Microsoft Fabric. There are three types of individual licenses:
 
