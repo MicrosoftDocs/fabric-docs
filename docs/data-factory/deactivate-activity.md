@@ -53,7 +53,6 @@ An inactive activity behaves differently in a pipeline.
    - If you mark the activity as _Succeeded_, the _UponSuccess_ or _UponCompletion_ branch runs
    - If you mark the activity as _Failed_, the _UponFailure_ or _UponCompletion_ branch runs
    - If you mark the activity as _Skipped_, the _UponSkip_ branch runs
-   - For more information, please refer to [Conditional Execution](tutorial-pipeline-failure-error-handling.md#conditional-paths)
 
    :::image type="content" source="./media/deactivate-activity/deactivate-02-run-status.png" alt-text="Screenshot showing activity run status of an inactive activity":::
 
