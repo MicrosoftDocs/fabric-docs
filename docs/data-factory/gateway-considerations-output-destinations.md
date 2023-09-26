@@ -2,7 +2,7 @@
 title: On-premises data gateway considerations for data destinations in Dataflow Gen2
 description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
 author: nikkiwaghani
-ms.author: miescobar
+ms.author: nikkiwaghani
 ms.topic: conceptual
 ms.date: 8/17/2023
 ---

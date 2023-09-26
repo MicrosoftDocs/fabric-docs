@@ -21,9 +21,9 @@ You can access the Monitoring hub to view various Apache Spark activities by sel
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\monitoring-hub-in-the-left-side-navigation-bar.png" alt-text="Screenshot showing the monitoring hub in the left side navigation bar." lightbox="media\browse-spark-applications-in-monitoring-hub\monitoring-hub-in-the-left-side-navigation-bar.png":::
 
-## Sort, search and filter Apache Spark applications  
+## Sort, search, filter and column options Apache Spark applications
 
-For better usability and discoverability, you can sort the Apache Spark applications by selecting different columns in the UI. You can also filter the applications based on different columns and search for specific applications.
+For better usability and discoverability, you can sort the Apache Spark applications by selecting different columns in the UI. You can also filter the applications based on different columns and search for specific applications. You can also adjust the display and sort order of the columns independently through the column options.
 
 ### Sort Apache Spark applications
 
@@ -42,6 +42,12 @@ You can filter Apache Spark applications by **Status**, **Item Type**, **Start T
 To search for specific Apache Spark applications, you can enter certain keywords in the search box located in the upper-right corner.
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\search-spark-applications.png" alt-text="Screenshot showing the search spark application." lightbox="media\browse-spark-applications-in-monitoring-hub\search-spark-applications.png":::
+
+### Column options Apache Spark applications
+
+You can change the order in which the lists are displayed by selecting the list you want to display and then dragging the list options.
+
+:::image type="content" source="media\browse-spark-applications-in-monitoring-hub\draggable-column-options.png" alt-text="Screenshot showing the draggable column options." lightbox="media\browse-spark-applications-in-monitoring-hub\draggable-column-options.png":::
 
 ## Manage an Apache Spark application
 

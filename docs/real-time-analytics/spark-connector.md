@@ -115,7 +115,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

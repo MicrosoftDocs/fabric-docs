@@ -31,6 +31,8 @@
     items:
     - name: Connector overview
       href: connector-overview.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -129,6 +131,10 @@
         items:
         - name: Configure in Data pipeline
           href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
@@ -251,6 +257,14 @@
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
+      - name: Until activity
+        href: until-activity.md
+      - name: Wait activity
+        href: wait-activity.md
+      - name: Web activity
+        href: web-activity.md
+      - name: WebHook activity
+        href: webhook-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
@@ -356,5 +370,9 @@
         href: data-factory-known-issues.md
       - name: Lineage view edit button
         href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
+      - name: Staging items
+        href: known-issue-staging-item.md
+      - name: Gateway refreshes longer than an hour fail
+        href: known-issue-gateway-refreshes.md
+      - name: In progress tables refresh history
+        href: known-issue-inprogress-refresh-history.md

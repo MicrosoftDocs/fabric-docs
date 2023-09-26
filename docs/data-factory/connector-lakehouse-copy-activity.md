@@ -4,7 +4,7 @@ description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/11/2023
+ms.date: 09/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -145,7 +145,18 @@ The following properties are **required**:
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping isn't supported.
+For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+
+If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+
+For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
+
+   :::image type="content" source="media/connector-lakehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
+> [!NOTE]
+> Editing the destination type currently is not supported when your source is decimal type.
+
+If you choose Binary as your file format, mapping isn't supported.
 
 ### Settings
 
