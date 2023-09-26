@@ -7,7 +7,7 @@ items:
     href: data-activator-introduction.md
   - name: Get started with Data Activator
     href: data-activator-get-started.md    
-- name: Get Data
+- name: Get data
   items:
   - name: Get data from Power BI
     href: data-activator-get-data-power-bi.md
@@ -23,7 +23,7 @@ items:
     href: data-activator-detection-conditions.md            
   - name: Use custom actions to trigger Power Automate flows
     href: data-activator-trigger-power-automate-flows.md         
-- name: Tutorial    
+- name: Tutorial
   items:
   - name: Data Activator tutorial using sample data
     href: data-activator-tutorial.md
