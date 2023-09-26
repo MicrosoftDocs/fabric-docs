@@ -32,7 +32,7 @@ Alternatively, you can deactivate multiple activities with right click.
 
 1. Press down _Ctrl_ key to multi-select. Using your mouse, left click on all activities you want to deactivate
 1. Right click to bring up the drop down menu
-- Select _Deactivate_ to deactivate them all
+1. Select _Deactivate_ to deactivate them all
 - To fine tune the settings for _Mark activity as_, go to **General** tab of the activity, and make appropriate changes
 
 :::image type="content" source="./media/deactivate-activity/deactivate-04-setup-multiple.png" alt-text="Deactive multiple activities all at once":::
