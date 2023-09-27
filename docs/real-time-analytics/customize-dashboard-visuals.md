@@ -17,7 +17,7 @@ All visualizations that are created in the context of the [render operator](/azu
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](real-time-dashboards.md)
+* Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
 
 ## Customize a dashboard tile
 
