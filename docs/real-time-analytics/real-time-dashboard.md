@@ -5,7 +5,7 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 05/16/2023
+ms.date: 09/27/2023
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Visualize data with Real-Time Dashboards
@@ -14,8 +14,6 @@ A dashboard is a collection of tiles, optionally organized in pages, where each 
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
-
-The following image shows a sample Real-Time Dashboard:
 
 ## Prerequisites
 
@@ -34,6 +32,8 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 
 ## Add data source
 
+Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
+
 1. Select the **Manage** tab > **Data sources**
 1. In the **Data sources** pane, select **+ New data source**.
 
@@ -41,7 +41,7 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
-    1. Select the **Database** from the drop-down list.
+    1. Select a **Database** from the drop-down list.
 
 ## Add tile
 
@@ -82,19 +82,14 @@ However, database editors may want to limit the minimum refresh rate that any vi
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tile(s).  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards].
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tile(s).  For more information about how to set up and use different kinds of parameters, see Use parameters in Real-Time Dashboards.
 
-## Share dashboards
-
-no idea how this works
 
 ### Share the dashboard
 
-TODO: Add info about sharing model
-
-1. To share the dashboard link, 
-* Select **Share** and then select **Copy link**
-* In the **Dashboard permissions** window, select **Copy link**.
+1. To share the dashboard link: 
+    1. Select **Share** and then select **Copy link**
+    1. In the **Dashboard permissions** window, select **Copy link**.
 
 ## Export dashboards
 
@@ -162,7 +157,3 @@ You can update an existing dashboard, or restore a previous version, as follows:
 1. In the dashboard, select the **Manage** tab > **Replace with file**.
 1. Select the file to update the dashboard.
 1. Select **Save**.
-
-
-## Related content
-
