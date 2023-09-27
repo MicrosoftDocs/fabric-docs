@@ -90,6 +90,8 @@ After creating a pipeline, you need to add the content you want to manage to the
 
 Follow the instructions in the link to [assign a workspace to a pipeline](assign-pipeline.md#assign-a-workspace-to-any-vacant-pipeline-stage).
 
+## Step3 - Make a stage public (optional)
+
 At least one stage in each deployment pipeline must be public. By default, the final stage is made public. To change the public stage at any time, go to the pipeline stage settings and check the **Make this stage public** box.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
@@ -98,7 +100,7 @@ At least one stage in each deployment pipeline must be public. By default, the f
 
 Since at least one stage has to be public, before you uncheck one stage, you must first make another stage public.
 
-## Step 3 - Deploy to an empty stage
+## Step 4 - Deploy to an empty stage
 
 When you finished working with content in one pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. A typical workflow for moving content from stage to stage, is development to test, and then test to production, but you can deploy in any direction. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
@@ -112,7 +114,7 @@ Deployment pipelines offer three options when it comes to deploying your content
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](deploy-content.md#review-your-deployment-and-leave-a-note).
 
-## Step 4 - Deploy content from one stage to another
+## Step 5 - Deploy content from one stage to another
 
 Once you have content in a pipeline stage, you can deploy it to the next stage, even if the next stage workspace has content. Items with the same name and type are overwritten. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
@@ -124,7 +126,7 @@ Deployment time is useful for establishing when a stage was last updated. It can
 
 To examine the differences between the two pipelines before you deploy, see [compare content in different deployment stages](./compare-pipeline-content.md).
 
-## Step 5 - Create deployment rules (optional)
+## Step 6 - Create deployment rules (optional)
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
