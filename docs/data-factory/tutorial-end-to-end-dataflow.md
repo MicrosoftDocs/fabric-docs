@@ -67,10 +67,8 @@ The high-level steps in the dataflow are as follows:
    - lpepDropoffDatetime
    - puLocationId
    - doLocationId
-   - pickupLongitude
    - pickupLatitude
    - dropoffLongitude
-   - dropoffLatitude
    - rateCodeID
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::

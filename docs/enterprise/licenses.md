@@ -3,7 +3,7 @@ title: Microsoft Fabric licenses
 description: Understand how licenses in Microsoft Fabric work, and what are tenants, capacities and SKUs.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 06/07/2023
 ---
@@ -85,12 +85,11 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F256 | 256 | P3/A6 | 32 |
 | F512 | 512 | P4/A7 | 64 |
 | F1024 | 1024 | P5/A8 | 128 |
-| F2048 | 2048 | - | 256 |
+| F2048<sup>**</sup> | 2048 | - | 256 |
 
 <sup>*</sup>SKUs that are smaller than F64 require a Pro license to consume Power BI content.
 
-## Known Issue
-If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration. We are working on a fix.
+<sup>**</sup>If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration.
 
 ### Individual licenses
 
