@@ -36,9 +36,9 @@ To make changes in your dashboard:
 
 ## Customization properties
 
-The following table describes the available customization properties, categorized alphabetically by their respective sections, and specifies which visualization types support the given property.
+The following table describes the available customization properties, categorized alphabetically by their respective sections, and specifies which visuals support the given property.
 
-| Section | Property | Description | Visualization types |
+| Section | Property | Description | Visual types |
 |--|--|--|--|
 | **Colors** | **Color palette** | Determines the set of colors to use for the heatmap. | Heatmap |
 | **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When set to **Show**, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Table, Time chart |
