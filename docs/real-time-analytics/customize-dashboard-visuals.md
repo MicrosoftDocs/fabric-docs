@@ -51,20 +51,20 @@ The following table describes the available customization properties, categorize
 |  | **Value** | The numeric column that serves as the primary variable for the heatmap. | Heatmap |
 |  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
 |  | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. | Map |
-| **Display options** | **Order by** | How to order the results in the chart: Name, Size, or None. | Pie chart |
-|  | **Top N** | Option to only show sections for the top n values in the chart. | Pie chart |
+| **Display options** | **Order by** | How to order the results in the chart: **Name**, **Size**, or **None**. | Pie chart |
+|  | **Top N** | Option to only show sections for the top *n* values in the chart. | Pie chart |
 | **General** | **Display orientation** | Determines the orientation of the display: Horizontal or Vertical. | Multi Stat |
-|  | **Text size** | Determines the size of the text: Large, Recommended, Small. | Multi Stat, Stat |
-|  | **Visual format** | Determines the format for the chart. For area, bar, and column charts, the format can be standarad, stacked, or stacked 100%. For pie charts, the format can be pie or donut. | Area chart, Bar chart, Column chart, Pie chart |
+|  | **Text size** | Determines the size of the text: **Recommended**, **Small**, or **Large**. | Multi Stat, Stat |
+|  | **Visual format** | Determines the format for the chart. For area, bar, and column charts, the format can be standard, stacked, or stacked 100%. For pie charts, the format can be pie or donut. | Area chart, Bar chart, Column chart, Pie chart |
 | **Layout** | **Slot configuration** | Customizes the grid layout with options ranging from 1 column by 1 row (1 slot) to 5 columns by 5 rows (25 slots). | Multi Stat |
 | **Legend** | **Hide** or **Show** | Hides or shows a legend explaining data series in the chart. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 | **Size** | **Hide** or **Show** | Toggles sizing for the map points on or off. | Map |
 |  | **Size column** | The column used to determine the size of the map point. | Map |
-| **URLs** | **Apply link on column** | When enabled, selecting a value in this column directs to the URL specified in the "URL column." | Table |
+| **URLs** | **Apply link on column** | When enabled, selecting a value in this column directs to the URL specified in the **URL column**. | Table |
 |  | **URL column** | The column that contains URL values. | Table |
 | **X Axis** | **Label** | Sets a custom label for the horizontal axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |  |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to **linear** or **logarithmic**. |  |
 | **Y Axis** | **Label** | Sets a custom label for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
