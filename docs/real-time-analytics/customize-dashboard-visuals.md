@@ -36,7 +36,7 @@ To make changes in your dashboard:
 
 ## Customization properties
 
-The following table describes the available customization properties, categorized alphabetically by their respective sections, and specifies which visuals support the given property.
+The following table describes the available customization properties, categorized alphabetically by section, and specifies which visuals support the given property.
 
 | Section | Property | Description | Visual types |
 |--|--|--|--|
