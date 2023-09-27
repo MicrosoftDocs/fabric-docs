@@ -57,6 +57,8 @@ items:
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
+    - name: Data connectors
+      href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
   - name: Data management
     items:
     - name: Data management overview  
