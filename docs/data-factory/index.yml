@@ -78,3 +78,12 @@ landingContent:
           - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
 
+  # Card
+  - title: FAQs
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Frequently asked questions
+          url: frequently-asked-questions.yml
+
+
