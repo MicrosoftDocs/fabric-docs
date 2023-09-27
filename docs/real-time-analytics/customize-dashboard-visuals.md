@@ -5,17 +5,18 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 09/27/2023
 ---
 
 # Customize Real-Time Dashboard visuals
 
-This article explains how to customize Real-Time Dashboard visuals and outlines the available customization properties for each visual.
+Real-Time Dashboards are composed of tiles, each featuring a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
 
 ## Prerequisites
 
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * [Visualize data with Real-Time Dashboards](real-time-dashboards.md)
-* Permissions to edit the dashboard
+* Editor permissions on a Real-Time Dashboard
 
 ## Customize visuals
 
@@ -25,7 +26,7 @@ To make changes in your dashboard:
 
     :::image type="content" source="media/customize-dashboard-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/customize-dashboard-visuals/viewing-to-editing-mode.png":::
 
-1. On the tile that you'd like to customize, select the **Edit** icon.
+1. On the tile that you'd like to customize, select the **Edit** icon. Edit the underlying query or the visualization properties.
 
     :::image type="content" source="media/customize-dashboard-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/customize-dashboard-visuals/tile-edit-icon.png":::
 
@@ -262,7 +263,7 @@ When **Visual type** is set to **Heatmap**, the following properties are availab
 
 ## Plotly
 
-The Plotly graphics library offers extensive support for a wide range of chart types useful for advanced charting needs, including geographic, scientific, machine learning, 3D, and animation, and more. For more information, see [Plotly](https://plotly.com/python/).
+The Plotly graphics library offers extensive support for a wide range of chart types useful for advanced charting needs, including geographic, scientific, machine learning, 3D, and animation, and more. For more information, see [Plotly](/azure/data-explorer/kusto/query/visualization-plotly?pivots=fabric).
 
 To display a Plotly visualization in your Real-Time Dashboard, your query must generate a table with a single string cell containing [Plotly JSON](https://plotly.com/chart-studio-help/json-chart-schema/). 
 
