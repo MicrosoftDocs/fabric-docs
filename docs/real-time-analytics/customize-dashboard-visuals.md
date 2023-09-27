@@ -64,7 +64,7 @@ The following table describes the available customization properties, categorize
 |  | **URL column** | The column that contains URL values. | Table |
 | **X Axis** | **Label** | Sets a custom label for the horizontal axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to **linear** or **logarithmic**. |  |
+|  | **X axis scale** | Adjusts the scale of the horizontal axis to **linear** or **logarithmic**. | Anomaly chart, Area chart, Bar chart, Multi Stat, Scatter chart, Table, Time chart |
 | **Y Axis** | **Label** | Sets a custom label for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
