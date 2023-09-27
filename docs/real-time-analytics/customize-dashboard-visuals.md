@@ -12,11 +12,12 @@ ms.date: 09/27/2023
 
 Real-Time Dashboards are a collection of tiles that feature a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
 
+All visualizations that are created in the context of the [render operator](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric) are available in dashboard visualizations.
+
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [Visualize data with Real-Time Dashboards](real-time-dashboards.md)
-* Editor permissions on a Real-Time Dashboard
+* Editor permissions on a [Real-Time Dashboard](real-time-dashboards.md)
 
 ## Customize a dashboard tile
 
@@ -69,14 +70,6 @@ The following table describes the available customization properties, categorize
 |  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
-
-## Plotly visuals
-
-The Plotly graphics library offers extensive support for a wide range of chart types useful for advanced charting needs, including geographic, scientific, machine learning, 3D, and animation, and more. For more information, see [Plotly](/azure/data-explorer/kusto/query/visualization-plotly?pivots=fabric).
-
-To display a Plotly visualization in your Real-Time Dashboard, your query must generate a table with a single string cell containing [Plotly JSON](https://plotly.com/chart-studio-help/json-chart-schema/). 
-
-When **Visual type** is set to **Plotly**, the **Column** property should be set to the column containing the Plotly JSON for rendering.
 
 ## Related content
 
