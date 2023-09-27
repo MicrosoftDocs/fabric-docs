@@ -1,5 +1,5 @@
 ---
-title: OneLake API parity
+title: OneLake and ADLS Gen2 API parity
 description: Microsoft OneLake supports ADLS Gen2 APIs, with a few differences.
 ms.reviewer: eloldag
 ms.author: mabasile
