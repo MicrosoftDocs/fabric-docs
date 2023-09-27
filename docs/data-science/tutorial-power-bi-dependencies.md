@@ -12,12 +12,9 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->
 
-> [!TIP]
-> Contents of _powerbi_dependencies_tutorial.ipynb_. **[Open in GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb)**.
-
 # Tutorial: Analyze functional dependencies in a Power BI sample dataset
 
-In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover non-trivial data quality issues in order to gain more accurate insights.
+In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -33,11 +30,11 @@ In this tutorial, you learn how to:
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the _Customer Profitability Sample.pbix_ dataset from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) and upload it to your workspace.
+* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) dataset from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets) and upload it to your workspace.
 
 ### Follow along in the notebook
 
-The [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) notebook accompanies this tutorial.
+The [powerbi_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
@@ -111,7 +108,7 @@ A functional dependency manifests itself as a one-to-many relationship between t
     plot_dependency_metadata(dependencies)
     ```
 
-    ![svg](temp_files/temp_20_1.svg)
+    :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png" alt-text="Screenshot showing the plot of dependency metadata." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png":::
     
     As expected, the functional dependencies graph shows that the `Customer` column determines some columns like `City`, `Postal Code`, and `Name`. 
 
@@ -125,9 +122,9 @@ A functional dependency manifests itself as a one-to-many relationship between t
     customer_state_df.plot_dependency_violations('Postal Code', 'City')
     ```
 
-    ![svg](temp_files/temp_23_1.svg)
+    :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot showing the plot of dependency violations.":::
 
-    The plot of dependency violations shows values for `Postal Code` on the left hand side, and values for `City` on the right hand side. An edge connects a `Postal Code` on the left hand side with a `City` on the right hand side if there is a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with postal code 20004, one with city "North Tower" and the other with city "Washington".
+    The plot of dependency violations shows values for `Postal Code` on the left hand side, and values for `City` on the right hand side. An edge connects a `Postal Code` on the left hand side with a `City` on the right hand side if there's a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with postal code 20004, one with city "North Tower" and the other with city "Washington".
 
     Moreover, the plot shows a few violations and many empty values.
 
@@ -139,14 +136,14 @@ A functional dependency manifests itself as a one-to-many relationship between t
 
     50 rows have NA for postal code.
 
-1. Drop rows with empty values. Then, find dependencies using the `find_dependencies` function. Notice the additional parameter `verbose=1` that offers a glimpse into the internal workings of SemPy:
+1. Drop rows with empty values. Then, find dependencies using the `find_dependencies` function. Notice the extra parameter `verbose=1` that offers a glimpse into the internal workings of SemPy:
 
     ```python
     customer_state_df2=customer_state_df.dropna()
     customer_state_df2.find_dependencies(verbose=1)
     ```
 
-    The conditional entropy for `Postal Code` and `City` is 0.049. This value can be explained by the fact there are functional dependency violations. Before you fix the violations, raise the threshold on conditional entropy from the default value of `0.01` to `0.05`, just to see the dependencies. Lower thresholds result in fewer dependencies (or higher selectivity).
+    The conditional entropy for `Postal Code` and `City` is 0.049. This value indicates that there are functional dependency violations. Before you fix the violations, raise the threshold on conditional entropy from the default value of `0.01` to `0.05`, just to see the dependencies. Lower thresholds result in fewer dependencies (or higher selectivity).
 
 1. Raise the threshold on conditional entropy from the default value of `0.01` to `0.05`:
 
@@ -154,23 +151,23 @@ A functional dependency manifests itself as a one-to-many relationship between t
     plot_dependency_metadata(customer_state_df2.find_dependencies(threshold=0.05))
     ```
     
-    ![svg](temp_files/temp_29_1.svg)
+    :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png" alt-text="Plot of the dependency metadata with a higher threshold for entropy." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png":::
 
     If you apply domain knowledge of which entity determines values of other entities, this dependencies graph seems accurate. 
 
-1. Explore more data quality issues that were detected. For example, `City` and `Region` are joined by a dashed arrow, which indicates that the dependency is only approximate. This could imply that there is a partial functional dependency.
+1. Explore more data quality issues that were detected. For example, a dashed arrow joins `City` and `Region`, which indicates that the dependency is only approximate. This approximate relationship could imply that there's a partial functional dependency.
 
     ```python
     customer_state_df.list_dependency_violations('City', 'Region')
     ```
 
-1. Take a closer look at each of the cases where a non-empty `Region` value causes a violation:
+1. Take a closer look at each of the cases where a nonempty `Region` value causes a violation:
 
     ```python
     customer_state_df[customer_state_df.City=='Downers Grove']
     ```
 
-    The result shows Downers Grove city occuring in Illinois and Nebraska. However, Downer's Grove is a [city in Illinois](https://en.wikipedia.org/wiki/Downers_Grove,_Illinois), not Nebraska.
+    The result shows Downers Grove city occurring in Illinois and Nebraska. However, Downer's Grove is a [city in Illinois](https://en.wikipedia.org/wiki/Downers_Grove,_Illinois), not Nebraska.
 
 1. Take a look at the city of _Fremont_:
 
@@ -178,7 +175,7 @@ A functional dependency manifests itself as a one-to-many relationship between t
     customer_state_df[customer_state_df.City=='Fremont']
     ```
 
-    There's a city called [Fremont in California](https://en.wikipedia.org/wiki/Fremont,_California). However, for Texas, the search engine returns [Premont](https://en.wikipedia.org/wiki/Premont,_Texas), not Fremont!
+    There's a city called [Fremont in California](https://en.wikipedia.org/wiki/Fremont,_California). However, for Texas, the search engine returns [Premont](https://en.wikipedia.org/wiki/Premont,_Texas), not Fremont.
 
 1. It's also suspicious to see violations of the dependency between `Name` and `Country/Region`, as signified by the dotted line in the original graph of dependency violations (before dropping the rows with empty values).
 
@@ -186,7 +183,7 @@ A functional dependency manifests itself as a one-to-many relationship between t
     customer_state_df.list_dependency_violations('Name', 'Country/Region')
     ```
 
-    It appears that one customer, 'SDI Design' is present in two regions - United States and Canada. This may not be a semantic violation, but may just be an uncommon case. Still, it's worth taking a close look:
+    It appears that one customer, _SDI Design_ is present in two regions - United States and Canada. This occurrence may not be a semantic violation, but may just be an uncommon case. Still, it's worth taking a close look:
 
 1. Take a closer look at the customer _SDI Design_:
 
@@ -201,14 +198,9 @@ Exploratory data analysis is an exciting process, and so is data cleaning. There
 ## Related content
 
 Check out other tutorials for Semantic Link / SemPy:
-1. Clean data with functional dependencies
-1. Discover relationships in the _Synthea_ dataset using Semantic Link
-1. Discover relationships in a Power BI dataset using Semantic Link
-1. Extract and calculate Power BI measures from a Jupyter notebook
-
-1. [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-1. [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-1. [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
-1. [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+[Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+[Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
+[Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+[Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->
