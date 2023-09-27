@@ -218,7 +218,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 * The workspace isn't assigned to any other pipeline
 
-* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-license)
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
@@ -345,7 +345,7 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 #### Deployment failure: Large number of paginated reports fails
 
 **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
-**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-license), or use selective deployment.
 
 ### Dataflows
 
@@ -371,11 +371,11 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 
 #### Who can deploy content between stages?
 
-Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-license).
 
-* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
+* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#per-user-licenses) user who's a member or admin in the source workspace.
 
-* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity-license) user who's a member or admin of both workspaces in the source and target deployment stages.
 
 * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
 
