@@ -121,7 +121,7 @@ When you open a notebook, you enter the co-editing mode by default, and every no
 
 ### Share a notebook
 
-Sharing a notebook is a convenient way for you to collaborate with team members. Authorized workspace roles can view or edit/run notebooks by default. You can share a notebook with granting specified permissions granted.
+Sharing a notebook is a convenient way for you to collaborate with team members. Authorized workspace roles can view or edit/run notebooks by default. You can share a notebook with specified permissions granted.
 
 1. Select the **Share** button on the notebook toolbar.
 
@@ -131,11 +131,11 @@ Sharing a notebook is a convenient way for you to collaborate with team members.
 
    :::image type="content" source="media\how-to-use-notebook\select-permissions.png" alt-text="Screenshot showing where to select permissions.":::
 
-1. After you "Apply" the selection, you can either send directly or copy the link to others, and then the recipients can open the notebook with the corresponding view granted by the permission.
+1. After you "Apply" the selection, you can either send the notebook directly or copy the link to others, and then the recipients can open the notebook with the corresponding view granted by the permission.
 
    :::image type="content" source="media\how-to-use-notebook\create-and-send-link.png" alt-text="Screenshot showing where to create and send link.":::
 
-1. To further manage your notebook permissions, you can find the "Manage permissions" entry in the **Workspace item list** -> **More options** to update the existing notebook access and permission.
+1. To further manage your notebook permissions, you can find the "Manage permissions" entry in the **Workspace item list** > **More options** to update the existing notebook access and permission.
 
    :::image type="content" source="media\how-to-use-notebook\manage-permissions-in-workspace.png" alt-text="Screenshot showing where to manage permissions in workspace.":::
    
