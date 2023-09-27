@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
 ms.custom: build-2023
-ms.date: 06/01/2023
+ms.date: 08/03/2023
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -18,7 +18,7 @@ After you buy a capacity, you can learn how to [manage your capacity](/power-bi/
 
 ## SKU types
 
-Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
+Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-license) table to see how many CUs each SKU provides.
 
 Microsoft Fabric operates on two types of SKUs:
 
@@ -60,7 +60,7 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
     * *Region* - Select the region you want your capacity to be part of.
 
-    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-and-skus).
+    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-license).
 
     * *Fabric capacity administrator* - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
 
