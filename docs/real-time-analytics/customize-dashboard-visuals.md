@@ -10,7 +10,7 @@ ms.date: 09/27/2023
 
 # Customize Real-Time Dashboard visuals
 
-Real-Time Dashboards are composed of tiles, each featuring a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
+Real-Time Dashboards are a collection of tiles that feature a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
 
 ## Prerequisites
 
