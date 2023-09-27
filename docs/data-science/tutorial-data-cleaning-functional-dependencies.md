@@ -69,7 +69,7 @@ In this section, you set up a notebook environment with the necessary modules an
     providers.head()
     ```
 
-1. Check for data quality issues with SemPy's `find_dependencies` function by plotting a graph of auto-detected functional dependencies:
+1. Check for data quality issues with SemPy's `find_dependencies` function by plotting a graph of autodetected functional dependencies:
 
     ```python
     deps = providers.find_dependencies()
@@ -92,7 +92,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 The functional dependencies graph also shows that `ORGANIZATION` determines `ADDRESS` and `ZIP`, as expected. However, you might expect `ZIP` to also determine `CITY`, but the dashed arrow indicates that the dependency is only approximate, pointing towards a data quality issue.
 
-There are other peculiarities in the graph. For example, `NAME` does not determine `GENDER`, `Id`, `SPECIALITY` or `ORGANIZATION`. Each of these might be worth investigating.
+There are other peculiarities in the graph. For example, `NAME` doesn't determine `GENDER`, `Id`, `SPECIALITY`, or `ORGANIZATION`. Each of these peculiarities might be worth investigating.
 
 1. Take a deeper look at the approximate relationship between `ZIP` and `CITY`, by using SemPy's `list_dependency_violations` function to see a tabular list of violations:
 
@@ -108,7 +108,7 @@ There are other peculiarities in the graph. For example, `NAME` does not determi
 
     :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot showing the plot of dependency violations.":::
 
-    The plot of dependency violations shows values for `ZIP` on the left hand side, and values for `CITY` on the right hand side. An edge connects a zip code on the left with a city on the right if there is a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with zip code 02747-1242, one row with city "NORTH DARTHMOUTH" and the other with city "DARTHMOUTH", as shown in the previous plot and the following code:
+    The plot of dependency violations shows values for `ZIP` on the left hand side, and values for `CITY` on the right hand side. An edge connects a zip code on the left hand side of the plot with a city on the right hand side if there's a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with zip code 02747-1242, one row with city "NORTH DARTHMOUTH" and the other with city "DARTHMOUTH", as shown in the previous plot and the following code:
 
 1. Confirm the previous observations you made with the plot of dependency violations by running the following code:
 
@@ -122,7 +122,7 @@ There are other peculiarities in the graph. For example, `NAME` does not determi
     providers[providers.CITY == 'DARTMOUTH'].ZIP.value_counts()
     ```
 
-1. There are other zip codes associated with "DARTMOUTH", but these aren't shown in the graph of dependency violations, as they don't hint at data quality issues. For example, the zip code "02747-4302" is uniquely associated to "DARTMOUTH" and doesn't show up in the graph of dependency violations. Confirm this by running the following code:
+1. There are other zip codes associated with "DARTMOUTH", but these zip codes aren't shown in the graph of dependency violations, as they don't hint at data quality issues. For example, the zip code "02747-4302" is uniquely associated to "DARTMOUTH" and doesn't show up in the graph of dependency violations. Confirm by running the following code:
 
     ```python
     providers[providers.ZIP == '02747-4302'].CITY.value_counts()
@@ -130,13 +130,13 @@ There are other peculiarities in the graph. For example, `NAME` does not determi
 
 ## Summarize data quality issues detected with SemPy
 
-Going back to the graph of dependency violations, you can see that there are actually several interesting data quality issues present in this dataset:
+Going back to the graph of dependency violations, you can see that there are several interesting data quality issues present in this dataset:
 
 - Some city names are all uppercase. This issue is easy to fix using string methods.
 - Some city names have qualifiers (or prefixes), such as "North" and "East". For example, the zip code "2128" maps to "EAST BOSTON" once and to "BOSTON" once. A similar issue occurs between "NORTH DARTHMOUTH" and "DARTHMOUTH". You could try to drop these qualifiers or map the zip codes to the city with the most common occurrence.
-- There are typos in some cities, such as "PITTSFIELD" vs. "PITTSFILED" and "NEWBURGPORT vs. "NEWBURYPORT". In the case of "NEWBURGPORT" this typo could be fixed by using the most common occurrence. In the case of "PITTSFIELD", having only one occurrence each makes it much harder for automatic disambiguation without external knowledge or the use of a language model.
-- Sometimes, prefixes like "West" are abbreviated to a single letter "W". This could potentially be fixed with a simple replace, if all occurrences of "W" stand for "West".
-- The zip code "02130" maps to "BOSTON" once and "Jamaica Plain" once. This issue is not easy to fix, but if there was more data, mapping to the most common occurrence could be a potential solution.
+- There are typos in some cities, such as "PITTSFIELD" vs. "PITTSFILED" and "NEWBURGPORT vs. "NEWBURYPORT". For "NEWBURGPORT" this typo could be fixed by using the most common occurrence. For "PITTSFIELD", having only one occurrence each makes it much harder for automatic disambiguation without external knowledge or the use of a language model.
+- Sometimes, prefixes like "West" are abbreviated to a single letter "W". This issue could potentially be fixed with a simple replace, if all occurrences of "W" stand for "West".
+- The zip code "02130" maps to "BOSTON" once and "Jamaica Plain" once. This issue isn't easy to fix, but if there was more data, mapping to the most common occurrence could be a potential solution.
 
 ## Clean the data
 
