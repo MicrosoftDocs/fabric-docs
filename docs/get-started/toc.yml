@@ -60,9 +60,9 @@ items:
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
     - name: Unable to start new Spark session after deleting all libraries
-      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-deleting-libraries.md
+      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
     - name: Selecting view account link in account manager shows wrong page
-      href: known-issues/known-issue-507-selecting-view-account-link-account-manager-shows-wrong-page.md
+      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
     - name: Admin monitoring dataset refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region

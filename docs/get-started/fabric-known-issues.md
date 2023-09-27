@@ -19,8 +19,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  514  | Data Engineering | [Unable to start new Spark session after deleting all libraries](known-issues/known-issue-514-unable-to-start-new-spark-session-after-deleting-libraries.md)  | September 25, 2023 |
-|  507  | Administration & Management | [Selecting view account link in account manager shows wrong page](known-issues/known-issue-507-selecting-view-account-link-account-manager-shows-wrong-page.md)  | September 25, 2023 |
+|  514  | Data Engineering | [Unable to start new Spark session after deleting all libraries](known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md)  | September 25, 2023 |
+|  507  | Administration & Management | [Selecting view account link in account manager shows wrong page](known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md)  | September 25, 2023 |
 |  483  | Administration & Management | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md)  | August 24, 2023 |
 |  473  | OneLake                     | [Fabric items can't be created in a workspace moved to a capacity in a different region](known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)    |  August 7, 2023  |
 |  467  | Data Engineering            | [Notebook fails to load after workspace migration](known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md)    |  August 3, 2023  |
