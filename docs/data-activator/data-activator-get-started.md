@@ -13,13 +13,14 @@ ms.date: 10/03/2023
 > [!IMPORTANT]
 > Microsoft Fabric and Data Activator are in preview.
 
-To get started with Data Activator, select the Data Activator experience in Microsoft Fabric, select it from the menu at the bottom of the screen to tailor your Fabric experience to Data Activator.
+The first step in using Data Activator is for your administrator to enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
+
+:::image type="content" source="media/data-activator-get-started/data-activator-get-started-04.png" alt-text="Screenshot of enabling data activator in the admin portal.":::
+
+Next, select the Data Activator experience in Microsoft Fabric, then select it from the menu at the bottom of the screen to tailor your Fabric experience to Data Activator.
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-01.png" alt-text="Screenshot of data activator fabric experience.":::
 
-Your administrator must enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
-
-:::image type="content" source="media/data-activator-get-started/data-activator-get-started-04.png" alt-text="Screenshot of enabling data activator in the admin portal.":::
 
 ## Create a reflex item
 
