@@ -19,7 +19,7 @@ This tutorial illustrates how to use SemPy to calculate measures in Power BI dat
 
 ### In this tutorial, you learn how to:
 - Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](https://learn.microsoft.com/en-us/python/api/semantic-link-sempy)) that helps to bridge the gap between AI and BI. These components include:
+- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that helps to bridge the gap between AI and BI. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that allow you to fetch Power BI datasets, including raw data, configurations, and measures.
 
@@ -32,7 +32,7 @@ This tutorial illustrates how to use SemPy to calculate measures in Power BI dat
 
 ### Follow along in the notebook
 
-The [powerbi_measures_tutorial.ipynb_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb) notebook accompanies this tutorial.
+The [powerbi_measures_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
@@ -110,7 +110,7 @@ In the previous code, `Store` is the name of the table, `Territory` is the name 
 
 ### Evaluate a measure across multiple tables
 
-You can group the measure by columns across span multiple tables in the dataset.
+You can group the measure by columns that span across multiple tables in the dataset.
 
 ```python
 fabric.evaluate_measure(dataset, measure="Total Units Last Year", groupby_columns=["Store[Territory]", "Sales[ItemID]"])

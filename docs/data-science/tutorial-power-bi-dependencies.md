@@ -20,7 +20,7 @@ In this tutorial, you build upon prior work done by a Power BI analyst and store
 
 In this tutorial, you learn how to:
 - Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](https://learn.microsoft.com/en-us/python/api/semantic-link-sempy)) that supports integration with Power BI and helps to automate data quality analysis. These components include:
+- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that supports integration with Power BI and helps to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions for pulling Power BI datasets from a Fabric workspace into your notebook.
     - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.

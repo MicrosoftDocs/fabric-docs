@@ -21,7 +21,7 @@ In this tutorial, you use functional dependencies for data cleaning. A functiona
 
 In this tutorial, you learn how to:
 - Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](https://learn.microsoft.com/en-us/python/api/semantic-link-sempy)) that helps to automate data quality analysis. These components include:
+- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that helps to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
 
