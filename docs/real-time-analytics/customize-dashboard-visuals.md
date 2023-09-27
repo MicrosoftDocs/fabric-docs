@@ -42,12 +42,15 @@ The following table describes the available customization properties, categorize
 |--|--|--|--|
 | **Colors** | **Color palette** | Determines the set of colors to use for the heatmap. | Heatmap |
 | **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When set to **Show**, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Table, Time chart |
-| **Data** | **Category column** | The column that determines the data categories. | Funnel chart, Heatmap, Pie chart |
-|  | **Define location by** | Determines the method used to define the location: Infer, Latitude and longitude, or Geo point. | Map |
+| **Data** | **Y columns** | The columns that provide data for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
+|  | **X column** | The column that provides data for the horizontal axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
+|  | **Series columns** | The columns used to categorize data into different series. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
+|  | **Category column** | The column that determines the data categories. | Funnel chart, Heatmap, Pie chart |
 |  | **Label column** | Assigns labels to each slot using the designated column. | Multi Stat |
-|  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
+|  | **Value column** | The column that provides data for the visualization. | Funnel chart, Multi stat |
 |  | **Value** | The numeric column that serves as the primary variable for the heatmap. | Heatmap |
-|  | **Value column** | The column that provides data for the visualization. | Multi Stat, Stat |
+|  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
+|  | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. | Map |
 | **Display options** | **Order by** | How to order the results in the chart: Name, Size, or None. | Pie chart |
 |  | **Top N** | Option to only show sections for the top n values in the chart. | Pie chart |
 | **General** | **Display orientation** | Determines the orientation of the display: Horizontal or Vertical. | Multi Stat |
