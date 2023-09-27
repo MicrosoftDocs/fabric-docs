@@ -975,11 +975,10 @@ Exploratory data analysis is an exciting process, and so is data cleaning. There
 ## Related content
 
 Check out other tutorials for Semantic Link / SemPy:
-1. Clean data with functional dependencies
-1. Analyze functional dependencies in a Power BI sample dataset
-1. Discover relationships in the _Synthea_ dataset using Semantic Link
-1. Extract and calculate Power BI measures from a Jupyter Notebook
-
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 
 <!-- nbend -->

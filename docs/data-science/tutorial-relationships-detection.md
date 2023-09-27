@@ -3545,9 +3545,9 @@ suggested_relationships.sort_values(['Row Count From', 'Row Count To'], ascendin
 ## Related content
 
 Check out other tutorials for Semantic Link / SemPy:
-1. Clean data with functional dependencies
-1. Discover relationships in a Power BI dataset using Semantic Link
-1. Analyze functional dependencies in a Power BI sample dataset
-1. Extract and calculate Power BI measures from a Jupyter notebook
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

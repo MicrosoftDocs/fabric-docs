@@ -1014,12 +1014,9 @@ fabric.evaluate_measure(dataset, \
 ## Related content
 
 Check out other tutorials for Semantic Link / SemPy:
-1. Clean data with functional dependencies
-1. Analyze functional dependencies in a Power BI sample dataset
-1. Discover relationships in the _Synthea_ dataset using Semantic Link
-1. Discover relationships in a Power BI dataset using Semantic Link
-
-
-
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
 
 <!-- nbend -->
