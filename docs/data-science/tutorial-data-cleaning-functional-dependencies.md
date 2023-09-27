@@ -13,9 +13,6 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb -->
 
-> [!TIP]
-> Contents of _data_cleaning_functional_dependencies_tutorial.ipynb_. **[Open in GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb)**.
-
 # Tutorial: Clean data with functional dependencies
 
 In this tutorial, you use functional dependencies for data cleaning. A functional dependency exists when one column in a dataset is a function of another column. For example, a _zip code_ column might determine the values in a _city_ column. A functional dependency manifests itself as a one-to-many relationship between the values in two or more columns within a DataFrame. This tutorial uses the _Synthea_ dataset to show how functional relationships can help to detect data quality problems.
@@ -36,6 +33,12 @@ In this tutorial, you learn how to:
     * [Import this notebook into your workspace](../data-engineering/how-to-use-notebook.md#import-existing-notebooks). You can import from the Data Science homepage.
     * Alternatively, you can create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
 * In the Lakehouse explorer section of your notebook, add a new or existing lakehouse to your notebook. For more information on how to add a lakehouse, see [Attach a lakehouse to your notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks).
+
+### Follow along in the notebook
+
+[data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
 
 ## Set up the notebook
 
@@ -169,7 +172,7 @@ Going back to the graph of dependency violations, you can see that there are act
     providers_clean.list_dependency_violations('ZIP', 'CITY')
     ```
 
-    The empty list shows that there are no more violations of the functional constraint **CITY -> ZIP**.
+    The code returns an empty list to indicate that there are no more violations of the functional constraint **CITY -> ZIP**.
 
 ## Related content
 
