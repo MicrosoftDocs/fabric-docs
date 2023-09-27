@@ -123,6 +123,7 @@ To read data from Power BI datasets:
 1. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
    The workspace parameter is optional and follows the same rules as the workspace parameter of the `evaluate_dax` function.
    The cell magic also supports accessing Python variables using the `{variable_name}` syntax.
+   To use a curly brace in the DAX query, escape it with another curly brace (e.g. `EVALUATE {{1}}`).
 
     ```dax
     %%dax "Customer Profitability Sample" -w "Your Workspace"
