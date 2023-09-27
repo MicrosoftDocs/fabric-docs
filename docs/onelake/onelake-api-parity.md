@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 08/04/2023
 ---
 
-# OneLake API parity
+# OneLake and Azure Data Lake Storage (ADLS) Gen2 API parity
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
