@@ -92,13 +92,14 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 ## Step3 - Make a stage public (optional)
 
-At least one stage in each deployment pipeline must be public. By default, the final stage is made public. To change the public stage at any time, go to the pipeline stage settings and check the **Make this stage public** box.
+At least one stage in each deployment pipeline must always be public. By default, the final stage is made public.  
+To change the public stage at any time, go to the pipeline stage settings and check the **Make this stage public** box.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/make-stage-public.png" alt-text="Screenshot of the stage settings with the make this stage public checkbox highlighted.":::
 
-Since at least one stage has to be public, before you uncheck one stage, you must first make another stage public.
+Since at least one stage always has to be public, before you can uncheck the box in one stage, you first have to make another stage public.
 
 ## Step 4 - Deploy to an empty stage
 
