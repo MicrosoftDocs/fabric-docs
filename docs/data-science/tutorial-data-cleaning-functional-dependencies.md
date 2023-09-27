@@ -29,14 +29,10 @@ In this tutorial, you learn how to:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
-* Open your notebook. You have two options:
-    * [Import this notebook into your workspace](../data-engineering/how-to-use-notebook.md#import-existing-notebooks). You can import from the Data Science homepage.
-    * Alternatively, you can create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks) to copy/paste code into cells.
-* In the Lakehouse explorer section of your notebook, add a new or existing lakehouse to your notebook. For more information on how to add a lakehouse, see [Attach a lakehouse to your notebook](tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks).
 
 ### Follow along in the notebook
 
-[data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) is the notebook that accompanies this tutorial.
+The [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
@@ -110,7 +106,7 @@ There are other peculiarities in the graph. For example, `NAME` does not determi
     providers.plot_dependency_violations('ZIP', 'CITY')
     ```
 
-    :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot showing the plot of dependency violations." lightbox="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png":::
+    :::image type="content" source="media/tutorial-data-cleaning-functional-dependencies/plot-of-dependency-violations.png" alt-text="Screenshot showing the plot of dependency violations.":::
 
     The plot of dependency violations shows values for `ZIP` on the left hand side, and values for `CITY` on the right hand side. An edge connects a zip code on the left with a city on the right if there is a row that contains these two values. The edges are annotated with the count of such rows. For example, there are two rows with zip code 02747-1242, one row with city "NORTH DARTHMOUTH" and the other with city "DARTHMOUTH", as shown in the previous plot and the following code:
 
