@@ -18,7 +18,7 @@ Real-Time Dashboards are a collection of tiles that feature a visual representat
 * [Visualize data with Real-Time Dashboards](real-time-dashboards.md)
 * Editor permissions on a Real-Time Dashboard
 
-## Customize visuals
+## Customize a dashboard tile
 
 To make changes in your dashboard:
 
@@ -34,234 +34,40 @@ To make changes in your dashboard:
 
     :::image type="content" source="media/customize-dashboard-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/customize-dashboard-visuals/apply-changes.png":::
 
-## Table
+## Customization properties
 
-When **Visual type** is set to **Table**, the following properties are available for customization:
+The following table describes the available customization properties by visualization type.
 
-| Section | Property | Description |
-|--|--|--|
-| **URLs** | **URL column** | The column that contains URL values. |
-|  | **Apply link on column** | When this option is set, selecting the value in this column directs to the URL from the **URL column**. |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). |
-
-## Bar chart
-
-When **Visual type** is set to **Bar chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Visual format** | Determines the format for the chart: **Bar chart**, **Stacked bar chart**, or **Stacked 100% bar chart**. |
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
+| Section | Property | Description | Visualization types |
+|--|--|--|--|
+| **Colors** | **Color palette** | Determines the set of colors to use for the heatmap: blue, green, purple, orange, pink, or yellow. | Heatmap |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). | Table, Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+| **Data** | **Category column** | The column that determines the data categories. | Pie chart, Funnel chart, Heatmap |
+|  | **Define location by** | Determines the method used to define the location: Infer, Latitude and longitude, or Geo point. | Map |
+|  | **Label column** | Assigns labels to each slot using the designated column. | Multi Stat |
+|  | **Numeric column** | The column that provides the numeric value for the data category. | Pie chart |
+|  | **Value** | The numeric column that serves as the primary variable for the heatmap. | Heatmap |
+|  | **Value column** | The column that provides data for the visualization. | Stat, Multi Stat |
+| **Display options** | **Order by** | How to order the results in the chart: Name, Size, or None. | Pie chart |
+|  | **Top N** | Option to only show sections for the top n values in the chart. | Pie chart |
+| **General** | **Display orientation** | Determines the orientation of the display: Horizontal or Vertical. | Multi Stat |
+|  | **Text size** | Determines the size of the text: Recommended, Small, or Large. | Stat, Multi Stat |
+|  | **Visual format** | Determines the format for the chart. For area, bar, and column charts, the format can be standard, stacked, or stacked 100%. For pie charts, the format can be pie or donut. | Area chart, bar chart, column chart, pie chart |
+| **Layout** | **Slot configuration** | Customizes the grid layout with options ranging from 1 column by 1 row (1 slot) to 5 columns by 5 rows (25 slots). | Multi Stat |
+| **Legend** | **Hide** or **Show** | Hides or shows a legend explaining data series in the chart. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+| **Size** | **Hide** or **Show** | Toggles sizing for the map points on or off. | Map |
+|  | **Size column** | The column used to determine the size of the map point. | Map |
+| **URLs** | **Apply link on column** | When enabled, selecting a value in this column directs to the URL specified in the "URL column." | Table |
+|  | **URL column** | The column that contains URL values. | Table |
+| **X Axis** | **Label** | Sets a custom label for the horizontal axis. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
 |  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
+| **Y Axis** | **Label** | Sets a custom label for the vertical axis. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+|  | **Maximum value** | Defines the maximum value on the vertical axis. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+|  | **Minimum value** | Defines the minimum value on the vertical axis. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
+|  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Bar chart, Column chart, Area chart, Scatter chart, Time chart, Anomaly chart, Multi Stat |
 
-## Column chart
-
-When **Visual type** is set to **Column chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Visual format** | Determines the format for the chart: **Column chart**, **Stacked column chart**, or **Stacked 100% column chart**. |
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-## Area chart
-
-When **Visual type** is set to **Area chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Visual format** | Determines the format for the chart: **Area chart**, **Stacked area chart**, or **Stacked 100% area chart**. |
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-
-## Line chart
-
-When **Visual type** is set to **Line chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-
-## Stat
-
-When **Visual type** is set to **Stat**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Text size** | Determines the size of the text: **Recommended**, **Small**, or **Large**. |
-| **Data** | **Value column** | The column that provides data for the visualization. |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). |
-
-## Multi Stat
-
-When **Visual type** is set to **Multi Stat**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Text size** | Determines the size of the text: **Recommended**, **Small**, or **Large**. |
-|  | **Display orientation** | Determines the orientation of the display: **Horizontal** or **Vertical**. |
-| **Layout** | **Slot configuration** | Customizes the grid layout with options ranging from 1 column by 1 row (1 slot) to 5 columns by 5 rows (25 slots). |
-| **Data** | **Label column** | Assigns labels to each slot using the designated column. |
-|  | **Value column** | The column that provides data for the visualization. |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. When turned on, you can add conditional formatting rules to the visualization. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). |
-
-## Pie chart
-
-When **Visual type** is set to **Pie chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **General** | **Visual format** | Determines the format for the chart: **Pie** or **Donut**. |
-| **Data** | **Category column** | The column that determines the data categories. |
-|  | **Numeric column** | The column that provides the numeric value for the data category. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Label** | **Text** | Determines what to include in the label: **Name**, **Percentage**, and **Value**. |
-| **Tooltip** | **Text** | Determines what to include in the tooltip, which can be seen when hovering over a section of the chart: **Name**, **Percentage**, and **Value**. |
-| **Display options** | **Order by** | How to order the results in the chart: **Name**, **Size**, or **None**. |
-|  | **Top N** | Option to only show sections for the top *n* values in the chart. |
-
-## Scatter chart
-
-When **Visual type** is set to **Scatter chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-## Time chart
-
-When **Visual type** is set to **Time chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-## Anomaly chart
-
-When **Visual type** is set to **Anomaly chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Y columns** | The columns that provide data for the vertical axis. |
-|  | **X column** | The column that provides data for the horizontal axis. |
-|  | **Series columns** | The columns used to categorize data into different series. |
-| **Legend** | **Hide** or **Show** | Hides or shows a legend to explain the data series in the chart. |
-| **Y Axis** | **Label** | Sets a custom label for the vertical axis. |
-|  | **Maximum value** | Defines the maximum value on the vertical axis. |
-|  | **Minimum value** | Defines the minimum value on the vertical axis. |
-|  | **Y axis scale** | Adjusts the scale of the vertical axis to linear or logarithmic. |
-|  | **Reference lines** | A value to mark on the chart as a reference line for visual guidance. |
-| **X Axis** | **Label** | Sets a custom label for the horizontal axis. |
-|  | **X axis scale** | Adjusts the scale of the horizontal axis to linear or logarithmic. |
-|  | **Vertical line value** | Specifies a value on the horizontal axis for vertical reference lines. |
-
-## Funnel chart
-
-A funnel chart visualizes a linear process that has sequential, connected stages.
-
-When **Visual type** is set to **Funnel chart**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Category column** | The column that determines the data categories. |
-|  | **Value column** | The column that provides the value for the data category. |
-
-## Map
-
-When **Visual type** is set to **Map**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Define location by** | Determines the method used to define the location: **Infer**, **Latitude and longitude**, or **Geo point**. |
-|  | **Label column** | The column to use for the map point label. |
-| **Size** | **Hide** | A toggle option to turn off or turn on sizing for the map points. |
-|  | **Size column** | The column to use to determine the size of the map point. |
-
-## Markdown
-
-When **Visual type** is set to **Markdown**, the first row of the column specified in the **Column** property is rendered as Markdown.
-
-## Heatmap
-
-A heatmap shows values for a main variable of interest across two axis variables as a grid of colored squares.
-
-When **Visual type** is set to **Heatmap**, the following properties are available for customization:
-
-| Section | Property | Description |
-|--|--|--|
-| **Data** | **Y column** | The column providing data for the vertical axis. If this column contains `string` values, the corresponding **X column** must also contain `string` values. If it contains `datetime` values, the **X column** must be numeric. |
-|  | **X column** | The column providing data for the horizontal axis. |
-|  | **Value** | The numeric column that serves as the primary variable for the heatmap. |
-| **X axis** | **Label** | Sets a custom label for the horizontal axis. |
-| **Y axis** | **Label** | Sets a custom label for the vertical axis. |
-| **Colors** | **Color palette** | Determines the set of colors to use for the heatmap: **blue**, **green**, **purple**, **orange**, **pink**, or **yellow**. |
-
-## Plotly
+## Plotly visuals
 
 The Plotly graphics library offers extensive support for a wide range of chart types useful for advanced charting needs, including geographic, scientific, machine learning, 3D, and animation, and more. For more information, see [Plotly](/azure/data-explorer/kusto/query/visualization-plotly?pivots=fabric).
 
