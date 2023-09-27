@@ -10,6 +10,8 @@ ms.date: 09/14/2023
 
 # Understand the metrics app overview page
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
@@ -30,11 +32,15 @@ The Multi metric column ribbon displays the four values listed below. It shows t
 
 ## Capacity utilization and throttling
 
-It has three features. Use the tabs at the top of the visuals to toggle.
+Displays usage and throttling for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
 
 ### Utilization  
 
-Displays the CU usage over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+Displays CU usage over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
+
+* **Linear** - Display the information using a linear scale that starts at 0 percent.
+
+* **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
 The utilization chart displays the following elements:
 
@@ -60,33 +66,33 @@ The utilization chart displays the following elements:
 
 ### Throttling
 
-Displays the Interactive delay, Interactive rejection and Background rejection over time. Use the tabs at the top of the visual to toggle between Interactive delay, Interactive rejection and Background rejection and use tabs from the top right corner of the visual to toggle how the visual is displayed. Timepoints with above 100% value are rendered with darker color. 
-
-The throttling chart displays the following elements:
-
-  * **Interactive delay** - Billable interactive Operations are delayed if the value is above 100%.
-  
-  * **Interactive rejection** - Billable interactive operations are rejected if the value is above 100%.
-
-  * **Background rejection** - Billable background operations are rejected if the value is above 100%.
-
-Utilization and Throttling has below view:
+Displays delay and rejection over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed. 
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
+Use the tabs at the top of the visual to toggle between interactive delay, interactive rejection and background rejection. Timepoints with a value that's above 100% are rendered with darker color.
+
+The throttling chart displays the following elements:
+
+  * **Interactive delay** - Billable interactive operations are delayed if the value is above 100%.
+  
+  * **Interactive rejection** - Billable interactive operations are rejected if the value is above 100%.
+
+  * **Background rejection** - Billable background operations are rejected if the value is above 100%.
+
 ### Overages 
   
-Displays the carryforward add, carryforward burndown and cumulative carryforward over time. Use x and y axis zoom slicer to zoom visual. Carryforward only consider billable Interactive and Background operations.
+Displays the *add*, *burndown* and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
 
 The overages chart displays the following elements:
 
-  * **Add %** - Green columns represent the carryforward % added during current 30 second period.
+  * **Add %** - Green columns represent the carryforward percent added during the current 30 second period.
   
-  * **Burndown %** - Blue columns represent the carryforward % burned down for current 30 second period.
+  * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30 second period.
   
-  * **Cumulative %** - Red line represent the cumulative carryforward % for current 30 second period. 
+  * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30 second period. 
   
 
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.

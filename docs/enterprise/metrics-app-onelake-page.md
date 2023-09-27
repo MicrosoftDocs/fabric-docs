@@ -10,6 +10,8 @@ ms.date: 09/17/2023
 
 # Understand the metrics app OneLake page
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity storage information. It is divided into the following sections:
 
 - Filters
@@ -19,7 +21,7 @@ The Microsoft Fabric Capacity Metrics app's OneLake page provides capacity stora
 - Export data
 
 ## Filters
-There are two report filters located at the top of the page and one filter located at top right corner of table visual.
+There are two report filters located at the top of the page and one filter located at top right corner of the table visual.
 
 * **Capacity Name** - Select a capacity. The app displays information related to the selected capacity.
 
@@ -38,7 +40,7 @@ In this page, there are three cards present to provide specific information on s
 * **Billed storage (GB)** - Displays the billed storage in GB.
 
 >[!NOTE]
->* Billed storage volume can be lower than current storage volume. If the capacity had less storage usage at the start of reporting period, the billed storage volume would be less than current storage.
+>* Billed storage volume can be lower than current storage volume. If the capacity has less storage usage at the start of the reporting period, the billed storage volume is lower than the current storage.
 >* Current storage can display a zero value. This occurs when the workspaces have not yet begun reporting data for that specific hour.
 
 ## Table visual

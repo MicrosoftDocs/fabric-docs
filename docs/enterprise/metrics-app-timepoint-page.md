@@ -10,6 +10,8 @@ ms.date: 05/23/2023
 
 # Understand the metrics app timepoint page
 
+[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
 >[!NOTE]
@@ -100,25 +102,27 @@ A table showing every background operation that contributed CU usage to the view
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
 
-## Burndown Table
+## Burndown table
 
-A table showing add %, burndown % and cumulative % by experiences for last 30 seconds
+A table showing the *add*, *burndown* and *cumulative* percent by experiences, for the last 30 seconds.
 
 * **Experience** - The name of the experience.
 
-* **Add %** - The percentage of carryforward added compared to SKU of capacity for the last 30 seconds.
+* **Add %** - The percentage of carryforward added compared to the capacity, for the last 30 seconds.
 
-* **Burndown %** - The percentage of carryforward burned down compared to SKU of capacity for the last 30 seconds. 
+* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for the last 30 seconds. 
 
-* **Cumulative %** - The percentage of cumulative carryforward compared to SKU of capacity for the last 30 seconds..
+* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for the last 30 seconds.
 
 ## Overages 
 
-Overages visual has switch for 24 hours, 60 minutes and 10 minutes view to visualize carryforward % on different scale. Carryforward only consider billable Interactive and Background opreations.
+You can change the overages visual scale to display 10 minutes, 60 minutes and 24 hours. Carryforward only takes into account billable operations.
 
-* **Add %** - Green columns represent the percentage of carryforward added within the specified timepoint window.
-* **Burndown %** - Blue columns represent the percentage of carryforward burned down within the specified timepoint window.
-* **Cumulative %** - Red line represents the cumulative carryforward within the specified timepoint window.
+* **Add %** - The green columns represent the percentage of carryforward added within the specified timepoint window.
+  
+* **Burndown %** - The blue columns represent the percentage of carryforward burned down within the specified timepoint window.
+  
+* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window.
 
 
 
