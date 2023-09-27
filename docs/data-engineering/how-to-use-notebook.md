@@ -121,21 +121,21 @@ When you open a notebook, you enter the co-editing mode by default, and every no
 
 ### Share a notebook
 
-Sharing a notebook is a convenient way for you to collaborate with team members. Authorized workspace roles can view or edit/run notebook by default. Besides, we support share a notebook with granting specified permissions.
+Sharing a notebook is a convenient way for you to collaborate with team members. Authorized workspace roles can view or edit/run notebooks by default. You can share a notebook with granting specified permissions granted.
 
 1. Select the **Share** button on the notebook toolbar.
 
-   :::image type="content" source="media\how-to-use-notebook\open-sharenotebook-popup.png" alt-text="Screenshot showing where to select Share.":::
+   :::image type="content" source="media\how-to-use-notebook\open-share-notebook-popup.png" alt-text="Screenshot showing where to select Share.":::
 
-1. Select corresponding category of **people who can view this notebook**. You could check **Share**, **Edit**, or **Run** to grant the permissions to the recipients.
+1. Select the corresponding category of **people who can view this notebook**. You can check **Share**, **Edit**, or **Run** to grant the permissions to the recipients.
 
    :::image type="content" source="media\how-to-use-notebook\select-permissions.png" alt-text="Screenshot showing where to select permissions.":::
 
-1. After "Apply" the selection, you could either send directly or copy link to others, then the recipients can open the notebook with corresponding view by the permission.
+1. After you "Apply" the selection, you can either send directly or copy the link to others, and then the recipients can open the notebook with the corresponding view granted by the permission.
 
    :::image type="content" source="media\how-to-use-notebook\create-and-send-link.png" alt-text="Screenshot showing where to create and send link.":::
 
-1. To further manage your notebook permissions, you can find the “Manage permissions” entry in the *Workspace item list -> More options* to update the existing notebook access and permission.
+1. To further manage your notebook permissions, you can find the "Manage permissions" entry in the **Workspace item list** -> **More options** to update the existing notebook access and permission.
 
    :::image type="content" source="media\how-to-use-notebook\manage-permissions-in-workspace.png" alt-text="Screenshot showing where to manage permissions in workspace.":::
    
