@@ -16,7 +16,9 @@ For each visual, you have the flexibility to define one or more conditional form
 
 ## Prerequisites
 
-* A [Table](customize-dashboard-visuals.md#table), [Stat](customize-dashboard-visuals.md#stat), or [Multi Stat](customize-dashboard-visuals.md#multi-stat) dashboard visual.
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* Editor permissions on a Real-Time Dashboard
+* A table, stat, or multi stat dashboard visual
 
 ## Add a conditional formatting rule
 
