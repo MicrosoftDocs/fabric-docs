@@ -84,6 +84,10 @@ items:
   items:
   - name: Visualize data with Real-Time Dashboards
     href: real-time-dashboard.md
+  - name: Customize Real-Time Dashboard visuals
+    href: customize-dashboard-visuals.md
+  - name: Apply conditional formatting
+    href: dashboards-conditional-formatting.md
 - name: Query data
   items:
   - name: Use example queries
