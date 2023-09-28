@@ -116,5 +116,6 @@ The following points provide a breakdown of the code snippet:
 ## Next steps
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-power-bi.md)
 - [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)

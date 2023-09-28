@@ -193,6 +193,18 @@ items:
     items:
     - name: What is Semantic Link?
       href: semantic-link-overview.md
+  - name: Tutorials
+    items:
+    - name: Clean data with functional dependencies
+      href: tutorial-data-cleaning-functional-dependencies.md
+    - name: Analyze functional dependencies in a Power BI sample dataset
+      href: tutorial-power-bi-dependencies.md
+    - name: Extract and calculate Power BI measures from a notebook
+      href: tutorial-power-bi-measures.md
+    - name: Discover relationships in a Power BI dataset using Semantic Link
+      href: tutorial-power-bi-relationships.md
+    - name: Discover relationships in the Synthea dataset using Semantic Link
+      href: tutorial-relationships-detection.md
   - name: Concepts
     items:
     - name: Power BI connectivity

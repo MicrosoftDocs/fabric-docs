@@ -270,5 +270,6 @@ By using Power BI, the *ForecastTable* table can be added to a composite dataset
 ## Next steps
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
