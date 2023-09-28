@@ -68,11 +68,11 @@ In this section, you set up a notebook environment with the necessary modules an
 
 This tutorial uses a standard Power BI sample dataset [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix). For a description of the dataset, see [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).
 
-1. Use SemPy's `list_datasets` function to explore datasets in your current workspace:
+- Use SemPy's `list_datasets` function to explore datasets in your current workspace:
 
-```python
-fabric.list_datasets()
-```
+    ```python
+    fabric.list_datasets()
+    ```
 
 For the rest of this notebook you use two versions of the Customer Profitability Sample dataset:
 -  *Customer Profitability Sample*: the dataset as it comes from Power BI samples with predefined table relationships
@@ -142,7 +142,7 @@ If you started with relationships that Power BI autodetected, you'd have a small
     plot_relationship_metadata(autodetected)
     ```
 
-    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png" alt-text="Visualize relationships after removing incorrect ones." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png":::
+    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png" alt-text="Screenshot that shows a visualization of relationships after removing incorrect ones." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-incomplete-relationships.png":::
 
 1. Load all the tables from the dataset, using SemPy's `list_tables` and `read_table` functions:
 
@@ -169,7 +169,7 @@ If you started with relationships that Power BI autodetected, you'd have a small
     plot_relationship_metadata(suggested_relationships_all)
     ```
 
-    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Visualize newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
+    :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot that shows visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
     
     SemPy was able to detect all relationships. 
 
