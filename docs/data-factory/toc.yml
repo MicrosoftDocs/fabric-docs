@@ -144,9 +144,19 @@
         - name: Configure in Data pipeline
           href: format-parquet.md
         - name: Configure in Dataflow Gen2
-          href: connector-parquet-dataflows.md     
-    - name: Google Cloud Storage
+          href: connector-parquet-dataflows.md
+      - name: XML
+        items:
+        - name: Configure in Data pipeline
+          href: format-xml.md       
+    - name: FTP
       items:
+      - name: Overview
+        href: connector-ftp-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-ftp-copy-activity.md
+    - name: Google Cloud Storage
+      items: 
       - name: Overview
         href: connector-google-cloud-storage-overview.md
       - name: Manage connections and gateway
