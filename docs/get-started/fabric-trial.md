@@ -3,9 +3,9 @@ title: Fabric (preview) trial
 description: Understand how the Fabric (preview) trial works
 author: mihart
 ms.author: mihirwagle
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
-ms.date: 06/22/2023
+ms.date: 08/03/2023
 ---
 
 # Microsoft Fabric (Preview) trial
@@ -55,7 +55,7 @@ If your Fabric administrator has [enabled the preview of Microsoft Fabric for th
 
 ## What is a trial capacity?
 
- A trial capacity is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power reserved for users of that capacity. The amount of compute resources is based on the [SKU](../enterprise/licenses.md#microsoft-fabric-components).
+ A trial capacity is a distinct pool of resources allocated to Microsoft Fabric. The size of the capacity determines the amount of computation power reserved for users of that capacity. The amount of compute resources is based on the [SKU](../enterprise/licenses.md#microsoft-fabric-concepts).
 
 With a Fabric (Preview) trial, you get full access to all of the Fabric experiences and features. You also get OneLake storage up to 1 TB. Create Fabric items and collaborate with others in the same Fabric trial capacity. With a Fabric (Preview) trial, you can:
 

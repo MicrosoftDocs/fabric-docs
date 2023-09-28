@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/07/2023
 ms.search.form: product-kusto, KQL Database
 ---
 # Create a KQL database
@@ -38,7 +38,7 @@ The KQL database has now been created within the context of the selected workspa
 
 ## Database details
 
-The main page of your KQL database shows an overview of the contents in your database. The following table lists the information you'll see.
+The main page of your KQL database shows an overview of the contents in your database. The following table lists the available information.
 
 :::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard.png":::
 
@@ -49,8 +49,8 @@ The main page of your KQL database shows an overview of the contents in your dat
 | | Region | Shows the region of the data and services.|
 | | Created on | Date of database creation.|
 | | Last ingestion | Date on which data was ingested last into the database.|
-| | Query URI | URI that can be used for sending/ running queries.|
-| | Ingestion URI | URI that can be used for programmatic ingestion.|
+| | Query URI | URI that can be used to run queries or to store management commands.|
+| | Ingestion URI | URI that can be used to get data.|
 | | OneLake folder | OneLake folder path that can be used for creating shortcuts. You can also activate and deactivate data copy to OneLake.|
 | **Size**|
 | | Compressed| Total size of compressed data.|
@@ -69,23 +69,9 @@ The main page of your KQL database shows an overview of the contents in your dat
 |**Recently created data connections**
 | | | Lists the data connection and the time it was created.|
 
-## Access an existing KQL database
-
-To access your existing KQL databases:
-
-1. Select the **Workspaces** icon on the side navigation on the left. Then choose a workspace.
-
-    :::image type="content" source="media/create-database/access-existing-database-1.png" alt-text="Screenshot of the left menu of UI that shows the dropdown menu of the icon titled workspaces. The workspaces icon is highlighted.":::
-
-1. Select **Filter** on the right side of the ribbon > **KQL Database**.
-
-    :::image type="content" source="media/database-editor/access-existing-database-2.png" alt-text="Screenshot of workspace pane that shows the dropdown menu of the workspace ribbon option titled Filter. The dropdown entry titled KQL Database is selected. Both the Filter option and KQL Database are highlighted."  lightbox="media/database-editor/access-existing-database-2.png":::
-
-1. Select the desired database.
-
-## Next steps
+## Related content
 
 * [Get data from a blob](get-data-blob.md)
-* [Get data from a blob container](get-data-blob-container.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in a KQL queryset](kusto-query-set.md)
+* [Get data from OneLake](get-data-onelake.md)

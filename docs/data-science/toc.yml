@@ -39,6 +39,8 @@ items:
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
+  - name: Customer churn prediction
+    href: customer-churn.md
   - name: Retail recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
@@ -49,6 +51,8 @@ items:
     href: title-genre-classification.md
   - name: Uplift modeling
     href: uplift-modeling.md
+  - name: Predictive maintenance
+    href: predictive-maintenance.md
 - name: Governance
   items:
   - name: Roles and permissions
@@ -183,8 +187,8 @@ items:
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: What is Cognitive Services in SynapseML?
-      href: overview-cognitive-services.md
+    - name: What is Azure AI services in SynapseML?
+      href: overview-azure-ai-services.md
   - name: Get started
     items:
     - name: Build your first SynapseML model
@@ -197,8 +201,8 @@ items:
       href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
-    - name: Use Cognitive Services with SynapseML
-      href: how-to-use-cognitive-services-with-synapseml.md
+    - name: Use Azure AI services with SynapseML
+      href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
     - name: Use k-nearest neighbors with SynapseML
@@ -210,9 +214,8 @@ items:
     - name: Perform multivariate anomaly detection with SynapseML
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
-      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
-      href: cognitive-services-multivariate-anomaly-detection.md
+      href: create-a-multilingual-search-engine-from-forms.md
+    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
+      href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
-

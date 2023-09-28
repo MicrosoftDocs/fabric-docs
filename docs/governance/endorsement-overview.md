@@ -3,7 +3,7 @@ title: Endorsement overview
 description: Learn how to make quality content easier to find through promotion or certification.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 07/15/2023
 ---

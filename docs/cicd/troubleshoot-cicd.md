@@ -60,7 +60,7 @@ To understand the considerations and limitations of various lifecycle management
 
 **Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
 **Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
-**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 
 #### Connect failure: It says something went wrong when I try to connect
 
@@ -96,9 +96,9 @@ To understand the considerations and limitations of various lifecycle management
 
 #### Connect failure: It says I need a Premium license to connect to git
 
-**Description of problem**: My workspace was previously connected to a git repo, but now it says that I need a premium license to connect.  
-**Cause**: You can only connect to git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include git integration, you will not be able to connect to that repo anymore. This applies to trial licenses as well.  
-**Solution**: Disconnect from git and work without source control, or purchase a Premium license.
+**Description of problem**: My workspace was previously connected to a Git repo, but now it says that I need a premium license to connect.  
+**Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you will not be able to connect to that repo anymore. This applies to trial licenses as well.  
+**Solution**: Disconnect from Git and work without source control, or purchase a Premium license.
 
 ### Commit issues
 
@@ -155,13 +155,15 @@ Reason: Git Integration doesn't support Direct Query and proxy models at this ti
 
 **Solution**: Select the all the dependencies of the selected database and try again.
 
-#### Undo failure: After selecting "Undo" a dialog pops up indicating failure because the action would break a dependency link
+#### Dependency error: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link.
 
-**Description of problem**: The following error appears after an undo action if the action would break a dependency.
+**Description of problem**: The following error appears after an undo, update or switch branch action:
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
 
-**Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+**Cause**: There's an unsupported item in the workspace that depends on an item that's no longer in the workspace causing a dependency problem.
+
+**Solution**: Open the [Lineage view](../governance/lineage.md) to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
 
 :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
 
@@ -170,7 +172,7 @@ To resolve the issue, delete the problematic item(s):
 * If the item that's not selected is supported by Git (for example, reports), select it to be deleted as well.
 * If the item that's not selected isn't supported by Git (for example, Dashboards), [delete it manually](git-integration/partial-update.md) from the workspace.
 
-Select **Undo**.  
+To read more about dependencies, see [Understand dependencies](./git-integration/dependency-errors.md).
 
 ## Deployment pipelines
 
@@ -216,7 +218,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 * The workspace isn't assigned to any other pipeline
 
-* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-license)
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
@@ -343,7 +345,7 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 #### Deployment failure: Large number of paginated reports fails
 
 **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
-**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-license), or use selective deployment.
 
 ### Dataflows
 
@@ -369,11 +371,11 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 
 #### Who can deploy content between stages?
 
-Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-license).
 
-* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
+* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#per-user-licenses) user who's a member or admin in the source workspace.
 
-* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity-license) user who's a member or admin of both workspaces in the source and target deployment stages.
 
 * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
 
