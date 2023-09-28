@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 6: Build a Power BI report"
-description: Part 6 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 6- Build a Power BI report
+description: Learn how to visualize your data in a Power BI report in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 08/03/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report
 

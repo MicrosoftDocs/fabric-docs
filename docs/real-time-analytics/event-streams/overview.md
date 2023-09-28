@@ -1,13 +1,13 @@
 ---
 title: Microsoft Fabric event streams overview
-description: The Microsoft Fabric event streams feature provides a centralized place to capture, transform, and route real-time events to various destinations. Learn more.
+description: Learn about event streams and its capability of capturing, transforming, and routing real-time events to various destinations in Microsoft Fabric.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Event streams
 ---
 
 # Microsoft Fabric event streams - overview

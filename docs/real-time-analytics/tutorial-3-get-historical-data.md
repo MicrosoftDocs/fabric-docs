@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 3: Get historical data"
-description: Part 3 of the Real-Time Analytics tutorial in Microsoft Fabric
+title: Real-Time Analytics tutorial part 3- Get historical data
+description: Learn how to get historical data into your KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 08/03/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 3: Get historical data
 
