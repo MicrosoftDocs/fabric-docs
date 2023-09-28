@@ -13,7 +13,7 @@ ms.search.form: Deployment pipelines operations
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
+Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as different environments of a managed release. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 <!---
 >[!NOTE]

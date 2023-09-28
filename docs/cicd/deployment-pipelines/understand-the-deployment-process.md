@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 08/03/2023
+ms.date: 09/28/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -247,7 +247,7 @@ Once your pipeline is configured with incremental refresh, we recommend that you
 
 2. Upload your *.pbix* file to the first (usually *development*) stage.
 
-3. Deploy your content to the next (*test*) stage. After deployment, the changes you made will apply to the entire dataset you're using.
+3. Deploy your content to the next stage. After deployment, the changes you made will apply to the entire dataset you're using.
 
 4. Review the changes you made in each stage, and after you verify them, deploy to the next stage until you get to the final stage.
 

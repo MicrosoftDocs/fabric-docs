@@ -57,6 +57,8 @@ The deployment history log is formatted as a table. Each row represents a single
     | :::image type="content" source="media/deployment-history/successful-deployment.png" alt-text="A screenshot of the deployment pipelines history successful deployment status icon.":::         | Successful        |
     | :::image type="content" source="media/deployment-history/unsuccessful-deployment.png" alt-text="A screenshot of the deployment pipelines history unsuccessful deployment status icon.":::         | Unsuccessful      |
 
+You can choose to see the deployment history of a specific stage, or of all stages.
+
 ## Considerations and limitations
 
 The following section lists the deployment history limitations.

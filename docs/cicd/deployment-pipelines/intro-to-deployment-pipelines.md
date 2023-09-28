@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, build-2023
-ms.date: 05/23/2023
+ms.date: 09/28/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -28,7 +28,7 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 ## Pipeline structure
 
-When you create a deployment pipeline, you can decide how many stages you want there to be. The default pipeline has three stages, but there can be anywhere between two and ten stages to your pipeline. Regardless of how many stages there are, the general concepts are the same.:
+You can decide how many stages you want in your deployment pipeline. There can be anywhere between two and ten stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same.:
 
 * **<a name="development"></a>Development**
 
