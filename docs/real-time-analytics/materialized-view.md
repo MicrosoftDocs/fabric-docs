@@ -1,5 +1,5 @@
 ---
-title: Create materialized views in Real-Time Analytics
+title: Create materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Data management
 ---
 # Create materialized views
 
