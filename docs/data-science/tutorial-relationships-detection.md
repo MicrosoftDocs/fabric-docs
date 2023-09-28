@@ -40,8 +40,6 @@ In this tutorial, you begin with a simple baseline example where you experiment 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the _Customer Profitability Sample.pbix_ and _Customer Profitability Sample (auto).pbix_ datasets from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets) and upload them to your workspace.
-
 ### Follow along in the notebook
 
 The [relationships_detection_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb) notebook accompanies this tutorial.
@@ -117,7 +115,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
     The function lays out the relationship hierarchy from the left hand side to the right hand side, which corresponds to "from" and "to" tables in the output. In other words, the independent "from" tables on the left hand side use their foreign keys to point to their "to" dependency tables on the right hand side. Each entity box shows columns that participate on either the "from" or "to" side of a relationship.
     
-    By default, relationships are generated as "m:1" (not as "1:m") or "1:1". The "1:1" relationships can be generated one or both ways, depending on if the ratio of mapped values to all values exceed `coverage_threshold` in just one or both directions. Later in this tutorial, you cover the less frequent case of "m:m" relationships.
+    By default, relationships are generated as "m:1" (not as "1:m") or "1:1". The "1:1" relationships can be generated one or both ways, depending on if the ratio of mapped values to all values exceeds `coverage_threshold` in just one or both directions. Later in this tutorial, you cover the less frequent case of "m:m" relationships.
 
 ## Troubleshoot relationship detection issues
 
@@ -187,9 +185,7 @@ In more murky scenarios, you can try loosening your search criteria. This method
 
     The results show that the relationship from `encounters` to `patients` was detected, but there are two problems:
 
-    - The relationship indicates a direction from `patients` to `encounters`, which is an inverse of the expected. This is because all
-     `patients` happened to be covered by `encounters` (`Coverage From` is 1.0) while `encounters` are only partially covered
-     by `patients` (`Coverage To` = 0.85), since patients rows are missing.
+    - The relationship indicates a direction from `patients` to `encounters`, which is an inverse of the expected relationship. This is because all `patients` happened to be covered by `encounters` (`Coverage From` is 1.0) while `encounters` are only partially covered by `patients` (`Coverage To` = 0.85), since patients rows are missing.
     - There's an accidental match on a low cardinality `GENDER` column, which happens to match by name and value in both tables,
      but it isn't an "m:1" relationship of interest. The low cardinality is indicated by `Unique Count From` and
      `Unique Count To` columns.
@@ -227,7 +223,7 @@ By matching column names first, the detection runs faster.
 
 1. Match the column names:
     - To understand which columns are selected for further evaluation, use the `verbose=2` option (`verbose=1` lists only the entities being processed).
-    - The `name_similarity_threshold` parameter determines how columns are compared. The threshold of 1 indicates that you're interested in 100% match only:
+    - The `name_similarity_threshold` parameter determines how columns are compared. The threshold of 1 indicates that you're interested in 100% match only.
 
     ```python
     find_relationships(dirty_tables, verbose=2, name_similarity_threshold=1.0);
@@ -301,14 +297,14 @@ The simple baseline example was a convenient learning and troubleshooting tool. 
 
     :::image type="content" source="media/tutorial-relationships-detection/visualize-relationship-metadata.png" alt-text="Screenshot of the relationships between tables." lightbox="media/tutorial-relationships-detection/visualize-relationship-metadata.png":::
 
-1. Count how many new "m:m" relationships will be discovered with `include_many_to_many=True`. These relationships will be in addition to the previously shown "m:1" relationships; therefore, you'll have to filter on `multiplicity`:
+1. Count how many new "m:m" relationships will be discovered with `include_many_to_many=True`. These relationships are in addition to the previously shown "m:1" relationships; therefore, you have to filter on `multiplicity`:
 
     ```python
     suggested_relationships = find_relationships(all_tables, coverage_threshold=1.0, include_many_to_many=True) 
     suggested_relationships[suggested_relationships['Multiplicity']=='m:m']
     ```
 
-1. You can sort the relationship data by various columns to gain a deeper understanding of their nature. For example, you could choose to order the output by `Row Count From` and `Row Count To`, which will help identify the largest tables. 
+1. You can sort the relationship data by various columns to gain a deeper understanding of their nature. For example, you could choose to order the output by `Row Count From` and `Row Count To`, which help identify the largest tables.
 
     ```python
     suggested_relationships.sort_values(['Row Count From', 'Row Count To'], ascending=False)
