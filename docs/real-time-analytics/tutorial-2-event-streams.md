@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 2: Get data with Eventstream"
-description: Part 2 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 2- Get data with Eventstream
+description: Learn how to stream data into your KQL database from Eventstream in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 2: Get data with Eventstream
 
