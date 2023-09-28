@@ -1,13 +1,13 @@
 ---
-title: Use data from a KQL database in Power BI Desktop in Real-time Analytics
+title: Use data from a KQL database in Power BI Desktop
 description: Learn how to use data from your KQL database in Power BI Desktop.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Power BI
 ---
 # Use data from a KQL database in Power BI Desktop
 

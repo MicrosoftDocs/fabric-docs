@@ -1,5 +1,5 @@
 ---
-title: Create OneLake shortcuts in Real-Time Analytics
+title: Create OneLake shortcuts
 description: Learn how to create a OneLake shortcut to query data from internal and external sources.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 08/15/2023
-ms.search.form: product-kusto
+ms.search.form: OneLake
 ---
 
 # Create OneLake shortcuts

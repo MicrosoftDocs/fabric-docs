@@ -1,13 +1,13 @@
 ---
-title: Create a KQL database in Real-Time Analytics
-description: Learn how to create a KQL database in Real-Time Analytics in Microsoft Fabric
+title: Create a KQL database
+description: Learn how to create a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/07/2023
-ms.search.form: product-kusto, KQL Database
+ms.date: 09/28/2023
+ms.search.form: KQL Database
 ---
 # Create a KQL database
 
