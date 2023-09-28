@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # Azure Analysis Services connector overview
 
-The Azure Analysis Services connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)]with the following capabilities.
+The Azure Analysis Services connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
