@@ -7,7 +7,6 @@ author: YaelSchuster
 ms.topic: Tutorial
 ms.custom: build-2023
 ms.date: 09/28/2023
-ms.search.form: Other
 ---
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 

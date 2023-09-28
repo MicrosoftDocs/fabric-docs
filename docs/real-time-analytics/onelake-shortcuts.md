@@ -7,7 +7,6 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 08/15/2023
-ms.search.form: OneLake
 ---
 
 # Create OneLake shortcuts

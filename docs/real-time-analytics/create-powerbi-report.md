@@ -7,7 +7,6 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 09/10/2023
-ms.search.form: Power BI
 ---
 
 # Visualize data in a Power BI report

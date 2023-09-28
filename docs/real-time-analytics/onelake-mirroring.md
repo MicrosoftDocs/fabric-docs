@@ -7,7 +7,6 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 09/28/2023
-ms.search.form: OneLake
 ---
 # One logical copy
 

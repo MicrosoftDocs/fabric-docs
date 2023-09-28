@@ -1,6 +1,6 @@
 ---
 title: Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
-description: Use Microsoft Fabric eventstreams to ingest, filter, and transform the event data and send them in Delta Lake format from Azure Event Hubs to a Microsoft Fabric lakehouse.
+description: Learn how to use event streams to ingest, filter, and transform data from Azure Event Hubs, and stream it into a lakehosue.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
@@ -19,6 +19,7 @@ This tutorial shows you how to use the Microsoft Fabric event streams feature to
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
+>
 > - Create Eventstream and Lakehouse items in Microsoft Fabric
 > - Add an Azure Event Hubs source to the eventstream
 > - Create an event hub cloud connection

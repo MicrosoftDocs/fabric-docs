@@ -1,6 +1,6 @@
 ---
 title: Process event data with the event processor editor
-description: Learn how to use the event processor editor in an Eventstream item to define the event processing logic.
+description: Learn how to use the event processor editor to define the event processing logic.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
