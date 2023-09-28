@@ -1,13 +1,13 @@
 ---
-title: Create an empty table in Real-Time Analytics
+title: Create an empty table
 description: Learn how to create an empty table in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/10/2023
-ms.search.form: product-kusto, create a Kusto DB
+ms.date: 09/28/2023
+ms.search.form: Create a table
 ---
 # Create an empty table
 
