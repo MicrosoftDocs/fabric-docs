@@ -1,13 +1,13 @@
 ---
-title: Get data from Amazon S3 in Real-Time Analytics
-description: Learn how to get data from Amazon S3 in a KQL database in Real-Time Analytics
+title: Get data from Amazon S3
+description: Learn how to get data from Amazon S3 in a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/26/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 # Get data from Amazon S3
 

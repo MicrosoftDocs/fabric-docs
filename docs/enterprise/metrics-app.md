@@ -12,6 +12,9 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+>[!NOTE]
+>The Microsoft Fabric Capacity Metrics app has been updated to include support for both EM/A and P SKUs.
+
 The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Monitoring your capacities is essential for making informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.
@@ -26,13 +29,11 @@ To install the app follow the instructions in [Install the Microsoft Fabric Capa
 
 When using the Microsoft Fabric Capacity Metrics app, consider the following limitations.
 
-* In the [CU over time](metrics-app-overview-page.md#cu-over-time) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
+* In the [Capacity utilization and throttling](metrics-app-overview-page.md#capacity-utilization-and-throttling) visual logarithmic's view, the primary axis seen on the left of the visual, isn't aligned with the secondary axis seen on the right of the visual.
 
 * In the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operation tables, the *Throttling(s)* column displays zero when throttling is disabled, even when the capacity is overloaded.
 
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
-
-* Warehouse utilization reporting shows only OneLake related compute usage.
 
 * Updates from version 1 to version 1.1 will be installed in a new workspace.
 
