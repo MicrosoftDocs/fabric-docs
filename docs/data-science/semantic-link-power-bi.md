@@ -189,5 +189,6 @@ The `add_measure` operation performs these steps:
 ## Next steps
 
 - [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
