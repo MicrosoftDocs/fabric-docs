@@ -24,7 +24,7 @@ You're unable to start a new Spark session in a Fabric notebook and receive the 
 
 To work around this issue, you can install any library (from PyPi, Conda, or custom library) through **Workspace settings** > **Data engineering** > **Library management**.  You don't need to use the library in a Fabric notebook or Spark job definition for it to resolve the error message.
 
-If you are not using any library in your workspace, adding a library from PyPi or Conda to workaround this issue may slow your session start time slightly. Instead, you may install a small custom library to have faster session start times. You can download a simple JAR file from [Fabric Samples/SampleCustomJar](https://github.com/microsoft/fabric-samples/docs-samples/data-engineering/SampleCustomJAR) and install.
+If you are not using any library in your workspace, adding a library from PyPi or Conda to workaround this issue may slow your session start time slightly. Instead, you may install a small custom library to have faster session start times. You can download a simple JAR file from [Fabric Samples/SampleCustomJar](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/SampleCustomJAR) and install.
 
 ## Next steps
 
