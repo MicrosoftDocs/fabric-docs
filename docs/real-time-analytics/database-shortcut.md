@@ -1,12 +1,12 @@
 ---
-title: Create a database shortcut in Real-Time Analytics
-description: Learn how to create a database shortcut in Real-Time Analytics in Microsoft Fabric
+title: Create a database shortcut
+description: Learn how to create a database shortcut in Real-Time Analytics.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 08/30/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: KQL Database
 ---
 # Create a database shortcut
 

@@ -1,13 +1,13 @@
 ---
-title:  Get data from Azure Event Hubs in Real-Time Analytics
-description: Learn how to create a connection to Event Hubs and get data into your KQL database.
+title:  Get data from Azure Event Hubs
+description: Learn how to create a connection to Event Hubs and get data into your KQL database in Real-Time Analytics.
 ms.reviewer: guregini
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/25/2023
-ms.search.form: product-kusto, Get data, Data connection
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
 

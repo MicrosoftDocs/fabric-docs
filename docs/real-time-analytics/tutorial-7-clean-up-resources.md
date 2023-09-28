@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 7: Clean up resources"
-description: Part 7 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 7- Clean up resources
+description: Learn how to delete the resources in your Microsoft Fabric workspace.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 7: Clean up resources
 

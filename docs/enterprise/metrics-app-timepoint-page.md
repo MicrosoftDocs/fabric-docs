@@ -19,7 +19,7 @@ All the activities in the capacity are ranked according to their compute impact.
 
 When the total combined CU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [CU over time](metrics-app-overview-page.md#cu-over-time) chart and CU (s) card will changes its color to yellow.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-overview-page.md#capacity-utilization-and-throttling) chart and CU (s) card will changes its color to yellow.
 
     >[!NOTE]
     >When autoscale is enabled, if the capacity reaches the maximum number of capacity units (CUs) allowed by the autoscale operation, throttling is applied.
@@ -101,6 +101,30 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 A table showing every background operation that contributed CU usage to the viewed timepoint. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
 
 All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
+
+## Burndown table
+
+A table showing the *add*, *burndown* and *cumulative* percent by experiences, for the last 30 seconds.
+
+* **Experience** - The name of the experience.
+
+* **Add %** - The percentage of carryforward added compared to the capacity, for the last 30 seconds.
+
+* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for the last 30 seconds. 
+
+* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for the last 30 seconds.
+
+## Overages 
+
+You can change the overages visual scale to display 10 minutes, 60 minutes and 24 hours. Carryforward only takes into account billable operations.
+
+* **Add %** - The green columns represent the percentage of carryforward added within the specified timepoint window.
+  
+* **Burndown %** - The blue columns represent the percentage of carryforward burned down within the specified timepoint window.
+  
+* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window.
+
+
 
 ## Next steps
 

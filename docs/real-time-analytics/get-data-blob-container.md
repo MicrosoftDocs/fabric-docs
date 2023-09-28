@@ -1,19 +1,19 @@
 ---
-title: Get data from a blob container in Real-Time Analytics
-description: Learn how to get data from a blob container in a KQL database in Real-Time Analytics
+title: Get data from a blob container
+description: Learn how to get data from a blob container in a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto, Get data
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 # Get data from a blob container
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you'll learn you how to get data from an Azure blob or blob container into an existing database. A blob container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
+In this article, you'll learn how to get data from an Azure blob or blob container into an existing database. A blob container organizes a set of blobs, similar to a directory in a file system. A storage account can include an unlimited number of containers, and a container can store an unlimited number of blobs. For more information on blob containers, see [Manage blob containers using Azure portal](/azure/storage/blobs/blob-containers-portal).
 
 To get data from a blob, see [Get data from a blob](get-data-blob.md).
 
