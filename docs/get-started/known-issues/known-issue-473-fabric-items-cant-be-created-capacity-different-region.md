@@ -4,7 +4,7 @@ description: A known issue is posted where Fabric items can't be created in a wo
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 08/24/2023
+ms.date: 09/28/2023
 ms.custom: known-issue-473
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-473
 
 If a workspace ever contained a Fabric item other than a Power BI item, even if all the Fabric items have since been deleted, then moving that workspace to a different capacity in a different region isn't supported.  If you do move the workspace cross-region, you can't create any Fabric items. In addition, the same behavior occurs if you configure Spark compute settings in the Data Engineering or Data Science section of the workspace settings.
 
-**Status:** Open
+**Status:** Fixed: September 28, 2023
 
 **Product Experience:** OneLake
 
