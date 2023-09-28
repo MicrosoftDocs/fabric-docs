@@ -144,7 +144,11 @@
         - name: Configure in Data pipeline
           href: format-parquet.md
         - name: Configure in Dataflow Gen2
-          href: connector-parquet-dataflows.md    
+          href: connector-parquet-dataflows.md
+      - name: XML
+        items:
+        - name: Configure in Data pipeline
+          href: format-xml.md       
     - name: FTP
       items:
       - name: Overview
