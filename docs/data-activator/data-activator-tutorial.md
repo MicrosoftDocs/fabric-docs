@@ -34,20 +34,20 @@ From the Fabric homepage, select a workspace with a Fabric capacity. Select the 
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-01.png" alt-text="Selecting reflex sample for data activator tutorial data.":::
 
 
-### Step 2: Explore the package events in Data Mode
+### Step 2: Explore the package events in data mode
 
 In the following step, we explore data mode. 
 
 1. In the newly created reflex, select on the *data* tab, then select the *Package in Transit* events stream. These events show the real-time status of packages that are in the process of being delivered by a logistics company. Look at the incoming events and note the columns on the events. The *PackageId* column uniquely identifies the Packages; this is the ID column that we use to assign the Package events to Package objects.
 2. Select on the other two event streams. These come from different sources in the logistics company, but they're also about packages. They also have a *Package ID* column.
 
-### Step 3: Explore the Package object in Design Mode
+### Step 3: Explore the Package object in design mode
 
-Now we explore Design Mode. 
+Now we explore design mode. 
 
-1. Select the *Design* tab at the bottom of the screen to enter Design Mode.
+1. Select the *Design* tab at the bottom of the screen to enter design mode.
 
-2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from Data Mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
+2. In the left navigation pane, look at the *Events* section of the Package object. All three event streams from data mode are linked to the package object. This enables you to create triggers about packages that use data from any of the three event streams.
 
 3. Select the trigger called *Medicine too warm*. Observe how it works:
     
@@ -69,19 +69,19 @@ Now that you have familiarized yourself with the packages events and objects, yo
 
 ### Step 4: Create a City object
 
-Now it's time to create an object of your own. In this section, you'll create a *City" object that tracks the status of package deliveries at the level of Cities, rather than individual packages.
+Now it's time to create an object of your own. In this section, you'll create a *City* object that tracks the status of package deliveries at the level of Cities, rather than individual packages.
 
-1. Return to Data Mode
-2. Select the *Package In Transit* stream
-3. Select *Assign your data* in the ribbon
-4. Name your new object *City* and choose *City* as the ID column
+1. Return to data mode.
+2. Select the *Package In Transit* stream.
+3. Select *Assign your data* in the ribbon.
+4. Name your new object *City* and choose *City* as the ID column.
 5. Select **continue**.
 
 ### Step 5: Create a trigger on the City object
 
 Now you'll create a trigger that alerts you if the average time in transit, for any city, exceeds a target.
 
-1. Go to Design Mode and select your new *City* object. Select *New trigger* then name it *Average transit time above target*. After this step, your City object will look like this:
+1. Go to design mode and select your new *City* object. Select *New trigger* then name it *Average transit time above target*. After this step, your City object will look like this:
 
     :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-02.png" alt-text="Average transit time trigger for data activator tutorial.":::
 

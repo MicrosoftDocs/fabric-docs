@@ -27,7 +27,7 @@ Before you begin, you need a Power BI report that is published online to a Fabri
 
 This section, and the sections within it, describes how to create a Data Activator from a Power BI visual. 
 
-#### Select trigger action on your Power BI visual.
+#### Select trigger action on your Power BI visual
 
 To begin creating a trigger from a Power BI report:
 
@@ -39,7 +39,7 @@ The following image shows an example of how to trigger an action from a visual t
 
 :::image type="content" source="media/data-activator-get-data/data-activator-get-data-01.png" alt-text="Screenshot of sales by store.":::
 
-#### Create your Data Activator trigger.
+#### Create your Data Activator trigger
 
 Next, define your trigger conditions and to create your trigger. In the *Create Alert* dialog that appears, take the following steps:
 

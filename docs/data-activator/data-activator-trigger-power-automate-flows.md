@@ -15,13 +15,13 @@ ms.date: 10/03/2023
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 
-1. Sending notifications using systems other than Teams and Email
-2. Creating action items in ticketing systems
-3. Calling line-of-business apps
+* Sending notifications using systems other than Teams and Email.
+* Creating action items in ticketing systems.
+* Calling line-of-business apps.
 
 To trigger Power Automate flows from your triggers, you first create a *custom action*. Then, you call your custom action from your triggers. 
 
-## Create a Custom Action
+## Create a custom action
 
 A custom action is a reusable action template that you can use in multiple triggers, in multiple Reflex items. Creating a custom action requires familiarity with Power Automate. However, once you have created a custom action, other Data Activator users can use the action in any trigger, without requiring any knowledge of Power Automate. 
 
@@ -61,7 +61,7 @@ After you save your flow, return to Data Activator. Upon successful saving of th
 :::image type="content" source="media/data-activator-detection-conditions/data-activator-detection-conditions-07.png" alt-text="Screenshot of custom action completion for data activator.":::
 
 
-## Call your Custom Action from a Trigger
+## Call your custom action from a trigger
 
 Once you have created a custom action, it's available for use by all Data Activator users, in all triggers and reflexes. To call your custom action, from a trigger, select the *Custom Action* tile in the trigger’s *Act* card, and select your custom action from the list:
 

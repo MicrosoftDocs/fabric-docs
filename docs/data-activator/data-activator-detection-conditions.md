@@ -65,7 +65,7 @@ Condition types fall into the following categories:
 
 
 
-### Condition Timers
+### Condition timers
 
 After you specify a condition type, you can specify a condition timer.
 

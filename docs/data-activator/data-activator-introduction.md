@@ -27,7 +27,7 @@ Some common use cases are:
 * Alert account teams when customers fall into arrears, with customized time or value limits per customer.
 * Track data pipeline quality, either rerunning jobs or alerting when pipelines fail or anomalies are detected.
 
-## Core Concepts
+## Core concepts
 
 The following concepts are used to build and trigger automated actions and responses in Data Activator.
 

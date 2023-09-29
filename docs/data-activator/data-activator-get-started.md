@@ -32,7 +32,7 @@ To get started, you create a reflex item in your Fabric workspace. From the New 
 
 :::image type="content" source="media/data-activator-get-started/data-activator-get-started-03.png" alt-text="Screenshot of selecting a new data activator reflex item.":::
 
-## Navigate between Data Mode and Design Mode
+## Navigate between data mode and design mode
 
 When you open a reflex, you see two tabs at the bottom of the screen that switch between **data mode** and **design mode**. In data mode, you can see your incoming data and assign it to objects. In design mode, you build triggers from your objects. At first, these will be empty; the next step after creating a reflex is to populate it with your data.
 

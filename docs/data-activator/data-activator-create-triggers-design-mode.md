@@ -82,7 +82,7 @@ The toolbar changes to allow you to Stop the trigger. If you make changes to the
 
 When you delete a trigger (or Object), it can take up to 5 minutes for any back-end processing of data to complete. This means your trigger may continue to monitor data, and take actions accordingly, for a few minutes after it has been deleted.
 
-## Create Properties
+## Create properties
 
 Sometimes, you need to reuse trigger logic across multiple triggers. This is where properties come in. You can create a property that defines a reusable condition or measure, then reference that property from multiple triggers.
 
