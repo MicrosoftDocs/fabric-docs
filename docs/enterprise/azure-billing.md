@@ -16,7 +16,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 
 ## Invoice meters
 
-In Microsoft Cost Management, your cost analysis and invoice show multiple meters related to your Fabric capacity resource. THe following is a complete list of all of the meters.
+In Microsoft Cost Management, your cost analysis and invoice show multiple meters related to your Fabric capacity resource. The following is a complete list of all of the meters.
 
 * **Power BI  Usage CU** – Represents the Power BI usage on your capacity.
 * **Data Movement Capacity Usage CU** - Represents the Pipelines usage on your capacity.
