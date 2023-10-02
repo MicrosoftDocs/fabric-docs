@@ -52,10 +52,10 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Text classification
-            url: title-genre-classification.md 
-          - text: Uplift modeling
-            url: uplift-modeling.md          
+          - text: Discover relationships in a Power BI dataset using Semantic Link
+            url: tutorial-power-bi-relationships.md 
+          - text: Analyze functional dependencies in a Power BI dataset using Semantic Link
+            url: tutorial-power-bi-dependencies.md   
 
   # Card 
   - title: Preparing Data
