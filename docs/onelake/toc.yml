@@ -23,7 +23,6 @@ items:
     href: create-onelake-shortcut.md
   - name: Access OneLake shortcuts in a Spark notebook
     href: access-onelake-shortcuts.md
-  - name: Create an Azure Data Lake Storage Gen2 shortcut
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
