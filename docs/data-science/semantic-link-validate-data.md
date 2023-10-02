@@ -10,7 +10,7 @@ ms.date: 06/06/2023
 ms.search.form: Semantic Link
 ---
 
-# Detect, explore and validate functional dependencies in your data
+# Detect, explore, and validate functional dependencies in your data
 
 Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
