@@ -41,9 +41,9 @@ The first phase of throttling begins when a capacity has consumed all its availa
 
 ## Carry forward capacity usage reduction
 
-Anytime a capacity has idle capacity, the system pays down the carry forward carry forward levels. 
+Anytime a capacity has idle capacity, the system pays down the carry forward levels. 
 
-If you have 100 CU minutes and a carry forward of 200 CU minutes, and you don’t have any operations running, it takes two minutes for you to pay off your carry forward. In this example, you would not be throttled as you're only at 2 minutes of carry forward. Throttling delays won’t begin until you're at 10 minutes of carry forward. 
+If you have 100 CU minutes and a carry forward of 200 CU minutes, and you don’t have any operations running, it takes two minutes for you to pay off your carry forward. In this example, the system isn't throttled, as there are 2 minutes of carry forward. Throttling delays won’t begin until it's at 10 minutes of carry forward. 
 
 If you need to pay down your carry forward faster, you can increase your SKU size temporarily to generate more idle capacity that is applied to your carry forward. 
 
