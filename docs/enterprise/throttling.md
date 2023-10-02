@@ -46,7 +46,7 @@ Anytime a capacity has idle capacity it will pay down the carry forward carry fo
 
 While most Fabric products follow the previously mentioned throttling rules, there are some exceptions. For example, eventstream has many operations that can run for years once they are started. Throttling new eventstream operations wouldn’t make sense, so instead, the amount of CU allocated to keeping the stream open is reduced until the capacity is in good standing again. Another exception is Real-Time Data, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Data ignores the first stage of throttling with 20-second delays at 10 minutes of carry forward and waits until the rejection phase at 60 minutes of carry forward to begin throttling. This ensures users can continue to enjoy real-time performance even during periods of high demand.
 
-## Interactive and background classifications for Throttling and Smoothing
+## Interactive and background classifications for throttling and smoothing
 
 Some admins may notice that operations are sometimes classified as interactive and smoothed as background, or vice versa. This is because Fabric’s throttling systems must apply throttling rules before a request begins to run, while smoothing is applied after the job has started running and CU consumption can be measured. Throttling systems do their best to accurately categorize operations upon submission, but sometimes an operation’s classification may change after throttling has been applied, when the operation begins to run and more detailed information about the request is available. In ambiguous scenarios, throttling systems try to err on the side of classifying operations as background, which is in the user’s best interest. 
 
