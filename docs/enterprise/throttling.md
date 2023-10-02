@@ -1,6 +1,6 @@
 ---
 title: Understand your Fabric capacity throttling
-description: Learn why and how capacities are throttled in Microsoft Fabric
+description: Learn why and how capacities are throttled in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
@@ -10,7 +10,7 @@ ms.date: 10/02/2023
 
 # The Fabric throttling policy
 
-Throttling occurs when a tenant’s capacity consumes more capacity resources than it has purchased. Too much throttling results in a degraded end-user experience. A Fabric tenant can create multiple capacities and assign workspaces to a specific capacity for billing and sizing. 
+Throttling occurs when a tenant’s capacity consumes more capacity resources than it has purchased. Too much throttling can result in a degraded end-user experience. A Fabric tenant can create multiple capacities and assign workspaces to a specific capacity for billing and sizing. 
 
 Throttling is applied at the capacity level, meaning that while one capacity, or set of workspaces, may be experiencing reduced performance due to being overloaded, other capacities may continue running normally. In cases where features such as OneLake artifacts are produced in one capacity and consumed by another, the throttling state of the consuming capacity determines whether calls to the artifact are throttled.
 
@@ -26,14 +26,14 @@ When a capacity enters a throttled state, it only affects operations that are re
 
 ## Throttle triggers and throttle stages
 
-After applying smoothing, some accounts may still experience spikes in CU usage during peak reporting times. To help manage those spikes, admins can set up email alerts to be notified when a capacity consumes 100% of its provisioned CU. This pattern is an indication that the capacity may benefit from load balancing, and the admin should consider increasing the SKU size. It’s important to note that for F SKUs, you can manually increase and decrease them at any time in the admin settings. However, even when a capacity is operating at its full CU potential, Fabric does not apply throttling. This ensures users enjoy consistently fast performance without experiencing any disruptions.
+After smoothing, some accounts may still experience spikes in CU usage during peak reporting times. To help manage those spikes, admins can set up email alerts to be notified when a capacity consumes 100% of its provisioned CU. This pattern is an indication that the capacity may benefit from load balancing, and the admin should consider increasing the SKU size. It’s important to note that for F SKUs, you can manually increase and decrease them at any time in the admin settings. However, even when a capacity is operating at its full CU potential, Fabric doesn't apply throttling. This ensures users have consistently fast performance without experiencing any disruptions.
 
 The first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes. For example, if you purchased 10 units of CU and then consumed 50 units per minute, you would create a carry forward of 40 units per minute. After two and a half minutes, you would have accumulated a carry forward of 100 units, borrowed from future windows. At this point where the capacity has already exhausted all capacity for the next 10 minutes, Fabric initiates its first level of throttling, and all new interactive operations are delayed by 20 seconds upon submission. If the carry forward reaches a full hour, interactive requests are rejected, but background scheduled operations continue to run. If the capacity accumulates a full 24 hours of carry forward, the entire capacity is frozen until the carry forward is paid off.
 
 ## Future smoothed consumption
 
 | Usage  | Policy Limits	 | Platform Policy	Experience Impact | 
-| -- | -- | -- | 
+| --- | --- | --- | 
 | <= 10 minutes	 | Overage protection	 | Jobs can consume 10 minutes of future capacity use without throttling | 
 | 10 minutes < Usage <= 60 minutes	 | Interactive Delay	 | User-requested interactive jobs are delayed 20 seconds at submission | 
 | 60 minutes < Usage <= 24 hours	 | Interactive Rejection	 | User-requested interactive jobs are rejected | 
@@ -53,7 +53,7 @@ Some admins may notice that operations are sometimes classified as interactive a
 
 ## Track rejected Operations
 
-The [metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There is  limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End Users receive an error message when a request is rejected that asks them to try again later. 
+The [metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's  limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End Users receive an error message when a request is rejected that asks them to try again later. 
 
 
 ## Next steps
