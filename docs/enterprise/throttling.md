@@ -41,15 +41,25 @@ The first phase of throttling begins when a capacity has consumed all its availa
 
 ## Carry forward capacity usage reduction
 
-Anytime a capacity has idle capacity, the system pays down the carry forward carry forward levels. If you have 100 CU minutes and a carry forward of 200 CU minutes, and you don’t have any operations running, it takes two minutes for you to pay off your carry forward. Note that in this example, you would not be throttled as you're only at 2 minutes of carry forward and throttling delays won’t begin until you're at 10 minutes of carry forward. If you need to pay down your carry forward faster you can increase your SKU size temporarily to generate more idle capacity that will be applied to your carry forward carry forward. 
+Anytime a capacity has idle capacity, the system pays down the carry forward carry forward levels. 
+
+If you have 100 CU minutes and a carry forward of 200 CU minutes, and you don’t have any operations running, it takes two minutes for you to pay off your carry forward. In this example, you would not be throttled as you're only at 2 minutes of carry forward. Throttling delays won’t begin until you're at 10 minutes of carry forward. 
+
+If you need to pay down your carry forward faster, you can increase your SKU size temporarily to generate more idle capacity that is applied to your carry forward. 
 
 ## Throttling behavior is specific to Fabric
 
-While most Fabric products follow the previously mentioned throttling rules, there are some exceptions. For example, Fabric event streams have many operations that can run for years once they're started. Throttling new event stream operations wouldn’t make sense, so instead, the amount of CU allocated to keeping the stream open is reduced until the capacity is in good standing again. Another exception is Real-Time Data, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Data ignores the first stage of throttling with 20-second delays at 10 minutes of carry forward and waits until the rejection phase at 60 minutes of carry forward to begin throttling. This ensures users can continue to enjoy real-time performance even during periods of high demand.
+While most Fabric products follow the previously mentioned throttling rules, there are some exceptions. 
+
+For example, Fabric event streams have many operations that can run for years once they're started. Throttling new event stream operations wouldn’t make sense, so instead, the amount of CU allocated to keeping the stream open is reduced until the capacity is in good standing again. 
+
+Another exception is Real-Time Data, which wouldn’t be real-time if operations were delayed by 20 seconds. As a result, Real-Time Data ignores the first stage of throttling with 20-second delays at 10 minutes of carry forward and waits until the rejection phase at 60 minutes of carry forward to begin throttling. This behavior ensures users can continue to enjoy real-time performance even during periods of high demand.
 
 ## Interactive and background classifications for throttling and smoothing
 
-Some admins may notice that operations are sometimes classified as interactive and smoothed as background, or vice versa. This is because Fabric’s throttling systems must apply throttling rules before a request begins to run, while smoothing is applied after the job has started running and CU consumption can be measured. Throttling systems do their best to accurately categorize operations upon submission, but sometimes an operation’s classification may change after throttling has been applied, when the operation begins to run, and more detailed information about the request is available. In ambiguous scenarios, throttling systems try to err on the side of classifying operations as background, which is in the user’s best interest. 
+Some admins may notice that operations are sometimes classified as interactive and smoothed as background, or vice versa. This distinction happens because Fabric’s throttling systems must apply throttling rules before a request begins to run. Smoothing occurs after the job has started running and CU consumption can be measured. 
+
+Throttling systems attempt to accurately categorize operations upon submission, but sometimes an operation’s classification may change after throttling has been applied. When the operation begins to run, more detailed information about the request becomes available. In ambiguous scenarios, throttling systems try to err on the side of classifying operations as background, which is in the user’s best interest. 
 
 ## Track rejected Operations
 
