@@ -52,10 +52,10 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Text classification
-            url: title-genre-classification.md 
-          - text: Uplift modeling
-            url: uplift-modeling.md          
+          - text: Discover relationships in a Power BI dataset using Semantic Link
+            url: tutorial-power-bi-relationships.md 
+          - text: Analyze functional dependencies in a Power BI dataset using Semantic Link
+            url: tutorial-power-bi-dependencies.md   
 
   # Card 
   - title: Preparing Data
@@ -140,3 +140,19 @@ landingContent:
         links:
         - text: SemPy Python SDK
           url: /python/api/semantic-link-sempy
+
+# Card 
+  - title: Using Semantic Link
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Semantic Link?
+            url: semantic-link-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Read from Power BI and write data consumable by Power BI
+            url: read-write-power-bi.md
+          - text: Detect, explore, and validate functional dependencies in your data
+            url: semantic-link-validate-data.md
+          - text: Explore and validate relationships in datasets
+            url: semantic-link-validate-relationship.md
