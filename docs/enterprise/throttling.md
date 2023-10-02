@@ -22,7 +22,7 @@ For background operations that have long runtimes and consume heavy CU loads, Fa
 
 ## In-flight operations aren't throttled
 
-When a capacity enters a throttled state, it only affects operations that are requested after the capacity has begun throttling. All operations, including long-running ones, that were submitted before throttling began are allowed to run to completion. This behavior gives you the assurance that operations are completed, even during CU surges.
+When a capacity enters a throttled state, it only affects operations that are requested after the capacity has begun throttling. All operations, including long-running ones that were submitted before throttling began, are allowed to run to completion. This behavior gives you the assurance that operations are completed, even during CU surges.
 
 ## Throttle triggers and throttle stages
 
