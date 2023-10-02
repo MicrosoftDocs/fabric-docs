@@ -30,4 +30,4 @@ items:
     - name: Understand the metrics app OneLake page
       href: metrics-app-onelake-page.md
     - name: Understand the metrics app timepoint page
-    - name: metrics-app-timepoint-page.md             
+      href: metrics-app-timepoint-page.md             
