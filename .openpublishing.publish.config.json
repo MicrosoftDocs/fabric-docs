@@ -46,6 +46,9 @@
     "sngun@microsoft.com",
     "jasonh@microsoft.com"
   ],
+  "contributors_to_exclude": [
+    "jasonwhowell"
+  ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/fabric-docs",
   "git_repository_branch_open_to_public_contributors": "main",
