@@ -60,7 +60,7 @@ Continuing the example from the [Activity Overview](#activity-overview-page) pag
 
 ### Activity Details page
 
-The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *Activity Details* page from the page navigation menu, or by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages. To drill through, right-click a result and then select the *Activity Details* page. After drilling through, you see the following information for the selected activities:
+The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *Activity Details* page by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages. To drill through, right-click a result and then select the *Activity Details* page. After drilling through, you see the following information for the selected activities:
 
 * **Creation time** - The time the activity was registered
 

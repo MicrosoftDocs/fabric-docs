@@ -6,14 +6,14 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Overview
 ---
 # What is the difference between Real-Time Analytics and Azure Data Explorer?
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Real-Time Analytics is a data analytics SaaS experience in the Microsoft Fabric offering. Azure Data Explorer is a PaaS service in Azure. Kusto in Real-Time Analytics (KQL Database and KQL Queryset) and Azure Data Explorer share the same core engine with the identical core capabilities, but different management behavior. This article details the difference between the two services. Real-Time Analytics also offers other capabilities, such as [Eventstreams](event-streams/overview.md), and has many aspects that are managed at the workspace level. 
+Real-Time Analytics is a data analytics SaaS experience in the Microsoft Fabric offering. Azure Data Explorer is a PaaS service in Azure. Kusto in Real-Time Analytics (KQL Database and KQL Queryset) and Azure Data Explorer share the same core engine with the identical core capabilities, but different management behavior. This article details the difference between the two services. Real-Time Analytics also offers other capabilities, such as [Eventstreams](event-streams/overview.md), and has many aspects that are managed at the workspace level.
 
 For more information on Real-Time Analytics, see [What is Real-Time Analytics in Fabric?](overview.md).
 
@@ -47,6 +47,7 @@ You can query data from your KQL database in the query editor of Azure Data Expl
 |  | Power BI connectivity | Power BI report Quick create allows for online creation of reports without the desktop application.  Power BI connector | Power BI connector |
 | **Pricing** | Business model | Included in the Power BI Premium workspace consumption model. Billing per use. | Cost plus billing model with multiple meters: Azure Data Explorer IP markup, with passthrough of infrastructure (Compute, Storage, and Networking) expenses. Leverages Azure reserved instances plans when in place. |
 
-## Next steps
+## Next step
 
-* Get started with [Real-Time Analytics](tutorial-introduction.md)
+> [!div class="nextstepaction"]
+> [Get started with Real-Time Analytics](tutorial-introduction.md)

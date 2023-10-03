@@ -67,10 +67,8 @@ The high-level steps in the dataflow are as follows:
    - lpepDropoffDatetime
    - puLocationId
    - doLocationId
-   - pickupLongitude
    - pickupLatitude
    - dropoffLongitude
-   - dropoffLatitude
    - rateCodeID
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-columns-dialog.png" alt-text="Screenshot showing the Choose columns dialog with the identified columns deselected.":::
@@ -234,7 +232,7 @@ With the output query now fully prepared and with data ready to output, we can d
 In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 
 > [!div class="checklist"]
-> - Dreate a new Dataflow Gen2.
+> - Create a new Dataflow Gen2.
 > - Import and transform sample data.
 > - Import and transform text/CSV data.
 > - Merge data from both data sources into a new query.

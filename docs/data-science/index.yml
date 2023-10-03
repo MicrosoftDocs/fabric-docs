@@ -107,7 +107,7 @@ landingContent:
           - text: Use OpenAI for big data with SynapseML
             url: open-ai.md
           - text: Use Congnitive Services with SynapseML
-            url: overview-cognitive-services.md
+            url: overview-azure-ai-services.md
           - text: Deep learning with ONNX and SynapseML
             url: onnx-overview.md
           - text: Perform multivariate anomaly detection with SynapseML

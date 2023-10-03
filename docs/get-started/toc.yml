@@ -11,6 +11,8 @@ items:
     href: preview.md    
   - name: Fabric terminology
     href: fabric-terminology.md
+  - name: What's New
+    href: whats-new.md
 - name: Get started
   items:
   - name: End-to-end tutorials
@@ -19,8 +21,8 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
-  - name: Decision guide - data warehouse or lakehouse
-    href: decision-guide-warehouse-lakehouse.md
+  - name: Decision guide - choose a data store
+    href: decision-guide-data-store.md
 - name: Find your way around Fabric
   items:
   - name: Find your items from Fabric Home
@@ -57,12 +59,34 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Unable to start new Spark session after deleting all libraries
+      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
+    - name: Selecting view account link in account manager shows wrong page
+      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
+    - name: Admin monitoring dataset refresh fails and credentials expire
+      href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
+    - name: Fabric items can't be created in a workspace moved to a capacity in a different region
+      href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
+    - name: Notebook fails to load after workspace migration
+      href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
+    - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
+      href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
+    - name: Fabric user sees workspace git status column display synced for unsupported items
+      href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
+    - name: Not able to add lookup activity output to body of Office 365 activity
+      href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 
+    - name: OneLake file explorer does not contain items under my workspace
+      href: known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md  
+    - name: Warehouse's object explorer doesn't support case-sensitive object names
+      href: known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
+    - name: Data Warehouse only publishes Delta Lake Logs for Inserts
+      href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
     - name: Pipeline isn't loading if user deployed with update app via public API
       href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Data Warehouse and SQL Endpoint
-      href: known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md  
+      href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
     - name: OneLake table folder not removed when table dropped in data warehouse
-      href: known-issues/known-issue-446-oneLake-table-folder-not-removed.md  
+      href: known-issues/known-issue-446-onelake-table-folder-isnt-removed.md  
     - name: Affected rows number displayed doesn't match the real row number
       href: known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md
     - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files

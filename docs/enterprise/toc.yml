@@ -8,20 +8,26 @@ items:
 - name: Get started
   items:
   - name: Buy a Microsoft Fabric subscription
-    href: buy-subscription.md    
+    href: buy-subscription.md
+  - name: Service interruption notifications
+    href: service-interruption-notifications.md
 - name: Capacity operations
   items:
+  - name: Understand your Azure bill
+    href: azure-billing.md
   - name: Pause and resume your capacity
     href: pause-resume.md
   - name: Scale your capacity
-    href: scale-capacity.md    
+    href: scale-capacity.md
   - name: Metrics app
     items:
-    - name: What is the utilization and metrics app?
+    - name: What is the Microsoft Fabric Capacity Metrics app?
       href: metrics-app.md
-    - name: Install the utilization and metrics app
+    - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the metrics app overview page
+    - name: Understand the Microsoft Fabric Capacity Metrics app overview page
       href: metrics-app-overview-page.md
+    - name: Understand the metrics app OneLake page
+      href: metrics-app-onelake-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md                  
+      href: metrics-app-timepoint-page.md             

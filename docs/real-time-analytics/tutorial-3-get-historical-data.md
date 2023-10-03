@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 3: Get historical data"
-description: Part 3 of the Real-Time Analytics tutorial in Microsoft Fabric
+title: Real-Time Analytics tutorial part 3- Get historical data
+description: Learn how to get historical data into your KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 3: Get historical data
 
@@ -29,12 +29,10 @@ One-time data loading is often needed for historical data, or for adding dimensi
 
 ### Destination tab
 
-In the **Destination** tab, **Database** is auto populated with the name of the selected database.
-
 1. Under **Table**, make sure that **New table** is selected, and enter *Locations* as the table name.
 1. Select **Next: Source**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/destination-tab.png" alt-text="Screenshot of destination tab.":::
+    :::image type="content" source="media/realtime-analytics-tutorial/destination-tab.png" alt-text="Screenshot of destination tab showing the table name. The Next:Source button is highlighted.":::
 
 ### Source tab
 
@@ -71,7 +69,7 @@ loaded.
 
 Select **Close** to return to your database landing page.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 
