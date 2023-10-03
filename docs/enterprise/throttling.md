@@ -60,7 +60,7 @@ Some admins may notice that operations are sometimes classified as interactive a
 
 Throttling systems attempt to accurately categorize operations upon submission, but sometimes an operation’s classification may change after throttling has been applied. When the operation begins to run, more detailed information about the request becomes available. In ambiguous scenarios, throttling systems try to err on the side of classifying operations as background, which is in the user’s best interest. 
 
-## Track rejected Operations
+## Track rejected operations
 
 The [Microsoft Fabric Capacity Metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End users receive an error message when a request is rejected that asks them to try again later. 
 
