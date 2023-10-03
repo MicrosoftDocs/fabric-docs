@@ -34,10 +34,10 @@ The first phase of throttling begins when a capacity has consumed all its availa
 
 | Usage  | Policy Limits	 | Platform Policy	Experience Impact | 
 | --- | --- | --- | 
-| <= 10 minutes	 | Overage protection	 | Jobs can consume 10 minutes of future capacity use without throttling | 
-| 10 minutes < Usage <= 60 minutes	 | Interactive Delay	 | User-requested interactive jobs are delayed 20 seconds at submission | 
-| 60 minutes < Usage <= 24 hours	 | Interactive Rejection	 | User-requested interactive jobs are rejected | 
-| Usage > 24 hours	 | Background Rejection	 | All requests are rejected | 
+| Usage <= 10 minutes	 | Overage protection	 | Jobs can consume 10 minutes of future capacity use without throttling. | 
+| 10 minutes < Usage <= 60 minutes	 | Interactive Delay	 | User-requested interactive jobs are delayed 20 seconds at submission. | 
+| 60 minutes < Usage <= 24 hours	 | Interactive Rejection	 | User-requested interactive jobs are rejected. | 
+| Usage > 24 hours	 | Background Rejection	 | All requests are rejected. | 
 
 ## Carry forward capacity usage reduction
 
