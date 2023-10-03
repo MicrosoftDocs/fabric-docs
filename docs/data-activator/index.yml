@@ -51,6 +51,8 @@ landingContent:
             url: data-activator-detection-conditions.md
           - text: Use custom actions to trigger Power Automate flows
             url: data-activator-trigger-power-automate-flows.md           
+          - text: Data Activator limitations
+            url: data-activator-limitations.md                   
 
   - title: Tutorial
     linkLists:

@@ -23,6 +23,8 @@ items:
     href: data-activator-detection-conditions.md            
   - name: Use custom actions to trigger Power Automate flows
     href: data-activator-trigger-power-automate-flows.md         
+  - name: Data Activator limitations
+    href: data-activator-limitations.md             
 - name: Tutorial
   items:
   - name: Data Activator tutorial using sample data
