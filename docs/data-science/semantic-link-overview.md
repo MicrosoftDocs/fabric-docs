@@ -60,7 +60,7 @@ It exposes semantic functions and the [add-measure](semantic-link-power-bi.md#da
 
 ## Next steps
 
-- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
+- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link/)
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Learn more about Semantic Link and Power BI connectivity](semantic-link-power-bi.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)

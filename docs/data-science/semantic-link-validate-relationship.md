@@ -162,7 +162,7 @@ By using the `list_relationship_violations` function with pandas DataFrames, you
 
 
 ## Next steps
-- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
+- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
 - [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
 - [Detect, explore and validate functional dependencies in your data](semantic-link-validate-data.md)

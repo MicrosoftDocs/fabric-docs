@@ -139,7 +139,7 @@ landingContent:
       - linkListType: reference
         links:
         - text: SemPy Python SDK
-          url: /python/api/semantic-link-sempy
+          url: /python/api/semantic-link/overview-semantic-link
 
 # Card 
   - title: Using Semantic Link

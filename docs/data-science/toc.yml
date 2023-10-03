@@ -262,4 +262,4 @@ items:
 - name: Reference
   items:
     - name: SemPy Python SDK
-      href: /python/api/semantic-link-sempy
+      href: /python/api/semantic-link/overview-semantic-link

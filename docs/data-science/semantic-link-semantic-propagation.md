@@ -52,7 +52,7 @@ For example, column aggregation strips the metadata.
 
 ## Next steps
 
-- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link-sempy/)
+- [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 - [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
 - [How to validate data with Semantic Link](semantic-link-validate-data.md)
