@@ -13,13 +13,13 @@ ms.date: 09/27/2023
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_relationships_tutorial.ipynb -->
 
 # Tutorial: Discover relationships in a Power BI dataset using Semantic Link
-This tutorial illustrates how to interact with Power BI from a Jupyter notebook with the help of the SemPy library. 
+This tutorial illustrates how to interact with Power BI from a Jupyter notebook and detect relationships between tables with the help of the SemPy library.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ### In this tutorial, you learn how to:
-- Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Use components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that supports integration with Power BI and helps to automate data quality analysis. These components include:
+- Discover relationships in a Power BI dataset using Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)).
+- Use components of SemPy that support integration with Power BI and help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Functions for pulling Power BI datasets from a Fabric workspace into your notebook.
     - Functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
