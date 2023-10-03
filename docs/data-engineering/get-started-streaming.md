@@ -26,7 +26,6 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
    
    if __name__ == "__main__":
        spark = SparkSession.builder.appName("MyApp").getOrCreate()
-       spark.sparkContext.setLogLevel("DEBUG")
    
        tableName = "streamingtable"
        deltaTablePath = "Tables/" + tableName
@@ -34,6 +33,7 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
        df = spark.readStream.format("rate").option("rowsPerSecond", 1).load()
 
        query = df.writeStream.outputMode("append").format("delta").option("path", deltaTablePath).option("checkpointLocation", deltaTablePath + "/checkpoint").start()
+       query.awaitTermination()
    ```
 
 1. Save your script as Python file (.py) in your local computer.
