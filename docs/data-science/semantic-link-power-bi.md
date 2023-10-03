@@ -31,7 +31,7 @@ Thereby, providing a way for business analysts and data scientists to collaborat
 
 ## Data connectivity through SemPy Python library for pandas users
 
-The [SemPy Python library](/python/api/semantic-link-sempy) is part of the Semantic Link feature and serves pandas users.
+The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the Semantic Link feature and serves pandas users.
 SemPy provides functionalities that include data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of DAX queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
