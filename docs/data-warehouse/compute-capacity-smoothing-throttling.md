@@ -79,7 +79,7 @@ A capacity administrator can recover from a throttling situation by:
 
 ## Monitor overload information with Fabric Capacity Metrics App
 
-Capacity administrators can view overload information and drilldown further via [Microsoft Fabric Capacity Metrics app](enterprise/metrics-app.md).
+Capacity administrators can view overload information and drilldown further via [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 ### Utilization tab
 
