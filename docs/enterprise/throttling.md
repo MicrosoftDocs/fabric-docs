@@ -62,7 +62,7 @@ Throttling systems attempt to accurately categorize operations upon submission, 
 
 ## Track rejected Operations
 
-The [metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's  limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End Users receive an error message when a request is rejected that asks them to try again later. 
+The [Microsoft Fabric Capacity Metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End users receive an error message when a request is rejected that asks them to try again later. 
 
 
 ## Next steps
