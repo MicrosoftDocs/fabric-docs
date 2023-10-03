@@ -67,7 +67,7 @@ Now that you have familiarized yourself with the packages events and objects, yo
 4. In the ribbon, select **Start**. This causes the trigger to email you whenever a medicine package is too warm. The trigger should fire several times every hour. (You might have to wait 10 minutes or so for it to fire.)
 5. Later, you can turn off the trigger using the **Stop** button.
 
-### Step 4: Create a City object
+### Step 5: Create a City object
 
 Now it's time to create an object of your own. In this section, you'll create a *City* object that tracks the status of package deliveries at the level of Cities, rather than individual packages.
 
@@ -77,7 +77,7 @@ Now it's time to create an object of your own. In this section, you'll create a 
 4. Name your new object *City* and choose *City* as the ID column.
 5. Select **continue**.
 
-### Step 5: Create a trigger on the City object
+### Step 6: Create a trigger on the City object
 
 Now you'll create a trigger that alerts you if the average time in transit, for any city, exceeds a target.
 
