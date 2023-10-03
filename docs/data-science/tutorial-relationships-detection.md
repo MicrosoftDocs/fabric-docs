@@ -29,7 +29,7 @@ Even if relationships are known in advance, a search for relationships can help 
 In this tutorial, you begin with a simple baseline example where you experiment with only three tables so that connections between them are easy to follow. Then, you show a more complex example with a larger table set.
 
 ### In this tutorial, you learn how to: 
-- Use components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that supports integration with Power BI and helps to automate data  analysis. These components include:
+- Use components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Functions for pulling Power BI datasets from a Fabric workspace into your notebook.
     - Functions that automate the discovery and visualization of relationships in your datasets.

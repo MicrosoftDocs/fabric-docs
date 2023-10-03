@@ -18,8 +18,8 @@ This tutorial illustrates how to use SemPy to calculate measures in Power BI dat
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ### In this tutorial, you learn how to:
-- Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that helps to bridge the gap between AI and BI. These components include:
+- Evaluate Power BI measures programmatically via a Python interface of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)).
+- Get familiarized with components of SemPy that help to bridge the gap between AI and BI. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that allow you to fetch Power BI datasets, including raw data, configurations, and measures.
 
