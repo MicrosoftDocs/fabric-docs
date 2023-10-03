@@ -4,7 +4,6 @@ description: Learn why and how capacities are throttled in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
-ms.custom: build-2023
 ms.date: 10/02/2023
 ---
 
