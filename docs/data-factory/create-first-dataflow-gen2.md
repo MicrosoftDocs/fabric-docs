@@ -133,9 +133,9 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
-15. For this step, you can configure an output to your Azure SQL database if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
+15. For this step, you can configure an output to your lakehouse if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination lakehouse and table for your query results, in addition to the update method (Append or Replace).
 
-    :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with Azure SQL database selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with lakehouse selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-destination-settings.png" alt-text="Screenshot of the Choose destination settings window." lightbox="media/create-first-dataflow-gen2/choose-destination-settings.png":::
 
