@@ -131,8 +131,15 @@ items:
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+- name: How to
+  items:    
+    - name: Observe utilization trends
+      href: how-to-observe-utilization.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
