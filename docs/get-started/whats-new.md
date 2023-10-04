@@ -148,7 +148,7 @@ This section summarizes recent improvements and features for the [Data Science e
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|October 2023|**Semantic link sample notebooks added to fabric-samples GitHub repo**|New sample notebooks are available in the [fabric-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/semantic-link-samples) GitHub repository to showcase the use of semantic link's Python library, [SemPy](/python/api/semantic-link/overview-semantic-link?view=semantic-link-python), in Microsoft Fabric. |
+|October 2023|**Semantic link sample notebooks added to fabric-samples GitHub repo**|New sample notebooks are available in the [fabric-samples](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/semantic-link-samples) GitHub repository to showcase the use of semantic link's Python library, [SemPy](/python/api/semantic-link/overview-semantic-link), in Microsoft Fabric. |
 |August 2023|**New Machine failure and Customer churn samples**|More samples have been added to the Microsoft Fabric Synapse Data Science **Use a sample** menu. To check these Data Science samples, select **Synapse Data Science**, then **Use a sample**. |
 |August 2023|**Use Semantic Kernel with Lakehouse in Microsoft Fabric** |Learn how Fabric allows data scientists to [use Semantic Kernel with Lakehouse in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/use-semantic-kernel-with-lakehouse-in-microsoft-fabric?ft=All).|
 
