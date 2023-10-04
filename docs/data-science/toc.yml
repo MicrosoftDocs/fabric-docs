@@ -55,8 +55,6 @@ items:
     href: predictive-maintenance.md
 - name: Governance
   items:
-  - name: Roles and permissions
-    href: models-experiments-rbac.md
   - name: Lineage for models and experiments
     href: data-science-lineage.md
 - name: Preparing data 
@@ -101,6 +99,12 @@ items:
       href: ../data-engineering/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Secure and manage ML artifacts
+  items:
+    - name: Disaster recovery for ML artifacts
+      href: data-science-disaster-recovery.md
+    - name: Roles and permissions
+      href: models-experiments-rbac.md
 - name: Apache Spark
   items:
   - name: Spark compute
