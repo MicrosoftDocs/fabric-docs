@@ -140,7 +140,7 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
 
 1. Allow combining the data from the OData source and the lakehouse by confirming the following dialog:
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png" alt-text="Screenshot showing the allow combining data dialog.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png" alt-text="Screenshot showing the allow combining data dialog."  lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png":::
 
 1. Update the data destination to use the following settings:
     - Update method: `Append`
