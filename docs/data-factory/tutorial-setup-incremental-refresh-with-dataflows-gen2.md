@@ -5,7 +5,7 @@ ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial 
-ms.date: 07/20/2023
+ms.date: 10/03/2023
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2
@@ -27,7 +27,7 @@ The high-level steps in this tutorial are as follows:
 
 ## Prerequisites
 
-You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md).
+You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you are using the diagram view in Dataflows Gen2. To check if you are using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
 
 ## Create a dataflow to load data from an OData source into a lakehouse
 
@@ -137,6 +137,10 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/orderid-greater-than-filter.png" alt-text="Screenshot showing the orderid greater than filter function.":::
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/filter-settings.png" alt-text="Screenshot showing the filter settings.":::
+
+1. Allow combining the data from the OData source and the lakehouse by confirming the following dialog:
+
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png" alt-text="Screenshot showing the allow combining data dialog."  lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png":::
 
 1. Update the data destination to use the following settings:
     - Update method: `Append`
