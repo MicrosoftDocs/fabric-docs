@@ -13,7 +13,7 @@ You can now deactivate one or more activities from a pipeline, and we skip them 
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-:::image type="content" source="./media/deactivate-activity/deactivate-01-overview.png" alt-text="Screenshot showing an inactive activity in pipeline":::
+:::image type="content" source="./media/deactivate-activity/deactivate-01-overview.png" alt-text="Screenshot showing an inactive activity in pipeline.":::
 
 ## Deactivate and reactivate
 
@@ -35,7 +35,7 @@ Alternatively, you can deactivate multiple activities with right click.
 1. Select _Deactivate_ to deactivate them all
 1. To fine tune the settings for _Mark activity as_, go to **General** tab of the activity, and make appropriate changes
 
-:::image type="content" source="./media/deactivate-activity/deactivate-04-setup-multiple.png" alt-text="Screenshot of how to deactivatee multiple activities all at once.":::
+:::image type="content" source="./media/deactivate-activity/deactivate-04-setup-multiple.png" alt-text="Screenshot of how to deactivate multiple activities all at once.":::
 
 In both cases, you do need to deploy the changes to deactivate the parts during pipeline run.
 
