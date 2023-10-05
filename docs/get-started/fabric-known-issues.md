@@ -19,7 +19,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  521  | Administration & Management | [New throttling logic delayed for Power BI and event stream](known-issues/known-issue-521-throttling-logic-delayed-power-bi-event-stream.md)  | October 5, 2023 |
+|  521  | Administration & Management | [New throttling logic delayed for Power BI and eventstream](known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md)  | October 5, 2023 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
 |  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
 |  514  | Data Engineering | [Unable to start new Spark session after deleting all libraries](known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md)  | September 25, 2023 |
