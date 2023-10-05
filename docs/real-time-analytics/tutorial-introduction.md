@@ -1,13 +1,13 @@
 ---
 title: Real-Time Analytics Tutorial- Introduction
-description: Introduction to the Synapse Real-Time Analytics tutorial in Microsoft Fabric.
+description: Get started with Synapse Real-Time Analytics in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 
 # Real-Time Analytics Tutorial- Introduction

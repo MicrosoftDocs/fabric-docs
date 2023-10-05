@@ -14,7 +14,7 @@ A known issue is posted where a customer gets taken to the Dataflow Gen1 experie
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
-**Status:** Open
+**Status:** Resolved
 
 **Problem area:** Data Factory
 

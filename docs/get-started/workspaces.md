@@ -6,7 +6,7 @@ ms.author: maggies
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
 ms.custom: build-2023
-ms.search.form: product-trident
+ms.search.form: product-trident, Manage your workspace
 ms.date: 06/14/2023
 ---
 
@@ -103,7 +103,7 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 ## Administering and auditing workspaces
 
-Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces) in the "Workspace settings" article.
+Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.
 
 Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/portal-workspaces.md) in the "Admin portal" article.
 

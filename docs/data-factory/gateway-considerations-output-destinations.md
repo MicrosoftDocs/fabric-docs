@@ -1,13 +1,23 @@
 ---
 title: On-premises data gateway considerations for data destinations in Dataflow Gen2
-description: Describes how to troubleshoot a refresh error that might occur when trying to access a data destination through an on-premises data gateway.
+description: Describes multiple considerations and limitations when using a data gateway and the data destination feature inside of Dataflow Gen2
 author: nikkiwaghani
-ms.author: miescobar
+ms.author: nikkiwaghani
 ms.topic: conceptual
-ms.date: 07/12/2023
+ms.date: 8/17/2023
 ---
 
 # On-premises data gateway considerations for data destinations in Dataflow Gen2
+
+This article tries to list the limitations and considerations when using the Data Gateway with data destinations scenarios in Dataflow Gen2.
+
+## Evaluation time outs
+
+Dataflows that use a Gateway and the data destination feature are limited to an evaluation or refresh time of one hour.
+
+Learn more about this limitation from the article on the [Troubleshoot the on-premises data gateway article](/data-integration/gateway/service-gateway-tshoot#limitations-and-considerations).
+
+## Network issues with port 1433
 
 When using Microsoft Fabric Dataflow Gen2 with an on-premises data gateway, you might encounter issues with the dataflow refresh process. The underlying problem occurs when the gateway is unable to connect to the dataflow staging Lakehouse in order to read the data before copying it to the desired data destination. This issue can occur regardless of the type of data destination being used.
 
@@ -18,7 +28,7 @@ During the overall dataflow refresh, the tables refresh can show as "Succeeded,"
 >[!NOTE]
 >From an architectural perspective, the dataflow engine uses an HTTPS endpoint to write data into a Lakehouse. However, reading data from the Lakehouse requires the use of the TDS protocol (TCP over port 1433). This protocol is utilized to copy the data from the staging lakehouse to the data destination. This explains why the Tables Load step succeeds while the data destination activity fails, even when both lakehouses are in the same OneLake instance.
 
-## Troubleshooting
+### Troubleshooting
 
 To troubleshoot the issue, follow these steps:
 
@@ -34,7 +44,7 @@ To troubleshoot the issue, follow these steps:
 
    :::image type="content" source="media/gateway-considerations-output-destination/refresh-history-detail.png" alt-text="Screenshot of the WriteToDatabaseTablefrom activity showing the error message." lightbox="media/gateway-considerations-output-destination/refresh-history-detail.png":::
 
-## Solution: Set new firewall rules on server running the gateway
+### Solution: Set new firewall rules on server running the gateway
 
 The firewall rules on the gateway server and/or customer's proxy servers need to be updated to allow outbound traffic from the gateway server to the following:
 

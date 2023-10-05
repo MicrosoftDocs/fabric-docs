@@ -1,18 +1,18 @@
 ---
 title: Add and manage eventstream sources
-description: This article describes how to add and manage an event source in an eventstream item with Microsoft Fabric event streams feature.
+description: Learn how to add and manage an event source in an eventstream.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: zhenxilin
+author: alexlzx
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/04/2023
+ms.search.form: Event streams
 ---
 
 # Add and manage an event source in an eventstream
 
-Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that you can add to your eventstream include Azure Event Hubs, Sample data, and Custom app. See the [Supported event sources](#supported-event-sources) section for details.
+Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that you can add to your eventstream include Azure Event Hubs, Azure IoT Hub, Sample data, and Custom app.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -21,11 +21,27 @@ Once you have created an eventstream, you can connect it to various data sources
 Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- For an Azure Event Hubs source, you need an Azure event hub with event data and appropriate permission to access its policy keys. It must be publicly accessible and not behind a firewall or secured in a virtual network.
+- To add an Azure Event Hubs or Azure IoT Hub as eventstream source, you need to have appropriate permission to access its policy keys. They must be publicly accessible and not behind a firewall or secured in a virtual network.
+
+## Supported sources
+
+The following sources are supported by Fabric Eventstream:
+
+| Sources          | Description |
+| --------------- | ---------- |
+| Azure Event Hubs | If you have an Azure event hub, you can ingest event hub data into Microsoft Fabric using Eventstream.  |
+| Azure IoT Hub | If you have an Azure IoT hub, you can ingest IoT data into Microsoft Fabric using Eventstream.  |
+| Sample data | You can choose **Yellow Taxi** or **Stock Market events** as a sample data source to test the data ingestion while setting up an eventstream. |
+| Custom App | The custom app feature allows your applications or Kafka clients to connect to Eventstream using a connection string, enabling the smooth ingestion of streaming data into Eventstream. |
+
+> [!NOTE]
+>
+> - The total count of sources and destinations for one eventstream is **11**.
+> - Event data retention in an eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
 
 ## Add an Azure event hub as a source
 
-If you have an Azure event hub created with event data there, follow these steps to add an Azure event hub as your eventstream source:
+If you have an Azure event hub created with streaming data, follow these steps to add an Azure event hub as your eventstream source:
 
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Azure Event Hubs**.
 
@@ -60,6 +76,48 @@ If you have an Azure event hub created with event data there, follow these steps
 After you have created the event hub source, you see it added to your eventstream on the canvas.
 
 :::image type="content" source="./media/add-manage-eventstream-sources/event-hub-source-completed.png" alt-text="Screenshot showing the event hub source." lightbox="./media/add-manage-eventstream-sources/event-hub-source-completed.png":::
+
+## Add an Azure IoT hub as a source
+
+Follow these steps to add an Azure IoT hub as your eventstream source:
+
+1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
+
+   :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
+
+2. On the **Azure IoT Hub** configuration pane, enter the following details:
+
+   :::image type="content" source="./media/add-iot-hub-source/iot-hub-configuration-pane.png" alt-text="Screenshot that shows where to configure Azure IoT Hub in the eventstream.":::
+
+    1. **Source name**: Enter a name for your Azure IoT Hub, such as **iothub-source**.
+    2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
+    3. **Data format**. Choose a data format (AVRO, JSON, or CSV) for streaming your IoT Hub data into the eventstream.
+    4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
+    5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
+
+       :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
+
+3. To create a new cloud connection for your Azure IoT Hub, follow these steps:
+
+   :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
+
+    1. Select **Create new connection** from the drop down menu, and you're directed to the **Manage connections and gateway** page for creating a new cloud connection.
+
+        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
+
+    2. **Connection name**. Enter a name for the new cloud connection, such as **iothub-connection**.
+    3. **IoT Hub** and **Authentication**. Enter the authentication information for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints.
+
+       :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
+
+    4. **General**. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
+    5. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
+
+       :::image type="content" source="./media/add-iot-hub-source/refresh-iot-hub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub.":::
+
+Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
+
+:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data.":::
 
 ## Add a sample data as a source
 
@@ -106,47 +164,6 @@ The endpoint exposed by the custom app is in the connection string, which is an 
 - **Regenerate key for a custom app**: If you want to regenerate a new connection key for your application, select one of your custom app sources on the canvas and select **Regenerate** to get a new connection key.
 
    :::image type="content" source="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" alt-text="Screenshot showing how to regenerate a key." lightbox="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" :::
-
-## Supported event sources
-
-By utilizing the eventstream sources, users can seamlessly incorporate their real-time events into Microsoft Fabric, facilitating efficient and effective data ingestion.
-
-> [!NOTE]
->
-> - The total count of sources and destinations for one eventstream is **11**.
-> - Event data retention in an eventstream is **1 day**, with the potential to extend it and make it configurable in the future.
-
-:::image type="content" source="./media/event-streams-source/eventstream-sources.png" alt-text="Screenshot showing the overview of the eventstream source types.":::
-
-The following sources are currently available.
-
-### Azure event hubs
-
-If you already have an Azure event hub set up in Azure, you can utilize that event hub to ingest real-time data into Microsoft Fabric via the event streams feature.
-
-- **Source name**: A meaningful source name that appears in your eventstream.
-- **Cloud connection**: You need to establish a cloud connection between an existing event hub and Microsoft Fabric. Once that cloud connection is in place, you can reuse it across multiple eventstreams. To create a new cloud connection, you must provide the **event hub namespace name**, **event hub name**, **shared access policy name** and **primary key**.
-- **Data format**: The format of the incoming real-time events that you want to get from your Azure event hub.
-- **Consumer group**: The consumer group of your event hub that can read the event data from your Azure event hub.
-
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-event-hub.png" alt-text="Screenshot showing the Azure Event Hubs source configuration.":::
-
-### Sample data
-
-By utilizing the sample data source (**Yellow Taxi** or **Stock Market events**), you can effortlessly test your configuration without the need for writing any code, as the sample data is pushed directly into your eventstream.
-
-- **Source name**: A meaningful source name that appears in your eventstream.
-- **Sample data**: Select either the Yellow Taxi or Stock Market sample data.
-
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-sample-data.png" alt-text="Screenshot showing the sample data source configuration.":::
-
-### Custom application
-
-A custom application enables a streaming endpoint where you can point your existing event hubs or Kafka clients to your eventstream in Microsoft Fabric without needing any code changes.
-
-- **Source name**: A meaningful source name that appears in your eventstream.
-
-    :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration.":::
 
 ## Next steps
 

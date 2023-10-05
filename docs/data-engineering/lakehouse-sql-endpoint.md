@@ -16,7 +16,7 @@ Microsoft Fabrics provides a SQL-based experience for lakehouse delta tables. Th
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Creating a lakehouse creates a SQL endpoint, which points to the lakehouse delta table storage. Once you create a delta table in the Lakehouse, it's immediately available for querying using the SQL endpoint. To learn more, see [Data Warehouse documentation: SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse)
+Creating a lakehouse creates a SQL endpoint, which points to the lakehouse delta table storage. Once you create a delta table in the Lakehouse, it's immediately available for querying using the SQL endpoint. To learn more, see [Data Warehouse documentation: SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
 :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL Endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::
 
