@@ -1,5 +1,5 @@
 ---
-title: Query sample data in Real-Time Analytics
+title: Sample Gallery
 description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset. 
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -10,7 +10,7 @@ ms.date: 08/13/2023
 ms.search.form: product-kusto
 ---
 
-# Query sample data
+# Sample Gallery
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

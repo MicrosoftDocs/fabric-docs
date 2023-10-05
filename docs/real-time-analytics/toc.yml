@@ -28,7 +28,8 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
-  - name: Query sample data
+  - name: Sample Gallery
+    displayName: Query sample data
     href: sample-gallery.md
 - name: Event streams
   href: event-streams/toc.yml
