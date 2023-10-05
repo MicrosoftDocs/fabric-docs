@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 08/13/2023
-ms.search.form: product-kusto
+ms.search.form: KQL Queryset
 ---
 
 # Sample Gallery
