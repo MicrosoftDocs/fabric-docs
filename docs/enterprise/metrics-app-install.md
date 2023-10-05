@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/04/2023
 ---
 
 # Install the Microsoft Fabric capacity metrics app
@@ -34,6 +34,9 @@ Follow the steps according to the type of installation you need.
 >* [Microsoft 365 Department of Defense (DoD)](https://aka.ms/FabricUSGovDodCapacityUsageReport)
 >
 >* [Power BI for China cloud](https://aka.ms/FabricMCCCapacityUsageReport)
+
+>[!NOTE]
+> Install the app in a workspace with [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license) to avoid throttling due to capacity overutilization.
 
 # [First time installation](#tab/1st)
 
