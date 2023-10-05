@@ -62,7 +62,7 @@ The entire endpoint name looks similar to the following example:
 
 `x6eps4xrq2xudenlfv6naeo3i4-l27nd6wdk4oephe4gz4j7mdzka.datawarehouse.pbidedicated.windows.net`
 
-### Workaround: Split dataflow in a seperate ingest and load dataflow
+### Workaround: Split dataflow in a separate ingest and load dataflow
 
 If you're unable to update the firewall rules, you can split the dataflow into two separate dataflows. The first dataflow is responsible for ingesting the data into the staging lakehouse. The second dataflow is responsible for loading the data from the staging lakehouse into the data destination. This workaround isn't ideal, as it requires the use of two separate dataflows, but it can be used as a temporary solution until the firewall rules can be updated.
 
