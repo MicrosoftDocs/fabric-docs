@@ -36,7 +36,7 @@ Follow the steps according to the type of installation you need.
 >* [Power BI for China cloud](https://aka.ms/FabricMCCCapacityUsageReport)
 
 >[!NOTE]
-> Use default install location of Pro workspace during installation to avoid throttling.
+> Install the app in a pro workspace to avoid throttling due to capacity overutilization.
 
 # [First time installation](#tab/1st)
 
