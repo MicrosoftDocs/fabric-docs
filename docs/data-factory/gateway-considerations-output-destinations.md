@@ -64,7 +64,7 @@ The entire endpoint name looks similar to the following example:
 
 ### Workaround: Split dataflow in a seperate ingest and load dataflow
 
-If you're unable to update the firewall rules, you can split the dataflow into two separate dataflows. The first dataflow would be responsible for ingesting the data into the staging lakehouse. The second dataflow would be responsible for loading the data from the staging lakehouse into the data destination. This workaround isn't ideal, as it requires the use of two separate dataflows, but it can be used as a temporary solution until the firewall rules can be updated.
+If you're unable to update the firewall rules, you can split the dataflow into two separate dataflows. The first dataflow is responsible for ingesting the data into the staging lakehouse. The second dataflow is responsible for loading the data from the staging lakehouse into the data destination. This workaround isn't ideal, as it requires the use of two separate dataflows, but it can be used as a temporary solution until the firewall rules can be updated.
 
 To implement this workaround, follow these steps:
 
@@ -72,7 +72,7 @@ To implement this workaround, follow these steps:
 
     :::image type="content" source="media/gateway-considerations-output-destination/remove-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being removed." lightbox="media/gateway-considerations-output-destination/remove-destination.png":::
 
-1. Create a new dataflow that uses the dataflow connector to connect to the ingest dataflow. This dataflow will be responsible for ingesting the data from staging into the data destination.
+1. Create a new dataflow that uses the dataflow connector to connect to the ingest dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
 
     :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflowconnector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflowconnector.png":::
 
@@ -82,6 +82,6 @@ To implement this workaround, follow these steps:
 
     :::image type="content" source="media/gateway-considerations-output-destination/set-data-destination.png" alt-text="Screenshot of the Power Query editor with the Lakehouse data destination being set." lightbox="media/gateway-considerations-output-destination/set-data-destination.png":::
 
-1. Optionally, you can disable staging for this new dataflow. This will prevent the data from being copied to the staging lakehouse again and instead will copy the data directly from the ingest dataflow to the data destination.
+1. Optionally, you can disable staging for this new dataflow. This change prevents the data from being copied to the staging lakehouse again and instead copies the data directly from the ingest dataflow to the data destination.
 
     :::image type="content" source="media/gateway-considerations-output-destination/disable-staging.png" alt-text="Screenshot of the Power Query editor with the staging option being disabled." lightbox="media/gateway-considerations-output-destination/disable-staging.png":::
