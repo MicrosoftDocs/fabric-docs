@@ -74,7 +74,7 @@ To implement this workaround, follow these steps:
 
 1. Create a new dataflow that uses the dataflow connector to connect to the ingest dataflow. This dataflow is responsible for ingesting the data from staging into the data destination.
 
-    :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflowconnector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflowconnector.png":::
+    :::image type="content" source="media/gateway-considerations-output-destination/get-data-dataflow-connector.png" alt-text="Screenshot of the Power Query editor with the Get Data option selected, and the Dataflow connector option emphasized." lightbox="media/gateway-considerations-output-destination/get-data-dataflowconnector.png":::
 
     :::image type="content" source="media/gateway-considerations-output-destination/dataflow-connector-get-data.png" alt-text="Screenshot of the Get Data dialog with the Dataflow connector option selected." lightbox="media/gateway-considerations-output-destination/dataflow-connector-get-data.png":::
 
