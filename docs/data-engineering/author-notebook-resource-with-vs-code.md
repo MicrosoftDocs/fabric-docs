@@ -12,7 +12,7 @@ ms.search.form: VSCodeExtension
 
 # Microsoft Fabric notebook resources in VS Code
 
-Microsoft Fabric notebooks now support a feature called **Notebook Resources**. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Synapse.
+Microsoft Fabric notebooks now support a feature called **notebook resources**. With this feature, you can store code modules in .py format and other data files, such as .csv or image files, in a resource folder. You can access all these resource files from the notebook as a local file system. This article shows you how to use this feature in Visual Studio (VS) Code, with the VS Code extension for Synapse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
