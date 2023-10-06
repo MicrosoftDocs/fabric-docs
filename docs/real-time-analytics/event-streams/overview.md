@@ -34,6 +34,9 @@ The Fabric event streams feature supports sending data to diverse destinations, 
 
 :::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
 
+> [!NOTE]
+> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](/fabric/enterprise/licenses#capacity-license): F4)
+ 
 ## Next steps
 
 See [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
