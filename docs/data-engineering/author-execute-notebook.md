@@ -463,6 +463,8 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
 | Comment or Uncomment | Ctrl + / |
+| Comment | Ctrl + K + C |
+| Uncomment | Ctrl + K + U |
 | Delete word before | Ctrl + Backspace |
 | Delete word after | Ctrl + Delete |
 | Go to cell start | Ctrl + Home |
