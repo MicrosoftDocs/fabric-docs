@@ -12,7 +12,7 @@ ms.search.form: product-kusto
 
 # Add and manage a destination in an eventstream
 
-Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, and Custom App. See the [Supported destinations](#supported-destinations) section for details.
+Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse,Custom App and Reflex. See the [Supported destinations](#supported-destinations) section for details.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -23,6 +23,7 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
 - For a KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
 - For a lakehouse destination, get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
+- For a Reflex destination, get access to a **premium workspace** with **Contributor** or above permissions where your Reflex is located.
 
 ## Supported destinations
 
@@ -33,6 +34,7 @@ The following destinations are supported by Fabric Eventstream:
 | Custom app | With this destination, you can easily route your real-time events to a custom application. It allows you to connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to ingest data from external system into Microsoft Fabric.  |
 | KQL database | This destination provides direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has successfully loaded. With the data in the KQL database, you can perform queries and analysis to gain deeper insights into your event data.  |
 | Lakehouse | This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events convert into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario. To learn more about how to use the event processor for real-time data processing, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).|
+| Reflex | With this destination, you can modify your real-time events before they are ingested into a Reflex，allwing you to use the built-in libraries and tools provided by Reflex to handle event data.It is suitable for scenarios where you want to perform some complex or special processing on real-time events.|
 
 > [!NOTE]
 > The maximum number of sources and destinations for one eventstream is **11**.
@@ -124,6 +126,20 @@ The connection string is an **event hub compatible connection string** and you c
 `Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
+
+## Add a Reflex as a destination
+
+To add a Reflex from the workspace as an eventstream destination, do the following steps.:
+
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Reflex**. The **Reflex** destination configuration screen appears.
+
+1. Enter a name for the eventstream destination and complete the information about your Relex.
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destinations-Relex-configuration.png" alt-text="Screenshot showing the Reflex destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destinations-Relex-configuration.png" :::
+     **Reflex**: Select an existing Reflex or create a new one to receive data.
+
+1. After setting up everything and selecting Add, you will see a Reflex destination on the canvas that connects to your eventstream.
+
+:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-Reflex.png" alt-text="Screenshot showing the new KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eeventstream-destination-Reflex.png" :::
 
 ## Manage a destination
 
