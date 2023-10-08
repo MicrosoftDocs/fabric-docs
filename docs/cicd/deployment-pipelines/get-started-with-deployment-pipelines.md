@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom: contperf-fy21q1, intro-get-started, build-2023
-ms.date: 09/26/2023
+ms.date: 10/08/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -92,9 +92,9 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 ## Step 3 - Make a stage public (optional)
 
-By default, the final stage of the pipeline is made public. A public stage is visible to all users, including users who don't have access to the pipeline. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
+By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
-You can have as many public stages as you want. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
+at least one stage must be public, but you can have more. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
