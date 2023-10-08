@@ -45,8 +45,12 @@ items:
     href: git-integration-admin-settings.md
   - name: Set up item certification
     href: endorsement-setup.md
+  - name: Configure notifications
+    href: service-admin-premium-capacity-notifications.md
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
+  - name: Enable content certification
+    href: service-admin-setup-certification.md
   - name: Enable service principal authentication for read-only admin APIs
     href: metadata-scanning-enable-read-only-apis.md
 - name: Fabric tenant settings
