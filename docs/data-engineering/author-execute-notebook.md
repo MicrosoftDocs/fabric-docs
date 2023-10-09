@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Develop and run notebooks
-ms.date: 06/12/2023
+ms.date: 10/09/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -462,7 +462,7 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 | Move cursor down | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
-| Comment or Uncomment | Ctrl + / |
+| Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |
 | Delete word before | Ctrl + Backspace |
 | Delete word after | Ctrl + Delete |
 | Go to cell start | Ctrl + Home |
