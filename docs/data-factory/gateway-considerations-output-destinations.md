@@ -4,7 +4,7 @@ description: Describes multiple considerations and limitations when using a data
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: conceptual
-ms.date: 10/8/2023
+ms.date: 10/09/2023
 ---
 
 # On-premises data gateway considerations for data destinations in Dataflow Gen2
