@@ -4,7 +4,7 @@ description: This article explains the overview of using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 10/09/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -20,13 +20,14 @@ For information on how to connect to Azure Blob Storage in Dataflow Gen2, go to 
 
 ## Supported in data pipelines
 
+The Azure Blob Storage connector supports the following capabilities in data pipelines:
+
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **Lookup activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **GetMetadata activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 
-## Next steps
+To learn more about how to connect to Azure Blob Storage in data pipelines, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline).
 
-- [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)
-- [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md)
+To learn more about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md)
