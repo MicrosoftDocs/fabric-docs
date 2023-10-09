@@ -19,6 +19,8 @@ items:
     href: pause-resume.md
   - name: Scale your capacity
     href: scale-capacity.md
+  - name: Throttling
+    href: throttling.md
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?
@@ -30,4 +32,4 @@ items:
     - name: Understand the metrics app OneLake page
       href: metrics-app-onelake-page.md
     - name: Understand the metrics app timepoint page
-    - name: metrics-app-timepoint-page.md             
+      href: metrics-app-timepoint-page.md             

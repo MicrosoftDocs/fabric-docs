@@ -31,7 +31,7 @@ In this section, we walk you through two distinct experiences available for crea
 
    :::image type="content" source="media\create-warehouse-sample\home-hub-provide-sample-name.png" alt-text="Screenshot showing the Warehouse creation experience in the Home hub." lightbox="media\create-warehouse-sample\home-hub-provide-sample-name.png":::
 
-3. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
+3. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few seconds to complete.
 
    :::image type="content" source="media\create-warehouse-sample\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media\create-warehouse-sample\loading-sample-data.png":::
 
@@ -47,7 +47,7 @@ For more information on how to create a warehouse, see [Create a Warehouse](crea
 
    :::image type="content" source="media\create-warehouse-sample\use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media\create-warehouse-sample\use-sample-database.png":::
 
-2. The data loading takes few minutes to complete.
+2. The data loading takes few seconds to complete.
 
    :::image type="content" source="media\create-warehouse-sample\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media\create-warehouse-sample\loading-sample-data.png":::
 

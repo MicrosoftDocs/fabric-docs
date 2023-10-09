@@ -4,7 +4,7 @@ description: In this tutorial step, learn how to clone a table using T-SQL in a 
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 06/13/2023
+ms.date: 10/02/2023
 ms.topic: tutorial
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
@@ -92,7 +92,12 @@ This tutorial guides you through creating a [table clone](clone-table.md) in [!I
 
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-## Next steps
+## Related content
 
 - [Clone table in Microsoft Fabric](clone-table.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)

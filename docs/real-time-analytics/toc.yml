@@ -10,22 +10,27 @@ items:
     href: realtime-analytics-compare.md
 - name: Get started
   items:
-  - name: Tutorial - Introduction
-    href: tutorial-introduction.md
-  - name: 1- Create resources
-    href: tutorial-1-resources.md
-  - name: 2- Get data with Eventstream
-    href: tutorial-2-event-streams.md
-  - name: 3- Get historical data
-    href: tutorial-3-get-historical-data.md
-  - name: 4- Explore data with KQL and SQL
-    href: tutorial-4-explore.md
-  - name: 5- Use advanced KQL queries
-    href: tutorial-5-advanced-kql-query.md
-  - name: 6- Build a Power BI report
-    href: tutorial-6-build-report.md
-  - name: 7- Clean up resources
-    href: tutorial-7-clean-up-resources.md
+  - name: End to end tutorial
+    items:
+    - name: Tutorial - Introduction
+      href: tutorial-introduction.md
+    - name: 1- Create resources
+      href: tutorial-1-resources.md
+    - name: 2- Get data with Eventstream
+      href: tutorial-2-event-streams.md
+    - name: 3- Get historical data
+      href: tutorial-3-get-historical-data.md
+    - name: 4- Explore data with KQL and SQL
+      href: tutorial-4-explore.md
+    - name: 5- Use advanced KQL queries
+      href: tutorial-5-advanced-kql-query.md
+    - name: 6- Build a Power BI report
+      href: tutorial-6-build-report.md
+    - name: 7- Clean up resources
+      href: tutorial-7-clean-up-resources.md
+  - name: Sample Gallery
+    displayName: Query sample data
+    href: sample-gallery.md
 - name: Event streams
   href: event-streams/toc.yml
 - name: KQL Database

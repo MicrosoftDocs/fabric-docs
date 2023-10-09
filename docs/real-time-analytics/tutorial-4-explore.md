@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 4: Explore your data with KQL and SQL"
-description: Part 4 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 4- Explore your data with KQL and SQL
+description: Learn how to explore your data using example KQL and SQL queries.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 08/13/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 4: Explore your data with KQL and SQL
 
