@@ -62,7 +62,7 @@ All Warehouse and SQL Endpoint operations follow "Background Rejection" policy, 
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Almost all Warehouse requests are considered background. Some requests may trigger a string of operations that are throttled differently. This can make a background operation become subject to throttling as an interactive operation. Some Warehouse operations in the Fabric Portal may be subject to the "Interactive Rejection" policy, as they invoke other Power BI services. Examples include creating a warehouse, which invokes a call to Power BI to create a default dataset, and loading the "Model" page, which invokes a call to Power BI modeling service.
+- Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc. ) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
 - Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to understand the root cause.
 - If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later`.
 - If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later (Microsoft SQL Server Server, Error: 18456)`.
@@ -105,3 +105,5 @@ The **Overages** tab provides a visual history of any overutilization of capacit
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Throttling in Microsoft Fabric](../enterprise/throttling.md)
+
+
