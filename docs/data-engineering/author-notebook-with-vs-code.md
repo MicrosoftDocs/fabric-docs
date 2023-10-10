@@ -10,7 +10,7 @@ ms.date: 05/08/2023
 ms.search.form: VSCodeExtension
 ---
 
-# Microsoft Fabric notebook experience in VS Code
+# Create and manage Microsoft Fabric notebooks in Visual Studio Code
 
 The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The extension also supports synchronization between local and remote workspaces; when you synchronize changes, you can address any conflicts or differences between your local and remote workspace.
 
