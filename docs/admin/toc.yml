@@ -27,7 +27,7 @@ items:
   - name: Find users who have signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
-    href: service-admin-portal-azure-connections.md
+    href: service-admin-custom-branding.md
   - name: Manage Azure connections
     href: service-admin-portal-azure-connections.md
   - name: Manage capacity settings
@@ -74,8 +74,6 @@ items:
     href: endorsement-setup.md
   - name: Configure notifications
     href: service-admin-premium-capacity-notifications.md
-  - name: Add custom branding
-    href: service-admin-custom-branding.md
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable content certification
