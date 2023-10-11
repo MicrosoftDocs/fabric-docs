@@ -3,7 +3,7 @@ title: Fabric tenant settings index
 description: This article is an index page for all Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
-ms.topic: index-page
+ms.topic: conceptual
 ms.custom: build-2023
 ms.date: 09/05/2023
 ---
