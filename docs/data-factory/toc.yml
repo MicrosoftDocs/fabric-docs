@@ -21,6 +21,8 @@
       href: ../get-started/decision-guide-pipeline-dataflow-spark.md
     - name: How to access on-premises Data
       href: how-to-access-on-premises-data.md
+    - name: Monitoring activity in Data Factory
+      href: monitor-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
