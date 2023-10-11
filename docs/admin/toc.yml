@@ -27,7 +27,7 @@ items:
   - name: Find users who have signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
-    href: service-admin-portal-azure-connections.md
+    href: service-admin-custom-branding.md
   - name: Manage Azure connections
     href: service-admin-portal-azure-connections.md
   - name: Manage capacity settings
