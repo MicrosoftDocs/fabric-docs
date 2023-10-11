@@ -80,7 +80,12 @@ To read data from Power BI datasets:
     df_table
     ```
 
-1. Evaluate the _Total Revenue_ measure per customer's state and date.
+    > [!NOTE]
+    > Data is retrieved using XMLA and therefore requires at least XMLA read-only to be enabled (see [details](/power-bi/enterprise/service-premium-connect-tools)).
+    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+
+2. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
     df_measure = fabric.evaluate_measure(
@@ -90,7 +95,13 @@ To read data from Power BI datasets:
     df_measure
     ```
 
-1. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
+    > [!NOTE]
+    > By default data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
+    > It is furthermore **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+
+3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
 
     ```python
     filters = {
@@ -105,7 +116,7 @@ To read data from Power BI datasets:
     df_measure
     ```
 
-1. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
+4. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
 
     ```python
     df_dax = fabric.evaluate_dax(
@@ -120,7 +131,12 @@ To read data from Power BI datasets:
         """)
     ```
 
-1. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
+    > [!NOTE]
+    > Data is retrieved using XMLA and therefore requires at least XMLA read-only to be enabled (see [details](/power-bi/enterprise/service-premium-connect-tools)).
+    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+    
+2. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
    The workspace parameter is optional and follows the same rules as the workspace parameter of the `evaluate_dax` function.
    The cell magic also supports accessing Python variables using the `{variable_name}` syntax.
    To use a curly brace in the DAX query, escape it with another curly brace (e.g. `EVALUATE {{1}}`).
@@ -143,7 +159,7 @@ To read data from Power BI datasets:
     df_dax.head()
     ``````
 
-2. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
+3. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
 
     ```python
     from sempy.fabric import FabricDataFrame
