@@ -75,13 +75,6 @@ UI changes to tenant settings apply only to the Power BI service. To manage the 
 |Software\Policies\Microsoft\Power BI Desktop\    |EnableUncertifiedVisuals    |0 - Disable </br>1 - Enable (default)         |
 |
 
-<!---
-### Allow access to remote resources
-
-When this setting is enabled, all visuals created with an API earlier than v4.6.0 will be able to access remote resources. Visuals created with API v4.6.0 and following versions will be able to access remote resources only if the visual's privileges setting allows it. If the visual's privileges setting doesn't allow access to remote resources, that visual won't be allowed access even if this admin setting is enabled.
-
--->
-
 ### Export data to file
 
 When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings.

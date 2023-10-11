@@ -74,6 +74,8 @@ items:
     href: endorsement-setup.md
   - name: Configure notifications
     href: service-admin-premium-capacity-notifications.md
+  - name: Add custom branding
+    href: service-admin-custom-branding.md
   - name: Set up metadata scanning
     href: metadata-scanning-setup.md
   - name: Enable content certification
