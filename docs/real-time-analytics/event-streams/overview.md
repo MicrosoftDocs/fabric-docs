@@ -12,7 +12,7 @@ ms.search.form: Event streams
 
 # Microsoft Fabric event streams - overview
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-time analytics** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
+The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-Time Analytics** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -30,9 +30,12 @@ The drag and drop experience gives you an intuitive and easy way to create your 
 
 ## Multiple destinations
 
-The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL database**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL Database**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
 
 :::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
+
+> [!NOTE]
+> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](/fabric/enterprise/licenses#capacity-license): F4)
 
 ## Next steps
 
