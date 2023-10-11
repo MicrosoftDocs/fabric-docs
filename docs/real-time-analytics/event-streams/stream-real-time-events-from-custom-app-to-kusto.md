@@ -1,13 +1,13 @@
 ---
 title: Stream real-time events from a custom app to a Microsoft Fabric KQL database
-description: Follow this end-to-end demonstration to stream real-time events from a custom app to a Microsoft Fabric KQL database and build a real-time Power BI report.
+description: Learn how to stream real-time events from a custom app to a Microsoft Fabric KQL database and build a real-time Power BI report.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 06/16/2023
-ms.search.form: product-kusto
+ms.search.form: Event streams
 #CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
 ---
 
@@ -20,6 +20,7 @@ In this tutorial, you learn how to use the Microsoft Fabric event streams featur
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
+>
 > - Create a KQL database and an eventstream in Microsoft Fabric.
 > - Configure a source (custom app) and a destination (KQL database) for the eventstream.
 > - Send events to the eventstream by using the custom app.
@@ -211,7 +212,7 @@ To verify the event data in your new KQL database:
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" alt-text="Screenshot that shows selections for displaying 100 records for a query table." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" :::
 
-1. Confirm that the data appears in the lower section of the **Check your data** panel.
+1. Confirm that the data appears in the lower section of the **Explore your data** panel.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100.png" alt-text="Screenshot that shows the top 100 records in a KQL table." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100.png" :::
 

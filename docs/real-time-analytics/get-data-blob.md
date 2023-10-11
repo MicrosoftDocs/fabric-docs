@@ -1,13 +1,13 @@
 ---
-title: Get data from a blob in Real-Time Analytics
-description: Learn how to get data from a blob in a KQL database in Real-Time Analytics
+title: Get data from a blob
+description: Learn how to get data from a blob in a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto, Get data
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 # Get data from a blob
 
@@ -51,8 +51,8 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 [!INCLUDE [schema-tab](../includes/real-time-analytics/schema-tab.md)]
 
-## Next steps
+## Related content
 
-* To create an empty table, see [Create an empty table](create-empty-table.md)
-* To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* [Manage data](data-management.md)
+* [Enable Python plugin](python-plugin.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

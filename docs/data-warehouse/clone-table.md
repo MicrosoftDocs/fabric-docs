@@ -6,7 +6,7 @@ ms.author: ajagadish
 ms.reviewer: wiassaf
 ms.date: 06/21/2023
 ms.topic: conceptual
-ms.search.form: Clone # This article's title should not change. If so, contact engineering.
+ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric
 

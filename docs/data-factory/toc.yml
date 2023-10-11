@@ -31,6 +31,12 @@
     items:
     - name: Connector overview
       href: connector-overview.md
+    - name: Dataflow Gen2 connectors
+      href: dataflow-support.md
+    - name: Data pipeline connectors
+      href: pipeline-support.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -129,14 +135,28 @@
         items:
         - name: Configure in Data pipeline
           href: format-json.md
+      - name: ORC
+        items:
+        - name: Configure in Data pipeline
+          href: format-orc.md
       - name: Parquet
         items:
         - name: Configure in Data pipeline
           href: format-parquet.md
         - name: Configure in Dataflow Gen2
-          href: connector-parquet-dataflows.md     
-    - name: Google Cloud Storage
+          href: connector-parquet-dataflows.md
+      - name: XML
+        items:
+        - name: Configure in Data pipeline
+          href: format-xml.md       
+    - name: FTP
       items:
+      - name: Overview
+        href: connector-ftp-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-ftp-copy-activity.md
+    - name: Google Cloud Storage
+      items: 
       - name: Overview
         href: connector-google-cloud-storage-overview.md
       - name: Manage connections and gateway
@@ -225,6 +245,8 @@
       items:
       - name: Activity overview
         href: activity-overview.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md
       - name: Append Variable activity
         href: append-variable-activity.md
       - name: Copy activity
@@ -251,6 +273,14 @@
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
+      - name: Until activity
+        href: until-activity.md
+      - name: Wait activity
+        href: wait-activity.md
+      - name: Web activity
+        href: web-activity.md
+      - name: WebHook activity
+        href: webhook-activity.md
     - name: Concepts
       items:
       - name: Monitor data pipeline runs
@@ -315,6 +345,8 @@
     items:
     - name: What's new in Data Factory
       href: whats-new.md
+    - name: Frequently asked questions
+      href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
       href: gateway-considerations-output-destinations.md
     - name: Getting from Azure Data Factory to Data Factory in Fabric
@@ -356,5 +388,9 @@
         href: data-factory-known-issues.md
       - name: Lineage view edit button
         href: known-issue-lineage-view-edit.md
-      - name: Staging artifacts
-        href: known-issue-staging-artifact.md
+      - name: Staging items
+        href: known-issue-staging-item.md
+      - name: Gateway refreshes longer than an hour fail
+        href: known-issue-gateway-refreshes.md
+      - name: In progress tables refresh history
+        href: known-issue-inprogress-refresh-history.md

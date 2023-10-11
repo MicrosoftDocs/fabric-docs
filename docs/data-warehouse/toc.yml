@@ -6,8 +6,8 @@ items:
 - name: Get started with Warehouse
   expanded: true
   items:
-  - name: Decision guide - data warehouse or lakehouse
-    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
   - name: 1. Create a warehouse
     href: create-warehouse.md
   - name: 2. Create a table
@@ -128,8 +128,18 @@ items:
     href: workload-management.md
 - name: Monitor the warehouse
   items:
+  - name: Monitor using Capacity Metrics app
+    href: usage-reporting.md
+    displayName: Billing, usage reporting
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+- name: How to
+  items:    
+    - name: Observe utilization trends
+      href: how-to-observe-utilization.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

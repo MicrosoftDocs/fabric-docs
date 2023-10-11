@@ -1,13 +1,13 @@
 ---
 title: Monitoring status and performance of an Eventstream item
-description: This article describes how to monitor the status and performance of an Eventstream item with the Microsoft Fabric event streams feature.
+description: Learn how to monitor the status and performance of an eventstream.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Event streams
 ---
 
 # Monitoring status and performance of an eventstream

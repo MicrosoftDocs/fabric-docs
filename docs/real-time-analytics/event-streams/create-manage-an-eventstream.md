@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Event streams
 ---
 
 # Create and manage an eventstream in Microsoft Fabric
@@ -24,11 +24,11 @@ Before you start, you must complete the following prerequisite:
 
 ## Create an eventstream
 
-You can create an eventstream on the **Workspace** page, the **Real-time Analytics experience Homepage**, or the **Create hub** page. Here are the steps:
+You can create an eventstream on the **Workspace** page, the **Real-Time Analytics experience Homepage**, or the **Create hub** page. Here are the steps:
 
-1. Change your Fabric experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in workspace or homepage or create hub.
+1. Change your Fabric experience to **Real-Time Analytics** and select **Eventstream** to create a new eventstream in workspace or homepage or create hub.
 
-   - On the **Real-time Analytics** homepage, select the **Eventstream** tile:
+   - On the **Real-Time Analytics** homepage, select the **Eventstream** tile:
 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the Eventstream tile on the homepage.":::
 

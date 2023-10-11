@@ -3,7 +3,7 @@ title: Domains (preview)
 description: Learn about domains and how to create and manage them.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
 ms.date: 07/23/2023
 ---

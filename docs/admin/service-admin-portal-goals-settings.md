@@ -1,6 +1,6 @@
 ---
 title: Metrics admin settings 
-description: Learn how to configure Power BI Metrics admin settings.
+description: Learn how to configure Metrics admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 06/28/2022
+ms.date: 09/08/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,9 +18,9 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Create and use Metrics
 
-Users in the organization can create and use Metrics.
+Users in the organization can create and use metrics in Power BI.
 
-![Screenshot of the Create and use metrics tenant setting.](media/tenant-settings/create-use-goals-tenant-setting.png)
+To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
 ## Next steps
 

@@ -10,31 +10,38 @@ items:
     href: realtime-analytics-compare.md
 - name: Get started
   items:
-  - name: Tutorial - Introduction
-    href: tutorial-introduction.md
-  - name: 1- Create resources
-    href: tutorial-1-resources.md
-  - name: 2- Get data with Eventstream
-    href: tutorial-2-event-streams.md
-  - name: 3- Get historical data
-    href: tutorial-3-get-historical-data.md
-  - name: 4- Explore data with KQL and SQL
-    href: tutorial-4-explore.md
-  - name: 5- Use advanced KQL queries
-    href: tutorial-5-advanced-kql-query.md
-  - name: 6- Build a Power BI report
-    href: tutorial-6-build-report.md
-  - name: 7- Clean up resources
-    href: tutorial-7-clean-up-resources.md
+  - name: End to end tutorial
+    items:
+    - name: Tutorial - Introduction
+      href: tutorial-introduction.md
+    - name: 1- Create resources
+      href: tutorial-1-resources.md
+    - name: 2- Get data with Eventstream
+      href: tutorial-2-event-streams.md
+    - name: 3- Get historical data
+      href: tutorial-3-get-historical-data.md
+    - name: 4- Explore data with KQL and SQL
+      href: tutorial-4-explore.md
+    - name: 5- Use advanced KQL queries
+      href: tutorial-5-advanced-kql-query.md
+    - name: 6- Build a Power BI report
+      href: tutorial-6-build-report.md
+    - name: 7- Clean up resources
+      href: tutorial-7-clean-up-resources.md
+  - name: Sample Gallery
+    displayName: Query sample data
+    href: sample-gallery.md
 - name: Event streams
   href: event-streams/toc.yml
 - name: KQL Database
   items:
   - name: Create a KQL database
     href: create-database.md
-  - name: Access an existing KQL Database
+  - name: Access an existing KQL database
     displayName: copy URI, copy query URI, copy ingestion URI
     href: access-database-copy-uri.md
+  - name: Create a database shortcut
+    href: database-shortcut.md
   - name: Create an empty table
     href: create-empty-table.md
   - name: Get data
@@ -55,6 +62,8 @@ items:
       href: ../data-factory/connector-kql-database-copy-activity.md
     - name: Connect to KQL Database in dataflows
       href: ../data-factory/connector-kusto-dataflows.md
+    - name: Data connectors
+      href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
   - name: Data management
     items:
     - name: Data management overview  

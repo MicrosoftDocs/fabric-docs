@@ -1,13 +1,13 @@
 ---
-title: Query data in a KQL queryset in Real-Time Analytics
-description: Learn how to use the KQL queryset to query the data in your KQL database.
+title: Query data in a KQL queryset
+description: Learn how to use the KQL queryset to query the data in your KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 08/13/2023
-ms.search.form: product-kusto, KQL Queryset
+ms.date: 09/28/2023
+ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
 
@@ -117,8 +117,7 @@ This is a one-time method to export a CSV file containing the query results.
 
 :::image type="content" source="media/kusto-query-set/clean-up-query-set.png" alt-text="Screenshot of Microsoft Fabric workspace showing how to delete a KQL Queryset."  lightbox="media/kusto-query-set/clean-up-query-set.png":::
 
-## Next steps
+## Next step
 
-* [Customize results in the KQL Queryset results grid](customize-results.md)
-* [Visualize data in a Power BI report](create-powerbi-report.md)
-* [Use example queries to query your table](query-table.md)
+> [!div class="nextstepaction"]
+> [Customize results in the KQL Queryset results grid](customize-results.md)

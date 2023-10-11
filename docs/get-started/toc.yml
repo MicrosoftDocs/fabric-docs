@@ -21,8 +21,8 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: decision-guide-pipeline-dataflow-spark.md
-  - name: Decision guide - data warehouse or lakehouse
-    href: decision-guide-warehouse-lakehouse.md
+  - name: Decision guide - choose a data store
+    href: decision-guide-data-store.md
 - name: Find your way around Fabric
   items:
   - name: Find your items from Fabric Home
@@ -59,6 +59,16 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: New throttling logic delayed for Power BI and eventstream]
+      href: known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md
+    - name: User column incorrectly shows as System in Fabric capacity metrics app
+      href: known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
+    - name: InProgress status shows in Fabric capacity metrics app for completed queries
+      href: known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
+    - name: Unable to start new Spark session after deleting all libraries
+      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
+    - name: Selecting view account link in account manager shows wrong page
+      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
     - name: Admin monitoring dataset refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region
@@ -67,7 +77,7 @@ items:
       href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
     - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
       href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
-    - name: Fabric user sees workspace git status column display synced for unsupported artifacts
+    - name: Fabric user sees workspace git status column display synced for unsupported items
       href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
     - name: Not able to add lookup activity output to body of Office 365 activity
       href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 

@@ -1,13 +1,13 @@
 ---
-title: Create a KQL database in Real-Time Analytics
-description: Learn how to create a KQL database in Real-Time Analytics in Microsoft Fabric
+title: Create a KQL database
+description: Learn how to create a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/07/2023
-ms.search.form: product-kusto, KQL Database
+ms.date: 09/28/2023
+ms.search.form: KQL Database
 ---
 # Create a KQL database
 
@@ -62,16 +62,16 @@ The main page of your KQL database shows an overview of the contents in your dat
 |**Most active users**|
 | | Name | User name of most active users in the database.|
 | | Queries run last month | The number of queries run per user in the last month.|
-|**Recently updated functions**
+|**Recently updated functions**|
 | | |  Lists the function name and the time it was last updated.|
 |**Recently used Querysets**|
 | | | Lists the recently used KQL queryset and the time it was last accessed.|
-|**Recently created data connections**
-| | | Lists the data connection and the time it was created.|
+|**Recently created Data streams**|
+| | | Lists the data stream and the time it was created.|
 
-## Next steps
+## Related content
 
 * [Get data from a blob](get-data-blob.md)
-* [Get data from a blob container](get-data-blob-container.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
-* [Query data in a KQL queryset](kusto-query-set.md)
+* [Get data from OneLake](get-data-onelake.md)

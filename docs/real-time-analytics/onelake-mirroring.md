@@ -1,13 +1,12 @@
 ---
-title: One logical copy in Real-Time Analytics
+title: One logical copy
 description: Learn how to create a OneLake shortcut that exposes the data in your KQL database to other Microsoft Fabric experiences.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/16/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
 ---
 # One logical copy
 
@@ -51,8 +50,9 @@ Creating one logical copy of your data in OneLake is a two-step process. You ena
 
     :::image type="content" source="media/onelake-mirroring/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
-You've enabled data availability in your KQL database. To expose the data, see [Create a OneLake shortcut](../onelake/create-onelake-shortcut.md).
+You've enabled data availability in your KQL database. To expose the data, create a OneLake shortcut.
 
-## Next steps
+## Next step
 
-[Access shortcuts](../onelake/access-onelake-shortcuts.md)
+> [!div class="nextstepaction"]
+> [Create a OneLake shortcut](../onelake/create-onelake-shortcut.md)

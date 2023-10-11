@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 07/30/2023
+ms.date: 08/03/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -43,7 +43,7 @@ For information on licenses, see [Fabric licenses](../enterprise/licenses.md).
 
 All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
 
-For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
+For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
 
 >[!NOTE]
 >
@@ -64,7 +64,7 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 ### Can I connect to a repository that's in a different region than my workspace?
 
-If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#enable-git-actions-on-workspaces-residing-in-other-geographical-locations).
+If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Users can export items to Git repositories in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 
 ### How do I get started with Git integration?
 

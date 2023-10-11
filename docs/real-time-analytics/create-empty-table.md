@@ -1,13 +1,13 @@
 ---
-title: Create an empty table in Real-Time Analytics
+title: Create an empty table
 description: Learn how to create an empty table in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto, create a Kusto DB
+ms.date: 09/28/2023
+ms.search.form: Create a table
 ---
 # Create an empty table
 
@@ -90,7 +90,9 @@ In the **Create table completed** window, the empty table is marked with a green
 
 :::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Analytics.":::
 
-## Next steps
+## Related content
 
 * [Get data from a blob](get-data-blob.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
+* [Get data from OneLake](get-data-onelake.md)
