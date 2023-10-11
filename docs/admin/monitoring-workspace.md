@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 07/12/2023
+ms.date: 09/26/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -16,13 +16,11 @@ The *Admin monitoring* workspace is designed to provide admins with monitoring c
 
 ## Prerequisites
 
-To use the admin monitoring workspace, you need:
+To use the admin monitoring workspace, you need to be an admin with one of these roles.
 
-* To be an admin with one of these roles.
-    * Microsoft 365 *Global administrator*
-    * *Fabric administrator*
+* Microsoft 365 *Global administrator*
 
-* A *Pro* license
+* *Fabric administrator*
 
 ## Access the admin monitoring workspace
 
@@ -42,7 +40,7 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](featur
 
 ### Manage access
 
-There are several ways you can manage access to content of the admin monitoring workspace. If you're the admin of the workspace, you have a *member* [workspace role](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) and you can grant access to any of its items with or without share and build permissions.
+There are several ways you can manage access to content of the admin monitoring workspace. If you're the admin of the workspace, you have a *member* workspace role and you can grant access to any of its items with or without share and build permissions.
 
 * **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
 
@@ -62,9 +60,11 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 ## Considerations and limitations
 
+* The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as datasets and reports in the workspace.
+
 * Sovereign clouds are not supported.
 
-* The admin monitoring workspace is a read-only workspace. Users, including workspace admins, are not able to edit or view properties of the items in the workspace, including datasets and reports.
+* Lineage view of the workspace isn't supported.
 
 ## Next steps
 

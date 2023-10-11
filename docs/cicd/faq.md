@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 05/24/2023
+ms.date: 08/03/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -23,15 +23,15 @@ ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, 
 
 ### What is lifecycle management in Microsoft Fabric?
 
-Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
+Lifecycle management has two parts, integration and deployment. To understand what integration is in Fabric, refer to [the Git integration overview](./git-integration/intro-to-git-integration.md). To understand what deployment pipelines is in Fabric, refer to the [deployment pipelines overview](deployment-pipelines/intro-to-deployment-pipelines.md).
 
-### How do I get started with git integration?
+### What is Git integration?
 
-Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
+For a short explanation of Git integration, see the [Git integration overview](./git-integration/intro-to-git-integration.md).
 
-### How do I get started with deployment pipelines?
+### What is deployment pipelines?
 
-Get started with deployment pipelines using the [get started instructions](deployment-pipelines/get-started-with-deployment-pipelines.md).
+For a short explanation of deployment pipelines, see the [deployment pipelines overview](./deployment-pipelines/intro-to-deployment-pipelines.md).
 
 ## Licensing questions
 
@@ -43,7 +43,7 @@ For information on licenses, see [Fabric licenses](../enterprise/licenses.md).
 
 All workspaces must be assigned to a Fabric license. However, you can use different capacity types for different workspaces.
 
-For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-and-skus).
+For information on capacity types, see [Capacity and SKUs](../enterprise/licenses.md#capacity-license).
 
 >[!NOTE]
 >
@@ -62,9 +62,20 @@ To configure deployment rules in deployment pipelines, you must be the dataset o
 
 ## Git integration questions
 
-### How do I get started with git integration ?
+### Can I connect to a repository that's in a different region than my workspace?
 
-Get started with git integration using the [get started instructions](git-integration/git-get-started.md).
+If the workspace capacity is in one geographic location while the Azure DevOps repo is in another location, the Fabric admin can decide whether to enable cross-geo exports. For more information, see [Users can export items to Git repositories in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
+
+### How do I get started with Git integration?
+
+Get started with Git integration using the [get started instructions](git-integration/git-get-started.md).
+
+### Why was my item removed from the workspace?
+
+There could be several reasons why an item was removed from the workspace.
+
+* If the item wasn't committed and you selected it in an *undo* action, the item is removed from the workspace.
+* If the item was committed, it could get removed if you switch branches and the item doesn't exist in the new branch.
 
 ## Deployment pipeline questions
 
@@ -79,7 +90,7 @@ These are some important considerations to keep in mind:
 
 ### How can I assign workspaces to all the stages in a pipeline?
 
-You can either assign one workspace to your pipeline and then deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
+You can either assign one workspace to your pipeline and deploy it across the pipeline, or assign a different workspace to each pipeline stage. For more information, see [assign a workspace to a deployment pipeline](deployment-pipelines/assign-pipeline.md).
 
 ### Does deployment pipelines support multi-geo?
 
@@ -141,5 +152,5 @@ Deployment pipelines don't display datasets that belong to datamarts in the pipe
 
 ## Next steps
 
-* [Get started with git integration](git-integration/git-get-started.md)
+* [Get started with Git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)

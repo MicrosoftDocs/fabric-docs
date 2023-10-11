@@ -1,13 +1,12 @@
 ---
-title: Use data from a KQL database in Power BI Desktop in Real-time Analytics
+title: Use data from a KQL database in Power BI Desktop
 description: Learn how to use data from your KQL database in Power BI Desktop.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
 ---
 # Use data from a KQL database in Power BI Desktop
 
@@ -85,6 +84,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     :::image type="content" source="media/power-bi-data-connector/select-table.png" alt-text="Screenshot of Navigator screen, showing that the StormEvents table is selected. The Load button is highlighted." lightbox="media/power-bi-data-connector/select-table.png":::
 
-## Next steps
+## Next step
 
-[Create reports and dashboards in Power BI](/power-bi/create-reports/).
+> [!div class="nextstepaction"]
+> [Create reports and dashboards in Power BI](/power-bi/create-reports/).

@@ -5,8 +5,7 @@ ms.reviewer: wiassaf
 ms.author: cynotebo
 author: cynotebo
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 06/20/2023
+ms.date: 10/05/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -43,21 +42,21 @@ User's database scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions(NULL, "Database");
+FROM sys.fn_my_permissions(NULL, 'Database');
 ```
 
 User's schema scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions("<schema-name>", "Schema");
+FROM sys.fn_my_permissions('<schema-name>', 'Schema');
 ```
 
 User's object-scoped permissions:
 
 ```sql
 SELECT *
-FROM sys.fn_my_permissions("<schema-name>.<object-name>", "Object");
+FROM sys.fn_my_permissions('<schema-name>.<object-name>', 'Object');
 ```
 
 ## View permissions granted explicitly to users
@@ -68,7 +67,7 @@ When connected via the SQL connection string, a user with elevated permissions c
 SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
  pr.authentication_type_desc, pe.state_desc, pe.permission_name
 FROM sys.database_principals AS pr
-JOIN sys.database_permissions AS pe
+INNER JOIN sys.database_permissions AS pe
  ON pe.grantee_principal_id = pr.principal_id;
 ```
 
@@ -103,7 +102,8 @@ Row level security is currently not supported. As a workaround, views and system
    GRANT SELECT ON dbo.RestrictedAccessTable TO [userOne@contoso.com];
    ```
 
-## Next steps
+## Related content
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)
+- [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)

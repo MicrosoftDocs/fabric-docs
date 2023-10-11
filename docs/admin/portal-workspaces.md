@@ -102,7 +102,7 @@ A [!INCLUDE [product-name](../includes/product-name.md)] admin or capacity admin
 
 ### Restore a deleted My workspace as an app workspace
 
-When users leave the company, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
+When users are deleted from the company's Active Directory, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
 
 During this restoration process, the [!INCLUDE [product-name](../includes/product-name.md)] admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it will show up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
 
@@ -135,7 +135,7 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has non Power BI Fabric items, you won't be able to move it unless you delete all non-Power BI Fabric items first.
+    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you can move the workspace but you cannot create new Fabric items (see [Known issue - Fabric items can't be created in a workspace moved to a capacity in a different region](../get-started/known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)).  Once the known issue is resolved, moving workspaces that once had non-PowerBI Fabric items will not be allowed.
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 

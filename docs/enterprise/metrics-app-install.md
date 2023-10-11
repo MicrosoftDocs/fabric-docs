@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/04/2023
 ---
 
 # Install the Microsoft Fabric capacity metrics app
@@ -19,8 +19,24 @@ The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is
 To install the metrics app, you need to be a capacity admin.
 
 ## Install the app
+>[!NOTE]
+> OneLake is not yet supported in Government Community Cloud (GCC).
 
 Follow the steps according to the type of installation you need.
+
+>[!NOTE]
+>If you're installing the app in a government cloud environment, use one of the links. You can also use these links to upgrade the app. When upgrading, you don't need to delete the old app.
+>
+>* [Microsoft 365 Government Community Cloud (GCC)](https://aka.ms/FabricUSGovCapacityUsageReport)
+>
+>* [Microsoft 365 Government Community Cloud High (GCC High)](https://aka.ms/FabricUSGovHighCapacityUsageReport)
+>
+>* [Microsoft 365 Department of Defense (DoD)](https://aka.ms/FabricUSGovDodCapacityUsageReport)
+>
+>* [Power BI for China cloud](https://aka.ms/FabricMCCCapacityUsageReport)
+
+>[!NOTE]
+> Install the app in a workspace with [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license) to avoid throttling due to capacity overutilization.
 
 # [First time installation](#tab/1st)
 

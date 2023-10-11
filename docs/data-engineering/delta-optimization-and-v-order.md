@@ -46,7 +46,7 @@ Use the following commands to control usage of V-Order writes.
 
 ```sql
 %%sql 
-GET spark.sql.parquet.vorder.enabled 
+SET spark.sql.parquet.vorder.enabled 
 ```
 
 # [PySpark](#tab/pyspark)
@@ -147,7 +147,7 @@ sparkR.conf("spark.sql.parquet.vorder.enabled", "true")
 Enable V-Order table property during table creation:
 ```sql
 %%sql 
-CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 ```
 
 > [!IMPORTANT]
@@ -157,9 +157,9 @@ Enable or disable V-Order by altering the table property:
 
 ```sql
 %%sql 
-ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled","true");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "true");
 
-ALTER TABLE person SET TBLPROPERTIES("delta. parquet.vorder.enabled","false");
+ALTER TABLE person SET TBLPROPERTIES("delta.parquet.vorder.enabled" = "false");
 
 ALTER TABLE person UNSET TBLPROPERTIES("delta.parquet.vorder.enabled");
 ```
@@ -218,9 +218,9 @@ DeltaTable.createOrReplace(spark)\
 
 ## What is Optimized Write?
 
-Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingestion workloads into data lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
+Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
 
-Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per a workload requirements using configurations.
+Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per workload requirements using configurations.
 
 The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark. To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 

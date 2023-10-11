@@ -1,5 +1,5 @@
 ---
-title: Create materialized views in Real-Time Analytics
+title: Create materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -7,7 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Data management
 ---
 # Create materialized views
 
@@ -45,7 +45,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 
     :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Data tree showing the database entities in Real-Time Analytics. The dropdown list of materialized views is highlighted.":::
 
-## Next steps
+## Related content
 
 * [Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
 * [Query data in a KQL queryset](kusto-query-set.md)

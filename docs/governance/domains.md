@@ -3,9 +3,9 @@ title: Domains (preview)
 description: Learn about domains and how to create and manage them.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 07/23/2023
 ---
 
 # Domains (preview)
@@ -14,13 +14,13 @@ Today, organizations are facing massive growth in data, and there's an increasin
 
 To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called data mesh. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
-For public preview, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. Future releases will enable federated governance, which means that some of the governance currently controlled at the tenant level will move to domain-level control, enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ## What are Fabric domains?
 
 In Fabric, a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. During the Fabric public preview, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the OneLake data hub, users can filter content by domain in order find content that is relevant to them. Going forward, capabilities for managing and governing data at the domain level will be added.
+To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#override-tenant-level-settings), thus allowing domain-specific configuration of those settings.
 
 ## Key concepts
 
@@ -65,11 +65,23 @@ To create domain you must be a Fabric admin.
 
 ## Configure a domain
 
-Power BI and domain admins can configure a domain on the domain's configuration page. To get to the domain's configuration page, go to the admin portal, choose **Domains**, and then select the domain you want to configure.
+Fabric admins and a domain's admins can configure the domain on the domain's configuration page. To get to the domain's configuration page, go to the admin portal, choose **Domains**, and then select the domain you want to configure.
 
 :::image type="content" source="./media/domains/configure-choose-domain.png" alt-text="Screenshot showing the domains page-for choosing domain to configure.":::
 
 Domain admins see only domains they are admins of.
+
+When you open a domain, you see two tabs: **Details** and **Delegated Settings**.
+
+:::image type="content" source="./media/domains/domain-configuration-page.png" alt-text="Screenshot of domain configuration page, showing the Details and Delegated settings tabs.":::
+
+* On the **Details** tab, you can [configure the various properties of the domain](#configure-domain-details). Some details can only be configured by a Fabric admin, and some details can be configured by either Fabric admins or domain admins.
+
+* On the **Delegated Settings** tab, Fabric admins and domain admins can [override tenant-level settings that have been delegated to the domain level](#override-tenant-level-settings).
+
+## Configure domain details
+
+To configure domain details, select the **Details** pane on the domain's [configuration page](#configure-a-domain).
 
 ### Edit name and description
 
@@ -143,7 +155,33 @@ Fabric admins and domain admins can associate workspaces with the domain on the 
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
 To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
+
 To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
+
+## Override tenant-level settings
+
+Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated Settings** tab on the domain's [configuration page](#configure-a-domain). To override a setting, expand the setting you want to override.
+
+The following admin settings can potentially be overridden.
+
+### Certification settings
+
+Certification is a way for organizations to label items that it considers to be quality items. For more information about certification, see [Endorsement](./endorsement-overview.md).
+
+Certification settings at the domain level mean you can:
+
+* Enable or disable certification of items that belong to the domain.
+* Specify certifiers who are experts in the domain.
+* Provide a URL to documentation that is relevant to certification in the domain.
+
+To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox, and then configure the settings as desired.
+
+> [!NOTE]
+> If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not [allowed this setting to be overridden at the domain level](../admin/endorsement-setup.md#set-up-certification).
+
+For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
+
+:::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
 
 ## Next steps
 

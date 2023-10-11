@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 09/29/2023
 ms.search.form: DataflowGen2 Tutorials
 ---
 
@@ -27,7 +27,7 @@ The following prerequisites are required before you start:
 
 In this section, you'll be creating your first dataflow.
 
-1. Switch to the **Data factory** or **Power BI** experience.
+1. Switch to the **Data factory** experience.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
@@ -47,15 +47,19 @@ Let's get some data! In this example, you'll be getting data from an OData servi
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-more.png" alt-text="Screenshot with the Get Data option selected and More emphasized in the drop-down box.":::
 
-2. Select **OData** as the data source.
+2. In **Choose data source**, select **View more**.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
+   :::image type="content" source="media/create-first-dataflow-gen2/view-more.png" alt-text="Screenshot of Get data source with View more emphasized." lightbox="media/create-first-dataflow-gen2/view-more.png":::
 
-3. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
+3. In **New source**, select **Other** > **OData** as the data source.
+
+   :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the Other category and the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
+
+4. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/enter-odata-url.png" alt-text="Screenshot of the OData data source where you enter the data URL.":::
 
-4. Select the **Orders** and **Customers** tables, and then select **Create**.
+5. Select the **Orders** and **Customers** tables, and then select **Create**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-order-customers.png" alt-text="Screenshot of the Power Query navigator with the Customers and Orders tables emphasized." lightbox="media/create-first-dataflow-gen2/select-order-customers.png":::
 
@@ -133,9 +137,9 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-data-destination.png" alt-text="Screenshot of the dataflows editor with the location of the Data destination selection emphasized." lightbox="media/create-first-dataflow-gen2/choose-data-destination.png":::
 
-15. For this step, you can configure an output to your Azure SQL database if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination server, database, and table for your query results, in addition to the update method (Append or Replace).
+15. For this step, you can configure an output to your lakehouse if you have one available, or skip this step if you don't. Within this experience, you're able to configure the destination lakehouse and table for your query results, in addition to the update method (Append or Replace).
 
-    :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with Azure SQL database selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
+    :::image type="content" source="media/create-first-dataflow-gen2/configure-output.png" alt-text="Screenshot of the Connect to data destination window with lakehouse selected." lightbox="media/create-first-dataflow-gen2/configure-output.png":::
 
     :::image type="content" source="media/create-first-dataflow-gen2/choose-destination-settings.png" alt-text="Screenshot of the Choose destination settings window." lightbox="media/create-first-dataflow-gen2/choose-destination-settings.png":::
 
@@ -144,6 +148,11 @@ Follow these steps to apply transformations and publish:
     :::image type="content" source="media/create-first-dataflow-gen2/publish-dataflow.png" alt-text="Screenshot of the dataflows editor with the Publish button on the lower-right side emphasized." lightbox="media/create-first-dataflow-gen2/publish-dataflow.png":::
 
     You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
+
+    > [!IMPORTANT]
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items will be provisioned along with their related SQL Endpoint and Datasets and seen in the below image. These items are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and should not be used outside of dataflows experience. The items are an implementation detail of Dataflow Gen2 and while currently visible, they will be hidden in the future.
+
+    :::image type="content" source="media/create-first-dataflow-gen2/dataflow-staging-artifacts.png" alt-text="Screenshot of the staging items created by dataflows.":::
 
 17. In your workspace, select the **Schedule Refresh** icon.
 

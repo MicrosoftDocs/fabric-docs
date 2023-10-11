@@ -1,13 +1,12 @@
 ---
 title: Tutorial-  Use a notebook with Kqlmagic to query a KQL database
-description: Learn how to import the NYCtaxicab notebook into your [!INCLUDE [product-name](../includes/product-name.md)] environment.
+description: Learn how to import the NYCtaxicab notebook into your Microsoft Fabric environment.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: Tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
 ---
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
@@ -166,7 +165,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
-## Next steps
+## Related content
 
 * [Query data in the KQL Queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

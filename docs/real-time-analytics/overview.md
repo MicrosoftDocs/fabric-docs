@@ -1,13 +1,13 @@
 ---
-title: Overview of Real-Time Analytics in Microsoft Fabric
-description: Learn about Real-Time Analytics in Microsoft Fabric.
+title: Overview of Real-Time Analytics
+description: Learn about the capabilities of Real-Time Analytics and its integration with other experiences in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 07/10/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Overview
 ---
 # What is Real-Time Analytics in Fabric?
 
@@ -49,11 +49,21 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 
 The types of industries that benefit from data analysis in Real-Time Analytics is varied. For example: finance, transportation and logistics, smart cities, smart buildings, manufacturing operations, automotive, and oil and gas.
 
+## Scenarios
+
+### Marketing
+
+As a marketing specialist implementing a new campaign, Real-Time Analytics allows you to analyze the immediate impact of your campaign on sales, inventory, and logistics. You can stream large volumes of data into your KQL database through Eventstream with a latency of a few seconds, then use a KQL queryset to analyze your campaign's performance and visualize your findings in a shareable Power BI report. You can use these insights to immediately modify the different aspects of your campaign and easily view the effect in real-time. You can also grant view access for your KQL database to different teams in your company, such as the finance and production teams to analyze your streaming data and make adjustments to the cost and production of the product accordingly.
+
+### Sales
+
+As a business analyst working for a global retail chain, you're responsible for analyzing the incoming data and communicating your insights to key stakeholders in your business. You can collect and store data from a variety of different sources, such as manufacturers, shippers, suppliers, and in a variety of formats, such as structured, semi-structured, and unstructured data. All this actionable data is captured in a KQL database, providing a scalable data solution for your growing data that can hold billions of records that can be retained for years on end for you to query and compare with the streaming data. Not only can you use a KQL queryset to perform time series analysis, but you can also create Power BI reports visualizing geospatial analytics of land and maritime routes, quickly detect anomalies, and collaborate with project managers on dashboards to make better business decisions.
+
 ## How to work in Real-Time Analytics?
 
 The main items available in Real-Time Analytics include:
 
-* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience. 
+* [Eventstream](event-streams/overview.md) for capturing, transforming, and routing real-time events to various destinations with a no-code experience.
 * A [KQL database](create-database.md) for data storage and management. Data loaded into a KQL database can be accessed in OneLake and is exposed to other Fabric experiences.
 * A [KQL queryset](kusto-query-set.md) to run queries, view, and customize query results on data. The KQL queryset allows you to save queries for future use, export and share queries with others, and includes the option to generate a Power BI report.
 
@@ -73,7 +83,7 @@ See how these items work together in the end-to-end streaming data consumption a
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
 
-## See also
+## Related content
 
 * [Microsoft Fabric event streams - overview](event-streams/overview.md)
 * [Compare Real-Time Analytics to Azure Data Explorer](realtime-analytics-compare.md)

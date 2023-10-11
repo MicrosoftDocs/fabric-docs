@@ -1,5 +1,5 @@
 items:
-- name: Control commands overview
+- name: Management commands overview
   displayName: Management
   href: /azure/data-explorer/kusto/management/index?context=/fabric/context/context-rta&pivots=fabric
 - name: Schema
@@ -20,6 +20,9 @@ items:
     - name: .show database schema command
       displayName: .show databases schema
       href: /azure/data-explorer/kusto/management/show-schema-database?context=/fabric/context/context-rta&pivots=fabric
+    - name: .show databases entities command
+      displayName: .show databases entities
+      href: /azure/data-explorer/kusto/management/show-databases-entities?context=/fabric/context/context-rta&pivots=fabric
     - name: .execute database script command
       href: /azure/data-explorer/kusto/management/execute-database-script?context=/fabric/context/context-rta&pivots=fabric
   - name: Tables
@@ -91,10 +94,11 @@ items:
           href: /azure/data-explorer/kusto/management/external-table-mapping-show?context=/fabric/context/context-rta&pivots=fabric
       - name: .show external table artifacts command
         href: /azure/data-explorer/kusto/management/show-external-table-artifacts?context=/fabric/context/context-rta&pivots=fabric
-    - name: SQL Server external tables
+    - name: SQL external tables
       items:
-      - name: Create and alter external table
+      - name: Create and alter SQL external tables
         href: /azure/data-explorer/kusto/management/external-sql-tables?context=/fabric/context/context-rta&pivots=fabric
+        displayName: SQL Server, MySQL, PostgreSQL, Cosmos DB
       - name: Query a SQL external table
         href: /azure/data-explorer/kusto/management/external-sql-tables-query?context=/fabric/context/context-rta&pivots=fabric
     - name: .drop external table command
@@ -248,10 +252,11 @@ items:
     - name: .alter table policy caching command
       displayName: .alter table cache policy command
       href: /azure/data-explorer/kusto/management/alter-table-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete database cache policy command
-    - name: .delete database cache policy command
+    - name: .delete database policy caching command
+      displayName: .delete database cache policy
       href: /azure/data-explorer/kusto/management/delete-database-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete materialized-view cache policy command
+    - name: .delete materialized-view policy caching command
+      displayName: .delete materialized-view cache policy
       href: /azure/data-explorer/kusto/management/delete-materialized-view-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy caching command
       displayName: .delete table cache policy, .delete table caching policy
@@ -287,7 +292,9 @@ items:
     - name: .alter table policy ingestionbatching command
       displayName: .alter table ingestion batching policy, .alter tables policy ingestionbatching
       href: /azure/data-explorer/kusto/management/alter-table-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete database ingestion batching policy command
+    - name: .delete database policy ingestionbatching command
+      displayName: .delete database ingestion batching policy, .delete database ingestionbatching
+        policy
       href: /azure/data-explorer/kusto/management/delete-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy ingestionbatching command
       displayName: .delete table ingestionbatching policy, .delete table ingestion
@@ -309,7 +316,8 @@ items:
       displayName: .alter table ingestion time policy, .alter ingestiontime policy,
         .alter tables policy ingestiontime
       href: /azure/data-explorer/kusto/management/alter-ingestion-time-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete ingestion time policy command
+    - name: .delete table policy ingestiontime command
+      displayName: .delete ingestion time policy, .delete ingestiontime policy
       href: /azure/data-explorer/kusto/management/delete-ingestion-time-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .show table policy ingestiontime command
       displayName: .show table ingestion time policy, .show table ingestiontime policy
@@ -336,7 +344,8 @@ items:
     - name: .alter-merge materialized-view policy merge command
       displayName: .alter-merge materialized-view merge policy
       href: /azure/data-explorer/kusto/management/alter-merge-materialized-view-merge-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete database merge policy command
+    - name: .delete database policy merge command
+      displayName: .delete database merge policy
       href: /azure/data-explorer/kusto/management/delete-database-merge-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy merge command
       displayName: .delete table merge policy
@@ -362,7 +371,8 @@ items:
     - name: .alter-merge table policy partitioning command
       displayName: .alter-merge table partitioning policy
       href: /azure/data-explorer/kusto/management/alter-merge-table-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete materialized-view partitioning policy command
+    - name: .delete materialized-view policy partitioning command
+      displayName: .delete materialized-view partitioning policy
       href: /azure/data-explorer/kusto/management/delete-materialized-view-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy partitioning command
       displayName: .delete table partitioning policy
@@ -374,6 +384,8 @@ items:
     - name: .show table policy partitioning command
       displayName: .show table partitioning policy
       href: /azure/data-explorer/kusto/management/show-table-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: .show database extents partitioning statistics command
+      href: /azure/data-explorer/kusto/management/show-database-extents-partitioning-statistics?context=/fabric/context/context-rta&pivots=fabric
   - name: Retention
     items:
     - name: Retention policy
@@ -398,9 +410,11 @@ items:
     - name: .alter-merge table policy retention command
       displayName: .alter-merge table retention policy
       href: /azure/data-explorer/kusto/management/alter-merge-table-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete database retention policy command
+    - name: .delete database policy retention command
+      displayName: .delete database retention policy
       href: /azure/data-explorer/kusto/management/delete-database-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
-    - name: .delete materialized-view retention policy command
+    - name: .delete materialized-view policy retention command
+      displayName: .delete materialized-view retention policy
       href: /azure/data-explorer/kusto/management/delete-materialized-view-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
     - name: .delete table policy retention command
       displayName: .delete table retention policy
@@ -500,24 +514,32 @@ items:
     - name: .show table policy update command
       displayName: .show table update policy
       href: /azure/data-explorer/kusto/management/show-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
+    - name: Use a managed identity
+      href: /azure/data-explorer/kusto/management/update-policy-with-managed-identity?context=/fabric/context/context-rta&pivots=fabric
 - name: Security roles
   items:
   - name: Security roles overview
     href: /azure/data-explorer/kusto/management/security-roles?context=/fabric/context/context-rta&pivots=fabric
+    displayName: role based access control, rbac, principals
   - name: Manage database roles
     href: /azure/data-explorer/kusto/management/manage-database-security-roles?context=/fabric/context/context-rta&pivots=fabric
+    displayName: .show principal, principal access, security roles, roles, rbac
   - name: Manage table roles
     items:
     - name: Manage table roles
       href: /azure/data-explorer/kusto/management/manage-table-security-roles?context=/fabric/context/context-rta&pivots=fabric
+      displayName: .show principal, principal access, security roles, roles, rbac
     - name: Manage table view access
       href: /azure/data-explorer/kusto/management/manage-table-view-access?context=/fabric/context/context-rta&pivots=fabric
   - name: Manage external table roles
     href: /azure/data-explorer/kusto/management/manage-external-table-security-roles?context=/fabric/context/context-rta&pivots=fabric
+    displayName: .show principal, principal access, security roles, roles, rbac
   - name: Manage materialized view roles
     href: /azure/data-explorer/kusto/management/manage-materialized-view-security-roles?context=/fabric/context/context-rta&pivots=fabric
+    displayName: .show principal, principal access, security roles, roles, rbac
   - name: Manage function roles
     href: /azure/data-explorer/kusto/management/manage-function-security-roles?context=/fabric/context/context-rta&pivots=fabric
+    displayName: .show principal, principal access, security roles, roles, rbac
   - name: Referencing security principals
     displayName: Security group, Identity providers, IdPs, SG, Azure AD tenants
     href: /azure/data-explorer/kusto/management/referencing-security-principals?context=/fabric/context/context-rta&pivots=fabric
@@ -529,7 +551,7 @@ items:
   - name: Ingest from query
     items:
     - name: Ingest from query
-      displayName: .set, .append, .set-or-append, .set-or-replace
+      displayName: .set, .append, .set-or-append, .set-or-replace, add row, append
       href: /azure/data-explorer/kusto/management/data-ingestion/ingest-from-query?context=/fabric/context/context-rta&pivots=fabric
     - name: cancel operation command
       href: /azure/data-explorer/kusto/management/cancel-operation-command?context=/fabric/context/context-rta&pivots=fabric

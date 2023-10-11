@@ -26,7 +26,7 @@ landingContent:
         links:
           - text: What is Lifecycle management?
             url: ./cicd-overview.md 
-          - text: What is git integration?
+          - text: What is Git integration?
             url: git-integration/intro-to-git-integration.md 
           - text: What is deployment pipelines?
             url: deployment-pipelines/intro-to-deployment-pipelines.md  
@@ -38,7 +38,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Get started with git integration
+          - text: Get started with Git integration
             url: git-integration/git-get-started.md
           - text: Get started with deployment pipelines
             url: deployment-pipelines/get-started-with-deployment-pipelines.md            
@@ -54,11 +54,11 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Manage git branches
+          - text: Manage Git branches
             url: git-integration/manage-branches.md
-          - text: Resolve conflicts in git
+          - text: Resolve conflicts in Git
             url: git-integration/conflict-resolution.md
-          - text: Create deployment pipleline rules
-            url: deployment-pipelines/create-rules.md
           - text: Automate deployment pipelines
             url: deployment-pipelines/pipeline-automation.md
+          - text: Lifecycle management tutorial
+            url: cicd-tutorial.md
