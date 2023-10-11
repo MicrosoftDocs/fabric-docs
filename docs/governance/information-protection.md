@@ -50,7 +50,7 @@ Default labeling is fully supported in Power BI and is described in [Default lab
 
 Mandatory labeling is currently supported for Power BI items only. Mandatory labeling isn’t enforced if changes are made via the [flyout menu](../get-started/apply-sensitivity-labels.md#apply-a-label).
 
-For Lakehouses, Pipelines, and Data Warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it will be possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the workload itself requires that a label be set.
+For Lakehouses, Pipelines, and Data Warehouses: Assuming that information protection is enabled, if mandatory labeling is on and default labeling is off, it will be possible for the user to select a label. However, mandatory labeling logic isn't enforced. That means that the user can save the item without a label, unless the experience itself requires that a label be set.
 
 For more information about mandatory labeling, see [Mandatory label policy for Power BI](/power-bi/enterprise/service-security-sensitivity-label-mandatory-label-policy).
 

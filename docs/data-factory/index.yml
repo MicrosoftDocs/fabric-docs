@@ -27,6 +27,8 @@ landingContent:
             url: data-factory-overview.md
           - text: Connector overview
             url: connector-overview.md
+          - text: What's new in Data Factory?
+            url: whats-new.md
 
   # Card 
   - title: Get started
@@ -75,4 +77,13 @@ landingContent:
             url: dataflows-gen2-monitor.md
           - text: Save a draft of your dataflow
             url: dataflows-gen2-save-draft.md
+
+  # Card
+  - title: FAQs
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Frequently asked questions
+          url: frequently-asked-questions.yml
+
 

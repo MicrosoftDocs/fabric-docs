@@ -4,7 +4,7 @@ description: A known issue is posted where a customer tries to create a new Micr
 author: ptyx507
 ms.author: miescobar
 ms.topic: troubleshooting  
-ms.date: 06/05/2023
+ms.date: 07/31/2023
 ms.custom: 
 ---
 
@@ -14,7 +14,7 @@ When importing a Power Query template from a dataflow with output destination lo
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
-**Status:** Open
+**Status:** Resolved
 
 **Problem area:** Authoring a dataflow
 

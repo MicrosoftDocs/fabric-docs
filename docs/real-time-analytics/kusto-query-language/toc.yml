@@ -3,10 +3,40 @@ items:
   href: /azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric
 - name: Syntax conventions
   href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context-rta&pivots=fabric
-- name: Quick reference guide
-  href: /azure/data-explorer/kusto/query/kql-quick-reference?context=/fabric/context/context-rta&pivots=fabric
 - name: Add a comment in KQL
   href: /azure/data-explorer/kusto/query/comment?context=/fabric/context/context-rta&pivots=fabric
+- name: Get started with KQL
+  items:
+  - name: Quick reference guide
+    href: /azure/data-explorer/kusto/query/kql-quick-reference?context=/fabric/context/context-rta&pivots=fabric
+  - name: 1 - Learn common operators
+    href: /azure/data-explorer/kusto/query/tutorials/learn-common-operators?context=/fabric/context/context-rta&pivots=fabric
+  - name: 2 - Use aggregation functions
+    href: /azure/data-explorer/kusto/query/tutorials/use-aggregation-functions?context=/fabric/context/context-rta&pivots=fabric
+  - name: 3 - Join data from multiple tables
+    href: /azure/data-explorer/kusto/query/tutorials/join-data-from-multiple-tables?context=/fabric/context/context-rta&pivots=fabric
+  - name: 4 - Create geospatial visualizations
+    href: /azure/data-explorer/kusto/query/tutorials/create-geospatial-visualizations?context=/fabric/context/context-rta&pivots=fabric
+  - name: Train me
+    items:
+    - name: Introduction to Azure Data Explorer
+      href: /training/modules/intro-to-azure-data-explorer/intro-to-azure-data-explorer/?context=/fabric/context/context-rta&pivots=fabric
+    - name: Write your first query with Kusto Query Language
+      href: /training/modules/write-first-query-kusto-query-language/?context=/fabric/context/context-rta&pivots=fabric
+    - name: Gain insights from your data by using Kusto Query Language
+      href: /training/modules/gain-insights-data-kusto-query-language/?context=/fabric/context/context-rta&pivots=fabric
+    - name: Multi-table queries using Kusto Query Language
+      href: /training/modules/multi-table-queries-with-kusto-query-language/?context=/fabric/context/context-rta&pivots=fabric
+    - name: Characterize an unfamiliar dataset with Azure Data Explorer
+      href: /training/modules/characterize-data-azure-data-explorer/?context=/fabric/context/context-rta&pivots=fabric
+    - name: Create dashboards in Azure Data Explorer
+      href: /training/modules/create-dashboards-azure-data-explorer/?context=/fabric/context/context-rta&pivots=fabric
+    - name: 'Learning path: Data analysis in Azure Data Explorer with Kusto Query
+        Language'
+      href: /training/paths/data-analysis-data-explorer-kusto-query-language/?context=/fabric/context/context-rta&pivots=fabric
+    - name: 'Learning path: Create queries for Microsoft Sentinel using Kusto Query
+        Language'
+      href: /training/paths/sc-200-utilize-kql-for-azure-sentinel/?context=/fabric/context/context-rta&pivots=fabric
 - name: Query best practices
   items:
   - name: Best practices
@@ -23,6 +53,7 @@ items:
   - name: Entity types
     href: /azure/data-explorer/kusto/query/schema-entities/index?context=/fabric/context/context-rta&pivots=fabric
   - name: Entity names
+    displayName: language keywords, KQL keywords, keywords
     href: /azure/data-explorer/kusto/query/schema-entities/entity-names?context=/fabric/context/context-rta&pivots=fabric
   - name: Entity references
     href: /azure/data-explorer/kusto/query/schema-entities/entity-references?context=/fabric/context/context-rta&pivots=fabric
@@ -422,6 +453,7 @@ items:
       displayName: not in operator
       href: /azure/data-explorer/kusto/query/not-in-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: matches regex operator
+      displayName: case-sensitive matches regex
       href: /azure/data-explorer/kusto/query/matches-regex-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: startswith operator
       displayName: starts with operator
@@ -1604,8 +1636,7 @@ items:
   items:
   - name: RE2 syntax
     href: /azure/data-explorer/kusto/query/re2?context=/fabric/context/context-rta&pivots=fabric
-  - name: RE2 library
-    href: /azure/data-explorer/kusto/query/re2-library?context=/fabric/context/context-rta&pivots=fabric
+    displayName: RE2 library, regex, regular expressions
   - name: JSONPath syntax
     href: /azure/data-explorer/kusto/query/jsonpath?context=/fabric/context/context-rta&pivots=fabric
   - name: SQL to Kusto cheat sheet

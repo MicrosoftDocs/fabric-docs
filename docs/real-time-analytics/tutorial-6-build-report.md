@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 6: Build a Power BI report"
-description: Part 6 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 6- Build a Power BI report
+description: Learn how to visualize your data in a Power BI report in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 6: Build a Power BI report
 
@@ -42,8 +42,6 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
     * **Latitude** > **Latitude**
     * **Longitude** > **Longitude**
     * **Count** > **Bubble size**
-1. Under **Latitude**, select **V** to expand the dropdown menu, and then select **Don't summarize**.
-1. Repeat the previous step for **Longitude**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/create-power-bi-second-report.png" alt-text="Screenshot of creating second Power BI report in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/create-power-bi-second-report.png":::
 
@@ -80,7 +78,7 @@ A Power BI report is a multi-perspective view into a dataset, with visuals that 
 
     The Power BI report now autorefreshes on streaming data arriving in a KQL database from an eventstream.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

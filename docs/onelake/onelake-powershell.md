@@ -13,7 +13,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Connecting to OneLake with Azure PowerShell
+## Connect to OneLake with Azure PowerShell
 
 Connect to OneLake from PowerShell by following these steps:
 
@@ -30,13 +30,13 @@ Connect to OneLake from PowerShell by following these steps:
     ```
 
 1. Create the storage account context.
-   1. Storage account name is 'onelake'.
-   1. Set '-UseConnectedAccount' to passthrough your Azure credentials.
-   1. Set '-endpoint' as 'fabric.microsoft.com'.  
+   - Storage account name is **one lake**.
+   - Set `-UseConnectedAccount` to passthrough your Azure credentials.
+   - Set `-endpoint` as `fabric.microsoft.com`.
 
-1. Run the same commands used for ADLS Gen2. For more information about ADLS Gen 2 and the Azure Storage PowerShell module, see [Use PowerShell to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell).
+1. Run the same commands used for Azure Data Lake Storage (ADLS) Gen2. For more information about ADLS Gen2 and the Azure Storage PowerShell module, see [Use PowerShell to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-powershell).
 
-## Example: Get size of an item or directory
+## Example: Get the size of an item or directory
 
 ```powershell
 Install-Module Az.Storage -Repository PSGallery -Force
@@ -49,5 +49,9 @@ $itemPath = 'mylakehouse.lakehouse/Files'
 
 # Recursively get the length of all files within your lakehouse, sum, and convert to GB.
 $colitems = Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $workspaceName -Path $itemPath -Recurse -FetchProperty | Measure-Object -property Length -sum
-"Total file size: " + ($colitems.sum / 1GB) + " GB"   
+"Total file size: " + ($colitems.sum / 1GB) + " GB"
 ```
+
+## Next steps
+
+- [Integrate OneLake with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)

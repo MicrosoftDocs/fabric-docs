@@ -4,7 +4,7 @@ description: This article provides information about how to create a SharePoint 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 08/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -20,8 +20,6 @@ The SharePoint Online List connector supports the following authentication types
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| √| |
-|OAuth2| √| |
 |Service Principal| √| |
 |Organizational account| | √|
 
@@ -66,23 +64,10 @@ In the **New connection** pane, choose **Cloud**, and specify the following fiel
 
 Under **Authentication method**, select your authentication from the drop-down list and complete the related configuration. The SharePoint Online List connector supports the following authentication types.
 
-- [Anonymous](#anonymous-authentication)
-- [OAuth2](#oauth2-authentication)
 - [Service Principal](#service-principal-authentication)
 
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-method.png" alt-text="Screenshot showing that authentication method of SharePoint Online List.":::
 
-#### Anonymous authentication
-
-Select **Anonymous** under **Authentication method**.
-
-:::image type="content" source="./media/connector-sharepoint-online-list/authentication-anonymous.png" alt-text="Screenshot showing Anonymous authentication.":::
-
-#### OAuth2 authentication
-
-Select **OAuth2** under **Authentication method**.
-
-:::image type="content" source="media/connector-sharepoint-online-list/authentication-oauth2.png" alt-text="Screenshot showing that OAuth2 authentication method.":::
 
 #### Service Principal authentication
 
@@ -122,8 +107,6 @@ The following table contains the supported authentication type properties.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
-|**Anonymous**||||✓|
-|**OAuth2**||||✓|
 |**Service Principal**||||✓|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
 |- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||

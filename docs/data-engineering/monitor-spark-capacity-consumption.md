@@ -14,9 +14,9 @@ ms.search.form: Monitor Spark capacity consumption
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Spark capacity consumption reports available in the [Microsoft Fabric utilization and metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for Spark workload items, including Lakehouse, Notebook, and Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
+The purpose of this article is to offer guidance for admins who want to monitor activities in the capacities they manage. By utilizing the Spark capacity consumption reports available in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md), admins can gain insights into the billable Spark capacity consumption for items, including Lakehouse, Notebook, and Spark job definitions. Some Spark capacity consumption activities aren't reported in the app.
 
-## Spark capacity consumption reported 
+## Spark capacity consumption reported
 
 The following operations from Lakehouse, Notebook, and Spark job definitions will be treated as billable activities once we move out of the preview status. During public preview, the capacity consumption from these operations will be displayed as *Preview* in the metrics app.
 
@@ -34,7 +34,7 @@ The following operations from Lakehouse, Notebook, and Spark job definitions wil
 | **Spark job pipeline run** | Spark Job Definition | Public preview | Synapse batch job runs triggered by pipeline. |
 | **Spark job VS Code run** | Spark Job Definition | Public preview | Synapse Spark job definition submitted from VS Code. |
 
-## Spark capacity consumption that isn’t reported
+## Spark capacity consumption that isn't reported
 
 There are some Spark capacity consumption activities that aren't reported in the metrics app. These activities include system Spark jobs for Library Management and certain system Spark jobs for Spark Live pool or live sessions.
 
