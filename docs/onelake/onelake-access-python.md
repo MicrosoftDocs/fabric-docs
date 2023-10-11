@@ -92,7 +92,7 @@ def upload_file_to_directory(self, directory_client: DataLakeDirectoryClient, lo
 
 ## Sample
 
-This samples combines the functions defined above to list the directory contents of any folder in OneLake.
+This sample combines the functions defined above to list the directory contents of any folder in OneLake.
 
 ```python
 def get_service_client_token_credential(self, account_name) -> DataLakeServiceClient:
