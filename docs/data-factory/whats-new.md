@@ -5,7 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
-ms.date: 08/09/2023
+ms.date: 10/11/2023
 ---
 
 # What's new in Data Factory for Microsoft Fabric
@@ -19,6 +19,35 @@ Data Factory for Microsoft Fabric is improved on an ongoing basis. To stay up to
 - Plans for changes.
 
 This page is updated monthly, so revisit it regularly.  
+
+## September 2023
+
+### Dataflows Gen2
+
+#### Authentication
+
+- New Service Principal authentication method [Learn more](https://blog.fabric.microsoft.com/en-US/blog/service-principal-support-to-connect-to-data-in-dataflow-datamart-dataset-and-dataflow-gen-2/)
+
+#### Stability
+
+- Bug fixes and reliability improvements [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsoft-fabric-september-2023-update?ft=Data-factory:category#post-4105-_Toc146840936)
+
+### Data pipelines
+
+#### Activities
+
+-  Outlook email & Teams activities available in collaborative shared pipelines
+-  New Azure Batch, Azure Functions, and KQL script activities added
+
+### Monitoring
+
+- Pipeline output monitoring view simplified and made customizable
+
+### Lineage
+
+- Connection lineage support in pipeline lineage
+
+
 
 ## August 2023
 
