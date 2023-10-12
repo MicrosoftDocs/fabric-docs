@@ -197,6 +197,18 @@
         href: connector-microsoft-365.md
       - name: Configure in Data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
+    - name: MongoDB
+      items:
+      - name: Overview
+        href: connector-mongodb-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-copy-activity.md
+    - name: MongoDB Atlas
+      items:
+      - name: Overview
+        href: connector-mongodb-atlas-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-atlas-copy-activity.md
     - name: OData
       items:
       - name: Overview
