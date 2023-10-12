@@ -1,6 +1,6 @@
 ---
 title: Dataset Security admin setting
-description: Learn how to configure Power BI dataset security admin settings.
+description: Learn how to configure dataset security admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 03/10/2022
+ms.date: 08/31/2023
 LocalizationGroup: Administration
 ---
 
@@ -20,7 +20,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Disable package refresh, and only allow the dataset owner to publish updates.
 
-![Screenshot of the Block republish and disable package refresh tenant setting.](media/tenant-settings/block-republish-disable-package-tenant-setting.png)
+To learn more about dataset security, see [Dataset permissions](/power-bi/connect-data/service-datasets-permissions).
 
 ## Next steps
 
