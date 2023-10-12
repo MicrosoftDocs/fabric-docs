@@ -77,7 +77,7 @@ From Power BI, you also have the option of creating a pipeline from inside an ex
 
 For pipelines with more than three stages, use the arrows on the top-right corner to navigate between stages.
 
-:::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages.":::
+:::image type="content" source="media/get-started-with-deployment-pipelines/navigate-stages.png" alt-text="Screenshot of arrows in the top right corner of the deployment pipelines home screen for navigating between stages." lightbox="media/get-started-with-deployment-pipelines/navigate-stages.png":::
 
 After the pipeline is created, you can share it with other users, edit, or delete it. When you share a pipeline with others, they receive access to the pipeline and become [pipeline admins](understand-the-deployment-process.md#permissions). Pipeline access enables users to view, share, edit, and delete the pipeline.
 
