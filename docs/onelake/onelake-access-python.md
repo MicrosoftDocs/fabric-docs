@@ -43,7 +43,7 @@ from azure.identity import DefaultAzureCredential
 
 ## Authorize access to OneLake
 
-The following example creates a service client connected to OneLake that you'll use to create filesystem clients for other operations.  
+The following example creates a service client connected to OneLake that you can use to create filesystem clients for other operations.  
 
 ```python
 def get_service_client_token_credential(self, account_name) -> DataLakeServiceClient:
@@ -59,7 +59,7 @@ To learn more about using DefaultAzureCredential to authorize access to data, se
 
 ## Working with directories
 
-To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform a variety of operations, including renaming, moving, or listing paths (as seen in the following example).  You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
+To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform various operations, including renaming, moving, or listing paths (as seen in the following example). You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
 
 ```python
 def create_file_system_client(self, service_client, file_system_name: str) : DataLakeServiceClient) -> FileSystemClient:
