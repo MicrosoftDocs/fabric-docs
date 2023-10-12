@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
-ms.date: 06/27/2023
+ms.date: 10/12/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
@@ -15,7 +15,7 @@ The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) to
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
-You can use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
+You can use the [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
 * Manage pipelines from start to finish, including creating a pipeline, assigning a workspace to any stage, and deploying and deleting the pipeline.
 
@@ -34,7 +34,7 @@ You can use the [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipel
 > [!NOTE]
 > The deployment pipelines APIs currently only work for Power BI items.
 
-The [deployment pipelines Fabric REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
+The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allow you to perform the following functions:
 
 * **Get pipeline information** - Retrieve information about your pipelines and their content. Getting the pipeline information enables you to dynamically build the deployment API calls. You can also check the [status of a deployment](/rest/api/power-bi/pipelines/getpipelineoperation) or the [deployment history](/rest/api/power-bi/pipelines/getpipelineoperations).
 
@@ -74,7 +74,7 @@ To automate the deployment processes from within your [release pipeline in Azure
 
 * **Power BI automation tools** - This extension works with a [*service principal*](/power-bi/developer/embedded/embed-service-principal) or a *user*.
 
-You can also use other [Fabric REST API](/rest/api/power-bi/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
+You can also use other [Power BI REST API](/rest/api/power-bi/) calls, to complete related operations such as importing a *.pbix* into the pipeline, updating data sources and parameters.
 
 ### Use the Power BI automation tools extension
 
