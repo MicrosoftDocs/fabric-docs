@@ -59,7 +59,7 @@ To learn more about using DefaultAzureCredential to authorize access to data, se
 
 ## Working with directories
 
-To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform a variety of operations, including renaming, moving, or listing paths (as seen below).  You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](https://learn.microsoft.com/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
+To work with a directory in OneLake, create a filesystem client and directory client. You can use this directory client to perform a variety of operations, including renaming, moving, or listing paths (as seen below).  You can also create a directory client when creating a directory, using the [FileSystemClient.create_directory](/python/api/azure-storage-file-datalake/azure.storage.filedatalake.filesystemclient#azure-storage-filedatalake-filesystemclient-create-directory) method.
 
 ```python
 def create_file_system_client(self, service_client, file_system_name: str) : DataLakeServiceClient) -> FileSystemClient:
