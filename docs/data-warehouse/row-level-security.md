@@ -11,7 +11,7 @@ ms.date: 10/11/2023
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Row-level security (RLS) enables you to use group membership or execution context to control access to rows in a database table. For example, you can ensure that workers access only those data rows that are pertinent to their department. Another example is to restrict customers' data access to only the data relevant to their company in a multi-tenant architecture. The feature is similar to row-level security in [SQL Server](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true).
+Row-level security (RLS) enables you to use group membership or execution context to control access to rows in a database table. For example, you can ensure that workers access only those data rows that are pertinent to their department. Another example is to restrict customers' data access to only the data relevant to their company in a multitenant architecture. The feature is similar to row-level security in [SQL Server](/sql/relational-databases/security/row-level-security?view=fabric&preserve-view=true).
 
 ## Row-level security at the data level
 
@@ -35,9 +35,9 @@ Filter predicates are applied while reading data from the base table. They affec
 
 Filter predicate and security policies have the following behavior:
 
-- You may define a predicate function that joins with another table and/or invokes a function. If the security policy is created with `SCHEMABINDING = ON` (the default), then the join or function is accessible from the query and works as expected without any additional permission checks.
+- You can define a predicate function that joins with another table and/or invokes a function. If the security policy is created with `SCHEMABINDING = ON` (the default), then the join or function is accessible from the query and works as expected without any additional permission checks.
 
-- You may issue a query against a table that has a security predicate defined but disabled. Any rows that are filtered or blocked aren't affected.
+- You can issue a query against a table that has a security predicate defined but disabled. Any rows that are filtered or blocked aren't affected.
 
 - If a dbo user, a member of the `db_owner` role, or the table owner queries a table that has a security policy defined and enabled, the rows are filtered or blocked as defined by the security policy.
 
