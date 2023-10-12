@@ -91,7 +91,7 @@ spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.
 List all tables in the Power BI dataset `Sales Dataset`:
 
 ```python
-df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
+df = spark.sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
@@ -117,7 +117,7 @@ List all tables in the Power BI dataset `Sales Dataset`:
 ```R
 %%sparkr
 
-df = sql("SHOW TABLES pbi.`Sales Dataset`")
+df = sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
