@@ -143,7 +143,7 @@ Add these visuals to the report:
     :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart." lightbox="media/tutorial-data-science-create-report/change-title.png":::
 
 
-1. In the Visualizations panel, select the **Clustered column chart** from "Build visual". Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
+1. In the Visualizations panel, select the **Clustered column chart** card. Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
 
     :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart" lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
 
