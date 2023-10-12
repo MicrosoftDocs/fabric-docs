@@ -32,7 +32,8 @@ Users and service principals allowed to call Power BI admin APIs might get detai
 
 To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning#enabling-enhanced-metadata-scanning).
 
-Note: For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
+> [!NOTE]
+> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
 
 ## Enhance admin APIs responses with DAX and mashup expressions
 
@@ -42,7 +43,8 @@ Users and service principals eligible to call Power BI admin APIs get detailed m
 
 To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning#enabling-enhanced-metadata-scanning).
 
-Note: For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
+> [!NOTE]
+> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
 
 ## Next steps
 
