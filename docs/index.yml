@@ -141,7 +141,7 @@ productDirectory:
         - url: data-science/use-ai-samples.md
           text: Use end-to-end AI samples
         - url: data-science/semantic-link-overview.md
-          text: Use Semantic Link to connect with Power BI
+          text: Use semantic link to connect with Power BI
         - url: data-science/index.yml
           text: See more
 
