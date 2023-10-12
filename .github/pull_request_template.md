@@ -19,7 +19,7 @@ If you are working internally at Microsoft please:
 
 - [ ] 4. **If you are adding a new markdown file, make sure it is linked from the table of contents.**: Add a new title and href in the toc.yml file for the folder to point to the new page.
 
-- [ ] 5. **If you are working internally, once you're done, type `#Sign-off` in the comments**: Once the pull request is finalized and ready to be merged, indicate so by typing `#sign-off` in a new comment in the Pull Request. If you need to cancel that sign-off, type `#hold-off` instead. *Signing off means the document can be published at any time.*
+- [ ] 5. **If you are working internally, once you're done, type `#sign-off` in the comments**: Once the pull request is finalized and ready to be merged, indicate so by typing `#sign-off` in a new comment in the Pull Request. If you need to cancel that sign-off, type `#hold-off` instead. *Signing off means the document can be published at any time.*
 
 
 ## Merge and publish
