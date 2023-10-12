@@ -6,10 +6,10 @@ If you are working internally at Microsoft please:
 ** Provide a link to an Azure DevOps work item that tracks this doc update.**
 >
 
-** Who is your primary documentation team contact?** \@mention them individually so they will be notified of your contribution. If you're not sure, you could email the Fabric Docs team. Not all areas have someone assigned.
+** Who is your primary documentation team contact?** \@mention them individually if you need their help.
 >
 
-## Check these off these quality control checklist items later on
+## For internal contributors, check these off these quality control checklist items later on
 
 - [ ] 1. **Successful build validation  with no warnings and no suggestions**: Review the build status to make sure **all files are green** (Succeeded). This applies even to public contributions.
 
