@@ -247,7 +247,7 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 ## Next step
 
-Proceed to [Part 3: Train and register machine learning models](data-science/tutorial-data-science-train-models.md) to use the `df_clean` data to train and register machine learning models.
+Train and register machine learning models with  this data in [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
 
 <!-- nbend -->
 
