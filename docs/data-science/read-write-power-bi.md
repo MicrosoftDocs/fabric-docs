@@ -175,7 +175,14 @@ All Spark SQL commands can be executed in Python, R, and Scala. The Semantic Lin
 
     ```Python
     spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+
+    # Optionally configure the workspace ID for the pbi catalog
+    # spark.conf.set("spark.sql.catalog.pbi.workspace", "212598c9-a3bf-441e-a6f2-2034281e7f18")
     ```
+
+   > [!TIP]
+   > The Semantic Link Spark native connector is pre-installed on Fabric and does **not** require the `SemPy` Python libray to be installed.
+   > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
 
 1. List tables of all Power BI datasets in the workspace, using PySpark.
 
