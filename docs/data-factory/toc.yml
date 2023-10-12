@@ -7,6 +7,8 @@
       href: data-factory-overview.md
     - name: Data Factory training
       href: /training/paths/get-started-fabric
+    - name: What's new in Data Factory
+      href: whats-new.md
   - name: Get started
     items:
     - name: Create a dataflow
@@ -17,6 +19,10 @@
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
       href: ../get-started/decision-guide-pipeline-dataflow-spark.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
+    - name: Monitoring activity in Data Factory
+      href: monitor-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
@@ -35,8 +41,6 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
-    - name: How to access on-premises Data
-      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
@@ -343,8 +347,6 @@
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
-    - name: What's new in Data Factory
-      href: whats-new.md
     - name: Frequently asked questions
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2
