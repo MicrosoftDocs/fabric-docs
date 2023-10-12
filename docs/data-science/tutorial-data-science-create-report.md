@@ -70,7 +70,7 @@ Now add a few measures to the dataset:
     1. Change the format from **General** to **Percentage** in the **Properties** panel.
     1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
 
-        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lighbox="media/tutorial-data-science-create-report/churn-rate.png":::
+        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lightbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
 * Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
 
