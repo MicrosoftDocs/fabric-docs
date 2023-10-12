@@ -25,5 +25,5 @@ If you are working internally at Microsoft please:
 ## Merge and publish
 - After you `#sign-off`, there is a separate PR Review team that will review the PR and describe any necessary feedback before merging. 
 - The PR review team will use the comments section in the PR to provide feedback if changes are needed. Address any blocking issues and sign off again to request another review.
-- Once all feedback is resolved, you can `#sign-off` again. The PR Review team review and  merge the pull request into the main branch.
+- Once all feedback is resolved, you can `#sign-off` again. The PR Review team reviews and merges the pull request into the specified branch (usually the main branch or a release- branch).
 - From the main branch, the change is merged into the live branch several times a day to publish it to the public learn.microsoft.com site.
