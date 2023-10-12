@@ -186,6 +186,8 @@ To run a PowerShell script that performs a deployment, you need the following co
 
 * The deployment pipelines APIs currently only support Power BI items.
 
+* Creating a customized pipeline of 2-10 stages is currently supported only through the UI.
+
 ## Next steps
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
