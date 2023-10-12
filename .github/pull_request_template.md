@@ -9,7 +9,7 @@ If you are working internally at Microsoft please:
 ** Who is your primary documentation team contact?** \@mention them individually so they will be notified of your contribution. If you're not sure, you could email the Fabric Docs team. Not all areas have someone assigned.
 >
 
-## Check these off these quality control checklist items as you go
+## Check these off these quality control checklist items later on
 
 - [ ] 1. **Successful build validation  with no warnings and no suggestions**: Review the build status to make sure **all files are green** (Succeeded). This applies even to public contributions.
 
