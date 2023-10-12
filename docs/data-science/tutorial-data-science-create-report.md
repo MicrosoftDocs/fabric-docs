@@ -1,23 +1,26 @@
 ---
-title: Data science tutorial - create a Power BI report to visualize predictions
-description: In this sixth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
+title: Data science tutorial - Visualize predictions with a Power BI report
+description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/4/2023
+ms.date: 10/12/2023
 ---
 
-# Part 6: Create a Power BI report to visualize predictions
+# Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables direct connectivity from Power BI datasets to lakehouse tables in direct query mode with automatic data refresh. In this tutorial, you'll use the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a report from the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+This part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
 * Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 
@@ -27,126 +30,133 @@ In this tutorial, we use the Microsoft Fabric DirectLake feature, which enables 
 
 * Complete [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-## Prepare for creating reports
+## Create a Power BI dataset
+
+Create a new Power BI dataset linked to the predictions data you produced in part 4:
 
 1. On the left, select **OneLake data hub**.
-
 1. Select the lakehouse that you used as part of the previous parts of the tutorial series.
-
 1. On the top ribbon, select Open.
 
    :::image type="content" source="media/tutorial-data-science-create-report/open-lakehouse.png" alt-text="Screenshot shows opening the lakehouse.":::
 
 1. Select **New Power BI dataset** on the top ribbon.
+
    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
 
-1. Give the dataset a name, such as "bank customer churn".  Then select the **customer_churn_test_predictions** dataset. 
+1. Give the dataset a name, such as "bank customer churn." Then select the **customer_churn_test_predictions** dataset.
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
 
-1. Select **Continue** to create a new Power BI dataset linked to the predictions data you produced in part 4.
+1. Select **Continue**.  
 
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
+## Add new measures
 
-   :::image type="content" source="media\tutorial-data-science-create-report\visualize-this-data.png" alt-text="Screenshot of the dataset pane, showing how to start a new report." lightbox="media\tutorial-data-science-create-report\visualize-this-data.png":::
+Now add a few measures to the dataset:
 
-You can now create various visuals to generate insights from the prediction dataset.
+* Add a new measure that measures the churn rate.
 
-## Add new measures 
+    1. Select **New measure** in the top ribbon.  This action adds a new item named **Measure** to the **customer_churn_test_predictions** dataset, and opens a formula bar above the table.
 
-1. Add a new measure that measures the churn rate. From the **Data** tab, right click on "predictions" from the right panel under "customer_churn_test_predictions". This adds a new item named "Measure" to the "customer_churn_test_predictions". Select "Measure" and then move to the formula bar on the left side of the page. Write the following to determine the average churn rate and press enter.
+        :::image type="content" source="media/tutorial-data-science-create-report/new-measure.png" alt-text="Screenshot show creating a new measure.":::
 
-    ```python
-    Churn Rate = AVERAGE(customer_churn_test_predictions.predictions)
-    ```
+    1. To determine the average predicted churn rate, replace `Measure =` in the formula bar with:
 
-    Under the **Data** tab, "Churn Rate" now appears under "customer_churn_test_predictions". Please note the calculator sign that is used to represent the "Churn Rate". Moreover, you need to change the Percentage Format to yes by toggling the percentage bar. Finally, you set the decimal places to 1.
+        ```python
+        Churn Rate = AVERAGE(customer_churn_test_predictions[predictions])
+        ```
 
+    1. To apply the formula, select the check mark in the formula bar.  The new measure appears in the data table.  The calculator icon shows it was created as a measure.
+    1. Change the format from **General** to **Percentage** in the **Properties** panel.
+    1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
 
-1. Add another new measure that counts the number of bank customers. Under the **Data** tab, right click on "predictions" from the right panel under "customer_churn_test_predictions". This adds a new item named "Measure" to the "customer_churn_test_predictions". Select "Measure" and use the formula bar on the left side of the page to write the following to determine the number of customers. Each prediction represents one customer.
+        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set.":::
 
-    ```python
-    Customers = COUNT(customer_churn_test_predictions.predictions)
-    ```
+* Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
 
+    1. Select **New measure**.  
+    1. Each prediction represents one customer.  To determine the total number of customers, replace `Measure =` in the formula bar with:
 
-1. Add the churn rate for each of the countries, e.g., Germany, France, Spain. Under the **Data** tab, right click on "Churn Rate" from the right panel under "customer_churn_test_predictions". This adds a new label named "Measure" to the "customer_churn_test_predictions". Select "Measure" and then use the formula bar on the left side of the page to write the following to calculate Germany's churn rate.
+        ```python
+        Customers = COUNT(customer_churn_test_predictions[predictions])
+        ```
 
-    ```python
-    Germany Churn = CALCULATE(customer_churn_test_predictions(Churn Rate), customer_churn_test_predictions[Geography_Germany] = 1)
-    ```
-    This filters the rows down to the ones with Germany as their geography (Geography_Germany equals one).
+    1. Select the check mark in the formula bar to apply the formula.
 
+* Add the churn rate for Germany.
 
-1. Repeat to add churn rates for France and Spain using the follow Formulas. 
-    
-    For Spain's churn rate:
+    1. Select **New measure**.
+    1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
-    ```python
-    Spain Churn = CALCULATE(customer_churn_test_predictions(Churn Rate), customer_churn_test_predictions[Geography_Spain] = 1)
-    ```
-    and for France's churn rate:
+        ```python
+        Germany Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Germany] = 1)
+        ```
 
-    ```python
-    France Churn = CALCULATE(customer_churn_test_predictions(Churn Rate), customer_churn_test_predictions[Geography_France] = 1)
-    ```
+        This filters the rows down to the ones with Germany as their geography (Geography_Germany equals one).
+
+    1. To apply the formula, select the check mark in the formula bar.
+
+* Repeat to add churn rates for France and Spain.
+
+    * Spain's churn rate:
+
+        ```python
+        Spain Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_Spain] = 1)
+        ```
+
+    * France's churn rate:
+
+        ```python
+        France Churn = CALCULATE(customer_churn_test_predictions[Churn Rate], customer_churn_test_predictions[Geography_France] = 1)
+        ```
 
 ## Create new report
 
-Once that you are done with all operations, select "New report" for a blank report that has all the new measures based on the above operations in order to create a new report. 
+Once you are done with all operations, move on to the Power BI report authoring page by selecting **Create report** on the top ribbon.
 
-To create the report:
+:::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
 
-1. Start by clicking on the text box to add the title of the report, "Bank Customer Churn".
+Add these visuals to the report:
 
-1. Add your card for the Churn Rate to display at the top right. Select Card from the "Build Visual" section, then select the "Churn Rate" from Data.
-
-
-<!--    <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-10.png"  width="100%" height="70%"> -->
+1. Select the text box on the top ribbon and enter a title for the report, such as "Bank Customer Churn".  Change the font size and background color in the Format panel.  Adjust the font size and color by selecting the text and using the format bar.
 
 
-1. Select the "Line and stacked column chart" from "Build visual". Select "age" for the x-axis, "Churn Rate" for column y-axis, and "Customers" for the line y-axis.
+1. In the Visualizations panel, select the **Card** icon. From the **Data** pane, select **Churn Rate**. Change the font size and background color in the Format panel. Drag this visualization to the top right of the report.
 
-<!--     <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-11.png"  width="100%" height="70%"> -->
+    :::image type="content" source="media/tutorial-data-science-create-report/card-churn.png" alt-text="Screenshot shows addition of Churn Rate card.":::
 
+1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **age** for the x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-1. Select the "Line and stacked column chart" from "Build visual". You pick the "NumOfProducts" for x-axis, the "Churn Rate" for column y-axis, and the "Customers" for the line y-axis.
+    :::image type="content" source="media/tutorial-data-science-create-report/age.png" alt-text="Screenshot shows addition of a stacked column chart for Age.":::
 
-    <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-12.png"  width="100%" height="70%">
+1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **NumOfProducts** for x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-
-1. Select the "Stacked column chart" from "Build visual". Select "NewCreditsScore" for x-axis and  "Churn Rate" for y-axis. You can rename the "NewCreditsScore" to "Credit Score" by clicking on the middle tab which is "Format your visual" and then make changes to the title of x-axis.
-
-<!--    <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-13a2.png"  width="100%" height="70%">
-    <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-13b.png"  width="100%" height="70%"> -->
+    :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts.":::
 
 
-1. Select the "Clustered column chart" from "Build visual". You pick "Germany Churn", "Spain Churn", "France Churn" in current order for the y-axis.
+1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis. 
 
-<!--     <img src="https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn/step-14-2.png"  width="100%" height="70%"> -->
+    :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore.":::
 
-The Power BI report shows that customers who use more than two of the bank products will have a higher churn rate although few customers had more than two products. Bank should collect more data, but also investigate additional features correlated with more products (*see the plot in the bottom left panel).
-It can be realized that bank customers in Germany would have a higher churn rate than in France and Spain (*see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
+    Change the title "NewCreditsScore" to "Credit Score" in the Format panel.
+
+    :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart.":::
+
+
+1. In the Visualizations panel, select the **Clustered column chart** from "Build visual". Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
+
+    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart":::
+
+> [!NOTE]
+> This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on syour subject matter expertise, and what your firm and business analytics team has standardized as metrics.
+
+
+The Power BI report shows that customers who use more than two of the bank products have a higher churn rate although few customers had more than two products. The bank should collect more data, but also investigate other features correlated with more products (see the plot in the bottom left panel).
+Bank customers in Germany have a higher churn rate than in France and Spain (see the plot in the bottom right panel), which suggests that an investigation into what has encouraged customers to leave could be beneficial.
 There are more middle aged customers (between 25-45) and customers between 45-60 tend to exit more.
-Finally, we can see that customers with lower credit scores would most likely leave the bank for other financial institutes so the bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
+Finally, customers with lower credit scores would most likely leave the bank for other financial institutes. The bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
 
 
 ## Next steps
 
-- [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)
-- 
-NEW INSTRUCTIONS:
-> [!NOTE]
-> This shows an illustrated example of how you would analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the platform user may have to do more thorough ideation of what visualizations to create, based on subject matter expertise, and what their firm and business analytics team has standardized as metrics.
-
-To generate the Power BI report:
-
-1. On the left panel, select **OneLake data hub** and then select the same lakehouse that you used in this tutorial series. On the top right, select **Open** and then select **New Power BI dataset** on the top ribbon and select the table name in which you have saved the prediction results, e.g., customer_churn_test_predictions. Finally, select **Continue** to create a new Power BI dataset linked to the predictions data that was generated in Step 6.
-
-1. Once the page for the new dataset loads, rename the dataset by selecting the dropdown at top left corner of the dataset page and entering a more user-friendly name, e.g., bank_churn_predictions. Then click anywhere outside the dropdown to apply the name change.
-
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
-
-## Next step
-
-[How-to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md).
+* [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)
