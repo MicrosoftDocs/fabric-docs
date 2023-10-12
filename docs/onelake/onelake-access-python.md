@@ -126,7 +126,7 @@ if __name__ == "__main__":
 
 ```
 
-To run this sample, save the preceding code into a file 'listOneLakeDirectory.py' and run the following command in the same directory. Remember to replace the workspace and path with your own data. 
+To run this sample, save the preceding code into a file `listOneLakeDirectory.py` and run the following command in the same directory. Remember to replace the workspace and path with your own data. 
 
 ```powershell
 python listOneLakeDirectory.py "onelake" "myWorkspace" "myLakehouse.Lakehouse/Files/path"
