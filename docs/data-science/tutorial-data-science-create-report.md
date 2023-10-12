@@ -22,13 +22,13 @@ In this tutorial, you'll create a report from the prediction data produced in [P
 
 This part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
-* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 
-* Complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
+* [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
 
-* Complete [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+* [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
 
-* Complete [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+* [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 ## Create a Power BI dataset
 

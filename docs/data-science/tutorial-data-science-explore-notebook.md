@@ -6,7 +6,7 @@ ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/4/2023
+ms.date: 10/12/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---
 
@@ -29,9 +29,12 @@ The main steps in this tutorial are:
 
 ## Prerequisites
 
+
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+This part 2 of 5 in the tutorial series. To complete this tutorial, first complete:
+
+* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 
 ## Follow along in notebook
 
