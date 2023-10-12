@@ -16,7 +16,21 @@ items:
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
 - name: Information protection
-  href: information-protection.md
+  items:
+  - name: Information protection in Microsoft Fabric
+    href: information-protection.md
+  - name: Sensitivity labels
+    items:
+    - name: Default label policy
+      href: service-security-sensitivity-label-default-label-policy.md
+    - name: Mandatory label policy
+      href: service-security-sensitivity-label-mandatory-label-policy.md
+    - name: Programmatic labeling
+      href: service-security-sensitivity-label-inheritance-set-remove-api.md
+    - name: Downstream inheritance
+      href: service-security-sensitivity-label-downstream-inheritance.md
+    - name: Inheritance from data sources
+      href: service-security-sensitivity-label-inheritance-from-data-sources.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage
