@@ -42,11 +42,11 @@ Create a new Power BI dataset linked to the predictions data you produced in par
 
 1. Select **New Power BI dataset** on the top ribbon.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon." lightbox="media\tutorial-data-science-create-report\new-power-bi-dataset.png":::
+   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon.":::
 
-1. Give the dataset a name, such as "bank customer churn." Then select the **customer_churn_test_predictions** dataset.
+1. Give the dataset a name, such as "bank churn predictions." Then select the **customer_churn_test_predictions** dataset.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue." lightbox="media\tutorial-data-science-create-report\select-predictions-data.png":::
+   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue.":::
 
 1. Select **Continue**.  
 
@@ -70,7 +70,7 @@ Now add a few measures to the dataset:
     1. Change the format from **General** to **Percentage** in the **Properties** panel.
     1. Scroll down in the **Properties** panel to change the **Decimal places** to 1.
 
-        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set.":::
+        :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lighbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
 * Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
 
@@ -127,25 +127,25 @@ Add these visuals to the report:
 
 1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **age** for the x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/age.png" alt-text="Screenshot shows addition of a stacked column chart for Age.":::
+    :::image type="content" source="media/tutorial-data-science-create-report/age.png" alt-text="Screenshot shows addition of a stacked column chart for Age."  lightbox="media/tutorial-data-science-create-report/age.png":::
 
 1. In the Visualizations panel, select the **Line and stacked column chart** icon. Select **NumOfProducts** for x-axis, **Churn Rate** for column y-axis, and **Customers** for the line y-axis.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts.":::
+    :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts." lightbox="media/tutorial-data-science-create-report/number-of-products.png":::
 
 
 1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis. 
 
-    :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore.":::
+    :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore." lightbox="media/tutorial-data-science-create-report/new-credit-score.png":::
 
     Change the title "NewCreditsScore" to "Credit Score" in the Format panel.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart.":::
+    :::image type="content" source="media/tutorial-data-science-create-report/change-title.png" alt-text="Screenshot shows changing the title for the chart." lightbox="media/tutorial-data-science-create-report/change-title.png":::
 
 
 1. In the Visualizations panel, select the **Clustered column chart** from "Build visual". Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart":::
+    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart" lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
 
 > [!NOTE]
 > This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on syour subject matter expertise, and what your firm and business analytics team has standardized as metrics.
