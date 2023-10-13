@@ -2,16 +2,20 @@
 
 ## Fill out these items before submitting your pull request:
 
-If you are working internally at Microsoft please: 
-** Provide a link to an Azure DevOps work item that tracks this feature/update.**
+If you are working internally at Microsoft:
+** Provide a link to an Azure DevOps Boards work item that tracks this feature/update.**
+
+>
 >
 
 ** Who is your primary Skilling team contact?** \@mention them individually if you need their help.
+
+>
 >
 
 ## For internal Microsoft contributors, check off these quality control items as you go
 
-- [ ] 1. **Check the Acrolinx report:** Make sure your Acrolinx score is **above 80 minimum** (higher is better) and with **0 spelling issues**. Acrolinx ensures we are providing consistent terminology and using an appropriate voice and tone.
+- [ ] 1. **Check the Acrolinx report:** Make sure your Acrolinx Total score is **above 80 minimum** (higher is better) and with no spelling issues. Acrolinx ensures we are providing consistent terminology and using an appropriate voice and tone, and helps with localization.
 
 - [ ] 2. **Successful build with no warnings or suggestions**: Review the build status to make sure **all files are green** (Succeeded).
 
