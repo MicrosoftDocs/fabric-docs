@@ -4,7 +4,7 @@ description: A known issue is posted where a failure occurs when accessing a ren
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 08/03/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-463
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-463
 
 After renaming your Lakehouse or Warehouse items in Microsoft Fabric, you may experience a failure when trying to access the SQL endpoint or Warehouse item using client tools or the Web user experience. The failure happens when the underlying SQL file system isn't properly updated after the rename operation resulting in different names in the portal and SQL file system.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Data Warehouse
 

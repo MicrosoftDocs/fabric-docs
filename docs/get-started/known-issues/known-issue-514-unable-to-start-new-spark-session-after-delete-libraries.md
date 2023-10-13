@@ -4,7 +4,7 @@ description: A known issue is posted where you're unable to start new Spark sess
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 09/25/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-514
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-514
 
 You may not be able to start a new Spark session in a Fabric notebook.  You receive a message that the session has failed.  The failure occurs when you installed libraries through **Workspace settings** > **Data engineering** > **Library management**, and then you removed all the libraries.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Data Engineering
 
