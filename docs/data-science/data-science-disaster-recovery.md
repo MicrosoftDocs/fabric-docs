@@ -5,7 +5,7 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa 
 ms.topic: conceptual
-ms.date: 10/04/2023
+ms.date: 10/13/2023
 ---
 
 # Disaster recovery guidance for Fabric Data Science
@@ -18,11 +18,11 @@ In Fabric, machine learning experiments and models consist of files and metadata
 
 To protect your data from rare region-wide outages, we recommend copying your critical data to another region with a frequency aligned with the needs of your disaster recovery plan.
 
-To store your machine learning experiments and models in two different regions, you need to create these items in two different workspaces. To do this, you must choose workspaces that are associated with capacities in two different regions.
+To store your machine learning experiments and models in two different regions, you need to create these items in two different workspaces. When selecting workspaces, you must choose workspaces that are associated with capacities in two different regions.
 
-Then, you will need to export and copy your Fabric notebooks into your secondary workspace and re-run to create the relevant machine learning artifacts.
+Then, export and copy your Fabric notebooks into your secondary workspace and rerun to create the relevant machine learning items in the secondary workspace.
 
-If a regional outage occurs, you can then access your machine learning artifacts in a different region where the artifacts were copied.
+If a regional outage occurs, you can then access your machine learning items in a different region where the items were copied.
 
 ## Next steps
 
