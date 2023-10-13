@@ -10,7 +10,7 @@ ms.date: 10/13/2023
 
 # Disaster recovery guidance for Fabric Data Science
 
-In Fabric, machine learning experiments and models consist of files and metadata. This article provides guidance on how to further protect your data from rare region-wide outages.
+In Microsoft Fabric, machine learning experiments and models consist of files and metadata. This article provides guidance on how to further protect your data from rare region-wide outages.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
