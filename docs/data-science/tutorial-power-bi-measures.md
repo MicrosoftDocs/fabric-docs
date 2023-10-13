@@ -13,12 +13,14 @@ ms.date: 09/27/2023
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->
 
 # Tutorial: Extract and calculate Power BI measures from a Jupyter notebook
+
 This tutorial illustrates how to use SemPy to calculate measures in Power BI datasets.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-### In this tutorial, you learn how to:
-- Evaluate Power BI measures programmatically via a Python interface of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)).
+In this tutorial, you learn how to:
+
+- Evaluate Power BI measures programmatically via a Python interface of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)).
 - Get familiarized with components of SemPy that help to bridge the gap between AI and BI. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that allow you to fetch Power BI datasets, including raw data, configurations, and measures.
@@ -35,7 +37,6 @@ This tutorial illustrates how to use SemPy to calculate measures in Power BI dat
 The [powerbi_measures_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
-
 
 ## Set up the notebook
 
@@ -138,10 +139,11 @@ fabric.evaluate_measure(dataset, \
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
+Check out other tutorials for semantic link / SemPy:
+
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
 
 <!-- nbend -->

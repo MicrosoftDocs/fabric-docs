@@ -7,7 +7,7 @@ ms.author: marcozo
 author: eisber
 ms.topic: conceptual
 ms.date: 06/23/2023
-ms.search.form: Semantic Link
+ms.search.form: semantic link
 ---
 
 # Semantic functions
@@ -117,5 +117,5 @@ The following points provide a breakdown of the code snippet:
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Power BI connectivity with Semantic Link and Microsoft Fabric](semantic-link-power-bi.md)
+- [Power BI connectivity with semantic link and Microsoft Fabric](semantic-link-power-bi.md)
 - [Semantic data propagation from Power BI datasets](semantic-link-semantic-propagation.md)
