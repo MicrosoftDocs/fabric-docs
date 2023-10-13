@@ -19,8 +19,9 @@ In this tutorial, you build upon prior work done by a Power BI analyst and store
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
+
 - Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data quality analysis. These components include:
+- Get familiarized with components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions for pulling Power BI datasets from a Fabric workspace into your notebook.
     - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
@@ -109,8 +110,8 @@ A functional dependency manifests itself as a one-to-many relationship between t
     ```
 
     :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png" alt-text="Screenshot showing the plot of dependency metadata." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata.png":::
-    
-    As expected, the functional dependencies graph shows that the `Customer` column determines some columns like `City`, `Postal Code`, and `Name`. 
+
+    As expected, the functional dependencies graph shows that the `Customer` column determines some columns like `City`, `Postal Code`, and `Name`.
 
     Surprisingly, the graph doesn't show a functional dependency between `City` and `Postal Code`, probably because there are many violations in the relationships between the columns. You can use SemPy's ``plot_dependency_violations`` function to visualize violations of dependencies between specific columns.
 
@@ -150,10 +151,10 @@ A functional dependency manifests itself as a one-to-many relationship between t
     ```python
     plot_dependency_metadata(customer_state_df2.find_dependencies(threshold=0.05))
     ```
-    
+
     :::image type="content" source="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png" alt-text="Plot of the dependency metadata with a higher threshold for entropy." lightbox="media/tutorial-power-bi-dependencies/plot-of-dependency-metadata-for-higher-entropy-threshold.png":::
 
-    If you apply domain knowledge of which entity determines values of other entities, this dependencies graph seems accurate. 
+    If you apply domain knowledge of which entity determines values of other entities, this dependencies graph seems accurate.
 
 1. Explore more data quality issues that were detected. For example, a dashed arrow joins `City` and `Region`, which indicates that the dependency is only approximate. This approximate relationship could imply that there's a partial functional dependency.
 
@@ -193,14 +194,15 @@ A functional dependency manifests itself as a one-to-many relationship between t
 
     Further inspection shows that it's actually two different customers (from different industries) with the same name.
 
-Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic Link provides you with new tools that you can use to achieve more with your data.
+Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic link provides you with new tools that you can use to achieve more with your data.
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
+Check out other tutorials for semantic link / SemPy:
+
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->
