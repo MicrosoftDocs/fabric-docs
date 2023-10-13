@@ -1,6 +1,6 @@
 ---
-title: 'Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link'
-description: This article shows how to detect relationships in the public _Synthea_ dataset, using Semantic Link.
+title: 'Tutorial: Discover relationships in the _Synthea_ dataset using semantic link'
+description: This article shows how to detect relationships in the public _Synthea_ dataset, using semantic link.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: alsavelv
@@ -11,9 +11,9 @@ ms.date: 09/27/2023
 ---
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb -->
 
-# Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link
+# Tutorial: Discover relationships in the _Synthea_ dataset using semantic link
 
-This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using Semantic Link. 
+This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using semantic link.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -24,12 +24,13 @@ When you're working with new data or working without an existing data model, it 
    * validate updated data or new, incoming data, and
    * clean data.
 
-Even if relationships are known in advance, a search for relationships can help with better understanding of the data model or identification of data quality issues. 
+Even if relationships are known in advance, a search for relationships can help with better understanding of the data model or identification of data quality issues.
 
 In this tutorial, you begin with a simple baseline example where you experiment with only three tables so that connections between them are easy to follow. Then, you show a more complex example with a larger table set.
 
-### In this tutorial, you learn how to: 
-- Use components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data analysis. These components include:
+In this tutorial, you learn how to:
+
+- Use components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Functions for pulling Power BI datasets from a Fabric workspace into your notebook.
     - Functions that automate the discovery and visualization of relationships in your datasets.
@@ -87,8 +88,8 @@ In this section, you set up a notebook environment with the necessary modules an
 1. Select three tables from a larger set:
 
     * `patients` specifies patient information
-    * `encounters` specifies the patients that had medical encounters (for example, a medical appointment, procedure) 
-    * `providers` specifies which medical providers attended to the patients 
+    * `encounters` specifies the patients that had medical encounters (for example, a medical appointment, procedure)
+    * `providers` specifies which medical providers attended to the patients
 
     The `encounters` table resolves a many-to-many relationship between `patients` and `providers` and can be described as an [associative entity](https://wikipedia.org/wiki/Associative_entity):
 
@@ -114,14 +115,14 @@ In this section, you set up a notebook environment with the necessary modules an
     :::image type="content" source="media/tutorial-relationships-detection/plot-of-relationship-metadata.png" alt-text="Screenshot showing relationships between tables in the dataset." lightbox="media/tutorial-relationships-detection/plot-of-relationship-metadata.png":::
 
     The function lays out the relationship hierarchy from the left hand side to the right hand side, which corresponds to "from" and "to" tables in the output. In other words, the independent "from" tables on the left hand side use their foreign keys to point to their "to" dependency tables on the right hand side. Each entity box shows columns that participate on either the "from" or "to" side of a relationship.
-    
+
     By default, relationships are generated as "m:1" (not as "1:m") or "1:1". The "1:1" relationships can be generated one or both ways, depending on if the ratio of mapped values to all values exceeds `coverage_threshold` in just one or both directions. Later in this tutorial, you cover the less frequent case of "m:m" relationships.
 
 ## Troubleshoot relationship detection issues
 
 The baseline example shows a successful relationship detection on clean _Synthea_ data. In practice, the data is rarely clean, which prevents successful detection. There are several techniques that can be useful when the data isn't clean.
 
-This section of this tutorial addresses relationship detection when the dataset is dirty. 
+This section of this tutorial addresses relationship detection when the dataset is dirty.
 
 1. Begin by manipulating the original DataFrames to obtain "dirty" data, and print the size of the dirty data.
 
@@ -175,7 +176,7 @@ errors
 
 ### Loosen search criteria
 
-In more murky scenarios, you can try loosening your search criteria. This method increases the possibility of false positives. 
+In more murky scenarios, you can try loosening your search criteria. This method increases the possibility of false positives.
 
 1. Set `include_many_to_many=True` and evaluate if it helps:
 
@@ -316,10 +317,11 @@ The simple baseline example was a convenient learning and troubleshooting tool. 
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
+Check out other tutorials for semantic link / SemPy:
+
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 
 <!-- nbend -->
