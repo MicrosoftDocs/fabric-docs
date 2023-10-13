@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # Connecting to Microsoft OneLake

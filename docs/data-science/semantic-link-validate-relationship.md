@@ -1,13 +1,13 @@
 ---
-title: Use Semantic Link to explore and validate relationships in datasets
-description: Learn to use Semantic Link to explore and validate relationships in Power BI datasets and pandas DataFrames.
+title: Use semantic link to explore and validate relationships in datasets
+description: Learn to use semantic link to explore and validate relationships in Power BI datasets and pandas DataFrames.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: romanbat
 author: RomanBat
 ms.topic: how-to
 ms.date: 06/06/2023
-ms.search.form: Semantic Link
+ms.search.form: semantic link
 ---
 
 
@@ -39,7 +39,7 @@ You'll learn to:
 
 The `list_relationships` function lets you retrieve a list of all relationships found within a Power BI model so that you can better understand the structure of your data and how different tables and columns are connected.
 
-The function works by leveraging Semantic Link, which provides annotated DataFrames that include the necessary metadata to understand the relationships within the dataset.
+The function works by leveraging semantic link, which provides annotated DataFrames that include the necessary metadata to understand the relationships within the dataset.
 This makes it easy for you to analyze the dataset's structure and use it in your machine learning models or other data analysis tasks.
 
 To use the `list_relationships` function, you'll first need to import the `sempy.fabric` module.
@@ -160,10 +160,10 @@ You can customize the function by specifying how to handle missing keys, by sett
 
 By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
-
 ## Next steps
+
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
 - [Detect, explore and validate functional dependencies in your data](semantic-link-validate-data.md)
 - [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)
