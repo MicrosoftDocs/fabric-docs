@@ -22,7 +22,7 @@ To store your machine learning experiments and models in two different regions, 
 
 Then, export and copy your Fabric notebooks into your secondary workspace and rerun the notebooks to create the relevant machine learning items in the secondary workspace.
 
-If a regional outage occurs, you can then access your machine learning items in a different region where the items were copied.
+If a regional outage occurs, you can then access your machine learning items in the different region where the items were copied.
 
 ## Next steps
 
