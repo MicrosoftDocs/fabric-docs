@@ -99,9 +99,9 @@ items:
       href: ../data-engineering/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
-- name: Secure and manage ML artifacts
+- name: Secure and manage ML items
   items:
-    - name: Disaster recovery for ML artifacts
+    - name: Disaster recovery for ML items
       href: data-science-disaster-recovery.md
     - name: Roles and permissions
       href: models-experiments-rbac.md
