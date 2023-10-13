@@ -6,7 +6,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/20/2023
+ms.date: 09/27/2023
 ---
 
 # What's new in the latest OneLake file explorer?
