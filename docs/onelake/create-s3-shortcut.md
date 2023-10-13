@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/16/2023
+ms.date: 09/27/2023
 ---
 
 # Create an Amazon S3 shortcut
