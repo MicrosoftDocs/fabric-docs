@@ -2,11 +2,11 @@
 title: Process event data with the event processor editor
 description: Learn how to use the event processor editor in an Eventstream item to define the event processing logic.
 ms.reviewer: spelluru
-ms.author: xujiang1
-author: xujxu
+ms.author: Wenyang
+author: WemyangShi
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 12/10/2023
 ms.search.form: product-kusto
 ---
 
@@ -33,15 +33,25 @@ To design your event processing with the event processor editor:
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-entrypoint.png" alt-text="Screenshot showing where to select Open event processor in the Lakehouse destination configuration screen.":::
 
-1. In the Event processing editor canvas, select the eventstream node. You can preview the data schema, rename the column, or change the data type in the right **Eventstream** pane.
+1. In the Event processing editor canvas, select the eventstream node. You can preview the data schema or change the data type in the right **Eventstream** pane.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-schema.png" alt-text="Screenshot showing the data schema in the right pane of the Event processing editor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-schema.png" :::
 
-1. From the **Operations** menu in the ribbon, select an operator to add event processing logic. For example, select **Manage fields**.
+1. You can add event processing logic in three ways:
 
-   :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu." :::
+   1. The first way is to select an operator from the **Operations** menu in the ribbon, for example, select **Manage fields**.
 
-1. Select the line between the eventstream and the lakehouse and press the **Delete** key to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing where to select Manage fields in the Operations menu." :::
+
+   1. The second way is to hover on the connection line and click the add button.
+
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-1.png" alt-text="Screenshot showing where to hover on connection line to insert a node." :::
+
+   1. The third way is for a node missing a connection to another node. You can hover on the node, then click the add button. After that, you can see available items in the menu.
+
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on node to insert a node." :::
+
+1. Hover on the line between the eventstream and the lakehouse and then press the **Delete** key or click the delete button to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
 
    :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-delete-connection.png" alt-text="Screenshot showing where to select and delete the connection between the eventstream and the lakehouse." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-delete-connection.png" :::
 
