@@ -16,7 +16,7 @@ In Microsoft Fabric, machine learning experiments and models consist of files an
 
 ## Disaster recovery
 
-To protect your data from rare region-wide outages, we recommend copying your critical data to another region with a frequency aligned with the needs of your disaster recovery plan.
+To protect your data from rare region-wide outages, we recommend that you copy your critical data to another region with a frequency aligned with the needs of your disaster recovery plan.
 
 To store your machine learning experiments and models in two different regions, you need to create these items in two different workspaces. When selecting workspaces, you must choose workspaces that are associated with capacities in two different regions.
 
