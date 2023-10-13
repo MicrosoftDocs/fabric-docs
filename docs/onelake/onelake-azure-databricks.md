@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 03/24/2023
+ms.date: 09/27/2023
 ---
 
 # Integrate OneLake with Azure Databricks
