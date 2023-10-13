@@ -40,9 +40,8 @@ When they exceed these reserves and when the capacity is at its maximum utilizat
 With queueing enabled, batch jobs like Spark Job Definitions get added to the queue and are automatically retried when the capacity is freed up.
 The following section lists various cores based limits for Spark workloads based on Microsoft Fabric capacity SKUs: 
 
-| Fabric Capacity SKU | Equivalent Power BI SKU | Spark VCores | Interactive |  | Batch |  | Queue Limit |
-|---------------------|-------------------------|--------------|-------------|-------------|------|------|------------|
-|                     |                         |              | Min Cores   | Max Cores (With Bursting)  | Min Cores (With Bursting)  | Max Cores  |            |
+| Fabric Capacity SKU | Equivalent Power BI SKU | Spark VCores | Interactive Min Cores | Interactive Max Cores (With Bursting) | Batch Min Cores | Batch Max Cores (With Bursting) | Queue Limit |
+|---------------------|-------------------------|--------------|-------------|------------|------|------|------------|
 | F2                  | -                       | 4            | 6           | 18         | 2    | 14   | 4          |
 | F4                  | -                       | 8            | 7           | 22         | 2    | 17   | 4          |
 | F8                  | -                       | 16           | 14          | 43         | 5    | 34   | 8          |
