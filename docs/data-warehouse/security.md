@@ -4,7 +4,7 @@ description: Learn more about securing the SQL Endpoint and Warehouse in Microso
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 07/12/2023
+ms.date: 10/05/2023
 ms.topic: overview
 ms.custom: build-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
@@ -45,11 +45,27 @@ In contrast to workspace roles, which apply to all items within a workspace, ite
 
 For details on the specific permissions provided for warehouses, see [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
 
-### Object-level security
+### Granular security
 
 Workspace roles and item permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some cases, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
 
+#### Object-level security
+
+Object-level security is a security mechanism that controls access to specific database objects, such as tables, views, or procedures, based on user privileges or roles. It ensures that users or roles can only interact with and manipulate the objects they have been granted permissions for, protecting the integrity and confidentiality of the database schema and its associated resources.
+
 For details on the managing granular permissions in SQL, see [SQL granular permissions](sql-granular-permissions.md).
+
+#### Row-level security
+
+Row-level security is a database security feature that restricts access to individual rows or records within a database table based on specified criteria, such as user roles or attributes. It ensures that users can only view or manipulate data that is explicitly authorized for their access, enhancing data privacy and control.
+
+For details on row-level security, see [Row-level security in Fabric data warehousing](row-level-security.md).
+
+#### Column-level security
+
+Column-level security is a database security measure that limits access to specific columns or fields within a database table, allowing users to see and interact with only the authorized columns while concealing sensitive or restricted information. It offers fine-grained control over data access, safeguarding confidential data within a database.
+
+For details on column-level security, see [Column-level security in Fabric data warehousing](column-level-security.md).
 
 ### Share a warehouse
 
@@ -67,7 +83,7 @@ When evaluating the permissions to assign to a user, consider the following guid
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
 - You can manage permissions on Azure Active Directory groups, as well, rather than adding each specific member.
 
-## Next steps
+## Related content
 
 - [Connectivity](connectivity.md)
 - [SQL granular permissions in Microsoft Fabric](sql-granular-permissions.md)

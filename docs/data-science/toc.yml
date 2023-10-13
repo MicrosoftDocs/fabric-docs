@@ -41,17 +41,17 @@ items:
     href: use-ai-samples.md
   - name: Customer churn prediction
     href: customer-churn.md
-  - name: Retail recommendation
+  - name: Book recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
     href: fraud-detection.md
-  - name: Forecasting
+  - name: Time series forecasting
     href: time-series-forecasting.md
-  - name: Text classification
+  - name: Text (title genre) classification
     href: title-genre-classification.md
   - name: Uplift modeling
     href: uplift-modeling.md
-  - name: Predictive maintenance
+  - name: Machine failure prediction
     href: predictive-maintenance.md
 - name: Governance
   items:
