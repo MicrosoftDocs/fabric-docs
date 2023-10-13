@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 08/03/2023
+ms.date: 09/28/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -15,7 +15,7 @@ The deployment process lets you clone content from one stage in the deployment p
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content may take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
+During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
@@ -23,7 +23,7 @@ You can also deploy content programmatically, using the [deployment pipelines RE
 
 When you deploy content to an empty stage, a new workspace is created on a capacity for the stage you deploy to. All the metadata in the reports, dashboards, and datasets of the original workspace is copied to the new workspace in the stage you're deploying to.
 
-There are two ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
+There are several ways to deploy content from one stage to another. You can deploy all the content, or you can [select which items to deploy](deploy-content.md#selective-deployment).
 
 You can also deploy content backwards, from a later stage in the deployment pipeline, to an earlier one.
 
@@ -37,7 +37,7 @@ If you have permissions, the content of the workspace is copied to the stage you
 
 If you don't have permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
-If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, workspaces created by a PPU user, can only be accessed by other PPU users. In addition, content created in such workspaces can only be consumed by PPU users.
+If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, if you create a workspace with a PPU, only other PPU users can access it. In addition, only PPU users can consume content created in such workspaces.
 
 ### Workspace and content ownership
 
@@ -73,7 +73,7 @@ Auto-binding works only with items that are supported by deployment pipelines an
 
 #### Auto-binding across pipelines
 
-Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a dataset in the test stage of pipeline B, deployment pipelines will recognize this connection.
+Deployment pipelines automatically binds items that are connected across pipelines, if they're in the same pipeline stage. When you deploy such items, deployment pipelines attempts to establish a new connection between the deployed item and the item it's connected to in the other pipeline. For example, if you have a report in the test stage of pipeline A that's connected to a dataset in the test stage of pipeline B, deployment pipelines recognizes this connection.
 
 Here's an example with illustrations that to help demonstrate how autobinding across pipelines works:
 
@@ -87,27 +87,27 @@ Here's an example with illustrations that to help demonstrate how autobinding ac
 
 5. The deployment succeeds or fails, depending on whether or not you have a copy of the dataset it depends on in the test stage of pipeline A:
 
-    * *You have a copy of the dataset the report depends on in the test stage of pipeline A*
+    * *If you have a copy of the dataset the report depends on in the test stage of pipeline A*:
 
-        The deployment will succeed, and deployment pipelines connects (autobind) the report in the test stage of pipeline B, to the dataset in the test stage of pipeline A.
+        The deployment succeeds, and deployment pipelines connects (auto-bind) the report in the test stage of pipeline B, to the dataset in the test stage of pipeline A.
 
         :::image type="content" source="media/understand-the-deployment-process/successful-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment is successful because there's a copy of the dataset the report depends on in the test stage of pipeline A. After the deployment the report in the test stage on pipeline B, autobinds with the dataset in the test stage of pipeline A.":::
 
-    * *You don't have a copy of the dataset the report depends on in the test stage of pipeline A*
+    * *If you don't have a copy of the dataset the report depends on in the test stage of pipeline A*:
 
-        The deployment will fail because deployment pipelines can't connect (autobind) the report in the test stage in pipeline B, to the dataset it depends on in the test stage of pipeline A.
+        The deployment fails because deployment pipelines can't connect (auto-bind) the report in the test stage in pipeline B, to the dataset it depends on in the test stage of pipeline A.
 
         :::image type="content" source="media/understand-the-deployment-process/failed-deployment.png" alt-text="A diagram showing a deployment of a report from the development stage to the test stage in pipeline B. The report is connected to a dataset in pipeline A. The deployment fails because there isn't a copy of the dataset the report depends on in the test stage of pipeline A.":::
 
 #### Avoid using auto-binding
 
-In some cases, you might not want to use autobinding. For example, if you have one pipeline for developing organizational datasets, and another for creating reports. In this case, you might want all the reports to always be connected to datasets in the production stage of the pipeline they belong to. To accomplish this, avoid using the autobinding feature.
+In some cases, you might not want to use auto-binding. For example, if you have one pipeline for developing organizational datasets, and another for creating reports. In this case, you might want all the reports to always be connected to datasets in the production stage of the pipeline they belong to. To accomplish this, avoid using the auto-binding feature.
 
 :::image type="content" source="media/understand-the-deployment-process/no-auto-binding.png" alt-text="A diagram showing two pipelines. Pipeline A has a dataset in every stage and pipeline B has a report in every stage. All the reports from pipeline B are connected to the dataset in the production stage of pipeline A.":::
 
 There are three methods you can use to avoid using auto-binding:
 
-* Don't connect the item to corresponding stages. When the items aren't connected in the same stage, deployment pipelines keeps the original connection. For example, if you have a report in the development stage of pipeline B that's connected to a dataset in the production stage of pipeline A. When you deploy the report to the test stage of pipeline B, it will remain connected to the dataset in the production stage of pipeline A.
+* Don't connect the item to corresponding stages. When the items aren't connected in the same stage, deployment pipelines keeps the original connection. For example, if you have a report in the development stage of pipeline B that's connected to a dataset in the production stage of pipeline A. When you deploy the report to the test stage of pipeline B, it remains connected to the dataset in the production stage of pipeline A.
 
 * Define a parameter rule. This option isn't available for reports. You can only use it with datasets and dataflows.
 
@@ -245,11 +245,11 @@ Once your pipeline is configured with incremental refresh, we recommend that you
 
 1. Make changes to your *.pbix* file in Power BI Desktop. To avoid long waiting times, you can make changes using a sample of your data.
 
-2. Upload your *.pbix* file to the *development* stage.
+2. Upload your *.pbix* file to the first (usually *development*) stage.
 
-3. Deploy your content to the *test* stage. After deployment, the changes you made will apply to the entire dataset you're using.
+3. Deploy your content to the next stage. After deployment, the changes you made will apply to the entire dataset you're using.
 
-4. Review the changes you made in the *test* stage, and after you verify them, deploy to the *production* stage.
+4. Review the changes you made in each stage, and after you verify them, deploy to the next stage until you get to the final stage.
 
 #### Usage examples
 
@@ -259,7 +259,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 * Enable incremental refresh in a dataset that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by assigning the workspace to a new pipeline's *production* stage, and using [backwards deployment](deploy-content.md#backwards-deployment) to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a dataset that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a dataset that uses incremental refresh to a workspace that's part of an existing pipeline.
 
@@ -267,7 +267,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 For incremental refresh, deployment pipelines only supports datasets that use [enhanced dataset metadata](/power-bi/connect-data/desktop-enhanced-dataset-metadata). All datasets created or modified with Power BI Desktop automatically implement enhanced dataset metadata.
 
-When republishing a dataset to an active pipeline with incremental refresh enabled, the following changes will result in deployment failure due to data loss potential:
+When republishing a dataset to an active pipeline with incremental refresh enabled, the following changes result in deployment failure due to data loss potential:
 
 * Republishing a dataset that doesn't use incremental refresh, to replace a dataset that has incremental refresh enabled.
 
@@ -289,7 +289,7 @@ In a deployment pipeline, you can use composite models to connect a dataset to a
 
 [Automatic aggregations](/power-bi/enterprise/aggregations-auto) are built on top of user defined aggregations and use machine learning to continuously optimize DirectQuery datasets for maximum report query performance.
 
-Each dataset keeps its automatic aggregations after deployment. Deployment pipelines doesn't change a dataset's automatic aggregation. This means that if you deploy a dataset with an automatic aggregation, the automatic aggregation in the target stage will remain as is, and won't be overwritten by the automatic aggregation deployed from the source stage.
+Each dataset keeps its automatic aggregations after deployment. Deployment pipelines doesn't change a dataset's automatic aggregation. This means that if you deploy a dataset with an automatic aggregation, the automatic aggregation in the target stage remains as is, and isn't overwritten by the automatic aggregation deployed from the source stage.
 
 To enable automatic aggregations, follow the instructions in [configure the automatic aggregation](/power-bi/enterprise/aggregations-auto-configure).
 
@@ -335,7 +335,7 @@ The lowest deployment pipeline permission is *pipeline admin*, and it's required
 |**Pipeline admin** |<ul><li>View the pipeline​</li><li>Share the pipeline with others</li><li>Edit and delete the pipeline</li><li>Unassign a workspace from a stage</li><li>Can see workspaces that are tagged as assigned to the pipeline in Power BI service</li></ul> |Pipeline access doesn't grant permissions to view or take actions on the workspace content. |
 |**Workspace viewer**<br>(and pipeline admin) |<ul><li>Consume content</li><li>Unassign a workspace from a stage</li></ul> |Workspace members assigned the Viewer role without *build* permissions, can't access the dataset or edit workspace content. |
 |**Workspace contributor**<br>(and pipeline admin) |<ul><li>Consume content​</li><li>Compare stages</li><li>View datasets</li><li>Unassign a workspace from a stage</li></ul> |   |
-|**Workspace member**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items (must be a member or admin of both source and target workspaces)</li><li>Update datasets</li><li>Unassign a workspace from a stage</li><li>Configure dataset rules (you must be the dataset owner)</li></ul> |If the *block republish and disable package refresh* setting located in the tenant *dataset security* section is enabled, only dataset owners will be able to update datasets. |
+|**Workspace member**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items (must be a member or admin of both source and target workspaces)</li><li>Update datasets</li><li>Unassign a workspace from a stage</li><li>Configure dataset rules (you must be the dataset owner)</li></ul> |If the *block republish and disable package refresh* setting located in the tenant *dataset security* section is enabled, only dataset owners are able to update datasets. |
 |**Workspace admin**<br>(and pipeline admin) |<ul><li>View workspace content​</li><li>Compare stages</li><li>Deploy items</li><li>Assign workspaces to a stage</li><li>Update datasets</li><li>Unassign a workspace from a stage</li><li>Configure dataset rules (you must be the dataset owner)</li></ul> |   |
 
 ### Granted permissions
@@ -382,9 +382,9 @@ This section lists most of the limitations in deployment pipelines.
 
 * [Microsoft 365 groups](/microsoft-365/admin/create-groups/compare-groups#microsoft-365-groups) aren't supported as pipeline admins.
 
-* When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment will fail.
+* When you're deploying a Power BI item for the first time, if another item in the target stage is similar in type (for example, if both files are reports) and has the same name, the deployment fails.
 
-* For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#limitations).
+* For a list of workspace limitations, see the [workspace assignment limitations](assign-pipeline.md#considerations-and-limitations).
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
@@ -392,7 +392,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.md#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode-that-uses-variation-or-auto-datetime-tables)
+* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.md#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode-that-uses-variation-or-auto-datetime-tables).
 
 * During deployment, if the target dataset is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets), the source dataset must use this connection mode too.
 
@@ -410,7 +410,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For deployment pipeline rule limitations that affect dataflows, see [Deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* If a dataflow is being refreshed during deployment, the deployment will fail.
+* If a dataflow is being refreshed during deployment, the deployment fails.
 
 * When comparing stages during dataflow refresh, the results are unpredictable.
 

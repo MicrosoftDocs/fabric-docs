@@ -143,7 +143,7 @@ To read data from Power BI datasets:
     df_dax.head()
     ``````
 
-2. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
+1. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
 
     ```python
     from sempy.fabric import FabricDataFrame
@@ -166,7 +166,7 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the notebook, if no Lakehouse is attached.
 
 Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
-All Spark SQL commands can be executed in Python, R, and Scala. The Semantic Link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+All Spark SQL commands can be executed in Python, R, and Scala. The semantic link Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -235,7 +235,7 @@ If this parameter is turned off, type incompatibility issues may result between 
 
 SemPy `read_table` also uses the model information provided by Power BI.
 
- - `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
+- `multiindex_hierarchies`: If True, converts [Power BI Hierarchies](/power-bi/create-reports/service-metrics-get-started-hierarchies) to pandas MultiIndex structure.
 
 ## Read-access limitations
 
@@ -266,10 +266,9 @@ df_forecast.to_lakehouse_table("ForecastTable")
 
 By using Power BI, the *ForecastTable* table can be added to a composite dataset using the Lakehouse dataset.
 
-
 ## Next steps
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [How to validate data with Semantic Link](semantic-link-validate-data.md)
+- [How to validate data with semantic link](semantic-link-validate-data.md)

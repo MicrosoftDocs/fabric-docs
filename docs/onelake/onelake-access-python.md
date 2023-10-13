@@ -6,7 +6,7 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 08/04/2023
+ms.date: 09/27/2023
 ---
 
 # Use Python to manage files and folders in Microsoft OneLake
@@ -17,9 +17,10 @@ This article shows how you can use the Azure Storage Python SDK to manage files 
 
 ## Prerequisites
 
-Before starting your project, make sure you have the following:  
-    - A workspace in your Fabric tenant with Contributor permissions.  
-    - A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
+Before starting your project, make sure you have the following:
+
+- A workspace in your Fabric tenant with Contributor permissions.  
+- A lakehouse in the workspace. Optionally, have data preloaded to read using Python.
 
 ## Set up your project
 
@@ -126,7 +127,7 @@ if __name__ == "__main__":
 
 ```
 
-To run this sample, save the preceding code into a file `listOneLakeDirectory.py` and run the following command in the same directory. Remember to replace the workspace and path with your own data. 
+To run this sample, save the preceding code into a file `listOneLakeDirectory.py` and run the following command in the same directory. Remember to replace the workspace and path with your own data.
 
 ```powershell
 python listOneLakeDirectory.py "onelake" "myWorkspace" "myLakehouse.Lakehouse/Files/path"

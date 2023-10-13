@@ -11,7 +11,7 @@ ms.search.form: Deployment pipelines operations
 
 # Compare content in different deployment stages
 
-Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares the three deployment stages and indicates if there are any differences. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
+Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
