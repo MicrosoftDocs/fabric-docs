@@ -4,7 +4,7 @@ description: A known issue is posted where selecting the **View account** link i
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 09/25/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-507
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-507
 
 When you open the Account manager on any Microsoft Fabric page, you can select the **View account** link.  When you select the **View account** link, the page redirects to the wrong page instead of the user account information page.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Administration & Management
 
