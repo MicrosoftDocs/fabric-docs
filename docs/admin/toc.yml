@@ -16,17 +16,44 @@ items:
   - name: Understand Microsoft Fabric admin roles
     href: roles.md
   - name: What is the admin portal?
-    href: admin-center.md         
-- name: Manage Fabric in the admin portal
-  items:
-  - name: Using Monitoring hub
-    href: monitoring-hub.md 
-- name: Monitoring
+    href: admin-center.md
+- name: Monitor and manage Fabric
+  expanded: false
   items:
   - name: Using Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
-    href: track-user-activities.md       
+    href: track-user-activities.md
+  - name: Find users who have signed in
+    href: service-admin-access-usage.md
+  - name: Customize Fabric branding
+    href: service-admin-custom-branding.md
+  - name: Manage Azure connections
+    href: service-admin-portal-azure-connections.md
+  - name: Manage capacity settings
+    href: service-admin-portal-capacity-settings.md
+  - name: Manage embed codes
+    href: service-admin-portal-embed-codes.md
+  - name: Manage featured content
+    href: service-admin-portal-featured-content.md
+  - name: Manage organizational visuals
+    href: service-admin-portal-organizational-visuals.md
+  - name: Manage Power BI visuals admin settings
+    href: organizational-visuals.md 
+  - name: Manage Premium Per User
+    href: service-admin-portal-premium-per-user.md
+  - name: Manage Premium Per User
+    href: service-admin-portal-users.md
+  - name: Manage workspaces
+    href: service-admin-portal-workspaces.md
+  - name: View audit logs
+    href: service-admin-portal-audit-logs.md
+  - name: View information protection metrics
+    href: service-admin-portal-protection-metrics.md
+  - name: View refresh summary
+    href: service-admin-portal-refresh-summary.md
+  - name: View usage metrics
+    href: service-admin-portal-usage-metrics.md
   - name: Monitoring workspace
     items:    
     - name: What is the admin monitoring workspace?
@@ -40,7 +67,7 @@ items:
   - name: Workspace tenant settings
     href: portal-workspace.md
 - name: Feature set up
-  items:    
+  items:
   - name: Set up git integration
     href: git-integration-admin-settings.md
   - name: Set up item certification
@@ -53,6 +80,8 @@ items:
     href: service-admin-setup-certification.md
   - name: Enable service principal authentication for read-only admin APIs
     href: metadata-scanning-enable-read-only-apis.md
+  - name: Configure Multi-Geo support for Fabric Premium
+    href: service-admin-premium-multi-geo.md
 - name: Fabric tenant settings
   items:
   - name: Tenant settings index
