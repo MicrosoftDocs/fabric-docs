@@ -1,5 +1,5 @@
 ---
-title: Configure and Manage Starter Pools in Fabric Spark
+title: Configure and manage starter pools in Fabric Spark.
 description: Learn about the customizing Starter Pools from Fabric workspace settings.
 ms.reviewer: snehagunda
 ms.author: saravi
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom: build-2023
 ms.date: 10/05/2023
 ---
-# Configuring Starter Pools in Microsoft Fabric
+# Configuring starter pools in Microsoft Fabric
 
 In this document, we explain how to customize Starter pools in Microsoft Fabric for your analytics workloads. Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 Starter pools have Spark clusters that are always on and ready for your requests. They use medium sized nodes and can be scaled up based on your workload requirements.
