@@ -65,7 +65,7 @@ items:
     items:
     - name: Overview
       href: spark-compute.md
-    - name: Configure Starter Pools
+    - name: Configure starter pools
       href: configure-starter-pools.md
     - name: Runtime
       href: runtime.md
