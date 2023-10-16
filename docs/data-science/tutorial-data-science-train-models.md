@@ -1,6 +1,6 @@
 ---
-title: Data science tutorial - train and register machine learning models
-description: In this fourth part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
+title: "Tutorial: Train and register machine learning models"
+description: In this third part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 10/16/2023
 ---
 
-# Part 3: Train and register a machine learning model
+# Tutorial Part 3: Train and register a machine learning model
 
 In this tutorial, you'll learn to train a machine learning model to predict which bank customers are likely to leave.
 

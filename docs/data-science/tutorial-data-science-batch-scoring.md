@@ -1,6 +1,6 @@
 ---
-title: Data science tutorial - perform batch scoring and save predictions
-description: In this fifth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
+title: "Tutorial: Perform batch scoring and save predictions"
+description: In this fourth part of the tutorial series, learn how to import a trained and registered model and perform batch predictions on a test dataset.
 ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 10/16/2023
 ---
 
-# Part 4: Perform batch scoring and save predictions to a lakehouse
+# Tutorial Part 4: Perform batch scoring and save predictions to a lakehouse
 
 In this tutorial, you'll learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 

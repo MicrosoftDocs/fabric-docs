@@ -1,5 +1,5 @@
 ---
-title: Tutorial - Visualize predictions with a Power BI report
+title: "Tutorial: Visualize predictions with a Power BI report"
 description: In this fifth part of the tutorial series, learn how to get set up to create reports and how to create various visuals to analyze data.
 ms.reviewer: sgilley
 ms.author: amjafari
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 10/16/2023
 ---
 
-# Part 5: Visualize predictions with a Power BI report
+# Tutorial Part 5: Visualize predictions with a Power BI report
 
 In this tutorial, you'll create a report from the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
