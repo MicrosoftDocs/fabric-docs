@@ -52,9 +52,7 @@ You'll access SMOTE using the `imblearn` library. Install it now:
 
 > [!TIP]
 >
-> When you install a library in a notebook, it is only available for the duration of the notebook session. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](../python-library-management.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json) to make it available to all notebooks in your workspace without further installs.
-
-
+> When you install a library in a notebook, it is only available for the duration of the notebook session. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](/python-guide/python-library-management.md) to make it available to all notebooks in your workspace without further installs.
 
 ## Load the data
 
