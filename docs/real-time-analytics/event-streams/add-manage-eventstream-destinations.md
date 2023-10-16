@@ -2,8 +2,8 @@
 title: Add and manage eventstream destinations
 description: Learn how to add and manage an event destination in an Eventstream item with the Microsoft Fabric event streams feature.
 ms.reviewer: spelluru
-ms.author: Wenyang
-author: WenyangShi
+ms.author: xujiang1
+author: xujxu
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 10/08/2023
@@ -131,13 +131,13 @@ To add a Reflex from your workspace as an eventstream's destination, do the foll
 
 1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Reflex**. The **Reflex** destination configuration screen appears.
 
-1. Enter a name for the eventstream destination and complete the information about your Relex.
+1. Enter a name for the eventstream destination and complete the information about your Reflex.
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-Relex-configuration.png" alt-text="Screenshot showing the Reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-Relex-configuration.png" :::
 
    **Reflex**: Select an existing Reflex or create a new one to receive data.
 
-1. After entering the destination name, selecting the workspace, and selecting or creating a new Reflex, click the Add button, then you can see a Reflex destination on the canvas that connects to your eventstream.
+1. After you enter the destination name, select the workspace, and select or create a new Reflex, select on the Add button. You see a Reflex destination on the canvas that is linked to your eventstream.
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-Reflex.png" alt-text="Screenshot showing the new Reflex destination." lightbox="./media/add-manage-eventstream-destinations/eeventstream-destination-Reflex.png" :::
 
