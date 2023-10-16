@@ -6,7 +6,7 @@ ms.author: Wenyang
 author: WenyangShi
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/10/2023
+ms.date: 10/08/2023
 ms.search.form: product-kusto
 ---
 
