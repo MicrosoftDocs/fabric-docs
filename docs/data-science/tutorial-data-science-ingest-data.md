@@ -1,6 +1,6 @@
 ---
 title: Data science tutorial - ingest data into a lakehouse
-description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
+description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
@@ -13,9 +13,9 @@ ms.date: 10/16/2023
 
 In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format. Some important terms to understand:
 
-* **Lakehouse** -- A lakehouse is a collection of files/folders/tables that represent a database over a data lake used by the Spark engine and SQL engine for big data processing and that includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables.
+* **Lakehouse** - A lakehouse is a collection of files/folders/tables that represent a database over a data lake used by the Spark engine and SQL engine for big data processing and that includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables.
 
-* **Delta Lake** - Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
+* **Delta Lake**  - Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -23,7 +23,7 @@ In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
--  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. You will be downloading data from a public blob, then storing the data in the lakehouse.
+-  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. You'll be downloading data from a public blob, then storing the data in the lakehouse.
 
 ## Follow along in notebook
 
@@ -36,11 +36,23 @@ In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format
 
 ## Bank churn data
 
-The dataset contains churn status of 10000 customers along with 14 attributes that include credit score, geographical location (Germany, France, Spain), gender (male, female), age, tenure (years of being bank's customer), account balance, estimated salary, number of products that a customer has purchased through the bank, credit card status (whether a customer has a credit card or not), and active member status (whether an active bank's customer or not).
+The dataset contains churn status of 10,000 customers. It also includes attributes that could impact churn such as:
 
-The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. The event that defines the customer's churn is the closing of the customer's bank account, therefore, the column `exit` in the dataset refers to customer's abandonment. Note that there is not much context available about these attributes so you have to proceed without having background information about the dataset, but the aim is to understand how these attributes contribute to the `exit` status.
+* Credit score
+* Geographical location (Germany, France, Spain)
+* Gender (male, female)
+* Age
+* Tenure (years of being bank's customer)
+* Account balance
+* Estimated salary
+* Number of products that a customer has purchased through the bank
+* Credit card status (whether a customer has a credit card or not)
+* Active member status (whether an active bank's customer or not)
 
-Out of the 10000 customers, only 2037 customers (around 20%) have left the bank. Therefore, given the class imbalance ratio, we recommend to generate synthetic data.
+The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. 
+
+The event that defines the customer's churn is the closing of the customer's bank account. The column `exit` in the dataset refers to customer's abandonment. There isn't much context available about these attributes so you have to proceed without having background information about the dataset. The aim is to understand how these attributes contribute to the `exit` status.
+
 
 Example rows from the dataset:
 
