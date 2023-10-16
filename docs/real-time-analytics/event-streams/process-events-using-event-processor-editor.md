@@ -49,7 +49,7 @@ To design your event processing with the event processor editor:
 
    1. The third way is for a node missing a connection to another node. You can hover on the node, then click the add button. After that, you can see available items in the menu.
 
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on node to insert a node." :::
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-insert-node-2.png" alt-text="Screenshot showing where to hover on nodes to insert a node." :::
 
 1. Hover on the line between the eventstream and the lakehouse and then press the **Delete** key or click the delete button to remove the connection between them. You must delete this connection before you can insert the **Manage fields** operator between them.
 
