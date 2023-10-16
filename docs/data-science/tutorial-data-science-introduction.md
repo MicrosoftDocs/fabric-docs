@@ -68,4 +68,5 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 ## Next steps
 
-- [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)
+> [!div class="nextstepaction"]
+> [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)

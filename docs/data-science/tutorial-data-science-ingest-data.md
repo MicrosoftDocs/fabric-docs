@@ -113,4 +113,7 @@ if not IS_CUSTOM_DATA:
 
 ## Next steps
 
-- You'll use the data you just ingested in [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)
+You'll use the data you just ingested in:
+ 
+> [!div class="nextstepaction"]
+> [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)

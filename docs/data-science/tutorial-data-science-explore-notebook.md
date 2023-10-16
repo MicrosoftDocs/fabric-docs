@@ -244,10 +244,14 @@ sparkDF=spark.createDataFrame(df_clean)
 sparkDF.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
+<!-- nbend -->
 
 ## Next step
 
-Train and register machine learning models with this data in [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+Train and register machine learning models with this data: 
 
-<!-- nbend -->
+> [!div class="nextstepaction"]
+> [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+
+
 

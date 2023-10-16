@@ -15,7 +15,15 @@ In this tutorial, you'll learn to train a machine learning model to predict whic
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Once a model is trained, you'll register the trained model, and log the used hyperaparameters as well as the evaluation metrics using Microsoft Fabric's native integration with the MLflow framework.
+In this tutorial, you'll:
+
+> [!div class="checklist"]
+>
+> * Train Random Forrest and LightGBM models.
+> * Use Microsoft Fabric's native integration with the MLflow framework to log the used hyperaparameters and evaluation metrics.
+> * Register the trained model.
+> * Assess the performances of the trained models on the validation dataset.
+
 
 [MLflow](https://mlflow.org/docs/latest/index.html) is an open source platform for managing the machine learning lifecycle with features like Tracking, Models, and Model Registry. MLflow is natively integrated with the Fabric Data Science experience.
 
@@ -144,7 +152,7 @@ X_res, y_res = sm.fit_resample(X_train, y_train)
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
 
-### Model Training
+### Model training
 
 * Train the model using Random Forest with maximum depth of 4 and 4 features
 
@@ -217,7 +225,7 @@ To view your experiments:
 
 :::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
 
-### Assess the performances of the trained models on the validation dataset
+## Assess the performances of the trained models on the validation dataset
 
 Once done with model training, you can assess the performance of trained models in two ways.
 
@@ -319,4 +327,5 @@ tn, fp, fn, tp = cfm.ravel()
 
 ## Next step
 
-- [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)
+> [!div class="nextstepaction"]
+> [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)

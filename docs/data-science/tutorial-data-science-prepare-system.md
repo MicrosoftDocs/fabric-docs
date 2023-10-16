@@ -64,4 +64,5 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 
 ## Next steps
 
-* [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+> [!div class="nextstepaction"]
+> [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)

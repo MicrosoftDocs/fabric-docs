@@ -11,7 +11,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, you'll create a report from the prediction data produced in [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a report from the prediction data produced in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -161,4 +161,7 @@ The Power BI report shows:
 
 ## Next steps
 
-* [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)
+This completes the five part tutorial series.  See other end-to-end sample tutorials:
+
+> [!div class="nextstepaction"]
+> [How to use end-to-end AI samples in Microsoft Fabric](use-ai-samples.md)

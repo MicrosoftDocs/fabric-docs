@@ -17,11 +17,13 @@ In this tutorial, you'll learn to import a trained and registered LightGBMRegres
 
 Microsoft Fabric allows you to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook or from a given model's item page. Learn about [PREDICT](https://aka.ms/fabric-predict).  
 
-To generate batch predictions on our test dataset, you'll use version 1 of the trained churn model. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways: 
+To generate batch predictions on our test dataset, you'll use version 1 of the trained churn model. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways:
 
-- Using the Transformer API from SynapseML
-- Using the Spark SQL API
-- Using PySpark user-defined function (UDF)
+> [!div class="checklist"]
+>
+> * Transformer API from SynapseML
+> * Spark SQL API
+> * PySpark user-defined function (UDF)
 
 ## Prerequisites
 
@@ -136,4 +138,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 ## Next step
 
-- Continue on to [Part 5: Create a Power BI report to visualize predictions](tutorial-data-science-create-report.md)
+Continue on to:
+
+> [!div class="nextstepaction"]
+> [Part 5: Create a Power BI report to visualize predictions](tutorial-data-science-create-report.md)
