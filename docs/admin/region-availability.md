@@ -31,6 +31,7 @@ Europe
 * WestEurope
 * FranceCentral
 * NorwayEast
+* SwedenCentral
 * SwitzerlandNorth
 * SwitzerlandWest
 * UKSouth
