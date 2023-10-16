@@ -96,7 +96,7 @@ The following table contains more information about the copy activity in MongoDB
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
-|**Connection**|Your MongoDB Atlas connection to the source data store.|< your MongoDB Atlas connection >|Yes|connection|
+|**Connection**|Your connection to the source data store.|< your MongoDB Atlas connection >|Yes|connection|
 |**Database**|Your database that you use as source.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|
 |**Filter**|The selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).|< your selection filter >|No|filter|
@@ -109,7 +109,7 @@ The following table contains more information about the copy activity in MongoDB
 |Name|Description|Value|Required|JSON script property|
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
-|**Connection**|Your MongoDB Atlas connection to the destination data store.|< your MongoDB Atlas connection >|Yes|connection|
+|**Connection**|Your connection to the destination data store.|< your MongoDB Atlas connection >|Yes|connection|
 |**Database**|Your database that you use as destination.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|
 |**Write behavior**|Describes how to write data to MongoDB Atlas. Allowed values: **Insert** and **Upsert**.<br><br>The behavior of **Upsert** is to replace the document if a document with the same `_id` already exists; otherwise, insert the document.<br><br>Note: The service automatically generates an `_id` for a document if an `_id` isn't specified either in the original document or by column mapping. This means that you must ensure that, for **Upsert** to work as expected, your document has an ID.|• **Insert** (default)<br>• **Upsert**<br>|No|writeBehavior:<br>• insert<br>• upsert|
