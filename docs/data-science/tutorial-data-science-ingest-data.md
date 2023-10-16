@@ -23,7 +23,7 @@ In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
--  [Add a lakehouse](how-to-use-notebook.md#connect-lakehouses-and-notebooks) to this notebook. You will be downloading data from a public blob, then storing the data in the lakehouse.
+-  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. You will be downloading data from a public blob, then storing the data in the lakehouse.
 
 ## Follow along in notebook
 
@@ -42,14 +42,12 @@ The dataset also includes columns such as row number, customer ID, and customer 
 
 Out of the 10000 customers, only 2037 customers (around 20%) have left the bank. Therefore, given the class imbalance ratio, we recommend to generate synthetic data.
 
-some example rows from the dataset:
+Example rows from the dataset:
+
 |"CustomerID"|"Surname"|"CreditScore"|"Geography"|"Gender"|"Age"|"Tenure"|"Balance"|"NumOfProducts"|"HasCrCard"|"IsActiveMember"|"EstimatedSalary"|"Exited"|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
 |15634602|Hargrave|619|France|Female|42|2|0.00|1|1|1|101348.88|1|
 |15647311|Hill|608|Spain|Female|41|1|83807.86|1|0|1|112542.58|0|
-
-
-
 
 ### Download dataset and upload to lakehouse
 
@@ -72,7 +70,7 @@ DATA_FILE = "churn.csv"  # data file name
 This code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> **Make sure you [add a lakehouse](how-to-use-notebook.md#connect-lakehouses-and-notebooks) to the notebook before running it. Failure to do so will result in an error.**
+> **Make sure you [add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to the notebook before running it. Failure to do so will result in an error.**
 
 
 ```python
@@ -98,13 +96,9 @@ if not IS_CUSTOM_DATA:
     print("Downloaded demo data files into lakehouse.")
 ```
 
-## Next step
-
-You'll use the data you just ingested in [Part 2: Explore and cleanse data](https://learn.microsoft.com/fabric/data-science/tutorial-data-science-explore-notebook).
-
 <!-- nbend -->
 
 
 ## Next steps
 
-- [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)
+- You'll use the data you just ingested in [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)
