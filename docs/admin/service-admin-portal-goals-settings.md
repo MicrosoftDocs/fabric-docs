@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Metrics tenant settings 
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create and use Metrics
 
@@ -24,4 +24,4 @@ To learn more, see [Get started with metrics in Power BI](/power-bi/create-repor
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

@@ -12,7 +12,7 @@ ms.date: 09/05/2023
 
 | Name | Description |
 |------|-------|
-| **[Microsoft Fabric (Preview)](./fabric-switch.md)** |  |
+| **[Microsoft Fabric (Preview)](fabric-switch.md)** |  |
 | Users can create Fabric items (public preview) | Users can create Fabric items with new capabilities in Microsoft Fabric. This setting can be managed at both the tenant and the capacity levels. By using Microsoft Fabric, you accept the [Preview Terms of Use](https://azure.microsoft.com/support/legal/preview-supplemental-terms). |
 | **[Help and support settings](service-admin-portal-help-support.md)** |  |
 | [Publish "Get Help" information](service-admin-portal-help-support.md#publish-get-help-information) | Users in the organization can go to internal help and support resources from the Power BI help menu. |
@@ -149,4 +149,4 @@ ms.date: 09/05/2023
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [About the Admin portal](/power-bi/admin/service-admin-portal)
+> [What is the Admin portal>](admin-center.md)
