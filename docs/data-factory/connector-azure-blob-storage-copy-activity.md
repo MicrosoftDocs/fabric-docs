@@ -167,5 +167,4 @@ The following tables contain more information about the copy activity in Azure B
 
 ## Next steps
 
-- [How to create Azure Blob connection](connector-azure-blob-storage.md)
-- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)]
+- [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)

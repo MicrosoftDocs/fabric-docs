@@ -45,22 +45,24 @@
       items:
       - name: Overview
         href: connector-amazon-s3-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-amazon-s3.md
       - name: Configure in Data pipeline Copy activity
         href: connector-amazon-s3-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-amazon-s3-dataflows.md
+    - name: Azure Analysis Services
+      items:
+      - name: Overview
+        href: connector-azure-analysis-services-overview.md
+      - name: Set up your connection
+        href: connector-azure-analysis-services.md
     - name: Azure Blob Storage
       items:
       - name: Overview
         href: connector-azure-blob-storage-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-azure-blob-storage.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-blob-storage-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
