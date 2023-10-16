@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "docs/data-science/tutorial-data-science-ingest-data.md",
+        "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
+        "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
