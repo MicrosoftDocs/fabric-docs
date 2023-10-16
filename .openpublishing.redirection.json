@@ -1,7 +1,7 @@
 {
     "redirections": [
       {
-        "source_path_from_root": "docs/data-science/tutorial-data-science-ingest-data.md",
+        "source_path_from_root": "/docs/data-science/tutorial-data-science-ingest-data.md",
         "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
         "redirect_document_id": false
       },
