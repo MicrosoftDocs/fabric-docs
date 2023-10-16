@@ -6,8 +6,8 @@ ms.author: Wenyang
 author: WemyangShi
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 12/10/2023
-ms.search.form: product-kusto
+ms.date: 05/23/2023
+ms.search.form: Event streams
 ---
 
 # Process event data with event processor editor
