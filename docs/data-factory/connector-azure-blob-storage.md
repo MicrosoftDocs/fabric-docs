@@ -40,14 +40,14 @@ In some cases, the Power Query connector article might include advanced options,
 
 Browse to the **New connection page** for the data factory pipeline to configure the connection details and create the connection.
 
-:::image type="content" source="./media/connector-azure-blob-storage/new-connection-page.png" alt-text="Screenshot showing the new connection page.":::
+:::image type="content" source="./media/connector-azure-blob-storage/new-connection-page.png" alt-text="Screenshot showing the new connection page." lightbox="./media/connector-azure-blob-storage/new-connection-page.png":::
 
 You have two ways to browse to this page:
 
 * In copy assistant, browse to this page after selecting the connector.
 * In pipeline, browse to this page after selecting + New in Connection section and selecting the connector.
 
-## Step 1: Specify the account name or URL, connection and connection name
+### Step 1: Specify the account name or URL, connection and connection name
 
 :::image type="content" source="./media/connector-azure-blob-storage/configure-azure-blob-storage-connection-common.png" alt-text="Screenshot showing the common connection setup for Azure Blob Storage.":::
 

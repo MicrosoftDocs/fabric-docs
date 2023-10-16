@@ -51,7 +51,7 @@ You have two ways to browse to this page:
 
 In the **New connection** pane, specify the following field:
 
-- **Url**: Specify the account endpoint URL of you Amazon S3 data.
+- **Url**: Specify the account endpoint URL of your Amazon S3 data.
 
 ### Step 2:  Select and set your authentication
 
