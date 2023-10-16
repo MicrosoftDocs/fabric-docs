@@ -6,7 +6,7 @@ ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 10/12/2023
+ms.date: 10/16/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---
 
@@ -29,7 +29,6 @@ The main steps in this tutorial are:
 
 ## Prerequisites
 
-
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 This part 2 of 5 in the tutorial series. To complete this tutorial, first complete:
@@ -42,6 +41,8 @@ This part 2 of 5 in the tutorial series. To complete this tutorial, first comple
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
+> [!IMPORTANT]
+> Attach the same lakehouse you used in Part 1.
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb -->
 
@@ -201,7 +202,6 @@ plt.show()
 
 Perform feature engineering to generate new attributes based on current attributes:
 
-
 ```python
 df_clean["NewTenure"] = df_clean["Tenure"]/df_clean["Age"]
 df_clean["NewCreditsScore"] = pd.qcut(df_clean['CreditScore'], 6, labels = [1, 2, 3, 4, 5, 6])
@@ -247,7 +247,7 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 ## Next step
 
-Train and register machine learning models with  this data in [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
+Train and register machine learning models with this data in [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
 
 <!-- nbend -->
 

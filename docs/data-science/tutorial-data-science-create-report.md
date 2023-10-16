@@ -6,7 +6,7 @@ ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 10/12/2023
+ms.date: 10/16/2023
 ---
 
 # Part 5: Visualize predictions with a Power BI report

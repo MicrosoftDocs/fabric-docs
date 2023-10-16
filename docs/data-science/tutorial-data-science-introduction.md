@@ -29,24 +29,17 @@ The lifecycle of a Data science project typically includes (often, iteratively) 
 
 The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
 
-In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing taxicab trip data. You then build a machine learning model to predict trip duration at scale on a large dataset.
+In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing the churn status of 10000 customers at a bank. You then build a machine learning model to predict predict which bank customers are likely to leave.
 
 You'll learn to perform the following activities:
 
 1. Use the Fabric notebooks for data science scenarios.
-
 1. Ingest data into a Fabric lakehouse using Apache Spark.
-
 1. Load existing data from the lakehouse delta tables.
-
 1. Clean and transform data using Apache Spark.
-
 1. Create experiments and runs to train a machine learning model.
-
 1. Register and track trained models using MLflow and the Fabric UI.
-
 1. Run scoring at scale and save predictions and inference results to the lakehouse.
-
 1. Visualize predictions in Power BI using DirectLake.
 
 ## Architecture
