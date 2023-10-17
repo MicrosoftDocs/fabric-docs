@@ -23,23 +23,17 @@ In this tutorial, you'll create a report from the prediction data produced in [P
 This part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
-
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
-
 * [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
-
 * [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 ## Create a Power BI dataset
 
 Create a new Power BI dataset linked to the predictions data you produced in part 4:
 
-1. On the left, select **OneLake data hub**.
-1. Select the lakehouse that you used as part of the previous parts of the tutorial series.
-1. On the top ribbon, select Open.
-
-   :::image type="content" source="media/tutorial-data-science-create-report/open-lakehouse.png" alt-text="Screenshot shows opening the lakehouse.":::
-
+1. On the left, select your workspace.
+1. On the top left, select **Lakehouse** as a filter.
+1. Select the lakehouse that you used in the previous parts of the tutorial series.
 1. Select **New Power BI dataset** on the top ribbon.
 
    :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon.":::
