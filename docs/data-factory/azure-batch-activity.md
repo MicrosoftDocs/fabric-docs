@@ -33,12 +33,12 @@ To use an Azure Batch activity in a pipeline, complete the following steps:
 
    :::image type="content" source="media/azure-batch-activity/add-azure-batch-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Azure Batch activity highlighted.":::
 
-1. Select the new KQL activity on the pipeline editor canvas if it isn't already selected.
+1. Select the new Azure Batch activity on the pipeline editor canvas if it isn't already selected.
 
    :::image type="content" source="media/azure-batch-activity/azure-batch-activity-general-settings.png" alt-text="Screenshot showing the General settings tab of the Azure Batch activity.":::
 
 Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
-### KQL activity settings
+### Azure Batch activity settings
 
 1. Select the **Settings** tab, then
