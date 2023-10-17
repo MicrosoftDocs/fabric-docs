@@ -1,9 +1,9 @@
 ---
 title: KQL activity
 description: Learn how to add a KQL activity to a pipeline and use it to connect to an Azure Data Explorer instance and run a query in Kusto Query Language (KQL).
-ms.reviewer: xupxhou
-ms.author: jburchel
-author: jonburchel
+ms.reviewer: jburchel
+ms.author: abnarain
+author: nabhishek
 ms.topic: how-to
 ms.date: 10/17/2023
 ---
@@ -26,7 +26,7 @@ To use a KQL activity in a pipeline, complete the following steps:
 ### Creating the activity
 
 1. Create a new pipeline in your workspace.
-1. Search for Teams in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. 
+1. Search for KQL in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. 
 
    > [!NOTE]
    > You may need to expand the menu and scroll down to see the KQL activity as highlighted in the screenshot below.
