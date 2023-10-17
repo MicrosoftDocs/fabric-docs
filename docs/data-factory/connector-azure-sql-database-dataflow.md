@@ -12,13 +12,11 @@ ms.custom: template-how-to, build-2023
 
 You can connect to Azure SQL databases in Dataflow Gen2 using the Azure SQL database connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Connect to an Azure SQL database
 
 To connect to an Azure SQL database from a dataflow:
 
-1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
+1. From your workspace, select **New** > **Dataflow Gen2** to create a new dataflow.
 
    :::image type="content" source="./media/connector-azure-sql-database/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-azure-sql-database/select-open-dataflow.png":::
 

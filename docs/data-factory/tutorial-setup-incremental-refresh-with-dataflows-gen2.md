@@ -23,8 +23,6 @@ The high-level steps in this tutorial are as follows:
 - Add a query to the dataflow to filter the data based on the data destination.
 - (Optional) reload data using notebooks and pipelines.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you are using the diagram view in Dataflows Gen2. To check if you are using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.

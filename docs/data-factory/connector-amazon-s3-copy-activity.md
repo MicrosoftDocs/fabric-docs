@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Required permissions
 
 To copy data from Amazon S3, make sure you've been granted the following permissions for Amazon S3 object operations: `s3:GetObject` and `s3:GetObjectVersion`.

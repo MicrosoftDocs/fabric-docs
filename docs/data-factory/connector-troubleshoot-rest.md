@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the REST connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: RestSinkCallFailed
 
 - **Message**: `Rest Endpoint responded with Failure from server. Check the error from server:%message;`
