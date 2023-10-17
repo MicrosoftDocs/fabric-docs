@@ -51,7 +51,7 @@ The dataset contains churn status of 10,000 customers. It also includes attribut
 
 The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. 
 
-The event that defines the customer's churn is the closing of the customer's bank account. The column `exit` in the dataset refers to customer's abandonment. There isn't much context available about these attributes so you have to proceed without having background information about the dataset. The aim is to understand how these attributes contribute to the `exit` status.
+The event that defines the customer's churn is the closing of the customer's bank account. The column `exited` in the dataset refers to customer's abandonment. There isn't much context available about these attributes so you have to proceed without having background information about the dataset. The aim is to understand how these attributes contribute to the `exited` status.
 
 
 Example rows from the dataset:
@@ -88,12 +88,10 @@ This code downloads a publicly available version of the dataset and then stores 
 ```python
 import os, requests
 if not IS_CUSTOM_DATA:
-# Using synapse blob, this can be done in one line
-
 # Download demo data files into lakehouse if not exist
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
-    file_list = ["churn.csv"]
-    download_path = "/lakehouse/default/Files/churn/raw"
+    file_list = [DATA_FILE]
+    download_path = "{DATA_ROOT}/{DATA_FOLDER}/raw"
 
     if not os.path.exists("/lakehouse/default"):
         raise FileNotFoundError(
