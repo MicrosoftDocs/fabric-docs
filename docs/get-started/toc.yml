@@ -103,3 +103,5 @@ items:
   items:
     - name: Icons
       href: icons.md
+    - name: What's New? Archive
+      href: whats-new-archive.md
