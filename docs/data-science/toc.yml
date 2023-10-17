@@ -81,6 +81,10 @@ items:
         href: train-models-scikit-learn.md
       - name: Train models with SynapseML
         href: train-models-synapseml.md  
+      - name: Train interpretable models for classification
+        href: ./model-training/explainable-boosting-machines-classification.md
+      - name: Train interpretable models for regression
+        href: ./model-training/explainable-boosting-machines-regression.md
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
