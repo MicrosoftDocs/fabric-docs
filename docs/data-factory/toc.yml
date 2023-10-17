@@ -267,6 +267,8 @@
         href: if-condition-activity.md
       - name: Invoke Pipeline activity
         href: invoke-pipeline-activity.md
+      - name: KQL activity
+        href: kql-activity.md
       - name: Pipeline Lookup activity
         href: lookup-activity.md
       - name: Notebook activity
