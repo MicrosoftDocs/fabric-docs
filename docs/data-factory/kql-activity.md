@@ -47,13 +47,13 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Then provide a KQL query to execute against the selected database for the **Command** property. You can use dynamic content in the query by selecting the **Add dynamic content** link that appears when the text box is selected.
 
-   :::image type="content" source="media/kql-activity/kql-activity-settings.png" alt-text="Screenshot showign the Settings tab of the KQL activity highlighting the Command property and showing where its Add dynamic content link appears.":::
+   :::image type="content" source="media/kql-activity/kql-activity-settings.png" alt-text="Screenshot showing the Settings tab of the KQL activity highlighting the Command property and showing where its Add dynamic content link appears.":::
 
 1. Finally, specify a command timeout or leave the default timeout of 20 minutes. You can use dynamic content for this property too.
 
 ## Save and run or schedule the pipeline
 
-The KQL activity may typically be used with other activities. After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+The KQL activity might typically be used with other activities. After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
