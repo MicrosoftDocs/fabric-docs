@@ -36,8 +36,8 @@ You'll learn to perform the following activities:
 1. Use the Fabric notebooks for data science scenarios.
 1. Ingest data into a Fabric lakehouse using Apache Spark.
 1. Load existing data from the lakehouse delta tables.
-1. Clean and transform data using Apache Spark.
-1. Create experiments and runs to train a machine learning model.
+1. Clean and transform data using Apache Spark and Python based tools.
+1. Create experiments and runs to train different machine learning models.
 1. Register and track trained models using MLflow and the Fabric UI.
 1. Run scoring at scale and save predictions and inference results to the lakehouse.
 1. Visualize predictions in Power BI using DirectLake.
