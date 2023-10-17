@@ -1,6 +1,6 @@
 ---
 title: Lookup activity
-description: Learn how to add a Lookup activity to a pipeline and use it to look up data from a data source.
+description: Learn how to add a lookup activity to a pipeline and use it to look up data from a data source.
 ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
@@ -24,7 +24,7 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
-## Add a Lookup activity to a pipeline with UI
+## Add a lookup activity to a pipeline with UI
 
 To use a Lookup activity in a pipeline, complete the following steps:
 
