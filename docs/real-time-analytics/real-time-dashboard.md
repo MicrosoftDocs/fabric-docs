@@ -100,7 +100,7 @@ Parameters significantly improve dashboard rendering performance, and enable you
 
 ### Share the dashboard
 
-1. To share the dashboard link:
+To share the dashboard link:
     1. Select **Share** and then select **Copy link**
     1. In the **Dashboard permissions** window, select **Copy link**.
 

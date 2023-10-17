@@ -10,9 +10,9 @@ ms.date: 09/21/2023
 
 # Use parameters in Real-Time Dashboards
 
-Parameters are used as building blocks for filters in real-time dashboards. They're managed in the dashboard scope, and can be added to queries to filter the data presented by the underlying visual. A query can use one or more parameters.
+Parameters are used as building blocks for filters in Real-Time Dashboards. They're managed in the dashboard scope, and can be added to queries to filter the data presented by the underlying visual. A query can use one or more parameters.
 
-This document describes the creation and use of parameters and linked filters in Real-Time Dashboards. Parameters can be used to filter dashboard visuals either by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using [cross-filters](#cross-filters-parameters).
+This document describes the creation and use of parameters and linked filters in dashboards. Parameters can be used to filter dashboard visuals either by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using [cross-filters](#cross-filters-parameters).
 
 The query examples used in this article are based on the **StormEvents** table in the *Weather analytics* sample data available in the [samples gallery](sample-gallery.md#get-data).
 
@@ -23,7 +23,7 @@ The query examples used in this article are based on the **StormEvents** table i
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
-* A table, stat, or multi stat dashboard visual
+* A dashboard with visuals
 
 ## View parameters list
 
@@ -78,7 +78,17 @@ A parameter must be used in the query to make the filter applicable for that que
 
 ## Parameter types
 
-Several dashboard parameter types are supported. The following examples describe how to use parameters in a query for various parameter types.
+Several dashboard parameter types are supported, as follows:
+
+* [Default time range parameter](#default-time-range-parameter)
+* [Single-selection fixed-values parameters](#single-selection-fixed-values-parameters)
+* [Multiple-selection fixed-values parameters](#multiple-selection-fixed-values-parameters)
+* [Single-selection query-based parameters](#single-selection-query-based-parameters)
+* [Multiple-selection query-based parameters](#multiple-selection-query-based-parameters)
+* [Free text parameters](#free-text-parameters)
+* [Data source parameters](#data-source-parameters)
+
+The following examples describe how to use parameters in a query for various parameter types.
 
 ### Default time range parameter
 
@@ -397,7 +407,7 @@ Once drillthroughs are defined, you can use them to interact with your data. To 
 
 ## Use filter search for single and multiple selection filters
 
-In single and multiple selection filters, type the value that you want. The filter search presents only the recently retrieved values that match the search term.
+In single and multiple selection filters, type the value that you want. The filter updates to only show the values that match the search term.
 
 ## Related content
 
