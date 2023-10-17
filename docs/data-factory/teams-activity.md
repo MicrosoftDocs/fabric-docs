@@ -50,7 +50,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. The **Group chat** or **Team** and **Channel** dropdowns appear after you select where to post. Use them to select a group chat or team and channel where you want to post the message.
 
-1. Use the **Message** area to create a message. Dynamic expressions are fully supported, so you can incorporate any system or user variables, expressions, or functions to customize the message however necessary. To use dynamic expressions, select the **View in expression builder** link.
+1. Use the **Message** area to create a message. Dynamic expressions are supported allowing you to incorporate any system or user variables, expressions, or functions to customize the message however necessary. To use dynamic expressions, select the **View in expression builder** link below the message area.
 
    :::image type="content" source="media/teams-activity/edit-teams-message.png" alt-text="Screenshot showing the Teams settings configuration with a group chat selected and the message area displayed.":::
 
@@ -60,7 +60,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ## Save and run or schedule the pipeline
 
-You will typically want to use the Teams activity in conjunction with other activities, often as a status notification for the outcome of prior steps in a pipeline. After configuring any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline.  Select **Run** to run it directly, or **Schedule** to schedule it.  You can also view the run history here or configure other settings.
+The Teams activity is typically used with other activities, often as a status notification for the outcome of prior steps in a pipeline. After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
