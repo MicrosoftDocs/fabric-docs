@@ -12,7 +12,7 @@ ms.date: 09/21/2023
 
 Parameters are used as building blocks for filters in real-time dashboards. They're managed in the dashboard scope, and can be added to queries to filter the data presented by the underlying visual. A query can use one or more parameters.
 
-This document describes the creation and use of parameters and linked filters in real-time dashboards. Parameters can be used to slice and dice dashboard visuals either directly by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using [cross-filters](#cross-filters-parameters).
+This document describes the creation and use of parameters and linked filters in Real-Time Dashboards. Parameters can be used to filter dashboard visuals either by selecting [parameter values in the filter bar](#use-parameters-in-your-query) or by using [cross-filters](#cross-filters-parameters).
 
 The query examples used in this article are based on the **StormEvents** table in the *Weather analytics* sample data available in the [samples gallery](sample-gallery.md#get-data).
 
