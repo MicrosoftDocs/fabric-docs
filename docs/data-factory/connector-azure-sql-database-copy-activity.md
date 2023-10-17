@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.

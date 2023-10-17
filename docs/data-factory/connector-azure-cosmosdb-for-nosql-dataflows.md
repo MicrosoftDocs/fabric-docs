@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Next steps
 
 - [How to create an Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md)

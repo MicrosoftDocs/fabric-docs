@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the Azure Database for PostgreSQL connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: AzurePostgreSqlNpgsqlDataTypeNotSupported
 
 - **Message**: `The data type of the chosen Partition Column, '%partitionColumn;', is '%dataType;' and this data type is not supported for partitioning.`

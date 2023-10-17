@@ -7,7 +7,7 @@ ms.topic: troubleshooting
 ms.date: 9/13/2023
 ---
 
-# Data Factory data pipeline limitations in Microsoft Fabric (preview)
+# Data Factory data pipeline limitations in Microsoft Fabric
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 

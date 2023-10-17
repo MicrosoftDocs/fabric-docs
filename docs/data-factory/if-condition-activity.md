@@ -13,8 +13,6 @@ ms.date: 08/31/2023
 
 The If Condition activity in Data Factory for Microsoft Fabric provides the same functionality that an if statement provides in programming languages. It executes a set of activities when the condition evaluates to true and another set of activities when the condition evaluates to false.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to configure Binary format in Data Factory.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported capabilities
 
 Binary format is supported for the following activities and connectors as source and destination.

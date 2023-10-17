@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the delimited text format connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: DelimitedTextColumnNameNotAllowNull
 
 - **Message**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
