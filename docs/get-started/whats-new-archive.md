@@ -1,5 +1,5 @@
 ---
-title: What's new? Archive
+title: What's new? archive
 description: An archive of new feature announcements and documentation improvements for Microsoft Fabric.
 author: WilliamDAssafMSFT
 ms.author: wiassaf
@@ -8,7 +8,7 @@ ms.date: 10/17/2023
 ms.topic: whats-new
 ---
 
-# What's new in Microsoft Fabric? Archive
+# What's new in Microsoft Fabric? archive
 
 This archive page is periodically updated with an archival of content from [What's new in Microsoft Fabric?](whats-new.md). 
 
