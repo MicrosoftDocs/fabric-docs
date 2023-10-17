@@ -101,9 +101,11 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 This section summarizes recent improvements and features for [real-time analytics in Microsoft Fabric](../real-time-analytics/overview.md).
 
+<!--
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
 |May 2023|**What's New in Kusto – Build 2023!**|Announcing the [Synapse Real Time Analytics in Microsoft Fabric (Preview)](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/what-s-new-in-kusto-build-2023/ba-p/3829467)!|
+-->
 
 #### Real-time analytics samples and guidance
 
