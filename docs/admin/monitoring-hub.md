@@ -20,7 +20,7 @@ ms.date: 05/23/2023
 
 ## Prerequisites
 
-Verify that the [new workspace experience](/power-bi/admin/service-admin-portal-workspace#create-workspaces-new-workspace-experience) is enabled.
+Verify that the [new workspace experience](portal-workspace.md#create-workspaces-new-workspace-experience) is enabled.
 
 ## Permissions required
 

@@ -12,10 +12,10 @@ ms.date: 09/08/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 > [!IMPORTANT]
-> The switches that control git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](./fabric-switch.md) is turned on. If Fabric is disabled, git integration can't work regardless of the status of these switches.
+> The switches that control git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](fabric-switch.md) is turned on. If Fabric is disabled, git integration can't work regardless of the status of these switches.
 
 ## Users can synchronize workspace items with their Git repositories (Preview)
 
@@ -40,4 +40,4 @@ Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md
 
 ## Next steps
 
-- [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

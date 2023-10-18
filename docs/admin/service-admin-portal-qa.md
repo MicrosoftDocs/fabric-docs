@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Q&A tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Review questions
 
@@ -33,4 +33,4 @@ To learn about synonyms, see [Field synonyms](/power-bi/natural-language/q-and-a
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)
