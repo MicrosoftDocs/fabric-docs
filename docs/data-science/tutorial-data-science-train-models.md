@@ -1,6 +1,6 @@
 ---
 title: "Tutorial: Train and register machine learning models"
-description: In this third part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
+description: In this third part of the tutorial series, learn how to train machine learning models to predict whether bank customers would stop doing business with the bank or not, and then register the trained models.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
@@ -11,7 +11,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 3: Train and register a machine learning model
 
-In this tutorial, you'll learn to train a machine learning model to predict which bank customers are likely to leave.
+In this tutorial, you'll learn to train multiple machine learning models to select the best one in order to predict which bank customers are likely to leave.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -20,9 +20,9 @@ In this tutorial, you'll:
 > [!div class="checklist"]
 >
 > * Train Random Forrest and LightGBM models.
-> * Use Microsoft Fabric's native integration with the MLflow framework to log the used hyperaparameters and evaluation metrics.
-> * Register the trained model.
-> * Assess the performances of the trained models on the validation dataset.
+> * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
+> * Register the trained ML model.
+> * Assess the performances of the trained ML models on the validation dataset.
 
 
 [MLflow](https://mlflow.org/docs/latest/index.html) is an open source platform for managing the machine learning lifecycle with features like Tracking, Models, and Model Registry. MLflow is natively integrated with the Fabric Data Science experience.
@@ -47,11 +47,11 @@ This is part 3 of 5 in the tutorial series. To complete this tutorial, first com
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/3-train-evaluate.ipynb -->
 
-## Introduction to SMOTE
+## Install custom libraries
 
-The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. Learn more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
+For this notebook, you'll install the Imbalanced-learn (imported as `imblearn`) using `%pip install`. Imbalanced-learn is a library for Synthetic Minority Oversampling Technique (SMOTE) which is used when dealing with imbalanced datasets. Note that the PySpark kernel will be restarted after `%pip install`, thus you'll need to install the library before you run any other cells. 
 
-You'll access SMOTE using the `imblearn` library. Install it now:
+You'll access SMOTE using the `imblearn` library. Install it now using the in-line installation capabilities (e.g., `%pip`, `%conda`).
 
 ```python
 # Install imblearn for SMOTE using pip
@@ -60,12 +60,11 @@ You'll access SMOTE using the `imblearn` library. Install it now:
 
 > [!TIP]
 >
-> When you install a library in a notebook, it is only available for the duration of the notebook session. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](python-guide/python-library-management.md) to make it available to all notebooks in your workspace without further installs.
+> When you install a library in a notebook, it is only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](python-guide/python-library-management.md) to make it available to all notebooks in your workspace without further installs.
 
 ## Load the data
 
-Load the delta table from the lakehouse in order to read the cleaned data you created in the previous notebook.
-
+Prior to training any ML model, you need to load the delta table from the lakehouse in order to read the cleaned data you created in the previous notebook.
 
 ```python
 import pandas as pd
@@ -75,8 +74,7 @@ df_clean = spark.read.format("delta").load("Tables/df_clean").toPandas()
 
 ### Generate experiment for tracking and logging the model using MLflow
 
-This section demonstrates how to generate an experiment, specify model and training parameters as well as scoring metrics, train the models, log them, and save the trained models for later use.
-
+This section demonstrates how to generate an experiment, specify the ML model and training parameters as well as scoring metrics, train the ML models, log them, and save the trained ML models for later use.
 
 ```python
 import mlflow
@@ -86,7 +84,7 @@ EXPERIMENT_NAME = "bank-churn-experiment"  # MLflow experiment name
 
 Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
 
-All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about  autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 
 ### Set experiment and autologging specifications
@@ -98,7 +96,7 @@ mlflow.autolog(exclusive=False)
 
 ## Import scikit-learn and LightGBM
 
-With your data in place, you can now define the model. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
+With your data in place, you can now define the machine learning models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
 
 
 ```python
@@ -111,8 +109,7 @@ from sklearn.metrics import accuracy_score, f1_score, precision_score, confusion
 
 ## Prepare training, validation and test datasets
 
-Use the `train_test_split` function from `scikit-learn` to split the data into training and test sets.
-
+Use the `train_test_split` function from `scikit-learn` to split the data into training, validation, and test sets.
 
 ```python
 y = df_clean["Exited"]
@@ -129,7 +126,6 @@ X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.
 
 Save the test data to the delta table for use in the next notebook.
 
-
 ```python
 table_name = "df_test"
 # Create PySpark DataFrame from Pandas
@@ -140,7 +136,11 @@ print(f"Spark test DataFrame saved to delta table: {table_name}")
 
 ### Apply SMOTE to the training data to synthesize new samples for the minority class
 
-SMOTE should only be applied to the training dataset. You must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the model will perform on the original data, which is representing the situation in production.
+The data expolration in part 2 showed that out of the 10000 data points corresponding to 10000 customers, only 2037 customers (around 20%) have left the bank. This indicates that the dataset is highly imbalanced. The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class. Learn more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
+
+> [!TIP]
+>
+> Note that SMOTE should only be applied to the training dataset. You must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the ML model will perform on the original data, which is representing the situation in production.
 
 
 ```python
@@ -217,7 +217,7 @@ with mlflow.start_run(run_name="lgbm_sm") as run:
 
 ## Experiments artifact for tracking model performance
 
-The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained models, their runs, performance metrics and model parameters are logged. 
+The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained ML models, their runs, performance metrics, and model parameters are logged. 
 
 To view your experiments:
 1. On the left panel, select your workspace.
@@ -227,9 +227,9 @@ To view your experiments:
 
 ## Assess the performances of the trained models on the validation dataset
 
-Once done with model training, you can assess the performance of trained models in two ways.
+Once done with ML model training, you can assess the performance of trained machine learning models in two ways.
 
-- Open the saved experiment from the workspace, load the models, and then assess the performance of the loaded models on the validation dataset.
+- Open the saved experiment from the workspace, load the machine learning models, and then assess the performance of the loaded models on the validation dataset.
 
     ```python
     # Define run_uri to fetch the model
@@ -243,7 +243,7 @@ Once done with model training, you can assess the performance of trained models 
     ypred_lgbm1_sm_v1 = load_model_lgbm1_sm.predict(X_val) # LightGBM
     ```
 
-- Directly assess the performance of the trained models on the validation dataset.
+- Directly assess the performance of the trained machine learning models on the validation dataset.
 
     ```python
     ypred_rfc1_sm_v2 = rfc1_sm.predict(X_val) # Random Forest with max depth of 4 and 4 features
@@ -256,7 +256,6 @@ Depending on your preference, either approach is fine and should offer identical
  ### Show True/False Positives/Negatives using the Confusion Matrix
 
 Next, you'll develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification using the validation dataset. The confusion matrix can be plotted using SynapseML tools as well, which is shown in Fraud Detection sample that is available [here](https://aka.ms/samples/frauddectection).
-
 
 ```python
 import seaborn as sns
