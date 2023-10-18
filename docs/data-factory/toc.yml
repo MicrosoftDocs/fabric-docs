@@ -41,6 +41,18 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Access database
+      items:
+      - name: Overview
+        href: connector-access-database-overview.md
+      - name: Set up your connection
+        href: connector-access-database.md    
+    - name: Amazon Redshift
+      items:
+      - name: Overview
+        href: connector-amazon-redshift-overview.md
+      - name: Set up your connection
+        href: connector-amazon-redshift.md    
     - name: Amazon S3
       items:
       - name: Overview
@@ -87,6 +99,18 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
+    - name: Azure Databricks
+      items:
+      - name: Overview
+        href: connector-azure-databricks-overview.md
+      - name: Set up your connection
+        href: connector-azure-databricks.md
+    - name: Azure HDInsight on AKS Trino
+      items:
+      - name: Overview
+        href: connector-azure-hdinsight-on-aks-trino-overview.md
+      - name: Set up your connection
+        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Overview
