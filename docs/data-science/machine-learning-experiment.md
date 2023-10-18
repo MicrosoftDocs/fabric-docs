@@ -125,7 +125,7 @@ mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG" ], max_results=1, ord
 
 ### Compare runs within a Fabric notebook
 
-Users can leverage the MLFlow authoring widget within Fabric notebooks to track MLflow runs specifically generated within each notebook cell. This allows users to track their runs, associated metrics, parameters, and properties right down to the individual cell level.
+Users can leverage the MLFlow authoring tool within Fabric notebooks to track MLflow runs generated within each notebook cell. This allows users to track their runs, associated metrics, parameters, and properties down to the individual cell level.
 
 To obtain a visual comparison, users can also switch to the **Run comparison** view. This presents the data graphically, aiding in the quick identification of patterns or deviations across different runs.
 
