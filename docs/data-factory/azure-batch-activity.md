@@ -41,4 +41,16 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 ### Azure Batch activity settings
 
-1. Select the **Settings** tab, then
+Select the **Settings** tab, then you can choose an existing or create a new **Azure Batch connection**, provide a **Command** to be executed, and a **Resource connection** to a storage account. You can also specify a specific **Folder path** within the storage account and a **Retention time in days** for data to be retained there, as well as add extended properties of your own.
+
+:::image type="content" source="media/azure-batch-activity/azure-batch-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Batch activity.":::
+
+## Save and run or schedule the pipeline
+
+After you configure any other activities required for your pipeline, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
+
+:::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
+
+## Next steps
+
+[How to monitor pipeline runs](monitor-pipeline-runs.md)
