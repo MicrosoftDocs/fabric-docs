@@ -96,7 +96,7 @@ mlflow.autolog(exclusive=False)
 
 ## Import scikit-learn and LightGBM
 
-With your data in place, you can now define the ML models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
+With your data in place, you can now define the machine learning models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
 
 
 ```python
