@@ -138,7 +138,7 @@ S3 shortcuts must point to the https endpoint for the S3 bucket.
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> You don not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+> You do not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
 > 
 > Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
