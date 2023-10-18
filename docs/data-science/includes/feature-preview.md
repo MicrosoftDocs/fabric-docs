@@ -1,6 +1,6 @@
 ---
-title: include file for generic preview information
-description: include file for generic preview information
+title: Include file for generic preview information
+description: Include file for generic preview information
 author: Blackmist
 ms.topic: include
 ms.date: 03/17/2021
