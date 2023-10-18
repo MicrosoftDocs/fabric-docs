@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create workspaces (new workspace experience)
 
@@ -58,4 +58,4 @@ For more information, see [Prevent My workspace owners from reassigning their My
 
 ## Next steps
 
-[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+[About tenant settings](tenant-settings-index.md)

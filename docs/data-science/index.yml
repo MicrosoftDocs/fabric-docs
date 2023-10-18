@@ -52,9 +52,9 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Discover relationships in a Power BI dataset using Semantic Link
+          - text: Discover relationships in a Power BI dataset using semantic link
             url: tutorial-power-bi-relationships.md 
-          - text: Analyze functional dependencies in a Power BI dataset using Semantic Link
+          - text: Analyze functional dependencies in a Power BI dataset using semantic link
             url: tutorial-power-bi-dependencies.md   
 
   # Card 
@@ -142,11 +142,11 @@ landingContent:
           url: /python/api/semantic-link/overview-semantic-link
 
 # Card 
-  - title: Using Semantic Link
+  - title: Using semantic link
     linkLists:
       - linkListType: overview
         links:
-          - text: What is Semantic Link?
+          - text: What is semantic link?
             url: semantic-link-overview.md
       - linkListType: how-to-guide
         links:

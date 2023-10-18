@@ -4,7 +4,7 @@ description: A known issue is posted where a notebook fails to load after worksp
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 08/03/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-467
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-467
 
 If you migrate your workspace that contains Reflex or Kusto items to another capacity, may see issues loading a notebook within that workspace.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Data Engineering
 

@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # OneLake shortcuts

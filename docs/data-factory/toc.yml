@@ -7,6 +7,8 @@
       href: data-factory-overview.md
     - name: Data Factory training
       href: /training/paths/get-started-fabric
+    - name: What's new in Data Factory
+      href: whats-new.md
   - name: Get started
     items:
     - name: Create a dataflow
@@ -17,6 +19,10 @@
       href: transform-data.md
     - name: Decide - Copy activity, dataflow, or Spark?
       href: ../get-started/decision-guide-pipeline-dataflow-spark.md
+    - name: How to access on-premises Data
+      href: how-to-access-on-premises-data.md
+    - name: Monitoring activity in Data Factory
+      href: monitor-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
@@ -35,28 +41,28 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
-    - name: How to access on-premises Data
-      href: how-to-access-on-premises-data.md
     - name: Amazon S3
       items:
       - name: Overview
         href: connector-amazon-s3-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-amazon-s3.md
       - name: Configure in Data pipeline Copy activity
         href: connector-amazon-s3-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-amazon-s3-dataflows.md
+    - name: Azure Analysis Services
+      items:
+      - name: Overview
+        href: connector-azure-analysis-services-overview.md
+      - name: Set up your connection
+        href: connector-azure-analysis-services.md
     - name: Azure Blob Storage
       items:
       - name: Overview
         href: connector-azure-blob-storage-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-azure-blob-storage.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-blob-storage-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-blob-storage-dataflows.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
@@ -261,6 +267,8 @@
         href: if-condition-activity.md
       - name: Invoke Pipeline activity
         href: invoke-pipeline-activity.md
+      - name: KQL activity
+        href: kql-activity.md
       - name: Pipeline Lookup activity
         href: lookup-activity.md
       - name: Notebook activity
@@ -273,6 +281,8 @@
         href: stored-procedure-activity.md
       - name: Switch activity
         href: switch-activity.md
+      - name: Teams activity
+        href: teams-activity.md
       - name: Until activity
         href: until-activity.md
       - name: Wait activity
@@ -343,8 +353,6 @@
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
-    - name: What's new in Data Factory
-      href: whats-new.md
     - name: Frequently asked questions
       href: frequently-asked-questions.yml
     - name: Gateway considerations for data destinations in Dataflow Gen2

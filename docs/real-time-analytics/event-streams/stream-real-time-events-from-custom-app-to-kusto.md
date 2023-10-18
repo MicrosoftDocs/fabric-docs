@@ -212,7 +212,7 @@ To verify the event data in your new KQL database:
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" alt-text="Screenshot that shows selections for displaying 100 records for a query table." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100-menu.png" :::
 
-1. Confirm that the data appears in the lower section of the **Check your data** panel.
+1. Confirm that the data appears in the lower section of the **Explore your data** panel.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100.png" alt-text="Screenshot that shows the top 100 records in a KQL table." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-table-top-100.png" :::
 
