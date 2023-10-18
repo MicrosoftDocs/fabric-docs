@@ -10,7 +10,7 @@ ms.date: 10/13/2023
 
 # Train Explainable Boosting Machines - Regression (Preview)
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
@@ -125,7 +125,7 @@ interpret.show(explanation)
 
 The term "importances" represents the mean absolute contribution (score) of each term (feature or interaction) towards predictions. These contributions are averaged across the training dataset, taking into account the number of samples in each bin and sample weights (if applicable). The top 15 most important terms are displayed in the explanation.
 
-:::image type="content" source="../media/model-training/global-explanations-ebm.png" alt-text="Screenshot of global explanations." lightbox="../media/model-training/global-explanations-ebm.png":::
+:::image type="content" source="media/model-training/global-explanations-ebm.png" alt-text="Screenshot of global explanations." lightbox="media/model-training/global-explanations-ebm.png":::
 
 ## Local explanations
 
@@ -175,4 +175,4 @@ Feature scores are [-0.06610139373422304, -0.06386890875478829, 0.00678462951334
 ## Next steps
 
 - [InterpretML Explainable Boosting Machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
-- [Track models with MLFlow](../mlflow-autologging.md)
+- [Track models with MLFlow](mlflow-autologging.md)
