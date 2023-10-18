@@ -42,7 +42,7 @@ In the monitoring workspace, you can use the [Feature Usage and Adoption](featur
 
 There are several ways you can manage access to content of the admin monitoring workspace. If you're the admin of the workspace, you have a *member* workspace role and you can grant access to any of its items with or without share and build permissions.
 
-* **Workspace** - Learn how to to give users access to the workspace in [manage workspace](../admin/portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
+* **Workspace** - Learn how to to give users access to the workspace in [manage workspace](portal-workspaces.md). You can only grant other users a viewer role. Once a viewer role is provided, it can't be taken away.
 
 * **Report** - You can [share a report](/power-bi/connect-data/service-datasets-share) with other users.
 

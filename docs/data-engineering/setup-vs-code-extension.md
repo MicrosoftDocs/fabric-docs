@@ -22,7 +22,7 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
 - [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
