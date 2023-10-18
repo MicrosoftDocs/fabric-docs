@@ -87,5 +87,4 @@ The tables below list the data that is shared with Microsoft 365 services.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

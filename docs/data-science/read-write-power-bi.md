@@ -50,6 +50,8 @@ To read data from Power BI datasets:
 1. List the available Power BI datasets in your workspace.
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
     import sempy.fabric as fabric
     
     df_datasets = fabric.list_datasets()
@@ -59,6 +61,10 @@ To read data from Power BI datasets:
 1. List the tables available in the _Customer Profitability Sample_ Power BI dataset.
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     df_tables = fabric.list_tables("Customer Profitability Sample", include_columns=True)
     df_tables
     ```
@@ -68,6 +74,10 @@ To read data from Power BI datasets:
    > In the following code, we've specified the workspace for SemPy to use for accessing the dataset. You can replace `Your Workspace` with the name of the workspace where you uploaded the dataset (from the [Upload the dataset into your workspace](#upload-the-dataset-into-your-workspace) section).
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     df_measures = fabric.list_measures("Customer Profitability Sample", workspace="Your Workspace")
     ```
 
@@ -76,6 +86,10 @@ To read data from Power BI datasets:
 1. Read the _Customer_ table from the _Customer Profitability Sample_ Power BI dataset.
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     df_table = fabric.read_table("Customer Profitability Sample", "Customer")
     df_table
     ```
@@ -83,6 +97,10 @@ To read data from Power BI datasets:
 1. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     df_measure = fabric.evaluate_measure(
         "Customer Profitability Sample",
         "Total Revenue",
@@ -93,6 +111,10 @@ To read data from Power BI datasets:
 1. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     filters = {
         "State[Region]": ["East", "Central"],
         "State[State]": ["FLORIDA", "NEW YORK"]
@@ -108,6 +130,10 @@ To read data from Power BI datasets:
 1. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
+    import sempy.fabric as fabric
+
     df_dax = fabric.evaluate_dax(
         "Customer Profitability Sample",
         """
@@ -146,6 +172,8 @@ To read data from Power BI datasets:
 1. Alternatively, you can add measures to data retrieved from external sources. This approach combines three tasks: it resolves column names to Power BI dimensions, defines group by columns and filters the measure. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
 
     ```python
+    # %pip and import only needs to be done once per notebook
+    %pip install semantic-link
     from sempy.fabric import FabricDataFrame
     
     df = FabricDataFrame({
@@ -175,7 +203,14 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
 
     ```Python
     spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+
+    # Optionally configure the workspace ID for the pbi catalog
+    # spark.conf.set("spark.sql.catalog.pbi.workspace", "212598c9-a3bf-441e-a6f2-2034281e7f18")
     ```
+
+   > [!TIP]
+   > The Semantic Link Spark native connector is pre-installed on Fabric and does **not** require the `SemPy` Python libray to be installed.
+   > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
 
 1. List tables of all Power BI datasets in the workspace, using PySpark.
 
