@@ -23,7 +23,7 @@ To get started, you must complete the following prerequisites:
 
 To use an Azure Batch activity in a pipeline, complete the following steps:
 
-### Creating the activity
+### Create the activity
 
 1. Create a new pipeline in your workspace.
 1. Search for Azure Batch in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
