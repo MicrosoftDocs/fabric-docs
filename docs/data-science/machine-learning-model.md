@@ -23,7 +23,7 @@ In [MLflow](https://mlflow.org/), an ML model can include multiple model version
 
 In MLflow, machine learning models include a standard packaging format. This format allows use of those models in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention to save a model in different “flavors” that different downstream tools can understand.
 
-The user experience can directly create a ML model from the user experience. The MLflow API can also directly create a ML model.
+You can directly create an ML model from the user experience. The MLflow API can also directly create a ML model.
 
 To create a ML model from the user experience, you can:
 
