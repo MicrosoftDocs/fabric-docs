@@ -10,11 +10,11 @@ ms.date: 10/13/2023
 
 # Train Explainable Boosting Machines - Regression (Preview)
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
-In SynapseML, you can use a scalable implementation of Explainable Boosting Machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of Explainable Boosting Machines within Microsoft Fabric by utilizing Apache Spark.
+In SynapseML, you can use a scalable implementation of Explainable Boosting Machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of Explainable Boosting Machines within Microsoft Fabric by utilizing Apache Spark. Using Explainable Boosting Machines with Microsoft Fabric is currently in preview.
+
+[!INCLUDE [feature-preview](../includes/feature-preview.md)]
 
 ## Benefits of Explainable Boosting Machines
 
