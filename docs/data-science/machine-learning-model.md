@@ -1,12 +1,11 @@
 ---
 title: Machine learning model
 description: Learn how to create machine learning models, manage versions within a model, track models, and apply a model.
-author: nelgson
-ms.author: negust
+author: midesa
 ms.reviewer: franksolomon
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/17/2023
 
 ms.search.form: Create New Model, Model Comparison
 ---
@@ -17,15 +16,15 @@ A machine learning (ML) model is a file trained to recognize certain types of pa
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In [MLflow](https://mlflow.org/), an ML model can include multiple model versions. Each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model versions.
+In [MLflow](https://mlflow.org/), an ML model can include multiple model versions. Here, each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model versions.
 
-## Create a ML model
+## Create an ML model
 
 In MLflow, machine learning models include a standard packaging format. This format allows use of those models in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention to save a model in different “flavors” that different downstream tools can understand.
 
-You can directly create an ML model from the user experience. The MLflow API can also directly create a ML model.
+The user experience can directly create an ML model from the user experience. The MLflow API can also directly create an ML model.
 
-To create an ML model from the user experience, follow these steps:
+To create an ML model from the user experience, you can:
 
 1. Create a new data science workspace, or select an existing data science workspace.
 1. From the **+ New** dropdown, select **Model**. This creates an empty model in your data science workspace.
@@ -46,7 +45,7 @@ print("Name: {}".format(mv.name))
 print("Version: {}".format(mv.version))
 ```
 
-## Manage versions within a model
+## Manage versions within an ML model
 
 A machine learning model contains a collection of model versions for simplified tracking and comparison. Within a model, a data scientist can navigate across various model versions to explore the underlying parameters and metrics. Data scientists can also make comparisons across model versions to identify whether or not newer models might yield better results.
 
@@ -94,9 +93,9 @@ for rm in client.list_registered_models():
     pprint(dict(rm), indent=4)
 ```
 
-## Apply the ML model
+## Apply ML models
 
-Once you train a model on a dataset, you can provide new data to that model to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
+Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
 
 ## Next steps
 
