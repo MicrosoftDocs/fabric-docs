@@ -25,7 +25,7 @@ In MLflow, machine learning models include a standard packaging format. This for
 
 You can directly create an ML model from the user experience. The MLflow API can also directly create a ML model.
 
-To create a ML model from the user experience, you can:
+To create an ML model from the user experience, follow these steps:
 
 1. Create a new data science workspace, or select an existing data science workspace.
 1. From the **+ New** dropdown, select **Model**. This creates an empty model in your data science workspace.
