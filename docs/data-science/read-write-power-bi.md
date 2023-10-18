@@ -82,8 +82,8 @@ To read data from Power BI datasets:
 
     > [!NOTE]
     > Data is retrieved using XMLA and therefore requires at least XMLA read-only to be enabled (see [details](/power-bi/enterprise/service-premium-connect-tools)).
-    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
-    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+    > The amount of data retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) running the notebook.
+    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 2. Evaluate the _Total Revenue_ measure per customer's state and date.
 
@@ -98,8 +98,8 @@ To read data from Power BI datasets:
     > [!NOTE]
     > By default data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
     > It is furthermore **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
-    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+    > The amount of data retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) running the notebook.
+    > All requests are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
 
