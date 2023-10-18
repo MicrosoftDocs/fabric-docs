@@ -96,7 +96,7 @@ for rm in client.list_registered_models():
 
 ## Apply the ML model
 
-Once you train a model on a data set, you can apply that model to data it never saw to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
+Once you train a model on a dataset, you can provide new data to that model to generate predictions. We call this model use technique **scoring** or **inferencing**. For more information about [!INCLUDE [product-name](../includes/product-name.md)] model scoring, see the next section.
 
 ## Next steps
 
