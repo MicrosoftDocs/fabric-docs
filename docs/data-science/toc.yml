@@ -179,6 +179,10 @@ items:
     href: r-overview.md
   - name: Tutorials
     items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
     - name: Avocado price prediction
       href: r-avocado.md
     - name: Flight delay prediction
