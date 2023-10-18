@@ -20,7 +20,7 @@ In this tutorial, you'll:
 > [!div class="checklist"]
 >
 > * Train Random Forrest and LightGBM models.
-> * Use Microsoft Fabric's native integration with the MLflow framework to log the trained ML models, the used hyperaparameters, and evaluation metrics.
+> * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
 > * Register the trained ML model.
 > * Assess the performances of the trained ML models on the validation dataset.
 
