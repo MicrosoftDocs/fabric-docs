@@ -85,7 +85,7 @@ flight_data <-
 
 Before you start building up your model, let’s take a quick look at a few specific variables that are important for both preprocessing and modeling.
 
-Notice that the variable called `arr_delay` is a factor variable. iIt's important that your outcome variable for training a logistic regression model is a factor.
+Notice that the variable called `arr_delay` is a factor variable. It's important that your outcome variable for training a logistic regression model is a factor.
 
 ```R
 glimpse(flight_data)

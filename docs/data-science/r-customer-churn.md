@@ -43,7 +43,7 @@ The main steps in this tutorial are
 
 ## Step 1: Install Custom Libraries
 
-When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages`and `devtools::install_version`. Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
+When developing a machine learning model or doing ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages`and `devtools::install_version`. Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
 
 In this tutorial, you will use `install.packages()` to install the `imbalance` and `randomForest` libraries. Set `quiet` to `TRUE` to make output more concise:
 
@@ -289,7 +289,7 @@ for (item in attr_list[5:6]) {
 
 ### Distribution of numerical attributes
 
-Show the the frequency distribution of numerical attributes using histogram.
+Show the frequency distribution of numerical attributes using histogram.
 
 ```r
 # Set the overall layout of the graphics window
@@ -308,7 +308,7 @@ for (item in numeric_variables[1:2]) {
 }
 ```
 
-:::image type="content" source="media/r-customer-churn/histogram.png" alt-text="Graph shows distributon of CreditScore and Age.":::
+:::image type="content" source="media/r-customer-churn/histogram.png" alt-text="Graph shows distribution of CreditScore and Age.":::
 
 ```r
 # Set the overall layout of the graphics window

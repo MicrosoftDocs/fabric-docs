@@ -43,9 +43,9 @@ The main steps in this tutorial are
 
 ## Step 1: Install custom libraries
 
-When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages`and `devtools::install_version`. Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
+When developing a machine learning model or doing ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages`and `devtools::install_version`. Alternatively, you could install the required libraries into the workspace, by navigating into the workspace setting to find Library management.
 
-For this notebook, you'll use `install.packages()` to install Imbalanced-learn (imported as `imbalance`).  Set `quiet` to `TRUE` to make output more concise.
+For this notebook, you'll use `install.packages()` to install imbalanced-learn (imported as `imbalance`).  Set `quiet` to `TRUE` to make output more concise.
 
 
 ```r

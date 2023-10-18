@@ -13,7 +13,7 @@ ms.search.form: R Language
 # Tutorial: Use R to predict avocado price
 
 
-This articles shows an end to end example of using R to analyze, visualize the avocado prices in the US, and predict future avocado prices.
+This article shows an end to end example of using R to analyze, visualize the avocado prices in the US, and predict future avocado prices.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
