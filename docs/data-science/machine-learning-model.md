@@ -17,7 +17,7 @@ A machine learning (ML) model is a file trained to recognize certain types of pa
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In [MLflow](https://mlflow.org/), a ML model can include multiple model versions. Here, each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model versions.
+In [MLflow](https://mlflow.org/), an ML model can include multiple model versions. Each version can represent a model iteration. In this article, you learn how to interact with ML models to track and compare model versions.
 
 ## Create a ML model
 
