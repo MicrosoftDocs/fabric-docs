@@ -243,7 +243,7 @@ Once done with ML model training, you can assess the performance of trained ML m
     ypred_lgbm1_sm_v1 = load_model_lgbm1_sm.predict(X_val) # LightGBM
     ```
 
-- Directly assess the performance of the trained ML models on the validation dataset.
+- Directly assess the performance of the trained machine learning models on the validation dataset.
 
     ```python
     ypred_rfc1_sm_v2 = rfc1_sm.predict(X_val) # Random Forest with max depth of 4 and 4 features
