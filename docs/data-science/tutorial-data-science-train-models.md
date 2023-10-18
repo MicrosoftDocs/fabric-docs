@@ -229,7 +229,7 @@ To view your experiments:
 
 Once done with ML model training, you can assess the performance of trained ML models in two ways.
 
-- Open the saved experiment from the workspace, load the ML models, and then assess the performance of the loaded ML models on the validation dataset.
+- Open the saved experiment from the workspace, load the machine learning models, and then assess the performance of the loaded models on the validation dataset.
 
     ```python
     # Define run_uri to fetch the model
