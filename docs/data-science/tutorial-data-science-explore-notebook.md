@@ -12,7 +12,9 @@ ms.date: 10/16/2023
 
 # Tutorial Part 2: Explore and visualize data using Microsoft Fabric notebooks
 
-In this tutorial, you'll use `seaborn`, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about `seaborn`, see [`seaborn``: statistical data visualization](https://seaborn.pydata.org/).  
+In this tutorial, you'll learn how to conduct exploratory data analysis (EDA) to examine and investigate the data while summarizing its key characteristics through the use of data visualization techniques.
+
+In particualr, you'll use `seaborn`, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about `seaborn`, see [Seaborn: Statistical Data Visualization](https://seaborn.pydata.org/).  
 
 You'll also use [Data Wrangler](data-wrangler.md), a notebook-based tool that provides you with an immersive experience to conduct exploratory data analysis and cleaning.
 
@@ -22,8 +24,8 @@ The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
-> 1. Read data stored from a delta table in the lakehouse.
-> 1. Convert a Spark dataframe to Pandas dataframe, which python visualization libraries support.
+> 1. Read the data stored from a delta table in the lakehouse.
+> 1. Convert a Spark DataFrame to Pandas DataFrame, which python visualization libraries support.
 > 1. Use Data Wrangler to perform initial data cleaning and transformation.
 > 1. Perform exploratory data analysis using `seaborn`.
 
@@ -31,7 +33,7 @@ The main steps in this tutorial are:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-This part 2 of 5 in the tutorial series. To complete this tutorial, first complete:
+This is part 2 of 5 in the tutorial series. To complete this tutorial, first complete:
 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 
@@ -50,7 +52,6 @@ This part 2 of 5 in the tutorial series. To complete this tutorial, first comple
 
 Read raw data from the **Files** section of the lakehouse. You uploaded this data in the previous notebook. Make sure you have attached the same lakehouse you used in Part 1 to this notebook before you run this code.
 
-
 ```python
 df = (
     spark.read.option("header", True)
@@ -64,15 +65,13 @@ df = (
 
 Convert the spark DataFrame to pandas DataFrame for easier processing and visualization.
 
-
 ```python
 df = df.toPandas()
 ```
 
 ### Display raw data
 
-Explore the raw data with `display`, do some basic statistics and show chart views. You first need to import required libraries for data visualization such as `seaborn`, which is a Python data visualization library to provide a high-level interface for building visuals on DataFrames and arrays. Learn more about [`seaborn`](https://seaborn.pydata.org/). 
-
+Explore the raw data with `display`, do some basic statistics and show chart views. Note that you first need to import the required libraries such as `Numpy`, `Pnadas`, `Seaborn`, and 'Matplotlib` for data analysis and visualization.
 
 ```python
 import seaborn as sns
@@ -117,6 +116,7 @@ df_clean = clean_data(df.copy())
 df_clean.head()
 ```
 
+Depending on the size of the dataset, you can choose to use all the data or a subset of it for training.
 
 ```python
 # If you're working with a sample, get the sample back now
@@ -212,11 +212,14 @@ df_clean["NewEstSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels 
 
 ## Use Data Wrangler to perform one-hot encoding
 
-Data Wrangler can also be used to perform one-hot encoding.  To do so, re-open Data Wrangler.  This time, select the `df_clean` data. Then select **One-hot encode** under **Formulas**.  
+Data Wrangler can also be used to perform one-hot encoding.  To do so, re-open Data Wrangler. This time, select the `df_clean` data.
 
-Or use this code:
+1. Expand **Formulas** and select **One-hot encode**.
+2. A panel appears for you to select the list of columns you want to perform one-hot encoding on. Select **Geography** and **Gender**..
 
+You could copy the generated code, close Data Wrangler to return to the notebook, then paste into a new cell. Or, select **Add code to notebook** at the top left to close Data Wrangler and add the code automatically.  
 
+If you didn't use Data Wrangler, you can instead use this next code cell:
 
 ```python
 # use either this cell or the one created from Data Wrangler.  Not both.
