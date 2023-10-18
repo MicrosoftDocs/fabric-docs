@@ -5,8 +5,7 @@ ms.reviewer: wiassaf
 ms.author: stevehow
 author: realAngryAnalytics
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/18/2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Workload management
@@ -54,6 +53,12 @@ When pressure subsides, backend topology scales back down and releases resource 
 In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], loading activities are provided resource isolation from analytical workloads. This improves performance and reliability, as ingestion jobs can run on dedicated nodes that are optimized for ETL and do not compete with other queries or applications for resources.
 
 :::image type="content" source="media\workload-management\etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities.":::
+
+## Sessions
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 512 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 512 and has been reached`.
+
+> [!NOTE]
+> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. See [Monitor using DMVs](monitor-using-dmv.md) for more information.
 
 ## Best practices
 
