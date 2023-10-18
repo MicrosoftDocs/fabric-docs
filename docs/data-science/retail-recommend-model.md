@@ -656,5 +656,5 @@ userRecs.write.format("delta").mode("overwrite").save(
 
 - [Training and evaluating a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

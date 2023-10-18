@@ -44,7 +44,7 @@ In the rest of this article, we'll use Apache Spark to perform some analysis on 
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook. For instructions, see [Create a notebook](data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For instructions, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
 2. Import the types required for this notebook.
 
     ```python
