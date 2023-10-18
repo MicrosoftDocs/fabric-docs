@@ -57,6 +57,8 @@ In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in 
 ## Sessions
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 512 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 512 and has been reached`.
 
+Users can increase the amount of read-only sessions to the underlying artifact but following the [best practices](workload-management.md#best-practices) below.
+
 > [!NOTE]
 > As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. See [Monitor using DMVs](monitor-using-dmv.md) for more information.
 
