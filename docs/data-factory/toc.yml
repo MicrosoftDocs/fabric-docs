@@ -127,6 +127,18 @@
         href: connector-azure-synapse-analytics-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
+    - name: CloudBluePSA
+      items:
+      - name: Overview
+        href: connector-cloudbluepsa-overview.md
+      - name: Set up your connection
+        href: connector-cloudbluepsa.md
+    - name: Common Data Service (Legacy)
+      items:
+      - name: Overview
+        href: connector-common-data-service-legacy-overview.md
+      - name: Set up your connection
+        href: connector-common-data-service-legacy.md
     - name: Dataverse
       items:
       - name: Overview
