@@ -227,7 +227,7 @@ To view your experiments:
 
 ## Assess the performances of the trained models on the validation dataset
 
-Once done with ML model training, you can assess the performance of trained ML models in two ways.
+Once done with ML model training, you can assess the performance of trained machine learning models in two ways.
 
 - Open the saved experiment from the workspace, load the machine learning models, and then assess the performance of the loaded models on the validation dataset.
 
