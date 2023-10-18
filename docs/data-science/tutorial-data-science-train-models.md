@@ -82,7 +82,7 @@ import mlflow
 EXPERIMENT_NAME = "bank-churn-experiment"  # MLflow experiment name
 ```
 
-Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a ML model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
+Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
 
 All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
