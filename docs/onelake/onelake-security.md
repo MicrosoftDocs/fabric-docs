@@ -59,6 +59,12 @@ OneLake uses Azure Active Directory (Azure AD) for authentication; you can use i
 
 :::image type="content" source="media\onelake-security\admin-portal-tenant-settings.png" alt-text="Screenshot showing the Developer settings options on the Tenant setting screen." lightbox="media\onelake-security\admin-portal-tenant-settings.png":::
 
+## Encryption
+
+Data stored in OneLake is encrypted at rest by default using Microsoft-managed key. Microsoft-managed keys are rotated appropriately per compliance requirements. Data in OneLake is encrypted and decrypted transparently using 256-bit AES encryption, one of the strongest block ciphers available, and it is FIPS 140-2 compliant.
+
+Encryption at rest using customer-managed key is currently not supported. You can submit request for this feature on [Microsoft Fabric Ideas](https://ideas.fabric.microsoft.com/).
+
 ## Private links
 
 Fabric doesn’t currently support private link access to OneLake data via non-Fabric products and Spark.
