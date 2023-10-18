@@ -279,6 +279,8 @@
         href: deactivate-activity.md
       - name: Append Variable activity
         href: append-variable-activity.md
+      - name: Azure Batch activity
+        href: azure-batch-activity.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: Delete data activity
