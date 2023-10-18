@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
+As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
 
 On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -141,4 +141,4 @@ This means the following:
 
 ## Next steps
 
-[About the Admin portal](/power-bi/admin/service-admin-portal)
+[About the Admin portal](tenant-settings-index.md)

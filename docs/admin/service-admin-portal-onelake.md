@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # OneLake tenant settings
 
-OneLake tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+OneLake tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Users can access data stored in OneLake with apps external to Fabric
 
@@ -30,4 +30,4 @@ To learn more, see [OneLake File Explorer](../onelake/onelake-file-explorer.md).
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)
