@@ -67,6 +67,6 @@ Sign-in-related data is available for up to seven days, unless your organization
 
 ## Next steps
 
-- [Track user activities in Power BI](/power-bi/admin/service-admin-auditing)
+- [Track user activities in Power BI](/powerbi-docs/enterprise/service-admin-auditing)
 
 - More questions? [Ask the Power BI Community](https://community.powerbi.com/)
