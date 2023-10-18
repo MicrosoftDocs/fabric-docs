@@ -134,10 +134,13 @@ You can also create shortcuts to Amazon S3 accounts. When you create shortcuts t
 #### Access
 
 S3 shortcuts must point to the https endpoint for the S3 bucket.
+
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VPC.
+> In order for the S3 shortcut to function, you do not need to disable the Amazon S3 Block Public Access setting for your S3 account.
+> 
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
 
