@@ -7,6 +7,7 @@ author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 10/16/2023
+#CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
 ---
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
@@ -15,6 +16,14 @@ In this tutorial, you'll create a report from the prediction data produced in [P
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
+You'll learn how to:
+
+> [!div class="checklist"]
+>
+> * Create a dataset for Power BI from the predictions data.
+> * Add new measures to the data from PowerBI
+> * Create a Power BI report.
+> * Add visualizations to the report.
 
 ## Prerequisites
 
@@ -106,15 +115,13 @@ Now add a few measures to the dataset:
 
 ## Create new report
 
-Once you are done with all operations, move on to the Power BI report authoring page by selecting **Create report** on the top ribbon.
+Once you're done with all operations, move on to the Power BI report authoring page by selecting **Create report** on the top ribbon.
 
 :::image type="content" source="media/tutorial-data-science-create-report/visualize-this-data.png" alt-text="Screenshot shows how to create a report.":::
 
 Once the report page appears, add these visuals:
 
 1. Select the text box on the top ribbon and enter a title for the report, such as "Bank Customer Churn".  Change the font size and background color in the Format panel.  Adjust the font size and color by selecting the text and using the format bar.
-
-
 1. In the Visualizations panel, select the **Card** icon. From the **Data** pane, select **Churn Rate**. Change the font size and background color in the Format panel. Drag this visualization to the top right of the report.
 
     :::image type="content" source="media/tutorial-data-science-create-report/card-churn.png" alt-text="Screenshot shows addition of Churn Rate card." lightbox="media/tutorial-data-science-create-report/card-churn.png":::
@@ -128,7 +135,7 @@ Once the report page appears, add these visuals:
     :::image type="content" source="media/tutorial-data-science-create-report/number-of-products.png" alt-text="Screenshot shows addition of a stacked column chart of NumOfProducts." lightbox="media/tutorial-data-science-create-report/number-of-products.png":::
 
 
-1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis. 
+1. In the Visualizations panel, select the **Stacked column chart** icon. Select **NewCreditsScore** for x-axis and  **Churn Rate** for y-axis.
 
     :::image type="content" source="media/tutorial-data-science-create-report/new-credit-score.png" alt-text="Screenshot shows adding a stacked column chart of NewCreditScore." lightbox="media/tutorial-data-science-create-report/new-credit-score.png":::
 
@@ -139,7 +146,7 @@ Once the report page appears, add these visuals:
 
 1. In the Visualizations panel, select the **Clustered column chart** card. Select **Germany Churn**, **Spain Churn**, **France Churn** in that order for the y-axis.
 
-    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart" lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
+    :::image type="content" source="media/tutorial-data-science-create-report/germany-spain-france.png" alt-text="Screenshot shows the clustered column chart." lightbox="media/tutorial-data-science-create-report/germany-spain-france.png":::
 
 > [!NOTE]
 > This report represents an illustrated example of how you might analyze the saved prediction results in Power BI. However, for a real customer churn use-case, the you may have to do more thorough ideation of what visualizations to create, based on syour subject matter expertise, and what your firm and business analytics team has standardized as metrics.
@@ -153,7 +160,7 @@ The Power BI report shows:
 * Finally, customers with lower credit scores would most likely leave the bank for other financial institutes. The bank should look into ways that encourage customers with lower credit scores and account balances to stay with the bank.
 
 
-## Next steps
+## Next step
 
 This completes the five part tutorial series.  See other end-to-end sample tutorials:
 
