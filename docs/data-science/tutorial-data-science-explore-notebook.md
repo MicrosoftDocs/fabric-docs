@@ -117,16 +117,6 @@ df_clean = clean_data(df.copy())
 df_clean.head()
 ```
 
-
-```python
-# If you're working with a sample, get the sample back now
-IS_SAMPLE = False  # if TRUE, use only SAMPLE_ROWS of data for training, otherwise use all data
-SAMPLE_ROWS = 5000
-# if IS_SAMPLE is True, use only SAMPLE_ROWS of rows for training
-if IS_SAMPLE:
-    df_clean = df_clean.limit(SAMPLE_ROWS)
-```
-
 ## Explore the data
 
 Display some summaries and visualizations of the cleaned data.

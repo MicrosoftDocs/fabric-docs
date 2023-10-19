@@ -17,6 +17,15 @@ In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format
 
 * **Delta Lake**  - Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
+* [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets.md) are curated public datasets you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
+
+In this tutorial, you use the Apache Spark to:
+
+> [!div class="checklist"]
+>
+> * Read data from Azure Open Datasets containers.
+> * Write data into a Fabric lakehouse delta table.
+
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
@@ -70,9 +79,6 @@ Example rows from the dataset:
 
 ```python
 IS_CUSTOM_DATA = False  # if TRUE, dataset has to be uploaded manually
-
-IS_SAMPLE = False  # if TRUE, use only SAMPLE_ROWS of data for training, otherwise use the entire data
-SAMPLE_ROWS = 5000  # if IS_SAMPLE is True, use only this number of rows for training
 
 DATA_ROOT = "/lakehouse/default"
 DATA_FOLDER = "Files/churn"  # folder with data files
