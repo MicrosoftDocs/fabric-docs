@@ -141,4 +141,4 @@ This means the following:
 
 ## Next steps
 
-[About the Admin portal](tenant-settings-index.md)
+[About the admin portal](admin-center.md)
