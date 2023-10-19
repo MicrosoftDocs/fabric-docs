@@ -63,6 +63,6 @@ Typically, a complex query running in a workspace assigned to a small capacity S
 
 This message indicates that the capacity SKU size is too small to perform the query processing activity. To increase the SKU size, contact your capacity administrator.
 
-After the [capacity is resized](https://learn.microsoft.com/en-us/fabric/enterprise/scale-capacity), the new guardrails will be applied at the time the next query is run. Performance should stabilize to the new capacity SKU size within a few seconds of the first query submission.
+After the [capacity is resized](https://learn.microsoft.com/fabric/enterprise/scale-capacity), the new guardrails will be applied at the time the next query is run. Performance should stabilize to the new capacity SKU size within a few seconds of the first query submission.
 
 Also, a workload running on a nonoptimal capacity size can be subject to resource contention (such as spilling) that can increase the CU usage of the workload.
