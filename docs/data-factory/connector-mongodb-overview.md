@@ -14,12 +14,12 @@ The MongoDB connector is supported in Data Factory for [!INCLUDE [product-name](
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in data pipelines
+
+The MongoDB connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 
-## Next steps
-
-- [How to configure MongoDB in a copy activity](connector-mongodb-copy-activity.md)
+To learn more about the copy activity configuration for MongoDB in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-copy-activity.md).

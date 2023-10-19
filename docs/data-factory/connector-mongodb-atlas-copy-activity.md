@@ -75,9 +75,9 @@ Under **Advanced**, you can specify the following fields:
     > [!Note]
     > The service automatically generates an `_id` for a document if an `_id` isn't specified either in the original document or by column mapping. This means that you must ensure that, for **Upsert** to work as expected, your document has an ID.
 
-- **Write batch size**: This property controls the size of documents to write in each batch. You can try increasing the value to improve performance and decreasing the value if your document size being large.
+- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
 
-- **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
+- **Write batch size**: This property controls the size of documents to write in each batch. You can try increasing the value to improve performance and decreasing the value if your document size being large.
 
 ### Mapping
 

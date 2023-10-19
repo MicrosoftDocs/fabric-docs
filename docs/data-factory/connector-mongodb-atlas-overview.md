@@ -14,12 +14,13 @@ The MongoDB Atlas connector is supported in Data Factory for [!INCLUDE [product-
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in data pipelines
+
+The MongoDB Atlas connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 
-## Next steps
+To learn more about the copy activity configuration for AMongoDB Atlas in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-atlas-copy-activity.md).
 
-- [How to configure MongoDB Atlas in a copy activity](connector-mongodb-atlas-copy-activity.md)
