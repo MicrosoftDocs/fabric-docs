@@ -22,5 +22,5 @@ The MongoDB Atlas connector supports the following capabilities in data pipeline
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 
-To learn more about the copy activity configuration for AMongoDB Atlas in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-atlas-copy-activity.md).
+To learn more about the copy activity configuration for MongoDB Atlas in data pipelines, go to [Configure in a data pipeline copy activity](connector-mongodb-atlas-copy-activity.md).
 
