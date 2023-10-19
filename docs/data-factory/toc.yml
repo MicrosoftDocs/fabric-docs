@@ -139,6 +139,18 @@
         href: connector-common-data-service-legacy-overview.md
       - name: Set up your connection
         href: connector-common-data-service-legacy.md
+    - name: Databricks
+      items:
+      - name: Overview
+        href: connector-databricks-overview.md
+      - name: Set up your connection
+        href: connector-databricks.md
+    - name: Dataflows (Power Platform)
+      items:
+      - name: Overview
+        href: connector-dataflows-overview.md
+      - name: Set up your connection
+        href: connector-dataflows.md
     - name: Dataverse
       items:
       - name: Overview
