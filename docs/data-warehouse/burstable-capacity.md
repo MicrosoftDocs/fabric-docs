@@ -29,7 +29,7 @@ As an illustration of this formula, if your capacity is an F8, and your workload
 When a scale factor is over 1, it means that burstable capacity is being used to meet the demands of the workload. It also means that your workload is borrowing capacity units from a future time interval. This is a fundamental concept of Microsoft Fabric called [smoothing](compute-capacity-smoothing-throttling.md#smoothing).
 
 ## SKU Guardrails
-Burstable capacity isn't infinite. There's a limit that is applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads from exclusively causing [throttling](compute-capacity-smoothing-throttling.md#throttling)
+Burstable capacity is finite. There's a limit that is applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads from exclusively causing [throttling](compute-capacity-smoothing-throttling.md#throttling)
 
 The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
 
@@ -49,7 +49,7 @@ The limit (or guardrail) is a scale factor directly correlated to the Fabric Cap
 
 Smaller  SKU sizes are often used for Dev/Test scenarios or ad-hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
-Larger SKU sizes have access to more total capacity units, allowing for more complex workloads to run optimally.
+Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](https://learn.microsoft.com/fabric/enterprise/scale-capacity) might be beneficial.
 
 > [!NOTE]
 > The max burstable scale factor in the above table may only be observable for extremely small time intervals. Often within a single query for seconds or even milliseconds. When using the capacity metrics app to observe burstable capacity note that the scale factor over longer durations will be much lower.
