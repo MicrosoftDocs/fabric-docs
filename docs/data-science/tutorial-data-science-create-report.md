@@ -12,7 +12,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, you'll create a power BI report from the predictions data that was genereated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

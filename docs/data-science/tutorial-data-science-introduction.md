@@ -29,7 +29,7 @@ The lifecycle of a Data science project typically includes (often, iteratively) 
 
 The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
 
-In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing the churn status of 10000 customers at a bank. You then build a machine learning model to predict predict which bank customers are likely to leave.
+In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing the churn status of 10000 customers at a bank. You then build a machine learning model to predict which bank customers are likely to leave.
 
 You'll learn to perform the following activities:
 

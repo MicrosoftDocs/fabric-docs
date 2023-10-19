@@ -210,7 +210,7 @@ df_clean["NewEstSalaryScore"] = pd.qcut(df_clean['EstimatedSalary'], 10, labels 
 Data Wrangler can also be used to perform one-hot encoding.  To do so, re-open Data Wrangler. This time, select the `df_clean` data.
 
 1. Expand **Formulas** and select **One-hot encode**.
-2. A panel appears for you to select the list of columns you want to perform one-hot encoding on. Select **Geography** and **Gender**..
+2. A panel appears for you to select the list of columns you want to perform one-hot encoding on. Select **Geography** and **Gender**.
 
 You could copy the generated code, close Data Wrangler to return to the notebook, then paste into a new cell. Or, select **Add code to notebook** at the top left to close Data Wrangler and add the code automatically.  
 
