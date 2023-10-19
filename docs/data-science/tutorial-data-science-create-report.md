@@ -12,7 +12,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, you'll create a report from the prediction data produced in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a power BI report from the predictions data that was genereated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -21,7 +21,7 @@ You'll learn how to:
 > [!div class="checklist"]
 >
 > * Create a dataset for Power BI from the predictions data.
-> * Add new measures to the data from PowerBI
+> * Add new measures to the data from Power BI.
 > * Create a Power BI report.
 > * Add visualizations to the report.
 
@@ -29,7 +29,7 @@ You'll learn how to:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-This part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
+This is part 5 of 5 in the tutorial series. To complete this tutorial, first complete:
 
 * [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
 * [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
@@ -76,9 +76,9 @@ Now add a few measures to the dataset:
         :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lightbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
 * Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
-
-    1. Select **New measure**.  
-    1. Each prediction represents one customer.  To determine the total number of customers, replace `Measure =` in the formula bar with:
+  
+    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
+    1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
         ```python
         Customers = COUNT(customer_churn_test_predictions[predictions])
@@ -88,7 +88,7 @@ Now add a few measures to the dataset:
 
 * Add the churn rate for Germany.
 
-    1. Select **New measure**.
+    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python
@@ -99,7 +99,7 @@ Now add a few measures to the dataset:
 
     1. To apply the formula, select the check mark in the formula bar.
 
-* Repeat to add churn rates for France and Spain.
+* Repeat the above step to add the churn rates for France and Spain.
 
     * Spain's churn rate:
 
