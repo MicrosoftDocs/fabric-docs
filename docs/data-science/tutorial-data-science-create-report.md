@@ -88,7 +88,7 @@ Now add a few measures to the dataset:
 
 * Add the churn rate for Germany.
 
-    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset, and opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python
