@@ -3,12 +3,12 @@
 ## Fill out these items before submitting your pull request:
 
 If you are working internally at Microsoft:
-** Provide a link to an Azure DevOps Boards work item that tracks this feature/update.**
+**Provide a link to an Azure DevOps Boards work item that tracks this feature/update.**
 
 >
 >
 
-** Who is your primary Skilling team contact?** \@mention them individually if you need their help.
+**Who is your primary Skilling team contact?** \@mention them individually tag them and let them review the PR before signing off.
 
 >
 >
