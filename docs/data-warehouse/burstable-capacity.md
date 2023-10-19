@@ -23,7 +23,7 @@ Burstable capacity has a direct correlation to the SKU that has been assigned to
 
 CU can be determined by using the [capacity metrics app](usage-reporting.md)
 
-As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CUs, the scale factor would be calculated as follows:
+As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CU, the scale factor would be calculated as follows:
 `1500 / 100 / 8 = 1.875`
 
 When a scale factor is over 1, it means that burstable capacity is being used to meet the demands of the workload. It also means that your workload is borrowing capacity units from a future time interval. This is a fundamental concept of Microsoft Fabric called [smoothing](compute-capacity-smoothing-throttling.md#smoothing).
