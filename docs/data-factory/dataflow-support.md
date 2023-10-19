@@ -36,8 +36,8 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/cdata-64.png":::<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [:::image type="icon" source="media/dataflow-support/celonis-64.png":::<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | :::image type="icon" source="media/dataflow-support/cherwell-64.png":::<br/>**Cherwell (Beta)**<br/>By Cherwell | [:::image type="icon" source="media/dataflow-support/cloudbluepsa-64.png":::<br/>**CloudBluePSA<br/>(Beta)**](/power-query/connectors/cloudbluepsa)<br/>By CloudBluePSA | :::image type="icon" source="media/dataflow-support/cdf-64.png":::<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
-| [:::image type="icon" source="media/dataflow-support/cds-to-data64.png":::<br/>**Common Data<br/>Service (legacy)**](/power-query/connectors/common-data-service-legacy)<br/>By Microsoft | | | | |
+| [:::image type="icon" source="media/dataflow-support/cdata-64.png":::<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [:::image type="icon" source="media/dataflow-support/celonis-64.png":::<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | :::image type="icon" source="media/dataflow-support/cherwell-64.png":::<br/>**Cherwell (Beta)**<br/>By Cherwell | [:::image type="icon" source="media/dataflow-support/cloudbluepsa-64.png":::<br/>**CloudBluePSA<br/>(Beta)**](connector-cloudbluepsa.md)<br/>By CloudBluePSA | :::image type="icon" source="media/dataflow-support/cdf-64.png":::<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
+| [:::image type="icon" source="media/dataflow-support/cds-to-data64.png":::<br/>**Common Data<br/>Service (legacy)**](connector-common-data-service-legacy.md)<br/>By Microsoft | | | | |
 
 ## D
 

@@ -55,22 +55,21 @@ In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in 
 :::image type="content" source="media\workload-management\etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities.":::
 
 ## Sessions
+
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 512 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 512 and has been reached`.
 
-Users can increase the amount of read-only sessions to the underlying artifact but following the [best practices](workload-management.md#best-practices) below.
-
 > [!NOTE]
-> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. See [Monitor using DMVs](monitor-using-dmv.md) for more information.
+> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. For more information, see [Monitor using DMVs](monitor-using-dmv.md).
 
 ## Best practices
 
 The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a natural isolation boundary of the distributed compute system. Workloads can take advantage of this boundary to manage both cost and performance.
 
-[OneLake shortcuts](../onelake/onelake-shortcuts.md) can be used to create read-only replicas of tables in other workspaces to distribute load across multiple sql engines creating an isolation boundary.
+[OneLake shortcuts](../onelake/onelake-shortcuts.md) can be used to create read-only replicas of tables in other workspaces to distribute load across multiple SQL engines, creating an isolation boundary. This can effectively increase the maximum number of sessions performing read-only queries.
 
 :::image type="content" source="media\workload-management\workspace-isolation.svg" alt-text="Diagram that shows isolation of two workspaces, for example, the Finance and the Marketing workspace.":::
 
-## Next steps
+## Related content
 
 - [OneLake overview](../onelake/onelake-overview.md)
 - [Data warehousing](data-warehousing.md)
