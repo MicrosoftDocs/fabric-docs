@@ -94,7 +94,7 @@ items:
     href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service
     href: reports-power-bi-service.md    
-- name: Collaborate, share and manage security
+- name: Collaborate, share, and manage security
   items:
   - name: Data warehousing security
     href: security.md
@@ -104,6 +104,16 @@ items:
     href: sql-granular-permissions.md
   - name: Share your Warehouse
     href: share-warehouse-manage-permissions.md    
+  - name: Column-level security
+    href: column-level-security.md
+  - name: Row-level security
+    href: row-level-security.md
+  - name: How to
+    items: 
+    - name: Implement column-level security
+      href: tutorial-column-level-security.md    
+    - name: Implement row-level security
+      href: tutorial-row-level-security.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -131,8 +141,15 @@ items:
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: How to
+    items:    
+      - name: Observe utilization trends
+        href: how-to-observe-utilization.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

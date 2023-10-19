@@ -158,7 +158,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
-- The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
+- The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)/[Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio):
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
@@ -168,5 +168,10 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 ## Related content
 
-- [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
+- [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [How-to: Query the Warehouse](query-warehouse.md)

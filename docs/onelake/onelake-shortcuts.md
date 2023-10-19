@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # OneLake shortcuts
@@ -134,10 +134,13 @@ You can also create shortcuts to Amazon S3 accounts. When you create shortcuts t
 #### Access
 
 S3 shortcuts must point to the https endpoint for the S3 bucket.
+
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VPC.
+> You do not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+> 
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
 

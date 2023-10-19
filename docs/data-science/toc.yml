@@ -41,17 +41,17 @@ items:
     href: use-ai-samples.md
   - name: Customer churn prediction
     href: customer-churn.md
-  - name: Retail recommendation
+  - name: Book recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
     href: fraud-detection.md
-  - name: Forecasting
+  - name: Time series forecasting
     href: time-series-forecasting.md
-  - name: Text classification
+  - name: Text (title genre) classification
     href: title-genre-classification.md
   - name: Uplift modeling
     href: uplift-modeling.md
-  - name: Predictive maintenance
+  - name: Machine failure prediction
     href: predictive-maintenance.md
 - name: Governance
   items:
@@ -65,6 +65,12 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -165,6 +171,10 @@ items:
     href: r-overview.md
   - name: Tutorials
     items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
     - name: Avocado price prediction
       href: r-avocado.md
     - name: Flight delay prediction
@@ -181,6 +191,40 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
+- name: Semantic link
+  items:
+  - name: Overview
+    items:
+    - name: What is semantic link?
+      href: semantic-link-overview.md
+  - name: Tutorials
+    items:
+    - name: Clean data with functional dependencies
+      href: tutorial-data-cleaning-functional-dependencies.md
+    - name: Analyze functional dependencies in a Power BI sample dataset
+      href: tutorial-power-bi-dependencies.md
+    - name: Extract and calculate Power BI measures from a notebook
+      href: tutorial-power-bi-measures.md
+    - name: Discover relationships in a Power BI dataset using semantic link
+      href: tutorial-power-bi-relationships.md
+    - name: Discover relationships in the Synthea dataset using semantic link
+      href: tutorial-relationships-detection.md
+  - name: Concepts
+    items:
+    - name: Power BI connectivity
+      href: semantic-link-power-bi.md
+    - name: Semantic propagation
+      href: semantic-link-semantic-propagation.md
+    - name: Semantic functions
+      href: semantic-link-semantic-functions.md
+  - name: How-to guides
+    items:
+    - name: Read from Power BI and write data usable by Power BI
+      href: read-write-power-bi.md
+    - name: Explore and validate functional dependencies in your data
+      href: semantic-link-validate-data.md
+    - name: Explore and validate relationships in datasets
+      href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:
   - name: Overview
@@ -219,3 +263,7 @@ items:
       href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
+- name: Reference
+  items:
+    - name: SemPy Python SDK
+      href: /python/api/semantic-link/overview-semantic-link
