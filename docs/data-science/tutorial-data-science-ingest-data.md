@@ -91,7 +91,7 @@ if not IS_CUSTOM_DATA:
 # Download demo data files into lakehouse if not exist
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
     file_list = [DATA_FILE]
-    download_path = "f{DATA_ROOT}/{DATA_FOLDER}/raw"
+    download_path = f"{DATA_ROOT}/{DATA_FOLDER}/raw"
 
     if not os.path.exists("/lakehouse/default"):
         raise FileNotFoundError(
