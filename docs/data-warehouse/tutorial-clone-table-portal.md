@@ -12,7 +12,7 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-A zero-copy clone creates a replica of the table by copying the metadata, while still referencing the same data files in OneLake. This article describes how to use [Clone table](clone-table.md) actions in the warehouse editor to create cloned table with no-code experience.
+A zero-copy clone creates a replica of the table by copying the metadata, while still referencing the same data files in OneLake. This tutorial guides you through creating a [table clone](clone-table.md) in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], using the warehouse editor with a no-code experience.
 
 ## Clone table as of current state of the source table
 

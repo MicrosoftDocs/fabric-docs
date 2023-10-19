@@ -92,6 +92,7 @@ Consider the ability to clone tables near instantaneously and with minimal stora
 - Table clones across workspaces are not currently supported.
 - Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
+- Cloned tables do not currently inherit [row-level security](row-level-security.md) or dynamic data masking.
 
 ## Related content
 
