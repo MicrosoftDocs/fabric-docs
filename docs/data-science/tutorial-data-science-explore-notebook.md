@@ -71,7 +71,7 @@ df = df.toPandas()
 
 ### Display raw data
 
-Explore the raw data with `display`, do some basic statistics and show chart views. Note that you first need to import the required libraries such as `Numpy`, `Pnadas`, `Seaborn`, and 'Matplotlib` for data analysis and visualization.
+Explore the raw data with `display`, do some basic statistics and show chart views. Note that you first need to import the required libraries such as `Numpy`, `Pnadas`, `Seaborn`, and `Matplotlib` for data analysis and visualization.
 
 ```python
 import seaborn as sns
