@@ -29,7 +29,7 @@ To use an Azure Machine Learning activity in a pipeline, complete the following 
 1. Search for Azure Machine Learning in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    > [!NOTE]
-   > You may need to expand the menu and scroll down to see the KQL activity as highlighted in the screenshot below.
+   > You may need to expand the menu and scroll down to see the Azure Machine Learning activity as highlighted in following the screenshot.
 
    :::image type="content" source="media/azure-machine-learning-activity/add-azure-machine-learning-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Azure Machine Learning activity highlighted.":::
 
@@ -43,7 +43,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Select the **Settings** tab, then you can choose an existing or create a new **Azure Machine Learning connection**. 
 1. Choose and **Endpoint type**, either Batch Endpoint or Pipeline (v1).
-1. Provide a **Batch endpoint** and **Batch deployment** and configure **Job settings**for the [Batch Endpoint](/azure/machine-learning/concept-endpoints-batch.md?view=azureml-api-2) type, or provide the pipeline details to run an [Azure Machine Learning Pipeline (v1)](/azure/machine-learning/concept-ml-pipelines.md?view=azureml-api-2).
+1. Provide a **Batch endpoint** and **Batch deployment** and configure **Job settings for the [Batch Endpoint](/azure/machine-learning/concept-endpoints-batch.md?view=azureml-api-2) type, or provide the pipeline details to run an [Azure Machine Learning Pipeline (v1)](/azure/machine-learning/concept-ml-pipelines.md?view=azureml-api-2).
 
 :::image type="content" source="media/azure-machine-learning-activity/azure-machine-learning-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Machine Learning activity.":::
 
