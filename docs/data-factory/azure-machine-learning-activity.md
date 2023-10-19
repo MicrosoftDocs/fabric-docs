@@ -43,7 +43,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Select the **Settings** tab, then you can choose an existing or create a new **Azure Machine Learning connection**. 
 1. Choose and **Endpoint type**, either Batch Endpoint or Pipeline (v1).
-1. Provide a **Batch endpoint** and **Batch deployment** and configure **Job settings for the [Batch Endpoint](/azure/machine-learning/concept-endpoints-batch?view=azureml-api-2) type, or provide the pipeline details to run an [Azure Machine Learning Pipeline (v1)](/azure/machine-learning/concept-ml-pipelines?view=azureml-api-2).
+1. Provide a **Batch endpoint** and **Batch deployment** and configure **Job settings for the [Batch Endpoint](/azure/machine-learning/concept-endpoints-batch) type, or provide the pipeline details to run an [Azure Machine Learning Pipeline (v1)](/azure/machine-learning/concept-ml-pipelines).
 
 :::image type="content" source="media/azure-machine-learning-activity/azure-machine-learning-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Machine Learning activity.":::
 
