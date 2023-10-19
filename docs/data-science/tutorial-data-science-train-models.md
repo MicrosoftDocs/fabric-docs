@@ -302,15 +302,20 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
+:::image type="content" source="media/tutorial-data-science-train-models/random-forest-4.jpg" alt-text="Graph shows confusion matrix for Random Forest with maximum depth of 4.":::
+
 * Confusion Matrix for Random Forest Classifier with maximum depth of 8 and 6 features
 
 
 ```python
 cfm = confusion_matrix(y_val, y_pred=ypred_rfc2_sm_v1)
 plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
-                      title='Random Forest with max depth of 5')
+                      title='Random Forest with max depth of 8')
 tn, fp, fn, tp = cfm.ravel()
 ```
+
+:::image type="content" source="media/tutorial-data-science-train-models/random-forest-8.jpg" alt-text="Graph shows confusion matrix for Random Forest with maximum depth of 8.":::
+
 
 * Confusion Matrix for LightGBM
 
@@ -321,6 +326,8 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
                       title='LightGBM')
 tn, fp, fn, tp = cfm.ravel()
 ```
+
+:::image type="content" source="media/tutorial-data-science-train-models/lightgbm.jpg" alt-text="Graph shows confusion matrix for LightGBM.":::
 
 <!-- nbend -->
 

@@ -156,6 +156,8 @@ fig.delaxes(axes[1,2])
 
 ```
 
+:::image type="content" source="media/tutorial-data-science-explore-notebook/box-plots.jpg" alt-text="Graph shows the five-number summaries.":::
+
 ## Distribution of exited and nonexited customers 
 
 Show the distribution of exited versus nonexited customers across the categorical attributes. 
@@ -168,6 +170,8 @@ for ind, item in enumerate (attr_list):
     sns.countplot(x = item, hue = 'Exited', data = df_clean, ax = axarr[ind%2][ind//2])
 fig.subplots_adjust(hspace=0.7)
 ```
+
+:::image type="content" source="media/tutorial-data-science-explore-notebook/bar-charts.jpg" alt-text="Graph shows the bar charts for exited and nonexited customers.":::
 
 ### Distribution of numerical attributes
 
@@ -186,6 +190,8 @@ for i,j in itertools.zip_longest(columns, range(length)):
     plt.title(i)
 plt.show()
 ```
+
+:::image type="content" source="media/tutorial-data-science-explore-notebook/histograms.jpg" alt-text="Graph shows the distribution of numerical attributes.":::
 
 ## Perform feature engineering
 
