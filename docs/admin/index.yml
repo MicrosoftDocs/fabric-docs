@@ -42,26 +42,6 @@ landingContent:
           - text: Understand Fabric admin roles
             url: roles.md
 
-  - title: Workspace administration
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Manage workspaces
-            url: portal-workspaces.md
-          - text: Workspace tenant settings
-            url: portal-workspace.md
-
-  - title: Monitoring and management
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: What is the admin monitoring workspace?
-            url: monitoring-workspace.md
-          - text: Feature usage and adoption report
-            url: feature-usage-adoption.md
-          - text: Using Monitoring hub
-            url: monitoring-hub.md 
-
   - title: Tools and settings
     linkLists:
       - linkListType: overview
@@ -84,3 +64,23 @@ landingContent:
             url: metadata-scanning-enable-read-only-apis.md
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
+
+  - title: Workspace administration
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Manage workspaces
+            url: portal-workspaces.md
+          - text: Workspace tenant settings
+            url: portal-workspace.md
+
+  - title: Monitoring and management
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is the admin monitoring workspace?
+            url: monitoring-workspace.md
+          - text: Feature usage and adoption report
+            url: feature-usage-adoption.md
+          - text: Using Monitoring hub
+            url: monitoring-hub.md
