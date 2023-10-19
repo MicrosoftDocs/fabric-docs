@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # How to configure MongoDB in a copy activity
 
-This article outlines how to use the copy activity in data pipelines to copy data from MongoDB.
+This article outlines how to use the copy activity in data pipelines to copy data from and to MongoDB.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 

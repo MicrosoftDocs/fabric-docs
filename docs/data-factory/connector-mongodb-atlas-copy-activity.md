@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # How to configure MongoDB Atlas in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from MongoDB Atlas.
+This article outlines how to use the copy activity in data pipeline to copy data from and to MongoDB Atlas.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
