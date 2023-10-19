@@ -77,7 +77,7 @@ Now add a few measures to the dataset:
 
 * Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
   
-    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset, and opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
         ```python
