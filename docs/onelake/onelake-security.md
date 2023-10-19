@@ -31,7 +31,7 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 
 Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on data in OneLake.
 
-| **Permission Name** | **Sharing text** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL endpoint?** |
+| **Permission Name** | **Sharing text** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
 |----------|----------|----------|----------|--------------|
 | Read | *No share boxes selected* | No | No | No |
 | ReadData | Read all SQL endpoint data | No | No | Yes |

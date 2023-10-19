@@ -17,7 +17,7 @@ This article explains the data warehousing experience with the [[!INCLUDE [fabri
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## What is a Lakehouse SQL Endpoint?
+## What is a Lakehouse SQL analytics endpoint?
 
 In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) is automatically created. 
 

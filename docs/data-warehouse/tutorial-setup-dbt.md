@@ -81,7 +81,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
           authentication: CLI
           database: <put the database name here>
           driver: ODBC Driver 18 for SQL Server
-          host: <enter your sql endpoint here>
+          host: <enter your SQL analytics endpoint here>
           schema: dbo
           threads: 4
           type: fabric

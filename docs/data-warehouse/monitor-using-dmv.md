@@ -101,4 +101,4 @@ KILL '101'
 ## Next steps
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

@@ -24,15 +24,15 @@ In this tutorial, learn about how you can easily create and execute T-SQL querie
 
     :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses.png" alt-text="A screenshot from the Fabric portal Explorer, showing the + Warehouse button boxed in red.":::
 
-1. Select the SQL endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both warehouse experiences are added to the query.
+1. Select the SQL analytics endpoint of the lakehouse you created using shortcuts previously, named `ShortcutExercise`. Both warehouse experiences are added to the query.
 
-    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="A screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
+    :::image type="content" source="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png" alt-text="A screenshot from the Fabric portal Add warehouses window. Two warehouses are selected, including the ShortcutExercise SQL analytics endpoint." lightbox="media/tutorial-sql-cross-warehouse-query-editor/explorer-add-warehouses-select-sql-endpoint.png":::
 
 1. Your selected warehouses now show the same **Explorer** pane.
 
 ## Execute a cross-warehouse query
 
-In this example, you can see how easily you can run T-SQL queries across the `WideWorldImporters` warehouse and `ShortcutExercise` SQL Endpoint. You can write cross-database queries using three-part naming to reference the `database.schema.table`, as in SQL Server.
+In this example, you can see how easily you can run T-SQL queries across the `WideWorldImporters` warehouse and `ShortcutExercise` SQL analytics endpoint. You can write cross-database queries using three-part naming to reference the `database.schema.table`, as in SQL Server.
 
 1. From the ribbon, select **New SQL query**.
 

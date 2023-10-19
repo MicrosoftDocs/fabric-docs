@@ -1,6 +1,6 @@
 ---
 title: Security for data warehousing
-description: Learn more about securing the SQL Endpoint and Warehouse in Microsoft Fabric.
+description: Learn more about securing the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf

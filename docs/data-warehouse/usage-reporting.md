@@ -13,7 +13,7 @@ ms.search.form: Warehouse billing and utilization
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the Warehouse, and read activity on the SQL Endpoint of the Lakehouse.
+The article explains compute usage reporting of the Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)], which includes read and write activity against the Warehouse, and read activity on the SQL analytics endpoint of the Lakehouse.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
@@ -27,7 +27,7 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 In the capacity-based SaaS model, Fabric data warehousing aims to make the most of the purchased capacity and provide visibility into usage.
 
-CUs consumed by data warehousing include read and write activity against the Warehouse, and read activity on the SQL Endpoint of the Lakehouse.
+CUs consumed by data warehousing include read and write activity against the Warehouse, and read activity on the SQL analytics endpoint of the Lakehouse.
 
 The "CPU time" metric captures usage of compute resources when requests are executed. "CPU time" isn't the same as elapsed time, it's the time spent by compute cores in execution of a request. Similar to how Windows accounts for Processor Time, multi-threaded workloads record more than one second of "CPU time" per second.
 
@@ -43,10 +43,10 @@ Once you have installed the app, select the **Warehouse** from the **Select item
 
 You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CU(s)). The table displayed shows aggregated usage across the last 14 days.
 
-Both the Warehouse and SQL Endpoint roll up under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
+Both the Warehouse and SQL analytics endpoint roll up under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
 - **Warehouse Query**: Compute charge for all user generated and system generated T-SQL statements within a warehouse.
-- **SQL Endpoint Query**: Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint.
+- **SQL analytics endpoint Query**: Compute charge for all user generated and system generated T-SQL statements within a SQL analytics endpoint.
 - **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
 
 For example:
@@ -95,7 +95,7 @@ The numbers used in this example are for demonstration purposes only and not act
 
 Consider the following usage reporting nuances:
 
-- Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a Warehouse and a SQL Endpoint), usage is reported against the originating resource.
+- Cross database reporting: When a T-SQL query joins across multiple warehouses (or across a Warehouse and a SQL analytics endpoint), usage is reported against the originating resource.
 - Queries on system catalog views and dynamic management views are billable queries.
 - **Duration(s)** field reported in Fabric Capacity Metrics App is for informational purposes only. It reflects the statement execution duration and might not include the complete end-to-end duration for rendering results back to the web application like the [SQL Query Editor](sql-query-editor.md) or client applications like [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) and [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio).
 

@@ -33,8 +33,8 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
    * [Create a Fabric workspace](tutorial-lakehouse-get-started.md).
    * [Create a lakehouse](tutorial-build-lakehouse.md).
-   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, OneCopy of your data across lakehouse mode and SQL endpoint mode.
-   * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
+   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, OneCopy of your data across lakehouse mode and SQL analytics endpoint mode.
+   * Connect to your lakehouse using the SQL analytics endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
    * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
 
 1. [Clean up resources](tutorial-lakehouse-clean-up.md) by deleting the workspace and other items.
@@ -51,7 +51,7 @@ The following image shows the lakehouse end-to-end architecture. The components 
 
 * **Transform and store**: Fabric standardizes on Delta Lake format. Which means all the Fabric engines can access and manipulate the same dataset stored in OneLake without duplicating data. This storage system provides the flexibility to build lakehouses using a medallion architecture or a data mesh, depending on your organizational requirement. You can choose between a low-code or no-code experience for data transformation, utilizing either pipelines/dataflows or notebook/Spark for a code-first experience.
 
-* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS/SQL endpoint, for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. Additionally, when a Lakehouse is created, a corresponding secondary item called a Warehouse is automatically generated with the same name as the Lakehouse. It provides users with the TDS/SQL endpoint functionality.
+* **Consume**: Power BI can consume data from the Lakehouse for reporting and visualization. Each Lakehouse has a built-in TDS endpoint called the *SQL analytics endpoint* for easy connectivity and querying of data in the Lakehouse tables from other reporting tools. The SQL analytics endpoint provides users with the SQL connection functionality.
 
 ## Sample dataset
 
@@ -85,7 +85,7 @@ The following image shows the source, destination and data transformation:
 
 * **Transform**: For data preparation and transformation, you see two different approaches. We demonstrate the use of Notebooks/Spark for users who prefer a code-first experience and use pipelines/dataflow for users who prefer a low-code or no-code experience.
 
-* **Consume**: To demonstrate data consumption, you see how you can use the DirectLake feature of Power BI to create reports, dashboards and directly query data from the lakehouse. Additionally, we demonstrate how you can make your data available to third party reporting tools by using the TDS/SQL endpoint. This endpoint allows you to connect to the warehouse and run SQL queries for analytics.
+* **Consume**: To demonstrate data consumption, you see how you can use the DirectLake feature of Power BI to create reports, dashboards and directly query data from the lakehouse. Additionally, we demonstrate how you can make your data available to third party reporting tools by using the TDS/SQL analytics endpoint. This endpoint allows you to connect to the warehouse and run SQL queries for analytics.
 
 ## Next steps
 

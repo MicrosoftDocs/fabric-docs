@@ -53,7 +53,7 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 ## Create reports in the Power BI Desktop
 
-The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL endpoint of Lakehouse in easy steps.
+The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL analytics endpoint of Lakehouse in easy steps.
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
 1. Select the warehouse that you would like to connect

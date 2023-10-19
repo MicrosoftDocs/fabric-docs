@@ -57,7 +57,7 @@ The four capacity throttling policies for Microsoft Fabric:
 |**60 minutes < Usage <= 24 hours**|Interactive Rejection|User requested interactive type jobs are rejected.|
 |**Usage > 24 hours**|Background Rejection|All new jobs are rejected from execution. This is the category for most **Warehouse** operations.|
 
-All Warehouse and SQL Endpoint operations follow "Background Rejection" policy, and as a result experience operation rejection only after over-utilization averaged over a 24-hour period.
+All Warehouse and SQL analytics endpoint operations follow "Background Rejection" policy, and as a result experience operation rejection only after over-utilization averaged over a 24-hour period.
 
 ### Throttling considerations
 

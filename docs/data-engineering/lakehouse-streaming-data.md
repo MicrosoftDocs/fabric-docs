@@ -59,7 +59,7 @@ In Fabric Data Engineering, Delta Lake is used to:
 Delta is added as one of the possible outputs sinks formats used in writeStream – more information about the existing output sinks can be found [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks).
 
 
-The following example demonstrates how it’s possible to stream data into Delta Lake.  
+The following example demonstrates how it's possible to stream data into Delta Lake.  
 
  
 ```PySpark 
@@ -181,4 +181,4 @@ Spark 3.1 and higher versions have a built-in structured streaming UI ([link](ht
 
 ## Next steps
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with SQL endpoint.
+* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

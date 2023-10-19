@@ -87,4 +87,4 @@ For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+> [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

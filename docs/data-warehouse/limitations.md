@@ -39,7 +39,7 @@ For more limitations information in specific areas, see:
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
 - [Tables](tables.md#limitations)
 
-## Limitations of the SQL Endpoint
+## Limitations of the SQL analytics endpoint
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.
 

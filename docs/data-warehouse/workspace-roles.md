@@ -23,10 +23,10 @@ Assigning users to the various workspace roles provides the following capabiliti
 
 | Workspace role   |  Description |
 |---|---|
-|**Admin**|Grants the user CONTROL access for each Warehouse and SQL Endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session, [monitor connections and requests in DMVs via TSQL](monitor-using-dmv.md), and [KILL](/sql/t-sql/language-elements/kill-transact-sql?view=fabric&preserve-view=true) sessions.|
-|**Member**|Grants the user CONTROL access for each Warehouse and SQL Endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
-|**Contributor**|Grants the user CONTROL access for each Warehouse and SQL Endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
-|**Viewer**|Grants the user CONNECT permissions for each Warehouse and SQL Endpoint within the workspace. Viewers can be granted granular SQL permissions to read data from tables/views using T-SQL. For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).|
+|**Admin**|Grants the user CONTROL access for each Warehouse and SQL analytics endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.<br/><br/>Allows the user to see workspace-scoped session, [monitor connections and requests in DMVs via TSQL](monitor-using-dmv.md), and [KILL](/sql/t-sql/language-elements/kill-transact-sql?view=fabric&preserve-view=true) sessions.|
+|**Member**|Grants the user CONTROL access for each Warehouse and SQL analytics endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
+|**Contributor**|Grants the user CONTROL access for each Warehouse and SQL analytics endpoint within the workspace, providing them with full read/write permissions and the ability to manage granular user SQL permissions.|
+|**Viewer**|Grants the user CONNECT permissions for each Warehouse and SQL analytics endpoint within the workspace. Viewers can be granted granular SQL permissions to read data from tables/views using T-SQL. For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).|
 
 ## Next steps
 
