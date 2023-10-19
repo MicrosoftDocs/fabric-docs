@@ -37,7 +37,7 @@ On the left panel is a list of operations (such as **Find and replace**, **Forma
 
     In the middle panel is a preview of the results of this operation. Under the preview is the code to perform the operation. In this instance, the data appears to be unchanged.  But since you're looking at a truncated view, it's a good idea to still apply the operation.
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-duplicate.png" alt-text="Screenshot shows dropping duplicate rows in Data Wrangler.":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-duplicate.png" alt-text="Screenshot shows dropping duplicate rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-duplicate.png":::
 
 
 1. You could copy and paste the code into your notebook. But in this tutorial, you'll perform more data cleaning first. Select **Apply** (either at the side or at the bottom) to go to the next step.
@@ -49,7 +49,7 @@ Use Data Wrangler to drop rows with missing data across all columns.
 1. Select **Drop missing values** from **Find and replace**.
 1. Select **All columns** from the drop-down list.
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-missing.png" alt-text="Screenshot shows dropping missing rows in Data Wrangler.":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-missing.png" alt-text="Screenshot shows dropping missing rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-missing.png":::
 
 1. Select **Apply** to go on to the next step.
 
@@ -60,7 +60,7 @@ Use Data Wrangler to drop columns that you don't need.
 1. Expand **Schema** and select **Drop columns**.
 1. Select **RowNumber**, **CustomerId**, **Surname**.  These columns appear in red in the preview, to show they're changed by the code (in this case, dropped.)
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-columns.png" alt-text="Screenshot shows dropping columns in Data Wrangler.":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-columns.png" alt-text="Screenshot shows dropping columns in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-columns.png":::
 
 1. Select **Apply** to go on to the next step.
 
