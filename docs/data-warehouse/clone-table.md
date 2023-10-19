@@ -4,7 +4,7 @@ description: Learn about table clones in Microsoft Fabric.
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 06/21/2023
+ms.date: 10/19/2023
 ms.topic: conceptual
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
@@ -18,7 +18,7 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 - Table clones provide consistent reporting and zero-copy duplication of datasets for analytical workloads and machine learning modeling and testing.
 - Table clones provide the capability of data recovery in the event of a failed release or data corruption by retaining the previous state of data.
 
-You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md).
+You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -33,6 +33,10 @@ A zero-copy clone creates a replica of the table by copying the metadata, while 
 Within a warehouse, a clone of a table can be created near-instantaneously using simple T-SQL, based on the current data in the table. A clone of a table can be created within or across schemas in a warehouse.
 
 There is no limit on the number of clones created both within and across schemas.
+
+You can also clone a group of tables at once. This can be useful for cloning a group of related tables at the same past point in time. For an example, see [Clone multiple tables at once](tutorial-clone-table-portal.md#clone-multiple-tables-at-once).
+
+You can clone the present state of a table, or the past state of the table within last 7 days. This generates a clone of the table from a specific point in time. For examples, see [Clone table as of past point-in-time state of the source table](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time-state-of-the-source-table) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
 
 ### Separate and independent
 
@@ -72,7 +76,7 @@ Consider the ability to clone tables near instantaneously and with minimal stora
 
 ### Development and testing
 
-   Table clones allow developers and testers to experiment, validate, and refine the tables without impacting the tables in production environment. The clone provides a safe and isolated space to conduct development and testing activities of new features, ensuring the integrity and stability of the production environment. Use a table clone to quickly spin up a copy of production-like environment for troubleshooting, experimentation, development and testing purposes.
+   Table clones allow developers and testers to experiment, validate, and refine the tables without affecting the tables in production environment. The clone provides a safe and isolated space to conduct development and testing activities of new features, ensuring the integrity and stability of the production environment. Use a table clone to quickly spin up a copy of production-like environment for troubleshooting, experimentation, development and testing purposes.
 
 ### Consistent reporting, data exploration, and machine learning modeling
 
@@ -86,12 +90,12 @@ Consider the ability to clone tables near instantaneously and with minimal stora
 
 - Table clones across warehouses in a workspace are not currently supported.
 - Table clones across workspaces are not currently supported.
-- The tables present in [!INCLUDE [fabric-se](includes/fabric-se.md)] cannot be cloned through T-SQL.
-- Clone creation as of a previous point in time is not currently supported.
+- Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
 
-## Next steps
+## Related content
 
-- [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Tutorial: Clone table using T-SQL](tutorial-clone-table.md)
+- [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
+- [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the Warehouse](query-warehouse.md)
