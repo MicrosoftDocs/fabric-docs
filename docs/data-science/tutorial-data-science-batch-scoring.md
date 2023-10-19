@@ -11,13 +11,13 @@ ms.date: 10/16/2023
 
 # Tutorial Part 4: Perform batch scoring and save predictions to a lakehouse
 
-In this tutorial, you'll learn to import a trained and registered LightGBMRegressor model from the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
+In this tutorial, you'll learn to import the registered LightGBMClassifier model that was trained in part 3 using the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric allows you to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook or from a given model's item page. Learn about [PREDICT](https://aka.ms/fabric-predict).  
 
-To generate batch predictions on our test dataset, you'll use version 1 of the trained churn model. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways:
+To generate batch predictions on the test dataset, you'll use version 1 of the trained LightGBM model that demonstrated the best performance among all trained machine learning models. You'll load the test dataset into a spark DataFrame and create an MLFlowTransformer object to generate batch predictions. You can then invoke the PREDICT function using one of following three ways:
 
 > [!div class="checklist"]
 >
@@ -92,6 +92,7 @@ display(predictions)
 
 ### PREDICT with the Spark SQL API
 
+The following code invokes the PREDICT function with the Spark SQL API.
 
 ```python
 from pyspark.ml.feature import SQLTransformer 
@@ -110,6 +111,7 @@ display(sqlt.transform(df_test))
 
 ### PREDICT with a user-defined function (UDF)
 
+The following code invokes the PREDICT function with a PySpark UDF.
 
 ```python
 from pyspark.sql.functions import col, pandas_udf, udf, lit
@@ -120,11 +122,11 @@ features = df_test.columns
 
 display(df_test.withColumn("predictions", my_udf(*[col(f) for f in features])))
 ```
+Note that you can also generate PREDICT code from a model's item page. Learn about [PREDICT](https://aka.ms/fabric/predict-from-model-item).
 
 ## Write model prediction results to the lakehouse
 
-Write the model prediction results back to the lakehouse.  
-
+Once you have generated batch predictions, write the model prediction results back to the lakehouse.  
 
 ```python
 # Save predictions to lakehouse to be used for generating a Power BI report
