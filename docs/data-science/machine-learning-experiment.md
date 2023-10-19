@@ -29,7 +29,7 @@ In this article, you'll learn more about how data scientists can interact with a
 
 You can create a machine learning experiment directly from the Data science home page in the Power BI user interface (UI) or by writing code that uses the MLflow API.
 
-### Create an experiment using the UI
+### Create an experiment from Fabric
 
 To create a machine learning experiment from the UI:
 
