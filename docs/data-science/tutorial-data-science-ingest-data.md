@@ -17,7 +17,7 @@ In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format
 
 * **Delta Lake**  - Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
-* [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets.md) are curated public datasets you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
+* [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
 In this tutorial, you use the Apache Spark to:
 
@@ -36,7 +36,7 @@ In this tutorial, you use the Apache Spark to:
 
 ## Follow along in notebook
 
- [1-ingest-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb) is the notebook that accompanies this tutorial.
+ [1-ingest-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 

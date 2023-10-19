@@ -14,7 +14,7 @@ ms.date: 10/16/2023
 
 In this tutorial, you'll learn how to conduct exploratory data analysis (EDA) to examine and investigate the data while summarizing its key characteristics through the use of data visualization techniques.
 
-In particualr, you'll use `seaborn`, which is a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about `seaborn`, see [Seaborn: Statistical Data Visualization](https://seaborn.pydata.org/).  
+You'll use `seaborn`, a Python data visualization library that provides a high-level interface for building visuals on dataframes and arrays. For more information about `seaborn`, see [Seaborn: Statistical Data Visualization](https://seaborn.pydata.org/).  
 
 You'll also use [Data Wrangler](data-wrangler.md), a notebook-based tool that provides you with an immersive experience to conduct exploratory data analysis and cleaning.
 

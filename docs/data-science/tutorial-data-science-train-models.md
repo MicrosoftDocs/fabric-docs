@@ -38,7 +38,7 @@ This is part 3 of 5 in the tutorial series. To complete this tutorial, first com
 
 ## Follow along in notebook
 
-[3-train-evaluate.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/04-train-and-track-machine-learning-models.ipynb) is the notebook that accompanies this tutorial.
+[3-train-evaluate.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/3-train-evaluate.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
