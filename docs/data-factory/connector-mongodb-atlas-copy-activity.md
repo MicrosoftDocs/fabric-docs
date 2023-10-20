@@ -101,7 +101,7 @@ The following table contains more information about the copy activity in MongoDB
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|
 |**Filter**|The selection filter using query operators. To return all documents in a collection, omit this parameter or pass an empty document ({}).|< your selection filter >|No|filter|
 |**Cursor methods**|The way that the underlying query is executed.|• **project**<br>• **sort**<br>• **limit**<br>• **skip**|No|cursorMethods:<br>• project<br>• sort<br>• limit<br>• skip|
-|**Batch size**|The number of documents to return in each batch of the response from MongoDB Atlas instance.|< your write batch size ><br>The default value is 100|No|batchSize|
+|**Batch size**|The number of documents to return in each batch of the response from MongoDB Atlas instance.|< your write batch size ><br>(the default is 100)|No|batchSize|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
 ### Destination information
@@ -113,7 +113,7 @@ The following table contains more information about the copy activity in MongoDB
 |**Database**|Your database that you use as destination.|< your database >|Yes|database|
 |**Collection name**|Name of the collection in MongoDB Atlas database.|< your collection >|Yes|collection|
 |**Write behavior**|Describes how to write data to MongoDB Atlas. Allowed values: **Insert** and **Upsert**.<br><br>The behavior of **Upsert** is to replace the document if a document with the same `_id` already exists; otherwise, insert the document.<br><br>Note: The service automatically generates an `_id` for a document if an `_id` isn't specified either in the original document or by column mapping. This means that you must ensure that, for **Upsert** to work as expected, your document has an ID.|• **Insert** (default)<br>• **Upsert**<br>|No|writeBehavior:<br>• insert<br>• upsert|
-|**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan.|< your write batch timeout ><br>The default is **00:30:00** - 30 minutes|No|writeBatchTimeout|
+|**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| Controls the size of documents to write in each batch. You can try increasing this value to improve performance and decreasing the value if your document size being large.|< your write batch size >|No|writeBatchSize|
 
 ## Next steps
