@@ -12,7 +12,7 @@ ms.date: 10/16/2023
 
 # Tutorial Part 5: Visualize predictions with a Power BI report
 
-In this tutorial, you'll create a power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
+In this tutorial, you'll create a Power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -57,7 +57,7 @@ Create a new Power BI dataset linked to the predictions data you produced in par
 
 Now add a few measures to the dataset:
 
-* Add a new measure that measures the churn rate.
+1. Add a new measure for the churn rate.
 
     1. Select **New measure** in the top ribbon.  This action adds a new item named **Measure** to the **customer_churn_test_predictions** dataset, and opens a formula bar above the table.
 
@@ -75,9 +75,9 @@ Now add a few measures to the dataset:
 
         :::image type="content" source="media/tutorial-data-science-create-report/churn-rate.png" alt-text="Screenshot show the new Churn Rate measure with properties set." lightbox="media/tutorial-data-science-create-report/churn-rate.png":::
 
-* Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
+1. Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
   
-    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
         ```python
@@ -86,9 +86,9 @@ Now add a few measures to the dataset:
 
     1. Select the check mark in the formula bar to apply the formula.
 
-* Add the churn rate for Germany.
+1. Add the churn rate for Germany.
 
-    1. Select **New measure** in the top ribbon to add a new item named Measure to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python
@@ -99,7 +99,7 @@ Now add a few measures to the dataset:
 
     1. To apply the formula, select the check mark in the formula bar.
 
-* Repeat the above step to add the churn rates for France and Spain.
+1. Repeat the above step to add the churn rates for France and Spain.
 
     * Spain's churn rate:
 

@@ -171,7 +171,7 @@ for ind, item in enumerate (attr_list):
 fig.subplots_adjust(hspace=0.7)
 ```
 
-:::image type="content" source="media/tutorial-data-science-explore-notebook/bar-charts.jpg" alt-text="Graph shows the bar charts for exited and nonexited customers.":::
+:::image type="content" source="media/tutorial-data-science-explore-notebook/bar-charts.jpg" alt-text="Graph shows the bar charts for exited and nonexited customers." lightbox="media/tutorial-data-science-explore-notebook/bar-charts.jpg":::
 
 ### Distribution of numerical attributes
 
@@ -191,7 +191,7 @@ for i,j in itertools.zip_longest(columns, range(length)):
 plt.show()
 ```
 
-:::image type="content" source="media/tutorial-data-science-explore-notebook/histograms.jpg" alt-text="Graph shows the distribution of numerical attributes.":::
+:::image type="content" source="media/tutorial-data-science-explore-notebook/histograms.jpg" alt-text="Graph shows the distribution of numerical attributes." lightbox="media/tutorial-data-science-explore-notebook/histograms.jpg" :::
 
 ## Perform feature engineering
 
