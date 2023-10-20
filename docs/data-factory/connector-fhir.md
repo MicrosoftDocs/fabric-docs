@@ -1,6 +1,6 @@
 ---
 title: Set up your FHIR data connection
-description: This article provides information about how to create an FHIR data connection in Microsoft Fabric.
+description: This article provides information about how to create a FHIR data connection in Microsoft Fabric.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # Set up your FHIR data connection
 
-This article outlines the steps to create an FHIR data connection.
+This article outlines the steps to create a FHIR data connection.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 

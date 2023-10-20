@@ -1,6 +1,6 @@
 ---
 title: Set up your Folder connection
-description: This article provides information about how to create an Folder connection in Microsoft Fabric.
+description: This article provides information about how to create a Folder connection in Microsoft Fabric.
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
