@@ -1,18 +1,23 @@
 ---
-title: AI services in SynapseML
+title: AI services in SynapseML with bring your own key
 description: Learn about the capabilities of Azure AI services pretrained models for enriching your data with artificial intelligence (AI) in SynapseML.
 ms.topic: overview
-ms.custom: build-2023
+ms.custom: ignite-2023
 ms.reviewer: mopeakande
-author: JessicaXYWang
-ms.author: jessiwang
-ms.date: 05/08/2023
+author: JessicaXYWang, ruixinxu
+ms.author: jessiwang, ruxu
+ms.date: 10/18/2023
 ---
-# What is Azure AI services in SynapseML?
+# Azure AI services in SynapseML with bring your own key
 
-[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. AI services empowers developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
+[Azure AI services](https://azure.microsoft.com/products/ai-services/) is a suite of APIs, SDKs, and services that developers can use to add cognitive features to their applications, thereby building intelligent applications. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: **Vision**, **Speech**, **Language**, **Web search**, and **Decision**.
 
-## Usage of Azure AI services
+
+> [!NOTE] 
+> Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/), and [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) without any prerequisite. This is currently in public preview, for more information about the the prebuilt AI services in Fabric, see [AI services in Fabric](./ai-services-overview.md).
+
+
+## Usage of Azure AI services with bring your own key
 
 ### Vision
 [**Azure AI Vision**](https://azure.microsoft.com/products/ai-services/ai-vision/)
@@ -79,6 +84,6 @@ ms.date: 05/08/2023
 
 ## Next steps
 
-- [Use Azure AI services with SynapseML in Microsoft Fabric](how-to-use-ai-services-with-synapseml.md)
-- [Use Azure AI services with SynapseML for multivariate anomaly detection](multivariate-anomaly-detection.md)
-- [Create a custom search engine and question-answering system](create-a-multilingual-search-engine-from-forms.md)
+- [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
+- [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)
+- [Create a custom search engine and question-answering system](../create-a-multilingual-search-engine-from-forms.md)
