@@ -16,7 +16,7 @@ The Dataflows connector is supported in Data Factory for [!INCLUDE [product-name
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Dataflows data in Dataflow Gen2, go to [Set up your Dataflows (Power Platform) connection](connector-amazon-redshift.md).
+For information on how to connect to Dataflows data in Dataflow Gen2, go to [Set up your Dataflows (Power Platform) connection](connector-dataflows.md).
 
 ## Support in data pipelines
 
