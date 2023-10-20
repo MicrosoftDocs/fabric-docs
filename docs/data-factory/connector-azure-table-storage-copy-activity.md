@@ -50,7 +50,7 @@ The following three properties are **required**:
 
     :::image type="content" source="./media/connector-azure-table-storage/source-query.png" alt-text="Screenshot showing Use query when selecting Query." :::
 
-    - **Table**: Specify the name of the table in the Azure Table Storage database instance. Select the table from the drop down list or enter the name manually by selecting **Edit**.
+    - **Table**: Specify the name of the table in the Azure Table Storage database instance. Select the table from the drop-down list or enter the name manually by selecting **Edit**.
     - **Query**: Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options), and see the examples in the following Azure Table source query examples:
 
         > [!Note]
@@ -91,7 +91,7 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Insert type**: Select the mode to insert data into Azure Table. The modes are **Merge** and **Replace**. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. This setting applies at the row level not the table level. Neither option deletes rows in the output table that do not exist in the input. To learn about how the merge and replace settings work, see [Insert or merge entity](/rest/api/storageservices/Insert-Or-Merge-Entity) and [Insert or replace entity](/rest/api/storageservices/Insert-Or-Replace-Entity).
+- **Insert type**: Select the mode to insert data into Azure Table. The modes are **Merge** and **Replace**. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. This setting applies at the row level not the table level. Neither option deletes rows in the output table that don't exist in the input. To learn about how the merge and replace settings work, see [Insert or merge entity](/rest/api/storageservices/Insert-Or-Merge-Entity) and [Insert or replace entity](/rest/api/storageservices/Insert-Or-Replace-Entity).
 
 - **Partition key value selection**: Select from **Specify partition value** or **Use destination column**. Partition key value can be a fixed value or it can take value from a destination column.
 
@@ -157,4 +157,4 @@ The following table contains more information about the copy activity in Azure T
 
 ## Next steps
 
-- [MongoDB connector overview](connector-mongodb-overview.md)
+- [Azure Table Storage connector overview](connector-azure-table-storage-overview.md)
