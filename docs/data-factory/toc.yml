@@ -103,6 +103,12 @@
         href: connector-azure-synapse-analytics-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
+    - name: Azure Table Storage
+      items:
+      - name: Overview
+        href: connector-azure-table-storage-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-table-storage-copy-activity.md
     - name: Dataverse
       items:
       - name: Overview
