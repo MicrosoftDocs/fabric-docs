@@ -171,7 +171,7 @@ items:
     href: ./ai-services/ai-services-regions.md
   - name: How-to guides
     items:
-    - name: Use pre-built Azure openAI
+    - name: Use prebuilt Azure openAI
       items:
         - name: with REST API
           href: ./ai-services/how-to-use-openai-via-rest-api.md
@@ -179,19 +179,19 @@ items:
           href: ./ai-services/how-to-use-openai-via-python-sdk.md
         - name: with SynapseML
           href: ./ai-services/how-to-use-openai-via-synapseml.md
-    - name: Use pre-built anomaly detector
+    - name: Use prebuilt anomaly detector
       items:
         - name: with REST API
           href: ./ai-services/how-to-use-anomaly-detector-via-rest-api.md
         - name: with SynapeML
           href: ./ai-services/how-to-use-anomaly-detector-via-synapseml.md
-    - name: Use pre-built text analytics
+    - name: Use prebuilt text analytics
       items:
         - name: with REST API
           href: ./ai-services/how-to-use-text-analytics-via-rest-api.md
         - name: with SynapseML
           href: ./ai-services/how-to-use-text-analytics-via-synapseml.md
-    - name: Use pre-built Azure AI translator
+    - name: Use prebuilt Azure AI translator
       items: 
         - name: with REST API
           href: ./ai-services/how-to-use-text-translation-via-rest-api.md

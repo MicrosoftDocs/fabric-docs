@@ -4,8 +4,8 @@ description: Learn about the capabilities of Azure AI services pretrained models
 ms.topic: overview
 ms.custom: ignite-2023
 ms.reviewer: mopeakande
-author: JessicaXYWang, ruixinxu
-ms.author: jessiwang, ruxu
+author: JessicaXYWang
+ms.author: jessiwang
 ms.date: 10/18/2023
 ---
 # Azure AI services in SynapseML with bring your own key
