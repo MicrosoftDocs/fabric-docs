@@ -152,6 +152,7 @@ print(embeddings)
 
 ### Output
 
+```
     {
       "object": "list",
       "data": [
@@ -177,7 +178,7 @@ print(embeddings)
         "total_tokens": 8
       }
     }
-
+```
 
 ## Next steps
 

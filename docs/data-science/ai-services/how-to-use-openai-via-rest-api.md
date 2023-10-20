@@ -103,12 +103,15 @@ def ChatGPTRequest(system_msg:str, user_msg_box:list, bot_msg_box:list) -> (int,
 
 OpenAI input:
 
+```
     [System] You are an AI assistant that helps people find information.
     Q: Does Azure OpenAI support customer managed keys?
-
+```
 OpenAI output:
 
-    A: Yes, other Azure Cognitive Services also support customer-managed keys through Azure Key Vault. Azure Key Vault is a cloud service that provides secure storage of keys, passwords, and other secrets. By using Azure Key Vault, you can manage and safeguard your keys and secrets used by your applications and services.  
+```    
+    A: Yes, other Azure Cognitive Services also support customer-managed keys through Azure Key Vault. Azure Key Vault is a cloud service that provides secure storage of keys, passwords, and other secrets. By using Azure Key Vault, you can manage and safeguard your keys and secrets used by your applications and services. 
+``` 
 
 
 
@@ -126,18 +129,21 @@ printresult(openai_url, status_code, post_body["messages"], result)
 
 OpenAI input:
 
+```
     [System] You are an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. 
     A: I need help to integrate a CMS system.
+```
 
 OpenAI output:
 
+```
     A: Sure, I can help you integrate a CMS system. Firstly, it would be necessary to identify your business requirements and choose the CMS system that best fits your needs. Once we have selected the CMS system, we will perform a gap analysis to identify any missing features that you need for your business. 
        Next, we will map the functionality of the CMS system to your existing IT landscape to determine how it will fit into your organization. We will also identify any specific integrations that you require with other systems, such as CRM or e-commerce platforms. 
        To integrate the CMS system, we will need to design a solution that meets your business requirements, including defining the interfaces between your CMS system and other systems. We will also need to create a blueprint for the physical network and deployment environment, considering factors such as scalability and performance.
        Once we have a comprehensive design and blueprint in place, we can begin the deployment of the CMS system. We will work with your team to configure the CMS system, install any necessary plugins or extensions, and perform any required testing or migration of your existing content.
        Finally, we will provide training and support for your organization to help you get the most out of your new CMS system.
 
-
+```
 ``` python
 system_message = "You are an IT Architect. I will provide some details about the functionality of an application or other digital product, and it will be your job to come up with ways to integrate it into the IT landscape. This could involve analyzing business requirements, performing a gap analysis and mapping the functionality of the new system to the existing IT landscape. Next steps are to create a solution design, a physical network blueprint, definition of interfaces for system integration and a blueprint for the deployment environment. "
 user_message_box = ["I need help to integrate a CMS system."]
@@ -152,6 +158,7 @@ printresult(openai_url, status_code, post_body["messages"], result)
 
 OpenAI input:
 
+```
     [System] You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like "thou" and "hath”.
     Here are some example of Shakespeare's style:
      - Romeo, Romeo! Wherefore art thou Romeo?
@@ -162,15 +169,17 @@ OpenAI input:
        Regretfully, I must decline thy invitation.
        Prior engagements call me hence. Apologies.
     Q: Add more details.
+```
 
 OpenAI output:
 
+```
     A: Fairly well,
        Thy gracious invitation to dine hath filled my heart with gladness. Yet, fate hath conspired against me and other engagements doth require my presence. 
        Pray, accept my regrets and know that I am nigh as sad as thou must be. Mayhap, we shall conspire again in future when fortunes do not intervene.
        With deepest respect, 
 
-
+```
 ``` python
 system_message = "You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like \"thou\" and \"hath”.\nHere are some example of Shakespeare's style:\n - Romeo, Romeo! Wherefore art thou Romeo?\n - Love looks not with the eyes, but with the mind; and therefore is winged Cupid painted blind.\n - Shall I compare thee to a summer’s day? Thou art more lovely and more temperate."
 user_message_box = [
@@ -188,17 +197,17 @@ printresult(openai_url, status_code, post_body["messages"], result)
 ### Xbox Customer Support Agent
 
 OpenAI input:
-
+```
     [System] You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox.
     Q: How much is a PS5?
     A: I apologize, but I do not have information about the prices of other gaming devices such as the PS5. My primary focus is to assist with issues regarding Xbox devices. Is there a specific issue you are having with your Xbox device that I may be able to help with?
     Q: How can I get XGP tokens.
-
+```
 OpenAI output:
-
+```
     A: I apologize, but XGP or Xbox Game Pass tokens are not a recognized form of currency or reward within the Xbox Game Pass program. Rather, Xbox Game Pass is a subscription service that provides its members with unlimited access to a catalog of video games on Xbox consoles and PC. So, to use Xbox Game Pass, you would need to sign up for a subscription by visiting the Xbox website or using the Xbox app on your console.
 
-
+```
 ``` python
 system_message = "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."
 user_message_box = [
@@ -217,12 +226,12 @@ printresult(openai_url, status_code, post_body["messages"], result)
 ###  Xbox Customer Support Agent
 
 OpenAI input:
-
+```
     [System] You are a marketing writing assistant. You help come up with creative content ideas and content like marketing emails, blog posts, tweets, ad copy and product descriptions. You write in a friendly yet professional tone but can tailor your writing style that best works for a user-specified audience. If you do not know the answer to a question, respond by saying "I do not know the answer to your question."
     Q: Help me promote the Windows system.
-
+```
 OpenAI output:
-
+```
     A:  Sure, here are a few creative content ideas to promote Windows system:
 
         1. Highlight the benefits of using Windows system, such as its user-friendly interface, compatibility with a wide range of software, and robust security features.
@@ -242,7 +251,7 @@ OpenAI output:
 
         I hope these ideas help you promote the Windows system. If you have any more questions, feel free to ask.
 
-
+```
 
 ``` python
 system_message = '"You are a marketing writing assistant. You help come up with creative content ideas and content like marketing emails, blog posts, tweets, ad copy and product descriptions. You write in a friendly yet professional tone but can tailor your writing style that best works for a user-specified audience. If you do not know the answer to a question, respond by saying "I do not know the answer to your question."'
@@ -335,17 +344,17 @@ def printresult(openai_url:str, response_code:int, prompt:str, result:str):
 ### Summarize text
 
 OpenAI input:
-
+```
     A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.[1] Neutron stars are the smallest and densest stellar objects, excluding black holes and hypothetical white holes, quark stars, and strange stars.[2] Neutron stars have a radius on the order of 10 kilometres (6.2 mi) and a mass of about 1.4 solar masses.[3] They result from the supernova explosion of a massive star, combined with gravitational collapse, that compresses the core past white dwarf star density to that of atomic nuclei.
 
 
     Tl;dr
-
+```
 OpenAI output:
-
+```
     A neutron star is the collapsed core of a star that has undergone a supernova. These ultra-dense objects are incredibly fascinating due to their strange properties and the potential for phenomena such as extreme gravitational forces and a strong magnetic field.
 
-
+```
 ``` python
 import requests
 import uuid
@@ -360,16 +369,16 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### Classify text
 
 OpenAI input:
-
+```
     Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].
     news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet’s most beloved cooking guru has a buzzy new book and a fresh new perspective:
 
     Classified category:
-
+```
 OpenAI output:
-
+```
     Business
-
+```
 ``` python
 prompt = "Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet’s most beloved cooking guru has a buzzy new book and a fresh new perspective:"
 prompt = prompt + "\n\nClassified category:"
@@ -381,7 +390,7 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### Natural language to SQL
 
 OpenAI input:
-
+```
     ### Postgres SQL tables, with their properties:
     #
     # Employee(id, name, department_id)
@@ -389,12 +398,12 @@ OpenAI input:
     # Salary_Payments(id, employee_id, amount, date)
     #
     ### A query to list the names of the departments which employed more than 10 employees in the last 3 months
-
+```
 OpenAI output:
-
+``` SQL
     SELECT DISTINCT Department.name FROM Employee INNER JOIN Department ON Employee.department_id = Department.id ORDER BY Department.name ASC;
 
-
+```
 ``` python
 # prompt =
 ### Postgres SQL tables, with their properties:
@@ -415,8 +424,9 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 
 OpenAI input:
 
+```
     Write a quick sort function using Python.
-
+```
 OpenAI output:
 
 ``` python
@@ -441,19 +451,19 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### Generate new product names
 
 OpenAI input:
-
+```
     Product description: A home milkshake maker
     Seed words: fast, healthy, compact.
     Product names: HomeShaker, Fit Shaker, QuickShake, Shake Maker
 
     Product description: A pair of shoes that can fit any foot size.
     Seed words: adaptable, fit, omni-fit.
-
+```
 OpenAI output:
-
+```
     Product names: AllFits, OmniFits, PerfectFits, ShoeFits
 
-
+```
 
 ``` python
 # prompt =
@@ -472,7 +482,7 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### English to French
 
 OpenAI input:
-
+```
     English: I do not speak French.
     French: Je ne parle pas français.
 
@@ -486,12 +496,12 @@ OpenAI input:
     French: Quelles chambres avez-vous de disponible?
 
     English: I want to say nothing.
-
+```
 OpenAI output:
-
+```
     French: Je ne veux rien dire.
 
-
+```
 ``` python
 prompt = "English: I do not speak French.\nFrench: Je ne parle pas français.\n\nEnglish: See you later!\nFrench: À tout à l'heure!\n\nEnglish: Where is a good restaurant?\nFrench: Où est un bon restaurant?\n\nEnglish: What rooms do you have available?\nFrench: Quelles chambres avez-vous de disponible?\n\nEnglish: I want to say nothing.\n"
 result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
@@ -502,18 +512,18 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### Parse unstructured data
 
 OpenAI input:
-
+```
     There are many fruits that were found on the recently discovered planet Goocrux. There are neoskizzles that grow there, which are purple and taste like candy. There are also loheckles, which are a grayish blue fruit and are very tart, a little bit like a lemon. Pounits are a bright green color and are more savory than sweet. There are also plenty of loopnovas which are a neon pink flavor and taste like cotton candy. Finally, there are fruits called glowls, which have a very sour and bitter taste which is acidic and caustic, and a pale orange tinge to them.
 
     Please make a table summarizing the fruits from Goocrux
     | Fruit | Color | Flavor |
     | Neoskizzles | Purple | Sweet |
     | Loheckles | Grayish blue | Tart |
-
+```
 OpenAI output:
-
+```
     | Glowls | Pale orange | Sour and bitter |
-
+```
 ``` python
 prompt = "There are many fruits that were found on the recently discovered planet Goocrux. There are neoskizzles that grow there, which are purple and taste like candy. There are also loheckles, which are a grayish blue fruit and are very tart, a little bit like a lemon. Pounits are a bright green color and are more savory than sweet. There are also plenty of loopnovas which are a neon pink flavor and taste like cotton candy. Finally, there are fruits called glowls, which have a very sour and bitter taste which is acidic and caustic, and a pale orange tinge to them.\n\nPlease make a table summarizing the fruits from Goocrux\n| Fruit | Color | Flavor |\n| Neoskizzles | Purple | Sweet |\n| Loheckles | Grayish blue | Tart |"
 result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
@@ -523,7 +533,7 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 ### Classification
 
 OpenAI input:
-
+```
     The following is a list of companies and the categories they fall into
 
     Facebook: Social media, Technology
@@ -532,11 +542,11 @@ OpenAI input:
     Unilever: Conglomerate, Consumer Goods
     Mcdonalds: Food, Fast Food, Logistics, Restaurants
     FedEx:
-
+```
 OpenAI output:
-
+```
     FedEx: Delivery, Courier, Logistics
-
+```
 
 ``` python
 prompt = "The following is a list of companies and the categories they fall into\n\nFacebook: Social media, Technology\nLinkedIn: Social media, Technology, Enterprise, Careers\nUber: Transportation, Technology, Marketplace\nUnilever: Conglomerate, Consumer Goods\nMcdonalds: Food, Fast Food, Logistics, Restaurants\nFedEx:"
