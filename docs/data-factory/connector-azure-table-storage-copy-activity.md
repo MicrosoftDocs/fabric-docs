@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Table Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/08/2023
+ms.date: 10/19/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -133,7 +133,7 @@ The following table contains more information about the copy activity in Azure T
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your Azure Table Storage connection >|Yes|connection|
-| **Use query** | Select from **Table** or **Query**. | • Table<br>• Query | Yes | / | 
+| **Use query** | Choose to use **Table** or **Query**. | • Table<br>• Query | Yes | / | 
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
 | **Query** | Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options). | < your query > | No | azureTableSourceQuery | 
 | **Ignore table not found** | Whether to allow the exception of the table to not exist. | selected or unselected (default) | No | azureTableSourceIgnoreTableNotFound:<br>true or false (default) | 

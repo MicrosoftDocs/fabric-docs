@@ -16,10 +16,12 @@ This Azure Table Storage connector is supported in Data Factory for [!INCLUDE [p
 
 ## Support in data pipelines
 
+The Azure Table Storage connector supports the following capabilities in data pipelines:
+
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/-)** | None | Account key |
 | **Lookup activity** | None | Account key |
 
-To learn more about the copy activity configuration for Azure Table Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-table-storage-activity.md).
+To learn more about the copy activity configuration for Azure Table Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-table-storage-copy-activity.md).
 
