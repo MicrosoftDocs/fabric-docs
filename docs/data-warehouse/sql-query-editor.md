@@ -49,13 +49,13 @@ To enable **Save as view**, **Save as table**, **Download Excel file**, and **Vi
 
 #### Save as view
 
-You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
+You can select the query and save your query as a view using the **Save as view** button. Select the schema name that you have access to create views, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
 
    :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu." lightbox="media\sql-query-editor\save-as-view.png":::
 
 #### Save as table
 
-You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
+You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema that you have access to create tables and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
 
    :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu." lightbox="media\sql-query-editor\save-as-table.png":::
 

@@ -92,7 +92,7 @@ spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.
 List all tables in the Power BI dataset `Sales Dataset`:
 
 ```python
-df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
+df = spark.sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
@@ -118,7 +118,7 @@ List all tables in the Power BI dataset `Sales Dataset`:
 ```R
 %%sparkr
 
-df = sql("SHOW TABLES pbi.`Sales Dataset`")
+df = sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
@@ -162,14 +162,13 @@ The `add_measure` operation is a powerful feature of semantic link that enables 
 The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector. For more information on the `add_measure` method, see [add_measure in the FabricDataFrame Class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
-
-```python
-%pip install semantic-link
-```
-
 The following example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
 
 ```python
+# %pip and import only needs to be done once per notebook
+%pip install semantic-link
+from sempy.fabric import FabricDataFrame
+
 df = FabricDataFrame({
         "Sales Agent": ["Agent 1", "Agent 1", "Agent 2"],
         "Customer[Country/Region]": ["US", "GB", "US"],
