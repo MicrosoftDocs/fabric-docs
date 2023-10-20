@@ -4,13 +4,13 @@ description: Learn about smoothing and throttling principles applicable for data
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/03/2023
+ms.date: 10/19/2023
 ms.topic: conceptual
 ---
 
 # Smoothing and throttling in Fabric Data Warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
 
@@ -24,9 +24,9 @@ Capacity forms the foundation in Microsoft Fabric and provides the computing pow
 
 ## Smoothing
 
-Capacities have periods where they're under-utilized (idle) and over-utilized (peak). When a capacity is running multiple jobs, a sudden spike in compute demand may be generated that exceeds the limits of a purchased capacity.
+Capacities have periods where they're under-utilized (idle) and over-utilized (peak). When a capacity is running multiple jobs, a sudden spike in compute demand might be generated that exceeds the limits of a purchased capacity. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide [burstable capacity](burstable-capacity.md) that allows workloads to use more resources to achieve better performance.
 
-Smoothing offers relief for customers who create sudden spikes during their peak times while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
+Smoothing offers relief for customers who create sudden spikes during their peak times, while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
 
 Smoothing won't affect execution time. It helps streamline capacity management by allowing customers to size your capacity based on average, rather than peak usage.
 
@@ -46,7 +46,7 @@ Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Wa
 
 Throttling occurs when a customer's capacity consumes more CPU resources than what was purchased. After consumption is smoothed, capacity throttling policies will be checked based on the amount of future capacity consumed. This results in a degraded end-user experience. When a capacity enters a throttled state, it only affects operations that are requested after the capacity has begun throttling. 
 
-Throttling policies are applied at a capacity level, meaning that while one capacity, or set of workspaces, may be experiencing reduced performance due to being overloaded, other capacities may continue running normally.
+Throttling policies are applied at a capacity level, meaning that while one capacity, or set of workspaces, might be experiencing reduced performance due to being overloaded, other capacities can continue running normally.
 
 The four capacity throttling policies for Microsoft Fabric:
 
@@ -64,8 +64,8 @@ All Warehouse and SQL Endpoint operations follow "Background Rejection" policy, 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
 - Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc. ) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
 - Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to understand the root cause.
-- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later`.
-- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later (Microsoft SQL Server Server, Error: 18456)`.
+- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you might see error message: `Your request was rejected due to resource constraints. Try again later`.
+- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you might see error message: `Your request was rejected due to resource constraints. Try again later (Microsoft SQL Server Server, Error: 18456)`.
 
 ## Best practices to recover from overload situations
 
@@ -105,5 +105,5 @@ The **Overages** tab provides a visual history of any overutilization of capacit
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Throttling in Microsoft Fabric](../enterprise/throttling.md)
-
-
+- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
+- [Burstable capacity in Fabric data warehousing](burstable-capacity.md)

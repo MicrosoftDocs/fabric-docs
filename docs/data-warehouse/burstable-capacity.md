@@ -1,35 +1,39 @@
 ---
-title: Burstable Capacity
-description: Learn more about how burstable capacity is used and limited with SKU guard arils.
-ms.reviewer: wiassaf
-ms.author: stevehow
+title: Burstable capacity
+description: Learn more about how burstable capacity is used and limited with SKU guardrails in Fabric data warehousing.
 author: realAngryAnalytics
-ms.topic: conceptual
+ms.author: stevehow
+ms.reviewer: wiassaf
 ms.date: 10/19/2023
+ms.topic: conceptual
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 
-# Burstable Capacity in Fabric data warehousing
+# Burstable capacity in Fabric data warehousing
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## Burstable Capacity
-A Fabric capacity is a distinct pool of resources that’s size (or SKU) determines the amount of computational power available. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide burstable capacity that allows workloads to use more resources to achieve better performance.
+A Fabric capacity is a distinct pool of resources that's size (or SKU) determines the amount of computational power available. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide burstable capacity that allows workloads to use more resources to achieve better performance.
 
-Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A nondemanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased. To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload.
-`Capacity Units (CU)    / duration / Baseline CU = scale factor`
+## Burstable capacity
 
-CU can be determined by using the [capacity metrics app](usage-reporting.md)
+Burstable capacity has a direct correlation to the SKU that has been assigned to the Fabric capacity of the workspace. It also is a function of the workload. A non-demanding workload might never use burstable capacity units. The workload could achieve optimal performance within the baseline capacity that has been purchased. 
 
-As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CU, the scale factor would be calculated as follows:
-`1500 / 100 / 8 = 1.875`
+To determine if your workload is using burstable capacity, the following formula can be used to calculate the scale factor for your workload: `Capacity Units (CU) / duration / Baseline CU = Scale factor` 
+
+As an illustration of this formula, if your capacity is an F8, and your workload takes 100 seconds to complete, and it uses 1500 CU, the scale factor would be calculated as follows: `1500 / 100 / 8 = 1.875`
+
+CU can be determined by using the [Microsoft Fabric Capacity Metrics app](usage-reporting.md). 
 
 When a scale factor is over 1, it means that burstable capacity is being used to meet the demands of the workload. It also means that your workload is borrowing capacity units from a future time interval. This is a fundamental concept of Microsoft Fabric called [smoothing](compute-capacity-smoothing-throttling.md#smoothing).
 
-## SKU Guardrails
-Burstable capacity is finite. There's a limit that is applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads from exclusively causing [throttling](compute-capacity-smoothing-throttling.md#throttling)
+Smoothing offers relief for customers who create sudden spikes during their peak times, while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
+
+## SKU guardrails
+
+Burstable capacity is finite. There's a limit applied to the backend compute resources to greatly reduce the risk of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] workloads causing [throttling](compute-capacity-smoothing-throttling.md#throttling).
 
 The limit (or guardrail) is a scale factor directly correlated to the Fabric Capacity SKU size that is assigned to the workspace.
 
@@ -47,22 +51,30 @@ The limit (or guardrail) is a scale factor directly correlated to the Fabric Cap
 | F1024      | P5                    | 1024                         | 1x - 12x               |
 | F2048      |                       | 2048                         | 1x - 12x               |
 
-Smaller  SKU sizes are often used for Dev/Test scenarios or ad-hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
+Smaller SKU sizes are often used for Dev/Test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
 Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](https://learn.microsoft.com/fabric/enterprise/scale-capacity) might be beneficial.
 
 > [!NOTE]
-> The max burstable scale factor in the above table may only be observable for extremely small time intervals. Often within a single query for seconds or even milliseconds. When using the capacity metrics app to observe burstable capacity note that the scale factor over longer durations will be much lower.
+> The maximum Burstable Scale Factor might only be observed for extremely small time intervals, often within a single query for seconds or even milliseconds. When using the Microsoft Fabric Capacity Metrics app to observe burstable capacity, the scale factor over longer durations will be lower.
 
-## Isolation Boundaries
-As described in the [workload management](workload-management.md#ingestion-isolation) documentation, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] fully isolates ingestion from query processing. The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, capacity can be assigned to multiple workspaces. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula.
-`([query burstable scale factor] + [ingestion burstable scale factor]) * [Number of workspaces] = [aggregate burstable scale factor]`
+## Isolation boundaries
 
-## Troubleshooting
-Typically, a complex query running in a workspace assigned to a small capacity SKU size should run to completion. However, if the data retrieval or intermediate data processing physically can't run within the burstable scale factor, it results in the following error message: `this query was rejected due to current capacity constraints.`
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] fully isolates ingestion from query processing, as described in [Workload management](workload-management.md#ingestion-isolation). 
 
-This message indicates that the capacity SKU size is too small to perform the query processing activity. To increase the SKU size, contact your capacity administrator.
+The burstable scale factor can be achieved independently for ingestion at the same time the burstable scale factor is achieved for query processing. These scale factors encapsulate all processes within a single workspace. However, capacity can be assigned to multiple workspaces. Therefore, the aggregate max scale factor across a capacity would be represented in the following formula: `([Query burstable scale factor] + [Ingestion burstable scale factor]) * [number of Fabric workspaces] = [aggregate burstable scale factor]`
 
-After the [capacity is resized](https://learn.microsoft.com/fabric/enterprise/scale-capacity), the new guardrails will be applied at the time the next query is run. Performance should stabilize to the new capacity SKU size within a few seconds of the first query submission.
+## Considerations
 
-Also, a workload running on a nonoptimal capacity size can be subject to resource contention (such as spilling) that can increase the CU usage of the workload.
+- Typically, a complex query running in a workspace assigned to a small capacity SKU size should run to completion. However, if the data retrieval or intermediate data processing physically can't run within the burstable scale factor, it results in the following error message: `This query was rejected due to current capacity constraints.` This message indicates that the capacity SKU size is too small to perform the query processing activity. To increase the SKU size, contact your capacity administrator.
+
+- After the [capacity is resized](../enterprise/scale-capacity.md), new guardrails will be applied when the next query is run. Performance should stabilize to the new capacity SKU size within a few seconds of the first query submission.
+
+- A workload running on a nonoptimal capacity size can be subject to resource contention (such as spilling) that can increase the CU usage of the workload.
+
+## Related content
+
+- [Workload management](workload-management.md)
+- [Scale your capacity](../enterprise/scale-capacity.md)
+- [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
+- [Manage capacity settings](../admin/service-admin-portal-capacity-settings.md)
