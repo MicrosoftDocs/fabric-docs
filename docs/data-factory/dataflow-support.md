@@ -2,7 +2,7 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 10/18/2023
+ms.date: 10/20/2023
 ms.author: dougklo
 ms.topic: overview
 ms.custom: build-2023
@@ -58,13 +58,13 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](/power-query/connectors/fhir/fhir)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](/power-query/connectors/folder)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
+| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](connector-fhir.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](connector-folder.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
 
 ## G
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](/power-query/connectors/google-analytics)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](/power-query/connectors/google-bigquery)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
+| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
 
 ## H
 

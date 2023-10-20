@@ -163,6 +163,18 @@
         href: connector-data-warehouse-overview.md
       - name: Configure in Data pipeline
         href: connector-data-warehouse-copy-activity.md 
+    - name: FHIR
+      items:
+      - name: Overview
+        href: connector-fhir-overview.md
+      - name: Set up your connection
+        href: connector-fhir.md
+    - name: Folder
+      items:
+      - name: Overview
+        href: connector-folder-overview.md
+      - name: Set up your connection
+        href: connector-folder.md
     - name: Format
       items:
       - name: Avro
@@ -209,6 +221,18 @@
         href: connector-ftp-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-ftp-copy-activity.md
+    - name: Google Analytics
+      items:
+      - name: Overview
+        href: connector-google-analytics-overview.md
+      - name: Set up your connection
+        href: connector-google-analytics.md
+    - name: Google BigQuery
+      items:
+      - name: Overview
+        href: connector-google-bigquery-overview.md
+      - name: Set up your connection
+        href: connector-google-bigquery.md
     - name: Google Cloud Storage
       items: 
       - name: Overview
