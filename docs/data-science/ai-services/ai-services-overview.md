@@ -18,15 +18,15 @@ Fabric provides two options for utilizing Azure AI services:
 
 - **Pre-built AI models in Fabric (preview)**. 
 
-Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend using this option as you can utilize your Fabric authentication to access AI services, and all usage are billed against your Fabric capacity. This option is currently in public preview with limited AI services available. 
+    Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend using this option as you can utilize your Fabric authentication to access AI services, and all usage are billed against your Fabric capacity. This option is currently in public preview with limited AI services available. 
 
-[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/), and [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) are available out of the box in Fabric, with support for both RESTful API and SynapseML. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information on available models, see [prebuilt AI models in Fabric](./ai-services-overview.md#pre-built-ai-models-in-fabric-preview).
+    [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/), and [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) are available out of the box in Fabric, with support for both RESTful API and SynapseML. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information on available models, see [prebuilt AI models in Fabric](./ai-services-overview.md#pre-built-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**. 
 
-You can provision your AI services on Azure and bring your own key to use them from Fabric. If the desired AI services aren't yet supported in the prebuilt AI models, you can still use BYOK. 
+    You can provision your AI services on Azure and bring your own key to use them from Fabric. If the desired AI services aren't yet supported in the prebuilt AI models, you can still use BYOK. 
 
-To learn more about how to use Azure AI services with BYOK, visit [Azure AI services in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
+    To learn more about how to use Azure AI services with BYOK, visit [Azure AI services in SynapseML with bring your own key](./ai-services-in-synapseml-bring-your-own-key.md).
 
 ## Prebuilt AI models in Fabric (preview)
 
