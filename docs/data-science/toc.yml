@@ -194,9 +194,9 @@ items:
     - name: Use prebuilt Azure AI translator
       items: 
         - name: with REST API
-          href: ./ai-services/how-to-use-text-translation-via-rest-api.md
+          href: ./ai-services/how-to-use-text-translator-via-rest-api.md
         - name: with SynapseML
-          href: ./ai-services/how-to-use-text-translation-via-synapseml.md
+          href: ./ai-services/how-to-use-text-translator-via-synapseml.md
 - name: Use Python
   items:
   - name: Python overview
