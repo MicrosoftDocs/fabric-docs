@@ -305,6 +305,8 @@
         href: append-variable-activity.md
       - name: Azure Batch activity
         href: azure-batch-activity.md
+      - name: Azure Machine Learning activity
+        href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: Delete data activity
