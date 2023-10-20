@@ -25,7 +25,12 @@ Current general product limitations for Data Warehousing in Microsoft Fabric are
 
 - <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
 - Warehouse recovery capabilities are not available during preview.
-- Data warehousing is not supported for multiple geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview.
+- Data warehousing is not supported for multiple geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview. The following Azure regions are currently not supported for Data Warehousing and Lakehouse SQL Endpoint:
+   - West India
+   - UAE Central
+   - Poland
+   - Israel
+   - Italy
 
 For more limitations information in specific areas, see:
 
