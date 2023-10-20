@@ -21,13 +21,13 @@ In this guide, you will:
 
 - Query one copy of data on OneLake with SQL.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
-Before you begin, you must:
+Before you begin, you must download and install [OneLake file explorer](onelake-file-explorer.md).
 
-- Download and install [OneLake file explorer](onelake-file-explorer.md).
+ [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+You must also:
 
 - Create a workspace with a Lakehouse item.
 

@@ -16,8 +16,6 @@ OneLake is a single, unified, logical data lake for your whole organization. Lik
 - **One data lake** for the entire organization
 - **One copy of data** for use with multiple analytical engines
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## One data lake for the entire organization
 
 Before OneLake, it was easier for customers to create multiple lakes for different business groups rather than collaborating on a single lake, even with the extra overhead of managing multiple resources. OneLake focuses on removing these challenges by improving collaboration. Every customer tenant has exactly one OneLake. There can never be more than one and if you have Fabric, there can never be zero. Every Fabric tenant automatically provisions OneLake, with no extra resources to set up or manage.
@@ -47,6 +45,8 @@ For more information on APIs and endpoints, see [OneLake access and APIs](onelak
 ### OneLake file explorer for Windows
 
 OneLake is the OneDrive for data. Just like OneDrive, you can easily explore OneLake data from Windows using the OneLake file explorer for Windows. You can navigate all your workspaces and data items, easily uploading, downloading, or modifying files just like you do in Office. The OneLake file explorer simplifies working with data lakes, allowing even nontechnical business users to use them.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 For more information, see [OneLake file explorer](onelake-file-explorer.md).
 
