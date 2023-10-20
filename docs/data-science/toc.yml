@@ -13,15 +13,13 @@ items:
     href: tutorial-data-science-prepare-system.md
   - name: 1 Ingest data into a Fabric lakehouse
     href: tutorial-data-science-ingest-data.md
-  - name: 2 Explore and visualize data using notebooks
+  - name: 2 Explore and clean data using notebooks
     href: tutorial-data-science-explore-notebook.md
-  - name: 3 Perform data cleansing and preparation
-    href: tutorial-data-science-data-cleanse.md
-  - name: 4 Train and register machine learning models
+  - name: 3 Train and register machine learning models
     href: tutorial-data-science-train-models.md
-  - name: 5 Perform batch scoring and save predictions
+  - name: 4 Perform batch scoring and save predictions
     href: tutorial-data-science-batch-scoring.md
-  - name: 6 Create a Power BI report
+  - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
 - name: Notebooks
   items:
