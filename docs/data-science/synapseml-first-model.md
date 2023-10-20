@@ -94,6 +94,6 @@ display(model.transform(test))
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
+- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [Quickstart: Create a multi-service resource for Azure AI services](/azure/ai-services/multi-service-resource)

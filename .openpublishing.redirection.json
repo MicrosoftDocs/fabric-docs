@@ -1,8 +1,8 @@
 {
     "redirections": [
       {
-        "source_path": "/docs/data-science/overview-azure-ai-services.md",
-        "redirect_url": "/docs/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key.md",
+        "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key.md",
         "redirect_document_id": true
       },
       {
@@ -17,7 +17,7 @@
       },
       {
         "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
-        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key.md",
         "redirect_document_id": true
         },
         {
