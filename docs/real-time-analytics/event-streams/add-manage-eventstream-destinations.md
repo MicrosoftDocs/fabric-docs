@@ -133,13 +133,13 @@ To add a Reflex from your workspace as an eventstream's destination, do the foll
 
 1. Enter a name for the eventstream destination and complete the information about your Reflex.
 
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-Relex-configuration.png" alt-text="Screenshot showing the Reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-Relex-configuration.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-relex-configuration.png" alt-text="Screenshot showing the reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-relex-configuration.png" :::
 
    **Reflex**: Select an existing Reflex or create a new one to receive data.
 
 1. After you select on the Add button, you can see a Reflex destination on the canvas that is linked to your eventstream.
 
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-Reflex.png" alt-text="Screenshot showing the new Reflex destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-Reflex.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-reflex.png" alt-text="Screenshot showing the new Reflex destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-reflex.png" :::
 
 ## Manage a destination
 
