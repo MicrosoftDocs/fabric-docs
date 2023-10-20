@@ -274,7 +274,7 @@ printresponse(response)
 ## Key Phrase Extractor
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
-identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/en-us/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
+identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
 
 
 ``` python

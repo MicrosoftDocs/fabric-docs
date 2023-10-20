@@ -85,7 +85,7 @@ display(result.select("text", "detectedLanguage"))
 ## Key Phrase Extractor
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
-identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/en-us/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
+identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
 
 ``` Python
 df = spark.createDataFrame([
@@ -134,7 +134,7 @@ display(result.select("text", "entityNames"))
 ## Entity linking
 
 Entity linking identifies and disambiguates the identity of entities found in text. For example, in the sentence "We went to Seattle last
-week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](https://learn.microsoft.com/en-us/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
+week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](https://learn.microsoft.com/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
 
 
 ``` Python
