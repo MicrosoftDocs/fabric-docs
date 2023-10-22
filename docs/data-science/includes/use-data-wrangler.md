@@ -40,7 +40,7 @@ On the left panel is a list of operations (such as **Find and replace**, **Forma
     :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-duplicate.png" alt-text="Screenshot shows dropping duplicate rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-duplicate.png":::
 
 
-1. You could copy and paste the code into your notebook. But in this tutorial, you'll perform more data cleaning first. Select **Apply** (either at the side or at the bottom) to go to the next step.
+1. Select **Apply** (either at the side or at the bottom) to go to the next step.
 
 ### Drop rows with missing data
 
@@ -68,7 +68,7 @@ Use Data Wrangler to drop columns that you don't need.
 
 Each time you select **Apply**, a new step is created in the **Cleaning steps** panel on the bottom left. At the bottom of the panel, select **Preview code for all steps** to view a combination of all the separate steps.
 
-You could copy this code, close Data Wrangler to return to the notebook, then paste into a new cell. Or, select **Add code to notebook** at the top left to close Data Wrangler and add the code automatically. The **Add code to notebook** wraps the code in a function, then calls the function.  
+Select **Add code to notebook** at the top left to close Data Wrangler and add the code automatically. The **Add code to notebook** wraps the code in a function, then calls the function.  
 
 :::image type="content" source="../media/tutorial-data-science-explore-notebook/add-to-notebook.png" alt-text="Screenshot shows preview code and where to access add to notebook.":::
 
