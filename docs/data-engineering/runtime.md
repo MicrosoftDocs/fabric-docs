@@ -23,17 +23,23 @@ Major components of the Fabric Runtime:
 
 - **Default-level Packages for Java/Scala, Python, and R** to support diverse programming languages and environments. These packages are automatically installed and configured, allowing developers to apply their preferred programming languages for data processing tasks.
 
-- The Microsoft Fabric Runtime is built upon **a robust open-source operating system (Ubuntu)**, ensuring compatibility with various hardware configurations and system requirements.
+- The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
 
-## Runtime 1.1
+Below, you'll find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
 
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
-- Apache Spark 3.3
-- Operating System: Ubuntu 18.04
-- Java: 1.8.0_282
-- Scala: 2.12.15
-- Python: 3.10
-- Delta Lake: 2.2
-- R: 4.2.2
+|                       | **[Runtime 1.1](./runtime-1-1.md)**   | **[Runtime 1.2](./runtime-1-2.md)** |
+|-----------------------|---------------------------------------|-------------------------------------|
+| **Apache Spark**      | 3.3.1                                 | 3.4.1                               |
+| **Operating System**  | Ubuntu 18.04                          | Mariner 2.0                         |
+| **Java**              | 8                                     | 11                                  |
+| **Scala**             | 2.12.15                               | 2.12.15                             |
+| **Python**            | 3.10                                  | 3.10                                |
+| **Delta Lake**        | 2.2                                   | 2.4                                 |
+| **R**                 | 4.2.2                                 | 4.2.2                               |
 
-Please visit [Runtime 1.1](./runtime-1-1.md) to explore all the details, new features, improvements, and migration scenarios for Runtime 1.1.
+Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
+
+
+## Versioning 
+
+Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries. 

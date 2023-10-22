@@ -15,7 +15,7 @@ The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spa
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+Microsoft Fabric Runtime 1.1 is the default runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
 
 - Apache Spark 3.3
 - Operating System: Ubuntu 18.04
@@ -25,11 +25,12 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 - Delta Lake: 2.2
 - R: 4.2.2
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
-
 Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
-Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
+Microsoft Fabric periodically releases maintenance updates for Runtime 1.1, delivering bug fixes, performance enhancements, and security patches. Ensuring you stay up to date with these updates guarantees optimal performance and reliability for your data processing tasks. **If you are currently using Runtime 1.1, you can upgrade to Runtime 1.2 by navigating to Workspace Settings > Data Engineering / Science > Spark Settings.**
+
+:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
+
 
 ## New features and improvements
 

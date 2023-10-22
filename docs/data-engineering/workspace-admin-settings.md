@@ -54,9 +54,9 @@ Learn more about [Spark Compute for Fabric](spark-compute.md).
 
 ## Runtime version
 
-You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
+You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) and [Spark 3.4](./runtime-1-2.md) versions are available.
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
+:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
 
 ## Autologging for Machine Learning models and experiments
 
