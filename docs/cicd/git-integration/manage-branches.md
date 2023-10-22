@@ -4,7 +4,7 @@ description: Learn how to use Git branches to work in your own isolated environm
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: concept-article
+ms.topic: conceptual
 ms.date: 06/23/2023
 ms.custom: build-2023
 ---
