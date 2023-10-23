@@ -134,7 +134,7 @@ The key features in this release are as follows:
 
 Check the source and full release notes on [GitHub at delta-io/delta](https://github.com/delta-io/delta/releases).
 
-## Default level packages for Java/Scala libraries
+## Default-level packages for Java/Scala
 
 The following table lists all the default level packages for Java/Scala and their respective versions.
 
@@ -369,7 +369,7 @@ The following table lists all the default level packages for Java/Scala and thei
 | oro                               | oro                                         | 2.0.8                       |
 | pl.edu.icm                        | JLargeArrays                                | 1.5                         |
 
-## Default level packages for Python libraries
+## Default-level packages for Python
 
 The following table lists all the default level packages for Python and their respective versions.
 
@@ -532,7 +532,7 @@ The following table lists all the default level packages for Python and their re
 | interpret                     | 0.3.1       | pcre2                    | 10.40        | zstd                    | 1.5.2       |
 | interpret-core                | 0.3.1       | pexpect                  | 4.8.0        |                         |             |
 
-## Default level packages for R libraries
+## Default-level packages for R
 
 The following table lists all the default level packages for R and their respective versions.
 
