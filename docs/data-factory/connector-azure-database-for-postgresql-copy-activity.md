@@ -47,7 +47,7 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure SQL Database is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
+- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure Database for PostgreSQL is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
     If you select **None**, you choose not to use partition.
 
@@ -152,7 +152,7 @@ The following table contains more information about the copy activity in Azure D
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Connection type** |Your destination connection type. |**Azure Database for PostgreSQL** |Yes|/|
-|**Table**|Your destination data table to write data.| \<name of your destination table\> |Yes |• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp; - schema<br>&nbsp; - table<br>|
+|**Table**|Your destination data table to write data.| < name of your destination table > |Yes |• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp; - schema<br>&nbsp; - table<br>|
 |**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>|No|writeMethod:<br>• CopyCommand<br>• BulkInsert|
 |**Pre-copy script**|A SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.|< your pre-copy script >|No|preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
