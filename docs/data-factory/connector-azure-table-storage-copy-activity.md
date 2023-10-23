@@ -109,7 +109,7 @@ Under **Advanced**, you can specify the following fields:
     If you select **Use destination column**:
     - **Row key column**: Select the name of the column whose column values are used as the row key. If not specified, use a GUID for each row.
 
-- **Write batch size**: This property controls the size of documents to write in each batch. You can try increasing the value to improve performance and decreasing the value if your document size being large. Allowed values are integer (number of rows).and the default value is 10,000.
+- **Write batch size**: Specify the write batch size to inserts data into Azure Table when it is hit. Allowed values are integer (number of rows).and the default value is 10,000.
 
 - **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
 
@@ -152,7 +152,7 @@ The following table contains more information about the copy activity in Azure T
 | **Partition key column** | The name of the column whose values are used as partition keys. If not specified, "AzureTableDefaultPartitionKeyValue" is used as the partition key. | < your partition key column > | No | azureTablePartitionKeyName：<br>• value<br>• type | 
 | **Row key value selection** | Row key value can be an auto generated unique identifier or it can take value from a destination column. | • **Unique identifier**<br>• **Use destination column** | No | / | 
 | **Row key column** | The name of the column whose column values are used as the row key. If not specified, use a GUID for each row. | < your row key column  > | No | azureTableRowKeyName:<br>• value<br>• type |
-|**Write batch size**| Controls the size of documents to write in each batch. You can try increasing this value to improve performance and decreasing the value if your document size being large.|integer <br> (default is 10,000)|No|writeBatchSize|
+|**Write batch size**| Inserts data into Azure Table when the write batch size is hit.|integer <br> (default is 10,000)|No|writeBatchSize|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. | timespan |No|writeBatchTimeout|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< your max concurrent connections >|No| maxConcurrentConnections |
 
