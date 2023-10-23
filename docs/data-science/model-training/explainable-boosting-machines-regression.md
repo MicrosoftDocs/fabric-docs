@@ -16,7 +16,7 @@ In SynapseML, you can use a scalable implementation of Explainable Boosting Mach
 
 [!INCLUDE [feature-preview](../includes/feature-preview.md)]
 
-## Benefits of Explainable Boosting Machines
+## Benefits of explainable boosting machines
 
  EBMs offer a unique blend of interpretability and predictive power, making them an ideal choice when transparency and comprehensibility of machine learning models are crucial. With EBMs, users can gain valuable insights into the underlying factors driving predictions, enabling them to understand why a model makes specific decisions or predictions, which is essential for building trust in AI systems.
 
