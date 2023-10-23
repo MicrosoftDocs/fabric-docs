@@ -259,7 +259,7 @@ display(token_df.limit(20))
 
 Display the wordcloud for each class.
 
-A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
+A wordcloud is a visually prominent presentation of "keywords" that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
 
 
 
@@ -502,5 +502,5 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ## Next steps
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

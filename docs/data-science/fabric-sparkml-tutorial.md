@@ -11,7 +11,7 @@ ms.date: 05/23/2023
 
 # Build a machine learning model with Apache Spark MLlib
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you'll learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that does simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 
@@ -44,7 +44,7 @@ In the rest of this article, we'll use Apache Spark to perform some analysis on 
 
 ## Create an Apache Spark machine learning model
 
-1. Create a PySpark notebook. For instructions, see [Create a notebook](../../data-engineering/how-to-use-notebook.md).
+1. Create a PySpark notebook. For instructions, see [Create a notebook](../data-engineering/how-to-use-notebook.md).
 2. Import the types required for this notebook.
 
     ```python
@@ -61,7 +61,7 @@ In the rest of this article, we'll use Apache Spark to perform some analysis on 
     from pyspark.ml.evaluation import BinaryClassificationEvaluator
     ```
 
-3. We will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
+3. We will use [MLflow](https://mlflow.org/) to track our machine learning experiments and corresponding runs. If [!INCLUDE [product-name](../includes/product-name.md)] Autologging is enabled, the corresponding metrics and parameters are automatically captured.
 
     ```python
     import mlflow
@@ -214,9 +214,9 @@ plt.ylabel('True Positive Rate')
 plt.show()
 ```
 
-![Graph that shows the ROC curve for logistic regression in the tip model.](../media/model-training/sparkml-tutorial-results.png)
+![Graph that shows the ROC curve for logistic regression in the tip model.](media/model-training/sparkml-tutorial-results.png)
 
 ## Next steps
 
-- Use AI samples to build machine learning models: [Use AI samples](../use-ai-samples.md)
-- Track machine learning runs using Experiments: [Machine learning experiments](../machine-learning-experiment.md)
+- Use AI samples to build machine learning models: [Use AI samples](use-ai-samples.md)
+- Track machine learning runs using Experiments: [Machine learning experiments](machine-learning-experiment.md)

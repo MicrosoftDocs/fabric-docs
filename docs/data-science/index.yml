@@ -73,11 +73,11 @@ landingContent:
       - linkListType: overview
         links:  
         - text: Training Overview
-          url: ./model-training/model-training-overview.md 
+          url: model-training-overview.md 
       - linkListType: how-to-guide
         links:
           - text: Train with Spark MLlib
-            url: ./model-training/fabric-sparkml-tutorial.md 
+            url: fabric-sparkml-tutorial.md 
           - text: Train models with Scikit-learn
             url: train-models-scikit-learn.md 
           - text: Train models with PyTorch

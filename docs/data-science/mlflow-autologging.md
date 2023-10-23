@@ -111,5 +111,5 @@ To do this:
 
 ## Next steps
 
-- Train a Spark MLlib model with autologging: [Train with Spark MLlib](./model-training/fabric-sparkml-tutorial.md)
+- Train a Spark MLlib model with autologging: [Train with Spark MLlib](fabric-sparkml-tutorial.md)
 - Learn about machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]: [Experiments](./machine-learning-experiment.md)

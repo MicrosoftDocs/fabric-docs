@@ -564,5 +564,5 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
 
 * [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 * [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-* [Train machine learning models](model-training/model-training-overview.md)
+* [Train machine learning models](model-training-overview.md)
 * [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
