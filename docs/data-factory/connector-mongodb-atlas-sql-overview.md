@@ -16,7 +16,7 @@ The MongoDB Atlas SQL connector is supported in Data Factory for [!INCLUDE [prod
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to a MongoDB Atlas SQL database in Dataflow Gen2, go to [Set up your MongoDB Atlas SQL (Beta) connection](connector-mongod-atlas-sql.md).
+For information on how to connect to a MongoDB Atlas SQL database in Dataflow Gen2, go to [Set up your MongoDB Atlas SQL (Beta) connection](connector-mongodb-atlas-sql.md).
 
 ## Support in data pipelines
 

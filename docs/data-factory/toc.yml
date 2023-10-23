@@ -290,7 +290,7 @@
       - name: Overview
         href: connector-odbc-overview.md
       - name: Set up your connection
-        href: connector-odbc-database.md
+        href: connector-odbc.md
     - name: Palantir Foundry
       items:
       - name: Overview
