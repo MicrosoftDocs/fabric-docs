@@ -43,16 +43,18 @@ The following three properties are **required**:
     - If you select **Table**:
       - **Table**: Select the table from the drop-down list or select **Edit** to manually enter it to read data. 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM mytable or SELECT * FROM "MyTable"`. Note in PostgreSQL, the entity name is treated as case-insensitive if not quoted.
+      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM mytable` or `SELECT * FROM "MyTable"`. Note in PostgreSQL, the entity name is treated as case-insensitive if not quoted.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure SQL Database is controlled by the **Degree of copy parallelism** in the copy activity setting tab.
+- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure SQL Database is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
     If you select **None**, you choose not to use partition.
 
     If you select **Physical partitions of table**:
-    - **Partition names**: Specify the list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  For an example, see the Parallel copy from [Azure Database for PostgreSQL](#parallel-copy-from-azure-database-for-postgresql) section.
+    - **Partition names**: Specify the list of physical partitions that needs to be copied. 
+    
+        If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  For an example, see the Parallel copy from [Azure Database for PostgreSQL](#parallel-copy-from-azure-database-for-postgresql) section.
     
         :::image type="content" source="./media/connector-azure-database-for-postgresql/physical-partitions-of-table.png" alt-text="Screenshot showing the configuration when you select Physical partitions of table.":::
     
@@ -109,7 +111,7 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 The Azure Database for PostgreSQL connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
-When you enable partitioned copy, copy activity runs parallel queries against your Azure Database for PostgreSQL source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity setting tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Azure Database for PostgreSQL.
+When you enable partitioned copy, copy activity runs parallel queries against your Azure Database for PostgreSQL source to load data by partitions. The parallel degree is controlled by the **Degree of copy parallelism** in the copy activity settings tab. For example, if you set **Degree of copy parallelism** to four, the service concurrently generates and runs four queries based on your specified partition option and settings, and each query retrieves a portion of data from your Azure Database for PostgreSQL.
 
 You are suggested to enable parallel copy with data partitioning especially when you load large amount of data from your Azure Database for PostgreSQL. The following are suggested configurations for different scenarios. When copying data into file-based data store, it's recommended to write to a folder as multiple files (only specify folder name), in which case the performance is better than writing to a single file.
 
