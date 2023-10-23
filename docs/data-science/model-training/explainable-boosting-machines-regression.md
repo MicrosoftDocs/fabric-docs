@@ -1,5 +1,5 @@
 ---
-title: Train regression models using Explainable Boosting Machines (Preview)
+title: Train regression models using explainable boosting machines (Preview)
 description: Learn how to train regression models using explainable boosting machines
 ms.reviewer: mopeakande
 ms.author: midesa
@@ -10,9 +10,9 @@ ms.date: 10/13/2023
 
 # Train explainable boosting machines - regression (Preview)
 
-An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
+In this article, you'll learn how to train regression models using explainable boosting machines (EBM) in Microsoft Fabric. An EBM is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
-In SynapseML, you can use a scalable implementation of Explainable Boosting Machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of Explainable Boosting Machines within Microsoft Fabric by utilizing Apache Spark. Using Explainable Boosting Machines with Microsoft Fabric is currently in preview.
+In SynapseML, you can use a scalable implementation of explainable boosting machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of explainable boosting machines within Microsoft Fabric by utilizing Apache Spark. Using explainable boosting machines with Microsoft Fabric is currently in preview.
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
@@ -22,12 +22,12 @@ In SynapseML, you can use a scalable implementation of Explainable Boosting Mach
 
 Their ability to uncover complex relationships within the data while providing clear and interpretable results makes them invaluable in fields like finance, healthcare, and fraud detection. In these fields, model explainability isn't only desirable but often a regulatory requirement. Ultimately, opting for EBMs can strike a balance between model performance and transparency, ensuring that AI solutions are accurate, easily understandable, and accountable.
 
-## Import MLFlow
+## Import MLflow
 
 MLflow allows you to track the model's parameters and outcomes. The following code snippet demonstrates how to use MLflow for experimentation and tracking purposes. The `ebm-wine-quality` value is the name of the experiment where the information is logged.
 
 ```python
-# Import MLFlow
+# Import MLflow
 import mlflow
 
 # Create a new experiment for EBM Wine Quality
@@ -86,7 +86,7 @@ This code snippet illustrates how to use the VectorAssembler to structure the fe
 
 ## Train the model
 
-The following code initiates the process of creating an Explainable Boosting Machine (EBM) regression model using the Synapse ML library. First, initialize the EBM regression estimator, specifying that it's intended for a regression task. Next, set the label column name to ensure the model knows which column to predict. Finally, fit the model to the preprocessed dataset:
+The following code initiates the process of creating an EBM regression model using the Synapse ML library. First, initialize the EBM regression estimator, specifying that it's intended for a regression task. Next, set the label column name to ensure the model knows which column to predict. Finally, fit the model to the preprocessed dataset:
 
 ```python
 # Import the EBMRegression estimator from Synapse ML.
@@ -127,7 +127,7 @@ The term "importances" represents the mean absolute contribution (score) of each
 
 :::image type="content" source="../media/model-training/global-explanations-ebm.png" alt-text="Screenshot of global explanations." lightbox="../media/model-training/global-explanations-ebm.png":::
 
-## Local explanations
+## View local explanations
 
 The provided explanations are at a global level, but there are scenarios where per-feature outputs are also valuable. Both the trainer and the model offer the capability to set the ```FeaturesScoresCol```, which, when populated, introduces another vector-valued column. Each vector within this column matches the length of the feature column, with each value corresponding to the feature at the same index. These values represent the contribution of each feature's value to the final output of the model.
 
@@ -174,5 +174,5 @@ Feature scores are [-0.06610139373422304, -0.06386890875478829, 0.00678462951334
 
 ## Next steps
 
-- [InterpretML Explainable Boosting Machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
-- [Track models with MLFlow](../mlflow-autologging.md)
+- [InterpretML explainable boosting machine: How it works](https://interpret.ml/docs/ebm.html#how-it-works)
+- [Track models with MLflow](../mlflow-autologging.md)
