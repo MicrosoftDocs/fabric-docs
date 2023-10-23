@@ -6,13 +6,13 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/08/2023
 ms.search.form: product-kusto
 ---
 
 # Add and manage a destination in an eventstream
 
-Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, and Custom App. See the [Supported destinations](#supported-destinations) section for details.
+Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, Custom App and Reflex. See the [Supported destinations](#supported-destinations) section for details.
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
@@ -21,8 +21,7 @@ Once you have created an eventstream in Microsoft Fabric, you can route data to 
 Before you start, you must complete the following prerequisites:
 
 - Get access to a **premium workspace** with **Contributor** or above permissions where your eventstream is located.
-- For a KQL database destination, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database is located.
-- For a lakehouse destination, get access to a **premium workspace** with **Contributor** or above permissions where your lakehouse is located.
+- For a destination of type KQL database, lakehouse, or Reflex, get access to a **premium workspace** with **Contributor** or above permissions where your destination is located.
 
 ## Supported destinations
 
@@ -33,6 +32,7 @@ The following destinations are supported by Fabric Eventstream:
 | Custom app | With this destination, you can easily route your real-time events to a custom application. It allows you to connect your own applications to the eventstream and consume the event data in real time. It's useful when you want to ingest data from external system into Microsoft Fabric.  |
 | KQL database | This destination provides direct ingestion of your real-time event data into a KQL database, allowing for seamless querying of the data once it has successfully loaded. With the data in the KQL database, you can perform queries and analysis to gain deeper insights into your event data.  |
 | Lakehouse | This destination provides you with the ability to transform your real-time events prior to ingestion into your lakehouse. Real-time events convert into Delta Lake format and then stored in the designated lakehouse tables. It helps with your data warehousing scenario. To learn more about how to use the event processor for real-time data processing, see [Process event data with event processor editor](./process-events-using-event-processor-editor.md).|
+| Reflex |This destination allows you to directly connect your real-time event data to a Reflex. Reflex is a type of intelligent agent that contains all the information necessary to connect to data, monitor for conditions, and act. When the data reaches certain thresholds or matches other patterns, Reflex automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.|
 
 > [!NOTE]
 > The maximum number of sources and destinations for one eventstream is **11**.
@@ -117,13 +117,29 @@ If you want to route event data to your application, you can add a custom app as
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-configuration.png" alt-text="Screenshot of the Custom App destination configuration screen.":::
 
-After you have successfully created the custom application destination, you can view details like **connection string** on the **Information** tab in the lower pane.
+After you have successfully created the custom application destination, you can view its detailed information on the **Details** tab in the lower pane. The information includes the **basic**, the **keys**, which contain the **connection string**, and the **sample code** for each type (**Event hub**/**AMQP**/**Kafka**).
 
 The connection string is an **event hub compatible connection string** and you can use it in your application to receive events from your eventstream. The following example shows what the connection string looks like:
 
 `Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`
 
-:::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" :::
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
+
+## Add a Reflex as a destination
+
+To add a Reflex from your workspace as an eventstream's destination, do the following steps:
+
+1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **Reflex**. The **Reflex** destination configuration screen appears.
+
+1. Enter a name for the eventstream destination and complete the information about your Reflex.
+
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" alt-text="Screenshot showing the reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" :::
+
+   **Reflex**: Select an existing Reflex or create a new one to receive data.
+
+1. After you select on the Add button, you can see a Reflex destination on the canvas that is linked to your eventstream.
+
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-add-reflex.png" alt-text="Screenshot showing the new reflex destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-add-reflex.png" :::
 
 ## Manage a destination
 

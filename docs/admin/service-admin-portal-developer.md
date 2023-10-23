@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Developer tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 To manage Power BI developer settings, you must be a Global Admin in Office 365, or have been assigned the Fabric administrator role. For more information about the Fabric administrator role, see [Understand Microsoft Fabric admin roles](roles.md).
 
@@ -51,4 +51,4 @@ This setting applies to the entire organization. You can't apply it only to a se
 
 ## Next steps
 
-- [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

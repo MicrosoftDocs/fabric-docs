@@ -128,6 +128,8 @@ items:
   items:
   - name: Clone tables
     href: clone-table.md
+  - name: Clone tables in the Fabric portal
+    href: tutorial-clone-table-portal.md
 - name: Manage performance
   items:
   - name: Statistics
