@@ -36,4 +36,4 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 - Delta Lake: 2.2
 - R: 4.2.2
 
-Please visit [Runtime 1.1](./runtime11.md) to explore all the details, new features, improvements, and migration scenarios for Runtime 1.1.
+Please visit [Runtime 1.1](./runtime-1-1.md) to explore all the details, new features, improvements, and migration scenarios for Runtime 1.1.

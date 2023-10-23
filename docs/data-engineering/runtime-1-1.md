@@ -613,7 +613,7 @@ The following table lists all the default level packages for R and their respect
 | haven         | 2.5.1       | RColorBrewer | 1.1-3       |     zip      | 2.2.2       |
 | hexbin        | 1.28.2      |     Rcpp     | 1.0.9       |     zoo      | 1.8-11      |
 
-## Migration between different Apache Spark Versions
+## Migration between different Apache Spark versions
 
 Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older version of Apache Spark involves a series of steps to ensure a smooth migration. This guide outlines the necessary steps to help you migrate efficiently and effectively.
 
