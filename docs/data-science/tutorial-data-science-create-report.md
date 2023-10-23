@@ -51,7 +51,7 @@ Create a new Power BI dataset linked to the predictions data you produced in par
 
    :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue.":::
 
-1. Select **Continue**.  
+1. Select **Confirm**.  
 
 ## Add new measures
 

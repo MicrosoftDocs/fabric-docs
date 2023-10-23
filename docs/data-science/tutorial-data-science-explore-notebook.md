@@ -217,8 +217,17 @@ You could copy the generated code, close Data Wrangler to return to the notebook
 If you didn't use Data Wrangler, you can instead use this next code cell:
 
 ```python
-# use either this cell or the one created from Data Wrangler.  Not both.
-df_clean = pd.get_dummies(df_clean, columns=['Geography', 'Gender'])
+# This is the same code that Data Wrangler will generate
+ 
+import pandas as pd
+ 
+def clean_data(df_clean):
+    # One-hot encode columns: 'Geography', 'Gender'
+    df_clean = pd.get_dummies(df_clean, columns=['Geography', 'Gender'])
+    return df_clean
+ 
+df_clean_1 = clean_data(df_clean.copy())
+df_clean_1.head()
 ```
 
 ## Summary of observations from the exploratory data analysis
@@ -238,7 +247,7 @@ You'll use this data in the next notebook of this series.
 ```python
 table_name = "df_clean"
 # Create Spark DataFrame from pandas
-sparkDF=spark.createDataFrame(df_clean) 
+sparkDF=spark.createDataFrame(df_clean_1) 
 sparkDF.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```

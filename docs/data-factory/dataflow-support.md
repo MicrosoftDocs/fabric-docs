@@ -2,7 +2,7 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 10/18/2023
+ms.date: 10/20/2023
 ms.author: dougklo
 ms.topic: overview
 ms.custom: build-2023
@@ -43,7 +43,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/data-virtuality-64.png":::<br/>**Data Virtuality<br/>LDW**<br/>By Data Virtuality | [:::image type="icon" source="media/dataflow-support/databricks-64.png":::<br/>**Databricks**](/power-query/connectors/databricks)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/power-platform-dataflows-64.png":::<br/>**Dataflows**](/power-query/connectors/dataflows)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/datamarts-64.png":::<br/>**Datamarts**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/dataverse-64.png":::<br/>**Dataverse**](/power-query/connectors/dataverse)<br/>By Microsoft | 
+| :::image type="icon" source="media/dataflow-support/data-virtuality-64.png":::<br/>**Data Virtuality<br/>LDW**<br/>By Data Virtuality | [:::image type="icon" source="media/dataflow-support/databricks-64.png":::<br/>**Databricks**](connector-databricks.md)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/power-platform-dataflows-64.png":::<br/>**Dataflows**](connector-dataflows.md)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/datamarts-64.png":::<br/>**Datamarts**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/dataverse-64.png":::<br/>**Dataverse**](/power-query/connectors/dataverse)<br/>By Microsoft | 
 | [:::image type="icon" source="media/dataflow-support/delta-sharing-64.png":::<br/>**Delta Sharing**](/power-query/connectors/delta-sharing)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/denodo-for-powerbi-64.png":::<br/>**Denodo**](/power-query/connectors/denodo)<br/>By Denodo | [:::image type="icon" source="media/dataflow-support/dcwinsights-64.png":::<br/>**Digital<br/>Construction<br/>Works Insights**](/power-query/connectors/digital-construction-works-insights)<br/>By Digital<br/>Construction<br/> Works | :::image type="icon" source="media/dataflow-support/dremio-64.png":::<br/>**Dremio Cloud**<br/>By Dremio | :::image type="icon" source="media/dataflow-support/dremio-64.png":::<br/>**Dremio Software**<br/>By Dremio |
 | :::image type="icon" source="media/dataflow-support/dynamics365-business-central-64.png":::<br/>**Dynamics 365<br/>Business Central**<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/customer-insights-64.png":::<br/>**Dynamics 365<br/>Customer Insights<br/>(Beta)**<br/>By Microsoft | | | |
 
@@ -58,13 +58,13 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](/power-query/connectors/fhir/fhir)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](/power-query/connectors/folder)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
+| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](connector-fhir.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](connector-folder.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
 
 ## G
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](/power-query/connectors/google-analytics)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](/power-query/connectors/google-bigquery)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
+| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
 
 ## H
 
