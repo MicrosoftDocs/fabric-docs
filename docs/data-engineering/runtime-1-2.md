@@ -95,7 +95,7 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 *   In Spark 3.4, the series name will be preserved in Pandas on Spark API `Series.mode` to follow pandas 1.4 behavior.
 *   In Spark 3.4, the Pandas on Spark API `Index.__setitem__` will first to check `value` type is `Column` type to avoid raising unexpected `ValueError` in `is_list_like` like Cannot convert column into bool: please use ‘&’ for ‘and’, ‘|’ for ‘or’, ‘~’ for ‘not’ when building DataFrame boolean expressions..
 *   In Spark 3.4, the Pandas on Spark API `astype('category')` will also refresh `categories.dtype` according to original data `dtype` to follow pandas 1.4 behavior.
-*   In Spark 3.4, the Pandas on Spark API supports groupby positional indexing in `GroupBy.head` and `GroupBy.tail` to follow pandas 1.4. Negative arguments now work correctly and result in ranges relative to the end and start of each group, Previously, negative arguments returned empty frames.
+*   In Spark 3.4, the Pandas on Spark API supports group by positional indexing in `GroupBy.head` and `GroupBy.tail` to follow pandas 1.4. Negative arguments now work correctly and result in ranges relative to the end and start of each group. Previously, negative arguments returned empty frames.
 *   In Spark 3.4, the infer schema process of `groupby.apply` in Pandas on Spark, will first infer the pandas type to ensure the accuracy of the pandas `dtype` as much as possible.
 *   In Spark 3.4, the `Series.concat` sort parameter will be respected to follow pandas 1.4 behaviors.
 *   In Spark 3.4, the `DataFrame.__setitem__` will make a copy and replace pre-existing arrays, which will NOT be over-written to follow pandas 1.4 behaviors.
@@ -103,7 +103,7 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 *   In Spark 3.4, Pandas API on Spark follows for the pandas 2.0, and some APIs were deprecated or removed in Spark 3.4 according to the changes made in pandas 2.0. Please refer to the \[release notes of pandas\]([https://pandas.pydata.org/docs/dev/whatsnew/](https://pandas.pydata.org/docs/dev/whatsnew/)) for more details.
 
 #### SQL, Datasets and DataFrame
-* Since Spark 3.4, INSERT INTO commands with explicit column lists comprising fewer columns than the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly-assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns does not match the number of columns in the target table. Note that disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
+* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns then the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns does not match the number of columns in the target table. Note that disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
 *   Since Spark 3.4, Number or Number(\*) from Teradata will be treated as Decimal(38,18). In Spark 3.3 or earlier, Number or Number(\*) from Teradata will be treated as Decimal(38, 0), in which case the fractional part will be removed.
 *   Since Spark 3.4, v1 database, table, permanent view and function identifier will include ‘spark\_catalog’ as the catalog name if database is defined, e.g. a table identifier will be: `spark_catalog.default.t`. To restore the legacy behavior, set `spark.sql.legacy.v1IdentifierNoCatalog` to `true`.
 *   Since Spark 3.4, when ANSI SQL mode(configuration `spark.sql.ansi.enabled`) is on, Spark SQL always returns NULL result on getting a map value with a non-existing key. In Spark 3.3 or earlier, there will be an error.
@@ -121,7 +121,7 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 
 #### Structured Streaming
 *   Since Spark 3.4, `Trigger.Once` is deprecated, and users are encouraged to migrate from `Trigger.Once` to `Trigger.AvailableNow`. Please refer [SPARK-39805](https://issues.apache.org/jira/browse/SPARK-39805) for more details.
-*   Since Spark 3.4, the default value of configuration for Kafka offset fetching (`spark.sql.streaming.kafka.useDeprecatedOffsetFetching`) is changed from `true` to `false`. The default no longer relies consumer group based scheduling, which affect the required ACL. For further details please see [Structured Streaming Kafka Integration](https://spark.apache.org/docs/3.4.0/structured-streaming-kafka-integration.html#offset-fetching).
+*   Since Spark 3.4, the default value of configuration for Kafka offset fetching (`spark.sql.streaming.kafka.useDeprecatedOffsetFetching`) is changed from `true` to `false`. The default no longer relies consumer group based scheduling, which affects the required ACL. For further details please see [Structured Streaming Kafka Integration](https://spark.apache.org/docs/3.4.0/structured-streaming-kafka-integration.html#offset-fetching).
     
 
 
@@ -134,7 +134,7 @@ Specifically, Delta Lake offers:
 *   [Streaming](https://docs.delta.io/2.4.0/delta-streaming.html) and [batch](https://docs.delta.io/2.4.0/delta-batch.html) unification: A table in Delta Lake is a batch table as well as a streaming source and sink. Streaming data ingest, batch historic backfill, interactive queries all just work out of the box.
 *   Schema enforcement: Automatically handles schema variations to prevent insertion of bad records during ingestion.
 *   [Time travel](https://docs.delta.io/2.4.0/delta-batch.html#-deltatimetravel): Data versioning enables rollbacks, full historical audit trails, and reproducible machine learning experiments.
-*   [Upserts](https://docs.delta.io/2.4.0/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/2.4.0/delta-update.html#-delta-delete): Supports merge, update and delete operations to enable complex use cases like change-data-capture, slowly-changing-dimension (SCD) operations, streaming upserts, and so on.
+*   [Upserts](https://docs.delta.io/2.4.0/delta-update.html#-delta-merge) and [deletes](https://docs.delta.io/2.4.0/delta-update.html#-delta-delete): Supports merge, update and delete operations to enable complex use cases like change-data-capture, slowly changing dimension (SCD) operations, streaming upserts, and so on.
 
 
 ### The key features in this release are as follows
@@ -154,7 +154,7 @@ Specifically, Delta Lake offers:
 *   [Allow](https://github.com/delta-io/delta/commit/303d640a) changing the column type of a `char` or `varchar` column to a compatible type in the `ALTER TABLE` command. The new behavior is the same as in Apache Spark and allows upcasting from `char` or `varchar` to `varchar` or `string`.
 *   [Block](https://github.com/delta-io/delta/commit/579a3151db611c5049e5ca04a32fc6cccb77448b) using `overwriteSchema` with dynamic partition overwrite. This can corrupt the table as not all the data may be removed, and the schema of the newly written partitions may not match the schema of the unchanged partitions.
 *   [Return](https://github.com/delta-io/delta/commit/83513484) an empty `DataFrame` for Change Data Feed reads when there are no commits within the timestamp range provided. Previously an error would be thrown.
-*   [Fix](https://github.com/delta-io/delta/commit/5ab678db) a bug in Change Data Feed reads for records created during the ambiguous hour when daylight savings occurs.
+*   [Fix](https://github.com/delta-io/delta/commit/5ab678db) a bug in Change Data Feed reads for records created during the ambiguous hour when daylight savings occur.
 *   [Fix](https://github.com/delta-io/delta/commit/28148976) a bug where querying an external Delta table at the root of an S3 bucket would throw an error.
 *   [Remove](https://github.com/delta-io/delta/commit/81c7a58e) leaked internal Spark metadata from the Delta log to make any affected tables readable again.
 
