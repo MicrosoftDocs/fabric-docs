@@ -24,7 +24,7 @@ Their ability to uncover complex relationships within the data while providing c
 
 ## Prerequisites
 
-[!INCLUDE [Prerequisites](../../includes/prerequisites.md)]
+[!INCLUDE [Prerequisites](../includes/prerequisites.md)]
 
 * Create a new notebook in your workspace by selecting **+** and then **Notebook**.
 
