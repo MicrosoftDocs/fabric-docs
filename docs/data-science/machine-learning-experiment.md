@@ -6,7 +6,7 @@ ms.author: midesa
 author: midesa
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/13/2023
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -29,7 +29,7 @@ In this article, you'll learn more about how data scientists can interact with a
 
 You can create a machine learning experiment directly from the Data science home page in the Power BI user interface (UI) or by writing code that uses the MLflow API.
 
-### Create an experiment using the UI
+### Create an experiment from Fabric
 
 To create a machine learning experiment from the UI:
 
@@ -123,11 +123,17 @@ Use the `max_results` parameter from `search_runs` to limit the number of runs r
 mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG" ], max_results=1, order_by=["start_time DESC"])
 ```
 
+### Compare runs within a Fabric notebook
+
+Users can leverage the MLFlow authoring tool within Fabric notebooks to track MLflow runs generated within each notebook cell. This allows users to track their runs, associated metrics, parameters, and properties down to the individual cell level.
+
+To obtain a visual comparison, users can also switch to the **Run comparison** view. This presents the data graphically, aiding in the quick identification of patterns or deviations across different runs.
+
+:::image type="content" source="media/machine-learning-experiment/inline-authoring-mlflow.png" alt-text="Screenshot showing how to use the MLFlow authoring widget." lightbox="media/machine-learning-experiment/inline-authoring-mlflow.png":::
+
 ## Save run as a model
 
-Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment.
-
-<!-- add steps to save a run as a model and retake screenshot -->
+Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment by selecting **Save as model**.
 
 :::image type="content" source="media/machine-learning-experiment/create-model-select-new.png" alt-text="Screenshot showing where to select Create a new model." lightbox="media/machine-learning-experiment/create-model-select-new.png":::
 
