@@ -57,6 +57,8 @@ Each Delta table is associated with a protocol specification, defining the featu
 The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page [How does Delta Lake manage feature compatibility?
 ](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
 
+:::image type="content" source="media\mrs\DeltaLakeUpgradeTableProtocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used.":::
+
 Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, as well as in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
 
 It's essential to note that when performing this upgrade, users will receive a warning indicating that upgrading the Delta protocol version is a non-reversible process. This means that once the update is executed, it cannot be undone.
