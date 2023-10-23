@@ -462,6 +462,8 @@ The following table lists all the default level packages for Java/Scala and thei
 
 ## Default-level packages for Python
 
+Synapse-Python310-CPU.yml contains the list of libraries shipped in the default Python 3.10 environment in Runtime 1.2. 
+
 The following table lists all the default level packages for Python and their respective versions.
 
 |          **Library**          |  **Version** |          **Library**          |  **Version** |       **Library**       |     **Version**    |
@@ -781,3 +783,7 @@ The following table lists all the default level packages for R and their respect
 | r-cachem                  | 1.0.8        | r-praise        | 1.0.0      | zstd             | 1.5.5      |
 | r-callr                   | 3.7.3        | r-prettyunits   | 1.1.1      |                  |            |
 | r-caret                   | 6.0_94       | r-proc          | 1.18.4     |                  |            |
+
+
+## Next steps
+- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
