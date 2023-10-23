@@ -22,6 +22,12 @@ In SynapseML, you can use a scalable implementation of explainable boosting mach
 
 Their ability to uncover complex relationships within the data while providing clear and interpretable results makes them invaluable in fields like finance, healthcare, and fraud detection. In these fields, model explainability isn't only desirable but often a regulatory requirement. Ultimately, opting for EBMs can strike a balance between model performance and transparency, ensuring that AI solutions are accurate, easily understandable, and accountable.
 
+## Prerequisites
+
+[!INCLUDE [Prerequisites](../../includes/prerequisites.md)]
+
+* Create a new notebook in your workspace by selecting **+** and then **Notebook**.
+
 ## Import MLflow
 
 MLflow allows you to track the model's parameters and outcomes. The following code snippet demonstrates how to use MLflow for experimentation and tracking purposes. The `ebm-wine-quality` value is the name of the experiment where the information is logged.

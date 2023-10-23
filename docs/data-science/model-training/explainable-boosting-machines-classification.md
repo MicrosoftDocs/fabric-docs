@@ -24,6 +24,12 @@ In this article, you walk through the process of acquiring and preprocessing dat
 
 Their ability to uncover complex relationships within the data while providing clear and interpretable results makes them invaluable in fields like finance, healthcare, and fraud detection. In these fields, model explainability isn't only desirable but often a regulatory requirement. Ultimately, users opting for EBMs can strike a balance between model performance and transparency, ensuring that AI solutions are accurate, easily understandable, and accountable.
 
+## Prerequisites
+
+[!INCLUDE [Prerequisites](../../includes/prerequisites.md)]
+
+* Create a new notebook in your workspace by selecting **+** and then **Notebook**.
+
 ## Install libraries
 
 To begin, install the Azure Machine Learning Open Datasets library, which grants access to the dataset. This installation step is essential for accessing and utilizing the dataset effectively.
