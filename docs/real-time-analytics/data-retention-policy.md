@@ -6,14 +6,14 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/22/2023
 ms.search.form: product-kusto
 ---
 # Change the data retention policy
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric). It's useful to remove data that continuously flows into a table, and whose relevance is age-based. For example, the policy can be used for a table that holds diagnostics events that may become uninteresting after two weeks. The default data retention policy is 36,500 days.
+The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric). It's useful to remove data that continuously flows into a table, and whose relevance is age-based. For example, the policy can be used for a table that holds diagnostics events that may become uninteresting after two weeks. The default data retention policy is 3650 days.
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).  
 
@@ -24,16 +24,21 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ## Change data retention policy
 
-1. Browse to your KQL database and select the **Manage** > **Data retention policy**
+1. To change the data retention policy, browse to your KQL database and select the **Manage** > **Data policies**
 
-    :::image type="content" source="media/data-management/manage-retention-policy.png" alt-text="Screenshot showing the manage tab in a KQL database."  lightbox="media/data-management/manage-retention-policy.png":::
+    :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database."  lightbox="media/data-management/data-policies.png":::
 
-1. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
+1. Under **Retention**, enter a time period and select **Done**. By default, your data is stored for 3650 days.
 
     :::image type="content" source="media/data-management/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
+    Optionally, you can set the caching period to **Unlimited** by toggling on that button.
+
+> [!NOTE]
+> The minimum retention period is 1 day. The maximum retention period is 36,500 days.
+
 ## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Change the caching policy](cache-policy.md)
 * [Create materialized views](materialized-view.md)
-* [Create a table update policy](table-update-policy.md)
+* [Enable Python plugin](python-plugin.md)

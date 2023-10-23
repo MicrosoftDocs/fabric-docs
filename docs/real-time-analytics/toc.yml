@@ -70,6 +70,8 @@ items:
       href: data-management.md
     - name: Change the data retention policy
       href: data-retention-policy.md
+    - name: Change the caching policy
+      href: cache-policy.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
