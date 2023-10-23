@@ -24,15 +24,13 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ## Change data retention policy
 
-1. To change the data retention policy, browse to your KQL database and select the **Manage** > **Data policies**
+1. To change the data retention policy, browse to your KQL database and select the **Manage** > **Data policies**.
 
-    :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database."  lightbox="media/data-management/data-policies.png":::
+    :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
-1. Under **Retention**, enter a time period and select **Done**. By default, your data is stored for 3650 days.
+1. Under **Retention**, either select the toggle to set the retention period to **Unlimited**, or enter a time period and select **Done**. By default, your data is stored for 3650 days.
 
     :::image type="content" source="media/data-management/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
-
-    Optionally, you can set the caching period to **Unlimited** by toggling on that button.
 
 > [!NOTE]
 > The minimum retention period is 1 day. The maximum retention period is 36,500 days.
