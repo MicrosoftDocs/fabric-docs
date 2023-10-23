@@ -70,7 +70,7 @@ Apache Spark 3.4.0 is the fifth release of the 3.x line. With tremendous contrib
 *   Support subqueries with correlated non-equality predicates ([SPARK-36114](https://issues.apache.org/jira/browse/SPARK-36114))
 *   Support subqueries with correlation through UNION/INTERSECT/EXCEPT ([SPARK-36124](https://issues.apache.org/jira/browse/SPARK-36124))
 *   Fix the OOM error can’t be reported when AQE on ([SPARK-42290](https://issues.apache.org/jira/browse/SPARK-42290))
-*   Fix the trim logic did not handle ASCII control characters correctly ([SPARK-44383](https://issues.apache.org/jira/browse/SPARK-44383))
+*   Fix the trim logic didn't handle ASCII control characters correctly ([SPARK-44383](https://issues.apache.org/jira/browse/SPARK-44383))
 *   Dataframe.joinWith outer-join should return a null value for unmatched row ([SPARK-37829](https://issues.apache.org/jira/browse/SPARK-37829))
 *   Use the utils to get the switch for dynamic allocation used in local checkpoint ([SPARK-42421](https://issues.apache.org/jira/browse/SPARK-42421))
 *   Add CapturedException to utils ([SPARK-42078](https://issues.apache.org/jira/browse/SPARK-42078))
@@ -84,16 +84,16 @@ Read the full version of the release notes for a specific Apache Spark version b
 When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, please review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html). Here are the key highlights:
 
 #### Core
-*   Since Spark 3.4, Spark driver will own `PersistentVolumnClaim`s and try to reuse if they are not assigned to live executors. To restore the behavior before Spark 3.4, you can set `spark.kubernetes.driver.ownPersistentVolumeClaim` to `false` and `spark.kubernetes.driver.reusePersistentVolumeClaim` to `false`.
+*   Since Spark 3.4, Spark driver will own `PersistentVolumnClaim`s and try to reuse if they're not assigned to live executors. To restore the behavior before Spark 3.4, you can set `spark.kubernetes.driver.ownPersistentVolumeClaim` to `false` and `spark.kubernetes.driver.reusePersistentVolumeClaim` to `false`.
 *   Since Spark 3.4, Spark driver will track shuffle data when dynamic allocation is enabled without shuffle service. To restore the behavior before Spark 3.4, you can set `spark.dynamicAllocation.shuffleTracking.enabled` to `false`.
 *   Since Spark 3.4, Spark will try to decommission cached RDD and shuffle blocks if both `spark.decommission.enabled` and `spark.storage.decommission.enabled` are true. To restore the behavior before Spark 3.4, you can set both `spark.storage.decommission.rddBlocks.enabled` and `spark.storage.decommission.shuffleBlocks.enabled` to `false`.
 *   Since Spark 3.4, Spark will use RocksDB store if `spark.history.store.hybridStore.enabled` is true. To restore the behavior before Spark 3.4, you can set `spark.history.store.hybridStore.diskBackend` to `LEVELDB`. 
 #### PySpark
 *   In Spark 3.4, the schema of an array column is inferred by merging the schemas of all elements in the array. To restore the previous behavior where the schema is only inferred from the first element, you can set `spark.sql.pyspark.legacy.inferArrayTypeFromFirstElement.enabled` to `true`.
-*   In Spark 3.4, if Pandas on Spark API `Groupby.apply`’s `func` parameter return type is not specified and `compute.shortcut_limit` is set to 0, the sampling rows will be set to 2 (ensure sampling rows always >= 2) to make sure infer schema is accurate.
+*   In Spark 3.4, if Pandas on Spark API `Groupby.apply`’s `func` parameter return type isn't specified and `compute.shortcut_limit` is set to 0, the sampling rows will be set to 2 (ensure sampling rows always >= 2) to make sure infer schema is accurate.
 *   In Spark 3.4, if Pandas on Spark API `Index.insert` is out of bounds, will raise IndexError with `index {} is out of bounds for axis 0 with size {}` to follow pandas 1.4 behavior.
 *   In Spark 3.4, the series name will be preserved in Pandas on Spark API `Series.mode` to follow pandas 1.4 behavior.
-*   In Spark 3.4, the Pandas on Spark API `Index.__setitem__` will first to check `value` type is `Column` type to avoid raising unexpected `ValueError` in `is_list_like` like Cannot convert column into bool: please use ‘&’ for ‘and’, ‘|’ for ‘or’, ‘~’ for ‘not’ when building DataFrame boolean expressions..
+*   In Spark 3.4, the Pandas on Spark API `Index.__setitem__` will first to check `value` type is `Column` type to avoid raising unexpected `ValueError` in `is_list_like` like Can't convert column into bool: please use ‘&’ for ‘and’, ‘|’ for ‘or’, ‘~’ for ‘not’ when building DataFrame boolean expressions..
 *   In Spark 3.4, the Pandas on Spark API `astype('category')` will also refresh `categories.dtype` according to original data `dtype` to follow pandas 1.4 behavior.
 *   In Spark 3.4, the Pandas on Spark API supports group by positional indexing in `GroupBy.head` and `GroupBy.tail` to follow pandas 1.4. Negative arguments now work correctly and result in ranges relative to the end and start of each group. Previously, negative arguments returned empty frames.
 *   In Spark 3.4, the infer schema process of `groupby.apply` in Pandas on Spark, will first infer the pandas type to ensure the accuracy of the pandas `dtype` as much as possible.
@@ -103,25 +103,25 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 *   In Spark 3.4, Pandas API on Spark follows for the pandas 2.0, and some APIs were deprecated or removed in Spark 3.4 according to the changes made in pandas 2.0. Please refer to the \[release notes of pandas\]([https://pandas.pydata.org/docs/dev/whatsnew/](https://pandas.pydata.org/docs/dev/whatsnew/)) for more details.
 
 #### SQL, Datasets and DataFrame
-* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns then the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns does not match the number of columns in the target table. Note that disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
+* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns then the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns doesn't match the number of columns in the target table. Note that disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
 *   Since Spark 3.4, Number or Number(\*) from Teradata will be treated as Decimal(38,18). In Spark 3.3 or earlier, Number or Number(\*) from Teradata will be treated as Decimal(38, 0), in which case the fractional part will be removed.
 *   Since Spark 3.4, v1 database, table, permanent view and function identifier will include ‘spark\_catalog’ as the catalog name if database is defined, e.g. a table identifier will be: `spark_catalog.default.t`. To restore the legacy behavior, set `spark.sql.legacy.v1IdentifierNoCatalog` to `true`.
-*   Since Spark 3.4, when ANSI SQL mode(configuration `spark.sql.ansi.enabled`) is on, Spark SQL always returns NULL result on getting a map value with a non-existing key. In Spark 3.3 or earlier, there will be an error.
-*   Since Spark 3.4, the SQL CLI `spark-sql` does not print the prefix `Error in query:` before the error message of `AnalysisException`.
+*   Since Spark 3.4, when ANSI SQL mode(configuration `spark.sql.ansi.enabled`) is on, Spark SQL always returns NULL result on getting a map value with a nonexisting key. In Spark 3.3 or earlier, there will be an error.
+*   Since Spark 3.4, the SQL CLI `spark-sql` doesn't print the prefix `Error in query:` before the error message of `AnalysisException`.
 *   Since Spark 3.4, `split` function ignores trailing empty strings when `regex` parameter is empty.
 *   Since Spark 3.4, the `to_binary` function throws error for a malformed `str` input. Use `try_to_binary` to tolerate malformed input and return NULL instead.
-    *   Valid Base64 string should include symbols from in base64 alphabet (A-Za-z0-9+/), optional padding (`=`), and optional whitespaces. Whitespaces are skipped in conversion except when they are preceded by padding symbol(s). If padding is present it should conclude the string and follow rules described in RFC 4648 § 4.
+    *   Valid Base64 string should include symbols from in base64 alphabet (A-Za-z0-9+/), optional padding (`=`), and optional whitespaces. Whitespaces are skipped in conversion except when they're preceded by padding symbol(s). If padding is present it should conclude the string and follow rules described in RFC 4648 § 4.
     *   Valid hexadecimal strings should include only allowed symbols (0-9A-Fa-f).
     *   Valid values for `fmt` are case-insensitive `hex`, `base64`, `utf-8`, `utf8`.
 *   Since Spark 3.4, Spark throws only `PartitionsAlreadyExistException` when it creates partitions but some of them exist already. In Spark 3.3 or earlier, Spark can throw either `PartitionsAlreadyExistException` or `PartitionAlreadyExistsException`.
 *   Since Spark 3.4, Spark will do validation for partition spec in ALTER PARTITION to follow the behavior of `spark.sql.storeAssignmentPolicy` which may cause an exception if type conversion fails, e.g. `ALTER TABLE .. ADD PARTITION(p='a')` if column `p` is int type. To restore the legacy behavior, set `spark.sql.legacy.skipTypeValidationOnAlterPartition` to `true`.
-*   Since Spark 3.4, vectorized readers are enabled by default for the nested data types (array, map and struct). To restore the legacy behavior, set `spark.sql.orc.enableNestedColumnVectorizedReader` and `spark.sql.parquet.enableNestedColumnVectorizedReader` to `false`.
-*   Since Spark 3.4, `BinaryType` is not supported in CSV datasource. In Spark 3.3 or earlier, users can write binary columns in CSV datasource, but the output content in CSV files is `Object.toString()` which is meaningless; meanwhile, if users read CSV tables with binary columns, Spark will throw an `Unsupported type: binary` exception.
+*   Since Spark 3.4, vectorized readers are enabled by default for the nested data types (array, map, and struct). To restore the legacy behavior, set `spark.sql.orc.enableNestedColumnVectorizedReader` and `spark.sql.parquet.enableNestedColumnVectorizedReader` to `false`.
+*   Since Spark 3.4, `BinaryType` isn't supported in CSV datasource. In Spark 3.3 or earlier, users can write binary columns in CSV datasource, but the output content in CSV files is `Object.toString()` which is meaningless; meanwhile, if users read CSV tables with binary columns, Spark will throw an `Unsupported type: binary` exception.
 *   Since Spark 3.4, bloom filter joins are enabled by default. To restore the legacy behavior, set `spark.sql.optimizer.runtime.bloomFilter.enabled` to `false`.
 
 #### Structured Streaming
 *   Since Spark 3.4, `Trigger.Once` is deprecated, and users are encouraged to migrate from `Trigger.Once` to `Trigger.AvailableNow`. Please refer [SPARK-39805](https://issues.apache.org/jira/browse/SPARK-39805) for more details.
-*   Since Spark 3.4, the default value of configuration for Kafka offset fetching (`spark.sql.streaming.kafka.useDeprecatedOffsetFetching`) is changed from `true` to `false`. The default no longer relies consumer group based scheduling, which affects the required ACL. For further details please see [Structured Streaming Kafka Integration](https://spark.apache.org/docs/3.4.0/structured-streaming-kafka-integration.html#offset-fetching).
+*   Since Spark 3.4, the default value of configuration for Kafka offset fetching (`spark.sql.streaming.kafka.useDeprecatedOffsetFetching`) is changed from `true` to `false`. The default no longer relies consumer group based scheduling, which affects the required ACL. For more information, see [Structured Streaming Kafka Integration](https://spark.apache.org/docs/3.4.0/structured-streaming-kafka-integration.html#offset-fetching).
     
 
 
@@ -158,7 +158,7 @@ Specifically, Delta Lake offers:
 *   [Fix](https://github.com/delta-io/delta/commit/28148976) a bug where querying an external Delta table at the root of an S3 bucket would throw an error.
 *   [Remove](https://github.com/delta-io/delta/commit/81c7a58e) leaked internal Spark metadata from the Delta log to make any affected tables readable again.
 
-Note: the Delta Lake 2.4.0 release does not include the [Iceberg to Delta converter](https://docs.delta.io/2.4.0/delta-utility.html#convert-an-iceberg-table-to-a-delta-table) because `iceberg-spark-runtime` does not support Spark 3.4 yet. The Iceberg to Delta converter is still supported when using Delta 2.3 with Spark 3.3.
+Note: the Delta Lake 2.4.0 release doesn't include the [Iceberg to Delta converter](https://docs.delta.io/2.4.0/delta-utility.html#convert-an-iceberg-table-to-a-delta-table) because `iceberg-spark-runtime` doesn't support Spark 3.4 yet. The Iceberg to Delta converter is still supported when using Delta 2.3 with Spark 3.3.
 
 Read the full version of the release notes for [Delta Lake 2.4](https://github.com/delta-io/delta/releases/tag/v2.4.0).
 

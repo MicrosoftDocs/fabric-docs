@@ -42,7 +42,7 @@ Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) 
 ## Multiple Runtimes Support
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
 
-**By default, all new workspaces use the latest stable runtime version, which is currently Runtime 1.1.** 
+**By default, all new workspaces use the latest stable runtime version, which is currently [Runtime 1.1](./runtime-1-1.md).** 
 
 To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
 
