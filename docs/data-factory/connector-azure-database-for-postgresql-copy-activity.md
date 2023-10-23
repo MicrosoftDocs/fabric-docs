@@ -54,7 +54,7 @@ Under **Advanced**, you can specify the following fields:
     If you select **Physical partitions of table**:
     - **Partition names**: Specify the list of physical partitions that needs to be copied. If you use a query to retrieve the source data, hook `?AdfTabularPartitionName` in the WHERE clause.  For an example, see the Parallel copy from [Azure Database for PostgreSQL](#parallel-copy-from-azure-database-for-postgresql) section.
     
-        :::image type="content" source="./media/connector-azure-database-for-postgresql/physical-partitions-of-table.png" alt-text="Screenshot showing .":::
+        :::image type="content" source="./media/connector-azure-database-for-postgresql/physical-partitions-of-table.png" alt-text="Screenshot showing the configuration when you select Physical partitions of table.":::
     
     If you select **Dynamic range**:
     - **Partition column name**: Specify the name of the source column in integer or date/datetime type (int, smallint, bigint, date, timestamp without time zone, timestamp with time zone or time without time zone) that will be used by range partitioning for parallel copy. If not specified, the primary key of the table is auto-detected and used as the partition column.
@@ -69,7 +69,7 @@ Under **Advanced**, you can specify the following fields:
     
       If you use a query to retrieve the source data, hook `?AdfRangePartitionLowbound` in the WHERE clause. For an example, see the [Parallel copy from Azure Database for PostgreSQL](#parallel-copy-from-azure-database-for-postgresql) section.
 
-      :::image type="content" source="./media/connector-azure-database-for-postgresql/dynamic-range.png" alt-text="Screenshot showing .":::
+      :::image type="content" source="./media/connector-azure-database-for-postgresql/dynamic-range.png" alt-text="Screenshot showing the configuration when you select Dynamic range.":::
         
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
