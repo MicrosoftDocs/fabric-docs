@@ -1,5 +1,5 @@
 ---
-title: Train classification models using Explainable Boosting Machines (Preview)
+title: Train classification models using explainable boosting machines (Preview)
 description: Learn how to train classification models using explainable boosting machines
 ms.reviewer: larryfr
 ms.author: midesa
@@ -8,21 +8,27 @@ ms.topic: how-to
 ms.date: 10/13/2023
 ---
 
-# Train Explainable Boosting Machines - Classification (Preview)
+# Train explainable boosting machines - classification (Preview)
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+In this article, you learn how to train classification models using explainable boosting machines (EBM). An explainable boosting machine is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
-An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
+In SynapseML, you can use a scalable implementation of an EBM, powered by Apache Spark, for training new models. This article guides you through the process of applying the scalability and interpretability of EBMs within Microsoft Fabric by utilizing Apache Spark. 
 
-In SynapseML, you can use a scalable implementation of Explainable Boosting Machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of Explainable Boosting Machines within Microsoft Fabric by utilizing Apache Spark.
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-In this tutorial, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
+In this article, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
 
-## Benefits of Explainable Boosting Machines
+## Benefits of explainable boosting machines
 
  EBMs offer a unique blend of interpretability and predictive power, making them an ideal choice when transparency and comprehensibility of machine learning models are crucial. With EBMs, users can gain valuable insights into the underlying factors driving predictions, enabling them to understand why a model makes specific decisions or predictions, which is essential for building trust in AI systems.
 
 Their ability to uncover complex relationships within the data while providing clear and interpretable results makes them invaluable in fields like finance, healthcare, and fraud detection. In these fields, model explainability isn't only desirable but often a regulatory requirement. Ultimately, users opting for EBMs can strike a balance between model performance and transparency, ensuring that AI solutions are accurate, easily understandable, and accountable.
+
+## Prerequisites
+
+[!INCLUDE [Prerequisites](../includes/prerequisites.md)]
+
+* Create a new notebook in your workspace by selecting **+** and then **Notebook**.
 
 ## Install libraries
 
@@ -138,9 +144,9 @@ taxi_featurised_df = taxi_df.select('totalAmount', 'fareAmount', 'tipAmount', 'p
 
 These data preparation steps ensure that your dataset is both refined and optimized for subsequent modeling processes.
 
-### Encoding
+### Encode the data
 
-In the context of SynapseML Explainable Boosting Machines (EBMs), the ```Estimator``` expects input data to be in the form of an ```org.apache.spark.mllib.linalg.Vector```, essentially a vector of ```Doubles```. So, it's necessary to convert any categorical (string) variables into numerical representations, and any variables that possess numeric values but non-numeric data types must be cast into numeric data types.
+In the context of SynapseML EBMs, the ```Estimator``` expects input data to be in the form of an ```org.apache.spark.mllib.linalg.Vector```, essentially a vector of ```Doubles```. So, it's necessary to convert any categorical (string) variables into numerical representations, and any variables that possess numeric values but non-numeric data types must be cast into numeric data types.
 
 Presently, SynapseML EBMs employ the ```StringIndexer``` approach to manage categorical variables. Currently, SynapseML EBMs don't offer specialized handling for categorical features.
 
@@ -191,7 +197,7 @@ This division of data allows us to train the model on a substantial portion whil
 
 ## Train the model
 
-Now, train the Explainable Boosting Machine (EBM) model and then evaluate its performance using the Area under the Receiver Operating Characteristic (ROC) curve (AUROC) as the metric:
+Now, train the EBM model and then evaluate its performance using the Area under the Receiver Operating Characteristic (ROC) curve (AUROC) as the metric:
 
 ```python
 # Create an instance of the EBMClassifier
@@ -214,7 +220,7 @@ print("Area under ROC = %s" % metrics.areaUnderROC)
 
 This process entails training the EBM model on the training dataset and then utilizing it to make predictions on the test dataset, followed by assessing the model's performance using AUROC as a key metric.
 
-## Global explanations
+## View global explanations
 
 To visualize the model's overall explanation, you can obtain the visualization wrapper and utilize the ```interpret``` library's ```show``` method. The visualization wrapper acts as a bridge to facilitate the visualization experience of the model. Here's how you can do it:
 
@@ -234,7 +240,7 @@ interpret.show(explanation)
 
 The term "importances" represents the mean absolute contribution (score) of each term (feature or interaction) towards predictions. These contributions are averaged across the training dataset, taking into account the number of samples in each bin and sample weights (if applicable). The top 15 most important terms are displayed in the explanation.
 
-## Local explanations
+## View local explanations
 
 The provided explanations are at a global level, but there are scenarios where per-feature outputs are also valuable. Both the trainer and the model offer the capability to set the ```featurescores```, which, when populated, introduces another vector-valued column. Each vector within this column matches the length of the feature column, with each value corresponding to the feature at the same index. These values represent the contribution of each feature's value to the final output of the model.
 
@@ -266,5 +272,5 @@ print('Feature scores are', first['featurescores'])
 
 ## Next steps
 
-- [InterpretML Explainable Boosting Machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
-- [Track models with MLFlow](../mlflow-autologging.md)
+- [InterpretML explainable boosting machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
+- [Track models with MLflow](../mlflow-autologging.md)
