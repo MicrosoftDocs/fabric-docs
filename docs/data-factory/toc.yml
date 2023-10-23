@@ -41,6 +41,18 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Access database
+      items:
+      - name: Overview
+        href: connector-access-database-overview.md
+      - name: Set up your connection
+        href: connector-access-database.md    
+    - name: Amazon Redshift
+      items:
+      - name: Overview
+        href: connector-amazon-redshift-overview.md
+      - name: Set up your connection
+        href: connector-amazon-redshift.md    
     - name: Amazon S3
       items:
       - name: Overview
@@ -87,6 +99,18 @@
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-azure-data-lake-storage-gen2-dataflows.md
+    - name: Azure Databricks
+      items:
+      - name: Overview
+        href: connector-azure-databricks-overview.md
+      - name: Set up your connection
+        href: connector-azure-databricks.md
+    - name: Azure HDInsight on AKS Trino
+      items:
+      - name: Overview
+        href: connector-azure-hdinsight-on-aks-trino-overview.md
+      - name: Set up your connection
+        href: connector-azure-hdinsight-on-aks-trino.md
     - name: Azure SQL database
       items:
       - name: Overview
@@ -103,6 +127,18 @@
         href: connector-azure-synapse-analytics-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
+    - name: CloudBluePSA
+      items:
+      - name: Overview
+        href: connector-cloudbluepsa-overview.md
+      - name: Set up your connection
+        href: connector-cloudbluepsa.md
+    - name: Common Data Service (Legacy)
+      items:
+      - name: Overview
+        href: connector-common-data-service-legacy-overview.md
+      - name: Set up your connection
+        href: connector-common-data-service-legacy.md
     - name: Dataverse
       items:
       - name: Overview
@@ -255,6 +291,10 @@
         href: deactivate-activity.md
       - name: Append Variable activity
         href: append-variable-activity.md
+      - name: Azure Batch activity
+        href: azure-batch-activity.md
+      - name: Azure Machine Learning activity
+        href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
       - name: Delete data activity

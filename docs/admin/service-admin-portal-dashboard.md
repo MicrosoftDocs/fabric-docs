@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Dashboard tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Web content on dashboard tiles
 
@@ -27,4 +27,4 @@ To learn more, see [Add images, videos, and more to your dashboard](/power-bi/cr
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

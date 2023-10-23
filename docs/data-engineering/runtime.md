@@ -107,7 +107,7 @@ The key features in this release are as follows:
 
 - [Improve](https://github.com/delta-io/delta/commit/9017ac0d811c0a42ba8ac45720bddf06c8f17e63) performance of the [DELETE](https://docs.delta.io/latest/delta-update.html#delete-from-a-table) command by pruning the columns to read when searching for files to rewrite.
 
-- [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp, which was used by [DynamoDB's TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, follow the migration steps [here](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
+- [Fix](https://github.com/delta-io/delta/commit/6dbc55db53332c985e5bc8470df6c95106afac25) for a bug in the DynamoDB-based [S3 multi-cluster mode](https://docs.delta.io/2.1.1/delta-storage.html#setup-configuration-s3-multi-cluster) configuration. The previous version wrote an incorrect timestamp, which was used by [DynamoDB's TTL](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html) feature to clean up expired items. This timestamp value has been fixed and the table attribute renamed from `commitTime` to `expireTime`. If you already have TTL enabled, follow the migration steps for [Delta Lake 1.2.1, 2.0.0, or 2.1.0 to Delta Lake 2.0.1, 2.1.1 or above](https://docs.delta.io/latest/porting.html#delta-lake-1-2-1-2-0-0-or-2-1-0-to-delta-lake-2-0-1-2-1-1-or-above).
 
 - [Fix](https://github.com/delta-io/delta/commit/b07257df) [nondeterministic](https://github.com/delta-io/delta/issues/527) behavior during MERGE when working with sources that are nondeterministic.
 
@@ -145,7 +145,7 @@ The key features in this release are as follows:
 
 - [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset isn't correctly updated when there are no data changes  
 
-Check the source and full release notes [here](https://github.com/delta-io/delta/releases).
+Check the source and full release notes on [GitHub at delta-io/delta](https://github.com/delta-io/delta/releases).
 
 ## Default level packages for Java/Scala libraries
 
