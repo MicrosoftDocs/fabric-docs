@@ -35,22 +35,48 @@ items:
     href: ../data-engineering/lakehouse-notebook-load-data.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
-  - name: How to use end-to-end AI samples
-    href: use-ai-samples.md
-  - name: Customer churn prediction
-    href: customer-churn.md
-  - name: Book recommendation
-    href: retail-recommend-model.md
-  - name: Fraud detection
-    href: fraud-detection.md
-  - name: Time series forecasting
-    href: time-series-forecasting.md
-  - name: Text (title genre) classification
-    href: title-genre-classification.md
-  - name: Uplift modeling
-    href: uplift-modeling.md
-  - name: Machine failure prediction
-    href: predictive-maintenance.md
+  - name: Python tutorials
+    items:
+    - name: How to use end-to-end AI samples
+      href: use-ai-samples.md
+    - name: Customer churn prediction
+      href: customer-churn.md
+    - name: Book recommendation
+      href: retail-recommend-model.md
+    - name: Fraud detection
+      href: fraud-detection.md
+    - name: Time series forecasting
+      href: time-series-forecasting.md
+    - name: Text (title genre) classification
+      href: title-genre-classification.md
+    - name: Uplift modeling
+      href: uplift-modeling.md
+    - name: Machine failure prediction
+      href: predictive-maintenance.md
+  - name: R tutorials
+    items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
+    - name: Avocado price prediction
+      href: r-avocado.md
+    - name: Flight delay prediction
+      href: r-flight-delay.md
+  - name: Semantic link tutorials
+    items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Clean data with functional dependencies
+      href: tutorial-data-cleaning-functional-dependencies.md
+    - name: Analyze functional dependencies in a Power BI sample dataset
+      href: tutorial-power-bi-dependencies.md
+    - name: Extract and calculate Power BI measures from a notebook
+      href: tutorial-power-bi-measures.md
+    - name: Discover relationships in a Power BI dataset using semantic link
+      href: tutorial-power-bi-relationships.md
+    - name: Discover relationships in the Synthea dataset using semantic link
+      href: tutorial-relationships-detection.md
 - name: Governance
   items:
   - name: Roles and permissions
@@ -73,14 +99,12 @@ items:
   items:
   - name: Training Overview
     href: ./model-training/model-training-overview.md
-  - name: How-to guides
-    items:
-      - name: Train with Spark MLlib
-        href: ./model-training/fabric-sparkml-tutorial.md
-      - name: Train models with Scikit-learn
-        href: train-models-scikit-learn.md
-      - name: Train models with SynapseML
-        href: train-models-synapseml.md  
+  - name: Train with Spark MLlib
+    href: ./model-training/fabric-sparkml-tutorial.md
+  - name: Train models with Scikit-learn
+    href: train-models-scikit-learn.md
+  - name: Train models with SynapseML
+    href: train-models-synapseml.md  
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
@@ -89,10 +113,8 @@ items:
     href: machine-learning-model.md
   - name: Fabric autologging
     href: mlflow-autologging.md
-  - name: How-to guides
-    items:
-    - name: Train models with PyTorch
-      href: train-models-pytorch.md
+  - name: Train models with PyTorch
+    href: train-models-pytorch.md
 - name: Model scoring
   items:   
     - name: Direct lake mode and PBI reporting
@@ -157,38 +179,24 @@ items:
   items:
   - name: Python overview
     href: ./python-guide/python-overview.md
-  - name: How-to guides
-    items:
-    - name: Python library management
-      href: ./python-guide/python-library-management.md
-    - name: Python visualizations
-      href: ./python-guide/python-visualizations.md
+  - name: Python library management
+    href: ./python-guide/python-library-management.md
+  - name: Python visualizations
+    href: ./python-guide/python-visualizations.md
 - name: Use R
   items:
   - name: R overview
     href: r-overview.md
-  - name: Tutorials
-    items:
-    - name: Customer churn
-      href: r-customer-churn.md
-    - name: Fraud detection
-      href: r-fraud-detection.md
-    - name: Avocado price prediction
-      href: r-avocado.md
-    - name: Flight delay prediction
-      href: r-flight-delay.md
-  - name: How-to guides
-    items:
-    - name: R library management
-      href: r-library-management.md
-    - name: How to use SparkR 
-      href: r-use-sparkr.md
-    - name: How to use sparklyr
-      href: r-use-sparklyr.md
-    - name: How to use Tidyverse
-      href: r-use-tidyverse.md
-    - name: R visualization
-      href: r-visualization.md
+  - name: R library management
+    href: r-library-management.md
+  - name: How to use SparkR 
+    href: r-use-sparkr.md
+  - name: How to use sparklyr
+    href: r-use-sparklyr.md
+  - name: How to use Tidyverse
+    href: r-use-tidyverse.md
+  - name: R visualization
+    href: r-visualization.md
 - name: Semantic link
   items:
   - name: Overview
@@ -207,22 +215,18 @@ items:
       href: tutorial-power-bi-relationships.md
     - name: Discover relationships in the Synthea dataset using semantic link
       href: tutorial-relationships-detection.md
-  - name: Concepts
-    items:
-    - name: Power BI connectivity
-      href: semantic-link-power-bi.md
-    - name: Semantic propagation
-      href: semantic-link-semantic-propagation.md
-    - name: Semantic functions
-      href: semantic-link-semantic-functions.md
-  - name: How-to guides
-    items:
-    - name: Read from Power BI and write data usable by Power BI
-      href: read-write-power-bi.md
-    - name: Explore and validate functional dependencies in your data
-      href: semantic-link-validate-data.md
-    - name: Explore and validate relationships in datasets
-      href: semantic-link-validate-relationship.md
+  - name: Power BI connectivity
+    href: semantic-link-power-bi.md
+  - name: Semantic propagation
+    href: semantic-link-semantic-propagation.md
+  - name: Semantic functions
+    href: semantic-link-semantic-functions.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:
   - name: Overview
