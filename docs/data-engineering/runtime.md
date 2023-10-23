@@ -50,6 +50,23 @@ Once you make this change, all system-created items within the workspace, includ
 
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
+### Upgrading Delta Lake
+
+Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, it will be unable to read from or write to that table.
+
+The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page [How does Delta Lake manage feature compatibility?
+](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
+
+Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, as well as in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
+
+It's essential to note that when performing this upgrade, users will receive a warning indicating that upgrading the Delta protocol version is a non-reversible process. This means that once the update is executed, it cannot be undone.
+
+Protocol version upgrades can potentially impact the compatibility of existing Delta Lake table readers, writers, or both. Therefore, it is advisable to proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
+
+:::image type="content" source="media\mrs\DeltaLakeUpgradeWarning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
+
+Additionally, users should verify that all current and future production tools and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
+
 ## Versioning 
 
 Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries. 
