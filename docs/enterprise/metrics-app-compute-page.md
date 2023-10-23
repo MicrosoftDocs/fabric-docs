@@ -63,10 +63,18 @@ The utilization chart displays the following elements:
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
-
 ### Throttling
 
-Displays delay and rejection over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed. 
+Displays delay and rejection over time. Throttling is based on the amount of future capacity consumption resulting from the following smoothing policies.
+
+| Policy | Consumption |Impact |
+|--|--|--|
+| Overage protection |Usage <= 10 minutes |Jobs can consume 10 minutes of future capacity use without throttling. |
+| Interactive delay |10 minutes < usage <= 60 minutes |User requested interactive jobs are throttled. |
+| Interactive rejection |60 minutes < usage <= 24 hours |User requested interactive jobs are rejected. |
+| Background rejection |Usage > 24 hours |User scheduled background jobs are rejected and not executed. |
+
+Use the tabs at the top right corner of the visual to toggle how the visual is displayed. 
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
@@ -82,7 +90,7 @@ The throttling chart displays the following elements:
 
   * **Background rejection** - Billable background operations are rejected if the value is above 100%.
 
-### Overages 
+### Overages
   
 Displays the *add*, *burndown* and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
 
