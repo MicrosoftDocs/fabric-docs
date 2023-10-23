@@ -1,6 +1,6 @@
 ---
-title: Understand the metrics app overview page
-description: Learn how to read the Microsoft Fabric Capacity metrics app's overview page.
+title: Understand the metrics app compute page
+description: Learn how to read the Microsoft Fabric Capacity metrics app's compute page.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
@@ -8,11 +8,11 @@ ms.custom: build-2023
 ms.date: 09/14/2023
 ---
 
-# Understand the metrics app overview page
+# Understand the metrics app compute page
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
+The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
@@ -155,6 +155,6 @@ User can hover over any value in the visual to see operation level data. User ca
 
 ## Next steps
 
-[Understand the metrics app OneLake page](metrics-app-onelake-page.md)
+[Understand the metrics app storage page](metrics-app-storage-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)

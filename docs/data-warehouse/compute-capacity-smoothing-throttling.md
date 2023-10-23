@@ -89,13 +89,13 @@ This screenshot shows when the "Autoscale %" (the yellow line) was enabled to pr
 
 ### Throttling tab
 
-To monitor and analyze throttling policies, a throttling tab is added to the usage graph. With this, capacity admins can easily observe future usage as a percentage of each limit, and even drill down to specific workloads that contributed to an overage. For more information, refer to [Throttling in the Metrics App](../enterprise/metrics-app-overview-page.md#throttling).
+To monitor and analyze throttling policies, a throttling tab is added to the usage graph. With this, capacity admins can easily observe future usage as a percentage of each limit, and even drill down to specific workloads that contributed to an overage. For more information, refer to [Throttling in the Metrics App](../enterprise/metrics-app-compute-page.md#throttling).
 
 Utilization exceeding the 100% line is potentially subject to throttling in the "Background Rejection" policy.
 
 ### Overages Tab
 
-The **Overages** tab provides a visual history of any overutilization of capacity, including carry forward, cumulative, and burndown of utilization. For more information, refer to [Throttling in Microsoft Fabric](../enterprise/throttling.md) and [Overages in the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-overview-page.md#overages).
+The **Overages** tab provides a visual history of any overutilization of capacity, including carry forward, cumulative, and burndown of utilization. For more information, refer to [Throttling in Microsoft Fabric](../enterprise/throttling.md) and [Overages in the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md#overages).
 
 ## Related content
 
