@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 10/13/2023
 ---
 
-# Train Explainable Boosting Machines - Regression (Preview)
+# Train explainable boosting machines - regression (Preview)
 
 An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
