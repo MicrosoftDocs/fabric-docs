@@ -39,6 +39,16 @@ Below, you'll find a comprehensive comparison of key components, including Apach
 
 Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
+## Multiple Runtimes Support
+Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
+
+**By default, all new workspaces use the latest stable runtime version, which is currently Runtime 1.1.** 
+
+To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
+
+Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you are currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session will continue as is. However, starting from the next session or job, the selected runtime version will be applied.
+
+:::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
 ## Versioning 
 
