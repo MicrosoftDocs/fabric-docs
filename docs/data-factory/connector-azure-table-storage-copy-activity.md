@@ -109,7 +109,7 @@ Under **Advanced**, you can specify the following fields:
     If you select **Use destination column**:
     - **Row key column**: Select the name of the column whose column values are used as the row key. If not specified, use a GUID for each row.
 
-- **Write batch size**: Specify the write batch size to inserts data into Azure Table when it is hit. Allowed values are integer (number of rows).and the default value is 10,000.
+- **Write batch size**: Specify the write batch size to inserts data into Azure Table. Allowed values are integer (number of rows). The default value is 10,000.
 
 - **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
 
