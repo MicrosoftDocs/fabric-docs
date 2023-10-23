@@ -67,7 +67,7 @@ Protocol version upgrades can potentially impact the compatibility of existing D
 
 :::image type="content" source="media\mrs\DeltaLakeUpgradeWarning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
 
-Additionally, users should verify that all current and future production tools and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
+Additionally, users should verify that all current and future production workloads and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
 
 ## Versioning 
 
