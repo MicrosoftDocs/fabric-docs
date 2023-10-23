@@ -14,7 +14,7 @@ In this article, you'll learn how to train regression models using explainable b
 
 In SynapseML, you can use a scalable implementation of explainable boosting machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of explainable boosting machines within Microsoft Fabric by utilizing Apache Spark. Using explainable boosting machines with Microsoft Fabric is currently in preview.
 
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Benefits of explainable boosting machines
 
@@ -24,7 +24,7 @@ Their ability to uncover complex relationships within the data while providing c
 
 ## Prerequisites
 
-[!INCLUDE [Prerequisites](../includes/prerequisites.md)]
+[!INCLUDE [Prerequisites](includes/prerequisites.md)]
 
 * Create a new notebook in your workspace by selecting **+** and then **Notebook**.
 
@@ -181,4 +181,4 @@ Feature scores are [-0.06610139373422304, -0.06386890875478829, 0.00678462951334
 ## Next steps
 
 - [InterpretML explainable boosting machine: How it works](https://interpret.ml/docs/ebm.html#how-it-works)
-- [Track models with MLflow](../mlflow-autologging.md)
+- [Track models with MLflow](mlflow-autologging.md)

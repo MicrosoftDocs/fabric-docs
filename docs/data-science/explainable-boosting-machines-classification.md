@@ -14,7 +14,7 @@ In this article, you learn how to train classification models using explainable 
 
 In SynapseML, you can use a scalable implementation of an EBM, powered by Apache Spark, for training new models. This article guides you through the process of applying the scalability and interpretability of EBMs within Microsoft Fabric by utilizing Apache Spark. 
 
-[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
 
@@ -26,7 +26,7 @@ Their ability to uncover complex relationships within the data while providing c
 
 ## Prerequisites
 
-[!INCLUDE [Prerequisites](../includes/prerequisites.md)]
+[!INCLUDE [Prerequisites](includes/prerequisites.md)]
 
 * Create a new notebook in your workspace by selecting **+** and then **Notebook**.
 
@@ -273,4 +273,4 @@ print('Feature scores are', first['featurescores'])
 ## Next steps
 
 - [InterpretML explainable boosting machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
-- [Track models with MLflow](../mlflow-autologging.md)
+- [Track models with MLflow](mlflow-autologging.md)
