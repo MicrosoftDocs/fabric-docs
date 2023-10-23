@@ -79,7 +79,7 @@ Apache Spark 3.4.0 is the fifth release of the 3.x line. With tremendous contrib
 Read the full version of the release notes for a specific Apache Spark version by visiting both [Spark 3.4.0](https://spark.apache.org/releases/spark-release-3-4-0.html) and [Spark 3.4.1](https://spark.apache.org/releases/spark-release-3-4-1.html). 
 
 
-### Migration guide from Runtime 1.1 to Runtime 1.2
+## Migration guide from Runtime 1.1 to Runtime 1.2
 
 When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, powered by Apache Spark 3.4, please review [the official migration guide](https://spark.apache.org/docs/3.4.0/migration-guide.html). Here are the key highlights:
 

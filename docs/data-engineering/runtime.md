@@ -50,7 +50,7 @@ Once you make this change, all system-created items within the workspace, includ
 
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
-### Upgrading Delta Lake
+## Upgrading Delta Lake
 
 Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, it will be unable to read from or write to that table.
 

@@ -31,10 +31,7 @@ Microsoft Fabric periodically releases maintenance updates for Runtime 1.1, deli
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
 
-
-## New features and improvements
-
-### Apache Spark 3.3.1
+## New features and improvements - Apache Spark 3.3.1
 
 Following is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1:
 
@@ -85,7 +82,7 @@ Following is an extended summary of key new features related to Apache Spark ver
 
 - Fix column pruning in CSV when \_corrupt\_record is selected. ([SPARK-40468](https://issues.apache.org/jira/browse/SPARK-40468))
 
-### Delta Lake 2.2
+## New features and improvements - Delta Lake 2.2
 
 The key features in this release are as follows:
 
