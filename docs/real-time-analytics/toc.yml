@@ -68,6 +68,8 @@ items:
     items:
     - name: Data management overview  
       href: data-management.md
+    - name: Cache Policy (hot and cold cache)
+      href: cache-policy-overview.md
     - name: Change the data retention policy
       href: data-retention-policy.md
     - name: Change the caching policy
