@@ -4,9 +4,9 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 07/12/2023
+ms.date: 10/23/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom: build-2023, references_regions
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations in Microsoft Fabric
@@ -23,11 +23,11 @@ Data Warehousing in Microsoft Fabric is currently in preview. The focus of this 
 
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article.
 
-- <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
+- At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
 - Warehouse recovery capabilities are not available during preview.
-- Data warehousing is not supported for multiple geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview.
+- Data warehousing is not supported for *multiple* geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview. 
 
-For more limitations information in specific areas, see:
+For more limitations in specific areas, see:
 
 - [Data types in Microsoft Fabric](data-types.md)
 - [Datasets](datasets.md#limitations)
@@ -38,6 +38,15 @@ For more limitations information in specific areas, see:
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
 - [Tables](tables.md#limitations)
+
+## Regional availability
+
+The following Azure regions are currently not supported for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)]:
+   - West India
+   - UAE Central
+   - Poland
+   - Israel
+   - Italy
 
 ## Limitations of the SQL Endpoint
 
@@ -59,6 +68,7 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visit [Microsoft Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
 
-## Next steps
+## Next step
 
-- [Get Started with Warehouse](create-warehouse.md)
+> [!div class="nextstepaction"]
+> [Get Started with Warehouse](create-warehouse.md)
