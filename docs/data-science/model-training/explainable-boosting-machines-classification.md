@@ -14,7 +14,7 @@ An Explainable Boosting Machine (EBM) is a machine learning technique that combi
 
 In SynapseML, you can use a scalable implementation of Explainable Boosting Machines, powered by Apache Spark, for training new models. This tutorial guides you through the process of applying the scalability and interpretability of Explainable Boosting Machines within Microsoft Fabric by utilizing Apache Spark. Using Explainable Boosting Machines with Microsoft Fabric is currently in preview.
 
-[!INCLUDE [feature-preview](../includes/feature-preview.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 In this tutorial, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
 
