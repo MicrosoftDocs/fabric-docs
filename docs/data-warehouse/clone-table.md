@@ -45,7 +45,7 @@ There is no limit on the number of clones created both within and across schemas
 
 You can also clone a group of tables at once. This can be useful for cloning a group of related tables at the same past point in time. For an example, see [Clone multiple tables at once](tutorial-clone-table-portal.md#clone-multiple-tables-at-once).
 
-## Retention of data history
+### Retention of data history
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for seven calendar days, allowing for clones to be made at a point in time. All modifications to data, including inserts, updates, and deletes are retained.
 
