@@ -16,7 +16,7 @@ In SynapseML, you can use a scalable implementation of Explainable Boosting Mach
 
 [!INCLUDE [feature-preview](../includes/feature-preview.md)]
 
-In this tutorial, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
+In this article, you walk through the process of acquiring and preprocessing data from Azure Open Datasets that records NYC Yellow Taxi trips. Then you train a predictive model with the ultimate objective of determining whether a given trip will occur or not.
 
 ## Benefits of Explainable Boosting Machines
 
