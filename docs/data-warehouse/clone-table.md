@@ -37,7 +37,7 @@ Clone of a table can be created based on either:
 
 - **Current point-in-time:** The clone is based on the present state of the table.
 
-- **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. Table clone will be created with a timestamp based on UTC.
+- **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. The new table is created with a timestamp based on UTC.
 
 For examples, see [Clone table as of past point-in-time state of the source table](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time-state-of-the-source-table) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
 
@@ -73,11 +73,11 @@ The following permissions are required to create a table clone:
 
 The objects described here are included in the table clone:
 
-- The object-level security on the source of the clone is automatically inherited by the cloned table. As the [workspace roles](workspace-roles.md) provide read access by default, [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) permission can be set on the table clone if desired.
+- The clone table inherits object-level SQL security from the source table of the clone. As the [workspace roles](workspace-roles.md) provide read access by default, [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) permission can be set on the table clone if desired.
 
-- All attributes that exist at the source table are inherited by the table clone, whether the clone was created within the same schema or across different schemas in a warehouse.
+- The clone table inherits all attributes that exist at the source table, whether the clone was created within the same schema or across different schemas in a warehouse.
 
-- The primary and unique key constraints defined in the source table are inherited by the table clone.
+- The clone table inherits the primary and unique key constraints defined in the source table.
 
 - A read-only delta log is created for every table clone that is created within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The data files stored as delta parquet files are read-only. This ensures that the data stays always protected from corruption.
 
@@ -95,7 +95,7 @@ To keep up with the ever-changing data landscape, frequent execution of ETL jobs
 
 ### Low-cost, near-instantaneous recovery
 
-In the event of accidental data loss or corruption, existing table clones can be leveraged to recover the table to its previous state.
+In the event of accidental data loss or corruption, existing table clones can be used to recover the table to its previous state.
 
 ### Data archival
 
@@ -107,7 +107,7 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - Table clones across workspaces are not currently supported.
 - Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
-- Table clones submitted before the retention period of 7 days cannot be created.
+- Table clones submitted before the retention period of seven days cannot be created.
 - Cloned tables do not currently inherit [row-level security](row-level-security.md) or dynamic data masking.
 - Changes to the table schema prevent a clone from being created prior to the table schema change.
 
@@ -117,3 +117,8 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](query-warehouse.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
