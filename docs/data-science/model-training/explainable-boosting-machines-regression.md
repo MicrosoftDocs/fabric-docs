@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 10/13/2023
 ---
 
-# Train Explainable Boosting Machines - Regression (Preview)
+# Train explainable boosting machines - regression (Preview)
 
 An Explainable Boosting Machine (EBM) is a machine learning technique that combines the power of gradient boosting with an emphasis on model interpretability. It creates an ensemble of decision trees, similar to gradient boosting, but with a unique focus on generating human-readable models. EBMs not only provide accurate predictions but also offer clear and intuitive explanations for those predictions. They're well-suited for applications where understanding the underlying factors driving model decisions is essential, such as healthcare, finance, and regulatory compliance.
 
@@ -16,7 +16,7 @@ In SynapseML, you can use a scalable implementation of Explainable Boosting Mach
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-## Benefits of Explainable Boosting Machines
+## Benefits of explainable boosting machines
 
  EBMs offer a unique blend of interpretability and predictive power, making them an ideal choice when transparency and comprehensibility of machine learning models are crucial. With EBMs, users can gain valuable insights into the underlying factors driving predictions, enabling them to understand why a model makes specific decisions or predictions, which is essential for building trust in AI systems.
 
