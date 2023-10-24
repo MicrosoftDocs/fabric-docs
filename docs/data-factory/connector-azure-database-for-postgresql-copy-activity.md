@@ -42,8 +42,13 @@ The following three properties are **required**:
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
       - **Table**: Select the table from the drop-down list or select **Edit** to manually enter it to read data. 
+
+        :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
+
     - If you select **Query**:
       - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM mytable` or `SELECT * FROM "MyTable"`. Note in PostgreSQL, the entity name is treated as case-insensitive if not quoted.
+          
+          :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::    
 
 Under **Advanced**, you can specify the following fields:
 
