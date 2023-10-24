@@ -333,6 +333,12 @@
         href: connector-palantir-foundry-overview.md
       - name: Set up your connection
         href: connector-palantir-foundry.md
+    - name: PostgreSQL
+      items:
+      - name: Overview
+        href: connector-postgresql-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-postgresql-copy-activity.md       
     - name: REST
       items:
       - name: Overview
