@@ -50,6 +50,7 @@ You can also clone a group of tables at once. This can be useful for cloning a g
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for seven calendar days, allowing for clones to be made at a point in time. All inserts, updates, and deletes made to the data warehouse are retained for seven calendar days.
 
 ### Separate and independent
+
 Upon creation, a table clone is an independent and separate copy of the data from its source. 
 
 - Any changes made through DML or DDL on the source of the clone table is not reflected in the table that is cloned. 
@@ -69,21 +70,6 @@ Due to its autonomous existence, both the original source and the clones can be 
 
 - Users with Admin, Member, or Contributor [workspace roles] (workspace-roles.md) can delete the table clone within the workspace.
 - Users who have [ALTER SCHEMA](/sql/t-sql/statements/alter-schema-transact-sql?view=fabric&preserve-view=true) permissions on the schema in which the table clone resides can delete the table clone.
-
-### Table clone inheritance
-Upon creation, a table clone is an independent and separate copy of the data from its source. Changes made to the source table, such as adding new attributes or data, are not reflected in the cloned table.
-
-Similarly, any new attributes or data added to the cloned table are not applied to the source table.
-
-### Permissions to create a table clone
-
-The following permissions are required to create a table clone:
-
-- Users with Admin, Member, or Contributor [workspace roles](workspace-roles.md) can clone the tables within the workspace. The Viewer workspace role cannot create a clone.
-
-- [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) permission on all the rows and columns of the source of the table clone is required.
-
-- User must have [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true) permission in the schema where the table clone will be created.
 
 ### Table clone inheritance
 
