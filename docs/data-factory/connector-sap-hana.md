@@ -27,7 +27,7 @@ The SAP HANA database connector supports the following authentication types for 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an SAP HANA database. The following links provide the specific Power Query connector information you need to connect to an SAP HANA database in Dataflow Gen2:
 
 - To get started using the SAP HANA database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-- Be sure to install or set up any [SAP HANA database prerequisites](/power-query/connectors/sap-hana/overview#prerequisitess) before connecting to the SAP HANA database connector.
+- Be sure to install or set up any [SAP HANA database prerequisites](/power-query/connectors/sap-hana/overview#prerequisites) before connecting to the SAP HANA database connector.
 - To connect to the SAP HANA database connector from Power Query, go to [Connect to an SAP HANA database from Power Query Online](/power-query/connectors/sap-hana/overview#connect-to-an-sap-hana-database-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
