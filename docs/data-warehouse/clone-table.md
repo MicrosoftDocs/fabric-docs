@@ -4,7 +4,7 @@ description: Learn about table clones in Microsoft Fabric.
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 10/23/2023
+ms.date: 10/24/2023
 ms.topic: conceptual
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
@@ -54,10 +54,6 @@ You can also clone a group of tables at once. This can be useful for cloning a g
 Upon creation, a table clone is an independent and separate copy of the data from its source. Changes made to the source table, such as adding new attributes or data, are not reflected in the cloned table.
 
 Similarly, any new attributes or data added to the cloned table are not applied to the source table.
-
-### Deletion of a table clone
-
-Due to its autonomous existence, both the original source and the clones can be deleted without any constraints or limitations. Once a clone is created, it remains in existence until deleted by the user.
 
 ### Permissions to create a table clone
 
