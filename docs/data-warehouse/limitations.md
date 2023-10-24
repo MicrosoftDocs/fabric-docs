@@ -29,15 +29,16 @@ Current general product limitations for Data Warehousing in Microsoft Fabric are
 
 For more limitations in specific areas, see:
 
+- [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
-- [Statistics](statistics.md#limitations)
-- [Transactions](transactions.md#limitations)
-- [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
-- [Connectivity](connectivity.md#considerations-and-limitations)
+- [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
+- [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
+- [Transactions](transactions.md#limitations)
+- [Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 
 ## Regional availability
 

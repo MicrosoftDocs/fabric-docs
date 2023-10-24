@@ -24,7 +24,7 @@ Capacity forms the foundation in Microsoft Fabric and provides the computing pow
 
 ## Smoothing
 
-Capacities have periods where they're under-utilized (idle) and over-utilized (peak). When a capacity is running multiple jobs, a sudden spike in compute demand may be generated that exceeds the limits of a purchased capacity.
+Capacities have periods where they're under-utilized (idle) and over-utilized (peak). When a capacity is running multiple jobs, a sudden spike in compute demand might be generated that exceeds the limits of a purchased capacity. 
 
 Smoothing offers relief for customers who create sudden spikes during their peak times while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
 
@@ -40,7 +40,7 @@ For more information, visit [Throttling in Microsoft Fabric](../enterprise/throt
 
 In general, similar to Power BI, [operations are classified either as ](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)*[interactive](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)* or *[background](/power-bi/enterprise/service-premium-interactive-background-operations#operation-list)*.
 
-Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying all data warehousing as *background* prevents peaks of CU utilization from triggering throttling too quickly.
+Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Warehouse** category are reported as *background* to take advantage of 24-hour smoothing of activity to allow for the most flexible usage patterns. With 24-hour smoothing, operations can run simultaneously without causing any spikes at any time during the day. Customers get the benefit of a consistently fast performance without having to worry about tiny spikes in their workload. Thus, classifying data warehousing as *background* reduces the frequency of peaks of CU utilization from triggering throttling too quickly.
 
 ## Throttling
 
@@ -55,17 +55,17 @@ The four capacity throttling policies for Microsoft Fabric:
 |**Usage <= 10 minutes**|Overage protection|Jobs can consume 10 minutes of future capacity use without throttling.|
 |**10 minutes < Usage <=60 minutes**|Interactive Delay|User-requested interactive jobs are delayed 20 seconds at submission. |
 |**60 minutes < Usage <= 24 hours**|Interactive Rejection|User requested interactive type jobs are rejected.|
-|**Usage > 24 hours**|Background Rejection|All new jobs are rejected from execution. This is the category for most **Warehouse** operations.|
+|**Usage > 24 hours**|Background Rejection|All new jobs are rejected from execution. |
 
-All Warehouse and SQL Endpoint operations follow "Background Rejection" policy, and as a result experience operation rejection only after over-utilization averaged over a 24-hour period.
+Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] operations follow "Background Rejection" policy, and as a result experience operation rejection after over-utilization averaged over a 24-hour period.
 
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc. ) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
-- Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to understand the root cause.
-- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later`.
-- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you may see error message: `Your request was rejected due to resource constraints. Try again later (Microsoft SQL Server Server, Error: 18456)`.
+- Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc.) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
+- Dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. 
+- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you may see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you may see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 
 ## Best practices to recover from overload situations
 
@@ -73,7 +73,6 @@ A capacity administrator can recover from a throttling situation by:
 
 - Upgrade the capacity to a higher SKU to raise capacity limit.
 - [Identify contributors to peak activity](how-to-observe-utilization.md) and work with high-load project owners to optimize requests by T-SQL query optimization processes or redistributing tasks across other capacities.
-    - Reschedule batch activities to avoid overlapping or concurrency with other requests. For example, spread out scheduled data pipelines in Data Engineering during overnight processing.
 - Wait until the overload state is over before issuing new requests.
 - Capacity admins can configure proactive [alerts](/power-bi/admin/service-admin-premium-capacity-notifications) and be notified before a capacity gets throttled.
 
@@ -81,17 +80,19 @@ A capacity administrator can recover from a throttling situation by:
 
 Capacity administrators can view overload information and drilldown further via [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
+:::image type="content" source="media/compute-capacity-smoothing-throttling/metrics-app-throttling.gif" alt-text="An animated image showing the capabilities of the Fabric Capacity Metrics app.":::
+
+For a walkthrough of the app, visit [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md).
+
 ### Utilization tab
 
-This screenshot shows when the "Autoscale %" (the yellow line) was enabled to prevent throttling of peak utilization. When the "Interactive %" (red line) exceeded the CU limit, throttling policies were in effect. This example doesn't indicate any throttling of _background_ operations in capacity.
-
-:::image type="content" source="media/compute-capacity-smoothing-throttling/throttling-explore.png" alt-text="Screenshot showing the overload information in the timepoint graph." lightbox="media/compute-capacity-smoothing-throttling/throttling-explore.png":::
+This tab shows utilization of resources compared to capacity purchased. 100% of utilization represents the full throughput of a capacity SKU and is shared by all Fabric experiences. This is represented by the yellow dotted line. Selecting a specific timepoint in the graph enables the **Explore** button, which opens a detailed drill through page.
 
 ### Throttling tab
 
 To monitor and analyze throttling policies, a throttling tab is added to the usage graph. With this, capacity admins can easily observe future usage as a percentage of each limit, and even drill down to specific workloads that contributed to an overage. For more information, refer to [Throttling in the Metrics App](../enterprise/metrics-app-overview-page.md#throttling).
 
-Utilization exceeding the 100% line is potentially subject to throttling in the "Background Rejection" policy.
+In the **Background rejection** section, utilization exceeding the 100% line is subject to throttling in the "Background Rejection" policy.
 
 ### Overages Tab
 
@@ -101,9 +102,12 @@ The **Overages** tab provides a visual history of any overutilization of capacit
 
 - [Billing and utilization reporting in Synapse Data Warehouse](usage-reporting.md)
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
-- [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
 - [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Throttling in Microsoft Fabric](../enterprise/throttling.md)
+- [Pause and resume in Fabric data warehousing](pause-resume.md)
 
+## Next step
 
+> [!div class="nextstepaction"]
+> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
