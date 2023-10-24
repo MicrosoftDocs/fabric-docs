@@ -96,6 +96,9 @@ To ingest the data to the lakehouse destination:
    
 1. Publish the dataflow.
 
+    > [!IMPORTANT]
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items will be provisioned along with their related SQL Endpoint and Datasets. These items are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and are not intended to be used directly by users.experience. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but may be accesible in other experiences such as the Notebook, SQL-endpoint, Lakehouse and Warehouse experiences. you can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
+
 Now that you've ingested the data to the lakehouse destination, you can set up your data pipeline.
 
 ## Create a data pipeline

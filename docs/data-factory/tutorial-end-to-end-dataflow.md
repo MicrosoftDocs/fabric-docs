@@ -217,6 +217,9 @@ With the output query now fully prepared and with data ready to output, we can d
 
 1. Back in the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table, and then select **Publish**.
 
+    > [!IMPORTANT]
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items will be provisioned along with their related SQL Endpoint and Datasets. These items are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and are not intended to be used directly by users.experience. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but may be accesible in other experiences such as the Notebook, SQL-endpoint, Lakehouse and Warehouse experiences. you can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
+
 1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Properties**.
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-dataflow.png" alt-text="Screenshot showing the Properties option selected on the menu for a dataflow where it can be renamed.":::
