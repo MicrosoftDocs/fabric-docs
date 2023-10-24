@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 07/12/2023
+ms.date: 10/24/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -23,21 +23,22 @@ Data Warehousing in Microsoft Fabric is currently in preview. The focus of this 
 
 Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article.
 
-- <b>IMPORTANT</B> At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations. 
+- At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
 - Warehouse recovery capabilities are not available during preview.
 - Data warehousing is not supported for multiple geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview.
 
 For more limitations information in specific areas, see:
 
+- [Clone table](clone-table.md#limitations)
+- [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
-- [Statistics](statistics.md#limitations)
-- [Transactions](transactions.md#limitations)
-- [The Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
-- [Connectivity](connectivity.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
+- [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)
+- [Transactions](transactions.md#limitations)
+- [Visual Query editor](visual-query-editor.md#limitations-with-visual-query-editor)
 
 ## Limitations of the SQL Endpoint
 
