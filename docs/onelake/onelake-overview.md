@@ -44,7 +44,7 @@ For more information on APIs and endpoints, see [OneLake access and APIs](onelak
 
 ### OneLake file explorer for Windows
 
-OneLake is the OneDrive for data. Just like OneDrive, you can easily explore OneLake data from Windows using the OneLake file explorer for Windows. You can navigate all your workspaces and data items, easily uploading, downloading, or modifying files just like you do in Office. The OneLake file explorer simplifies working with data lakes, allowing even nontechnical business users to use them.
+OneLake is the OneDrive for data. Just like OneDrive, you can easily explore OneLake data from Windows using the [OneLake file explorer](onelake-file-explorer.md) for Windows. You can navigate all your workspaces and data items, easily uploading, downloading, or modifying files just like you do in Office. The OneLake file explorer simplifies working with data lakes, allowing even nontechnical business users to use them.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
