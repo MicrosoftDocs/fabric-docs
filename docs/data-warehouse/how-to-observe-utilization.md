@@ -4,7 +4,7 @@ description: Learn how to use the Fabric Capacity Metrics app to observe Microso
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/01/2023
+ms.date: 10/24/2023
 ms.topic: how-to
 ms.search.form: Warehouse billing and utilization
 ---
@@ -30,8 +30,8 @@ This graph can provide high-level CU trends in the last 14 days to see which Fab
 
 1. Use the **Item** table to identify specific warehouses consuming most Compute. The Items table below the multi metric ribbon chart provides aggregated consumption at item level. In this view, for example, you can identify which items have consumed the most CUs.
 1. Select "Warehouse" in the **Select item kind(s)** dropdown list.
-1. Sort by CU(s) descending.
-1. For more information, visit [Throttling in Microsoft Fabric](/fabric/enterprise/throttling).
+1. Sort the **Item** table by **CU(s)**, descending.
+1. You can now identify the items using the most the capacity units, overall duration of activity, number of users, and more. For more information, visit [Throttling in Microsoft Fabric](/fabric/enterprise/throttling).
 
 ## Drill through peak activity
 
@@ -55,12 +55,6 @@ The following animated gif walks through several steps you may use to drill thro
 1. The **Burndown table** graph represents the different Fabric workloads that are running on this capacity and the % compute consumed by them at the selected timepoint. 
     - The table entry for **DMS** is your Warehouse workload. In the previous sample animated image, DMS has added 26% to the overall carryforward debt.
     - The **Cumulative %** column provides a percentage of how much the capacity has overconsumed. This value should be below 100% to avoid throttling. For example, in the previous sample animated image, 2433.84% indicates that DMS used 24 times more capacity than what the current SKU (F2) allows.
-
-You can also use the **Items** table to review the capacity consumption of different items.
-
-1. Expand the **Select item kind(s)** drop down list and select **Warehouse**.
-1. Sort the **Item** table by **CU(s)**, descending.
-1. You can now identify the items using the most the capacity units, overall duration of activity, number of users, and more.
 
 ## Related content
 
