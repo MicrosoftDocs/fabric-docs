@@ -39,7 +39,7 @@ Clone of a table can be created based on either:
 
 - **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. The new table is created with a timestamp based on UTC.
 
-For examples, see [Clone table as of past point-in-time state of the source table](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time-state-of-the-source-table) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
+For examples, see [Clone table as of past point-in-time state of the source table](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
 
 There is no limit on the number of clones created both within and across schemas.
 
