@@ -39,7 +39,7 @@ Clone of a table can be created based on either:
 
 - **Previous point-in-time:** The clone is based on a point-in-time up to seven days in the past. The table clone contains the data as it appeared at a desired past point in time. The new table is created with a timestamp based on UTC.
 
-For examples, see [Clone table as of past point-in-time state of the source table](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
+For examples, see [Clone table as of past point-in-time](tutorial-clone-table-portal.md#clone-table-as-of-past-point-in-time) or [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true).
 
 There is no limit on the number of clones created both within and across schemas.
 
@@ -47,10 +47,30 @@ You can also clone a group of tables at once. This can be useful for cloning a g
 
 ### Retention of data history
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for seven calendar days, allowing for clones to be made at a point in time. All modifications to data, including inserts, updates, and deletes are retained.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] automatically preserves and maintains the data history for seven calendar days, allowing for clones to be made at a point in time. All inserts, updates, and deletes made to the data warehouse are retained for seven calendar days.
 
 ### Separate and independent
+Upon creation, a table clone is an independent and separate copy of the data from its source. 
 
+- Any changes made through DML or DDL on the source of the clone table is not reflected in the table that is cloned. 
+- Similarly, any changes made through DDL or DML on the table clone is not reflected on the source of the clone table.
+
+### Permissions to create a table clone
+
+The following permissions are required to create a table clone:
+
+- Users with Admin, Member, or Contributor [workspace roles](workspace-roles.md) can clone the tables within the workspace. The Viewer workspace role cannot create a clone.
+- [SELECT](/sql/t-sql/queries/select-transact-sql?view=fabric&preserve-view=true) permission on all the rows and columns of the source of the table clone is required.
+- User must have [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric&preserve-view=true) permission in the schema where the table clone will be created.
+
+### Deletion of a table clone
+
+Due to its autonomous existence, both the original source and the clones can be deleted without any constraints. Once a clone is created, it remains in existence until deleted by the user.
+
+- Users with Admin, Member, or Contributor [workspace roles] (workspace-roles.md) can delete the table clone within the workspace.
+- Users who have [ALTER SCHEMA](/sql/t-sql/statements/alter-schema-transact-sql?view=fabric&preserve-view=true) permissions on the schema in which the table clone resides can delete the table clone.
+
+### Table clone inheritance
 Upon creation, a table clone is an independent and separate copy of the data from its source. Changes made to the source table, such as adding new attributes or data, are not reflected in the cloned table.
 
 Similarly, any new attributes or data added to the cloned table are not applied to the source table.
@@ -93,7 +113,7 @@ To keep up with the ever-changing data landscape, frequent execution of ETL jobs
 
 In the event of accidental data loss or corruption, existing table clones can be used to recover the table to its previous state.
 
-### Data archival
+### Data archiving
 
 For auditing or compliance purposes, zero copy clones can be easily used to create copies of data as it existed at a particular point in time in the past. Some data might need to be archived for long-term retention or legal compliance. Cloning the table at various historical points ensures that data is preserved in its original form.
 
