@@ -99,12 +99,14 @@ A **banner** promoting Save and Publish will appear when there are pending chang
 
 ## Attach an Environment
 
-Microsoft Fabric Environment can be attached to your Fabric Notebooks, Fabric Spark job definitions and even the Data Engineering/Science workspaces.
+Microsoft Fabric Environment can be attached to your Data Engineering/Science workspaces or your Notebooks and Spark job definitions.
+
+### Attach an Environment in as workspace default
+
+You can find the **Environment** tab by navigating to *Workspace setting -> Data Engineering/Science -> Spark setting*. The toggle call **Customize environment** in this page. 
+
+Fabric Notebooks, Fabric Spark job definitions and even the Data Engineering/Science workspaces.
 
 ### Attach an Environment to Notebook or Spark job definitions
 
 You can find the **Environment** dropdown in both Notebook and Spark job definition's Home tab. The available Environments are listed in the drop-down. If you select any Environment, the Spark compute and libraries configured in it are effective once the Spark session get started.
-
-
-
-
