@@ -243,6 +243,12 @@
         href: connector-google-cloud-storage-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-google-cloud-storage-dataflow.md
+    - name: Hive LLAP
+      items:
+      - name: Overview
+        href: connector-hive-llap-overview.md
+      - name: Set up your connection
+        href: connector-hive-llap.md
     - name: HTTP
       items:
       - name: Overview
@@ -253,6 +259,18 @@
         href: connector-http-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-http-dataflows.md
+    - name: IBM DB2 database
+      items:
+      - name: Overview
+        href: connector-ibm-db2-database-overview.md
+      - name: Set up your connection
+        href: connector-ibm-db2-database.md
+    - name: Impala
+      items:
+      - name: Overview
+        href: connector-impala-overview.md
+      - name: Set up your connection
+        href: connector-impala.md
     - name: KQL database
       items:
       - name: Overview
@@ -275,6 +293,24 @@
         href: connector-microsoft-365.md
       - name: Configure in Data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
+    - name: Microsoft Exchange Online
+      items:
+      - name: Overview
+        href: connector-microsoft-exchange-online-overview.md
+      - name: Set up your connection
+        href: connector-microsoft-exchange-online.md
+    - name: MongoDB Atlas SQL (Beta)
+      items:
+      - name: Overview
+        href: connector-mongodb-atlas-sql-overview.md
+      - name: Set up your connection
+        href: connector-mongodb-atlas-sql.md
+    - name: MySQL database
+      items:
+      - name: Overview
+        href: connector-mysql-database-overview.md
+      - name: Set up your connection
+        href: connector-mysql-database.md
     - name: OData
       items:
       - name: Overview
@@ -285,6 +321,18 @@
         href: connector-odata-copy-activity.md 
       - name: Configure in Dataflow Gen2
         href: connector-odata-dataflows.md
+    - name: Odbc
+      items:
+      - name: Overview
+        href: connector-odbc-overview.md
+      - name: Set up your connection
+        href: connector-odbc.md
+    - name: Palantir Foundry
+      items:
+      - name: Overview
+        href: connector-palantir-foundry-overview.md
+      - name: Set up your connection
+        href: connector-palantir-foundry.md
     - name: REST
       items:
       - name: Overview
