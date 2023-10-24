@@ -31,13 +31,13 @@ This graph can provide high-level CU trends in the last 14 days to see which Fab
 1. Use the **Item** table to identify specific warehouses consuming most Compute. The Items table below the multi metric ribbon chart provides aggregated consumption at item level. In this view, for example, you can identify which items have consumed the most CUs.
 1. Select "Warehouse" in the **Select item kind(s)** dropdown list.
 1. Sort the **Item** table by **CU(s)**, descending.
-1. You can now identify the items using the most the capacity units, overall duration of activity, number of users, and more. For more information, visit [Throttling in Microsoft Fabric](/fabric/enterprise/throttling).
+1. You can now identify the items using the most the capacity units, overall duration of activity, number of users, and more. 
 
 ## Drill through peak activity
 
 Use the timepoint graph to identify a range of activity where CU utilization was at its peak. We can identify individual interactive and background activities consuming utilization.
 
-The following animated gif walks through several steps you may use to drill through utilization, throttling, and overage information.
+The following animated gif walks through several steps you may use to drill through utilization, throttling, and overage information. For more information, visit [Throttling in Microsoft Fabric](/fabric/enterprise/throttling).
 
 :::image type="content" source="media/how-to-observe-utilization/metrics-app-throttling.gif" alt-text="An animated gif of the Metrics app showing the drill through steps.":::
 
