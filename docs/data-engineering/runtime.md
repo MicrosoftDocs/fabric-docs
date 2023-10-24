@@ -50,7 +50,14 @@ Once you make this change, all system-created items within the workspace, includ
 
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
+
+%TODO - Spark settings consequences
+%TODO - Library management consequences
+%TODO - LH consequences
+
 ## Upgrading Delta Lake Protocol
+
+Delta Lake features are always backwards compatible, ensuring tables created in a lower Delta Lake version can seamlessly interact with higher versions. However, when certain features are enabled (e.g., by using `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` method, forward compatibility with lower Delta Lake versions may be compromised. In such instances, it's essential to modify workloads referencing the upgraded tables to align with a Delta Lake version that maintains compatibility.
 
 Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, it will be unable to read from or write to that table.
 
