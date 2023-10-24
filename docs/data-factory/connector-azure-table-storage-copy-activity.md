@@ -51,7 +51,7 @@ The following three properties are **required**:
     :::image type="content" source="./media/connector-azure-table-storage/source-query.png" alt-text="Screenshot showing Use query when selecting Query." :::
 
     - **Table**: Specify the name of the table in the Azure Table Storage database instance. Select the table from the drop-down list or enter the name manually by selecting **Edit**.
-    - **Query**: Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options), and see the examples in the following Azure Table source query examples:
+    - **Query**: Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options), and see the following Azure Table source query examples:
 
         > [!Note]
         > Azure Table query operation times out in 30 seconds as [enforced by Azure Table service](/rest/api/storageservices/setting-timeouts-for-table-service-operations). Learn how to optimize the query from [Design for querying](/azure/storage/tables/table-storage-design-for-query) article.
@@ -136,7 +136,7 @@ The following table contains more information about the copy activity in Azure T
 | **Use query** | Choose to use **Table** or **Query**. | • Table<br>• Query | Yes | / | 
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
 | **Query** | Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options). | < your query > | No | azureTableSourceQuery | 
-| **Ignore table not found** | Whether to allow the exception of the table to not exist. | selected or unselected (default) | No | azureTableSourceIgnoreTableNotFound:<br>true or false (default) | 
+| **Ignore table not found** | Indicates whether to allow the exception of the table to not exist. | selected or unselected (default) | No | azureTableSourceIgnoreTableNotFound:<br>true or false (default) | 
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
 ### Destination information
@@ -146,7 +146,7 @@ The following table contains more information about the copy activity in Azure T
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Table Storage connection >|Yes|connection|
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
-| **Insert type** | Whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No | merge<br>replace | 
+| **Insert type** | The mode to insert data into Azure Table. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No | merge<br>replace | 
 | **Partition key value selection** | Partition key value can be a fixed value or it can take value from a destination column. | • **Specify partition value**<br>• **Use destination column** | No | / | 
 | **Default partition value** | The default partition key value that can be used by the destination | < your default partition value > | No | azureTableDefaultPartitionKeyValue | 
 | **Partition key column** | The name of the column whose values are used as partition keys. If not specified, "AzureTableDefaultPartitionKeyValue" is used as the partition key. | < your partition key column > | No | azureTablePartitionKeyName：<br>• value<br>• type | 
