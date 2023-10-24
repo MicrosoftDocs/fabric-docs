@@ -133,4 +133,4 @@ df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json")
 ## Next steps
 
 - Use Data Wrangler to [clean and prepare your data](data-wrangler.md)
-- Start [training ML models](./model-training/model-training-overview.md)
+- Start [training ML models](model-training-overview.md)

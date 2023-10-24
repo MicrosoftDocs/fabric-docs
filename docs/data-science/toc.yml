@@ -70,19 +70,19 @@ items:
 - name: Train machine learning models
   items:
   - name: Training Overview
-    href: ./model-training/model-training-overview.md
+    href: model-training-overview.md
   - name: How-to guides
     items:
       - name: Train with Spark MLlib
-        href: ./model-training/fabric-sparkml-tutorial.md
+        href: fabric-sparkml-tutorial.md
       - name: Train models with Scikit-learn
         href: train-models-scikit-learn.md
       - name: Train models with SynapseML
         href: train-models-synapseml.md  
       - name: Train interpretable models for classification
-        href: ./model-training/explainable-boosting-machines-classification.md
+        href: explainable-boosting-machines-classification.md
       - name: Train interpretable models for regression
-        href: ./model-training/explainable-boosting-machines-regression.md
+        href: explainable-boosting-machines-regression.md
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
