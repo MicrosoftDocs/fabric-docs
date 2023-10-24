@@ -23,11 +23,9 @@ In this guide, you will:
 
 ## Prerequisites
 
-Before you begin, you must download and install [OneLake file explorer](onelake-file-explorer.md).
+Before you begin, you must:
 
- [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
-
-You must also:
+- Download and install [OneLake file explorer](onelake-file-explorer.md).
 
 - Create a workspace with a Lakehouse item.
 
