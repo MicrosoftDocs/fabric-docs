@@ -378,7 +378,7 @@
       - name: Overview
         href: connector-sap-hana-overview.md
       - name: Set up your connection
-        href: connector-sap-hana-server.md
+        href: connector-sap-hana.md
     - name: SFTP
       items:
       - name: Overview
