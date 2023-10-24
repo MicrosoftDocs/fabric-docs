@@ -51,10 +51,10 @@ You can also clone a group of tables at once. This can be useful for cloning a g
 
 ### Separate and independent
 
-Upon creation, a table clone is an independent and separate copy of the data from its source. 
+Upon creation, a table clone is an independent and separate copy of the data from its source.
 
-- Any changes made through DML or DDL on the source of the clone table is not reflected in the table that is cloned. 
-- Similarly, any changes made through DDL or DML on the table clone is not reflected on the source of the clone table.
+- Any changes made through DML or DDL on the source of the clone table are not reflected in the clone table.
+- Similarly, any changes made through DDL or DML on the table clone are not reflected on the source of the clone table.
 
 ### Permissions to create a table clone
 
