@@ -421,6 +421,8 @@
         href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
+      - name: Functions activity
+        href: functions-activity.md
       - name: Get Metadata activity
         href: get-metadata-activity.md
       - name: If Condition activity
