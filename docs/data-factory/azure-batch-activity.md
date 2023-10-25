@@ -29,7 +29,7 @@ To use an Azure Batch activity in a pipeline, complete the following steps:
 1. Search for Azure Batch in the pipeline **Activities** pane, and select it to add it to the pipeline canvas.
 
    > [!NOTE]
-   > You may need to expand the menu and scroll down to see the KQL activity as highlighted in the screenshot below.
+   > You may need to expand the menu and scroll down to see the Azure Batch activity as highlighted in the following screenshot.
 
    :::image type="content" source="media/azure-batch-activity/add-azure-batch-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Azure Batch activity highlighted.":::
 

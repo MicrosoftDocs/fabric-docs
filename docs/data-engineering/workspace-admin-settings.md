@@ -54,7 +54,7 @@ Learn more about [Spark Compute for Fabric](spark-compute.md).
 
 ## Runtime version
 
-You may choose which version of Spark you'd like to use for the workspace. Currently, Spark 3.2 version is available.
+You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
 
