@@ -333,6 +333,12 @@
         href: connector-palantir-foundry-overview.md
       - name: Set up your connection
         href: connector-palantir-foundry.md
+    - name: PostgreSQL database
+      items:
+      - name: Overview
+        href: connector-postgresql-overview.md
+      - name: Set up your connection
+        href: connector-postgresql.md
     - name: REST
       items:
       - name: Overview
@@ -343,6 +349,36 @@
         href: connector-rest-copy-activity.md    
       - name: Configure in Dataflow Gen2
         href: connector-rest-dataflows.md 
+    - name: Salesforce objects
+      items:
+      - name: Overview
+        href: connector-salesforce-objects-overview.md
+      - name: Set up your connection
+        href: connector-salesforce-objects.md
+    - name: Salesforce reports
+      items:
+      - name: Overview
+        href: connector-salesforce-reports-overview.md
+      - name: Set up your connection
+        href: connector-salesforce-reports.md
+    - name: SAP BW Application Server
+      items:
+      - name: Overview
+        href: connector-sap-bw-application-server-overview.md
+      - name: Set up your connection
+        href: connector-sap-bw-application-server.md
+    - name: SAP BW Message Server
+      items:
+      - name: Overview
+        href: connector-sap-bw-message-server-overview.md
+      - name: Set up your connection
+        href: connector-sap-bw-message-server.md
+    - name: SAP HANA database
+      items:
+      - name: Overview
+        href: connector-sap-hana-overview.md
+      - name: Set up your connection
+        href: connector-sap-hana.md
     - name: SFTP
       items:
       - name: Overview
