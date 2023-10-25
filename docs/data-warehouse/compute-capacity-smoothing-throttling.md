@@ -4,7 +4,7 @@ description: Learn about smoothing and throttling principles applicable for data
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/03/2023
+ms.date: 10/25/2023
 ms.topic: conceptual
 ---
 
@@ -46,7 +46,7 @@ Most [operations](usage-reporting.md#warehouse-operation-categories) in the **Wa
 
 Throttling occurs when a customer's capacity consumes more CPU resources than what was purchased. After consumption is smoothed, capacity throttling policies will be checked based on the amount of future capacity consumed. This results in a degraded end-user experience. When a capacity enters a throttled state, it only affects operations that are requested after the capacity has begun throttling. 
 
-Throttling policies are applied at a capacity level, meaning that while one capacity, or set of workspaces, may be experiencing reduced performance due to being overloaded, other capacities may continue running normally.
+Throttling policies are applied at a capacity level. If one capacity, or set of workspaces, is experiencing reduced performance due to being overloaded, other capacities can continue running normally.
 
 The four capacity throttling policies for Microsoft Fabric:
 
@@ -62,10 +62,10 @@ Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](inc
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc.) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
+- Warehouse operations are _background_ except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc.) or creating/updating Power BI datasets (including default dataset) or reports. These operations continue to follow "Interactive Rejection" policy.
 - Dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. 
-- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you may see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
-- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you may see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you might see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you might see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 
 ## Best practices to recover from overload situations
 

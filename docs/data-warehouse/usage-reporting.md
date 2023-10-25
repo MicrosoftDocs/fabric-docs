@@ -4,7 +4,7 @@ description: Learn more about utilization reporting for the data warehouse, incl
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/01/2023
+ms.date: 10/25/2023
 ms.topic: conceptual
 ms.search.form: Warehouse billing and utilization
 ---
@@ -65,9 +65,9 @@ In general, similar to Power BI, [operations are classified either as interactiv
 
 :::image type="content" source="media/usage-reporting/drill-through.png" alt-text="A screenshot of the Timepoint drill through graph in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/drill-through.png":::
 
-This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table will represent the list of operations that were executed at that timepoint.
+This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
 
-The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](/fabric/data-warehouse/compute-capacity-smoothing-throttling). For example, the table will display all operations that were executed and still being smoothed at a selected timepoint.
+The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](/fabric/data-warehouse/compute-capacity-smoothing-throttling). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
 
 Top use cases for this view include:
 
