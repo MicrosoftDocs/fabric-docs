@@ -71,11 +71,11 @@ SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssm
 
 ### Scripting the default Power BI dataset
 
-You can script out the default Power BI dataset from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
+You can script out the default Power BI dataset from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
 
-View the Tabular Model Scripting Language (TMSL) schema of the dataset by scripting out the dataset via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your dataset in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the dataset via SSMS's **Script** context menu action.
+View the Tabular Model Scripting Language (TMSL) schema of the dataset by scripting out the dataset via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your dataset in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the dataset via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
 
-This requires Power BI write permissions on the Power BI dataset. With read permissions, you can see the data but not the schema of the Power BI dataset.
+Scripting requires Power BI write permissions on the Power BI dataset. With read permissions, you can see the data but not the schema of the Power BI dataset.
 
 ## Create a new Power BI dataset
 
