@@ -5,12 +5,12 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Run metadata scanning
 
-The following short walkthrough shows how to use the scanner APIs to retrieve metadata from your organization's Fabric items. It assumes that a Power BI admin has set up metadata scanning in your organization.
+The following short walkthrough shows how to use the scanner APIs to retrieve metadata from your organization's Fabric items. It assumes that a Fabric admin has set up metadata scanning in your organization.
 
 For the list of the artifact and subartifact metadata that metadata scanning returns, see the [documentation for the Admin - WorkspaceInfo GetScanResult API](/rest/api/power-bi/admin/workspace-info-get-scan-result).
 
@@ -37,11 +37,11 @@ Call [workspaces/getInfo](/rest/api/power-bi/admin/workspace-info-post-workspace
 >[!NOTE]
 > Not more than 16 calls can be made simultaneously. The caller should wait for a scan succeed/failed response from the *scanStatus* API before invoking another call.
 >
-> If some metadata you expected to receive is not returned, check with your Power BI admin to make sure they have [enabled all relevant admin switches](../admin/metadata-scanning-setup.md).
+> If some metadata you expected to receive is not returned, check with your Fabric admin to make sure they have [enabled all relevant admin switches](../admin/metadata-scanning-setup.md).
 
 Use the URI from the location header you received from calling *workspaces/getInfo* and poll on [workspaces/scanStatus/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-status) until the status returned is "Succeeded". This status means the scan result is ready. It's recommended to use a polling interval of 30-60 seconds. In the location header, you also receive the URI to call in the next step. Use it only after the status is "Succeeded".
 
-Use the URI from the location header you received from calling *workspaces/scanStatus/{scan-id}* and read the data using [workspaces/scanResult/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-result). The data contains the list of workspaces, artifact info, and other metadata based on the parameters passed in the *workspaces/getInfo* call.
+Use the URI from the location header you received from calling *workspaces/scanStatus/{scan-id}* and read the data using [workspaces/scanResult/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-result). The data contains the list of workspaces, item info, and other metadata based on the parameters passed in the *workspaces/getInfo* call.
 
 ## Step 2: Perform an incremental scan
 
@@ -60,7 +60,7 @@ Divide this list into chunks of up to 100 workspaces, and get the data for these
 
 ## Licensing
 
-Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of artifacts located in non-Premium workspaces.
+Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
 ## Next steps
 

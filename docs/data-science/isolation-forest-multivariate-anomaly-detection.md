@@ -4,7 +4,7 @@ description: Use SynapseML on Apache Spark for multivariate anomaly detection wi
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
@@ -188,6 +188,6 @@ display(df_test_pred)
 
 ## Next steps
 
-- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
-- [How to use SynapseML and Cognitive Services for multivariate anomaly detection - Analyze time series](cognitive-services-multivariate-anomaly-detection.md)
+- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
+- [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)

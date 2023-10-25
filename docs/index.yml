@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 05/23/2023
+  ms.date: 06/06/2023
 
 # highlightedContent section (optional)
 # Maximum of 8 items 
@@ -28,6 +28,10 @@ highlightedContent:
       itemType: get-started
       url: get-started/fabric-trial.md
     # Card
+    - title: Microsoft Fabric preview information
+      itemType: concept
+      url: get-started/preview.md      
+    # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
       url: admin/fabric-switch.md
@@ -35,6 +39,10 @@ highlightedContent:
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
+    # Card
+    - title: Microsoft Fabric licenses
+      itemType: concept
+      url: enterprise/licenses.md              
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -132,6 +140,8 @@ productDirectory:
           text: Machine learning experiment
         - url: data-science/use-ai-samples.md
           text: Use end-to-end AI samples
+        - url: data-science/semantic-link-overview.md
+          text: Use semantic link to connect with Power BI
         - url: data-science/index.yml
           text: See more
 
@@ -157,7 +167,7 @@ productDirectory:
         - url: real-time-analytics/overview.md
           text: What is Real-Time Analytics?
         - url: real-time-analytics/event-streams/overview.md
-          text: What is Event stream?
+          text: What is Event streams?
         - url: real-time-analytics/create-database.md
           text: Create a database
         - url: real-time-analytics/index.yml

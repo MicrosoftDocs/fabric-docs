@@ -13,15 +13,13 @@ items:
     href: tutorial-data-science-prepare-system.md
   - name: 1 Ingest data into a Fabric lakehouse
     href: tutorial-data-science-ingest-data.md
-  - name: 2 Explore and visualize data using notebooks
+  - name: 2 Explore and clean data using notebooks
     href: tutorial-data-science-explore-notebook.md
-  - name: 3 Perform data cleansing and preparation
-    href: tutorial-data-science-data-cleanse.md
-  - name: 4 Train and register machine learning models
+  - name: 3 Train and register machine learning models
     href: tutorial-data-science-train-models.md
-  - name: 5 Perform batch scoring and save predictions
+  - name: 4 Perform batch scoring and save predictions
     href: tutorial-data-science-batch-scoring.md
-  - name: 6 Create a Power BI report
+  - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
 - name: Notebooks
   items:
@@ -39,16 +37,20 @@ items:
   items:
   - name: How to use end-to-end AI samples
     href: use-ai-samples.md
-  - name: Train a retail recommendation model
+  - name: Customer churn prediction
+    href: customer-churn.md
+  - name: Book recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
     href: fraud-detection.md
-  - name: Forecasting
+  - name: Time series forecasting
     href: time-series-forecasting.md
-  - name: Text classification
+  - name: Text (title genre) classification
     href: title-genre-classification.md
-  - name: Healthcare causal impact of treatments
+  - name: Uplift modeling
     href: uplift-modeling.md
+  - name: Machine failure prediction
+    href: predictive-maintenance.md
 - name: Governance
   items:
   - name: Roles and permissions
@@ -61,6 +63,12 @@ items:
     href: read-write-pandas.md
   - name: How to accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
   - name: Training Overview
@@ -161,6 +169,10 @@ items:
     href: r-overview.md
   - name: Tutorials
     items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
     - name: Avocado price prediction
       href: r-avocado.md
     - name: Flight delay prediction
@@ -177,18 +189,62 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
-- name: SynapseML
+- name: Semantic link
   items:
-  - name: Get started
+  - name: Overview
     items:
-    - name: Your first model
-      href: synapseml-first-model.md
+    - name: What is semantic link?
+      href: semantic-link-overview.md
+  - name: Tutorials
+    items:
+    - name: Clean data with functional dependencies
+      href: tutorial-data-cleaning-functional-dependencies.md
+    - name: Analyze functional dependencies in a Power BI sample dataset
+      href: tutorial-power-bi-dependencies.md
+    - name: Extract and calculate Power BI measures from a notebook
+      href: tutorial-power-bi-measures.md
+    - name: Discover relationships in a Power BI dataset using semantic link
+      href: tutorial-power-bi-relationships.md
+    - name: Discover relationships in the Synthea dataset using semantic link
+      href: tutorial-relationships-detection.md
+  - name: Concepts
+    items:
+    - name: Power BI connectivity
+      href: semantic-link-power-bi.md
+    - name: Semantic propagation
+      href: semantic-link-semantic-propagation.md
+    - name: Semantic functions
+      href: semantic-link-semantic-functions.md
   - name: How-to guides
     items:
-    - name: Use LightGBM with SynapseML
+    - name: Read from Power BI and write data usable by Power BI
+      href: read-write-power-bi.md
+    - name: Explore and validate functional dependencies in your data
+      href: semantic-link-validate-data.md
+    - name: Explore and validate relationships in datasets
+      href: semantic-link-validate-relationship.md
+- name: SynapseML
+  items:
+  - name: Overview
+    items:
+    - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: Use Cognitive Services with SynapseML
-      href: overview-cognitive-services.md
+    - name: What is Azure AI services in SynapseML?
+      href: overview-azure-ai-services.md
+  - name: Get started
+    items:
+    - name: Build your first SynapseML model
+      href: synapseml-first-model.md
+    - name: Install another version of SynapseML
+      href: install-synapseml.md
+  - name: How-to guides
+    items:
+    - name: Use OpenAI for big data with SynapseML
+      href: open-ai.md
+    - name: Use LightGBM with SynapseML
+      href: how-to-use-lightgbm-with-synapseml.md
+    - name: Use Azure AI services with SynapseML
+      href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
     - name: Use k-nearest neighbors with SynapseML
@@ -200,9 +256,12 @@ items:
     - name: Perform multivariate anomaly detection with SynapseML
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
-      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
-      href: cognitive-services-multivariate-anomaly-detection.md
+      href: create-a-multilingual-search-engine-from-forms.md
+    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
+      href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
-
+- name: Reference
+  items:
+    - name: SemPy Python SDK
+      href: /python/api/semantic-link/overview-semantic-link

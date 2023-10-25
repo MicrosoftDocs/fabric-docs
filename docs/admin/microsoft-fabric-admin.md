@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 07/16/2023
 ---
 
 # What is Microsoft Fabric admin?
@@ -37,11 +37,11 @@ This section lists the Microsoft 365 admin roles and the tasks they can perform.
     * Create and manage users and groups
     * Reset user passwords
 
-### Power Platform and Power BI admin roles
+### Power Platform and Fabric admin roles
 
-As a Power Platform or a Power BI admin, you have full access to all the Microsoft Fabric management tasks.
+As a Power Platform or a Fabric admin, you have full access to all the Microsoft Fabric management tasks.
 
-* **Power Platform administrator** or **Power BI administrator**
+* **Power Platform administrator** or **Fabric administrator**
     * Enable and disable Microsoft Fabric features
     * Report on usage and performance
     * Review and manage auditing
@@ -57,7 +57,7 @@ As a capacity admin, you can perform these tasks on the capacity you're an admin
 
 ## Admin tasks and tools
 
-Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/developer/visuals/create-r-based-power-bi-desktop), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
+Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](admin-center.md), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
 * **[Microsoft Fabric admin portal](admin-center.md)**
     * Acquire and work with capacities
@@ -93,4 +93,4 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/powe
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
 
-* [Understand Microsoft Fabric roles](roles.md)
+* [Understand Microsoft Fabric admin roles](roles.md)

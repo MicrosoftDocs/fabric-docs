@@ -9,8 +9,8 @@ items:
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
     href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
-  - name: Decision guide - data warehouse or lakehouse
-    href: ../get-started/decision-guide-warehouse-lakehouse.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
   - name: Upload CSV to delta tables
     href: get-started-csv-upload.md
   - name: Get streaming data into lakehouse
@@ -57,16 +57,26 @@ items:
   items:
   - name: Workspace roles and permissions
     href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
 - name: Apache Spark
   items:
   - name: Spark compute
     items:
     - name: Overview
       href: spark-compute.md
-    - name: Runtime
-      href: runtime.md
+    - name: Configure starter pools
+      href: configure-starter-pools.md
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: runtime.md
+        - name: Runtime 1.1
+          href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
+    - name: High Concurrency mode
+      href: high-concurrency-overview.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
@@ -97,7 +107,7 @@ items:
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
-    - name: Spark monitoring overview
+    - name: Apache Spark monitoring overview
       href: spark-monitoring-overview.md
     - name: Apache Spark Advisor
       href: spark-advisor-introduction.md
@@ -129,6 +139,8 @@ items:
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
     href: author-execute-notebook.md
+  - name: Run notebooks in High Concurrency mode
+    href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
     href: notebook-visualization.md
   - name: Explore data in lakehouse
@@ -141,6 +153,8 @@ items:
     href: setup-vs-code-extension.md
   - name: Notebook with VS Code extension
     href: author-notebook-with-vs-code.md
+  - name: Notebook resource with VS Code extension
+    href: author-notebook-resource-with-vs-code.md
   - name: Spark job definition with VS Code extension
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension

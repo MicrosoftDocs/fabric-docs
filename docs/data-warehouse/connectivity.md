@@ -6,7 +6,7 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/01/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 # Connectivity to data warehousing in Microsoft Fabric
@@ -43,7 +43,7 @@ To retrieve the connection string, follow these steps:
 
 ## Get started with SQL Server Management Studio (SSMS)
 
-The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
+The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. When you open SSMS, the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
@@ -118,13 +118,17 @@ When establishing connectivity via JDBC, check for the following dependencies:
     </dependency>
     ```
 
-## Connect using DBT
+## Connect using dbt
 
-Users typically use DBT adapters to connect DBT projects to a target datastore. DBT adapters are built specifically for each data source. Users who would like to connect to Synapse Data Warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)] from DBT project must use the `dbt-synapsevnext` DBT adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
+The `dbt` adapter is a data transformation framework that uses software engineering best practices like testing and version control to reduce code, automate dependency management, and ship more reliable data—all with SQL.
+
+The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
+
+Both adapters support Azure Active Directory (Azure AD) authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
 The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
-The DBT Fabric DW adapter supports Azure Active Directory (Azure AD) authentication and allows developers to use `az cli authentication` using the dbt-synapsevnext adapter. SQL Authentication is not supported.
+For more information, see the [Microsoft Fabric Synapse Data Warehouse dbt adapter setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [Microsoft Fabric Synapse Data Warehouse dbt adapter configuration](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
 
 ## Connectivity by other means
 

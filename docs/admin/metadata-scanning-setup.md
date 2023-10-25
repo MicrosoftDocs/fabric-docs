@@ -5,14 +5,14 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Set up metadata scanning in your organization
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Before metadata scanning can be run over an organization's Microsoft Fabric workspaces, it must be set up by a Power BI administrator. Setting up metadata scanning involves two steps:
+Before metadata scanning can be run over an organization's Microsoft Fabric workspaces, it must be set up by a Fabric administrator. Setting up metadata scanning involves two steps:
 
 1. Enabling service principal authentication for read-only admin APIs.
 1. Enabling tenant settings for detailed dataset metadata scanning.

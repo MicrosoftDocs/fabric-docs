@@ -30,7 +30,7 @@ To connect to REST APIs in a dataflow:
 
    :::image type="content" source="./media/connector-rest/select-web-api.png" alt-text="Screenshot of the choose data source screen with the Other category and the Web API connector emphasized.":::
 
-1. In **Connect to data source**, under **Connection settings**, enter the URL of the REST API. Generally, this entry is a URI with some parameters, for example `https://api.\<some domain>.com?format=jason`. However, there are no rules around how this URI is configured. To compile the URI, consult the documentation for the REST APIs you're going to be using.
+1. In **Connect to data source**, under **Connection settings**, enter the URL of the REST API. Generally, this entry is a URI with some parameters, for example `https://api.<some domain>.com?format=json`. However, there are no rules around how this URI is configured. To compile the URI, consult the documentation for the REST APIs you're going to be using.
 
 1. If necessary, select the on-premises data gateway in **Data gateway**.
 

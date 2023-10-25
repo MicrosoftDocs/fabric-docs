@@ -1,26 +1,26 @@
 ---
 title: Conditional KNN Exploring Art Across Cultures
 description: A guideline for match-finding via k-nearest-neighbors.
-ms.topic: overview
+ms.topic: how-to
 ms.custom: build-2023
-ms.reviewer: jessiwang
-author: jessiwang
+ms.reviewer: larryfr
+author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/12/2023
 ---
 # Exploring Art across Culture and Medium with Fast, Conditional, k-Nearest Neighbors
 
 
-This notebook serves as a guideline for match-finding via k-nearest-neighbors. We set up code that allows queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Rijksmuseum in Amsterdam.
+This article serves as a guideline for match-finding via k-nearest-neighbors. You set up code that allows queries involving cultures and mediums of art amassed from the Metropolitan Museum of Art in NYC and the Rijksmuseum in Amsterdam.
 
 ## Prerequisites
 
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
-### Overview of the BallTree
-The structure functioning behind the kNN model is a BallTree, which is a recursive binary tree where each node (or "ball") contains a partition of the points of data to be queried. Building a BallTree involves assigning data points to the "ball" whose center they're closest to (with respect to a certain specified feature), resulting in a structure that allows binary-tree-like traversal and lends itself to finding k-nearest neighbors at a BallTree leaf.
+## Overview of the BallTree
+The structure functioning behind the KNN model is a BallTree, which is a recursive binary tree where each node (or "ball") contains a partition of the points of data to be queried. Building a BallTree involves assigning data points to the "ball" whose center they're closest to (with respect to a certain specified feature), resulting in a structure that allows binary-tree-like traversal and lends itself to finding k-nearest neighbors at a BallTree leaf.
 
-#### Setup
+## Setup
 Import necessary Python libraries and prepare dataset.
 
 
@@ -77,8 +77,9 @@ df = spark.read.parquet(
 display(df.drop("Norm_Features"))
 ```
 
-#### Define categories to be queried on
-We're using two kNN models: one for culture, and one for medium.
+## Define categories to be queried on
+
+Two KNN models are used: one for culture, and one for medium.
 
 
 ```python
@@ -114,8 +115,9 @@ small_df = df.where(
 small_df.count()
 ```
 
-### Define and fit ConditionalKNN models
-We create ConditionalKNN models for both the medium and culture columns; each model takes in an output column, features column (feature vector), values column (cell values under the output column), and label column (the quality that the respective KNN is conditioned on).
+## Define and fit ConditionalKNN models
+
+Create ConditionalKNN models for both the medium and culture columns; each model takes in an output column, features column (feature vector), values column (cell values under the output column), and label column (the quality that the respective KNN is conditioned on).
 
 
 ```python
@@ -141,9 +143,9 @@ culture_cknn = (
 )
 ```
 
-#### Define matching and visualizing methods
+## Define matching and visualizing methods
 
-After the initial dataset and category setup, we prepare methods that will query and visualize the conditional kNN's results. 
+After the initial dataset and category setup, prepare methods that will query and visualize the conditional KNN's results.
 
 `addMatches()` creates a Dataframe with a handful of matches per category.
 
@@ -196,8 +198,9 @@ def plot_urls(url_arr, titles, filename):
     display(plt.show())
 ```
 
-### Putting it all together
-We define `test_all()` to take in the data, CKNN models, the art id values to query on, and the file path to save the output visualization to. The medium and culture models were previously trained and loaded.
+## Putting it all together
+
+Define `test_all()` to take in the data, CKNN models, the art id values to query on, and the file path to save the output visualization to. The medium and culture models were previously trained and loaded.
 
 
 ```python
@@ -232,7 +235,7 @@ def test_all(data, cknn_medium, cknn_culture, test_ids, root):
     return results_df_culture
 ```
 
-### Demo
+## Demo
 The following cell performs batched queries given desired image IDs and a filename to save the visualization.
 
 

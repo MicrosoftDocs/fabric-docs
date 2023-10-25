@@ -3,9 +3,9 @@ title: Endorsement overview
 description: Learn how to make quality content easier to find through promotion or certification.
 author: paulinbar
 ms.author: painbar
-ms.topic: concept
+ms.topic: concept-article
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 07/15/2023
 ---
 
 # Endorsement
@@ -22,11 +22,14 @@ There are two kinds of endorsement: **promotion** and **certification**.
 
 * **Certification**: Certification means that the item meets the organization's quality standards and can be regarded as reliable and authoritative, and is ready for use across the organization.
 
-    Only a [select group of reviewers (defined by the Power BI administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
+    Only a [select group of reviewers (defined by the Fabric administrator)](../admin/endorsement-setup.md) is authorized to certify items. Item owners who wish to see their item certified and aren't authorized to certify it themselves need to follow their organization's guidelines about getting it certified.
 
     Learn how to [certify items](../get-started/endorsement-promote-certify.md#certify-items) or [request certification](../get-started/../get-started/endorsement-promote-certify.md#request-item-certification).
 
-    **Certification is available only if a Power BI administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+    **Certification is available only if a Fabric administrator has [enabled and configured](../admin/endorsement-setup.md) it for your organization**.
+
+    > [!NOTE]
+    > Certification enablement and configuration can be delegated to domain administrators, making it possible to specify a different set of reviewers for each domain. For more information, see [Set up item certification](../admin/endorsement-setup.md).
 
 The following image illustrates how endorsed, promoted, and certified datasets are clearly identified when you're searching for an item.
 
@@ -39,4 +42,4 @@ All Fabric items can be endorsed except for Power BI dashboards.
 ## Next steps
 
 * [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
-* [Enable certification for your organization](../admin/endorsement-setup.md) (Power BI admins)
+* [Enable certification for your organization](../admin/endorsement-setup.md) (Fabric admins)

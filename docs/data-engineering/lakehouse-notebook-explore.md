@@ -50,6 +50,9 @@ To switch to a different default lakehouse, move the pin icon.
 
 :::image type="content" source="media\lakehouse-notebook-explore\set-default-lakehouse.png" alt-text="Screenshot of Lake vie Tables and Files folders.":::
 
+> [!NOTE]
+> The default lakehouse decide which Hive metastore to use when running the notebook with Spark SQL.if multiple lakehouse are added into the notebook, make sure when Spark SQL is used, the target lakehouse and the current default lakehouse are from the same workspace.
+
 ## Add or remove a lakehouse
 
 Selecting the **X** icon next to a lakehouse name removes it from the notebook, but the lakehouse item still exists in the workspace.

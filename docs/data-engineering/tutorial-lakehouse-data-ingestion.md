@@ -1,6 +1,6 @@
 ---
 title: Lakehouse tutorial - Ingest data into the lakehouse
-description: In this tutorial, you will ingest additional dimensions and fact tables from the Wide World Importers (WWI) into the lakehouse.
+description: In this tutorial, you ingest additional dimensions and fact tables from the Wide World Importers (WWI) into the lakehouse.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
@@ -11,7 +11,7 @@ ms.date: 5/23/2023
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
-In this tutorial, you'll ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
+In this tutorial, you ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -23,17 +23,19 @@ In this tutorial, you'll ingest additional dimensional and fact tables from the 
 
 In this section, you use the **Copy data activity** of the Data Factory pipeline to ingest sample data from an Azure storage account to the **Files** section of the lakehouse you created earlier.
 
-1. Choose the workspace you created from the Workspace flyout on left hand. From the **+New** button in the workspace page, select **Data pipeline**  
+1. Select **Workspaces** in the left navigation pane, and then select your new workspace from the **Workspaces** menu. The items view of your workspace appears.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\create-data-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
 
+1. From the **+New** button in the workspace page, select **Data pipeline**.
+
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**. A new data factory pipeline is created and opened.
 
-1. On your newly created data factory pipeline, select **Add pipeline activity** to add an activity to the pipeline and select **Copy data**. This adds copy data activity to the pipeline canvas.
+1. On your newly created data factory pipeline, select **Add pipeline activity** to add an activity to the pipeline and select **Copy data**. This action adds copy data activity to the pipeline canvas.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Add pipeline activity and Copy data.":::
 
-1. Select the newly added copy data activity from the canvas. It shows activity properties at the bottom. Under the **General** tab, specify the name for the copy data activity **Data Copy to Lakehouse**.
+1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you may need to expand the pane upwards by dragging the top edge). Under the **General** tab in the properties pane, specify the name for the copy data activity **Data Copy to Lakehouse**.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-copy-to-lakehouse.png" alt-text="Screenshot showing where to add the copy activity name on the General tab.":::
 
@@ -82,13 +84,13 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details.":::
 
-1. You now finished configuring the copy data activity. Select the **Save** button under **Home** to save the changes made, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we'll run the pipeline only once by clicking on **Run** button.
+1. You have finished configuring the copy data activity. Select the **Save** button on the top ribbon (under **Home**) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by clicking on **Run** button.
 
-   This triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon to look at the details of the data transfer.
+   This action triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon, which appears when you hover over the name, to look at the details of the data transfer.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab.":::
 
-1. Once the data is copied, go to the items view of the workspace and select **wwilakehouse** to launch the **Lakehouse explorer** for this selected lakehouse.
+1. Once the data is copied, go to the items view of the workspace and select your new lakehouse (**wwilakehouse**) to launch the **Lakehouse explorer**.
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing where to select the lakehouse to launch the Lakehouse explorer.":::
 

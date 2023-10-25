@@ -1,13 +1,13 @@
 ---
-title: Tutorial- Use a notebook with Apache Spark to query a KQL database in Real-time Analytics
+title: Tutorial- Use a notebook with Apache Spark to query a KQL database
 description: Learn how to import and query the NYC GreenTaxi notebook in your Real-time Analytics in Microsoft Fabric environment using Apache Spark.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
@@ -115,7 +115,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover your notebook once you delete it.
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

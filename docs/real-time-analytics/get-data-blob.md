@@ -1,13 +1,13 @@
 ---
-title: Get data from a blob in Real-Time Analytics
-description: Learn how to get data from a blob in a KQL database in Real-Time Analytics
+title: Get data from a blob
+description: Learn how to get data from a blob in a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 # Get data from a blob
 
@@ -42,7 +42,7 @@ To get data from a blob container, see [Get data from a blob container](get-data
 1. In **Source type** select Azure blob.
 1. In the **Link to source** field, add a blob URL with an Account Key/SAS URI.
 
-    To add a blob URI, you need to generate an Account Key/ SAS token with both Read and Write permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/generate-sas-token?context=/fabric/context/context&pivots=fabric).
+    To add a blob URI, you need to generate an Account Key/ SAS token with both Read and Write permissions. To generate an Account Key/SAS token, see [Generate a SAS token](/azure/data-explorer/kusto/api/connection-strings/generate-sas-token?context=/fabric/context/context&pivots=fabric).
 
     The blob you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining blob by selecting the star icon on the right side of the source link field.
 1. Select **Next: Schema** to view and edit your table column configuration.
@@ -51,8 +51,8 @@ To get data from a blob container, see [Get data from a blob container](get-data
 
 [!INCLUDE [schema-tab](../includes/real-time-analytics/schema-tab.md)]
 
-## Next steps
+## Related content
 
-* To create an empty table, see [Create an empty table](create-empty-table.md)
-* To manage your database, see [Manage data](data-management.md)
-* To create, store, and export queries, see [Query data in a KQL queryset](kusto-query-set.md)
+* [Manage data](data-management.md)
+* [Enable Python plugin](python-plugin.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

@@ -5,11 +5,13 @@ author: sdgilley
 ms.author: sgilley
 ms.topic: include
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/08/2023
 ---
 
-* A Power BI Premium subscription. If you don't have one, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-
-* A Power BI workspace with assigned Premium capacity. If you don't have a workspace, use the steps in [Create a workspace](../../get-started/create-workspaces.md) to create one and assign it to a Premium capacity.
+* Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or sign up for a free [Microsoft Fabric (Preview) trial](../../get-started/fabric-trial.md).
 
 * Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
+
+* Switch to the Data Science experience by using the experience switcher icon on the left side of your home page.
+
+   :::image type="content" source="../media/tutorial-data-science-prepare-system/switch-to-data-science.png" alt-text="Screenshot of the experience switcher menu, showing where to select Data Science." lightbox="../media/tutorial-data-science-prepare-system/switch-to-data-science.png":::

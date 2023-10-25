@@ -6,11 +6,11 @@ ms.author: jejiang
 author: jejiang
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 05/23/2023 
 ms.search.form: spark_job_definition
 ---
 
-# Microsoft Fabric Apache Spark monitoring overview
+# Apache Spark monitoring overview
 
 [!INCLUDE [product-name](../includes/product-name.md)] Spark monitoring is designed to offer a web-UI based experience with built-in rich capabilities for monitoring the progress and status of Spark applications in progress, browsing past Spark activities, analyzing and optimizing performance, and facilitating troubleshooting of failures. Multiple entry points are available for browsing, monitoring, and viewing Spark application details.
 
@@ -38,7 +38,11 @@ For Pipeline Spark Activity Inline Monitoring, deep links have been built into t
 
 ## Next steps
 
-- [Workspace item recent runs](spark-item-recent-runs.md)
-- [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
-- [Run an Apache Spark job definition](run-spark-job-definition.md)
+- [Apache Spark advisor for real-time advice on notebooks](spark-advisor-introduction.md)
+- [Browse the Apache Spark applications in the Fabric monitoring hub](browse-spark-applications-monitoring-hub.md)
+- [Browse item's recent runs](spark-item-recent-runs.md)
+- [Monitor Spark jobs within a notebook](spark-monitor-debug.md)
+- [Monitor your Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
+- [Use extended Apache Spark history server to debug and diagnose Apache Spark applications](apache-spark-history-server.md)
+- [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

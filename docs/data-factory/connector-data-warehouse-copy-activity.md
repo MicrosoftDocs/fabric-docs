@@ -4,7 +4,7 @@ description: This article explains how to copy data using Data Warehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 06/12/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -95,28 +95,32 @@ Under **Advanced**, you can specify the following fields:
 - **Write batch timeout**: The wait time for the batch insert operation to finish before it times out. The allowed values are in the format of a timespan. The default value is "00:30:00" (30 minutes).
 - **Disable performance metrics analytics**: The service collects metrics for copy performance optimization and recommendations. If you're concerned with this behavior, turn off this feature.
 
-If your source data is in **Azure Blob Storage** or **Azure Data Lake Storage Gen2**, and the format is COPY statement compatible, copy activity directly invokes the COPY command to let Data Warehouse pull the data from the source.
+#### Direct copy by using COPY command
+
+Data Warehouse COPY command directly supports **Azure Blob Storage** and **Azure Data Lake Storage Gen2** as source data stores. If your source data meets the criteria described in this section, use COPY command to copy directly from the source data store to Data Warehouse. 
 
 1. The source data and format contain the following types and authentication methods:
 
     |**Supported source data store type** |**Supported format** |**Supported source authentication type**|
     |:---|:---|:---|
-    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Shared access signature authentication|
-    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Shared access signature authentication |
+    |Azure Blob Storage |Delimited text<br> Parquet|Anonymous authentication<br> Account key authentication<br> Shared access signature authentication|
+    |Azure Data Lake Storage Gen2 |Delimited text<br> Parquet|Account key authentication<br> Shared access signature authentication |
 
 1. The following Format settings can be set:<br>
-   1. For **Parquet**: compression can be no compression, Snappy, or GZip.<br>
-   1. For **Delimited text**:<br>
-      1. `rowDelimiter` is explicitly set as **single character** or "**\r\n**", the default value isn't supported.<br>
-      1. `nullValue` is left as default or set to **empty string ("")**.<br>
-      1. `encodingName` is left as default or set to **utf-8 or utf-16**.<br>
-      1. `skipLineCount` is left as default or set to 0.<br>
-      1. compression can be **no compression** or **GZip**.
+   1. For **Parquet**: **Compression type** can be **None**, **snappy**, or **gzip**.
+   1. For **DelimitedText**:
+      1. **Row delimiter**: When copying delimited text to Data Warehouse via direct COPY command, specify the row delimiter explicitly (\r; \n; or \r\n). Only when the row delimiter of the source file is \r\n, the default value (\r, \n, or \r\n) works. Otherwise, enable staging for your scenario. 
+      1. **Null value** is left as default or set to **empty string ("")**.
+      1. **Encoding** is left as default or set to **UTF-8** or **UTF-16**.
+      1. **Skip line count** is left as default or set to 0.
+      1. **Compression type** can be **None** or **gzip**.
 
-1. If your source is a folder, `recursive` in a copy activity must be set to true.
-1. `modifiedDateTimeStart`, `modifiedDateTimeEnd`, `prefix`, `enablePartitionDiscovery`, and `additionalColumns` aren't specified.<br>
+1. If your source is a folder, you must select **Recursively** checkbox.
+1. **Start time (UTC)** and **End time (UTC)** in **Filter by last modified**, **Prefix**, **Enable partition discovery**, and **Additional columns** aren't specified.
 
-If your source data store and format isn't originally supported by a COPY statement, use the Staged copy by using the COPY statement feature instead. The staged copy feature also provides you with better throughput. It automatically converts the data into a COPY statement compatible format, then calls a COPY statement to load data into Data Warehouse.
+To learn how to ingest data into your Data Warehouse using the COPY command, see this [article](../data-warehouse/ingest-data-copy.md).
+
+If your source data store and format isn't originally supported by a COPY command, use the Staged copy by using the COPY command feature instead. It automatically converts the data into a COPY command compatible format, then calls a COPY command to load data into Data Warehouse.
 
 ### Mapping
 

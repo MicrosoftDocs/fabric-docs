@@ -46,16 +46,16 @@ landingContent:
         links:
           - text: How to use end-to-end AI samples
             url: use-ai-samples.md 
-          - text: Train a retail recommendation model
+          - text: Retail recommendation
             url: retail-recommend-model.md 
           - text: Fraud detection
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Text classification
-            url: title-genre-classification.md 
-          - text: Healthcare causal impact of treatments
-            url: uplift-modeling.md          
+          - text: Discover relationships in a Power BI dataset using semantic link
+            url: tutorial-power-bi-relationships.md 
+          - text: Analyze functional dependencies in a Power BI dataset using semantic link
+            url: tutorial-power-bi-dependencies.md   
 
   # Card 
   - title: Preparing Data
@@ -99,11 +99,15 @@ landingContent:
       - linkListType: get-started
         links:
           - text: Your First SynapseML Model
-            url: synapseml-first-model.md 
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
       - linkListType: how-to-guide
         links:
+          - text: Use OpenAI for big data with SynapseML
+            url: open-ai.md
           - text: Use Congnitive Services with SynapseML
-            url: overview-cognitive-services.md
+            url: overview-azure-ai-services.md
           - text: Deep learning with ONNX and SynapseML
             url: onnx-overview.md
           - text: Perform multivariate anomaly detection with SynapseML
@@ -128,3 +132,27 @@ landingContent:
             url: r-library-management.md 
           - text: R visualization
             url: r-visualization.md 
+
+# Card
+  - title: Reference docs     
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: SemPy Python SDK
+          url: /python/api/semantic-link/overview-semantic-link
+
+# Card 
+  - title: Using semantic link
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is semantic link?
+            url: semantic-link-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Read from Power BI and write data consumable by Power BI
+            url: read-write-power-bi.md
+          - text: Detect, explore, and validate functional dependencies in your data
+            url: semantic-link-validate-data.md
+          - text: Explore and validate relationships in datasets
+            url: semantic-link-validate-relationship.md
