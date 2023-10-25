@@ -159,7 +159,7 @@ To read data from Power BI datasets:
 
     > [!NOTE]
     > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
-    > The amount of data retrievable is limited by the available memory in Microsoft Analysis Services and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > The amount of data retrievable is limited by the available memory in Microsoft Azure Analysis Services and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
     > All requests use low priority to minimize the impact on Analysis Services performance and are billed as interactive requests.
     
 2. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
