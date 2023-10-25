@@ -24,7 +24,7 @@ For more information, see [Cache policy](/azure/data-explorer/kusto/management/c
 
 ## Change caching policy
 
-1. Browse to your KQL database and select the **Manage** > **Data policies**
+1. Browse to your KQL database and select  **Manage** > **Data policies**
 
     :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
@@ -33,7 +33,7 @@ For more information, see [Cache policy](/azure/data-explorer/kusto/management/c
     :::image type="content" source="media/data-management/caching-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
 > [!NOTE]
-> The time period you set for the caching policy must be lower or equal to the data retention time period.
+> The time period you set for the caching policy must be lower than or equal to the data retention time period.
 
 ## Related content
 
