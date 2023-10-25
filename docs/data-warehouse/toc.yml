@@ -108,6 +108,8 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: User audit logs
+    href: user-audit-logs.md
   - name: How to
     items: 
     - name: Implement column-level security
