@@ -4,7 +4,7 @@ description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 06/04/2023
+ms.date: 10/25/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -62,6 +62,20 @@ To access default Power BI datasets, go to your workspace, and find the dataset 
 To load the dataset, select the name of the dataset.
 
    :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
+
+### Monitor the default Power BI dataset
+
+You can monitor and analyze activity on the dataset with [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) by connecting to the XMLA endpoint. 
+
+SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and allows tracing and debugging of dataset events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Use with the Fabric default Power BI dataset requires SQL Server Profiler version 18.9 or higher. Users must specify the dataset as the **initial catalog** when connecting with the XMLA endpoint. To learn more, see [SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
+
+### Scripting the default Power BI dataset
+
+You can script out the default Power BI dataset from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
+
+View the Tabular Model Scripting Language (TMSL) schema of the dataset by scripting out the dataset via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your dataset in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the dataset via SSMS's **Script** context menu action.
+
+This requires Power BI write permissions on the Power BI dataset. With read permissions, you can see the data but not the schema of the Power BI dataset.
 
 ## Create a new Power BI dataset
 
