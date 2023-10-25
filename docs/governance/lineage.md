@@ -58,7 +58,7 @@ Items are represented by cards that provide some information about the item.
 
 **Data sources**
 
-You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
+You see the data sources from which the semantic models and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
 
 :::image type="content" source="./media/lineage/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
 
@@ -87,7 +87,7 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 * During Fabric public preview, some relationships between Fabric items might not be represented, or not represented correctly.
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
-* Correct display of dataset-dataflow lineage is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of dataset-dataflow lineage isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
+* Correct display of the lineage between semantic models and dataflows is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of the lineage between semantic models and dataflows isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
 ## Next steps
 
