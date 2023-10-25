@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/25/2023
 ---
 
 # Lineage in Fabric
@@ -25,7 +25,7 @@ Every workspace automatically has a lineage view.
 
 ## Permissions
 
-Any user with a role in a workspace can access that workspace's lineage view. However, data sources are not visible to users who have the *Viewer* role.
+Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 
