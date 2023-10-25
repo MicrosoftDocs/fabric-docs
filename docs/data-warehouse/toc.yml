@@ -146,6 +146,9 @@ items:
   - name: Smoothing and throttling
     href: compute-capacity-smoothing-throttling.md
     displayName: Smoothing, throttling
+  - name: Capacity pause and resume
+    href: pause-resume.md
+    displayName: pause, warehouse
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
   - name: How to
