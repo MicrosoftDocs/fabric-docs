@@ -4,7 +4,7 @@ description: Learn more about the data warehousing experience.
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 6/1/2023
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
@@ -21,23 +21,23 @@ ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspac
 
 [!INCLUDE [product-name](../includes/product-name.md)] introduces a lake centric data warehouse built on an enterprise grade distributed processing engine that enables industry leading performance at scale while eliminating the need for configuration and management. Through an easy to use SaaS experience that is tightly integrated with Power BI for easy analysis and reporting, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] converges the world of data lakes and warehouses with a goal of greatly simplifying an organizations investment in their analytics estate. Data warehousing workloads benefit from the rich capabilities of the SQL engine over an open data format, enabling customers to focus on data preparation, analysis and reporting over a single copy of their data stored in their Microsoft OneLake. 
 
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected dataset that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected dataset that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross-database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
 
 ### Virtual warehouses with cross database querying
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides customers with the ability to stand up virtual warehouses containing data from virtually any source by using shortcuts. Customers can build a virtual warehouse by creating shortcuts to their data wherever it resides. A virtual warehouse may consist of data from OneLake, Azure Data Lake Storage, or any other cloud vendor storage within a single boundary and with no data duplication. 
 
-Seamlessly unlock value from a variety of data sources through the richness of cross database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
+Seamlessly unlock value from a variety of data sources through the richness of cross-database querying in [!INCLUDE [product-name](../includes/product-name.md)]. Cross database querying enables customers to quickly and seamlessly leverage multiple data sources for fast insights and with zero data duplication. Data stored in different sources can be easily joined together enabling customers to deliver rich insights that previously required significant effort from data integration and engineering teams. 
 
 Cross-database queries can be created through the [Visual Query editor](visual-query-editor.md), which offers a no-code path to insights over multiple tables. The [SQL Query editor](sql-query-editor.md), or other familiar tools such as SQL Server Management Studio (SSMS), can also be used to create cross-database queries. 
 
 ### Autonomous workload management
 
-Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry-leading distributed query processing engine, which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different workload characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
+Warehouses in [!INCLUDE [product-name](../includes/product-name.md)] leverage an industry-leading distributed query processing engine, which provides customers with workloads that have a natural isolation boundary. There are no knobs to turn with the autonomous allocation and relinquishing of resources to offer best in breed performance with automatic scale and concurrency built in. True isolation is achieved by separating workloads with different characteristics, ensuring that ETL jobs never interfere with their ad hoc analytics and reporting workloads. 
 
 ### Open format for seamless engine interoperability
 
-Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is stored in the parquet file format and published as Delta Lake Logs, enabling ACID transactions and cross engine interoperability that can be leveraged through other [!INCLUDE [product-name](../includes/product-name.md)] workloads such as Spark, Pipelines, Power BI and Azure Data Explorer. Customers no longer need to create multiple copies of their data to enable data professionals with different skill sets. Data engineers that are accustomed to working in Python can easily leverage the same data that was modeled and served by a data warehouse professional that is accustomed to working in SQL. In parallel, BI professionals can quickly and easily leverage the same data to create a rich set of visualizations in Power BI with record performance and no data duplication. 
+Data in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is stored in the parquet file format and published as Delta Lake Logs, enabling ACID transactions and cross engine interoperability that can be leveraged through other [!INCLUDE [product-name](../includes/product-name.md)] experiences such as Spark, Pipelines, Power BI and Azure Data Explorer. Customers no longer need to create multiple copies of their data to enable data professionals with different skill sets. Data engineers that are accustomed to working in Python can easily leverage the same data that was modeled and served by a data warehouse professional that is accustomed to working in SQL. In parallel, BI professionals can quickly and easily leverage the same data to create a rich set of visualizations in Power BI with record performance and no data duplication. 
 
 ### Separation of storage and compute
 
@@ -45,11 +45,11 @@ Compute and storage are decoupled in a [!INCLUDE [fabric-dw](includes/fabric-dw.
 
 ### Easily ingest, load and transform at scale
 
-Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor. 
+Data can be [ingested](ingest-data.md) into the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] through Pipelines, Dataflows, cross database querying or the COPY INTO command. Once ingested, data can be analyzed by multiple business groups through functionality such as sharing and cross database querying. Time to insights is expedited through a fully integrated BI experience through graphical data modeling easy to use web experience for querying within the Warehouse Editor. 
 
-## What types of warehouses are available in Microsoft Fabric? 
+## Data Warehousing experiences in Microsoft Fabric
 
-This section provides an overview of two distinct data warehousing experiences: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This section provides an overview of two distinct data warehousing experiences in Microsoft Fabric: the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ### SQL Endpoint of the Lakehouse
 
@@ -133,7 +133,7 @@ Primary capabilities
 ACID compliant, full data warehousing with transactions support in T-SQL.
    :::column-end:::
    :::column span="1"::: 
-Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports queries and views on top of Lakehouse delta tables only.
+Read only, system generated [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse for T-SQL querying and serving. Supports analytics on the Lakehouse Delta tables, and the Delta Lake folders referenced via [shortcuts](../onelake/onelake-shortcuts.md).
    :::column-end:::
    :::column span="1"::: 
 No-code data warehousing and T-SQL querying 

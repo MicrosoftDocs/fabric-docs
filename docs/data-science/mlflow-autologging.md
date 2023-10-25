@@ -22,6 +22,7 @@ Autologging works by automatically capturing the values of input parameters, out
 The default configuration for the notebook [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) hook is:
 
 ```python
+
 mlflow.autolog(
     log_input_examples=False,
     log_model_signatures=True,
@@ -29,8 +30,8 @@ mlflow.autolog(
     disable=False,
     exclusive=True,
     disable_for_unsupported_versions=True,
-    silent=True
-)
+    silent=True)
+
 ```
 
 When you launch a [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] notebook, [!INCLUDE [product-name](../includes/product-name.md)] calls [mlflow.autolog()](https://mlflow.org/docs/latest/python_api/mlflow.html#mlflow.autolog) to instantly enable the tracking and load the corresponding dependencies. As you train models in your notebook, this model information is automatically tracked with MLflow. This configuration is done automatically behind the scenes when you run ```import mlflow```.

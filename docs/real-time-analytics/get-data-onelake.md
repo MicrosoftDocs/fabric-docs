@@ -1,13 +1,13 @@
 ---
-title: Get data from OneLake in Real-Time Analytics
+title: Get data from OneLake
 description: Learn how to get data from OneLake into a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from OneLake
@@ -22,15 +22,22 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 * A [Lakehouse](../data-engineering/create-lakehouse.md)
 * A [KQL database](create-database.md)
 
-## Copy folder path from Lakehouse
+## Copy file path from Lakehouse
 
 1. In the experience switcher, choose **Data Engineering**.
 1. Select the Lakehouse environment containing the data source you want to use.
 
 1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
+
+    > [!IMPORTANT]
+    >
+    > * Folder paths aren't supported.
+    > * Wildcards (*) aren't supported.
+
     :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
+
     :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted." lightbox="media/get-data-onelake/lakehouse-file-properties.png":::
 
 1. Return to your workspace and select a KQL database.
@@ -52,7 +59,7 @@ In this article, you'll learn how to get data from OneLake into an existing KQL 
 
 ### Source
 
-1. In **Link to source**, paste the folder path of the Lakehouse you copied in [Copy folder path from Lakehouse](#copy-folder-path-from-lakehouse).
+1. In **Link to source**, paste the file path of the Lakehouse you copied in [Copy file path from Lakehouse](#copy-file-path-from-lakehouse).
 
     > [!NOTE]
     >  The OneLake path you add will be the basis for the schema tab. You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining file by selecting the star icon on the right side of the source link field.
@@ -108,7 +115,7 @@ In the **Data ingestion completed** window, all three steps will be marked with 
 
 :::image type="content" source="media/get-data-onelake/onelake-summary.png" alt-text="Screenshot of the Summary pane showing the successful completion of data ingestion.":::
 
-## Next steps
+## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)

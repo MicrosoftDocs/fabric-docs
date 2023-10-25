@@ -20,7 +20,21 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
 
 1. Use the following Python code that uses Spark structured streaming to get data in a lakehouse table.
 
-   :::image type="content" source="media\get-started-streaming\python-code.png" alt-text="Screenshot showing Python script" lightbox="media\get-started-streaming\python-code.png":::
+   ```python
+   import sys
+   from pyspark.sql import SparkSession
+   
+   if __name__ == "__main__":
+       spark = SparkSession.builder.appName("MyApp").getOrCreate()
+   
+       tableName = "streamingtable"
+       deltaTablePath = "Tables/" + tableName
+   
+       df = spark.readStream.format("rate").option("rowsPerSecond", 1).load()
+
+       query = df.writeStream.outputMode("append").format("delta").option("path", deltaTablePath).option("checkpointLocation", deltaTablePath + "/checkpoint").start()
+       query.awaitTermination()
+   ```
 
 1. Save your script as Python file (.py) in your local computer.
 
@@ -69,6 +83,9 @@ Use the following steps to set the retry policy for your Spark job definition:
 1. Define maximum retry attempts or check **Allow unlimited attempts**.
 
 1. Specify time between each retry attempt and select **Apply**.
+
+> [!NOTE]
+> There is a lifetime limit of 90 days for the retry policy setup. Once the retry policy is enabled, the job will be restarted according to the policy within 90 days. After this period, the retry policy will automatically cease to function, and the job will be terminated. Users will then need to manually restart the job, which will, in turn, re-enable the retry policy.
 
 ## Execute and monitor the Spark Job Definition
 

@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 1: Create resources"
-description: Part 1 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 1- Create resources
+description: Learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.date: 09/28/2023
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
 
@@ -39,7 +39,7 @@ ms.search.form: product-kusto
 
     :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Analytics in Microsoft Fabric." :::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

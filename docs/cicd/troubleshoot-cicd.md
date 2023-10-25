@@ -1,29 +1,32 @@
 ---
-title: Troubleshoot the Fabric lifecycle management tools
-description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools
+title: Troubleshoot the Fabric lifecycle management tools.
+description: Troubleshoot problems with deployment pipelines, the Fabric Application lifecycle management (ALM) tools.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: NimrodShalit
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 08/24/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
-# Troubleshoot Lifecycle management issues
+# Troubleshoot lifecycle management issues
 
 Use this article to troubleshoot issues in the lifecycle management process.  
 
-Review the links in the following table to understand the considerations and limitations of various lifecycle management issues:
+To understand the considerations and limitations of various lifecycle management issues, review the links in the following table:
 
 | Topic | Git integration  | Deployment pipelines |
 |--------|------------------|---------------------|
-| **General limitations** | [general git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
+| **General limitations** | [general Git limitations](./git-integration/git-integration-process.md#considerations-and-limitations) | [deployment pipelines limitations](deployment-pipelines/understand-the-deployment-process.md#considerations-and-limitations) |
 | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
-| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#limitations) |
+| **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
 | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
 | **Datasets** |   | [dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 * [Git integration](#git-integration)  
+
+  * [Access](#access-issues)
   * [Connect](#connect-issues)
   * [Commit](#commit-issues)
   * [Update](#update-issues)
@@ -38,32 +41,51 @@ Review the links in the following table to understand the considerations and lim
 
 ## Git integration
 
+### Access issues
+
+#### I can't access my Azure DevOps repository
+
+**Description of problem**: When I go to the Git integration tab, I get an error message and can't access Azure DevOps.
+
+<!--
+:::image type="content" source="./media/troubleshoot-cicd/no-access.png" alt-text="Screenshot of error message when the user doesn't have access to Azure DevOps.":::
+-->
+
+**Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them won't work.  
+**Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Azure AD are defined in [Manage authentication methods](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy).
+
 ### Connect issues
+
+#### Connect failure: Unable to connect to repository
+
+**Description of problem**: When I try to connect to a Git repo I get a message that it can't connect because the workspace is in a different region.  
+**Cause**: If the workspace and repo are located in different regions, the cross-region switch must be enabled.  
+**Solution**: [Enable Git actions on workspaces residing in other geographical locations](../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).
 
 #### Connect failure: It says something went wrong when I try to connect
 
-**Description of problem**: After selecting **Connect** in the git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the git branch.
+**Description of problem**: After selecting **Connect** in the Git integration tab, the **Something went wrong** error dialog pops up. In addition, when you select the source control button, the pane indicates that you need to sync with the Git branch.
 
 :::image type="content" source="./media/troubleshoot-cicd/something-went-wrong.png" alt-text="Screenshot of error message when the workspace can't connect.":::
 
-:::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a git branch.":::
+:::image type="content" source="./media/troubleshoot-cicd/sync-direction-continue.png" alt-text="Screenshot of error message when the workspace isn't connected to a Git branch.":::
 
-**Cause**: If the folder you're trying to connect to has subdirectories, but no Fabric items, the connection will fail.
+**Cause**: If the folder you're trying to connect to has subdirectories but no Fabric items, the connection fails.
 
-**Solution**: Open the git repository in Azure DevOps and navigate to the git folder defined in the connection. If the git folder contains sub-directories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a sub-directory. If the git folder doesn't contain any item directories, you can't connect to it. Either remove the sub-directories or connect to a different folder that doesn't contain sub-directories.
+**Solution**: Open the Git repository in Azure DevOps and navigate to the Git folder defined in the connection. If the Git folder contains subdirectories, check that at least one of them represents an item directory. If the directory contains item.config.json and item.metadata.json files, it's an item directory. If the directory doesn't contain these files, it's a subdirectory. If the Git folder doesn't contain any item directories, you can't connect to it. Either remove the subdirectories or connect to a different folder that doesn't contain subdirectories.
 
-#### Connect failure: It's asking if I want to create a new folder when I try to connect to a git branch
+#### Connect failure: It's asking if I want to create a new folder when I try to connect to a Git branch
 
-**Description of problem**: After selecting **Connect** in the git integration tab, a dialog pops up indicating an invalid folder path.
+**Description of problem**: After selecting **Connect** in the Git integration tab, a dialog pops up indicating an invalid folder path.
 
 :::image type="content" source="./media/troubleshoot-cicd/create-new-folder.png" alt-text="Screenshot of error message when the workspace can't connect to a folder.":::
 
-**Cause**: If the folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository, you're asked if you want to create a new folder. This can happen if you're connecting to a new branch, or if the folder was deleted from the branch.
+**Cause**: The folder you're trying to connect doesn't exist, has been deleted, or differs in case sensitivity from existing folders in the repository. This message can appear if you're connecting to a new branch, or if the folder was deleted from the branch.
 
 **Solution**:
 
-* To create a new folder and connect it to the workspace choose **Create and sync**.  
-* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the git integration tab.
+* To create a new folder and connect it to the workspace, select **Create and sync**.  
+* To connect the workspace to a different folder, select **Cancel** and choose another folder in the workspace settings of the Git integration tab.
 
 #### The Source control icon doesn't have a number
 
@@ -72,83 +94,91 @@ Review the links in the following table to understand the considerations and lim
 
 :::image type="content" source="./media/troubleshoot-cicd/no-source.png" alt-text="Screenshot of source control icon without a number.":::
 
+#### Connect failure: It says I need a Premium license to connect to git
+
+**Description of problem**: My workspace was previously connected to a Git repo, but now it says that I need a premium license to connect.  
+**Cause**: You can only connect to Git repos if you have a valid Premium license. If your license expired or you change your license to a license that doesn't include Git integration, you will not be able to connect to that repo anymore. This applies to trial licenses as well.  
+**Solution**: Disconnect from Git and work without source control, or purchase a Premium license.
+
 ### Commit issues
 
 #### The Commit button is disabled
 
-**Description of problem**: If there were updates made to the git branch, commits are disabled until you update your workspace.  
+**Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
 **Solution**: Update your workspace to enable commits.
 
 ### Update issues
 
-#### The Commit and Update buttons are both disabled.
+#### The Commit and Update buttons are both disabled
 
-**Description of problem**: Changing the same item in the workspace and the git branch can lead a possible conflict. If changes were made in the workspace and in the git branch on the same item, updates are disabled until the conflict is resolved.  
+**Description of problem**: Changing the same item in the workspace and the Git branch can lead a possible conflict. If changes were made in the workspace and in the Git branch on the same item, updates are disabled until the conflict is resolved.  
 **Solution**: [Resolve conflicts](./git-integration/conflict-resolution.md) and then try again.
 
 #### Update failure: Update doesn't complete because it would break dependency links
 
-**Description of problem**: After selecting **Update all** in the **Updates** tab, a dialog pops up indicating failure because the action would break a dependency links.
+**Description of problem**: After selecting **Update all** or **Undo**, a dialog pops up indicating failure because the action would break a dependency links.
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when the updating would break dependencies.":::
 
-**Solution**: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from workspace.
+**Solution**: Open the Lineage view to find the item or items that would be deleted from the workspace in the update and are linked to items that won't be deleted from the workspace.
 
 :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
 
 To resolve the issue, delete the problematic item(s):
 
 * If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-* If the item is supported by Git (for example, reports), delete it either from Git (if exists) or from the workspace.
+* If the item is supported by Git (for example, reports), delete it either from Git (if it exists) or from the workspace.
 
 Select **Update All**.  
 For more information, see [Manually Update from Git](./git-integration/partial-update.md).
 
 #### Post update failure: Dependencies aren't pointing to the correct items
 
-**Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items are not as expected. For example, the proxy model no longer points to the correct model.
+**Description of problem**: After updating from Git, when looking at the lineage view, the dependencies of some items aren't as expected. For example, the proxy model no longer points to the correct model.
 
-Reason: Git Integration does not support Direct Query and proxy models at this time.
+Reason: Git Integration doesn't support Direct Query and proxy models at this time.
 
-**Solution**: To fix the dependencies, do one of the following:
+**Solution**: To fix the dependencies, do one of the following actions:
 
-* Edit the bim file of the ProxyDataset in the git repository to point to the correct dataset, and then, in the workspace, update from git to receive the change.
+* Edit the bim file of the ProxyDataset in the Git repository so that it points to the correct dataset, and then, in the workspace, update from Git to receive the change.
 * Use the [Update Datasource API](/rest/api/power-bi/datasets/update-datasources-in-group) to update the connection details of the proxy model in the workspace.
 
 ### Resolve error issues
 
 ### Undo issues
 
-#### Undo failure: After selecting "Undo", a dialog pops up indicating failure because dependency can't be found
+#### Undo failure: After selecting "Undo" a dialog pops up indicating failure because dependency can't be found
 
-**Description of problem**: The following error appears after an undo action if there is an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
+**Description of problem**: The following error appears after an undo action if there's an uncommitted dependency in the **Changes** tab that wasn't selected in the "Undo" action.
 
 :::image type="content" source="./media/troubleshoot-cicd/dependency-not-found.png" alt-text="Screenshot of error message when undo fails because dependency isn't found.":::
 
 **Solution**: Select the all the dependencies of the selected database and try again.
 
-#### Undo failure: After selecting "Undo", a dialog pops up indicating failure because the action would break a dependency link
+#### Dependency error: After selecting "Undo", "Update", or "Switch branch" a dialog pops up indicating failure because the action would break a dependency link.
 
-**Description of problem**: The following error appears after an undo action if the action would break a dependency.
+**Description of problem**: The following error appears after an undo, update or switch branch action:
 
 :::image type="content" source="./media/troubleshoot-cicd/break-dependencies.png" alt-text="Screenshot of error message when undo fails because the action would break a dependency link.":::
 
-**Solution**: Open the Lineage view to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
+**Cause**: There's an unsupported item in the workspace that depends on an item that's no longer in the workspace causing a dependency problem.
+
+**Solution**: Open the [Lineage view](../governance/lineage.md) to find the item or items that were selected to be "undone" and are linked to items that aren't selected.
 
 :::image type="content" source="./media/troubleshoot-cicd/lineage-view.png" alt-text="Screenshot of the lineage view.":::
 
 To resolve the issue, delete the problematic item(s):
 
-* If the item that's not selected isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-* If the item that isn't selected is supported by Git (for example, reports), select it as well.
+* If the item that's not selected is supported by Git (for example, reports), select it to be deleted as well.
+* If the item that's not selected isn't supported by Git (for example, Dashboards), [delete it manually](git-integration/partial-update.md) from the workspace.
 
-Select **Undo**.  
+To read more about dependencies, see [Understand dependencies](./git-integration/dependency-errors.md).
 
 ## Deployment pipelines
 
 ### I can't see the deployment pipelines button
 
-If the following conditions aren't met, you won't be able to see the deployment pipelines button.
+If the following conditions aren't met, you can't see the deployment pipelines button.
 
 * You have a [Fabric license](../enterprise/licenses.md).
 
@@ -168,10 +198,10 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 ### I can't assign a workspace to a stage
 
-**Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there is more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.  
+**Cause**: When you assign a workspace to a deployment pipelines stage, deployment pipelines checks the items (such as reports and dashboards) in the workspace. If there are two items of the same type with the same name in an adjacent stage, deployment pipelines can't determine which one of them should match the one in the assigned workspace, and the **Can't assign the workspace** error message appears. For example, if you're trying to assign a workspace to the *test stage*, and one of your reports is called 'regional sales', if there's more than one report with the same name in either the *development* or *production* stages, the assignment fails. Assigning your workspace will also fail if the workspace you're assigning has two datasets titled 'regional sales dataset', and there's a dataset with the same name in either the *development* or *production* stages.  
 **Solution**: To resolve this error, change the name of the item that doesn't match the item in the stage you're trying to assign. You can select the links in the error message to open the items in Fabric.
 
-:::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the Can't assign the workspace error message in deployment pipelines.":::
+:::image type="content" source="media/troubleshoot-cicd/cannot-assign-error.png" alt-text="A screenshot of the *Can't assign the workspace* error message in deployment pipelines.":::
 
 ### I see the 'different' symbol after I assigned a workspace with datasets that are similar to the datasets in adjacent stages
 
@@ -188,7 +218,7 @@ Deployment pipelines display a pipeline stage tag in workspaces that are assigne
 
 * The workspace isn't assigned to any other pipeline
 
-* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus)
+* The workspace resides on a [Fabric capacity](../enterprise/licenses.md#capacity-license)
 
 Workspaces that don't meet these conditions, aren't displayed in the list of workspaces you can select from.
 
@@ -292,9 +322,9 @@ To use this script, you need to provide a *workspace name* and a *user principal
 ### I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
 **Cause**: Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines.  
-**Solution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your dataset so that it works in deployment pipelines.
+**Solution**: If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the following methods to edit your dataset so that it works in deployment pipelines.
 
-* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
+* Use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode instead of *DirectQuery* or *Composite* mode in your dataset.
 
 * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your dataset. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your dataset model works as it may result in data corruption in your visuals.
 
@@ -306,7 +336,7 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 #### Data source mismatch: Target stage paginated report displays data from a Fabric dataset in the source stage
 
-**Description of problem**: At present, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
+**Description of problem**: Currently, datasets are treated as an external Analysis Services data source, and connections to datasets aren't switched automatically after deployment.
 
 When you deploy a paginated report that's connected to a Fabric dataset, it continues to point to the dataset it was originally connected to. Use [deployment rules](deployment-pipelines/create-rules.md) to point your paginated report to any dataset you want, including, for example,  the target stage dataset.
 
@@ -315,7 +345,7 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 #### Deployment failure: Large number of paginated reports fails
 
 **Description of problem**: A deployment of a large number of paginated reports with rules might fail due to an overload on the capacity.  
-**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-and-skus), or use selective deployment.
+**Solution**: Either purchase a higher [SKU](../enterprise/licenses.md#capacity-license), or use selective deployment.
 
 ### Dataflows
 
@@ -323,7 +353,7 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 
 **Cause**: In dataflows, old data sources aren't removed from the dataflow data source page. To support the dataflows lineage view, connected items aren't deleted.
 
-**Solution**: This behavior doesn't affect deployment pipelines. You can still refresh, edit and deploy dataflows in a pipeline.
+**Solution**: This behavior doesn't affect deployment pipelines. You can still refresh, edit, and deploy dataflows in a pipeline.
 
 #### I see two data sources connected to my dataflow after using dataflow rules
 
@@ -341,11 +371,11 @@ When you deploy a paginated report that's connected to a Fabric dataset, it cont
 
 #### Who can deploy content between stages?
 
-Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-and-skus).
+Content can be deployed to an empty stage or to a stage that contains content. The content must reside on a [Fabric capacity](../enterprise/licenses.md#capacity-license).
 
-* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin in the source workspace.
+* **Deploying to an empty stage** - Any [licensed Fabric](../enterprise/licenses.md#per-user-licenses) user who's a member or admin in the source workspace.
 
-* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#organizational-licenses) user who's a member or admin of both workspaces in the source and target deployment stages.
+* **Deploying to a stage with content** - Any [licensed Fabric](../enterprise/licenses.md#capacity-license) user who's a member or admin of both workspaces in the source and target deployment stages.
 
 * **Overwriting a dataset** - Deployment overwrites each dataset that is included in the target stage, even if the dataset wasn't changed. Any user who's a member or admin of both workspaces, but the tenant admin can restrict this to target dataset owners only.
 
@@ -356,7 +386,7 @@ Content can be deployed to an empty stage or to a stage that contains content. T
 
 #### Error message: 'workspace member permissions needed'
 
-**Solution**: To assign a workspace you need at least [workspace member](deployment-pipelines/understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
+**Solution**: To assign a workspace, you need at least [workspace member](deployment-pipelines/understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. Workspace member (or higher) permissions in the adjacent stages are required to enable deployment pipelines to establish connections between items in neighboring pipeline stages.
 
 :::image type="content" source="media/troubleshoot-cicd/workspace-permission-needed.png" alt-text="A screenshot of the workspace member permission needed message in the test stage of a deployment pipeline.":::
 
@@ -397,7 +427,7 @@ To deploy successfully, fix or remove the broken rules, and redeploy.
 >[!div class="mx-imgBorder"]
 >![A screenshot showing deployment pipelines deployment rules greyed out.](media/troubleshoot-cicd/rules-greyed-out.png)
 
-If one of the rule options is greyed out, it could be because of the reasons listed below:
+If one of the rule options is greyed out, it could be because of the following reasons:
 
 * **Data source rules** - There are no data sources that a rule can be configured on.
 

@@ -15,3 +15,7 @@ items:
   href: monitor.md
 - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
   href: transform-and-stream-real-time-events-to-lakehouse.md
+- name: Stream real-time events from custom application to Microsoft Fabric KQL Database
+  href: stream-real-time-events-from-custom-app-to-kusto.md
+- name: Build a real-time dashboard by streaming data from Azure IoT Hub
+  href: build-real-time-dashboard-from-iot-hub.md

@@ -4,7 +4,7 @@ description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory 
 author: luitwieler
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/05/2023
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---
@@ -22,7 +22,7 @@ Dataflow Gen2 is the new generation of dataflows. The new generation of dataflow
 | Author dataflows with Power Query  | ✓ | ✓ |
 | Shorter authoring flow | ✓ |  |
 | Auto-Save and background publishing | ✓ |  |
-| Output destinations  | ✓  |   |
+| Data destinations  | ✓  |   |
 | Improved monitoring and refresh history       | ✓ |   |
 | Integration with data pipelines     | ✓  |   |
 | High-scale compute     | ✓ |   |
@@ -43,9 +43,9 @@ With Dataflow Gen2, we changed how saving a dataflow works. Any changes made to 
 
 To learn more about the new save experience, go to [Save a draft of your dataflow](dataflows-gen2-save-draft.md).
 
-### Output destinations
+### Data destinations
 
-Similar to Dataflow Gen1, Dataflow Gen2 allows you to transform your data into dataflow's internal/staging storage where it can be accessed using the Dataflow connector. Dataflow Gen2 also allows you to specify an output destination for your data. Using this feature, you can now separate your ETL logic and destination storage. This feature benefits you in many ways. For example, you can now use a dataflow to load data into a lakehouse and then use a notebook to analyze the data. Or you can use a dataflow to load data into an Azure SQL database and then use a data pipeline to load the data into a data warehouse.
+Similar to Dataflow Gen1, Dataflow Gen2 allows you to transform your data into dataflow's internal/staging storage where it can be accessed using the Dataflow connector. Dataflow Gen2 also allows you to specify a data destination for your data. Using this feature, you can now separate your ETL logic and destination storage. This feature benefits you in many ways. For example, you can now use a dataflow to load data into a lakehouse and then use a notebook to analyze the data. Or you can use a dataflow to load data into an Azure SQL database and then use a data pipeline to load the data into a data warehouse.
 
 In Dataflow Gen2, we added support for the following destinations and many more are coming soon:
 
@@ -54,7 +54,10 @@ In Dataflow Gen2, we added support for the following destinations and many more 
 - Azure Synapse Analytics (SQL DW)
 - Azure SQL Database
 
-:::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported output destinations displayed.":::
+>[!NOTE]
+>To load your data to the Fabric Warehouse, you can use the Azure Synapse Analytics (SQL DW) connector by retrieving the SQL connection string. More information: [Connectivity to data warehousing in Microsoft Fabric](../data-warehouse/connectivity.md)
+
+:::image type="content" source="./media/dataflows-gen2-overview/output-destinations-overview.png" alt-text="Screenshot with the supported data destinations displayed.":::
 
 ### New refresh history and monitoring
 
@@ -77,6 +80,10 @@ With Dataflow Gen2, we introduce a worry free experience by removing the need fo
 ### High scale compute
 
 Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine to improve performance of both transformations of referenced queries and get data scenarios. To achieve this, Dataflow Gen2 creates both Lakehouse and Warehouse items in your workspace, and uses them to store and access data to improve performance for all your dataflows.
+
+## Licensing Dataflow Gen1 vs Gen2
+
+Dataflow Gen1 works with Power BI Pro/PPU/Premium licenses while Dataflow Gen2 only works with a Fabric capacity (trail) as it requires support from other experiences like Data Engineering and Data Warehouses. Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. Dataflows are supported for Power BI Pro, Premium Per User (PPU), and Power BI Premium users. [Some features](/power-bi/transform-model/dataflows/dataflows-premium-features) are only available with a Power BI Premium subscription (which is either a Premium capacity or PPU license).
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 

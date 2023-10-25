@@ -7,7 +7,7 @@ author: gsaurer
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: product-trident
-ms.date: 05/23/2023
+ms.date: 06/30/2023
 ---
 
 # What is Microsoft Fabric?
@@ -22,7 +22,7 @@ The platform is built on a foundation of Software as a Service (SaaS), which tak
 
 ## SaaS foundation
 
-Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Explorer into a single integrated environment. These components are then presented in various customized user experiences.
+Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Factory into a single integrated environment. These components are then presented in various customized user experiences.
 
 :::image type="content" source="media\microsoft-fabric-overview\saas-foundation.png" alt-text="Diagram of the software as a service foundation beneath the different experiences of Fabric.":::
 

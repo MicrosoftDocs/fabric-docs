@@ -1,13 +1,13 @@
 ---
-title: Data management in Real-Time Analytics
-description: Learn how to manage your data in Real-Time Analytics in Microsoft Fabric.
+title: Data management
+description: Learn how to manage your data in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Manage data in a KQL Database
 ---
 
 # Data management
@@ -48,8 +48,8 @@ This feature allows you to create or alter an existing function using the `.crea
 
 For more information, see [Create stored functions](create-functions.md)
 
-## Next steps
+## Related content
 
 * [Create a database](create-database.md)
 * [Get data from a blob](get-data-blob.md)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

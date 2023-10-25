@@ -29,7 +29,7 @@ Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the mos
 | **Approximate numerics** | <ul><li>float</li><li>real</li></ul> |
 | **Date and time** | <ul><li>date</li><li>datetime2</li><li>time</li></ul> |
 | **Character strings** | <ul><li>char</li><li>varchar</li></ul> |
-| **Binary strings** | <ul><li>uniqueidentifer</li></ul> |
+| **Binary strings** | <ul><li>varbinary</li><li>uniqueidentifer</li></ul> |
 
 > [!NOTE]
 > The precision for datetime2 and time is limited to 6 digits of precision on fractions of seconds.

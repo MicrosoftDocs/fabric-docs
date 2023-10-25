@@ -32,6 +32,5 @@ Assigning users to the various workspace roles provides the following capabiliti
 
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [SQL granular permissions](sql-granular-permissions.md)
-- [Manage item permissions in Microsoft Fabric](item-permissions.md)
 - [Connectivity](connectivity.md)
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)

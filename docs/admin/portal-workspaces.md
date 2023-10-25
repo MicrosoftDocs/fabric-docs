@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
+As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
 
 On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -102,7 +102,7 @@ A [!INCLUDE [product-name](../includes/product-name.md)] admin or capacity admin
 
 ### Restore a deleted My workspace as an app workspace
 
-When users leave the company, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
+When users are deleted from the company's Active Directory, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
 
 During this restoration process, the [!INCLUDE [product-name](../includes/product-name.md)] admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it will show up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
 
@@ -135,10 +135,10 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has non Power BI Fabric items, you won't be able to move it unless you delete all non-Power BI Fabric items first.
+    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you also won't be able to move the workspace to a capacity in a different region.
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
 ## Next steps
 
-[About the Admin portal](/power-bi/admin/service-admin-portal)
+[About the admin portal](admin-center.md)

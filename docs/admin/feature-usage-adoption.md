@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ---
 
 # Feature usage and adoption report
@@ -14,7 +14,7 @@ ms.date: 05/23/2023
 
 The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's dataset, and use it to customize the report, or build a new report that relies on the same data.
 
-You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace you need to be a [Power BI Administrator](microsoft-fabric-admin.md#power-platform-and-power-bi-admin-roles).
+You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace you need to be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
 ## Navigation
 
@@ -38,7 +38,7 @@ Use the Activity Overview page to find out:
 
 * Which capacities and workspaces are the most active?
 
-* View activities in your organization by different item types such as reports and datasets.
+* View activities in your organization.
 
 * View activities in your organization by users or top active user.
 
@@ -46,7 +46,7 @@ For example, if you're working in a large retail organization, you may want to u
 
 ### Analysis page
 
-In the Analysis page, you can see a daily count of activities and users by date and a decomposition tree that automatically aggregates data and enables drilling down into dimensions in any order. Use the decomposition tree, to decompose the activities according to *item type*, *action*, *activity name* and *user*. You can use the additional available fields to decompose activities.
+In the Analysis page, you can see a daily count of activities and users by date and a decomposition tree that automatically aggregates data and enables drilling down into dimensions in any order. Use the decomposition tree, to decompose the activities according to *operation* and *user*. You can use the additional available fields to decompose activities.
 
 To view the details of a specific activity, drill through to the [Activity Details](#activity-details-page):
 
@@ -60,7 +60,7 @@ Continuing the example from the [Activity Overview](#activity-overview-page) pag
 
 ### Activity Details page
 
-The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *Activity Details* page from the page navigation menu, or by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages. To drill through, right-click a result and then select the *Activity Details* page. After drilling through, you see the following information for the selected activities:
+The Activity Details page shows information related to specific or multiple capacity or workspaces activities. You can only get to the *Activity Details* page by drilling through from the [Activity Overview](#activity-overview-page) or [Analysis](#analysis-page) pages. To drill through, right-click a result and then select the *Activity Details* page. After drilling through, you see the following information for the selected activities:
 
 * **Creation time** - The time the activity was registered
 
@@ -72,11 +72,9 @@ The Activity Details page shows information related to specific or multiple capa
 
 * **Workspace ID** - The ID of the workspace that the activity took place in
 
-* **Item type** - The type of item the activity relates to
-
 * **User (UPN)** - The user principal name (UPN) of the user who created the activity
 
-* **Activity name** - The name of the activity
+* **Operation** - The name of the operation
 
 * **Total of activities** - The number of times the activity was registered
 
@@ -84,23 +82,27 @@ To conclude the example given in the [Activity Overview](#activity-overview-page
 
 ## Considerations and limitations
 
-* Single data point across the zoom slider display a misleading date range for the total activities and users.
+This section lists the report's considerations and limitations.
+
+### Display
+
+* The single data point across the zoom slider, displays a misleading date range for the total activities and users.
 
 * When drilling down to a workspace, the *Expand All* feature doesn't update the *Most Active Capacities* visual title.
 
-* All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.
-
-* During business continuity and disaster recovery, the *Audit* table may have data quality issues.
-
-* The *Audit* table doesn't show activities for a deleted capacity.
-
 * Capacities with the same name and capacities that were deleted and recreated with the same name, are displayed as one capacity.
 
-* In case capacity, workspace or an item is deleted, it will count the deleted audit records in total audit activities. It will show up under blanks in visuals.
+* *NA* represents data that isn't available in the *Audit* table. This can happen when an event doesn't have the dimension information, or when that information isn't applicable for the event.
 
-* The NA's in report represents data that isn't available in audit fact. It can be a case when an event doesn't capture the dimension info or it isn't applicable for the event.
+* The report retains information for 30 days.
 
-* In card visual, deleted capacities, workspaces and users are counted in active records. Capacities with same name but different ID are counted as separate records in card visual.
+### Counting logic
+
+* All *MyWorkspaces* are counted as different records as part of the *Active Workspaces* total.
+
+* When a capacity, workspace or item is deleted, its activities are counted in the report but appear as *(Blank)*.
+
+* Capacities with the same name but different IDs are counted as separate records.
 
 ## Next steps
 

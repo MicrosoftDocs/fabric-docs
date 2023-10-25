@@ -1,13 +1,13 @@
 ---
-title: "Real-Time Analytics tutorial part 2: Get data with Eventstream"
-description: Part 2 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 2- Get data with Eventstream
+description: Learn how to stream data into your KQL database from Eventstream in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 2: Get data with Eventstream
 
@@ -37,7 +37,7 @@ ms.search.form: product-kusto
 1. In the Eventstream authoring area, select **New source** > **Sample data**.
 1. Enter **nytaxitripsdatasource** as the Source Name, and then select **Yellow
     Taxi** from the dropdown of **Sample data**.
-1. Select **Create**.
+1. Select **Add**.
 1. In the Eventstream authoring area, select **New destination** > **KQL Database**.
 1. In the **KQL Database** pane, fill out the fields as follows:
 
@@ -47,7 +47,7 @@ ms.search.form: product-kusto
     | **Workspace**     |   The workspace in which you [created a database](tutorial-1-resources.md#create-a-kql-database).      |
     | **KQL Database**     | *NycTaxiDB* |
 
-1. Select **Create and configure.**
+1. Select **Add and configure.**
 
     A data ingestion pane opens with the **Destination** tab selected.
 
@@ -91,7 +91,7 @@ ms.search.form: product-kusto
     | tolls_amount | *real*
     | improvement_surcharge | *real*
     | total_amount | *real*
-    | congestion_charge | *real*
+    | congestion_surcharge | *real*
     | airport_fee | *real*
 
 1. Select **Next: Summary**.
@@ -101,7 +101,7 @@ ms.search.form: product-kusto
 > [!NOTE]
 > You may need to refresh the page to view your table after the Eventstream connection has been established.
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 

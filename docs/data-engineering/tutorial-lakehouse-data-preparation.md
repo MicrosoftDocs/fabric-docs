@@ -52,12 +52,12 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
 
    > [!NOTE]
-   > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized delta lake files. V-order often improves compression by 3 to 4 times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
+   > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized delta lake files. V-order often improves compression by three to four times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
    > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimized-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
 
-   To start notebook and all its cells execution in sequence,select **Run All** under **Home** . Or to execute code from that specific cell, you can select the **Run** icon on the left of the cell or press **SHIFT + ENTER** on your keyboard while control is in the cell.
+   To start the notebook and execute all the cells in sequence, select **Run All** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon.":::
 
@@ -78,12 +78,13 @@ From the previous tutorial steps, we have raw data ingested from the source to t
    df.write.mode("overwrite").format("delta").partitionBy("Year","Quarter").save("Tables/" + table_name)
    ```
 
-1. After the fact table load, you can move on to loading data for the rest of the dimensions. The following cell creates a function to read raw data from the **Files** section of the lakehouse for each of table names passed as a parameter. Next, it creates a list of dimension tables. Finally, it has a for loop to loop through the list of tables and call created function with each table name as parameter to read data for that specific table and create delta table respectively.
+1. After the fact tables load, you can move on to loading data for the rest of the dimensions. The following cell creates a function to read raw data from the **Files** section of the lakehouse for each of the table names passed as a parameter. Next, it creates a list of dimension tables. Finally, it loops through the list of tables and creates a delta table for each table name that's read from the input parameter. Note that the script will drop the column named `Photo` in this example since the column is not used.
 
    ```python
    from pyspark.sql.types import *
    def loadFullDataFromSource(table_name):
        df = spark.read.format("parquet").load('Files/wwi-raw-data/full/' + table_name)
+       df = df.drop("Photo")
        df.write.mode("overwrite").format("delta").save("Tables/" + table_name)
     
    full_tables = [

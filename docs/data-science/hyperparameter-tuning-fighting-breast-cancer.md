@@ -4,7 +4,7 @@ description: Identify the best combination of hyperparameters for your chosen cl
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
 ms.date: 05/08/2023
 ---
@@ -114,5 +114,5 @@ metrics.limit(10).toPandas()
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Cognitive Services with SynapseML](overview-cognitive-services.md)
+- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

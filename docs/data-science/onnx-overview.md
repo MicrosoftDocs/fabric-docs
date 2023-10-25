@@ -1,31 +1,31 @@
 ---
 title: ONNX - Inference on Spark
-description: build ONNX model with SynapseML
-ms.topic: overview
+description: Use SynapseML to build a LightGBM model, convert it to ONNX format, then perform inference.
+ms.topic: how-to
 ms.custom: build-2023
-ms.reviewer: jessiwang
-author: jessiwang
+ms.reviewer: larryfr
+author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/28/2023
 ---
 # ONNX Inference on Spark
 
-In this example, we train a LightGBM model, convert the model to ONNX format and use the converted model to infer some testing data on Spark.
+In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some testing data on Spark.
 
-Python dependencies:
+This example uses the following Python packages and versions:
 
-- onnxmltools==1.7.0
-- lightgbm==3.2.1
-
+- `onnxmltools==1.7.0`
+- `lightgbm==3.2.1`
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
-* You may need to install onnxmltools by ```!pip install onnxmltools==1.7.0```
+- Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+- You may need to install `onnxmltools` by adding `!pip install onnxmltools==1.7.0` in a code cell and then running the cell.
 
 
-Load training data
+## Load the example data
 
+To load the example data, add the following code examples to cells in your notebook and then run the cells:
 
 ```python
 from pyspark.sql import SparkSession
@@ -34,10 +34,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.getOrCreate()
 
 from synapse.ml.core.platform import *
-
-
 ```
-
 
 ```python
 df = (
@@ -52,8 +49,15 @@ df = (
 display(df)
 ```
 
-Use LightGBM to train a model
+The output should look similar to the following table, though the values and number of rows may differ:
 
+| Interest Coverage Ratio | Net Income Flag | Equity to Liability |
+| ----- | ----- | ----- |
+| 0.5641 | 1.0 | 0.0165 |
+| 0.5702 | 1.0 | 0.0208 |
+| 0.5673 | 1.0 | 0.0165 |
+
+## Use LightGBM to train a model
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -85,8 +89,9 @@ model = (
 model = model.fit(train_data)
 ```
 
-Export the trained model to a LightGBM booster, convert it to ONNX format.
+## Convert the model to ONNX format
 
+The following code exports the trained model to a LightGBM booster and then converts it to ONNX format:
 
 ```python
 import lightgbm as lgb
@@ -109,8 +114,7 @@ booster = lgb.Booster(model_str=booster_model_str)
 model_payload_ml = convertModel(booster, len(feature_cols))
 ```
 
-Load the ONNX payload into an `ONNXModel`, and inspect the model inputs and outputs.
-
+After conversion, load the ONNX payload into an `ONNXModel` and inspect the model inputs and outputs:
 
 ```python
 from synapse.ml.onnx import ONNXModel
@@ -133,8 +137,9 @@ onnx_ml = (
 )
 ```
 
-Create some testing data and transform the data through the ONNX model.
+## Use the model for inference
 
+To perform inference with the model, the following code creates testing data and transforms the data through the ONNX model.
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -159,8 +164,16 @@ testDf = (
 
 display(onnx_ml.transform(testDf))
 ```
+
+The output should look similar to the following table, though the values and number of rows may differ:
+
+| Index | Features | Prediction | Probability |
+| ----- | ----- | ----- | ----- |
+| 1 | `"{"type":1,"values":[0.105...` | 0 | `"{"0":0.835...` |
+| 2 | `"{"type":1,"values":[0.814...` | 0 | `"{"0":0.658...` |
+
 ## Next steps
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
-- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
+- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)

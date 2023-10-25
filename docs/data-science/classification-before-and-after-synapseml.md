@@ -1,32 +1,32 @@
 ---
-title: Classification - Before and After SynapseML
+title: Classification - before and after SynapseML
 description: Perform the same classification task with and without SynapseML.
-ms.topic: overview
+ms.topic: how-to
 ms.custom: build-2023
 ms.reviewer: jessiwang
-author: jessiwang
+author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 06/13/2023
 ---
-# Classification - Before and After SynapseML
+# Classification - before and after SynapseML
+
+In this article, you perform the same classification task in two
+different ways: once using plain **`pyspark`** and once using the
+**`synapseml`** library.  The two methods yield the same performance,
+but highlights the simplicity of using `synapseml` compared to `pyspark`.
+
+The task is to predict whether a customer's review of a book sold on
+Amazon is good (rating > 3) or bad based on the text of the review. You
+accomplish it by training LogisticRegression learners with different
+hyperparameters and choosing the best model.
 
 ## Prerequisites
 
 * Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
-## Introduction
+## Setup
 
-In this tutorial, we perform the same classification task in two
-different ways: once using plain **`pyspark`** and once using the
-**`synapseml`** library.  The two methods yield the same performance,
-but one of the two libraries is drastically simpler to use and iterate
-on (can you guess which one?).
-
-The task is simple: Predict whether a user's review of a book sold on
-Amazon is good (rating > 3) or bad based on the text of the review.  We
-accomplish it by training LogisticRegression learners with different
-hyperparameters and choosing the best model.
-
+Import necessary Python libraries and get a spark session.
 
 ```python
 from pyspark.sql import SparkSession
@@ -37,8 +37,7 @@ spark = SparkSession.builder.getOrCreate()
 
 ## Read the data
 
-We download and read in the data.
-
+Download and read in the data.
 
 ```python
 rawData = spark.read.parquet(
@@ -47,13 +46,12 @@ rawData = spark.read.parquet(
 rawData.show(5)
 ```
 
-## Extract more features and process data
+## Extract features and process data
 
-Real data however is more complex than the above dataset. It's common
-for a dataset to have features of multiple types: text, numeric,
-categorical.  To illustrate how difficult it is to work with these
-datasets, we add two numerical features to the dataset: the **word
-count** of the review and the **mean word length**.
+Real data is more complex than the above dataset. It's common
+for a dataset to have features of multiple types, such as text, numeric, and
+categorical. To illustrate how difficult it's to work with these
+datasets, add two numerical features to the dataset: the **word count** of the review and the **mean word length**.
 
 
 ```python
@@ -111,7 +109,7 @@ data.show(5)
 ## Classify using pyspark
 
 To choose the best LogisticRegression classifier using the `pyspark`
-library, need to *explicitly* perform the following steps:
+library, you need to *explicitly* perform the following steps:
 
 1. Process the features:
    * Tokenize the text column
@@ -124,9 +122,6 @@ library, need to *explicitly* perform the following steps:
    and select the model with the highest metric as computed on the
    `test` dataset
 5. Evaluate the best model on the `validation` set
-
-As you can see, there's numerous work involved and many
-steps where something can go wrong!
 
 
 ```python
@@ -187,9 +182,9 @@ scoredVal = bestModel.transform(validation)
 print(evaluator.evaluate(scoredVal))
 ```
 
-## Classify using synapseml
+## Classify using SynapseML
 
-Life is a lot simpler when using `synapseml`!
+The steps needed with `synapseml` are simpler:
 
 1. The **`TrainClassifier`** Estimator featurizes the data internally,
    as long as the columns selected in the `train`, `test`, `validation`
@@ -235,6 +230,6 @@ print(
 ```
 ## Next steps
 
-- [How to use knn model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
+- [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

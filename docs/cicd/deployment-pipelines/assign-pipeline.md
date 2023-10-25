@@ -9,11 +9,11 @@ ms.date: 10/25/2023
 ms.search.form: Deployment pipelines operations
 ---
 
-# Assigning a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
+# Assign a workspace to a Microsoft Fabric deployment pipeline
 
 [!INCLUDE [preview-note](../../includes/preview-note.md)]
 
-Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is particularly important for organizations that already have workspaces that are used as development, test, and production environments. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
+Deployment pipelines enable you to assign and unassign workspaces to any stage in a pipeline. This capability is important for organizations that already have workspaces that are used as different environments of a managed release. In such cases, you can assign each workspace to its corresponding pipeline stage, and continue working in your usual flow.
 
 <!---
 >[!NOTE]
@@ -22,9 +22,9 @@ Deployment pipelines enable you to assign and unassign workspaces to any stage i
 
 ## Assign a workspace to any vacant pipeline stage
 
-To assign a workspace to a pipeline, the pipeline stage you want to assign the workspace to has to be vacant. If you want to assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-pipeline-stage) the current workspace from that stage and then continue with assigning the new workspace.
+To assign a workspace to a pipeline, the pipeline stage you want to assign the workspace to has to be vacant. If you want to assign a workspace to a pipeline stage that already has another workspace assigned to it, [unassign](#unassign-a-workspace-from-a-pipeline-stage) the current workspace from that stage and then assign the new workspace.
 
-Before you assign a workspace to a pipeline stage, review the [limitations](#limitations) section and make sure that the workspace meets the required conditions.
+Before you assign a workspace to a pipeline stage, review the [limitations](#considerations-and-limitations) section and make sure that the workspace meets the required conditions.
 
 >[!NOTE]
 >Before you assign or unassign a workspace to a pipeline, consider that every time you deploy to a vacant stage, a new workspace is created.
@@ -61,7 +61,7 @@ To unassign a workspace from a pipeline stage, follow these steps:
 
 4. In the *Unassign workspace* dialogue box, select **Unassign**.
 
-    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines, with the unassign button highlighted.":::
+    :::image type="content" source="media/assign-pipeline/unassign-note.png" alt-text="A screenshot showing the unassign workspace pop-up window in deployment pipelines. The unassign button is highlighted.":::
 
 ## Item connections
 
@@ -69,7 +69,7 @@ After assigning a workspace to a deployment pipeline stage, if there are any adj
 
 Connections between items are only established when you assign a workspace to a pipeline stage. Adding a new item to a workspace that's part of a pipeline, doesn't trigger the creation of connections between that item and identical items in adjacent stages. To trigger forming a connection between a newly added item in a workspace stage and its equivalent item in an adjacent stage, unassign and reassign the workspace that contains the newly added item.
 
-## Limitations
+## Considerations and limitations
 
 * You must be an admin of the workspace.
 

@@ -24,3 +24,4 @@ The Lakehouse connector is supported in Data Factory for [!INCLUDE [product-name
 ## Next steps
 
 - [How to configure Lakehouse in a copy activity](connector-lakehouse-copy-activity.md)
+- [Connect to a Lakehouse data lake in dataflows](connector-lakehouse-dataflows.md)

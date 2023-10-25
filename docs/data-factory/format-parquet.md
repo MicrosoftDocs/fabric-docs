@@ -4,7 +4,7 @@ description: This article explains how to configure Parquet format in the data p
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 06/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -51,8 +51,9 @@ After you select **Settings**, the following properties are shown in the pop-up 
 
 :::image type="content" source="./media/format-parquet/destination-file-settings.png" alt-text="Screenshot showing parquet file format destination.":::
 
-- **Enable Verti-Parquet**: Select this checkbox to optimize with Verti-Parquet technology.
 - **Compression type**: Choose the compression codec used to write Parquet files in the drop-down list. You can choose from **None**, **gzip (.gz)**, **snappy**, **lzo**, **Brotli (.br)**, **Zstandard**, **lz4**, **lz4frame**, **bzip2 (.bz2)**, or **lz4hadoop**.
+
+- **Use V-Order**: Enable a write time optimization to the parquet file format. For more information, see [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md). It is enabled by default.
 
 Under **Advanced** settings in the **Destination** tab, the following Parquet format related properties are displayed.
 
@@ -77,6 +78,7 @@ The following properties are supported in the copy activity **Destination** sect
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 | **File format**|The file format that you want to use.| **Parquet**|Yes|type (*under `datasetSettings`*):<br>Parquet|
+| **Use V-Order**|A write time optimization to the parquet file format.| selected or unselected|No |enableVertiParquet|
 |**Compression type**|The compression codec used to write Parquet files.|Choose from: <br>**None** <br>**gzip (.gz)**<br>**snappy**<br>**lzo**<br>**Brotli (.br)**<br>**Zstandard**<br>**lz4**<br>**lz4frame**<br>**bzip2 (.bz2)**<br>**lz4hadoop** |No|compressionCodec: <br><br>gzip<br>snappy<br>lzo<br>brotli<br>zstd<br>lz4<br>lz4frame<br>bz2<br>lz4hadoop|
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.|\<your max rows per file> | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.|\<your file name prefix> |No| fileNamePrefix|

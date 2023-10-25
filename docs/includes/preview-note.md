@@ -5,7 +5,7 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: include
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 06/06/2023
 ---
 > [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+> Microsoft Fabric is in [preview](../get-started/preview.md).
