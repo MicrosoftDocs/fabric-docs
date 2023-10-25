@@ -95,9 +95,9 @@ To read data from Power BI datasets:
     ```
 
     > [!NOTE]
-    > Data is retrieved using XMLA and therefore requires at least XMLA read-only to be enabled (see [details](/power-bi/enterprise/service-premium-connect-tools)).
-    > The amount of data retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) running the notebook.
-    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
+    > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
+    > All requests use low priority to minimize the impact on Microsoft Analysis Services performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 2. Evaluate the _Total Revenue_ measure per customer's state and date.
 
@@ -114,9 +114,9 @@ To read data from Power BI datasets:
     ```
 
     > [!NOTE]
-    > By default data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
-    > It is furthermore **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-    > The amount of data retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) running the notebook.
+    > By default, data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
+    >Furthermore, the data is **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
     > All requests are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
@@ -158,9 +158,9 @@ To read data from Power BI datasets:
     ```
 
     > [!NOTE]
-    > Data is retrieved using XMLA and therefore requires at least XMLA read-only to be enabled (see [details](/power-bi/enterprise/service-premium-connect-tools)).
-    > The amount of data retrievable is limited by the available memory in Analysis Services (AS) and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
-    > All requests use low-priority to minimize the impact on Analysis Services (AS) performance and are billed as interactive requests.
+    > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
+    > The amount of data retrievable is limited by the available memory in Microsoft Analysis Services and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > All requests use low priority to minimize the impact on Analysis Services performance and are billed as interactive requests.
     
 2. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
    The workspace parameter is optional and follows the same rules as the workspace parameter of the `evaluate_dax` function.
