@@ -53,7 +53,7 @@ The limit (or guardrail) is a scale factor directly correlated to the Fabric Cap
 
 Smaller SKU sizes are often used for Dev/Test scenarios or ad hoc workloads. The larger scale factor shown in the table gives more processing power that aligns with lower overall utilization typically found in those environments.
 
-Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](https://learn.microsoft.com/fabric/enterprise/scale-capacity) might be beneficial.
+Larger SKU sizes have access to more total capacity units, allowing more complex workloads to run optimally and with more concurrency. Therefore, if desired performance of a workload is not being achieved, [increasing the capacity SKU size](../enterprise/scale-capacity.md) might be beneficial.
 
 > [!NOTE]
 > The maximum Burstable Scale Factor might only be observed for extremely small time intervals, often within a single query for seconds or even milliseconds. When using the Microsoft Fabric Capacity Metrics app to observe burstable capacity, the scale factor over longer durations will be lower.
