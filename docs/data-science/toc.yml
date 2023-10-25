@@ -13,15 +13,13 @@ items:
     href: tutorial-data-science-prepare-system.md
   - name: 1 Ingest data into a Fabric lakehouse
     href: tutorial-data-science-ingest-data.md
-  - name: 2 Explore and visualize data using notebooks
+  - name: 2 Explore and clean data using notebooks
     href: tutorial-data-science-explore-notebook.md
-  - name: 3 Perform data cleansing and preparation
-    href: tutorial-data-science-data-cleanse.md
-  - name: 4 Train and register machine learning models
+  - name: 3 Train and register machine learning models
     href: tutorial-data-science-train-models.md
-  - name: 5 Perform batch scoring and save predictions
+  - name: 4 Perform batch scoring and save predictions
     href: tutorial-data-science-batch-scoring.md
-  - name: 6 Create a Power BI report
+  - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
 - name: Notebooks
   items:
@@ -41,17 +39,17 @@ items:
     href: use-ai-samples.md
   - name: Customer churn prediction
     href: customer-churn.md
-  - name: Retail recommendation
+  - name: Book recommendation
     href: retail-recommend-model.md
   - name: Fraud detection
     href: fraud-detection.md
-  - name: Forecasting
+  - name: Time series forecasting
     href: time-series-forecasting.md
-  - name: Text classification
+  - name: Text (title genre) classification
     href: title-genre-classification.md
   - name: Uplift modeling
     href: uplift-modeling.md
-  - name: Predictive maintenance
+  - name: Machine failure prediction
     href: predictive-maintenance.md
 - name: Governance
   items:
@@ -171,6 +169,10 @@ items:
     href: r-overview.md
   - name: Tutorials
     items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
     - name: Avocado price prediction
       href: r-avocado.md
     - name: Flight delay prediction
@@ -187,11 +189,11 @@ items:
       href: r-use-tidyverse.md
     - name: R visualization
       href: r-visualization.md
-- name: Semantic Link
+- name: Semantic link
   items:
   - name: Overview
     items:
-    - name: What is Semantic Link?
+    - name: What is semantic link?
       href: semantic-link-overview.md
   - name: Tutorials
     items:
@@ -201,9 +203,9 @@ items:
       href: tutorial-power-bi-dependencies.md
     - name: Extract and calculate Power BI measures from a notebook
       href: tutorial-power-bi-measures.md
-    - name: Discover relationships in a Power BI dataset using Semantic Link
+    - name: Discover relationships in a Power BI dataset using semantic link
       href: tutorial-power-bi-relationships.md
-    - name: Discover relationships in the Synthea dataset using Semantic Link
+    - name: Discover relationships in the Synthea dataset using semantic link
       href: tutorial-relationships-detection.md
   - name: Concepts
     items:

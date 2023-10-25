@@ -65,8 +65,14 @@ items:
     items:
     - name: Overview
       href: spark-compute.md
-    - name: Runtime
-      href: runtime.md
+    - name: Configure starter pools
+      href: configure-starter-pools.md
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: runtime.md
+        - name: Runtime 1.1
+          href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
     - name: High Concurrency mode

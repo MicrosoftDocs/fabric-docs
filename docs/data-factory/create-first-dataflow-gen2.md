@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 09/29/2023
 ms.search.form: DataflowGen2 Tutorials
 ---
 
@@ -27,7 +27,7 @@ The following prerequisites are required before you start:
 
 In this section, you'll be creating your first dataflow.
 
-1. Switch to the **Data factory** or **Power BI** experience.
+1. Switch to the **Data factory** experience.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
 
@@ -47,15 +47,19 @@ Let's get some data! In this example, you'll be getting data from an OData servi
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-more.png" alt-text="Screenshot with the Get Data option selected and More emphasized in the drop-down box.":::
 
-2. Select **OData** as the data source.
+2. In **Choose data source**, select **View more**.
 
-   :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
+   :::image type="content" source="media/create-first-dataflow-gen2/view-more.png" alt-text="Screenshot of Get data source with View more emphasized." lightbox="media/create-first-dataflow-gen2/view-more.png":::
 
-3. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
+3. In **New source**, select **Other** > **OData** as the data source.
+
+   :::image type="content" source="media/create-first-dataflow-gen2/select-odata-source.png" alt-text="Screenshot of Get data source with the Other category and the OData connector emphasized." lightbox="media/create-first-dataflow-gen2/select-odata-source.png":::
+
+4. Enter the URL `https://services.odata.org/v4/northwind/northwind.svc/`, and then select **Next**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/enter-odata-url.png" alt-text="Screenshot of the OData data source where you enter the data URL.":::
 
-4. Select the **Orders** and **Customers** tables, and then select **Create**.
+5. Select the **Orders** and **Customers** tables, and then select **Create**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/select-order-customers.png" alt-text="Screenshot of the Power Query navigator with the Customers and Orders tables emphasized." lightbox="media/create-first-dataflow-gen2/select-order-customers.png":::
 

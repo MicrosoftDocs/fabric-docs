@@ -1,13 +1,13 @@
 ---
-title: Validate functional dependencies in data with Semantic Link
-description: Explore and validate functional dependencies in data with Semantic Link and Microsoft Fabric.
+title: Validate functional dependencies in data with semantic link
+description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: romanbat
 author: RomanBat
 ms.topic: how-to
 ms.date: 06/06/2023
-ms.search.form: Semantic Link
+ms.search.form: semantic link
 ---
 
 # Detect, explore, and validate functional dependencies in your data
@@ -18,7 +18,7 @@ Functional dependencies act as an effective invariant that allows you to find an
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you'll use Semantic Link to:
+In this article, you'll use semantic link to:
 
 > [!div class="checklist"]
 > * Find dependencies between columns of a FabricDataFrame
@@ -218,6 +218,7 @@ By using the `drop_dependency_violations` function, you can enforce functional c
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
 
 ## Next steps
+
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 - [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
 - [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)

@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-science/tutorial-data-science-data-cleanse.md",
+        "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
+        "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -79,6 +84,16 @@
           "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
           "redirect_document_id": true
+        },
+        { 
+          "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-amazon-s3",
+          "redirect_document_id": false
         }
     ]
 }

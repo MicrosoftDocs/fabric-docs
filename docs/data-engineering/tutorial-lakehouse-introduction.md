@@ -33,7 +33,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
    * [Create a Fabric workspace](tutorial-lakehouse-get-started.md).
    * [Create a lakehouse](tutorial-build-lakehouse.md).
-   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, OneCopy of your data across lakehouse mode and SQL endpoint mode.
+   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL endpoint mode.
    * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
    * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
 
