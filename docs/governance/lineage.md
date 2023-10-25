@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/25/2023
 ---
 
 # Lineage in Fabric
@@ -18,10 +18,14 @@ In modern business intelligence (BI) projects, understanding the flow of data fr
 
 In lineage view, you see the lineage relationships between all the items in a workspace, as well as data sources external to the workspace one-step upstream.
 
-Every workspace automatically has a lineage view. You need at least a *Contributor* role in the workspace to view it. See [Permissions](#permissions) in this article for details.
+Every workspace automatically has a lineage view.
 
 > [!NOTE]
 > Lineage in Fabric is in preview, and not all connections between items are fully supported yet. It is possible that the lineage between some items will be incorrectly shown.
+
+## Permissions
+
+Any user with a [role in a workspace](../get-started/roles-workspaces.md) can access that workspace's lineage view. However, users with the *Viewer* role won't see data sources.
 
 ## Open lineage view
 
@@ -78,10 +82,6 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 * To have more room for the graph itself, use the full screen option at the bottom-right corner.
 
     :::image type="content" source="./media/lineage/lineage-zoom.png" alt-text="Screenshot of zoom in or out, or full screen options." border="false":::
-
-## Permissions
-
-* Users must have an Admin, Member, or Contributor role in the workspace. Users with a Viewer role can't access lineage.
 
 ## Considerations and limitations
 
