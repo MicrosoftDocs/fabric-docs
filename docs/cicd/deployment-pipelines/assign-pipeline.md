@@ -77,7 +77,7 @@ Connections between items are only established when you assign a workspace to a 
 
 * The workspace must reside on a [Fabric capacity](../../enterprise/licenses.md).
 
-* To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.yml#error-message-workspace-member-permissions-needed)
+* To assign a workspace, you need at least [workspace member](understand-the-deployment-process.md#permissions-table) permissions for the workspaces in its adjacent stages. For more information, see [Why am I getting the *workspace member permissions needed* error message when I try to assign a workspace?](../troubleshoot-cicd.md#error-message-workspace-member-permissions-needed)
 
 * You can't assign a workspace with [Power BI samples](/power-bi/create-reports/sample-datasets) to a pipeline stage.
 
