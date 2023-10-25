@@ -4,7 +4,7 @@ description: Learn about smoothing and throttling principles applicable for data
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/19/2023
+ms.date: 10/25/2023
 ms.topic: conceptual
 ---
 
@@ -26,7 +26,7 @@ Capacity forms the foundation in Microsoft Fabric and provides the computing pow
 
 Capacities have periods where they're under-utilized (idle) and over-utilized (peak). When a capacity is running multiple jobs, a sudden spike in compute demand might be generated that exceeds the limits of a purchased capacity. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide [burstable capacity](burstable-capacity.md) that allows workloads to use more resources to achieve better performance.
 
-Smoothing offers relief for customers who create sudden spikes during their peak times, while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
+Smoothing offers relief for customers who create sudden spikes during their peak times while they have a lot of idle capacity that is unused. Smoothing simplifies capacity management by spreading the evaluation of compute to ensure that customer jobs run smoothly and efficiently.
 
 Smoothing won't affect execution time. It helps streamline capacity management by allowing customers to size your capacity based on average, rather than peak usage.
 
@@ -62,7 +62,7 @@ All Warehouse and SQL Endpoint operations follow "Background Rejection" policy, 
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Warehouse operations are _background_ except for scenarios which involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results etc. ) or creating/updating Power BI datasets (including default dataset) or reports. These operations will continue to follow "Interactive Rejection" policy.
+- Warehouse operations are _background_ except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results, etc.) or creating/updating Power BI datasets (including default dataset) or reports. These operations continue to follow "Interactive Rejection" policy.
 - Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to understand the root cause.
 - If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you might see error message: `Your request was rejected due to resource constraints. Try again later`.
 - If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you might see error message: `Your request was rejected due to resource constraints. Try again later (Microsoft SQL Server Server, Error: 18456)`.
