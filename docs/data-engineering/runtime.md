@@ -1,12 +1,12 @@
 ---
 title: Apache Spark runtime in Fabric
-description: Learn about the Apache Spark-based runtimes available in Fabric, including unique features, capabilities, and best practices.
+description: Learn about the Apache Spark-based runtimes available in Fabric.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 10/20/2023
+ms.date: 10/24/2023
 ---
 
 # Apache Spark Runtime in Fabric
@@ -28,6 +28,7 @@ Major components of Fabric Runtime:
 ## Runtime 1.1
 
 Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+
 - Apache Spark 3.3
 - Operating System: Ubuntu 18.04
 - Java: 1.8.0_282

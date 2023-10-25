@@ -1,6 +1,6 @@
 ---
-title: Spark compute for data engineering and data science
-description: Learn about the starter pools, custom Spark pools, and pool configurations for data engineering and science experiences in Fabric.
+title: Spark compute for Data Engineering and Data Science
+description: Learn about the starter pools, custom Spark pools, and pool configurations for data Engineering and Science experiences in Fabric.
 ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
@@ -12,7 +12,7 @@ ms.date: 10/20/2023
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
-Microsoft Fabric data engineering and data science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
+Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
 
 :::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
 
