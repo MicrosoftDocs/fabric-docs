@@ -135,10 +135,10 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you can move the workspace but you cannot create new Fabric items (see [Known issue - Fabric items can't be created in a workspace moved to a capacity in a different region](../get-started/known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)).  Once the known issue is resolved, moving workspaces that once had non-PowerBI Fabric items will not be allowed.
+    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you also won't be able to move the workspace to a capacity in a different region.
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
 ## Next steps
 
-[About the Admin portal](tenant-settings-index.md)
+[About the admin portal](admin-center.md)

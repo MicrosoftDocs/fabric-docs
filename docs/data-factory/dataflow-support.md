@@ -2,7 +2,7 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 10/18/2023
+ms.date: 10/20/2023
 ms.author: dougklo
 ms.topic: overview
 ms.custom: build-2023
@@ -36,14 +36,14 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/cdata-64.png":::<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [:::image type="icon" source="media/dataflow-support/celonis-64.png":::<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | :::image type="icon" source="media/dataflow-support/cherwell-64.png":::<br/>**Cherwell (Beta)**<br/>By Cherwell | [:::image type="icon" source="media/dataflow-support/cloudbluepsa-64.png":::<br/>**CloudBluePSA<br/>(Beta)**](/power-query/connectors/cloudbluepsa)<br/>By CloudBluePSA | :::image type="icon" source="media/dataflow-support/cdf-64.png":::<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
-| [:::image type="icon" source="media/dataflow-support/cds-to-data64.png":::<br/>**Common Data<br/>Service (legacy)**](/power-query/connectors/common-data-service-legacy)<br/>By Microsoft | | | | |
+| [:::image type="icon" source="media/dataflow-support/cdata-64.png":::<br/>**CData Connect<br/>Cloud**](/power-query/connectors/cdata-connect-cloud)<br/>By CData | [:::image type="icon" source="media/dataflow-support/celonis-64.png":::<br/>**Celonis EMS (Beta)**](/power-query/connectors/celonis-ems)<br/>By Celonis | :::image type="icon" source="media/dataflow-support/cherwell-64.png":::<br/>**Cherwell (Beta)**<br/>By Cherwell | [:::image type="icon" source="media/dataflow-support/cloudbluepsa-64.png":::<br/>**CloudBluePSA<br/>(Beta)**](connector-cloudbluepsa.md)<br/>By CloudBluePSA | :::image type="icon" source="media/dataflow-support/cdf-64.png":::<br/>**Cognite Data<br/>Fusion**<br/>By Cognite |
+| [:::image type="icon" source="media/dataflow-support/cds-to-data64.png":::<br/>**Common Data<br/>Service (legacy)**](connector-common-data-service-legacy.md)<br/>By Microsoft | | | | |
 
 ## D
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/data-virtuality-64.png":::<br/>**Data Virtuality<br/>LDW**<br/>By Data Virtuality | [:::image type="icon" source="media/dataflow-support/databricks-64.png":::<br/>**Databricks**](/power-query/connectors/databricks)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/power-platform-dataflows-64.png":::<br/>**Dataflows**](/power-query/connectors/dataflows)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/datamarts-64.png":::<br/>**Datamarts**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/dataverse-64.png":::<br/>**Dataverse**](/power-query/connectors/dataverse)<br/>By Microsoft | 
+| :::image type="icon" source="media/dataflow-support/data-virtuality-64.png":::<br/>**Data Virtuality<br/>LDW**<br/>By Data Virtuality | [:::image type="icon" source="media/dataflow-support/databricks-64.png":::<br/>**Databricks**](connector-databricks.md)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/power-platform-dataflows-64.png":::<br/>**Dataflows**](connector-dataflows.md)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/datamarts-64.png":::<br/>**Datamarts**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/dataverse-64.png":::<br/>**Dataverse**](/power-query/connectors/dataverse)<br/>By Microsoft | 
 | [:::image type="icon" source="media/dataflow-support/delta-sharing-64.png":::<br/>**Delta Sharing**](/power-query/connectors/delta-sharing)<br/>By Databricks | [:::image type="icon" source="media/dataflow-support/denodo-for-powerbi-64.png":::<br/>**Denodo**](/power-query/connectors/denodo)<br/>By Denodo | [:::image type="icon" source="media/dataflow-support/dcwinsights-64.png":::<br/>**Digital<br/>Construction<br/>Works Insights**](/power-query/connectors/digital-construction-works-insights)<br/>By Digital<br/>Construction<br/> Works | :::image type="icon" source="media/dataflow-support/dremio-64.png":::<br/>**Dremio Cloud**<br/>By Dremio | :::image type="icon" source="media/dataflow-support/dremio-64.png":::<br/>**Dremio Software**<br/>By Dremio |
 | :::image type="icon" source="media/dataflow-support/dynamics365-business-central-64.png":::<br/>**Dynamics 365<br/>Business Central**<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/customer-insights-64.png":::<br/>**Dynamics 365<br/>Customer Insights<br/>(Beta)**<br/>By Microsoft | | | |
 
@@ -58,25 +58,25 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](/power-query/connectors/fhir/fhir)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](/power-query/connectors/folder)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
+| :::image type="icon" source="media/dataflow-support/factset-64.png":::<br/>**FactSet Analytics**<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/factset-rms-64.png":::<br/>**FactSet RMS<br/>(Beta)**](/power-query/connectors/factset-rms)<br/>By FactSet | [:::image type="icon" source="media/dataflow-support/fhir-64.png":::<br/>**FHIR**](connector-fhir.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/folder-64.png":::<br/>**Folder**](connector-folder.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/funnel-64.png":::<br/>**Funnel**](/power-query/connectors/funnel)<br/>By Funnel |
 
 ## G
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](/power-query/connectors/google-analytics)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](/power-query/connectors/google-bigquery)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
+| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
 
 ## H
 
 | &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/hive-64.png":::<br/>**HDInsight<br/>Interactive Query**<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/hexagon-64.png":::<br/>**Hexagon PPM <br/> Smart API**<br/>By Hexagon PPM | [:::image type="icon" source="media/dataflow-support/hive-64.png":::<br/>**Hive LLAP**](/power-query/connectors/hive-llap)<br/>By Microsoft | | |
+| :::image type="icon" source="media/dataflow-support/hive-64.png":::<br/>**HDInsight<br/>Interactive Query**<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/hexagon-64.png":::<br/>**Hexagon PPM <br/> Smart API**<br/>By Hexagon PPM | [:::image type="icon" source="media/dataflow-support/hive-64.png":::<br/>**Hive LLAP**](connector-hive-llap.md)<br/>By Microsoft | | |
 
 ## I
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**IBM DB2<br/>database**](/power-query/connectors/ibm-db2-database)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc-64.png":::<br/>**Impala**](/power-query/connectors/impala-database)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/indexima-64.png":::<br/>**Indexima**<br/>By Indexima | :::image type="icon" source="media/dataflow-support/industrial-app-store-64.png":::<br/>**Industrial<br/>App Store**<br/>By Intelligent Plant | :::image type="icon" source="media/dataflow-support/information-grid-64.png":::<br/>**Information<br/>Grid (Beta)**<br/>By Luminis |
+| [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**IBM DB2<br/>database**](connector-ibm-db2-database.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc-64.png":::<br/>**Impala**](connector-impala.md)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/indexima-64.png":::<br/>**Indexima**<br/>By Indexima | :::image type="icon" source="media/dataflow-support/industrial-app-store-64.png":::<br/>**Industrial<br/>App Store**<br/>By Intelligent Plant | :::image type="icon" source="media/dataflow-support/information-grid-64.png":::<br/>**Information<br/>Grid (Beta)**<br/>By Luminis |
 | :::image type="icon" source="media/dataflow-support/iris-powerbi-connector-64.png":::<br/>**InterSystems<br/>IRIS (Beta)**<br/>By Intersystems | :::image type="icon" source="media/dataflow-support/intune-64.png":::<br/>**Intune Data<br/>Warehouse (Beta)**<br/>By Microsoft | | | |
 
 ## J
@@ -101,20 +101,20 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/mariadb-64.png":::<br/>**MariaDB**<br/>By MariaDB | :::image type="icon" source="media/dataflow-support/marklogic-odbc-64.png":::<br/>**MarkLogic**<br/>By MarkLogic | [:::image type="icon" source="media/dataflow-support/exchange-64.png":::<br/>**Microsoft Exchange<br/>Online**](/power-query/connectors/microsoft-exchange-online)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/teams-analytics-64.png":::<br/>**Microsoft Teams<br/>Personal Analytics<br/>(Beta)**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/microstrategy-64.png":::<br/>**MicroStrategy<br/>for Power BI**](/power-query/connectors/microstrategy-for-power-bi)<br/>By MicroStrategy |
-| [:::image type="icon" source="media/dataflow-support/mongodb-64.png":::<br/>**MongoDB Atlas<br/>SQL interface<br/>(Beta)**](/power-query/connectors/mongodb-atlas-sql-interface)<br/>By MongoDB | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**MySQL database**](/power-query/connectors/mysql-database)<br/>By Microsoft | | | |
+| :::image type="icon" source="media/dataflow-support/mariadb-64.png":::<br/>**MariaDB**<br/>By MariaDB | :::image type="icon" source="media/dataflow-support/marklogic-odbc-64.png":::<br/>**MarkLogic**<br/>By MarkLogic | [:::image type="icon" source="media/dataflow-support/exchange-64.png":::<br/>**Microsoft Exchange<br/>Online**](connector-microsoft-exchange-online.md)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/teams-analytics-64.png":::<br/>**Microsoft Teams<br/>Personal Analytics<br/>(Beta)**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/microstrategy-64.png":::<br/>**MicroStrategy<br/>for Power BI**](/power-query/connectors/microstrategy-for-power-bi)<br/>By MicroStrategy |
+| [:::image type="icon" source="media/dataflow-support/mongodb-64.png":::<br/>**MongoDB Atlas<br/>SQL interface<br/>(Beta)**](connector-mongodb-atlas-sql.md)<br/>By MongoDB | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**MySQL database**](connector-mysql-database.md)<br/>By Microsoft | | | |
 
 ## O
 
 | &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](/power-query/connectors/odata-feed)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](/power-query/connectors/odbc)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
+| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](/power-query/connectors/odata-feed)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](connector-odbc.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
 
 ## P
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/parquet-64.png":::<br/>**Parquet**](/power-query/connectors/parquet)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/foundry-64.png":::<br/>**Palantir Foundry**](/power-query/connectors/palantir-foundry-datasets)</br>By Palantir | :::image type="icon" source="media/dataflow-support/paxata-64.png":::<br/>**Paxata**<br/>By Paxata | [:::image type="icon" source="media/dataflow-support/pdffile-64.png":::<br/>**PDF**](/power-query/connectors/pdf)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/planview-enterprise-64.png":::<br/>**Planview Enterprise<br/>Architecture**<br/>By Planview |
+| [:::image type="icon" source="media/dataflow-support/parquet-64.png":::<br/>**Parquet**](/power-query/connectors/parquet)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/foundry-64.png":::<br/>**Palantir Foundry**](connector-palantir-foundry.md)</br>By Palantir | :::image type="icon" source="media/dataflow-support/paxata-64.png":::<br/>**Paxata**<br/>By Paxata | [:::image type="icon" source="media/dataflow-support/pdffile-64.png":::<br/>**PDF**](/power-query/connectors/pdf)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/planview-enterprise-64.png":::<br/>**Planview Enterprise<br/>Architecture**<br/>By Planview |
 | :::image type="icon" source="media/dataflow-support/spigit-64.png":::<br/>**Planview IdeaPlace**<br/>By Planview | :::image type="icon" source="media/dataflow-support/planview-portfolios-64.png":::<br/>**Planview Portfolios**<br/>By Planview | :::image type="icon" source="media/dataflow-support/projectplace-64.png":::<br/>**Planview Projectplace**<br/>By Planview | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**PostgreSQL<br/>database**](/power-query/connectors/postgresql)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/power-platform-dataflows-64.png":::<br/>**Power BI dataflows (Legacy)**<br/>By Microsoft |
 | :::image type="icon" source="media/dataflow-support/product-insights-64.png":::<br/>**Product Insights<br/>(Beta)**<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/profisee-64.png":::<br/>**Profisee**](/power-query/connectors/profisee)<br/>By Profisee | | | |
 

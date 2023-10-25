@@ -19,17 +19,17 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 * Go to the Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)].
 * Create [a new notebook](../data-engineering/how-to-use-notebook.md#create-notebooks).
-* An Azure OpenAI resource: request access [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
+* An Azure OpenAI resource: [Request Access to Azure OpenAI Service](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
 
 
 ## Step 2: Import this guide as a notebook
 
 The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. Or download the notebook and import it into Synapse Analytics
 
-1.	[Download this demo as a notebook](https://microsoft.github.io/SynapseML/docs/Explore%20Algorithms/OpenAI/) (click Raw, then save the file)
-1.	Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Databricks [import into the Databricks Workspace](/en-us/azure/databricks/notebooks/notebooks-manage#create-a-notebook). If using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
+1. [Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/2abfbdaadded0eff17ee0e5ea1908758e6d7a222/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb) (select **Raw**, then save the file)
+1. Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Databricks [import into the Databricks Workspace](/en-us/azure/databricks/notebooks/notebooks-manage#create-a-notebook). If using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
 1. Install SynapseML on your cluster. Please see the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If using Fabric, please check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This requires pasting an extra cell at the top of the notebook you imported. 
-1.	Connect your notebook to a cluster and follow along, editing and running the cells.
+1. Connect your notebook to a cluster and follow along, editing and running the cells.
 
 ## Step 3: Fill in your service information
 
@@ -117,11 +117,11 @@ display(
 
 Your output should look something like this. Please note completion text will be different
 
-| **prompt**                   	| **error** 	| **text**                                                                                                                              	|
-|:----------------------------:	|:----------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|
-| Hello my name is            	| null      	| Makaveli I'm eighteen years old and I want to   be a rapper when I grow up I love writing and making music I'm from Los   Angeles, CA 	|
-| The best code is code thats 	| null      	| understandable This is a subjective statement,   and there is no definitive answer.                                                   	|
-| SynapseML is                	| null      	| A machine learning algorithm that is able to learn how to predict the future outcome of events.                                       	|
+| **prompt**                       | **error**     | **text**                                                                                                                                  |
+|:----------------------------:    |:----------:    |:-------------------------------------------------------------------------------------------------------------------------------------:    |
+| Hello my name is                | null          | Makaveli I'm eighteen years old and I want to   be a rapper when I grow up I love writing and making music I'm from Los   Angeles, CA     |
+| The best code is code thats     | null          | understandable This is a subjective statement,   and there is no definitive answer.                                                       |
+| SynapseML is                    | null          | A machine learning algorithm that is able to learn how to predict the future outcome of events.                                           |
 
 ## Additional Usage Examples
 
