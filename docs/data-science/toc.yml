@@ -63,20 +63,6 @@ items:
       href: r-avocado.md
     - name: Flight delay prediction
       href: r-flight-delay.md
-  - name: Semantic link tutorials
-    items:
-    - name: Customer churn
-      href: r-customer-churn.md
-    - name: Clean data with functional dependencies
-      href: tutorial-data-cleaning-functional-dependencies.md
-    - name: Analyze functional dependencies in a Power BI sample dataset
-      href: tutorial-power-bi-dependencies.md
-    - name: Extract and calculate Power BI measures from a notebook
-      href: tutorial-power-bi-measures.md
-    - name: Discover relationships in a Power BI dataset using semantic link
-      href: tutorial-power-bi-relationships.md
-    - name: Discover relationships in the Synthea dataset using semantic link
-      href: tutorial-relationships-detection.md
 - name: Governance
   items:
   - name: Roles and permissions
