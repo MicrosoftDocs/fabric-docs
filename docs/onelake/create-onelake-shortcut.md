@@ -14,8 +14,6 @@ ms.date: 09/27/2023
 
 In this article, you learn how to create a OneLake shortcut inside a Fabric lakehouse. You can use a lakehouse, a data warehouse, or a Kusto Query Language (KQL) database as the source for your shortcut. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisite
 
 If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).

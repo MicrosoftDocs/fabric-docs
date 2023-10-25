@@ -10,8 +10,6 @@ ms.date: 09/27/2023
 
 # OneLake security
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with user identities, service principals, and managed identities. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
 
 :::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
