@@ -1,35 +1,31 @@
 ---
-# Required metadata
-# For more information, see https://review.learn.microsoft.com/en-us/help/platform/learn-editor-add-metadata?branch=main
-# For valid values of ms.service, ms.prod, and ms.topic, see https://review.learn.microsoft.com/en-us/help/platform/metadata-taxonomies?branch=main
-
-title:       # Add a title for the browser tab
-description: # Add a meaningful description for search results
-author:      SQLStijn-MSFT # GitHub alias
-ms.author:   stwynant # Microsoft alias
-ms.service:  # Add the ms.service or ms.prod value
-# ms.prod:   # To use ms.prod, uncomment it and delete ms.service
-ms.topic:    # Add the ms.topic value
-ms.date:     10/26/2023
+title: Dynamic data masking in Synapse Data Warehouse
+description: Learn about the dynamic data masking data protection feature in Fabric data warehousing.
+author:  SQLStijn-MSFT
+ms.author:   stwynant 
+ms.reviewer: wiassaf
+ms.topic: conceptual
+ms.date:  10/31/2023
 ---
 
-# Dynamic Data Masking
+# Dynamic data masking in Fabric data warehousing
 
-Dynamic data masking (DDM) limits sensitive data exposure by masking it to nonprivileged users. It can be used to greatly simplify the design and coding of security in your application.
+**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Dynamic data masking helps prevent unauthorized access to sensitive data by enabling customers to specify how much sensitive data to reveal with minimal effect on the application layer. DDM can be configured on designated database fields to hide sensitive data in the result sets of queries. With DDM, the data in the database isn't changed. DDM is easy to use with existing applications, since masking rules are applied in the query results. Many applications can mask sensitive data without modifying existing queries.
+Dynamic data masking limits sensitive data exposure by masking it to nonprivileged users. It can be used to greatly simplify the design and coding of security in your application.
+
+Dynamic data masking helps prevent unauthorized viewing of sensitive data by enabling administrators to specify how much sensitive data to reveal, with minimal effect on the application layer. Dynamic data masking can be configured on designated database fields to hide sensitive data in the result sets of queries. With dynamic data masking, the data in the database isn't changed, so it can be used with existing applications since masking rules are applied to query results. Many applications can mask sensitive data without modifying existing queries.
 
 - A central data masking policy acts directly on sensitive fields in the database.
-
 - Designate privileged users or roles that do have access to the sensitive data.
-
-- DDM features full masking and partial masking functions, and a random mask for numeric data.
-
+- Dynamic data masking features full masking and partial masking functions, and a random mask for numeric data.
 - Simple Transact-SQL commands define and manage masks.
 
-The purpose of dynamic data masking is to limit exposure of sensitive data, preventing users who shouldn't have access to the data from viewing it. Dynamic data masking doesn't aim to prevent database users from connecting directly to the database and running exhaustive queries that expose pieces of the sensitive data. Dynamic data masking is complementary to other Fabric security features like Column-level Security & Row-level security. It's highly recommended to use it with them in order to better protect the sensitive data in the database.
+The purpose of dynamic data masking is to limit exposure of sensitive data, preventing users who shouldn't have access to the data from viewing it. Dynamic data masking doesn't aim to prevent database users from connecting directly to the database and running exhaustive queries that expose pieces of the sensitive data.
 
-### Define a Dynamic Data mask
+Dynamic data masking is complementary to other Fabric security features like [column-level security](column-level-security.md) and [row-level security](row-level-security.md). It's highly recommended to use these data protection features together in order to protect the sensitive data in the database.
+
+### Define a dynamic data mask
 
 A masking rule may be defined on a column in a table in order to obfuscate the data in that column. There are five types of masks available.
 
@@ -94,13 +90,13 @@ ALTER COLUMN [Phone Number] ADD MASKED WITH (FUNCTION = 'partial(5,"XXXXXXX",0)'
 
 ### Permissions
 
-You don't need any special permission to create a table with a dynamic data mask, only the standard __CREATE TABLE__ and __ALTER__ on schema permissions.
+You don't need any special permission to create a table with a dynamic data mask, only the standard `CREATE TABLE` and `ALTER` on schema permissions.
 
-Adding, replacing, or removing the mask of a column, requires the __ALTER ANY MASK__ permission and __ALTER__ permission on the table. It's appropriate to grant __ALTER ANY MASK__ to a security officer.
+Adding, replacing, or removing the mask of a column, requires the `ALTER ANY MASK` permission and `ALTER` permission on the table. It's appropriate to grant `ALTER ANY MASK` to a security officer.
 
-Users with __SELECT__ permission on a table can view the table data. Columns that are defined as masked, will display the masked data. Grant the __UNMASK__ permission to a user to enable them to retrieve unmasked data from the columns for which masking is defined.
+Users with `SELECT` permission on a table can view the table data. Columns that are defined as masked, will display the masked data. Grant the `UNMASK` permission to a user to enable them to retrieve unmasked data from the columns for which masking is defined.
 
-The __CONTROL__ permission on the database includes both the __ALTER ANY MASK__ and __UNMASK__ permission which enables the user to view unmasked data. Administrative users or roles such as Admin Member or Contributor has CONTROL permission on the database by design and can view unmasked data.
+The `CONTROL` permission on the database includes both the `ALTER ANY MASK` and `UNMASK` permission which enables the user to view unmasked data. Administrative users or roles such as Admin Member or Contributor has CONTROL permission on the database by design and can view unmasked data.
 
 ### Example
 
@@ -109,13 +105,13 @@ We can add a mask to an existing table by using the ALTER table statement.
 
 
 
-```tsql
+```sql
 ALTER TABLE Sales.Orders
 ALTER COLUMN SalesRep ADD MASKED WITH (FUNCTION = 'email()');
 ```
 
 You can also create tables with masking defined
-```tsql
+```sql
 CREATE SCHEMA sales;
 GO
 -- Create a table to store sales data
@@ -148,28 +144,28 @@ When selecting from the sales.Orders table, the data for SalesRep will be masked
 
 #### Grant permissions to view unmasked data
 
-Granting the __UNMASK__ permission allows manager@contoso.com to see the data unmasked.
-```tsql
-GRANT  
-UNMASK TO manager@contoso.com;
+Granting the `UNMASK` permission allows manager@contoso.com to see the data unmasked.
+
+```sql
+GRANT UNMASK TO manager@contoso.com;
 ```
 
 #### Deletion of a mask
 
 Deleting the mask of a column allows manager@contoso.com to see the data unmasked.
-```tsql
-ALTER TABLE Sales.Orders  
-DROP COLUMN SalesRep MASKED|
-```
 
+```sql
+ALTER TABLE Sales.Orders  
+ALTER COLUMN SalesRep DROP MASKED;
+```
 
 #### Security Considerations: Bypassing masking using inference or brute-force techniques
 
-Dynamic Data Masking is designed to simplify application development by limiting data exposure in a set of predefined queries used by the application. While Dynamic Data Masking can also be useful to prevent accidental exposure of sensitive data when accessing a production database directly, it's important to note that unprivileged users with ad hoc query permissions can apply techniques to gain access to the actual data.
+Dynamic data masking is designed to simplify application development by limiting data exposure in a set of predefined queries used by the application. While dynamic data masking can also be useful to prevent accidental exposure of sensitive data when accessing a production database directly, it's important to note that unprivileged users with ad hoc query permissions can apply techniques to gain access to the actual data.
 
-As an example, consider a database principal that has sufficient privileges to run ad hoc queries on the database, and tries to 'guess' the underlying data and ultimately infer the actual values. Assume that we have a mask defined on the [Employee].[Salary] column, and this user connects directly to the database and starts guessing values, eventually inferring the [Salary] value of a set of Employees:
+As an example, consider a database principal that has sufficient privileges to run ad hoc queries on the database, and tries to 'guess' the underlying data and ultimately infer the actual values. Assume that we have a mask defined on the `Employee.Salary` column, and this user connects directly to the database and starts guessing values, eventually inferring the `Salary` value of a set of Employees:
 
-```tsql
+```sql
 SELECT ID, Name, Salary FROM Employees  
 WHERE Salary > 99999 and Salary < 100001;
 ```
@@ -181,14 +177,41 @@ Result
 |62543|Jane Doe|0|
 |91245|John Smith|0|
 
- 
-
-This demonstrates that Dynamic Data Masking shouldn't be used as an isolated measure to fully secure sensitive data from users running ad hoc queries on the database. It's appropriate for preventing accidental sensitive data exposure but doesn't protect against malicious intent to infer the underlying data.
+This demonstrates that dynamic data masking shouldn't be used as an isolated measure to fully secure sensitive data from users running ad hoc queries on the database. It's appropriate for preventing accidental sensitive data exposure but doesn't protect against malicious intent to infer the underlying data.
 
 It's important to properly manage the permissions on the database, and to always follow the minimal required permissions principle. Also, remember to have Auditing enabled to track all activities taking place on the database
 
 
+## Security consideration: bypassing masking using inference or brute-force techniques
 
+Dynamic data masking is designed to simplify application development by limiting data exposure in a set of predefined queries used by the application. While Dynamic Data Masking can also be useful to prevent accidental exposure of sensitive data when accessing data directly, it's important to note that unprivileged users with query permissions can apply techniques to gain access to the actual data. <!-- Consider [user audit logs](user-audit-logs.md) to monitor all database activity and mitigate this scenario. -->
 
+As an example, consider a user that has sufficient privileges to run queries on the Warehouse, and tries to 'guess' the underlying data and ultimately infer the actual values. Assume that we have a mask defined on the `[Employee].[Salary]` column, and this user connects directly to the database and starts guessing values, eventually inferring the `[Salary]` value in the `Employees` table:
 
+```sql
+SELECT ID, Name, Salary FROM Employees
+WHERE Salary > 99999 and Salary < 100001;
+```
 
+Results in:
+
+|  Id | Name| Salary |  
+| --- | --- | --- |  
+|  62543 | Jane Doe | 0 |  
+|  91245 | John Smith | 0 |
+
+This demonstrates that dynamic data masking shouldn't be used alone to fully secure sensitive data from users with query access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. It's appropriate for preventing sensitive data exposure, but doesn't protect against malicious intent to infer the underlying data.
+
+It's important to properly manage object-level security with [SQL granular permissions](sql-granular-permissions.md), and to always follow the minimal required permissions principle.
+
+## Related content
+
+- [Workspace roles in Fabric data warehousing](workspace-roles.md)
+- [Column-level security in Fabric data warehousing](column-level-security.md)
+- [Row-level security in Fabric data warehousing](row-level-security.md)
+- [Security for data warehousing in Microsoft Fabric](security.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [How to implement dynamic data masking in Synapse Data Warehouse](howto-dynamic-data-masking.md)
