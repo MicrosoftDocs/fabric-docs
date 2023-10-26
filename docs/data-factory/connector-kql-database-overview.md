@@ -14,7 +14,13 @@ This KQL Database connector is supported in Data Factory for [!INCLUDE [product-
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in Dataflow Gen2
+
+For information on how to connect to KQL Database data in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-kql-database.md#set-up-your-connection-in-dataflow-gen2).
+
+## Support in data pipelines
+
+The KQL Database connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|

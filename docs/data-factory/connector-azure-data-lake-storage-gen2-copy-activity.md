@@ -4,7 +4,7 @@ description: This article explains how to copy data using Azure Data Lake Storag
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -18,14 +18,14 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 Azure Data Lake Storage Gen2 supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 

@@ -1,14 +1,14 @@
 ---
-title: How to create an Azure Data Lake Storage Gen2 connection
-description: This article provides information about how to do create an Azure Data Lake Storage Gen2 connection
+title: Set up your Azure Data Lake Storage Gen2 connection
+description: This article provides information about how to set up an Azure Data Lake Storage Gen2 connection
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to create an Azure Data Lake Storage Gen2 connection
+# Set up your Azure Data Lake Storage Gen2 connection
 
 This article outlines the steps to create an Azure Date Lake Storage Gen2 connection.
 
@@ -25,18 +25,19 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Service Principal|√||
 |Shared Access Signature (SAS)| √| √|
 
->[!Note]
->For information about an Azure Data Lake Storage Gen2 connection in Dataflow Gen2, go to [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Data Lake Storage Gen2. The following links provide the specific Power Query connector information you need to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+* To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+* Be sure to install or set up any [Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites) before connecting to the Azure Data Lake Storage Gen2 connector.
+* To connect to the Azure Data Lake Storage Gen2 connector from Power Query, go to [Connect to Azure Data Lake Storage Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to Manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
 

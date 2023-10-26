@@ -16,7 +16,7 @@ The Azure Blob Storage connector is supported in Data Factory in [!INCLUDE [prod
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-blob-storage.md#set-up-your-connection-in-dataflow-gen2).
+To learn about how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-blob-storage.md#set-up-your-connection-in-dataflow-gen2).
 
 ## Support in data pipelines
 
@@ -28,6 +28,6 @@ The Azure Blob Storage connector supports the following capabilities in data pip
 | **Lookup activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **GetMetadata activity** | None | Anonymous<br/>Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 
-To learn more about how to connect to Azure Blob Storage in data pipelines, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline).
+To learn about how to connect to Azure Blob Storage in data pipelines, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn more about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md).
+To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md).

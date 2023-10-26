@@ -69,7 +69,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Partition option**: Specify the data partitioning options used to load data from Azure SQL Database. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Azure SQL Database is controlled by the [parallel copy](/azure/data-factory/copy-activity-performance-features#parallel-copy) setting on the copy activity.
 
-  :::image type="content" source="./media/connector-azure-sql-database/partition-option-1.png" alt-text="Screenshot showing Partition option settings.":::
+  :::image type="content" source="./media/connector-azure-sql-database/partition-option-1.png" alt-text="Screenshot showing Partition option settings." lightbox="./media/connector-azure-sql-database/partition-option-1.png":::
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
@@ -85,7 +85,7 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure SQL Database under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-sql-database/destination.png" alt-text="Screenshot showing Destination tab.":::
+:::image type="content" source="./media/connector-azure-sql-database/destination.png" alt-text="Screenshot showing Destination tab." lightbox="./media/connector-azure-sql-database/destination.png":::
 
 The following properties are **required**:
 
@@ -122,7 +122,7 @@ Under **Advanced**, you can specify the following fields:
     - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when checking the **Edit** box to read data from the source table.
     - **Stored procedure parameters**: Specify values for stored procedure parameters. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters.
 
-      :::image type="content" source="./media/connector-azure-sql-database/stored-procedure.png" alt-text="Screenshot showing stored procedure settings.":::
+      :::image type="content" source="./media/connector-azure-sql-database/stored-procedure.png" alt-text="Screenshot showing stored procedure settings." lightbox="./media/connector-azure-sql-database/stored-procedure.png":::
 
 - **Bulk insert table lock**: Choose **Yes** or **No**. Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
@@ -157,7 +157,7 @@ The following tables contain more information about the copy activity in Azure S
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
-|**Table** | Your source data table. |< name of your destination table>|Yes |schema <br> table|
+|**Table** | Your source data table. |\<name of your destination table>|Yes |schema <br> table|
 |**Use query** |The custom SQL query to read data.|• None <br>• Query<br>• Stored procedure |No |<br><br>• sqlReaderQuery <br>• sqlReaderStoredProcedureName, storedProcedureParameters|
 |**Query timeout** |The timeout for query command execution, default is 120 minutes. |timespan |No |queryTimeout|
 |**Isolation level** |Specifies the transaction locking behavior for the SQL source.|• None<br>• ReadCommitted<br>• ReadUncommitted<br>• RepeatableRead<br>• Serializable<br>• Snapshot|No |isolationLevel|
@@ -169,7 +169,7 @@ The following tables contain more information about the copy activity in Azure S
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
-|**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
+|**Connection** |Your connection to the destination data store.|\<your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>• sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
@@ -183,5 +183,4 @@ The following tables contain more information about the copy activity in Azure S
 
 ## Next steps
 
-- [How to create Azure SQL Database connection](connector-azure-sql-database.md)
-- [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)
+- [Set up your Azure SQL Database connection](connector-azure-sql-database.md)

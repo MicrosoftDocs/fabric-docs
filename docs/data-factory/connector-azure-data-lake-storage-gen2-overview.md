@@ -4,7 +4,7 @@ description: This article provides an overview of the Azure Data Lake Storage Ge
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -14,7 +14,13 @@ The Azure Data Lake Storage Gen2 connector is supported in Data Factory for [!IN
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in Dataflow Gen2
+
+To learn about how to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-data-lake-storage-gen2.md#set-up-your-connection-in-dataflow-gen2).
+
+## Support in data pipelines
+
+The Azure Data Lake Storage Gen2 connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -22,8 +28,6 @@ The Azure Data Lake Storage Gen2 connector is supported in Data Factory for [!IN
 | **Lookup activity** | None | Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 | **GetMetadata activity** | None | Key<br/>OAuth2<br/>Service principal<br/>Shared Access Signature (SAS) |
 
-## Next steps
+To learn about how to connect to Azure Data Lake Storage Gen2 in data pipelines, go to [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md#set-up-your-connection-in-a-data-pipeline).
 
-- [How to create a Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
-- [How to configure Azure Data Lake Storage Gen2 in copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
-- [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md)
+To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md).

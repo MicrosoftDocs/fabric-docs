@@ -1,16 +1,16 @@
 ---
-title: How to configure Azure Blob Storage in copy activity
+title: Configure Azure Blob Storage in a copy activity
 description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Azure Blob Storage in copy activity
+# Configure Azure Blob Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
+This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -18,14 +18,14 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -86,7 +86,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Delete files after completion**: If this checkbox is selected, the binary files are deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll notice that some files have already been copied to the destination and deleted from the source, while others are still remaining in the source store.
 
-    >[!Note]
+    > [!NOTE]
     >This property is only valid in a binary files copy scenario.
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
