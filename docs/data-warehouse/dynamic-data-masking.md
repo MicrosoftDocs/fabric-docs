@@ -36,6 +36,9 @@ A masking rule may be defined on a column in a table in order to obfuscate the d
 |Function|Description|Examples|
 | -------- | -------- | -------- |
 |Default|Full masking according to the data types of the designated fields.  
+  
+  
+  
 For string data types, use XXXX (or fewer) if the size of the field is fewer than 4 characters (char, nchar, varchar, nvarchar, text, ntext).  
   
   
@@ -183,5 +186,9 @@ Result
 This demonstrates that Dynamic Data Masking shouldn't be used as an isolated measure to fully secure sensitive data from users running ad hoc queries on the database. It's appropriate for preventing accidental sensitive data exposure but doesn't protect against malicious intent to infer the underlying data.
 
 It's important to properly manage the permissions on the database, and to always follow the minimal required permissions principle. Also, remember to have Auditing enabled to track all activities taking place on the database
+
+
+
+
 
 
