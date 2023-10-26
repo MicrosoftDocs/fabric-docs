@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)
+title: 'Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)'
 description: This article shows how to interact with Power BI from a Jupyter notebook with the help of the SemPy library.
 ms.reviewer: mopeakande
 reviewer: msakande

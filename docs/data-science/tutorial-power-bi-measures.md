@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)
+title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)'
 description: This article shows how to use SemPy to calculate measures in Power BI datasets.
 ms.reviewer: mopeakande
 reviewer: msakande

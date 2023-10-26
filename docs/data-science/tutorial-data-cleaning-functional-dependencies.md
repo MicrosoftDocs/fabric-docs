@@ -1,5 +1,5 @@
 ---
-title: Tutorial: Clean data with functional dependencies (preview)
+title: 'Tutorial: Clean data with functional dependencies (preview)'
 description: This article shows how to use information about functional dependencies in data for data cleaning.
 ms.reviewer: mopeakande
 reviewer: msakande
