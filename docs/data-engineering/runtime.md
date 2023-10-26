@@ -60,16 +60,20 @@ Once you make this change, all system-created items within the workspace, includ
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
 
-When you change the runtime from version A to B, your all Spark Settings from the version A will be propagated to version B. 
+### Consequences of Runtime Changes on Spark Settings
+
+In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting is not compatible with Runtime B, we will issue a warning message and refrain from implementing the setting.
 
 :::image type="content" source="media\workspace-admin-settings\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
 
 
-Library management
+### Consequences of Runtime Changes on Library Management
 
-%TODO - Spark settings consequences
-%TODO - Library management consequences
+In general, our approach is to migrate all libraries from Runtime A to Runtime B, including both Public and Custom Runtimes. If the Python and R versions remain unchanged, the libraries should function properly. However, for Jars, there is a significant likelihood that they may not work due to alterations in dependencies, as well as other factors such as changes in Scala, Java, Spark, and the operating system.
 
+It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there is a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
+
+:::image type="content" source="media\workspace-admin-settings\LMRuntimeChange.png" alt-text="Library Management Runtime Change":::
 
 ## Upgrading Delta Lake Protocol
 
