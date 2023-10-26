@@ -8,7 +8,7 @@ ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Azure SQL Database Connector Overview
+# Azure SQL Database connector overview
 
 This Azure SQL Database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 

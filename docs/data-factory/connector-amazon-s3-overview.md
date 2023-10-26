@@ -31,4 +31,4 @@ The Amazon S3 connector supports the following capabilities in data pipelines:
 
 To learn about how to connect to Amazon S3 data in data pipelines, go to [Set up your Amazon S3 connection](connector-amazon-s3.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Amazon S3 in data pipelines, go to [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md).
+To learn about the copy activity configuration for Amazon S3 in data pipelines, go to [Configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md).

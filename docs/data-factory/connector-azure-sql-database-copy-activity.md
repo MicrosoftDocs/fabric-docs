@@ -155,7 +155,7 @@ The following tables contain more information about the copy activity in Azure S
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.| **External** |Yes|/|
-|**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
+|**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
 |**Connection type** |Your connection type. Select **Azure SQL Database**.|**Azure SQL Database** |Yes|/|
 |**Table** | Your source data table. |\<name of your destination table>|Yes |schema <br> table|
 |**Use query** |The custom SQL query to read data.|• None <br>• Query<br>• Stored procedure |No |<br><br>• sqlReaderQuery <br>• sqlReaderStoredProcedureName, storedProcedureParameters|
@@ -175,10 +175,10 @@ The following tables contain more information about the copy activity in Azure S
 |**Write behavior** |Defines the write behavior when the source is files from a file-based data store.|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>• sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureParameters|
 |**Bulk insert table lock** |Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No |No |sqlWriterUseTableLock:<br>true or false|
 |**Table option** |Specifies whether to automatically create the destination table if it doesn't exist based on the source schema.|• None <br>• Auto create table|No |tableOption:<br>• autoCreate|
-|**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.| < pre-copy script ><br>(string)|No |preCopyScript|
+|**Pre-copy script**|A script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the preloaded data.| \<pre-copy script><br>(string)|No |preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).|timespan |No |writeBatchTimeout|
-|**Write batch size**|The number of rows to insert into the SQL table per batch. By default, the service dynamically determines the appropriate batch size based on the row size.|< number of rows ><br>(integer) |No |writeBatchSize|
-|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
+|**Write batch size**|The number of rows to insert into the SQL table per batch. By default, the service dynamically determines the appropriate batch size based on the row size.|\<number of rows><br>(integer) |No |writeBatchSize|
+|**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<upper limit of concurrent connections><br>(integer)|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.| select or unselect |No |disableMetricsCollection：<br> true or false|
 
 ## Next steps

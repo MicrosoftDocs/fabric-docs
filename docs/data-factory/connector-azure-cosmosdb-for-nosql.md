@@ -8,7 +8,7 @@ ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Set up you Azure Cosmos DB for NoSQL connection
+# Set up your Azure Cosmos DB for NoSQL connection
 
 This article outlines the steps to create an Azure Cosmos DB for NoSQL connection.
 
@@ -103,4 +103,4 @@ The properties in the following table are the supported authentication types.
 
 ## Next steps
 
-- [How to configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)
+- [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

@@ -78,7 +78,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders are processed recursively. If you unselect the checkbox, just the ones in the selected folder are processed. This setting is disabled when a single file is selected.
 
-- **Delete files after completion**:  If this checkbox is selected, binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll notice some files have already been copied to the destination and deleted from source, while others are still remaining in the source store.
+- **Delete files after completion**:  If this checkbox is selected, binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you can tell that some files have already been copied to the destination and deleted from source, while others still remain in the source store.
 
     > [!NOTE]
     > This property is only valid in a binary files copy scenario.

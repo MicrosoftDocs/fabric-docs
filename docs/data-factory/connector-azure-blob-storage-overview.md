@@ -30,4 +30,4 @@ The Azure Blob Storage connector supports the following capabilities in data pip
 
 To learn about how to connect to Azure Blob Storage in data pipelines, go to [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-blob-storage-copy-activity.md).
+To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure Azure Blob Storage in a copy activity](connector-azure-blob-storage-copy-activity.md).

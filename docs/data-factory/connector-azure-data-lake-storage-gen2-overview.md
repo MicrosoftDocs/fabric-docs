@@ -30,4 +30,4 @@ The Azure Data Lake Storage Gen2 connector supports the following capabilities i
 
 To learn about how to connect to Azure Data Lake Storage Gen2 in data pipelines, go to [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Azure Data Lake Storage Gen2 in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md).
+To learn about the copy activity configuration for Azure Data Lake Storage Gen2 in data pipelines, go to [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md).
