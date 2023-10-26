@@ -100,6 +100,8 @@ items:
     href: security.md
   - name: Workspace roles
     href: workspace-roles.md
+  - name: Implement dynamic data masking
+    href: howto-dynamic-data-masking.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
   - name: Share your Warehouse
