@@ -29,9 +29,9 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Data Lake Storage Gen2. The following links provide the specific Power Query connector information you need to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2:
 
-* To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
-* Be sure to install or set up any [Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites) before connecting to the Azure Data Lake Storage Gen2 connector.
-* To connect to the Azure Data Lake Storage Gen2 connector from Power Query, go to [Connect to Azure Data Lake Storage Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
+- To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- Be sure to install or set up any [Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites) before connecting to the Azure Data Lake Storage Gen2 connector.
+- To connect to the Azure Data Lake Storage Gen2 connector from Power Query, go to [Connect to Azure Data Lake Storage Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
@@ -162,5 +162,4 @@ The properties in the following table are the supported authentication types.
 
 ## Next steps
 
-- [How to configure Azure Data Lake Storage Gen2 in copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
-- [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md)
+- [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)

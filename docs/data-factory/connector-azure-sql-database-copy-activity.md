@@ -1,5 +1,5 @@
 ---
-title: Configure in a data pipeline copy activity
+title: Configure Azure SQL Database in a copy activity
 description: This article explains how to copy data using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Configure in a data pipeline copy activity
+# Configure Azure SQL Database in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
 

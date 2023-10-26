@@ -1,5 +1,5 @@
 ---
-title: Configure in a data pipeline copy activity
+title: Configure Azure Cosmos DB for NoSQL in a copy activity
 description: This article explains how to copy data using Azure Cosmos DB for NoSQL.
 author: jianleishen
 ms.author: jianleishen
@@ -8,12 +8,11 @@ ms.date: 05/23/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Configure in a data pipeline copy activity
+# Configure Azure Cosmos DB for NoSQL in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Cosmos DB for NoSQL.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 
 ## Supported configuration
 

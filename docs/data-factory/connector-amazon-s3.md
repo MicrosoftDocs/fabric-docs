@@ -68,7 +68,7 @@ In the **General** tab, under **Privacy level**, select the privacy level that y
 
 Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If the credentials aren't correct, the creation fails with errors.
 
-:::image type="content" source="./media/connector-amazon-s3/connection.png" alt-text="Screenshot showing connection page."lightbox="./media/connector-amazon-s3/connection.png" lightbox="./media/connector-amazon-s3/connection.png":::
+:::image type="content" source="./media/connector-amazon-s3/connection.png" alt-text="Screenshot showing connection page."lightbox="./media/connector-amazon-s3/connection.png":::
 
 ## Table summary
 
