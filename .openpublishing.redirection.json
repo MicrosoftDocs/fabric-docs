@@ -1,9 +1,14 @@
 {
     "redirections": [
       {
-        "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
-        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key.md",
-        "redirect_document_id": true
+        "source_path_from_root": "/docs/data-science/tutorial-data-science-data-cleanse.md",
+        "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
+        "redirect_document_id": false
+      },
+      {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key.md",
+       "redirect_document_id": true
       },
       {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
@@ -23,6 +28,16 @@
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
         "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
         "redirect_document_id": true
         },
         {

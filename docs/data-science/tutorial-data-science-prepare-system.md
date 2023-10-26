@@ -13,7 +13,7 @@ ms.date: 5/4/2023
 
 Before you begin the data science end-to-end tutorial series, learn about prerequisites, how to import notebooks, and how to attach a lakehouse to those notebooks.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -41,8 +41,6 @@ We utilize the notebook item in the Data Science experience to demonstrate vario
 
 1. The imported notebooks are now available in your workspace for use.
 
-   :::image type="content" source="media\tutorial-data-science-prepare-system\imported-notebook-list.png" alt-text="Screenshot showing a list of available notebooks in a workspace." lightbox="media\tutorial-data-science-prepare-system\imported-notebook-list.png":::
-
 1. If the imported notebook includes output, select the **Edit** menu, then select **Clear all outputs**.
 
    :::image type="content" source="media\tutorial-data-science-prepare-system\clear-outputs.png" alt-text="Screenshot shows the edit menu option to clear all outputs." lightbox="media\tutorial-data-science-prepare-system\clear-outputs.png":::
@@ -60,10 +58,11 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 1. Once a lakehouse is added, it's visible in the lakehouse pane in the notebook UI where tables and files stored in the lakehouse can be viewed.
 
 > [!NOTE]
-> Before executing each notebooks, you need to perform these steps on that notebook.
+> Before executing each notebooks, you need to perform these steps on that notebook. 
 
 :::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
 ## Next steps
 
-* [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
+> [!div class="nextstepaction"]
+> [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)

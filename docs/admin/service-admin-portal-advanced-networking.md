@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Advanced networking tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Azure Private Link
 
@@ -30,4 +30,4 @@ To learn more, see [Private endpoints for secure access to Power BI](/power-bi/e
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

@@ -14,7 +14,7 @@ LocalizationGroup: Administration
 
 # Gen 1 dataflow tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create and use Gen1 dataflows
 
@@ -25,4 +25,4 @@ Users in the organization can create and use dataflows. For an overview of dataf
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

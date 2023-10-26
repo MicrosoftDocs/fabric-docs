@@ -13,7 +13,7 @@ ms.date: 5/4/2023
 
 This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience. You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
 
@@ -29,24 +29,17 @@ The lifecycle of a Data science project typically includes (often, iteratively) 
 
 The goals and success criteria of each stage depend on collaboration, data sharing and documentation. The Fabric data science experience consists of multiple native-built features that enable collaboration, data acquisition, sharing, and consumption in a seamless way.
 
-In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing taxicab trip data. You then build a machine learning model to predict trip duration at scale on a large dataset.
+In these tutorials, you take the role of a data scientist who has been given the task to explore, clean, and transform a dataset containing the churn status of 10000 customers at a bank. You then build a machine learning model to predict which bank customers are likely to leave.
 
 You'll learn to perform the following activities:
 
 1. Use the Fabric notebooks for data science scenarios.
-
 1. Ingest data into a Fabric lakehouse using Apache Spark.
-
 1. Load existing data from the lakehouse delta tables.
-
-1. Clean and transform data using Apache Spark.
-
-1. Create experiments and runs to train a machine learning model.
-
+1. Clean and transform data using Apache Spark and Python based tools.
+1. Create experiments and runs to train different machine learning models.
 1. Register and track trained models using MLflow and the Fabric UI.
-
 1. Run scoring at scale and save predictions and inference results to the lakehouse.
-
 1. Visualize predictions in Power BI using DirectLake.
 
 ## Architecture
@@ -54,8 +47,7 @@ You'll learn to perform the following activities:
 In this tutorial series, we showcase a simplified end-to-end data science scenario that involves:
 
 1. [Ingesting data from an external data source](tutorial-data-science-ingest-data.md).
-1. [Data exploration and visualization](tutorial-data-science-explore-notebook.md).
-1. [Data cleansing, preparation, and feature engineering](tutorial-data-science-data-cleanse.md).
+1. [Data exploration and cleansing](tutorial-data-science-explore-notebook.md).
 1. [Model training and evaluation](tutorial-data-science-train-models.md).
 1. [Model batch scoring and saving predictions for consumption](tutorial-data-science-batch-scoring.md).
 1. [Visualizing prediction results](tutorial-data-science-create-report.md).
@@ -76,4 +68,5 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 ## Next steps
 
-- [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)
+> [!div class="nextstepaction"]
+> [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)

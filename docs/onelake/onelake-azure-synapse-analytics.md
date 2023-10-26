@@ -13,8 +13,6 @@ ms.date: 09/27/2023
 
 Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics. This tutorial shows how to connect to OneLake using [Azure Synapse Analytics](/azure/synapse-analytics/).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Write data from Synapse using Apache Spark
 
 Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics.

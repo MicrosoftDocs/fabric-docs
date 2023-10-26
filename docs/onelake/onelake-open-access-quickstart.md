@@ -11,8 +11,6 @@ ms.date: 09/27/2023
 
 # Ingest data into OneLake and analyze with Azure Databricks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this guide, you will:
 
 - Create a pipeline in a workspace and ingest data into your OneLake in Delta format.
