@@ -159,29 +159,6 @@ ALTER TABLE Sales.Orders
 ALTER COLUMN SalesRep DROP MASKED;
 ```
 
-#### Security Considerations: Bypassing masking using inference or brute-force techniques
-
-Dynamic data masking is designed to simplify application development by limiting data exposure in a set of predefined queries used by the application. While dynamic data masking can also be useful to prevent accidental exposure of sensitive data when accessing a production database directly, it's important to note that unprivileged users with ad hoc query permissions can apply techniques to gain access to the actual data.
-
-As an example, consider a database principal that has sufficient privileges to run ad hoc queries on the database, and tries to 'guess' the underlying data and ultimately infer the actual values. Assume that we have a mask defined on the `Employee.Salary` column, and this user connects directly to the database and starts guessing values, eventually inferring the `Salary` value of a set of Employees:
-
-```sql
-SELECT ID, Name, Salary FROM Employees  
-WHERE Salary > 99999 and Salary < 100001;
-```
-
-Result
-
-|Id|Name|Salary|
-| -------- | -------- | -------- |
-|62543|Jane Doe|0|
-|91245|John Smith|0|
-
-This demonstrates that dynamic data masking shouldn't be used as an isolated measure to fully secure sensitive data from users running ad hoc queries on the database. It's appropriate for preventing accidental sensitive data exposure but doesn't protect against malicious intent to infer the underlying data.
-
-It's important to properly manage the permissions on the database, and to always follow the minimal required permissions principle. Also, remember to have Auditing enabled to track all activities taking place on the database
-
-
 ## Security consideration: bypassing masking using inference or brute-force techniques
 
 Dynamic data masking is designed to simplify application development by limiting data exposure in a set of predefined queries used by the application. While Dynamic Data Masking can also be useful to prevent accidental exposure of sensitive data when accessing data directly, it's important to note that unprivileged users with query permissions can apply techniques to gain access to the actual data. <!-- Consider [user audit logs](user-audit-logs.md) to monitor all database activity and mitigate this scenario. -->
@@ -202,7 +179,7 @@ Results in:
 
 This demonstrates that dynamic data masking shouldn't be used alone to fully secure sensitive data from users with query access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)]. It's appropriate for preventing sensitive data exposure, but doesn't protect against malicious intent to infer the underlying data.
 
-It's important to properly manage object-level security with [SQL granular permissions](sql-granular-permissions.md), and to always follow the minimal required permissions principle.
+It's important to properly manage object-level security with [SQL granular permissions](sql-granular-permissions.md), and to always follow the minimal required permissions principle. <!-- Use [user audit logs](user-audit-logs.md) to monitor all database activity. -->
 
 ## Related content
 

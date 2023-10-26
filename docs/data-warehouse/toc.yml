@@ -98,12 +98,8 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
-  - name: Dynamic data masking
-    href: dynamic-data-masking.md
   - name: Workspace roles
     href: workspace-roles.md
-  - name: Implement dynamic data masking
-    href: howto-dynamic-data-masking.md
   - name: Manage SQL granular permissions
     href: sql-granular-permissions.md
   - name: Share your Warehouse
@@ -112,12 +108,16 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: Dynamic data masking
+    href: dynamic-data-masking.md
   - name: How to
     items: 
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
       href: tutorial-row-level-security.md
+    - name: Implement dynamic data masking
+      href: howto-dynamic-data-masking.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
