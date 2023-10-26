@@ -22,7 +22,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 > * Save and register the best-performing machine learning model.
 > * Load the machine learning model for scoring and making predictions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 

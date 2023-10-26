@@ -11,7 +11,7 @@ ms.date: 05/23/2023
 
 # Train machine learning models
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)] enables machine learning with big data, providing the ability to obtain valuable insight from large amounts of structured, unstructured, and fast-moving data. There are several options when training machine learning models using Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)]: Apache Spark MLlib, SynapseML, and various other open-source libraries.
 
