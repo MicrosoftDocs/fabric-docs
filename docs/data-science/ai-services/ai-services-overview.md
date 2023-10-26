@@ -1,7 +1,7 @@
 ---
 title: Use Azure AI services in Fabric
 description: Overview of using Azure AI services in Fabric.
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 author: ruixinxu
 ms.author: ruxu
 ms.topic: overview
@@ -62,6 +62,28 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-anomaly-detector-via-rest-api.md), [SynapseML](how-to-use-anomaly-detector-via-synapseml.md)
 - Anomaly status of latest point: generates a model using preceding points and determines whether the latest point is anomalous.
 - Find anomalies: generates a model using an entire series and finds anomalies in the series.
+
+## Available regions
+
+Prebuilt AI services in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+To find out what your Fabric home region is, see [Find your Fabric home region](../../admin/find-fabric-home-region.md).
+
+
+| Asia Pacific | Europe | Americas | Middle East and Africa | 
+| -------- | ------- | ------- | ------- |
+| Australia East | North Europe | Brazil South | South Africa North | 
+| Australia Southeast | West Europe | Canada Central | UAE North | 
+|  Central Indian | France Central | Canada East |  |
+| East Asia | Norway East |  East US | | 
+| Japan East | Switzerland North | East US 2 |  | 
+|  Korea Central | Switzerland West | North Central US |  |
+| Southeast Asia | UK South | South Central US |  | 
+|  South India | UK West | West US |  |
+| |  | West US 2 |  | 
+|   |  | West US 3 |  |
+
+## Available regions for Azure OpenAI Service
+[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant’s geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
 
 
 ## Next steps
