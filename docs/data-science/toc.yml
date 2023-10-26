@@ -167,36 +167,20 @@ items:
   items:
   - name: Overview of AI services in Fabric
     href: ./ai-services/ai-services-overview.md
-  - name: Supported regions for AI services in Fabric
-    href: ./ai-services/ai-services-regions.md
   - name: How-to guides
     items:
     - name: Use prebuilt Azure openAI
       items:
         - name: with REST API
           href: ./ai-services/how-to-use-openai-via-rest-api.md
-        - name: with OpenAI Python SDK
-          href: ./ai-services/how-to-use-openai-via-python-sdk.md
-        - name: with SynapseML
-          href: ./ai-services/how-to-use-openai-via-synapseml.md
-    - name: Use prebuilt anomaly detector
-      items:
-        - name: with REST API
-          href: ./ai-services/how-to-use-anomaly-detector-via-rest-api.md
-        - name: with SynapeML
-          href: ./ai-services/how-to-use-anomaly-detector-via-synapseml.md
-    - name: Use prebuilt text analytics
-      items:
-        - name: with REST API
-          href: ./ai-services/how-to-use-text-analytics-via-rest-api.md
-        - name: with SynapseML
-          href: ./ai-services/how-to-use-text-analytics-via-synapseml.md
-    - name: Use prebuilt Azure AI translator
-      items: 
-        - name: with REST API
-          href: ./ai-services/how-to-use-text-translator-via-rest-api.md
-        - name: with SynapseML
-          href: ./ai-services/how-to-use-text-translator-via-synapseml.md
+        - name: with SynapseML or OpenAI Python SDK
+          href: ./ai-services/how-to-use-open-ai-sdk-synapse.md
+    - name: Use prebuilt anomaly detector with REST API or SynapseML 
+      href: ./ai-services/how-to-use-anomaly-detector.md
+    - name: Use prebuilt text analytics with REST API or SynapseML
+      href: ./ai-services/how-to-use-text-analytics.md
+    - name: Use prebuilt Azure AI translator with REST API or SynapseML 
+      href: ./ai-services/how-to-use-text-translator.md
 - name: Use Python
   items:
   - name: Python overview
