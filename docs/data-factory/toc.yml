@@ -299,6 +299,18 @@
         href: connector-microsoft-exchange-online-overview.md
       - name: Set up your connection
         href: connector-microsoft-exchange-online.md
+    - name: MongoDB
+      items:
+      - name: Overview
+        href: connector-mongodb-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-copy-activity.md
+    - name: MongoDB Atlas
+      items:
+      - name: Overview
+        href: connector-mongodb-atlas-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-atlas-copy-activity.md
     - name: MongoDB Atlas SQL (Beta)
       items:
       - name: Overview
@@ -385,6 +397,18 @@
         href: connector-sftp-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-sftp-copy-activity.md
+    - name: SharePoint folder
+      items:
+      - name: Overview
+        href: connector-sharepoint-folder-overview.md
+      - name: Set up your connection
+        href: connector-sharepoint-folder.md
+    - name: SharePoint list
+      items:
+      - name: Overview
+        href: connector-sharepoint-list-overview.md
+      - name: Set up your connection
+        href: connector-sharepoint-list.md
     - name: SharePoint online list
       items:
       - name: Overview
@@ -401,6 +425,24 @@
         href: connector-snowflake-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
+    - name: SQL Server database
+      items:
+      - name: Overview
+        href: connector-sql-server-database-overview.md
+      - name: Set up your connection
+        href: connector-sql-server-database.md
+    - name: Teradata database
+      items:
+      - name: Overview
+        href: connector-teradata-database-overview.md
+      - name: Set up your connection
+        href: connector-teradata-database.md
+    - name: Web API/Web page
+      items:
+      - name: Overview
+        href: connector-web-overview.md
+      - name: Set up your connection
+        href: connector-web.md
   - name: Data pipelines
     items:
     - name: Activities
@@ -421,6 +463,8 @@
         href: delete-data-activity.md
       - name: For-each activity
         href: foreach-activity.md
+      - name: Functions activity
+        href: functions-activity.md
       - name: Get Metadata activity
         href: get-metadata-activity.md
       - name: If Condition activity
