@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 09/26/2023
+ms.date: 10/26/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -65,6 +65,8 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 * Sovereign clouds are not supported.
 
 * Lineage view of the workspace isn't supported.
+
+* Users granted *build* permissions to a dataset in the monitoring workspace, show as having *read* permissions."
 
 ## Next steps
 
