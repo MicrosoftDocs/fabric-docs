@@ -15,7 +15,7 @@ ms.search.form: Read write powerbi
 In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that Power BI datasets can consume.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 

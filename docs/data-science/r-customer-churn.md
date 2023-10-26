@@ -14,7 +14,7 @@ ms.date: 09/21/2023
 
 In this tutorial, you'll see a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are
 

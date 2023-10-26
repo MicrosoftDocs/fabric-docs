@@ -14,7 +14,7 @@ ms.search.form: semantic link
 
 This article covers semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries on which they're working.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
 

@@ -15,7 +15,7 @@ ms.search.form: semantic link
 When you read a Power BI dataset into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the dataset are automatically attached to the FabricDataFrame.
 In this article, you'll learn how the SemPy python library preserves annotations that are attached to your [Power BI dataset's](/power-bi/connect-data/service-datasets-understand) tables and columns.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Semantic propagation for pandas users
 

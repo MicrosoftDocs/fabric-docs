@@ -19,7 +19,7 @@ In this tutorial, you walk through the data engineering and data science workflo
 > * Train a model and log it with MLflow
 > * Load the model and make predictions
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 There are different types of recommendation algorithms. This tutorial uses a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 

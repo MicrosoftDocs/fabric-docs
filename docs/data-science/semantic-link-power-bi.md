@@ -15,7 +15,7 @@ ms.search.form: semantic link
 Power BI connectivity is at the core of semantic link.
 In this article, you'll learn about the ways that semantic link provides connectivity to Power BI datasets for users of the Python pandas ecosystem and the Apache Spark ecosystem.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 A Power BI dataset usually represents the gold standard of data and is the result of upstream data processing and refinement.
 Business analysts can create Power BI reports from Power BI datasets and use these reports to drive business decisions.

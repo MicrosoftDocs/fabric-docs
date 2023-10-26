@@ -15,7 +15,7 @@ ms.date: 09/27/2023
 
 This tutorial illustrates how to detect relationships in the public _Synthea_ dataset, using semantic link.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 When you're working with new data or working without an existing data model, it can be helpful to discover relationships automatically. This relationship detection can help you to:
 

@@ -16,7 +16,7 @@ ms.date: 09/27/2023
 
 In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this tutorial, you learn how to:
 

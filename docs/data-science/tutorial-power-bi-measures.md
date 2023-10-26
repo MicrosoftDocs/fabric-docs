@@ -16,7 +16,7 @@ ms.date: 09/27/2023
 
 This tutorial illustrates how to use SemPy to calculate measures in Power BI datasets.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this tutorial, you learn how to:
 

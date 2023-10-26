@@ -17,7 +17,7 @@ ms.date: 09/27/2023
 
 In this tutorial, you use functional dependencies for data cleaning. A functional dependency exists when one column in a dataset is a function of another column. For example, a _zip code_ column might determine the values in a _city_ column. A functional dependency manifests itself as a one-to-many relationship between the values in two or more columns within a DataFrame. This tutorial uses the _Synthea_ dataset to show how functional relationships can help to detect data quality problems.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this tutorial, you learn how to:
 

@@ -13,7 +13,7 @@ ms.search.form: Data Science Overview
 
 # What is Data Science in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 

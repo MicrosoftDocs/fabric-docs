@@ -16,7 +16,7 @@ Functional dependencies are relationships between columns in a table, where the 
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this article, you'll use semantic link to:
 

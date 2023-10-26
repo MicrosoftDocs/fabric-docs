@@ -16,7 +16,7 @@ ms.date: 09/27/2023
 
 This tutorial illustrates how to interact with Power BI from a Jupyter notebook and detect relationships between tables with the help of the SemPy library.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this tutorial, you learn how to:
 
