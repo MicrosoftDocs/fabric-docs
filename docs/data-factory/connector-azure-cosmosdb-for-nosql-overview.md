@@ -29,6 +29,6 @@ The Azure Cosmos DB for NoSQL connector supports the following capabilities in d
 | **Copy activity (source/destination)** | None | Key |
 | **Lookup activity** | None | Key |
 
-To learn about how to connect to Azure Cosmos DB for NoSQL in data pipelines, go to [Set up your Azure Cosmos DB for NoSQL connection](connector-amazon-s3.md#set-up-your-connection-in-a-data-pipeline).
+To learn about how to connect to Azure Cosmos DB for NoSQL in data pipelines, go to [Set up your Azure Cosmos DB for NoSQL connection](connector-azure-cosmosdb-for-nosql.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Amazon S3 in data pipelines, go to [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md).
+To learn about the copy activity configuration for Azure Cosmos DB for NoSQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md).

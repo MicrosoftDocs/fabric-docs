@@ -32,4 +32,4 @@ The Azure SQL Database connector supports the following capabilities in data pip
 
 To learn about how to connect to Azure SQL Database in data pipelines, go to [Set up your Azure SQL Database connection](connector-azure-sql-database.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Azure Blob Storage in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-sql-database-copy-activity.md).
+To learn about the copy activity configuration for Azure SQL Database in data pipelines, go to [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md).

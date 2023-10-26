@@ -84,7 +84,7 @@ Select **Basic** under **Authentication method**.
 
 #### OAuth2 authentication
 
-Open **Edit credentials**. You'll see the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
+Open **Edit credentials**. You'll notice the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 

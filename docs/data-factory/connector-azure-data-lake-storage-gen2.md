@@ -47,7 +47,7 @@ To create a connection in a data pipeline:
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the new page." lightbox="./media/connector-common/add-new-connection.png":::
 
-    The **New connection** pane will show up on the left side of the page.
+    The **New connection** pane shows up on the left side of the page.
 
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
@@ -128,7 +128,7 @@ In the **General** tab, select the privacy level that you want apply in the **Pr
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
+Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
 :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-azure-data-lake-storage-gen2/connection.png":::
 
