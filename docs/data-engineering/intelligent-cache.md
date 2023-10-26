@@ -22,7 +22,7 @@ Intelligent cache is a single cache per node. If you're using a medium-sized nod
 
 We reserve a minimum of 20% of available disk space for data shuffles. For shuffle-intensive workloads, you can minimize the cache size or disable the cache. In Microsoft Fabric (Runtime 1.1 and 1.2), intelligent caching is enabled by default for all the Spark pools for all workspaces with cache size with 50%. We recommend starting with a 50% cache size and adjusting as necessary. If your workload requires a lot of disk space on the local SSD for shuffling or Resilient Distributed Dataset (RDD) caching, you should consider reducing the cache size to reduce the chance of failure due to insufficient storage. The actual size of the available storage and the cache size on each node depends on the node family and node size.
 
-## When to use intelligent cache?
+## When to use intelligent cache
 
 This feature benefits you if:
 
@@ -30,7 +30,7 @@ This feature benefits you if:
 
 - Your workload uses Delta Lake tables, Parquet, or CSV file formats.
 
-You don't see the benefit of this feature if:
+You don't see the benefit of intelligent cache if:
 
 - You're reading a file that exceeds the cache size. If so, the beginning of the files could be evicted, and subsequent queries have to refetch the data from the remote storage. In this case, you don't see any benefits from the intelligent cache, and you might want to increase your cache size and/or node size.
 
@@ -38,7 +38,7 @@ You don't see the benefit of this feature if:
 
 ## Enabling and disabling the cache in a session
 
-You can disable or enable the intelligent cache within a session by running the following code in your notebook:
+You can disable or enable the intelligent cache within a session by running the following code in your notebook.
 
 ```
 spark.conf.set("spark.synapse.vegas.useCache", "false/true") 
