@@ -1,5 +1,5 @@
 ---
-title: Semantic propagation with Sempy python library
+title: Semantic propagation with Sempy python library (preview)
 description: Learn how Sempy library supports propagation of metadata attached to Power BI datasets on which you're operating.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -10,12 +10,12 @@ ms.date: 06/06/2023
 ms.search.form: semantic link
 ---
 
-# Semantic data propagation from Power BI datasets
+# Semantic data propagation from Power BI datasets (preview)
 
 When you read a Power BI dataset into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the dataset are automatically attached to the FabricDataFrame.
 In this article, you'll learn how the SemPy python library preserves annotations that are attached to your [Power BI dataset's](/power-bi/connect-data/service-datasets-understand) tables and columns.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Semantic propagation for pandas users
 
@@ -55,6 +55,6 @@ For example, column aggregation strips the metadata.
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [How to validate data with semantic link](semantic-link-validate-data.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Analyze functional dependencies in a Power BI sample dataset'
+title: Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)
 description: This article shows how to analyze functional dependencies that exist in columns of a DataFrame.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,11 +12,11 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->
 
-# Tutorial: Analyze functional dependencies in a Power BI sample dataset
+# Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)
 
-In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
+In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy (preview) in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -200,9 +200,9 @@ Exploratory data analysis is an exciting process, and so is data cleaning. There
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

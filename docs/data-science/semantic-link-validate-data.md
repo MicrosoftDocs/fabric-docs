@@ -1,5 +1,5 @@
 ---
-title: Validate functional dependencies in data with semantic link
+title: Validate functional dependencies in data with semantic link (preview)
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -16,7 +16,7 @@ Functional dependencies are relationships between columns in a table, where the 
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you'll use semantic link to:
 
@@ -220,6 +220,6 @@ However, it's essential to carefully consider the context of your data and the f
 ## Next steps
 
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)
+- [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)

@@ -85,11 +85,11 @@ In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can 
 
 Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Data exploration with semantic link
+## Data exploration with semantic link (preview)
 
 Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with Power BI datasets and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
 
-Semantic link allows data scientists to establish a connection between Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on their datasets.
+Semantic link (preview) allows data scientists to establish a connection between Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on their datasets.
 By leveraging semantic link, data scientists can:
 
 - avoid the need to re-implement business logic and domain knowledge in their code
@@ -103,7 +103,7 @@ Through the use of SemPy, organizations can expect to see:
 - increased cross-collaboration across business intelligence and AI teams
 - reduced ambiguity and an easier learning curve when onboarding onto a new model or dataset
 
-For more information on semantic link, see [What is semantic link?](semantic-link-overview.md).
+For more information on semantic link, see [What is semantic link (preview)?](semantic-link-overview.md).
 
 ## Next steps
 

@@ -1,5 +1,5 @@
 ---
-title: Use semantic link to explore and validate relationships in datasets
+title: Use semantic link to explore and validate relationships in datasets (preview)
 description: Learn to use semantic link to explore and validate relationships in Power BI datasets and pandas DataFrames.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -11,11 +11,11 @@ ms.search.form: semantic link
 ---
 
 
-# Explore and validate relationships in datasets
+# Explore and validate relationships in datasets (preview)
 
 In this article, you'll learn to discover and validate relationships within your Power BI datasets and pandas DataFrames by using SemPy modules.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In data science and machine learning, it's important to understand the structure and relationships within your dataset.
 Although Power BI is a powerful tool that allows you to model and visualize your data, you sometimes need to dive deeper into a dataset's structure to gain more insights or build machine learning models.
@@ -163,7 +163,7 @@ By using the `list_relationship_violations` function with pandas DataFrames, you
 ## Next steps
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
-- [Detect, explore and validate functional dependencies in your data](semantic-link-validate-data.md)
-- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Detect, explore and validate functional dependencies in your data (preview)](semantic-link-validate-data.md)
+- [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)
