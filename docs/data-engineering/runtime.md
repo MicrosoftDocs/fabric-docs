@@ -64,7 +64,7 @@ Once you make this change, all system-created items within the workspace, includ
 
 In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting is not compatible with Runtime B, we will issue a warning message and refrain from implementing the setting.
 
-:::image type="content" source="media\workspace-admin-settings\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
+:::image type="content" source="media\mrs\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
 
 
 ### Consequences of Runtime Changes on Library Management
@@ -73,7 +73,7 @@ In general, our approach is to migrate all libraries from Runtime A to Runtime B
 
 It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there is a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
 
-:::image type="content" source="media\workspace-admin-settings\LMRuntimeChange.png" alt-text="Library Management Runtime Change":::
+:::image type="content" source="media\mrs\LMRuntimeChange.png" alt-text="Library Management Runtime Change":::
 
 ## Upgrading Delta Lake Protocol
 
