@@ -14,8 +14,6 @@ ms.search.form: delta lake v-order optimization
 
 The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to [!INCLUDE [product-name](../includes/product-name.md)], assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## What is V-Order?
 
 __V-Order is a write time optimization to the parquet file format__ that enables lightning-fast reads under the Microsoft Fabric compute engines, such as Power BI, SQL, Spark and others.

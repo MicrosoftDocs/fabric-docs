@@ -10,8 +10,6 @@ title: Apache Spark workspace administration settings FAQ
 summary: |
   This article lists answers to frequently asked questions about Apache Spark workspace administration settings.
 
-  > [!INCLUDE [preview-note](../includes/preview-note.md)]
-
 sections:
   - name: Workspace administration settings
     questions:

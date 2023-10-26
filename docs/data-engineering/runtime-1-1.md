@@ -13,8 +13,6 @@ ms.date: 10/24/2023
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The major components of Fabric Runtime 1.1 are:
 
 - Apache Spark 3.3

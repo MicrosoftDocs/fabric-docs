@@ -15,8 +15,6 @@ Autotune automatically tunes Apache Spark configurations to minimize workload ex
 
 Autotune uses historical data execution from your workloads (Spark SQL queries) to iteratively learn the optimal configurations for a given workload and its execution time.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 > [!NOTE]
 > The autotune preview is available in two production regions: West Central US and East US 2.
 

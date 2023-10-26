@@ -13,8 +13,6 @@ ms.date: 5/23/2023
 
 As a final step in the tutorial, clean up your resources. This article shows how to delete the workspace.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * [Create the Power BI data model and a report](tutorial-lakehouse-build-report.md)
