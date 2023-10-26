@@ -98,6 +98,8 @@ items:
   items:
   - name: Data warehousing security
     href: security.md
+  - name: Dynamic data masking
+    href: dynamic-data-masking.md
   - name: Workspace roles
     href: workspace-roles.md
   - name: Manage SQL granular permissions
