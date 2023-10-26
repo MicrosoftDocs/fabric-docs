@@ -8,8 +8,6 @@ metadata:
   ms.date: 09/26/2023
 title: Data Factory in Microsoft Fabric FAQ
 summary: |
-  [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-  
   This article provides answers to frequently asked questions about Data Factory in Microsoft Fabric.  
   
 sections:

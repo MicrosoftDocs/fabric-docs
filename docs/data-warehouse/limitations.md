@@ -34,6 +34,7 @@ For more limitations in specific areas, see:
 - [Data types in Microsoft Fabric](data-types.md)
 - [Datasets](datasets.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
+- [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
 - [Statistics](statistics.md#limitations)
 - [Tables](tables.md#limitations)

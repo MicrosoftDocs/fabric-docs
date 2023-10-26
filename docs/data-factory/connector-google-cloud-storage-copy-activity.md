@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Google Cloud Storage.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 The following setup is required on your Google Cloud Storage account:

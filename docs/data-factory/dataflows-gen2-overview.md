@@ -13,8 +13,6 @@ ms.search.form: DataflowGen2 Overview
 
 Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflow Gen1 and Dataflow Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Feature overview
 
 | Feature |   Dataflow Gen2 |  Dataflow Gen1 |

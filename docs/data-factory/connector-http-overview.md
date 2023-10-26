@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported capabilities
 
 | Supported capabilities | Gateway | Authentication |

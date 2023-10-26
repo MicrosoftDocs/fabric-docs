@@ -12,13 +12,11 @@ ms.custom: template-how-to, build-2023
 
 You can connect to REST APIs in Dataflow Gen2 using the Web API connector provided by Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Connect to REST APIs
 
 To connect to REST APIs in a dataflow:
 
-1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
+1. From your workspace, select **New** > **Dataflow Gen2** to create a new dataflow.
 
    :::image type="content" source="./media/connector-rest/select-open-dataflow.png" alt-text="Screenshot of the Dataflow Gen2 selection in the Data Factory workspace.":::
 

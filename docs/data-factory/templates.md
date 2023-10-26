@@ -16,8 +16,6 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
 :::image type="content" source="media/templates/templates-list.png" lightbox="media/templates/templates-list.png" alt-text="Screenshot showing the templates browser in [!INCLUDE [product-name](../includes/product-name.md)].":::
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## How to build a pipeline from a template
 
 1. To get started with a template, start by selecting **New** and then **Data pipeline**.

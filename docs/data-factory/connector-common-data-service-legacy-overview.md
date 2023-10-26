@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Common Data Service (Legacy) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Support in Dataflow Gen2
 
 For information on how to connect to Common Data Service (Legacy) in Dataflow Gen2, go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).

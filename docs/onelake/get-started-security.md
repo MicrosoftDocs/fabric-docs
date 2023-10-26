@@ -10,8 +10,6 @@ ms.date: 09/27/2023
 
 # Get started securing your data in OneLake
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 With OneLake as the single data lake for your entire organization, it’s critical to implement a scalable and robust security model to keep sensitive data compartmentalized. Microsoft OneLake and Microsoft Fabric provide several out of the box capabilities to restrict data access to only those users that need it. This article provides an overview of how to best secure your data estate with the current capabilities in OneLake.
 
 ## OneLake structure

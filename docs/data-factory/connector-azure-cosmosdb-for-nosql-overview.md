@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsoft Fabric with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported capabilities
 
 | Supported capabilities | Gateway | Authentication |

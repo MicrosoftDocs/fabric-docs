@@ -18,8 +18,6 @@ The high-level steps in module 1 are as follows:
 1. Create a data pipeline.
 1. Use a Copy Activity in the pipeline to load sample data into a data Lakehouse.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Create a data pipeline
 
 1. A [!INCLUDE [product-name](../includes/product-name.md)] tenant account with an active subscription is required. [Create a free account](https://azure.microsoft.com/free/).

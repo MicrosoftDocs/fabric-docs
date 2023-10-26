@@ -12,8 +12,6 @@ ms.date: 09/21/2023
 
 The Until activity provides the same functionality that a do-until looping structure provides in programming languages. It executes a set of activities in a loop until the condition associated with the activity evaluates to true. If an inner activity fails, the Until activity doesn't stop. You can specify a timeout value for the until activity.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

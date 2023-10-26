@@ -12,8 +12,6 @@ ms.date: 09/22/2023
 
 A webhook activity can control the execution of pipelines through custom code. With the webhook activity, code can call an endpoint and pass it a callback URL. The pipeline run waits for the callback invocation before it proceeds to the next activity.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

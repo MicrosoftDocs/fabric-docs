@@ -13,7 +13,7 @@ ms.date: 10/13/2023
 
 Continue reading for information on major updates to OneLake file explorer.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 ## September 2023 Update (v 1.0.10.0)
 
