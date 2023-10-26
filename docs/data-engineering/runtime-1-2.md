@@ -462,9 +462,6 @@ The following table lists all the default level packages for Java/Scala and thei
 
 ## Default-level packages for Python
 
-%TODO
-Synapse-Python310-CPU.yml contains the list of libraries shipped in the default Python 3.10 environment in Runtime 1.2. 
-
 The following table lists all the default level packages for Python and their respective versions.
 
 |          **Library**          |  **Version** |          **Library**          |  **Version** |       **Library**       |     **Version**    |

@@ -39,6 +39,15 @@ Below, you'll find a comprehensive comparison of key components, including Apach
 
 Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
+## Fabric Optimizations
+
+In Microsoft Fabric, both the Spark engine and the Delta Lake implementations contain platform specific optimizations and features. The features are implemented leverage platform native integrations. All features may be turned off to achieve vanilla Spark and Delta Lake standards.
+
+In the Fabric Runtime for Apache Spark and Delta Lake, there are native writer capabilities that achieves two things: 
+1. Differentiated performance on writing workloads.  
+2. V-Order optimization of Delta parquet files by default. The Delta Lake V-Order optimization is critical to deliver read performance across all Fabric engines. To understand how it works and how to control it, read the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
+3. Intelligent Cache
+
 ## Multiple Runtimes Support
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
 
@@ -51,9 +60,16 @@ Once you make this change, all system-created items within the workspace, includ
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
 
+When you change the runtime from version A to B, your all Spark Settings from the version A will be propagated to version B. 
+
+:::image type="content" source="media\workspace-admin-settings\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
+
+
+Library management
+
 %TODO - Spark settings consequences
 %TODO - Library management consequences
-%TODO - LH consequences
+
 
 ## Upgrading Delta Lake Protocol
 
@@ -75,6 +91,23 @@ Protocol version upgrades can potentially impact the compatibility of existing D
 :::image type="content" source="media\mrs\DeltaLakeUpgradeWarning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
 
 Additionally, users should verify that all current and future production workloads and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
+
+## Delta 2.2 vs Delta 2.4 changes
+
+In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuratios details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
+
+All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant. 
+
+Scripts that expect or assume parquet table format should be revised. The following commands are not supported in Delta tables:
+1. `ANALYZE TABLE $partitionedTableName PARTITION (p1) COMPUTE STATISTICS`
+2. `ALTER TABLE $partitionedTableName ADD PARTITION (p1=3)`
+3. `ALTER TABLE DROP PARTITION`
+4. `ALTER TABLE RECOVER PARTITIONS`
+5. `ALTER TABLE SET SERDEPROPERTIES`
+6. `LOAD DATA`
+7. `INSERT OVERWRITE DIRECTORY`
+8. `SHOW CREATE TABLE`
+9. `CREATE TABLE LIKE `
 
 ## Versioning 
 
