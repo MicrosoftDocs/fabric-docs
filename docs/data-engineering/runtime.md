@@ -120,15 +120,3 @@ Our runtime version numbering, while closely related to Semantic Versioning, fol
 ## Next steps
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 - [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)
-=======
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
-
-- Apache Spark 3.3
-- Operating System: Ubuntu 18.04
-- Java: 1.8.0_282
-- Scala: 2.12.15
-- Python: 3.10
-- Delta Lake: 2.2
-- R: 4.2.2
-
-Please visit [Runtime 1.1](./runtime-1-1.md) to explore all the details, new features, improvements, and migration scenarios for Runtime 1.1.
