@@ -25,20 +25,27 @@ To manage the Spark settings for the pool associated with your workspace:
 
    :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
 
-1. You see the **Spark Compute** option in your left-hand menu:
+2. You see the **Spark Compute** option in your left-hand menu:
 
-1. Configure the four setting options you can change on this page: **Default pool for workspace**, **Runtime version**, **Automatically track machine learning experiments and models** and **Spark properties**.
+3. Configure the four setting options you can change on this page: **Pool**, **Environment**, **High concurrency**, **Automatic log**.
+
+
+:::image type="content" source="media\workspace-admin-settings\workspace-settings.gif" alt-text="Gif showing different sections of the spark compute in workspace settings.":::
 
 > [!NOTE]
 > If you change the default pool to a custom Spark pool you may see longer session start (~3 minutes) in this case.
 
-## Default pool for workspace
+## Pool
 
-There are two options:
+### Default pool for the workspace 
+You can use the automatically created starter pool or create custom pools for the workspace.
 
-* **Starter Pool**: Prehydrated live clusters automatically created for your faster experience. These clusters are medium size. Currently, a starter pool with 10 nodes is provided for evaluation purposes.
+* **Starter Pool**: Prehydrated live pools automatically created for your faster experience. These clusters are medium size. The starter pool is set to a default configuration based on the Fabric capacity SKU purchased. Admins can customize the max nodes and executors based on their Spark workload scale requirements.  To learn more, see [Configure Starter Pools](configure-starter-pools.md)
 
-* **Custom Spark Pool**: You can size the nodes, autoscale, and dynamically allocate executors based on your Spark job requirements. To create a custom Spark pool, the capacity admin should enable the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin** settings. To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
+* **Custom Spark Pool**: You can size the nodes, autoscale, and dynamically allocate executors based on your Spark job requirements. To create a custom Spark pool, the capacity admin should enable the **Customized workspace pools** option in the **Spark Compute** section of **Capacity Admin** settings.
+> [!NOTE]
+> The capacity level control for Customized workspace pools is enabled by default.
+To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-settings-management.md).
 
 Admins can create custom Spark pools based on their compute requirements by selecting the **New Pool** option.
 
@@ -51,6 +58,12 @@ You can also select the option to dynamically allocate executors to pool automat
 :::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation.":::
 
 Learn more about [Spark Compute for Fabric](spark-compute.md).
+
+* **Customize compute configuration for items**: As a workspace admin, you can allow users to adjust compute configurations (session level properties which include Driver/Executor Core, Driver/Executor Memory) for individual items such as notebooks, spark job definitions using Environment.
+Learn more about [Spark Compute in Environment](environment-manage-compute.md)
+:::image type="content" source="media\workspace-admin-settings\customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
+
+If the setting is turned off by the workspace admin, the Default pool and its compute configurations will be used for all environments in the workspace.
 
 ## Runtime version
 
