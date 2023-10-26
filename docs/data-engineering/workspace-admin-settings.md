@@ -33,7 +33,7 @@ To manage the Spark settings for the pool associated with your workspace:
 :::image type="content" source="media\workspace-admin-settings\workspace-settings.gif" alt-text="Gif showing different sections of the spark compute in workspace settings.":::
 
 > [!NOTE]
-> If you change the default pool to a custom Spark pool you may see longer session start (~3 minutes) in this case.
+> If you change the default pool from Starter Pool to a Custom Spark pool you may see longer session start (~3 minutes).
 
 ## Pool
 
@@ -65,27 +65,24 @@ Learn more about [Spark Compute in Environment](environment-manage-compute.md)
 
 If the setting is turned off by the workspace admin, the Default pool and its compute configurations will be used for all environments in the workspace.
 
-## Runtime version
+## Environment
 
 You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
 
-## Autologging for Machine Learning models and experiments
+## High concurrency
+
+You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
+
+:::image type="content" source="media\workspace-admin-settings\high-concurrency-mode-settings.png" alt-text="Screenshot showing high concurrency settings page." lightbox="media\workspace-admin-settings\high-concurrency-mode-settings.png":::
+
+## Automatic logging for Machine Learning models and experiments
 
 Admins can now enable autologging for their machine learning models and experiments. This option automatically captures the values of input parameters, output metrics, and output items of a machine learning model as it is being trained.
-
 [Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
+:::image type="content" source="media\workspace-admin-settings\automatic-logging.png" alt-text="Screenshot showing autolog settings page.":::
 
-## Spark properties
-
-Apache Spark has many settings you can provide to optimize the experience for your scenarios. You may set those properties through the UI by selecting the **Add** option. Select an item from the dropdown menu, and enter the value.
-
-:::image type="content" source="media\workspace-admin-settings\spark-properties-add.png" alt-text="Screenshot showing where to select Add.":::
-
-You can delete items by selecting the item(s) and then select the **Delete** button. Or select the delete icon next to each item you wish you to delete.
-
-:::image type="content" source="media\workspace-admin-settings\spark-properties-delete.png" alt-text="Screenshot showing where to select Delete.":::
 
 ## Next steps
 
