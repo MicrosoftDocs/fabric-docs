@@ -73,9 +73,22 @@ __Step 5: Test Dynamic Data Masking__
 __Step 6: Manage and Modify DDM Rules__
 
 1. To manage or modify existing DDM rules, return to the SQL script where you defined them.
+2. Drop the SSN mask of the EmployeeData table.
 
-1. Make the necessary changes to the rules.
+```tsql
+ALTER TABLE dbo.EmployeeData ALTER COLUMN SSN DROP MASKED;
+```
 
-1. Re-run the SQL script to apply the updated DDM rules.
+1. Re-run the statement above in your SQL script to apply the updated DDM rules.
+1. Verify if the mask is dropped
+1. Identify a user/group who are allowed to see unmasked data
+1. Return to the SQL Script where you defined your DDM rules
+1. Grant unmask to the user
+
+```tsql
+REVOKE UNMASK ON dbo.EmployeeData TO [YourUser];
+```
+
+1. Verify if the user can see unmasked data
 
 
