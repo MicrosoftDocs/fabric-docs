@@ -59,7 +59,7 @@
         href: connector-amazon-s3-overview.md
       - name: Set up your connection
         href: connector-amazon-s3.md
-      - name: Configure Amazon S3 in a copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-amazon-s3-copy-activity.md
     - name: Azure Analysis Services
       items:
@@ -73,7 +73,7 @@
         href: connector-azure-blob-storage-overview.md
       - name: Set up your connection
         href: connector-azure-blob-storage.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-blob-storage-copy-activity.md
     - name: Azure Cosmos DB for NoSQL
       items:
@@ -81,7 +81,7 @@
         href: connector-azure-cosmosdb-for-nosql-overview.md
       - name: Set up your connection
         href: connector-azure-cosmosdb-for-nosql.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
     - name: Azure Data Explorer (Kusto)
       items:
@@ -93,7 +93,7 @@
         href: connector-azure-data-lake-storage-gen2-overview.md
       - name: Set up your connection
         href: connector-azure-data-lake-storage-gen2.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
     - name: Azure Databricks
       items:
@@ -113,7 +113,7 @@
         href: connector-azure-sql-database-overview.md
       - name: Set up your connection
         href: connector-azure-sql-database.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
     - name: Azure Synapse Analytics
       items:

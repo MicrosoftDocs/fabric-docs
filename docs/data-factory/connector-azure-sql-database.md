@@ -161,4 +161,3 @@ The following properties in the table are the supported authentication types.
 ## Next steps
 
 - [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
-- [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)
