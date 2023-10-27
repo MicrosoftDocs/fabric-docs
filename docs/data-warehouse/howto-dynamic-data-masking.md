@@ -45,16 +45,16 @@ __Step 3: Configure Dynamic Data Masking__
 
 
 
+
 ```tsql
-CREATE TABLE dbo.EmployeeData (
-    EmployeeID INT
-    ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"XXX-XX-",2)') NULL
-    ,LastName VARCHAR(50) MASKED WITH (FUNCTION = 'default()') NULL
-    ,SSN CHAR(11) MASKED WITH (FUNCTION = 'partial(0,"XXX-XX-",4)') NULL
-    );
+ALTER TABLE dbo.EmployeeData
+ALTER COLUMN email ADD MASKED WITH (FUNCTION = 'email()');
+GO
+ALTER TABLE dbo.EmployeeData
+ALTER COLUMN LastName ADD MASKED WITH(FUNCTION = 'default()');
 ```
 
-In this example, we have created a table __EmployeeData__ with DDM applied to the __FirstName__ and __SSN__ columns.
+In this example, we have are applying DDM rules to a table called **EmployeeData.** We have applied DDM  to the __email__ column with the *email()* function and applied DDM to the **LastName** column with the *default()* function.
 
 __Step 4: Execute the SQL Script__
 
@@ -72,11 +72,12 @@ __Step 5: Test Dynamic Data Masking__
 
 __Step 6: Manage and Modify DDM Rules__
 
-1. To manage or modify existing DDM rules, return to the SQL script where you defined them.
-2. Drop the SSN mask of the EmployeeData table.
+1. To manage or modify existing DDM rules, create a new SQL script.
+1. Drop the DDM mask you defined. for example the mask we had in the previous example:
+
 
 ```tsql
-ALTER TABLE dbo.EmployeeData ALTER COLUMN SSN DROP MASKED;
+ALTER TABLE dbo.EmployeeData ALTER COLUMN LastName DROP MASKED;
 ```
 
 1. Re-run the statement above in your SQL script to apply the updated DDM rules.
@@ -89,6 +90,6 @@ ALTER TABLE dbo.EmployeeData ALTER COLUMN SSN DROP MASKED;
 REVOKE UNMASK ON dbo.EmployeeData TO [YourUser];
 ```
 
-1. Verify if the user can see unmasked data
+1. Verify if the user can see unmasked data for all columns
 
 
