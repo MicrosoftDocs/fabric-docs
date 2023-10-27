@@ -1,5 +1,5 @@
 ---
-title: Configure in a data pipeline copy activity
+title: Configure Amazon S3 in a copy activity
 description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Configure in a data pipeline copy activity
+# Configure Amazon S3 in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
 
