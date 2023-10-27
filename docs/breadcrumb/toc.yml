@@ -42,7 +42,7 @@ items:
       topicHref: /fabric/real-time-analytics/index
     - name: Event streams
       tocHref: /fabric/real-time-analytics/event-streams/
-      topicHref: /fabric/real-time-analytics/event-streams/overview      
+      topicHref: /fabric/real-time-analytics/index
   - name: Security
     tocHref: /fabric/security/
     topicHref: /fabric/security/index
