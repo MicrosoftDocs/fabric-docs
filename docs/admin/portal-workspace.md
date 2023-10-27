@@ -45,7 +45,7 @@ For more information, see [Intro to datasets across workspaces](/power-bi/connec
 
 ## Identify your workspace ID
 
-The easiest way to find your workspace ID is in the URL of the Fabric site for an item. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`.
+The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in the Power BI Admin portal settings by selecting **Details** next to the workspace name.
 
 ## Block users from reassigning personal workspaces (My Workspace)
 
