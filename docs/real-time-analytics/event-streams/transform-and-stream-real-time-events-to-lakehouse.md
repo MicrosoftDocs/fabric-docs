@@ -72,32 +72,33 @@ After you create the lakehouse and eventstream, follow these steps to add an Azu
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen.":::
 
-1. Fill in the information about your Azure event hub on the **New connection** page.
+1. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the **Connection settings** and **Connection credentials** of your Azure event hub, and then select **Create**.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing where to select Cloud on the New connection screen.":::
+   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source.":::
 
    - **Connection name**: Enter a name for the cloud connection.
-   - **Connection type**: Default value is `EventHub`.
+   - **Connection type**: The default value is `EventHub`.
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace.
    - **Authentication**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**.
 
-       :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing where to select and enter the authentication information for your Azure event hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
+       :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png":::
 
-   - **Privacy level**: choose a privacy level for the cloud connection.
+   - **Privacy level**: Choose a privacy level for the cloud connection.
+
+1. After you create a cloud connection, select the refresh button, and then select the cloud connection you created.
+
+   :::image type="content" source="./media/add-manage-eventstream-sources/cloud-connection-refresh.png" alt-text="Screenshot showing the cloud connection refresh.":::
 
 1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 
-1. Select a **Consumer group** that reads the event data from your Azure event hub and then **Add**.
+   > [!NOTE]
+   > The event streams feature supports the ingestion of events from Azure Event Hubs in JSON, Avro, and CSV (with header) data formats.
 
-1. The new source node appears in the canvas after the event hub source is created successfully. Select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
+1. Select a **Consumer group** that can read the event data from your Azure event hub and then select **Add**.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/event-hub-source-preview.png" alt-text="Screenshot showing the event hub source preview." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/event-hub-source-preview.png" :::
+After you have created the event hub source, you see it added to your eventstream on the canvas.
 
-1. Select the eventstream node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the eventstream.
-
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-data-preview.png" alt-text="Screenshot showing the Data preview tab in the eventstream node." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/eventstream-data-preview.png" :::
-
-1. To find data insight details, select the **Data insights** tab for the event hub source node and the eventstream node.
+:::image type="content" source="./media/add-manage-eventstream-sources/event-hub-source-completed.png" alt-text="Screenshot showing the event hub source." lightbox="./media/add-manage-eventstream-sources/event-hub-source-completed.png":::
 
 ## Add a lakehouse destination to the eventstream
 
