@@ -16,8 +16,6 @@ ms.search.form: lakehouse delta lake tables
 
 Saving data in the Lakehouse using capabilities such as [Load to Tables](load-to-tables.md) or methods described in [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md), all data is saved in Delta format.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 For a more comprehensive introduction to the Delta Lake table format, follow links in the Next steps section.
 
 ## Big data, Apache Spark and legacy table formats
