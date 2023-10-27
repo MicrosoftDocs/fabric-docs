@@ -92,7 +92,7 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
    This mode ingests your event data directly into the KQL database without any processing. This mode is suitable for scenarios where you have low data volume and high latency tolerance. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later using KQL queries.
       1. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
 
-         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
+         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen.":::
 
          - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
          - **Workspace**: Select the workspace associated with your Kusto database.
@@ -123,7 +123,7 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
       1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
 
-         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
+         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen.":::
 
       2. Design the event processing with event processor,and then select **Save**
 

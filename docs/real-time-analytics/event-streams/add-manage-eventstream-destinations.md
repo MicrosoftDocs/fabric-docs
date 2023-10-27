@@ -50,7 +50,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
       > [!NOTE]
       > You can only select workspaces that have the same region Fabric capacity as the eventstream.
 
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
+      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen.":::
 
    3. On the **Get data** page, navigate through the tabs to complete the configuration:
       1. **Configure**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next**.
@@ -78,7 +78,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
    This mode processes your event data before ingesting it into the KQL database. This mode is suitable for scenarios where you have high data volume and low latency tolerance. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can specify the processing logic using Azure Stream Analytics queries.
    1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
 
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
+      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen.":::
 
    2. Design the event processing with event processor,and then select **Save**
 
