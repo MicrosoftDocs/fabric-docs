@@ -10,7 +10,7 @@ ms.date: 10/25/2023
 ms.search.form: spark_job_definition
 ---
 
-## How to create and update a Spark Job Definition with Microsoft Fabric Rest API
+# How to create and update a Spark Job Definition with Microsoft Fabric Rest API
 
 The Microsoft Fabric Rest API provides service endpoint for the CRUD operation of Fabric item. In this tutorial, we walk through an end-2-end scenario of how to create and update a Spark Job Definition artifact. Three high level steps are involved:
 
@@ -20,12 +20,12 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Prerequisites
 
-1. AAD token is required to access the Fabric Rest API. The MSAL library is recommended to get the token. Refer to [this doc](https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-authentication-flows) for more details.
-1. A storage token is required to access the OneLake API. Refer to [this doc](https://learn.microsoft.com/en-us/entra/msal/python/?view=msal-py-latest) for more details
+1. AAD token is required to access the Fabric Rest API. The MSAL library is recommended to get the token. Refer to [this doc](https://docs.microsoft.com/azure/active-directory/develop/msal-authentication-flows) for more details.
+1. A storage token is required to access the OneLake API. Refer to [this doc](https://learn.microsoft.com/entra/msal/python/?view=msal-py-latest) for more details
 
 ## Create a Spark Job Definition item with initial state
 
-Microsoft Fabric Rest API defines unified endpoint for CRUD operation of Fabric item. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The item detail is specified inside the request body. Here is an example of the request body for creating a Spark Job Definition item:
+Microsoft Fabric Rest API defines unified endpoint for CRUD operation of Fabric item. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The item detail is specified inside the request body. Here's an example of the request body for creating a Spark Job Definition item:
 
 ```json
 {
@@ -60,7 +60,7 @@ In this example, the Spark Job Definition item is named as `SJDHelloWorld`. The 
 }
 ```
 
-here are two helper functions to encode and decode the detail setup:
+Here are two helper functions to encode and decode the detail setup:
 
 ```python
 import base64
@@ -90,7 +90,7 @@ def base64_to_json(base64_data):
     return json_data
 ```
 
-Here is the code snippet to create a Spark Job Definition item:
+Here's the code snippet to create a Spark Job Definition item:
 
 ```python
 import requests
@@ -127,7 +127,7 @@ response = requests.post(sjdCreateUrl, json=payload_data, headers=headers)
 
 ## Upload the main definition file and other lib files
 
-A storage token is required to upload file to OneLake. Here is a helper function to get the storage token:
+A storage token is required to upload file to OneLake. Here's a helper function to get the storage token:
 
 ```python
 
@@ -146,7 +146,7 @@ def getOnelakeStorageToken():
 
 ```
 
-Now we have a Spark Job Definition item created, to make it runnable, we need to setup the main definition file and required properties. The endpoint for uploading the file for this SJD item is `https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{sjdartifactid}`. The same "workspaceId" from previous step should be used, the value of "sjdartifactid" could be found from the response body of previous step. Here is the code snippet to setup the main definition file:
+Now we have a Spark Job Definition item created, to make it runnable, we need to set up the main definition file and required properties. The endpoint for uploading the file for this SJD item is `https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{sjdartifactid}`. The same "workspaceId" from previous step should be used, the value of "sjdartifactid" could be found from the response body of previous step. Here's the code snippet to set up the main definition file:
 
 ```python
 import requests
@@ -208,7 +208,7 @@ Follow the same process to upload the other lib files if needed.
 
 ## Update the Spark Job Definition item with the OneLake URL of the main definition file and other lib files
 
-Until now, we have created a Spark Job Definition item with some initial state, uploaded the main definition file and other lib files, The last step is to update the Spark Job Definition item to set the URL properties of the main definition file and other lib files. The endpoint for updating the Spark Job Definition item is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{sjdartifactid}`. The same "workspaceId" and "sjdartifactid" from previous steps should be used. Here is the code snippet to update the Spark Job Definition item:
+Until now, we have created a Spark Job Definition item with some initial state, uploaded the main definition file and other lib files, The last step is to update the Spark Job Definition item to set the URL properties of the main definition file and other lib files. The endpoint for updating the Spark Job Definition item is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{sjdartifactid}`. The same "workspaceId" and "sjdartifactid" from previous steps should be used. Here's the code snippet to update the Spark Job Definition item:
 
 ```python 
 
