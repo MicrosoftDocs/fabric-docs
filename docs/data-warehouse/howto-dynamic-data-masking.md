@@ -88,24 +88,29 @@ Once the dynamic data masking rules are applied, you can test the masking by que
     ```sql
     SELECT * FROM dbo.EmployeeData;
     ```
+1. With your admin account, you can grant and revoke the `UNMASK` permission to a role
+    ```sql
+    GRANT UNMASK ON dbo.EmployeeData TO [TestRole];
+    REVOKE UNMASK ON dbo.EmployeeData TO [TestRole];
+    ```
 
 ### 4. Manage and modify dynamic data masking rules
 
 To manage or modify existing dynamic data masking rules, create a new SQL script.
 
-1. You can add a new column with a mask using the `MASKED WITH FUNCTION` clause:
+1. You can add a new column with a mask to the `EmployeeData` table, using the `MASKED WITH FUNCTION` clause:
     ```sql
     ALTER TABLE dbo.EmployeeData
     ADD [email] nvarchar(256) MASKED WITH (FUNCTION = 'partial(1, "@", 5)');
     GO
     ```
-1. You can modify the mask on the `email` column:
+1. You can modify the mask on the existing `email` column:
     ```sql
     ALTER TABLE dbo.EmployeeData
     ALTER COLUMN [email] nvarchar(256) MASKED WITH (FUNCTION = 'email()');
     GO
     ```
-1. You can remove the mask on the `LastName` column in the `EmployeeData` table:
+1. You can remove the mask on the `email` column:
     ```sql
     ALTER TABLE dbo.EmployeeData 
     ALTER COLUMN [email] DROP MASKED;

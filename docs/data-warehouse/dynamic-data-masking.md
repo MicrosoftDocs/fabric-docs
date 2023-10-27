@@ -36,76 +36,19 @@ A masking rule may be defined on a column in a table, in order to obfuscate the 
 | Random | A random masking function for use on any numeric type to mask the original value with a random value within a specified range. | Example definition syntax: `Account_Number bigint MASKED WITH (FUNCTION = 'random([start range], [end range])')`<br /><br />Example of alter syntax: `ALTER COLUMN [Month] ADD MASKED WITH (FUNCTION = 'random(1, 12)')` |
 | Custom String | Masking method that exposes the first and last letters and adds a custom padding string in the middle. `prefix,[padding],suffix`<br /><br />If the original value is too short to complete the entire mask, part of the prefix or suffix isn't exposed. | Example definition syntax: `FirstName varchar(100) MASKED WITH (FUNCTION = 'partial(prefix,[padding],suffix)') NULL`<br /><br />Example of alter syntax: `ALTER COLUMN [Phone Number] ADD MASKED WITH (FUNCTION = 'partial(1,"XXXXXXX",0)')`<br /><br /> This turns a phone number like `555.123.1234` into `5XXXXXXX`. <br /><br />Additional example:<br /><br />`ALTER COLUMN [Phone Number] ADD MASKED WITH (FUNCTION = 'partial(5,"XXXXXXX",0)')` <br /><br /> This turns a phone number like `555.123.1234` into `555.1XXXXXXX`. |
 
+For more examples, see [How to implement dynamic data masking in Synapse Data Warehouse](howto-dynamic-data-masking.md).
+
 ### Permissions
+
+Users without the Administrator, Member, or Contributor rights on the workspace, and without elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], will see masked data.
 
 You don't need any special permission to create a table with a dynamic data mask, only the standard `CREATE TABLE` and `ALTER` on schema permissions.
 
 Adding, replacing, or removing the mask of a column, requires the `ALTER ANY MASK` permission and `ALTER` permission on the table. It's appropriate to grant `ALTER ANY MASK` to a security officer.
 
-Users with `SELECT` permission on a table can view the table data. Columns that are defined as masked, will display the masked data. Grant the `UNMASK` permission to a user to enable them to retrieve unmasked data from the columns for which masking is defined.
+Users with `SELECT` permission on a table can view the table data. Columns that are defined as masked will display masked data. Grant the `UNMASK` permission to a user to enable them to retrieve unmasked data from the columns for which masking is defined.
 
-The `CONTROL` permission on the database includes both the `ALTER ANY MASK` and `UNMASK` permission which enables the user to view unmasked data. Administrative users or roles such as Admin Member or Contributor has CONTROL permission on the database by design and can view unmasked data.
-
-### Example
-
-We can add a mask to an existing table by using the ALTER table statement.
-
-
-
-
-```sql
-ALTER TABLE Sales.Orders
-ALTER COLUMN SalesRep ADD MASKED WITH (FUNCTION = 'email()');
-```
-
-You can also create tables with masking defined
-```sql
-CREATE SCHEMA sales;
-GO
--- Create a table to store sales data
-CREATE TABLE sales.Orders (
-    SaleID INT,
-    SalesRep MASKED WITH (FUNCTION = 'email()'),
-    ProductName VARCHAR(50),
-    SaleAmount DECIMAL(10, 2),
-    SaleDate DATE
-);
-
--- Insert sample data
-INSERT INTO sales.Orders (SaleID, SalesRep, ProductName, SaleAmount, SaleDate)
-VALUES
-    (1, 'Sales1@contoso.com', 'Smartphone', 500.00, '2023-08-01'),
-    (2, 'Sales2@contoso.com', 'Laptop', 1000.00, '2023-08-02'),
-    (3, 'Sales1@contoso.com', 'Headphones', 120.00, '2023-08-03'),
-    (4, 'Sales2@contoso.com', 'Tablet', 800.00, '2023-08-04'),
-    (5, 'Sales1@contoso.com', 'Smartwatch', 300.00, '2023-08-05'),
-    (6, 'Sales2@contoso.com', 'Gaming Console', 400.00, '2023-08-06'),
-    (7, 'Sales1@contoso.com', 'TV', 700.00, '2023-08-07'),
-    (8, 'Sales2@contoso.com', 'Wireless Earbuds', 150.00, '2023-08-08'),
-    (9, 'Sales1@contoso.com', 'Fitness Tracker', 80.00, '2023-08-09'),
-    (10, 'Sales2@contoso.com', 'Camera', 600.00, '2023-08-10');
-When selecting from the sales.Orders table, the data for SalesRep will be masked to aXXX@XXXX.com.
-
-```
-
-
-
-#### Grant permissions to view unmasked data
-
-Granting the `UNMASK` permission allows manager@contoso.com to see the data unmasked.
-
-```sql
-GRANT UNMASK TO manager@contoso.com;
-```
-
-#### Deletion of a mask
-
-Deleting the mask of a column allows manager@contoso.com to see the data unmasked.
-
-```sql
-ALTER TABLE Sales.Orders  
-ALTER COLUMN SalesRep DROP MASKED;
-```
+The `CONTROL` permission on the database includes both the `ALTER ANY MASK` and `UNMASK` permission which enables the user to view unmasked data. Administrative users or roles such as Admin, Member, or Contributor have CONTROL permission on the database by design and can view unmasked data by default. Elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] will include `CONTROL` permission.
 
 ## Security consideration: bypassing masking using inference or brute-force techniques
 
