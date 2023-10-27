@@ -42,56 +42,57 @@ The following destinations are supported by Fabric Eventstream:
 To add a KQL database as a destination, you need to have a KQL database created in the workspace, and choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.
 
 1. **Direct ingestion**
-   This mode ingests your event data directly into the KQL database without any processing. This mode is suitable for scenarios where you have low data volume and high latency tolerance. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later using KQL queries.Follow these steps to add the KQL database as eventstream destination with Direct ingestion:
+   This mode ingests your event data directly into the KQL database without any processing. This mode is suitable for scenarios where you have low data volume and high latency tolerance. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later using KQL queries.
    1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination configuration screen appears.
 
-   1. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
+   2. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
 
       > [!NOTE]
       > You can only select workspaces that have the same region Fabric capacity as the eventstream.
 
       :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
 
-   1. On the **Get data** page, navigate through the tabs to complete the configuration:
+   3. On the **Get data** page, navigate through the tabs to complete the configuration:
       1. **Configure**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next**.
 
-       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the Destination tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
+         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the Destination tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
 
-      1. **Inspet**:Select a data format, and preview how the data is sent to your KQL database.
+      2. **Inspet**:Select a data format, and preview how the data is sent to your KQL database.
 
-       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the data format of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
+         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the data format of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
 
-       You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
+         You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
 
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the colum of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
+         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the colum of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
+         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
-      1. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
+      3. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
 
           :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
 
-   1. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream.
+   4. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream.
+
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
-1. **Event processing before ingestion**
-   This mode processes your event data before ingesting it into the KQL database. This mode is suitable for scenarios where you have high data volume and low latency tolerance. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can specify the processing logic using Azure Stream Analytics queries.Follow these steps to add the KQL database as eventstream destination with Event processing before ingestion:
-   1. Select **Event processing before ingestion**, enter a destination name, select a workspace, choose a KQL database and select or create a new table from the selected workspace, choose the input data format, and then select **Open event processor**.
+2. **Event processing before ingestion**
+   This mode processes your event data before ingesting it into the KQL database. This mode is suitable for scenarios where you have high data volume and low latency tolerance. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can specify the processing logic using Azure Stream Analytics queries.
+   1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
 
       :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
 
-   1. Design the event processing with event processor,and then select **Done**
+   2. Design the event processing with event processor,and then select **Done**
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen.":::
 
-   1. When you choose an existing Kusto table, for schema validation, if you don’t open event processor, we just show errors but do not provide detailed message.
+   3. When you choose an existing Kusto table, for schema validation, if you don’t open event processor, we just show errors but do not provide detailed message.
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen.":::
 
-   When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
+      When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
 
       :::image type="content" source="./media/rocess-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen.":::
 
-   1. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
+   4. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" alt-text="Screenshot showing the new KQL database push mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" :::
 

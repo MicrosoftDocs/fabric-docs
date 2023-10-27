@@ -140,7 +140,7 @@ In this section, after you have started the process of adding a lakehouse destin
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" alt-text="Screenshot showing where to select and delete the operator connection between the eventstream and the lakehouse." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" :::
 
-1. On the left edge of the eventstream node, click and drag the green circle with your mouse to connect it to the **Manage fields** operator node. Follow the same process to  connect the **Manage fields** operator node to the lakehouse node.
+1. On the left edge of the eventstream node, select and drag the green circle with your mouse to connect it to the **Manage fields** operator node. Follow the same process to  connect the **Manage fields** operator node to the lakehouse node.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" alt-text="Screenshot showing the operator connection screen in the Event processing editor." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" :::
 
