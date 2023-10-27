@@ -25,7 +25,7 @@ Major components of Fabric Runtime:
 
 - The Microsoft Fabric Runtime is built upon **a robust open-source operating system**, ensuring compatibility with various hardware configurations and system requirements.
 
-Below, you'll find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
+Below, you find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
 
 |                       | **[Runtime 1.1](./runtime-1-1.md)** | **[Runtime 1.2](./runtime-1-2.md)** |
 |-----------------------|-------------------------------------|-------------------------------------|
@@ -37,11 +37,11 @@ Below, you'll find a comprehensive comparison of key components, including Apach
 | **Delta Lake**        | 2.2.0                               | 2.4.0                               |
 | **R**                 | 4.2.2                               | 4.2.2                               |
 
-Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
+Visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
 ## Fabric Optimizations
 
-In Microsoft Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features are designed to leverage native integrations within the platform. It's important to note that all these features can be disabled to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
+In Microsoft Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features are designed to use native integrations within the platform. It's important to note that all these features can be disabled to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
 1. The complete open-source version of Apache Spark.
 2. A collection of nearly 100 built-in, distinct query performance enhancements. These enhancements include features like partition caching (enabling the FileSystem partition cache to reduce metastore calls) and Cross Join to Projection of Scalar Subquery.
 3. Built-in intelligent cache.
@@ -49,7 +49,7 @@ In Microsoft Fabric, both the Spark engine and the Delta Lake implementations in
 Within the Fabric Runtime for Apache Spark and Delta Lake, there are native writer capabilities that serve two key purposes:
 
 1. They offer differentiated performance for writing workloads, optimizing the writing process.
-2. They default to V-Order optimization of Delta Parquet files. The Delta Lake V-Order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, please refer to the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
+2. They default to V-Order optimization of Delta Parquet files. The Delta Lake V-Order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, refer to the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
 
 
 ## Multiple Runtimes Support
@@ -59,42 +59,42 @@ Fabric supports multiple runtimes, offering users the flexibility to seamlessly 
 
 To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
 
-Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you are currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session will continue as is. However, starting from the next session or job, the selected runtime version will be applied.
+Once you make this change, all system-created items within the workspace, including Lakehouses, SJDs, and Notebooks, will operate using the newly selected workspace-level runtime version starting from the next Spark Session. If you're currently using a notebook with an existing session for a job or any lakehouse-related activity, that Spark session continue as is. However, starting from the next session or job, the selected runtime version will be applied.
 
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
 
 ### Consequences of Runtime Changes on Spark Settings
 
-In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting is not compatible with Runtime B, we will issue a warning message and refrain from implementing the setting.
+In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting isn't compatible with Runtime B, we issue a warning message and refrain from implementing the setting.
 
 :::image type="content" source="media\mrs\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
 
 
 ### Consequences of Runtime Changes on Library Management
 
-In general, our approach is to migrate all libraries from Runtime A to Runtime B, including both Public and Custom Runtimes. If the Python and R versions remain unchanged, the libraries should function properly. However, for Jars, there is a significant likelihood that they may not work due to alterations in dependencies, as well as other factors such as changes in Scala, Java, Spark, and the operating system.
+In general, our approach is to migrate all libraries from Runtime A to Runtime B, including both Public and Custom Runtimes. If the Python and R versions remain unchanged, the libraries should function properly. However, for Jars, there's a significant likelihood that they may not work due to alterations in dependencies, and other factors such as changes in Scala, Java, Spark, and the operating system.
 
-It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there is a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
+It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there's a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
 
 :::image type="content" source="media\mrs\LMRuntimeChange.png" alt-text="Library Management Runtime Change":::
 
 ## Upgrading Delta Lake Protocol
 
-Delta Lake features are always backwards compatible, ensuring tables created in a lower Delta Lake version can seamlessly interact with higher versions. However, when certain features are enabled (e.g., by using `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` method, forward compatibility with lower Delta Lake versions may be compromised. In such instances, it's essential to modify workloads referencing the upgraded tables to align with a Delta Lake version that maintains compatibility.
+Delta Lake features are always backwards compatible, ensuring tables created in a lower Delta Lake version can seamlessly interact with higher versions. However, when certain features are enabled (for example, by using `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` method, forward compatibility with lower Delta Lake versions may be compromised. In such instances, it's essential to modify workloads referencing the upgraded tables to align with a Delta Lake version that maintains compatibility.
 
-Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, it will be unable to read from or write to that table.
+Each Delta table is associated with a protocol specification, defining the features it supports. Applications that interact with the table, either for reading or writing, rely on this protocol specification to determine if they are compatible with the table's feature set. If an application lacks the capability to handle a feature listed as supported in the table's protocol, It's unable to read from or write to that table.
 
-The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page [How does Delta Lake manage feature compatibility?
+The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"
 ](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
 
 :::image type="content" source="media\mrs\DeltaLakeUpgradeTableProtocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used.":::
 
-Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, as well as in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
+Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, and in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
 
-It's essential to note that when performing this upgrade, users will receive a warning indicating that upgrading the Delta protocol version is a non-reversible process. This means that once the update is executed, it cannot be undone.
+It's essential to note that when performing this upgrade, users receive a warning indicating that upgrading the Delta protocol version is a nonreversible process. This means that once the update is executed, it cannot be undone.
 
-Protocol version upgrades can potentially impact the compatibility of existing Delta Lake table readers, writers, or both. Therefore, it is advisable to proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
+Protocol version upgrades can potentially impact the compatibility of existing Delta Lake table readers, writers, or both. Therefore, it's advisable to proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
 
 :::image type="content" source="media\mrs\DeltaLakeUpgradeWarning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
 
