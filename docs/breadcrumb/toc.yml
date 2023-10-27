@@ -2,6 +2,24 @@ items:
 - name: Microsoft Fabric
   tocHref: /fabric/
   topicHref: /fabric/index
+  - name: Data Engineering
+    tocHref: /fabric/data-engineering/
+    topicHref: /fabric/data-engineering/index
+  - name: Data Factory
+    tocHref: /fabric/data-factory/
+    topicHref: /fabric/data-factory/index
+  - name: Data Science
+    tocHref: /fabric/data-science/
+    topicHref: /fabric/data-science/index
+  - name: Data Warehouse
+    tocHref: /fabric/data-warehouse/
+    topicHref: /fabric/data-warehouse/index
+  - name: OneLake
+    tocHref: /fabric/onelake/
+    topicHref: /fabric/onelake/index
+  - name: Real-Time Analytics
+    tocHref: /fabric/real-time-analytics/
+    topicHref: /fabric/real-time-analytics/index
   - name: Real-Time Analytics
     tocHref: /fabric/real-time-analytics/
     topicHref: /fabric/real-time-analytics/index
