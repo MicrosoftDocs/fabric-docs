@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 09/27/2023
 ---
 
-# Create a lakehouse with OneLake
+# Bring your first data to OneLake with Lakehouse
 
 This tutorial is a quick guide to creating a lakehouse and getting started with the basic methods of interacting with it. After completing this tutorial, you'll have a lakehouse provisioned inside of Microsoft Fabric working on top of OneLake.
 
