@@ -8,7 +8,7 @@ ms.date: 10/27/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Configure in a data pipeline copy activity
+## How to configure Amazon S3 Compatible in copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3 Compatible.
 
