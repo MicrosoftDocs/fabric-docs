@@ -16,7 +16,7 @@ The Amazon Redshift connector is supported in Data Factory for [!INCLUDE [produc
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Amazon Redshift in Dataflow Gen2, go to [Set up your Amazon Redshift connection](connector-amazon-redshift.md).
+To learn about how to connect to Amazon Redshift in Dataflow Gen2, go to [Set up your Amazon Redshift connection](connector-amazon-redshift.md).
 
 ## Support in data pipelines
 
