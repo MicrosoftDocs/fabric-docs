@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -16,7 +16,7 @@ The Databricks connector is supported in Data Factory for [!INCLUDE [product-nam
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Databricks in Dataflow Gen2, go to [Set up your Databricks connection](connector-databricks.md).
+To learn about how to connect to Databricks in Dataflow Gen2, go to [Set up your Databricks connection](connector-databricks.md).
 
 ## Support in data pipelines
 
