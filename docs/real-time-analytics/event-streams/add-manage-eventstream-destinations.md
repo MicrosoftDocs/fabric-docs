@@ -70,7 +70,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
           :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
 
-   4. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream.
+   4. After you configure everything and select **Close**, a KQL database destination appears on the canvas, connected to your eventstream.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
 
@@ -80,7 +80,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database destination configuration screen.":::
 
-   2. Design the event processing with event processor,and then select **Done**
+   2. Design the event processing with event processor,and then select **Save**
 
       :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen.":::
 
@@ -90,9 +90,9 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
 
-      :::image type="content" source="./media/rocess-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen.":::
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen.":::
 
-   4. After you configure everything and select **Done**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
+   4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" alt-text="Screenshot showing the new KQL database push mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" :::
 
