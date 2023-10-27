@@ -443,8 +443,6 @@
       items:
       - name: Activity overview
         href: activity-overview.md
-      - name: Deactivate an activity
-        href: deactivate-activity.md
       - name: Append Variable activity
         href: append-variable-activity.md
       - name: Azure Batch activity
@@ -453,6 +451,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Deactivate an activity
+        href: deactivate-activity.md        
       - name: Delete data activity
         href: delete-data-activity.md
       - name: For-each activity
@@ -467,7 +467,7 @@
         href: invoke-pipeline-activity.md
       - name: KQL activity
         href: kql-activity.md
-      - name: Pipeline Lookup activity
+      - name: Lookup activity
         href: lookup-activity.md
       - name: Notebook activity
         href: notebook-activity.md
