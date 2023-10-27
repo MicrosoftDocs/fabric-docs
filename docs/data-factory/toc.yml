@@ -59,7 +59,7 @@
         href: connector-amazon-s3-overview.md
       - name: Set up your connection
         href: connector-amazon-s3.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-amazon-s3-copy-activity.md
     - name: Azure Analysis Services
       items:
@@ -73,18 +73,16 @@
         href: connector-azure-blob-storage-overview.md
       - name: Set up your connection
         href: connector-azure-blob-storage.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-blob-storage-copy-activity.md
     - name: Azure Cosmos DB for NoSQL
       items:
       - name: Overview
         href: connector-azure-cosmosdb-for-nosql-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-azure-cosmosdb-for-nosql.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-cosmosdb-for-nosql-dataflows.md
     - name: Azure Data Explorer (Kusto)
       items:
       - name: Configure in Dataflow Gen2
@@ -93,12 +91,10 @@
       items:
       - name: Overview
         href: connector-azure-data-lake-storage-gen2-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-azure-data-lake-storage-gen2.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure Databricks
       items:
       - name: Overview
@@ -115,17 +111,15 @@
       items:
       - name: Overview
         href: connector-azure-sql-database-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-azure-sql-database.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-sql-database-dataflow.md
     - name: Azure Synapse Analytics
       items:
       - name: Overview
         href: connector-azure-synapse-analytics-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
     - name: CloudBluePSA
       items:
@@ -299,6 +293,18 @@
         href: connector-microsoft-exchange-online-overview.md
       - name: Set up your connection
         href: connector-microsoft-exchange-online.md
+    - name: MongoDB
+      items:
+      - name: Overview
+        href: connector-mongodb-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-copy-activity.md
+    - name: MongoDB Atlas
+      items:
+      - name: Overview
+        href: connector-mongodb-atlas-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-mongodb-atlas-copy-activity.md
     - name: MongoDB Atlas SQL (Beta)
       items:
       - name: Overview
