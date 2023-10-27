@@ -21,8 +21,8 @@ Event streams can route the event data to various destinations, including the Fa
 
 Before you start, you must complete the following prerequisites:
 
-- Get access to a **premium workspace** with **Viewer** or above permissions where your Eventstream item is located.
-- For a KQL database or Lakehouse item, get access to a **premium workspace** with **Viewer** or above permissions where your KQL database or Lakehouse item is located.
+- Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located.
+- For a KQL database or Lakehouse item, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database or Lakehouse item is located.
 
 ## "Get data from Eventstream" in a KQL database
 
@@ -50,7 +50,7 @@ There are two options available:
 
 1. After you select **Create** with the new eventstream name, the new eventstream will be open with the teaching bubbles.
 
-   :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard-new-guide.png" alt-text="Screenshot showing the new eventstream dialog." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard-new-guide.png" :::
+   :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard-new-guide.png" alt-text="Screenshot showing the new eventstream naming dialog." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard-new-guide.png" :::
 
 Following the guide in these teaching bubbles, you'll be able to get the data from this eventstream to your KQL database.
 
