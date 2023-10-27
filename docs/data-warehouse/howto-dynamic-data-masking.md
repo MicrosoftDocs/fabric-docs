@@ -23,16 +23,16 @@ Before you begin, make sure you have the following:
 1. A Microsoft Fabric workspace with an active capacity or trial capacity.
 1. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
     1. Dynamic data masking works on [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can add masks to existing columns using `ALTER TABLE ... ALTER COLUMN` as demonstrated later in this article.
-    1. This exercise will use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+    1. This exercise uses a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 1. To administer, a user with the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-    1. In this tutorial, this will be named the "admin account".
+    1. In this tutorial, the "admin account".
 1. To test, a user without the Administrator, Member, or Contributor rights on the workspace, and without elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-    1. In this tutorial, this will be named the "test user".
+    1. In this tutorial, the "test user".
 
 ### 1. Connect
 
 1. Open the Fabric workspace and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] you want to apply dynamic data masking to.
-1. Log in using an account with elevated access on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], either Admin/Member/Contributor role on the workspace or Control Permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+1. Sign in using an account with elevated access on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], either Admin/Member/Contributor role on the workspace or Control Permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ### 2. Configure dynamic data masking
 
@@ -56,9 +56,9 @@ Before you begin, make sure you have the following:
     GO
     ```
     In this example, we have created a table `EmployeeData` with dynamic data masking applied to the `FirstName` and `SSN` columns, and a full mask of the `LastName` column.
-        - The `FirstName` column will show only the first and last two characters of the string, with `-` in the middle.
-        - The `LastName` column will show `XXXX`.
-        - the `SSN` column will show `XXX-XX-` followed by the last four characters of the string.
+        - The `FirstName` column shows only the first and last two characters of the string, with `-` in the middle.
+        - The `LastName` column shows `XXXX`.
+        - the `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
 1. Select the **Run** button to execute the script.
 1. Confirm the execution of the script.
 1. The script will apply the specified dynamic data masking rules to the designated columns in your table. 
@@ -68,7 +68,7 @@ Before you begin, make sure you have the following:
 Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 1. Sign in to a tool like Azure Data Studio or SQL Server Management Studio as the test user, for example TestUser@contoso.com.
-1. As the test user, run a query against the table, and you will notice that the masked data is displayed according to the rules you defined.
+1. As the test user, run a query against the table. The masked data is displayed according to the rules you defined.
     ```sql
     SELECT * FROM dbo.EmployeeData;
     ```

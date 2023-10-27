@@ -27,7 +27,7 @@ Dynamic data masking is complementary to other Fabric security features like [co
 
 ## Define a dynamic data mask
 
-A masking rule may be defined on a column in a table, in order to obfuscate the data in that column. Five types of masks are available.
+A masking rule can be defined on a column in a table, in order to obfuscate the data in that column. Five types of masks are available.
 
 | Function | Description | Examples |
 | --- | --- | --- |
@@ -48,7 +48,7 @@ Adding, replacing, or removing the mask of a column, requires the `ALTER ANY MA
 
 Users with `SELECT` permission on a table can view the table data. Columns that are defined as masked will display masked data. Grant the `UNMASK` permission to a user to enable them to retrieve unmasked data from the columns for which masking is defined.
 
-The `CONTROL` permission on the database includes both the `ALTER ANY MASK` and `UNMASK` permission which enables the user to view unmasked data. Administrative users or roles such as Admin, Member, or Contributor have CONTROL permission on the database by design and can view unmasked data by default. Elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] will include `CONTROL` permission.
+The `CONTROL` permission on the database includes both the `ALTER ANY MASK` and `UNMASK` permission that enables the user to view unmasked data. Administrative users or roles such as Admin, Member, or Contributor have CONTROL permission on the database by design and can view unmasked data by default. Elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] include `CONTROL` permission.
 
 ## Security consideration: bypassing masking using inference or brute-force techniques
 
@@ -63,7 +63,7 @@ WHERE Salary > 99999 and Salary < 100001;
 
 Results in:
 
-|  Id | Name| Salary |  
+|  ID | Name| Salary |  
 | --- | --- | --- |  
 |  62543 | Jane Doe | 0 |  
 |  91245 | John Smith | 0 |
