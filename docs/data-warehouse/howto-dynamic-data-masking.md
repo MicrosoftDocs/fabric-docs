@@ -21,9 +21,13 @@ For more information, see [Dynamic data masking in Fabric data warehousing](dyna
 Before you begin, make sure you have the following:
 
 1. A Microsoft Fabric workspace with an active capacity or trial capacity.
-1. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Dynamic data masking works on [!INCLUDE [fabric-se](includes/fabric-se.md)], but this exercise will use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-1. Either the Administrator, Member, or Contributor rights on the workspace or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-1. Users or roles to test.
+1. A [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
+    1. Dynamic data masking works on [!INCLUDE [fabric-se](includes/fabric-se.md)]. You can add masks to existing columns using `ALTER TABLE ... ALTER COLUMN` as demonstrated later in this article.
+    1. This exercise will use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+1. To administer, a user with the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+    1. In this tutorial, this will be named the "admin account".
+1. To test, a user without the Administrator, Member, or Contributor rights on the workspace, and without elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+    1. In this tutorial, this will be named the "test user".
 
 ### 1. Connect
 
@@ -32,50 +36,87 @@ Before you begin, make sure you have the following:
 
 ### 2. Configure dynamic data masking
 
+1. Sign into the Fabric portal with your admin account.
 1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse.
 1. Select the **New SQL query** option, and under **Blank**, select **New SQL query**.
 1. In your SQL script, define dynamic data masking rules using the `MASKED WITH FUNCTION` clause. For example:
     ```sql
     CREATE TABLE dbo.EmployeeData (
         EmployeeID INT
-        ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"XXX-XX-",2)') NULL
+        ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"-",2)') NULL
         ,LastName VARCHAR(50) MASKED WITH (FUNCTION = 'default()') NULL
         ,SSN CHAR(11) MASKED WITH (FUNCTION = 'partial(0,"XXX-XX-",4)') NULL
         );
+    GO
+    INSERT INTO dbo.EmployeeData
+        VALUES (1, 'TestFirstName', 'TestLastName', '123-45-6789');
+    GO
+    INSERT INTO dbo.EmployeeData
+        VALUES (2, 'First_Name', 'Last_Name', '000-00-0000');
+    GO
     ```
-    
-    In this example, we have created a table `EmployeeData` with dynamic data masking applied to the `FirstName` and `SSN` columns.
-1. Select the **Run** button to execute it.
+    In this example, we have created a table `EmployeeData` with dynamic data masking applied to the `FirstName` and `SSN` columns, and a full mask of the `LastName` column.
+        - The `FirstName` column will show only the first and last two characters of the string, with `-` in the middle.
+        - The `LastName` column will show `XXXX`.
+        - the `SSN` column will show `XXX-XX-` followed by the last four characters of the string.
+1. Select the **Run** button to execute the script.
 1. Confirm the execution of the script.
-1. The script will apply the specified dynamic data masking rules to the designated columns in your table.
+1. The script will apply the specified dynamic data masking rules to the designated columns in your table. 
 
 ### 3. Test dynamic data masking
 
-1. Once the dynamic data masking rules are applied, you can test the masking by querying the table. Log in to a tool like Azure Data Studio or SQL Server Management Studio using the credentials with access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)].
-1. Run a query against the table, and you will notice that the masked data is displayed according to the rules you defined.
+Once the dynamic data masking rules are applied, you can test the masking by querying the table with a test user who does not have the Administrator, Member, or Contributor rights on the workspace, or elevated permissions on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
-### 4. Manage and Modify dynamic data masking rules
-
-1. To manage or modify existing dynamic data masking rules, return to the SQL script where you defined them.
-1. Drop the SSN mask of the EmployeeData table.
+1. Sign in to a tool like Azure Data Studio or SQL Server Management Studio as the test user, for example TestUser@contoso.com.
+1. As the test user, run a query against the table, and you will notice that the masked data is displayed according to the rules you defined.
     ```sql
-    ALTER TABLE dbo.EmployeeData ALTER COLUMN SSN DROP MASKED;
+    SELECT * FROM dbo.EmployeeData;
     ```
-1. Re-run the statement above in your SQL script to apply the updated dynamic data masking rules.
-1. Verify that the mask is dropped.
-1. Identify a user/group who are allowed to see unmasked data.
-1. Return to the SQL Script where you defined your dynamic data masking rules.
-1. Grant the `UNMASK` permission from the test user.
+1. With your admin account, grant the `UNMASK` permission from the test user.
     ```sql
-    GRANT UNMASK ON dbo.EmployeeData TO [YourUser];
+    GRANT UNMASK ON dbo.EmployeeData TO [TestUser@contoso.com];
     ```
-1. Verify that the test user can see unmasked data.
-1. Revoke the `UNMASK` permission from the test user.
+1. As the test user, verify that a user signed in as TestUser@contoso.com can see unmasked data.
     ```sql
-    REVOKE UNMASK ON dbo.EmployeeData TO [YourUser];
+    SELECT * FROM dbo.EmployeeData;
+    ``` 
+1. With your admin account, revoke the `UNMASK` permission from the test user.
+    ```sql
+    REVOKE UNMASK ON dbo.EmployeeData TO [TestUser];
     ```
 1. Verify that the test user cannot see unmasked data, only the masked data.
+    ```sql
+    SELECT * FROM dbo.EmployeeData;
+    ```
 
+### 4. Manage and modify dynamic data masking rules
+
+To manage or modify existing dynamic data masking rules, create a new SQL script.
+
+1. You can add a new column with a mask using the `MASKED WITH FUNCTION` clause:
+    ```sql
+    ALTER TABLE dbo.EmployeeData
+    ADD [email] nvarchar(256) MASKED WITH (FUNCTION = 'partial(1, "@", 5)');
+    GO
+    ```
+1. You can modify the mask on the `email` column:
+    ```sql
+    ALTER TABLE dbo.EmployeeData
+    ALTER COLUMN [email] nvarchar(256) MASKED WITH (FUNCTION = 'email()');
+    GO
+    ```
+1. You can remove the mask on the `LastName` column in the `EmployeeData` table:
+    ```sql
+    ALTER TABLE dbo.EmployeeData 
+    ALTER COLUMN [email] DROP MASKED;
+    ```
+
+### 5. Cleanup
+
+1. To clean up this testing table:
+    ```sql
+    DROP TABLE dbo.EmployeeData;
+    ```
 
 ## Related content
 
