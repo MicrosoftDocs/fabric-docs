@@ -27,26 +27,30 @@ Major components of Fabric Runtime:
 
 Below, you'll find a comprehensive comparison of key components, including Apache Spark versions, supported operating systems, Java, Scala, Python, Delta Lake, and R, for both Runtime 1.1 and Runtime 1.2 within the Microsoft Fabric platform.
 
-|                       | **[Runtime 1.1](./runtime-1-1.md)**   | **[Runtime 1.2](./runtime-1-2.md)** |
-|-----------------------|---------------------------------------|-------------------------------------|
-| **Apache Spark**      | 3.3.1                                 | 3.4.1                               |
-| **Operating System**  | Ubuntu 18.04                          | Mariner 2.0                         |
-| **Java**              | 8                                     | 11                                  |
-| **Scala**             | 2.12.15                               | 2.12.15                             |
-| **Python**            | 3.10                                  | 3.10                                |
-| **Delta Lake**        | 2.2                                   | 2.4                                 |
-| **R**                 | 4.2.2                                 | 4.2.2                               |
+|                       | **[Runtime 1.1](./runtime-1-1.md)** | **[Runtime 1.2](./runtime-1-2.md)** |
+|-----------------------|-------------------------------------|-------------------------------------|
+| **Apache Spark**      | 3.3.1                               | 3.4.1                               |
+| **Operating System**  | Ubuntu 18.04                        | Mariner 2.0                         |
+| **Java**              | 8                                   | 11                                  |
+| **Scala**             | 2.12.15                             | 2.12.17                             |
+| **Python**            | 3.10                                | 3.10                                |
+| **Delta Lake**        | 2.2.0                               | 2.4.0                               |
+| **R**                 | 4.2.2                               | 4.2.2                               |
 
 Please visit [Runtime 1.1](./runtime-1-1.md) or [Runtime 1.2](./runtime-1-2.md) to explore details, new features, improvements, and migration scenarios for the specific runtime version.
 
 ## Fabric Optimizations
 
-In Microsoft Fabric, both the Spark engine and the Delta Lake implementations contain platform specific optimizations and features. The features are implemented leverage platform native integrations. All features may be turned off to achieve vanilla Spark and Delta Lake standards.
+In Microsoft Fabric, both the Spark engine and the Delta Lake implementations incorporate platform-specific optimizations and features. These features are designed to leverage native integrations within the platform. It's important to note that all these features can be disabled to achieve standard Spark and Delta Lake functionality. The Fabric Runtimes for Apache Spark encompass:
+1. The complete open-source version of Apache Spark.
+2. A collection of nearly 100 built-in, distinct query performance enhancements. These enhancements include features like partition caching (enabling the FileSystem partition cache to reduce metastore calls) and Cross Join to Projection of Scalar Subquery.
+3. Built-in intelligent cache.
 
-In the Fabric Runtime for Apache Spark and Delta Lake, there are native writer capabilities that achieves two things: 
-1. Differentiated performance on writing workloads.  
-2. V-Order optimization of Delta parquet files by default. The Delta Lake V-Order optimization is critical to deliver read performance across all Fabric engines. To understand how it works and how to control it, read the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
-3. Intelligent Cache
+Within the Fabric Runtime for Apache Spark and Delta Lake, there are native writer capabilities that serve two key purposes:
+
+1. They offer differentiated performance for writing workloads, optimizing the writing process.
+2. They default to V-Order optimization of Delta Parquet files. The Delta Lake V-Order optimization is crucial for delivering superior read performance across all Fabric engines. To gain a deeper understanding of how it operates and how to manage it, please refer to the dedicated article on [Delta Lake table optimization and V-Order](./delta-optimization-and-v-order.md).
+
 
 ## Multiple Runtimes Support
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
