@@ -6,12 +6,28 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 6/15/2023
+ms.date: 10/28/2023
 ---
 
 # The Microsoft Purview hub in Microsoft Fabric
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and data owners manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
+
+The Purview hub has two views, administrator view and data owner view. When Fabric administrators open the Purview hub, they see the admin view. When data owners open the Purview hub, they see the data owner view. Select a tab to see information about the view that applies to you.
+
+# [Admin view](#tab/admin-view)
+
+Admin view
+
+# [Data owner view](#tab/data-owner)
+
+Data owner view
+
+---
+
+* **Administrator view**: When a Fabric administrator opens the Purview hub, they see insights that include the entire Fabric data estate - all Fabric items, both data and non-data items, of all the users in the tenant. 
+
+* **Data owner view**: When a data owner opens the Purview hub, they see insights that include just the Fabric data items that they own.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
