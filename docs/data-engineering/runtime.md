@@ -63,12 +63,11 @@ Once you make this change, all system-created items within the workspace, includ
 
 :::image type="content" source="media\workspace-admin-settings\runtime-change.gif" alt-text="Gif showing how to change runtime version.":::
 
-
 ### Consequences of Runtime Changes on Spark Settings
 
 In general, we aim to migrate all Spark settings. However, if we identify that the Spark setting isn't compatible with Runtime B, we issue a warning message and refrain from implementing the setting.
 
-:::image type="content" source="media\mrs\SparkSettingsRuntimeChange.png" alt-text="Spark Settings Runtime Change":::
+:::image type="content" source="media\mrs\spark-settings-runtime-change.png" alt-text="Spark Settings Runtime Change":::
 
 
 ### Consequences of Runtime Changes on Library Management
@@ -77,7 +76,7 @@ In general, our approach is to migrate all libraries from Runtime A to Runtime B
 
 It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there's a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
 
-:::image type="content" source="media\mrs\LMRuntimeChange.png" alt-text="Library Management Runtime Change":::
+:::image type="content" source="media\mrs\lm-runtime-change.png" alt-text="Library Management Runtime Change":::
 
 ## Upgrading Delta Lake Protocol
 
@@ -88,7 +87,7 @@ Each Delta table is associated with a protocol specification, defining the featu
 The protocol specification is divided into two distinct components: the read protocol and the write protocol. Visit the page ["How does Delta Lake manage feature compatibility?"
 ](https://docs.delta.io/2.4.0/versioning.html#language-python) to read details about it.
 
-:::image type="content" source="media\mrs\DeltaLakeUpgradeTableProtocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used.":::
+:::image type="content" source="media\mrs\delta-upgrade-table-protocol.gif" alt-text="GIF showing the immediate warning when upgradeTableProtocol method is used.":::
 
 Users can execute the command `delta.upgradeTableProtocol(minReaderVersion, minWriterVersion)` within the PySpark environment, and in Spark SQL and Scala. This command allows them to initiate an update on the Delta table. 
 
@@ -96,7 +95,7 @@ It's essential to note that when performing this upgrade, users receive a warnin
 
 Protocol version upgrades can potentially impact the compatibility of existing Delta Lake table readers, writers, or both. Therefore, it's advisable to proceed with caution and upgrade the protocol version only when necessary, such as when adopting new features in Delta Lake.
 
-:::image type="content" source="media\mrs\DeltaLakeUpgradeWarning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
+:::image type="content" source="media\mrs\delta-upgrade-warning.png" alt-text="Screenshot showing the warning when upgrading the delta lake protocol.":::
 
 Additionally, users should verify that all current and future production workloads and processes are compatible with Delta Lake tables using the new protocol version to ensure a seamless transition and prevent any potential disruptions.
 
