@@ -105,5 +105,19 @@
           "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
           "redirect_document_id": false
         }                  
+          "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-data-lake-storage-gen2-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-lake-storage-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
+          "redirect_document_id": false
+        }
     ]
 }

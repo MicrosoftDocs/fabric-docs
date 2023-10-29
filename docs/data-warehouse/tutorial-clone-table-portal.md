@@ -4,7 +4,7 @@ description: How to clone tables in the Warehouse in the Fabric portal.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 10/19/2023
+ms.date: 10/24/2023
 ms.topic: how-to
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
@@ -14,7 +14,7 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 
 A zero-copy clone creates a replica of the table by copying the metadata, while still referencing the same data files in OneLake. This tutorial guides you through creating a [table clone](clone-table.md) in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], using the warehouse editor with a no-code experience.
 
-## Clone table as of current state of the source table
+## Clone table as of current state
 
 When you select the table, and select on more options, you get the **Clone table** menu. This menu is also available via **Table tools** in the ribbon.
 
@@ -26,9 +26,9 @@ On clone table pane, you can see the source table schema and name is already pop
 
 :::image type="content" source="media\tutorial-clone-table-portal\clone-table-current-state.png" alt-text="Screenshot showing the clone table as current state of the source table.":::
 
-## Clone table as of past point-in-time state of the source table
+## Clone table as of past point-in-time
 
-Similar to current state, you can also choose the past state of the table within last 7 days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
+Similar to current state, you can also choose the past state of the table within last seven days by selecting the date and time in UTC. This generates a clone of the table from a specific point in time, selectable in the **Date and time of past state** fields.
 
 :::image type="content" source="media\tutorial-clone-table-portal\clone-table-past-state.png" alt-text="Screenshot showing the clone table as past state of the source table.":::
 
@@ -36,7 +36,7 @@ Similar to current state, you can also choose the past state of the table within
 
 You can also clone a group of tables at once. This can be useful for cloning a group of related tables at the same past point in time. By selecting source tables, current or past table state, and destination schema, you can perform clone of multiple tables easily and quickly.
 
-The **Clone tables** context menu on **Tables** folder in the **Explorer** enables to select multiple tables for cloning.
+With the **Clone tables** context menu on **Tables** folder in the **Explorer**, you can select multiple tables for cloning.
 
    :::image type="content" source="media\tutorial-clone-table-portal\clone-tables-entrypoint.png" alt-text="Screenshot showing the entry point for multiple clone tables.":::
 
