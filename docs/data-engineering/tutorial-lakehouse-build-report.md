@@ -13,8 +13,6 @@ ms.date: 07/10/2023
 
 In this section of the tutorial, you create a Power BI data model and create a report from scratch.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * [Prepare and transform the data using notebooks and Spark runtime](tutorial-lakehouse-data-preparation.md)

@@ -14,7 +14,7 @@ ms.date: 09/15/2023
 
 In this tutorial, you'll see an end-to-end data science workflow for a text classification model using Microsoft Fabric. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this notebook are:
 

@@ -1,21 +1,19 @@
 ---
 title: Runtime 1.1 in Fabric
-description: Gain a deep understanding of the Apache Spark-based Runtime 1.1 available in Fabric. By learning about unique features, capabilities, and best practices, you can confidently choose Fabric and implement your data-related solutions.
+description: Learn about Apache Spark-based Runtime 1.1 that is available in Fabric, including unique features, capabilities, and best practices.
 ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/24/2023
 ---
 
 # Runtime 1.1
 
-The Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. This document covers the Runtime 1.1 components and versions.
+Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The major components of Fabric Runtime 1.1 are:
 
 - Apache Spark 3.3
 - Operating System: Ubuntu 18.04
@@ -27,7 +25,7 @@ Microsoft Fabric Runtime 1.1 is the default and currently the only runtime offer
 
 :::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
 
-Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
+Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when you use notebooks or jobs on the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
 Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
 
@@ -35,7 +33,7 @@ Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, pro
 
 ### Apache Spark 3.3.1
 
-Following is an extended summary of key new features related to Apache Spark version 3.3.0 and 3.3.1:
+The following extended summary describes key new features related to Apache Spark version 3.3.0 and 3.3.1:
 
 - **Row-level filtering**: improve the performance of joins by prefiltering one side, as long as there are no deprecation or regression impacts on using a Bloom filter and IN predicate generated from the values from the other side of the join. ([SPARK-32268](https://issues.apache.org/jira/browse/SPARK-32268))
 
@@ -110,7 +108,7 @@ The key features in this release are as follows:
 
 - [Support](https://github.com/delta-io/delta/commit/3e8d2d16) partition column names starting with `.` or `_` in CONVERT TO DELTA command.
 
-- Improvements to metrics in table history
+- Improvements to metrics in table history:
 
   - [Fix](https://github.com/delta-io/delta/commit/5d22a38d) a metric in MERGE command.
   
@@ -120,11 +118,11 @@ The key features in this release are as follows:
   
   - [More](https://github.com/delta-io/delta/commit/fd503d80) vacuum stats.
 
-- [Fix](https://github.com/delta-io/delta/commit/7e876792efdd92a85aa3f7b81d81f34c8b276d7b) for accidental protocol downgrades with [RESTORE](https://docs.delta.io/latest/delta-utility.html#restore-a-delta-table-to-an-earlier-state) command. Until now, RESTORE TABLE may downgrade the protocol version of the table, which could have resulted in inconsistent reads with time travel. With this fix, the protocol version is never downgraded from the current one.
+- [Fix](https://github.com/delta-io/delta/commit/7e876792efdd92a85aa3f7b81d81f34c8b276d7b) for accidental protocol downgrades with [RESTORE](https://docs.delta.io/latest/delta-utility.html#restore-a-delta-table-to-an-earlier-state) command. Until now, RESTORE TABLE might downgrade the protocol version of the table, which could have resulted in inconsistent reads with time travel. With this fix, the protocol version is never downgraded from the current one.
 
 - [Fix](https://github.com/delta-io/delta/commit/943e1531) a bug in `MERGE INTO` when there are multiple `UPDATE` clauses and one of the UPDATEs is with a schema evolution.
 
-- [Fix](https://github.com/delta-io/delta/commit/68c8e183) a bug where sometimes active `SparkSession` object isn't found when using Delta APIs
+- [Fix](https://github.com/delta-io/delta/commit/68c8e183) a bug where sometimes active `SparkSession` object isn't found when using Delta APIs.
 
 - [Fix](https://github.com/delta-io/delta/commit/951a97d3) an issue where partition schema couldn't be set during the initial commit.
 
@@ -132,7 +130,7 @@ The key features in this release are as follows:
 
 - [Fix](https://github.com/delta-io/delta/commit/29d3a092) an issue when restarting a streaming query with `AvailableNow` trigger on a Delta table.
 
-- [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset isn't correctly updated when there are no data changes  
+- [Fix](https://github.com/delta-io/delta/commit/0bbec372) an issue with CDF and Streaming where the offset isn't correctly updated when there are no data changes.
 
 Check the source and full release notes on [GitHub at delta-io/delta](https://github.com/delta-io/delta/releases).
 
@@ -621,21 +619,21 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
 
 1. Check compatibility of your current setup and all related libraries, including dependencies and integrations. Review the migration guides to identify potential breaking changes:
 
-   - [Review Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html)
-   - [Review SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html)
-   - If your solution is Apache Spark Structure Streaming related, [review Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html)
-   - If you use PySpark, [review Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html)
-   - If you migrate code from Koalas to PySpark, [review Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html)
+   - Review the [Spark Core migration guide](https://spark.apache.org/docs/latest/core-migration-guide.html).
+   - Review the [SQL, Datasets and DataFrame migration guide](https://spark.apache.org/docs/latest/sql-migration-guide.html).
+   - If your solution is Apache Spark Structure Streaming related, review the [Structured Streaming migration guide](https://spark.apache.org/docs/latest/ss-migration-guide.html).
+   - If you use PySpark, reviewe the [Pyspark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/pyspark_upgrade.html).
+   - If you migrate code from Koalas to PySpark, review the [Koalas to pandas API on Spark migration guide](https://spark.apache.org/docs/latest/api/python/migration_guide/koalas_to_pyspark.html).
 
 1. Move your workloads to Fabric and ensure that you have backups of your data and configuration files in case you need to revert to the previous version.
 
-1. Update any dependencies that the new version of Apache Spark or other Fabric Runtime 1.1 related components may impact, including third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production
+1. Update any dependencies that the new version of Apache Spark or other Fabric Runtime 1.1 related components might impact, including third-party libraries or connectors. Make sure to test the updated dependencies in a staging environment before deploying to production.
 
-1. Update the Apache Spark Configuration on your workload, including updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
+1. Update the Apache Spark configuration on your workload, including updating configuration settings, adjusting memory allocations, and modifying any deprecated configurations.
 
-1. Modify your Apache Spark applications (notebooks and Apache Spark Jobs Definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. You may need to update your code to accommodate any deprecated or removed APIs, and refactor your applications to take advantage of performance improvements and new functionalities.
+1. Modify your Apache Spark applications (notebooks and Apache Spark job definitions) to use the new APIs and features introduced in Fabric Runtime 1.1 and Apache Spark 3.3. You might need to update your code to accommodate any deprecated or removed APIs, and refactor your applications to take advantage of performance improvements and new functionalities.
 
-1. Thoroughly test your updated applications in a staging environment to ensure compatibility and stability with Apache Spark 3.3. Perform performance testing, functional testing, and regression testing to identify and resolve any issues that may arise during the migration process.
+1. Thoroughly test your updated applications in a staging environment to ensure compatibility and stability with Apache Spark 3.3. Perform performance testing, functional testing, and regression testing to identify and resolve any issues that might arise during the migration process.
 
 1. After validating your applications in a staging environment, deploy the updated applications to your production environment. Monitor the performance and stability of your applications after the migration to identify any issues that need to be addressed.
 

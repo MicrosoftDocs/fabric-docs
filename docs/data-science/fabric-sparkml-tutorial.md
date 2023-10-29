@@ -11,7 +11,7 @@ ms.date: 05/23/2023
 
 # Build a machine learning model with Apache Spark MLlib
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this article, you'll learn how to use Apache Spark [MLlib](https://spark.apache.org/mllib/) to create a machine learning application that does simple predictive analysis on an Azure open dataset. Spark provides built-in machine learning libraries. This example uses *classification* through logistic regression.
 

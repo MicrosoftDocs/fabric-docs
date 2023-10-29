@@ -13,8 +13,6 @@ ms.date: 5/23/2023
 
 In this tutorial, you ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * [Create a lakehouse](tutorial-build-lakehouse.md)

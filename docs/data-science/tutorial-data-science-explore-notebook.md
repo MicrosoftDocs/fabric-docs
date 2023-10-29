@@ -18,7 +18,7 @@ You'll use `seaborn`, a Python data visualization library that provides a high-l
 
 You'll also use [Data Wrangler](data-wrangler.md), a notebook-based tool that provides you with an immersive experience to conduct exploratory data analysis and cleaning.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are:
 

@@ -51,7 +51,6 @@ You can locate Delta Lake logs via the following methods:
 
 ## Limitations
 
-- Currently, tables with inserts only are supported.
 - Currently, Delta Lake log checkpoint and vacuum functions are unavailable.
 - Table Names can only be used by Spark and other systems if they only contain these characters: A-Z a-z 0-9 and underscores.
 - Column Names that will be used by Spark and other systems cannot contain:
