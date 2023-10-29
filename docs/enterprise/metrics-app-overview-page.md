@@ -57,7 +57,7 @@ The utilization chart displays the following elements:
 
 * **Background non-billable %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
 
-* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
+* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in preview workloads. During public preview, this refers to operations in workloads that are not billable.
 
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
