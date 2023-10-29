@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 10/29/2023
+ms.date: 10/30/2023
 ---
 
 # Understand the metrics app compute page
