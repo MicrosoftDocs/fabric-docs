@@ -104,7 +104,8 @@
           "source_path_from_root": "/docs/enterprise/metrics-app-overview-page.md",
           "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
           "redirect_document_id": false
-        }                  
+        },
+        {                  
           "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
           "redirect_document_id": false
