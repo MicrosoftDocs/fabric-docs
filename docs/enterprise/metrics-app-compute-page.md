@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 09/14/2023
+ms.date: 10/29/2023
 ---
 
 # Understand the metrics app compute page
@@ -74,7 +74,7 @@ Displays delay and rejection over time. Throttling is based on the amount of fut
 | Interactive rejection |60 minutes < usage <= 24 hours |User requested interactive jobs are rejected. |
 | Background rejection |Usage > 24 hours |User scheduled background jobs are rejected and not executed. |
 
-Use the tabs at the top right corner of the visual to toggle how the visual is displayed. 
+Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
