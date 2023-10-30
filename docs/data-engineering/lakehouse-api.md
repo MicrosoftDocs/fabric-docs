@@ -85,7 +85,7 @@ Response:
 Request:
 
 ```http
-GET https://api.fabric.microsoft.com/v1/workspaces/bee6c118-c2aa-4900-9311-51546433bbb8/lakehouses/daaa77c7-9ef4-41fc-ad3c-f192604424f5 
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId} 
 ```
 
 Response:
@@ -97,8 +97,8 @@ Response:
     "description": "", 
     "workspaceId": "bee6c118-c2aa-4900-9311-51546433bbb8", 
     "properties": { 
-        "oneLakeTablesPath": "https://onelake.dfs.fabric.microsoft.com/bee6c118-c2aa-4900-9311-51546433bbb8/daaa77c7-9ef4-41fc-ad3c-f192604424f5/Tables", 
-        "oneLakeFilesPath": "https://onelake.dfs.fabric.microsoft.com/bee6c118-c2aa-4900-9311-51546433bbb8/daaa77c7-9ef4-41fc-ad3c-f192604424f5/Files", 
+        "oneLakeTablesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Tables", 
+        "oneLakeFilesPath": "https://onelake.dfs.fabric.microsoft.com/{workspaceId}/{lakehouseId}/Files", 
         "sqlEndpointProperties": { 
             "connectionString": "hkpobavgthae5kji5cuqxtivcu-dda6npvkyiaeteyrkfkgim53xa-datawarehouse.pbidedicated.windows.net", 
             "id": "0dfbd45a-2c4b-4f91-920a-0bb367826479", 
@@ -137,7 +137,7 @@ Response:
         { 
             "type": "Managed", 
             "name": "demo1", 
-            "location": "abfss://c522396d-7ac8-435d-8d77-442c3ff21295@onelake.dfs.fabric.microsoft.com/4828d284-3bb7-40e2-a03e-24f0b1ec2a29/Tables/demo1", 
+            "location": "abfss://c522396d-7ac8-435d-8d77-442c3ff21295@onelake.dfs.fabric.microsoft.com/{workspaceId}/Tables/demo1", 
             "format": "delta" 
         } 
     ] 
@@ -158,7 +158,7 @@ Response:
 ```json
 { 
     "continuationToken": "+RID:~HTsuAOseYicH-GcAAAAAAA==#RT:1#TRC:1#ISV:2#IEO:65567#QCF:8#FPC:AgKfAZ8BnwEEAAe8eoA=", 
-    "continuationUri": "https://api.fabric.microsoft.com:443/v1/workspaces/bee6c118-c2aa-4900-9311-51546433bbb8/lakehouses/daaa77c7-9ef4-41fc-ad3c-f192604424f5/tables?continuationToken=%2BRID%3A~HTsuAOseYicH-GcAAAAAAA%3D%3D%23RT%3A1%23TRC%3A1%23ISV%3A2%23IEO%3A65567%23QCF%3A8%23FPC%3AAgKfAZ8BnwEEAAe8eoA%3D", 
+    "continuationUri": "https://api.fabric.microsoft.com:443/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables?continuationToken=%2BRID%3A~HTsuAOseYicH-GcAAAAAAA%3D%3D%23RT%3A1%23TRC%3A1%23ISV%3A2%23IEO%3A65567%23QCF%3A8%23FPC%3AAgKfAZ8BnwEEAAe8eoA%3D", 
     "data": [ 
         { 
             "type": "Managed", 
