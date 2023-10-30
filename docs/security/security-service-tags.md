@@ -26,7 +26,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
 | KustoAnalytics | Real-Time Analytics | Both | No | No |
 
-## How to enable service tags?
+## Enable service tags
 
 To enable Azure service tags for Fabric, you can follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags). These instructions use SQL Managed Instance as an example.
 
