@@ -33,7 +33,7 @@ KustoUpTime is the number of seconds that your KQL database is active in relatio
 You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md).
 
 > [!NOTE]
-> You must be a capacity administrator to monitor capacity usage. TODO: Link
+> You must be a capacity administrator to monitor capacity usage. For more information, see [Understand Microsoft Fabric admin roles](../admin/roles.md).
 
 :::image type="content" source="media/database-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app.":::
 
