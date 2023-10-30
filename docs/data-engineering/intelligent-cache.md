@@ -36,7 +36,7 @@ You don't see the benefit of intelligent cache if:
 
 - Your workload requires large amounts of shuffle. Disabling the intelligent cache frees up available space to prevent your job from failing due to insufficient storage space.
 
-## Enabling and disabling the cache in a session
+## Enable and disable the cache in a session
 
 You can disable or enable the intelligent cache within a session by running the following code in your notebook.
 
