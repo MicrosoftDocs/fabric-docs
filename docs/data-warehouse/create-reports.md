@@ -52,11 +52,11 @@ Alternatively, you can complete the following steps to connect to a warehouse in
 1. Select the **Warehouse (preview) connector** from the **Get data** or connect to the default dataset from **Data hub**. 
 1. Paste the SQL connection string into the connector dialog. 
 1. For authentication, select *organizational account*.
-1. Authenticate using Azure Active Directory - MFA.
+1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multi-factor authentication (MFA).
 1. Select **Connect**.
 1. Select the data items you want to include or not include in your dataset.
 
-## Next steps
+## Related content
 
 - [Data modeling in the default Power BI dataset in Microsoft Fabric](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service in Microsoft Fabric](reports-power-bi-service.md)

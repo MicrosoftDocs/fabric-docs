@@ -26,7 +26,7 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 
 ### Limitations
 
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause issues to your warehouse. 
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
 - ALTER TABLE ADD/ALTER/DROP COLUMN
 - BULK LOAD
@@ -55,7 +55,9 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Triggers
 - TRUNCATE
 
-## Next steps
+## Related content
 
+- [Query insights in Fabric data warehousing](query-insights.md)
+- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations in Microsoft Fabric](limitations.md)

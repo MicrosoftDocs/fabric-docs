@@ -48,13 +48,13 @@ One of the well-known strategies for lake data organization is a [medallion arch
 
 You can use [OneLake shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
 
-Warehouses can also be added as subject area or domain oriented solutions for specific subject matter that may have bespoke analytics requirements. 
+Warehouses can also be added as subject area or domain oriented solutions for specific subject matter that can have bespoke analytics requirements. 
 
 If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
 
 ### Query as a service over your delta tables from Lakehouse and other items from OneLake Data Hub
 
-There are use cases where an analyst, data scientist, or data engineer may need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
+There are use cases where an analyst, data scientist, or data engineer might need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
 
 [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. Every item in Fabric makes it data accessible via OneLake. 
 
@@ -136,7 +136,7 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
 
-## Next steps
+## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
