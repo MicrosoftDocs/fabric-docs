@@ -3,6 +3,12 @@ items:
   tocHref: /fabric/
   topicHref: /fabric/index
   items:
+  - name: Admin
+    tocHref: /fabric/admin/
+    topicHref: /fabric/admin/index
+  - name: Lifecycle management
+    tocHref: /fabric/cicd/
+    topicHref: /fabric/cicd/index
   - name: Data Engineering
     tocHref: /fabric/data-engineering/
     topicHref: /fabric/data-engineering/index
@@ -15,16 +21,24 @@ items:
   - name: Data Warehouse
     tocHref: /fabric/data-warehouse/
     topicHref: /fabric/data-warehouse/index
+  - name: Enterprise
+    tocHref: /fabric/enterprise/
+    topicHref: /fabric/enterprise/index
+  - name: Get started
+    tocHref: /fabric/get-started/
+    topicHref: /fabric/get-started/index
+  - name: Governance
+    tocHref: /fabric/governance/
+    topicHref: /fabric/governance/index
   - name: OneLake
     tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
   - name: Real-Time Analytics
     tocHref: /fabric/real-time-analytics/
     topicHref: /fabric/real-time-analytics/index
-  - name: Real-Time Analytics
-    tocHref: /fabric/real-time-analytics/
-    topicHref: /fabric/real-time-analytics/index
-
+  - name: Security
+    tocHref: /fabric/security/
+    topicHref: /fabric/security/index
 - name: Microsoft Fabric
   tocHref: /azure/
   topicHref: /fabric/index
