@@ -15,8 +15,6 @@ ms.search.form: Data Wrangler
 
 Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code, in pandas or PySpark, that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. More detailed instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
- 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
