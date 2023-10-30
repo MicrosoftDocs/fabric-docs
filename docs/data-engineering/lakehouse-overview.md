@@ -20,7 +20,7 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
 
-It's important to note that the SQL analytics endpoint is a read-only experience and does not support the full T-SQL surface area of a transactional data warehouse.
+It's important to note that the SQL analytics endpoint is a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 
 > [!NOTE]
 > Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can not be queried using the SQL analytics endpoint. If you don't see your table, you will need convert it to Delta format.
@@ -53,7 +53,7 @@ The multitasking experience provides a browser tab design that allows you to ope
 
 - Retain Your Context: Selected objects, data tables, or files remain open and readily available when you switch between tabs. The context of your data lakehouse is always at your fingertips.
 
-- Non-Blocking List Reload: A non-blocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background, ensuring that you have the most up to date data while providing you a smooth and uninterrupted experience.
+- Non-Blocking List Reload: A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background, ensuring that you have the most up to date data while providing you a smooth and uninterrupted experience.
 
 - Clearly Defined Notifications: Toast notifications specify which lakehouse they're coming from, making it easier to track changes and updates in your multi-tasking environment.
 

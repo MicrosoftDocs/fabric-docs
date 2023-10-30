@@ -18,9 +18,9 @@ Creating a Lakehouse creates a SQL analytics endpoint, which points to the Lakeh
 
 :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL analytics endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::
 
-## SQL analytics endpoint re-provisioning
+## SQL analytics endpoint reprovisioning
 
-We offer the ability to retry SQL analytics endpoint provisioning directly within the Lakehouse experience. This means that if your initial provisioning attempt fails, you have the option to try again without the need to create an entirely new Lakehouse. This empower you to self-mitigate provisioning issues in convenient way in the UI avoiding the need for complete Lakehouse recreation.
+We offer the ability to retry SQL analytics endpoint provisioning directly within the Lakehouse experience. Therefore if your initial provisioning attempt fails, you have the option to try again without the need to create an entirely new Lakehouse. This feature empowers you to self-mitigate provisioning issues in convenient way in the UI avoiding the need for complete Lakehouse recreation.
 
 :::image type="content" source="media\sql-endpoint\SQL-analytics-endpoint-re-provisioning.png" alt-text="Lakehouse SQL analytics endpoint re-provisioning" lightbox="media\sql-endpoint\main-screen.png":::
 
