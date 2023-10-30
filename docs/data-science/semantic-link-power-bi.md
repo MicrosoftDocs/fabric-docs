@@ -65,13 +65,17 @@ Configure Spark to use the Power BI Spark native connector:
 
 ```Python
 spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
+
+# Optionally configure the workspace using it's ID
+# Resolve workspace name to ID using fabric.resolve_workspace_id("My workspace")
+# spark.conf.set("spark.sql.catalog.pbi.workspace, "c5fd3571-875a-473d-b587-3fee851291f8")
 ```
 
 List all tables in the Power BI dataset `Sales Dataset`:
 
 ```sql
 %%sql
-SHOW TABLES pbi.`Sales Dataset`
+SHOW TABLES FROM pbi.`Sales Dataset`
 ```
 
 Display data from the table `Customer` in the Power BI dataset `Sales Dataset`:
