@@ -68,7 +68,8 @@ spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.
 
 # Optionally configure the workspace using it's ID
 # Resolve workspace name to ID using fabric.resolve_workspace_id("My workspace")
-# spark.conf.set("spark.sql.catalog.pbi.workspace, "c5fd3571-875a-473d-b587-3fee851291f8")
+# Replace 00000000-0000-0000-0000-000000000000 with your own workspace ID
+# spark.conf.set("spark.sql.catalog.pbi.workspace, "00000000-0000-0000-0000-000000000000")
 ```
 
 List all tables in the Power BI dataset `Sales Dataset`:
