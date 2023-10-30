@@ -64,7 +64,7 @@ For more information on how to use shortcuts, see [OneLake shortcuts](onelake-sh
 
 ### One copy of data with multiple analytical engines
 
-While applications may have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
+While applications might have separation of storage and computing, the data is often optimized for a single engine, which makes it difficult to reuse the same data for multiple applications. With Fabric, the different analytical engines (T-SQL, Spark, Analysis Services, etc.) store data in the open Delta Parquet format to allow you to use the same data across multiple engines.
 
 There's no longer a need to copy data just to use it with another engine. You're always able to choose the best engine for the job that you're trying to do. For example, imagine you have a team of SQL engineers building a fully transactional data warehouse. They can use the T-SQL engine and all the power of T-SQL to create tables, transform data, and load the data to tables. If a data scientist wants to make use of this data, they no longer need to go through a special Spark/SQL driver. OneLake stores all data in Delta Parquet format. Data scientists can use the full power of the Spark engine and its open-source libraries directly over the data.
 
