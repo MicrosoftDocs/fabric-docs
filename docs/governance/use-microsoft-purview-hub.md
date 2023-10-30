@@ -50,7 +50,7 @@ When a Fabric administrator opens the Purview hub, they see insights that includ
 
 When a data owner opens the Purview hub, they see insights that include just the Fabric data items that they own. They also can select tiles to access Purview capabilites that can help them govern their Fabric items.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 ---
 
