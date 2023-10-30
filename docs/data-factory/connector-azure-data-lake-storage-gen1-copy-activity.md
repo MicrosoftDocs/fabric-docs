@@ -45,7 +45,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 The following properties are supported for Azure Data Lake Storage Gen1 under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-data-lake-storage-gen1/source.png" alt-text="Screenshot showing source tab." lightbox="./media/connector-azure-data-lake-storage-gen1/source.png":::
+:::image type="content" source="./media/connector-azure-data-lake-storage-gen1/source.png" alt-text="Screenshot showing source tab.":::
 
 The following properties are **required**:
 
@@ -55,8 +55,8 @@ The following properties are **required**:
 - **File path type**: You can choose **File path**, **Name range**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
   - **File path**: If you choose this type, the data can be copied from the given container or folder/file path specified previously.
-  - **Name range**: Retrieve folders/files with names before or after a specific value in alphabetical order. It utilizes the service-side filter for ADLS Gen1, which provides better performance than a wildcard filter. For more examples, got to [Name range filter examples](/azure/data-factory/connector-azure-data-lake-store?tabs=data-factory#name-range-filter-examples).
-      :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/name-range.png" alt-text="Screenshot showing name range." lightbox="./media/connector-azure-data-lake-storage-gen1/name-range.png":::
+  - **Name range**: Retrieve folders/files with names before or after a specific value in alphabetical order. It utilizes the service-side filter for ADLS Gen1, which provides better performance than a wildcard filter. For more examples, got to [Name range filter examples](/azure/data-factory/connector-azure-data-lake-store#name-range-filter-examples).
+      :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/name-range.png" alt-text="Screenshot showing name range.":::
   
       *List after*: Retrieve the folders/files whose name is after this value alphabetically (exclusive).
 
@@ -64,9 +64,9 @@ The following properties are **required**:
   
   - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given blob container to filter your source folders or files.
 
-    Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-store?tabs=data-factory#folder-and-file-filter-examples).
+    Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-store#folder-and-file-filter-examples).
 
-    :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-azure-data-lake-storage-gen1/wildcard-file-path.png":::
+    :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
 
     *Wildcard folder path*: Specify the folder path with wildcard characters under your given container to filter source folders.
 
@@ -74,7 +74,7 @@ The following properties are **required**:
 
   - **List of files**: Indicates you want to copy a given file set. In **Path to file list**, point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path.
 
-    When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-data-lake-store?tabs=data-factory#file-list-examples).
+    When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-data-lake-store#file-list-examples).
 
     :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
 
@@ -112,7 +112,7 @@ Under **Advanced**, you can specify the following fields:
 
 The following properties are supported for Azure Data Lake Storage Gen1 under the **Destination** tab of a copy activity.
 
-:::image type="content" source="./media/connector-azure-data-lake-storage-gen1/destination.png" alt-text="Screenshot showing destination tab." lightbox="./media/connector-azure-data-lake-storage-gen1/destination.png":::
+:::image type="content" source="./media/connector-azure-data-lake-storage-gen1/destination.png" alt-text="Screenshot showing destination tab.":::
 
 The following properties are **required**:
 
@@ -160,7 +160,7 @@ The following tables contain more information about the copy activity in Azure D
 |**Data store type**|Your data store type.| **External** |Yes|type|
 |**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen1 connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |type|
-|**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• listAfter/listBefore<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
+|**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• listAfter, listBefore<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.|Selected or unselect|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
