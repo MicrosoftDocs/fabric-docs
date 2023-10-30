@@ -26,6 +26,16 @@
         "redirect_document_id": true
         },
         {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
+        "redirect_document_id": true
+        },
+        {
             "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
             "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
             "redirect_document_id": false
