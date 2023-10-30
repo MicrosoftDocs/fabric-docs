@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 10/27/2023
+ms.date: 10/30/2023
 ms.topic: whats-new
 ---
 
@@ -182,6 +182,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Query insights**|The [query insights](../data-warehouse/query-insights.md) feature is a scalable, sustainable, and extendable solution to enhance the SQL analytics experience. With historic query data, aggregated insights, and access to actual query text, you can analyze and tune your query performance. |
 |October 2023|**Full DML to Delta Lake Logs**| [Fabric Warehouse now publishes all Inserts, Updates and Deletes](https://blog.fabric.microsoft.com/blog/announcing-fabric-warehouse-publishing-full-dml-to-delta-lake-logs?ft=All) for each table to their [Delta Lake Log](../data-warehouse/query-delta-lake-logs.md) in OneLake.|
 |October 2023|**V-Order write optimization**| V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. Starting this month, all data ingested into Fabric Warehouses use V-Order optimization. |
 |October 2023|**Burstable capacity**| [Burstable capacity](../data-warehouse/burstable-capacity.md) allows workloads to use more resources to achieve better performance. Burstable capacity is finite, with a limit applied to the backend compute resources to greatly reduce the risk of [throttling](../data-warehouse/compute-capacity-smoothing-throttling.md#throttling). For more information, see [Data Warehouse SKU Guardrails for Burstable Capacity](https://blog.fabric.microsoft.com/blog/data-warehouse-sku-guardrails-for-burstable-capacity/).|
