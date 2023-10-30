@@ -1,6 +1,6 @@
 ---
 title: Lakehouse management API
-description: Learn how to manage the Lakehouse using the Rest API
+description: Learn how to manage the Lakehouse using the Rest API.
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
@@ -24,11 +24,11 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 
 ## Pre-requisites
 
-Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholder `{workspaceId}` and `{lakehouseId}` should be replaced by the appropriate values when issuing the commands exemplified in this article.
+Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
 
 ## Lakehouse CRUD
 
-Use the following API to perform creation, modifications and removal of the Lakehouse artifact inside a workspace.
+Use the following API to perform creation, modifications, and removal of the Lakehouse artifact inside a workspace.
 
 ### Create a Lakehouse
 
@@ -110,7 +110,7 @@ Response:
 
 ### Delete a Lakehouse
 
-All object metadata and data will be deleted. Shortcut references will be deleted, but the data will be preserved at the target.
+All object metadata and data are deleted. Shortcut references are deleted, but the data is preserved at the target.
 
 Request:
 
@@ -172,13 +172,13 @@ Response:
 
 ## Load to tables
 
-This API surfaces the capabilities of the [Load to Tables](load-to-tables.md) Lakehouse feature. With this API it's possible to load CSV and parquet files to new or existing Delta Lake tables in the Lakehouse.
+This API surfaces the capabilities of the [Load to Tables](load-to-tables.md) Lakehouse feature. With this API, it's possible to load CSV and parquet files to new or existing Delta Lake tables in the Lakehouse.
 
 This API is asynchronous, so three steps are required:
 
-1. Upload files and folders using OneLake API's to Lakehouse's ```Files``` section.
+1. Upload files and folders using OneLake APIs to Lakehouse's ```Files``` section.
 1. Submit Load to Tables API request.
-1. Track the status of the operation until completion
+1. Track the status of the operation until completion.
 
 The following sections assume the files were already uploaded.
 
@@ -207,9 +207,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 }
 ```
 
-The response header contains the URI to poll the status of the asynchronous operations. The URI is provide under the __Location__ parameter of the response header.
+The response header contains the URI to poll the status of the asynchronous operations. The URI is provids under the __Location__ parameter of the response header.
 
-If the Location header contains and URI such as the following: https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/__32ad6d2a-82bb-420d-bb57-4620c8860373__, the item in bold should be used as the operation id to query the status of the running transaction.
+The Location header contains an URI as the following: https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/__32ad6d2a-82bb-420d-bb57-4620c8860373__. The item in bold us to be used as the operation id to query the status of running Load to tables operations.
 
 ### Monitoring Load to tables operations
 
@@ -234,7 +234,7 @@ The following are the possible operation status for Load to tables
 
 * 1 - Operation not started
 * 2 - Running
-* 3 - Succeedded
+* 3 - Success
 * 4 - Failed
 
 ## Next steps
