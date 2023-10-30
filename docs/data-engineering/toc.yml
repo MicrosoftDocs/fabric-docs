@@ -131,6 +131,8 @@ items:
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
 - name: Notebooks
