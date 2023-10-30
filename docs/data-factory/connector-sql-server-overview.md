@@ -14,7 +14,7 @@ This SQL server connector is supported in Data Factory for [!INCLUDE [product-na
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Support in data pipelines
 
 The SQL server connector supports the following capabilities in data pipelines:
 
