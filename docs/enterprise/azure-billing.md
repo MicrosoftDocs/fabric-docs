@@ -3,7 +3,7 @@ title: Understand your Fabric capacity Azure bill
 description: Learn how to navigate your Azure bill for A Fabric capacity.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
 ms.date: 09/19/2023
 ---
