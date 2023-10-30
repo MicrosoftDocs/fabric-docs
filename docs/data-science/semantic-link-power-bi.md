@@ -66,7 +66,7 @@ Configure Spark to use the Power BI Spark native connector:
 ```Python
 spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
 
-# Optionally configure the workspace using it's ID
+# Optionally, configure the workspace using its ID
 # Resolve workspace name to ID using fabric.resolve_workspace_id("My workspace")
 # spark.conf.set("spark.sql.catalog.pbi.workspace, "c5fd3571-875a-473d-b587-3fee851291f8")
 ```
