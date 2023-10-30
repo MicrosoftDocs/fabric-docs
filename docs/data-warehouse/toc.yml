@@ -136,22 +136,29 @@ items:
     href: statistics.md
   - name: Caching
     href: caching.md
-  - name: Workload Management
-    href: workload-management.md
 - name: Monitor the warehouse
   items:
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
-  - name: Smoothing and throttling
-    href: compute-capacity-smoothing-throttling.md
-    displayName: Smoothing, throttling
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
   - name: How to
     items:    
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
+- name: Warehouse capacity
+  items:
+  - name: Burstable capacity
+    href: burstable-capacity.md
+  - name: Capacity pause and resume
+    href: pause-resume.md
+    displayName: pause, warehouse
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
+  - name: Workload Management
+    href: workload-management.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
