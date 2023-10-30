@@ -16,6 +16,9 @@ To meet this challenge, organizations are shifting from traditional IT centric d
 
 Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
+> [!NOTE]
+> Customers using Purview, are strongly recommended to create the same domains in Fabric and in Purview for better integration and alignment.
+
 ## Key concepts
 
 ### Domains
@@ -26,11 +29,11 @@ To group data into domains, workspaces are associated with domains. When a works
 
 ### Subdomains
 
-asdf
-
+You can create subdomains under domains. A subomain is a way for fine tuning the logical grouping of your data. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
+ 
 ### Domain roles
 
-There are three roles involved in domains:
+There are three roles involved in the creation and management of domains:
 
 * **Fabric admin** (or higher): Fabric admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Fabric admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
 
@@ -45,7 +48,11 @@ There are three roles involved in domains:
     > [!NOTE]
     > Remember, to be able to associate a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
 
-### Delegated settings
+### Domain settings delegation
+
+Some tenant-level settings for managing and governing data can be [delegated to the domain level](#override-tenant-level-settings). This allows domain-specific configuration of those settings.
+
+It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ### Domain image
 
@@ -53,7 +60,13 @@ When users look for data items in the OneLake data hub, they may want to see onl
 
 :::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
 
+For information about how to specify an image for a domain, see [Specify a domain image](#specify-a-domain-image).
+
 ### Default domain
+
+A default domain is a domain that has been specified as default domain for specific users and security groups. It means that when these users/security groups create a new workspace, or when they update a workspacethat they are an admin of and as yet has no associate domain, that workspace will automatically be associated to that (default) domain. In general, these users/security groups will become "default"’" contributors. Default domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the Domains page in the admin portal.
+
+Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Default domains](#default-domain) for details.
 
 ## Create a domain
 
@@ -113,6 +126,8 @@ To unassign several workspaces at a time, select the checkboxes next to the work
 
 ## Configure domain settings
 
+Sub domains configuration contains name and description only at this stage, Fabric admins and domain admins can create, edit and delete sub domains 
+
 ### General settings
 
 Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
@@ -123,7 +138,7 @@ Fabric admins can edit the name and description fields. Domain admins can edit t
 
 1. When done, select **Apply**.
 
-### Image
+### Specify a domain image
 
 Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
 
@@ -153,6 +168,12 @@ To specify domain contributors, you must be a domain admin for the domain or a F
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
 ### Default domain
+
+To specify default domain, you must be a domain admin for the domain or a Fabric admin.
+
+Go to Domain Settings and click on the Default Domain tab and specify who will be the users/security group which their WS will be assigned to the domain by default.
+
+Image
 
 ### Delegated settings
 
