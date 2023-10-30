@@ -45,6 +45,8 @@ items:
     href: lakehouse-sql-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
 - name: Get data into lakehouse
   items:
   - name: Get data into a lakehouse
