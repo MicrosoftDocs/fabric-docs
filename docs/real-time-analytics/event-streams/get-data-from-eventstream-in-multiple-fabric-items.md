@@ -40,7 +40,7 @@ There are two options available:
 
    :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard.png" alt-text="Screenshot showing the get data wizard first step." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-wizard.png" :::
 
-1. To get all the steps completed, following this article [Get data wizard configuration guide](./../get-data-event-hub.md).
+1. To get all the steps completed, following this article [Get data wizard configuration guide](./../get-data-eventstream.md).
 
 ### Get data from a new eventstream
 
