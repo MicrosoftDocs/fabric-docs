@@ -13,22 +13,32 @@ ms.date: 10/28/2023
 
 Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
 
-The Purview hub has a view for Fabric administrators and a view for non-administrator Fabric users.
+The Purview hub has a view for Fabric administrators and a view for non-admin Fabric users.
 * The administrator view provides visibility over the tenant's entire Fabric data estate.
-* The non-adminstrator view provides users visibilty over their own Fabric content. In the sections below, select a tab to see the information that is relevant to you.
+* The non-adminstrator view provides users visibilty over their own Fabric content.
 
-When you open the hub, you see the view that matches your role. In the sections below, select the appropriate tab to see the information that is relevant to you.
+When you open the hub, you see the view that is appropriate for you. In the sections below, select the appropriate tab to see the information that is relevant to you.
+
+# [Admin view](#tab/admin-view)
+
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+
+# [Non-admin view](#tab/data-owner-view)
+
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+
+---
 
 ## Accessing the hub
 
-To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub (preview)**.
+To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub**.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-When you select the Microsoft Purview hub option, the hub opens to the appropriate view.
+When you select the Microsoft Purview hub option, the hub opens to the appropriate view. If this is the first time insights are being generated, it make take a few moment for them to appear.
 
 >[!NOTE]
-> Some users won't be able to see a view. See Considerations and limitations for exceptions.
+> Some users won't be able to see a view when they select the **Microsoft Purview hub** option. See [Considerations and limitations for exceptions]().
 
 # [Admin view](#tab/admin-view)
 
