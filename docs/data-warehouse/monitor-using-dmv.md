@@ -98,7 +98,8 @@ KILL '101'
 - A Member, Contributor, and Viewer can execute `sys.dm_exec_sessions` and `sys.dm_exec_requests` and see their own results within the warehouse, but does not have permission to execute `sys.dm_exec_connections`. 
 - Only an Admin has permission to run the `KILL` command. 
 
-## Next steps
+## Related content
 
 - [Query using the SQL Query editor](sql-query-editor.md)
-- [Query the SQL Endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-warehouse.md)
+- [Query insights in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-insights.md)
