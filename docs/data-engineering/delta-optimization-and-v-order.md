@@ -216,9 +216,9 @@ DeltaTable.createOrReplace(spark)\
 
 ## What is Optimized Write?
 
-Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
+Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables might have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
 
-Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per workload requirements using configurations.
+Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size can be changed per workload requirements using configurations.
 
 The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark. To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 
@@ -232,7 +232,7 @@ The implementation is controlled by the ```spark.microsoft.delta.merge.lowShuffl
 
 As Delta tables change, performance and storage cost efficiency tend to degrade for the following reasons:
 
-- New data added to the table may skew data
+- New data added to the table might skew data
 - Batch and streaming data ingestion rates might bring in many small files
 - Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
 - No longer needed data files and log files available in the storage.
