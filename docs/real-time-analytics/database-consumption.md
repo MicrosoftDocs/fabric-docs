@@ -10,11 +10,11 @@ ms.search.form: KQL Database, Overview
 ---
 # KQL Database consumption
 
-KQL databases operate on a fully managed Kusto engine. With a KQL Database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs.
+[KQL databases](create-database.md) operate on a fully managed Kusto engine. With a KQL Database, you can expect available compute for your analytics within 5 to 10 seconds. The compute resources grow with your data analytic needs.
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
-This article explains compute usage reporting of the KQL databases in Microsoft Fabric.
+This article explains compute usage reporting of the KQL databases in Microsoft Fabric, including [KustoUpTime](#kustouptime) and [storage](#monitor-onelake-storage).
 
 ## Capacity
 
@@ -22,9 +22,9 @@ In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capa
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times. The amount of capacity that used by a KQL database is based on the **KustoUpTime** operation.
 
-### Capacity in KQL Database: KustoUpTime
+## KustoUpTime
 
-KustoUpTime is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database. An auto-scale mechanism is used to determine the size of your KQL database. This ensures cost and performance optimization based on your usage pattern.
+KustoUpTime is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database. An auto-scale mechanism is used to determine the size of your KQL database. This mechanism ensures cost and performance optimization based on your usage pattern.
 
 > For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
@@ -39,11 +39,11 @@ You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../e
 
 ## Storage billing
 
-Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage, OneLake Cache Storage and OneLake Standard Storage.
+Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
 
-**OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. For instance, if you typically query back 7 days then you can set the cache retention to 7 days for best performance. This is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
+* **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. For instance, if you typically query back 7 days then you can set the cache retention to 7 days for best performance. This is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
-**OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
+* **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
 ### Monitor OneLake Storage
 
