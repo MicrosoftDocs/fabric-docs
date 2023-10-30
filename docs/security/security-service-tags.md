@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: concept-article
 ms.custom: build-2023
-ms.date: 10/29/2023
+ms.date: 10/30/2023
 ---
 
 # Service tags
@@ -28,15 +28,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 
 ## How to enable service tags?
 
-To enable service tags in Fabric, you can follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags).
-
-You can also follow the example in this section, for enabling service tags in SQL Managed Instance.
-
-1. [Enable a public endpoint](/power-bi/enterprise/service-premium-service-tags#enable-a-public-endpoint) in the SQL Managed Instance.
-
-2. [Create a Network Security Group rule](/power-bi/enterprise/service-premium-service-tags#create-a-network-security-group-rule) to allow inbound traffic.
-
-3. [Enter the credentials](/power-bi/enterprise/service-premium-service-tags#enter-the-credentials-in-power-bi) in Microsoft Fabric.
+To enable Azure service tags for Fabric, you can follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags). These instructions use SQL Managed Instance as an example.
 
 ## Next steps
 
