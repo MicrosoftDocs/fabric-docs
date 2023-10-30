@@ -26,16 +26,6 @@
         "redirect_document_id": true
         },
         {
-        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
-        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
-        "redirect_document_id": true
-        },
-        {
-        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
-        "redirect_url": "/fabric/data-science/model-training-overview",
-        "redirect_document_id": true
-        },
-        {
             "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
             "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
             "redirect_document_id": false
@@ -76,6 +66,16 @@
           "redirect_document_id": true
         },
         {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
           "redirect_url": "/fabric/data-factory/data-factory-limitations",
           "redirect_document_id": false
@@ -103,6 +103,21 @@
         {
           "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-amazon-s3",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-data-lake-storage-gen2-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-lake-storage-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
           "redirect_document_id": false
         }
     ]
