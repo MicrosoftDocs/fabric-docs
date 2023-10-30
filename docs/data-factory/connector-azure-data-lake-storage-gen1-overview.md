@@ -4,7 +4,7 @@ description: This article provides an overview of the Azure Data Lake Storage Ge
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/25/2023
+ms.date: 10/30/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -20,7 +20,7 @@ The Azure Data Lake Storage Gen1 connector supports the following capabilities i
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (Source/Destination)** | None | Service principal |
+| **Copy activity (source/destination)** | None | Service principal |
 | **Lookup activity** | None | Service principal |
 | **GetMetadata activity** | None | Service principal|
 
