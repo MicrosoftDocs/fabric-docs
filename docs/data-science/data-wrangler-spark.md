@@ -15,8 +15,6 @@ ms.search.form: Data Wrangler
 
 [Data Wrangler](data-wrangler.md), a notebook-based tool for exploratory data analysis, now works for both Spark DataFrames and pandas DataFrames. For a general overview of Data Wrangler, which covers how to explore and transform pandas DataFrames using the tool, please see the [themain tutorial](data-wrangler.md). The following tutorial shows how to use the tool to explore and transfrom Spark DataFrames.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
