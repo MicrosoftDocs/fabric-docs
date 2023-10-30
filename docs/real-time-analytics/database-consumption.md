@@ -14,7 +14,7 @@ KQL databases operate on a fully managed Kusto engine. With a KQL Database, you 
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
-This article explains compute usage reporting of the KQL databases in Microsoft Fabric, which includes .
+This article explains compute usage reporting of the KQL databases in Microsoft Fabric.
 
 ## Capacity
 
@@ -24,27 +24,26 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ### Capacity in KQL Database: KustoUpTime
 
-KustoUpTime is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database.
+KustoUpTime is the number of seconds that your KQL database is active in relation to the number of virtual cores used by your database. An auto-scale mechanism is used to determine the size of your KQL database. This ensures cost and performance optimization based on your usage pattern.
 
-For example, if a database is using 4 virtual cores and is active for 30 seconds, you will utilize 120 seconds of Capacity Units. An auto-scale mechanism is utilized to determine the size of your KQL database. This ensures the most cost optimized and best performance based on your usage pattern.
+> For example, a database using 4 virtual cores that is active for 30 seconds will use 120 seconds of Capacity Units.
 
 ### Monitor KustoUpTime
 
-The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows any capacity administrator to monitor capacity usage.
+You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md).
+
+> [!NOTE]
+> You must be a capacity administrator to monitor capacity usage. TODO: Link
 
 :::image type="content" source="media/database-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app.":::
 
 ## Storage billing
 
-Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage, [OneLake Cache Storage](#onelake-cache-storage) and [OneLake Standard Storage](#onelake-standard-storage).
+Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage, OneLake Cache Storage and OneLake Standard Storage.
 
-### OneLake Cache Storage
+**OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. For instance, if you typically query back 7 days then you can set the cache retention to 7 days for best performance. This is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
-This is premium storage that is utilized to provide the fastest query response times. For instance, if you typically query back 7 days then you can set the cache retention to 7 days for best performance. This is comparable to Azure ADLS (Azure Data Lake Storage) premium tier.
-
-### OneLake Standard Storage
-
-This is standard storage that is used to persist and store all queryable data. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This is comparable to Azure ADLS (Azure Data Lake Storage) hot tier.
+**OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
 ### Monitor OneLake Storage
 
@@ -54,5 +53,6 @@ The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows 
 
 ## Related content
 
+* [Microsoft Fabric concepts and licenses](../enterprise/licenses.md)
 * [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 * [Create a KQL database](create-database.md)
