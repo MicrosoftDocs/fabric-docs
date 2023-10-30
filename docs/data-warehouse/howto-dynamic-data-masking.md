@@ -56,9 +56,9 @@ Before you begin, make sure you have the following:
     GO
     ```
     In this example, we have created a table `EmployeeData` with dynamic data masking applied to the `FirstName` and `SSN` columns, and a full mask of the `LastName` column.
-        - The `FirstName` column shows only the first and last two characters of the string, with `-` in the middle.
-        - The `LastName` column shows `XXXX`.
-        - the `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
+    - The `FirstName` column shows only the first and last two characters of the string, with `-` in the middle.
+    - The `LastName` column shows `XXXX`.
+    - the `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
 1. Select the **Run** button to execute the script.
 1. Confirm the execution of the script.
 1. The script will apply the specified dynamic data masking rules to the designated columns in your table. 
