@@ -40,13 +40,13 @@ You don't see the benefit of intelligent cache if:
 
 You can disable or enable the intelligent cache within a session by running the following code in your notebook.
 
-```
+```scala
 spark.conf.set("spark.synapse.vegas.useCache", "false/true") 
 ```
 
 You can also change the default percentage of intelligent cache within a session by running the following code in your notebook and specifying cache size from 0 to 80. Specifying 0 means disabling it. The following example shows how to change the cache size to 60 percentage.
 
-```
+```scala
 spark.conf.set("spark.synapse.vegas.cacheSize", "60")
 ```
 
