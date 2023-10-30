@@ -1,18 +1,18 @@
 ---
-title: Understand the metrics app overview page
-description: Learn how to read the Microsoft Fabric Capacity metrics app's overview page.
+title: Understand the metrics app compute page
+description: Learn how to read the Microsoft Fabric Capacity metrics app's compute page.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 09/14/2023
+ms.date: 10/30/2023
 ---
 
-# Understand the metrics app overview page
+# Understand the metrics app compute page
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The Microsoft Fabric Capacity Metrics app's overview page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
+The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
 At the top of each page, the **Capacity Name** field allows you to select the capacity the app shows results for.
 
@@ -57,16 +57,24 @@ The utilization chart displays the following elements:
 
 * **Background non-billable %** - Baby blue columns represent the percent of CU consumption used during preview workloads background operations in a 30 second period. During public preview, this refers to operations in workloads that are not billable.
 
-* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in non-preview workloads. During public preview, this refers to operations in workloads that are not billable.
+* **Interactive non-billable %** - Green columns represent the percent of CU consumption used during preview workloads interactive operations in a 30 second period. This column refers to operations that are performed in preview workloads. During public preview, this refers to operations in workloads that are not billable.
 
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
 
-
 ### Throttling
 
-Displays delay and rejection over time. Use the tabs at the top right corner of the visual to toggle how the visual is displayed. 
+Displays delay and rejection over time. Throttling is based on the amount of future capacity consumption resulting from the following smoothing policies.
+
+| Policy | Consumption |Impact |
+|--|--|--|
+| Overage protection |Usage <= 10 minutes |Jobs can consume 10 minutes of future capacity use without throttling. |
+| Interactive delay |10 minutes < usage <= 60 minutes |User requested interactive jobs are throttled. |
+| Interactive rejection |60 minutes < usage <= 24 hours |User requested interactive jobs are rejected. |
+| Background rejection |Usage > 24 hours |User scheduled background jobs are rejected and not executed. |
+
+Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
 * **Linear** - Display the information using a linear scale that starts at 0 percent.
 
@@ -82,7 +90,7 @@ The throttling chart displays the following elements:
 
   * **Background rejection** - Billable background operations are rejected if the value is above 100%.
 
-### Overages 
+### Overages
   
 Displays the *add*, *burndown* and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
 
@@ -155,6 +163,6 @@ User can hover over any value in the visual to see operation level data. User ca
 
 ## Next steps
 
-[Understand the metrics app OneLake page](metrics-app-onelake-page.md)
+[Understand the metrics app storage page](metrics-app-storage-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
