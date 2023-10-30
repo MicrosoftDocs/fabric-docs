@@ -32,7 +32,7 @@ The total usage from all meters add up to the cost of the provisioned Fabric cap
 
 ## Comparing your Azure bill with your usage
 
-Use the [Microsoft Fabric Capacity Metrics](metrics-app-overview-page.md) to correlate your Azure bill with usage analytics generated from your organization’s usage of Fabric.
+Use the [Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md) to correlate your Azure bill with usage analytics generated from your organization’s usage of Fabric.
 
 The default view in the app shows trends in consumption by workload over the past 14 days. The view includes an analysis of billable and preview workloads that aren't used by your capacity and aren't billed.
 
@@ -48,4 +48,4 @@ To compare the information in the Microsoft Fabric Capacity Metrics app to what 
 
 ## Next steps
 
-[Microsoft Fabric Capacity Metrics](metrics-app-overview-page.md)
+[Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md)

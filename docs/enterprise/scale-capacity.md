@@ -44,4 +44,4 @@ Scaling up a capacity that’s smaller than F64, may take up to three hours. Dur
 
 * [Pause and resume your capacity](pause-resume.md)
 
-* [Understand the metrics app overview page](metrics-app-overview-page.md)
+* [Understand the metrics app overview page](metrics-app-compute-page.md)
