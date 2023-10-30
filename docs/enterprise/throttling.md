@@ -3,7 +3,7 @@ title: Understand your Fabric capacity throttling
 description: Learn why and how capacities are throttled in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.date: 10/02/2023
 ---
 

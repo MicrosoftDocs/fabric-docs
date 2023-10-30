@@ -3,7 +3,7 @@ title: Microsoft Fabric concepts
 description: Understand Microsoft Fabric concepts such as tenants, capacities and SKUs.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
 ms.date: 09/04/2023
 ---
