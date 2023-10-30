@@ -12,13 +12,11 @@ ms.custom: template-how-to, build-2023
 
 You can connect to a SharePoint Online list in Dataflow Gen2 using the SharePoint Online list connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Connect to a SharePoint Online list
 
 To connect to a SharePoint Online list from a dataflow:
 
-1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
+1. From your workspace, select **New** > **Dataflow Gen2** to create a new dataflow.
 
    :::image type="content" source="./media/connector-sharepoint-online-list/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-sharepoint-online-list/select-open-dataflow.png":::
 

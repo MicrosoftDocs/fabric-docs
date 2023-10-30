@@ -13,8 +13,6 @@ ms.date: 05/23/2023
 
 In this tutorial, learn how to read/write data into your lakehouse with a notebook.Spark API and Pandas API are supported to achieve this goal.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Load data with an Apache Spark API
 
  In the code cell of the notebook, use the following code example to read data from the source and load it into **Files**, **Tables**, or both sections of your lakehouse.

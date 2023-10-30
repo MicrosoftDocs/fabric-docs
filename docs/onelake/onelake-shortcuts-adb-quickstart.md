@@ -6,12 +6,10 @@ ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # Connect to ADLS and transform the data with Azure Databricks
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this guide, you will:
 

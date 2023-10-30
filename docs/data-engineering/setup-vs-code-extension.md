@@ -12,17 +12,15 @@ ms.search.form: VSCodeExtension
 
 # What is the Synapse Visual Studio Code extension?
 
-The Synapse VS Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
+The Synapse Visual Studio Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-Visual Studio Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
+Visual Studio (VS) Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
 
 ## Prerequisites
 
 Prerequisites for the Synapse VS Code extension:
 
-- [Java 1.8](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
 - [Conda](https://docs.conda.io/en/latest/miniconda.html)
 - [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
@@ -38,7 +36,7 @@ After you have installed the required software, you must update the operating sy
 
 Run the **conda.sh** in the terminal:
 
-1. Open the terminal window, change the directory to the folder where conda is installed, then change to the subdirectory **etc/profile.d**. The subdirectory should contain a file named conda.sh.
+1. Open the terminal window, change the directory to the folder where conda is installed, then change to the subdirectory **etc/profile.d**. The subdirectory should contain a file named **conda.sh**.
 
 1. Execute `source conda.sh`.
 
@@ -68,7 +66,7 @@ To validate the setup, open the extension settings and check the details there:
 
 1. After you successfully sign in, your username will be displayed in the VS Code status bar to indicate that you're signed in.
 
-    :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status.":::
+   :::image type="content" source="media\vscode\signin-status.png" alt-text="Screenshot of the VS Code status bar, showing where to find your sign-in status.":::
 
 1. To sign out of the extension, enter the command `Synapse: Sign off`.
 

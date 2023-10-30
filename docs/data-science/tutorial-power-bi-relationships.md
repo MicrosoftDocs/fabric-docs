@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Discover relationships in a Power BI dataset using Semantic Link'
+title: 'Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)'
 description: This article shows how to interact with Power BI from a Jupyter notebook with the help of the SemPy library.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,13 +12,15 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_relationships_tutorial.ipynb -->
 
-# Tutorial: Discover relationships in a Power BI dataset using Semantic Link
+# Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)
+
 This tutorial illustrates how to interact with Power BI from a Jupyter notebook and detect relationships between tables with the help of the SemPy library.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-### In this tutorial, you learn how to:
-- Discover relationships in a Power BI dataset using Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)).
+In this tutorial, you learn how to:
+
+- Discover relationships in a Power BI dataset using semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)).
 - Use components of SemPy that support integration with Power BI and help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Functions for pulling Power BI datasets from a Fabric workspace into your notebook.
@@ -75,9 +77,9 @@ This tutorial uses a standard Power BI sample dataset [_Customer Profitability S
     ```
 
 For the rest of this notebook you use two versions of the Customer Profitability Sample dataset:
--  *Customer Profitability Sample*: the dataset as it comes from Power BI samples with predefined table relationships
--  *Customer Profitability Sample (auto)*: the same data, but relationships are limited to those ones that Power BI would autodetect.
- 
+
+- *Customer Profitability Sample*: the dataset as it comes from Power BI samples with predefined table relationships
+- *Customer Profitability Sample (auto)*: the same data, but relationships are limited to those ones that Power BI would autodetect.
 
 ## Extract a sample dataset with its predefined semantic model
 
@@ -110,12 +112,11 @@ If you started with relationships that Power BI autodetected, you'd have a small
     autodetected = fabric.list_relationships(dataset)
     plot_relationship_metadata(autodetected)
     ```
-    
+
     :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png" alt-text="Screenshot showing the relationships that Power BI autodetected in the dataset." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-autodetected-relationships.png":::
-        
 
     Power BI's autodetection missed many relationships. Moreover, two of the autodetected relationships are semantically incorrect:
-    
+
     - `Executive[ID]` -> `Industry[ID]`
     - `BU[Executive_id]` -> `Industry[ID]`
 
@@ -170,8 +171,8 @@ If you started with relationships that Power BI autodetected, you'd have a small
     ```
 
     :::image type="content" source="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png" alt-text="Screenshot that shows visualization of newly discovered relationships." lightbox="media/tutorial-power-bi-relationships/plot-metadata-for-newly-discovered-relationships.png":::
-    
-    SemPy was able to detect all relationships. 
+
+    SemPy was able to detect all relationships.
 
 1. Use the `exclude` parameter to limit the search to additional relationships that weren't identified previously:
 
@@ -205,15 +206,15 @@ If you started with relationships that Power BI autodetected, you'd have a small
 
     The relationship violations provide some interesting insights. For example, one out of seven values in `Fact[Product Key]` isn't present in `Product[Product Key]`, and this missing key is `50`.
 
-Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic Link provides you with new tools that you can use to achieve more with your data.
+Exploratory data analysis is an exciting process, and so is data cleaning. There's always something that the data is hiding, depending on how you look at it, what you want to ask, and so on. Semantic link provides you with new tools that you can use to achieve more with your data.
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+Check out other tutorials for semantic link / SemPy:
 
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

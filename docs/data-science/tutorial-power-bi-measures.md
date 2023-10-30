@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
+title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)'
 description: This article shows how to use SemPy to calculate measures in Power BI datasets.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,13 +12,15 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->
 
-# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook
-This tutorial illustrates how to use SemPy to calculate measures in Power BI datasets.
+# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+This tutorial illustrates how to use SemPy (preview) to calculate measures in Power BI datasets.
 
-### In this tutorial, you learn how to:
-- Evaluate Power BI measures programmatically via a Python interface of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)).
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+
+In this tutorial, you learn how to:
+
+- Evaluate Power BI measures programmatically via a Python interface of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)).
 - Get familiarized with components of SemPy that help to bridge the gap between AI and BI. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that allow you to fetch Power BI datasets, including raw data, configurations, and measures.
@@ -35,7 +37,6 @@ This tutorial illustrates how to use SemPy to calculate measures in Power BI dat
 The [powerbi_measures_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
-
 
 ## Set up the notebook
 
@@ -138,10 +139,11 @@ fabric.evaluate_measure(dataset, \
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
+Check out other tutorials for semantic link / SemPy:
+
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
 
 <!-- nbend -->

@@ -1,18 +1,16 @@
 ---
-title: How to configure Amazon S3 in a copy activity
+title: Configure in a data pipeline copy activity
 description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 09/13/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Amazon S3 in a copy activity
+# Configure in a data pipeline copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Required permissions
 
@@ -117,4 +115,4 @@ The following tables contain more information about the copy activity in Amazon 
 
 ## Next steps
 
-[How to create an Amazon S3 connection](connector-amazon-s3.md)
+[Set up your Amazon S3 connection](connector-amazon-s3.md)

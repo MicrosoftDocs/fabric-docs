@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Clean data with functional dependencies'
+title: 'Tutorial: Clean data with functional dependencies (preview)'
 description: This article shows how to use information about functional dependencies in data for data cleaning.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -13,15 +13,16 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb -->
 
-# Tutorial: Clean data with functional dependencies
+# Tutorial: Clean data with functional dependencies (preview)
 
 In this tutorial, you use functional dependencies for data cleaning. A functional dependency exists when one column in a dataset is a function of another column. For example, a _zip code_ column might determine the values in a _city_ column. A functional dependency manifests itself as a one-to-many relationship between the values in two or more columns within a DataFrame. This tutorial uses the _Synthea_ dataset to show how functional relationships can help to detect data quality problems.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
+
 - Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
-- Get familiarized with components of Semantic Link's Python library ([SemPy](/python/api/semantic-link-sempy)) that help to automate data quality analysis. These components include:
+- Get familiarized with components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
     - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
 
@@ -41,11 +42,13 @@ The [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/mi
 In this section, you set up a notebook environment with the necessary modules and data.
 
 1. Install `SemPy` from PyPI, using the `%pip` in-line installation capability within the notebook:
+
     ```python
     %pip install semantic-link
     ```
 
 1. Perform necessary imports of modules that you'll need later:
+
     ```python
     import pandas as pd
     import sempy.fabric as fabric
@@ -172,10 +175,11 @@ Going back to the graph of dependency violations, you can see that there are sev
 
 ## Related content
 
-Check out other tutorials for Semantic Link / SemPy:
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using Semantic Link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using Semantic Link](tutorial-power-bi-relationships.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+Check out other tutorials for semantic link / SemPy:
+
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

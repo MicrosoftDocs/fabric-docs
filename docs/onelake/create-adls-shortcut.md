@@ -7,14 +7,12 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 07/16/2023
+ms.date: 09/27/2023
 ---
 
 # Create an Azure Data Lake Storage Gen2 shortcut
 
 In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisite
 

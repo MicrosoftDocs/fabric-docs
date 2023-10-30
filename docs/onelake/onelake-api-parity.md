@@ -6,12 +6,10 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 08/04/2023
+ms.date: 09/27/2023
 ---
 
 # OneLake and Azure Data Lake Storage (ADLS) Gen2 API parity
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 OneLake supports the same APIs as Azure Data Lake Storage (ADLS) Gen2, enabling users to read, write, and manage their data in OneLake. However, not all functionality in ADLS Gen2 maps directly to OneLake. OneLake also enforces a set folder structure to support Fabric workspaces and items. This page details the changes between ADLS Gen2 and OneLake when calling DFS APIs, and other differences between the two services. For more information on ADLS Gen2 APIs, see [Azure Data Lake Storage Gen2 REST APIs](/rest/api/storageservices/data-lake-storage-gen2).
 

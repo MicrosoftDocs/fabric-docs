@@ -2,7 +2,6 @@
 title: An overview of refresh history and monitoring for dataflows.
 description: An overview of refresh history and monitoring for dataflows features.
 author: luitwieler
-
 ms.topic: conceptual
 ms.custom: build-2023
 ms.date: 05/23/2023
@@ -12,8 +11,6 @@ ms.author: jeluitwi
 # View refresh history and monitor your dataflows
 
 Monitoring your dataflow refreshes is key in ensuring that your dataflows are running as expected. Refresh history and monitoring hub allows you to evaluate in detail what happened during the refresh of your dataflow. This article provides you with an overview of the features that are available in the refresh history and monitoring hub. We also provide you with some guidance on how to use these features.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Refresh history
 

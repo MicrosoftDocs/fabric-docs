@@ -14,8 +14,6 @@ ms.search.form: Lakehouse SQL Endpoint
 
 Microsoft Fabrics provides a SQL-based experience for lakehouse delta tables. This SQL-based experience is called the SQL Endpoint. You can analyze data in delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL Endpoint, you select a corresponding item in the workspace view or switch to SQL endpoint mode in Lakehouse Explorer.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Creating a lakehouse creates a SQL endpoint, which points to the lakehouse delta table storage. Once you create a delta table in the Lakehouse, it's immediately available for querying using the SQL endpoint. To learn more, see [Data Warehouse documentation: SQL Endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
 
 :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL Endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::

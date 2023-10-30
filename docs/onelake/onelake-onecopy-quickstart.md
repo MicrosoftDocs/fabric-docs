@@ -6,7 +6,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # Transform data with Spark and query with SQL
@@ -20,8 +20,6 @@ In this guide, you will:
 - Analyze and transform data with Spark using a Fabric notebook.
 
 - Query one copy of data on OneLake with SQL.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

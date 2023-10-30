@@ -7,7 +7,7 @@ ms.topic: troubleshooting
 ms.date: 9/13/2023
 ---
 
-# Data Factory data pipeline limitations in Microsoft Fabric (preview)
+# Data Factory data pipeline limitations in Microsoft Fabric
 
 The following list describes the current limitations of pipelines in Data Factory in Microsoft Fabric.
 
@@ -22,7 +22,6 @@ The following list describes the current limitations of pipelines in Data Factor
 - Data pipelines are scoped to their workspace, and can't interact with items in other workspaces.
 - The on-premises data gateway or VNet data gateway can be used with Dataflow Gen2 to ingest on-premises data now. You can orchestrate on-premises data ingestion with a data flow activity in the pipeline.
 - Pipelines can't use a managed VNet.
-- Gateways can't use on-premises data access.
 
 ## Next steps
 

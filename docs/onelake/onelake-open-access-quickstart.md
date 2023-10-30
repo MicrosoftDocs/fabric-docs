@@ -6,12 +6,10 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # Ingest data into OneLake and analyze with Azure Databricks
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this guide, you will:
 

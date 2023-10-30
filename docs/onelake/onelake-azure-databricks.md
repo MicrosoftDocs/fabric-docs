@@ -6,12 +6,10 @@ ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 03/24/2023
+ms.date: 09/27/2023
 ---
 
 # Integrate OneLake with Azure Databricks
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This scenario shows how to connect to OneLake via Azure Databricks. After completing this tutorial, you'll be able to read and write to a Microsoft Fabric lakehouse from your Azure Databricks workspace.
 

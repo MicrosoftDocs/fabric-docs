@@ -7,14 +7,12 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Develop and run notebooks
-ms.date: 06/12/2023
+ms.date: 10/09/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments. It's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. This article explains how to develop notebooks with code cell operations and run them.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Develop notebooks
 
@@ -462,7 +460,7 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 | Move cursor down | Down |
 | Undo | Ctrl + Z |
 | Redo | Ctrl + Y |
-| Comment or Uncomment | Ctrl + / |
+| Comment or Uncomment | Ctrl + / <br/> Comment: Ctrl + K + C <br/> Uncomment: Ctrl + K + U |
 | Delete word before | Ctrl + Backspace |
 | Delete word after | Ctrl + Delete |
 | Go to cell start | Ctrl + Home |

@@ -1,6 +1,11 @@
 {
     "redirections": [
       {
+        "source_path_from_root": "/docs/data-science/tutorial-data-science-data-cleanse.md",
+        "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
+        "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -18,6 +23,16 @@
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
         "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
         "redirect_document_id": true
         },
         {
@@ -61,6 +76,16 @@
           "redirect_document_id": true
         },
         {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
           "redirect_url": "/fabric/data-factory/data-factory-limitations",
           "redirect_document_id": false
@@ -79,6 +104,16 @@
           "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
           "redirect_document_id": true
+        },
+        { 
+          "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-amazon-s3",
+          "redirect_document_id": false
         }
     ]
 }

@@ -1,21 +1,21 @@
 ---
-title: Semantic Link and Power BI connectivity
-description: Semantic Link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
+title: Semantic link and Power BI connectivity (preview)
+description: Semantic link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
 author: eisber
 ms.topic: conceptual
 ms.date: 06/14/2023
-ms.search.form: Semantic Link
+ms.search.form: semantic link
 ---
 
-# Power BI connectivity with Semantic Link and Microsoft Fabric
+# Power BI connectivity with semantic link and Microsoft Fabric (preview)
 
-Power BI connectivity is at the core of Semantic Link.
-In this article, you'll learn about the ways that Semantic Link provides connectivity to Power BI datasets for users of the Python pandas ecosystem and the Apache Spark ecosystem.
+Power BI connectivity is at the core of semantic link (preview).
+In this article, you'll learn about the ways that semantic link provides connectivity to Power BI datasets for users of the Python pandas ecosystem and the Apache Spark ecosystem.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 A Power BI dataset usually represents the gold standard of data and is the result of upstream data processing and refinement.
 Business analysts can create Power BI reports from Power BI datasets and use these reports to drive business decisions.
@@ -23,15 +23,15 @@ Furthermore, they can encode their domain knowledge and business logic into Powe
 On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
 In such cases, it may become necessary for the data scientists to duplicate the business logic, which can lead to critical errors.
 
-Semantic Link bridges this gap between the Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
-Thereby, providing a way for business analysts and data scientists to collaborate seamlessly and reduce data mismatch. Semantic Link offers connectivity to the:
+Semantic link bridges this gap between the Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
+Thereby, providing a way for business analysts and data scientists to collaborate seamlessly and reduce data mismatch. Semantic link offers connectivity to the:
 
 - Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, and
 - Power BI datasets through the **Spark native connector** that supports PySpark, Spark SQL, R, and Scala.
 
 ## Data connectivity through SemPy Python library for pandas users
 
-The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the Semantic Link feature and serves pandas users.
+The [SemPy Python library](/python/api/semantic-link/overview-semantic-link) is part of the semantic link feature and serves pandas users.
 SemPy provides functionalities that include data retrieval from [tables](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-read-table), [computation of measures](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-measure), and [execution of DAX queries](/python/api/semantic-link-sempy/sempy.fabric#sempy-fabric-evaluate-dax) and metadata.
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
@@ -42,6 +42,7 @@ To use the `SemPy` Python library, you first need to install it in your notebook
 
 SemPy also extends pandas DataFrames with additional metadata propagated from the Power BI data source.
 This metadata includes:
+
 - Power BI data categories:
   - Geographic: address, place, city, etc.
   - URL: web url, image url
@@ -49,11 +50,11 @@ This metadata includes:
 - Relationships between tables
 - Hierarchies
 
-## Data connectivity through Semantic Link Spark native connector
+## Data connectivity through semantic link Spark native connector
 
 Support for Spark (PySpark, Spark SQL, R and Scala)
 
-The Semantic Link Spark native connector enables Spark users to access Power BI tables and measures.
+The semantic link Spark native connector enables Spark users to access Power BI tables and measures.
 The connector is language-agnostic and supports PySpark, Spark SQL, R, and Scala.
 
 To use the Spark native connector, Power BI datasets are represented as Spark namespaces and transparently expose Power BI tables as Spark tables.
@@ -91,7 +92,7 @@ spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.
 List all tables in the Power BI dataset `Sales Dataset`:
 
 ```python
-df = spark.sql("SHOW TABLES pbi.`Sales Dataset`")
+df = spark.sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
@@ -117,7 +118,7 @@ List all tables in the Power BI dataset `Sales Dataset`:
 ```R
 %%sparkr
 
-df = sql("SHOW TABLES pbi.`Sales Dataset`")
+df = sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 
 display(df)
 ```
@@ -157,18 +158,19 @@ GROUP BY
 
 ## Data augmentation with Power BI measures
 
-The `add_measure` operation is a powerful feature of Semantic Link that enables you to augment data with measures from Power BI datasets.
+The `add_measure` operation is a powerful feature of semantic link that enables you to augment data with measures from Power BI datasets.
 The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector. For more information on the `add_measure` method, see [add_measure in the FabricDataFrame Class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
 
+   > [!TIP]
+   > The code example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
+
 ```python
+# %pip and import only needs to be done once per notebook
 %pip install semantic-link
-```
+from sempy.fabric import FabricDataFrame
 
-The following example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
-
-```python
 df = FabricDataFrame({
         "Sales Agent": ["Agent 1", "Agent 1", "Agent 2"],
         "Customer[Country/Region]": ["US", "GB", "US"],
@@ -189,6 +191,6 @@ The `add_measure` operation performs these steps:
 ## Next steps
 
 - [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
-- [How to validate data with Semantic Link](semantic-link-validate-data.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [How to validate data with  (preview)](semantic-link-validate-data.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)

@@ -13,7 +13,7 @@ ms.date: 09/15/2023
 
 In this article, learn how to create, train and evaluate uplift models and apply uplift modeling technique.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 - What is uplift modeling?
 

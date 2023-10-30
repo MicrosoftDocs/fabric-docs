@@ -7,14 +7,12 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 09/27/2023
 ---
 
 # OneLake shortcuts
 
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric experience to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What are shortcuts?
 
@@ -134,10 +132,13 @@ You can also create shortcuts to Amazon S3 accounts. When you create shortcuts t
 #### Access
 
 S3 shortcuts must point to the https endpoint for the S3 bucket.
+
 Example: `https://bucketname.s3.region.amazonaws.com/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VPC.
+> You do not need to disable the S3 Block Public Access setting for your S3 account for the S3 shortcut to function.
+> 
+> Access to the S3 endpoint must not be blocked by a storage firewall or Virtual Private Cloud.
 
 #### Authorization
 

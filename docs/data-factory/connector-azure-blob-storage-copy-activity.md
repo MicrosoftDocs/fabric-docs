@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported format
 
 Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
@@ -167,5 +165,4 @@ The following tables contain more information about the copy activity in Azure B
 
 ## Next steps
 
-- [How to create Azure Blob connection](connector-azure-blob-storage.md)
-- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)]
+- [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)

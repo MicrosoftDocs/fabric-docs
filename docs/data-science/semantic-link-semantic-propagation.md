@@ -1,5 +1,5 @@
 ---
-title: Semantic propagation with Sempy python library
+title: Semantic propagation with Sempy python library (preview)
 description: Learn how Sempy library supports propagation of metadata attached to Power BI datasets on which you're operating.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -7,19 +7,19 @@ ms.author: marcozo
 author: eisber
 ms.topic: conceptual
 ms.date: 06/06/2023
-ms.search.form: Semantic Link
+ms.search.form: semantic link
 ---
 
-# Semantic data propagation from Power BI datasets
+# Semantic data propagation from Power BI datasets (preview)
 
 When you read a Power BI dataset into a [FabricDataFrame](semantic-link-overview.md#fabricdataframe-data-structure), semantic information such as metadata and annotations from the dataset are automatically attached to the FabricDataFrame.
 In this article, you'll learn how the SemPy python library preserves annotations that are attached to your [Power BI dataset's](/power-bi/connect-data/service-datasets-understand) tables and columns.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Semantic propagation for pandas users
 
-The [SemPy Python library](/python/api/semantic-link-sempy) is part of the Semantic Link feature and serves [pandas](https://pandas.pydata.org/) users.
+The [SemPy Python library](/python/api/semantic-link-sempy) is part of the semantic link feature and serves [pandas](https://pandas.pydata.org/) users.
 SemPy supports the operations that pandas allows you to perform on your data.
 Furthermore, SemPy allows you to propagate semantic data from Power BI datasets on which you're operating.
 By propagating semantic data, you can preserve annotations that are attached to tables and columns in the Power BI dataset when you perform operations such as slicing, merges, and concatenation.
@@ -36,8 +36,8 @@ How semantic data is preserved varies depending on factors such as the operation
 
 When you merge two FabricDataFrames, the order of the DataFrames determines how semantic information is propagated.
 
-   - If **both FabricDataFrames are annotated**, then the table-level metadata of the left FabricDataFrame takes precedence. The same rule applies to individual columns; the column annotations present in the left FabricDataFrame take precedence over the column annotations in the right one.
-   - If **only one FabricDataFrame is annotated**, its metadata is used. The same rule applies to individual columns; the column annotations present in the annotated FabricDataFrame is used.
+- If **both FabricDataFrames are annotated**, then the table-level metadata of the left FabricDataFrame takes precedence. The same rule applies to individual columns; the column annotations present in the left FabricDataFrame take precedence over the column annotations in the right one.
+- If **only one FabricDataFrame is annotated**, its metadata is used. The same rule applies to individual columns; the column annotations present in the annotated FabricDataFrame is used.
 
 ### Semantic propagation with concatenation
 
@@ -46,7 +46,8 @@ When you perform concatenation on multiple FabricDataFrames, for each column, Se
 You can also propagate concatenations of FabricDataFrames with regular pandas DataFrames by placing the FabricDataFrame first.
 
 ## Semantic propagation for Spark users
-The Semantic Link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
+
+The semantic link Spark native connector hydrates (or populates) the [metadata](https://spark.apache.org/docs/3.3.2/api/python/reference/pyspark.sql/api/pyspark.sql.types.StructField.html#pyspark.sql.types.StructField) dictionary of a Spark column.
 Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated.
 For example, column aggregation strips the metadata.
 
@@ -54,6 +55,6 @@ For example, column aggregation strips the metadata.
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [How to validate data with Semantic Link](semantic-link-validate-data.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)

@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to configure Avro format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported capabilities
 
 Avro format is supported for the following activities and connectors as a source and destination.
