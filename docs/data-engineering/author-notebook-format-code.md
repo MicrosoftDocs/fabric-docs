@@ -28,10 +28,10 @@ Specifically, this article describes how you can extend a Fabric notebook to use
 
 You can extend a Fabric notebook by using a _notebook extension_. A notebook extension is a software component that adds new functionality to the notebook interface. You install an extension as a library, and then you set it up to meet your specific needs.
 
-In this article, you will learn about two extensions that you can use to format Python code in a Fabric notebook.
+This article considers two extensions that you can use to format Python code in a Fabric notebook.
 
 - The [black](https://github.com/psf/black) Python code formatter extension.
-- The [Jupyter-black](https://github.com/n8henrie/jupyter-black) formatter extension, which you can also use to automatically format code in a Jupyter Notebook or Jupyter Lab.
+- The [jupyter-black](https://github.com/n8henrie/jupyter-black) formatter extension, which you can also use to automatically format code in a Jupyter Notebook or Jupyter Lab.
 
 > [!NOTE]
 > Both extensions are freely available from GitHub.
@@ -42,20 +42,21 @@ There are two methods to set up a code formatter extension in a Fabric notebook.
 
 #### Workspace settings
 
-Use the workspace settings to setup the working environment for a Fabric workspace. Any library that you install in the workspace settings is available to all notebooks and Spark job definitions in the workspace. Therefore, when you install a code formatter extension in the workspace library, all notebooks within the workspace can benefit from it.
+Use the workspace settings to set up the working environment for a Fabric workspace. Any library that you install in the workspace settings is available to all notebooks and Spark job definitions in the workspace. Therefore, when you install a code formatter extension in the workspace library, all notebooks within the workspace can benefit from it.
 
 To learn how to install workspace libraries, see [Install workspace libraries](../data-science/python-guide/python-library-management.md#python-libraries-in-microsoft-fabric).
 
 #### In-line installation
 
-Use the in-line installation method when you want to install a library for a specific notebook, rather than all notebooks in a workspace. This approach is convenient when you want a temporary or quick solution that shouldn't impact on other notebooks in the workspace.
+Use the in-line installation method when you want to install a library for a specific notebook, rather than all notebooks in a workspace. This approach is convenient when you want a temporary or quick solution that shouldn't affect other notebooks in the workspace.
 
 To learn how to perform an in-line installation, see [In-line installation](library-management.md#in-line-installation).
 
 In the following example, the %pip command is used to install the latest version of the _Jupyter-black_ extension on both the driver and executor nodes.
 
 ```python
-# Install latest version using %pip command, will be available on both driver and executor nodes
+# Install the latest version by using %pip command
+# It will be available on both driver and executor nodes
 %pip install jupyter-black
 ```
 
@@ -63,18 +64,18 @@ In the following example, the %pip command is used to install the latest version
 
 After you install the code formatting extension, you must enable code formatting for the notebook. You do that by loading the extension, which can be done in one of two ways.
 
-Either use the ```%load\\_ext``` magic command.
+Either use the ```%load_ext``` magic command.
 
 ```python
-# Load Jupyter\_black extension
-%load\_ext jupyter\_black
+# Load the jupyter-black extension
+%load_ext jupyter-black
 ```
 
 Or, use the load extension by using the programming API.
 
 ```python
-import jupyter\_black
-jupyter\_black.load()
+import jupyter-black
+jupyter-black.load()
 ```
 
 > [!TIP]
