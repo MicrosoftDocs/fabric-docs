@@ -20,12 +20,11 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/release-plan/) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/release-plan/) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
 
 ## Manually compute estimated costs
 
-The following table can be utilized as a template to manually compute estimated costs for a Dataflows Gen2 refresh with staging disabled:
-
+The following table is a template to help you manually estimate costs for a Dataflows Gen2 refresh with staging enabled:
 
 |  |Standard Compute  |
 |---------|---------|
@@ -34,7 +33,6 @@ The following table can be utilized as a template to manually compute estimated 
 |Effective CU-hours billed     |  (16 CUs) * (Billed duration in hour)       |
 
 **Total refresh cost** = (Effective CU-hours billed) * (Fabric capacity per unit cost)
-
 
 The following table can be utilized as a template to manually compute estimated costs for a Dataflows Gen2 refresh with staging enabled:
 

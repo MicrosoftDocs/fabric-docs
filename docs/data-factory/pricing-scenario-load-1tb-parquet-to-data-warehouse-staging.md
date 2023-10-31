@@ -44,7 +44,6 @@ The data movement operation utilized 267,480 CU seconds with a 1504.42 second (2
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
-
 |  |Data Movement Operation  |
 |---------|---------|
 |CU seconds     | 267,480 CU seconds        |
