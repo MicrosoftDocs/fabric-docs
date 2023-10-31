@@ -100,7 +100,7 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 Partitioned data enables faster access if the queries are filtering on the predicates that compare predicate columns with a value.
 
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] can easily read this type of data with no configuration required. For example, you can use any application to archive data into a data lake, including SQL Server 2022 or Azure SQL Managed Instance. After you partitioning data and land it in a lake for archival purposes with external tables, a [!INCLUDE [fabric-se](includes/fabric-se.md)] can read partitioned Delta Lake tables as SQL tables and allow your organization to analyze them. this reduces the total cost of ownership, reduces data duplication, and lights up big data, AI, other analytics scenarios.
+A [!INCLUDE [fabric-se](includes/fabric-se.md)] can easily read this type of data with no configuration required. For example, you can use any application to archive data into a data lake, including SQL Server 2022 or Azure SQL Managed Instance. After you partitioning data and land it in a lake for archival purposes with external tables, a [!INCLUDE [fabric-se](includes/fabric-se.md)] can read partitioned Delta Lake tables as SQL tables and allow your organization to analyze them. This reduces the total cost of ownership, reduces data duplication, and lights up big data, AI, other analytics scenarios.
 
 ### Data virtualization of Fabric data with shortcuts
 
