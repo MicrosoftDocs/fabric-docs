@@ -20,7 +20,7 @@ The Lakehouse is a data artifact that contains both metadata and data that is re
 * [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
 * [Notebooks](how-to-use-notebook.md)
-* Semantic models and PowerBI
+* Semantic models and Power BI
 
 The default semantic model and SQL Analytics Endpoint metadata are related to a Lakehouse and managed by the git update process by default.
 
