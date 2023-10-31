@@ -210,7 +210,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of runnin load to tables operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of running load to tables operations as described in the next section.
 
 ### Monitoring Load to tables operations
 
