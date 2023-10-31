@@ -14,7 +14,7 @@ ms.search.form: Best practices for deployment pipelines, Create deployment pipel
 
 This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 The article is divided into four sections:
 
