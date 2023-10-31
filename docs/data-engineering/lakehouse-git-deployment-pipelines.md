@@ -53,7 +53,7 @@ The Lakehouse artifact is supported in Microsoft Fabric lifecycle management dep
 Lakehouse deployment pipelines integration capabilities:
 
 * Deployment across Dev-Test-Production workspaces.
-* Lakehouse can be removed as a depedent object upon deployment. Mapping different Lakehouses within the deployment pipeline context is also supported.
+* Lakehouse can be removed as a dependent object upon deployment. Mapping different Lakehouses within the deployment pipeline context is also supported.
   * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, is created in the target workspace. Notebook and Spark Job Definitions are remapped to reference the new Lakehouse object in the new workspace.
   * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved as requested__.
   * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
