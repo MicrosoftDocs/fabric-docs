@@ -22,7 +22,7 @@ If you don't have a lakehouse, create one by following these steps: [Create a la
 
 1. Open a lakehouse.
 
-1. Right-click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on a directory within the **Explorer** pane of the lakehouse.
 
 1. Select **New shortcut**.
 
@@ -30,7 +30,7 @@ If you don't have a lakehouse, create one by following these steps: [Create a la
 
 [!INCLUDE [onelake-shortcut](../includes/onelake-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut(s) appears under the selected directory in the **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 

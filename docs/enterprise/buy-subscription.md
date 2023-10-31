@@ -3,7 +3,7 @@ title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
 ms.date: 10/15/2023
 ---

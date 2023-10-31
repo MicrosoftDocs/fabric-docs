@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/13/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -14,7 +14,7 @@ The Common Data Service (Legacy) connector is supported in Data Factory for [!IN
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Common Data Service (Legacy) in Dataflow Gen2, go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).
+To learn about how to connect to Common Data Service (Legacy) in Dataflow Gen2, go to [Set up your Common Data Service (Legacy) connection](connector-common-data-service-legacy.md).
 
 ## Support in data pipelines
 

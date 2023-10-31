@@ -64,8 +64,6 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Sovereign clouds are not supported.
 
-* Lineage view of the workspace isn't supported.
-
 * Users granted *build* permissions to a dataset in the monitoring workspace, show as having *read* permissions."
 
 ## Next steps
