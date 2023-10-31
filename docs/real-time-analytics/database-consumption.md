@@ -1,6 +1,6 @@
 ---
 title: KQL Database consumption
-description: Learn how to KQL databases consume capacity units in Real-Time Analytics.
+description: Learn how KQL databases consume capacity units in Real-Time Analytics.
 ms.reviewer: bwatts
 ms.author: yaschust
 author: YaelSchuster
