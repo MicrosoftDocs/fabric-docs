@@ -4,7 +4,7 @@ description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 06/04/2023
+ms.date: 10/31/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -106,7 +106,7 @@ Default Power BI datasets follow the current limitations for datasets in Power B
 
 If the parquet, Apache Spark, or SQL data types can't be mapped to one of the above types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
 
-## Next steps
+## Related content
 
 - [Define relationships in data models](data-modeling-defining-relationships.md)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
