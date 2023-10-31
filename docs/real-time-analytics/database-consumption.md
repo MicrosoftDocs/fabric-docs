@@ -28,7 +28,8 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ### Monitor KustoUpTime
 
-You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md).
+
+The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows any capacity administrator to monitor KustoUpTime.
 
 > [!NOTE]
 > You must be a capacity administrator to monitor capacity usage. For more information, see [Understand Microsoft Fabric admin roles](../admin/roles.md).
