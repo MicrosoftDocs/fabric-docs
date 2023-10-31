@@ -11,7 +11,7 @@ ms.search.form: lakehouse git deployment pipelines alm ci cd
 
 # Lakehouse git integration and deployment pipelines
 
-The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
+The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
 
 ## Lakehouse git integration
 
@@ -22,7 +22,7 @@ The Lakehouse is a data artifact that contains both metadata and data that is re
 * [Notebooks](how-to-use-notebook.md)
 * Semantic models and PowerBI
 
-The default semantic model and SQL Analytics Endpoint metadata are related to a Lakehouse and are tracked by default.
+The default semantic model and SQL Analytics Endpoint metadata are related to a Lakehouse and managed by the git update process by default.
 
 As a principle __no data is tracked in git__, only metadata.
 
@@ -30,33 +30,37 @@ As a principle __no data is tracked in git__, only metadata.
 
 The following Lakehouse information will be serialized and tracked in a git connected workspace:
 
-* Lakehouse display name
-* Lakehouse name
-* Lakehouse guid
+* Display name
+* Description
+* Logical guid
+
+> [!NOTE]
+> The tracked logical id is an automatically generated cross-workspace identifier representing an item and its source control representation.
 
 ### Lakehouse git integration capabilities
 
 The following capabilities are available:
 
 * Serialization of the Lakehouse object metadata to a git JSON representation.
-* Importing changes across branches in the same workspace. The Microsoft Fabric platform offers compare and change impact analysis.
-* Renaming of Lakehouses are tracked in git. Import of renamed lakehouse will also rename default semantic data model and SQL Analytics endpoint.
+* Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
+* Renaming of Lakehouses are tracked in git. Update of renamed Lakehouse will also rename default semantic data model and SQL Analytics endpoint.
 * No action is applied to tables, folders and shortcuts, metadata and data of those items is always preserved.
 
 ## Lakehouse in deployment pipelines
 
-The Lakehouse artifact is supported in Microsoft Fabric lifecycle management deployment pipelines, enabling environment segmentation [best-practices](../cicd/best-practices-cicd.md). As an isolation principle, deployment pipelines won't overwrite 
+The Lakehouse artifact is supported in Microsoft Fabric lifecycle management deployment pipelines, enabling environment segmentation [best-practices](../cicd/best-practices-cicd.md). 
+
+As an isolation principle, deployment pipelines won't overwrite 
 
 Lakehouse deployment pipelines integration capabilities:
 
 * Deployment across Dev-Test-Production workspaces.
-* Lakehouse can be removed as a dependency upon deployment. Mapping to different Lakehouses within the deployment pipeline context is also supported. The git representation on the new workspace will be updated to new Lakehouse reference.
-    * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, will be created in the target workspace. Notebook and Spark Job Definitions will reference the new Lakehouse object in the new workspace.
-    * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, will be created in the target workspace, __but Notebooks and Spark Job Definitions references will be preserved as requested__.
-    * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
+* Lakehouse can be removed as a dependency upon deployment. Mapping to different Lakehouses within the deployment pipeline context is also supported.
+  * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, is created in the target workspace. Notebook and Spark Job Definitions are re-mapped to reference the new Lakehouse object in the new workspace.
+  * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved as requested__.
+  * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
 * No object inside the Lakehouse is overwriten.
-* Use pull request to apply changes to upstream or downstream workspaces and branches.
-* Updates to Lakehouse name can be syncronized across workspaces in a deployment pipeline conxtext.
+* Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline conxtext.
 
 ## Next steps
 
