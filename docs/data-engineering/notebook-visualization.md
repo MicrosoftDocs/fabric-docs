@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Notebook visualization
-ms.date: 05/30/2023
+ms.date: 10/30/2023
 ---
 
 # Notebook visualization in Microsoft Fabric
