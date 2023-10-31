@@ -1,5 +1,5 @@
 ---
-title: Lakehouse git and deployment pipelines
+title: Lakehouse deployment pipelines and git integration
 description: Learn about the Lakehouse git integration and deployment pipelines.
 ms.reviewer: snehagunda
 ms.author: dacoelho
@@ -9,7 +9,7 @@ ms.date: 10/31/2023
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
-# Lakehouse git integration and deployment pipelines (Preview)
+# Lakehouse deployment pipelines and git integration (Preview)
 
 The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective product versioning and release process by continuously delivering features and bug fixes into multiple environments. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
 
