@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -20,23 +20,15 @@ The Amazon S3 connector supports the following authentication types for copy and
 |:---|:---|:---|
 |Basic| √| n/a|
 
-## Prerequisites
-
-The following prerequisites are required before you start:
-
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
-
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
-
 ## Set up your connection in Dataflow Gen2
 
 The Amazon S3 connector isn't currently supported in Dataflow Gen2.
 
 ## Set up your connection in a data pipeline
 
-Browse to the **New connection page** for the data factory pipeline to configure the connection details and create the connection.
+Browse to the **New connection page** for the Data Factory pipeline to configure the connection details and create the connection.
 
-:::image type="content" source="./media/connector-amazon-s3/new-connection-page.png" alt-text="Screenshot showing the new connection page.":::
+:::image type="content" source="./media/connector-amazon-s3/new-connection-page.png" alt-text="Screenshot showing the new connection page." lightbox="./media/connector-amazon-s3/new-connection-page.png":::
 
 You have two ways to browse to this page:
 
