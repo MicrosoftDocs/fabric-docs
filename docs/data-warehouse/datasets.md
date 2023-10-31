@@ -4,7 +4,7 @@ description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 06/04/2023
+ms.date: 10/25/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -63,9 +63,23 @@ To load the dataset, select the name of the dataset.
 
    :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
 
+### Monitor the default Power BI dataset
+
+You can monitor and analyze activity on the dataset with [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) by connecting to the XMLA endpoint. 
+
+SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and allows tracing and debugging of dataset events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Use with the Fabric default Power BI dataset requires SQL Server Profiler version 18.9 or higher. Users must specify the dataset as the **initial catalog** when connecting with the XMLA endpoint. To learn more, see [SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
+
+### Scripting the default Power BI dataset
+
+You can script out the default Power BI dataset from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
+
+View the Tabular Model Scripting Language (TMSL) schema of the dataset by scripting out the dataset via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your dataset in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the dataset via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
+
+Scripting requires Power BI write permissions on the Power BI dataset. With read permissions, you can see the data but not the schema of the Power BI dataset.
+
 ## Create a new Power BI dataset
 
-There are some situations where your organization may need to create additional Power BI datasets based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
+There are some situations where your organization might need to create additional Power BI datasets based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
 
 The **New Power BI dataset** button inherits the default dataset's configuration and allows for further customization. The default dataset acts as a starter template, helping to ensure a single version of the truth. For example, if you use the default dataset and define new relationships, and then use the **New Power BI dataset** button, the new dataset will inherit those relationships if the tables selected include those new relationships.
 
@@ -90,9 +104,9 @@ Default Power BI datasets follow the current limitations for datasets in Power B
 - [Azure Analysis Services resource and object limits | Microsoft Learn](/azure/analysis-services/analysis-services-capacity-limits)
 - [Data types in Power BI Desktop - Power BI | Microsoft Learn](/power-bi/connect-data/desktop-data-types)
 
-If the parquet, Apache Spark, or SQL data types can't be mapped to one of the above types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
+If the parquet, Apache Spark, or SQL data types can't be mapped to one of the Power BI desktop data types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
 
-## Next steps
+## Related content
 
 - [Define relationships in data models](data-modeling-defining-relationships.md)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
