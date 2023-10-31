@@ -15,7 +15,7 @@ The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management 
 
 ## Lakehouse git integration
 
-The Lakehouse is a data artifact that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contain tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects may reference a Lakehouse artifact:
+The Lakehouse is a data artifact that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contain tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects might reference a Lakehouse artifact:
 
 * [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
 * [Spark Job Definitions](spark-job-definition.md)
