@@ -86,7 +86,7 @@ You can also hide the entire table and individual columns by using the **Model v
 
 :::image type="content" source="media\model-default-power-bi-dataset\model-view-canvas.png" alt-text="Screenshot showing the model view canvas options." lightbox="media\model-default-power-bi-dataset\model-view-canvas.png":::
 
-## Next steps
+## Related content
 
 - [Define relationships in data models](model-default-power-bi-dataset.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)

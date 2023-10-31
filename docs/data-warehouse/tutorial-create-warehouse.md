@@ -41,7 +41,7 @@ When provisioning is complete, the **Build a warehouse** landing page appears.
 
 :::image type="content" source="media\tutorial-create-warehouse\build-a-warehouse.png" alt-text="Screenshot of the Build a warehouse landing page." lightbox="media\tutorial-create-warehouse\build-a-warehouse.png":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Ingest data into a Microsoft Fabric data warehouse](tutorial-ingest-data.md)
