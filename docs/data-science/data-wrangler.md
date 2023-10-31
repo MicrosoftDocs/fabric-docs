@@ -13,7 +13,7 @@ ms.search.form: Data Wrangler
 
 # How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code, in pandas or PySpark, that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. More detailed instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
+Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code, in pandas or PySpark, that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler to explore and transform Spark DataFrames can be found [here](data-wrangler-spark.md).
 
 ## Prerequisites
 
@@ -47,9 +47,9 @@ Under the notebook ribbon “Data” tab, use the Data Wrangler dropdown prompt 
 
 Data Wrangler allows users to open a custom sample of any active DataFrame by selecting "Choose custom sample" from the dropdown. Doing so launches a separate prompt with options to specify the size of the desired sample (number of rows) and the sampling method (first records, last records, or a random set of rows).
 
-:::image type="content" source="media/data-wrangler/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler/launch-custom-sample.png":::
+:::image type="content" source="media/data-wrangler/launch-custom-sample.png" alt-text="Screenshot showing the Data Wrangler dropdown prompt with the custom sample option outlined." lightbox="media/data-wrangler/launch-custom-sample.png":::
 
-:::image type="content" source="media/data-wrangler/browse-operations.png" alt-text="Screenshot showing the Data Wrangler Operations panel." lightbox="media/data-wrangler/choose-sample.png":::
+:::image type="content" source="media/data-wrangler/choose-sample.png" alt-text="Screenshot showing the Data Wrangler custom sample prompt." lightbox="media/data-wrangler/choose-sample.png":::
 
 ## Viewing summary statistics
 
