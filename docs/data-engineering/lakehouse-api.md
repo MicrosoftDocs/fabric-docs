@@ -247,7 +247,7 @@ This API is asynchronous, so two steps are required:
 1. Submit table maintenance API request.
 1. Track the status of the operation until completion.
 
-### Table maitenance API Request
+### Table maintenance API Request
 
 This example executes a table maintenance job that applies V-Order to a table, while also applying Z-Order to the ``tipAmount`` column and executing the ``VACUUM`` operation using a retention of seven days and one hour.
 
