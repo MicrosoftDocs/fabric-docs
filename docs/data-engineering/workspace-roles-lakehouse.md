@@ -14,8 +14,6 @@ ms.search.form: Lakehouse Workspace roles Permissions
 
 Workspace roles define what user can do with Microsoft Fabric items. Roles can be assigned to individuals or security groups from workspace view. See, [Give users access to workspaces](../get-started/give-access-workspaces.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The user can be assigned to the following roles:
 
 * Admin

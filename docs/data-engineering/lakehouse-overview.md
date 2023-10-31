@@ -16,8 +16,6 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Lakehouse SQL analytics endpoint
 
 The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.

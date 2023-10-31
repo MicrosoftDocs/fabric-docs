@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.search.form: Event Streams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse

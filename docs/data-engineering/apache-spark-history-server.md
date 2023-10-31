@@ -11,8 +11,6 @@ ms.search.form: Spark history server to debug apps
 
 # Use extended Apache Spark history server to debug and diagnose Apache Spark applications
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides guidance on how to use the extended Apache Spark history server to debug and diagnose completed and running Spark applications.
 
 ## Access the Apache Spark history server

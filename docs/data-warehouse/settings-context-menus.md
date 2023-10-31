@@ -34,6 +34,8 @@ The following table is a list of settings available for each warehouse.
 | **Owned by** | Name of the user who owns the warehouse. | |
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **SQL connection string** | The SQL connection string for the workspace. You can use the SQL connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
+| **Sensitivity label** | Classify your warehouse to protect it from unauthorized access. | |
+| **Endorsement and discovery** | Endorse the warehouse and make it discoverable in your org. |
 
 
 The following table shows settings for the default Power BI dataset.
@@ -44,7 +46,8 @@ The following table shows settings for the default Power BI dataset.
 | **Q&A** | Use natural language to ask question on your data. |
 | **Query caching** | Turn on or off caching query results for speeding up reports by using previously saved query results. |
 | **Server settings** | The XMLA connection string of the default dataset. |
-| **Endorsement and discovery** | Endorse default dataset and make it discoverable in your org. |
+| **Endorsement and discovery** | Endorse the default dataset independently from warehouse and make it discoverable in your org. |
+
 
 ## Context menus
 

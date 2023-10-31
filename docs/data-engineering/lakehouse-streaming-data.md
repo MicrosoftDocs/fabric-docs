@@ -16,8 +16,6 @@ Structured Streaming is a scalable and fault-tolerant stream processing engine b
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
 
 * Data streaming throughput optimization
@@ -43,7 +41,7 @@ If too many partitions are used with a low ingestion rate, partition readers dea
 
 The recommendation is to investigate and test the best number of partitions for your throughput scenario. But it's common to see scenarios with high throughput using 32 or more partitions.
 
-Azure Event Hubs Connector for Apache Spark ([link](https://github.com/Azure/azure-event-hubs-spark)) is recommended to connect Spark application to Azure Event Hubs.
+Azure Event Hubs Connector for Apache Spark ([azure-event-hubs-spark](https://github.com/Azure/azure-event-hubs-spark)) is recommended to connect Spark application to Azure Event Hubs.
 
 ## Lakehouse as streaming sink
 
@@ -56,12 +54,10 @@ In Fabric Data Engineering, Delta Lake is used to:
 * View the state of tables before and after operations are executed.
 * Retrieve a history of operations performed on tables.
 
-Delta is added as one of the possible outputs sinks formats used in writeStream – more information about the existing output sinks can be found [here](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks).
-
+Delta is added as one of the possible outputs sinks formats used in writeStream. For more information about the existing output sinks, see [Spark Structured Streaming Programming Guide](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html#output-sinks).
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
- 
 ```PySpark 
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
@@ -171,7 +167,7 @@ The advantage of combining batching of events in Delta table writing operations 
 
 ## Monitoring
 
-Spark 3.1 and higher versions have a built-in structured streaming UI ([link](https://spark.apache.org/docs/latest/web-ui.html#structured-streaming-tab)) containing the following streaming metrics:
+Spark 3.1 and higher versions have a built-in [structured streaming UI](https://spark.apache.org/docs/latest/web-ui.html#structured-streaming-tab) containing the following streaming metrics:
 
 * Input Rate
 * Process Rate

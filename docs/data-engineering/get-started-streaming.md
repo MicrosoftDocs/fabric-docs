@@ -14,8 +14,6 @@ ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 
 This quickstart explains how to create a Spark Job Definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through a SQL analytics endpoint. After completing this quickstart, you'll have a Spark Job Definition that runs continuously and the SQL analytics endpoint can view the incoming data.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Create a Python script
 
 1. Use the following Python code that uses Spark structured streaming to get data in a lakehouse table.

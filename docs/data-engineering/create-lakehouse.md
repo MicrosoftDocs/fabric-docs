@@ -14,8 +14,6 @@ ms.search.form: Create lakehouse
 
 In this tutorial, you learn different ways to create a Lakehouse in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Create a lakehouse
 
 The lakehouse creation process is quick and simple; there are several ways to get started.

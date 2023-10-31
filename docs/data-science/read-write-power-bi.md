@@ -15,7 +15,7 @@ ms.search.form: Read write powerbi
 In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that Power BI datasets can consume.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -94,7 +94,12 @@ To read data from Power BI datasets:
     df_table
     ```
 
-1. Evaluate the _Total Revenue_ measure per customer's state and date.
+    > [!NOTE]
+    > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
+    > All requests use low priority to minimize the impact on Microsoft Azure Analysis Services performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
+
+2. Evaluate the _Total Revenue_ measure per customer's state and date.
 
     ```python
     # %pip and import only needs to be done once per notebook
@@ -108,7 +113,13 @@ To read data from Power BI datasets:
     df_measure
     ```
 
-1. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
+    > [!NOTE]
+    > By default, data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
+    >Furthermore, the data is **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
+    > All requests are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
+
+3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
 
     ```python
     # %pip and import only needs to be done once per notebook
@@ -127,7 +138,7 @@ To read data from Power BI datasets:
     df_measure
     ```
 
-1. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
+4. You can also evaluate the _Total Revenue_ measure per customer's state and date by using a [DAX query](/dax/dax-queries).
 
     ```python
     # %pip and import only needs to be done once per notebook
@@ -146,7 +157,12 @@ To read data from Power BI datasets:
         """)
     ```
 
-1. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
+    > [!NOTE]
+    > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
+    > The amount of data retrievable is limited by the available memory in Microsoft Azure Analysis Services and the Spark driver node (see [node sizes](/power-bi/enterprise/service-premium-connect-tools)).
+    > All requests use low priority to minimize the impact on Analysis Services performance and are billed as interactive requests.
+    
+2. You can evaluate the same DAX query without the need to import the library, by using the `%%dax` cell magic.
    The workspace parameter is optional and follows the same rules as the workspace parameter of the `evaluate_dax` function.
    The cell magic also supports accessing Python variables using the `{variable_name}` syntax.
    To use a curly brace in the DAX query, escape it with another curly brace (e.g. `EVALUATE {{1}}`).
@@ -194,7 +210,7 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the notebook, if no Lakehouse is attached.
 
 Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
-All Spark SQL commands can be executed in Python, R, and Scala. The semantic link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+All Spark SQL commands can be executed in Python, R, and Scala. The semantic link (preview) Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -204,12 +220,12 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
     ```Python
     spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
 
-    # Optionally configure the workspace ID for the pbi catalog
+    # Optionally, configure the workspace ID for the Power BI catalog
     # spark.conf.set("spark.sql.catalog.pbi.workspace", "212598c9-a3bf-441e-a6f2-2034281e7f18")
     ```
 
    > [!TIP]
-   > The Semantic Link Spark native connector is pre-installed on Fabric and does **not** require the `SemPy` Python libray to be installed.
+   > The semantic link (preview) Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
    > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
 
 1. List tables of all Power BI datasets in the workspace, using PySpark.
@@ -304,6 +320,6 @@ By using Power BI, the *ForecastTable* table can be added to a composite dataset
 ## Next steps
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [How to validate data with semantic link](semantic-link-validate-data.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)
+- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)

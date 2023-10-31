@@ -4,7 +4,7 @@ description: Identify issues that are affecting your Fabric trial.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/13/2023
+ms.date: 10/23/2023
 ms.custom: build-2023
 ---
 # Fabric (Preview) trial known issues
@@ -19,6 +19,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |
+|  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |
 |  519  | Administration & Management | [Capacity Metrics app shows variance between workload summary and operations](known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md)  | October 13, 2023 |
 |  521  | Administration & Management | [New throttling logic delayed for Power BI and eventstream](known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md)  | October 5, 2023 |
 |  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
@@ -44,7 +46,6 @@ Select the **Title** to view more information about that specific known issue. F
 |  473  | OneLake                     | [Fabric items can't be created in a workspace moved to a capacity in a different region](known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)    |  August 7, 2023  | Fixed: September 28, 2023 |
 |  456  | OneLake                     | [OneLake file explorer doesn't contain items under My workspace](known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md)    |  July 26, 2023  | Fixed: August 24, 2023 |
 |  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  | Fixed: August 24, 2023 |
-|  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer doesn't sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  | Fixed: July 31, 2023 |
 
 ## Next steps
 

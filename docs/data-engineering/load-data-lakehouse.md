@@ -20,8 +20,6 @@ The get data experience covers all user scenarios for bringing data into the lak
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Different ways to load data into a lakehouse
 
 In Microsoft Fabric, there are a few ways you can get data into a lakehouse:

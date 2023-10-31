@@ -67,8 +67,12 @@ items:
       href: spark-compute.md
     - name: Configure starter pools
       href: configure-starter-pools.md
-    - name: Runtime
-      href: runtime.md
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: runtime.md
+        - name: Runtime 1.1
+          href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
     - name: High Concurrency mode
@@ -121,12 +125,16 @@ items:
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
       href: monitor-spark-capacity-consumption.md
+  - name: Intelligent cache
+    href: intelligent-cache.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
 - name: Notebooks
