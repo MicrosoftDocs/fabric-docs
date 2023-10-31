@@ -42,7 +42,7 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
  - Only the top 1000 rows can be shown in the data grid of the Data preview. 
  - The Data preview view changes depending on how the columns are sorted or if there's a keyword that is searched. 
 
-## Next steps
+## Related content
 
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
  - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)

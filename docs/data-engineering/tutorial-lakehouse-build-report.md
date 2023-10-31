@@ -139,8 +139,6 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
 1. Select **Save**.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\save-your-report.png" alt-text="Screenshot showing the Save your report dialog.":::
-
 ## Next steps
 
 Advance to the next article to learn how to

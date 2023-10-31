@@ -58,7 +58,7 @@ Before you begin, make sure you have the following:
 1. Replace `YourSecurityPolicy` with your policy name, `tvf_securitypredicate` with the name of your predicate function, `sampleschema` with the name of your schema and `sampletable` with the name of your target table. 
 1. Replace `UserName_column` with a column in your table that contains user names.
 1. Replace `WHERE @UserName = USER_NAME();` with a `WHERE` clause that matches the desired predicate-based security filter. For example, this filters the data where the `UserName` column, mapped to the `@UserName` parameter, matches the result of the system function [USER_NAME()](/sql/t-sql/functions/user-name-transact-sql?view=fabric&preserve-view=true).
-1. Repeat the above steps to create security policies for other tables if needed.
+1. Repeat these steps to create security policies for other tables if needed.
 
 ## 3. Test row-level security
 
