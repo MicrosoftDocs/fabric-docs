@@ -185,7 +185,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 > [!NOTE]
 > - Currently Fabric notebook only supports referencing notebooks within a workspace.
-> - If you use the files under [Notebook Resource]("docs\data-engineering\how-to-use-notebook.md"), we recommand to use `mssparkutils.nbResPath` in the referenced notebook to make sure it pointing to the same folder as interactive run.
+> - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), we recommand to use `mssparkutils.nbResPath` in the referenced notebook to make sure it pointing to the same folder as interactive run.
 
 ### Reference run multiple notebooks in parallel 
 
