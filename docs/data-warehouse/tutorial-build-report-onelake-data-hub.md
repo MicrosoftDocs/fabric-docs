@@ -46,7 +46,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
     - Learn more about [Workspace roles in Fabric data warehousing](workspace-roles.md).
     - Consider [Microsoft Purview](../governance/microsoft-purview-fabric.md), included by default in every tenant to meet important compliance and governance needs.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Clean up tutorial resources](tutorial-clean-up.md)
