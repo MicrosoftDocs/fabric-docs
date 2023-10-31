@@ -32,16 +32,16 @@ Whether you’re a citizen or professional developer, Data Factory enables you t
 
 Here are some example scenarios for pricing of data pipelines:
 
-- [Load 1TB Parquet to a data warehouse]()
-- [Load 1 TB Parquet to a data warehouse via staging]()
-- [Load 1 TB CSV files to a Lakehouse table]()
-- [Load 1 TB CSV files to a Lakehouse files with binary copy]()
-- [Load 1 TB Parquet to a Lakehouse table]()
+- [Load 1TB Parquet to a data warehouse](pricing-scenario-load-1tb-parquet-to-data-warehouse.md)
+- [Load 1 TB Parquet to a data warehouse via staging](pricing-scenario-load-1tb-parquet-to-data-warehouse-staging.md)
+- [Load 1 TB CSV files to a Lakehouse table](pricing-scenario-load-1tb-csv-to-lakehouse-table.md)
+- [Load 1 TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1tb-csv-to-lakehouse-files.md)
+- [Load 1 TB Parquet to a Lakehouse table](pricing-scenario-load-1tb-parquet-to-lakehouse-table.md)
 
 Here are some pricing examples for Dataflows Gen2:
 
-- [Load on-premises 2 GB CSV file to a Lakehouse table]()
-- [Load 2 GB Parquet to a Lakehouse table]()
+- [Load on-premises 2 GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2gb-csv-to-lakehouse-table.md)
+- [Load 2 GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2gb-parquet-to-lakehouse-table.md)
 
 ## Next steps
 
