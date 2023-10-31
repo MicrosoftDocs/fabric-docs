@@ -24,7 +24,7 @@ Key capabilities of the lakehouse table maintenance feature:
 
 ## Supported file types
 
-__Lakehouse table maintenance__ applies only to delta Lake tables. The legacy Hive tables, that use PARQUET, ORC, AVRO, CSV, and other formats aren't supported.
+__Lakehouse table maintenance__ applies only to delta Lake tables. The legacy Hive tables that use PARQUET, ORC, AVRO, CSV, and other formats aren't supported.
 
 ## Table maintenance operations
 
@@ -42,7 +42,7 @@ How to use the feature:
 1. From the Lakehouse explorer's **Tables** section, either right-click on the table or use the ellipsis to access the contextual menu.
 1. Select the**Optimize** menu entry.
 1. Check the maintenance options in the dialog per your requirement. For more information, see the [Table maintenance operations](#table-maintenance-operations) section of this article.
-1. Select **Run now** to execute the table maintenance job. 
+1. Select **Run now** to execute the table maintenance job.
 1. Track maintenance job execution by the notifications pane, or the Monitoring Hub experience.
 
    :::image type="content" source="media\table-maintenance\table-maintenance.png" alt-text="Screenshot showing the load to tables dialog box with filled table name." lightbox="media\load-to-tables\load-from-file.png":::
@@ -53,7 +53,7 @@ After **Run now** is selected, a Spark maintenance job is submitted for executio
 
 1. The Spark job is submitted using the user identity and table privileges.
 1. The Spark job consumes Fabric capacity of the workspace/user that submitted the job.
-1. If there is another maintenance job running on a table, a new one will be rejected.
+1. If there is another maintenance job running on a table, a new one is rejected.
 1. Jobs on different tables can execute in parallel.
 1. Table maintenance jobs can be easily tracked in the Monitoring Hub. Look for "TableMaintenance" text within the activity name column in the monitoring hub main page.
 

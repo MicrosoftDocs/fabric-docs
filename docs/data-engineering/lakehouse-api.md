@@ -23,7 +23,7 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 |Table load|Creates Delta table from CSV and parquet files and folders.|
 |Table maintenance|Apply bin-compaction, V-Order, and unreferenced old files cleanup.|
 
-## Pre-requisites
+## Prerequisites
 
 Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoint is `https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items`. The placeholders `{workspaceId}` and `{lakehouseId}` should be replaced with the appropriate values when issuing the commands exemplified in this article.
 
@@ -119,7 +119,7 @@ Request:
 DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}
 ```
 
-Response : __Empty__
+Response: __Empty__
 
 ## List tables in a Lakehouse
 
@@ -181,7 +181,7 @@ This API is asynchronous, so three steps are required:
 1. Submit Load to Tables API request.
 1. Track the status of the operation until completion.
 
-The following sections assume the files were already uploaded.
+Following sections assume the files were already uploaded.
 
 ### Load to tables API Request
 
@@ -210,7 +210,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as the following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of runnin load to tables operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of runnin load to tables operations as described in the next section.
 
 ### Monitoring Load to tables operations
 
@@ -231,7 +231,7 @@ Response:
 } 
 ```
 
-The following are the possible operation status for Load to tables
+Possible operation status for load to tables:
 
 * 1 - Operation not started
 * 2 - Running
@@ -274,7 +274,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as the following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation id to query the status of running table maintenance operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation id to query the status of running table maintenance operations as described in the next section.
 
 ### Monitoring table maintenance operations
 
@@ -310,17 +310,17 @@ Response:
 }
 ```
 
-The following are the possible operation status for Load to tables
+Possible operation status for table maintenance:
 
 * NotStarted - Job not started
 * InProgress - Job in progress
 * Completed - Job completed
 * Failed - Job failed
-* Cancelled - Job cancelled
+* Canceled - Job canceled
 * Deduped - A job instance of the same job type is already running and this job instance is skipped
 
 ## Next steps
 
-- Learn all about the [Load to Tables](load-to-tables.md) feature.
-- [Use table maintenance feature to manage delta tables in Fabric](lakehouse-table-maintenance.md)
-- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Load to Tables](load-to-tables.md) Lakehouse feature.
+- [Use table maintenance feature to manage delta tables in Fabric](lakehouse-table-maintenance.md).
+- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md).

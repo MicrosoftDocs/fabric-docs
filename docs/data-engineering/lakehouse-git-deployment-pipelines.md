@@ -9,9 +9,9 @@ ms.date: 10/31/2023
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 
-# Lakehouse git integration and deployment pipelines
+# Lakehouse git integration and deployment pipelines (Preview)
 
-The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
+The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all development team members throughout the product's life. Lifecycle management facilitates an effective product versioning and release process by continuously delivering features and bug fixes into multiple environments. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
 
 ## Lakehouse git integration
 
@@ -28,7 +28,7 @@ As a principle __no data is tracked in git__, only metadata.
 
 ### Git representation
 
-The following Lakehouse information will be serialized and tracked in a git connected workspace:
+The following Lakehouse information is serialized and tracked in a git connected workspace:
 
 * Display name
 * Description
@@ -43,24 +43,22 @@ The following capabilities are available:
 
 * Serialization of the Lakehouse object metadata to a git JSON representation.
 * Apply changes directly or use pull request to control changes to upstream or downstream workspaces and branches.
-* Renaming of Lakehouses are tracked in git. Update of renamed Lakehouse will also rename default semantic data model and SQL Analytics endpoint.
+* Renaming of Lakehouses are tracked in git. Update of renamed Lakehouse also renames the default semantic data model and SQL Analytics endpoint.
 * No action is applied to tables, folders and shortcuts, metadata and data of those items is always preserved.
 
 ## Lakehouse in deployment pipelines
 
-The Lakehouse artifact is supported in Microsoft Fabric lifecycle management deployment pipelines, enabling environment segmentation [best-practices](../cicd/best-practices-cicd.md). 
-
-As an isolation principle, deployment pipelines won't overwrite 
+The Lakehouse artifact is supported in Microsoft Fabric lifecycle management deployment pipelines, enabling environment segmentation [best-practices](../cicd/best-practices-cicd.md).
 
 Lakehouse deployment pipelines integration capabilities:
 
 * Deployment across Dev-Test-Production workspaces.
-* Lakehouse can be removed as a dependency upon deployment. Mapping to different Lakehouses within the deployment pipeline context is also supported.
-  * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, is created in the target workspace. Notebook and Spark Job Definitions are re-mapped to reference the new Lakehouse object in the new workspace.
+* Lakehouse can be removed as a depedent object upon deployment. Mapping different Lakehouses within the deployment pipeline context is also supported.
+  * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, is created in the target workspace. Notebook and Spark Job Definitions are remapped to reference the new Lakehouse object in the new workspace.
   * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved as requested__.
   * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
-* No object inside the Lakehouse is overwriten.
-* Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline conxtext.
+* No object inside the Lakehouse is overwritten.
+* Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline context.
 
 ## Next steps
 
