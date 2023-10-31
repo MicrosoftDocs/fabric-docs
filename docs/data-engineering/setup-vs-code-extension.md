@@ -46,7 +46,7 @@ Run the **conda.sh** in the terminal:
 
 ## Install the extension and prepare your environment
 
-1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension.
 
 1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 
