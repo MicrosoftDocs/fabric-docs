@@ -24,7 +24,7 @@ To use the admin monitoring workspace, you need to be an admin with one of these
 
 ## Access the admin monitoring workspace
 
-The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Fabric admin* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Global administrator* or *Fabric administrator* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
 
 ### Admin monitoring workspace view
 
