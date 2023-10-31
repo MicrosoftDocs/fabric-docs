@@ -12,7 +12,7 @@ ms.search.form:
 
 # Introduction to Git integration
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 > [!NOTE]
 > This articles in this section are about version control using Git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.

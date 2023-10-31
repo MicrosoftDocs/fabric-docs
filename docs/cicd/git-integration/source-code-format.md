@@ -20,7 +20,7 @@ Inside each item directory are the [mandatory system files that define the item]
 - [item.metadata.json](#metadata-file)
 - [item.config.json](#config-file)
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Metadata file
 
