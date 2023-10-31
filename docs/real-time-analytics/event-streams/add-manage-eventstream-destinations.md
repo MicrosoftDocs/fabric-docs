@@ -63,7 +63,8 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
          You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the colum of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
+         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the colum of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png":::
+
          :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
 
       3. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
@@ -90,7 +91,7 @@ To add a KQL database as a destination, you need to have a KQL database created 
 
       When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
 
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png"::::::
+      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png":::
 
    4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and you can check the metrics in the **Data insights** and logs in **Runtime logs**.
 
@@ -143,13 +144,13 @@ If you want to route event data to your application, you can add a custom app as
 
    :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png" alt-text="Screenshot showing the custom app destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app.png":::
 
-   - Basic: Shows the name, description, type and status of your custom app.
-   - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.
-   - Sample code: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
+   - **Basic**: Shows the name, description, type and status of your custom app.
+   - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
 
-   For each tab (Basic / Keys / Sample code), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
 
-   1. The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
+   The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
 
    *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
@@ -157,19 +158,21 @@ If you want to route event data to your application, you can add a custom app as
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png":::
 
-      he other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
-   2. AMQP format:
+      the other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
+
+   AMQP format:
 
    *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
 
       The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
-   3. Kafka format:
+
+   Kafka format:
 
    *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
 
       The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
 
-   You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
+You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
 ## Add a Reflex as a destination
 

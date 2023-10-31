@@ -153,13 +153,13 @@ If you want to connect your own application with an eventstream, you can add a c
 
    :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png":::
 
-   - Basic: Shows the name, description, type and status of your custom app.
-   - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.
-   - Sample code: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
+   - **Basic**: Shows the name, description, type and status of your custom app.
+   - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
 
-   For each tab (Basic / Keys / Sample code), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
 
-   1. The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
+   The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
 
    *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
@@ -168,12 +168,12 @@ If you want to connect your own application with an eventstream, you can add a c
       :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
       he other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
-   2. AMQP format:
+   AMQP format:
 
    *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
 
       The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
-   3. Kafka format:
+   Kafka format:
 
    *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
 
