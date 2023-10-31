@@ -127,7 +127,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Sample data**.
 
 1. On the right pane, enter a source name to appear on the canvas, select the sample data you want to add to your eventstream, and then select **Add**.
-   - **Bicycles**: sample Bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighbourhood, Latitude, and more.
+   - **Bicycles**: sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighbourhood, Latitude, and more.
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more.
    - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
 
@@ -167,7 +167,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
       :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
-      he other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
+      the other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
    AMQP format:
 
    *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
