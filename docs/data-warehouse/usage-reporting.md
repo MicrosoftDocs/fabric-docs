@@ -37,7 +37,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 Once you have installed the app, select the **Warehouse** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart and the **Items (14 days)** data table now show only **Warehouse** activity.
 
-:::image type="content" source="media/usage-reporting/fabric-capacity-metrics-app.gif" alt-text="An animated gif of the Fabric Capacity Metrics Overview page in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/fabric-capacity-metrics-app.gif":::
+:::image type="content" source="media/usage-reporting/fabric-capacity-metrics-app.gif" alt-text="An animated gif of the Fabric Capacity Metrics compute page in the Microsoft Fabric Capacity Metrics app." lightbox="media/usage-reporting/fabric-capacity-metrics-app.gif":::
 
 ### Warehouse operation categories
 
@@ -109,7 +109,7 @@ Consider the following usage reporting nuances:
 - [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
-- [Understand the metrics app overview page](../enterprise/metrics-app-overview-page.md)
+- [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
 
 ## Next step
