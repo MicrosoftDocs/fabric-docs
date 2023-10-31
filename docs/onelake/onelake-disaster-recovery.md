@@ -20,4 +20,4 @@ You have the option to enable or disable BCDR (Business Continuity and Disaster 
 
 If a catastrophe makes the main data center unreachable, you can use OneLake's APIs through the global endpoint to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster will be lost. After a failover, the new primary data center will have local redundancy only.
 
-For a comprehensive understanding of the end-to-end experience, please consult the Fabric BCDR documentation.
+For a comprehensive understanding of the end-to-end experience, please see the Fabric BCDR documentation.
