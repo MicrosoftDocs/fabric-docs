@@ -10,7 +10,7 @@ ms.date: 2/11/2023
 ms.search.form: Event Streams with Other Fabric Items
 ---
 
-# Get-data from Eventstream in multiple Fabric items
+# Get data from Eventstream in multiple Fabric items
 
 Event streams can route the event data to various destinations, including the Fabric items, for example: Fabric Lakehouse, Fabric KQL Database, etc. With the integration between Fabric Eventstream and these Fabric items, you can get the data from Eventstream item inside these Fabric items. This article describes how to use this integration experience within these Fabric items.
 
@@ -24,15 +24,15 @@ Before you start, you must complete the following prerequisites:
 - Get access to a **premium workspace** with **Contributor** or above permissions where your Eventstream item is located.
 - For a KQL database or Lakehouse item, get access to a **premium workspace** with **Contributor** or above permissions where your KQL database or Lakehouse item is located.
 
-## "Get data from Eventstream" in a KQL database
+## Get data from Eventstream in a KQL database
 
 To get data from Eventstream into a KQL table inside a KQL database, Select **Get data** on the ribbon of your KQL database
 
 :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" alt-text="Screenshot showing the get data options." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database.png" :::
 
 There are two options available:
-1. **Existing Eventstream**
-1. **New Eventstream**
+- **Existing Eventstream**
+- **New Eventstream**
 
 ### Get data from an existing eventstream
 
@@ -54,7 +54,7 @@ There are two options available:
 
 Following the guide in these teaching bubbles, you'll be able to get the data from this eventstream to your KQL database.
 
-## "Get data from Eventstream" in a lakehouse
+## Get data from Eventstream in a lakehouse
 
 1. To get data from Eventstream into a lakehouse, Select **Get data** on the ribbon of your KQL database. In lakehouse, only **New Eventstream** option is available to get the data from.
 
