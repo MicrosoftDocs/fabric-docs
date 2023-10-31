@@ -43,7 +43,7 @@ Apache Spark 3.4.0 is the fifth release in the 3.x line. This release, driven by
 *   Pandas API coverage improvements ([SPARK-42882](https://issues.apache.org/jira/browse/SPARK-42882)) and NumPy input support in PySpark ([SPARK-39405](https://issues.apache.org/jira/browse/SPARK-39405))
 *   Provide a memory profiler for PySpark user-defined functions ([SPARK-40281](https://issues.apache.org/jira/browse/SPARK-40281))
 *   Implement PyTorch Distributor ([SPARK-41589](https://issues.apache.org/jira/browse/SPARK-41589))
-*   Publish SBOM artifacts ([SPARK-41893](https://issues.apache.org/jira/browse/SPARK-41893))
+*   Publish SBOM (software bill of materials) artifacts ([SPARK-41893](https://issues.apache.org/jira/browse/SPARK-41893))
 *   Implement support for DEFAULT values for columns in tables ([SPARK-38334](https://issues.apache.org/jira/browse/SPARK-38334))
 *   Support parameterized SQL ([SPARK-41271](https://issues.apache.org/jira/browse/SPARK-41271), [SPARK-42702](https://issues.apache.org/jira/browse/SPARK-42702))
 *   Implement support for DEFAULT values for columns in tables ([SPARK-38334](https://issues.apache.org/jira/browse/SPARK-38334))
@@ -68,7 +68,7 @@ Apache Spark 3.4.0 is the fifth release in the 3.x line. This release, driven by
 *   Add flatMapSortedGroups and cogroupSorted ([SPARK-38591](https://issues.apache.org/jira/browse/SPARK-38591))
 *   Support subqueries with correlated non-equality predicates ([SPARK-36114](https://issues.apache.org/jira/browse/SPARK-36114))
 *   Support subqueries with correlation through UNION/INTERSECT/EXCEPT ([SPARK-36124](https://issues.apache.org/jira/browse/SPARK-36124))
-*   Fix the OOM error can’t be reported when AQE on ([SPARK-42290](https://issues.apache.org/jira/browse/SPARK-42290))
+*   Fix the OOM error can’t be reported when AQE (adaptive query execution) on ([SPARK-42290](https://issues.apache.org/jira/browse/SPARK-42290))
 *   Fix the trim logic didn't handle ASCII control characters correctly ([SPARK-44383](https://issues.apache.org/jira/browse/SPARK-44383))
 *   Dataframe.joinWith outer-join should return a null value for unmatched row ([SPARK-37829](https://issues.apache.org/jira/browse/SPARK-37829))
 *   Use the utils to get the switch for dynamic allocation used in local checkpoint ([SPARK-42421](https://issues.apache.org/jira/browse/SPARK-42421))
@@ -83,9 +83,9 @@ Read the full version of the release notes for a specific Apache Spark version b
 
 #### Concurrent Writes Support in Spark
 
-Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT query. This can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
+Encountering a 404 error with the message 'Operation failed: The specified path doesn't exist' is a common issue when performing parallel data insertions into the same table using an SQL INSERT INTO query. This can result in data loss. Our new feature, the File Output Committer Algorithm, resolves this issue, allowing customers to perform parallel data insertion seamlessly.
 
-To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries on the same table. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
+To access this feature, enable the `spark.sql.enable.concurrentWrites` feature flag, which is enabled by default starting from Runtime 1.2 (Spark 3.4). While this feature is also available in other Spark 3 versions, it isn't enabled by default. This feature doesn't support parallel execution of INSERT OVERWRITE queries where each concurrent job overwrites data on different partitions of the same table dynamically. For this purpose, Spark offers an alternative feature, which can be activated by configuring the `spark.sql.sources.partitionOverwriteMode` setting to [dynamic](https://spark.apache.org/docs/3.4.0/configuration.html#:~:text=spark.sql.sources.partitionOverwriteMode).
 
 
 #### Smart reads, which skip files from failed jobs
@@ -110,8 +110,8 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 #### Core
 *   Since Spark 3.4, Spark driver owns `PersistentVolumnClaim`s and try to reuse if they're not assigned to live executors. To restore the behavior before Spark 3.4, you can set `spark.kubernetes.driver.ownPersistentVolumeClaim` to `false` and `spark.kubernetes.driver.reusePersistentVolumeClaim` to `false`.
 *   Since Spark 3.4, Spark driver tracks shuffle data when dynamic allocation is enabled without shuffle service. To restore the behavior before Spark 3.4, you can set `spark.dynamicAllocation.shuffleTracking.enabled` to `false`.
-*   Since Spark 3.4, Spark will try to decommission cached RDD and shuffle blocks if both `spark.decommission.enabled` and `spark.storage.decommission.enabled` are true. To restore the behavior before Spark 3.4, you can set both `spark.storage.decommission.rddBlocks.enabled` and `spark.storage.decommission.shuffleBlocks.enabled` to `false`.
-*   Since Spark 3.4, Spark will use RocksDB store if `spark.history.store.hybridStore.enabled` is true. To restore the behavior before Spark 3.4, you can set `spark.history.store.hybridStore.diskBackend` to `LEVELDB`. 
+*   Since Spark 3.4, Spark tries to decommission cached RDD (resilient distributed dataset) and shuffle blocks if both `spark.decommission.enabled` and `spark.storage.decommission.enabled` are true. To restore the behavior before Spark 3.4, you can set both `spark.storage.decommission.rddBlocks.enabled` and `spark.storage.decommission.shuffleBlocks.enabled` to `false`.
+*   Since Spark 3.4, Spark uses RocksDB store if `spark.history.store.hybridStore.enabled` is true. To restore the behavior before Spark 3.4, you can set `spark.history.store.hybridStore.diskBackend` to `LEVELDB`. 
 #### PySpark
 *   In Spark 3.4, the schema of an array column is inferred by merging the schemas of all elements in the array. To restore the previous behavior where the schema is only inferred from the first element, you can set `spark.sql.pyspark.legacy.inferArrayTypeFromFirstElement.enabled` to `true`.
 *   In Spark 3.4, when using the Pandas on Spark API `Groupby.apply`, if the return type of the `func` parameter isn't specified and `compute.shortcut_limit` is set to 0, the number of sampling rows will be automatically set to 2. This adjustment ensures that there are always at least 2 sampling rows to maintain accurate schema inference.
@@ -127,14 +127,14 @@ When migrating from Runtime 1.1, powered by Apache Spark 3.3, to Runtime 1.2, po
 *   In Spark 3.4, Pandas API on Spark follows for the pandas 2.0, and some APIs were deprecated or removed in Spark 3.4 according to the changes made in pandas 2.0.  Refer to the \[release notes of pandas\]([https://pandas.pydata.org/docs/dev/whatsnew/](https://pandas.pydata.org/docs/dev/whatsnew/)) for more details.
 
 #### SQL, datasets and dataframe
-* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns then the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns doesn't match the number of columns in the target table. Disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
+* Since Spark 3.4, INSERT INTO commands with explicit column list comprising fewer columns than the target table will automatically add the corresponding default values for the remaining columns (or NULL for any column lacking an explicitly assigned default value). In Spark 3.3 or earlier, these commands would have failed returning errors reporting that the number of provided columns doesn't match the number of columns in the target table. Disabling `spark.sql.defaultColumn.useNullsForMissingDefaultValues` will restore the previous behavior.
 *   Since Spark 3.4, Number or Number(\*) from Teradata will be treated as Decimal(38,18). In Spark 3.3 or earlier, Number or Number(\*) from Teradata will be treated as Decimal(38, 0), in which case the fractional part is removed.
 *   Since Spark 3.4, v1 database, table, permanent view and function identifier will include ‘spark\_catalog’ as the catalog name if database is defined, e.g. a table identifier will be: `spark_catalog.default.t`. To restore the legacy behavior, set `spark.sql.legacy.v1IdentifierNoCatalog` to `true`.
 *   Since Spark 3.4, when ANSI SQL mode(configuration `spark.sql.ansi.enabled`) is on, Spark SQL always returns NULL result on getting a map value with a nonexisting key. In Spark 3.3 or earlier, there will be an error.
 *   Since Spark 3.4, the SQL CLI `spark-sql` doesn't print the prefix `Error in query:` before the error message of `AnalysisException`.
 *   Since Spark 3.4, `split` function ignores trailing empty strings when `regex` parameter is empty.
 *   Since Spark 3.4, the `to_binary` function throws error for a malformed `str` input. Use `try_to_binary` to tolerate malformed input and return NULL instead.
-    *   Valid Base64 string should include symbols from in base64 alphabet (A-Za-z0-9+/), optional padding (`=`), and optional whitespaces. Whitespaces are skipped in conversion except when they're preceded by padding symbol(s). If padding is present, it should conclude the string and follow rules described in RFC 4648 § 4.
+    *   Valid `Base64` string should include symbols from in `base64` alphabet (A-Za-z0-9+/), optional padding (`=`), and optional whitespaces. Whitespaces are skipped in conversion except when they're preceded by padding symbol(s). If padding is present, it should conclude the string and follow rules described in RFC 4648 § 4.
     *   Valid hexadecimal strings should include only allowed symbols (0-9A-Fa-f).
     *   Valid values for `fmt` are case-insensitive `hex`, `base64`, `utf-8`, `utf8`.
 *   Since Spark 3.4, Spark throws only `PartitionsAlreadyExistException` when it creates partitions but some of them exist already. In Spark 3.3 or earlier, Spark can throw either `PartitionsAlreadyExistException` or `PartitionAlreadyExistsException`.
