@@ -32,17 +32,22 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Direct Lake Mode
-[Direct Lake](https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake without having to query a data warehouse or lakehouse endpoint, and without having to import or duplicate data into a Power BI dataset. This native integration brings a unique mode, called Direct Lake, of accessing the data from the Lakehouse or Warehouse to provide the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
 
-In traditional DirectQuery mode, the Power BI engine directly queries the data from the source for each query execution, and the query performance depends on the data retrieval speed. DirectQuery eliminates the need to copy data, ensuring that any changes in the source are immediately reflected in query results. On the other hand, in the import mode, the performance is much better because the data is readily available in memory without having to query the data from the source for each query execution, however the Power BI engine must first copy the data into the memory at data refresh time. Any changes to the underlying data source are picked up during the next data refresh(in scheduled as well as on-demand refresh).
+[Direct Lake](/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI dataset. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
 
-Direct Lake mode now eliminates this import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur, thus combining the advantages of DirectQuery and import mode while avoiding their disadvantages. Direct Lake mode is therefore the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
+Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
+
+- In traditional DirectQuery mode, the Power BI engine directly queries the data from the source for each query execution, and the query performance depends on the data retrieval speed. DirectQuery eliminates the need to copy data, ensuring that any changes in the source are immediately reflected in query results. 
+
+- In import mode, the performance is better because the data is readily available in memory, without having to query the data from the source for each query execution. However, the Power BI engine must first copy the data into the memory, at data refresh time. Any changes to the underlying data source are picked up during the next data refresh.
+
+- Direct Lake mode eliminates the import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combinesthe advantages of DirectQuery and import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
 
 Direct Lake mode is the default connection type for Datasets that use a Lakehouse or Warehouse as a data source.
 
 ## Understand what's in the default Power BI dataset
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md) or Warehouse, a default Power BI dataset is created with the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](datasets.md).
+When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](datasets.md).
 
 The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
