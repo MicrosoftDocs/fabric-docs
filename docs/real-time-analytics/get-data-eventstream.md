@@ -16,7 +16,7 @@ ms.search.form: Get data in a KQL Database
 
 In this article, you learn how to get data from an existing eventstream into either a new or existing table.
 
-To get data from a new eventstream, see <!-- [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).-->
+To get data from a new eventstream, see [Get data from a new eventstream](event-streams/get-data-from-eventstream-in-multiple-fabric-items.md#get-data-from-a-new-eventstream).
 
 ## Prerequisites
 
