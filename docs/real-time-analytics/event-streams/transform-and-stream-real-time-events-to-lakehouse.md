@@ -70,11 +70,11 @@ After you create the lakehouse and eventstream, follow these steps to add an Azu
 
 1. Enter a source name for the new source and select **Create new connection** to your Azure event hub.
 
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png" alt-text="Screenshot showing where to select Create new connection on the Azure Event Hubs source configuration screen." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-connection.png":::
 
 1. If you don’t have a cloud connection, select **Create new connection** to create one. To create a new connection, fill in the **Connection settings** and **Connection credentials** of your Azure event hub, and then select **Create**.
 
-   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source.":::
+   :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 
    - **Connection name**: Enter a name for the cloud connection.
    - **Connection type**: The default value is `EventHub`.
@@ -87,7 +87,7 @@ After you create the lakehouse and eventstream, follow these steps to add an Azu
 
 1. After you create a cloud connection, select the refresh button, and then select the cloud connection you created.
 
-   :::image type="content" source="./media/add-manage-eventstream-sources/cloud-connection-refresh.png" alt-text="Screenshot showing the cloud connection refresh.":::
+   :::image type="content" source="./media/add-manage-eventstream-sources/cloud-connection-refresh.png" alt-text="Screenshot showing the cloud connection refresh." lightbox="./media/add-manage-eventstream-sources/cloud-connection-refresh.png":::
 
 1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
 

@@ -44,7 +44,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 1. In the Eventstream editor, expand the **New source** drop-down menu within the node and choose **Azure IoT Hub**.
 
-   :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream.":::
+   :::image type="content" source="./media/add-iot-hub-source/add-iot-hub-source.png" alt-text="Screenshot that shows where to add an Azure IoT Hub source in the eventstream." lightbox="./media/add-iot-hub-source/add-iot-hub-source.png":::
 
 2. On the **Azure IoT Hub** configuration pane, enter the following details:
 
@@ -56,7 +56,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
     4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
     5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
 
-       :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor.":::
+       :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor." lightbox="./media/add-iot-hub-source/successfully-added-iot-hub.png":::
 
 3. To create a new cloud connection for your Azure IoT Hub, follow these steps:
 
@@ -64,35 +64,35 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
     1. Select **Create new connection** from the drop-down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
 
-        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection.":::
+        :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection." lightbox="./media/add-iot-hub-source/add-new-cloud-connection.png":::
 
     2. **IoT Hub**. Enter the name of the IoT Hub in the Azure portal.
     3. **Connection name**. Enter a name for the new cloud connection, such as **iothub-connection**.
     4. **Shared access key name** and **Shared access key**. Enter the connection credentials for your Azure IoT Hub. You can find it under **Shared access policies** in the Azure portal. You must have appropriate permissions to access any of the IoT Hub endpoints.
 
-       :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal.":::
+       :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal." lightbox="./media/add-iot-hub-source/shared-access-key.png":::
 
     5. **General**. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
     6. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
 
-       :::image type="content" source="./media/add-iot-hub-source/refresh-iot-hub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub.":::
+       :::image type="content" source="./media/add-iot-hub-source/refresh-iot-hub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub." lightbox="./media/add-iot-hub-source/refresh-iot-hub-connection.png":::
 
 Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
 
-:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data.":::
+:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data." lightbox="./media/add-iot-hub-source/preview-iot-hub-data.png":::
 
 ## Add a Kusto destination to the eventstream
 
 1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
 
-   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination.":::
+   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
 2. On the **KQL Database** configuration pane, you can  choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**:
    1. **Direct ingestion**
    This mode ingests your event data directly into the KQL database without any processing. This mode is suitable for scenarios where you have low data volume and high latency tolerance. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later using KQL queries.
       1. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
 
-         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen.":::
+         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 
          - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
          - **Workspace**: Select the workspace associated with your Kusto database.
@@ -116,7 +116,7 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
           :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
 
       6. After you configure everything and select **Close**, a KQL database destination appears on the canvas, connected to your eventstream.
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database.png" :::
+      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-pull-mode.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-pull-mode.png" :::
 
    2. **Event processing before ingestion**
    This mode processes your event data before ingesting it into the KQL database. This mode is suitable for scenarios where you have high data volume and low latency tolerance. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can specify the processing logic using Azure Stream Analytics queries.
@@ -138,8 +138,6 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
          :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen.":::
 
       4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" alt-text="Screenshot showing the new KQL database push mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-push-mode.png" :::
 
 ## Build a Power BI dashboard
 

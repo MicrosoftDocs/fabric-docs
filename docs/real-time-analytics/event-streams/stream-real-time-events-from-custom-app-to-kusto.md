@@ -68,13 +68,37 @@ Follow these steps to add a custom application source to your eventstream:
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source.png" alt-text="Screenshot of the Custom App dialog.":::
 
-1. After you successfully add the custom application source, a new source node appears on the canvas. Select this node to view key information about the source on the **Information** tab located on the lower pane.
+1. After you have successfully created the custom application source, you can switch and view the following information in the **Details** tab in the lower pane:
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot of the canvas and the Information pane that shows where to find the new source and custom app information." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
-The connection string displayed on the **Information** tab is compatible with Azure Event Hubs. You can use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
+   - Basic: Shows the name, description, type and status of your custom app.
+   - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.
+   - Sample code: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
 
-`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`
+   For each tab (Basic / Keys / Sample code), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
+
+   1. The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
+
+   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
+
+      The EventHub format is the default format for the connection string, and it is compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstream using the Event Hubs protocol.
+
+      :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
+
+      he other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
+   2. AMQP format:
+
+   *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
+
+      The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
+   3. Kafka format:
+
+   *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
+
+      The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
+
+   You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
 ## Create an application to send events to the eventstream
 
