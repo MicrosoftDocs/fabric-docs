@@ -57,8 +57,7 @@ Now that you know how to build a data warehouse, load a table, and generate a re
 
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-## Next steps
-
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Transform data using a stored procedure](tutorial-transform-data.md)

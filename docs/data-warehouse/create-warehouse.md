@@ -149,7 +149,7 @@ ORDER BY
 > [!TIP]
 > You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Create tables in Warehouse](create-table.md)
