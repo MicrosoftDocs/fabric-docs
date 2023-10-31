@@ -486,7 +486,8 @@ During the pipeline run mode, you can configure pipeline Notebook activity setti
 If you want to change the session configuration, pipeline Notebook activity parameters name should be same as activityParameterName in the notebook. When running this pipeline, in this example driverCores in %%configure will be replaced by 8 and livy.rsc.sql.num-rows will be replaced by 4000.
 
 > [!NOTE]
->  If run pipeline failed because of using this new %%configure magic, you can check more error information by running %%configure magic cell in the interactive mode of the notebook. 
+> - If run pipeline failed because of using this new %%configure magic, you can check more error information by running %%configure magic cell in the interactive mode of the notebook. 
+> - Notebook schedule run doesn't support parameterized session configuration.
 >
 
 ## Python logging in Notebook
