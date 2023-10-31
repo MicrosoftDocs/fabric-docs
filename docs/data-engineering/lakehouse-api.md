@@ -274,7 +274,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehou
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation id to query the status of running table maintenance operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation ID to query the status of running table maintenance operations as described in the next section.
 
 ### Monitoring table maintenance operations
 
