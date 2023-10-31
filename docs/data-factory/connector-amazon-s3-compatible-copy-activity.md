@@ -1,5 +1,5 @@
 ---
-title: Configure in a data pipeline copy activity
+title: How to configure Amazon S3 Compatible in copy activity
 description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
