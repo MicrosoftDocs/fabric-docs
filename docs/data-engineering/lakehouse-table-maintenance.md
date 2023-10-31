@@ -20,6 +20,7 @@ Key capabilities of the lakehouse table maintenance feature:
 
 > [!NOTE]
 > For advanced maintenance tasks, such as grouping multiple table maintenance commands, orchestrating it based on a schedule, a code-centric approach is the recommended choice. To learn more, see [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article.
+> It is also possible to use the Lakehouse API to automate table maintenance operations, to learn more see [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md).
 
 ## Supported file types
 
@@ -59,5 +60,6 @@ After **Run now** is selected, a Spark maintenance job is submitted for executio
 ## Next steps
 
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
+- [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)
 - [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

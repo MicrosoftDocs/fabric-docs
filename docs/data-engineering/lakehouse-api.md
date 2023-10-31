@@ -21,6 +21,7 @@ The Microsoft Fabric Rest API provides service endpoint for the CRUD operation o
 |Get Properties |Gets the properties of the lakehouse artifact and SQL Analytics endpoint.|
 |List tables    |List tables in the Lakehouse.|
 |Table load|Creates Delta table from CSV and parquet files and folders.|
+|Table maintenance|Apply bin-compaction, V-Order, and unreferenced old files cleanup.|
 
 ## Pre-requisites
 
@@ -207,9 +208,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 }
 ```
 
-The response header contains the URI to poll the status of the asynchronous operations. The URI is provids under the __Location__ parameter of the response header.
+The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location header contains an URI as the following: https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/__32ad6d2a-82bb-420d-bb57-4620c8860373__. The item in bold us to be used as the operation id to query the status of running Load to tables operations.
+The Location variable contains an URI as the following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of runnin load to tables operations as described in the next section.
 
 ### Monitoring Load to tables operations
 
@@ -237,6 +238,89 @@ The following are the possible operation status for Load to tables
 * 3 - Success
 * 4 - Failed
 
+## Table maintenance
+
+This API surfaces the capabilities of the Lakehouse [table maintenance feature](lakehouse-table-maintenance.md). With this API, it's possible to apply bin-compaction, V-Order, and unreferenced old files cleanup.
+
+This API is asynchronous, so two steps are required:
+
+1. Submit table maintenance API request.
+1. Track the status of the operation until completion.
+
+### Table maitenance API Request
+
+This example executes a table maintenance job that applies V-Order to a table, while also applying Z-Order to the ``tipAmount`` column and executing the ``VACUUM`` operation using a retention of seven days and one hour.
+
+Request:
+
+```http
+POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances?jobType=TableMaintenance
+{
+    "executionData": {
+        "tableName": "{table_name}",
+        "optimizeSettings": {
+            "vOrder": true,
+            "zOrderBy": [
+                "tipAmount"
+            ]
+        },
+        "vacuumSettings": {
+            "retentionPeriod": "7.01:00:00"
+        }
+    }
+}
+ 
+```
+
+The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
+
+The Location variable contains an URI as the following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b``. The guid ``f2d65699-dd22-4889-980c-15226deb0e1b`` is the operation id to query the status of running table maintenance operations as described in the next section.
+
+### Monitoring table maintenance operations
+
+After capturing the operationId from the response of the Load to tables API request, execute the following request:
+
+```http
+GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/{operationId}
+```
+
+Response:
+```json
+{
+    "parameters": {
+        "workspaceId": "{workspaceId}",
+        "itemId": "{lakehouseId}",
+        "jobInstanceId": "{operationId}"
+    },
+    "responses": {
+        "200": {
+            "body": {
+                "id": "{operationId}",
+                "itemId": "431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7",
+                "jobType": "DefaultJob",
+                "invokeType": "Manual",
+                "status": "Completed",
+                "rootActivityId": "8c2ee553-53a4-7edb-1042-0d8189a9e0ca",
+                "startTimeUtc": "2023-04-22T06:35:00.7812154",
+                "endTimeUtc": "2023-04-22T06:35:00.8033333",
+                "failureReason": null
+            }
+        }
+    }
+}
+```
+
+The following are the possible operation status for Load to tables
+
+* NotStarted - Job not started
+* InProgress - Job in progress
+* Completed - Job completed
+* Failed - Job failed
+* Cancelled - Job cancelled
+* Deduped - A job instance of the same job type is already running and this job instance is skipped
+
 ## Next steps
 
 - Learn all about the [Load to Tables](load-to-tables.md) feature.
+- [Use table maintenance feature to manage delta tables in Fabric](lakehouse-table-maintenance.md)
+- [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
