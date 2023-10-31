@@ -70,7 +70,7 @@ Follow these steps to add a custom application source to your eventstream:
 
 1. After you have successfully created the custom application source, you can switch and view the following information in the **Details** tab in the lower pane:
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app information." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
    - Basic: Shows the name, description, type and status of your custom app.
    - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.
