@@ -10,6 +10,10 @@ ms.date: 10/31/2023
 
 # Pricing scenario using a data pipeline to load 1 TB of CSV data to Lakehouse files
 
+In this scenario, a Copy activity was used in a data pipeline to load 1 TB of CSV data stored in ADLS Gen2 to Lakehouse files in Microsoft Fabric.
+
+The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we will be using the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
+
 ## Configuration
 
 ## Manual cost estimation

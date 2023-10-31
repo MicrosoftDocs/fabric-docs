@@ -33,7 +33,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 |Effective TOU-hours billed     | (4 TOU) * (12/60 hour) = 0.8 TOU-hours        |
 |Effective CU     | (0.8 TOU-hours) * (1.5 CU) = 1.2 CU        |
 
-**Total run cost at $0.18/CU** = (1.2 CU) * ($0.18/CU) ~= **$ 0.22**
+**Total run cost at $0.18/CU hour** = (1.2 CU hours) * ($0.18/CU hour) ~= **$ 0.22**
 
 ## Cost estimation using the Fabric Metrics App
 
@@ -41,14 +41,16 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 The data movement operation utilized 3,960 CUs with a 662.64 second duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run.
 
+> [!NOTE]
+> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
+
 
 |  |Data Movement Operation  |
 |---------|---------|
-|Duration     | 662.64 seconds        |
-|CUs     | 3960 CUs        |
-|Effective CU-hours     | (3960) / (60*60) CU-hour = CU-hour        |
+|CU seconds     | 3960 CU seconds        |
+|Effective CU-hours     | (3960) / (60*60) CU-hours = 1.1 CU-hours        |
 
-**Total run cost at $0.18/CU** = (1.1 CU-hour) * ($0.18/CU) ~= **$0.20**
+**Total run cost at $0.18/CU hour** = (1.1 CU-hour) * ($0.18/CU hour) ~= **$0.20**
 
 ## Next steps
 
