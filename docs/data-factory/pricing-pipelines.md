@@ -1,6 +1,6 @@
 ---
 title: Pricing for data pipelines
-description: This article provides details of the pricing model for data pipelines for Data Factory in Microsoft Fabric.
+description: This article provides details of the pricing model of data pipelines for Data Factory in Microsoft Fabric.
 ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
@@ -65,6 +65,9 @@ The following table can be used as a template to compute estimated costs using F
 |CU (s)     | x CU (s)    |  y CU(s)       |
 |Effective CU-hour     | x CU(s) / (60*60) = X CU-hour    | y CU(s) / (60*60) = Y CU-hour        |
 
-**Total cost**: (X + Y CU-hour) * (Fabric Capacity per unit price)
+**Total cost**: (X + Y CU-hour) * (Fabric capacity per unit price)
 
-We'll apply this information to calculate costs for a number of [pricing example scenarios](pricing-overview.md#pricing-examples). 
+## Next steps
+
+- [Pricing example scenarios](pricing-overview.md#pricing-examples)
+- [Pricing Dataflows Gen2](pricing-dataflows-gen2.md)

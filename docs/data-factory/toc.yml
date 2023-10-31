@@ -9,6 +9,18 @@
       href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: whats-new.md
+    - name: Pricing in Data Factory
+      items:
+      - name: Pricing overview
+        href: pricing-overview.md 
+      - name: Pricing data pipelines
+        href: pricing-pipelines.md
+      - name: Pricing Dataflows Gen2
+        href: pricing-dataflows-gen2.md
+      - name: Pricing examples
+        items:
+        - name: Pricing example - Data pipelines
+          href: pricing-example-pipelines.md
   - name: Get started
     items:
     - name: Create a dataflow

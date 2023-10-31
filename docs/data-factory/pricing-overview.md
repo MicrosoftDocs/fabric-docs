@@ -45,5 +45,5 @@ Here are some pricing examples for Dataflows Gen2:
 
 ## Next steps
 
-[Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
-[Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
+- [Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
