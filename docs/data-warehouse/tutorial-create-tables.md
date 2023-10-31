@@ -99,7 +99,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
    :::image type="content" source="media\tutorial-create-tables\run-to-execute.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to select Run.":::
 
-1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
+1. To save this query for reference later, right-click on the query tab, and select **Rename**.
 
    :::image type="content" source="media\tutorial-create-tables\rename-query-option.png" alt-text="Screenshot of the top corner of the query editor screen, showing where to right-click to select the Rename option.":::
 
@@ -115,7 +115,7 @@ Learn how to create tables in the data warehouse you created in a previous part 
 
    :::image type="content" source="media\tutorial-create-tables\object-explorer-verify.png" alt-text="Screenshot of the Explorer pane, showing where to find your tables and newly created query.":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Load data using T-SQL](tutorial-load-data.md)

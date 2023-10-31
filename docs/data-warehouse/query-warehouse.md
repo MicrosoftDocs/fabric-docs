@@ -15,12 +15,12 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 
 To get started with this tutorial, check the following prerequisites:
 
-- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
+- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
 - Choose your querying tool. 
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
     - Use the [Visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](visual-query-editor.md).
 
-- Alternatively, you can use any of the below tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
+- Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
     - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
 
@@ -121,7 +121,7 @@ There are several ways you can write cross-database queries within the same [!IN
 > [!NOTE]
 > At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Create reports on data warehousing in Microsoft Fabric](create-reports.md)

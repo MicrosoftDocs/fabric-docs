@@ -33,6 +33,7 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 1. Select **Delete** on the warning to remove the workspace and all its contents.
 
-## Next steps
+## Next step
 
-- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
+> [!div class="nextstepaction"]
+> [What is data warehousing in Microsoft Fabric?](data-warehousing.md)

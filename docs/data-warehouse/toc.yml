@@ -87,7 +87,7 @@ items:
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
-    href: datasets.md
+    href: semantic-models.md
   - name: Model data in the default Power BI dataset
     href: model-default-power-bi-dataset.md          
   - name: Define relationships in data models
@@ -108,12 +108,16 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: Dynamic data masking
+    href: dynamic-data-masking.md
   - name: How to
     items: 
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
       href: tutorial-row-level-security.md
+    - name: Implement dynamic data masking
+      href: howto-dynamic-data-masking.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -143,6 +147,8 @@ items:
     displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query insights
+    href: query-insights.md
   - name: How to
     items:    
       - name: Observe utilization trends

@@ -4,7 +4,7 @@ description: Learn more about default Power BI datasets in Microsoft Fabric.
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 06/04/2023
+ms.date: 10/30/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
@@ -33,7 +33,7 @@ For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 ## Understand what's in the default Power BI dataset
 
-When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created with the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](datasets.md).
+When you create a [Lakehouse](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created with the [!INCLUDE [fabric-se](includes/fabric-se.md)]. The default dataset is represented with the *(default)* suffix. For more information, see [Default datasets](semantic-models.md).
 
 The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
@@ -51,31 +51,41 @@ Once there are objects in the default Power BI dataset, there are two ways to va
 
 The default layout for BI enabled tables persists in the user session and is generated whenever a user navigates to the model view. Look for the **Default dataset objects** tab.
 
-   :::image type="content" source="media\datasets\default-dataset-objects.png" alt-text="Screenshot of the reporting tab showing default dataset objects." lightbox="media\datasets\default-dataset-objects.png":::
-
 ## Access the default Power BI dataset
 
 To access default Power BI datasets, go to your workspace, and find the dataset that matches the name of the desired Lakehouse. The default Power BI dataset follows the naming convention of the Lakehouse.
 
-   :::image type="content" source="media\datasets\find-dataset.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\datasets\find-dataset.png":::
+   :::image type="content" source="media\semantic-models\find-semantic-models.png" alt-text="Screenshot showing where to find a dataset." lightbox="media\semantic-models\find-semantic-models.png":::
 
 To load the dataset, select the name of the dataset.
 
-   :::image type="content" source="media\datasets\load-dataset.png" alt-text="Screenshot showing the load dataset details." lightbox="media\datasets\load-dataset.png":::
+### Monitor the default Power BI dataset
+
+You can monitor and analyze activity on the dataset with [SQL Server Profiler](/sql/tools/sql-server-profiler/sql-server-profiler) by connecting to the XMLA endpoint. 
+
+SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms), and allows tracing and debugging of dataset events. Although officially deprecated for SQL Server, Profiler is still included in SSMS and remains supported for Analysis Services and Power BI. Use with the Fabric default Power BI dataset requires SQL Server Profiler version 18.9 or higher. Users must specify the dataset as the **initial catalog** when connecting with the XMLA endpoint. To learn more, see [SQL Server Profiler for Analysis Services](/analysis-services/instances/use-sql-server-profiler-to-monitor-analysis-services?view=power-bi-premium-current&preserve-view=true).
+
+### Scripting the default Power BI dataset
+
+You can script out the default Power BI dataset from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
+
+View the Tabular Model Scripting Language (TMSL) schema of the dataset by scripting out the dataset via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your dataset in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the dataset via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
+
+Scripting requires Power BI write permissions on the Power BI dataset. With read permissions, you can see the data but not the schema of the Power BI dataset.
 
 ## Create a new Power BI dataset
 
-There are some situations where your organization may need to create additional Power BI datasets based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
+There are some situations where your organization might need to create additional Power BI datasets based off [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] data.
 
 The **New Power BI dataset** button inherits the default dataset's configuration and allows for further customization. The default dataset acts as a starter template, helping to ensure a single version of the truth. For example, if you use the default dataset and define new relationships, and then use the **New Power BI dataset** button, the new dataset will inherit those relationships if the tables selected include those new relationships.
 
 To create a Power BI dataset from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)], follow these steps:
 
-1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then switch to the **Reporting** ribbon.
+1. Go to the **Data Warehouse** experience in the Fabric portal.
 
-1. In the **Reporting** ribbon, select **New Power BI dataset**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
+1. Open the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Switch to the **Reporting** ribbon.
 
-   :::image type="content" source="media\datasets\new-power-bi-dataset.png" alt-text="Screenshot showing the new Power BI dataset." lightbox="media\datasets\new-power-bi-dataset.png":::
+1. In the **Reporting** ribbon, select **New semantic model**, and then in the **New dataset** dialog, select tables to be included, and then select **Confirm**.
 
 1. Power BI automatically saves the dataset in the workspace based on the name of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and then opens the dataset in Power BI.
 
@@ -87,12 +97,12 @@ To learn more on how to edit data models in the Power BI service, see [Edit Data
 
 Default Power BI datasets follow the current limitations for datasets in Power BI. Learn more:
 
-- [Azure Analysis Services resource and object limits | Microsoft Learn](/azure/analysis-services/analysis-services-capacity-limits)
-- [Data types in Power BI Desktop - Power BI | Microsoft Learn](/power-bi/connect-data/desktop-data-types)
+- [Azure Analysis Services resource and object limits](/azure/analysis-services/analysis-services-capacity-limits)
+- [Data types in Power BI Desktop - Power BI](/power-bi/connect-data/desktop-data-types)
 
-If the parquet, Apache Spark, or SQL data types can't be mapped to one of the above types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
+If the parquet, Apache Spark, or SQL data types can't be mapped to one of the Power BI desktop data types, they are dropped as part of the sync process. This is in line with current Power BI behavior. For these columns, we recommend that you add explicit type conversions in their ETL processes to convert it to a type that is supported. If there are data types that are needed upstream, users can optionally specify a view in SQL with the explicit type conversion desired. This will be picked up by the sync or can be added manually as previously indicated.
 
-## Next steps
+## Related content
 
 - [Define relationships in data models](data-modeling-defining-relationships.md)
 - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
