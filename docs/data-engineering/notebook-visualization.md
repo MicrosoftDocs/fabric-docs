@@ -145,6 +145,80 @@ svg
 )
 ```
 
+## Embed a Power BI report in Notebook
+
+[Powerbiclient](https://github.com/microsoft/powerbi-jupyter/tree/main) Python package is now natively supported in Fabric notebooks. You don’t need to do any extra set up (like authentication process) on Fabric notebook Spark runtime 3.4, just import `powerbiclient` then continue your exploration. To learn more about how to use the powerbiclient package, check the [Documents](https://github.com/microsoft/powerbi-jupyter/blob/main/DOCUMENTATION.md). 
+
+Below are some key features supported by `powerbiclient` we want to demostrate.
+
+### Render an existing Power BI report
+
+You can easily embed and interact with Power BI reports in your notebooks with just a few lines of code. 
+
+The following image is an example of rendering existing powerbi report.
+
+:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a powerbi report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
+
+Run the following code to render an existing powerbi report.
+
+```python
+from powerbiclient import Report
+
+report_id="Your report id"
+report = Report(group_id=None, report_id=report_id)
+
+report
+```
+
+### Create report visuals from a Spark dataframe
+
+You can use a Spark DataFrame in your notebook to quickly generate insightful visualizations.
+You can also click *Save* in the embeded report to create a report item in a target workspace.
+
+The following image is an example of a `QuickVisualize()` from Spark dataframe.
+
+:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a quick visual." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
+
+Run the following code to render a report from a Spark dataframe.
+
+```python
+# Create a spark dataframe from a Lakehouse parquet table
+sdf = spark.sql("SELECT * FROM testlakehouse.table LIMIT 1000")
+
+# Create a Power BI report object from spark data frame
+from powerbiclient import QuickVisualize, get_dataset_config
+PBI_visualize = QuickVisualize(get_dataset_config(sdf))
+
+# Render new report
+PBI_visualize
+```
+
+### Create report visuals from a pandas dataframe
+
+You can also create reports based on a Pandas dataframe in notebook. 
+
+The following image is an example of a `QuickVisualize()` from pandas dataframe.
+
+:::image type="content" source="media\notebook-visualization\pandas-quick-visual-report.png" alt-text="Screenshot of a quick visual." lightbox="media\notebook-visualization\pandas-quick-visual-report.png":::
+
+Run the following code to render a report from a Spark dataframe.
+
+```python
+import pandas as pd
+
+# Create a pandas dataframe from a URL
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv")
+
+# Create a pandas dataframe from a Lakehouse csv file
+from powerbiclient import QuickVisualize, get_dataset_config
+
+# Create a Power BI report object from your data
+PBI_visualize = QuickVisualize(get_dataset_config(df))
+
+# Render new report
+PBI_visualize
+```
+ 
 ## Popular libraries
 
 When it comes to data visualization, Python offers multiple graphing libraries that come packed with many different features. By default, every Apache Spark pool in [!INCLUDE [product-name](../includes/product-name.md)] contains a set of curated and popular open-source libraries.
