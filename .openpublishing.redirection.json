@@ -121,6 +121,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-warehouse/model-default-power-bi-dataset.md",
+          "redirect_url": "/fabric/data-warehouse/default-power-bi-semantic-model",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/enterprise/metrics-app-onelake-page.md",
           "redirect_url": "/fabric/data-factory/metrics-app-storage-page.md",
           "redirect_document_id": false
