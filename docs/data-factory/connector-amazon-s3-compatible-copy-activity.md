@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/30/2023
+ms.date: 10/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -65,16 +65,14 @@ The following properties are **required**:
 
   - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix** to filter source S3 files.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
-    - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.
-
+    - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.<br>
           When you use prefix and choose to copy to file-based destination with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `bucket/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
       :::image type="content" source="./media/connector-amazon-s3-compatible/prefix.png" alt-text="Screenshot showing prefix.":::
 
   - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths** to filter your source folders or files.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
-    - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
-
+    - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.<br>
           Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
 
       - Wildcard folder path: The folder path with wildcard characters under the given bucket configured to filter source folders.
@@ -88,7 +86,7 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-amazon-s3-compatible/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
 
-- **File format**: Select the file format applied from the drop-down list. Select Settings to configure the file format. For settings of different file formats, refer to articles in [Supported format](#Supported-format) for detailed information.
+- **File format**: Select the file format applied from the drop-down list. Select Settings to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is set to **true** and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. Allowed values are **true** (default) and **false**. This property doesn't apply when you configure `fileListPath`.
 
