@@ -419,18 +419,14 @@
         href: connector-snowflake-overview.md
       - name: Configure in Data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
-    - name: SQL Server
-      items:
-      - name: Overview
-        href: connector-sql-server-overview.md
-      - name: Configure in Data pipeline Copy activity
-        href: connector-sql-server-copy-activity.md       
     - name: SQL Server database
       items:
       - name: Overview
         href: connector-sql-server-database-overview.md
       - name: Set up your connection
         href: connector-sql-server-database.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-sql-server-copy-activity.md  
     - name: Teradata database
       items:
       - name: Overview
