@@ -63,7 +63,7 @@ First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [p
 
     :::image type="content" source="media/tutorial-analyze-data-notebook/data-notebook-run-all-results.png" alt-text="A screenshot from the Fabric portal showing the results of running the notebook to display data from dimension_customer." lightbox="media/tutorial-analyze-data-notebook/data-notebook-run-all-results.png":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
