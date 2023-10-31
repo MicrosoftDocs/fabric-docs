@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 10/30/2023
+ms.date: 10/31/2023
 ms.topic: whats-new
 ---
 
@@ -113,7 +113,7 @@ This section summarizes recent new features and capabilities of [Data Factory in
 |July 2023|**New modern data connectivity and discovery experience in Dataflows**| An improved experience aims to expedite the [process of discovering data in Dataflow, Dataflow Gen2, and Datamart](https://blog.fabric.microsoft.com/blog/modern-get-data-in-dataflows?ft=All:).|
 |May 2023 |**Introducing Data Factory in Microsoft Fabric** | Data Factory enables you to [develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric). |
 
-#### Synapse Data Factory samples and guidance
+#### Data Factory in Microsoft Fabric samples and guidance
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
@@ -137,6 +137,8 @@ This section summarizes recent new features and capabilities of the [Data Engine
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Create multiple OneLake shortcuts at once**|Creating multiple OneLake shortcuts just got easier. Rather than creating shortcuts one at a time, you can now browse to your desired location and select multiple targets at once. [All your selected targets then get created as new shortcuts in a single operation](https://blog.fabric.microsoft.com/blog/create-multiple-shortcuts-faster-and-easier?ft=All).|
+|October 2023|**Delta-RS introduces native support for OneLake**|The OneLake team worked with the Delta-RS community to help introduce [support for recognizing OneLake URLs in both Delta-RS and the Rust Object Store](https://blog.fabric.microsoft.com/blog/delta-rs-introduces-native-support-for-onelake?ft=All). |
 |September 2023|**Import notebook to your Workspace**|The [new "Import Notebook" entry on the Workspace -> New menu](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840918) lets you easily import new Fabric Notebook items in the target workspace. You can upload one or more files, including `.ipynb`, `.py`, `.sql`, `.scala`, and `.r` file formats. |
 |September 2023|**Notebook file system support in Synapse VS Code extension**|The [Synapse VS Code extension](../data-engineering/setup-vs-code-extension.md) [now supports notebook File System](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840916) for Data Engineering and Data Science in Microsoft Fabric. The Synapse VS Code extension empowers users to develop their notebook artifacts directly within the Visual Studio Code environment.|
 |September 2023|**Notebook sharing execute-only mode**|We now support checking the "Run" operation separately when sharing a notebook, if you just selected the "Run" operation, the [recipient would see a "Execution-only" notebook](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840921). |
@@ -210,6 +212,8 @@ This section summarizes recent improvements and features for [real-time analytic
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Expanded Custom App Connections**|New [new custom app connections](https://blog.fabric.microsoft.com/blog/whats-new-in-eventstream-enhanced-ux-on-event-processor-and-expanded-custom-app-connections?ft=All) provide more flexibility when it comes to bringing your data streams into Eventstream.|
+|October 2023|**Enhanced UX on Event Processor**|New [UX improvements on the no-code Event Processor](https://blog.fabric.microsoft.com/blog/whats-new-in-eventstream-enhanced-ux-on-event-processor-and-expanded-custom-app-connections?ft=All) provide an intuitive experience, allowing you to effortlessly add or delete operations on the canvas.|
 |October 2023|**Eventstream Kafka Endpoints and Sample Code**|[The Custom App feature has new endpoints in sources and destinations](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573558), including sample Java code for your convenience. Simply add it to your application, and you'll be all set to stream your real-time event to Eventstream.|
 |October 2023|**Event processing editor UX improvements**|[Recent UX improvements](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573557) introduce a full-screen mode, providing a more spacious workspace for designing your data processing workflows. The insertion and deletion of data stream operations have been made more intuitive, making it easier to drag and drop and connect your data transformations.|
 |October 2023|**KQL Database Auto scale algorithm improvements**| Users do not need to worry about how many resources are needed to support their workloads in a KQL database. KQL Database has a sophisticated in-built, multi-dimensional, auto scaling algorithm. We recently [implemented some optimizations that will make some time series analysis more efficient](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573556).|
