@@ -158,7 +158,7 @@ If you want to route event data to your application, you can add a custom app as
 
       :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-custom-app-detail.png":::
 
-      the other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
+      The other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
 
    AMQP format:
 
