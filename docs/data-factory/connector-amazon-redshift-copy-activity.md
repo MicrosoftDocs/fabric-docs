@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # How to configure Amazon Redshift in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from Amazon Redshift.
+This article outlines how to use the copy activity in data pipelines to copy data from Amazon Redshift.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -36,8 +36,9 @@ Go to **Source** tab to configure your copy activity source. See the following c
 The following three properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Amazon Redshift connection from the connection list. If no connection exists, then create a new FTP connection by selecting **New**.
+- **Connection**:  Select an Amazon Redshift connection from the connection list. If no connection exists, then create a new Amazon Redshift connection by selecting **New**.
 - **Use query**: Select from **Table** or **Query**.
+
     If you select **Table**: 
 
     - **Table**: Specify the name of the table. Select the table from the drop-down list or enter the name manually by selecting **Edit**.
@@ -46,7 +47,7 @@ The following three properties are **required**:
 
     If you select **Query**:
 
-    - **Query**: Use the custom query to read data. For example: `select * from MyTable`.
+    - **Query**: Specify the custom query to read data. For example: `select * from MyTable`.
 
     :::image type="content" source="./media/connector-amazon-redshift/source-query.png" alt-text="Screenshot showing Use query when selecting Query." :::
 
@@ -65,7 +66,7 @@ For **Settings** tab configuration, go to [Configure your other settings under s
 
 ## Table summary
 
-See the following table for the summary and more information of the Dataverse copy activity.
+See the following table for the summary and more information of the Amazon Redshift copy activity.
 
 ### Source information
 
