@@ -4,7 +4,7 @@ description: Learn how to use the statistics features.
 author: mstehrani
 ms.author: emtehran
 ms.reviewer: wiassaf
-ms.date: 06/22/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
@@ -129,7 +129,7 @@ DBCC SHOW_STATISTICS ('sales.FactInvoice', '_WA_Sys_00000007_3B75D760');
 
 The `Updated` value in the result set of [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=fabric&preserve-view=true) should be a date (in UTC) similar to when you ran the original GROUP BY query.
 
-These automatically generated statistics can then be leveraged in subsequent queries by the query engine to improve plan costing and execution efficiency. If enough changes occur in table, the query engine will also refresh those statistics to improve query optimization. The same exercise above can be applied after changing the table significantly. In Fabric preview, the SQL query engine uses the same recompilation threshold as SQL Server 2016 (13.x) to refresh statistics.
+These automatically generated statistics can then be leveraged in subsequent queries by the query engine to improve plan costing and execution efficiency. If enough changes occur in table, the query engine will also refresh those statistics to improve query optimization. The same exercise above can be applied after changing the table significantly. In Fabric, the SQL query engine uses the same recompilation threshold as SQL Server 2016 (13.x) to refresh statistics expect when creating statistics for the first time.
 
 ### Types of automatically generated statistics
 
@@ -141,7 +141,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
     - Name begins with `_WA_Sys_`.
     - Contents can be viewed with [DBCC SHOW_STATISTICS](/sql/t-sql/database-console-commands/dbcc-show-statistics-transact-sql?view=fabric&preserve-view=true)
 - Average column length statistics
-    - Created for character columns (char and varchar) needing average column length at querytime.
+    - Created for variable character columns (varchar) greater than 100 needing average column length at querytime.
     - These objects contain a value representing the average row size of the varchar column at the time of statistics creation.
     - Name begins with `ACE-AverageColumnLength_`.
     - Contents cannot be viewed and are nonactionable by user.
