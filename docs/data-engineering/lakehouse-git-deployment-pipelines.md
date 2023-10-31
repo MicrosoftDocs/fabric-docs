@@ -1,0 +1,66 @@
+---
+title: Lakehouse git and deployment pipelines
+description: Learn about the Lakehouse git integration and deployment pipelines.
+ms.reviewer: snehagunda
+ms.author: dacoelho
+author: DaniBunny
+ms.topic: conceptual
+ms.date: 10/31/2023
+ms.search.form: lakehouse git deployment pipelines alm ci cd
+---
+
+# Lakehouse git integration and deployment pipelines
+
+The [Lakehouse](lakehouse-overview.md) integrates with the lifecycle management capabilities in Microsoft Fabric, providing a standardized collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. To learn more, read [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md).
+
+## Lakehouse git integration
+
+The Lakehouse is a data artifact that contains both metadata and data that is referenced in multiple objects in the workspace. Lakehouse contain tables, folders, and shortcuts as primary manageable data container items. From a development workflow perspective, the following dependent objects may reference a Lakehouse artifact:
+
+* [Dataflows](../data-factory/create-first-dataflow-gen2.md) and [Data Pipelines](../data-factory/create-first-pipeline-with-sample-data.md)
+* [Spark Job Definitions](spark-job-definition.md)
+* [Notebooks](how-to-use-notebook.md)
+* Semantic models and PowerBI
+
+The default semantic model and SQL Analytics Endpoint metadata are related to a Lakehouse and are tracked by default.
+
+As a principle __no data is tracked in git__, only metadata.
+
+### Git representation
+
+The following Lakehouse information will be serialized and tracked in a git connected workspace:
+
+* Lakehouse display name
+* Lakehouse name
+* Lakehouse guid
+
+### Lakehouse git integration capabilities
+
+The following capabilities are available:
+
+* Serialization of the Lakehouse object metadata to a git JSON representation.
+* Importing changes across branches in the same workspace. The Microsoft Fabric platform offers compare and change impact analysis.
+* Renaming of Lakehouses are tracked in git. Import of renamed lakehouse will also rename default semantic data model and SQL Analytics endpoint.
+* No action is applied to tables, folders and shortcuts, metadata and data of those items is always preserved.
+
+## Lakehouse in deployment pipelines
+
+The Lakehouse artifact is supported in Microsoft Fabric lifecycle management deployment pipelines, enabling environment segmentation [best-practices](../cicd/best-practices-cicd.md). As an isolation principle, deployment pipelines won't overwrite 
+
+Lakehouse deployment pipelines integration capabilities:
+
+* Deployment across Dev-Test-Production workspaces.
+* Lakehouse can be removed as a dependency upon deployment. Mapping to different Lakehouses within the deployment pipeline context is also supported. The git representation on the new workspace will be updated to new Lakehouse reference.
+    * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, will be created in the target workspace. Notebook and Spark Job Definitions will reference the new Lakehouse object in the new workspace.
+    * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, will be created in the target workspace, __but Notebooks and Spark Job Definitions references will be preserved as requested__.
+    * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
+* No object inside the Lakehouse is overwriten.
+* Use pull request to apply changes to upstream or downstream workspaces and branches.
+* Updates to Lakehouse name can be syncronized across workspaces in a deployment pipeline conxtext.
+
+## Next steps
+
+- [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
+- [Tutorial: Lifecycle management in Fabric](../cicd/cicd-tutorial.md)
+- [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md)
+- [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
