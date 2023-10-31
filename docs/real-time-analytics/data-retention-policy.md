@@ -24,7 +24,7 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ## Change data retention policy
 
-1. To change the data retention policy, browse to your KQL database and select the **Manage** > **Data policies**.
+1. To change the data retention policy, browse to your KQL database and select **Manage** > **Data policies**.
 
     :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
