@@ -5,8 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/25/2023
 ms.search.form: lakehouse delta lake tables
 ---
 
