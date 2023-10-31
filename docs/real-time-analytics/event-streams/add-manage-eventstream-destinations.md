@@ -160,15 +160,7 @@ If you want to route event data to your application, you can add a custom app as
 
       The other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
 
-   AMQP format:
-
-   *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
-
       The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
-
-   Kafka format:
-
-   *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
 
       The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
 
@@ -182,9 +174,9 @@ To add a Reflex from your workspace as an eventstream's destination, do the foll
 
 1. Enter a name for the eventstream destination and complete the information about your Reflex.
 
-   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" alt-text="Screenshot showing the reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" :::
-
    **Reflex**: Select an existing Reflex or create a new one to receive data.
+
+   :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" alt-text="Screenshot showing the reflex configuration." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-reflexconfiguration.png" :::
 
 1. After you select on the Add button, you can see a Reflex destination on the canvas that is linked to your eventstream.
 

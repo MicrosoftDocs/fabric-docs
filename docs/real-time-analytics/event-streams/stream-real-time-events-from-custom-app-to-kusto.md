@@ -68,7 +68,7 @@ Follow these steps to add a custom application source to your eventstream:
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source.png" alt-text="Screenshot of the Custom App dialog.":::
 
-1. After you have successfully created the custom application source, you can switch and view the following information in the **Details** tab in the lower pane:
+1. After you successfully add the custom application source, a new source node appears on the canvas. Select this node to view key information about the source on the **Details** tab located in the lower pane.
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app information." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
@@ -76,31 +76,13 @@ Follow these steps to add a custom application source to your eventstream:
    - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
    - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
 
-   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information:
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information.
 
-   The connection string is an event hub compatible connection string, and you can use it in your application to receive events from your eventstream. The connection string has multiple protocol formats, which you can switch and select in the Keys tab. The following example shows what the connection string looks like in Eventhub format:
+The connection string displayed on the **Details** tab is compatible with Azure Event Hubs. You can use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
 
    *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
-      The EventHub format is the default format for the connection string, and it is compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstream using the Event Hubs protocol.
-
       :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
-
-      The other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
-
-   AMQP format:
-
-   *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
-
-      The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
-
-   Kafka format:
-
-   *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
-
-      The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
-
-   You can choose the protocol format that suits your application needs and preferences, and copy and paste the connection string into your application. You can also refer to or copy the sample code that we provide in the Sample code tab, which shows how to send or receive events using different protocols.
 
 ## Create an application to send events to the eventstream
 
@@ -200,56 +182,27 @@ With a connection string to an event hub readily available in the custom app sou
 
 ## Add a KQL Database destination to the eventstream
 
-While the custom application is streaming events into your eventstream, you can add and configure the KQL Database destination to receive the events from your eventstream. To add a KQL database as a destination, you need to have a KQL database created in the workspace, and choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**.
+While the custom application is streaming events into your eventstream, you can add and configure the KQL Database destination to receive the events from your eventstream. To add a KQL Database destination, follow these steps:
 
-1. **Direct ingestion**
-   This mode ingests your event data directly into the KQL database without any processing. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later in KQL database using KQL queries.
-   1. Select **New destination** on the ribbon or "**+**" in the main editor canvas and then select **KQL Database**. The **KQL Database** destination configuration screen appears.
+1. Select **New destination** on the ribbon or **+** in the main editor canvas, and then select **KQL Database**.
 
-   2. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
+1. Enter a destination name, select a workspace, and choose a KQL database from the selected workspace.
 
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png" :::
+   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 
-   3. On the **Get data** page, navigate through the tabs to complete the configuration:
-      1. **Configure**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next**.
+1. Select **Add and configure** to start the data ingestion wizard. On the **Destination** tab, enter a name for the KQL table and then select **Next: Source**.
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" alt-text="Screenshot that shows the Destination tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" :::
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the Destination tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
+1. On the **Source** tab, verify your eventstream source and then select **Next: Schema**.
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" alt-text="Screenshot that shows the Source tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" :::
 
-      2. **Inspet**:Select a data format, and preview how the data is sent to your KQL database.
+1. On the **Schema** tab, select **JSON** as the data format. You can preview the data on the right pane. If the data type doesn't meet your expectations, you can modify it by selecting the arrow in the table heading. You can also add or remove columns based on your requirements. When you're done, select **Next: Summary**.
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the data format of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-schema.png" alt-text="Screenshot of the Schema tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-schema.png" :::
 
-         You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
+1. On the **Summary** tab, you can review the configuration and status summary. If everything is correct, select **Done** to finish the configuration. Event data starts flowing into your KQL database, and the KQL Database destination appears on the canvas.
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the colum of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png":::
-
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
-
-      3. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
-
-          :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
-
-   4. After you configure everything and select **Close**, a KQL database destination appears on the canvas, connected to your eventstream.
-
-2. **Event processing before ingestion**
-   This mode processes your event data before ingesting it into the KQL database. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can design the processing logic using event processor.
-   1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
-
-      :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png":::
-
-   2. Design the event processing with event processor,and then select **Save**
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png":::
-
-   3. When you choose an existing Kusto table, schema validation between the current schema in this eventstream and the target KQL table will be performed. If the two schemas are not matched, an error message is shown and reminds you to open event processor to adjust the schema in this eventstream accordingly.
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-error.png":::
-
-      When open the event processor, the detailed mismatch information will be shown in Authoring error tab.
-
-      :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen." lightbox="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png":::
-
-   4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and you can check the metrics in the **Data insights** and logs in **Runtime logs**.
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-destination-on-canvas.png" alt-text="Screenshot that shows where to find the new KQL database destination on the canvas." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-destination-on-canvas.png" :::
 
 ## Verify data in the KQL database
 

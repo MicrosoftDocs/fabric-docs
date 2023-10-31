@@ -54,11 +54,12 @@ Follow these steps to create a KQL database and an eventstream in your workspace
     2. **Cloud connection**: Select an existing cloud connection that links your Azure IoT Hub to Microsoft Fabric. If you don't have one, proceed to step 3 to create a new cloud connection.
     3. **Data format**. Choose a data format (AVRO, JSON, or CSV) for streaming your IoT Hub data into the eventstream.
     4. **Consumer group**. Choose a consumer group from your Azure IoT Hub, or leave it as **$Default**. Then select **Add** to finish the Azure IoT Hub configuration.
-    5. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
+
+3. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
 
        :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor." lightbox="./media/add-iot-hub-source/successfully-added-iot-hub.png":::
 
-3. To create a new cloud connection for your Azure IoT Hub, follow these steps:
+4. To create a new cloud connection for your Azure IoT Hub, follow these steps:
 
    :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
@@ -85,60 +86,30 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
 1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
 
-   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
+   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add an kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
-2. On the **KQL Database** configuration pane, you can  choose between two ingestion modes: **Direct ingestion** and **Event processing before ingestion**:
-   1. **Direct ingestion**
-   This mode ingests your event data directly into the KQL database without any processing. This mode is suitable for scenarios where you have low data volume and high latency tolerance. You can use this mode if you want to ingest your event data as-is and perform any processing or transformation later using KQL queries.
-      1. Select **Direct ingestion**, enter a destination name, select a workspace, choose a KQL database from the selected workspace, and then select **Add and configure**.
+2. On the **KQL Database** configuration pane, enter the details for your Kusto database:
 
-         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
+   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 
-         - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
-         - **Workspace**: Select the workspace associated with your Kusto database.
-         - **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
-      2. On the **Get data** page, navigate through the tabs to complete the configuration.
-      3. **Configure**: Use an existing table of your KQL database or create a new one to route and ingest the data. Complete the required fields and select **Next**.
+      - **Destination name**: Enter a name for this new destination, such as **kusto-dest**.
+      - **Workspace**: Select the workspace associated with your Kusto database.
+      - **KQL Database**: Select your Kusto database from the drop-down menu, and then **Create and configure**.
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" alt-text="Screenshot showing the Destination tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-1.png" :::
+3. You see a popup window helping you to complete the Kusto configuration. Select an existing table or create a new one for your IoTHub data stream. Enter the table name and select **Next**.
 
-      4. **Inspect**:Select a data format, and preview how the data is sent to your KQL database.
+   :::image type="content" source="./media/add-iot-hub-source/kusto-enter-table-name.png" alt-text="Screenshot that shows where to enter Kusto table name.":::
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" alt-text="Screenshot showing the data format of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-2.png" :::
+4. Set up a data connection linking your eventstream to the Kusto database. Enter a name for this new data connection and select **Next**.
+   :::image type="content" source="./media/add-iot-hub-source/kusto-data-connection.png" alt-text="Screenshot that shows where to set up Kusto connection.":::
 
-          You can also change the column name, data type, or update column by clicking the arrow in the table header. Complete the required fields and select **Finish**.
+5. Choose the correct data format of your IoTHub data stream, and change the schema data type to suit your requirement for this new table within the Kusto database.
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" alt-text="Screenshot showing how to change the column of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-3.png" :::
+   :::image type="content" source="./media/add-iot-hub-source/kusto-create-schema.png" alt-text="Screenshot that shows create a Kusto schema.":::
 
-         :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" alt-text="Screenshot showing the change the column name, data type of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-4.png" :::
+6. Once the configuration is complete, you can see the KQL Database is added to your eventstream.
 
-      5. **Summary**: Review the status of your data ingestion, including the table created with the schema you defined, and connection between the eventstream and the KQL database.
-
-          :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" alt-text="Screenshot showing the Summary tab of the Ingest data screen for creating a KQL database destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-wizard-5.png" :::
-
-      6. After you configure everything and select **Close**, a KQL database destination appears on the canvas, connected to your eventstream.
-      :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-pull-mode.png" alt-text="Screenshot showing the new KQL database pull mode destination." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-kql-database-pull-mode.png" :::
-
-   2. **Event processing before ingestion**
-   This mode processes your event data before ingesting it into the KQL database. This mode is suitable for scenarios where you have high data volume and low latency tolerance. You can use this mode if you want to apply some processing or transformation to your event data before ingesting it, such as filtering, aggregating, or expanding. You can specify the processing logic using Azure Stream Analytics queries.
-
-      1. Select **Event processing before ingestion**, complete the information about your KQL Database, and then select **Open event processor**.
-
-         :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database-push-mode.png" alt-text="Screenshot of the KQL Database push mode destination configuration screen.":::
-
-      2. Design the event processing with event processor,and then select **Save**
-
-         :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-editor-preview.png" alt-text="Screenshot of the push mode event processor screen.":::
-
-      3. When you choose an existing Kusto table, for schema validation, if you don’t open event processor, we just show errors but don't provide detailed message.
-
-         :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-error.png" alt-text="Screenshot of the push mode event processor error screen.":::
-
-         When open the event processor, the detailed mismatch information is shown in Authoring error tab.
-
-         :::image type="content" source="./media/process-events-using-event-processor-editor/event-processor-mismatch-information.png" alt-text="Screenshot of the push mode event processor mismatch information screen.":::
-
-      4. After you configure everything and select **Save**, a KQL database destination appears on the canvas, connected to your eventstream, and the **Data Insights** and **Runtime Logs** will be shown.
+      :::image type="content" source="./media/add-iot-hub-source/successfully-added-kusto.png" alt-text="Screenshot that shows where the Kusto database is added successfully.":::
 
 ## Build a Power BI dashboard
 

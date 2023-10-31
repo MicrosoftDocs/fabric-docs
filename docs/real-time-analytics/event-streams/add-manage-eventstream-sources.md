@@ -53,10 +53,10 @@ If you have an Azure event hub created with streaming data, follow these steps t
 
    :::image type="content" source="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png" alt-text="Screenshot showing the cloud connection in event hub source." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 
-   - **Connection name**: Enter a name for the cloud connection.
-   - **Connection type**: The default value is `EventHub`.
    - **Event Hub namespace**: Enter the name of your Azure event hub namespace.
-   - **Authentication**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**.
+   - **Event Hub**: Enter the name of your Azure event hub in the Azure portal.
+   - **Connection name**: Enter a name for the cloud connection.
+   - **Shared access key name** and **Shared access key**: Go to your Azure event hub and create a policy with `Manage` or `Listen` permission under **Share access policies**. Then use **policy name** and **primary key** as the **Shared Access Key Name** and **Shared Access Key**.
 
        :::image type="content" source="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png" alt-text="Screenshot showing the Azure event hub policy key." lightbox="./media/add-manage-eventstream-sources/azure-event-hub-policy-key.png":::
 
@@ -168,14 +168,8 @@ If you want to connect your own application with an eventstream, you can add a c
       :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
       The other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
-   AMQP format:
-
-   *`amqps://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:5671/es_xxxxxxxx`*
 
       The AMQP format is compatible with the AMQP 1.0 protocol, which is a standard messaging protocol that supports interoperability between different platforms and languages. You can use this format to connect to eventstream using the AMQP protocol.
-   Kafka format:
-
-   *`kafka://key_xxxxxxxx:xxxxxxxx@eventstream-xxxxxxxx:9093/es_xxxxxxxx`*
 
       The Kafka format is compatible with the Apache Kafka protocol, which is a popular distributed streaming platform that supports high-throughput and low-latency data processing. You can use this format to connect to eventstream using the Kafka protocol.
 
