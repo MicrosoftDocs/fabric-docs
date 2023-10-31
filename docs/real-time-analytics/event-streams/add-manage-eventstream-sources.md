@@ -147,11 +147,11 @@ If you want to connect your own application with an eventstream, you can add a c
 
 1. Enter a **Source name** for the custom app and select **Add**.
 
-   :::image type="content" source="./media/event-streams-source/eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="/media/event-streams-source/eventstream-sources-custom-app.png":::
+   :::image type="content" source="./media/event-streams-source\eventstream-sources-custom-app.png" alt-text="Screenshot showing the custom app source configuration." lightbox="./media/event-streams-source/eventstream-sources-custom-app.png":::
 
 1. After you have successfully created the custom application source, you can switch and view the following information in the **Details** tab in the lower pane:
 
-   :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png.png":::
+   :::image type="content" source="./media/add-manage-eventstream-sources/custom-app-source.png" alt-text="Screenshot showing the custom app source." lightbox="./media/add-manage-eventstream-sources/custom-app-source.png.png":::
 
    - Basic: Shows the name, description, type and status of your custom app.
    - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.

@@ -70,7 +70,7 @@ Follow these steps to add a custom application source to your eventstream:
 
 1. After you have successfully created the custom application source, you can switch and view the following information in the **Details** tab in the lower pane:
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
    - Basic: Shows the name, description, type and status of your custom app.
    - Keys: Shows the connection string for your custom app, which you can copy and paste into your application.
@@ -84,7 +84,7 @@ Follow these steps to add a custom application source to your eventstream:
 
       The EventHub format is the default format for the connection string, and it is compatible with the Azure Event Hubs SDK. You can use this format to connect to eventstream using the Event Hubs protocol.
 
-      :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
+      :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
       he other two protocol formats are AMQP and Kafka, which you can select by clicking on the corresponding tabs in the Keys tab.
    2. AMQP format:
