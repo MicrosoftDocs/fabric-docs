@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 10/08/2023
-ms.search.form: product-kusto
+ms.search.form: Source and Destination
 ---
 
 # Add and manage a destination in an eventstream
