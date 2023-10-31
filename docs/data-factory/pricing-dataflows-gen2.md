@@ -20,13 +20,13 @@ The following table indicates that to determine Dataflow Gen2 execution costs, e
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/release-plan/) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](../release-plan/) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
 
 ## Manually compute estimated costs
 
 The following table is a template to help you manually estimate costs for a Dataflows Gen2 refresh with staging enabled:
 
-|  |Standard Compute  |
+|    |Standard Compute  |
 |---------|---------|
 |Duration in seconds     |  t seconds       |
 |Billed duration (in hours)     |  t / (60*60) hours       |
@@ -36,7 +36,7 @@ The following table is a template to help you manually estimate costs for a Data
 
 The following table can be utilized as a template to manually compute estimated costs for a Dataflows Gen2 refresh with staging enabled:
 
-|  |Standard Compute  | High Scale Compute |
+|    |Standard Compute  | High Scale Compute |
 |---------|---------|---------|
 |Duration in seconds     |  t seconds       | d seconds |
 |Billed duration (in hours)     |  t / (60*60) hours       | d / (60*60) hour |
@@ -61,4 +61,4 @@ The following table can be utilized as a template to compute estimated costs usi
 ## Next steps
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
-- [Pricing data pipelines](pricing-data-pipelines.md)
+- [Pricing data pipelines](pricing-pipelines.md)

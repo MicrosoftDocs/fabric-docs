@@ -10,7 +10,7 @@ ms.date: 10/30/2023
 
 # Data Factory pricing in Microsoft Fabric
 
-Data Factory in Microsoft Fabric provides serverless and elastic data integration service capabilities built for cloud scale. There is no fixed-size compute power that you need to plan for peak load; rather you need to specify which operations to perform while authoring pipelines and dataflows, which will translate into an amount of **Fabric Capacity Units** consumed, that you can further track using the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app) to plan and manage your consumption metrics. This allows you to design the ETL processes in a much more scalable manner. In addition, Data Factory, like other Fabric experiences, is billed on a consumption-based plan, which means you only pay for what you use.
+Data Factory in Microsoft Fabric provides serverless and elastic data integration service capabilities built for cloud scale. There is no fixed-size compute power that you need to plan for peak load; rather you need to specify which operations to perform while authoring pipelines and dataflows, which will translate into an amount of **Fabric Capacity Units** consumed, that you can further track using the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to plan and manage your consumption metrics. This allows you to design the ETL processes in a much more scalable manner. In addition, Data Factory, like other Fabric experiences, is billed on a consumption-based plan, which means you only pay for what you use.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
