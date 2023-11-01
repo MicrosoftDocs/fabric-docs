@@ -11,7 +11,7 @@ ms.date: 11/03/2023
 
 # Migrate Spark pools from Azure Synapse to Fabric
 
-While Azure Synapse provides various Spark pools, Fabric offers [Starter pools](configure-starter-pools.md) and [Custom pools](create-custom-spark-pools.md). The Starter pool can be a good choice if you have a single pool with no custom configurations or libraries in Azure Synapse, and if the [Medium node size](spark-compute.md) meets your requirements. However, if you seek more flexibility with your Spark pool configurations, it's advisable to opt for *Custom pools*. There are two options here: 
+While Azure Synapse provides various Spark pools, Fabric offers [Starter pools](configure-starter-pools.md) and [Custom pools](create-custom-spark-pools.md). The Starter pool can be a good choice if you have a single pool with no custom configurations or libraries in Azure Synapse, and if the [Medium node size](spark-compute.md) meets your requirements. However, if you seek more flexibility with your Spark pool configurations, we recommended using *Custom pools*. There are two options here: 
 
 * Option 1: Move your Spark pool to a workspace's default environment.
 * Option 2: Move your Spark pool to a custom environment in Fabric. 
@@ -22,26 +22,26 @@ For Spark pool considerations, refer to [differences between Azure Synapse Spark
 
 ## Option 1: From Spark pool to workspace's default environment
 
-You can create custom Spark pools from your Fabric workspace and use them as the default environment. The default environment is used by all notebooks and SJDs in the same workspace. 
+You can create custom Spark pools from your Fabric workspace and use them as the default environment. The default environment is used by all notebooks and Spark job definitions in the same workspace. 
 
 To move from an existing Spark pool from Azure Synapse to a workspace default environment:
 
 1. **Access Azure Synapse workspace**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace, go to **Analytics Pools** and select **Apache Spark pools**.
 1.	**Locate the Spark pool**: From **Apache Spark pools**, locate the Spark pool you want to move to Fabric and check the pool properties. 
-1.	**Get the properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
+1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
 1.	**Create a custom Spark pool in Fabric**:
     * Go to your Fabric workspace and select **Workspace settings**.
-    * Go to **Data Engineering/Science** and select "Spark settings".
+    * Go to **Data Engineering/Science** and select **Spark settings**.
     * From the **Pool** tab and in **Default pool for workspace** section, expand the dropdown menu and select create **New pool**.
     * [Create your custom pool](create-custom-spark-pools.md) with the corresponding target values. Fill the name, node family, node size, autoscaling and dynamic executor allocation options.
 5.	**Select a runtime version**:
-    * Go to **Environment** tab, and select the required **Runtime Version**.
-    * Disable the **Set default environment**.
+    * Go to **Environment** tab, and select the required **Runtime Version**. See available runtimes [here](runtime.md).
+    * Disable the **Set default environment** option.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-default-environment.png" alt-text="Screenshot showing default environment.":::
 
 > [!NOTE]
-> In this option, pool level libraries or configurations are not supported. However, you can adjust compute configuration for individual items such as notebooksm Spark Job Definition, and add inline libraries. If you need to add custom libraries and configurations to an environment, consider a [custom environment](NEEDLINK).
+> In this option, pool level libraries or configurations are not supported. However, you can adjust compute configuration for individual items such as notebooks and Spark job definitions, and add inline libraries. If you need to add custom libraries and configurations to an environment, consider a custom [environment](environment-overview.md).
 
 ## Option 2: From Spark pool to custom environment
 
@@ -49,18 +49,21 @@ With custom environments, you can set up custom Spark properties and libraries. 
 
 1. **Access Azure Synapse workspace**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace, go to **Analytics Pools** and select **Apache Spark pools**.
 1.	**Locate the Spark pool**: From **Apache Spark pools**, locate the Spark pool you want to move to Fabric and check the pool properties. 
-1.	**Get the properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
+1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
 1.	**Create a custom Spark pool**:
     * Go to your Fabric workspace and select **Workspace settings**.
     * Go to **Data Engineering/Science** and select **Spark settings**.
     * From the **Pool** tab and in **Default pool for workspace** section, expand the dropdown menu and select create **New pool**.
     * [Create your custom pool](create-custom-spark-pools.md) with the corresponding target values. Fill the name, node family, node size, autoscaling and dynamic executor allocation options.
-1.	**[Create an Environment](NEEDLINK)** item if you don’t have one.
-1.	**Configure the Spark pool**:
+1.	**[Create an Environment](create-and-use-environment.md)** item if you don’t have one.
+1.	**Configure Spark compute**:
     * Within the **Environment**, go to **Spark Compute** > **Compute**.
     * Select the newly created pool for the new environment.
     * You can configure driver and executors cores and memory. 
+1.  **Select a runtime version** for the environment. See available runtimes [here](runtime.md).
 1.	Click on **Save** and **Publish** changes.
+
+Learn more on creating and using an [Environment](create-and-use-environment.md).
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-custom-environment.png" alt-text="Screenshot showing custom environment.":::
 
