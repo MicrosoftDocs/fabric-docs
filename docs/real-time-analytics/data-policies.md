@@ -50,7 +50,7 @@ For more information, see [Caching policy](/azure/data-explorer/kusto/management
 
 1. Under **Caching**, either select the toggle to set the caching period to **Unlimited**, or enter a time period and select **Done**. By default, your data is cached for 3650 days.
 
-    :::image type="content" source="media/data-policies/caching-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
+    :::image type="content" source="media/data-policies/caching-policy.png" alt-text="Screenshot of caching policy pane with default value.":::
 
 > [!NOTE]
 > The time period you set for the caching policy must be lower than or equal to the data retention time period.
