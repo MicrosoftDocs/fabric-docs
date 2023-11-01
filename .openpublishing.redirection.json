@@ -119,6 +119,11 @@
           "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
           "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint.md",
+          "redirect_document_id": false
         }
     ]
 }
