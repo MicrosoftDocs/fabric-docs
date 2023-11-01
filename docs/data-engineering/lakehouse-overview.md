@@ -69,7 +69,7 @@ Accessibility has always been a top priority to ensure that Lakehouse is inclusi
 
 - Alternative Text for Images: All images now include descriptive alt text, making it possible for screen readers to convey meaningful information.
 
-- Form Fields and Labels: All form fields have associated labels, simplifying data input for everyone, including those using screen readers.
+- **Form fields and Labels:** All form fields have associated labels, simplifying data input for everyone, including those using screen readers.
 
 ## Next steps
 
