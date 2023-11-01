@@ -24,7 +24,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/load-1tb-csv-to-lakehouse-table-details.png" alt-text="Screenshot showing the copy data details for the scenario.":::
 
-|Metric |Source to desiination  |
+|Metric |Source to destination  |
 |---------|---------|
 |Duration     | 00:12:41        |
 |Used Parallel copies     | 128        |
@@ -37,7 +37,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 ## Cost estimation using the Fabric Metrics App
 
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration  and CU consumption of the job in the Fabric Metrics App.":::
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
 The data movement operation utilized 282,240 CU seconds with a 763.78 second (12.73 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run.
 

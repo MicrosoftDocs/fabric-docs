@@ -37,7 +37,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 ## Cost estimation using the Fabric Metrics App
 
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-parquet-to-data-warehouse-staging.png" alt-text="Screenshot showing the duration  and CU consumption of the job in the Fabric Metrics App.":::
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-parquet-to-data-warehouse-staging.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
 The data movement operation utilized 267,480 CU seconds with a 1504.42 second (25.07 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run.
 
