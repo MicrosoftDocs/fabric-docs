@@ -149,6 +149,11 @@
           "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
           "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
+          "redirect_url": "/fabric/real-time-analytics/data-policies",
+          "redirect_document_id": false
         }
     ]
 }

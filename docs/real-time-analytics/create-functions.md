@@ -54,5 +54,5 @@ This feature allows you to create or alter an existing function using the `.crea
 ## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
-* [Change the data retention policy](data-retention-policy.md)
+* [Change data policies](data-policies.md)
 * [Create a table update policy](table-update-policy.md)
