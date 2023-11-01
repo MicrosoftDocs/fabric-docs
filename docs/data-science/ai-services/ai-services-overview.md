@@ -10,7 +10,9 @@ ms.date: 10/18/2023
 ms.search.form: 
 ---
 
-# AI services in Fabric
+# AI services in Fabric (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services), formerly known as Azure Cognitive Services, help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. 
 
@@ -20,7 +22,7 @@ Fabric provides two options for utilizing Azure AI services:
 
     Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with prebuilt AI models without any prerequisite. We recommend using this option as you can utilize your Fabric authentication to access AI services, and all usage are billed against your Fabric capacity. This option is currently in public preview with limited AI services available. 
 
-    [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/), and [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) are available out of the box in Fabric, with support for both RESTful API and SynapseML. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information on available models, see [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
+    [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) are available out of the box in Fabric, with support for both RESTful API and SynapseML. You can also use the [OpenAI Python Library](https://platform.openai.com/docs/api-reference?lang=python) to access Azure OpenAI service in Fabric. For more information on available models, see [prebuilt AI models in Fabric](./ai-services-overview.md#prebuilt-ai-models-in-fabric-preview).
 
 - **Bring your own key (BYOK)**. 
 
@@ -58,10 +60,6 @@ Fabric provides two options for utilizing Azure AI services:
 - Dictionary Lookup: Provides alternative translations for a word and a few idiomatic phrases.
 - Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. 
 
-### [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) 
-[REST API](how-to-use-anomaly-detector.md), [SynapseML](how-to-use-anomaly-detector.md)
-- Anomaly status of latest point: generates a model using preceding points and determines whether the latest point is anomalous.
-- Find anomalies: generates a model using an entire series and finds anomalies in the series.
 
 ## Available regions
 
@@ -86,10 +84,54 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant’s geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
 
 
+## Available regions
+Prebuilt AI services in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+
+To find out what your Fabric home region is, see [Find your Fabric home region](../../admin/find-fabric-home-region.md).
+
+
+Asia Pacific
+* Australia East
+* Australia Southeast
+* Central India
+* East Asia
+* Japan East
+* Korea Central
+* Southeast Asia
+* South India
+
+Europe
+* North Europe
+* West Europe
+* France Central
+* Norway East
+* Switzerland North
+* Switzerland West
+* UK South
+* UK West
+
+Americas
+* Brazil South
+* Canada Central
+* Canada East
+* East US
+* East US 2
+* North Central US
+* South Central US
+* West US
+* West US 2
+* West US 3
+
+Middle East and Africa
+* South Africa North
+* UAE North
+
+## Available regions for Azure OpenAI Service
+
+[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant’s geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
 ## Next steps
 - [Check out the regions for prebuilt AI services](ai-services-regions.md)
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-open-ai-sdk-synapse.md)
-- [Use prebuilt Anomaly Detector in Fabric](how-to-use-anomaly-detector.md)
 - [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)
 

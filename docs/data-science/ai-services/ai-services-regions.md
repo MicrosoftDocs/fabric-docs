@@ -10,7 +10,9 @@ ms.date: 10/18/2023
 ms.search.form: 
 ---
 
-# Prebuilt AI services in Fabric region availability
+# Prebuilt AI services in Fabric region availability (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 Prebuilt AI services in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
 

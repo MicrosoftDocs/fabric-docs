@@ -14,7 +14,7 @@ ms.date: 10/18/2023
 
 
 > [!NOTE] 
-> Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/), and [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) without any prerequisite. This is currently in public preview, for more information about the the prebuilt AI services in Fabric, see [AI services in Fabric](./ai-services-overview.md).
+> Fabric seamlessly integrates with Azure AI services, allowing you to enrich your data with [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/). This is currently in public preview, for more information about the the prebuilt AI services in Fabric, see [AI services in Fabric](./ai-services-overview.md).
 
 
 ## Usage of Azure AI services with bring your own key
