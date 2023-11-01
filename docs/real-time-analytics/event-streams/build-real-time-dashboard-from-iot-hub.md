@@ -57,7 +57,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 3. Once it's added successfully, you can see an Azure IoT Hub source added to your eventstream in the editor.
 
-       :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor." lightbox="./media/add-iot-hub-source/successfully-added-iot-hub.png":::
+   :::image type="content" source="./media/add-iot-hub-source/successfully-added-iot-hub.png" alt-text="Screenshot that shows the Azure IoT Hub source in the Eventstream editor." lightbox="./media/add-iot-hub-source/successfully-added-iot-hub.png":::
 
 4. To create a new cloud connection for your Azure IoT Hub, follow these steps:
 
@@ -73,14 +73,13 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
        :::image type="content" source="./media/add-iot-hub-source/shared-access-key.png" alt-text="Screenshot that shows where to find the shared access key in the Azure portal." lightbox="./media/add-iot-hub-source/shared-access-key.png":::
 
-    5. **General**. Keep **Organizational** as the Privacy level, and then select **Create** to create the new connection.
-    6. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
+    5. Return to the Azure IoT Hub configuration pane and select **Refresh** to load the new cloud connection.
 
        :::image type="content" source="./media/add-iot-hub-source/refresh-iot-hub-connection.png" alt-text="Screenshot that shows where to refresh the cloud connection for Azure IoT Hub." lightbox="./media/add-iot-hub-source/refresh-iot-hub-connection.png":::
 
-Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
+5. Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
 
-:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data." lightbox="./media/add-iot-hub-source/preview-iot-hub-data.png":::
+   :::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data." lightbox="./media/add-iot-hub-source/preview-iot-hub-data.png":::
 
 ## Add a Kusto destination to the eventstream
 
@@ -88,7 +87,7 @@ Once the Azure IoT Hub is added to your eventstream, select **Preview data** to 
 
    :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add an kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
-2. On the **KQL Database** configuration pane, enter the details for your Kusto database:
+2. On the **KQL Database** configuration pane, select **Direct ingestion**, and enter the details for your Kusto database:
 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot of the KQL Database pull mode destination configuration screen." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 

@@ -78,11 +78,11 @@ Follow these steps to add a custom application source to your eventstream:
 
    For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information.
 
-The connection string displayed on the **Details** tab is compatible with Azure Event Hubs. You can use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
+The connection string displayed on the **Details** tab is compatible with Azure Event Hubs. You can copy and use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
 
    *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
 
-      :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
 ## Create an application to send events to the eventstream
 

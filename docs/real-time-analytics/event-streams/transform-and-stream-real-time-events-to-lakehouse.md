@@ -83,11 +83,9 @@ After you create the lakehouse and eventstream, follow these steps to add an Azu
 
       :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" alt-text="Screenshot showing where to select and enter the authentication information for your Azure event hub." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/azure-event-hub-policy-key.png" :::
 
-   - **Privacy level**: Choose a privacy level for the cloud connection.
+1. Select a **Consumer group** that reads the event data from your Azure event hub and then **Add**.
 
 1. Select a **Data format** of the incoming real-time events that you want to get from your Azure event hub.
-
-1. Select a **Consumer group** that reads the event data from your Azure event hub and then **Add**.
 
 1. The new source node appears in the canvas after the event hub source is created successfully. Select the event hub node in the canvas, then the **Data preview** tab in the bottom pane to view the data inside the event hub.
 
