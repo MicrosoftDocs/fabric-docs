@@ -16,7 +16,7 @@ ms.search.form: Predict
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-In this article, you'll learn how to apply PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
+In this article, you learn how to apply PREDICT both ways, whether you're more comfortable writing code yourself or using a guided UI experience to handle batch scoring for you.
 
 ## Prerequisites
 
@@ -24,15 +24,26 @@ In this article, you'll learn how to apply PREDICT both ways, whether you're mor
 
 ## Limitations
 
-- The PREDICT function is currently supported for a limited set of ML model flavors, including PyTorch, Sklearn, Spark, TensorFlow, ONNX, XGBoost, LightGBM, CatBoost, Statsmodels, Prophet, and Keras.
+- The PREDICT function is currently supported for a limited set of ML model flavors, including:
+    - PyTorch
+    - Sklearn
+    - Spark
+    - TensorFlow
+    - ONNX
+    - XGBoost
+    - LightGBM
+    - CatBoost
+    - Statsmodels
+    - Prophet
+    - Keras
 - PREDICT ***requires*** ML models to be saved in the MLflow format with their signatures populated.
 - PREDICT ***does not*** support ML models with multi-tensor inputs or outputs.
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered an ML model in your workspace, you can skip to Step 2 below. If not, Step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered an ML model in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
 
-1. **Train an ML model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in  the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train ML models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
+1. **Train an ML model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train ML models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
 
     ```Python
     import mlflow
@@ -140,7 +151,12 @@ From any ML model's item page, you can choose either of the following options to
 
 ### Use a guided UI experience
 
-The guided UI experience walks you through steps to select source data for scoring, map the data correctly to your ML model's inputs, specify the destination for your model's outputs, and create a notebook that uses PREDICT to generate and store prediction results.
+The guided UI experience walks you through steps to:
+
+- Select source data for scoring
+- Map the data correctly to your ML model's inputs
+- Specify the destination for your model's outputs
+- Create a notebook that uses PREDICT to generate and store prediction results
 
 To use the guided experience,
 1. Go to the item page for a given ML model version.
@@ -155,7 +171,7 @@ To use the guided experience,
     :::image type="content" source="media/model-scoring-predict/select-input-table.png" alt-text="Screenshot of the step to select an input table for ML model predictions." lightbox="media/model-scoring-predict/select-input-table.png":::
 
 1. Select **Next** to go to the "Map input columns" step.
-1. Map column names from the source table to the ML model's input fields, which have been pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the source columns must match the model's expected data types.
+1. Map column names from the source table to the ML model's input fields, which are pulled from the model's signature. You must provide an input column for all the model's required fields. Also, the data types for the source columns must match the model's expected data types.
 
     > [!TIP]
     > The wizard will prepopulate this mapping if the names of the input table's columns match the column names logged in the ML model signature.
@@ -163,12 +179,12 @@ To use the guided experience,
     :::image type="content" source="media/model-scoring-predict/map-input-columns.png" alt-text="Screenshot of the step to map input columns for ML model predictions." lightbox="media/model-scoring-predict/map-input-columns.png":::
 
 1. Select **Next** to go to the "Create output table" step.
-1. Provide a name for a new table within the selected lakehouse of your current workspace. This output table will store your ML model's input values with the prediction values appended. By default, the output table will be created in the same lakehouse as the input table, but the option to change the destination lakehouse is also available.
+1. Provide a name for a new table within the selected lakehouse of your current workspace. This output table stores your ML model's input values with the prediction values appended. By default, the output table is created in the same lakehouse as the input table, but the option to change the destination lakehouse is also available.
 
     :::image type="content" source="media/model-scoring-predict/create-output-table.png" alt-text="Screenshot of the step to create an output table for ML model predictions." lightbox="media/model-scoring-predict/create-output-table.png":::
 
 1. Select **Next** to go to the "Map output columns" step.
-1. Use the provided text field(s) to name the column(s) in the output table that will store the ML model's predictions.
+1. Use the provided text field(s) to name the column(s) in the output table that stores the ML model's predictions.
 
     :::image type="content" source="media/model-scoring-predict/map-output-columns.png" alt-text="Screenshot of the step to map output columns for ML model predictions." lightbox="media/model-scoring-predict/map-output-columns.png":::
 
@@ -178,7 +194,7 @@ To use the guided experience,
     :::image type="content" source="media/model-scoring-predict/configure-notebook.png" alt-text="Screenshot of the step to configure a notebook for ML model predictions." lightbox="media/model-scoring-predict/configure-notebook.png":::
 
 1. Select **Next** to go to the "Review and finish" step.
-1. Review the details on the summary page and select **Create notebook** to add the new notebook with its generated code to your workspace. You'll be taken directly to that notebook, where you can run the code to generate and store predictions.
+1. Review the details on the summary page and select **Create notebook** to add the new notebook with its generated code to your workspace. You're taken directly to that notebook, where you can run the code to generate and store predictions.
 
     :::image type="content" source="media/model-scoring-predict/review-and-finish.png" alt-text="Screenshot of the review-and-finish step for ML model predictions." lightbox="media/model-scoring-predict/review-and-finish.png":::
 
@@ -191,12 +207,12 @@ To use a code template for generating batch predictions:
 
 You can paste this code template into a notebook to generate batch predictions with your ML model. To successfully run the code template, you need to manually replace the following values:
 
-- `<INPUT_TABLE>`: The file path for the table that will provide inputs to the ML model
+- `<INPUT_TABLE>`: The file path for the table that provides inputs to the ML model
 - `<INPUT_COLS>`: An array of column names from the input table to feed to the ML model
-- `<OUTPUT_COLS>`: A name for a new column in the output table that will store predictions
+- `<OUTPUT_COLS>`: A name for a new column in the output table that stores predictions
 - `<MODEL_NAME>`: The name of the ML model to use for generating predictions
 - `<MODEL_VERSION>`: The version of the ML model to use for generating predictions
-- `<OUTPUT_TABLE>`: The file path for the table that will store the predictions
+- `<OUTPUT_TABLE>`: The file path for the table that stores the predictions
 
 :::image type="content" source="media/model-scoring-predict/copy-code.png" alt-text="Screenshot of the copy-code template for ML model predictions." lightbox="media/model-scoring-predict/copy-code.png":::
 
