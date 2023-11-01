@@ -10,6 +10,10 @@ ms.date: 10/30/2023
 
 # Dataflows Gen2 pricing for Data Factory in Microsoft Fabric
 
+This article provides details of the pricing model of Dataflows Gen2 for Data Factory in Microsoft Fabric.
+
+[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+
 The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CU per hour. Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CU per hour. At the end of each Dataflows Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
 
 
