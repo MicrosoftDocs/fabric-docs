@@ -12,7 +12,7 @@ ms.search.form: lakehouse load to delta lake tables
 
 # Load to Delta Lake table
 
-[!INCLUDE [product-name](../includes/product-name.md)] [Lakehouse](lakehouse-overview.md) provides a feature to efficiently load common file types to an optimized Delta table ready for analytics. The _Load to Table_ feature allows users to load a single file or a folder of files to a table. This feature increases productivity for data engineers by allowing them to quickly use a right click action to enable table loading on files and folders. Load to table is also a **no-code experience**, which lowers the entry bar for all personas.  
+The [Lakehouse](lakehouse-overview.md) in Microsoft Fabric provides a feature to efficiently load common file types to an optimized Delta table ready for analytics. The _Load to Table_ feature allows users to load a single file or a folder of files to a table. This feature increases productivity for data engineers by allowing them to quickly use a right-click action to enable table loading on files and folders. Loading to the table is also a **no-code experience**, which lowers the entry bar for all personas.  
 
 ## Load to Table capabilities overview
 
