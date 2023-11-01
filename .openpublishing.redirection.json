@@ -121,9 +121,9 @@
           "redirect_document_id": false
         },
         {
-          "source_path_from_root": "docs/data-engineering/lakehouse-sql-endpoint.md",
-          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint.md",
-          "redirect_document_id": false
+          "source_path_from_root": "/docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
         }
     ]
 }
