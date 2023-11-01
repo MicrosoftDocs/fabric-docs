@@ -14,13 +14,13 @@ This Azure Data Explorer connector is supported in Data Factory for [!INCLUDE [p
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Support in data pipelines
+## Support in Data pipeline
 
-The Azure Data Explorer connector supports the following capabilities in data pipelines:
+The Azure Data Explorer connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | User Auth |
 | **Lookup activity** | None | User Auth |
 
-To learn more about the copy activity configuration for Azure Data Explorer in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-explorer-copy-activity.md).
+To learn more about the copy activity configuration for Azure Data Explorer in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-data-explorer-copy-activity.md).
