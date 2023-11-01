@@ -28,7 +28,7 @@ ms.search.form: R Language
 
 ## Connect sparklyr to Synapse Spark cluster
 
-Use the following connection method in `spark_connect()` to establish a `sparklyr` connection. We support a new connection method called `synapse`, which allows you to connect to an existing Spark session. It dramatically reduces the `sparklyr` session start time. Additionally, we contributed this connection method to the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session and easily [share data between them](#Share-data-between-`sparklyr`-and-`SparkR`). 
+Use the following connection method in `spark_connect()` to establish a `sparklyr` connection. We support a new connection method called `synapse`, which allows you to connect to an existing Spark session. It dramatically reduces the `sparklyr` session start time. Additionally, we contributed this connection method to the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session and easily [share data between them](#share-data-between-sparklyr-and-sparkr). 
 
 ```R
 # connect sparklyr to your spark cluster
@@ -126,7 +126,7 @@ mtcars_tbl %>%
 
 ## Share data between `sparklyr` and `SparkR`
 
-When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#Connect-sparklyr-to-Synapse-Spark-cluster), you can use both `sparklyr` and `SparkR` in the same session and easily share data between them. You can create a spark table in `sparklyr` and read it from `SparkR`.
+When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), you can use both `sparklyr` and `SparkR` in the same session and easily share data between them. You can create a spark table in `sparklyr` and read it from `SparkR`.
 
 ```R
 # load the sparklyr package
