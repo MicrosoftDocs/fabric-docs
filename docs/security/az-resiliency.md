@@ -20,11 +20,11 @@ Azure availability zone-enabled services are designed to provide the right level
 Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric makes commercially-reasonable efforts to support zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
 
 > [!Note]
-> At General Availability, Fabric provides partial availability zone support in a limited number of regions which covers experiences and/or certain functionalities within an experience as described below. This list might be updated periodically by Microsoft. Experiences such as Data Factory (pipelines) , Data Engineering, Data Science, and Event Streams do not support availability zones. Zone availability might not be available for Fabric experiences or features and/or functionalities that are in preview.
+> At General Availability, Fabric provides partial availability-zone support in a limited number of regions. This partial availability-zone support covers experiences and/or certain functionalities within an experience as described below. This list might be updated periodically by Microsoft. Experiences such as Data Factory (pipelines), Data Engineering, Data Science, and Event Streams do not support availability zones. Zone availability might not be available for Fabric experiences or features and/or functionalities that are in preview.
 >
->While Microsoft strives to provide uniform and consistent availability zone support, in some cases of availability zone failure, Fabric capacities located in Azure regions with higher customer demand fluctuations might experience higher than usual latency.  
-
-Fabric on-prem gateways and large datasets are in the process of being migrated to AZ resilient infrastructure.  
+> While Microsoft strives to provide uniform and consistent availability zone support, in some cases of availability-zone failure, Fabric capacities located in Azure regions with higher customer demand fluctuations might experience higher than usual latency.
+>
+> Fabric on-prem gateways and large datasets are in the process of being migrated to AZ resilient infrastructure.  
 
 Fabric makes commercially-reasonable efforts to provide availability zone support in various regions as follows:
 
