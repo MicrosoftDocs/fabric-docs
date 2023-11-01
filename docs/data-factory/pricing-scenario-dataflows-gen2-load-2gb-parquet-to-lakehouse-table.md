@@ -16,9 +16,48 @@ The prices used in the following example are hypothetical and don’t intend to 
 
 ## Configuration
 
+To accomplish this scenario, you need to create a dataflow with the following steps:
+
+1. Initialize Dataflow: Get 2 GB Parquet files data from ADLS Gen2 storage account.
+1. Configure Power Query:
+   1. Navigate to Power Query.
+   1. Ensure the option for staging the query is enabled.
+   1. Proceed to combine the Parquet files.
+1. Data Transformation:
+   1. Promote headers for clarity.
+   1. Remove unnecessary columns.
+   1. Adjust column data types as needed.
+1. Define Output Data Destination:
+   1. Configure Lakehouse as the data output destination.
+   1. In this example, a Lakehouse within Fabric was created and utilized.
+
 ## Manual cost estimation
 
+The execution of this Dataflow Gen2 instance was completed in approximately 5 minutes.
+
+|Metric  |Standard compute meter  |
+|---------|---------|
+|Duration     | 00:00:14        |
+|Billed duration (hours)     | 14/(60*60) hours         |
+|Effective CU hours    | 16 CU * 14/(60*60) hours = 0.062 CU hours        |
+
+**Total run cost at $0.18/CU hour** = ($0.062 CU hours) * ($0.18/CU hour) ~= **$0.011**
+
 ## Cost estimation using the Fabric Metrics App
+
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2gp-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
+
+The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Scale Dataflows Compute operations consumed 7.78 CU seconds + 7.85 CU seconds each.
+
+> [!NOTE]
+> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
+
+|Metric  |Compute consumption  |
+|---------|---------|
+|Total CU seconds consumed | 49.1 CU seconds |
+|Effective CU hours billed | 49.1 / (60*60) = 0.014  CU hours |
+
+**Total run cost at $0.18/CU hour** = (0.014 CU-hours) * ($0.18/CU hour) ~= **$0.002**
 
 ## Next steps
 

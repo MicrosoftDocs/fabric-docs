@@ -37,7 +37,7 @@ The execution of this Dataflow Gen2 instance was completed in approximately 5 mi
 
 |Metric  |Standard compute meter  |
 |---------|---------|
-|Duration     | 00:05:00        |
+|Duration     | 00:05:00 = 300 seconds       |
 |Billed duration (hours)     | 300/(60*60) hours        |
 |Effective CU hours    | 16 * 300 / (60*60) = 1.34 CU hours        |
 
