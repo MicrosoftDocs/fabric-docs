@@ -1,5 +1,5 @@
 ---
-title: Change the data retention policy in Real-Time Analytics
+title: Data retention policy in Real-Time Analytics
 description: Learn how to create a data retention policy in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 10/22/2023
 ms.search.form: product-kusto
 ---
-# Change the data retention policy
+# Data retention policy
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -17,12 +17,14 @@ The retention policy controls the mechanism that automatically removes data from
 
 For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).  
 
+In this article, you learn how to set a data retention policy on your KQL database.
+
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
-## Change data retention policy
+## Set a data retention policy
 
 1. To change the data retention policy, browse to your KQL database and select **Manage** > **Data policies**.
 

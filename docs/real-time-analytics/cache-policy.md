@@ -1,5 +1,5 @@
 ---
-title: Change the caching policy in Real-Time Analytics
+title: Caching policy in Real-Time Analytics
 description: Learn how to create a caching policy in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -9,20 +9,22 @@ ms.custom: build-2023
 ms.date: 10/22/2023
 ms.search.form: product-kusto
 ---
-# Change the caching policy
+# Caching policy
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-The cache policy allows you to prioritize which data should be cached. You can differentiate between hot data cache and cold data cache. Hot data is kept in local SSD storage for faster query performance, while cold data is stored in reliable storage. The availability of data in hot cache increases query performance but also storage costs.
+The caching policy allows to you to choose which data should be cached and kept in local SSD storage. The availability of data in hot cache increases query performance but also storage costs. In Real-Time Analytics, you can enable a cashing policy on a KQL Database level. After enabling caching, you can set the time span that the data remains in the hot cache.
 
-For more information, see [Cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric).
+For more information, see [Cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
+
+In this article, you learn how to set a caching policy on your KQL database.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md)
 
-## Change caching policy
+## Set a caching policy
 
 1. Browse to your KQL database and select  **Manage** > **Data policies**
 

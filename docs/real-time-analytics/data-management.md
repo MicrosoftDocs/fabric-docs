@@ -22,13 +22,13 @@ For more information, see [Management commands](/azure/data-explorer/kusto/manag
 
 The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric).
 
-For more information, see [Change the data retention policy](data-retention-policy.md).
+For more information, see [Set a data retention policy](data-retention-policy.md).
 
 ## Caching policy
 
-The cache policy allows you to prioritize which data should be cached. You can differentiate between hot data cache and cold data cache. Hot data is kept in local SSD storage for faster query performance, while cold data is stored in reliable storage. The availability of data in hot cache increases query performance but also storage costs.
+The caching policy allows to you to choose which data should be cached and kept in local SSD storage.
 
-For more information, see [Change the caching policy](cache-policy.md).
+For more information, see [Set a caching policy](cache-policy.md).
 
 ## One logical copy
 

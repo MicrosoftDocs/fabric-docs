@@ -72,9 +72,9 @@ items:
     items:
     - name: Data management overview  
       href: data-management.md
-    - name: Change the data retention policy
+    - name: Data retention policy
       href: data-retention-policy.md
-    - name: Change the caching policy
+    - name: Caching policy
       href: cache-policy.md
     - name: Create a table update policy
       href: table-update-policy.md
