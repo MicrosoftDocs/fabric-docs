@@ -51,7 +51,7 @@ The multitasking experience provides a browser tab design that allows you to ope
 
 - Preserve Running Operations: Have an upload or data loading operation running in one tab and need to check on another task? No problem. With our enhanced multi-tasking, your running operation won't be canceled when you navigate between tabs. Focus on your work without interruptions.
 
-- Retain Your Context: Selected objects, data tables, or files remain open and readily available when you switch between tabs. The context of your data lakehouse is always at your fingertips.
+- **Retain your context:** Selected objects, data tables, or files remain open and readily available when you switch between tabs. The context of your data lakehouse is always at your fingertips.
 
 - Non-Blocking List Reload: A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background, ensuring that you have the most up to date data while providing you a smooth and uninterrupted experience.
 
