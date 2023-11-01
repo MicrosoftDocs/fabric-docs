@@ -69,9 +69,6 @@ You can learn more about how to use SparkR by visiting [How to use SparkR](./r-u
 
 To learn more about how to use sparklyr, visit [How to use sparklyr](./r-use-sparklyr.md).
 
-> [!NOTE] 
-> Using SparkR and sparklyr in the same notebook session isn't supported yet.
-
 
 ## Use Tidyverse
 
