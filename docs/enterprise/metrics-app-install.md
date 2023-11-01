@@ -135,4 +135,4 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
 
 ## Next steps
 
-[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app compute page](metrics-app-compute-page.md)

@@ -38,9 +38,9 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 > [!IMPORTANT]  
-> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique. A violation of that may cause the query to return inaccurate result. Foreign keys are not enforced.
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], make sure all values in those columns are unique. A violation of that can cause the query to return inaccurate result. Foreign keys are not enforced.
 
-This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+This example shows how a query might return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
 ```sql
  -- Create table t1
@@ -195,7 +195,7 @@ CREATE TABLE ForeignKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1) REFERENCES ForeignKeyReferenceTable (c1) NOT ENFORCED;
 ```
 
-## Next steps
+## Related content
 
 - [Design tables in Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
 - [Data types in Microsoft Fabric](data-types.md)

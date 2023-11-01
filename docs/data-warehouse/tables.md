@@ -122,7 +122,7 @@ The following list shows some of the table features that aren't currently suppor
 - Unique indexes
 - User-defined types
 
-## Next steps
+## Related content
 
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)

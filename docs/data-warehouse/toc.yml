@@ -87,9 +87,9 @@ items:
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
-    href: datasets.md
+    href: semantic-models.md
   - name: Model data in the default Power BI dataset
-    href: model-default-power-bi-dataset.md          
+    href: default-power-bi-semantic-model.md          
   - name: Define relationships in data models
     href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service
@@ -108,12 +108,16 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: Dynamic data masking
+    href: dynamic-data-masking.md
   - name: How to
     items: 
     - name: Implement column-level security
       href: tutorial-column-level-security.md    
     - name: Implement row-level security
       href: tutorial-row-level-security.md
+    - name: Implement dynamic data masking
+      href: howto-dynamic-data-masking.md
 - name: Query the warehouse
   items:
   - name: Query using Visual Query editor
@@ -136,27 +140,31 @@ items:
     href: statistics.md
   - name: Caching
     href: caching.md
-  - name: Burstable capacity
-    href: burstable-capacity.md
-  - name: Workload Management
-    href: workload-management.md
 - name: Monitor the warehouse
   items:
   - name: Monitor using Capacity Metrics app
     href: usage-reporting.md
     displayName: Billing, usage reporting
-  - name: Smoothing and throttling
-    href: compute-capacity-smoothing-throttling.md
-    displayName: Smoothing, throttling
-  - name: Capacity pause and resume
-    href: pause-resume.md
-    displayName: pause, warehouse
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query insights
+    href: query-insights.md
   - name: How to
     items:    
       - name: Observe utilization trends
         href: how-to-observe-utilization.md
+- name: Warehouse capacity
+  items:
+  - name: Burstable capacity
+    href: burstable-capacity.md
+  - name: Capacity pause and resume
+    href: pause-resume.md
+    displayName: pause, warehouse
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
+  - name: Workload Management
+    href: workload-management.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

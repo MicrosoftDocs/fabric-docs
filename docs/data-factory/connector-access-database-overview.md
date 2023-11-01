@@ -14,7 +14,7 @@ The Access database connector is supported in Data Factory for [!INCLUDE [produc
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to an Access database in Dataflow Gen2, go to [Set up your Access database connection](connector-access-database.md).
+To learn about how to connect to an Access database in Dataflow Gen2, go to [Set up your Access database connection](connector-access-database.md).
 
 ## Support in data pipelines
 

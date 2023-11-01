@@ -80,14 +80,14 @@ In some cases, the dependency chain can form cycles when you specify the `dropna
 
 ## Visualize dependencies in data
 
-After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependencies_metadata` function.
+After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependency_metadata` function.
 This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
 
 The following Python code snippet demonstrates how to use `plot_dependencies`.
 
 ```python
 from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependencies_metadata
+from sempy.dependencies import plot_dependency_metadata
 from sempy.samples import download_synthea
 
 download_synthea(which='small')
@@ -95,10 +95,10 @@ download_synthea(which='small')
 df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
 deps = df.find_dependencies()
-plot_dependencies_metadata(deps)
+plot_dependency_metadata(deps)
 ```
 
-The `plot_dependencies_metadata` function generates a visualization that shows the 1:1 groupings of columns.
+The `plot_dependency_metadata` function generates a visualization that shows the 1:1 groupings of columns.
 Columns that belong to a single group are put into a single cell. If no suitable candidates are found, an empty FabricDataFrame is returned.
 
 :::image type="content" source="media/semantic-link-validate-data/plot-dependencies.png" alt-text="Screenshot showing the output of the plot_dependencies function." lightbox="media/semantic-link-validate-data/plot-dependencies.png":::

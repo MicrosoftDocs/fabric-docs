@@ -72,8 +72,8 @@ items:
     items:
     - name: Data management overview  
       href: data-management.md
-    - name: Change the data retention policy
-      href: data-retention-policy.md
+    - name: Change data policies
+      href: data-policies.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
