@@ -132,8 +132,8 @@ Spark libraries can be applied at different levels:
 - Additional considerations:
     - Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code will be compatible with some exceptions. In that case, users may need compilation, the addition of custom libraries and adjusting syntax. See all Fabric Spark pool libraries [here](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-pool-libraries).
     - When migrating workloads from Azure Synapse Spark to Fabric, users are required to manually verify the compatibility of libraries in Fabric. We recommend the following steps:
-        - Initially, users should execute their notebooks or SJDs in Fabric to identify any missing libraries. Utilize the library management feature to add any libraries that are not present.
-        - Subsequently, users should compile a list of libraries used in Azure Synapse and compare it against the libraries available in Fabric. Utilize the library management feature to install any necessary libraries not already available in Fabric.
+        * Initially, users should execute their notebooks or SJDs in Fabric to identify any missing libraries. Utilize the library management feature to add any libraries that are not present.
+        * Subsequently, users should compile a list of libraries used in Azure Synapse and compare it against the libraries available in Fabric. Utilize the library management feature to install any necessary libraries not already available in Fabric.
 
 Please check the Spark libraries section for options on moving your Spark configurations to Fabric.
 
