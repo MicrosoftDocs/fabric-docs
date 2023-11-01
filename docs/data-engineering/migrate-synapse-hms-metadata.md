@@ -15,7 +15,7 @@ The initial step in the Hive Metastore (HMS) migration involves determining the 
 
 For HMS considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
-## Option 1: Import/Export HMS to lakehouse metastore
+## Option 1: Export and import HMS to lakehouse metastore
 
 Follow these key steps for migration:
 * Pre-migration steps
@@ -53,9 +53,12 @@ ADD CODE
 
 Step 2 is when the actual metadata is imported from intermediate storage into the Fabric lakehouse. The output of this step is to have all HMS metadata (databases, tables, and partitions) migrated. This process is as follows:
 
-* **2.1) Create a shortcut within the “Files” section** of the lakehouse. This shortcut needs to point to the source Spark warehouse directory in the HMS and is used later to do the replacement for Spark managed tables. In the example, you can see three shortcuts pointing to Azure Databricks, Azure Synapse Spark and HDInsight Spark warehouse directories.
+* **2.1) Create a shortcut within the “Files” section** of the lakehouse. This shortcut needs to point to the source Spark warehouse directory in the HMS and is used later to do the replacement for Spark managed tables. See examples below:
 
-:::image type="content" source="media\migrate-synapse\migrate-hms-warehouse-directory.png" alt-text="Screenshot showing warehouse directory options.":::
+    * Azure Synapse Spark warehouse directory shortcut to: `abfss://<container>@<storage_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/warehouse`
+    * Azure Databricks warehouse directory shortcut to: `dbfs:/mnt/<warehouse_dir>`
+    * HDInsight warehouse directory shortcut to: `abfss://<container>@<storage_name>.dfs.core.windows.net/apps/spark/warehouse`
+
 
 * **2.2) Import metadata notebook** to Fabric lakehouse. Import [this notebook ](NEEDLINK)to import database, table, and partition objects from intermediate storage. Spark internal catalog API is used in this script to create catalog objects in Fabric.
 * **2.3) Configure the parameters** in the first command. In Apache Spark, when you create a managed table, the data for that table is stored in a location managed by Spark itself, typically within the Spark's warehouse directory. The exact location is determined by Spark. This contrasts with external tables, where you specify the location and manage the underlying data. When you migrate the metadata of a managed table (without moving the actual data), the metadata still contains the original location information pointing to the old Spark warehouse directory. Hence, for managed tables, `WarehouseMappings` is used to do the replacement using the shortcut created in step 2.1. Similarly, for external tables, you can change the path using `WarehouseMappings` or keep original data location, for example, ADLS Gen2 (assuming the right permissions are set to access the data). All source managed tables are converted as external tables using this script. `LakehouseId` refers to the lakehouse created in step 2.1 containing shortcuts.

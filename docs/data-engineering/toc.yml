@@ -184,6 +184,6 @@ items:
     - name: Migrate notebooks
       href: migrate-synapse-notebooks.md
     - name: Migrate Spark job definition
-      href: migrate-synapse-sjd.md
+      href: migrate-synapse-spark-job-definition.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md

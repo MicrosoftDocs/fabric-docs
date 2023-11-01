@@ -24,7 +24,7 @@ To export a notebook from Azure Synapse:
 
 1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate the notebook**: In Synapse Studio, locate the notebook you want to export from the **Notebooks** section of your workspace.
-1.	**Export the notebook**:
+1.	**Export notebook**:
     * Right-click on the notebook you wish to export.
     * Select **Export** > **Notebook (.ipynb).**
     * Choose a destination folder and provide a name for the exported notebook file. 
@@ -36,24 +36,24 @@ To import the exported notebook in Fabric:
 
 1.	**Access Fabric workspace**: Sign-in into Fabric and access your workspace.
 1.	**Navigate to Data Engineering homepage**: Once inside your Fabric workspace, go to Data Engineering homepage.
-1.	**Import the notebook**: 
+1.	**Import notebook**: 
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
     * Browse for the ipynb notebook files that you downloaded from Azure Synapse.
     * Select the notebook files and click **Upload.**
 1.	**Open and use the Notebook**: Once the import is completed, you can open and use the notebook in your Fabric workspace.
 
 Once the notebook is imported, validate notebook dependencies:
-* Ensure using the same Spark version while creating the custom Spark pool in Fabric.
-* If you're using referenced notebooks, you can use msparkutils also in Fabric. However, if you import a notebook that references another one, you need to import the latter as well. Fabric workspace doesn't support folders for now, so any references to notebooks in other folders should be updated. You can use [notebook resources](how-to-use-notebook.md) if needed.
+* Ensure using the same Spark version.
+* If you're using referenced notebooks, you can use [msparkutils](microsoft-spark-utilities.md) also in Fabric. However, if you import a notebook that references another one, you need to import the latter as well. Fabric workspace doesn't support folders for now, so any references to notebooks in other folders should be updated. You can use [notebook resources](how-to-use-notebook.md) if needed.
 * If a notebook is using pool specific libraries and configurations, you need to import those libraries and/or configurations as well.
 * Linked services, data source connections, and mount points.
 
 ## Option 2: Use the Fabric API
 
 Follow these key steps for migration:
-* Pre-migration steps
-* Step 1: Export notebooks from Synapse to OneLake (ipynb) 
-* Step 2: Import notebooks automatically into Fabric using the Fabric API
+* Pre-migration steps.
+* Step 1: Export notebooks from Synapse to OneLake (ipynb).
+* Step 2: Import notebooks automatically into Fabric using the Fabric API.
 
 ### Pre-migration steps
 The pre-migration steps include actions you need to consider before starting notebook migration to Fabric.
@@ -94,7 +94,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 
 Step 2 is when notebooks are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
-* **2.1) Validate the configurations** in step 1.2 to ensure the right workspace and prefix are indicated to import the notebooks.
+* **2.1) Validate the configurations** in step 1.2 to ensure the right Fabric workspace and prefix values are indicated to import the notebooks.
 * **2.2) Run the third cell** of the `nt-notebook-export-import-ipynb.ipynb` notebook to import all notebooks from intermediate location.
 
 ## Next steps
