@@ -14,13 +14,13 @@ The Azure Database for PostgreSQL connector is supported in Data Factory for [!I
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Support in data pipelines
+## Support in Data pipeline
 
-The Azure Database for PostgreSQL connector supports the following capabilities in data pipelines:
+The Azure Database for PostgreSQL connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
 
-To learn more about the copy activity configuration for Azure Database for PostgreSQL in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-database-for-postgresql-copy-activity.md).
+To learn more about the copy activity configuration for Azure Database for PostgreSQL in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-database-for-postgresql-copy-activity.md).
