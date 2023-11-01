@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 09/29/2023
+ms.date: 11/1/2023
 ms.search.form: DataflowGen2 Tutorials
 ---
 
@@ -71,9 +71,11 @@ You'll be doing this task from the Power Query editor. You can find a detailed o
 
 Follow these steps to apply transformations and publish:
 
-1. Make sure you've enabled the [diagram view](/power-query/diagram-view) using the options under the **View** tab in the Power Query editor ribbon. Also ensure that the [Data Profiling tools](/power-query/data-profiling-tools) are enabled by navigating to **Home** > **Options** > **Global Options**.
+1. Ensure that the [Data Profiling tools](/power-query/data-profiling-tools) are enabled by navigating to **Home** > **Options** > **Global Options**.
 
    :::image type="content" source="media/create-first-dataflow-gen2/global-options.png" alt-text="Screenshot of Global options with the Column profile selections emphasized.":::
+
+   Also make sure you've enabled the [diagram view](/power-query/diagram-view) using the options under the **View** tab in the Power Query editor ribbon, or by selecting the diagram view icon on the lower right side of the Power Query window.
 
    :::image type="content" source="media/create-first-dataflow-gen2/diagram-view.png" alt-text="Screenshot of the overall look of Power Query diagram view." lightbox="media/create-first-dataflow-gen2/diagram-view.png":::
 
@@ -148,7 +150,7 @@ Follow these steps to apply transformations and publish:
     You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
     > [!IMPORTANT]
-    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items will be provisioned along with their related SQL Endpoint and Datasets and seen in the below image. These items are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and should not be used outside of dataflows experience. The items are an implementation detail of Dataflow Gen2 and while currently visible, they will be hidden in the future.
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL endpoint and datasets, as shown in the following image. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, should not be deleted, and should not be used outside of the dataflows experience. The items are an implementation detail of Dataflow Gen2 and while currently visible, they will be hidden in the future.
 
     :::image type="content" source="media/create-first-dataflow-gen2/dataflow-staging-artifacts.png" alt-text="Screenshot of the staging items created by dataflows.":::
 
@@ -156,7 +158,7 @@ Follow these steps to apply transformations and publish:
 
     :::image type="content" source="media/create-first-dataflow-gen2/schedule-refresh.png" alt-text="Screenshot of the workspace with the schedule refresh icon emphasized.":::
 
-18. Turn on the scheduled refresh, select **"Add another time"**, and configure the refresh as shown in the following screenshot.
+18. Turn on the scheduled refresh, select **Add another time**, and configure the refresh as shown in the following screenshot.
 
     :::image type="complex" source="media/create-first-dataflow-gen2/add-another-time.png" alt-text="Screenshot showing how to select another time.":::
     Screenshot of the scheduled refresh options, with scheduled refresh turned on, the refresh frequency set to Daily, the Time zone set to coordinated universal time, and the Time set to 4:00 AM. The on button, the Add another time selection, the dataflow owner, and the apply button are all emphasized.
