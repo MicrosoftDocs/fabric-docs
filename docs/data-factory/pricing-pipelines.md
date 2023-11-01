@@ -10,7 +10,7 @@ ms.date: 10/30/2023
 
 # Data pipelines pricing for Data Factory in Microsoft Fabric
 
-Data pipelines enable you to leverage rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
+Data pipelines enable you to apply rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -18,7 +18,7 @@ Data pipelines enable you to leverage rich out-of-the-box data orchestration cap
 
 When you run a Data Pipeline with Data Factory in Microsoft Fabric, Fabric Capacity Units are consumed for the following services:
 
-- Pipeline services for orchestration _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
+- Pipeline services for orchestration of _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
 - Azure Data Movement Services (ADMS) for Copy activity runs require _Throughput Optimization Units (TOU)_ hours. For copy activities, your charge is based on the number of TOU used and the execution duration.
 
 > [!NOTE]
@@ -37,7 +37,7 @@ It indicates that for each _Throughput Optimization Unit (TOU)_ hour used in dat
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.  
+Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
 
 ## Manually compute estimated costs
 
@@ -55,15 +55,15 @@ The following table can be used as a template to manually compute estimated cost
 
 ## Compute estimated costs using the Fabric Metrics App
 
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It is used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Fabrics Metrics App is the most accurate way to estimate the costs of data pipeline executions.
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workspaces tied to a capacity. It's used by capacity administrators to monitor the performance of workloads and their usage compared to purchased capacity. Using the Fabrics Metrics App is the most accurate way to estimate the costs of data pipeline executions.
 
 The following table can be used as a template to compute estimated costs using Fabric Metrics app for a data pipeline run:
 
 |Metric  | Data movement operation  |Activity run operation  |
 |---------|---------|---------|
 |Duration in seconds     |  t in seconds       | N/A         |
-|CU (s)     | x CU (s)    |  y CU(s)       |
-|Effective CU-hour     | x CU(s) / (60*60) = X CU-hour    | y CU(s) / (60*60) = Y CU-hour        |
+|CU seconds     | x CU seconds    |  y CU seconds       |
+|Effective CU-hour     | x CU seconds / (60*60) = X CU-hour    | y CU(s) / (60*60) = Y CU-hour        |
 
 **Total cost**: (X + Y CU-hour) * (Fabric capacity per unit price)
 

@@ -10,7 +10,7 @@ ms.date: 10/30/2023
 
 # Data Factory pricing in Microsoft Fabric
 
-Data Factory in Microsoft Fabric provides serverless and elastic data integration service capabilities built for cloud scale. There is no fixed-size compute power that you need to plan for peak load; rather you need to specify which operations to perform while authoring pipelines and dataflows, which will translate into an amount of **Fabric Capacity Units** consumed, that you can further track using the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to plan and manage your consumption metrics. This allows you to design the ETL processes in a much more scalable manner. In addition, Data Factory, like other Fabric experiences, is billed on a consumption-based plan, which means you only pay for what you use.
+Data Factory in Microsoft Fabric provides serverless and elastic data integration service capabilities built for cloud scale. There's no fixed-size compute power that you need to plan for peak load; rather you need to specify which operations to perform while authoring pipelines and dataflows, which translates into an amount of **Fabric Capacity Units** consumed, that you can further track using the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to plan and manage your consumption metrics. This allows you to design the ETL processes in a much more scalable manner. In addition, Data Factory, like other Fabric experiences, is billed on a consumption-based plan, which means you only pay for what you use.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -24,7 +24,7 @@ You can manage your Fabric Data Factory run costs easily with simplified billing
 
 ## Data Factory pricing meters
 
-Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines leverage **Data Orchestration** and **Data Movement** meters, while Dataflows Gen2 leverage **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
+Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflows Gen2 use **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
 
 :::image type="content" source="media/pricing-overview/pricing-meters.svg" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
 
@@ -32,7 +32,7 @@ Whether you’re a citizen or professional developer, Data Factory enables you t
 
 Here are some example scenarios for pricing of data pipelines:
 
-- [Load 1TB Parquet to a data warehouse](pricing-scenario-load-1tb-parquet-to-data-warehouse.md)
+- [Load 1 TB Parquet to a data warehouse](pricing-scenario-load-1tb-parquet-to-data-warehouse.md)
 - [Load 1 TB Parquet to a data warehouse via staging](pricing-scenario-load-1tb-parquet-to-data-warehouse-staging.md)
 - [Load 1 TB CSV files to a Lakehouse table](pricing-scenario-load-1tb-csv-to-lakehouse-table.md)
 - [Load 1 TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1tb-csv-to-lakehouse-files.md)
