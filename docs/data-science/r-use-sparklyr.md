@@ -28,13 +28,13 @@ ms.search.form: R Language
 
 ## Connect sparklyr to Synapse Spark cluster
 
-Use the following connection method in `spark_connect()` to establish a `sparklyr` connection.
+Use the following connection method in `spark_connect()` to establish a `sparklyr` connection. We support a new connection method called `synapse`, which allows you to connect to an existing Spark session. It dramatically reduces the `sparklyr` session start time. Additionally, we contributed this connection method to the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session and easily [share data between them](#Share-data-between-`sparklyr`-and-`SparkR`). 
 
 ```R
 # connect sparklyr to your spark cluster
 spark_version <- sparkR.version()
 config <- spark_config()
-sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt/spark", config = config)
+sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt/spark", method = "synapse", config = config)
 ```
 
 ## Use sparklyr to read data
@@ -124,13 +124,35 @@ mtcars_tbl %>%
   head(5)
 ```
 
+## Share data between `sparklyr` and `SparkR`
+
+When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#Connect-sparklyr-to-Synapse-Spark-cluster), you can use both `sparklyr` and `SparkR` in the same session and easily share data between them. You can create a spark table in `sparklyr` and read it from `SparkR`.
+
+```R
+# load the sparklyr package
+library(sparklyr)
+
+# Create table in `sparklyr`
+mtcars_sparklyr <- copy_to(sc, df = mtcars, name = "mtcars_tbl", overwrite = TRUE, repartition = 3L)
+
+# Read table from `SparkR`
+mtcars_sparklr <- SparkR::sql("select cyl, count(*) as n
+from mtcars_tbl
+GROUP BY cyl
+ORDER BY n DESC")
+
+head(mtcars_sparklr)
+```
+
+
+
 ## Machine learning
 
 Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
 ### Generate testing and training data sets
 
-Use a simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.
+Use a split, 70% for training and 30% for testing the model. Playing with this ratio results in different models.
 
 ```R
 # split the dataframe into test and training dataframes
