@@ -35,8 +35,8 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
     :::image type="content" source="media/data-policies/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
-> [!NOTE]
-> The minimum retention period is 1 day. The maximum retention period is 36,500 days.
+    > [!NOTE]
+    > The minimum retention period is 1 day. The maximum retention period is 36,500 days.
 
 ## Caching policy
 
@@ -52,8 +52,8 @@ For more information, see [Caching policy](/azure/data-explorer/kusto/management
 
     :::image type="content" source="media/data-policies/caching-policy.png" alt-text="Screenshot of caching policy pane with default value.":::
 
-> [!NOTE]
-> The time period you set for the caching policy must be lower than or equal to the data retention time period.
+    > [!NOTE]
+    > The time period you set for the caching policy must be lower than or equal to the data retention time period.
 
 ## Related content
 
