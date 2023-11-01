@@ -27,7 +27,7 @@ Follow these two key steps for migration:
 > Scripts only copy Spark catalog objects to Fabric lakehouse. Assumption is that the data is already copied (for example, from warehouse location to ADLS Gen2) or available for managed and external tables (for example, via shortcuts—preferred) into the Fabric lakehouse. 
 
 ### Pre-migration steps
-The pre-migration steps include actions you need to consider prior to beginning Spark metadata migration from source HMS to Fabric lakehouse. These involves:
+The pre-migration steps include actions you need to consider before beginning Spark metadata migration from source HMS to Fabric lakehouse. These involves:
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 

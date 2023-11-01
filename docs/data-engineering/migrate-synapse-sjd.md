@@ -13,8 +13,8 @@ ms.date: 11/03/2023
 
 To move Spark Job Definitions (SJD) from Azure Synapse to Fabric, you have two different options:
 
-* Option 1: create SJD manually in Fabric
-* Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API
+* Option 1: create SJD manually in Fabric.
+* Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API.
 
 For SJD considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
@@ -54,7 +54,7 @@ Follow these two key steps for migration:
 * Step 2: Import SJD automatically into Fabric using the Fabric API
 
 ### Pre-migration steps
-The pre-migration steps include actions you need to consider prior to notebook migration to Fabric.
+The pre-migration steps include actions you need to consider before starting SJD migration to Fabric.
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
@@ -79,7 +79,7 @@ synapse_workspace_name = "<>"
 workspace_id = "<>"
 lakehouse_id = "<>"
 export_folder_name = f"export/{synapse_workspace_name}"
-prefix = "<>" # this prefix is used during import {prefix}{notebook_name}
+prefix = "<>" # this prefix is used during import {prefix}{sjd_name}
 
 output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakehouse_id}/Files/{export_folder_name}"
 ```
@@ -93,7 +93,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 Step 2 is when SJDs are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
 * **2.1) Validate the configurations** in the 1.2) to ensure the right workspace and prefix are indicated to import the SJDs.
-* **2.2) Run the third cell** to import all notebooks from intermediate location.
+* **2.2) Run the third cell** to import all SJD from intermediate location.
 
 > [!NOTE]
 > The export option outputs a json metadata file. Ensure that SJD executable files, reference files, and arguments are accessible in Fabric.

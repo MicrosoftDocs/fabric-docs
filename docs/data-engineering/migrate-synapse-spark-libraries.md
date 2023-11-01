@@ -20,15 +20,15 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 You can move libraries to an environment as follows:
 
 1.	**Open Synapse Studio**: Sign-in to the Azure portal, navigate to your Azure Synapse workspace, and open the Synapse Studio.
-1.	**Locate Spark libraries**
-    * Go to "Manage" area and select on "Apache Spark pools"
-    * Find the Apache Spark pool, click on "Packages" and locate the Spark libraries for the pool
+1.	**Locate Spark libraries**:
+    * Go to "Manage" area and select on "Apache Spark pools".
+    * Find the Apache Spark pool, click on "Packages" and locate the Spark libraries for the pool.
 1.	**Get Spark libraries**: Locate the requirements.txt, environment.yml, or workspace packages installed in the pool. Get the list of installed libraries on the pool.
-1.	Once you have Spark libraries, **add custom Spark libraries to the Environment**
-    * Within the Environment, go to "Libraries" and add libraries
-        * From "Public libraries," you can upload an .yml file. You can also install libraries using PyPI and Conda
-        * From "Custom libraries," you can install libraries by using .jar, .whl or .tar.gz files
-1.	Click on "Save" and "Publish" changes
+1.	Once you have Spark libraries, **add custom Spark libraries to the Environment**:
+    * Within the Environment, go to "Libraries" and add libraries:
+        * From "Public libraries," you can upload an yml file. You can also install libraries using PyPI and Conda.
+        * From "Custom libraries," you can install libraries by using jar, whl or tar.gz files.
+1.	Click on "Save" and "Publish" changes.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
 

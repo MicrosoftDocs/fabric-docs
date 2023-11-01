@@ -29,14 +29,14 @@ To move from an existing Spark pool in Synapse PaaS to a workspace default envir
 1. **Access Azure Synapse workspace**: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and go to Analytics Pools.
 1.	**Locate the Spark pool**: In Analytics Pools, locate the Spark pool you want to move to Fabric and check the pool properties. 
 1.	**Get the properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
-1.	**Create a custom Spark pool in Fabric**
-    * Go to your Fabric workspace and click on "Workspace settings"
-    * Go to "Data Engineering/Science" and click on "Spark settings"
-    * Go to "Pool" tab and in "Default pool for workspace" section, first click on the dropdown menu and click on create "New pool"
-    * [Create your custom pool](create-custom-spark-pools.md) with corresponding target values. Complete the name, node family, node size, autoscaling and dynamic executor allocation options
-5.	**Select a runtime version**
-    * Go to "Environment" tab, and select the required "Runtime Version"
-    * Keep "Set default environment" disabled
+1.	**Create a custom Spark pool in Fabric**:
+    * Go to your Fabric workspace and click on "Workspace settings".
+    * Go to "Data Engineering/Science" and click on "Spark settings".
+    * Go to "Pool" tab and in "Default pool for workspace" section, first click on the dropdown menu and click on create "New pool".
+    * [Create your custom pool](create-custom-spark-pools.md) with corresponding target values. Complete the name, node family, node size, autoscaling and dynamic executor allocation options.
+5.	**Select a runtime version**:
+    * Go to "Environment" tab, and select the required "Runtime Version".
+    * Keep "Set default environment" disabled.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-default-environment.png" alt-text="Screenshot showing default environment.":::
 
@@ -50,17 +50,17 @@ With custom environments, you can set up custom Spark properties and libraries. 
 1.	**Access Azure Synapse workspace**: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and go to Analytics Pools.
 1.	**Locate the Spark pool**: In Analytics Pools, locate the Spark pool you want to move to Fabric and check the pool properties. 
 1.	**Get the properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
-1.	**Create a custom Spark pool**
-    * Go to your Fabric workspace and click on "Workspace settings"
-    * Go to "Data Engineering/Science" and click on "Spark settings"
-    * Go to "Pool" tab and in "Default pool for workspace" section click on create "New pool"
-    * [Create your custom pool](create-custom-spark-pools.md) with corresponding target values. Complete the name, node family, node size, autoscaling and dynamic executor allocation options
-1.	**[Create an Environment](NEEDLINK)** item if you don’t have one
-1.	**Configure the Spark pool**
-    * Within the Environment, go to "Spark Compute" > "Compute"
-    * Select the newly created pool for the new environment
-    * You can configure driver and executors cores and memory 
-1.	Click on "Save" and "Publish" changes
+1.	**Create a custom Spark pool**:
+    * Go to your Fabric workspace and click on "Workspace settings".
+    * Go to "Data Engineering/Science" and click on "Spark settings".
+    * Go to "Pool" tab and in "Default pool for workspace" section click on create "New pool".
+    * [Create your custom pool](create-custom-spark-pools.md) with corresponding target values. Complete the name, node family, node size, autoscaling and dynamic executor allocation options.
+1.	**[Create an Environment](NEEDLINK)** item if you don’t have one.
+1.	**Configure the Spark pool**:
+    * Within the Environment, go to "Spark Compute" > "Compute".
+    * Select the newly created pool for the new environment.
+    * You can configure driver and executors cores and memory. 
+1.	Click on "Save" and "Publish" changes.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-custom-environment.png" alt-text="Screenshot showing custom environment.":::
 
