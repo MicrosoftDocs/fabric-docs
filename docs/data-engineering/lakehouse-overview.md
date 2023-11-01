@@ -55,19 +55,19 @@ The multitasking experience provides a browser tab design that allows you to ope
 
 - **Non-blocking list reload:** A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background. It ensures that you have the latest data while providing you with a smooth and uninterrupted experience.
 
-- Clearly Defined Notifications: Toast notifications specify which lakehouse they're coming from, making it easier to track changes and updates in your multi-tasking environment.
+- **Clearly defined notifications:** The toast notifications specify which lakehouse they're coming from, making it easier to track changes and updates in your multi-tasking environment.
 
-## Accessible Lakehouse design
+## Accessible lakehouse design
 
 Accessibility has always been a top priority to ensure that Lakehouse is inclusive and user-friendly for everyone. Here are the key initiatives we have implemented so far to support accessibility:
 
-- Screen Reader Compatibility: Work seamlessly with popular screen readers, enabling visually impaired users to navigate and interact with our platform effectively.
+- **Screen reader compatibility:** You can work seamlessly with popular screen readers, enabling visually impaired users to navigate and interact with our platform effectively.
 
-- Text Reflow: Responsive design that adapts to different screen sizes and orientations. Text and content reflow dynamically, making it easier for users to view and interact with our application on a variety of devices.
+- **Text reflow** Responsive design that adapts to different screen sizes and orientations. Text and content reflow dynamically, making it easier for users to view and interact with our application on a variety of devices.
 
-- Keyboard Navigation: Improved keyboard navigation to allow users to move through the lakehouse without relying on a mouse, enhancing the experience for those with motor disabilities.
+- **Keyboard navigation:** Improved keyboard navigation to allow users to move through the lakehouse without relying on a mouse, enhancing the experience for those with motor disabilities.
 
-- Alternative Text for Images: All images now include descriptive alt text, making it possible for screen readers to convey meaningful information.
+- **Alternative text for images:** All images now include a descriptive alt text, making it possible for screen readers to convey meaningful information.
 
 - **Form fields and Labels:** All form fields have associated labels, simplifying data input for everyone, including those using screen readers.
 
