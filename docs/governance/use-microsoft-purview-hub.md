@@ -6,7 +6,7 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 10/28/2023
+ms.date: 11/01/2023
 ---
 
 # The Microsoft Purview hub in Microsoft Fabric
@@ -40,10 +40,7 @@ When you select the Microsoft Purview hub option, the hub opens to the view that
 >[!NOTE]
 > If you are a non-admin user and don't own or haven't created any content, the hub won't contain any insights.
 >
-> For some users, the hub won't open at all when they select the **Microsoft Purview hub** option. See [Considerations and limitations for more detail about this exceptions](#considerations-and-limitations.).
-
-
-For more information about the Fabric/Purview integration, see [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md).
+> For some users, the hub won't open at all when they select the **Microsoft Purview hub** option. See [Considerations and limitations for more detail about this exceptions](#considerations-and-limitations).
 
 ## Get insights about your Microsoft Fabric data
 
@@ -89,7 +86,7 @@ The report contains the following pages:
 * **Sensitivity page**: Insights about sensitivity labeling throughout your entire tenant.
 
 > [!NOTE]
-> * The full Purview hub report and its the dataset it is built on are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
+> * The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
 > * The first time the report and dataset are generated, it may take a few minutes for them to display.
 > * Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
 
@@ -111,7 +108,7 @@ The report contains the following pages:
 * **Sensitivity page**: Insights about sensitivity labeling throughout your entire tenant.
 
 > [!NOTE]
-> * The full Purview hub report and the dataset it is built on are generated in your My Workspace the first time  you open the Purview hub.
+> * The full Purview hub report and its associated dataset are generated in your *My Workspace* the first time  you open the Purview hub.
 > * The first time you open the Purview hub, it may take a few moments for the report and dataset to be generated.
 > * You can create new reports based on the dataset, and you can also edit the report and/or dataset directly. However, periodically the report and dataset are automatically regenerated, and any changes you have made will be lost.
 
@@ -143,7 +140,9 @@ The tiles at the top of the Purview hub provide access to Purview documentation 
 
 ## Considerations and limitations
 
-Free users and guest users can't access the Purview hub. Although they can see the **Microsoft Purview hub** option in the Fabric settings menu, access to the hub will be blocked if they select it.
+The following users can't access the Purview hub:
+* Free users (a Pro license is required)
+* Guest users
 
 ## Next steps
 
