@@ -13,8 +13,6 @@ ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introd
 
 This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](intro-to-deployment-pipelines.md), before you proceed.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
 >[!NOTE]
