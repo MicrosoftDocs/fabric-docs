@@ -24,7 +24,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/load-1tb-csv-to-lakehouse-table-details.png" alt-text="Screenshot showing the copy data details for the scenario.":::
 
-|  |Source to staging  |
+|Metric |Source to desiination  |
 |---------|---------|
 |Duration     | 00:12:41        |
 |Used Parallel copies     | 128        |
@@ -44,7 +44,7 @@ The data movement operation utilized 282,240 CU seconds with a 763.78 second (12
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
-|  |Data Movement Operation  |
+|Metric  |Data Movement Operation  |
 |---------|---------|
 |CU seconds     | 282,240 CU seconds        |
 |Effective CU-hours     | (282,240) / (60*60) CU-hours = 78.4 CU-hours        |
