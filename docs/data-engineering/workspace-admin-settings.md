@@ -60,7 +60,7 @@ You can also select the option to dynamically allocate executors to pool automat
 Learn more about [Spark Compute for Fabric](spark-compute.md).
 
 * **Customize compute configuration for items**: As a workspace admin, you can allow users to adjust compute configurations (session level properties which include Driver/Executor Core, Driver/Executor Memory) for individual items such as notebooks, spark job definitions using Environment.
-Learn more about [Spark Compute in Environment](environment-manage-compute.md)
+
 :::image type="content" source="media\workspace-admin-settings\customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
 
 If the setting is turned off by the workspace admin, the Default pool and its compute configurations will be used for all environments in the workspace.
