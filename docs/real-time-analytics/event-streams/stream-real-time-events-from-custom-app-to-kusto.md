@@ -191,9 +191,11 @@ While the custom application is streaming events into your eventstream, you can 
    :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 
 1. Select **Add and configure** to start the data ingestion wizard. On the **Destination** tab, enter a name for the KQL table and then select **Next: Source**.
+
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" alt-text="Screenshot that shows the Destination tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-table-name.png" :::
 
 1. On the **Source** tab, verify your eventstream source and then select **Next: Schema**.
+
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" alt-text="Screenshot that shows the Source tab of the Ingest data configuration wizard." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/kql-wizard-source.png" :::
 
 1. On the **Schema** tab, select **JSON** as the data format. You can preview the data on the right pane. If the data type doesn't meet your expectations, you can modify it by selecting the arrow in the table heading. You can also add or remove columns based on your requirements. When you're done, select **Next: Summary**.

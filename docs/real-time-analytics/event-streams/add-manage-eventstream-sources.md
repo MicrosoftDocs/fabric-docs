@@ -115,7 +115,7 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
 
 Once the Azure IoT Hub is added to your eventstream, select **Preview data** to verify successful configuration. You should be able to preview incoming data to your eventstream.
 
-:::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data." lightbox="./media/add-iot-hub-source/shared-access-key.png":::
+   :::image type="content" source="./media/add-iot-hub-source/preview-iot-hub-data.png" alt-text="Screenshot that shows where to preview IoT Hub data." lightbox="./media/add-iot-hub-source/shared-access-key.png":::
 
 ## Add a sample data as a source
 

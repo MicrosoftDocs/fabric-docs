@@ -60,7 +60,7 @@ After you create both your new eventstream and lakehouse successfully, these ite
 - **citypwr-es**: an Eventstream item
 - **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
 
-:::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
+   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
 
 ## Add an Azure Event Hubs source to the eventstream
 
@@ -136,10 +136,6 @@ In this section, after you have started the process of adding a lakehouse destin
 1. Hover on the connection line and then select the "+" button. A drop-down menu appears on the connection line, and you can insert the **Manage fields** operator between them.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" alt-text="Screenshot showing where to select and delete the operator connection between the eventstream and the lakehouse." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/delete-connection.png" :::
-
-1. On the left edge of the eventstream node, select and drag the green circle with your mouse to connect it to the **Manage fields** operator node. Follow the same process to  connect the **Manage fields** operator node to the lakehouse node.
-
-   :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" alt-text="Screenshot showing the operator connection screen in the Event processing editor." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/setup-connection.png" :::
 
 1. Select the **Manage fields** operator node. In the **Manage fields** configuration panel, select **Add all fields**. Then hover your mouse over the sensor column, select **...** and **Remove** to remove the column.
 

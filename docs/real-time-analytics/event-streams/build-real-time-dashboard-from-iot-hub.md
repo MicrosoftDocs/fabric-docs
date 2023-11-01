@@ -100,6 +100,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
    :::image type="content" source="./media/add-iot-hub-source/kusto-enter-table-name.png" alt-text="Screenshot that shows where to enter Kusto table name.":::
 
 4. Set up a data connection linking your eventstream to the Kusto database. Enter a name for this new data connection and select **Next**.
+
    :::image type="content" source="./media/add-iot-hub-source/kusto-data-connection.png" alt-text="Screenshot that shows where to set up Kusto connection.":::
 
 5. Choose the correct data format of your IoTHub data stream, and change the schema data type to suit your requirement for this new table within the Kusto database.
@@ -108,7 +109,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 6. Once the configuration is complete, you can see the KQL Database is added to your eventstream.
 
-      :::image type="content" source="./media/add-iot-hub-source/successfully-added-kusto.png" alt-text="Screenshot that shows where the Kusto database is added successfully.":::
+   :::image type="content" source="./media/add-iot-hub-source/successfully-added-kusto.png" alt-text="Screenshot that shows where the Kusto database is added successfully.":::
 
 ## Build a Power BI dashboard
 
