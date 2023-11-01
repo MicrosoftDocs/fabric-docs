@@ -65,31 +65,33 @@ The following properties are **required**:
 
   - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
-    - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.<br>
-          When you use prefix and choose to copy to file-based destination with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `bucket/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
+    - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.
+  
+      When you use prefix and choose to copy to file-based destination with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `bucket/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
-      :::image type="content" source="./media/connector-amazon-s3-compatible/prefix.png" alt-text="Screenshot showing prefix.":::
+    :::image type="content" source="./media/connector-amazon-s3-compatible/prefix.png" alt-text="Screenshot showing prefix.":::
 
   - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
     - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
 
         Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
+    :::image type="content" source="./media/connector-amazon-s3-compatible/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
+      *Wildcard folder path*: The folder path with wildcard characters under the given bucket configured to filter source folders.
 
-      - Wildcard folder path: The folder path with wildcard characters under the given bucket configured to filter source folders.
-      - Wildcard file name: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
+      *Wildcard file name*: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
-          :::image type="content" source="./media/connector-amazon-s3-compatible/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
+
 
   - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-amazon-s3-compatible-storage#file-list-examples).
+
+      :::image type="content" source="./media/connector-amazon-s3-compatible/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
     - **Folder path**: Specify the path to the folder under given bucket. It is required.
     - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
 
-      :::image type="content" source="./media/connector-amazon-s3-compatible/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
-
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
-- **Recursively**: Specify whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property is selected by default and doesn't apply when you configure **Path to file list**.
+- **Recursively**: Specify whether the data is read recursively from the subfolders or only from the specified folder. When **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property is selected by default and doesn't apply when you configure **Path to file list**.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -148,5 +150,5 @@ The following tables contain more information about the copy activity in Amazon 
 | **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.| Selected (default) or unselect |No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
-|**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
+|**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
