@@ -16,9 +16,49 @@ The prices used in the following example are hypothetical and don’t intend to 
 
 ## Configuration
 
+To accomplish this scenario, you need to create a dataflow with the following steps:
+
+1. Initialize Dataflow: Start by uploading 2 GB CSV files from your on-premises environment into the dataflow.
+1. Configure Power Query:
+   1. Navigate to Power Query.
+   1. Disable the option for staging the query.
+   1. Proceed to combine the CSV files.
+1. Data Transformation:
+   1. Promote headers for clarity.
+   1. Remove unnecessary columns.
+   1. Adjust column data types as needed.
+1. Define Output Data Destination:
+   1. Configure Lakehouse as the data output destination.
+   1. In this example, a Lakehouse within Fabric was created and utilized.
+
 ## Manual cost estimation
 
+The execution of this Dataflow Gen2 instance was completed in approximately 5 minutes.
+
+|Metric  |Standard compute meter  |
+|---------|---------|
+|Duration     | 00:05:00        |
+|Billed duration (hours)     | 300/(60*60) hours        |
+|Effective CU hours    | 16 * 300 / (60*60) = 1.34 CU hours        |
+
+**Total run cost at $0.18/CU hour** = (1.34 CU hours) * ($0.18/CU hour) ~= **$0.24**
+
 ## Cost estimation using the Fabric Metrics App
+
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2gp-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
+
+The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Scale Dataflows Compute operations consumed 7.78 CU seconds + 7.85 CU seconds each.
+
+> [!NOTE]
+> Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
+
+|Metric  |Compute consumption  |
+|---------|---------|
+|Dataflow Gen2 Refresh CU seconds     | 4749.42 CU seconds        |
+|High Scale Dataflows Compute CU seconds     | (7.78 + 7.85) 15.63 CU seconds        |
+|Effective CU hours billed | (4749.42 + 15.63) / (60*60) = 1.32 CU hours |
+
+**Total run cost at $0.18/CU hour** = (1.32 CU-hours) * ($0.18/CU hour) ~= **$0.24**
 
 ## Next steps
 
