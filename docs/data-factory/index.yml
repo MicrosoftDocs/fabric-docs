@@ -41,6 +41,8 @@ landingContent:
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
+          - text: Pricing
+            url: pricing-overview.md
       - linkListType: tutorial
         links:
           - text: Create an end-to-end data integration scenario
