@@ -111,7 +111,7 @@ model.transform(test).show()
 The following code invokes the PREDICT function with the Spark SQL API. If you've been using your own ML model, substitute the values for `model_name`, `model_version`, and `features` with your model name, model version, and feature columns.
 
 > [!NOTE]
-> Using the Spark SQL API to generate predictions still requires you to create an `MLFlowTransformer` object (as in Step 3).
+> Using the Spark SQL API to generate predictions still requires you to create an `MLFlowTransformer` object (as in step 3).
 
 ```Python
 from pyspark.ml.feature import SQLTransformer 
