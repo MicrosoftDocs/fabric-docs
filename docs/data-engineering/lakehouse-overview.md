@@ -45,7 +45,7 @@ A data engineer can interact with the lakehouse and the data within the lakehous
 
 Learn more about the different ways to load data into your lakehouse: [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md).
 
-## Multitasking with Lakehouse
+## Multitasking with lakehouse
 
 The multitasking experience provides a browser tab design that allows you to open and switch between multiple items seamlessly allowing you to manage your data lakehouse more efficiently than ever. No more juggling between different windows or losing track of your tasks. Lakehouse provides an enhanced multitasking experience to make your data management journey as efficient and user-friendly as possible:
 
