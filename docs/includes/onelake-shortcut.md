@@ -16,11 +16,15 @@ ms.date: 07/09/2023
 
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/data-source.png" alt-text="Screenshot of the Select a data source type window showing the available data sources to use with the shortcut. The Next button is highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/data-source.png":::
 
-1. Expand **Files**, and select a specific subfolder to connect to, then select **Create** to create your connection.
+1. Expand **Files** or **Tables**, and select 1 or more subfolders to connect to, then select **Next**.
 
     :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png" alt-text="Screenshot of the New shortcut window showing the data in the LakeHouse. The subfolder titled StrmSC and the Create button are highlighted."  lightbox="media/onelake-shortcuts/onelake-shortcut/create-shortcut.png":::
+
+1. Review you selected shortcut locations.  Use the edit action to rename the defaulted shortcut name.  Use the delete action remove any undesired selections.  Click **Create** to generate shortcuts.
+
+    :::image type="content" source="media/onelake-shortcuts/onelake-shortcut/review-shortcut-selection.png" alt-text="Screenshot of the New shortcut window showing selected shortcut locations and providing the option to delete or rename selections."  lightbox="media/onelake-shortcuts/onelake-shortcut/review-shortcut-selection.png":::
 
 1. Select **Close**.
 
 > [!NOTE]
-> You can only connect to one subfolder or table per shortcut. To connect to more data, repeat these steps and create additional shortcuts.
+> You can select upto 50 subfolders when creating OneLake shortcuts.
