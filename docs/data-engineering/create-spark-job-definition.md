@@ -116,7 +116,8 @@ To create a Spark job definition for SparkR(R):
 
 There are a few options to further customize the execution of Spark job definitions.
 
-- **Spark Compute**: On the **Spark Compute** tab, you can see the **Runtime Version**, which is the version of Spark that is used to run the job. You can also see the Spark configuration settings used to run the job. You can customize the Spark configuration settings by selecting the **Add** button.
+- **Spark Compute**: Within the **Spark Compute** tab, you can see [the Runtime Version](./runtime.md) which is the version of Spark that will be used to run the job. You can also see the Spark configuration settings that will be used to run the job. You can customize the Spark configuration settings by clicking on the **Add** button.
+
 
    :::image type="content" source="media\create-spark-job-definition\spark-compute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\spark-compute.png":::
 
