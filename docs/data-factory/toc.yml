@@ -347,6 +347,8 @@
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-postgresql-copy-activity.md  
     - name: REST
       items:
       - name: Overview
