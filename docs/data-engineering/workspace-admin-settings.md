@@ -67,21 +67,35 @@ If the setting is turned off by the workspace admin, the Default pool and its co
 
 ## Environment
 
-You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
+Environment provides flexible configurations for running your Spark jobs (notebooks, spark job definitions). In an Environment you can configure compute properties, select different runtime, setup library package dependencies based on your workload requirements. 
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
+In the environment tab, you have the option to set the default environment may choose which version of Spark you'd like to use for the workspace.
+
+As a Fabric workspace admin, you can select an Environment as workspace default Environment.
+Learn more about how to attach an Environment as workspace default: [Attach an Environment as the workspace default](create-and-use-environment.md\#attach-an-environment-as-the-workspace-default). 
+
+You can also create a new one through the **Environment** dropdown.
+    :::image type="content" source="media\environment-introduction\env-dropdown-ws.png" alt-text="Environment creation through attachment dropdown in WS setting":::
+
+If you disable the option to have a default environment, you have the option to select the Fabric runtime version from the available runtime versions listed in the dropdown selection. 
+
+:::image type="content" source="media\workspace-admin-settings\select-runtime-from-list.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\select-runtime-from-list.png":::
+
+Learn more about [Spark runtimes](runtime.md)
 
 ## High concurrency
 
-You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
+High concurrency mode allows users to share the same Spark sessions in Fabric Spark for data engineering and data science workloads. An item like a notebook uses a Spark session for its execution and when enabled allows users to share a single spark session across multiple notebooks. 
 
-:::image type="content" source="media\workspace-admin-settings\high-concurrency-mode-settings.png" alt-text="Screenshot showing high concurrency settings page." lightbox="media\workspace-admin-settings\high-concurrency-mode-settings.png":::
+:::image type="content" source="media\workspace-admin-settings\high-concurrency-workspace-setting-new.png" alt-text="Screenshot showing high concurrency settings page." lightbox="media\workspace-admin-settings\high-concurrency-workspace-setting-new.png":::
+
+Learn more about [High Concurrency in Fabric Spark](high-concurrency-overview.md)
 
 ## Automatic logging for Machine Learning models and experiments
 
 Admins can now enable autologging for their machine learning models and experiments. This option automatically captures the values of input parameters, output metrics, and output items of a machine learning model as it is being trained.
 [Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
-:::image type="content" source="media\workspace-admin-settings\automatic-logging.png" alt-text="Screenshot showing autolog settings page.":::
+:::image type="content" source="media\workspace-admin-settings\automatic-log-settings.png" alt-text="Screenshot showing autolog settings page.":::
 
 
 ## Next steps
