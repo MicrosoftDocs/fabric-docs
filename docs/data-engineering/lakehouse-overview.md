@@ -47,7 +47,7 @@ Learn more about the different ways to load data into your lakehouse: [Options t
 
 ## Multitasking with lakehouse
 
-The multitasking experience provides a browser tab design that allows you to open and switch between multiple items seamlessly allowing you to manage your data lakehouse more efficiently than ever. No more juggling between different windows or losing track of your tasks. Lakehouse provides an enhanced multitasking experience to make your data management journey as efficient and user-friendly as possible:
+The multitasking experience provides a browser tab design that allows you to open and switch between multiple items seamlessly allowing you to manage your data lakehouse more efficiently than ever. No more juggling between different windows or losing track of your tasks. Lakehouse provides an enhanced multitasking experience to make your data management journey as efficient and user-friendly as possible with the following capabilities:
 
 - Preserve Running Operations: Have an upload or data loading operation running in one tab and need to check on another task? No problem. With our enhanced multi-tasking, your running operation won't be canceled when you navigate between tabs. Focus on your work without interruptions.
 
