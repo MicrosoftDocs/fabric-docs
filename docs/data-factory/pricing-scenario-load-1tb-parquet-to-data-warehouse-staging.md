@@ -33,7 +33,7 @@ To accomplish this scenario, you need to create a pipeline with the following co
 |Effective TOU-hours billed     | (256 TOU) * (15/60 hour) = 64 TOU-hours        | (4 TOU) * (11/60 hour) = 0.74 TOU-hours |
 |Effective CU     | (64 TOU-hours) * (1.5 CU) = 96 CU hours        | (0.74 TOU-hours) * (1.5 CU) = 1.1 CU-hours |
 
-**Total run cost at $0.18/CU hour** = (97.1 CU hours) * ($0.18/CU hour) ~= **$ 17.28**
+**Total run cost at $0.18/CU hour** = (97.1 CU hours) * ($0.18/CU hour) ~= **$17.28**
 
 ## Cost estimation using the Fabric Metrics App
 
