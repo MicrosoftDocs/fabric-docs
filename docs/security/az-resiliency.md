@@ -5,7 +5,7 @@ author: paulinbar #Required; your GitHub user alias, with correct capitalization
 ms.author: painbar #Required; Microsoft alias of author; optional team alias.
 ms.topic: reliability-article
 ms.custom: subject-reliability, references_regions, build-2023
-ms.date: 09/06/2023 #Required; mm/dd/yyyy format.
+ms.date: 11/01/2023 #Required; mm/dd/yyyy format.
 ---
 
 # Resiliency in Microsoft Fabric
@@ -17,12 +17,16 @@ Azure availability zones are at least three physically separate groups of datace
 
 Azure availability zone-enabled services are designed to provide the right level of reliability and flexibility. They can be configured in two ways. They can be either zone redundant, with automatic replication across zones, or zonal, with instances pinned to a specific zone. You can also combine these approaches. For more information on zonal vs. zone-redundant architecture, see [Build solutions with availability zones](/azure/architecture/high-availability/building-solutions-for-high-availability).
 
-Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric supports zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
+Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric makes commercially-reasonable efforts to support zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
 
 > [!Note]
-> At Public Preview, Fabric provides partial availability zone support in a limited number of regions. Data Factory, Data Engineering, Data Science, and Event Streams do not support availability zones.
+> At General Availability, Fabric provides partial availability zone support in a limited number of regions which covers experiences and/or certain functionalities within an experience as described below. This list might be updated periodically by Microsoft. Experiences such as Data Factory (pipelines) , Data Engineering, Data Science, and Event Streams do not support availability zones. Zone availability might not be available for Fabric experiences or features and/or functionalities that are in preview.
+>
+>While Microsoft strives to provide uniform and consistent availability zone support, in some cases of availability zone failure, Fabric capacities located in Azure regions with higher customer demand fluctuations might experience higher than usual latency.  
 
-Fabric provides availability zone support in various regions as follows:
+Fabric on-prem gateways and large datasets are in the process of being migrated to AZ resilient infrastructure.  
+
+Fabric makes commercially-reasonable efforts to provide availability zone support in various regions as follows:
 
 | **Americas**         | **Power BI**                                                          | **Datamarts**                                                         | **Data Warehouses**                                                   | **Real-Time Analytics**                                               |
 |:---------------------|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
@@ -50,16 +54,12 @@ Fabric provides availability zone support in various regions as follows:
 | Japan East           | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Southeast Asia       | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |                                                                       |                                                                       |                                                                       |
 
-### Fault tolerance
-
-To prepare for availability zone failure, customers should over-provision capacity of service to ensure that the solution can tolerate ⅓ loss of capacity and continue to function without degraded performance during zone-wide outages.
-
 ### Zone down experience
 During a zone-wide outage, no action is required during zone recovery. Fabric capabilities in regions listed above will self-heal and rebalance automatically to take advantage of the healthy zone.
 
 ## Business continuity and disaster recovery (BCDR)
 
-BCDR isn't currently supported in Fabric for non-Power BI Fabric items, such as Notebooks, KQL Databases, etc., or for data stored in OneLake. However, it's still supported for Power BI Fabric items, such as datasets, reports, etc. For more information about BCDR in Power BI, see [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
+BCDR isn't currently supported in Fabric for non-Power BI Fabric items, such as Notebooks, KQL Databases, etc., or for data stored in OneLake. However, it's still supported for Power BI Fabric items, such as datasets, reports, etc. For more information about BCDR in Power BI, see the [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
 
 ## Next steps
 
