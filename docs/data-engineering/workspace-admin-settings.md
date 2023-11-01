@@ -27,7 +27,7 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. You see the **Spark Compute** option in your left-hand menu:
 
-1. Configure the four setting options you can change on this page: **Default pool for workspace**, **Runtime version**, **Automatically track machine learning experiments and models** and **Spark properties**.
+1. Configure the four setting options you can change on this page: **Default pool for workspace**, **[Runtime version](./runtime.md)**, **Automatically track machine learning experiments and models** and **Spark properties**.
 
 > [!NOTE]
 > If you change the default pool to a custom Spark pool you may see longer session start (~3 minutes) in this case.
@@ -54,9 +54,9 @@ Learn more about [Spark Compute for Fabric](spark-compute.md).
 
 ## Runtime version
 
-You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) is available.
+You may choose which version of Spark you'd like to use for the workspace. Currently, [Spark 3.3 version](./runtime-1-1.md) and [Spark 3.4](./runtime-1-2.md) versions are available. To [change the runtime version at the workspace level](./runtime.md), go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version.png":::
+:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\runtime-version-1-2.png":::
 
 ## Autologging for Machine Learning models and experiments
 
@@ -75,6 +75,6 @@ You can delete items by selecting the item(s) and then select the **Delete** but
 :::image type="content" source="media\workspace-admin-settings\spark-properties-delete.png" alt-text="Screenshot showing where to select Delete.":::
 
 ## Next steps
-
+- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml).
