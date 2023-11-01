@@ -41,7 +41,7 @@ In this article, you learn how to apply PREDICT both ways, whether you're more c
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If you've already trained and registered an ML model in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If there's an already trained and registered an ML model in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
 
 1. **Train an ML model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train ML models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
 
@@ -74,7 +74,7 @@ PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../inclu
     test = spark.createDataFrame(data.frame.drop(['target'], axis=1))
     ```
 
-3. **Create an `MLFlowTransformer` object to load the ML model for inferencing.** To create an `MLFlowTransformer` object for generating batch predictions, you must do the following:
+3. **Create an `MLFlowTransformer` object to load the ML model for inferencing.** To create an `MLFlowTransformer` object for generating batch predictions, you must perform the following actions:
     - specify which columns from the `test` DataFrame you need as model inputs (in this case, all of them),
     - choose a name for the new output column (in this case, `predictions`), and
     - provide the correct model name and model version for generating those predictions.
@@ -146,7 +146,7 @@ test.withColumn("PREDICT", my_udf(*[col(f) for f in features])).show()
 ## Generate PREDICT code from an ML model's item page
 
 From any ML model's item page, you can choose either of the following options to start generating batch predictions for a specific model version with PREDICT.
-- Use a guided UI experience to generate PREDICT code for you
+- Use a guided UI experience to generate PREDICT code
 - Copy a code template into a notebook and customize the parameters yourself
 
 ### Use a guided UI experience
@@ -184,7 +184,7 @@ To use the guided experience,
     :::image type="content" source="media/model-scoring-predict/create-output-table.png" alt-text="Screenshot of the step to create an output table for ML model predictions." lightbox="media/model-scoring-predict/create-output-table.png":::
 
 1. Select **Next** to go to the "Map output columns" step.
-1. Use the provided text field(s) to name the column(s) in the output table that stores the ML model's predictions.
+1. Use the provided text fields to name the columns in the output table that stores the ML model's predictions.
 
     :::image type="content" source="media/model-scoring-predict/map-output-columns.png" alt-text="Screenshot of the step to map output columns for ML model predictions." lightbox="media/model-scoring-predict/map-output-columns.png":::
 
