@@ -53,7 +53,7 @@ The multitasking experience provides a browser tab design that allows you to ope
 
 - **Retain your context:** Selected objects, data tables, or files remain open and readily available when you switch between tabs. The context of your data lakehouse is always at your fingertips.
 
-- Non-Blocking List Reload: A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background, ensuring that you have the most up to date data while providing you a smooth and uninterrupted experience.
+- **Non-blocking list reload:** A nonblocking reload mechanism for your files and tables list. You can keep working while the list refreshes in the background. It ensures that you have the latest data while providing you with a smooth and uninterrupted experience.
 
 - Clearly Defined Notifications: Toast notifications specify which lakehouse they're coming from, making it easier to track changes and updates in your multi-tasking environment.
 
