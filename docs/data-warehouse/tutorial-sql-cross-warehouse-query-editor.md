@@ -59,6 +59,20 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
 1. Type `Cross-warehouse query` to change the name of the query.
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
+## Execute a cross-warehouse cross-workspace query
+
+To query data from warehouse A residing in another workspace than your warehouse B you need to do the following steps:
+1. Create a Lakehouse in the same workspace as your warehouse B
+1. In that lakehouse create a shortcut pointing to the required databases or tables from warehouse A.
+1. Through the above described cross-warehouse query you can now query tables in that lakehouse which are just a shortcut to warehouse A.
+1. An example query would look something like
+   
+    ```sql
+    SELECT * FROM [lakehouse].[dbo].[table_shortcuted_from_warehouse_A]
+    ```
+> [!NOTE]
+> Cross-warehouse cross-workspace querying is currently limited for queries within the same region.
+
 ## Next step
 
 > [!div class="nextstepaction"]
