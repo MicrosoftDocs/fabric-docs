@@ -15,7 +15,7 @@ ms.search.form: product-kusto
 
 The caching policy allows to you to choose which data should be cached and kept in local SSD storage. The availability of data in hot cache increases query performance but also storage costs. In Real-Time Analytics, you can enable a cashing policy on a KQL Database level. After enabling caching, you can set the time span that the data remains in the hot cache.
 
-For more information, see [Cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
+For more information, see [Caching policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
 
 In this article, you learn how to set a caching policy on your KQL database.
 
