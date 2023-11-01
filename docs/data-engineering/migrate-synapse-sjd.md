@@ -16,7 +16,7 @@ To move Spark Job Definitions (SJD) from Azure Synapse to Fabric, you have two d
 * Option 1: create SJD manually in Fabric
 * Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API
 
-For SJD considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+For SJD considerations, please refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Create SJD manually
 
@@ -63,7 +63,7 @@ The pre-migration steps include actions you need to consider prior to notebook m
 
 The focus of Step 1 is on exporting the SJD from Azure Synapse workspace to OneLake in json format. This process is as follows:
 
-* **1.1) Import SJD migration notebook** to Fabric workspace. [This notebook](TBC) exports all SJDs from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export SJD.
+* **1.1) Import SJD migration notebook** to Fabric workspace. [This notebook](NEEDLINK) exports all SJDs from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export SJD.
 * **1.2) Configure the parameters** in the first command to export SJD to an intermediate storage (OneLake). This only exports the json metadata file.
 
 ```python
@@ -101,5 +101,5 @@ Step 2 is when SJD are imported from intermediate storage into the Fabric worksp
 ## Next steps
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
-- [Migrate data and pipelines](TBC)
+- [Migrate data and pipelines](NEEDLINK)
 - [Migrate notebooks](migrate-synapse-notebooks.md)

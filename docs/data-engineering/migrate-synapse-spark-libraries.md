@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 Options to migrate Azure Synapse pool libraries to Fabric.
 
-For Spark library considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+For Spark library considerations, please refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Adding Spark Libraries to Custom Environment
 

@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 Options to migrate Azure Synapse pool configurations to Fabric.
 
-For Spark configuration considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+For Spark configuration considerations, please refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Adding Spark Configurations to Custom Environment
 

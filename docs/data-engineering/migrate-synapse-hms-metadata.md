@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables. Additionally, pay attention to table properties, including data formats (e.g., csv, json, parquet, Delta) and partitions.
 
-For HMS considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+For HMS considerations, please refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Import/Export HMS to Lakehouse metastore
 
@@ -35,7 +35,7 @@ The pre-migration steps include actions you need to consider prior to beginning 
 
 The focus of Step 1 is on exporting the metadata from source HMS to OneLake, i.e., to the Files section within your Fabric lakehouse. This process is as follows:
 
-* 1.1) **Import migration notebook** to Azure Synapse. [This notebook](TBC) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
+* 1.1) **Import migration notebook** to Azure Synapse. [This notebook](NEEDLINK) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
 * 1.2) **Configure the parameters** in the first command to export metadata information to an intermediate storage (OneLake).
 
 ```scala
@@ -56,7 +56,7 @@ Step 2 is when the actual metadata is imported from intermediate storage into th
 
 :::image type="content" source="media\migrate-synapse\migrate-hms-warehouse-directory.png" alt-text="Screenshot showing warehouse directory options.":::
 
-* **2.2) Import metadata notebook** to Fabric lakehouse. Import [this notebook ](TBC)to import database, table, and partition objects from intermediate storage. Spark internal catalog API is used in this script to create catalog objects in Fabric.
+* **2.2) Import metadata notebook** to Fabric lakehouse. Import [this notebook ](NEEDLINK)to import database, table, and partition objects from intermediate storage. Spark internal catalog API is used in this script to create catalog objects in Fabric.
 * **2.3) Configure the parameters** in the first command. In Apache Spark, when you create a managed table, the data for that table is stored in a location managed by Spark itself, typically within the Spark's warehouse directory. The exact location is determined by Spark. This contrasts with external tables, where you specify the location and manage the underlying data. When you migrate the metadata of a managed table (without moving the actual data), the metadata still contains the original location information pointing to the old Spark warehouse directory. Hence, for managed tables, `WarehouseMappings` is used to do the replacement using the shortcut created in step 2.1. Similarly, for external tables, you can change the path using `WarehouseMappings` or keep original data location, e.g., ADLS Gen2 (assuming the right permissions are set to access the data). All source managed tables are converted as external tables into Fabric Spark metastore using this script. `LakehouseId` refers to the lakehouse created in step 2.1 containing shortcuts.
 
 ```scala
@@ -106,6 +106,6 @@ Alternatively, all imported tables will be visible within the Lakehouse explorer
 
 ## Next steps
 
-- [Azure Synapse Spark vs. Fabric Spark](TBC)
+- [Azure Synapse Spark vs. Fabric Spark](NEEDLINK)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark Job Definitions (SJD)](migrate-synapse-sjd.md)
 
