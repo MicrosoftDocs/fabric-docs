@@ -40,14 +40,17 @@ The following three properties are **required**:
 - **Connection type**: Select **PostgreSQL**.
 - **Use query**: Select from **Table** or **Query**.
     - If you select **Table**:
-      - **Table**: Specify the name of the table with schema to read data. Select the table from the drop-down list or select **Edit** to manually enter it. 
+      - **Table**: Specify the name of the table to read data. Select the table from the drop-down list or select **Edit** to manually enter it. 
 
         :::image type="content" source="./media/connector-postgresql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `"query": "SELECT * FROM \"MySchema\".\"MyTable\""`.
+      - **Query**: Specify the custom SQL query to read data.
 
         :::image type="content" source="./media/connector-postgresql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::
+
+        > [!Note]
+        > Schema and table names are case-sensitive. Enclose them in "" (double quotes) in the query.
     
 Under **Advanced**, you can specify the following fields:
         
