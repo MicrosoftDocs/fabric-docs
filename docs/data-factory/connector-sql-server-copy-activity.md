@@ -124,7 +124,7 @@ Under **Advanced**, you can specify the following fields:
     - **Key columns**: Specify the column names for unique row identification. Either a single key or a series of keys can be used. If not specified, the primary key is used.
 
   - **Stored procedure**: Use the stored procedure that defines how to apply source data into a target table. This stored procedure is *invoked per batch*. For operations that run only once and have nothing to do with source data, for example, delete or truncate, use **Pre-copy script** property. 
-    - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when checking the **Edit** box to read data from the source table.
+    - **Stored procedure name**: Select the stored procedure or specify the stored procedure name manually when checking the **Edit** to read data from the source table.
     - **Stored procedure parameters**: 
 
       - **Table type**: Specify the table type name to be used in the stored procedure. The copy activity makes the data being moved available in a temporary table with this table type. Stored procedure code can then merge the data that's being copied with existing data.
@@ -133,11 +133,11 @@ Under **Advanced**, you can specify the following fields:
       
       :::image type="content" source="./media/connector-sql-server/write-behavior-stored-procedure.png" alt-text="Screenshot showing stored procedure settings in destination write behavior." lightbox="./media/connector-sql-server/write-behavior-stored-procedure.png":::
 
-- **Bulk insert table lock**: Choose **Yes** or **No**. Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. You can specify this property when you select **Insert** or **Upsert** as your write behavior. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
+- **Bulk insert table lock**: Choose **Yes** or **No** (default). Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients. You can specify this property when you select **Insert** or **Upsert** as your write behavior. For more information, go to [BULK INSERT (Transact-SQL)](/sql/t-sql/statements/bulk-insert-transact-sql)
 
-- **Pre-copy script**: Specify a script for Copy Activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.
+- **Pre-copy script**: Specify a script for copy activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. The default value is "00:30:00" (30 minutes).
+- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan. If no value is specified, the timeout defaults to "02:00:00".
 
 - **Write batch size**: Specify the number of rows to insert into the SQL table per batch. The allowed value is integer (number of rows). By default, the service dynamically determines the appropriate batch size based on the row size.
 
@@ -233,7 +233,7 @@ See the following table for the summary and more information for the SQL server 
 |**Parameters** | Parameters for the stored procedure. Allowed values are name and value pairs. Names and casing of parameters must match the names and casing of the stored procedure parameters.|< name and value pairs > |No | storedProcedureParameters |
 |**Bulk insert table lock** |Use this setting to improve copy performance during a bulk insert operation on a table with no index from multiple clients.|Yes or No (default) |No |sqlWriterUseTableLock:<br>true or false (default)|
 |**Pre-copy script**|A script for copy activity to execute before writing data into a destination table in each run. You can use this property to clean up the pre-loaded data.| < pre-copy script ><br>(string)|No |preCopyScript|
-|**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is "00:30:00" - 30 minutes) |No |writeBatchTimeout|
+|**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is "02:00:00") |No |writeBatchTimeout|
 |**Write batch size**|The number of rows to insert into the SQL table per batch. By default, the service dynamically determines the appropriate batch size based on the row size.|< number of rows ><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
 
