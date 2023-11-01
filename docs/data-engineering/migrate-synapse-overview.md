@@ -15,18 +15,18 @@ Before you begin your migration, you should verify that [Fabric Data Engineering
 
 ## Key considerations
 
-The initial step in crafting a migration strategy is to assess suitability. It's worth noting that certain Fabric features related to Spark are currently in development or planning. For more details and updates, please visit the [Fabric roadmap](/fabric/release-plan/). 
+The initial step in crafting a migration strategy is to assess suitability. It's worth noting that certain Fabric features related to Spark are currently in development or planning. For more details and updates, visit the [Fabric roadmap](/fabric/release-plan/). 
 
 You can also learn about Fabric security and governance guidance [here](NEEDLINK). For Spark, see a detailed comparison [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Migration scenarios
 
-If you've determined that Fabric is the right choice for migrating your existing Spark workloads, the migration process can involve multiple scenarios and phases:
+If you determine that Fabric is the right choice for migrating your existing Spark workloads, the migration process can involve multiple scenarios and phases:
 
 * **Items**: Items migration involves the transfer of one or various artifacts from your existing Azure Synapse workspace to Fabric. Learn more about migrating [Spark pools](migrate-synapse-spark-pools.md), [Spark configurations](migrate-synapse-spark-configurations.md), [Spark libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md), and [Spark Job Definitions (SJD)](migrate-synapse-sjd.md).
-* **Data and Pipelines**: Users can make available data from an existing ADLS Gen2 linked to an Azure Synapse workspace into Fabric lakehouse e.g., using [OneLake shortcuts](../onelake/create-adls-shortcut.md). Pipeline migration involves moving existing data pipelines to Fabric, including notebook and SJD pipeline activities. Learn more about [Data and Pipelines migration](NEEDLINK).
+* **Data and Pipelines**: Users can make available data from an existing ADLS Gen2 linked to an Azure Synapse workspace into Fabric lakehouse, for example, using [OneLake shortcuts](../onelake/create-adls-shortcut.md). Pipeline migration involves moving existing data pipelines to Fabric, including notebook and SJD pipeline activities. Learn more about [Data and Pipelines migration](NEEDLINK).
 * **Metadata**: Metadata migration involves moving Spark catalog metadata (databases, tables, and partitions) from an existing Hive MetaStore (HMS) in Azure Synapse to Fabric lakehouse. Learn more about [HMS metadata migration](migrate-synapse-hms-metadata.md).
-* **Workspace**: Users can migrate an existing Azure Synapse workspace by creating a new workspace in Microsoft Fabric, including metadata. Workspace migration is not covered in this guidance, assumption is that users will [create a new workspace](../get-started/create-workspaces.md) or have an existing Fabric workspace.
+* **Workspace**: Users can migrate an existing Azure Synapse workspace by creating a new workspace in Microsoft Fabric, including metadata. Workspace migration isn't covered in this guidance, assumption is that users need to [create a new workspace](../get-started/create-workspaces.md) or have an existing Fabric workspace.
 
 :::image type="content" source="media\migrate-synapse\migration-scenarios.png" alt-text="Screenshot showing the migration scenarios.":::
 

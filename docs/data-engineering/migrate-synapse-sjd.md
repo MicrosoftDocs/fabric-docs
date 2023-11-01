@@ -16,20 +16,20 @@ To move Spark Job Definitions (SJD) from Azure Synapse to Fabric, you have two d
 * Option 1: create SJD manually in Fabric
 * Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API
 
-For SJD considerations, please refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
+For SJD considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Create SJD manually
 
-To export a SJD from Azure Synapse:
+To export an SJD from Azure Synapse:
 
-1.	**Access Azure Synapse Studio**: Log in to the Azure portal, navigate to your Azure Synapse workspace, and open Azure Synapse Studio.
-1.	**Locate the Python/Scala/R Spark Job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate. These should be listed in your Spark job definitions in Synapse.
+1.	**Access Azure Synapse Studio**: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and open Azure Synapse Studio.
+1.	**Locate the Python/Scala/R Spark Job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate.
 1.	**Export the Job Definition Configuration**:
     * In Synapse Studio, open the Spark job definition.
     * Export or note down the configuration settings, including script file location, dependencies, parameters, and any other relevant details.
 
 To create a new SJD based on the exported SJD information:
-1.	**Access Fabric Workspace**: Log in to Fabric and access your workspace.
+1.	**Access Fabric Workspace**: Sign-in into Fabric and access your workspace.
 1.	**Create a New Job in Fabric**:
     * In Fabric, go to Data Engineering homepage.
     * Click "Spark Job Definition."
@@ -54,7 +54,7 @@ Follow these two key steps for migration:
 * Step 2: Import SJD automatically into Fabric using the Fabric API
 
 ### Pre-migration steps
-The pre-migration steps include actions you need to consider prior to notebook migration to Fabric. These involves:
+The pre-migration steps include actions you need to consider prior to notebook migration to Fabric.
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
@@ -84,13 +84,13 @@ prefix = "<>" # this prefix is used during import {prefix}{notebook_name}
 output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakehouse_id}/Files/{export_folder_name}"
 ```
 
-* **1.3) Run the first two cells** to export SJD to OneLake. Once cells are completed, you will be able to see this folder structure under the intermediate output directory.
+* **1.3) Run the first two cells** to export SJD to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
 :::image type="content" source="media\migrate-synapse\migrate-sjd-export-api.png" alt-text="Screenshot showing SJD export in OneLake.":::
 
 ### Step 2: Import SJD into Fabric
 
-Step 2 is when SJD are imported from intermediate storage into the Fabric workspace. This process is as follows:
+Step 2 is when SJDs are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
 * **2.1) Validate the configurations** in the 1.2) to ensure the right workspace and prefix are indicated to import the SJDs.
 * **2.2) Run the third cell** to import all notebooks from intermediate location.
