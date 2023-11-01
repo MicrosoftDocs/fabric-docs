@@ -22,13 +22,13 @@ For notebook considerations, refer to [differences between Azure Synapse Spark a
 
 To export a notebook from Azure Synapse:
 
-1.	Access Azure Synapse Studio: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and open Azure Synapse Studio.
-1.	Locate the Notebook: In Azure Synapse Studio, locate the notebook you want to export from the "Notebooks" section of your workspace.
-1.	Export the Notebook:
+1.	**Access Azure Synapse Studio**: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and open Azure Synapse Studio.
+1.	**Locate the Notebook**: In Azure Synapse Studio, locate the notebook you want to export from the "Notebooks" section of your workspace.
+1.	**Export the Notebook**:
     * Right-click on the notebook you wish to export.
     * Select "Export."
-    * Choose a destination folder and provide a name for the exported notebook file. By default, the file has a ipynb extension, which is compatible with Fabric.
-4.	Download the Exported Notebook: Once the export is complete, you should have the notebook file available for upload.
+    * Choose a destination folder and provide a name for the exported notebook file. By default, the file has an ipynb extension, which is compatible with Fabric.
+4.	**Download the Exported Notebook**: Once the export is complete, you should have the notebook file available for upload.
 
 :::image type="content" source="media\migrate-synapse\migrate-notebooks-export.png" alt-text="Screenshot showing Synapse Notebook export.":::
 
@@ -94,8 +94,8 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 
 Step 2 is when notebooks are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
-•	**2.1) Validate the configurations** in step 1.2) to ensure the right workspace and prefix are indicated to import the notebooks.
-•	**2.2) Run the third cell** to import all notebooks from intermediate location.
+* **2.1) Validate the configurations** in step 1.2) to ensure the right workspace and prefix are indicated to import the notebooks.
+* **2.2) Run the third cell** to import all notebooks from intermediate location.
 
 ## Next steps
 
