@@ -74,7 +74,7 @@ Follow these steps to add a custom application source to your eventstream:
 
    - **Basic**: Shows the name, description, type and status of your custom app.
    - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
-   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstream.
 
    For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information.
 

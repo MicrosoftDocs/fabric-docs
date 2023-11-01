@@ -85,7 +85,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 1. In the Eventstream editor, expand the **New destination** drop-down menu within the destination node and choose **KQL Database**.
 
-   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add an kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
+   :::image type="content" source="./media/add-iot-hub-source/add-kusto-destination.png" alt-text="Screenshot that shows where to add a kusto destination." lightbox="./media/add-iot-hub-source/add-kusto-destination.png":::
 
 2. On the **KQL Database** configuration pane, select **Direct ingestion**, and enter the details for your Kusto database:
 

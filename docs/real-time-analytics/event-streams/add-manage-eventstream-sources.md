@@ -99,7 +99,7 @@ Follow these steps to add an Azure IoT hub as your eventstream source:
 
    :::image type="content" source="./media/add-iot-hub-source/create-new-cloud-connection.png" alt-text="Screenshot that shows where to create a new cloud connection.":::
 
-    1. Select **Create new connection** from the drop down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
+    1. Select **Create new connection** from the drop-down menu, fill in the **Connection settings** and **Connection credentials** of your Azure IoT Hub, and then select **Create**.
 
         :::image type="content" source="./media/add-iot-hub-source/add-new-cloud-connection.png" alt-text="Screenshot that shows where to configure a new cloud connection." lightbox="./media/add-manage-eventstream-sources/eventstream-eventhub-source-cloud-connection.png":::
 
@@ -124,7 +124,7 @@ To get a better understanding of how an eventstream works, you can use the out-o
 1. Select **New source** on the ribbon or "**+**" in the main editor canvas and then **Sample data**.
 
 1. On the right pane, enter a source name to appear on the canvas, select the sample data you want to add to your eventstream, and then select **Add**.
-   - **Bicycles**: sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighbourhood, Latitude, and more.
+   - **Bicycles**: sample bicycles data with a preset schema that includes fields such as BikepointID, Street, Neighborhood, Latitude, and more.
    - **Yellow Taxi**: sample taxi data with a preset schema that includes fields such as pickup time, drop-off time, distance, total fee, and more.
    - **Stock Market**: sample data of a stock exchange with a preset schema column such as time, symbol, price, volume and more.
 
@@ -152,7 +152,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
    - **Basic**: Shows the name, description, type and status of your custom app.
    - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
-   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstram.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstream.
 
    For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: **Eventhub**, **AMQP** and **Kafka** to access diverse protocol formats information:
 
