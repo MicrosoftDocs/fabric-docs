@@ -26,7 +26,7 @@ Consumption rates are subject to change at any time. Microsoft will use reasonab
 
 The following table is a template to help you manually estimate costs for a Dataflows Gen2 refresh with staging enabled:
 
-|    |Standard Compute  |
+|Metric    |Standard Compute  |
 |---------|---------|
 |Duration in seconds     |  t seconds       |
 |Billed duration (in hours)     |  t / (60*60) hours       |
@@ -36,7 +36,7 @@ The following table is a template to help you manually estimate costs for a Data
 
 The following table can be utilized as a template to manually compute estimated costs for a Dataflows Gen2 refresh with staging enabled:
 
-|    |Standard Compute  | High Scale Compute |
+|Metric    |Standard Compute  | High Scale Compute |
 |---------|---------|---------|
 |Duration in seconds     |  t seconds       | d seconds |
 |Billed duration (in hours)     |  t / (60*60) hours       | d / (60*60) hour |
@@ -51,7 +51,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 The following table can be utilized as a template to compute estimated costs using Fabric Metrics app for a Dataflows Gen2 refresh:
 
 
-|  |Standard Compute  |High Scale Compute  |
+|Metric  |Standard Compute  |High Scale Compute  |
 |---------|---------|---------|
 |Total CUs     | s CU seconds        |  h CU seconds       |
 |Effective CU-hours billed      | s / (60*60) = S CU-hour        |  h / (60*60) = H CU-hour       |

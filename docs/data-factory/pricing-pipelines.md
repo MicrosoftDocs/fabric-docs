@@ -43,7 +43,7 @@ Consumption rates are subject to change at any time. Microsoft will use reasonab
 
 The following table can be used as a template to manually compute estimated costs for a Pipeline run:
 
-|  |Data Movement Operation  |Activity Run Operation (Count = n)  |
+|Metric  |Data Movement Operation  |Activity Run Operation (Count = n)  |
 |---------|---------|---------|
 |Duration in minutes     | t mins        | N/A        |
 |TOU utilized by the activity run     |         | N/A         |
@@ -59,7 +59,7 @@ The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provid
 
 The following table can be used as a template to compute estimated costs using Fabric Metrics app for a data pipeline run:
 
-|  | Data movement operation  |Activity run operation  |
+|Metric  | Data movement operation  |Activity run operation  |
 |---------|---------|---------|
 |Duration in seconds     |  t in seconds       | N/A         |
 |CU (s)     | x CU (s)    |  y CU(s)       |
