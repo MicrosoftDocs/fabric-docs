@@ -87,9 +87,9 @@ items:
 - name: Create models and build Power BI reports
   items:
   - name: Datasets
-    href: datasets.md
+    href: semantic-models.md
   - name: Model data in the default Power BI dataset
-    href: model-default-power-bi-dataset.md          
+    href: default-power-bi-semantic-model.md          
   - name: Define relationships in data models
     href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service

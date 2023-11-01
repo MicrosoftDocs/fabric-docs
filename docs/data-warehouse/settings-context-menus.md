@@ -76,6 +76,6 @@ The following table describes the warehouse context menu options:
 ## Related content
 
 - [Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
-- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+- [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Admin portal](../admin/admin-center.md)
