@@ -22,13 +22,13 @@ For more information, see [Management commands](/azure/data-explorer/kusto/manag
 
 The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric).
 
-For more information, see [Set a data retention policy](data-retention-policy.md).
+For more information, see [Data retention policy](data-policies.md#data-retention-policy).
 
 ## Caching policy
 
 The caching policy allows to you to choose which data should be cached and kept in local SSD storage.
 
-For more information, see [Set a caching policy](cache-policy.md).
+For more information, see [Caching policy](data-policies.md#caching-policy).
 
 ## One logical copy
 
