@@ -20,7 +20,7 @@ Intelligent cache is a single cache per node. If you're using a medium-sized nod
 
 ## How it works
 
-We reserve a minimum of 20% of available disk space for data shuffles. For shuffle-intensive workloads, you can minimize the cache size or disable the cache. In Microsoft Fabric (Runtime 1.1 and 1.2), intelligent caching is enabled by default for all the Spark pools for all workspaces with cache size with 50%. We recommend starting with a 50% cache size and adjusting as necessary. If your workload requires a lot of disk space on the local SSD for shuffling or Resilient Distributed Dataset (RDD) caching, you should consider reducing the cache size to reduce the chance of failure due to insufficient storage. The actual size of the available storage and the cache size on each node depends on the node family and node size.
+In Microsoft Fabric (Runtime 1.1 and 1.2), intelligent caching is enabled by default for all the Spark pools for all workspaces with cache size with 50%. The actual size of the available storage and the cache size on each node depends on the node family and node size.
 
 ## When to use intelligent cache
 
@@ -36,19 +36,14 @@ You don't see the benefit of intelligent cache if:
 
 - Your workload requires large amounts of shuffle. Disabling the intelligent cache frees up available space to prevent your job from failing due to insufficient storage space.
 
-## Enable and disable the cache in a session
+## Enable and disable the intelligent cache 
 
-You can disable or enable the intelligent cache within a session by running the following code in your notebook.
+You can disable or enable the intelligent cache within a session by running the following code in your notebook or setting this configuration at the workspace or _Environment_ item level.
 
 ```scala
 spark.conf.set("spark.synapse.vegas.useCache", "false/true") 
 ```
 
-You can also change the default percentage of intelligent cache within a session by running the following code in your notebook and specifying cache size from 0 to 80. Specifying 0 means disabling it. The following example shows how to change the cache size to 60 percentage.
-
-```scala
-spark.conf.set("spark.synapse.vegas.cacheSize", "60")
-```
 
 ## Next steps
 
