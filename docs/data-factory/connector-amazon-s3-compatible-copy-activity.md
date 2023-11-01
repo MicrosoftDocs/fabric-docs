@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # How to configure Amazon S3 Compatible in copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to Amazon S3 Compatible.
+This article outlines how to use the copy activity in a data pipeline to copy data from Amazon S3 Compatible.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -59,21 +59,22 @@ The following properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**: Select an **Amazon S3 Compatible** connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
-- **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is:
+- **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration for each setting is:
 
-  - **File path**: If you choose this type, the data can be copied from the given bucket or the given bucket and folder path specified.
+  - **File path**: If you choose this type, the data can be copied from the given bucket or the given bucket and folder/file path specified.
 
-  - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix** to filter source S3 files.
+  - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
     - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.<br>
           When you use prefix and choose to copy to file-based destination with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `bucket/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
       :::image type="content" source="./media/connector-amazon-s3-compatible/prefix.png" alt-text="Screenshot showing prefix.":::
 
-  - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths** to filter your source folders or files.
+  - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
-    - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.<br>
-          Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
+    - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
+
+        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
 
       - Wildcard folder path: The folder path with wildcard characters under the given bucket configured to filter source folders.
       - Wildcard file name: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
@@ -86,9 +87,9 @@ The following properties are **required**:
 
       :::image type="content" source="./media/connector-amazon-s3-compatible/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
 
-- **File format**: Select the file format applied from the drop-down list. Select Settings to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
-- **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is set to **true** and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. Allowed values are **true** (default) and **false**. This property doesn't apply when you configure `fileListPath`.
+- **Recursively**: Specify whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property is selected by default and doesn't apply when you configure **Path to file list**.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -100,8 +101,9 @@ Under **Advanced**, you can specify the following fields:
 
 - **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
 
-  - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.<br>
-     If it is not specified, by default,
+  - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
+
+    If it is not specified, by default,
     - When you use file path or list of files on source, partition root path is the path that you configured.
     - When you use wildcard folder filter, partition root path is the sub-path before the first wildcard.
     - When you use prefix, partition root path is sub-path before the last "/".
@@ -137,13 +139,13 @@ The following tables contain more information about the copy activity in Amazon 
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|Amazon S3 Compatible|Yes|/|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes | / |
-| **File path** | The path to the source file. | < file path> | Yes | fileName<br>folderpath |
-| **Bucket** | The bucket name to the source file. | \<your bucketName> |Yes|bucketName|
-| **Prefix** | The prefix to the source file. | \<your prefix> |No|prefix|
-| **Wildcard paths** | The wildcard path to the source file. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName |
+| **File path** | The folder/file path to the source file. | < file path> | Yes | fileName<br>folderpath |
+| **Bucket** | The S3 Compatible Storage bucket name. | \<your bucketName> |Yes|bucketName|
+| **Prefix** | The configured prefix for the S3 key name under the given bucket to filter source S3 files. | \<your prefix> |No|prefix|
+| **Wildcard paths** | The folder/file path with wildcard characters under the configured bucket to filter source folders/files. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName |
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath |
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
-| **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **recursive** is set to **true** and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure `fileListPath`.| Selected (default) or unselect |No |recursive|
+| **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.| Selected (default) or unselect |No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
