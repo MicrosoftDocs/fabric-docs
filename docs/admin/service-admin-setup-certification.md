@@ -44,5 +44,3 @@ Certification is part of Power BI's *endorsement* feature. See [Endorsement: Pro
 - [Promote or certify content](/power-bi/collaborate-share/service-endorse-content)
 
 - [Read about endorsement in Power BI](/power-bi/collaborate-share/service-endorsement-overview)
-
-- Questions? [Ask the Power BI Community](https://community.powerbi.com)
