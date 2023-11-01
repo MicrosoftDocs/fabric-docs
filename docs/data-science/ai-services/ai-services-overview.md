@@ -32,7 +32,7 @@ Fabric provides two options for utilizing Azure AI services:
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) 
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-via-python-sdk.md). [SynapseML](how-to-use-openai-via-synapseml.md)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-open-ai-sdk-synapse.md). [SynapseML](how-to-use-open-ai-sdk-synapse.md)
 
 - DV3 : A Microsoft internal version of GPT-4 model. GPT-4 can solve difficult problems with greater accuracy than any of OpenAI's previous models. Like GPT-3.5 Turbo, GPT-4 is optimized for chat and works well for traditional completions tasks.
 - GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
@@ -41,7 +41,7 @@ Fabric provides two options for utilizing Azure AI services:
 - code-cushman-002, a legacy model that is optimized for code-completion tasks.
 
 ### [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/) 
-[REST API](how-to-use-text-analytics-via-rest-api.md), [SynapseML](how-to-use-text-analytics-via-synapseml.md)
+[REST API](how-to-use-text-analytics.md), [SynapseML](how-to-use-text-analytics.md)
 - Language detection: detects language of the input text.
 - Sentiment analysis: returns a score between 0 and 1 indicating the sentiment in the input text.
 - Key phrase extraction: identifies the key talking points in the input text. 
@@ -50,7 +50,7 @@ Fabric provides two options for utilizing Azure AI services:
 - Entity linking: identifies and disambiguates the identity of entities found in text.
 
 ### [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/) 
-[REST API](how-to-use-text-translator-via-rest-api.md), [SynapseML](how-to-use-text-translator-via-synapseml.md)
+[REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text.
 - Transliterate: Converts text in one language from one script to another script.
 - Detect: Identifies the language of a piece of text. 
@@ -59,7 +59,7 @@ Fabric provides two options for utilizing Azure AI services:
 - Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. 
 
 ### [Azure AI Anomaly Detector](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector) 
-[REST API](how-to-use-anomaly-detector-via-rest-api.md), [SynapseML](how-to-use-anomaly-detector-via-synapseml.md)
+[REST API](how-to-use-anomaly-detector.md), [SynapseML](how-to-use-anomaly-detector.md)
 - Anomaly status of latest point: generates a model using preceding points and determines whether the latest point is anomalous.
 - Find anomalies: generates a model using an entire series and finds anomalies in the series.
 
@@ -88,9 +88,9 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 
 ## Next steps
 - [Check out the regions for prebuilt AI services](ai-services-regions.md)
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-via-python-sdk.md)
-- [Use prebuilt Anomaly Detector in Fabric](how-to-use-anomaly-detector-via-rest-api.md)
-- [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics-via-rest-api.md)
-- [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator-via-rest-api.md)
+- [Use prebuilt Azure OpenAI in Fabric](how-to-use-open-ai-sdk-synapse.md)
+- [Use prebuilt Anomaly Detector in Fabric](how-to-use-anomaly-detector.md)
+- [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
+- [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)
 
 
