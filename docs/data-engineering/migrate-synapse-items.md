@@ -2,7 +2,7 @@
 title: Migrate items
 description: Learn about how to migrate items from Azure Synapse Spark to Fabric.
 ms.reviewer: snehagunda
-ms.author: murggu
+ms.author: aimurg
 author: murggu
 ms.topic: migration
 ms.custom: ignite-2023

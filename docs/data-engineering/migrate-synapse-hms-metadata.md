@@ -2,7 +2,7 @@
 title: Migrate Hive Metastore metadata
 description: Learn about how to migrate HMS metadata from Azure Synapse Spark to Fabric.
 ms.reviewer: snehagunda
-ms.author: murggu
+ms.author: aimurg
 author: murggu
 ms.topic: migration
 ms.custom: ignite-2023
