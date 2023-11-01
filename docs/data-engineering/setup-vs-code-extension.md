@@ -14,8 +14,6 @@ ms.search.form: VSCodeExtension
 
 The Synapse Visual Studio Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Visual Studio (VS) Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
 
 ## Prerequisites
@@ -48,7 +46,7 @@ Run the **conda.sh** in the terminal:
 
 ## Install the extension and prepare your environment
 
-1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension.
 
 1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 

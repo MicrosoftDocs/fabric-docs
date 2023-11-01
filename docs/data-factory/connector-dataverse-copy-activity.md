@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Dataverse.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To use this connector with Azure AD service-principal authentication, you must set up server-to-server (S2S) authentication in Dataverse. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal). 

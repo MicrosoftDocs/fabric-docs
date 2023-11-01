@@ -14,8 +14,6 @@ ms.search.form: Create Spark Job Definition,spark_job_definition
 
 In this tutorial, learn how to create a Spark job definition in Microsoft Fabric.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you get started, you need:

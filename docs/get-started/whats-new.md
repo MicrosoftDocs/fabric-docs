@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 10/27/2023
+ms.date: 10/31/2023
 ms.topic: whats-new
 ---
 
@@ -113,7 +113,7 @@ This section summarizes recent new features and capabilities of [Data Factory in
 |July 2023|**New modern data connectivity and discovery experience in Dataflows**| An improved experience aims to expedite the [process of discovering data in Dataflow, Dataflow Gen2, and Datamart](https://blog.fabric.microsoft.com/blog/modern-get-data-in-dataflows?ft=All:).|
 |May 2023 |**Introducing Data Factory in Microsoft Fabric** | Data Factory enables you to [develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines](https://blog.fabric.microsoft.com/blog/introducing-data-factory-in-microsoft-fabric). |
 
-#### Synapse Data Factory samples and guidance
+#### Data Factory in Microsoft Fabric samples and guidance
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
@@ -137,6 +137,8 @@ This section summarizes recent new features and capabilities of the [Data Engine
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Create multiple OneLake shortcuts at once**|Creating multiple OneLake shortcuts just got easier. Rather than creating shortcuts one at a time, you can now browse to your desired location and select multiple targets at once. [All your selected targets then get created as new shortcuts in a single operation](https://blog.fabric.microsoft.com/blog/create-multiple-shortcuts-faster-and-easier?ft=All).|
+|October 2023|**Delta-RS introduces native support for OneLake**|The OneLake team worked with the Delta-RS community to help introduce [support for recognizing OneLake URLs in both Delta-RS and the Rust Object Store](https://blog.fabric.microsoft.com/blog/delta-rs-introduces-native-support-for-onelake?ft=All). |
 |September 2023|**Import notebook to your Workspace**|The [new "Import Notebook" entry on the Workspace -> New menu](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840918) lets you easily import new Fabric Notebook items in the target workspace. You can upload one or more files, including `.ipynb`, `.py`, `.sql`, `.scala`, and `.r` file formats. |
 |September 2023|**Notebook file system support in Synapse VS Code extension**|The [Synapse VS Code extension](../data-engineering/setup-vs-code-extension.md) [now supports notebook File System](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840916) for Data Engineering and Data Science in Microsoft Fabric. The Synapse VS Code extension empowers users to develop their notebook artifacts directly within the Visual Studio Code environment.|
 |September 2023|**Notebook sharing execute-only mode**|We now support checking the "Run" operation separately when sharing a notebook, if you just selected the "Run" operation, the [recipient would see a "Execution-only" notebook](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840921). |
@@ -182,11 +184,12 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Query insights**|The [query insights](../data-warehouse/query-insights.md) feature is a scalable, sustainable, and extendable solution to enhance the SQL analytics experience. With historic query data, aggregated insights, and access to actual query text, you can analyze and tune your query performance. |
 |October 2023|**Full DML to Delta Lake Logs**| [Fabric Warehouse now publishes all Inserts, Updates and Deletes](https://blog.fabric.microsoft.com/blog/announcing-fabric-warehouse-publishing-full-dml-to-delta-lake-logs?ft=All) for each table to their [Delta Lake Log](../data-warehouse/query-delta-lake-logs.md) in OneLake.|
 |October 2023|**V-Order write optimization**| V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. Starting this month, all data ingested into Fabric Warehouses use V-Order optimization. |
 |October 2023|**Burstable capacity**| [Burstable capacity](../data-warehouse/burstable-capacity.md) allows workloads to use more resources to achieve better performance. Burstable capacity is finite, with a limit applied to the backend compute resources to greatly reduce the risk of [throttling](../data-warehouse/compute-capacity-smoothing-throttling.md#throttling). For more information, see [Data Warehouse SKU Guardrails for Burstable Capacity](https://blog.fabric.microsoft.com/blog/data-warehouse-sku-guardrails-for-burstable-capacity/).|
 |October 2023|**Throttling and smoothing in Synapse Data Warehouse**| A new article details the [throttling and smoothing behavior in Synapse Data Warehouse](../data-warehouse/compute-capacity-smoothing-throttling.md), where almost all activity is classified as *background* to take advantage of the 24-hr smoothing window before throttling takes effect. Learn more about [how to observe utilization in Synapse Data Warehouse](../data-warehouse/how-to-observe-utilization.md). |
-|September 2023|**Default dataset improvements**|The [default dataset](../data-warehouse/model-default-power-bi-dataset.md) [no longer automatically adds new objects](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840914). This can be enabled in the Warehouse item settings. |
+|September 2023|**Default dataset improvements**|The [default dataset](../data-warehouse/default-power-bi-semantic-model.md) [no longer automatically adds new objects](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=All#post-4105-_Toc146840914). This can be enabled in the Warehouse item settings. |
 |September 2023|**Deployment pipelines now support warehouses**|Deployment pipelines enable creators to develop and test content in the service before it reaches the users. Supported content types include reports, paginated reports, dashboards, datasets, dataflows, and now warehouses. Learn how to [deploy content programmatically using REST APIs and DevOps](../cicd/deployment-pipelines/pipeline-automation.md).|
 |September 2023|**SQL Projects support for Warehouse in Microsoft Fabric**|Microsoft Fabric Data Warehouse is now supported in the [SQL Database Projects extension](/sql/azure-data-studio/extensions/sql-database-project-extension) available inside of [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) and [Visual Studio Code](https://visualstudio.microsoft.com/downloads/).|
 |September 2023|**Announcing: Column-level & Row-level security for Fabric Warehouse & SQL Endpoint**|[Column-level and row-level security in Fabric Warehouse and SQL Endpoint](https://blog.fabric.microsoft.com/blog/announcing-column-level-row-level-security-for-fabric-warehouse-sql-endpoint?ft=All) are now in preview, behaving similarly to the same features in SQL Server.|
@@ -209,6 +212,8 @@ This section summarizes recent improvements and features for [real-time analytic
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|October 2023|**Expanded Custom App Connections**|New [new custom app connections](https://blog.fabric.microsoft.com/blog/whats-new-in-eventstream-enhanced-ux-on-event-processor-and-expanded-custom-app-connections?ft=All) provide more flexibility when it comes to bringing your data streams into Eventstream.|
+|October 2023|**Enhanced UX on Event Processor**|New [UX improvements on the no-code Event Processor](https://blog.fabric.microsoft.com/blog/whats-new-in-eventstream-enhanced-ux-on-event-processor-and-expanded-custom-app-connections?ft=All) provide an intuitive experience, allowing you to effortlessly add or delete operations on the canvas.|
 |October 2023|**Eventstream Kafka Endpoints and Sample Code**|[The Custom App feature has new endpoints in sources and destinations](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573558), including sample Java code for your convenience. Simply add it to your application, and you'll be all set to stream your real-time event to Eventstream.|
 |October 2023|**Event processing editor UX improvements**|[Recent UX improvements](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573557) introduce a full-screen mode, providing a more spacious workspace for designing your data processing workflows. The insertion and deletion of data stream operations have been made more intuitive, making it easier to drag and drop and connect your data transformations.|
 |October 2023|**KQL Database Auto scale algorithm improvements**| Users do not need to worry about how many resources are needed to support their workloads in a KQL database. KQL Database has a sophisticated in-built, multi-dimensional, auto scaling algorithm. We recently [implemented some optimizations that will make some time series analysis more efficient](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573556).|

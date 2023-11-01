@@ -13,8 +13,6 @@ ms.date: 08/17/2023
 
 The Fabric Delete data activity can delete data from any of the data sources supported by [!INCLUDE [product-name](../includes/product-name.md)]. 
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 You can use the Delete Activity in Data Factory to delete files or folders from any supported storage stores. Use this activity to clean up or archive files when they are no longer needed.
 
 ## Prerequisites

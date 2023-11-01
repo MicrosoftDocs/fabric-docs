@@ -21,8 +21,6 @@ In this guide, you will:
 
 - Query one copy of data on OneLake with SQL.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you begin, you must:

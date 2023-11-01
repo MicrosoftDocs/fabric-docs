@@ -13,8 +13,6 @@ ms.date: 05/23/2023
 
 This module takes about 25 minutes to create a dataflow, apply transformations, and move the raw data from the Bronze table into a Gold Lakehouse table. 
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table is loaded and ready for consumption.
 
 The high-level steps in the dataflow are as follows:
@@ -28,8 +26,8 @@ The high-level steps in the dataflow are as follows:
 
 ## Get data from a Lakehouse table
 
-1. From the sidebar, select **Create**, and then **Dataflow Gen2 (Preview)** to create a new dataflow gen2.
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 (Preview) button highlighted.":::
+1. From the sidebar, select **Create**, and then **Dataflow Gen2** to create a new dataflow gen2.
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted.":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 

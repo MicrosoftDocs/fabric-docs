@@ -13,8 +13,6 @@ ms.date: 05/23/2023
 
 In this tutorial, learn how to explore the data in your lakehouse with a notebook.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 To get started, you need the following prerequisites:

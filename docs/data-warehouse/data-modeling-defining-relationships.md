@@ -13,7 +13,7 @@ ms.search.form: Model view # This article's title should not change. If so, cont
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-A well-defined data model is instrumental in driving your analytics and reporting experiences. In a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables may be empty, but the schemas (their structures) need to be defined.
+A well-defined data model is instrumental in driving your analytics and reporting experiences. In a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can easily build and change your data model with a few simple steps in our visual editor. You need to have at least a small sample of data loaded before you can explore these concepts further; tables can be empty, but the schemas (their structures) need to be defined.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -59,8 +59,11 @@ Single or multi-selected relationships can also be deleted by pressing **Delete*
 
 ### Using model view layouts
 
-During the session, users may create multiple tabs in the model view to depict say, data warehouse schemas or further assist with database design. Currently the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
+During the session, users can create multiple tabs in the model view to depict multiple data warehouse schemas or further assist with database design.
 
-## Next steps
+Currently, the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
 
-- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+## Next step
+
+> [!div class="nextstepaction"]
+> [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)

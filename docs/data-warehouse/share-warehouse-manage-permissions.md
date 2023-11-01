@@ -106,7 +106,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 
 ## Limitations
 
-- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions may reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions will reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
 - Shared recipients are able to access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using owner's identity (delegated mode). Ensure that the owner of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is not removed from the workspace.
 - Shared recipients only have access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they receive and not any other items within the same workspace as the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to provide permissions for other users in your team to collaborate on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] (read and write access), add them as Workspace roles such as "Member" or "Contributor".
 - Currently, when you share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and choose **Read all data using SQL**, the shared recipient can access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in a read-only mode. These shared recipients can create queries, but cannot currently save their queries.
@@ -118,6 +118,14 @@ You can choose to add or remove permissions using the "Manage permissions" exper
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
   - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
+
+## Data protection features
+
+Microsoft Fabric data warehousing supports several technologies that administrators can use to protect sensitive data from unauthorized viewing. By securing or obfuscating data from unauthorized users or roles, these security features can provide data protection in both a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] without application changes.
+
+- [Column-level security](column-level-security.md) prevents unauthorized viewing of columns in tables.
+- [Row-level security](row-level-security.md) prevents unauthorized viewing of rows in tables, using familiar `WHERE` clause filter predicates.
+- [Dynamic data masking](dynamic-data-masking.md) prevents unauthorized viewing of sensitive data by using masks to prevent access to complete, such as email addresses or numbers.
 
 ## Related content
 

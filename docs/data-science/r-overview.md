@@ -14,7 +14,7 @@ ms.search.form: R Language
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides built-in R support for Apache Spark. This includes support for [SparkR](https://spark.apache.org/docs/latest/sparkr.html) and [sparklyr](https://spark.rstudio.com/), which allows users to interact with Spark using familiar Spark or R interfaces. You can analyze data using R through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 This document provides an overview of developing Spark applications in Synapse using the R language. 
 
@@ -68,9 +68,6 @@ You can learn more about how to use SparkR by visiting [How to use SparkR](./r-u
 [sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
 To learn more about how to use sparklyr, visit [How to use sparklyr](./r-use-sparklyr.md).
-
-> [!NOTE] 
-> Using SparkR and sparklyr in the same notebook session isn't supported yet.
 
 
 ## Use Tidyverse

@@ -14,8 +14,6 @@ ms.date: 05/30/2023
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments, it's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 
 - Get started with zero setup effort.

@@ -14,8 +14,6 @@ ms.search.form: Browse artifacts recent runs
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, Apache Spark job definitions, jobs, and other types of applications in your workspace. This article explains how to view your running Apache Spark applications, making it easier to keep an eye on the latest running status.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## View the recent runs pane
 
 We can open **Recent runs** pane with the following steps:

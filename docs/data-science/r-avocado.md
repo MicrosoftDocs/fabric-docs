@@ -15,7 +15,7 @@ ms.search.form: R Language
 
 This article shows an end to end example of using R to analyze, visualize the avocado prices in the US, and predict future avocado prices.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 :::image type="content" source="media/r-avocado/avocado.png" alt-text="Photograph of avocado.":::
 
