@@ -15,7 +15,7 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 
 The Purview hub has a view for Fabric administrators and a view for non-admin Fabric users.
 * The administrator view provides visibility over the tenant's entire Fabric data estate.
-* The non-adminstrator view provides users visibilty over their own Fabric content.
+* The non-adminstrator view provides users visibility over their own Fabric content.
 
 When you open the hub, you see the view that is appropriate for you. In the sections below, select the appropriate tab to see the information that is relevant to you.
 
@@ -35,20 +35,20 @@ To access the hub, open the Fabric settings pane and choose **Microsoft Purview 
 
 :::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-When you select the Microsoft Purview hub option, the hub opens to the appropriate view. If this is the first time insights are being generated, it make take a few moment for them to appear.
+When you select the Microsoft Purview hub option, the hub opens to the appropriate view. If this is the first time insights are being generated, it make take a few moments for them to appear.
 
 >[!NOTE]
 > Some users won't be able to see a view when they select the **Microsoft Purview hub** option. See [Considerations and limitations for exceptions]().
 
 # [Fabric administrator](#tab/admin-view)
 
-When a Fabric administrator opens the Purview hub, they see insights that include the entire Fabric data estate - all Fabric items, both data and non-data items, of all the users in the tenant. They can also select tiles to access Purview capabilites that can help them manage their tenant's data estate.
+When a Fabric administrator opens the Purview hub, they see insights that include the entire Fabric data estate - all Fabric items, both data and non-data items, of all the users in the tenant. They can also select tiles to access Purview capabilities that can help them manage their tenant's data estate.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
 # [Fabric data owner](#tab/data-owner-view)
 
-When a data owner opens the Purview hub, they see insights that include just the Fabric data items that they own. They also can select tiles to access Purview capabilites that can help them govern their Fabric items.
+When a data owner opens the Purview hub, they see insights that include just the Fabric data items that they own. They also can select tiles to access Purview capabilities that can help them govern their Fabric items.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
@@ -62,7 +62,7 @@ Use the Microsoft Fabric data section of the hub to see insights about your Fabr
 
 # [Fabric administrator](#tab/admin-view)
 
-When a Fabric administrator opens the Purview hub, they see insights that include the entire Fabric data estate - all Fabric items, both data and non-data items, of all the users in the tenant. They can also select tiles to access Purview capabilites that can help them manage their tenant's data estate.
+When a Fabric administrator opens the Purview hub, they see insights that include the entire Fabric data estate - all Fabric items, both data and non-data items, of all the users in the tenant. They can also select tiles to access Purview capabilities that can help them manage their tenant's data estate.
 
 * The items tab shows you insights about your organization's Fabric items - how many there are, what kinds they are, how many are promoted or certified, how these promoted and certified items are distributed throughout the workspaces, etc. Such insights might be used to drive adoption of certification in workspaces.
 
