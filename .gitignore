@@ -9,3 +9,4 @@ _repo.*/
 .DS_Store
 docs/data-engineering/.DS_Store
 media/.DS_Store
+.idea/
