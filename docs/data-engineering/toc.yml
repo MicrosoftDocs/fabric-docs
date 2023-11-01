@@ -175,17 +175,15 @@ items:
     items:
     - name: Overview
       href: migrate-synapse-overview.md
-    - name: Migrate items
-      items:
-      - name: Migrate Spark pools
-        href: migrate-synapse-spark-pools.md
-      - name: Migrate Spark configurations
-        href: migrate-synapse-spark-configurations.md
-      - name: Migrate Spark libraries
-        href: migrate-synapse-spark-libraries.md
-      - name: Migrate notebooks
-        href: migrate-synapse-notebooks.md
-      - name: Migrate Spark Job Definition
-        href: migrate-synapse-sjd.md
+    - name: Migrate Spark pools
+      href: migrate-synapse-spark-pools.md
+    - name: Migrate Spark configurations
+      href: migrate-synapse-spark-configurations.md
+    - name: Migrate Spark libraries
+      href: migrate-synapse-spark-libraries.md
+    - name: Migrate notebooks
+      href: migrate-synapse-notebooks.md
+    - name: Migrate Spark Job Definition
+      href: migrate-synapse-sjd.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md

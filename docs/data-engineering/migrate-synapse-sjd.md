@@ -9,46 +9,47 @@ ms.custom: ignite-2023
 ms.date: 11/03/2023
 ---
 
-# Migrate Spark Job Definition
+# Migrate Spark Job Definition from Azure Synapse to Fabric
 
 To move Spark Job Definitions (SJD) from Azure Synapse to Fabric, you have two different options:
 
 * Option 1: create SJD manually in Fabric.
-* Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API.
+* Option 2: you can use a script to export SJDs from Azure Synapse and import them in Fabric using the API.
 
 For SJD considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
 ## Option 1: Create SJD manually
 
-To export an SJD from Azure Synapse:
+To export a SJD from Azure Synapse:
 
-1.	**Access Azure Synapse Studio**: Sign-in into the Azure portal, navigate to your Azure Synapse workspace, and open Azure Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate the Python/Scala/R Spark Job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate.
 1.	**Export the Job Definition Configuration**:
-    * In Synapse Studio, open the Spark job definition.
+    * In Synapse Studio, open the Spark Job Definition.
     * Export or note down the configuration settings, including script file location, dependencies, parameters, and any other relevant details.
 
-To create a new SJD based on the exported SJD information:
-1.	**Access Fabric Workspace**: Sign-in into Fabric and access your workspace.
-1.	**Create a New Job in Fabric**:
-    * In Fabric, go to Data Engineering homepage.
-    * Click "Spark Job Definition."
+To create a new SJD based on the exported SJD information in Fabric:
+
+1.	**Access Fabric workspace**: Sign-in into Fabric and access your workspace.
+1.	**Create a new SJD in Fabric**:
+    * In Fabric, go to **Data Engineering homepage**.
+    * Select **Spark Job Definition.**
     * Configure the job using the information you exported from Synapse, including script location, dependencies, parameters, and cluster settings.
-1.	**Adapt and Test**: Make any necessary adaptations to the script or configuration to suit the Fabric environment. Test the job in Fabric to ensure it runs correctly.
+1.	**Adapt and Test**: Make any necessary adaptation to the script or configuration to suit the Fabric environment. Test the job in Fabric to ensure it runs correctly.
 
 :::image type="content" source="media\migrate-synapse\migrate-sjd-create.png" alt-text="Screenshot showing SJD creation.":::
 
 Learn more about how to [create an Apache Spark job definition](create-spark-job-definition.md) in Fabric.
 
 Once the SJD is created, validate dependencies:
-* Spark version – ensure using the same Spark version while creating the custom Spark pool in Fabric.
+* Ensure using the same Spark version while creating the custom Spark pool in Fabric.
 * Validate the existence of the main definition file. 
 * Validate the existence of the referenced files and resources.
 * Linked services, data source connections and mount points.
 
 ## Option 2: Use the Fabric API
 
-Follow these two key steps for migration:
+Follow these key steps for migration:
 * Pre-migration steps
 * Step 1: Export SJD from Synapse to OneLake (json) 
 * Step 2: Import SJD automatically into Fabric using the Fabric API
@@ -61,7 +62,7 @@ The pre-migration steps include actions you need to consider before starting SJD
 
 ### Step 1: Export SJD from Azure Synapse workspace 
 
-The focus of Step 1 is on exporting the SJD from Azure Synapse workspace to OneLake in json format. This process is as follows:
+The focus of Step 1 is on exporting SJD from Azure Synapse workspace to OneLake in json format. This process is as follows:
 
 * **1.1) Import SJD migration notebook** to Fabric workspace. [This notebook](NEEDLINK) exports all SJDs from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export SJD.
 * **1.2) Configure the parameters** in the first command to export SJD to an intermediate storage (OneLake). This only exports the json metadata file.
@@ -84,7 +85,7 @@ prefix = "<>" # this prefix is used during import {prefix}{sjd_name}
 output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakehouse_id}/Files/{export_folder_name}"
 ```
 
-* **1.3) Run the first two cells** to export SJD to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
+* **1.3) Run the first two cells** of the `nt-sjd-export-import-json.ipynb` to export SJD metadata to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
 :::image type="content" source="media\migrate-synapse\migrate-sjd-export-api.png" alt-text="Screenshot showing SJD export in OneLake.":::
 
@@ -92,11 +93,11 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 
 Step 2 is when SJDs are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
-* **2.1) Validate the configurations** in the 1.2) to ensure the right workspace and prefix are indicated to import the SJDs.
-* **2.2) Run the third cell** to import all SJD from intermediate location.
+* **2.1) Validate the configurations** in the 1.2 to ensure the right workspace and prefix are indicated to import the SJDs.
+* **2.2) Run the third cell** of the `nt-sjd-export-import-json.ipynb` to import all SJDs from intermediate location.
 
 > [!NOTE]
-> The export option outputs a json metadata file. Ensure that SJD executable files, reference files, and arguments are accessible in Fabric.
+> The export option outputs a json metadata file. Ensure that SJD executable files, reference files, and arguments are accessible from Fabric.
 
 ## Next steps
 
