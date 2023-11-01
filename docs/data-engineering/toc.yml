@@ -169,3 +169,13 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+- name: Migration guides
+  items:
+  - name: From Azure Synapse
+    items:
+    - name: Overview
+      href: migrate-synapse-overview.md
+    - name: Migrate items
+      href: migrate-synapse-items.md
+    - name: Migrate Hive Metastore metadata
+      href: migrate-synapse-hms-metadata.md
