@@ -107,7 +107,7 @@ Under **Advanced**, you can specify the following fields:
     - If you specify partition root path as `root/folder/year=2020`, copy activity will generate two more columns month and day with value "08" and "27" respectively, in addition to the columns inside the files.
     - If partition root path is not specified, no extra column will be generated.
 
-    :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
+  :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
