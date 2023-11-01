@@ -29,11 +29,11 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 1. To change the data retention policy, browse to your KQL database and select **Manage** > **Data policies**.
 
-    :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
+    :::image type="content" source="media/data-policies/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
 1. Under **Retention**, either select the toggle to set the retention period to **Unlimited**, or enter a time period and select **Done**. By default, your data is stored for 3650 days.
 
-    :::image type="content" source="media/data-management/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
+    :::image type="content" source="media/data-policies/retention-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
 > [!NOTE]
 > The minimum retention period is 1 day. The maximum retention period is 36,500 days.
@@ -44,13 +44,13 @@ The caching policy allows to you to choose which data should be cached and kept 
 
 For more information, see [Caching policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context&pivots=fabric).
 
-1. Browse to your KQL database and select  **Manage** > **Data policies**
+1. To change the caching policy, browse to your KQL database and select **Manage** > **Data policies**.
 
-    :::image type="content" source="media/data-management/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
+    :::image type="content" source="media/data-policies/data-policies.png" alt-text="Screenshot showing the manage tab in a KQL database." :::
 
 1. Under **Caching**, either select the toggle to set the caching period to **Unlimited**, or enter a time period and select **Done**. By default, your data is cached for 3650 days.
 
-    :::image type="content" source="media/data-management/caching-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
+    :::image type="content" source="media/data-policies/caching-policy.png" alt-text="Screenshot of data retention policy pane with default value.":::
 
 > [!NOTE]
 > The time period you set for the caching policy must be lower than or equal to the data retention time period.
