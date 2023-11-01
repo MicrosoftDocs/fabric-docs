@@ -59,7 +59,7 @@ In this example, you can see how easily you can run T-SQL queries across the `Wi
 1. Type `Cross-warehouse query` to change the name of the query.
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create a Power BI report](tutorial-power-bi-report.md)

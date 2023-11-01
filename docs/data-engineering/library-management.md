@@ -6,18 +6,18 @@ ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/20/2023
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
-**Libraries** provide reusable code that Apache Spark developers may want to include in their Spark application.
+**Libraries** provide reusable code that Apache Spark developers might want to include in their Spark application.
 
 Each workspace comes with a preinstalled set of libraries available in the Spark run-time that you can use immediately in a notebook or Spark job definition. We refer to these as built-in libraries.
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Based on your scenarios and specific needs, you can include other libraries. There are two types of libraries you may want to include:
+Based on your scenarios and specific needs, you can include other libraries. There are two types of libraries you can include:
 
 - **Feed library**: Feed libraries come from public sources or repositories. You can install Python feed libraries from PyPI and Conda by specifying the source in the Library Management portals. You can also use a Conda environment specification *.yml* file to install libraries.
 
@@ -37,7 +37,7 @@ You can manage all the previously mentioned types of libraries via two different
    > [!IMPORTANT]
    > In-line installation is session-specific and does not persist across sessions.
    >
-   > The Python interpreter will be restarted to apply the changes of library, any variables defined before running the command cell will be lost. Therefore, we strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
+   > The Python interpreter is restarted to apply the change of libraries. Any variables defined before running the command cell are lost. Therefore, we strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
 
 **Summarizing all library management behaviors currently available in Fabric:**
 
@@ -50,26 +50,30 @@ You can manage all the previously mentioned types of libraries via two different
 | **Jar** | Supported | Not supported |
 
 > [!IMPORTANT]
-> We currently have limitations of *.jar* library.
+> We currently have limitations on the *.jar* library.
 >
-> - If you upload a *.jar* file with different version of built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
-> - *%% configure* magic commands are not fully supported on Fabric at this moment. Please don't use it to bring *.jar* file to your notebook session.
+> - If you upload a *.jar* file with a different version of a built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
+> - *%% configure* magic commands are currently not fully supported on Fabric. Don't use them to bring *.jar* files to your notebook session.
 
 ## Library management in workspace setting
 
-Under the **Workspace settings**, you find the workspace-level library management portal: **Workspace setting** > **Data engineering** > **Library management**.
+Under **Workspace settings**, find the workspace-level library management portal: **Workspace setting** > **Data engineering** > **Library management**.
 
 ### Manage feed library in workspace setting
 
 In this section, we explain how to manage feed libraries from PyPI or Conda using the workspace library management portal.
 
-- **View and search feed library**: You can see the installed libraries and their name, version, and dependencies on the **library management portal**. You can also use the filter box on the upper right corner to find an installed library quickly.
-- **Add new feed library**: The default source for installing Python feed libraries is PyPI. You can also select "Conda" from the drop-down button next to the add button. To add a new library, select the **+** button and enter the library name and version in the new row.
+- **View and search feed library**: You can see the installed libraries and their name, version, and dependencies on the **library management portal**. You can also use the filter box in the upper right corner to find an installed library quickly.
+
+- **Add new feed library**: The default source for installing Python feed libraries is PyPI. You can also select "Conda" from the drop-down icon next to the add icon. To add a new library, select **+** and enter the library name and version in the new row.
 
    Alternatively, you can upload a .yml file to install multiple feed libraries at once.
-- **Remove existing feed library**: To remove a library, select the Trash button on its row.
+
+- **Remove existing feed library**: To remove a library, select the Trash icon on its row.
+
 - **Update the version of existing feed library**: To change the version of a library, select a different one from the drop-down box on its row.
-- **Review and apply changes**: You can review your changes in the "Pending changes" panel. You can remove a change by clicking on the **X** button, or discard all changes by clicking on the **Discard** button at the bottom of the page. When you're satisfied with your changes, select **Apply** to make these changes effective.
+
+- **Review and apply changes**: You can review your changes in the "Pending changes" panel. You can remove a change by selecting the **X** icon, or discard all changes by selecting the **Discard** icon at the bottom of the page. When you're satisfied with your changes, select **Apply** to make these changes effective.
 
 ### Manage custom libraries in workspace setting
 
@@ -77,9 +81,10 @@ In this section, we explain how to manage your custom packages, such as *.jar*, 
 
 - **Upload new custom library**: You can upload your custom codes as packages to the Fabric runtime through the portal. The library management module helps you resolve potential conflicts and download dependencies in your custom libraries.
 
-  To upload a package, select the **Upload** button under the **Custom libraries** panel and select a local directory.
+  To upload a package, select the **Upload** icon under the **Custom libraries** panel and choose a local directory.
 
-- **Remove existing custom library**: You can remove a custom library from the Spark runtime by clicking on the trash button under the **Custom libraries** panel.
+- **Remove existing custom library**: You can remove a custom library from the Spark runtime by selecting the trash icon under the **Custom libraries** panel.
+
 - **Review and apply changes**: As with feed libraries, you can review your changes in the **Pending changes** panel and apply them to your Fabric Spark workspace environment.
 
 > [!NOTE]
@@ -87,11 +92,11 @@ In this section, we explain how to manage your custom packages, such as *.jar*, 
 
 ### Cancel update
 
-The library update process may take some time to complete. You can cancel the process and continue editing while it's updating. The **Cancel** button appears during the process.
+The library update process can take some time to complete. You can cancel the process and continue editing while it's updating. The **Cancel** option appears during the process.
 
 ### Troubleshooting
 
-If the library update process fails, you receive a notification. You can select the **View log** button to see the log details and troubleshoot the problem. If you encounter a system error, you can copy the root activity ID and report it to the support team.
+If the library update process fails, you receive a notification. You can select **View log** to see the log details and troubleshoot the problem. If you encounter a system error, you can copy the root activity ID and report it to the support team.
 
 ## In-line installation
 
@@ -126,14 +131,14 @@ You can use in-line commands to enable *altair* on your notebook session without
 
    The log in the cell output indicates the result of installation.
 
-2. Import the package and dataset by running the following codes in another notebook cell:
+1. Import the package and dataset by running the following codes in another notebook cell:
 
    ```python
    import altair as alt
    from vega_datasets import data
    ```
 
-3. Now you can play around with the session-scoped *altair* library:
+1. Now you can play around with the session-scoped *altair* library:
 
    ```python
    # load a simple dataset as a pandas DataFrame
@@ -161,19 +166,19 @@ After uploading, you can use the following command to install the custom library
 Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
 
 > [!TIP]
-> All available R in-line commands and its clarifications can be found: [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html) and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
+> Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html), and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
 
-Follow this example to walk through the steps of installing an R feed library:
+To install an R feed library:
 
 1. Switch the working language to “SparkR(R)” in the notebook ribbon.
 
-2. Run the following command in a notebook cell to install *caesar* library:
+1. Run the following command in a notebook cell to install the *caesar* library.
 
    ```python
    install.packages("caesar")
    ```
 
-3. Now you can play around with the session-scoped *caesar* library with Spark job
+1. Now you can play around with the session-scoped *caesar* library with a Spark job.
 
    ```python
    library(SparkR)

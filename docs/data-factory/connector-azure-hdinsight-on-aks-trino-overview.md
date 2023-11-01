@@ -4,7 +4,7 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/18/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -16,7 +16,7 @@ The Azure HDInsight on AKS Trino connector is supported in Data Factory for [!IN
 
 ## Support in Dataflow Gen2
 
-For information on how to connect to Azure HDInsight on AKS Trino in Dataflow Gen2, go to [Set up your Azure HDInsight on AKS Trino connection](connector-azure-hdinsight-on-aks-trino.md).
+To learn about how to connect to Azure HDInsight on AKS Trino in Dataflow Gen2, go to [Set up your Azure HDInsight on AKS Trino connection](connector-azure-hdinsight-on-aks-trino.md).
 
 ## Support in data pipelines
 
