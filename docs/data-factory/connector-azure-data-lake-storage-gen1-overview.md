@@ -14,9 +14,9 @@ The Azure Data Lake Storage Gen1 connector is supported in Data Factory for [!IN
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
-## Supported capabilities
+## Supported in Data pipeline
 
-The Azure Data Lake Storage Gen1 connector supports the following capabilities in data pipelines:
+The Azure Data Lake Storage Gen1 connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -24,4 +24,4 @@ The Azure Data Lake Storage Gen1 connector supports the following capabilities i
 | **Lookup activity** | None | Service principal |
 | **GetMetadata activity** | None | Service principal|
 
-To learn more about the copy activity configuration for Azure Data Lake Storage Gen1 in data pipelines, go to [Configure in a data pipeline copy activity](connector-azure-data-lake-storage-gen1-copy-activity.md).
+To learn more about the copy activity configuration for Azure Data Lake Storage Gen1 in Data pipeline, go to [Configure in a data pipeline copy activity](connector-azure-data-lake-storage-gen1-copy-activity.md).
