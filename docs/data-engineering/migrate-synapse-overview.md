@@ -34,5 +34,7 @@ Transitioning from Azure Synapse Spark to Fabric Spark requires a deep understan
 
 ## Next steps
 
-- [Azure Synapse Spark vs. Fabric Spark](azure-synapse-spark-vs-fabric-spark.md)
-- To learn more about migration options for Spark pools, libraries, configurations, notebooks and Spark Job Definitions (SJD) see [Migrate items](azure-synapse-spark-vs-fabric-spark.md)
+- [Azure Synapse Spark vs. Fabric Spark](TBC)
+- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark Job Definitions (SJD)](migrate-synapse-sjd.md)
+- [Migrate data and pipelines](TBC)
+- [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md)

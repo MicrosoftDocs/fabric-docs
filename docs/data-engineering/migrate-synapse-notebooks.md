@@ -16,6 +16,8 @@ Migrating a notebook from Azure Synapse to Fabric can be done in two different w
 * Option 1: you can export a Notebook from Azure Synapse (.ipynb) and import it in Fabric (manually)
 * Option 2: you can use a script to export notebooks from Azure Synapse and import them in Fabric using the API
 
+For notebook considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+
 ## Option 1: Import/Export Notebook
 
 To export a notebook from Azure Synapse:
@@ -94,3 +96,9 @@ Step 2 is when notebooks are imported from intermediate storage into the Fabric 
 
 •	**2.1) Validate the configurations** in step 1.2) to ensure the right workspace and prefix are indicated to import the notebooks.
 •	**2.2) Run the third cell** to import all notebooks from intermediate location.
+
+## Next steps
+
+- [Migrate Spark pools](migrate-synapse-spark-pools.md)
+- [Migrate data and pipelines](TBC)
+- [Migrate Spark Job Definitions](migrate-synapse-hms-metadata.md)

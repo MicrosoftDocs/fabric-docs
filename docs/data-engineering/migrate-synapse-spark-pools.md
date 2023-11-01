@@ -18,6 +18,8 @@ While Azure Synapse provides various Spark pools, Fabric offers [Starter pools](
 
 If you have more than one Spark pool and you plan to move those to the same Fabric workspace, the recommended approach is to use Option 2, creating multiple custom environments (one environment per Apache Spark pool).
 
+For Spark pool considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+
 ## Option 1: From Spark Pool to Workspace Default Environment
 
 You can create custom Spark pools from your Fabric workspace and use them as the default environment. The default environment is used by all notebooks and SJD in the same workspace. 
@@ -61,3 +63,8 @@ With custom environments, you will be able to set up custom Spark properties and
 1.	Click on “Save” and “Publish” changes
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-custom-environment.png" alt-text="Screenshot showing custom environment.":::
+
+## Next steps
+
+- [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
+- [Migrate Spark libraries](migrate-synapse-spark-libraries.md)

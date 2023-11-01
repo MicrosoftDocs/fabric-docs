@@ -16,6 +16,8 @@ To move Spark Job Definitions (SJD) from Azure Synapse to Fabric, you have two d
 * Option 1: create SJD manually in Fabric
 * Option 2: you can use a script to export SJD from Azure Synapse and import them in Fabric using the API
 
+For SJD considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+
 ## Option 1: Create SJD manually
 
 To export a SJD from Azure Synapse:
@@ -95,3 +97,9 @@ Step 2 is when SJD are imported from intermediate storage into the Fabric worksp
 
 > [!NOTE]
 > The export option outputs a json metadata file. Ensure that SJD executable files, reference files, and arguments are accessible in Fabric.
+
+## Next steps
+
+- [Migrate Spark pools](migrate-synapse-spark-pools.md)
+- [Migrate data and pipelines](TBC)
+- [Migrate notebooks](migrate-synapse-notebooks.md)

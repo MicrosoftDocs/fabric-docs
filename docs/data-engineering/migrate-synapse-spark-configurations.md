@@ -13,6 +13,8 @@ ms.date: 11/03/2023
 
 Options to migrate Azure Synapse pool configurations to Fabric.
 
+For Spark configuration considerations, please refer to [differences between Azure Synapse Spark and Fabric](TBC).
+
 ## Option 1: Adding Spark Configurations to Custom Environment
 
 Within an environment, you can set Spark properties and those will be applied to the environment pool.
@@ -28,3 +30,8 @@ Within an environment, you can set Spark properties and those will be applied to
 1.	Click on “Save” and “Publish” changes
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
+
+## Next steps
+
+- [Migrate Spark pools](migrate-synapse-spark-pools.md)
+- [Migrate Spark libraries](migrate-synapse-spark-libraries.md)
