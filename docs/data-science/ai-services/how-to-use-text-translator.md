@@ -13,7 +13,7 @@ ms.search.form:
 
 # Use prebuilt Azure AI Translator in Fabric with REST API and SynapseML (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 [Azure AI Translator](https://learn.microsoft.com/azure/ai-services/translator/) is an [Azure AI services](https://learn.microsoft.com/azure/ai-services/) that enables you to perform language translation and other language-related operations.
 
@@ -743,7 +743,7 @@ display(result.select("textAndTranslation", "examples"))
 
 - [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator-via-synapseml.md)
+- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-open-ai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-open-ai-sdk-synapse.md)

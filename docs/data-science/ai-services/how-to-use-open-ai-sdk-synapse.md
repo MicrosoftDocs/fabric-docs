@@ -362,10 +362,9 @@ display(embedding.transform(df))
 ## Next steps
 
 - [Use prebuilt Anomaly Detector in Fabric with REST API](how-to-use-anomaly-detector.md)
-- [Use prebuilt Anomaly Detector in Fabric with SynapseML](how-to-use-anomaly-detector.md)
 - [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
 - [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML and Python SDK](how-to-use-openai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML and Python SDK](how-to-use-open-ai-sdk-synapse.md)
