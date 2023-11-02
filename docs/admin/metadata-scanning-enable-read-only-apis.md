@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Enable service principal authentication for read-only admin APIs
@@ -87,11 +87,11 @@ Service principal authentication is currently supported for the following read-o
 
 ## How to check if your app has admin-consent required permissions
 
-An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. To check the assigned permissions: [POWER BI?]
+An app using service principal authentication that calls read-only admin APIs **must not** have any admin-consent required permissions for Power BI set on it in the Azure portal. To check the assigned permissions:
 
 1. Sign into the **Azure portal** as a Global Administrator, an Application Administrator, or a Cloud Application Administrator.
 1. Select **Azure Active Directory**, then **Enterprise applications**.
-1. Select the application you want to grant access to Power BI. [POWER BI?]
+1. Select the application you want to grant access to Power BI.
 1. Select **Permissions**. There must be no admin-consent required permissions of type Application registered for the app.
 
 ## Considerations and limitations

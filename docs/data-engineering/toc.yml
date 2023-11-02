@@ -75,7 +75,9 @@ items:
       items:
         - name: Runtimes overview
           href: runtime.md
-        - name: Runtime 1.1
+        - name: Runtime 1.2 (Spark 3.4)
+          href: runtime-1-2.md
+        - name: Runtime 1.1 (Spark 3.3)
           href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
