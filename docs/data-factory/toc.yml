@@ -63,6 +63,12 @@
         href: connector-amazon-s3.md
       - name: Configure in a data pipeline copy activity
         href: connector-amazon-s3-copy-activity.md
+    - name: Amazon S3 Compatible
+      items:
+      - name: Overview
+        href: connector-amazon-s3-compatible-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services
       items:
       - name: Overview
