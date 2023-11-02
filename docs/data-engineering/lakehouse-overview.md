@@ -16,11 +16,11 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
-## [Lakehouse SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md)
+## Lakehouse SQL analytics endpoint
 
 The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
 
-It's important to note that the SQL analytics endpoint is a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
+It's important to note that the SQL analytics endpoint is a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse. Gain more insight [here](lakehouse-sql-analytics-endpoint.md).
 
 > [!NOTE]
 > Only the tables in Delta format are available in the SQL analytics endpoint. Parquet, CSV, and other formats can not be queried using the SQL analytics endpoint. If you don't see your table, you will need convert it to Delta format.

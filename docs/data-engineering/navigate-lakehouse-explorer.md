@@ -55,19 +55,19 @@ The Lakehouse ribbon is your quick-access action bar, offering a convenient way 
 
 There are several ways to load data into your Lakehouse from the explorer page:
 
-- **Local file/folder upload:** Easily upload data from your local machine directly to the File Section of your Lakehouse.
+- **Local file/folder upload:** Easily upload data from your local machine directly to the File Section of your Lakehouse. Learn more [here](lakehouse-notebook-load-data.md)**.
 
-- **[Notebook code:](lakehouse-notebook-load-data.md)** Utilize available Spark libraries to connect to data sources and load data into dataframes, then save it in your Lakehouse.
+- **Notebook code:** Utilize available Spark libraries to connect to data sources and load data into dataframes, then save it in your Lakehouse. Find additional information [here](lakehouse-notebook-load-data.md)**.
 
-- **[Copy tool in pipelines:](..\data-factory\copy-data-activity.md).** Connect to various data sources and land the data in its original format or convert it into a Delta table.
+- **Copy tool in pipelines:** Connect to various data sources and land the data in its original format or convert it into a Delta table. Learn more [here](..\data-factory\copy-data-activity.md)**.
 
-- **[Dataflows Gen 2:](../data-factory/create-first-dataflow-gen2.md)** Create dataflows to import data, transform it, and publish it into your Lakehouse.
+- **Dataflows Gen 2:** Create dataflows to import data, transform it, and publish it into your Lakehouse. Find out more [here](../data-factory/create-first-dataflow-gen2.md)**.
 
-- **[Shortcut](lakehouse-shortcuts.md)** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it.
+- **Shortcut** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it. Find additional information [here](lakehouse-shortcuts.md)**.
 
 - **Samples:** Quickly ingest sample data to jump-start your exploration of datasets and tables.
 
-Learn more about the different use cases to understand the best way to [load data in your lakehouse](load-data-lakehouse.md).
+Discover different use cases to understand the best way to [load data in your lakehouse](load-data-lakehouse.md).
 
 ### Accessing Lakehouse' SQL analytics endpoint
 
