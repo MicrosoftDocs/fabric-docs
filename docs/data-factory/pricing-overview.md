@@ -12,8 +12,6 @@ ms.date: 10/30/2023
 
 Data Factory in Microsoft Fabric provides serverless and elastic data integration service capabilities built for cloud scale. There's no fixed-size compute power that you need to plan for peak load; rather you need to specify which operations to perform while authoring pipelines and dataflows, which translates into an amount of **Fabric Capacity Units** consumed, that you can further track using the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to plan and manage your consumption metrics. This allows you to design the ETL processes in a much more scalable manner. In addition, Data Factory, like other Fabric experiences, is billed on a consumption-based plan, which means you only pay for what you use.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Microsoft Fabric Capacities
 
 Fabric is a unified data platform that offers shared experiences, architecture, governance, compliance, and billing. Capacities provide the computing power that drives all of these experiences. They offer a simple and unified way to scale resources to meet customer demand and can be easily increased with a SKU upgrade.
