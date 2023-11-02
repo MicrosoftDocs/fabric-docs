@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 10/26/2023
+ms.date: 10/31/2023
 ---
 
 # What is the admin monitoring workspace?
@@ -24,7 +24,15 @@ To use the admin monitoring workspace, you need to be an admin with one of these
 
 ## Access the admin monitoring workspace
 
-The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Fabric admin* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Global administrator* or *Fabric administrator* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+
+### Admin monitoring workspace view
+
+Only admins with the *Global administrator* or *Fabric administrator* roles, can see the admin monitoring workspace at the top of their list of workspaces. Admins can access the monitoring workspace by selecting it from the list.
+
+Users that are not admins, and do not have a *Global administrator* or *Fabric administrator* role, can't see the admin monitoring workspace at the top of their list of workspaces. Such users can only view the admin monitoring workspace by navigating to it's URL after they've been given viewer permissions by an admin.
+
+### Installing the admin monitoring workspace
 
 The admin monitoring workspace is automatically installed during the first time any Microsoft Fabric admin accesses it. To access the admin monitoring workspace, follow these steps:
 
@@ -63,8 +71,6 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 * The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as datasets and reports in the workspace.
 
 * Sovereign clouds are not supported.
-
-* Lineage view of the workspace isn't supported.
 
 * Users granted *build* permissions to a dataset in the monitoring workspace, show as having *read* permissions."
 

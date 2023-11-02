@@ -45,6 +45,10 @@ items:
     href: lakehouse-sql-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
+  - name: Git and deployment pipelines
+    href: lakehouse-git-deployment-pipelines.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
 - name: Get data into lakehouse
   items:
   - name: Get data into a lakehouse
@@ -89,6 +93,8 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
+    - name: Spark job definition API tutorial
+      href: spark-job-definition-api.md
   - name: Spark development
     items:
     - name: Spark utilities
