@@ -25,7 +25,7 @@ Data Factory in Microsoft Fabric brings Power Query and Azure Data Factory toget
 To enable customers to upgrade to Microsoft Fabric from Azure Data Factory (ADF), we support the following features: 
 
 - **Data pipeline activities** - We support most of the activities that you already use in ADF to Data Factory in Fabric. In addition, we have added new activities for notifications, for example, the Teams and Outlook activities. Refer to [this list of activities](activity-overview.md) that are available in Data Factory in Fabric. 
-- **OneLake/Lakehouse connector in Azure Data Factory** - For many ADF customers, you can now integrate with Microsoft Fabric, and bring data into the Fabric OneLake.
+- **OneLake/Lakehouse connector in Azure Data Factory** - For many ADF customers, you can now integrate with Microsoft Fabric, and [bring data into the Fabric OneLake](https://aka.ms/datafactoryfabric/docs/adfconnectLakehouse).
 - **Azure Data Factory Mapping Dataflow to Fabric** - We provide this [guide for ADF customers](guide-to-dataflows-for-mapping-data-flow-users.md) considering building new data transformations in Fabric.
 
   In addition, for customers considering migrating their ADF mapping dataflows to Fabric, you can apply sample code from the Fabric Customer Advisory Team (Fabric CAT) to convert mapping dataflows to Spark code. Find out more at [Mapping dataflows to Microsoft Fabric](https://github.com/sethiaarun/mapping-data-flow-to-spark).
