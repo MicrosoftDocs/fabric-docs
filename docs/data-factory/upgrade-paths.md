@@ -17,14 +17,14 @@ Data Factory in Microsoft Fabric brings Power Query and Azure Data Factory toget
 - **Get data and transformation** - Dataflows Gen2 is an evolution of Dataflows in Power BI. Dataflows Gen2 are re-architected to leverage Fabric compute engines for data processing and transformation. This enables them to ingest and transform data at any scale.
 - **Data orchestration** - Using data pipelines already familiar to users of Azure Data Factory (ADF), Microsoft Fabric enables the same orchestration capabilities offered in ADF. As part of the GA release of Fabric, data pipelines will support most of the activities available in ADF.
   
-  Refer to [this list of activities](pipeline-activities.md) that will be a part of data pipelines in Fabric. The SSIS activity will be added to data pipelines by Q2 CY2024.
+  Refer to [this list of activities](activity-overview.md) that will be a part of data pipelines in Fabric. The SSIS activity will be added to data pipelines by Q2 CY2024.
 - **Enterprise-ready data movement** - Whether it is small data movement or petabyte-scale, Data Factory provides a serverless and intelligent data movement platform that enables you to move data between diverse data sources and data destinations reliably. With support for 170+ connectors, Data Factory in Microsoft Fabric enables you to move data between multi-clouds, data sources on-premises, and within virtual networks (VNet). Intelligent throughput optimization enables the data movement platform to automatically detect the size of the compute needed for data movement.
 
 ## Upgrading from Azure Data Factory (ADF)
 
 To enable customers to upgrade to Microsoft Fabric from Azure Data Factory (ADF), we will be supporting the following: 
 
-- **Data pipeline activities** - We have added support for most of the activities that you already use in ADF to Data Factory in Fabric. In addition, we have added new activities for notifications, for example, the Teams and Outlook activities. Refer to [this list of activities](pipeline-activities.md) that are available in Data Factory in Fabric. 
+- **Data pipeline activities** - We have added support for most of the activities that you already use in ADF to Data Factory in Fabric. In addition, we have added new activities for notifications, for example, the Teams and Outlook activities. Refer to [this list of activities](activity-overview.md) that are available in Data Factory in Fabric. 
 - **OneLake/Lakehouse connector in Azure Data Factory** - For many ADF customers, you can now integrate with Microsoft Fabric, and bring data into the Fabric OneLake.
 - **Azure Data Factory Mapping Dataflow to Fabric** - We provide this [guide for ADF customers](guide-to-dataflows-for-mapping-data-flow-users.md) considering building new data transformations in Fabric.
 
@@ -56,5 +56,5 @@ Please also refer to the following article for further considerations: [Differen
 
 ## Next steps
 
-- [Pipeline activities supported in Microsoft Fabric](pipeline-activities.md)
+- [Pipeline activities supported in Microsoft Fabric](activity-overview.md)
 - [Guide to Dataflows Gen2 for ADF mapping dataflows users](guide-to-dataflows-for-mapping-data-flow-users.md)
