@@ -3,14 +3,12 @@ title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 10/15/2023
+ms.date: 11/02/2023
 ---
 
 # Buy a Microsoft Fabric subscription
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 

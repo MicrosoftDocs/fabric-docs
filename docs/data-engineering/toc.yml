@@ -41,10 +41,14 @@ items:
     href: create-lakehouse.md
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
-  - name: Lakehouse SQL endpoint
-    href: lakehouse-sql-endpoint.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
+  - name: Git and deployment pipelines
+    href: lakehouse-git-deployment-pipelines.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
 - name: Get data into lakehouse
   items:
   - name: Get data into a lakehouse
@@ -71,7 +75,9 @@ items:
       items:
         - name: Runtimes overview
           href: runtime.md
-        - name: Runtime 1.1
+        - name: Runtime 1.2 (Spark 3.4)
+          href: runtime-1-2.md
+        - name: Runtime 1.1 (Spark 3.3)
           href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
@@ -89,6 +95,8 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
+    - name: Spark job definition API tutorial
+      href: spark-job-definition-api.md
   - name: Spark development
     items:
     - name: Spark utilities

@@ -112,7 +112,7 @@ ORDER BY
     ti.HourlyBucket
 ```
 
-## Next steps
+## Related content
 
 - [Query warehouse](query-warehouse.md)
 - [Warehouse settings and context menus](settings-context-menus.md)

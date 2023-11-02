@@ -32,7 +32,7 @@ For more limitations in specific areas, see:
 - [Clone table](clone-table.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Datasets](datasets.md#limitations)
+- [Datasets](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)

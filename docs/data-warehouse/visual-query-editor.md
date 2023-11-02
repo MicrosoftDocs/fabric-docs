@@ -67,7 +67,8 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 - Only a subset of Power Query operations that support Query folding are currently supported.
 - Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
-## Next steps
+## Related content
 
 - [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the SQL Query editor](sql-query-editor.md)
+- [Query insights in Fabric data warehousing](query-insights.md)

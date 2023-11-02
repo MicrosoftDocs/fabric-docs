@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 11/02/2023
 ---
 
 # Set up metadata scanning in your organization
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Before metadata scanning can be run over an organization's Microsoft Fabric workspaces, it must be set up by a Fabric administrator. Setting up metadata scanning involves two steps:
 
