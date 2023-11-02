@@ -21,3 +21,5 @@ items:
   href: stream-real-time-events-from-custom-app-to-kusto.md
 - name: Build a real-time dashboard by streaming data from Azure IoT Hub
   href: build-real-time-dashboard-from-iot-hub.md
+- name: Explore and transform taxi data for KQL database integration
+  href: transform-taxi-data-and-route-to-kql.md
