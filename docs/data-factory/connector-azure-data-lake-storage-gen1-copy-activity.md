@@ -72,7 +72,7 @@ The following properties are **required**:
 
     *Wildcard folder path*: Specify the folder path with wildcard characters to filter source folders.
 
-    *Wildcard file name*: Specify the file name with wildcard characters under your given container and folder path (or wildcard folder path) to filter source files.
+    *Wildcard file name*: Specify the file name with wildcard characters under the configured folder/wildcard folder path to filter source files.
 
   - **List of files**: Indicates you want to copy a given file set. Specify **Folder path** and **Path to file list** to point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path. For more examples, go to [File list examples](/azure/data-factory/connector-azure-data-lake-store#file-list-examples).
 
@@ -129,7 +129,7 @@ The following properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Flatten hierarchy**, **Merge files**, **Preserve hierarchy**, or **Add dynamic content** from the drop-down list.
+- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose a behavior from the drop-down list.
 
   :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
 
@@ -160,7 +160,7 @@ The following tables contain more information about the copy activity in Azure D
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen1 connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
-|**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• listAfter, listBefore<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
+|**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• folderPath, fileName<br>• listAfter, listBefore<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|Selected or unselect|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
