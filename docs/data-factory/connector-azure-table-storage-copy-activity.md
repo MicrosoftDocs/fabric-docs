@@ -51,24 +51,11 @@ The following three properties are **required**:
     :::image type="content" source="./media/connector-azure-table-storage/source-query.png" alt-text="Screenshot showing Use query when selecting Query." :::
 
     - **Table**: Specify the name of the table in the Azure Table Storage database instance. Select the table from the drop-down list or enter the name manually by selecting **Edit**.
-    - **Query**: Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options), and see the following Azure Table source query examples:
+    - **Query**: Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [article](/rest/api/storageservices/querying-tables-and-entities#supported-query-options).
 
         > [!Note]
         > Azure Table query operation times out in 30 seconds as [enforced by Azure Table service](/rest/api/storageservices/setting-timeouts-for-table-service-operations). Learn how to optimize the query from [Design for querying](/azure/storage/tables/table-storage-design-for-query) article.
 
-        If you want to filter the data against a datetime type column, refer to this example:
-
-        ```json
-        "azureTableSourceQuery": "LastModifiedTime gt datetime'2017-10-01T00:00:00' and LastModifiedTime le datetime'2017-10-02T00:00:00'"
-        ```
-
-        If you want to filter the data against a string type column, refer to this example:
-
-        ```json
-        "azureTableSourceQuery": "LastModifiedTime ge '201710010000_0000' and LastModifiedTime le '201710010000_9999'"
-        ```
-
-        If you use the pipeline parameter, cast the datetime value to proper format according to the previous samples.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -109,9 +96,9 @@ Under **Advanced**, you can specify the following fields:
     If you select **Use destination column**:
     - **Row key column**: Select the name of the column whose column values are used as the row key. If not specified, use a GUID for each row.
 
-- **Write batch size**: Specify the write batch size to inserts data into Azure Table. Allowed values are integer (number of rows). The default value is 10,000.
+- **Write batch size**: Inserts data into Azure Table when the specified write batch size is hit. Allowed values are integer (number of rows). The default value is 10,000.
 
-- **Write batch timeout**: Specify the wait time for the batch insert operation to finish before it times out. The allowed value is timespan.
+- **Write batch timeout**: Inserts data into Azure Table when the specified write batch timeout is hit. The allowed value is timespan.
 
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections
 
@@ -135,7 +122,7 @@ The following table contains more information about the copy activity in Azure T
 |**Connection**|Your connection to the source data store.|< your Azure Table Storage connection >|Yes|connection|
 | **Use query** | Choose to use **Table** or **Query**. | • Table<br>• Query | Yes | / | 
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
-| **Query** | Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [doc](/rest/api/storageservices/querying-tables-and-entities#supported-query-options). | < your query > | No | azureTableSourceQuery | 
+| **Query** | Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [article](/rest/api/storageservices/querying-tables-and-entities#supported-query-options). | < your query > | No | azureTableSourceQuery | 
 | **Ignore table not found** | Indicates whether to allow the exception of the table to not exist. | selected or unselected (default) | No | azureTableSourceIgnoreTableNotFound:<br>true or false (default) | 
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
@@ -149,11 +136,11 @@ The following table contains more information about the copy activity in Azure T
 | **Insert type** | The mode to insert data into Azure Table. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No | merge<br>replace | 
 | **Partition key value selection** | Partition key value can be a fixed value or it can take value from a destination column. | • **Specify partition value**<br>• **Use destination column** | No | / | 
 | **Default partition value** | The default partition key value that can be used by the destination | < your default partition value > | No | azureTableDefaultPartitionKeyValue | 
-| **Partition key column** | The name of the column whose values are used as partition keys. If not specified, "AzureTableDefaultPartitionKeyValue" is used as the partition key. | < your partition key column > | No | azureTablePartitionKeyName：<br>• value<br>• type | 
+| **Partition key column** | The name of the column whose values are used as partition keys. If not specified, "AzureTableDefaultPartitionKeyValue" is used as the partition key. | < your partition key column > | No | azureTablePartitionKeyName | 
 | **Row key value selection** | Row key value can be an auto generated unique identifier or it can take value from a destination column. | • **Unique identifier**<br>• **Use destination column** | No | / | 
-| **Row key column** | The name of the column whose column values are used as the row key. If not specified, use a GUID for each row. | < your row key column  > | No | azureTableRowKeyName:<br>• value<br>• type |
+| **Row key column** | The name of the column whose column values are used as the row key. If not specified, use a GUID for each row. | < your row key column  > | No | azureTableRowKeyName |
 |**Write batch size**| Inserts data into Azure Table when the write batch size is hit.|integer <br> (default is 10,000)|No|writeBatchSize|
-|**Write batch timeout**|The wait time for the batch insert operation to finish before it times out. | timespan |No|writeBatchTimeout|
+|**Write batch timeout**|Inserts data into Azure Table when the write batch timeout is hit | timespan |No|writeBatchTimeout|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< your max concurrent connections >|No| maxConcurrentConnections |
 
 ## Next steps
