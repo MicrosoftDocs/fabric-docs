@@ -11,7 +11,9 @@ ms.search.form:
 ---
 
 
-# Use prebuilt Text Analytics in Fabric with REST API and SynapseML
+# Use prebuilt Text Analytics in Fabric with REST API and SynapseML (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 [Text Analytics](https://learn.microsoft.com/azure/ai-services/language-service/) is an [Azure AI services](https://learn.microsoft.com/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 

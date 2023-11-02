@@ -11,7 +11,7 @@ ms.search.form:
 ---
 # Use Azure OpenAI in Fabric with Python SDK and Synapse ML (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
 This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI Python SDK](https://platform.openai.com/docs/api-reference?lang=python) and using SynapseML.
 
@@ -361,11 +361,11 @@ display(embedding.transform(df))
 
 ## Next steps
 
-- [Use prebuilt Anomaly Detector in Fabric with REST API](how-to-use-anomaly-detector-via-rest-api.md)
+- [Use prebuilt Anomaly Detector in Fabric with REST API](how-to-use-anomaly-detector.md)
 - [Use prebuilt Anomaly Detector in Fabric with SynapseML](how-to-use-anomaly-detector.md)
 - [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
-- [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics-via-synapseml.md)
-- [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator-via-rest-api.md)
-- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator-via-synapseml.md)
+- [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
+- [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
+- [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-via-synapseml.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML and Python SDK](how-to-use-openai-sdk-synapse.md)
