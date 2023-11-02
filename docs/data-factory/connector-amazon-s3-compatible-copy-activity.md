@@ -57,7 +57,7 @@ The following properties are supported for Amazon S3 Compatible under the **Sour
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an **Amazon S3 Compatible** connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
+- **Connection**: Select an Amazon S3 Compatible connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration for each setting is:
 
@@ -80,8 +80,6 @@ The following properties are **required**:
       *Wildcard folder path*: The folder path with wildcard characters under the given bucket configured to filter source folders.
 
       *Wildcard file name*: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
-
-
 
   - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-amazon-s3-compatible-storage#file-list-examples).
 
@@ -139,7 +137,7 @@ The following tables contain more information about the copy activity in Amazon 
 |:---|:---|:---|:---|:---|
 | **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
-| **Connection type** |Select a type for your connection.|Amazon S3 Compatible|Yes|/|
+| **Connection type** |Select a type for your connection.|**Amazon S3 Compatible**|Yes|/|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes | / |
 | **File path** | The folder/file path to the source file. | < file path> | Yes | fileName<br>folderpath |
 | **Bucket** | The S3 Compatible Storage bucket name. | \<your bucketName> |Yes|bucketName|
@@ -152,3 +150,7 @@ The following tables contain more information about the copy activity in Amazon 
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
+
+## Next steps
+
+- [Amazon S3 Compatible overview](connector-amazon-s3-compatible-overview.md)
