@@ -33,7 +33,7 @@ Use the following API to perform creation, modifications, and removal of the lak
 
 ### Create a lakehouse
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items 
@@ -43,7 +43,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 } 
 ```
 
-Response:
+**Response:**
 
 ```json
 {
@@ -59,7 +59,7 @@ Response:
 
 Update the description and rename the Lakehouse.
 
-Request:
+**Request:**
 
 ```http
 PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/dc39f96a-47d7-4c2d-9358-740f50c0aa31 
@@ -69,7 +69,7 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/dc39f96
 } 
 ```
 
-Response:
+**Response:**
 
 ```json
 { 
@@ -83,13 +83,14 @@ Response:
 
 ### Get lakehouse properties
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId} 
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "id": "daaa77c7-9ef4-41fc-ad3c-f192604424f5", 
@@ -113,23 +114,24 @@ Response:
 
 When you delete a lakehouse, the object metadata and data are deleted. Shortcut references are deleted, but the data is preserved at the target.
 
-Request:
+**Request:**
 
 ```http
 DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}
 ```
 
-Response: __Empty__
+**Response:** __Empty__
 
 ## List tables in a Lakehouse
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables 
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "continuationToken": null, 
@@ -149,13 +151,13 @@ The list tables API __supports pagination__. Provide maxResults per page as a pa
 
 ### Pagination example
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables?maxResults=1 
 ```
 
-Response:
+**Response:**
 
 ```json
 { 
@@ -192,7 +194,7 @@ Both ```CSV``` and ```parquet``` are supported as the file ``format`` parameter.
 
 This example uploads a CSV file named ```demo.csv``` into an existing table named ``demo``.
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables/demo/load 
@@ -217,11 +219,14 @@ The Location variable contains an URI as following: ``https://api.fabric.microso
 
 After capturing the operationId from the response of the load to tables API request, execute the following request:
 
+**Request:**
+
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/{operationId}
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "Status": 3, 
@@ -252,7 +257,7 @@ This API is asynchronous, so two steps are required:
 
 This example executes a table maintenance job that applies V-Order to a table, while also applying Z-Order to the ``tipAmount`` column and executing the ``VACUUM`` operation with a retention of seven days and one hour.
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances?jobType=TableMaintenance
@@ -281,11 +286,14 @@ The Location variable contains an URI as following: ``https://api.fabric.microso
 
 After capturing *operationId* from the response of the load to tables API request, execute the following request:
 
+**Request:**
+
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/{operationId}
 ```
 
-Response:
+**Response:**
+
 ```json
 {
     "parameters": {
