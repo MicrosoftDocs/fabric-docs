@@ -30,7 +30,7 @@ Here's a list of features that we have enabled in the integrated load to table e
 
 - **Loaded as Delta Tables:** Tables are always loaded using the Delta Lake table format with V-Order optimization enabled.
 
-   :::image type="content" source="media\load-to-tables\load-to-table-overview.gif" alt-text="Gif of overall load folder to table experience." lightbox="media\load-to-tables\load-to-table-overview.gif":::
+   :::image type="content" source="media\load-to-tables\load-to-tables-overview.gif" alt-text="Gif of overall load folder to table experience." lightbox="media\load-to-tables\load-to-tables-overview.gif":::
 
 ## Validation guidelines and rules
 
