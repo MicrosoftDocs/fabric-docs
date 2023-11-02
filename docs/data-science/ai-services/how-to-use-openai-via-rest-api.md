@@ -12,7 +12,7 @@ ms.search.form:
 
 # Use Azure OpenAI in Fabric with REST API (preview)
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+[!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 This document shows examples of how to use Azure OpenAI in Fabric using REST API.
 
 ## Chat
