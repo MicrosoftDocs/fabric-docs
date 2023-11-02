@@ -26,7 +26,7 @@ items:
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
-  - name: Using Monitoring hub
+  - name: Use the Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
     href: track-user-activities.md
