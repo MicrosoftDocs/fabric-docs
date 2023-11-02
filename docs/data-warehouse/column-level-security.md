@@ -66,6 +66,7 @@ The SELECT permission was denied on the column 'CreditCard' of the object 'Custo
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
+- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
 
 ## Next step
 

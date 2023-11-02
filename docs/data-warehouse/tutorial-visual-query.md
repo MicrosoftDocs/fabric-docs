@@ -96,7 +96,7 @@ Create and save a query with the visual query builder in the [!INCLUDE [product-
 
 1. Press **Enter** on the keyboard or select anywhere outside the tab to save the change.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Analyze data with a notebook](tutorial-analyze-data-notebook.md)

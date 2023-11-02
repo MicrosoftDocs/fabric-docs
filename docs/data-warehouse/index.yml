@@ -12,7 +12,7 @@ metadata:
   ms.collection: collection # Optional; Remove if no collection is used.
   author: WilliamDAssafMSFT #Required; your GitHub user alias, with correct capitalization.
   ms.author: wiassaf #Required; microsoft alias of author; optional team alias.
-  ms.date: 10/23/2023
+  ms.date: 10/27/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -121,10 +121,10 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Workload Management
-            url: workload-management.md            
           - text: Statistics 
             url: statistics.md
+          - text: Query insights
+            url: query-insights.md            
           - text: Caching
             url: caching.md
           - text: Troubleshoot
@@ -136,10 +136,21 @@ landingContent:
         links:
           - text: Capacity Metrics app
             url: usage-reporting.md
-          - text: Monitor 
+          - text: Monitor using DMVs
             url: monitor-using-dmv.md
+  # Card 
+  - title: Warehouse capacity
+    linkLists:
+      - linkListType: architecture
+        links:
+          - text: Burstable capacity
+            url: burstable-capacity.md
+          - text: Pause and resume
+            url: pause-resume.md
           - text: Smoothing and throttling
             url: compute-capacity-smoothing-throttling.md
+          - text: Workload Management
+            url: workload-management.md            
   # Card 
   - title: Data recovery
     linkLists:
