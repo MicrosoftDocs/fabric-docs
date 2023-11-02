@@ -1,6 +1,6 @@
 ---
-title: Read data from Power BI datasets and write data that Power BI datasets can consume
-description: Learn how to read from Power BI datasets and write data that can be used in Power BI datasets.
+title: Use semantic link to read data from Power BI datasets and write data that Power BI datasets can consume (preview)
+description: Learn to use semantic link to read from Power BI datasets and write data that can be used in Power BI datasets.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
@@ -10,12 +10,12 @@ ms.date: 06/06/2023
 ms.search.form: Read write powerbi
 ---
 
-# Read from Power BI datasets and write data consumable by Power BI
+# Read from Power BI datasets and write data consumable by Power BI (preview)
 
 In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that Power BI datasets can consume.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
