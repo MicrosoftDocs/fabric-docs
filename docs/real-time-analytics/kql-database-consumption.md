@@ -5,7 +5,7 @@ ms.reviewer: bwatts
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 10/26/2023
+ms.date: 11/02/2023
 ms.search.form: KQL Database, Overview
 ---
 # KQL Database consumption
@@ -28,10 +28,12 @@ Capacity is a dedicated set of resources that is available at a given time to be
 
 ### Monitor KustoUpTime
 
-You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md).
+You can monitor **KustoUpTime** with the [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md). Learn how to understand the Metrics app compute page in [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md). This example shows information specific to monitoring **KustoUpTime**.
 
 > [!NOTE]
 > You must be a capacity administrator to monitor capacity usage. For more information, see [Understand Microsoft Fabric admin roles](../admin/roles.md).
+
+The following image shows a sample compute page from monitoring a KQL database in the Fabric Capacity Metric app:
 
 :::image type="content" source="media/database-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app.":::
 
@@ -39,13 +41,15 @@ You can monitor KustoUpTime with the [Microsoft Fabric Capacity Metric app](../e
 
 Storage is billed separately from your Fabric or Power BI Premium Capacity units. Data ingested into a KQL database is stored in two tiers of storage: OneLake Cache Storage, and OneLake Standard Storage.
 
-* **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
+* **OneLake Cache Storage** is premium storage that is utilized to provide the fastest query response times. When you set the [cache policy](/azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rta&pivots=fabric), you affect this storage tier. For instance, if you typically query back seven days then you can set the cache retention to seven days for best performance. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) premium tier.
 
-* **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
+* **OneLake Standard Storage** is standard storage that is used to persist and store all queryable data. When you set the [retention policy](data-retention-policy.md), you affect this storage tier. For instance, if you need to maintain 365 days of queryable data you can set the retention to 365 days. This storage tier is comparable to the Azure ADLS (Azure Data Lake Storage) hot tier.
 
 ### Monitor OneLake Storage
 
-The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows any capacity administrator to monitor OneLake Storage.
+The [Microsoft Fabric Capacity Metric app](../enterprise/metrics-app.md) allows any capacity administrator to monitor OneLake Storage. Learn how to understand the Metrics app storage page in [Understand the metrics app storage page](../enterprise/metrics-app-storage-page.md).
+
+The following image shows a sample storage page from monitoring a KQL database in the Fabric Capacity Metric app:
 
 :::image type="content" source="media/database-consumption/fabric-capacity-metrics.png" alt-text="Screenshot of Fabric capacity metrics app with data from Real-Time Analytics.":::
 
