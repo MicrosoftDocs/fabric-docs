@@ -99,19 +99,15 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. In the **Data Warehouse** drop down, select **WideWorldImporters** from the list.
 
-1. Next to the **Table** configuration setting, check the box under the dropdown list labeled **Edit**. The dropdown changes to two text boxes.
+1. Next to the **Table option** configuration setting, select the **Auto create table** radio button.
+
+1. The dropdown menu next to the **Table** configuration setting will automatically change to two text boxes.
 
 1. In the first box next to the **Table** setting, enter `dbo`.
 
 1. In the second box next to the **Table** setting, enter `dimension_customer`.
 
    :::image type="content" source="media\tutorial-ingest-data\destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps.":::
-
-1. Expand the **Advanced** section.
-
-1. For the **Table option**, select **Auto create table**.
-
-   :::image type="content" source="media\tutorial-ingest-data\advanced-auto-create-table.png" alt-text="Screenshot of the Advanced section, showing where to select Auto create table.":::
 
 1. From the ribbon, select **Run**.
 
