@@ -81,7 +81,7 @@ Under **Advanced**, you can specify the following fields:
 Note the following points:
 
 - If **Query** is specified for source, the copy activity runs this query against the SQL Server source to get the data. You also can specify a stored procedure by specifying **Stored procedure name** and **Stored procedure parameters** if the stored procedure takes parameters.
-- When using stored procedure in source to retrieve data, note if your stored procedure is designed as returning different schema when different parameter value is passed in, you may encounter failure or see unexpected result when importing schema from UI or when copying data to SQL database with auto table creation.
+- When using stored procedure in source to retrieve data, note if your stored procedure is designed as returning different schema when different parameter value is passed in, you might encounter failure or see unexpected result when importing schema from UI or when copying data to SQL database with auto table creation.
 
 ### Destination
 
