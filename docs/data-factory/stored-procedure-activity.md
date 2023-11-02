@@ -13,8 +13,6 @@ ms.date: 05/23/2023
 
 In this article, you learn how to add a new Stored procedure activity to a pipeline, add a new connection, and configure the activity to run.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:  

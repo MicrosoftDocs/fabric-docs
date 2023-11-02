@@ -13,6 +13,8 @@ items:
   href: preview-data.md
 - name: Monitor event streams
   href: monitor.md
+- name: Integrate with other Fabric items
+  href: get-data-from-eventstream-in-multiple-fabric-items.md
 - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
   href: transform-and-stream-real-time-events-to-lakehouse.md
 - name: Stream real-time events from custom application to Microsoft Fabric KQL Database

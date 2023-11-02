@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported format
 
 HTTP supports the following file formats. Refer to each article for format-based settings.

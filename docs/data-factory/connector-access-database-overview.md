@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Access database connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Support in Dataflow Gen2
 
 To learn about how to connect to an Access database in Dataflow Gen2, go to [Set up your Access database connection](connector-access-database.md).

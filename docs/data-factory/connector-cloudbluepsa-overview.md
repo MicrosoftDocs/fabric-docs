@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The CloudBluePSA connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Support in Dataflow Gen2
 
 For information on how to connect to CloudBluePSA in Dataflow Gen2, go to [Set up your CloudBluePSA connection](connector-cloudbluepsa.md).

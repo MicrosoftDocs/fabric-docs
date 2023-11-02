@@ -65,8 +65,6 @@ items:
       href: r-flight-delay.md
 - name: Governance
   items:
-  - name: Roles and permissions
-    href: models-experiments-rbac.md
   - name: Lineage for models and experiments
     href: data-science-lineage.md
 - name: Preparing data 
@@ -91,6 +89,10 @@ items:
     href: train-models-scikit-learn.md
   - name: Train models with SynapseML
     href: train-models-synapseml.md  
+  - name: Train interpretable models for classification
+    href: explainable-boosting-machines-classification.md
+  - name: Train interpretable models for regression
+    href: explainable-boosting-machines-regression.md
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
@@ -107,6 +109,12 @@ items:
       href: ../data-engineering/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Secure and manage ML items
+  items:
+    - name: Disaster recovery for ML items
+      href: data-science-disaster-recovery.md
+    - name: Roles and permissions
+      href: models-experiments-rbac.md
 - name: Apache Spark
   items:
   - name: Spark compute

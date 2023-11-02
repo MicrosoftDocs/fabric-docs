@@ -12,15 +12,13 @@ ms.custom: template-how-to, build-2023
 
 You can connect to an OData feed in Dataflow Gen2 using the OData connector provided by Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Connect to an OData feed
 
 To connect to an OData feed from a dataflow:
 
-1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
+1. From your workspace, select **New** > **Dataflow Gen2** to create a new dataflow.
 
-   :::image type="content" source="./media/connector-odata/select-open-dataflow.png" alt-text="Screenshot of the dataflow gen2 (preview) selection in the Data Factory workspace.":::
+   :::image type="content" source="./media/connector-odata/select-open-dataflow.png" alt-text="Screenshot of the dataflow gen2 selection in the Data Factory workspace.":::
 
 1. In Power Query, either select **Get data** in the ribbon or select **Get data from another source** in the current view.
 

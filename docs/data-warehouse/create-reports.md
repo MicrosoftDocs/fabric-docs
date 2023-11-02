@@ -58,5 +58,5 @@ Alternatively, you can complete the following steps to connect to a warehouse in
 
 ## Related content
 
-- [Data modeling in the default Power BI dataset in Microsoft Fabric](model-default-power-bi-dataset.md)
+- [Data modeling in the default Power BI dataset in Microsoft Fabric](default-power-bi-semantic-model.md)
 - [Create reports in the Power BI service in Microsoft Fabric](reports-power-bi-service.md)

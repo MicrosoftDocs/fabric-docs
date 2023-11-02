@@ -16,8 +16,6 @@ The Lakehouse explorer page is the main Lakehouse interaction page; you can use 
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Lakehouse explorer
 
 The Lakehouse explorer provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.

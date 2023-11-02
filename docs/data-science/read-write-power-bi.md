@@ -15,7 +15,7 @@ ms.search.form: Read write powerbi
 In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that Power BI datasets can consume.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -210,7 +210,7 @@ As with the SemPy python API, by default, the workspace used to access Power BI 
 - the workspace of the notebook, if no Lakehouse is attached.
 
 Microsoft Fabric exposes all tables from all Power BI datasets in the workspace as Spark tables.
-All Spark SQL commands can be executed in Python, R, and Scala. The semantic link Spark native connector supports push-down of Spark predicates to the Power BI engine.
+All Spark SQL commands can be executed in Python, R, and Scala. The semantic link (preview) Spark native connector supports push-down of Spark predicates to the Power BI engine.
 
 > [!TIP]
 > Since Power BI tables and measures are exposed as regular Spark tables, they can be joined with other Spark data sources in a single query.
@@ -225,7 +225,7 @@ All Spark SQL commands can be executed in Python, R, and Scala. The semantic lin
     ```
 
    > [!TIP]
-   > The semantic link Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
+   > The semantic link (preview) Spark native connector is pre-installed on Fabric and does **not** require that you install the `SemPy` Python library.
    > You can configure multiple Power BI workspaces by adding multiple catalog entries (e.g. spark.sql.catalog.my_pbi).
 
 1. List tables of all Power BI datasets in the workspace, using PySpark.
@@ -320,6 +320,6 @@ By using Power BI, the *ForecastTable* table can be added to a composite dataset
 ## Next steps
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [How to validate data with semantic link](semantic-link-validate-data.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)
+- [How to validate data with semantic link (preview)](semantic-link-validate-data.md)

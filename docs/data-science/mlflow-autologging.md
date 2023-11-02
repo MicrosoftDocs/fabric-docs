@@ -13,7 +13,7 @@ ms.date: 05/23/2023
 
 [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] includes autologging, which significantly reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. This feature extends [MLflow autologging](https://mlflow.org/docs/latest/tracking.html#automatic-logging) capabilities and is deeply integrated into the [!INCLUDE [product-name](../data-science/includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience. Using autologging, developers and data scientists can easily track and compare the performance of different models and experiments without the need for manual tracking.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Configurations
 
@@ -111,5 +111,5 @@ To do this:
 
 ## Next steps
 
-- Train a Spark MLlib model with autologging: [Train with Spark MLlib](./model-training/fabric-sparkml-tutorial.md)
+- Train a Spark MLlib model with autologging: [Train with Spark MLlib](fabric-sparkml-tutorial.md)
 - Learn about machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]: [Experiments](./machine-learning-experiment.md)

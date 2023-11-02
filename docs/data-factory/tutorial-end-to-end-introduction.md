@@ -14,8 +14,6 @@ ms.search.form: product-data-factory
 
 This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a step-by-step guidance for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Overview: Why Data Factory in Microsoft Fabric?
 
 This section helps you understand the role of Fabric generally, and the role Data Factory plays within it.
