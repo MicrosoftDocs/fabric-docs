@@ -72,10 +72,9 @@ Environment provides flexible configurations for running your Spark jobs (notebo
 In the environment tab, you have the option to set the default environment may choose which version of Spark you'd like to use for the workspace.
 
 As a Fabric workspace admin, you can select an Environment as workspace default Environment.
-Learn more about how to attach an Environment as workspace default: [Attach an Environment as the workspace default](create-and-use-environment.md\#attach-an-environment-as-the-workspace-default). 
 
 You can also create a new one through the **Environment** dropdown.
-    :::image type="content" source="media\environment-introduction\env-dropdown-ws.png" alt-text="Environment creation through attachment dropdown in WS setting":::
+    :::image type="content" source="media\workspace-admin-settings\env-dropdown-ws.png" alt-text="Environment creation through attachment dropdown in WS setting":::
 
 If you disable the option to have a default environment, you have the option to select the Fabric runtime version from the available runtime versions listed in the dropdown selection. 
 
