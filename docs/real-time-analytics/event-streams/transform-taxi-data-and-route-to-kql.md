@@ -1,5 +1,5 @@
 ---
-title: Explore and Transform Sample Taxi Data in Eventstream for KQL Database Integration
+title: Explore and transform sample taxi data in Eventstream for KQL Database integration
 description: This article provides instruction on how to explore and transform sample taxi data in Fabric Eventstream and then route them to KQL database. 
 ms.reviewer: spelluru
 ms.author: zhenxilin
@@ -11,7 +11,7 @@ ms.search.form: Event Streams Tutorials
 
 ---
 
-# Tutorial: Explore and Transform Sample Taxi Data in Eventstream for KQL Database Integration
+# Tutorial: Explore and transform sample taxi data in Eventstream for KQL Database integration
 
 Eventstream is a streaming platform that allows you to ingest, transform, and route data streams to various Fabric destinations such as KQL database. In this tutorial, we work with sample taxi data to find out the earnings of each taxi vendor or company over the past hour. You learn to use Eventstream's event processor for real-time data transformations and route the processed data to your KQL database.
 
