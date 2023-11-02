@@ -1,6 +1,6 @@
 ---
-title: Migrate Spark Job Definition
-description: Learn about how to migrate Spark Job Definition from Azure Synapse Spark to Fabric.
+title: Migrate Spark job definition
+description: Learn about how to migrate Spark job definition from Azure Synapse Spark to Fabric.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
@@ -9,7 +9,7 @@ ms.custom: ignite-2023
 ms.date: 11/03/2023
 ---
 
-# Migrate Spark Job Definition from Azure Synapse to Fabric
+# Migrate Spark job definition from Azure Synapse to Fabric
 
 To move Spark job definitions (SJD) from Azure Synapse to Fabric, you have two different options:
 
@@ -17,6 +17,10 @@ To move Spark job definitions (SJD) from Azure Synapse to Fabric, you have two d
 * Option 2: you can use a script to export SJDs from Azure Synapse and import them in Fabric using the API.
 
 For SJD considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
+
+## Prerequisites
+
+If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
 
 ## Option 1: Create Spark job definition manually
 
@@ -50,14 +54,14 @@ Once the SJD is created, validate dependencies:
 ## Option 2: Use the Fabric API
 
 Follow these key steps for migration:
-* Pre-migration steps.
+* Prerequisites.
 * Step 1: Export SJD from Synapse to OneLake (json).
 * Step 2: Import SJD automatically into Fabric using the Fabric API.
 
-### Pre-migration steps
-The pre-migration steps include actions you need to consider before starting SJD migration to Fabric.
+### Prerequisites
+The prerequisites include actions you need to consider before starting SJD migration to Fabric.
 
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* A Fabric workspace.
 * If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ### Step 1: Export SJD from Azure Synapse workspace 

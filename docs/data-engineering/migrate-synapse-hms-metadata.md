@@ -15,22 +15,20 @@ The initial step in the Hive Metastore (HMS) migration involves determining the 
 
 For HMS considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
+## Prerequisites
+
+* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
+
 ## Option 1: Export and import HMS to lakehouse metastore
 
 Follow these key steps for migration:
-* Pre-migration steps
 * Step 1: Export metadata from source HMS
 * Step 2: Import metadata into Fabric lakehouse
 * Post-migration steps: Validate content
 
 > [!NOTE]
 > Scripts only copy Spark catalog objects to Fabric lakehouse. Assumption is that the data is already copied (for example, from warehouse location to ADLS Gen2) or available for managed and external tables (for example, via shortcuts—preferred) into the Fabric lakehouse. 
-
-### Pre-migration steps
-The pre-migration steps include actions you need to consider before beginning Spark metadata migration from source HMS to Fabric lakehouse. These involves:
-
-* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
-* If you don’t have one already, create a [Fabric lakehouse](tutorial-build-lakehouse.md) in your workspace. 
 
 ### Step 1: Export metadata from source HMS
 

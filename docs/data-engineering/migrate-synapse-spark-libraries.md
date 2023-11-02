@@ -15,6 +15,11 @@ Azure Synapse offers different feed and custom library options. In Fabric, each 
 
 For Spark library considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
+## Prerequisites
+
+* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create an [Environment](NEEDLINK) in your workspace. 
+
 ## Option 1: Adding Spark libraries to custom environment
 
 You can move libraries to an environment as follows:

@@ -20,6 +20,10 @@ If you have more than one Spark pool and you plan to move those to the same Fabr
 
 For Spark pool considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
+## Prerequisites
+
+If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+
 ## Option 1: From Spark pool to workspace's default environment
 
 You can create custom Spark pools from your Fabric workspace and use them as the default environment. The default environment is used by all notebooks and Spark job definitions in the same workspace. 

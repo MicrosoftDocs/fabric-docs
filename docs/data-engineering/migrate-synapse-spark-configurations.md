@@ -15,6 +15,11 @@ Apache Spark provides numerous configurations that can be customized to enhance 
 
 For Spark configuration considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
 
+## Prerequisites
+
+* If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
+* If you don’t have one already, create an [Environment](NEEDLINK) in your workspace. 
+
 ## Option 1: Adding Spark configurations to custom environment
 
 Within an environment, you can set Spark properties and those configurations are applied to the selected environment pool.
