@@ -58,6 +58,13 @@ The following section lists various default configurations and the max node limi
 | F1024 | 1024 | 2048 | Medium | 10 | 200 |
 | F2048 | 2048 | 4096 | Medium | 10 | 200 |
 
+> [!NOTE]
+> To customize a starter pool, you need admin access to the workspace.
+
+## Known Issues 
+
+As Starter Pools are sized with Medium nodes (8 Spark Cores), users with F2 capacities could see a slower session start of 2-3 minutes.
+
 ## Next steps
 
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
