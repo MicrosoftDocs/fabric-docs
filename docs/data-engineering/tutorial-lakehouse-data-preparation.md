@@ -11,9 +11,7 @@ ms.date: 5/23/2023
 
 # Lakehouse tutorial: Prepare and transform data in the lakehouse
 
-In this tutorial, you use notebooks with Spark runtime to transform and prepare the data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+In this tutorial, you use notebooks with [Spark runtime](./runtime.md) to transform and prepare the data.
 
 ## Prerequisites
 

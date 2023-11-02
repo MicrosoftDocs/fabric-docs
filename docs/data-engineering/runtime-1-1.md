@@ -13,8 +13,6 @@ ms.date: 10/24/2023
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of the Data Engineering and Data Science experiences in Fabric. This document covers the Fabric Runtime 1.1 components and versions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Fabric Runtime 1.1 is the default and currently the only runtime offered within the Microsoft Fabric platform. The major components of Fabric Runtime 1.1 are:
 
 - Apache Spark 3.3
@@ -25,15 +23,13 @@ Fabric Runtime 1.1 is the default and currently the only runtime offered within 
 - Delta Lake: 2.2
 - R: 4.2.2
 
-:::image type="content" source="media\workspace-admin-settings\runtime-version.png" alt-text="Screenshot showing where to select runtime version.":::
+Microsoft Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when using notebooks or jobs in the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
 
-Fabric Runtime 1.1 comes with a collection of default level packages, including a full Anaconda installation and commonly used libraries for Java/Scala, Python, and R. These libraries are automatically included when you use notebooks or jobs on the Microsoft Fabric platform. Refer to the documentation for a complete list of libraries.
+Microsoft Fabric periodically releases maintenance updates for Runtime 1.1, delivering bug fixes, performance enhancements, and security patches. Ensuring you stay up to date with these updates guarantees optimal performance and reliability for your data processing tasks. **If you are currently using Runtime 1.1, you can upgrade to Runtime 1.2 by navigating to Workspace Settings > Data Engineering / Science > Spark Settings.**
 
-Microsoft Fabric periodically rolls out maintenance updates for Runtime 1.1, providing bug fixes, performance enhancements, and security patches. *Staying up to date ensures optimal performance and reliability for your data processing tasks.*
+:::image type="content" source="media\workspace-admin-settings\runtime-version-1-2.png" alt-text="Screenshot showing where to select runtime version.":::
 
-## New features and improvements
-
-### Apache Spark 3.3.1
+## New features and improvements - Apache Spark 3.3.1
 
 The following extended summary describes key new features related to Apache Spark version 3.3.0 and 3.3.1:
 
@@ -84,7 +80,7 @@ The following extended summary describes key new features related to Apache Spar
 
 - Fix column pruning in CSV when \_corrupt\_record is selected. ([SPARK-40468](https://issues.apache.org/jira/browse/SPARK-40468))
 
-### Delta Lake 2.2
+## New features and improvements - Delta Lake 2.2
 
 The key features in this release are as follows:
 
@@ -136,7 +132,7 @@ The key features in this release are as follows:
 
 Check the source and full release notes on [GitHub at delta-io/delta](https://github.com/delta-io/delta/releases).
 
-## Default level packages for Java/Scala libraries
+## Default-level packages for Java/Scala
 
 The following table lists all the default level packages for Java/Scala and their respective versions.
 
@@ -371,7 +367,7 @@ The following table lists all the default level packages for Java/Scala and thei
 | oro                               | oro                                         | 2.0.8                       |
 | pl.edu.icm                        | JLargeArrays                                | 1.5                         |
 
-## Default level packages for Python libraries
+## Default-level packages for Python
 
 The following table lists all the default level packages for Python and their respective versions.
 
@@ -534,7 +530,7 @@ The following table lists all the default level packages for Python and their re
 | interpret                     | 0.3.1       | pcre2                    | 10.40        | zstd                    | 1.5.2       |
 | interpret-core                | 0.3.1       | pexpect                  | 4.8.0        |                         |             |
 
-## Default level packages for R libraries
+## Default-level packages for R
 
 The following table lists all the default level packages for R and their respective versions.
 
@@ -640,3 +636,8 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
 1. After validating your applications in a staging environment, deploy the updated applications to your production environment. Monitor the performance and stability of your applications after the migration to identify any issues that need to be addressed.
 
 1. Update your internal documentation and training materials to reflect the changes introduced in Fabric Runtime 1.1. Ensure that your team members are familiar with the new features and improvements to maximize the benefits of the migration.
+
+
+## Next steps
+- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
+- [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)

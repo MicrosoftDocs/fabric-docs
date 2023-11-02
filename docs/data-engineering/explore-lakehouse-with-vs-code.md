@@ -14,8 +14,6 @@ ms.search.form: VSCodeExtension
 
 You can use the Synapse VS Code extension to explore the structure of your lakehouse in a workspace.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 With the extension installed, Visual Studio (VS) Code displays the lakehouse structure in a tree view that includes the **Files** and **Tables** sections. All the lakehouses from the workspace you select appear under the lakehouse root tree node.
 
 :::image type="content" source="media\vscode\lakehouse-list.png" alt-text="Screenshot showing the lakehouse list, with Tables and Files nodes under each lakehouse.":::

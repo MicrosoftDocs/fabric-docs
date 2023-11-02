@@ -15,8 +15,6 @@ ms.date: 05/23/2023
 
 When you create a workspace in Microsoft Fabric, a [starter pool](spark-compute.md#starter-pools) that is associated with that workspace is automatically created. With the simplified setup in Microsoft Fabric, there's no need to choose the node or machine sizes, as these options are handled for you behind the scenes. This configuration provides a faster (5-10 seconds) Spark session start experience for users to get started and run your Spark jobs in many common scenarios without having to worry about setting up the compute. For advanced scenarios with specific compute requirements, users can create a custom Spark pool and size the nodes based on their performance needs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To make changes to the Spark settings in a workspace, you should have the admin role for that workspace. To learn more, see [Roles in workspaces](../get-started/roles-workspaces.md).
 
 To manage the Spark settings for the pool associated with your workspace:
@@ -26,9 +24,6 @@ To manage the Spark settings for the pool associated with your workspace:
    :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
 
 2. You see the **Spark Compute** option in your left-hand menu:
-
-3. Configure the four setting options you can change on this page: **Pool**, **Environment**, **High concurrency**, **Automatic log**.
-
 
 :::image type="content" source="media\workspace-admin-settings\workspace-settings.gif" alt-text="Gif showing different sections of the spark compute in workspace settings.":::
 
@@ -98,6 +93,6 @@ Admins can now enable autologging for their machine learning models and experime
 
 
 ## Next steps
-
+- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml).

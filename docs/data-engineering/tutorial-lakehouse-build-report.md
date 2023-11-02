@@ -13,8 +13,6 @@ ms.date: 07/10/2023
 
 In this section of the tutorial, you create a Power BI data model and create a report from scratch.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * [Prepare and transform the data using notebooks and Spark runtime](tutorial-lakehouse-data-preparation.md)
@@ -138,8 +136,6 @@ DirectLake mode now eliminates this import requirement by loading the data files
 1. Enter the name of your report as **Profit Reporting**.
 
 1. Select **Save**.
-
-   :::image type="content" source="media\tutorial-lakehouse-build-report\save-your-report.png" alt-text="Screenshot showing the Save your report dialog.":::
 
 ## Next steps
 
