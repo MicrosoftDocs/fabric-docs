@@ -68,9 +68,9 @@ Follow these steps to create an eventstream in your workspace:
 
     :::image type="content" source="./media/transform-taxi-data-and-to-kql/open-event-processor.png" alt-text="Screenshot that shows where to open event processor in Eventstream.":::
 
-3. Select the eventstream in the canvas and edit the data type for your schema. To find out how much money taxi drivers make in the past hour, we need to make sure the **fare_amount** and **passenger_count** are in proper data type for any calculations.
+3. Select the eventstream in the canvas and edit the data type for your data schema. To find out how much money taxi drivers make in the past hour, we need to make sure the **fare_amount** and **passenger_count** are in proper data type for any calculations.
 
-    :::image type="content" source="./media/transform-taxi-data-and-to-kql/change-data-type.png" alt-text="Screenshot that shows where to open event processor in Eventstream.":::
+    :::image type="content" source="./media/transform-taxi-data-and-to-kql/change-data-type.png" alt-text="Screenshot that shows where to change data type in Eventstream.":::
 
     | Schema | Data type |
     | ------ | --------- |
