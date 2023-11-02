@@ -23,9 +23,9 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
 ## Get data
 
 1. On the bottom left experience switcher, select **Real-Time Analytics**.
-1. On the **Real-Time Analytics** homepage, select **Use a sample (Preview)**.
+2. On the **Real-Time Analytics** homepage, select **Use a sample**.
     :::image type="content" source="media/sample-gallery/use-sample.png" alt-text="Screenshot of the Real-Time Analytics homepage showing the different items that can be created in this experience. The item titled Use a sample is highlighted." lightbox="media/sample-gallery/use-sample.png":::
-1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the dataset is automatically generated.
+3. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the dataset is automatically generated.
 
     :::image type="content" source="media/sample-gallery/sample-gallery-tiles.png" alt-text="Screenshot of the Real-Time Analytics sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery-tiles.png":::
 

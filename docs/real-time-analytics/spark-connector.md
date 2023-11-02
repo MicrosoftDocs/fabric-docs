@@ -29,15 +29,15 @@ Specifically, you learn how to:
 ## 1- Create a KQL database
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select the **KQL Database (Preview)** tile.
+2. Select the **KQL Database** tile.
 
     :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Analytics.":::
 
-1. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
+3. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 
     The KQL database has now been created within the context of the selected workspace.
 
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+4. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 
