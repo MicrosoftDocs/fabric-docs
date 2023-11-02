@@ -57,4 +57,4 @@ Also refer to the following article for further considerations: [Differences bet
 ## Next steps
 
 - [Pipeline activities supported in Microsoft Fabric](activity-overview.md)
-- [Guide to Dataflows Gen2 for ADF mapping dataflows users](guide-to-dataflows-for-mapping-data-flow-users.md)
+- [Guide to Dataflows Gen2 for ADF mapping dataflow users](guide-to-dataflows-for-mapping-data-flow-users.md)
