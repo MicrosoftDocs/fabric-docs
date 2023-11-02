@@ -108,7 +108,7 @@ Under **Advanced**, you can specify the following fields:
 
   - **Insert**: Choose this option use insert write behavior to load data into SQL server.
 
-  - **Upsert**: Choose this option use upsert (insert and update) write behavior to load data into SQL server.
+  - **Upsert**: Choose this option use upsert write behavior to load data into SQL server.
   
     - **Use TempDB**: Specify whether to use a global temporary table or physical table as the interim table for upsert. By default, the service uses global temporary table as the interim table and this property is selected.
 
@@ -202,7 +202,7 @@ See the following table for the summary and more information for the SQL server 
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **SQL server**.|**SQL server** |Yes|/|
 |**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |No |/|
-|**Table** | Your source data table. |< name of your destination table>|No |schema <br> table|
+|**Table** | Your source data table. |< name of your table>|No |schema <br> table|
 |**Query** | The custom SQL query to read data. |< your query > |No |sqlReaderQuery|
 |**Stored procedure name** |This property is the name of the stored procedure that reads data from the source table. The last SQL statement must be a SELECT statement in the stored procedure.|< stored procedure name > |No |sqlReaderStoredProcedureName|
 |**Stored procedure parameter** | These parameters are for the stored procedure. Allowed values are name or value pairs. The names and casing of parameters must match the names and casing of the stored procedure parameters. |< name or value pairs >  |No |storedProcedureParameters|
@@ -222,7 +222,7 @@ See the following table for the summary and more information for the SQL server 
 |**Connection** |Your connection to the destination data store.|< your connection >|Yes|connection|
 |**Connection type** |Your connection type. Select **SQL server**.|**SQL server** |Yes|/|
 |**Table option** |Specifies whether to automatically create the destination table if it doesn't exist based on the source schema.|• Use existing <br>• Auto create table|No |tableOption:<br><br>• autoCreate|
-|**Table**|Your destination data table.| \<name of your destination table\> |Yes |schema <br> table|
+|**Table**|Your destination data table.| \<name of your table\> |Yes |schema <br> table|
 |**Write behavior** |The write behavior for copy activity to load data into SQL server database..|• Insert<br>• Upsert<br>• Stored procedure|No |writeBehavior:<br>• insert<br>• upsert<br>sqlWriterStoredProcedureName, sqlWriterTableType, storedProcedureTableTypeParameterName, storedProcedureParameters|
 |**Use TempDB** | Whether to use the a global temporary table or physical table as the interim table for upsert. |selected (default) or unselected  |No |useTempDB:<br>true (default) or false |
 |**Select user DB schema** | The interim schema for creating interim table if physical table is used. Note: user need to have the permission for creating and deleting table. By default, interim table will share the same schema as destination table. Apply when you don't select **Use TempDB**. |selected (default) or unselected  |No |interimSchemaName|
