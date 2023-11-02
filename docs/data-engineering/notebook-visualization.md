@@ -147,6 +147,10 @@ svg
 
 ## Embed a Power BI report in Notebook
 
+> [!IMPORTANT]
+> This feature is currently in PREVIEW.
+> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+
 [Powerbiclient](https://github.com/microsoft/powerbi-jupyter/tree/main) Python package is now natively supported in Fabric notebooks. You don’t need to do any extra set up (like authentication process) on Fabric notebook Spark runtime 3.4, just import `powerbiclient` then continue your exploration. To learn more about how to use the powerbiclient package, check the [Documents](https://github.com/microsoft/powerbi-jupyter/blob/main/DOCUMENTATION.md).
 
 Below are some key features supported by `powerbiclient` we want to demostrate.
