@@ -11,8 +11,6 @@ ms.search.form: Create a table
 ---
 # Create an empty table
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
 
 You can create an empty table without a data source to use as a testing environment, or for ingesting data in a later stage. In this article, you learn how to create an empty table within the context of a KQL database.

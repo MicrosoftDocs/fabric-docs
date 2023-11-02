@@ -11,8 +11,6 @@ ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to create and use a new KQL queryset.
 
 The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.  Each tab in the KQL queryset can be associated with a different KQL database, and lets your save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.

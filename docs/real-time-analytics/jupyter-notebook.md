@@ -10,8 +10,6 @@ ms.date: 09/28/2023
 ---
 # Tutorial: Use a notebook with Kqlmagic to query a KQL database
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a Jupyter notebook to run advanced queries and visualizations from data in a KQL database. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 [Kqlmagic](https://github.com/microsoft/jupyter-Kqlmagic) extends the capabilities of the Python kernel in Jupyter Notebook so you can run [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context&pivots=fabric) queries natively. You can combine Python and KQL to query and visualize data using the rich Plot.ly library integrated with the [render](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context&pivots=fabric) operator.

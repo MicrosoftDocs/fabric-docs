@@ -11,8 +11,6 @@ ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to get data from Event Hubs into your KQL database in Microsoft Fabric. [Azure Event Hubs](/azure/event-hubs/event-hubs-about?context=/fabric/context/context) is a big data streaming platform and event ingestion service that can process and direct millions of events per second.
 
 To stream data from Event Hubs into Real-Time-Analytics, you go through two main steps. The first step is performed in the Azure portal, where you define the shared access policy on your event hub and capture the details needed to later connect via this policy.

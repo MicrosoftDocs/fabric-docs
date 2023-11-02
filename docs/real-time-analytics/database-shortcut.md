@@ -10,8 +10,6 @@ ms.search.form: KQL Database
 ---
 # Create a database shortcut
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A database shortcut in Real-Time Analytics is an embedded reference within a KQL database to a source database in Azure Data Explorer. The behavior exhibited by the database shortcut is similar to that of a [follower database](/azure/data-explorer/follower).
 
 **When is a database shortcut useful?**

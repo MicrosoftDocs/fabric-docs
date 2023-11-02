@@ -11,8 +11,6 @@ ms.search.form: KQL Queryset
 ---
 # Customize results in the KQL Queryset results grid
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Use the results grid in the KQL Queryset to customize results and perform further analysis on your data. This article describes actions that can be done in the results grid after a query has been run.
 
 ## Prerequisites

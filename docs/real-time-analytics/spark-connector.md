@@ -11,8 +11,6 @@ ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
 Specifically, you learn how to:
