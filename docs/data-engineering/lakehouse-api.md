@@ -1,6 +1,6 @@
 ---
 title: Lakehouse management API
-description: Learn how to manage the Lakehouse using the Rest API.
+description: Manage the lakehouse in Microsoft Fabric with REST API
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
@@ -9,19 +9,19 @@ ms.date: 10/30/2023
 ms.search.form: lakehouse api
 ---
 
-# Manage the Lakehouse with Microsoft Fabric REST API
+# Manage lakehouse in Microsoft Fabric with REST API
 
-The Microsoft Fabric Rest API provides service endpoint for the CRUD operation of a Fabric item. The following actions are available for the Lakehouse artifact:
+The Microsoft Fabric Rest API provides service endpoint for the CRUD operation of a Fabric item. The following actions are available for the Lakehouse:
 
 |Action   |Description  |
 |---------|---------|
-|Create         |Creates Lakehouse inside a workspace. A SQL Analytics endpoint also gets provisioned along with the lakehouse.|
-|Update         |Updates name of the Lakehouse artifact and of the SQL Analytics endpoint.|
-|Delete         |Delete lakehouse artifact and associated SQL Analytics endpoint.|
-|Get Properties |Gets the properties of the lakehouse artifact and SQL Analytics endpoint.|
-|List tables    |List tables in the Lakehouse.|
-|Table load|Creates Delta table from CSV and parquet files and folders.|
-|Table maintenance|Apply bin-compaction, V-Order, and unreferenced old files cleanup.|
+|Create         |Creates a lakehouse inside a workspace. A SQL analytics endpoint also gets provisioned along with the lakehouse.|
+|Update         |Updates the name of a lakehouse and the SQL analytics endpoint.|
+|Delete         |Deletes lakehouse and the associated SQL analytics endpoint.|
+|Get properties |Gets the properties of a lakehouse and the SQL analytics endpoint.|
+|List tables    |List tables in the lakehouse.|
+|Table load|Creates delta tables from CSV and parquet files and folders.|
+|Table maintenance|Apply bin-compaction, V-Order, and removal of unreferenced and old files.|
 
 ## Prerequisites
 
@@ -29,11 +29,11 @@ Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoin
 
 ## Lakehouse CRUD
 
-Use the following API to perform creation, modifications, and removal of the Lakehouse artifact inside a workspace.
+Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace.
 
-### Create a Lakehouse
+### Create a lakehouse
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items 
@@ -43,7 +43,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items
 } 
 ```
 
-Response:
+**Response:**
 
 ```json
 {
@@ -55,11 +55,11 @@ Response:
 } 
 ```
 
-### Update a Lakehouse
+### Update a lakehouse
 
 Update the description and rename the Lakehouse.
 
-Request:
+**Request:**
 
 ```http
 PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/dc39f96a-47d7-4c2d-9358-740f50c0aa31 
@@ -69,7 +69,7 @@ PATCH https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/dc39f96
 } 
 ```
 
-Response:
+**Response:**
 
 ```json
 { 
@@ -81,15 +81,16 @@ Response:
 } 
 ```
 
-### Get Lakehouse properties
+### Get lakehouse properties
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId} 
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "id": "daaa77c7-9ef4-41fc-ad3c-f192604424f5", 
@@ -109,27 +110,28 @@ Response:
 }
 ```
 
-### Delete a Lakehouse
+### Delete a lakehouse
 
-All object metadata and data are deleted. Shortcut references are deleted, but the data is preserved at the target.
+When you delete a lakehouse, the object metadata and data are deleted. Shortcut references are deleted, but the data is preserved at the target.
 
-Request:
+**Request:**
 
 ```http
 DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}
 ```
 
-Response: __Empty__
+**Response:** __Empty__
 
 ## List tables in a Lakehouse
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables 
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "continuationToken": null, 
@@ -145,17 +147,18 @@ Response:
 } 
 ```
 
-List tables API __supports pagination__. Provide maxResults per page as a parameter to the request and the API responds with the continuation URI that can be used to get the next page of results.
+The list tables API __supports pagination__. Provide maxResults per page as a parameter to the request and the API responds with the continuation URI that can be used to get the next page of results.
 
 ### Pagination example
 
-Request:
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables?maxResults=1 
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "continuationToken": "+RID:~HTsuAOseYicH-GcAAAAAAA==#RT:1#TRC:1#ISV:2#IEO:65567#QCF:8#FPC:AgKfAZ8BnwEEAAe8eoA=", 
@@ -173,17 +176,17 @@ Response:
 
 ## Load to tables
 
-This API surfaces the capabilities of the [Load to Tables](load-to-tables.md) Lakehouse feature. With this API, it's possible to load CSV and parquet files to new or existing Delta Lake tables in the Lakehouse.
+This API surfaces the capabilities of the [Load to Tables](load-to-tables.md) lakehouse feature. With this API, it's possible to load CSV and parquet files to new or existing delta lake tables in the lakehouse.
 
 This API is asynchronous, so three steps are required:
 
-1. Upload files and folders using OneLake APIs to Lakehouse's ```Files``` section.
-1. Submit Load to Tables API request.
+1. Upload files and folders to Lakehouse's **Files** section using OneLake APIs.
+1. Submit load to tables API request.
 1. Track the status of the operation until completion.
 
-Following sections assume the files were already uploaded.
+The Following sections assume the files were already uploaded.
 
-### Load to tables API Request
+### Load to tables API request
 
 The ``mode`` parameter supports ``overwrite`` and ``append`` operations.
 ``pathType`` parameter specified if loading individual files or all files from specified folder.
@@ -191,7 +194,7 @@ Both ```CSV``` and ```parquet``` are supported as the file ``format`` parameter.
 
 This example uploads a CSV file named ```demo.csv``` into an existing table named ``demo``.
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/tables/demo/load 
@@ -210,17 +213,20 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of running load to tables operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation ID to query the status of running load to tables operations as described in the next section.
 
 ### Monitoring Load to tables operations
 
-After capturing the operationId from the response of the Load to tables API request, execute the following request:
+After capturing the operationId from the response of the load to tables API request, execute the following request:
+
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/{operationId}
 ```
 
-Response:
+**Response:**
+
 ```json
 { 
     "Status": 3, 
@@ -247,11 +253,11 @@ This API is asynchronous, so two steps are required:
 1. Submit table maintenance API request.
 1. Track the status of the operation until completion.
 
-### Table maintenance API Request
+### Table maintenance API request
 
-This example executes a table maintenance job that applies V-Order to a table, while also applying Z-Order to the ``tipAmount`` column and executing the ``VACUUM`` operation using a retention of seven days and one hour.
+This example executes a table maintenance job that applies V-Order to a table, while also applying Z-Order to the ``tipAmount`` column and executing the ``VACUUM`` operation with a retention of seven days and one hour.
 
-Request:
+**Request:**
 
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances?jobType=TableMaintenance
@@ -278,13 +284,16 @@ The Location variable contains an URI as following: ``https://api.fabric.microso
 
 ### Monitoring table maintenance operations
 
-After capturing the operationId from the response of the Load to tables API request, execute the following request:
+After capturing *operationId* from the response of the load to tables API request, execute the following request:
+
+**Request:**
 
 ```http
 GET https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{lakehouseId}/jobs/instances/{operationId}
 ```
 
-Response:
+**Response:**
+
 ```json
 {
     "parameters": {
@@ -317,7 +326,7 @@ Possible operation status for table maintenance:
 * Completed - Job completed
 * Failed - Job failed
 * Canceled - Job canceled
-* Deduped - A job instance of the same job type is already running and this job instance is skipped
+* Deduped - An instance of the same job type is already running and this job instance is skipped
 
 ## Next steps
 
