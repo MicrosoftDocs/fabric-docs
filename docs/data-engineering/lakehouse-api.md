@@ -11,13 +11,13 @@ ms.search.form: lakehouse api
 
 # Manage lakehouse in Microsoft Fabric with REST API
 
-The Microsoft Fabric Rest API provides service endpoint for the CRUD operation of a Fabric item. The following actions are available for the Lakehouse artifact:
+The Microsoft Fabric Rest API provides service endpoint for the CRUD operation of a Fabric item. The following actions are available for the Lakehouse:
 
 |Action   |Description  |
 |---------|---------|
 |Create         |Creates a lakehouse inside a workspace. A SQL analytics endpoint also gets provisioned along with the lakehouse.|
 |Update         |Updates the name of a lakehouse and the SQL analytics endpoint.|
-|Delete         |Deletes lakehouse artifact and the associated SQL analytics endpoint.|
+|Delete         |Deletes lakehouse and the associated SQL analytics endpoint.|
 |Get properties |Gets the properties of a lakehouse and the SQL analytics endpoint.|
 |List tables    |List tables in the lakehouse.|
 |Table load|Creates delta tables from CSV and parquet files and folders.|
@@ -29,7 +29,7 @@ Microsoft Fabric Rest API defines a unified endpoint for operations. The endpoin
 
 ## Lakehouse CRUD
 
-Use the following API to perform creation, modifications, and removal of the Lakehouse artifact inside a workspace.
+Use the following API to perform creation, modifications, and removal of the lakehouse inside a workspace.
 
 ### Create a lakehouse
 
@@ -211,7 +211,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{la
 
 The response header contains the URI to poll the status of the asynchronous operations. The URI is in the __Location__ variable of the response header.
 
-The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation id to query the status of running load to tables operations as described in the next section.
+The Location variable contains an URI as following: ``https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/lakehouses/{lakehouseId}/operations/32ad6d2a-82bb-420d-bb57-4620c8860373``. The guid ``32ad6d2a-82bb-420d-bb57-4620c8860373`` is the operation ID to query the status of running load to tables operations as described in the next section.
 
 ### Monitoring Load to tables operations
 
