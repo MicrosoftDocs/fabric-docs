@@ -52,7 +52,9 @@
       - name: Overview
         href: connector-amazon-redshift-overview.md
       - name: Set up your connection
-        href: connector-amazon-redshift.md    
+        href: connector-amazon-redshift.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-amazon-redshift-copy-activity.md            
     - name: Amazon S3
       items:
       - name: Overview
@@ -345,6 +347,8 @@
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-postgresql-copy-activity.md  
     - name: REST
       items:
       - name: Overview
