@@ -41,7 +41,7 @@ In this article, you learn how to apply PREDICT both ways, whether you're more c
 
 ## Call PREDICT from a notebook
 
-PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If there's an already trained and registered an ML model in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
+PREDICT supports MLflow-packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] registry. If there's an already trained and registered ML model in your workspace, you can skip to step 2. If not, step 1 provides sample code to guide you through training a sample logistic regression model. You can use this model to generate batch predictions at the end of the procedure.
 
 1. **Train an ML model and register it with MLflow**. The following sample code uses the MLflow API to create a machine learning experiment and start an MLflow run for a scikit-learn logistic regression model. The model version is then stored and registered in the [!INCLUDE [product-name](../includes/product-name.md)] registry. See [how to train ML models with scikit-learn](train-models-scikit-learn.md) to learn more about training models and tracking experiments of your own.
 
