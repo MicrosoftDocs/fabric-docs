@@ -54,7 +54,7 @@ With queueing enabled, batch jobs are added to the queue and automatically retri
 Fabric capacities offer bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased. 
 
 > [!NOTE]
-> The bursting factor only increases the total number of Spark VCores to help with the concurrency, but doesnt increase the max cores per job. Users cannot submit a job which requires more cores than what their Fabric capacity offers.
+> The bursting factor only increases the total number of Spark VCores to help with the concurrency but doesn't increase the max cores per job. Users can't submit a job that requires more cores than what their Fabric capacity offers.
 
 The following section lists various cores-based limits for Spark workloads based on Microsoft Fabric capacity SKUs:
 
@@ -76,7 +76,7 @@ The following section lists various cores-based limits for Spark workloads based
 > [!NOTE]
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
 
-Fabric Spark throttling doesnt have enforce arbitary jobs based limits and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
+Fabric Spark throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
 
 If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
 
