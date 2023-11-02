@@ -13,8 +13,6 @@ ms.search.form:
 
 Any [licensed user](../../enterprise/licenses.md) that's a member or admin in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines) to programmatically perform deployments. For more information, see [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
 ## Deploy to an empty stage

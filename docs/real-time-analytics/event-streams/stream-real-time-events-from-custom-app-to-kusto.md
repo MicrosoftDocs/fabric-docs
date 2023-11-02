@@ -7,7 +7,7 @@ author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 06/16/2023
-ms.search.form: Event streams
+ms.search.form: Event Streams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
 ---
 
@@ -66,13 +66,21 @@ Follow these steps to add a custom application source to your eventstream:
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source.png" alt-text="Screenshot of the Custom App dialog.":::
 
-1. After you successfully add the custom application source, a new source node appears on the canvas. Select this node to view key information about the source on the **Information** tab located on the lower pane.
+1. After you successfully add the custom application source, a new source node appears on the canvas. Select this node to view key information about the source on the **Details** tab located in the lower pane.
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot of the canvas and the Information pane that shows where to find the new source and custom app information." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" :::
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-information.png" alt-text="Screenshot showing the custom app information." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
-The connection string displayed on the **Information** tab is compatible with Azure Event Hubs. You can use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
+   - **Basic**: Shows the name, description, type and status of your custom app.
+   - **Keys**: Shows the connection string for your custom app, which you can copy and paste into your application.
+   - **Sample code**: Shows sample code, which you can refer to or copy to push the event data to this eventstream or pull the event data from this eventstream.
 
-`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`
+   For each tab (**Basic** / **Keys** / **Sample code**), you can also switch three protocol tabs: Eventhub, AMQP and Kafka to access diverse protocol formats information.
+
+The connection string displayed on the **Details** tab is compatible with Azure Event Hubs. You can copy and use this connection string in your application to send events to your eventstream. The following example shows what the connection string looks like:
+
+   *`Endpoint=sb://eventstream-xxxxxxxx.servicebus.windows.net/;SharedAccessKeyName=key_xxxxxxxx;SharedAccessKey=xxxxxxxx;EntityPath=es_xxxxxxxx`*
+
+   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/custom-app-source-detail.png" alt-text="Screenshot showing the custom app details tab." lightbox="./media/add-manage-eventstream-sources/custom-app-source-detail.png":::
 
 ## Create an application to send events to the eventstream
 
@@ -178,7 +186,7 @@ While the custom application is streaming events into your eventstream, you can 
 
 1. Enter a destination name, select a workspace, and choose a KQL database from the selected workspace.
 
-   :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/kql-database-destination-add.png" alt-text="Screenshot of the configuration details for a KQL database destination.":::
+   :::image type="content" source="./media/event-streams-destination/eventstream-destinations-kql-database.png" alt-text="Screenshot that shows where to create an Azure IoT Hub destination." lightbox="./media/event-streams-destination/eventstream-destinations-kql-database.png":::
 
 1. Select **Add and configure** to start the data ingestion wizard. On the **Destination** tab, enter a name for the KQL table and then select **Next: Source**.
 

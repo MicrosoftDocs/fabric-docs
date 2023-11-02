@@ -18,7 +18,7 @@ You can create an empty table without a data source to use as a testing environm
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Create an empty table in your KQL database
 
@@ -65,7 +65,7 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 ##### Edit columns
 
-1. Enter a column name. The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
+1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 1. Select **Add column** to add more columns.
 

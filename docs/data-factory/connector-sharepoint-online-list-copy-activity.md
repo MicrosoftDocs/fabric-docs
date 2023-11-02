@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in a data pipeline to copy data from SharePoint Online List.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:

@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines the steps to create an Amazon Redshift connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported authentication types
 
 The Amazon Redshift connector supports the following authentication types for copy and Dataflow Gen2 respectively.  

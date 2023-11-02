@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Google Cloud Storage connector isn't currently supported in Dataflow Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Next steps
 
 - [How to create a Google Cloud Storage connection](connector-google-cloud-storage.md)

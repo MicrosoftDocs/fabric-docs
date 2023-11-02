@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported authentication types
 
 The Azure SQL Database connector supports the following authentication types for copy and Dataflow Gen2 respectively.  

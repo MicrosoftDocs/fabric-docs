@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 10/23/2023
 ms.search.form: Manage data in a KQL Database
 ---
 
@@ -18,13 +18,19 @@ For more information, see [Management commands](/azure/data-explorer/kusto/manag
 
 ## Data retention policy
 
-To change the data retention policy, browse to your KQL database and select the **Manage** tab. Then, select **Data retention policy**. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
+The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric).
 
-For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).
+For more information, see [Data retention policy](data-policies.md#data-retention-policy).
+
+## Caching policy
+
+The caching policy allows to you to choose which data should be cached and kept in local SSD storage.
+
+For more information, see [Caching policy](data-policies.md#caching-policy).
 
 ## One logical copy
 
-To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, create a OneLake shortcut.
+To expose the data in your KQL database to all Microsoft Fabric experiences, create a OneLake shortcut.
 
 For more information, see [One logical copy](onelake-mirroring.md).
 

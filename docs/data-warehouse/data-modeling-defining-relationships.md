@@ -66,4 +66,4 @@ Currently, the model view layouts are only persisted in session. However the dat
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+> [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)

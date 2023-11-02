@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to configure delimited text format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported capabilities
 
 Delimited text format is supported for the following activities and connectors as source and destination.

@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the SharePoint Online list connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: SharePointOnlineAuthFailed
 
 - **Message**: `The access token generated failed, status code: %code;, error message: %message;.`
