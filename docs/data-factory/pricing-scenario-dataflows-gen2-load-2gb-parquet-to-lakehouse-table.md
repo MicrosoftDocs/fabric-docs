@@ -41,9 +41,9 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-2.png" alt-text="Screenshot showing details of Query and Dataset On-Demand Refresh cost.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-3.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-3.png" alt-text="Screenshot showing details of the first Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-4.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-4.png" alt-text="Screenshot showing details of a second Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-5.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Comput, Warehouse Query, and OneLake Compute consumption used in the run.":::
 
