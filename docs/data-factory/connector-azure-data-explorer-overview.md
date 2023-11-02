@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This Azure Data Explorer connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Support in Data pipeline
 
