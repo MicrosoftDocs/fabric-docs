@@ -121,7 +121,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
    :::image type="content" source="media\tutorial-ingest-data\monitor-output-page.png" alt-text="Screenshot of the Output page, showing what a successful run looks like." lightbox="media\tutorial-ingest-data\monitor-output-page.png":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create tables in a data warehouse](tutorial-create-tables.md)

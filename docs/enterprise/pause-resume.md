@@ -57,4 +57,4 @@ Restart usage by resuming your capacity. Resuming your capacity also resumes bil
 
 * [Scale your capacity](scale-capacity.md)
 
-* [Understand the metrics app overview page](metrics-app-overview-page.md)
+* [Understand the metrics app compute page](metrics-app-compute-page.md)

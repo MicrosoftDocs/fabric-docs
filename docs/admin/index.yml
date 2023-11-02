@@ -82,5 +82,5 @@ landingContent:
             url: monitoring-workspace.md
           - text: Feature usage and adoption report
             url: feature-usage-adoption.md
-          - text: Using Monitoring hub
+          - text: Use the Monitoring hub
             url: monitoring-hub.md
