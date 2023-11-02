@@ -37,6 +37,13 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2gp-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost":::
+
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-2.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute consumption used in the run.":::
+
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-3.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute consumption used in the run.":::
+
+
 The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Scale Dataflows Compute operations consumed 7.78 CU seconds + 7.85 CU seconds each.
 
 > [!NOTE]

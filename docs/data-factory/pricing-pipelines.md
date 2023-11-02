@@ -19,10 +19,7 @@ Data pipelines enable you to apply rich out-of-the-box data orchestration capabi
 When you run a Data Pipeline with Data Factory in Microsoft Fabric, Fabric Capacity Units are consumed for the following services:
 
 - Pipeline services for orchestration of _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
-- Data Movement service for Copy activity runs. You are charge based on the Capacity Units consumed during the Copy activity execution duration.
-
-> [!NOTE]
-> Data Integration Units was recently renamed to Throughput Optimization Units. The data pipelines user experience might still display the legacy name in some activity output.
+- Data Movement service for Copy activity runs. You are charged based on the Capacity Units consumed during the Copy activity execution duration.
 
 ## Pricing model
 
