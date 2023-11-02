@@ -73,23 +73,23 @@ The focus of Step 1 is on exporting SJD from Azure Synapse workspace to OneLake 
 
 ```python
 # Azure config
-azure_client_id = "<>"
-azure_tenant_id = "<>"
-azure_client_secret = "<>"
+azure_client_id = "<client_id>"
+azure_tenant_id = "<tenant_id>"
+azure_client_secret = "<client_secret>"
 
 # Azure Synapse workspace config
-synapse_workspace_name = "<>"
+synapse_workspace_name = "<synapse_workspace_name>"
 
 # Fabric config
-workspace_id = "<>"
-lakehouse_id = "<>"
+workspace_id = "<workspace_id>"
+lakehouse_id = "<lakehouse_id>"
 export_folder_name = f"export/{synapse_workspace_name}"
-prefix = "<>" # this prefix is used during import {prefix}{sjd_name}
+prefix = "" # this prefix is used during import {prefix}{sjd_name}
 
 output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakehouse_id}/Files/{export_folder_name}"
 ```
 
-* **1.3) Run the first two cells** of the `nt-sjd-export-import-json.ipynb` to export SJD metadata to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
+* **1.3) Run the first two cells** of the export/import notebook to export SJD metadata to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
 :::image type="content" source="media\migrate-synapse\migrate-sjd-export-api.png" alt-text="Screenshot showing SJD export in OneLake.":::
 
@@ -98,7 +98,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 Step 2 is when SJDs are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
 * **2.1) Validate the configurations** in the 1.2 to ensure the right workspace and prefix are indicated to import the SJDs.
-* **2.2) Run the third cell** of the `nt-sjd-export-import-json.ipynb` to import all SJDs from intermediate location.
+* **2.2) Run the third cell** of the export/import notebook to import all SJDs from intermediate location.
 
 > [!NOTE]
 > The export option outputs a json metadata file. Ensure that SJD executable files, reference files, and arguments are accessible from Fabric.

@@ -74,23 +74,23 @@ The focus of Step 1 is on exporting the notebooks from Azure Synapse workspace t
 
 ```python
 # Azure config
-azure_client_id = "<>"
-azure_tenant_id = "<>"
-azure_client_secret = "<>"
+azure_client_id = "<client_id>"
+azure_tenant_id = "<tenant_id>"
+azure_client_secret = "<client_secret>"
 
 # Azure Synapse workspace config
-synapse_workspace_name = "<>"
+synapse_workspace_name = "<synapse_workspace_name>"
 
 # Fabric config
-workspace_id = "<>"
-lakehouse_id = "<>"
+workspace_id = "<workspace_id>"
+lakehouse_id = "<lakehouse_id>"
 export_folder_name = f"export/{synapse_workspace_name}"
-prefix = "<>" # this prefix is used during import {prefix}{notebook_name}
+prefix = "" # this prefix is used during import {prefix}{notebook_name}
 
 output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakehouse_id}/Files/{export_folder_name}"
 ```
 
-* **1.3) Run the first two cells** of the `nt-notebook-export-import-ipynb.ipynb` to export notebooks to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
+* **1.3) Run the first two cells** of the export/import notebook to export notebooks to OneLake. Once cells are completed, this folder structure under the intermediate output directory is created.
 
 :::image type="content" source="media\migrate-synapse\migrate-notebooks-export-api.png" alt-text="Screenshot showing Notebook export in OneLake.":::
 
@@ -99,7 +99,7 @@ output_folder = f"abfss://{workspace_id}@onelake.dfs.fabric.microsoft.com/{lakeh
 Step 2 is when notebooks are imported from intermediate storage into the Fabric workspace. This process is as follows:
 
 * **2.1) Validate the configurations** in step 1.2 to ensure the right Fabric workspace and prefix values are indicated to import the notebooks.
-* **2.2) Run the third cell** of the `nt-notebook-export-import-ipynb.ipynb` notebook to import all notebooks from intermediate location.
+* **2.2) Run the third cell** of the export/import notebook to import all notebooks from intermediate location.
 
 ## Next steps
 
