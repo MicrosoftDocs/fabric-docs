@@ -18,6 +18,16 @@ The SQL Server database connector is supported in Data Factory for [!INCLUDE [pr
 
 For information on how to connect to a SQL Server database in Dataflow Gen2, go to [Set up your SQL Server database connection](connector-sql-server-database.md).
 
-## Support in data pipelines
+## Support in Data pipeline
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support a SQL Server database in data pipelines.
+The SQL Server database connector supports the following capabilities in Data pipeline:
+
+| Supported capabilities | Gateway | Authentication |
+| --- | --- | --- |
+| **Copy activity (source/destination)** | None | Basic |
+| **Lookup activity** | None | Basic |
+| **GetMetadata activity** | None | Basic |
+| **Script activity** | None | Basic |
+| **Stored procedure activity** | None | Basic |
+
+To learn more about the copy activity configuration for SQL Server database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-sql-server-copy-activity.md).
