@@ -378,8 +378,6 @@ IPython Widgets are eventful python objects that have a representation in the br
 1. Global *display* function provided by Fabric doesn't support displaying multiple widgets in one call (for example, *display(a, b)*), which is different from IPython *display* function.
 1. If you close a notebook that contains IPython Widget, you can't see or interact with it until you execute the corresponding cell again.
 
-
-
 ## Integrate a notebook
 
 ### Designate a parameters cell
@@ -392,7 +390,7 @@ The parameter cell is useful for integrating a notebook in a pipeline. Pipeline 
 
 ### Assign parameters values from a pipeline
 
-Once you've created a notebook with parameters, you can execute it from a pipeline with the Fabric Notebook activity. After you add the activity to your pipeline canvas, you will be able to set the parameters values under **Base parameters** section on the **Settings** tab. 
+Once you've created a notebook with parameters, you can execute it from a pipeline with the Fabric Notebook activity. After you add the activity to your pipeline canvas, you will be able to set the parameters values under **Base parameters** section on the **Settings** tab.
 
 :::image type="content" source="media\author-execute-notebook\assign-parameter.png" alt-text="Screenshot showing where to assign parameters values from a pipeline." lightbox="media\author-execute-notebook\assign-parameter.png":::
 
@@ -438,6 +436,7 @@ You can personalize your spark session via a magic command **%%configure**, Fabr
 ```
 
 > [!NOTE]
+>
 > - "DriverMemory" and "ExecutorMemory" are recommended to set as same value in %%configure, so do "driverCores" and "executorCores".
 > - "defaultLakehouse" will overwrite the "pinned" Lakehouse on Lakehouse explorer, but it only works on the current notebook session.
 > - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
@@ -486,7 +485,8 @@ During the pipeline run mode, you can configure pipeline Notebook activity setti
 If you want to change the session configuration, pipeline Notebook activity parameters name should be same as activityParameterName in the notebook. When running this pipeline, in this example driverCores in %%configure will be replaced by 8 and livy.rsc.sql.num-rows will be replaced by 4000.
 
 > [!NOTE]
-> - If run pipeline failed because of using this new %%configure magic, you can check more error information by running %%configure magic cell in the interactive mode of the notebook. 
+>
+> - If run pipeline failed because of using this new %%configure magic, you can check more error information by running %%configure magic cell in the interactive mode of the notebook.
 > - Notebook schedule run doesn't support parameterized session configuration.
 >
 

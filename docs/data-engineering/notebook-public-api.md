@@ -17,6 +17,7 @@ public api doc: [Items - REST API (Fabric REST APIs) | Microsoft Learn](https://
 ## Create notebook with definition
 
 ### Sample request
+
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items
 
@@ -41,23 +42,23 @@ Note: You can change the notebook attached lakehouse or environment by changing 
 
 ```json
 {
-	"nbformat": 4,
-	"nbformat_minor": 5,
-	"cells": [
-		{
-			"cell_type": "code",
-			"source": [
-				"# Welcome to your new notebook\n# Type here in the cell editor to add code!\n"
-			],
-			"execution_count": null,
-			"outputs": [],
-			"metadata": {}
-		}
-	],
-	"metadata": {
-		"language_info": {
-			"name": "python"
-		},
+ "nbformat": 4,
+ "nbformat_minor": 5,
+ "cells": [
+  {
+   "cell_type": "code",
+   "source": [
+    "# Welcome to your new notebook\n# Type here in the cell editor to add code!\n"
+   ],
+   "execution_count": null,
+   "outputs": [],
+   "metadata": {}
+  }
+ ],
+ "metadata": {
+  "language_info": {
+   "name": "python"
+  },
         "trident": {
             "environment": {
                 "environmentId": "6524967a-18dc-44ae-86d1-0ec903e7ca05",
@@ -78,12 +79,15 @@ Note: You can change the notebook attached lakehouse or environment by changing 
 Set the format as ipynb in query string to get an ipynb format notebook.
 
 ### Sample request
+
 ```http
 POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ARTIFACT_ID}}/GetDefinition?format=ipynb
 ```
 
 ### Sample response
+
 Status code: 200
+
 ```json
 {
     "definition": {
@@ -136,7 +140,9 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
 ```
 
 ### Sample response
+
 Status code: 202
+
 ```http
 Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187-f10824047715/items/431e8d7b-4a95-4c02-8ccd-6faef5ba1bd7/jobs/instances/f2d65699-dd22-4889-980c-15226deb0e1b
 Retry-After: 60

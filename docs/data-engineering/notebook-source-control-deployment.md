@@ -13,17 +13,17 @@ ms.search.form: Notebook git deployment pipelines alm ci cd
 
 ## Notebook Git integration (Preview)
 
-Fabric notebook offers Git integration for source control using Azure DevOps. With git integration, you can backup and version your notebook, revert to previous stages as needed, collaborate or work alone using git branches, and manage their content lifecycle end-to-end within Fabric. 
+Fabric notebook offers Git integration for source control using Azure DevOps. With git integration, you can backup and version your notebook, revert to previous stages as needed, collaborate or work alone using git branches, and manage their content lifecycle end-to-end within Fabric.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ### Set up connection
 
-You can easily can set up a connection to your Repo from the workspace settings and use Git commands to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks will appear in the “Source control” panel. 
+You can easily can set up a connection to your Repo from the workspace settings and use Git commands to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks will appear in the “Source control” panel.
 
 :::image type="content" source="media\notebook-source-control-deployment\git-source-panel.png" alt-text="Screenshot of workspace source control panel." lightbox="media\notebook-source-control-deployment\git-source-panel.png":::
 
-After the notebook instances are committed to Git repo successfully, from Azure DevOps Repos Files view, you’ll be able to see the notebook item folder structure and source code there, then you can establish the future operations like “Create pull request” etc. 
+After the notebook instances are committed to Git repo successfully, from Azure DevOps Repos Files view, you’ll be able to see the notebook item folder structure and source code there, then you can establish the future operations like “Create pull request” etc.
 
 ### Notebook representation in Git
 
@@ -35,14 +35,13 @@ When committing the notebook item to the Git repo, the code will be converted to
 
 In the item content source file, the item's metadata including default Lakehouse, environmnet markdown cells, and code cells will be preserved and distinguished, allowing for precise recovery when synced back to a Trident workspace. Note that notebook cell output will not be included when syncing to Git.
 
-:::image type="content" source="media\notebook-source-control-deployment\notebook-content.png" alt-text="Screenshot of notebook git repo file structure." lightbox="media\notebook-source-control-deployment\notebook-content.png":::
+:::image type="content" source="media\notebook-source-control-deployment\notebook-content.png" alt-text="Screenshot of notebook git repo content format." lightbox="media\notebook-source-control-deployment\notebook-content.png":::
 
 > [!NOTE]
 >
 > - Files in **Notebook Resources** won't be committed to the repo for now, will be supported in an upcoming release.
 > - The Default lakehouse id will be persisted in notebook when sync from repo to Fabric workspace, if you commit a notebook together with the default Lakehouse, you need to refer newly created lakehouse item manually. More details please check [Lakehouse Git integration](lakehouse-git-deployment-pipelines.md).
 >
-
 
 ## Notebook in deployment pipelines (Preview)
 
@@ -59,23 +58,23 @@ You can follow below steps to complete your Notebook deployment leveraging deplo
 :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
 - Step 4: Click **Deploy** button to deploy your notebooks across Development, Test, and Production stages.
-- Step 5 (optional): You can click the **Deployment rules** to create deployment rules for a deployment process, note that Deployment rules entry is on the target stage for a deployment process. 
+- Step 5 (optional): You can click the **Deployment rules** to create deployment rules for a deployment process, note that Deployment rules entry is on the target stage for a deployment process.
 
 :::image type="content" source="media\notebook-source-control-deployment\deploy-rule-entry.png" alt-text="Screenshot of deployment rules entry." lightbox="media\notebook-source-control-deployment\deploy-rule-entry.png":::
- 
-We support parameterize the default Lakehouse for **each** notebook instance when deploying with deployment rules. 3 options are offered here to specify the target default Lakehouse: Same with source Lakehouse, _N/A_, and other Lakehouse. 
+
+We support parameterize the default Lakehouse for **each** notebook instance when deploying with deployment rules. 3 options are offered here to specify the target default Lakehouse: Same with source Lakehouse, _N/A_, and other Lakehouse.
 
 :::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of set default lakehouse." lightbox="media\notebook-source-control-deployment\set-default-lakehouse.png":::
 
-You can achieve secured data isolation from different stage by setting up this rule, and it will apply to the next deployment and change your notebook's default lakehouse to the one you specified as target. 
+You can achieve secured data isolation from different stage by setting up this rule, and it will apply to the next deployment and change your notebook's default lakehouse to the one you specified as target.
 
 > [!NOTE]
 > When you choose to adopt other Lakehouse in the target environment, The _Lakehouse id_ is a must have. You can find the id of a Lakehouse from the Lakehouse URL link.
 
 - Step 6: Monitor the depoloyment status from **Deployment history**.
 
-
 ## Next steps
+
 - [Introduction of Notebook Public API](notebook-public-api.md)
 - [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md)
 - [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
