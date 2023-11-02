@@ -129,4 +129,4 @@ The following tables contain more information about the copy activity in Google 
 
 ## Next steps
 
-- [Set up yourGoogle Cloud Storage connection](connector-google-cloud-storage.md)
+- [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md)
