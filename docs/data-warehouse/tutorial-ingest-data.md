@@ -6,12 +6,12 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 11/02/2023
 ---
 
 # Tutorial: Ingest data into a Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can ingest data into that warehouse.
 
@@ -23,15 +23,13 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
    :::image type="content" source="media\tutorial-ingest-data\select-tutorial-menu.png" alt-text="Screenshot of the navigation menu, showing where to select Data Warehouse Tutorial.":::
 
-1. In the upper left corner, select **New** > **Show all** to display a full list of available items.
-
-   :::image type="content" source="media\tutorial-ingest-data\select-show-all.png" alt-text="Screenshot of the Data Warehouse Tutorial page, showing where to select Show all from the New menu.":::
+1. In the upper left corner, select **New** > **More options** to display a full list of available items.
 
 1. In the **Data Factory** section, select **Data pipeline**.
 
    :::image type="content" source="media\tutorial-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline.":::
 
-1. On the **New** **pipeline** dialog, enter `Load Customer Data` as the name.
+1. On the **New pipeline** dialog, enter `Load Customer Data` as the name.
 
    :::image type="content" source="media\tutorial-ingest-data\new-pipeline-dialog.png" alt-text="Screenshot of the New pipeline dialog box, showing where to enter the name and select Create.":::
 
@@ -87,7 +85,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
        1. **File path - File name:** `dimension_customer.parquet`
 
-   1. In the **File format** drop down, choose **Parquet**.
+   1. In the **File format** drop-down, choose **Parquet**.
 
 1. Select **Preview data** next to the **File path** setting to ensure there are no errors.
 
