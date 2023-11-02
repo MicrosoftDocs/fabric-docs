@@ -39,6 +39,7 @@ The following three properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**: Select an Azure Table Storage connection from the connection list. If no connection exists, then create a new Azure Table Storage connection by selecting **New**.
 - **Use query**: Specify way to read data. Select **Table** to read data from the specified table or select **Query** to read data using queries.
+
     If you select **Table**: 
 
     :::image type="content" source="./media/connector-azure-table-storage/source-table.png" alt-text="Screenshot showing Use query when selecting Table." :::
