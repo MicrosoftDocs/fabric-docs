@@ -14,8 +14,6 @@ ms.search.form: Event streams
 
 This tutorial shows you how to use the Microsoft Fabric event streams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]

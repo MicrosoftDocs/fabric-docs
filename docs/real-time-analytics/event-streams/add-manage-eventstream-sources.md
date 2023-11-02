@@ -14,8 +14,6 @@ ms.search.form: Event streams
 
 Once you have created an eventstream, you can connect it to various data sources and destinations. The types of event sources that you can add to your eventstream include Azure Event Hubs, Azure IoT Hub, Sample data, and Custom app.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:

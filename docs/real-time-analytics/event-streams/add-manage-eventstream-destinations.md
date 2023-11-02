@@ -14,8 +14,6 @@ ms.search.form: product-kusto
 
 Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, Custom App and Reflex. See the [Supported destinations](#supported-destinations) section for details.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:
