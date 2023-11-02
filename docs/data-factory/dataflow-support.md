@@ -108,7 +108,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](/power-query/connectors/odata-feed)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](connector-odbc.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
+| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](connector-odata.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](connector-odbc.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
 
 ## P
 
