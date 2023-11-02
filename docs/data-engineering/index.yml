@@ -60,7 +60,10 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
-
+          - text: Notebooks source control and deployment
+            url: notebook-source-control-deployment.md
+          - text: Use MSSparkUtils in notebook
+            url: microsoft-spark-utilities.md
   # Card 
   - title: Delta Lake
     linkLists:
