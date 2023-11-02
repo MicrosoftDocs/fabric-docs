@@ -50,7 +50,7 @@ The following properties are supported for Azure Data Lake Storage Gen1 under th
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an **Azure Data Lake Storage Gen1** connection from the connection list.If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
+- **Connection**:  Select an **Azure Data Lake Storage Gen1** connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen1 connection by selecting **New**.
 - **Connection type**: Select **Azure Data Lake Storage Gen1**.
 - **File path type**: You can choose **File path**, **Name range**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
