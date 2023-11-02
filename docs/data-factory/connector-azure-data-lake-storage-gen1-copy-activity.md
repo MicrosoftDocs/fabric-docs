@@ -50,7 +50,7 @@ The following properties are supported for Azure Data Lake Storage Gen1 under th
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an **Azure Data Lake Storage Gen1** connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen1 connection by selecting **New**.
+- **Connection**:  Select an Azure Data Lake Storage Gen1 connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen1 connection by selecting **New**.
 - **Connection type**: Select **Azure Data Lake Storage Gen1**.
 - **File path type**: You can choose **File path**, **Name range**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
@@ -122,7 +122,7 @@ The following properties are supported for Azure Data Lake Storage Gen1 under th
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an **Azure Data Lake Storage Gen1** connection from the connection list. If the connection doesn't exist, then create a new Azure Data Lake Storage Gen1 connection by selecting **New**.
+- **Connection**: Select an Azure Data Lake Storage Gen1 connection from the connection list. If the connection doesn't exist, then create a new Azure Data Lake Storage Gen1 connection by selecting **New**.
 - **Connection type**: Select **Azure Data Lake Storage Gen1**.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
@@ -157,9 +157,9 @@ The following tables contain more information about the copy activity in Azure D
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|type|
+|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen1 connection> |Yes|connection|
-|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |type|
+|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
 |**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• listAfter, listBefore<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|Selected or unselect|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
@@ -171,10 +171,14 @@ The following tables contain more information about the copy activity in Azure D
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|type|
+|**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen1 connection>|Yes|connection|
-|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |type|
+|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
 |**File path**|The file path of your destination data.|File path of source |Yes |container <br> fileName|
 |**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
-|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
+|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Expiry datetime (UTC)** |The expiry time of the written files. The time is applied to the UTC time in the format of "2020-03-01T08:00:00Z". By default it's NULL, which means the written files are never expired.|< your expiry datetime >|No |expiryDatetime|
+
+## Next steps
+
+- [Azure Data Lake Storage Gen1 overview](connector-azure-data-lake-storage-gen1-overview.md)
