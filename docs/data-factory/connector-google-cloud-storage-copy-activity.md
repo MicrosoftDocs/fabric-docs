@@ -1,14 +1,14 @@
 ---
-title: How to configure Google Cloud Storage in copy activity in Data Factory in Microsoft Fabric
-description: This article explains how to copy data using Google Cloud Storage.
+title: Configure Google Cloud Storage in a copy activity
+description: This article explains how to copy data using Google Cloud Storage in Data Factory in Microsoft Fabric.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/2/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Google Cloud Storage in copy activity
+# Configure Google Cloud Storage in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Google Cloud Storage.
 
@@ -16,7 +16,7 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 The following setup is required on your Google Cloud Storage account:
 
-1. Enable interoperability for your Google Cloud Storage account
+1. Enable interoperability for your Google Cloud Storage account.
 2. Set the default project that contains the data you want to copy from the target GCS bucket.
 3. Create a service account and define the right levels of permissions by using Cloud IAM on GCP.
 4. Generate the access keys for this service account.
@@ -35,14 +35,14 @@ For the full list of Google Cloud Storage roles and associated permissions, go t
 
 Google Cloud Storage supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -84,11 +84,11 @@ Under **Advanced**, you can specify the following fields:
 
       Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-        * Wildcard folder path: Specify the folder path with wildcard characters under the given bucket to filter source folders.
+        - Wildcard folder path: Specify the folder path with wildcard characters under the given bucket to filter source folders.
 
            :::image type="content" source="./media/connector-google-cloud/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-google-cloud/wildcard-folder-path.png":::
 
-        * Wildcard file name: Specify the file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
+        - Wildcard file name: Specify the file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
     - **List of files**: Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured in **File path**.
 
@@ -129,4 +129,4 @@ The following tables contain more information about the copy activity in Google 
 
 ## Next steps
 
-[How to create Google Cloud Storage connection](connector-google-cloud-storage.md)
+- [Set up yourGoogle Cloud Storage connection](connector-google-cloud-storage.md)
