@@ -81,6 +81,8 @@ At the end of the rentention period, the workspace is deleted permanently and it
 
 Once a workspace is in the retention period, administrators can permantly delete it before the end of the retention period.  
 
+Mention capacity usage in storage during the retention period, and how to monitor it.
+
 ## Govern My workspaces
 
 Every [!INCLUDE [product-name](../includes/product-name.md)] user has a personal workspace called My workspace where they can work with their own content. While generally only My workspace owners have access to their My workspaces, [!INCLUDE [product-name](../includes/product-name.md)] admins can use a set of features to help them govern these workspaces. With these features, [!INCLUDE [product-name](../includes/product-name.md)] admins can:
