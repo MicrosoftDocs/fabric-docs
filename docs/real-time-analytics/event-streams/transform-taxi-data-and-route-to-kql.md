@@ -84,9 +84,9 @@ Follow these steps to create an eventstream in your workspace:
 
     :::image type="content" source="./media/transform-taxi-data-and-to-kql/configure-group-by.png" alt-text="Screenshot that shows where to group by operation in Eventstream.":::
 
-    Under the **Settings**, select **VendorID** for Group aggregations by and **Tumbling** for Time window. Enter 1 hour for the duration.
+    Under the **Settings**, select **VendorID** for Group aggregations by and **Tumbling** for Time window. Enter 1 hour for the duration and select **Save** to complete the Group by configuration.
 
-5. There's a **Group by** operation inserted between the Eventstream and the KQL database. Select **Preview** to view the computed result. Select **Done** to close the Event processor.
+5. Then you see a **Group by** operation inserted between the Eventstream and the KQL database. Select **Preview** to view the processed result. Select **Done** to close the Event processor.
 
     :::image type="content" source="./media/transform-taxi-data-and-to-kql/preview-group-by.png" alt-text="Screenshot that shows where to preview group by data in Eventstream.":::
 
