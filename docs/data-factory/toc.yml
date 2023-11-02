@@ -339,12 +339,10 @@
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-odata.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-odata-copy-activity.md 
-      - name: Configure in Dataflow Gen2
-        href: connector-odata-dataflows.md
     - name: Odbc
       items:
       - name: Overview

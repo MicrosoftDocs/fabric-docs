@@ -166,6 +166,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
           "redirect_document_id": false
