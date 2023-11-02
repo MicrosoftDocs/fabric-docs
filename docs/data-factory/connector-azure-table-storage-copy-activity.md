@@ -38,8 +38,7 @@ The following three properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**: Select an Azure Table Storage connection from the connection list. If no connection exists, then create a new Azure Table Storage connection by selecting **New**.
-- **Use query**: Select from **Table** or **Query**. 
-    
+- **Use query**: Specify way to read data. Select **Table** to read data from the specified table or select **Query** to read data using queries.
     If you select **Table**: 
 
     :::image type="content" source="./media/connector-azure-table-storage/source-table.png" alt-text="Screenshot showing Use query when selecting Table." :::
@@ -120,7 +119,7 @@ The following table contains more information about the copy activity in Azure T
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the source data store.|< your Azure Table Storage connection >|Yes|connection|
-| **Use query** | Choose to use **Table** or **Query**. | • Table<br>• Query | Yes | / | 
+| **Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries. | • Table<br>• Query | Yes | / | 
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
 | **Query** | Specify the custom Table storage query to read data. The source query is a direct map from the `$filter` query option supported by Azure Table Storage, learn more about the syntax from this [article](/rest/api/storageservices/querying-tables-and-entities#supported-query-options). | < your query > | No | azureTableSourceQuery | 
 | **Ignore table not found** | Indicates whether to allow the exception of the table to not exist. | selected or unselected (default) | No | azureTableSourceIgnoreTableNotFound:<br>true or false (default) | 
