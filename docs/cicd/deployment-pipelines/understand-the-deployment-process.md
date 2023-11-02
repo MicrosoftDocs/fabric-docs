@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 09/28/2023
+ms.date: 11/02/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -141,6 +141,12 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Datamarts
 
 * Dashboards
+
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+
+* [Data warehouse](../../data-warehouse/data-warehousing.md)
 
 * Paginated reports
 
