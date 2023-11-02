@@ -35,11 +35,22 @@ Follow these key steps for migration:
 The focus of Step 1 is on exporting the metadata from source HMS to the Files section of your Fabric lakehouse. This process is as follows:
 
 * **1.1) Import migration notebook** to Azure Synapse. [This notebook](NEEDLINK) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
-* **1.2) Configure the parameters** in the first command to export metadata information to an intermediate storage (OneLake).
+* **1.2) Configure the parameters** in the first command to export metadata information to an intermediate storage (OneLake). The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.
 
 ```scala
 
-ADD CODE
+// Azure Synapse workspace config
+var SynapseWorkspaceName = "<synapse_workspace_name>"
+
+var DatabaseNames = "<db1_name>;<db2_name>"
+var SkipExportTablesWithUnrecognizedType:Boolean = false
+
+// Fabric config
+var WorkspaceId = "<workspace_id>"
+var LakehouseId = "<lakehouse_id>"
+var ExportFolderName = f"export/${SynapseWorkspaceName}/sparkCatalogMetadata"
+
+var OutputFolder = f"abfss://${WorkspaceId}@onelake.dfs.fabric.microsoft.com/${LakehouseId}/Files/${ExportFolderName}/"
 
 ```
 
@@ -63,7 +74,26 @@ Step 2 is when the actual metadata is imported from intermediate storage into th
 
 ```scala
 
-ADD CODE
+// Azure Synapse workspace config
+var ContainerName = "<container_name>"
+var StorageName = "<storage_name>"
+var SynapseWorkspaceName = "<synapse_workspace_name>"
+
+// Fabric config
+var WorkspaceId = "<workspace_id>"
+var LakehouseId = "<lakehouse_id>"
+var ExportFolderName = f"export/${SynapseWorkspaceName}/sparkCatalogMetadata"
+var ShortcutName = "<warehouse_dir_shortcut_name>"
+
+var WarehouseMappings:Map[String, String] = Map(
+    f"abfss://${ContainerName}@${StorageName}.dfs.core.windows.net/synapse/workspaces/${SynapseWorkspaceName}/warehouse"-> f"abfss://${WorkspaceId}@onelake.dfs.fabric.microsoft.com/${LakehouseId}/Files/${ShortcutName}"
+)
+
+var OutputFolder = f"abfss://${WorkspaceId}@onelake.dfs.fabric.microsoft.com/${LakehouseId}/Files/${ExportFolderName}/"
+
+var DatabasePrefix = ""
+var TablePrefix = ""
+var IgnoreIfExists = true
 
 ```
 
