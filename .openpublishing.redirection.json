@@ -154,6 +154,11 @@
           "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
           "redirect_url": "/fabric/real-time-analytics/data-policies",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
         }
     ]
 }

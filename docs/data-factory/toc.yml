@@ -276,7 +276,7 @@
       - name: Overview
         href: connector-lakehouse-overview.md
       - name: Set up your connection
-        href: connector-lakehouse-dataflows.md
+        href: connector-lakehouse.md
       - name: Configure in data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
