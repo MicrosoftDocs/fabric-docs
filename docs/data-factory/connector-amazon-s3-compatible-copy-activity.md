@@ -75,7 +75,7 @@ The following properties are **required**:
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
     - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
 
-        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
+        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. See more examples in [Folder and file filter examples](/azure/data-factory/connector-amazon-s3-compatible-storage#folder-and-file-filter-examples).
     :::image type="content" source="./media/connector-amazon-s3-compatible/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
       *Wildcard folder path*: The folder path with wildcard characters under the given bucket to filter source folders.
 
@@ -145,7 +145,7 @@ The following tables contain more information about the copy activity in Amazon 
 | **Wildcard paths** | The folder/file path with wildcard characters under the configured bucket to filter source folders/files. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName |
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath |
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
-| **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.| Selected (default) or unselect |No |recursive|
+| **Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.| selected (default) or unselect |No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
