@@ -54,7 +54,7 @@ The following properties are **required**:
 - **Connection type**: Select **Azure Data Lake Storage Gen1**.
 - **File path type**: You can choose **File path**, **Name range**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
-  - **File path**: If you choose this type, the data can be copied from the given container or folder/file path specified previously.
+  - **File path**: If you choose this type, the data can be copied from the specified folder/file path.
   - **Name range**: Retrieve folders/files with names before or after a specific value in alphabetical order. It utilizes the service-side filter for ADLS Gen1, which provides better performance than a wildcard filter. For more examples, got to [Name range filter examples](/azure/data-factory/connector-azure-data-lake-store#name-range-filter-examples).
       :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/name-range.png" alt-text="Screenshot showing name range.":::
 
@@ -66,7 +66,7 @@ The following properties are **required**:
   
   - **Wildcard file path**: Specify the folder or file path with wildcard characters to filter source folders or files.
 
-    Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-store#folder-and-file-filter-examples).
+    Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-store#folder-and-file-filter-examples).
 
     :::image type="content" source="./media/connector-azure-data-lake-storage-gen1/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
 
@@ -161,7 +161,7 @@ The following tables contain more information about the copy activity in Azure D
 |**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen1 connection> |Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
 |**File path type** |The file path type that you want to use.|• File path <br>• Name range <br>• Wildcard folder path, Wildcard file name<br>•List of files|No |• folderPath, fileName<br>• listAfter, listBefore<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
-|**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|Selected or unselect|No |recursive|
+|**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|selected (default) or unselect|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
@@ -174,8 +174,8 @@ The following tables contain more information about the copy activity in Azure D
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen1 connection>|Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
-|**File path**|The file path of your destination data.|File path of source |Yes |container <br> fileName|
-|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName|
+|**Copy behavior** |Defines the copy behavior when the destination is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Expiry datetime (UTC)** |The expiry time of the written files. The time is applied to the UTC time in the format of "2020-03-01T08:00:00Z". By default it's NULL, which means the written files are never expired.|< your expiry datetime >|No |expiryDatetime|
 
