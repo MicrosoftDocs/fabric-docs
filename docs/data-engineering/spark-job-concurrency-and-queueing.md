@@ -24,7 +24,19 @@ Once they have purchased the capacity, admins can create workspaces within the c
 
 ## Concurrency throttling and queueing
 
-Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. Because users can use different items like notebooks, Spark job definitions, and lakehouses in any workspace, and the usage varies across different enterprise teams, they could run into starvation scenarios where there's dependency on only type of item (like a Spark job definition). This situation could result in users sharing the capacity from running a notebook-based job or any lakehouse-based operation like load to table.
+Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. Because users can use different items like notebooks, Spark job definitions, and lakehouses in any workspace, and the usage varies across different enterprise teams, they could run into starvation scenarios where there's dependency on only type of item (like a Spark job definition). This situation could result in users sharing the capacity from running a notebook-based job or any lakehouse-based operation like load to table. 
+
+Microsoft Fabric Spark supports two types of jobs, **interactive** and **batch**. Below is a table detailing the jobs and their respective groups:
+
+| Job Type    | Operation                                         |
+| ----------- | ------------------------------------------------- |
+|             | Jobs submitted from notebook                      |
+|             | Scheduled notebook jobs                           |
+| Interactive | Notebook jobs from pipelines                      |
+|             | Lakehouse operations like Table Preview           |
+|             | Spark job definitions                             |
+| Batch       | Lakehouse operations like load to delta           |
+
 
 To avoid these blocking scenarios, Microsoft Fabric applies a **dynamic reserve-based throttling** for jobs from these items, based on two job types. Because notebook- and lakehouse-based jobs are more interactive and real-time, they're classified as **interactive**. Spark job definitions are classified as **batch**. As part of this dynamic reserve, minimum and maximum reserve bounds are maintained for these job types. The reserves address use cases where an enterprise team could experience peak usage scenarios, having their entire capacity consumed by batch jobs. During those peak hours, users are blocked from using interactive items like notebooks or lakehouses. With this approach, every capacity has a minimum reserve of 30% of the total jobs allocated for interactive jobs (5% for lakehouses and 25% for notebooks), and a minimum reserve of 10% for batch jobs.
 
