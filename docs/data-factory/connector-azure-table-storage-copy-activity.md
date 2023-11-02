@@ -132,7 +132,7 @@ The following table contains more information about the copy activity in Azure T
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Table Storage connection >|Yes|connection|
 | **Table** | The name of the table in the Azure Table Storage database instance. | < your table name > | Yes | tableName | 
-| **Insert type** | The mode to insert data into Azure Table. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No | merge<br>replace | 
+| **Insert type** | The mode to insert data into Azure Table. This property controls whether existing rows in the output table with matching partition and row keys have their values replaced or merged. | • **Merge**<br>• **Replace** | No |azureTableInsertType:<br>• merge<br>• replace | 
 | **Partition key value selection** | Partition key value can be a fixed value or it can take value from a destination column. | • **Specify partition value**<br>• **Use destination column** | No | / | 
 | **Default partition value** | The default partition key value that can be used by the destination | < your default partition value > | No | azureTableDefaultPartitionKeyValue | 
 | **Partition key column** | The name of the column whose values are used as partition keys. If not specified, "AzureTableDefaultPartitionKeyValue" is used as the partition key. | < your partition key column > | No | azureTablePartitionKeyName | 
