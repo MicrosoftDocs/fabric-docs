@@ -41,7 +41,7 @@ landingContent:
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
-          - text: Upgrade paths to Data Factory
+          - text: Upgrading to Data Factory
             url: upgrade-paths.md
       - linkListType: tutorial
         links:
