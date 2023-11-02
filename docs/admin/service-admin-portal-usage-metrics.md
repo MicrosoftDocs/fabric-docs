@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: admin-portal
 ms.topic: how-to
-ms.date: 09/19/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -54,6 +54,10 @@ This tile shows a view of your top users based on how many reports they have. Th
   
 ![Screenshot of a Power BI tile showing top users based on how many reports they have in the form of a table chart.](media/service-admin-portal-usage-metrics/powerbi-admin-usage-metrics-top-users-reports.png)
 
+## Considerations and limitations
+
+Due to the move to Microsoft Fabric, some tiles in the Admin Portal Usage Metrics are rendered blank.
+
 ## Next steps
 
-- [What is the admin portal?](admin-center.md)
+[What is the admin portal?](admin-center.md)
