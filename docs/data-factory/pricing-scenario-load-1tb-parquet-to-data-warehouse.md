@@ -22,21 +22,6 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/load-1tb-parquet-to-data-warehouse.png" alt-text="Screenshot showing the configuration of a pipeline copying Parquet data from ADLS Gen2 to a data warehouse.":::
 
-## Manual cost estimation
-
-:::image type="content" source="media/pricing-scenarios/load-1tb-parquet-to-data-warehouse-details.png" alt-text="Screenshot showing the copy data details for the scenario.":::
-
-|Metric  |Source to destination  |
-|---------|---------|
-|Duration     | 00:11:01        |
-|Used Parallel copies     | 1        |
-|TOU utilized by the activity run     | 4        |
-|Billed duration     | 11 minutes 1 second = 12/60 hour        |
-|Effective TOU-hours billed     | (4 TOU) * (12/60 hour) = 0.8 TOU-hours        |
-|Effective CU     | (0.8 TOU-hours) * (1.5 CU) = 1.2 CU        |
-
-**Total run cost at $0.18/CU hour** = (1.2 CU hours) * ($0.18/CU hour) ~= **$ 0.22**
-
 ## Cost estimation using the Fabric Metrics App
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-parquet-to-data-warehouse.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::

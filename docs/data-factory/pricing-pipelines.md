@@ -19,7 +19,7 @@ Data pipelines enable you to apply rich out-of-the-box data orchestration capabi
 When you run a Data Pipeline with Data Factory in Microsoft Fabric, Fabric Capacity Units are consumed for the following services:
 
 - Pipeline services for orchestration of _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
-- Azure Data Movement Services (ADMS) for Copy activity runs require _Throughput Optimization Units (TOU)_ hours. For copy activities, your charge is based on the number of TOU used and the execution duration.
+- Data Movement service for Copy activity runs. You are charge based on the Capacity Units consumed during the Copy activity execution duration.
 
 > [!NOTE]
 > Data Integration Units was recently renamed to Throughput Optimization Units. The data pipelines user experience might still display the legacy name in some activity output.
@@ -30,28 +30,14 @@ The following table shows a breakdown of the pricing model for Data Factory in M
 
 |Data Pipelines Engine Type  |Charge Meters and Metric Units  |Fabric Capacity Units (CUs) consumption rate  |
 |---------|---------|---------|
-|Data orchestration    | Based on TOU-Hours consumed to run copy activities        | 1.5 CU hours for each TOU hour consumed   |
+|Data orchestration    | Based on Copy activity run duration in hours and the used intelligent optimization throughput resources        | 1.5 CU per hour for each intelligent optimization throughput resource consumed   |
 |Data movement     |  Incorporates orchestration activity runs and activity integration runtime charges       | 0.0056 CUs for each non-copy activity run |
 
-It indicates that for each _Throughput Optimization Unit (TOU)_ hour used in data movement Copy activities, 1.5 Fabric Capacity Units (CU) are consumed and their billing is prorated by the minute and rounded up. For example, 1 second of Copy activity is billed for 1 minute, and 1 minute 5 seconds is billed for 2 minutes. Secondly, each orchestration activity run consumes 0.0056 CU. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.
+It indicates that for each intelligent optimization throughput resource usage in a Data Pipeline execution, 1.5 CU per hour are consumed for data movement Copy activities. Secondly, each orchestration activity run consumes 0.0056 CU. At the end of each pipeline run, the CU consumption for each engine type is summed and is billed as per the translated price of the Fabric Capacity in the region where the capacity is deployed.  
 
 ## Changes to Microsoft Fabric workload consumption rate
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email and in-product notification. Changes are effective on the date stated in the [Release Notes](/fabric/release-plan/data-factory) and the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers can use the cancellation options available for the chosen payment method.  
-
-## Manually compute estimated costs
-
-The following table can be used as a template to manually compute estimated costs for a Pipeline run:
-
-|Metric  |Data Movement Operation  |Activity Run Operation (Count = n)  |
-|---------|---------|---------|
-|Duration in minutes     | t mins        | N/A        |
-|TOU utilized by the activity run     |         | N/A         |
-|Billed duration (hour)     | t/60        | N/A         |
-|Effective TOU-hour billed     | (TOU utilized) * (Billed duration)        | N/A        |
-|Effective CU     | TOU-hour billed * 1.5 CU = X CU        | n * 0.0056 CU        |
-
-**Total run cost** = (X CU + (n*0.0056)) * (Fabric capacity price per unit)
 
 ## Compute estimated costs using the Fabric Metrics App
 

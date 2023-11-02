@@ -22,21 +22,6 @@ To accomplish this scenario, you need to create a pipeline with the following co
 
 :::image type="content" source="media/pricing-scenarios/load-1tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to a Lakehouse table.":::
 
-## Manual cost estimation
-
-:::image type="content" source="media/pricing-scenarios/load-1tb-parquet-to-lakehouse-table-details.png" alt-text="Screenshot showing the copy data details for the scenario.":::
-
-|Metric  |Source to destination  |
-|---------|---------|
-|Duration     | 00:13:20        |
-|Used Parallel copies     | 128        |
-|TOU utilized by the activity run     | 256        |
-|Billed duration     | 14 minutes = 14/60 hour        |
-|Effective TOU-hours billed     | (256 TOU) * (14/60 hour) = 59.74 TOU-hours        |
-|Effective CU     | (59.74 TOU-hours) * (1.5 CU) = 89.61 CU hours        |
-
-**Total run cost at $0.18/CU hour** = (89.61 CU hours) * ($0.18/CU hour) ~= **$16.13**
-
 ## Cost estimation using the Fabric Metrics App
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
