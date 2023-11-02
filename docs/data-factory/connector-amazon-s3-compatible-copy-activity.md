@@ -61,7 +61,7 @@ The following properties are **required**:
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration for each setting is:
 
-  - **File path**: If you choose this type, the data can be copied from the given bucket or the given bucket and folder/file path specified.
+  - **File path**: If you choose this type, the data can be copied from the given bucket or the given bucket and folder path specified.
 
   - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
     - **Bucket**: Specify the S3 Compatible Storage bucket name.
@@ -77,7 +77,7 @@ The following properties are **required**:
 
         Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside.
     :::image type="content" source="./media/connector-amazon-s3-compatible/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
-      *Wildcard folder path*: The folder path with wildcard characters under the given bucket configured to filter source folders.
+      *Wildcard folder path*: The folder path with wildcard characters under the given bucket to filter source folders.
 
       *Wildcard file name*: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
@@ -138,9 +138,9 @@ The following tables contain more information about the copy activity in Amazon 
 | **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3 Compatible**|Yes|/|
-| **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes | / |
+| **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |• folderPath，fileName<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath |
 | **File path** | The folder/file path to the source file. | < file path> | Yes | fileName<br>folderpath |
-| **Bucket** | The S3 Compatible Storage bucket name. | \<your bucketName> |Yes|bucketName|
+| **Bucket** | The S3 Compatible Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Prefix** | The configured prefix for the S3 key name under the given bucket to filter source S3 files. | \<your prefix> |No|prefix|
 | **Wildcard paths** | The folder/file path with wildcard characters under the configured bucket to filter source folders/files. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName |
 | **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath |
