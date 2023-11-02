@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines the steps to create either a Web API or Web page connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
