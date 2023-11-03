@@ -11,7 +11,7 @@ ms.search.form: Notebook git deployment pipelines alm ci cd
 
 # Notebook Source control and Deployment
 
-## Notebook Git integration (Preview)
+## Notebook Git integration
 
 Fabric notebook offers Git integration for source control using Azure DevOps. With git integration, you can back up and version your notebook, revert to previous stages as needed, collaborate or work alone using git branches, and manage their content lifecycle end-to-end within Fabric.
 
@@ -19,7 +19,7 @@ Fabric notebook offers Git integration for source control using Azure DevOps. Wi
 
 ### Set up connection
 
-You can easily can set up a connection to your Repo from the workspace settings and use Git commands to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks appear in the 'Source control' panel.
+You can easily can set up a connection to your Repo from the workspace settings to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks appear in the 'Source control' panel.
 
 :::image type="content" source="media\notebook-source-control-deployment\git-source-panel.png" alt-text="Screenshot of workspace source control panel." lightbox="media\notebook-source-control-deployment\git-source-panel.png":::
 
@@ -44,10 +44,11 @@ Notebook cell output won't be included when syncing to Git.
 > [!NOTE]
 >
 > - Files in **Notebook Resources** won't be committed to the repo for now, will be supported in an upcoming release.
+> - The attached Environment will be persisted in notebook when sync from repo to Fabric workspace, but cross workspace reference Environment is not being supported for now, you need to manually attach to a new Environment or workspace default settings in order to run the notebook. 
 > - The Default lakehouse id will be persisted in notebook when sync from repo to Fabric workspace, if you commit a notebook together with the default Lakehouse, you need to refer newly created lakehouse item manually. More details please check [Lakehouse Git integration](lakehouse-git-deployment-pipelines.md).
 >
 
-## Notebook in deployment pipelines (Preview)
+## Notebook in deployment pipelines
 
 You can also use Deployment pipeline to deploy your notebook code across different environments, such as development, test, and production. This feature can enable you to streamline your development process, ensure quality and consistency, and reduce manual errors with lightweight low-code operations. You can also use deployment rules to customize the behavior of your notebooks when they're deployed, such as changing the default Lakehouse of a Notebook.  
 

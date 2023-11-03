@@ -15,7 +15,8 @@ ms.search.form: Notebook REST API ci cd
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 ## Overview
-The Microsoft Fabric REST API provides service endpoint for the CRUD operation of a Fabric item. This artical is to showcase the notebook available REST APIs and the usage.
+
+The Microsoft Fabric REST API provides service endpoint for the CRUD operation of a Fabric item. This article is to showcase the notebook available REST APIs and the usage.
 
 With the notebook public APIs, data engineers/data scientists can automate their own pipelines and establish CI/CD conveniently and efficiently. Also make it easy for users to manage and manipulate Fabric notebook items and integrate notebook with other tools and systems.
 
@@ -83,23 +84,23 @@ The payload in the request is base64 string converted from following sample note
 
 ```json
 {
- "nbformat": 4,
- "nbformat_minor": 5,
- "cells": [
-  {
-   "cell_type": "code",
-   "source": [
-    "# Welcome to your new notebook\n# Type here in the cell editor to add code!\n"
-   ],
-   "execution_count": null,
-   "outputs": [],
-   "metadata": {}
-  }
- ],
- "metadata": {
-  "language_info": {
-   "name": "python"
-  },
+    "nbformat": 4,
+    "nbformat_minor": 5,
+    "cells": [
+        {
+            "cell_type": "code",
+            "source": [
+                "# Welcome to your new notebook\n# Type here in the cell editor to add code!\n"
+            ],
+            "execution_count": null,
+            "outputs": [],
+            "metadata": {}
+        }
+    ],
+    "metadata": {
+        "language_info": {
+            "name": "python"
+        },
         "trident": {
             "environment": {
                 "environmentId": "6524967a-18dc-44ae-86d1-0ec903e7ca05",
@@ -116,7 +117,7 @@ The payload in the request is base64 string converted from following sample note
 ```
 
 > [!NOTE]
-> 
+>
 > You can change the notebook default Lakehouse or attached Environment by changing notebook content `metadata.trident.lakehouse` or `metadata.trident.environment`.
 
 ## Get notebook with definition
@@ -147,14 +148,13 @@ Status code: 200
 }
 ```
 
-
 ### Run notebook on demand
 
 You can schedule your notebook run by using this API, Spark job will start to execute after successfully request.
 
 We support passing `parameters` in the request body to parameterize the notebook run, the values will be consumed by [Notebook parameter cell](author-execute-notebook.md#designate-a-parameters-cell).
 
-You can also use `configuration` to personalize Spark session of notebook run, ` configuration`  share the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
+You can also use `configuration` to personalize Spark session of notebook run, `configuration`  share the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
 
 **Request**
 
@@ -195,7 +195,6 @@ Retry-After: 60
 ```
 
 With the `location`, you can use [_Get Item Job Instance_](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/job-scheduler/get-item-job-instance?branch=drafts%2Ffeatures%2Fga-release&tabs=HTTP) to view job status or use [_Cancel Item Job Instance_](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/job-scheduler/cancel-item-job-instance?branch=drafts%2Ffeatures%2Fga-release&tabs=HTTP) to cancel this notebook run.
-
 
 ## Next steps
 
