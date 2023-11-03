@@ -142,7 +142,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md
+    href: author-execute-notebook.md  
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
