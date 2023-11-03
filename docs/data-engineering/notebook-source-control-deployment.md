@@ -19,7 +19,7 @@ Fabric notebook offers Git integration for source control using Azure DevOps. Wi
 
 ### Set up connection
 
-You can easily can set up a connection to your Repo from the workspace settings to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks appear in the 'Source control' panel.
+You can easily set up a connection to your Repo from the workspace settings to commit and sync changes following the [Get started with Git integration](../cicd/git-integration/git-get-started.md) of Fabric platform. Once connected, your items including notebooks appear in the 'Source control' panel.
 
 :::image type="content" source="media\notebook-source-control-deployment\git-source-panel.png" alt-text="Screenshot of workspace source control panel." lightbox="media\notebook-source-control-deployment\git-source-panel.png":::
 
@@ -35,7 +35,7 @@ Here's an example of the file structure of each notebook item in the repo:
 
 When committing the notebook item to the Git repo, the notebook code is converted to a source code format (for example, PySpark notebook to a 'notebook-content.py' file) instead of a standard ‘.ipynb’ file. This approach allows for easier code reviews using built-in diff features.
 
-In the item content source file, metadata (include default Lakehouse, attached Environmnet), markdown cells, and code cells are preserved and distinguished, to support a precise recovery when synced back to a Fabric workspace.
+In the item content source file, metadata (include default Lakehouse, attached Environment), markdown cells, and code cells are preserved and distinguished, to support a precise recovery when synced back to a Fabric workspace.
 
 Notebook cell output won't be included when syncing to Git.
 
@@ -44,7 +44,7 @@ Notebook cell output won't be included when syncing to Git.
 > [!NOTE]
 >
 > - Files in **Notebook Resources** won't be committed to the repo for now, will be supported in an upcoming release.
-> - The attached Environment will be persisted in notebook when sync from repo to Fabric workspace, but cross workspace reference Environment is not being supported for now, you need to manually attach to a new Environment or workspace default settings in order to run the notebook. 
+> - The attached Environment will be persisted in notebook when sync from repo to Fabric workspace, but cross workspace reference Environment is not being supported for now, you need to manually attach to a new Environment or workspace default settings in order to run the notebook.
 > - The Default lakehouse id will be persisted in notebook when sync from repo to Fabric workspace, if you commit a notebook together with the default Lakehouse, you need to refer newly created lakehouse item manually. More details please check [Lakehouse Git integration](lakehouse-git-deployment-pipelines.md).
 >
 
@@ -56,27 +56,31 @@ You can also use Deployment pipeline to deploy your notebook code across differe
 
 You can follow below steps to complete your Notebook deployment using deployment pipeline.
 
-- Step 1: Create a new deployment pipeline or open an existing deployment pipeline, Follow the instructions [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md) to set up your deployment pipeline.
-- Step 2: Assign workspaces to different stages according to your deployment goals.
-- Step 3: Select, view, and compare items including Notebooks between different stages, as example shows.
+1. Create a new deployment pipeline or open an existing deployment pipeline, Follow the instructions [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md) to set up your deployment pipeline.
 
-:::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
+1. Assign workspaces to different stages according to your deployment goals.
 
-- Step 4: Click **Deploy** button to deploy your notebooks across Development, Test, and Production stages.
-- Step 5 (optional): You can click the **Deployment rules** to create deployment rules for a deployment process, Deployment rules entry is on the target stage for a deployment process.
+1. Select, view, and compare items including Notebooks between different stages, as example shows.
 
-:::image type="content" source="media\notebook-source-control-deployment\deploy-rule-entry.png" alt-text="Screenshot of deployment rules entry." lightbox="media\notebook-source-control-deployment\deploy-rule-entry.png":::
+    :::image type="content" source="media\notebook-source-control-deployment\compare-stages.png" alt-text="Screenshot of notebook in deployment pipeline." lightbox="media\notebook-source-control-deployment\compare-stages.png":::
 
-We support parameterize the default Lakehouse for **each** notebook instance when deploying with deployment rules. 3 options are offered here to specify the target default Lakehouse: Same with source Lakehouse, _N/A_, and other Lakehouse.
+1. Click **Deploy** button to deploy your notebooks across Development, Test, and Production stages.
 
-:::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of set default lakehouse." lightbox="media\notebook-source-control-deployment\set-default-lakehouse.png":::
+1. (Optional) You can click the **Deployment rules** to create deployment rules for a deployment process, Deployment rules entry is on the target stage for a deployment process.
 
-You can achieve secured data isolation by setting up this rule, your notebook's default lakehouse will be replaced by the one you specified as target during deployment.
+    :::image type="content" source="media\notebook-source-control-deployment\deploy-rule-entry.png" alt-text="Screenshot of deployment rules entry." lightbox="media\notebook-source-control-deployment\deploy-rule-entry.png":::
 
-> [!NOTE]
-> When you choose to adopt other Lakehouse in the target environment, The _Lakehouse id_ is a must have. You can find the id of a Lakehouse from the Lakehouse URL link.
+    We support parameterize the default Lakehouse for **each** notebook instance when deploying with deployment rules. 3 options are offered here to specify the target default Lakehouse: Same with source Lakehouse, _N/A_, and other Lakehouse.
 
-- Step 6: Monitor the depoloyment status from **Deployment history**.
+    :::image type="content" source="media\notebook-source-control-deployment\set-default-lakehouse.png" alt-text="Screenshot of set default lakehouse." lightbox="media\notebook-source-control-deployment\set-default-lakehouse.png":::
+
+    You can achieve secured data isolation by setting up this rule, your notebook's default lakehouse will be replaced by the one you specified as target during deployment.
+
+    > [!NOTE]
+    > 
+    > When you choose to adopt other Lakehouse in the target environment, The _Lakehouse id_ is a must have. You can find the id of a Lakehouse from the Lakehouse URL link.
+
+1. Monitor the deployment status from **Deployment history**.
 
 ## Next steps
 

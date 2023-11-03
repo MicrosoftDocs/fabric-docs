@@ -189,7 +189,7 @@ You can open the snapshot link of the reference run in the cell output. The snap
 
 ### Reference run multiple notebooks in parallel 
 
-The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a pre-defined topological structure. It using the multi-thread implementation machenism within a spark session, which means the compute resources are shared by the reference notebook runs.
+The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a pre-defined topological structure. The API is using multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
 
 With `mssparkutils.notebook.runMultiple()`, you can: 
 
@@ -201,7 +201,7 @@ With `mssparkutils.notebook.runMultiple()`, you can:
 
 - View the Snapshots of each notebook run record in the output, debug/monitor your notebook tasks conveniently. 
 
-- Get the exit value of each executive activities and use them in downstream tasks.
+- Get the exit value of each executive activity and use them in downstream tasks.
 
 You can also try to run the mssparkutils.notebook.help("runMultiple") to find the example and detailed usage. 
 
@@ -217,7 +217,7 @@ The execution result from root notebook is as below:
 
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\microsoft-spark-utilities\reference-notebook-list.png":::
 
-Below is a example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`, you can leverage this way to orchestrate Notebooks conveniently through code experience .
+Below is an example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`, you can leverage this way to orchestrate Notebooks conveniently through code experience .
 
 ```python
 # run multiple notebooks with parameters

@@ -46,7 +46,7 @@ You can find more details in the public api doc: [Job Scheduler - REST API (Fabr
 
 ## Notebook REST API usage examples
 
-Here are the usage example for specific notebook public APIs, you can follow the instruction to test them and verify the result.
+Here are the usage examples for specific notebook public APIs, you can follow the instruction to test them and verify the result.
 
 > [!NOTE]
 > Only notebook unique usage examples are illstrated in the artical, the Fabric item common API examples are not covered here.

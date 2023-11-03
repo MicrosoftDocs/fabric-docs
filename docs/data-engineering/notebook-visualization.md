@@ -151,19 +151,19 @@ svg
 > This feature is currently in PREVIEW.
 > This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
-[Powerbiclient](https://github.com/microsoft/powerbi-jupyter/tree/main) Python package is now natively supported in Fabric notebooks. You don’t need to do any extra set up (like authentication process) on Fabric notebook Spark runtime 3.4, just import `powerbiclient` then continue your exploration. To learn more about how to use the powerbiclient package, check the [Documents](https://github.com/microsoft/powerbi-jupyter/blob/main/DOCUMENTATION.md).
+[Powerbiclient](https://github.com/microsoft/powerbi-jupyter/tree/main) Python package is now natively supported in Fabric notebooks. You don’t need to do any extra setup (like authentication process) on Fabric notebook Spark runtime 3.4, just import `powerbiclient` then continue your exploration. To learn more about how to use the powerbiclient package, check the [Documents](https://github.com/microsoft/powerbi-jupyter/blob/main/DOCUMENTATION.md).
 
-Below are some key features supported by `powerbiclient` we want to demostrate.
+Below are some key features supported by `powerbiclient` we want to demonstrate.
 
 ### Render an existing Power BI report
 
 You can easily embed and interact with Power BI reports in your notebooks with just a few lines of code.
 
-The following image is an example of rendering existing powerbi report.
+The following image is an example of rendering existing Power BI report.
 
-:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a powerbi report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
+:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
 
-Run the following code to render an existing powerbi report.
+Run the following code to render an existing Power BI report.
 
 ```python
 from powerbiclient import Report
@@ -177,7 +177,7 @@ report
 ### Create report visuals from a Spark dataframe
 
 You can use a Spark DataFrame in your notebook to quickly generate insightful visualizations.
-You can also click _Save_ in the embeded report to create a report item in a target workspace.
+You can also click _Save_ in the embedded report to create a report item in a target workspace.
 
 The following image is an example of a `QuickVisualize()` from Spark dataframe.
 
