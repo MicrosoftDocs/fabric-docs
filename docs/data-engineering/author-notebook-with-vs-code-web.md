@@ -1,5 +1,5 @@
 ---
-title: Develop, execute, and debug notebook in vscopde.dev
+title: Create and manage Microsoft Fabric notebooks from VS Code for the Web
 description: Learn about the VS Code extension for Synapse under the VS Code web experience, which supports a pro-developer authoring experience.
 ms.reviewer: sngun
 ms.author: qixwang
