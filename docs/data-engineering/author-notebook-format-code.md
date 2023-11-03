@@ -6,7 +6,6 @@ ms.author: v-myerspeter
 ms.reviewer: snehagunda
 ms.topic: how-to
 ms.custom: cat-fabric
-ms.search.form: Develop and run notebooks
 ms.date: 10/30/2023
 ---
 
