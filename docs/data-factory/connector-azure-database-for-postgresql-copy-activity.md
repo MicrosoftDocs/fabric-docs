@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # How to configure Azure Database for PostgreSQL in a copy activity
 
-This article outlines how to use the copy activity in data pipelines to copy data from and to Azure Database for PostgreSQL.
+This article outlines how to use the copy activity in Data pipeline to copy data from and to Azure Database for PostgreSQL.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
@@ -39,7 +39,7 @@ The following three properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**: Select an Azure Database for PostgreSQL connection from the connection list. If no connection exists, then create a new Azure Database for PostgreSQL connection by selecting **New**.
 - **Connection type**: Select **Azure Database for PostgreSQL**.
-- **Use query**: Select from **Table** or **Query**.
+- **Use query**: Select **Table** to read data from the specified table or select **Query** to read data using queries.
     - If you select **Table**:
       - **Table**: Select the table from the drop-down list or select **Edit** to manually enter it to read data. 
 
@@ -52,7 +52,7 @@ The following three properties are **required**:
 
 Under **Advanced**, you can specify the following fields:
 
-- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not None), the degree of parallelism to concurrently load data from an Azure Database for PostgreSQL is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
+- **Partition option**: Specifies the data partitioning options used to load data from Azure Database for PostgreSQL. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Azure Database for PostgreSQL is controlled by the **Degree of copy parallelism** in the copy activity settings tab.
 
     If you select **None**, you choose not to use partition.
 
@@ -157,11 +157,11 @@ The following table contains more information about the copy activity in Azure D
 |**Data store type**|Your data store type.|**External**|Yes|/|
 |**Connection**|Your connection to the destination data store.|< your Azure Database for PostgreSQL connection >|Yes|connection|
 |**Connection type** |Your destination connection type. |**Azure Database for PostgreSQL** |Yes|/|
-|**Table**|Your destination data table to write data.| < name of your destination table > |Yes |• typeProperties (under *`typeProperties`* -> *`sink`*)<br>&nbsp; - schema<br>&nbsp; - table<br>|
+|**Table**|Your destination data table to write data.| < name of your destination table > |Yes |typeProperties (under *`typeProperties`* -> *`sink`*):<br>&nbsp; - schema<br>&nbsp; - table<br>|
 |**Write method**|The method used to write data into Azure Database for PostgreSQL.|• **Copy command** (default)<br>• **Bulk insert**<br>|No|writeMethod:<br>• CopyCommand<br>• BulkInsert|
 |**Pre-copy script**|A SQL query for the copy activity to execute before you write data into Azure Database for PostgreSQL in each run. You can use this property to clean up the preloaded data.|< your pre-copy script >|No|preCopyScript|
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
-|**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch. Allowed value is an integer that represents the number of rows.|integer<br>(the default is 1,000,000)|No|writeBatchSize|
+|**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch.|integer<br>(the default is 1,000,000)|No|writeBatchSize|
 
 ## Next steps
 
