@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 10/31/2023
+ms.date: 11/02/2023
 ---
 
 # What is the admin monitoring workspace?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 

@@ -41,8 +41,8 @@ items:
     href: create-lakehouse.md
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
-  - name: Lakehouse SQL endpoint
-    href: lakehouse-sql-endpoint.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
   - name: Git and deployment pipelines
