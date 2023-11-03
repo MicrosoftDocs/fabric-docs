@@ -59,7 +59,7 @@ During a zone-wide outage, no action is required during zone recovery. Fabric ca
 
 ## Business continuity and disaster recovery (BCDR)
 
-BCDR isn't currently supported in Fabric for non-Power BI Fabric items, such as Notebooks, KQL Databases, etc., or for data stored in OneLake. However, it's still supported for Power BI Fabric items, such as datasets, reports, etc. For more information about BCDR in Power BI, see [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
+BCDR isn't currently supported in Fabric for non-Power BI Fabric items, such as Notebooks, KQL Databases, etc., or for data stored in OneLake. However, it's still supported for Power BI Fabric items, such as semantic models, reports, etc. For more information about BCDR in Power BI, see [Power BI high availability, failover, and disaster recovery FAQ](/power-bi/enterprise/service-admin-failover).
 
 ## Next steps
 
