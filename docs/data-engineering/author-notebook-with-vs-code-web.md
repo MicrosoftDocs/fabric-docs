@@ -25,13 +25,13 @@ The Synapse VS Code extension can also be used in the VS Code for the Web experi
 1. Search for **Synapse** and select the **Synapse VS Code - Remotes** extension
 1. click **Install**.
 
-:::image type="content" source="media\vscode\install-vs-code-web.png" alt-text="Install Synapse VS Code extension web.":::
+:::image type="content" source="media\vscode\install-vs-code-web.png" alt-text="Screenshot that shows installation of Synapse VS Code extension web.":::
 
 ## Open a notebook with the Synapse VS Code extension for the Web
 
-You can open a notebook in the VS Code for the Web experience by clicking the **Open in VS Code(Web)** button in the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, activated, and the notebook is opened.
+You can open a notebook in the VS Code for the Web experience by clicking the **Open in VS Code(Web)** button on the notebook authoring page in the Fabric portal. After you select the button, a separate browser tab is opened with the VS Code for the web experience. If you haven't already installed the extension, it is automatically installed, and activated, and the notebook is opened.
 
-:::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Open notebook in VS Code for the Web.":::
+:::image type="content" source="media\vscode\open-notebook-in-vs-code-web.png" alt-text="Screenshot showing how to open notebook in VS Code for the Web.":::
 
 ## Manage notebooks and notebook file system
 
@@ -44,10 +44,10 @@ The notebook tree node lists all of the notebook items in the current workspace.
 
 You can also delete any existing file/folder in the notebook file system.
 
-:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Notebook tree node.":::
+:::image type="content" source="media\vscode\manage-notebook-vs-code-web.png" alt-text="Screenshot of notebook tree node.":::
 
 ## Run notebooks in the VS Code for the Web experience
 
 You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. The kernel is selected in the top right corner of the notebook editor.
 
-:::image type="content" source="media\vscode\select-synapse-kernel.png" alt-text="Run notebook in VS Code for the Web.":::
+:::image type="content" source="media\vscode\select-synapse-kernel.png" alt-text="Screenshot showing how to run notebook in VS Code for the Web.":::
