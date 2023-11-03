@@ -27,13 +27,10 @@ Specifically, this article describes how you can extend a Fabric notebook to use
 
 You can extend a Fabric notebook by using a _notebook extension_. A notebook extension is a software component that adds new functionality to the notebook interface. You install an extension as a library, and then you set it up to meet your specific needs.
 
-This article considers two extensions that you can use to format Python code in a Fabric notebook.
+This article considers two extensions that you can use to format Python code in a Fabric notebook. Both extensions are freely available from GitHub.
 
 - The [black](https://github.com/psf/black) Python code formatter extension.
 - The [jupyter-black](https://github.com/n8henrie/jupyter-black) formatter extension, which you can also use to automatically format code in a Jupyter Notebook or Jupyter Lab.
-
-> [!NOTE]
-> Both extensions are freely available from GitHub.
 
 ### Set up a code formatter extension
 
