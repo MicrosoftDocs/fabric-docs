@@ -5,7 +5,7 @@ items:
   items:
   - name: What is Data Engineering?
     href: data-engineering-overview.md
-  - name: Compare with Synapse
+  - name: Fabric vs. Azure Synapse Spark
     href: synapse-fabric-comparison.md
 - name: Get started
   items:
