@@ -138,3 +138,17 @@ landingContent:
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
+
+  # Card 
+  - title: Get started with environment
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Fabric environments
+            url: create-and-use-environment.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage Spark compute in environments
+            url: environment-manage-compute.md
+          - text: Manage libraries in environments
+            url: environment-manage-library.md

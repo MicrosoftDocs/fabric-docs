@@ -141,6 +141,18 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+- name: Environments
+  items:
+  - name: Microsoft Fabric Environment overview
+    href: environment-overview.md
+  - name: Environment 101 - create, configure and use an environment
+    href: create-and-use-environment.md
+  - name: Manage Spark compute in environments
+    href: environment-manage-compute.md
+  - name: Manage libraries in environments
+    href: environment-manage-library.md
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: environment-ws-migration.md
 - name: VS Code integration 
   items:
   - name: Overview

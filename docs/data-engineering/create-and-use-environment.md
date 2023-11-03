@@ -8,31 +8,31 @@ ms.date: 10/01/2023
 ms.search.for: Create and use Environment
 ---
 
-# Environment 101: create, configure and use an Environment
+# Environment 101: create, configure and use an environment
 
-This tutorial gives you an overview of creating, configuring and using an Environment.
+This tutorial gives you an overview of creating, configuring and using an environment.
   
 > [!IMPORTANT]
 > The Fabric Environment is currently in PREVIEW.
 
-## Create an Environment
+## Create an environment
 
-There are multiple entry points of creating an Environment.
+There are multiple entry points of creating an environment.
 
-### Create an Environment from homepages, workspace view and creation hub
+### Create an environment from homepages, workspace view and creation hub
 
 1. **Data Engineering** homepage
-    - You can easily create an Environment through the **Environment** card under the **New** section in the Data Engineering homepage.
+    - You can easily create an environment through the **Environment** card under the **New** section in the Data Engineering homepage.
 
     :::image type="content" source="media\environment-introduction\env-de-card.png" alt-text="Environment card in DE homepage.":::
 
 2. **Data Science** homepage
-    - Similar with the DE homepage, you can easily create an Environment through the **Environment** card under the **New** section in the Data science homepage.
+    - Similar with the DE homepage, you can easily create an environment through the **Environment** card under the **New** section in the Data science homepage.
 
     :::image type="content" source="media\environment-introduction\env-ds-card.png" alt-text="Environment card in DS homepage.":::
 
 3. **Workspace** view
-    - If you are in your workspace, you can also create an  **Environment** through the **New** dropdown.
+    - If you are in your workspace, you can also create an environment through the **New** dropdown.
 
     :::image type="content" source="media\environment-introduction\env-ws-card.png" alt-text="Environment card in workspace view.":::
 
@@ -41,20 +41,20 @@ There are multiple entry points of creating an Environment.
 
     :::image type="content" source="media\environment-introduction\env-creation-hub-card.png" alt-text="Environment card in creation hub.":::
 
-### Create an Environment from attachment dropdowns
+### Create an environment from attachment dropdowns
 
-You can also find the entry points of creating new Environment at the places that you can attach the Environment. Learn how to attach and use an Environment: [Attach an Environment](create-and-use-environment.md\#attach-an-environment)
+You can also find the entry points of creating new environment at the places that you can attach the Environment. Learn how to attach and use an environment: [Attach an environment](create-and-use-environment.md\#attach-an-environment)
 
 1. **Notebook attachment dropdown**
-    - In the **Home** tab of Notebook ribbon, there is a dropdown to attach Environment. You can create a new one through the **Environment** dropdown.
+    - In the **Home** tab of Notebook ribbon, there is a dropdown to attach environment. You can create a new one through the **Environment** dropdown.
     :::image type="content" source="media\environment-introduction\env-dropdown-nb.png" alt-text="Environment creation through attachment dropdown in Notebook":::
 
 2. **Spark job definition attachment dropdown**
-    - In the **Home** tab of Spark job definition ribbon, there is a dropdown to attach Environment as well. You can create a new one through the **Environment** dropdown.
+    - In the **Home** tab of Spark job definition ribbon, there is a dropdown to attach environment as well. You can create a new one through the **Environment** dropdown.
     :::image type="content" source="media\environment-introduction\env-dropdown-sjd.png" alt-text="Environment creation through attachment dropdown in SJD":::
 
 3. **Workspace setting attachment dropdown**
-    - In the **Data Engineering/Science** section of workspace setting, workspace admin can attachment an Environment as workspace default Environment. Learn more about how to attach an Environment as workspace default: [Attach an Environment as the workspace default](create-and-use-environment.md\#attach-an-environment-as-the-workspace-default). You can also create a new one through the **Environment** dropdown.
+    - In the **Data Engineering/Science** section of workspace setting, workspace admin can attachment an environment as workspace default. Learn more about how to attach an environment as workspace default: [Attach an environment as the workspace default](create-and-use-environment.md\#attach-an-environment-as-workspace-default). You can also create a new one through the **Environment** dropdown.
     :::image type="content" source="media\environment-introduction\env-dropdown-ws.png" alt-text="Environment creation through attachment dropdown in WS setting":::
 
 ## Configure an environment
@@ -69,8 +69,8 @@ In the Microsoft Fabric Environment, you can choose from various [Spark runtimes
 
 > [!IMPORTANT]
 >
-> - If you are updating the runtime in an Environment with existing configurations/libraries, the contents need to be re-publish based on the newly updated runtime version.
-> - If the existing configurations/libraries are not compatible with newly updated runtime version, the publishing will fail. You need to remove the incompatible ones and publish the Environment again.
+> - If you are updating the runtime in an environment with existing configurations/libraries, the contents need to be re-publish based on the newly updated runtime version.
+> - If the existing configurations/libraries are not compatible with newly updated runtime version, the publishing will fail. You need to remove the incompatible ones and publish the environment again.
 >
 
 ### Configure Spark compute
@@ -89,7 +89,10 @@ To save and publish changes in the Fabric Environment, you can navigate to the *
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Save and Publish the changes":::
 
 - The **Save** button becomes active when there are changes that have not been saved. If you refresh the page without saving, all pending changes will be lost. If any section contains invalid input, the Save button will be disabled. The Save action applies to all unsaved changes in both *Libraries* and *Spark compute* sections.
-- The **Publish** button becomes active when there are changes that have not yet been published. You can directly publish these changes without first saving them. Clicking the Publish button will take you to the **Pending changes** page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric Environment will run jobs on the backend to prepare the configurations for use. This process may take several minutes, particularly if there are library changes involved.
+- The **Publish** button becomes active when there are changes that have not yet been published. You can directly publish these changes without first saving them. Clicking the Publish button will take you to the *Pending changes* page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric Environment will run jobs on the backend to prepare the configurations for use. This process may take several minutes, particularly if there are library changes involved.
+
+> [!NOTE]
+> During the publish process, if changes involve libraries, the system will assist in downloading dependencies and resolving potential conflicts.
 
 A **banner** promoting Save and Publish will appear when there are pending changes.
 
@@ -97,16 +100,38 @@ A **banner** promoting Save and Publish will appear when there are pending chang
 - During the publish process, clicking **View progress** button in the banner can take you to the **pending changes** page again. You can find **Cancel** button in pending changes page during publishing.
 - You will be notified once the publishing is done or encounters error.
 
-## Attach an Environment
+## Attach an environment
 
 Microsoft Fabric Environment can be attached to your Data Engineering/Science workspaces or your Notebooks and Spark job definitions.
 
-### Attach an Environment in as workspace default
+### Attach an environment as workspace default
 
-You can find the **Environment** tab by navigating to *Workspace setting -> Data Engineering/Science -> Spark setting*. The toggle call **Customize environment** in this page. 
+You can find the **Environment** tab by navigating to *Workspace setting -> Data Engineering/Science -> Spark setting*.
 
-Fabric Notebooks, Fabric Spark job definitions and even the Data Engineering/Science workspaces.
+#### New workspaces
 
-### Attach an Environment to Notebook or Spark job definitions
+When you're working in a workspace that's either new or doesn't have library and Spark settings set up before, you'll be presented with the screen shown below.
+:::image type="content" source="media\environment-introduction\env-ws-setting-default.png" alt-text="Workspace setting environment section":::
 
-You can find the **Environment** dropdown in both Notebook and Spark job definition's Home tab. The available Environments are listed in the drop-down. If you select any Environment, the Spark compute and libraries configured in it are effective once the Spark session get started.
+Workspace admins can define the default experience for entire workspaces. The values configured here are effective for notebooks and Spark job definitions that attaches to *Workspace Settings*.
+:::image type="content" source="media\environment-introduction\env-ws-setting-in-code-artifact.png" alt-text="Workspace configuration effective range":::
+
+The **Set default environment** toggle can enhance the user experience. By default, this toggle is set to "Off". If there is no default Spark property or library required as the workspace default, admins can define the Spark runtime under this circumstance. However, if an admin wants to prepare a default Spark compute and libraries for the workspace, they can turn on the toggle and easily attach an environment as the workspace default. This will make all configurations in the environment effective as the *Workspace Setting*.
+:::image type="content" source="media\environment-introduction\env-ws-toggle-on.png" alt-text="Default environment selection":::
+
+#### Workspaces with existing library or Spark properties
+
+The release of the Environment has brought a major upgrade to the *Data Engineering/Data Science* section in workspace settings. As part of this upgrade, library management and adding new Spark properties at the workspace level are no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-ws-migration.md) to migrate them to an environment and attach as workspace default.
+
+### Attach an environment to Notebook or Spark job definitions
+
+You can find the **Environment** dropdown in both Notebook and Spark job definition's Home tab. The available environments are listed in the drop-down. If you select any environment, the Spark compute and libraries configured in it are effective once the Spark session get started.
+:::image type="content" source="media\environment-introduction\env-nb-selection.png" alt-text="Attach an environment in Notebook":::
+
+>[!NOTE]
+> If you switch to a different environment while in an active session, the newly selected environment will not take effect until the next session.
+
+## Next steps
+
+- [Learn how to configure the Spark compute in Environment](environment-manage-compute.md)
+- [Learn how to install libraries in Environment](environment-manage-library.md)

@@ -1,5 +1,5 @@
 ---
-title: Migrate the workspace libraries and Spark properties to an default Environment 
+title: Migrate the workspace libraries and Spark properties to a default Environment 
 description: Learn how to migrate the existing libraries and Spark properties to an Environment.
 ms.author: shuaijunye
 author: shuaijunye
@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 10/01/2023
 ---
 
-# Migrate the workspace libraries and Spark properties to an default Environment
+# Migrate the workspace libraries and Spark properties to a default Environment
 
 The Data Engineering/Science experience at workspace setting has been upgraded. Adding new libraries and Spark properties are no longer supported in workspace setting. Instead, you can create a Fabric Environment, configure the library and property in it and attach it as the workspace default Environment. The existing libraries and Spark properties in your workspace need to migrate to a default Environment. In this tutorial, you learn how to migrate the existing workspace libraries and Spark properties to an Environment.
 
