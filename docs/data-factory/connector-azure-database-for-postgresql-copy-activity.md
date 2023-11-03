@@ -46,7 +46,10 @@ The following three properties are **required**:
         :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-table.png" alt-text="Screenshot showing Use query - Table." :::
 
     - If you select **Query**:
-      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM mytable` or `SELECT * FROM "MyTable"`. Note in PostgreSQL, the entity name is treated as case-insensitive if not quoted.
+      - **Query**: Specify the custom SQL query to read data. For example: `SELECT * FROM mytable` or `SELECT * FROM "MyTable"`. 
+          
+        > [!Note]
+        > In PostgreSQL, the entity name is treated as case-insensitive if not quoted.
           
           :::image type="content" source="./media/connector-azure-database-for-postgresql/use-query-query.png" alt-text="Screenshot showing Use query - Query." :::    
 
@@ -129,8 +132,8 @@ You are suggested to enable parallel copy with data partitioning especially when
 
 Best practices to load data with partition option:
 
-1. Choose distinctive column as partition column (like primary key or unique key) to avoid data skew. 
-2. If the table has built-in partition, use partition option "Physical partitions of table" to get better performance.
+- Choose distinctive column as partition column (like primary key or unique key) to avoid data skew. 
+- If the table has built-in partition, use partition option "Physical partitions of table" to get better performance.
 
 ## Table summary
 
