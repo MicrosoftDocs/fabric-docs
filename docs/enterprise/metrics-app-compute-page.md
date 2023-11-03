@@ -147,7 +147,7 @@ User can hover over any value in the visual to see operation level data. User ca
 
     You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
 
-    Sorting the matrix by the *performance delta* column helps identify datasets that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small datasets with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
+    Sorting the matrix by the *performance delta* column helps identify semantic models that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
 
 * **Billing type** - Displays information if the item is billable or not.
 
