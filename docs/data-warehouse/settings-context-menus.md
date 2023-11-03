@@ -73,9 +73,9 @@ The following table describes the warehouse context menu options:
 | **View lineage** | This option shows the end-to-end lineage of warehouse from the data sources to the warehouse, the default Power BI dataset, and other datasets (if any) that were built on top of the warehouse, all the way to deports, dashboards and apps. |
 | **View details** | Opens up warehouse details in Data hub. | 
 
-## Next steps
+## Related content
 
 - [Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
-- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+- [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Admin portal](../admin/admin-center.md)

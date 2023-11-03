@@ -3,7 +3,6 @@ title: Sensitivity label inheritance from data sources in Power BI
 description: Learn how Power BI datasets can inherit sensitivity labels from data sources.
 author: paulinbar
 ms.author: painbar
-manager: kfollis
 ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: conceptual

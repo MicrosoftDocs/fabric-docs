@@ -62,7 +62,7 @@ The Data hub integration in Power BI Desktop lets you connect to the Warehouse o
    :::image type="content" source="media\reports-power-bi-service\data-hub-pbi-desktop.png" alt-text="Screenshot of the Data hub in Power BI Desktop." lightbox="media\reports-power-bi-service\data-hub-pbi-desktop.png":::
 
 
-## Next steps
+## Related content
 
 - [Connectivity](connectivity.md)
 - [Create reports](create-reports.md)

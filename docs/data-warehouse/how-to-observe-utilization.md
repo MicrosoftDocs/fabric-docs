@@ -28,7 +28,7 @@ In the Fabric Capacity Metrics app, use the **Multi metric ribbon chart** to fin
 
 This graph can provide high-level CU trends in the last 14 days to see which Fabric workload has used the most CU.
 
-1. Use the **Item** table to identify specific warehouses consuming most Compute. The Items table below the multi metric ribbon chart provides aggregated consumption at item level. In this view, for example, you can identify which items have consumed the most CUs.
+1. Use the **Item** table to identify specific warehouses consuming most Compute. The `Items` table in the multi metric ribbon chart provides aggregated consumption at item level. In this view, for example, you can identify which items have consumed the most CUs.
 1. Select "Warehouse" in the **Select item kind(s)** dropdown list.
 1. Sort the **Item** table by **CU(s)**, descending.
 1. You can now identify the items using the most capacity units, overall duration of activity, number of users, and more.

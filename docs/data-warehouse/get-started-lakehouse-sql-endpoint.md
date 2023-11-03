@@ -25,7 +25,7 @@ The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in t
 
 - The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI dataset](datasets.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
+- The [default Power BI dataset](semantic-models.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
 
 There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
 
@@ -48,13 +48,13 @@ One of the well-known strategies for lake data organization is a [medallion arch
 
 You can use [OneLake shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
 
-Warehouses can also be added as subject area or domain oriented solutions for specific subject matter that may have bespoke analytics requirements. 
+Warehouses can also be added as subject area or domain oriented solutions for specific subject matter that can have bespoke analytics requirements. 
 
 If you choose to keep your data in Fabric, it will **always be open** and accessible through APIs, Delta format, and of course T-SQL.
 
 ### Query as a service over your delta tables from Lakehouse and other items from OneLake Data Hub
 
-There are use cases where an analyst, data scientist, or data engineer may need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
+There are use cases where an analyst, data scientist, or data engineer might need to query data within a data lake. In Fabric, this end to end experience is completely SaaSified.
 
 [OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the whole organization. OneLake is OneDrive for data. OneLake can contain multiple workspaces, for example, along your organizational divisions. Every item in Fabric makes it data accessible via OneLake. 
 
@@ -100,7 +100,7 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 Partitioned data enables faster access if the queries are filtering on the predicates that compare predicate columns with a value.
 
-A [!INCLUDE [fabric-se](includes/fabric-se.md)] can easily read this type of data with no configuration required. For example, you can use any application to archive data into a data lake, including SQL Server 2022 or Azure SQL Managed Instance. After you partitioning data and land it in a lake for archival purposes with external tables, a [!INCLUDE [fabric-se](includes/fabric-se.md)] can read partitioned Delta Lake tables as SQL tables and allow your organization to analyze them. this reduces the total cost of ownership, reduces data duplication, and lights up big data, AI, other analytics scenarios.
+A [!INCLUDE [fabric-se](includes/fabric-se.md)] can easily read this type of data with no configuration required. For example, you can use any application to archive data into a data lake, including SQL Server 2022 or Azure SQL Managed Instance. After you partitioning data and land it in a lake for archival purposes with external tables, a [!INCLUDE [fabric-se](includes/fabric-se.md)] can read partitioned Delta Lake tables as SQL tables and allow your organization to analyze them. This reduces the total cost of ownership, reduces data duplication, and lights up big data, AI, other analytics scenarios.
 
 ### Data virtualization of Fabric data with shortcuts
 
@@ -136,11 +136,11 @@ Data partitioning is a well-known data access optimization technique in data lak
 
 A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
 
-## Next steps
+## Related content
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
-- [Understand default Power BI datasets](datasets.md)
+- [Understand default Power BI datasets](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)

@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Track user activities in Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Knowing who is taking what action on which item in Fabric can be critical in helping your organization fulfill its requirements, such as meeting regulatory compliance and records management.
 

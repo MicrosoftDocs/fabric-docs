@@ -8,7 +8,7 @@ ms.custom: build-2023
 ms.date: 06/08/2023
 ---
 
-* Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or sign up for a free [Microsoft Fabric (Preview) trial](../../get-started/fabric-trial.md).
+* Get a [Microsoft Fabric subscription](../../enterprise/licenses.md). Or sign up for a free [Microsoft Fabric trial](../../get-started/fabric-trial.md).
 
 * Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
 

@@ -104,4 +104,4 @@ Use the following steps to set the retry policy for your Spark job definition:
 ## Next steps
 
 - [Spark Job Definition](spark-job-definition.md)
-- [What is SQL analytics endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
+- [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)

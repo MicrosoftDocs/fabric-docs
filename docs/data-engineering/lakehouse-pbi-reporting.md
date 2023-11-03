@@ -30,4 +30,4 @@ One option is to give the user *Viewer* role in the workspace and grant necessar
 
 ## Next steps
 
-- [Default Power BI datasets in Microsoft Fabric](../data-warehouse/datasets.md)
+- [Default Power BI datasets in Microsoft Fabric](../data-warehouse/semantic-models.md)

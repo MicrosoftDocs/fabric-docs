@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 10/26/2023
+ms.date: 11/02/2023
 ---
 
 # What is the admin monitoring workspace?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 
@@ -24,7 +22,15 @@ To use the admin monitoring workspace, you need to be an admin with one of these
 
 ## Access the admin monitoring workspace
 
-The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Fabric admin* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+The admin monitoring workspace is enabled for [Microsoft Fabric admins](microsoft-fabric-admin.md) that have the *Global administrator* or *Fabric administrator* role. Admins can also share its content with other users. Users with viewer permissions that are not admins, can view the admin monitoring workspace by navigating to the workspace URL.
+
+### Admin monitoring workspace view
+
+Only admins with the *Global administrator* or *Fabric administrator* roles, can see the admin monitoring workspace at the top of their list of workspaces. Admins can access the monitoring workspace by selecting it from the list.
+
+Users that are not admins, and do not have a *Global administrator* or *Fabric administrator* role, can't see the admin monitoring workspace at the top of their list of workspaces. Such users can only view the admin monitoring workspace by navigating to it's URL after they've been given viewer permissions by an admin.
+
+### Installing the admin monitoring workspace
 
 The admin monitoring workspace is automatically installed during the first time any Microsoft Fabric admin accesses it. To access the admin monitoring workspace, follow these steps:
 

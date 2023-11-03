@@ -12,13 +12,13 @@ ms.topic: tutorial
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This tutorial guides you through setting up dbt and deploying your first project to an Azure Fabric Synapse [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This tutorial guides you through setting up dbt and deploying your first project to an Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Introduction
 
-[dbt](https://www.getdbt.com/product/what-is-dbt/) (Data Build Tool) is an open-source framework that simplifies data transformation and analytics engineering. It focuses on SQL-based transformations within the analytics layer, treating SQL as code. dbt supports version control, modularization, testing, and documentation.
+The [dbt](https://www.getdbt.com/product/what-is-dbt/) (Data Build Tool) open-source framework simplifies data transformation and analytics engineering. It focuses on SQL-based transformations within the analytics layer, treating SQL as code. dbt supports version control, modularization, testing, and documentation.
 
 The dbt adapter for Microsoft Fabric can be used to create dbt projects, which can then be deployed to a Fabric Synapse Data Warehouse.
 
@@ -93,7 +93,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 1. Authenticate yourself to Azure in the Visual Studio Code terminal. 
 
     - Run `az login` in Visual Studio Code terminal if you're using Azure CLI authentication.
-    - For Service Principal or other Azure Active Directory authentication to Synapse Data Warehouse in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
+    - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
 
 1. Now you're ready to test the connectivity. Run `dbt debug` in the Visual Studio Code terminal to test the connectivity to your warehouse.
   
@@ -143,7 +143,7 @@ Important things to consider when using dbt-fabric adapter:
 
 - Review [the current limitations in Microsoft Fabric data warehousing](limitations.md).
 
-- Fabric supports Azure Active Directory (Azure AD) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
+- Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
 - Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Synapse Data Warehouse in Microsoft Fabric.
 
@@ -153,7 +153,7 @@ Important things to consider when using dbt-fabric adapter:
 
 - You can log issues on the dbt-fabric adapter by visiting [Issues · microsoft/dbt-fabric · GitHub](https://github.com/microsoft/dbt-fabric/issues).
 
-## Next steps
+## Related content
 
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Tutorial: Create a Warehouse in Microsoft Fabric](tutorial-create-warehouse.md)

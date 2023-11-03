@@ -146,6 +146,7 @@ GO
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Column-level security in Fabric data warehousing](column-level-security.md)
+- [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
 
 ## Next step
 

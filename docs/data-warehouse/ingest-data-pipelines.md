@@ -84,7 +84,7 @@ For more on data ingestion into your [!INCLUDE [fabric-dw](includes/fabric-dw.md
 - [Ingest data into your Warehouse using the COPY statement](ingest-data-copy.md)
 - [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)

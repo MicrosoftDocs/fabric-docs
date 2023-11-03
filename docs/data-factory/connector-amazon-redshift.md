@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon Red
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/18/2023
+ms.date: 10/31/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -31,6 +31,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support Amazon Redshift in data pipelines.

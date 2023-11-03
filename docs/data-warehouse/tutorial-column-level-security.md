@@ -42,7 +42,7 @@ Before you begin, make sure you have the following:
 1. Replace `YourSchema` with the name of your schema and `YourTable` with the name of your target table.
 1. Replace `SomeGroup` with the name of your User/Group.
 1. Replace the comma-delimited columns list with the columns you want to give the role access to.
-1. Repeat the above steps to grant specific column access for other tables if needed.
+1. Repeat these steps to grant specific column access for other tables if needed.
 
 ## 3. Test column-level access
 

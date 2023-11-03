@@ -44,7 +44,9 @@ There are two options available:
 
 ### Get data from a new eventstream
 
-1. Select **Existing Eventstream** in the drop-down list, a dialog pops up asking for a new eventstream name:
+1. Select **New Eventstream** in the drop-down list, a dialog pops up asking for a new eventstream name:
+
+   :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-options.png" alt-text="Screenshot showing the options for getting data from eventstream." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-options.png" :::
 
    :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-new.png" alt-text="Screenshot showing the new eventstream dialog." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-kql-database-new.png" :::
 

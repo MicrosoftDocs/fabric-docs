@@ -40,13 +40,13 @@ For more information about the supported data types including their precisions, 
 
 ### Unsupported data types
 
-For T-SQL data types that aren't currently supported, some alternatives are available. Make sure you evaluate the use of these types as precision and query behavior may vary:
+For T-SQL data types that aren't currently supported, some alternatives are available. Make sure you evaluate the use of these types, as precision and query behavior vary:
 
 | **Unsupported data type** | **Alternatives available** |
 |---|---|
 | **money and smallmoney** | Use decimal, however note that it can't store the monetary unit.  |
 | **datetime and smalldatetime** | Use datetime2. |
-| **nchar and nvarchar** | Use char and varchar respectively, as there's no similar unicode data type in Parquet. Char and varchar types in a UTF-8 collation may use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
+| **nchar and nvarchar** | Use char and varchar respectively, as there's no similar unicode data type in Parquet. Char and varchar types in a UTF-8 collation might use more storage than nchar and nvarchar to store unicode data. To understand the impact on your environment, see [Storage differences between UTF-8 and UTF-16](/sql/relational-databases/collations/collation-and-unicode-support?view=fabric&preserve-view=true#storage_differences). |
 | **text and ntext** | Use varchar. |
 | **image** | Use varbinary. |
 
@@ -77,6 +77,7 @@ The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-## Next steps
+## Next step
 
-- [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
+> [!div class="nextstepaction"]
+> [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
