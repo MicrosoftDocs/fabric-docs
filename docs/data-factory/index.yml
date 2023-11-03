@@ -41,7 +41,7 @@ landingContent:
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
-          - text: Pricing
+          - text: Pricing in Data Factory
             url: pricing-overview.md
       - linkListType: tutorial
         links:
