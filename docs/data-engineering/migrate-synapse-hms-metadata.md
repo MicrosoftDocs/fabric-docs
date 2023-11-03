@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 The initial step in the Hive Metastore (HMS) migration involves determining the databases, tables, and partitions you want to transfer. It's not necessary to migrate everything; you can select specific databases. When identifying databases for migration, make sure to verify if there are managed or external Spark tables.
 
-For HMS considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
+For HMS considerations, refer to [differences between Azure Synapse Spark and Fabric](synapse-fabric-comparison.md).
 
 ## Prerequisites
 
@@ -139,6 +139,6 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 
 ## Next steps
 
-- [Fabric vs. Azure Synapse Spark](NEEDLINK)
-- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark Job Definitions (SJD)](migrate-synapse-sjd.md)
+- [Fabric vs. Azure Synapse Spark](synapse-fabric-comparison.md)
+- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark Job Definitions (SJD)](migrate-synapse-spark-job-definition.md)
 

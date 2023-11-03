@@ -18,7 +18,7 @@ While Azure Synapse provides Spark pools, Fabric offers [Starter pools](configur
 
 If you have more than one Spark pool and you plan to move those to the same Fabric workspace, we recommended using Option 2, creating multiple custom environments.
 
-For Spark pool considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
+For Spark pool considerations, refer to [differences between Azure Synapse Spark and Fabric](synapse-fabric-comparison.md).
 
 ## Prerequisites
 
@@ -32,7 +32,7 @@ To move from an existing Spark pool from Azure Synapse to a workspace default en
 
 1. **Access Azure Synapse workspace**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace, go to **Analytics Pools** and select **Apache Spark pools**.
 1.	**Locate the Spark pool**: From **Apache Spark pools**, locate the Spark pool you want to move to Fabric and check the pool properties. 
-1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
+1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](synapse-fabric-comparison.md) to see any differences.
 1.	**Create a custom Spark pool in Fabric**:
     * Go to your Fabric workspace and select **Workspace settings**.
     * Go to **Data Engineering/Science** and select **Spark settings**.
@@ -53,7 +53,7 @@ With custom environments, you can set up custom Spark properties and libraries. 
 
 1. **Access Azure Synapse workspace**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace, go to **Analytics Pools** and select **Apache Spark pools**.
 1.	**Locate the Spark pool**: From **Apache Spark pools**, locate the Spark pool you want to move to Fabric and check the pool properties. 
-1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](NEEDLINK) to see any differences.
+1.	**Get properties**: Get the Spark pool properties such as Apache Spark version, node size family, node size or autoscale. Refer to [Spark pool considerations](synapse-fabric-comparison.md) to see any differences.
 1.	**Create a custom Spark pool**:
     * Go to your Fabric workspace and select **Workspace settings**.
     * Go to **Data Engineering/Science** and select **Spark settings**.
