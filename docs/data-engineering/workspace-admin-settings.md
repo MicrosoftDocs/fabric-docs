@@ -64,7 +64,7 @@ If the setting is turned off by the workspace admin, the Default pool and its co
 
 Environment provides flexible configurations for running your Spark jobs (notebooks, spark job definitions). In an Environment you can configure compute properties, select different runtime, setup library package dependencies based on your workload requirements. 
 
-In the environment tab, you have the option to set the default environment may choose which version of Spark you'd like to use for the workspace.
+In the environment tab, you have the option to set the default environment. You may choose which version of Spark you'd like to use for the workspace.
 
 As a Fabric workspace admin, you can select an Environment as workspace default Environment.
 
