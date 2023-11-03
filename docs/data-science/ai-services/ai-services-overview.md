@@ -34,7 +34,7 @@ Fabric provides two options for utilizing Azure AI services:
 
 ### [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) 
 
-[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-open-ai-sdk-synapse.md). [SynapseML](how-to-use-open-ai-sdk-synapse.md)
+[REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
 - DV3 : A Microsoft internal version of GPT-4 model. GPT-4 can solve difficult problems with greater accuracy than any of OpenAI's previous models. Like GPT-3.5 Turbo, GPT-4 is optimized for chat and works well for traditional completions tasks.
 - GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
@@ -86,8 +86,7 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant’s geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
 
 ## Next steps
-- [Check out the regions for prebuilt AI services](ai-services-regions.md)
-- [Use prebuilt Azure OpenAI in Fabric](how-to-use-open-ai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)
 

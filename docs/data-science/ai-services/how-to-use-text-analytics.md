@@ -15,7 +15,7 @@ ms.search.form:
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Text Analytics](/azure/ai-services/language-service/) is an [Azure AI services](https://learn.microsoft.com/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Text Analytics](/azure/ai-services/language-service/) is an [Azure AI services](/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
 This tutorial demonstrates using text analytics in Fabric with RESTful API to:
 
@@ -533,7 +533,7 @@ No steps for REST API in this section.
 # [SynapseML](#tab/synapseml)
 
 Entity linking identifies and disambiguates the identity of entities found in text. For example, in the sentence "We went to Seattle last
-week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](https://learn.microsoft.com/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
+week.", the word "Seattle" would be identified, with a link to more information on Wikipedia. See [Supported languages for entity linking](/azure/ai-services/language-service/entity-linking/language-support) for the list of enabled languages.
 
 
 ``` Python
@@ -562,5 +562,5 @@ display(result)
 - [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)
 - [Use prebuilt Azure AI Translator in Fabric with SynapseML](how-to-use-text-translator.md)
 - [Use prebuilt Azure OpenAI in Fabric with REST API](how-to-use-openai-via-rest-api.md)
-- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-open-ai-sdk-synapse.md)
-- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-open-ai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with Python SDK](how-to-use-openai-sdk-synapse.md)
+- [Use prebuilt Azure OpenAI in Fabric with SynapseML](how-to-use-openai-sdk-synapse.md)
