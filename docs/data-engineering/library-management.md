@@ -12,15 +12,15 @@ ms.date: 11/01/2023
 # Manage Apache Spark libraries in Microsoft Fabric
 
 
-A library is a collection of pre-written code that can be imported to provide additional functionality. By using libraries, developers can save time and effort by not having to write code from scratch to perform common tasks. Instead, they can simply import the library and use its functions and classes to achieve their desired functionality.On Microsoft Fabric, multiples mechanisms are provided to help you manage and use the libraries.
+A library is a collection of pre-written code that can be imported to provide additional functionality. By using libraries, developers can save time and effort by not having to write code from scratch to perform common tasks. Instead, they can simply import the library and use its functions and classes to achieve their desired functionality. On Microsoft Fabric, multiple mechanisms are provided to help you manage and use the libraries.
 
 - **Built-in** libraries: Each Fabric Spark runtime provides a rich set of popular pre-installed libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md)
 - **Public library**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
 - **Custom library**: Custom libraries refer to code built by you or your organization, and are supported in the *.whl*, *.jar*, and *.tar.gz* formats. Please note that *.tar.gz* files are only supported for R language; for Python custom libraries, please use the *.whl* format.
 
-
+## library-management-in-workspace-setting
 > [!IMPORTANT]
-> library management at the workspace setting is no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-ws-migration.md) to migrate them to an environment and attach as workspace default.
+> Library management at the workspace setting is no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-ws-migration.md) to migrate them to an environment and attach as workspace default.
 
 ## Summary of library management best practices
 
