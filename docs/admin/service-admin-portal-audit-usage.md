@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 08/29/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Audit and usage tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Usage metrics for content creators
 
@@ -36,4 +36,4 @@ When the switch is on, administrators and Premium workspace owners can [configur
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

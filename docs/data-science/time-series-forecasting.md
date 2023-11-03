@@ -13,7 +13,7 @@ ms.date: 09/15/2023
 
 In this notebook, we'll build a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 

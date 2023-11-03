@@ -16,8 +16,6 @@ The Visual Studio (VS) Code extension for Synapse fully supports the CRUD (creat
 
 With this extension, you can also run notebooks onto the remote Fabric Spark compute.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Open a notebook with the Synapse extension
 
 By clicking the **Open in VS Code** button in the notebook authoring page in the Fabric portal, you can directly open the same notebook with the Synapse VS Code extension for Fabric. After you activate the extension in VS Code and open the notebook once, your workspace should automatically connect to the notebook.

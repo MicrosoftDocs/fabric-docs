@@ -15,7 +15,7 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 To get started, you must complete the following prerequisites:
 
-- Have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
+- Have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
 - Choose your query tool. This tutorial features the SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal, but you can use any T-SQL querying tool.
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
 
@@ -36,7 +36,7 @@ For more information on connecting to your [!INCLUDE [fabric-dw](includes/fabric
 
 To learn more about supported table creation in Warehouse in Microsoft Fabric, see [Tables in data warehousing in Microsoft Fabric](tables.md) and [Data types in Microsoft Fabric](data-types.md).
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Ingest data into your Warehouse using data pipelines](ingest-data-pipelines.md)

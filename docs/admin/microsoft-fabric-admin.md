@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 07/16/2023
+ms.date: 11/02/2023
 ---
 
 # What is Microsoft Fabric admin?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric admin is the management of the organization-wide settings that control how Microsoft Fabric works. Users that are assigned to admin roles configure, monitor, and provision organizational resources. This article provides an overview of admin roles, tasks, and tools to help you get started.
 
@@ -57,7 +55,7 @@ As a capacity admin, you can perform these tasks on the capacity you're an admin
 
 ## Admin tasks and tools
 
-Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](/power-bi/admin/service-admin-portal), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
+Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](admin-center.md), but you should still be familiar with related admin tools. To find out which role is required to perform the tasks listed here, cross reference them with the admin roles listed in [Admin roles related to Microsoft Fabric](#admin-roles-related-to-microsoft-fabric).
 
 * **[Microsoft Fabric admin portal](admin-center.md)**
     * Acquire and work with capacities

@@ -38,12 +38,14 @@ You are prompted with options to select who you would like to share the [!INCLUD
 
 Here's more detail about each of the permissions provided:
 
-- **If no additional permissions are selected** - The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient will not be able to query any table or view or execute any function or stored procedure unless they are provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL GRANT statement.
+- **If no additional permissions are selected** - The shared recipient by default receives "Read" permission, which only allows the recipient to *connect* to the [!INCLUDE [fabric-se](includes/fabric-se.md)], the equivalent of CONNECT permissions in SQL Server. The shared recipient will not be able to query any table or view or execute any function or stored procedure unless they are provided access to objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using T-SQL [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true) statement.
 
 > [!NOTE]
 > **ReadData**, **ReadAll**, and **Build** are separate permissions that do not overlap.
 
-- **"Read all SQL endpoint data" is selected ("ReadData" permissions)**- The shared recipient can read all the database objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL GRANT/REVOKE/DENY statements.
+- **"Read all data using SQL" is selected ("ReadData" permissions)**- The shared recipient can read all the database objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **ReadData** is the equivalent of *db_datareader* role in SQL Server. The shared recipient can read data from all tables and views within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to further restrict and provide granular access to some objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], you can do this using T-SQL GRANT/REVOKE/DENY statements.
+
+    - In the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse, **"Read all SQL Endpoint data"** is equivalent to **"Read all data using SQL"**.
 
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
 
@@ -104,10 +106,10 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 
 ## Limitations
 
-- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions may reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions will reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
 - Shared recipients are able to access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using owner's identity (delegated mode). Ensure that the owner of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is not removed from the workspace.
 - Shared recipients only have access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they receive and not any other items within the same workspace as the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to provide permissions for other users in your team to collaborate on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] (read and write access), add them as Workspace roles such as "Member" or "Contributor".
-- Currently, when you share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and choose **Read all SQL endpoint data**, the shared recipient can access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in a read-only mode. These shared recipients can create queries, but cannot currently save their queries.
+- Currently, when you share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and choose **Read all data using SQL**, the shared recipient can access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in a read-only mode. These shared recipients can create queries, but cannot currently save their queries.
 - Currently, sharing a Warehouse is only available through the user experience.
 - If you want to provide granular access to specific objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with no additional permissions, then provide granular access to specific objects using T-SQL GRANT statement. For more information, see T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
 - If you see that the **ReadAll** permissions and **ReadData** permissions are disabled in the sharing dialog, refresh the page.
@@ -117,9 +119,18 @@ You can choose to add or remove permissions using the "Manage permissions" exper
   - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
 
-## Next steps
+## Data protection features
+
+Microsoft Fabric data warehousing supports several technologies that administrators can use to protect sensitive data from unauthorized viewing. By securing or obfuscating data from unauthorized users or roles, these security features can provide data protection in both a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] without application changes.
+
+- [Column-level security](column-level-security.md) prevents unauthorized viewing of columns in tables.
+- [Row-level security](row-level-security.md) prevents unauthorized viewing of rows in tables, using familiar `WHERE` clause filter predicates.
+- [Dynamic data masking](dynamic-data-masking.md) prevents unauthorized viewing of sensitive data by using masks to prevent access to complete, such as email addresses or numbers.
+
+## Related content
 
 - [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)
 - [Accessing shortcuts](../onelake/access-onelake-shortcuts.md)
 - [Navigate the Fabric Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md)
+- [GRANT (Transact-SQL)](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true)

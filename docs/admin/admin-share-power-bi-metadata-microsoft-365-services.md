@@ -7,7 +7,7 @@ ms.reviewer: 'jadelynray'
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: conceptual
-ms.date: 07/23/2023
+ms.date: 11/02/2023
 Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 LocalizationGroup: Admin
 ---
@@ -87,5 +87,4 @@ The tables below list the data that is shared with Microsoft 365 services.
 
 ## Next steps
 
->[!div class="nextstepaction"]
->[About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+- [About tenant settings](tenant-settings-index.md)

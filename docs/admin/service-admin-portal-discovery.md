@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Discovery tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 [Discoverability](/power-bi/collaborate-share/service-discovery) is a feature that dataset owners can use to make their endorsed content discoverable by users who don't yet have access to it.
 
@@ -36,4 +36,4 @@ To learn more, see [Find recommended items](/fabric/get-started/onelake-data-hub
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

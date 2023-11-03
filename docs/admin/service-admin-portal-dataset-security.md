@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 08/31/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Dataset security tenant setting
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Block republish and disable package refresh
 
@@ -24,4 +24,4 @@ To learn more about dataset security, see [Dataset permissions](/power-bi/connec
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

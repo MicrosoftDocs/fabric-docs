@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Content pack and app tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Create template organizational content packs and apps
 
@@ -38,4 +38,4 @@ To learn more, see [Publish an app in Power BI](/power-bi/collaborate-share/serv
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 11/02/2023
 ---
 
 # Pause and resume your capacity
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
 
@@ -57,4 +55,4 @@ Restart usage by resuming your capacity. Resuming your capacity also resumes bil
 
 * [Scale your capacity](scale-capacity.md)
 
-* [Understand the metrics app overview page](metrics-app-overview-page.md)
+* [Understand the metrics app compute page](metrics-app-compute-page.md)

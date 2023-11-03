@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 09/05/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Help and support tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Publish "Get Help" information
 
@@ -80,4 +80,4 @@ As with other tenant settings, you can choose who the **custom message** applies
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

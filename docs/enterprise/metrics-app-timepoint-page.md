@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Understand the metrics app timepoint page
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to CU usage.
 
@@ -19,7 +17,7 @@ All the activities in the capacity are ranked according to their compute impact.
 
 When the total combined CU for *interactive* and *background* operations exceeds the 30 second timepoint allowance, the capacity is overloaded and depending on whether autoscale is enabled or not, throttling is applied.
 
-* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-overview-page.md#capacity-utilization-and-throttling) chart and CU (s) card will changes its color to yellow.
+* **Autoscale is enabled** - If the capacity has autoscale enabled, a new capacity unit (CU) will get added for the next 24 hours and will be shown as an increased value in the *CU Limit* line in the [Capacity utilization and throttling](metrics-app-compute-page.md#capacity-utilization-and-throttling) chart and CU (s) card will changes its color to yellow.
 
     >[!NOTE]
     >When autoscale is enabled, if the capacity reaches the maximum number of capacity units (CUs) allowed by the autoscale operation, throttling is applied.
@@ -128,4 +126,4 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
 
 ## Next steps
 
-[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app compute page?](metrics-app-compute-page.md)

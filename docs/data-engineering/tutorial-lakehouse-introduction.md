@@ -15,8 +15,6 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 
 This tutorial walks you through an end-to-end scenario from data acquisition to data consumption. It helps you build a basic understanding of Fabric, including the different experiences and how they integrate, as well as the professional and citizen developer experiences that come with working on this platform. This tutorial isn't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Lakehouse end-to-end scenario
 
 Traditionally, organizations have been building modern data warehouses for their transactional and structured data analytics needs. And data lakehouses for big data (semi/unstructured) data analytics needs. These two systems ran in parallel, creating silos, data duplication, and increased total cost of ownership.
@@ -33,7 +31,7 @@ This tutorial explains how a developer at the fictional Wide World Importers com
 
    * [Create a Fabric workspace](tutorial-lakehouse-get-started.md).
    * [Create a lakehouse](tutorial-build-lakehouse.md).
-   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, OneCopy of your data across lakehouse mode and SQL endpoint mode.
+   * [Ingest data](tutorial-lakehouse-data-ingestion.md), [transform data](tutorial-lakehouse-data-preparation.md), and load it into the lakehouse. You can also explore the OneLake, one copy of your data across lakehouse mode and SQL endpoint mode.
    * Connect to your lakehouse using TDS/SQL endpoint and [Create a Power BI report using DirectLake](tutorial-lakehouse-build-report.md) to analyze sales data across different dimensions.
    * Optionally, you can orchestrate and schedule data ingestion and transformation flow with a pipeline.
 

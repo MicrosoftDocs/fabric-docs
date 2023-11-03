@@ -6,15 +6,13 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal, build-2023
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Manage workspaces
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
+As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
 
 On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -135,10 +133,10 @@ This means the following:
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you can move the workspace but you cannot create new Fabric items (see [Known issue - Fabric items can't be created in a workspace moved to a capacity in a different region](../get-started/known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)).  Once the known issue is resolved, moving workspaces that once had non-PowerBI Fabric items will not be allowed.
+    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you also won't be able to move the workspace to a capacity in a different region.
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
 ## Next steps
 
-[About the Admin portal](/power-bi/admin/service-admin-portal)
+[About the admin portal](admin-center.md)

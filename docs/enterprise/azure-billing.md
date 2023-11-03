@@ -3,14 +3,12 @@ title: Understand your Fabric capacity Azure bill
 description: Learn how to navigate your Azure bill for A Fabric capacity.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 09/19/2023
+ms.date: 11/02/2023
 ---
 
 # Understand your Azure bill on a Fabric capacity
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) experience.
 
@@ -32,7 +30,7 @@ The total usage from all meters add up to the cost of the provisioned Fabric cap
 
 ## Comparing your Azure bill with your usage
 
-Use the [Microsoft Fabric Capacity Metrics](metrics-app-overview-page.md) to correlate your Azure bill with usage analytics generated from your organization’s usage of Fabric.
+Use the [Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md) to correlate your Azure bill with usage analytics generated from your organization’s usage of Fabric.
 
 The default view in the app shows trends in consumption by workload over the past 14 days. The view includes an analysis of billable and preview workloads that aren't used by your capacity and aren't billed.
 
@@ -48,4 +46,4 @@ To compare the information in the Microsoft Fabric Capacity Metrics app to what 
 
 ## Next steps
 
-[Microsoft Fabric Capacity Metrics](metrics-app-overview-page.md)
+[Microsoft Fabric Capacity Metrics](metrics-app-compute-page.md)

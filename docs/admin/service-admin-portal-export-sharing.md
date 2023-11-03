@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization’s security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
-Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Allow Azure Active Directory guest users to access Microsoft Fabric
 
@@ -52,7 +52,7 @@ This setting helps organizations limit visibility of external users in sharing e
 
 People in your organization can publish public reports on the web. Publicly published reports don't require authentication to view them.
 
-Only admins can allow the creation of new publish-to-web embed codes. Go to [Embed codes](/power-bi/admin/service-admin-portal-embed-codes) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them. Review embed codes regularly to make sure no confidential information is live on the web.
+Only admins can allow the creation of new publish-to-web embed codes. Go to [Embed codes](service-admin-portal-embed-codes.md) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them. Review embed codes regularly to make sure no confidential information is live on the web.
 
 The **Publish to web** setting in the admin portal gives options for which users can create embed codes. Admins can set **Publish to web** to **Enabled** and **Choose how embed codes work** to **Allow only existing embed codes**. In that case, users can create embed codes, but they have to contact the admin to allow them to do so.
 
@@ -170,7 +170,7 @@ This setting lets you enable or disable the ability of users in your organizatio
 
 To learn more, see [Feature content on colleagues' Power BI Home page](/power-bi/collaborate-share/service-featured-content).
 
-You can also manage featured content on the **Featured content** page in the Admin portal. Go to [Manage featured content](/power-bi/admin/service-admin-portal-featured-content) for more details.
+You can also manage featured content on the **Featured content** page in the Admin portal. Go to [Manage featured content](service-admin-portal-featured-content.md) for more details.
 
 ## Allow connections to featured tables
 
@@ -250,4 +250,4 @@ Disabling this setting prevents any user from sharing datasets externally by blo
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

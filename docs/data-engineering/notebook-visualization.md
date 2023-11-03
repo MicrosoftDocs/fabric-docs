@@ -14,8 +14,6 @@ ms.date: 05/30/2023
 
 [!INCLUDE [product-name](../includes/product-name.md)] is an integrated analytics service that accelerates time to insight, across data warehouses and big data analytics systems. Data visualization in notebook is a key component in being able to gain insight into your data. It helps make big and small data easier for humans to understand. It also makes it easier to detect patterns, trends, and outliers in groups of data.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 When you use Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)], there are various built-in options to help you visualize your data, including [!INCLUDE [product-name](../includes/product-name.md)] notebook chart options, and access to popular open-source libraries.
 
 ## Notebook chart options

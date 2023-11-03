@@ -34,6 +34,8 @@ The following table is a list of settings available for each warehouse.
 | **Owned by** | Name of the user who owns the warehouse. | |
 | **Last modified by** | Name of the user who modified the warehouse recently. | |
 | **SQL connection string** | The SQL connection string for the workspace. You can use the SQL connection string to create a connection to the warehouse using various tools, such as SSMS/Azure Data Studio. | |
+| **Sensitivity label** | Classify your warehouse to protect it from unauthorized access. | |
+| **Endorsement and discovery** | Endorse the warehouse and make it discoverable in your org. |
 
 
 The following table shows settings for the default Power BI dataset.
@@ -44,7 +46,8 @@ The following table shows settings for the default Power BI dataset.
 | **Q&A** | Use natural language to ask question on your data. |
 | **Query caching** | Turn on or off caching query results for speeding up reports by using previously saved query results. |
 | **Server settings** | The XMLA connection string of the default dataset. |
-| **Endorsement and discovery** | Endorse default dataset and make it discoverable in your org. |
+| **Endorsement and discovery** | Endorse the default dataset independently from warehouse and make it discoverable in your org. |
+
 
 ## Context menus
 
@@ -70,9 +73,9 @@ The following table describes the warehouse context menu options:
 | **View lineage** | This option shows the end-to-end lineage of warehouse from the data sources to the warehouse, the default Power BI dataset, and other datasets (if any) that were built on top of the warehouse, all the way to deports, dashboards and apps. |
 | **View details** | Opens up warehouse details in Data hub. | 
 
-## Next steps
+## Related content
 
 - [Warehouse in Microsoft Fabric](data-warehousing.md#synapse-data-warehouse)
-- [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+- [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)
 - [Create reports in the Power BI service](reports-power-bi-service.md)
 - [Admin portal](../admin/admin-center.md)

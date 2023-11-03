@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 10/18/2023
 ---
 
 # Security in Microsoft Fabric
@@ -23,6 +23,8 @@ Review this section for a list of the security features available in Microsoft F
 * [Lockbox](security-lockbox.md) - Control how Microsoft engineers access your data.
 
 * [Service tags](security-service-tags.md) - Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric.
+
+* [OneLake security](../onelake/onelake-security.md) - Learn how to secure your data in OneLake.
 
 ## Next steps
 
