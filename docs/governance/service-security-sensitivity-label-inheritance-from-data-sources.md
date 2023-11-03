@@ -44,7 +44,7 @@ To be operative, [sensitivity label inheritance from data sources must be enable
 * Labels from data sources never overwrite manually applied labels.
 * Less restrictive labels from the data source never overwrite more restrictive labels on the semantic model.
 * In Desktop, if the incoming label is more restrictive than the label that is currently applied in Desktop, a banner appears that recommends to the user to apply the more restrictive label.
-* semantic model refresh succeeds even if for some reason the label from the data source isn't applied.
+* Semantic model refresh succeeds even if for some reason the label from the data source isn't applied.
 
 >[!NOTE]
 > No inheritance takes place if the semantic model owner isn't authorized to apply sensitivity labels in Power BI, or if the specific label in question hasn't been published for the semantic model owner.
