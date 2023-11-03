@@ -15,9 +15,9 @@ This article presents a comparison between Fabric and Azure Synapse spark, summa
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-| | **Azure Synapse Spark** | **Fabric Spark** |
-| --- | -- | -- |
-| Spark Pools | Spark Pool <br>- <br>-| Starter Pool / Custom Pool <br>V-Order <br>High Concurrency (notebooks and pipelines - [planned](../../fabric/release-plan/data-engineering.md)) |
+|| **Azure Synapse Spark** | **Fabric Spark** |
+| --- | --- | --- |
+| Spark Pools | Spark Pool <br>- <br>-| Starter Pool / Custom Pool <br>V-Order <br>High Concurrency (notebooks and pipelines - [planned](../../release-plan/data-engineering#concurrency)) |
 | Spark Configurations | Pool level <br>Notebook/SJD level| Environment level <br>Notebook/SJD level|
 | Spark Libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>Environment libraries <br>Inline libraries|
 | Resources | Notebook (Python, Scala, Spark SQL, R, .Net) <br>Spark Job Definition (Python, Scala, .Net) <br>Pipelines <br>Spark-related pipeline activities (Notebook, SJD)| Notebook (Python, Scala, Spark SQL, R) <br>Spark Job Definition (Python, Scala, R) <br>Pipelines <br> Spark-related pipeline activities (Notebook)|
