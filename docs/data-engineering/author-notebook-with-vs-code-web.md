@@ -48,6 +48,6 @@ You can also delete any existing file/folder in the notebook file system.
 
 ## Run notebooks in the VS Code for the Web experience
 
-You can run a notebook in the VS Code for the Web experience by clicking the **Run** button in the notebook editor. Before run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. The kernel is selected in the top right corner of the notebook editor.
+You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. The kernel is selected in the top right corner of the notebook editor.
 
 :::image type="content" source="media\vscode\select-synapse-kernel.png" alt-text="Run notebook in VS Code for the Web.":::
