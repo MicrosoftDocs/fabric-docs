@@ -60,7 +60,7 @@ If your Fabric administrator has [enabled the preview of Microsoft Fabric for th
 With a Fabric (Preview) trial, you get full access to all of the Fabric experiences and features. You also get OneLake storage up to 1 TB. Create Fabric items and collaborate with others in the same Fabric trial capacity. With a Fabric (Preview) trial, you can:
 
 - Create workspaces (folders) for projects that support Fabric capabilities.
-- Share Fabric items, such as datasets, warehouses, and notebooks, and collaborate on them with other Fabric users.
+- Share Fabric items, such as semantic models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 - Create analytics solutions using these Fabric items.
 
 You don't have access to your capacity until you put something into it. To begin using your Fabric (Preview) trial, add items to **My workspace**  or create a new workspace. Assign that workspace to your trial capacity using the "Trial" license mode, and then all the items in that workspace are saved and executed in that capacity. 
