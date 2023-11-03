@@ -16,7 +16,7 @@ Visual Studio Code for the Web provides a free, zero-install Microsoft Visual St
 The Synapse VS Code extension can also be used in the VS Code for the Web experience. The extension supports the CRUD (create, read, update, and delete) notebook experience in Fabric. The changes from the VS Code for the Web experience are applied to the workspace immediately. The extension also supports running notebooks in the VS Code for the web experience.
 
 > [!IMPORTANT]
-> Synapse VS Code - Remote is under public preview
+> The Synapse VS Code Remote extension is currently in preview.
 
 ## Install the Synapse VS Code extension for the Web
 
