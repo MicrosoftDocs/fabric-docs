@@ -1,6 +1,6 @@
 ---
-title: Read data from Power BI datasets and write data that Power BI datasets can consume
-description: Learn how to read from Power BI datasets and write data that can be used in Power BI datasets.
+title: Use semantic link to read data from Power BI datasets and write data that Power BI datasets can consume (preview)
+description: Learn to use semantic link to read from Power BI datasets and write data that can be used in Power BI datasets.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
@@ -10,12 +10,12 @@ ms.date: 06/06/2023
 ms.search.form: Read write powerbi
 ---
 
-# Read from Power BI datasets and write data consumable by Power BI
+# Read from Power BI datasets and write data consumable by Power BI (preview)
 
 In this article, you'll learn how to read data and metadata and evaluate measures in Power BI datasets using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that Power BI datasets can consume.
 
-
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -281,7 +281,7 @@ The SemPy `read_table` and `evaluate_measure` methods have more parameters that 
 - `num_rows`: Number of rows to output in the result.
 - `pandas_convert_dtypes`: If the value is "True", the resulting DataFrame's columns are cast to the best possible _dtype_, using pandas
 [convert_dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html).
-If this parameter is turned off, type incompatibility issues may result between columns of related tables that may not have been detected in the Power BI model due to
+If this parameter is turned off, type incompatibility issues can result between columns of related tables that might not have been detected in the Power BI model due to
 [DAX implicit type conversion](/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion).
 
 SemPy `read_table` also uses the model information provided by Power BI.
