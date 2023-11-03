@@ -45,7 +45,7 @@ To move from an existing Spark pool from Azure Synapse to a workspace default en
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-default-environment.png" alt-text="Screenshot showing default environment.":::
 
 > [!NOTE]
-> In this option, pool level libraries or configurations are not supported. However, you can adjust compute configuration for individual items such as notebooks and Spark job definitions, and add inline libraries. If you need to add custom libraries and configurations to an environment, consider a custom [environment](environment-overview.md).
+> In this option, pool level libraries or configurations are not supported. However, you can adjust compute configuration for individual items such as notebooks and Spark job definitions, and add inline libraries. If you need to add custom libraries and configurations to an environment, consider a custom [environment](NEEDLINK).
 
 ## Option 2: From Spark pool to custom environment
 
@@ -59,7 +59,7 @@ With custom environments, you can set up custom Spark properties and libraries. 
     * Go to **Data Engineering/Science** and select **Spark settings**.
     * From the **Pool** tab and in **Default pool for workspace** section, expand the dropdown menu and select create **New pool**.
     * [Create your custom pool](create-custom-spark-pools.md) with the corresponding target values. Fill the name, node family, node size, autoscaling and dynamic executor allocation options.
-1.	**[Create an Environment](create-and-use-environment.md)** item if you don’t have one.
+1.	**[Create an Environment](NEEDLINK)** item if you don’t have one.
 1.	**Configure Spark compute**:
     * Within the **Environment**, go to **Spark Compute** > **Compute**.
     * Select the newly created pool for the new environment.
@@ -67,7 +67,7 @@ With custom environments, you can set up custom Spark properties and libraries. 
 1.  **Select a runtime version** for the environment. See available runtimes [here](runtime.md).
 1.	Click on **Save** and **Publish** changes.
 
-Learn more on creating and using an [Environment](create-and-use-environment.md).
+Learn more on creating and using an [Environment](NEEDLINK).
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-custom-environment.png" alt-text="Screenshot showing custom environment.":::
 

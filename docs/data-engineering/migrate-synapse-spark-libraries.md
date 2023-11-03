@@ -18,7 +18,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 ## Prerequisites
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
-* If you don’t have one already, create an [Environment](create-and-use-environment.md) in your workspace. 
+* If you don’t have one already, create an [Environment](NEEDLINK) in your workspace. 
 
 ## Option 1: Adding Spark libraries to custom environment
 
@@ -36,7 +36,7 @@ You can move Spark pool libraries to an environment as follows:
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
 
-Learn more on adding Spark libraries to an [Environment](create-and-use-environment.md).
+Learn more on adding Spark libraries to an [Environment](NEEDLINK).
 
 > [!NOTE]
 > Note that library installation may take some time.

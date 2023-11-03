@@ -18,7 +18,7 @@ For Spark configuration considerations, refer to [differences between Azure Syna
 ## Prerequisites
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
-* If you don’t have one already, create an [Environment](create-and-use-environment.md) in your workspace. 
+* If you don’t have one already, create an [Environment](NEEDLINK) in your workspace. 
 
 ## Option 1: Adding Spark configurations to custom environment
 
@@ -36,7 +36,7 @@ Within an environment, you can set Spark properties and those configurations are
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
 
-Learn more on adding Spark configurations to an [Environment](create-and-use-environment.md).
+Learn more on adding Spark configurations to an [Environment](NEEDLINK).
 
 ## Next steps
 
