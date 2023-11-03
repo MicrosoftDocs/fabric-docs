@@ -255,7 +255,7 @@ After the data is ingested into your KQL database, you can analyze it according 
 
 ## Next steps
 
-In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query dataset to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
+In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query semantic model to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
 
 If you want to discover more advanced functionalities for working with Fabric eventstreams, you might find the following resources helpful:
 
