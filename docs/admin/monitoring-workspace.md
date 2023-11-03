@@ -52,7 +52,7 @@ There are several ways you can manage access to content of the admin monitoring 
 
 * **Report** - You can [share a report](/power-bi/connect-data/service-datasets-share) with other users.
 
-* **semantic model** - You can [share access to a semantic model](/power-bi/connect-data/service-datasets-share) with other users. Once a semantic model is shared, you can't unshare it.
+* **Semantic model** - You can [share access to a semantic model](/power-bi/connect-data/service-datasets-share) with other users. Once a semantic model is shared, you can't unshare it.
 
 ### Refreshes
 

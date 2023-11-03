@@ -32,7 +32,7 @@ Use the following settings to override the *automatic refresh* settings in indiv
 
 * **Change detection measure** - Use to specify a minimum value for all the reports in the PPU capacity that use [change detection](/power-bi/create-reports/desktop-automatic-page-refresh#change-detection). The Power BI service overrides any change detection settings that are higher than this setting.
 
-### semantic model workload settings
+### Semantic model workload settings
 
 [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools) allow Microsoft and third-party apps and tools to connect to Power BI semantic models. Use this setting to determine if in the PPU capacity XMLA endpoints are turned off, or configured for read only or read and write.
 
