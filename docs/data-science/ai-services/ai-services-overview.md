@@ -5,7 +5,7 @@ ms.reviewer: ssalgado
 author: ruixinxu
 ms.author: ruxu
 ms.topic: overview
-ms.custom: ignite-2023
+ms.custom: references_regions
 ms.date: 10/18/2023
 ms.search.form: 
 ---
@@ -14,7 +14,7 @@ ms.search.form:
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Azure AI services](https://learn.microsoft.com/azure/ai-services/what-are-ai-services), formerly known as Azure Cognitive Services, help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. 
+[Azure AI services](/azure/ai-services/what-are-ai-services), formerly known as Azure Cognitive Services, help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with prebuilt and customizable APIs and models. AI services empower developers even when they don't have direct AI or data science skills or knowledge. The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. 
 
 Fabric provides two options for utilizing Azure AI services:
 

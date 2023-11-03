@@ -1,5 +1,5 @@
 ---
-title: Use text analytics with rest api
+title: Use text analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API 
 ms.reviewer: ssalgado
 ms.author: ruxu
@@ -15,7 +15,7 @@ ms.search.form:
 
 [!INCLUDE [feature-preview](../../includes/feature-preview-note.md)]
 
-[Text Analytics](https://learn.microsoft.com/azure/ai-services/language-service/) is an [Azure AI services](https://learn.microsoft.com/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
+[Text Analytics](/azure/ai-services/language-service/) is an [Azure AI services](https://learn.microsoft.com/azure/ai-services/) that enables you to perform text mining and text analysis with Natural Language Processing (NLP) features.
 
 This tutorial demonstrates using text analytics in Fabric with RESTful API to:
 
@@ -77,7 +77,7 @@ from pyspark.sql.functions import col
 
 # [Rest API](#tab/rest)
 
-The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](https://learn.microsoft.com/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document and sentences within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ``` python
 import requests
@@ -238,7 +238,7 @@ printresponse(response)
 # [SynapseML](#tab/synapseml)
 
 The Sentiment Analysis feature provides a way for detecting the sentiment labels (such as "negative", "neutral" and "positive") and confidence scores at the sentence and document-level. This feature also returns confidence scores between 0 and 1 for each document & sentences
-within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](https://learn.microsoft.com/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
+within it for positive, neutral and negative sentiment. See the [Sentiment Analysis and Opinion Mining language support](/azure/ai-services/language-service/sentiment-opinion-mining/language-support) for the list of enabled languages.
 
 ``` Python
 df = spark.createDataFrame([
@@ -266,7 +266,7 @@ display(result.select("text", "sentiment"))
 # [Rest API](#tab/rest)
 
 The Language Detector evaluates text input for each document and returns language identifiers with a score that indicates the strength of the
-analysis. This capability is useful for content stores that collect arbitrary text, where language is unknown. See the [Supported languages for language detection](https://learn.microsoft.com/azure/ai-services/language-service/language-detection/language-support) for the list of enabled languages.
+analysis. This capability is useful for content stores that collect arbitrary text, where language is unknown. See the [Supported languages for language detection](/azure/ai-services/language-service/language-detection/language-support) for the list of enabled languages.
 
 ``` python
 post_body = {
@@ -317,7 +317,7 @@ printresponse(response)
 # [SynapseML](#tab/synapseml)
 
 The Language Detector evaluates text input for each document and returns language identifiers with a score that indicates the strength of the
-analysis. This capability is useful for content stores that collect arbitrary text, where language is unknown. See the [Supported languages for language detection](https://learn.microsoft.com/azure/ai-services/language-service/language-detection/language-support) for the list of enabled languages.
+analysis. This capability is useful for content stores that collect arbitrary text, where language is unknown. See the [Supported languages for language detection](/azure/ai-services/language-service/language-detection/language-support) for the list of enabled languages.
 
 
 ``` Python
@@ -347,7 +347,7 @@ display(result.select("text", "detectedLanguage"))
 # [Rest API](#tab/rest)
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
-identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
+identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
 
 
 ``` python
@@ -399,7 +399,7 @@ printresponse(response)
 # [SynapseML](#tab/synapseml)
 
 The Key Phrase Extraction evaluates unstructured text and returns a list of key phrases. This capability is useful if you need to quickly
-identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](https://learn.microsoft.com/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
+identify the main points in a collection of documents. See the [Supported languages for key phrase extraction](/azure/ai-services/language-service/key-phrase-extraction/language-support) for the list of enabled languages.
 
 ``` Python
 df = spark.createDataFrame([
@@ -426,7 +426,7 @@ display(result.select("text", "keyPhrases"))
 
 # [Rest API](#tab/rest)
 
-Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as: person, location, event, product, and organization. See the [NER language support](https://learn.microsoft.com/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 ``` python
 post_body = {
@@ -500,7 +500,7 @@ printresponse(response)
 
 
 Named Entity Recognition (NER) is the ability to identify different entities in text and categorize them into predefined classes or types
-such as: person, location, event, product, and organization. See the [NER language support](https://learn.microsoft.com/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
+such as: person, location, event, product, and organization. See the [NER language support](/azure/ai-services/language-service/named-entity-recognition/language-support?tabs=ga-api) for the list of enabled languages.
 
 
 ``` Python
@@ -527,6 +527,8 @@ display(result.select("text", "entityNames"))
 ## Entity linking
 
 # [Rest API](#tab/rest)
+
+No steps for REST API in this section.
 
 # [SynapseML](#tab/synapseml)
 

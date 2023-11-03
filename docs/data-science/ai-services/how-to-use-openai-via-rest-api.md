@@ -1,6 +1,6 @@
 ---
-title: Use Azure openai with rest api
-description: How to use prebuilt Azure openai in Fabric with REST API
+title: Use Azure openai with REST API
+description: How to use prebuilt Azure OpenAI in Fabric with REST API
 ms.reviewer: mopeakande
 ms.author: ruxu
 author: ruixinxu
@@ -31,7 +31,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 
 You can initialize the process by providing some necessary parameters. These parameters include the `Capacity ID`, `Workspace ID`, and User `AAD Token`, which can be obtained using the `mlflow-plugin` to create the base endpoint for Azure OpenAI models. 
 
-Additionally, the `x-ms-upstream-artifact-id` is the ID of the artifact that is being used and consumed for billing purposes, and the `x-ms-llm-feature-name` is the feature name that is used to track usage and configure the request rate limit. Although these last two parameters aren't currently mandatory, they'll be in the future.
+Additionally, the `x-ms-upstream-artifact-id` is the ID of the artifact that is being used and consumed for billing purposes, and the `x-ms-llm-feature-name` is the feature name that is used to track usage and configure the request rate limit. 
 
 ``` python
 from synapse.ml.mlflow import get_mlflow_env_config
