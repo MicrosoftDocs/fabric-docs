@@ -65,7 +65,7 @@ By default, downstream inheritance operates in user consent mode. To switch down
 ## Considerations and limitations
 
 * Downstream inheritance is limited to 80 items. If the number of downstream items exceeds 80, no downstream inheritance takes place. Only the item the label was actually applied to receives the label.
-* Downstream inheritance never overwrites manually applied labels. See [the following section](#downstream-inheritance-between-datasets-and-reports-published-from-pbix-files) for a significant consideration.
+* Downstream inheritance never overwrites manually applied labels. See [the following section](#downstream-inheritance-between-semantic-models-and-reports-published-from-pbix-files) for a significant consideration.
 * Downstream inheritance never replaces a label on downstream content with a label that's less restrictive than the currently applied label.
 * [Sensitivity labels inherited from data sources](service-security-sensitivity-label-inheritance-from-data-sources.md) are automatically propagated downstream only when fully automated downstream inheritance mode is enabled.
 
