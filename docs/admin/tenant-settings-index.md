@@ -160,7 +160,7 @@ Many of the settings can have one of three states:
 | **[Q&amp;A settings](service-admin-portal-qa.md)** |  |
 | Review questions | Allow semantic model owners to review questions people asked about their data. |
 | [Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms) | Allow people to share Q&amp;A synonyms with your organization. |
-| **[Dataset security](service-admin-portal-dataset-security.md)** |  |
+| **[Semantic model security](service-admin-portal-dataset-security.md)** |  |
 | Block republish and disable package refresh | Disable package refresh, and only allow the semantic model owner to publish updates. |
 | **[Advanced networking](service-admin-portal-advanced-networking.md)** |  |
 | [Azure Private Link](/power-bi/enterprise/service-security-private-links) | Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. |

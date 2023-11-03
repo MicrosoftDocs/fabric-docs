@@ -22,7 +22,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 Allow users in this organization who can [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to make content they promote discoverable by users who don't have access to it. You can also specify users and/or groups to exclude from the permitted groups. 
 
-To learn more, see [Dataset discoverability](/power-bi/collaborate-share/service-discovery).
+To learn more, see [Semantic model discoverability](/power-bi/collaborate-share/service-discovery).
 
 ## Make certified content discoverable
 

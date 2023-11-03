@@ -62,7 +62,7 @@ These items remain in the home region for the tenant:
 - Dashboard/report metadata: tile names, tile queries, and any other data
 - Service buses for gateway queries or scheduled refresh jobs
 - Permissions
-- Dataset credentials
+- Semantic model credentials
 - Power BI Embedded Analytics Playground saved state
 
 ## View capacity regions

@@ -13,7 +13,7 @@ LocalizationGroup: Share your work
 # Enable content certification
 
 Your organization can certify selected content to identify it an as authoritative source for critical information. Currently, the following content types can be certified:
-* semantic models
+* Semantic models
 * Dataflows
 * Reports
 * Apps
