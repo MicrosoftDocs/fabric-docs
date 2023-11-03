@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-[Discoverability](/power-bi/collaborate-share/service-discovery) is a feature that dataset owners can use to make their endorsed content discoverable by users who don't yet have access to it.
+[Discoverability](/power-bi/collaborate-share/service-discovery) is a feature that semantic model owners can use to make their endorsed content discoverable by users who don't yet have access to it.
 
 ## Make promoted content discoverable
 

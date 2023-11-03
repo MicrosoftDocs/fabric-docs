@@ -18,13 +18,13 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Allow XMLA endpoints and Analyze in Excel with on-premises datasets
 
-When enabled, users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools).
+When enabled, users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools).
 
 To learn more, see [Create Excel workbooks with refreshable Power BI data](/power-bi/collaborate-share/service-analyze-in-excel).
 
 ## Dataset Execute Queries REST API
 
-When enabled, users in the organization can query datasets by using Data Analysis Expressions (DAX) through Power BI REST APIs.
+When enabled, users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs.
 
 To learn more, see [Datasets - Execute Queries](/rest/api/power-bi/datasets/execute-queries).
 
@@ -73,7 +73,7 @@ To learn more, see [Azure AD-based Single Sign-On for Dremio Cloud and Power BI]
 
 ## Snowflake SSO
 
-For dataset owners to be able to enable single sign-on for DirectQuery connections to Snowflake in dataset settings, a Fabric admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization.
+For semantic model owners to be able to enable single sign-on for DirectQuery connections to Snowflake in semantic model settings, a Fabric admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization.
 
 To learn more, see [Connect to Snowflake in the Power BI Service](/power-bi/connect-data/service-connect-snowflake).
 
@@ -111,7 +111,7 @@ To learn more, see [Azure Active Directory SSO](/power-bi/connect-data/service-g
 
 This setting enables the Power BI/Power Platform Solutions integration from the Power BI side. Admin settings also have to be turned on in Power Platform.
 
-When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and dataset that are being to create the component. 
+When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and semantic model that are being to create the component. 
 
 To learn more, see [Power BI content management in Power Apps solutions](/power-apps/maker/model-driven-apps/power-bi-content-management-power-apps-solutions) and [About Power BI in Power Apps Solutions](/power-bi/collaborate-share/service-power-bi-powerapps-integration-about).
 

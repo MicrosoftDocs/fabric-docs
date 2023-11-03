@@ -18,7 +18,7 @@ Fabric administrators can enable or disable data model editing in the service fo
 
 ## Users can edit data models in the Power BI service (preview)
 
-Users can edit data models in the Power BI service (preview) tenant settings. This setting doesn't apply to DirectLake datasets or editing a dataset through an API or XMLA endpoint.
+Users can edit data models in the Power BI service (preview) tenant settings. This setting doesn't apply to DirectLake semantic models or editing a dataset through an API or XMLA endpoint.
 
 To learn more, see [Enabling data model editing in the admin portal](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal).
 
