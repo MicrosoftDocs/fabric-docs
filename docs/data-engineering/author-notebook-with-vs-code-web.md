@@ -20,7 +20,7 @@ The Synapse VS Code extension can also be used in the VS Code for the Web experi
 
 ## Install the Synapse VS Code extension for the Web
 
-1. Go to https://insider.vscode.dev in your browser.
+1. Go to https://insider.vscode.dev from your browser.
 1. Select the **Extensions** icon in the left navigation bar.
 1. Search for **Synapse** and select the **Synapse VS Code - Remotes** extension
 1. click **Install**.
