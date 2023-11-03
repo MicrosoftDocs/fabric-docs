@@ -83,3 +83,9 @@ In the upgraded workspace setting, you can review your existing configurations.
 
 **Now, we successfully migrate the existing configurations to an Environment.**
 :::image type="content" source="media\environment-migration\success.png" alt-text="Migration done":::
+
+## Next steps
+
+In this overview, you get a basic understanding of the Environment. Advance to the next articles to learn how to create and get started with your own Fabric Environment:
+
+- To get started with [!INCLUDE [product-name](../includes/product-name.md)] Environment, see [Environment 101: create, configure and use an Environment](create-and-use-environment.md).

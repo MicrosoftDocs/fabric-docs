@@ -18,50 +18,23 @@ Libraries provide reusable code that you might want to include in your programs 
 
 Within Fabric, there are 2 methods to add additional Python libraries.
 
-- **Feed library**: Feed libraries refer to the ones residing in public sources or repositories. We currently support Python feed libraries from PyPI and Conda, one can specify the source in Library Management portals.
+- **Public library**: Public libraries refer to the ones residing in public sources or repositories. We currently support Python public libraries from PyPI and Conda, one can specify the source in Library Management portals.
 
 - **Custom library**: Custom libraries are the code built by you or your organization. *.whl* and *.jar* can be managed through Library Management portals.
 
-You can learn more about feed and custom libraries by going to the [manage libraries in Fabric documentation](../../data-engineering/library-management.md).
+You can learn more about public and custom libraries by going to the [manage libraries in Fabric documentation](../../data-engineering/library-management.md).
 
 ## Install workspace libraries
 
-Workspace level libraries allow data scientists to standardize the sets of libraries and versions across all users in their workspace. Workspace library settings define the working environment for the entire workspace. The libraries installed on a workspace level are available for all notebooks and Spark job definitions under that workspace. Because these libraries are made available across sessions, it is best to use workspace libraries when you want to set up a shared environment for all sessions in a workspace.
+> [!IMPORTANT]
+> Only Workspace admin has access to update the Workspace level settings.
 
-   > [!IMPORTANT]
-   > Only Workspace admin has access to update the Workspace level settings.
+Workspace level libraries allow data scientists to standardize the sets of libraries and versions across all users in their workspace. [Workspace default environment](../../data-engineering/library-management.md\#scenario-1-admin-sets-default-libraries-for-the-workspace) define the working environment for the entire workspace. The libraries installed on a default environment are available for all notebooks and Spark job definitions under that workspace. Because these libraries are made available across sessions, it is best to use default environment when you want to set up a shared environment for all sessions in a workspace.
 
-To install libraries in your workspace:
+## Install libraries for a group of or single code item
 
-1. Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
-1. Select **Workspace settings** for your current workspace.
-1. Select **Data Engineering/Science** to open the dropdown.
-1. Select **Library management**.
-
-:::image type="content" source="../media/python-library-management/library-management-page.png" alt-text="Screenshot showing the library management page for a workspace." lightbox="../media/python-library-management/library-management-page.png":::
-
-You can use the workspace settings to install both Python feed and custom libraries. To learn more, you can visit [manage libraries in Fabric](../../data-engineering/library-management.md).
-
-### Use workspace settings to manage feed libraries
-
-In some cases, you may want to pre-install certain Python feed libraries from PyPI or Conda across all your notebook sessions. To do this, you can navigate to your workspace and manage these libraries through the [Python workspace settings](../../data-engineering/library-management.md#library-management-in-workspace-setting).
-
-From the Workspace setting, you can do the following:
-
-- **View and search feed library**. The installed library list appears when you open the **library management panel**. From this view, you can see the library name, version, and related dependencies. You can also search to quickly find a library from this list.
-- **Add new feed library**. You can add a new Python feed library from PyPI or Conda. For example, if you're installing from PyPI:
-
-   1. Select **+ Add from PyPI**. A new line appears for you to add the library.
-   1. Start typing the desired library name, and select it from the list that shows up, to fill in the name and version. For example, you can select `imblearn` and its corresponding version. You can add more libraries to this page.
-   1. When you're done, select **Apply** to install all selected libraries into the workspace.
-
-   :::image type="content" source="../media/python-library-management/install-library-into-workspace.png" alt-text="Screenshot showing how to install a library directly into the workspace." lightbox="../media/python-library-management/install-library-into-workspace.png":::
-
-   To upload a list of libraries at the same time, you can also upload a ```.yml``` file containing the required dependencies.
-
-### Use workspace settings to manage custom libraries
-
-Using the Workspace setting, you can also make custom Python ```.whl``` files available for all notebooks in your workspace. Once the changes are saved, Fabric will install your custom libraries and their related dependencies.  
+One Fabric environment can be attached to any code item in the workspace. The libraries installed in the Environment are made available across sessions once it's attached to the code item. It is the best to set up an environment for a group of notebooks or Spark job definitions that share the common library requirements.
+You can learn more about setting up an environment by going to the [Environment 101: create, configure and use an environment](../../data-engineering/create-and-use-environment.md).
 
 ## In-line installation
 
@@ -72,9 +45,9 @@ When developing a machine learning model or doing ad-hoc data analysis, you may 
    >
    > We recommend placing all the in-line commands that add, delete, or update the Python packages in the first cell of your Notebook. The change of Python packages will be effective after you restart the Python interpreter. The variables defined before running the command cell will be lost.
 
-### Install Python feed libraries within a notebook
+### Install Python public libraries within a notebook
 
-The ```%pip``` command in Microsoft Fabric is equivalent to the commonly used [pip](https://pip.pypa.io/en/stable/user_guide/) command in many data science workflows. The following section show examples of how you can use ```%pip``` commands to install feed libraries directly into your notebook.
+The ```%pip``` command in Microsoft Fabric is equivalent to the commonly used [pip](https://pip.pypa.io/en/stable/user_guide/) command in many data science workflows. The following section show examples of how you can use ```%pip``` commands to install public libraries directly into your notebook.
 
 1. Run the following commands in a Notebook code cell to install the *altair* library and *vega_datasets*:
 
@@ -117,3 +90,4 @@ To do this:
 
 - Manage workspace settings: [Apache Spark workspace administration settings](../../data-engineering/workspace-admin-settings.md)
 - Manage libraries in Fabric: [Manage libraries in Fabric documentation](../../data-engineering/library-management.md)
+- [Environment 101: create, configure and use an environment](../../data-engineering/create-and-use-environment.md)
