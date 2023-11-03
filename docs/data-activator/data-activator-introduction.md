@@ -36,7 +36,7 @@ The following concepts are used to build and trigger automated actions and respo
 Data Activator considers all data sources to be streams of events. An event is an observation about the state of an object, with some identifier for the object itself, a timestamp, and the values for fields
 you’re monitoring. Event streams vary in frequency from many times per second in the case of IoT sensors down to more sporadic streams such as packages being scanned in and out of shipping locations. 
 
-Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule that would typically match the refresh frequency of your Power BI dataset. This might only happen once a day, or even once a week – it’s just a slowly changing event stream.
+Data being observed from Power BI is also treated as an event stream. In this case, events are observations made of the data on a regular schedule that would typically match the refresh frequency of your Power BI semantic model (previously known as dataset). This might only happen once a day, or even once a week – it’s just a slowly changing event stream.
 
 ### Objects
 
