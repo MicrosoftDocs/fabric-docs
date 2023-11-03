@@ -11,7 +11,7 @@ ms.date: 10/30/2023
 
 # Format code in Microsoft Fabric notebooks
 
-There are many benefits to adopting good style and conventions when you write a notebook or Spark job definition, which are written in Python. By consistently formatting your code, you can:
+There are many benefits to adopting good style and conventions when you write a Python notebook or Spark job definition. By consistently formatting your code, you can:
 
 - Make it easier to read the code.
 - Increases maintainability of the code.
