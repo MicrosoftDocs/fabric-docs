@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 09/19/2023
+ms.date: 11/02/2023
 ---
 
 # Understand your Azure bill on a Fabric capacity
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) experience.
 

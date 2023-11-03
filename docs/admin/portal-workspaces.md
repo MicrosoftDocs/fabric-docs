@@ -6,13 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: admin-portal, build-2023
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Manage workspaces
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
 

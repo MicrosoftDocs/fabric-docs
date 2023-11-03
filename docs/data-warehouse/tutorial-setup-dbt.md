@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This tutorial guides you through setting up dbt and deploying your first project to an Azure Fabric Synapse [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This tutorial guides you through setting up dbt and deploying your first project to an Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 

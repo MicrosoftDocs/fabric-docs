@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
