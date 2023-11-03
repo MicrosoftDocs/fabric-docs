@@ -34,7 +34,7 @@ Follow these key steps for migration:
 
 The focus of Step 1 is on exporting the metadata from source HMS to the Files section of your Fabric lakehouse. This process is as follows:
 
-* **1.1) Import migration notebook** to Azure Synapse. [This notebook](NEEDLINK) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
+* **1.1) Import migration notebook** into your Azure Synapse workspace. [This notebook](NEEDLINK) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
 * **1.2) Configure the parameters** in the first command to export metadata information to an intermediate storage (OneLake). The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.
 
 ```scala
@@ -62,15 +62,15 @@ var OutputFolder = f"abfss://${WorkspaceId}@onelake.dfs.fabric.microsoft.com/${L
 
 Step 2 is when the actual metadata is imported from intermediate storage into the Fabric lakehouse. The output of this step is to have all HMS metadata (databases, tables, and partitions) migrated. This process is as follows:
 
-* **2.1) Create a shortcut within the “Files” section** of the lakehouse. This shortcut needs to point to the source Spark warehouse directory in the HMS and is used later to do the replacement for Spark managed tables. See examples below:
+* **2.1) Create a shortcut within the “Files” section** of the lakehouse. This shortcut needs to point to the source Spark warehouse directory and is used later to do the replacement for Spark managed tables. See shorcut examples pointing to Spark warehouse directory:
 
-    * Azure Synapse Spark warehouse directory shortcut to: `abfss://<container>@<storage_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/warehouse`
-    * Azure Databricks warehouse directory shortcut to: `dbfs:/mnt/<warehouse_dir>`
-    * HDInsight warehouse directory shortcut to: `abfss://<container>@<storage_name>.dfs.core.windows.net/apps/spark/warehouse`
+    * Shortcut path to Azure Synapse Spark warehouse directory: `abfss://<container>@<storage_name>.dfs.core.windows.net/synapse/workspaces/<workspace_name>/warehouse`
+    * Shortcut path to Azure Databricks warehouse directory: `dbfs:/mnt/<warehouse_dir>`
+    * Shortcut path to HDInsight Spark warehouse directory: `abfss://<container>@<storage_name>.dfs.core.windows.net/apps/spark/warehouse`
 
 
-* **2.2) Import metadata notebook** to Fabric lakehouse. Import [this notebook ](NEEDLINK)to import database, table, and partition objects from intermediate storage. Spark internal catalog API is used in this script to create catalog objects in Fabric.
-* **2.3) Configure the parameters** in the first command. In Apache Spark, when you create a managed table, the data for that table is stored in a location managed by Spark itself, typically within the Spark's warehouse directory. The exact location is determined by Spark. This contrasts with external tables, where you specify the location and manage the underlying data. When you migrate the metadata of a managed table (without moving the actual data), the metadata still contains the original location information pointing to the old Spark warehouse directory. Hence, for managed tables, `WarehouseMappings` is used to do the replacement using the shortcut created in step 2.1. Similarly, for external tables, you can change the path using `WarehouseMappings` or keep original data location, for example, ADLS Gen2 (assuming the right permissions are set to access the data). All source managed tables are converted as external tables using this script. `LakehouseId` refers to the lakehouse created in step 2.1 containing shortcuts.
+* **2.2) Import metadata notebook** into your Fabric workspace. Import [this notebook ](NEEDLINK)to import database, table, and partition objects from intermediate storage. Spark internal catalog API is used in this script to create catalog objects in Fabric.
+* **2.3) Configure the parameters** in the first command. In Apache Spark, when you create a managed table, the data for that table is stored in a location managed by Spark itself, typically within the Spark's warehouse directory. The exact location is determined by Spark. This contrasts with external tables, where you specify the location and manage the underlying data. When you migrate the metadata of a managed table (without moving the actual data), the metadata still contains the original location information pointing to the old Spark warehouse directory. Hence, for managed tables, `WarehouseMappings` is used to do the replacement using the shortcut created in Step 2.1. All source managed tables are converted as external tables using this script. `LakehouseId` refers to the lakehouse created in Step 2.1 containing shortcuts.
 
 ```scala
 
@@ -132,7 +132,7 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
 
 
-### Other Considerations
+### Other considerations
 
 -	Scalability: The solution here's using internal Spark catalog API to do import/export, but it isn't connecting directly to HMS to get catalog objects, so the solution couldn't scale well if the catalog is large. You would need to change the export logic using HMS DB.
 -	Data accuracy: There's no isolation guarantee, which means that if the Spark compute engine is doing concurrent modifications to the metastore while the migration notebook is running, inconsistent data can be introduced in Fabric lakehouse.

@@ -27,8 +27,8 @@ If you don’t have one already, create a [Fabric workspace](../get-started/crea
 To export a SJD from Azure Synapse:
 
 1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
-1.	**Locate the Python/Scala/R Spark Job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate.
-1.	**Export the Job Definition Configuration**:
+1.	**Locate the Python/Scala/R Spark job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate.
+1.	**Export the job definition configuration**:
     * In Synapse Studio, open the Spark Job Definition.
     * Export or note down the configuration settings, including script file location, dependencies, parameters, and any other relevant details.
 
@@ -39,11 +39,9 @@ To create a new SJD based on the exported SJD information in Fabric:
     * In Fabric, go to **Data Engineering homepage**.
     * Select **Spark Job Definition.**
     * Configure the job using the information you exported from Synapse, including script location, dependencies, parameters, and cluster settings.
-1.	**Adapt and Test**: Make any necessary adaptation to the script or configuration to suit the Fabric environment. Test the job in Fabric to ensure it runs correctly.
+1.	**Adapt and test**: Make any necessary adaptation to the script or configuration to suit the Fabric environment. Test the job in Fabric to ensure it runs correctly.
 
 :::image type="content" source="media\migrate-synapse\migrate-sjd-create.png" alt-text="Screenshot showing SJD creation.":::
-
-Learn more about how to [create an Apache Spark job definition](create-spark-job-definition.md) in Fabric.
 
 Once the SJD is created, validate dependencies:
 * Ensure using the same Spark version.
@@ -51,11 +49,13 @@ Once the SJD is created, validate dependencies:
 * Validate the existence of the referenced files, dependencies, and resources.
 * Linked services, data source connections and mount points.
 
+Learn more about how to [create an Apache Spark job definition](create-spark-job-definition.md) in Fabric.
+
 ## Option 2: Use the Fabric API
 
 Follow these key steps for migration:
 * Prerequisites.
-* Step 1: Export SJD from Synapse to OneLake (json).
+* Step 1: Export SJD from Azure Synapse to OneLake (json).
 * Step 2: Import SJD automatically into Fabric using the Fabric API.
 
 ### Prerequisites

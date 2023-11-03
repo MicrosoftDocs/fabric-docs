@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 Azure Synapse and Fabric support notebooks. Migrating a notebook from Azure Synapse to Fabric can be done in two different ways:
 
-* Option 1: you can export notebooks from Azure Synapse (ipynb) and import them d Fabric (manually).
+* Option 1: you can export notebooks from Azure Synapse (ipynb) and import them to Fabric (manually).
 * Option 2: you can use a script to export notebooks from Azure Synapse and import them to Fabric using the API.
 
 For notebook considerations, refer to [differences between Azure Synapse Spark and Fabric](NEEDLINK).
@@ -56,7 +56,7 @@ Once the notebook is imported, validate notebook dependencies:
 
 Follow these key steps for migration:
 * Prerequisites.
-* Step 1: Export notebooks from Synapse to OneLake (ipynb).
+* Step 1: Export notebooks from Azure Synapse to OneLake (ipynb).
 * Step 2: Import notebooks automatically into Fabric using the Fabric API.
 
 ### Prerequisites

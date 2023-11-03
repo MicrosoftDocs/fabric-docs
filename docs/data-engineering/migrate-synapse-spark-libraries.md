@@ -22,7 +22,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 ## Option 1: Adding Spark libraries to custom environment
 
-You can move libraries to an environment as follows:
+You can move Spark pool libraries to an environment as follows:
 
 1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate Spark libraries**:
@@ -36,7 +36,7 @@ You can move libraries to an environment as follows:
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
 
-Learn more on adding Spark configurations to an [Environment](NEEDLINK).
+Learn more on adding Spark libraries to an [Environment](NEEDLINK).
 
 > [!NOTE]
 > Note that library installation may take some time.
