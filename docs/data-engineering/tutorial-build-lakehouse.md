@@ -102,13 +102,13 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 ## Build a report
 
-1. In the item view of the workspace, select the **wwilakehouse** default dataset. This dataset is automatically created and has the same name as the lakehouse.
+1. In the item view of the workspace, select the **wwilakehouse** default semantic model. This semantic model is automatically created and has the same name as the lakehouse.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default dataset that was created when the new lakehouse was created.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default semantic model that was created when the new lakehouse was created.":::
 
-1. From the dataset pane, you can view all the tables. You have options to create reports either from scratch, paginated report, or let Power BI automatically create a report based on your data. For this tutorial, select **Auto-create** under **Create a report**. In the next tutorial, we create a report from scratch.
+1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated report, or let Power BI automatically create a report based on your data. For this tutorial, select **Auto-create** under **Create a report**. In the next tutorial, we create a report from scratch.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the Dataset details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
 
 1. Since the table is a dimension and there are no measures in it, Power BI creates a measure for the row count and aggregates it across different columns, and creates different charts as shown in the following image. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirement by including or excluding other tables or columns.
 

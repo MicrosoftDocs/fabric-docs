@@ -16,7 +16,7 @@ Shortcuts in a lakehouse allow users to reference data without copying it. It un
 
 ## Setting up a shortcut
 
-To create a shortcut, open Lakehouse Explorer and select where to place the shortcut under Tables or Files. Creating a shortcut to Delta formatted table under Tables in Lakehouse Explorer will automatically register it as a table, enabling data access through Spark, SQL endpoint, and default dataset. Spark can access shortcuts in Files for data science projects or for transformation into structured data.
+To create a shortcut, open Lakehouse Explorer and select where to place the shortcut under Tables or Files. Creating a shortcut to Delta formatted table under Tables in Lakehouse Explorer will automatically register it as a table, enabling data access through Spark, SQL endpoint, and default semantic model. Spark can access shortcuts in Files for data science projects or for transformation into structured data.
 
 ## Access Control for shortcuts
 
