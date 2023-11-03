@@ -4,7 +4,7 @@ description: Learn how to use Git branches to work in your own isolated environm
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: concept-article
+ms.topic: conceptual
 ms.date: 06/23/2023
 ms.custom: build-2023
 ---
@@ -16,7 +16,7 @@ The Fabric workspace is a shared environment that accesses live items. Any chang
 - [Develop using client tools](#develop-using-client-tools), such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for reports and datasets, or [VS Code](https://code.visualstudio.com/) for Notebooks.
 - [Develop in a separate workspace](#develop-using-another-workspace). Each developer has their own workspace where they connect their own separate branch, sync the content into that workspace, and then commit back to the branch.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 To work with branches using Git integration, first connect the shared development team’s workspace to a single shared branch. For example, if your team uses one shared workspace, connect it to the *main* branch in your team’s repository, and sync between the workspace and the repo. If your team’s workflow has multiple shared branches like *Dev/Test/Prod* branches, each branch can be connected to a different workspace.
 

@@ -11,11 +11,13 @@ ms.date: 11/01/2023
 
 # Manage Apache Spark libraries in Microsoft Fabric
 
+
 A library is a collection of pre-written code that can be imported to provide additional functionality. By using libraries, developers can save time and effort by not having to write code from scratch to perform common tasks. Instead, they can simply import the library and use its functions and classes to achieve their desired functionality.On Microsoft Fabric, multiples mechanisms are provided to help you manage and use the libraries.
 
 - **Built-in** libraries: Each Fabric Spark runtime provides a rich set of popular pre-installed libraries. You can find the full built-in library list in [Fabric Spark Runtime](runtime.md)
 - **Public library**: Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
 - **Custom library**: Custom libraries refer to code built by you or your organization, and are supported in the *.whl*, *.jar*, and *.tar.gz* formats. Please note that *.tar.gz* files are only supported for R language; for Python custom libraries, please use the *.whl* format.
+
 
 > [!IMPORTANT]
 > library management at the workspace setting is no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-ws-migration.md) to migrate them to an environment and attach as workspace default.
@@ -44,8 +46,6 @@ Users, who has the permission to run the notebook, can install extra libraries i
 
 ## Summary of supported library types
 
-**Summarizing all library management behaviors currently available in Fabric:**
-
 | **Library type** | **Environment library management** | **In-line installation** |
 |---|---|---|
 | **Python Public (PyPI & Conda)** | Supported | Supported |
@@ -55,10 +55,11 @@ Users, who has the permission to run the notebook, can install extra libraries i
 | **Jar** | Supported as custom library | Not supported |
 
 > [!IMPORTANT]
-> We currently have limitations of *.jar* library.
+> We currently have limitations on the *.jar* library.
 >
-> - If you upload a *.jar* file with different version of built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
-> - *%% configure* magic commands are not fully supported on Fabric at this moment. Please avoid use it to bring *.jar* file to your notebook session.
+> - If you upload a *.jar* file with a different version of a built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
+> - *%% configure* magic commands are currently not fully supported on Fabric. Don't use them to bring *.jar* files to your notebook session.
+
 
 ## In-line installation
 
@@ -67,7 +68,8 @@ Python libraries and R libraries can be supported by in-line commands.
 ### Python in-line installation
 
 > [!IMPORTANT]
->
+> 
+> The Python interpreter is restarted to apply the change of libraries. Any variables defined before running the command cell are lost. Therefore, we strongly recommend you to put all the commands for adding, deleting, or updating Python packages at the beginning of your notebook.
 > *%pip* is recommended instead of *!pip*. *!pip* is a IPython built-in shell command which has following limitations:
 >
 > - *!pip* will only install package on driver node without executor nodes.
@@ -130,21 +132,23 @@ After uploading, you can use the following command to install the custom library
 Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
 
 > [!TIP]
-> All available R in-line commands and its clarifications can be found: [install.packages command](https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/install.packages), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html) and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
+> Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html), and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
 
 ### Manage R public libraries through in-line installation
 
 Follow this example to walk through the steps of installing an R public library:
 
+To install an R feed library:
+
 1. Switch the working language to “SparkR(R)” in the notebook ribbon.
 
-2. Run the following command in a notebook cell to install *caesar* library:
+2. Run the following command in a notebook cell to install the *caesar* library.
 
    ```python
    install.packages("caesar")
    ```
 
-3. Now you can play around with the session-scoped *caesar* library with Spark job
+3. Now you can play around with the session-scoped *caesar* library with a Spark job.
 
    ```python
    library(SparkR)

@@ -13,8 +13,6 @@ ms.date: 5/23/2023
 
 Before you can begin creating the lakehouse, you need to create a workspace where you can build out the remainder of the tutorial.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). For public preview, the Fabric (Preview) trial requires a Power BI license. If you don't have one, [sign up for a Power BI free license,](https://app.fabric.microsoft.com) and then you can start the Fabric (Preview) trial.

@@ -8,13 +8,13 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 08/30/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Admin API tenant settings
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings).
+These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 ## Allow service principals to use read-only admin APIs
 
@@ -33,7 +33,7 @@ Users and service principals allowed to call Power BI admin APIs might get detai
 To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning#enabling-enhanced-metadata-scanning).
 
 > [!NOTE]
-> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
+> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](metadata-scanning-setup.md).
 
 ## Enhance admin APIs responses with DAX and mashup expressions
 
@@ -44,8 +44,8 @@ Users and service principals eligible to call Power BI admin APIs get detailed m
 To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning#enabling-enhanced-metadata-scanning).
 
 > [!NOTE]
-> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](/power-bi/admin/service-admin-metadata-scanning-setup).
+> For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](metadata-scanning-setup.md).
 
 ## Next steps
 
-* [About tenant settings](/power-bi/admin/service-admin-portal-about-tenant-settings)
+* [About tenant settings](tenant-settings-index.md)

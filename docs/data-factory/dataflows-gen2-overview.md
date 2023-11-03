@@ -13,8 +13,6 @@ ms.search.form: DataflowGen2 Overview
 
 Dataflow Gen2 is the new generation of dataflows. The new generation of dataflows resides alongside the Power BI Dataflow (Gen1) and brings new features and improved experiences. The following section provides a comparison between Dataflow Gen1 and Dataflow Gen2.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Feature overview
 
 | Feature |   Dataflow Gen2 |  Dataflow Gen1 |
@@ -83,7 +81,7 @@ Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine
 
 ## Licensing Dataflow Gen1 vs Gen2
 
-Dataflow Gen1 works with Power BI Pro/PPU/Premium licenses while Dataflow Gen2 only works with a Fabric capacity (trail) as it requires support from other experiences like Data Engineering and Data Warehouses. Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. Dataflows are supported for Power BI Pro, Premium Per User (PPU), and Power BI Premium users. [Some features](/power-bi/transform-model/dataflows/dataflows-premium-features) are only available with a Power BI Premium subscription (which is either a Premium capacity or PPU license).
+Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. To understand better how licening works for dataflows you can read the following article: [Microsoft Fabric concepts and licenses](/fabric/enterprise/licenses)
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 

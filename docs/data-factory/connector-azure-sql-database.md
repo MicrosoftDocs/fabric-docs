@@ -1,6 +1,6 @@
 ---
-title: How to create Azure SQL Database connection
-description: This article provides information about how to How to create Azure SQL Database  connection.
+title: Set up your Azure SQL Database connection
+description: This article provides information about how to set up an Azure SQL Database connection.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
@@ -8,11 +8,9 @@ ms.date: 05/23/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to create an Azure SQL Database connection
+# Set up your Azure SQL Database connection
 
-This article outlines how to set up connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
 
 ## Supported authentication types
 
@@ -24,20 +22,21 @@ The Azure SQL Database connector supports the following authentication types for
 |Organizational account| √| √|
 |Service Principal|√||
 
->[!Note]
->For information about an Azure SQL database connection in Dataflow Gen2, go to [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an Azure SQL database. The following links provide the specific Power Query connector information you need to connect to an Azure SQL database in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+- To get started using the Azure SQL Database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- Be sure to install or set up any [Azure SQL Database prerequisites](/power-query/connectors/azure-sql-database#prerequisites) before connecting to the Azure SQL Database connector.
+- To connect to the Azure SQL Database connector from Power Query, go to [Connect to Azure SQL database from Power Query Online](/power-query/connectors/azure-sql-database#connect-to-azure-sql-database-from-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to Manage gateways to create a new connection
+To create a connection in a data pipeline:
 
-1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways.**
+1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways.**
 
    :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
 
@@ -83,7 +82,7 @@ Select **Basic** under **Authentication method**.
 
 #### OAuth2 authentication
 
-Open **Edit credentials**. You'll see the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
+Open **Edit credentials**. You'll notice the sign in interface. Enter your account and password to sign in your account. After signing in, go back to the **New connection** page.
 
 :::image type="content" source="./media/connector-azure-sql-database/authentication-oauth2.png" alt-text="Screenshot showing OAuth2 authentication method.":::
 
@@ -159,5 +158,4 @@ The following properties in the table are the supported authentication types.
 
 ## Next steps
 
-- [How to configure Azure SQL Database in copy activity](connector-azure-sql-database-copy-activity.md)
-- [Connect to an Azure SQL database in dataflows](connector-azure-sql-database-dataflow.md)
+- [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)

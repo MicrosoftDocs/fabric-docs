@@ -14,8 +14,6 @@ ms.search.form: Pipeline Copy Assistant
 
 This tutorial describes the steps to move data into Lakehouse.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 Two approaches are provided using the copy assistant:
 
 1. The first approach moves source data into destination tables with delta format.

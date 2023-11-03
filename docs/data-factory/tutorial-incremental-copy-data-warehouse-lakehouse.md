@@ -14,8 +14,6 @@ ms.search.form: Pipeline tutorials
 
 In this tutorial, you learn how to incrementally load data from Data Warehouse to Lakehouse.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Overview
 
 Here is the high-level solution diagram:

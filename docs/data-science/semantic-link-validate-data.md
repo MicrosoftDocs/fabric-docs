@@ -1,5 +1,5 @@
 ---
-title: Validate functional dependencies in data with semantic link
+title: Validate functional dependencies in data with semantic link (preview)
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -16,7 +16,7 @@ Functional dependencies are relationships between columns in a table, where the 
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
 Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you'll use semantic link to:
 
@@ -80,14 +80,14 @@ In some cases, the dependency chain can form cycles when you specify the `dropna
 
 ## Visualize dependencies in data
 
-After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependencies_metadata` function.
+After finding functional dependencies in a dataset (using `find_dependencies`), you can visualize the dependencies, using the `plot_dependency_metadata` function.
 This function takes the resulting FabricDataFrame from `find_dependencies` and creates a visual representation of the dependencies between columns and groups of columns.
 
 The following Python code snippet demonstrates how to use `plot_dependencies`.
 
 ```python
 from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependencies_metadata
+from sempy.dependencies import plot_dependency_metadata
 from sempy.samples import download_synthea
 
 download_synthea(which='small')
@@ -95,10 +95,10 @@ download_synthea(which='small')
 df = FabricDataFrame(pd.read_csv("synthea/csv/providers.csv"))
 
 deps = df.find_dependencies()
-plot_dependencies_metadata(deps)
+plot_dependency_metadata(deps)
 ```
 
-The `plot_dependencies_metadata` function generates a visualization that shows the 1:1 groupings of columns.
+The `plot_dependency_metadata` function generates a visualization that shows the 1:1 groupings of columns.
 Columns that belong to a single group are put into a single cell. If no suitable candidates are found, an empty FabricDataFrame is returned.
 
 :::image type="content" source="media/semantic-link-validate-data/plot-dependencies.png" alt-text="Screenshot showing the output of the plot_dependencies function." lightbox="media/semantic-link-validate-data/plot-dependencies.png":::
@@ -220,6 +220,6 @@ However, it's essential to carefully consider the context of your data and the f
 ## Next steps
 
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)
+- [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)

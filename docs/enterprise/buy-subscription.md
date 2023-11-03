@@ -3,14 +3,12 @@ title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 08/03/2023
+ms.date: 11/02/2023
 ---
 
 # Buy a Microsoft Fabric subscription
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 
@@ -70,7 +68,7 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. EM SKUs don't support Microsoft Fabric.
+Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
 ## Next steps
 

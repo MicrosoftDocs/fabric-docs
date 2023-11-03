@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 Specifically, this generic REST connector supports:
 
 - Copying data from a REST endpoint by using the **GET** or **POST** methods and copying data to a REST endpoint by using the **POST**, **PUT** or **PATCH** methods.
