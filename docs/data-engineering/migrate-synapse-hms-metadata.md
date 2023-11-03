@@ -34,7 +34,7 @@ Follow these key steps for migration:
 
 The focus of Step 1 is on exporting the metadata from source HMS to the Files section of your Fabric lakehouse. This process is as follows:
 
-* **1.1) Import migration notebook** into your Azure Synapse workspace. [This notebook](NEEDLINK) queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
+* **1.1) Import migration notebook** into your Azure Synapse workspace. []() queries and exports HMS metadata of databases, tables, and partitions to an intermediate directory in OneLake (functions not included yet). Spark internal catalog API is used in this script to read catalog objects.
 * **1.2) Configure the parameters** in the first command to export metadata information to an intermediate storage (OneLake). The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.
 
 ```scala
