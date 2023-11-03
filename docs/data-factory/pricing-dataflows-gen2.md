@@ -10,13 +10,13 @@ ms.date: 10/30/2023
 
 # Dataflows Gen2 pricing for Data Factory in Microsoft Fabric
 
-Dataflows Gen2 enables you to leverage a low-code interface and 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool.  Dataflows Gen2 is authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated – this is the program that will run once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
+Dataflows Gen2 enables you to leverage a low-code interface and 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool.  Dataflows Gen2 are authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that will run once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflows Gen2 architecture.":::
 
-The diagram shown here captures the various components of the Data Factory Dataflows Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse artifact used as a compute engine and means to write back results to staging or supported output destinations faster. When Warehouse compute cannot be used, or when staging is disabled for a query, the Mashup Engine will extract, transform, or load the data to staging or data destinations. You can learn more about how Dataflow Gen2 works in this blogpost here: Data Factory Spotlight: Dataflow Gen2 | Microsoft Fabric Blog | Microsoft Fabric
+The diagram shown here captures the various components of the Data Factory Dataflows Gen2 architecture, including the Lakehouse used to stage data being ingested, and Warehouse artifact used as a compute engine and means to write back results to staging or supported output destinations faster. When Warehouse compute cannot be used, or when staging is disabled for a query, the Mashup Engine will extract, transform, or load the data to staging or data destinations. You can learn more about how Dataflow Gen2 works in this blogpost here: [Data Factory Spotlight: Dataflows Gen2](https://blog.fabric.microsoft.com/blog/data-factory-spotlight-dataflows-gen2?ft=All).
 
 When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are consumed for the following engines.
 - Standard Compute: You're charged for it based on the query evaluation time across all your Dataflow queries ran through the Mashup engine.  
@@ -24,12 +24,15 @@ When you refresh or publish a Dataflow Gen2 item, Fabric Capacity Units are cons
 
 ## Dataflows Gen2 pricing model
 
-The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CU per hour. Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CU per hour. At the end of each Dataflows Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
+The following table indicates that to determine Dataflow Gen2 execution costs, each query execution utilizes the mashup engine for standard computing, and that compute execution duration is translated to a consumption rate of 16 CUs per hour. Secondly, for high scale compute scenarios when staging is enabled, Lakehouse/Warehouse SQL engine execution duration should be accounted for as well. Compute execution duration is translated to a consumption rate of 6 CUs per hour. At the end of each Dataflows Gen2 run, the Capacity Unit (CU) consumption for each engine type is summed and is billed according to the translated price for Fabric capacity in the region where it's deployed.
 
-|Dataflows Gen2 Engine Type  |Consumption Meters  |Fabric CUs consumption rate  |Consumption reporting granularity      |
+|Dataflows Gen2 Engine Type  |Consumption Meters  |Fabric CU consumption rate  |Consumption reporting granularity      |
 |---------|---------|---------|---------|
 |Standard Compute     | Based on each mashup engine query execution duration in seconds.         | 16 CUs per hour         | Per Dataflows Gen2 item        |
 |High Scale Dataflows Compute     | Based on Lakehouse/Warehouse SQL engine execution (with staging enabled) duration in seconds.         | 6 CUs per hour         | Per workspace        |
+
+> [!NOTE]
+> It isn't currently possible to cancel a Dataflows Gen2 run, but we will add this capability by January, 2024.
 
 ## Changes to Microsoft Fabric workload consumption rate
 
