@@ -82,7 +82,7 @@ Once you have a workspace, choose it by selecting the **Select Workspace** optio
 
 ### Current Limitations
 
-- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](https://learn.microsoft.com/en-us/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
+- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
 - Shell command start with "!" is not supported.
 
 ## Next steps
