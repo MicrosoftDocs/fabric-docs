@@ -281,7 +281,7 @@ The SemPy `read_table` and `evaluate_measure` methods have more parameters that 
 - `num_rows`: Number of rows to output in the result.
 - `pandas_convert_dtypes`: If the value is "True", the resulting DataFrame's columns are cast to the best possible _dtype_, using pandas
 [convert_dtypes](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.convert_dtypes.html).
-If this parameter is turned off, type incompatibility issues may result between columns of related tables that may not have been detected in the Power BI model due to
+If this parameter is turned off, type incompatibility issues can result between columns of related tables that might not have been detected in the Power BI model due to
 [DAX implicit type conversion](/power-bi/connect-data/desktop-data-types#implicit-and-explicit-data-type-conversion).
 
 SemPy `read_table` also uses the model information provided by Power BI.

@@ -70,8 +70,8 @@ metrics = ComputeModelStatistics().transform(prediction)
 metrics.select('accuracy').show()
 ```
 
-And that's it! you've build your first machine learning model using the SynapseML
-package. For help on SynapseML classes and methods, you can use Python's help() function.
+And that's it! You've built your first machine learning model using the SynapseML
+package. For help on SynapseML classes and methods, you can use Python's `help()` function.
 
 ```python
 help(synapse.ml.train.TrainClassifier)
