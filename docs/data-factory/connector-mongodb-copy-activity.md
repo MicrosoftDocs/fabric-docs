@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in data pipelines to copy data from and to MongoDB.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 

@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 You can connect to data that's either in an Azure Data Explorer (Kusto) cluster or in a Kusto Query Language (KQL) database in Dataflow Gen2 using the Azure Data Explorer (Kusto) connector provided by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Copy the query URI
 
 If you are using the Azure Data Explorer (Kusto) to connect to a KQL database, first copy your query URI using the following steps:
@@ -28,7 +26,7 @@ If you are using the Azure Data Explorer (Kusto) to connect to a KQL database, f
 
 To connect to Azure Data Explorer from a dataflow:
 
-1. From your workspace, select **New** > **Dataflow Gen2 (Preview)** to create a new dataflow.
+1. From your workspace, select **New** > **Dataflow Gen2** to create a new dataflow.
 
    :::image type="content" source="./media/connector-kusto/select-open-dataflow.png" alt-text="Screenshot showing the workspace where you choose to create a new dataflow." lightbox="./media/connector-kusto/select-open-dataflow.png":::
 

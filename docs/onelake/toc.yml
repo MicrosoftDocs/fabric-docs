@@ -7,7 +7,7 @@ items:
     href: onelake-overview.md
 - name: Get started
   items:
-  - name: Creating a lakehouse with OneLake
+  - name: Bring your data to OneLake with Lakehouse
     href: create-lakehouse-onelake.md
   - name: Transform with Spark and query data with SQL
     href: onelake-onecopy-quickstart.md

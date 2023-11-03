@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines the steps to create a SQL Server database connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -34,6 +33,3 @@ Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-## Set up your connection in a data pipeline
-
-Data Factory in Microsoft Fabric doesn't currently support a SQL Server database in data pipelines.

@@ -15,8 +15,6 @@ ms.date: 05/23/2023
 
 Admins purchase Microsoft Fabric capacities based on the compute and scale requirements of their enterprise's analytics needs. Admins are responsible to manage the capacity and governance. They must govern and manage the compute properties for data engineering and science analytics applications.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Microsoft Fabric capacity admins can now manage and govern their Data Engineering and Data Science settings from the admin settings portal. Admins can configure Spark environment for their users by enabling workspace level compute, choose a default runtime, and also create or manage spark properties for their capacities.
 
 From the Admin portal, navigate to the **Data Engineering/Science Settings** section and select a specific capacity as shown in the following animation:

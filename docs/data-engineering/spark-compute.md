@@ -16,8 +16,6 @@ Microsoft Fabric Data Engineering and Data Science experiences operate on a full
 
 :::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Starter pools
 
 Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.

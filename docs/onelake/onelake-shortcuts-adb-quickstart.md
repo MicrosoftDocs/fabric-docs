@@ -11,8 +11,6 @@ ms.date: 09/27/2023
 
 # Connect to ADLS and transform the data with Azure Databricks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this guide, you will:
 
 - Create a Delta table in your Azure Data Lake Storage (ADLS) Gen2 account using Azure Databricks.

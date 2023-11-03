@@ -14,8 +14,6 @@ In this article, we explain how to customize starter pools in Microsoft Fabric f
 
 Starter pools have Spark clusters that are always on and ready for your requests. They use medium-sized nodes and can be scaled up based on your workload requirements.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 You can specify the maximum nodes for autoscaling based on the data engineering or data science workload requirements. Based on the max nodes you configure, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance.
 
 You can also set the maximum limit for executors in starter pools and with Dynamic Allocation enabled, the system adjusts the number of executors depending on the data volume and job-level compute needs. This process enables you to focus on your workloads without worrying about performance optimization and resource management.
@@ -59,6 +57,13 @@ The following section lists various default configurations and the max node limi
 | F512 | 512 | 1024 | Medium | 10 | 128 |
 | F1024 | 1024 | 2048 | Medium | 10 | 200 |
 | F2048 | 2048 | 4096 | Medium | 10 | 200 |
+
+> [!NOTE]
+> To customize a starter pool, you need admin access to the workspace.
+
+## Known Issues 
+
+As Starter Pools are sized with Medium nodes (8 Spark Cores), users with F2 capacities could see a slower session start of 2-3 minutes.
 
 ## Next steps
 

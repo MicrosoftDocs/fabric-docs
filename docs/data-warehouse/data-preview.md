@@ -45,4 +45,4 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 ## Related content
 
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
- - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+ - [Data modeling in the default Power BI dataset](default-power-bi-semantic-model.md)

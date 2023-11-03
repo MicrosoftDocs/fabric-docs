@@ -13,8 +13,6 @@ ms.search.form: Deployment history
 
 Deployment history is a deployment pipelines feature that enables reviewing the past deployments in your pipeline. The feature is designed as a log that lists all the past deployments in the pipeline.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 You can use the deployment history log, to check the health of your pipeline, and to troubleshoot problems that occurred during previous deployments.
 
 When you perform a deployment, you can use the built-in option to [leave notes](deploy-content.md#review-your-deployment-and-leave-a-note), to add additional information to each deployment. Later, when you look back at your deployment history, the notes can help you understand what happened during each deployment.

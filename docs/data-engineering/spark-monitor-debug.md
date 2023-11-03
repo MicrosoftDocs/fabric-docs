@@ -12,8 +12,6 @@ ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook
 
 # Monitor Spark jobs within a notebook
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Microsoft Fabric notebook is a web-based interactive surface for developing Apache Spark jobs and conducting machine learning experiments. This article outlines how to monitor the progress of your Spark jobs, access Spark logs, receive advice within the notebook, and navigate to the Spark application detail view or Spark UI for more comprehensive monitoring information for the entire notebook.
 
 ## Monitor Spark Job progress 
