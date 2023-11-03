@@ -31,7 +31,7 @@ landingContent:
             url: whats-new.md
 
   # Card 
-  - title: Get started
+  - title: Using Data Factory
     linkLists:
       - linkListType: get-started
         links:
