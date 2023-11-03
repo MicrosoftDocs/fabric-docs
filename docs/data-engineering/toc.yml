@@ -171,3 +171,5 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
