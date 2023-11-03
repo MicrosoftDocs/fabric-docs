@@ -13,12 +13,12 @@ ms.date: 11/03/2023
 
 Apache Spark provides numerous configurations that can be customized to enhance the experience in various scenarios. In Azure Synapse Spark and Fabric Data Engineering, you have the flexibility to incorporate these configurations or properties to tailor your experience. In Fabric, you can add Spark configurations to an environment or use inline Spark properties directly within your Spark jobs. To move Azure Synapse Spark pool configurations to Fabric, use an environment.
 
-For Spark configuration considerations, refer to [differences between Azure Synapse Spark and Fabric](synapse-fabric-comparison.md).
+For Spark configuration considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-spark-configurations.md).
 
 ## Prerequisites
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
-* If you don’t have one already, create an [Environment](NEEDLINK) in your workspace. 
+* If you don’t have one already, create an [Environment](migrate-synapse-spark-configurations.md) in your workspace. 
 
 ## Option 1: Adding Spark configurations to custom environment
 
@@ -36,7 +36,7 @@ Within an environment, you can set Spark properties and those configurations are
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
 
-Learn more on adding Spark configurations to an [Environment](NEEDLINK).
+Learn more on adding Spark configurations to an [Environment](migrate-synapse-spark-configurations.md).
 
 ## Next steps
 
