@@ -5,7 +5,7 @@ author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: snehagunda
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom: cat-fabric
 ms.search.form: Develop and run notebooks
 ms.date: 10/30/2023
 ---
