@@ -16,9 +16,9 @@ ms.search.form: Notebook REST API ci cd
 
 ## Overview
 
-The Microsoft Fabric REST API provides service endpoint for the CRUD operation of a Fabric item. This article is to showcase the notebook available REST APIs and the usage.
+The Microsoft Fabric REST API provides a service endpoint for the CRUD operation of a Fabric item. This article is to showcase the notebook available REST APIs and their usage.
 
-With the notebook public APIs, data engineers/data scientists can automate their own pipelines and establish CI/CD conveniently and efficiently. Also make it easy for users to manage and manipulate Fabric notebook items and integrate notebook with other tools and systems.
+With the notebook public APIs, data engineers/data scientists can automate their own pipelines and establish CI/CD conveniently and efficiently. It also makes it easy for users to manage and manipulate Fabric notebook items and integrate notebooks with other tools and systems.
 
 Here are the **Item management** actions that are available for Notebook.
 
@@ -32,7 +32,7 @@ Here are the **Item management** actions that are available for Notebook.
 |Get item definition |Gets the content of a notebook.|
 |List item | List all items in a workspace.|
 
-You can find more details in the public api doc: [Items - REST API (Fabric REST APIs) | Microsoft Learn](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/items?branch=drafts%2Ffeatures%2Fga-release)
+You can find more details in the public API doc: [Items - REST API](/rest/api/fabric/)
 
 Here are the **Job Scheduler** actions that are available for Notebook.
 
@@ -42,22 +42,22 @@ Here are the **Job Scheduler** actions that are available for Notebook.
 |Cancel Item Job Instance|Cancel notebook job run.|
 |Get Item Job Instance| Get notebook run status.|
 
-You can find more details in the public api doc: [Job Scheduler - REST API (Fabric REST APIs) | Microsoft Learn](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/job-scheduler?branch=drafts%2Ffeatures%2Fga-release)
+You can find more details in the public API doc: [Job Scheduler](/rest/api/fabric/)
 
 ## Notebook REST API usage examples
 
-Here are the usage examples for specific notebook public APIs, you can follow the instruction to test them and verify the result.
+Here are the usage examples for specific notebook public APIs, you can follow the instructions to test them and verify the result.
 
 > [!NOTE]
-> Only notebook unique usage examples are illstrated in the artical, the Fabric item common API examples are not covered here.
+> Only notebook-unique usage examples are illustrated in the article, the Fabric item common API examples are not covered here.
 
 ### Prerequisites
 
 Microsoft Fabric Rest API defines a unified endpoint for operations. The placeholders `{WORKSPACE_ID}` and `{ARTIFACT_ID}` should be replaced with the appropriate values when trying the examples in this article.
 
-### Create notebook with definition
+### Create a notebook with a definition
 
-You can create a Notebook item with an existing _.ipynb_ file follow the example.
+You can create a Notebook item with an existing _.ipynb_ file using the following example:
 
 **Request**
 
@@ -80,7 +80,7 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items
 }
 ```
 
-The payload in the request is base64 string converted from following sample notebook.
+The payload in the request is a base64 string converted from the following sample notebook.
 
 ```json
 {
@@ -122,7 +122,7 @@ The payload in the request is base64 string converted from following sample note
 
 ## Get notebook with definition
 
-You can get the notebook content by using this API, we support to set the format as ipynb in query string to get an ipynb format notebook.
+You can get the notebook content by using this API, we support setting the format as ipynb in the query string to get an ipynb format notebook.
 
 **Request**
 
@@ -150,11 +150,11 @@ Status code: 200
 
 ### Run notebook on demand
 
-You can schedule your notebook run by using this API, Spark job will start to execute after successfully request.
+You can schedule your notebook run by using this API, The Spark job will start to execute after a successful request.
 
 We support passing `parameters` in the request body to parameterize the notebook run, the values will be consumed by [Notebook parameter cell](author-execute-notebook.md#designate-a-parameters-cell).
 
-You can also use `configuration` to personalize Spark session of notebook run, `configuration`  share the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
+You can also use `configuration` to personalize the Spark session of notebook run. `Configuration`  shares the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
 
 **Request**
 
@@ -194,7 +194,7 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187
 Retry-After: 60
 ```
 
-With the `location`, you can use [_Get Item Job Instance_](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/job-scheduler/get-item-job-instance?branch=drafts%2Ffeatures%2Fga-release&tabs=HTTP) to view job status or use [_Cancel Item Job Instance_](https://review.learn.microsoft.com/en-us/rest/api/fabric/core/job-scheduler/cancel-item-job-instance?branch=drafts%2Ffeatures%2Fga-release&tabs=HTTP) to cancel this notebook run.
+With the `location`, you can use [_Get Item Job Instance_](/rest/api/fabric/) to view job status or use [_Cancel Item Job Instance_](/rest/api/fabric/) to cancel this notebook run.
 
 ## Next steps
 
