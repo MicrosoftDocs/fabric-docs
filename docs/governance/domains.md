@@ -76,7 +76,7 @@ To create domain you must be a Fabric admin.
 
 1. On the **Domains** page that opens, select **Create new domain**.
 
-    :::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
+    :::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page." lightbox="./media/domains/domains-page.png":::
 
 1. In the **New domain** dialog that appears, provide a name (mandatory) and specify domain admins (optional). If you don't specify domain admins, you can do this later in the domain settings.
 
@@ -85,6 +85,8 @@ To create domain you must be a Fabric admin.
 1. Select **Create**. The domain will be created, and you can continue configuring the domain as described in the following sections.
 
 ## Structure your data in the domain
+
+To refine the logic of your domains to best suit your needs, you can create subdomains for your domains. 
 
 ### Create subdomains
 
