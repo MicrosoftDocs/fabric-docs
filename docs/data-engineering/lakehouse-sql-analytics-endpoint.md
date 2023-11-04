@@ -14,7 +14,7 @@ ms.search.form: Lakehouse SQL Analytics Endpoint
 
 Microsoft Fabrics provides a SQL-based experience for lakehouse delta tables. This SQL-based experience is called the SQL analytics endpoint. You can analyze data in delta tables using T-SQL language, save functions, generate views, and apply SQL security. To access SQL analytics endpoint, you select a corresponding item in the workspace view or switch to SQL analytics endpoint mode in Lakehouse Explorer.
 
-Creating a Lakehouse creates a SQL analytics endpoint, which points to the Lakehouse delta table storage. Once you create a delta table in the Lakehouse, it's immediately available for querying using the SQL analytics endpoint. To learn more, see [Data Warehouse documentation: SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse).
+Creating a Lakehouse creates a SQL analytics endpoint, which points to the Lakehouse delta table storage. Once you create a delta table in the Lakehouse, it's immediately available for querying using the SQL analytics endpoint. To learn more, see [Data Warehouse documentation: SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
 :::image type="content" source="media\sql-endpoint\main-screen.png" alt-text="Lakehouse SQL analytics endpoint main screen" lightbox="media\sql-endpoint\main-screen.png":::
 
@@ -42,6 +42,6 @@ You can set object-level security for accessing data using SQL analytics endpoin
 
 ## Next steps
 
-- [Get started with the SQL analytics endpoint of the Lakehouse in Microsoft Fabric](../data-warehouse/data-warehousing.md#sql-endpoint-of-the-lakehouse)
+- [Get started with the SQL analytics endpoint of the Lakehouse in Microsoft Fabric](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
 - [Workspace roles and permissions](workspace-roles-lakehouse.md)
 - [Security for data warehousing in Microsoft Fabric](../data-warehouse/security.md)

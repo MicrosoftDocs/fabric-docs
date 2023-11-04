@@ -7,7 +7,7 @@ ms.reviewer: wiassaf
 ms.date: 6/1/2023
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.search.form: SQL Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # What is data warehousing in Microsoft Fabric?
 

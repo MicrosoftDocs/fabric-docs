@@ -7,7 +7,7 @@ ms.reviewer: wiassaf
 ms.date: 10/24/2023
 ms.topic: conceptual
 ms.custom: build-2023, references_regions
-ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations in Microsoft Fabric
 

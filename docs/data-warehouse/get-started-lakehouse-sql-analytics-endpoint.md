@@ -4,10 +4,10 @@ description: Learn more about the lakehouse data warehousing experience in Micro
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/04/2023
 ms.topic: conceptual
 ms.custom: build-2023
-ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
 
@@ -145,5 +145,5 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
 - [Connectivity](connectivity.md)
-- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] of the lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
+- [[!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
 - [Query the Warehouse](query-warehouse.md)
