@@ -217,7 +217,7 @@ The execution result from root notebook is as below:
 
 :::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\microsoft-spark-utilities\reference-notebook-list.png":::
 
-Below is an example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`, you can leverage this way to orchestrate Notebooks conveniently through code experience .
+Below is an example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`, you can leverage this way to orchestrate Notebooks conveniently through code experience.
 
 ```python
 # run multiple notebooks with parameters
