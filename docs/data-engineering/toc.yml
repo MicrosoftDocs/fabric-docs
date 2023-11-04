@@ -159,6 +159,10 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+  - name: Notebook source control and deployment
+    href: notebook-source-control-deployment.md
+  - name: Use Notebook public APIs
+    href: notebook-public-api.md
 - name: Environments
   items:
   - name: Microsoft Fabric Environment overview
@@ -183,3 +187,5 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
