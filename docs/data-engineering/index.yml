@@ -140,3 +140,5 @@ landingContent:
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md

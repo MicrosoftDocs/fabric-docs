@@ -1,17 +1,17 @@
 ---
-title: Find Power BI users who have signed in
+title: Find users who have signed in
 description: Learn how to see who has signed into Power BI, and how to use the Azure Active Directory access and usage reports.
-author: kfollis
-ms.author: kfollis
+author: KesemSharabi
+ms.author: kesharab
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
-# Find Power BI users who have signed in
+# Find users who have signed in
 
 If you're an admin for your organization, and want to see who has signed in to Fabric, use [Azure Active Directory (Azure AD) access and usage reports](/azure/active-directory/reports-monitoring/concept-sign-ins), which are also known as the sign-in logs.
 
@@ -67,6 +67,4 @@ Sign-in-related data is available for up to seven days, unless your organization
 
 ## Next steps
 
-- [Track user activities in Power BI](/powerbi-docs/enterprise/service-admin-auditing)
-
-- More questions? [Ask the Power BI Community](https://community.powerbi.com/)
+[Use the Monitoring hub](monitoring-hub.md)

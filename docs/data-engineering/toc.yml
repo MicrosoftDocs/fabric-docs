@@ -41,8 +41,8 @@ items:
     href: create-lakehouse.md
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
-  - name: Lakehouse SQL endpoint
-    href: lakehouse-sql-endpoint.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
   - name: Git and deployment pipelines
@@ -75,7 +75,9 @@ items:
       items:
         - name: Runtimes overview
           href: runtime.md
-        - name: Runtime 1.1
+        - name: Runtime 1.2 (Spark 3.4)
+          href: runtime-1-2.md
+        - name: Runtime 1.1 (Spark 3.3)
           href: runtime-1-1.md
     - name: Create custom pools
       href: create-custom-spark-pools.md
@@ -169,6 +171,8 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
 - name: Migration guides
   items:
   - name: From Azure Synapse
