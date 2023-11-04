@@ -48,13 +48,13 @@ Before you connect, you must have:
    oneLakePath = 'abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/myLakehouse.lakehouse/Files/'
    ```
 
-1. Load data from a Databricks public semantic model into a dataframe. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
+1. Load data from a Databricks public dataset into a dataframe. You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen2 account you already own.
 
    ```python
-   yellowTaxiDF = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-semantic models/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")
+   yellowTaxiDF = spark.read.format("csv").option("header", "true").option("inferSchema", "true").load("/databricks-datasets/nyctaxi/tripdata/yellow/yellow_tripdata_2019-12.csv.gz")
    ```
 
-1. Filter, transform, or prep your data. For this scenario, you can trim down your semantic model for faster loading, join with other semantic models, or filter down to specific results.
+1. Filter, transform, or prep your data. For this scenario, you can trim down your dataset for faster loading, join with other datasets, or filter down to specific results.
 
    ```python
    filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.fare_amount<4).where(yellowTaxiDF.passenger_count==4)
