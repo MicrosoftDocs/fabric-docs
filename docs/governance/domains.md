@@ -86,9 +86,15 @@ To create domain you must be a Fabric admin.
 
 ## Structure your data in the domain
 
-To refine the logic of your domains to best suit your needs, you can create subdomains for your domains. 
+Once you've created some domains, you organize your data into the appropriate domains by assigning the workspaces the data is located in to the relevant domain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
+
+To refine the logic of the way you're structuring your data, you can create subdomains for your domains.
 
 ### Create subdomains
+
+To create a subdomain of a domain, open the domain, select **New subdomain**, and then provide a name for the subdomain in the New subdomain dialog that appears.
+
+
 
 ### Assign workspaces to domains
 
