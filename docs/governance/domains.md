@@ -78,11 +78,11 @@ To create domain you must be a Fabric admin.
 
     :::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page.":::
 
-1. On the new domain’s configuration page, provide a name (mandatory) and a description for the domain.
+1. In the **New domain** dialog that appears, provide a name (mandatory) and specify domain admins (optional). If you don't specify domain admins, you can do this later in the domain settings.
 
     :::image type="content" source="./media/domains/domains-new-name.png" alt-text="Screenshot of domains new details section.":::
 
-1. Select **Apply**. The domain will be created, and you can continue configuring the domain as described in the following sections.
+1. Select **Create**. The domain will be created, and you can continue configuring the domain as described in the following sections.
 
 ## Structure your data in the domain
 
