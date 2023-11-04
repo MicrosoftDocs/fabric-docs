@@ -53,7 +53,7 @@ A SELECT statement could have completed successfully in the backend and fails wh
     - [Azure Data Studio](https://aka.ms/azuredatastudio)
     - The [SQL query editor](sql-query-editor.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal
     - The [Visual Query editor](visual-query-editor.md) in the [!INCLUDE [product-name](../includes/product-name.md)] portal
-    - SQLCMD utility (for authentication via Azure AD Universal with MFA, use parameters `-G -U`)  
+    - SQLCMD utility (for authentication via Microsoft Entra ID (formerly Azure Active Directory) Universal with MFA, use parameters `-G -U`)  
 1. If step 1 fails, run a CTAS command with the failed SELECT statement to send the SELECT query result to another table in the same warehouse.  Using CTAS avoids query result set being sent back to the client machine.  If the CTAS command finishes successfully and the target table is populated, then the original query failure is likely caused by the warehouse front end or client issues.
 
 ## What to collect before contacting Microsoft support
@@ -63,6 +63,9 @@ A SELECT statement could have completed successfully in the backend and fails wh
 - Provide the text of the exact error message.
 - Provide the time when the query completes or fails.
 
-## Next steps
+## Related content
 
+- [Query insights in Fabric data warehousing](query-insights.md)
 - [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
+- [What is the Microsoft Fabric Capacity Metrics app?](../enterprise/metrics-app.md)
+- [Limitations in Microsoft Fabric](limitations.md)

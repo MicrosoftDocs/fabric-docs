@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 10/04/2023
+ms.date: 11/02/2023
 ---
 
 # Install the Microsoft Fabric capacity metrics app
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
 
@@ -135,4 +133,4 @@ To complete the installation, configure the Microsoft Fabric Capacity Metrics ap
 
 ## Next steps
 
-[Understand the metrics app overview page?](metrics-app-overview-page.md)
+[Understand the metrics app compute page](metrics-app-compute-page.md)

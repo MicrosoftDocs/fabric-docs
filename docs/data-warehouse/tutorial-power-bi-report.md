@@ -91,7 +91,7 @@ Learn how to create and save several types of Power BI reports.
 
    :::image type="content" source="media\tutorial-power-bi-report\save-sales-analysis-report.png" alt-text="Screenshot of the Save your report dialog box with Sales Analysis entered as the report name.":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Build a report from the OneLake data hub](tutorial-build-report-onelake-data-hub.md)

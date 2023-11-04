@@ -13,8 +13,6 @@ ms.search.form: Deployment pipelines operations
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Compare stages
 
 :::image type="content" source="./media/compare-pipeline-content/deployment-pipelines-compare.png" alt-text="Screenshot showing three stages of deployment. There's a green check between the test and production stages and an orange X between the development and test stages." lightbox="media/compare-pipeline-content/deployment-pipelines-compare.png":::

@@ -46,7 +46,7 @@ Run the **conda.sh** in the terminal:
 
 ## Install the extension and prepare your environment
 
-1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension.
 
 1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 
@@ -77,6 +77,11 @@ To select a Fabric workspace, you must have a workspace created. If you don't ha
 Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
 
 :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
+
+### Current Limitations
+
+- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
+- Shell command start with "!" is not supported.
 
 ## Next steps
 

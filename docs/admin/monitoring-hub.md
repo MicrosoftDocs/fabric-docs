@@ -1,16 +1,14 @@
 ---
-title: Using Monitoring hub
+title: Use the Monitoring hub
 description: Understand the Microsoft Fabric Monitoring hub and the information it provides.
 author: davidiseminger
 ms.author: davidi
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
-# Using Monitoring hub
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+# Use the Monitoring hub
 
 *Monitoring hub* enables users to monitor various Microsoft Fabric activities, such as dataset refresh and Spark Job runs and many others, from a central location. You can access *Monitoring hub* by selecting its icon from the left pane.
 
@@ -26,13 +24,13 @@ Verify that the [new workspace experience](portal-workspace.md#create-workspaces
 
 All items for which a user has read permissions [dataset permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-dataset-permissions) will appear in the Monitoring Hub.
 
-## Using Monitoring hub
+## Using the Monitoring hub
 
 *Monitoring hub* shows activities based on which service is being used when Monitoring hub is selected. For example, if you're using Data Factory when you select Monitoring hub, a list of Data Factory activities is displayed. If you're using Power BI and then select Monitoring hub from the left pane, a list of Power BI related activities is displayed. 
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-02.png" alt-text="Screen shot of Monitoring hub in context with Power BI.":::
 
-Because there may be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *Dataset*, *Dataflow Gen2*, and *Datamart* items.
+Because there might be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *Dataset*, *Dataflow Gen2*, and *Datamart* items.
 
 You can dismiss filters by selecting the *x* beside the filter button, and you can select different filters by using the filter drop-down in the upper right corner of the window. You can also filter by keyword. 
 
