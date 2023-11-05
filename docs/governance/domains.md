@@ -164,12 +164,9 @@ Domain admins and Fabric admins can associate workspaces with a domain or subdom
      * This action excludes “My workspaces”.
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
-To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list.
+To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list. You can select several checkboxes to unassign more than one workspace at a time.
 
-Image
-
-> [!NOTE]
-> Select several checkboxes to unassign more than one workspace at a time.
+:::image type="content" source="./media/domains/domain-unassign-workspace.png" alt-text="Screenshot showing how to unassign workspaces.":::
 
 ## Configure domain settings
 
