@@ -67,7 +67,7 @@ You can locate Delta Lake logs via the following methods:
   - =
   - ]
 
-## Next steps
+## Related content
 
 - [Query the Warehouse](query-warehouse.md)
 - [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md)

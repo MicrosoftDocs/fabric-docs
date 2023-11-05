@@ -14,8 +14,6 @@ ms.date: 05/30/2023
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebook is a primary code item for developing Apache Spark jobs and machine learning experiments, it's a web-based interactive surface used by data scientists and data engineers to write code benefiting from rich visualizations and Markdown text. Data engineers write code for data ingestion, data preparation, and data transformation. Data scientists also use notebooks to build machine learning solutions, including creating experiments and models, model tracking, and deployment.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 With a [!INCLUDE [product-name](../includes/product-name.md)] notebook, you can:
 
 - Get started with zero setup effort.
@@ -106,7 +104,7 @@ The Built-in folder is a system pre-defined folder for each notebook instance, i
 - These resources are also available for use in the [Reference Notebook run](author-execute-notebook.md) case via ```mssparkutils.notebook.run()```.
 
 > [!NOTE]
-> - Currently we support uploading certain file types through UI which includes, *.py, .txt, .json, .yml, .xml, .csv, .html, .png, .jpg, xlsx* files. You can write to the built-in folder with file types that are not in the list via code, However Fabric notebook doesn’t support generating code snippet when operated on unsupported file types.
+> - Currently we support uploading certain file types through UI which includes, *.py, .whl, ,jar, .txt, .json, .yml, .xml, .csv, .html, .png, .jpg, xlsx* files. You can write to the built-in folder with file types that are not in the list via code, However Fabric notebook doesn’t support generating code snippet when operated on unsupported file types.
 > - Each file size needs to be less than 50MB, and the Built-in folder allows up to 100 file/folder instances in total.
 > - When using `mssparkutils.notebook.run()`, we recommend using the `mssparkutils.nbResPath` command to access to the target notebook resource. The relative path “builtin/” will always point to the root notebook’s built-in folder.
 

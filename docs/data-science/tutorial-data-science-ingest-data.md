@@ -26,7 +26,7 @@ In this tutorial, you use the Apache Spark to:
 > * Read data from Azure Open Datasets containers.
 > * Write data into a Fabric lakehouse delta table.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 

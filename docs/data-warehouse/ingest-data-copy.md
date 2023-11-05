@@ -103,7 +103,7 @@ SELECT COUNT(*) FROM [dbo].[bing_covid-19_data];
 
 If you ran both examples without deleting the rows in between runs, you'll see the result of this query with twice as many rows. While that works for data ingestion in this case, consider deleting all rows and ingesting data only once if you're going to further experiment with this data. 
 
-## Next steps
+## Related content
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
 - [Ingest data into your Warehouse using Transact-SQL](ingest-data-tsql.md)

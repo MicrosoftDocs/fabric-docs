@@ -3,14 +3,12 @@ title: Scale your Fabric capacity
 description: This article walks through how to scale a Microsoft Fabric capacity in Azure.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 06/12/2023
+ms.date: 11/02/2023
 ---
 
 # Scale your capacity
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article shows how to scale a Microsoft Fabric capacity in Azure. Scaling allows you to increase or decrease the size of your capacity.
 
@@ -44,4 +42,4 @@ Scaling up a capacity that’s smaller than F64, may take up to three hours. Dur
 
 * [Pause and resume your capacity](pause-resume.md)
 
-* [Understand the metrics app overview page](metrics-app-overview-page.md)
+* [Understand the metrics app overview page](metrics-app-compute-page.md)

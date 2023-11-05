@@ -4,7 +4,7 @@ description: This article provides information about how to create a Databricks 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.date: 10/26/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines the steps to create a Databricks connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -36,4 +35,4 @@ In some cases, the Power Query connector article might include advanced options,
 
 ## Set up your connection in a data pipeline
 
-Data Factory in Microsoft Fabric doesn't currently support Databricks in data pipelines.
+Data Factory in Microsoft Fabric doesn't currently support the Databricks connector in data pipelines.

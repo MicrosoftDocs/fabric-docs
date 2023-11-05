@@ -49,6 +49,13 @@ For details on the specific permissions provided for warehouses, see [Share your
 
 Workspace roles and item permissions provide an easy way to assign coarse permissions to a user for the entire warehouse. However, in some cases, more granular permissions are needed for a user. To achieve this, standard T-SQL constructs can be used to provide specific permissions to users.
 
+Microsoft Fabric data warehousing supports several data protection technologies that administrators can use to protect sensitive data from unauthorized access. By securing or obfuscating data from unauthorized users or roles, these security features can provide data protection in both a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] without application changes.
+
+- [Object-level security](#object-level-security) controls access to specific database objects.
+- [Column-level security](#column-level-security) prevents unauthorized viewing of columns in tables.
+- [Row-level security](#row-level-security) prevents unauthorized viewing of rows in tables, using familiar `WHERE` clause filter predicates.
+- [Dynamic data masking](#dynamic-data-masking) prevents unauthorized viewing of sensitive data by using masks to prevent access to complete, such as email addresses or numbers.
+
 #### Object-level security
 
 Object-level security is a security mechanism that controls access to specific database objects, such as tables, views, or procedures, based on user privileges or roles. It ensures that users or roles can only interact with and manipulate the objects they have been granted permissions for, protecting the integrity and confidentiality of the database schema and its associated resources.
@@ -67,13 +74,18 @@ Column-level security is a database security measure that limits access to speci
 
 For details on column-level security, see [Column-level security in Fabric data warehousing](column-level-security.md).
 
-### Share a warehouse
+#### Dynamic data masking
+
+Dynamic data masking helps prevent unauthorized viewing of sensitive data by enabling administrators to specify how much sensitive data to reveal, with minimal effect on the application layer. Dynamic data masking can be configured on designated database fields to hide sensitive data in the result sets of queries. With dynamic data masking, the data in the database isn't changed, so it can be used with existing applications since masking rules are applied to query results. Many applications can mask sensitive data without modifying existing queries.
+
+
+## Share a warehouse
 
 Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
 
 For more information on sharing, see [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md).
 
-### Guidance
+## Guidance on user access
 
 When evaluating the permissions to assign to a user, consider the following guidance:
 
@@ -81,7 +93,7 @@ When evaluating the permissions to assign to a user, consider the following guid
 - If they primarily require read only access, assign them to the Viewer role and grant read access on specific objects through T-SQL.  For more information, see [Manage SQL granular permissions](sql-granular-permissions.md).
 - If they are higher privileged users, assign them to Admin, Member or Contributor roles. The appropriate role is dependent on the other actions that they will need to perform.  
 - Other users, who only need access to an individual warehouse or require access to only specific SQL objects, should be given Fabric Item permissions and granted access through SQL to the specific objects.
-- You can manage permissions on Azure Active Directory groups, as well, rather than adding each specific member.
+- You can manage permissions on Microsoft Entra ID (formerly Azure Active Directory) groups, as well, rather than adding each specific member.
 
 ## Related content
 

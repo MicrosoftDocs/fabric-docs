@@ -3,14 +3,12 @@ title: What is the Microsoft Fabric admin portal?
 description: This article provides an overview of the admin Microsoft Fabric admin portal.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept-article
+ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 11/02/2023
 ---
 
 # What is the admin portal?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric admin portal includes settings that govern Microsoft Fabric. For example, you can make changes to [tenant settings](tenant-settings-index.md), access the Microsoft 365 admin portal, and control how users interact with Microsoft Fabric.
 

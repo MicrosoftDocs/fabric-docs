@@ -16,8 +16,6 @@ Structured Streaming is a scalable and fault-tolerant stream processing engine b
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
 
 * Data streaming throughput optimization

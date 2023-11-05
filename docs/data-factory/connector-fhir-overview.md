@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Fast Healthcare Interoperability Resources ([FHIR&reg;](https://hl7.org/fhir)) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Support in Dataflow Gen2
 

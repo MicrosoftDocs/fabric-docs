@@ -14,7 +14,7 @@ ms.date: 10/16/2023
 
 In this tutorial, you'll create a Power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 You'll learn how to:
 
