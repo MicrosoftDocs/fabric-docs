@@ -132,23 +132,15 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Datasets
-
-* Reports
-
-* Dataflows
-
-* Datamarts
-
 * Dashboards
-
-* [Notebooks](../../data-engineering/how-to-use-notebook.md)
-
+* Dataflows
+* Datamarts
+* Datasets
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-
-* [Data warehouse](../../data-warehouse/data-warehousing.md)
-
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
 * Paginated reports
+* Reports
+* [Warehouse](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 
