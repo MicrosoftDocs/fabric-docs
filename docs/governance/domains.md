@@ -16,9 +16,6 @@ To meet this challenge, organizations are shifting from traditional IT centric d
 
 Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#domain-settings-delegation), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
-> [!NOTE]
-> Customers using Purview, are strongly recommended to create the same domains in Fabric and in Purview for better integration and alignment.
-
 ## Key concepts
 
 ### Domains
@@ -39,7 +36,7 @@ There are three roles involved in the creation and management of domains:
 
 * **Domain admin**: Ideally, the domain admins of a domain are the business owners or designated experts. They should be familiar with the data in their area and the regulations and restrictions that are relevant to it.
 
-    Domain admins can access to the **Domains** tab in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the [domain image](#domain-image) and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
+    Domain admins can access to the **Domains** tab in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the [domain image](#domain-image) and [override tenant settings](#domain-settings-delegation) for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
 * **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
@@ -82,16 +79,18 @@ To create domain, you must be a Fabric admin.
 
 1. Select **Create**. The domain is created, and you can continue configuring the domain as described in the following sections.
 
+> [!NOTE]
+> Customers using Purview are strongly recommended to create the same domains in Fabric and in Purview for better integration and alignment.
+
 ## Structure your data in the domain
 
 Once you create some domains, you can refine the logic of the way you're structuring your data by creating subdomains for the domains.
 
-You organize your data into the appropriate domains and subdomains by assigning the workspaces the data is located in to the relevant domain or subdomain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
-
+You organize your data into the appropriate domains and subdomains by assigning the workspaces the data is located in to the relevant domain or subdomain. When a workspace is assigned to a domain, all the items in the workspace are associated with the domain.
 
 ### Create subdomains
 
-To create subdomains for a domain, you must be a domain admin of the domain or a Fabric admin.
+To create subdomains for a domain, you must be a a Fabric admin or domain admin of the domain.
 
 1. Open the domain you want to create a subdomain for and select **New subdomain**.
 
@@ -106,36 +105,36 @@ To create subdomains for a domain, you must be a domain admin of the domain or a
 
 ### Assign workspaces to domains and subdomains
 
-Domain admins and Fabric admins can associate workspaces with a domain or subdomain on the domain or subdomain's page.
+To assign workspaces to a domain or subdomain in the admin portal, you must be a Fabric admin or a domain admin.
 
 > [!NOTE]
-> Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces.md).
+> Domain contributors can assign their workspaces to a domain or subdomain in their [workspace's settings](../get-started/create-workspaces.md).
 
 1. Go to the domain or subdomain's page and select **Assign workspaces**.
 
     :::image type="content" source="./media/domains/domain-assign-workspaces-link.png" alt-text="Screenshot showing assign workspaces link.":::
  
-1. In the **Assign workspaces to this domain** side pane that appears, select how to assign the workspaces.
+1. In the **Assign workspaces to this domain**, select how to assign the workspaces.
 
     :::image type="content" source="./media/domains/domain-assign-workspaces-to-this-domain.png" alt-text="Screenshot showing assign workspaces side pane.":::
 
 * **Assign by workspace name**
 
-    * Some organizations have naming conventions for workspaces that make it easy to identify the data’s business context.
+    * Some organizations have naming conventions for workspaces that make it easy to identify the data's business context.
     * You can search for and select multiple workspaces at once
     * If a workspace is already associated with another domain, you'll see an icon next to the specific name. If you chose to continue the action, a warning message pops up, but you'll be able to continue and override the previous association.
 
 * **Assign by workspace admin**
     * You can select specific users or security groups as per your business structure. When you confirm the selection, all the workspaces the users and security groups are admins of will be associated to the domain.
-    * This action excludes “My workspaces”.
-    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you’ll be able to continue and override the previous association.
-   * This action affects existing workspaces only. It won’t affect workspaces the selected users create after the action has been performed.
+    * This action excludes "My workspaces".
+    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you'll be able to continue and override the previous association.
+   * This action affects existing workspaces only. It won't affect workspaces the selected users create after the action has been performed.
  * **Assign by capacity**
     * Some organizations have dedicated capacities per department/business unit.
-     * You can search for and select multiple capacities at once. When you confirm your selection, all the workspaces associated to the selected capacities will be associated with the domain.
+     * You can search for and select multiple capacities at once. When you confirm your selection, all the workspaces associated to the selected capacities will be assigned to the domain.
     * If some of the workspaces are already associated with another domain, a warning message will pop up, but you'll be able to continue and override the previous association.
-     * This action excludes “My workspaces”.
-    * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
+     * This action excludes "My workspaces".
+    * This action affects existing workspaces only. It won't affect workspaces that are assigned to the specified capacities after the action has been performed.
 
 To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list. You can select several checkboxes to unassign more than one workspace at a time.
 
@@ -143,24 +142,27 @@ To unassign a workspace from a domain or subdomain, select the checkbox next to 
 
 ## Configure domain settings
 
-You configure domain and subdomain settings on the domain or subdomain's **Domain settings** pane.
+You configure domain and subdomain settings on the domain or subdomain's **Domain settings** side pane.
 
-Image
+The domain settings side pane as the following tabs:
+
+* [General settings](#edit-name-and-description): Edit domain name and description
+* [Image](#specify-a-domain-image): Specify domain image
+* [Admins](#specify-domain-admins): Specify domain admins
+* [Contributors](#specify-domain-contributors): Specify domain contributors
+* [Default domain](#specify-a-default-domain): Set up domain as a default domian
+* [Delegated settings](#delegate-settings-to-the-domain-level): Override tenant-level settings
 
 > [!NOTE]
 > Subdomains currently have general settings only.
 
-To open the **Domain settings** pane, open the domain or subdomain and select **Domain settings** (for subdomains, **Subdomain settings**).
+To open the **Domain settings** side pane, open the domain or subdomain and select **Domain settings** (for subdomains, **Subdomain settings**).
 
 :::image type="content" source="./media/domains/open-domain-settings.png" alt-text="Screenshot showing how to open the domain settings pane.":::
 
-Alternatively, for domains, you hover over the domain on the Domain tab, select **More options (...)**, and choose **Settings**.
+Alternatively, for domains, you can hover over the domain on the Domain tab, select **More options (...)**, and choose **Settings**.
 
 :::image type="content" source="./media/domains/open-domain-settings-menu-option.png" alt-text="Screenshot of the domain settings menu option.":::
-
-
-
-Subdomains currently have general settings only. Fabric admins and domain admins can create, edit and delete sub domains
 
 ### Edit name and description
 
@@ -172,7 +174,6 @@ Subdomains currently have general settings only. Fabric admins and domain admins
     > Domain admins can only edit the description field.
 
 1. When done, select **Apply**.
-
 
 ### Specify a domain image
 
@@ -186,7 +187,7 @@ In the photo gallery that pops up you can choose an image or color to represent 
 
 You must be a Fabric admin to specify domain admins.
 
-Select **Admins** and then specify who can Admins can change domain settings and add or remove workspaces. When done, select **Apply**.
+Select **Admins** and then specify who can change domain settings and add or remove workspaces. When done, select **Apply**.
 
 :::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
 
@@ -194,7 +195,7 @@ Select **Admins** and then specify who can Admins can change domain settings and
 
 You must be a domain admin of the domain or a Fabric admin to specify domain contributors.
 
-Select **Contributors** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain. When done, select **Apply**.
+Select **Contributors** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to assign workspaces to the domain. When done, select **Apply**.
 
 :::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
 
@@ -224,7 +225,7 @@ Certification settings at the domain level mean you can:
 * Specify certifiers who are experts in the domain.
 * Provide a URL to documentation that is relevant to certification in the domain.
 
-To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox, and then configure the settings as desired.
+To override the tenant-level certification settings, expand the certification section, select the **Override tenant admin selection** checkbox, and configure the settings as desired.
 
 :::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
 
