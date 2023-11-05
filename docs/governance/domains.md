@@ -88,19 +88,37 @@ To create domain you must be a Fabric admin.
 
 Once you've created some domains, you organize your data into the appropriate domains by assigning the workspaces the data is located in to the relevant domain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
 
-To refine the logic of the way you're structuring your data, you can create subdomains for your domains.
+To refine the logic of the way you're structuring your data, you can create subdomains for your domains. You group your data into subdomains just like you do with domains, but assigning the workspaces the data is located in to the subdomain.
+
+To struction your data in a domain, open the domain 
 
 ### Create subdomains
 
-To create a subdomain of a domain, open the domain, select **New subdomain**, and then provide a name for the subdomain in the New subdomain dialog that appears.
+You must be an admin of a domain to be able to create subdomains for the domain.
 
+To create a subdomain of a domain:
 
+1. Go to the domain page. You'll see a list of all the domains you're an admin of. Select the name of the domain where you want to create a subdomain. Alternatively, hover over the desired domain, select **More options (...)**, and choose **Open** from the menu that appears.
+
+    :::image type="content" source="./media/domains/open-domain.png" alt-text="Screenshot of open domain menu option.":::
+
+1. Select **New subdomain**.
+
+    :::image type="content" source="./media/domains/select-new-subdomain.png" alt-text="Screenshot of open domain menu option.":::
+ 
+1. Provide a name for the subdomain in the **New subdomain** dialog that appears.
+
+    :::image type="content" source="./media/domains/new-subdomain-dialog.png" alt-text="Screenshot of open domain menu option.":::
+
+Subdomains don't have their own domain admins. The domain admins of a subdomain are the domain admins of its parent domains.
 
 ### Assign workspaces to domains
 
-Fabric admins and domain admins can associate workspaces with the domain on the domains.
+Fabric admins and domain admins can associate workspaces with a domain on the domain's page.
 
-1. Expand the **Workspaces in this domain** section. If any workspaces have been associated with the domain, they will be listed here.
+To associate workspaces with a domain:
+
+1. Go to the domain's page. If any workspaces are assigned to the domain, you'll see them listed here.
 
 1. Select **Assign workspaces**.
 
@@ -128,19 +146,21 @@ Fabric admins and domain admins can associate workspaces with the domain on the 
      * This action excludes “My workspaces”.
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
-To unassign a workspace in the Workspaces in this domain section, hover over the workspace entry and select the unassign icon that appears.
+To unassign a workspace in a domain , hover over the workspace entry on the domain's page, select **More options (...)** and choose the *unassign* icon that appears.
 
 To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
 
 ## Configure domain settings
 
-Sub domains configuration contains name and description only at this stage, Fabric admins and domain admins can create, edit and delete sub domains 
+To open the domain's setting page, open the domain and choose **Domain settings**. Alternatively, on the domain page, hover over the domain whose settings you want to configure, select **More options (...) **, and choose **Settings**.
+
+Subdomains currently have general settings only. Fabric admins and domain admins can create, edit and delete sub domains
 
 ### General settings
 
 Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
 
-1. Expand the Name and description section and make your desired changes.
+1. On the Domain settings page, select **General settngs** and then make your desired changes.
 
     :::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
 
