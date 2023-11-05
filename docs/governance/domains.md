@@ -14,7 +14,7 @@ Today, organizations are facing massive growth in data, and there's an increasin
 
 To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called data mesh. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
-Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#domain-settings-delegation), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 > [!NOTE]
 > Customers using Purview, are strongly recommended to create the same domains in Fabric and in Purview for better integration and alignment.
@@ -25,7 +25,7 @@ Currently, Microsoft Fabric's data mesh architecture primarily supports organizi
 
 In Fabric, a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#override-tenant-level-settings), thus allowing domain-specific configuration of those settings.
+To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
 
 ### Subdomains
 
@@ -50,9 +50,9 @@ There are three roles involved in the creation and management of domains:
 
 ### Domain settings delegation
 
-Some tenant-level settings for managing and governing data can be [delegated to the domain level](#override-tenant-level-settings). This allows domain-specific configuration of those settings.
+Some tenant-level settings for managing and governing data can be [delegated to the domain level](#delegate-settings-to-the-domain-level). This allows domain-specific configuration of those settings.
 
-It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#override-tenant-level-settings), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#delegate-settings-to-the-domain-level), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ### Domain image
 
@@ -136,7 +136,7 @@ To create subdomains for a domain, you must be a domain admin of the domain or a
 Domain admins and Fabric admins can associate workspaces with a domain or subdomain on the domain or subdomain's page.
 
 > [!NOTE]
-> Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces).
+> Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces.md).
 
 1. Go to the domain or subdomain's page and select **Assign workspaces**.
 
@@ -237,9 +237,9 @@ Select **Default domain** and specify users and/or security groups. When the spe
 domain-specify-default-domain.png
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
-### Delegated settings
+### Delegate settings to the domain level
 
-Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated Settings** tab on the domain's [configuration page](#configure-a-domain). The following admin settings can potentially be overridden.
+Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select **Delegated Settings**. The following admin settings can potentially be overridden.
 
 #### Certification settings
 
