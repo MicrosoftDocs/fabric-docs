@@ -96,7 +96,7 @@ KILL '101'
 
 - An Admin has permissions to execute all three DMVs (`sys.dm_exec_connections`, `sys.dm_exec_sessions`, `sys.dm_exec_requests`) to see their own and others' information within a workspace.
 - A Member, Contributor, and Viewer can execute `sys.dm_exec_sessions` and `sys.dm_exec_requests` and see their own results within the warehouse, but does not have permission to execute `sys.dm_exec_connections`. 
-- Only an Admin has permission to run the `KILL` command. 
+- Only an Admin has permission to run the `KILL` command.
 
 ## Related content
 
