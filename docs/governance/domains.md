@@ -111,17 +111,14 @@ To create domain you must be a Fabric admin.
 
 ## Structure your data in the domain
 
-Once you've created some domains, you organize your data into the appropriate domains by assigning the workspaces the data is located in to the relevant domain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
+Once you've created some domains, you can refine the logic of the way you're structuring your data by creating subdomains for the domains.
 
-To refine the logic of the way you're structuring your data, you can create subdomains for your domains. You group your data into subdomains just like you do with domains, but assigning the workspaces the data is located in to the subdomain.
+You organize your data into the appropriate domains and subdomains by assigning the workspaces the data is located in to the relevant domain or subdomain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
 
-To struction your data in a domain, open the domain 
 
 ### Create subdomains
 
-You must be an admin of a domain or a Fabric admin to be able to create subdomains for the domain.
-
-To create a subdomain of a domain:
+To create subdomains for a domain, you must be a domain admin of the domain or a Fabric admin.
 
 1. Open the domain you want to create a subdomain for and select **New subdomain**.
 
@@ -136,13 +133,12 @@ To create a subdomain of a domain:
 
 ### Assign workspaces to domains and subdomains
 
-Domain admins and Fabric admins can associate workspaces with a domain or subdomain on the domain or subdomain's page. Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces).
+Domain admins and Fabric admins can associate workspaces with a domain or subdomain on the domain or subdomain's page.
 
-To associate workspaces with a domain or subdomain:
+> [!NOTE]
+> Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces).
 
-1. Go to the domain or subdomain's page. If any workspaces are assigned to the domain, you'll see them listed here.
-
-1. Select **Assign workspaces**.
+1. Go to the domain or subdomain's page and select **Assign workspaces**.
 
     :::image type="content" source="./media/domains/domain-assign-workspaces-link.png" alt-text="Screenshot showing assign workspaces link.":::
  
