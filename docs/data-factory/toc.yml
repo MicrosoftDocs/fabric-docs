@@ -52,7 +52,9 @@
       - name: Overview
         href: connector-amazon-redshift-overview.md
       - name: Set up your connection
-        href: connector-amazon-redshift.md    
+        href: connector-amazon-redshift.md
+      - name: Configure in a data pipeline copy activity
+        href: connector-amazon-redshift-copy-activity.md            
     - name: Amazon S3
       items:
       - name: Overview
@@ -61,6 +63,12 @@
         href: connector-amazon-s3.md
       - name: Configure in a data pipeline copy activity
         href: connector-amazon-s3-copy-activity.md
+    - name: Amazon S3 Compatible
+      items:
+      - name: Overview
+        href: connector-amazon-s3-compatible-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services
       items:
       - name: Overview
@@ -85,6 +93,10 @@
         href: connector-azure-cosmosdb-for-nosql-copy-activity.md
     - name: Azure Data Explorer (Kusto)
       items:
+      - name: Overview
+        href: connector-azure-data-explorer-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-data-explorer-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-kusto-dataflows.md
     - name: Azure Data Lake Storage Gen2
@@ -95,6 +107,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Configure in Dataflow Gen2
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
+    - name: Azure Database for PostgreSQL
+      items:
+      - name: Overview
+        href: connector-azure-database-for-postgresql-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-database-for-postgresql-copy-activity.md 
     - name: Azure Databricks
       items:
       - name: Overview
@@ -121,6 +141,12 @@
         href: connector-azure-synapse-analytics-overview.md
       - name: Configure in data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
+    - name: Azure Table Storage
+      items:
+      - name: Overview
+        href: connector-azure-table-storage-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-table-storage-copy-activity.md
     - name: CloudBluePSA
       items:
       - name: Overview
@@ -345,6 +371,8 @@
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-postgresql-copy-activity.md  
     - name: REST
       items:
       - name: Overview
@@ -425,6 +453,8 @@
         href: connector-sql-server-database-overview.md
       - name: Set up your connection
         href: connector-sql-server-database.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-sql-server-copy-activity.md  
     - name: Teradata database
       items:
       - name: Overview

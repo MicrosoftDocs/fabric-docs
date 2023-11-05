@@ -23,7 +23,7 @@ The app is updated often with new features and functionalities and provides the 
 
 You must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization with the right permissions can view the app.
 
-To install the app follow the instructions in [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md).
+To install the app, follow the instructions in [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md).
 
 ## Considerations and limitations
 
@@ -35,9 +35,11 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * There's a difference of 0.01-0.05 percent between the *CU %* value in the [Top row visuals](metrics-app-timepoint-page.md#top-row-visuals) *Heartbeat line chart*, and the [interactive](metrics-app-timepoint-page.md#interactive-operations) and [background](metrics-app-timepoint-page.md#background-operations) operations tables *Total CU* values.
 
-* Updates from version 1 to version 1.1 will be installed in a new workspace.
+* Updates from version 1 to version 1.1 are installed in a new workspace.
 
 * Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
+
+* Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 
 ## Next steps
 
