@@ -181,39 +181,39 @@ Subdomains currently have general settings only. Fabric admins and domain admins
 
 ### Edit name and description
 
-Fabric admins can edit the name and description fields of domain and subdomains. Domain admins can edit the description field only.
-
-1. Select **General settngs** and then make your desired changes.
+1. Select **General settngs** and then edit the name and description fields as desired.
 
     :::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
 
+    >[!NOTE]
+    > Domain admins can only edit the description field.
+
 1. When done, select **Apply**.
+
 
 ### Specify a domain image
 
-Select **Image** and then select **Select an image**. In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
+Select **Image** and then select **Select an image**.
+
+In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
 
 :::image type="content" source="./media/domains/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
 
-### Soecify domain admins
+### Specify domain admins
 
-To specify domain admins, you must be a Fabric admin.
+You must be a Fabric admin to specify domain admins.
 
-1. Select **Admins** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+Select **Admins** and then specify who can Admins can change domain settings and add or remove workspaces. When done, select **Apply**.
 
-    :::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
-
-1. Select **Apply**.
+:::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
 
 ### Contributors
 
-To specify domain contributors, you must be a domain admin for the domain or a Fabric admin.
+You must be a domain admin of the domain or a Fabric admin to specify domain contributors.
 
-1. Expand the Domain contributors section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+Select **Contributors** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain. When done, select **Apply**.
 
-    :::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
-
-1. Select **Apply**.
+:::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
 
 >[!NOTE]
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
@@ -224,7 +224,8 @@ To specify default domain, you must be a domain admin for the domain or a Fabric
 
 Go to Domain Settings and click on the Default Domain tab and specify who will be the users/security group which their WS will be assigned to the domain by default.
 
-Image
+domain-specify-default-domain.png
+:::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
 ### Delegated settings
 
@@ -232,7 +233,7 @@ Some tenant-level settings can potentially be overridden at the domain level. To
 
 The following admin settings can potentially be overridden.
 
-### Certification settings
+#### Certification settings
 
 Certification is a way for organizations to label items that it considers to be quality items. For more information about certification, see [Endorsement](./endorsement-overview.md).
 
@@ -244,16 +245,9 @@ Certification settings at the domain level mean you can:
 
 To override the tenant-level certification settings, expand the certification section. You'll see the tenant-level selections, but greyed out. Select the **Override tenant admin selection** checkbox, and then configure the settings as desired.
 
-> [!NOTE]
-> If the checkbox is greyed out and you can't select it, it means that the Fabric admin has not [allowed this setting to be overridden at the domain level](../admin/endorsement-setup.md#set-up-certification).
-
-For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
-
 :::image type="content" source="./media/domains/domain-override-tenant-admin-selection.png" alt-text="Screenshot of certification override.":::
 
-## Audit schema for domains
-
-## Admin APIs
+For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
 
 ## Next steps
 
