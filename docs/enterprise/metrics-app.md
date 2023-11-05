@@ -39,6 +39,8 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
 
+* Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
+
 ## Next steps
 
 [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)
