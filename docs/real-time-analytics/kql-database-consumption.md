@@ -46,7 +46,8 @@ Here are some insights you can take from the above example:
 
 * The capacity being examined is called *democapacity*.
 * The capacity units for the selected day were used by several different workspaces, such as *Trident Real Time Analytics*, *Houston Event*, and others.
-* The utilization graph, on the right side of the app, shows nearly 100% CU usage. This utilization explains query throttling and indicates a need to increase the capacity units. 
+* Selecting a single item, like the KQL database item on the top, breaks down the CU usage by operations.
+* The utilization graph, on the right side of the app, shows nearly 100% CU usage over time. This high utilization explains query throttling experienced by the user and indicates a need to increase the capacity units.
 
 ## Storage billing
 
