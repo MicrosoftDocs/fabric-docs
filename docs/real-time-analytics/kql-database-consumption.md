@@ -14,6 +14,11 @@ ms.search.form: KQL Database, Overview
 
 When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview). To understand your Fabric billing, visit [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
+> [!IMPORTANT]
+> **Changes to Microsoft Fabric Workload Consumption Rate**
+>
+> Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft’s Release Notes](fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.  
+
 ## Capacity
 
 Based on the Capacity SKU that was purchased in Fabric, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
@@ -36,6 +41,12 @@ You can monitor **KustoUpTime** with the [Microsoft Fabric Capacity Metric app](
 The following image shows a sample compute page from monitoring a KQL database in the Fabric Capacity Metric app:
 
 :::image type="content" source="media/database-consumption/kusto-up-time.png" alt-text="Screenshot of uptime in Microsoft Fabric Capacity Metric app.":::
+
+Here are some insights you can take from the above example:
+
+* The capacity being examined is called *democapacity*.
+* The capacity units for the selected day were used by several different workspaces, such as *Trident Real Time Analytics*, *Houston Event*, and others.
+* The utilization graph, on the right side of the app, shows nearly 100% CU usage. This utilization explains query throttling and indicates a need to increase the capacity units. 
 
 ## Storage billing
 
