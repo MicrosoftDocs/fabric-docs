@@ -12,8 +12,6 @@ ms.search.form: product-kusto
 
 # Change data policies
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to change the [Data retention policy](#data-retention-policy) and the [Caching policy](#caching-policy) in your KQL database.
 
 ## Prerequisites
