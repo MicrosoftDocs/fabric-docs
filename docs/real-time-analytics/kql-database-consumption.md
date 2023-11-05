@@ -17,7 +17,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 > [!IMPORTANT]
 > **Changes to Microsoft Fabric Workload Consumption Rate**
 >
-> Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft’s Release Notes](fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.  
+> Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in [Microsoft’s Release Notes](/fabric/release-plan) or [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/en-US/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.  
 
 ## Capacity
 
