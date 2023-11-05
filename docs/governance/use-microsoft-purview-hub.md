@@ -74,7 +74,7 @@ The full Purview hub insights report enables administrators to visualize and ana
 
 You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset are located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access it directly from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-admin.png" alt-text="Screenshot of the Microsoft Purview hub full report for admins." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-admin.png":::
 
 The report contains the following pages:
 
@@ -96,7 +96,7 @@ The Purview hub insights report enables non-admin Fabric users to visualize and 
 
 You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset get generated in your My Workspace, and you can also access the report from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for non-admin users." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png":::
 
 The report contains the following pages:
 
