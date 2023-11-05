@@ -90,7 +90,7 @@ You organize your data into the appropriate domains and subdomains by assigning 
 
 ### Create subdomains
 
-To create subdomains for a domain, you must be a a Fabric admin or domain admin of the domain.
+To create subdomains for a domain, you must be Fabric admin or domain admin.
 
 1. Open the domain you want to create a subdomain for and select **New subdomain**.
 
@@ -107,14 +107,11 @@ To create subdomains for a domain, you must be a a Fabric admin or domain admin 
 
 To assign workspaces to a domain or subdomain in the admin portal, you must be a Fabric admin or a domain admin.
 
-> [!NOTE]
-> Domain contributors can assign their workspaces to a domain or subdomain in their [workspace's settings](../get-started/create-workspaces.md).
-
 1. Go to the domain or subdomain's page and select **Assign workspaces**.
 
     :::image type="content" source="./media/domains/domain-assign-workspaces-link.png" alt-text="Screenshot showing assign workspaces link.":::
  
-1. In the **Assign workspaces to this domain**, select how to assign the workspaces.
+1. In the **Assign workspaces to this domain** side pane, select how to assign the workspaces.
 
     :::image type="content" source="./media/domains/domain-assign-workspaces-to-this-domain.png" alt-text="Screenshot showing assign workspaces side pane.":::
 
@@ -144,7 +141,7 @@ To unassign a workspace from a domain or subdomain, select the checkbox next to 
 
 You configure domain and subdomain settings on the domain or subdomain's **Domain settings** side pane.
 
-The domain settings side pane as the following tabs:
+The domain settings side pane has the following tabs:
 
 * [General settings](#edit-name-and-description): Edit domain name and description
 * [Image](#specify-a-domain-image): Specify domain image
@@ -208,7 +205,6 @@ To specify a domain as a default domain, you must be a Fabric admin or a domain 
 
 Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
 
-domain-specify-default-domain.png
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
 
 ### Delegate settings to the domain level
