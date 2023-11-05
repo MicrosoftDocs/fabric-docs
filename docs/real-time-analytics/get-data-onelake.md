@@ -12,8 +12,6 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from OneLake
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to get data from OneLake into either a new or existing table.
 
 ## Prerequisites

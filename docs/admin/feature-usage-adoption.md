@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 06/15/2023
+ms.date: 11/02/2023
 ---
 
 # Feature usage and adoption report
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's dataset, and use it to customize the report, or build a new report that relies on the same data.
 

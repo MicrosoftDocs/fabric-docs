@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 >[!NOTE]
 >The Microsoft Fabric Capacity Metrics app has been updated to include support for both EM/A and P SKUs.
