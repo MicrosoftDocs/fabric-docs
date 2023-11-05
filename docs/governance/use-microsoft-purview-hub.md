@@ -1,6 +1,6 @@
 ---
-title: The Microsoft Purview Hub in Microsoft Fabric
-description: This article describes how to use the Microsoft Purview Hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
+title: The Microsoft Purview hub in Microsoft Fabric
+description: This article describes how to use the Microsoft Purview hub in Microsoft Fabric to monitor and govern your Microsoft Fabric instance.
 ms.reviewer: antonfr
 ms.author: painbar
 author: paulinbar
@@ -9,7 +9,7 @@ ms.custom: build-2023
 ms.date: 11/05/2023
 ---
 
-# The Microsoft Purview hub in Microsoft Fabric
+# The Microsoft Purview hub in Microsoft Fabric (preview)
 
 Microsoft Purview hub is a centralized page in Fabric that helps Fabric tenant administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
