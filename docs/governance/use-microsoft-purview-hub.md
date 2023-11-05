@@ -6,45 +6,45 @@ ms.author: painbar
 author: paulinbar
 ms.topic: how-to 
 ms.custom: build-2023
-ms.date: 11/01/2023
+ms.date: 11/05/2023
 ---
 
 # The Microsoft Purview hub in Microsoft Fabric
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and non-admin users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced Purview capabilities such as Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric tenant administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
-The Purview hub has a view for Fabric administrators and a view for non-admin Fabric users.
-* Administrators see insights concerning their tenant's entire Fabric data estate. They also see links to Purview capabilities to help them further analyze and manage governance of their tenant's Fabric data.
-* The non-adminstrators see insights about their own Fabric content, as well as links to Purview capabilites that help them further analyze and explore their data.
+The Purview hub has a view for Fabric tenant administrators and a view for other (non-admin) Fabric users.
+* Fabric tenant administrators see insights concerning their tenant's entire Fabric data estate. They also see links to capabilities in the Microsoft Purview portal to help them further analyze and manage governance of their tenant's Fabric data.
+* Other users see insights about their own Fabric content, as well as links to capabilites in the Microsoft Purview portal that help them further explore their data.
 
 When you open the hub, the appropriate view opens. In the sections below, select the appropriate tab to see the information that is relevant to you.
 
-# [Admins](#tab/admin-view)
+# [Tenant admins](#tab/admin-view)
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png" alt-text="Screenshot of the Microsoft Purview hub admin view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-admin-view.png":::
 
-# [Non-admins](#tab/data-owner-view)
+# [Other users](#tab/data-owner-view)
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png" alt-text="Screenshot of the Microsoft Purview hub data owner view." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-general-data-owner-view.png":::
 
 ---
 
-## Accessing the hub
+## Access the hub
 
 To access the hub, open the Fabric settings pane and choose **Microsoft Purview hub**.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/open-purview-hub.png" alt-text="Screenshot of the Microsoft Purview hub link in Fabric settings.":::
 
-When you select the Microsoft Purview hub option, the hub opens to the view that is appropriate for you, and insights are generated. If this is the first time insights are being generated, it make take a few moments for them to appear.
+When you select the Microsoft Purview hub option, the hub opens to the view that is appropriate for you, and insights are generated. If this is the first time insights are being generated, it might take some time for them to appear.
 
 >[!NOTE]
-> If you are a non-admin user and don't own or haven't created any content, the hub won't contain any insights.
+> If you're not a tenant admin and you don't own or haven't created any content, the hub won't contain any insights.
 >
 > For some users, the hub won't open at all when they select the **Microsoft Purview hub** option. See [Considerations and limitations for more detail about this exceptions](#considerations-and-limitations).
 
 ## Get insights about your Microsoft Fabric data
 
-# [Admins](#tab/admin-view)
+# [Tenant admins](#tab/admin-view)
 
 Use the Microsoft Fabric data section of the hub to see insights about your Fabric data. These insights cover your tenant's entire Fabric data estate - that is, all Fabric items, both data and non-data items, of all the users in the tenant. Two reports help you analyze the data.
 
@@ -54,7 +54,7 @@ Use the Microsoft Fabric data section of the hub to see insights about your Fabr
 
 The visuals in the reports are interactive, and you can select items and drill down to get deeper insights into the endorsement and sensitivity label coverage of your data. For instance, you could filter on a workspace to see what items are in the workspace and how many of them are certified or promoted, or you can identify workspaces that have the greatest number of items with no sensitivity label, so that you could reach out to the data owners and ask them to take action.
 
-# [Non-admins](#tab/data-owner-view)
+# [Other users](#tab/data-owner-view)
 
 Use the Microsoft Fabric data section of the hub to see insights about your Fabric data. These insights cover the Fabric data items that you own. Two reports help you analyze the data.
 
@@ -68,11 +68,11 @@ The visuals in the reports are interactive, and you can select items and drill d
 
 ## View the Purview hub insights report
 
-# [Admins](#tab/admin-view)
+# [Tenant admins](#tab/admin-view)
 
 The full Purview hub insights report enables administrators to visualize and analyze in greater detail the extent and distribution of endorsement and sensitivity labeling throughout their organization's Fabric data estate.
 
-You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its accociated dataset are located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access it directly from there.
+You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset are located in the [Admin monitoring workspace](../admin/monitoring-workspace.md), and you can also access it directly from there.
 
 :::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png" alt-text="Screenshot of the Microsoft Purview hub full report." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report.png":::
 
@@ -87,10 +87,10 @@ The report contains the following pages:
 
 > [!NOTE]
 > * The full Purview hub report and its associated dataset are generated in the admin monitoring workspace the first time any admin opens the Purview hub.
-> * The first time the report and dataset are generated, it may take a few minutes for them to display.
+> * The first time the report and dataset are generated, it may take some time for them to to appear.
 > * Fabric admins can create new reports based on the dataset, but they can't edit the report or dataset directly.
 
-# [Non-admins](#tab/data-owner-view)
+# [Other users](#tab/data-owner-view)
 
 The Purview hub insights report enables non-admin Fabric users to visualize and analyze in greater detail the extent and distribution of endorsement and sensitivity labeling of the Fabric data they own.
 
@@ -108,7 +108,7 @@ The report contains the following pages:
 * **Sensitivity page**: Insights about sensitivity labeling throughout your entire tenant.
 
 > [!NOTE]
-> * The full Purview hub report and its associated dataset are generated in your *My Workspace* the first time  you open the Purview hub.
+> * The full Purview hub report and its associated dataset are generated in your *My Workspace* the first time you open the Purview hub.
 > * The first time you open the Purview hub, it may take a few moments for the report and dataset to be generated.
 > * You can create new reports based on the dataset, and you can also edit the report and/or dataset directly. However, periodically the report and dataset are automatically regenerated, and any changes you have made will be lost.
 
@@ -116,7 +116,7 @@ The report contains the following pages:
 
 ## Access Purview capabilities
 
-# [Admins](#tab/admin-view)
+# [Tenant admins](#tab/admin-view)
 
 The tiles at the top of the Purview hub provide access to Purview's advanced governance and compliance capabilities.
 
@@ -126,7 +126,7 @@ The tiles at the top of the Purview hub provide access to Purview's advanced gov
 * **Data loss prevention**: Opens a new tab to the Microsoft Purview compliance portal, where data loss prevention policies can be defined and monitored.
 * **Audit**: Opens a new tab to the Microsoft Purview compliance portal, where activities regarding sensitivity labels and DLP policies recorded in the audit logs can be searched and retrieved with Purview's Audit solution.
 
-# [Non-admins](#tab/data-owner-view)
+# [Other users](#tab/data-owner-view)
 
 The tiles at the top of the Purview hub provide access to Purview documentation and catalog capability.
 
