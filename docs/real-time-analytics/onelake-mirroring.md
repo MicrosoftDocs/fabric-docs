@@ -16,7 +16,7 @@ OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../
 
 You can create a one logical copy by enabling data availability in OneLake. Enabling data availability of your KQL database in OneLake means that you can query data with high performance and low latency in your KQL database, and query the same data in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, warehouse, Lakehouse, Notebooks, and more.
 
-Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [Delta Lake](https://docs.delta.io/latest/delta-intro.html).
+Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 
 In this article, you learn how to enable availability of KQL Database data in OneLake.
 
