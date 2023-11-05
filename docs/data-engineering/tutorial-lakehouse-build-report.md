@@ -25,11 +25,11 @@ In traditional DirectQuery mode, the Power BI engine directly queries the data f
 
 DirectLake mode now eliminates this import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur, thus combining the advantages of DirectQuery and import mode while avoiding their disadvantages. DirectLake mode is therefore the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
 
-1. From your **wwilakehouse** lakehouse, select **SQL endpoint**  from the **Lakehouse** drop-down menu at the top right of the screen.
+1. From your **wwilakehouse** lakehouse, select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL endpoint from the top right drop-down menu.":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right drop-down menu.":::
 
-1. From the SQL endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI dataset.
+1. From the SQL analytics endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI dataset.
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
 

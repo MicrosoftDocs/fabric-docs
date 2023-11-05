@@ -17,7 +17,7 @@ Column-level security simplifies the design and coding of security in your appli
 
 The access restriction logic is located in the database tier, not in any single application tier. The database applies the access restrictions every time data access is attempted, from any application or reporting platform including Power BI. This restriction makes your security more reliable and robust by reducing the surface area of your overall security system. 
 
-Column-level security only applies to queries on a Warehouse or SQL Endpoint in Fabric. Power BI queries on a warehouse in Direct Lake mode will fall back to Direct Query mode to abide by column-level security.
+Column-level security only applies to queries on a Warehouse or SQL analytics endpoint in Fabric. Power BI queries on a warehouse in Direct Lake mode will fall back to Direct Query mode to abide by column-level security.
 
 ## Restrict access to certain columns to certain users
 
