@@ -183,7 +183,7 @@ To open the **Domain settings** pane, open the domain or subdomain and select **
 
 Alternatively, for domains, you hover over the domain on the Domain tab, select **More options (...)**, and choose **Settings**.
 
-Image
+:::image type="content" source="./media/domains/open-domain-settings-menu-option.png" alt-text="Screenshot of the domain settings menu option.":::
 
 
 
