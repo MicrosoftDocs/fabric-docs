@@ -2,7 +2,7 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 10/20/2023
+ms.date: 11/2/2023
 ms.author: dougklo
 ms.topic: overview
 ms.custom: build-2023
@@ -95,7 +95,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| :::image type="icon" source="media/dataflow-support/lakehouse-64.png":::<br/>**Lakehouse<br/>(Beta)**<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/linkar-connector-64.png":::<br/>**Linkar PICK<br/>Style/MultiValue<br/>Databases<br/>(Beta)**<br/>By Kosday Solutions | | | |
+| [:::image type="icon" source="media/dataflow-support/lakehouse-64.png":::<br/>**Lakehouse<br/>(Beta)**](connector-lakehouse.md)<br/>By Microsoft | :::image type="icon" source="media/dataflow-support/linkar-connector-64.png":::<br/>**Linkar PICK<br/>Style/MultiValue<br/>Databases<br/>(Beta)**<br/>By Kosday Solutions | | | |
 
 ## M
 
@@ -108,7 +108,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | Connectors | &nbsp; | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](/power-query/connectors/odata-feed)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](connector-odbc.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
+| [:::image type="icon" source="media/dataflow-support/odata-64.png":::<br/>**OData**](connector-odata.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/odbc2-64.png":::<br/>**ODBC**](connector-odbc.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/opensearch-project-64.png":::<br/>**OpenSearch Project**</br>**(Beta)**](/power-query/connectors/opensearch-project)<br/>By OpenSearch | | |
 
 ## P
 

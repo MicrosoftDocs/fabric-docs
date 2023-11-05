@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 10/30/2023
+ms.date: 11/02/2023
 ---
 
 # Understand the metrics app compute page
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 

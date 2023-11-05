@@ -5,12 +5,10 @@ author: paulinbar
 ms.author: painbar
 ms.custom: references_regions, build-2023
 ms.topic: overview
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Fabric region availability
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric Public Preview is available in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 

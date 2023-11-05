@@ -38,7 +38,7 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
->You, or other admins, can override the the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
+>You, or other admins, can override the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
 
 In your tenant, you can enable Microsoft Fabric for:
 
@@ -48,11 +48,11 @@ In your tenant, you can enable Microsoft Fabric for:
 
 Follow these steps to enable Microsoft Fabric for your tenant.
 
-1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric (Preview)*, expand **Users can create Fabric items**.
+1. Navigate to the [tenant settings](tenant-settings-index.md) in the admin portal and in *Microsoft Fabric*, expand **Users can create Fabric items**.
 
 2. Enable the **Users can create Fabric items** switch.
 
-3. (Optional) Use the **Specific security groups** option to enable Microsoft Fabric for specific users. You can also use the **Except specific security groups** option, to enable Microsoft Fabric for the tenant, and exclude specific users.
+3. (Optional) Use the **Specific security groups** option to enable Microsoft Fabric for specific users. You can also use the **Except specific security groups** option, to exclude specific users.
 
 4. Select **Apply**.
 
@@ -61,7 +61,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 
 ### Enable for a capacity
 
-Consider the Microsoft Fabric setting a recommendation for the entire organization. Capacity admins can override this setting, depending on their needs. For example, Fabric can be enabled in your organization. However, for security reasons your organization decided to disable Fabric on a specific capacity. In such cases, Microsoft Fabric can be disabled for that capacity.
+Consider the Microsoft Fabric setting at the tenant level a recommendation for the entire organization. Capacity admins can override this setting, depending on their needs. For example, Fabric can be enabled for all the users in your organization. However, for security reasons your organization decided to disable Fabric for a specific capacity. In such cases, Microsoft Fabric can be disabled for that capacity.
 
 Follow these steps to enable Microsoft Fabric for a specific capacity.
 
