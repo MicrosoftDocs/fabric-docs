@@ -28,6 +28,8 @@ landingContent:
         links: 
           - text: Real-Time Analytics Tutorial
             url: tutorial-introduction.md
+          - text: KQL Database consumption
+            url: kql-database-consumption.md
 
   # Card 
   - title: Event streams
