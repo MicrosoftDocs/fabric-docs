@@ -29,7 +29,7 @@ To group data into domains, workspaces are associated with domains. When a works
 
 ### Subdomains
 
-You can create subdomains under domains. A subomain is a way for fine tuning the logical grouping of your data. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
+You can create subdomains under domains. A subdomain is a way for fine tuning the logical grouping of your data. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
  
 ### Domain roles
 
@@ -41,7 +41,7 @@ There are three roles involved in the creation and management of domains:
 
     Domain admins have access to the **Domains** page in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
-* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) who have been authorized by the domain or Fabric admin to associate the workspaces they're the admins of to a domain, or to change the current domain association.
+* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) whom the domain or Fabric admin have authorized to associate the workspaces they're the admins of to a domain, or to change the current domain association.
 
     Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
     
@@ -56,7 +56,7 @@ It also enables federated governance, which means that some governance currently
 
 ### Domain image
 
-When users look for data items in the OneLake data hub, they may want to see only the data items that belong to a particular domain. To do this they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them of which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected, the image will become part of the theme of the data hub, as illustrated in the following image.
+When users look for data items in the OneLake data hub, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them of which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected, the image becomes part of the theme of the data hub, as illustrated in the following image.
 
 :::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
 
@@ -64,7 +64,7 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as the default domain for specific users and security groups. This means that when these users/security groups create a new workspace, or when they update an uassigned workspace they're an admin of, that workspace will automatically be associated to that (default) domain. These users/security groups generally automatically become domain contributors of the workspaces that assigned in this manner.
+A default domain is a domain that has been specified as the default domain for specific users and security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be associated to that (default) domain. These users/security groups generally automatically become domain contributors of the workspaces that assigned in this manner.
 
 Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Specify a default domain](#specify-a-default-domain) for details.
 
@@ -95,7 +95,7 @@ To open the page of a specific domain, go to the Domain page and select the name
 
 ## Create a domain
 
-To create domain you must be a Fabric admin.
+To create domain, you must be a Fabric admin.
 
 1. Open the admin portal and select the **Domains** tab.
 
@@ -107,11 +107,11 @@ To create domain you must be a Fabric admin.
 
     :::image type="content" source="./media/domains/domains-new-name.png" alt-text="Screenshot of domains new details section.":::
 
-1. Select **Create**. The domain will be created, and you can continue configuring the domain as described in the following sections.
+1. Select **Create**. The domain is created, and you can continue configuring the domain as described in the following sections.
 
 ## Structure your data in the domain
 
-Once you've created some domains, you can refine the logic of the way you're structuring your data by creating subdomains for the domains.
+Once you create some domains, you can refine the logic of the way you're structuring your data by creating subdomains for the domains.
 
 You organize your data into the appropriate domains and subdomains by assigning the workspaces the data is located in to the relevant domain or subdomain. When a workspace is associated with a domain, all the items in the workspace are associated with the domain.
 
@@ -150,7 +150,7 @@ Domain admins and Fabric admins can associate workspaces with a domain or subdom
 
     * Some organizations have naming conventions for workspaces that make it easy to identify the data’s business context.
     * You can search for and select multiple workspaces at once
-    * If a workspace is already associated with another domain, you’ll see an icon next to the specific name. If you chose to continue the action, a warning message will pop up, but you’ll be able to continue and override the previous association.
+    * If a workspace is already associated with another domain, you'll see an icon next to the specific name. If you chose to continue the action, a warning message pops up, but you'll be able to continue and override the previous association.
 
 * **Assign by workspace admin**
     * You can select specific users or security groups as per your business structure. When you confirm the selection, all the workspaces the users and security groups are admins of will be associated to the domain.
@@ -160,7 +160,7 @@ Domain admins and Fabric admins can associate workspaces with a domain or subdom
  * **Assign by capacity**
     * Some organizations have dedicated capacities per department/business unit.
      * You can search for and select multiple capacities at once. When you confirm your selection, all the workspaces associated to the selected capacities will be associated with the domain.
-    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you’ll be able to continue and override the previous association.
+    * If some of the workspaces are already associated with another domain, a warning message will pop up, but you'll be able to continue and override the previous association.
      * This action excludes “My workspaces”.
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
@@ -191,7 +191,7 @@ Subdomains currently have general settings only. Fabric admins and domain admins
 
 ### Edit name and description
 
-1. Select **General settngs** and then edit the name and description fields as desired.
+1. Select **General settings** and then edit the name and description fields as desired.
 
     :::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
 
