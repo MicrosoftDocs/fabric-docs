@@ -28,7 +28,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 
 ## Use service tags
 
-You can use the service tags to define network access controls on [network security groups](azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](azure/firewall/service-tags), and user-defined routes.
+You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
 
 ## Next steps
 
