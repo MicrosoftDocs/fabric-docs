@@ -129,8 +129,9 @@ Since a workspace can only be connected to a single branch at a time, it is reco
 To duplicate an item in a Git repository:
 
 1. Copy the entire item directory.
-1. Change the logical ID to something unique for that connected workspace.
+1. Change the logicalId to something unique for that connected workspace.
 1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
+1. If necessary, update the logicalId and display names in any dependencies.
 
 ## Test
 
