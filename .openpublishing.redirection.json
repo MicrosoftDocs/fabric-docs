@@ -6,6 +6,11 @@
         "redirect_document_id": false
       },
       {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+       "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -17,8 +22,8 @@
       },
       {
         "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
-        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
-        "redirect_document_id": true
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
         },
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
@@ -151,8 +156,38 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
           "redirect_url": "/fabric/real-time-analytics/data-policies",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-google-cloud-storage-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-google-cloud-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-http",
           "redirect_document_id": false
         }
     ]

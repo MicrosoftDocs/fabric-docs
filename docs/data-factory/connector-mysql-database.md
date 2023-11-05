@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines the steps to create a MySQL database connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
