@@ -68,13 +68,38 @@ A default domain is a domain that has been specified as default domain for speci
 
 Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Default domains](#default-domain) for details.
 
+## Set up and manage domains and subdomains
+
+Fabric admins and domain admins set up and manage domains on the Domain page in the admin portal, and on each domain's specific page. You access the specific domain pages from the Domains page.
+
+### Open the Domain page
+
+To open the Domain page, go to the admin portal and select **Domains**.
+
+:::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page." lightbox="./media/domains/domains-page.png":::
+
+
+The Domains page contains a list of domains.
+
+* For Fabric admins the list includes all the domains defined in the tenant.
+
+* For domain admins, the list includes just the domains they administer.
+
+Each domain in the list has an options menu that you can access by hovering over the item and selecting **More options (...)**.
+
+### Open a specific domain's page
+
+To open the page of a specific domain, go to the Domain page and select the name of the domain you want to open. Alternatively, hover over the desired domain, select **More options (...)**, and choose **Open** from the menu that appears.
+
+:::image type="content" source="./media/domains/open-domain.png" alt-text="Screenshot of open domain menu option.":::
+
 ## Create a domain
 
 To create domain you must be a Fabric admin.
 
-1. Open the admin portal and select **Domains**.
+1. Open the admin portal and select the **Domains** tab.
 
-1. On the **Domains** page that opens, select **Create new domain**.
+1. On the **Domains** tab, select **Create new domain**.
 
     :::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page." lightbox="./media/domains/domains-page.png":::
 
@@ -94,31 +119,26 @@ To struction your data in a domain, open the domain
 
 ### Create subdomains
 
-You must be an admin of a domain to be able to create subdomains for the domain.
+You must be an admin of a domain or a Fabric admin to be able to create subdomains for the domain.
 
 To create a subdomain of a domain:
 
-1. Go to the domain page. You'll see a list of all the domains you're an admin of. Select the name of the domain where you want to create a subdomain. Alternatively, hover over the desired domain, select **More options (...)**, and choose **Open** from the menu that appears.
-
-    :::image type="content" source="./media/domains/open-domain.png" alt-text="Screenshot of open domain menu option.":::
-
-1. Select **New subdomain**.
+1. Open the domain you want to create a subdomain for and select **New subdomain**.
 
     :::image type="content" source="./media/domains/select-new-subdomain.png" alt-text="Screenshot of open domain menu option.":::
  
 1. Provide a name for the subdomain in the **New subdomain** dialog that appears.
 
-    :::image type="content" source="./media/domains/new-subdomain-dialog.png" alt-text="Screenshot of open domain menu option.":::
+> [!NOTE]
+> Subdomains don't have their own domain admins. A subdomain's domain admins are the domain admins of its parent domain.
 
-Subdomains don't have their own domain admins. The domain admins of a subdomain are the domain admins of its parent domains.
+### Assign workspaces to domains and subdomains
 
-### Assign workspaces to domains
+Domain admins and Fabric admins can associate workspaces with a domain or subdomain on the domain or subdomain's page. Domain contributors can associate their workspaces with a domain or subdomain in their [workspace's settings](../get-started/create-workspaces).
 
-Fabric admins and domain admins can associate workspaces with a domain on the domain's page.
+To associate workspaces with a domain or subdomain:
 
-To associate workspaces with a domain:
-
-1. Go to the domain's page. If any workspaces are assigned to the domain, you'll see them listed here.
+1. Go to the domain or subdomain's page. If any workspaces are assigned to the domain, you'll see them listed here.
 
 1. Select **Assign workspaces**.
 
@@ -146,9 +166,12 @@ To associate workspaces with a domain:
      * This action excludes “My workspaces”.
     * This action affects existing workspaces only. It won’t affect workspaces that are assigned to the specified capacities after the action has been performed.
 
-To unassign a workspace in a domain , hover over the workspace entry on the domain's page, select **More options (...)** and choose the *unassign* icon that appears.
+To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list.
 
-To unassign several workspaces at a time, select the checkboxes next to the workspace names and then select the **Unassign** button above the table.
+Image
+
+> [!NOTE]
+> Select several checkboxes to unassign more than one workspace at a time.
 
 ## Configure domain settings
 
@@ -156,11 +179,11 @@ To open the domain's setting page, open the domain and choose **Domain settings*
 
 Subdomains currently have general settings only. Fabric admins and domain admins can create, edit and delete sub domains
 
-### General settings
+### Edit name and description
 
-Fabric admins can edit the name and description fields. Domain admins can edit the description field only.
+Fabric admins can edit the name and description fields of domain and subdomains. Domain admins can edit the description field only.
 
-1. On the Domain settings page, select **General settngs** and then make your desired changes.
+1. Select **General settngs** and then make your desired changes.
 
     :::image type="content" source="./media/domains/domain-edit-details.png" alt-text="Screenshot showing the domains name and description fields.":::
 
@@ -168,15 +191,15 @@ Fabric admins can edit the name and description fields. Domain admins can edit t
 
 ### Specify a domain image
 
-Expand the Domain image section and select **Select an image**. In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
+Select **Image** and then select **Select an image**. In the photo gallery that pops up you can choose an image or color to represent your domain in the OneLake data hub when your domain is selected.
 
 :::image type="content" source="./media/domains/domain-image-gallery.png" alt-text="Screenshot showing the domains image gallery.":::
 
-### Admins
+### Soecify domain admins
 
 To specify domain admins, you must be a Fabric admin.
 
-1. Expand the Domain admins section and specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
+1. Select **Admins** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to associate workspaces to the domain.
 
     :::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
 
