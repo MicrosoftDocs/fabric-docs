@@ -127,10 +127,12 @@ To create a subdomain of a domain:
 
     :::image type="content" source="./media/domains/select-new-subdomain.png" alt-text="Screenshot of open domain menu option.":::
  
-1. Provide a name for the subdomain in the **New subdomain** dialog that appears.
+1. Provide a name for the subdomain in the **New subdomain** dialog that appears. When done, select **Create**.
 
-> [!NOTE]
-> Subdomains don't have their own domain admins. A subdomain's domain admins are the domain admins of its parent domain.
+    :::image type="content" source="./media/domains/new-subdomain-dialog.png" alt-text="Screenshot of new subdomain dialog.":::
+
+    > [!NOTE]
+    > Subdomains don't have their own domain admins. A subdomain's domain admins are the domain admins of its parent domain.
 
 ### Assign workspaces to domains and subdomains
 
@@ -229,9 +231,7 @@ domain-specify-default-domain.png
 
 ### Delegated settings
 
-Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated Settings** tab on the domain's [configuration page](#configure-a-domain). To override a setting, expand the setting you want to override.
-
-The following admin settings can potentially be overridden.
+Some tenant-level settings can potentially be overridden at the domain level. To see these settings, select the **Delegated Settings** tab on the domain's [configuration page](#configure-a-domain). The following admin settings can potentially be overridden.
 
 #### Certification settings
 
