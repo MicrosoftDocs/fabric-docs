@@ -57,7 +57,7 @@ The `item.config.json` file contains the following attributes:
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
 
 > [!NOTE]
-> Though you should not generally change the logicalId or display name of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the logicalId and the display name to something unique in the repository.
+> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
 
 ## Item definition files
 
