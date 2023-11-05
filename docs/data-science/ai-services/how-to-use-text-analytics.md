@@ -1,5 +1,5 @@
 ---
-title: Use text analytics with REST API
+title: Use Text Analytics with REST API
 description: How to use prebuilt text analytics in Fabric with REST API 
 ms.reviewer: ssalgado
 ms.author: ruxu

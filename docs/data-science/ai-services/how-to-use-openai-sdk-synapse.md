@@ -1,5 +1,5 @@
 ---
-title: Use Azure openai with python SDK
+title: Use Azure OpenAI with Python SDK
 description: How to use prebuilt Azure openai in Fabric with Python library
 ms.reviewer: ssalgado
 ms.author: ruxu
