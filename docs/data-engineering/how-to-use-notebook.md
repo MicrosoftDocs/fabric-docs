@@ -92,7 +92,7 @@ You can easily copy path with different format of the select file or folder and 
 
 ## Notebook resources
 
-The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, datasets, and images. You can easily access them with code in the notebook as if you were working with your local file system.
+The notebook resource explorer provides a Unix-like file system to help you manage your folders and files. It offers a writeable file system space where you can store small-sized files, such as code modules, semantic models, and images. You can easily access them with code in the notebook as if you were working with your local file system.
 
 ![Animated GIF of notebook resources.](media/how-to-use-notebook/notebook-resources-operations.gif)
 

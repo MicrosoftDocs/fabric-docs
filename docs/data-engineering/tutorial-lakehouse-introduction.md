@@ -1,6 +1,6 @@
 ---
 title: "Lakehouse end-to-end scenario: overview and architecture"
-description: This article describes the lakehouse end-to-end scenario including its architecture, the various components involved in its implementation, and the dataset used.
+description: This article describes the lakehouse end-to-end scenario including its architecture, the various components involved in its implementation, and the semantic model used.
 ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
