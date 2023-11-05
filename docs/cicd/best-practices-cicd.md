@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.date: 08/10/2023
+ms.date: 11/05/2023
 ms.custom: intro-deployment, build-2023
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
@@ -123,6 +123,14 @@ Since a workspace can only be connected to a single branch at a time, it is reco
 * If a developer set up a private workspace with all required configurations, they can continue to use that workspace for any future branch they create. When a sprint is over, your changes are merged and you are starting a fresh new task, just switch the connection to a new branch on the same workspace. You can also do this if you suddenly need to fix a bug in the middle of a sprint. Think of it as a working directory on the web.
 
 * Developers using a client tool (such as VSCode, Power BI Desktop or others), don’t necessarily need a workspace. They can create branches and commit changes to that branch locally, push those to the remote repo and create a pull request to the main branch, all without a workspace. A workspace is needed only as a testing environment to check that everything works in a real-life scenario. It's up to you to decide when that should happen.
+
+### Duplicate an item in a Git repository
+
+To duplicate an item in a Git repository:
+
+1. Copy the entire item directory.
+1. Change the logical ID to something unique for that connected workspace.
+1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
 
 ## Test
 
