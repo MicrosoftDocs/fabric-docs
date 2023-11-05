@@ -12,7 +12,11 @@ ms.date: 11/05/2023
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. You can create a one logical copy of the data in KQL Database to make it appear as though the files and folders are stored locally in OneLake, but in reality; they exist in KQL Database. You can create a one logical copy by enabling data availability in OneLake. Enabling data availability of your KQL database in OneLake means that you can query data with high performance and low latency in your KQL database, and query the same data in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, warehouse, Lakehouse, Notebooks, and more. Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [Delta Lake](https://docs.delta.io/latest/delta-intro.html).
+OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses and other items. You can create a one logical copy of the data in KQL Database to make it appear as though the files and folders are stored locally in OneLake, but in reality; they exist in KQL Database.
+
+You can create a one logical copy by enabling data availability in OneLake. Enabling data availability of your KQL database in OneLake means that you can query data with high performance and low latency in your KQL database, and query the same data in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, warehouse, Lakehouse, Notebooks, and more.
+
+Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [Delta Lake](https://docs.delta.io/latest/delta-intro.html).
 
 In this article, you learn how to enable availability of KQL Database data in OneLake.
 
