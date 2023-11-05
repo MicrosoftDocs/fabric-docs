@@ -170,7 +170,22 @@ To unassign a workspace from a domain or subdomain, select the checkbox next to 
 
 ## Configure domain settings
 
-To open the domain's setting page, open the domain and choose **Domain settings**. Alternatively, on the domain page, hover over the domain whose settings you want to configure, select **More options (...) **, and choose **Settings**.
+You configure domain and subdomain settings on the domain or subdomain's **Domain settings** pane.
+
+Image
+
+> [!NOTE]
+> Subdomains currently have general settings only.
+
+To open the **Domain settings** pane, open the domain or subdomain and select **Domain settings** (for subdomains, **Subdomain settings**).
+
+:::image type="content" source="./media/domains/open-domain-settings.png" alt-text="Screenshot showing how to open the domain settings pane.":::
+
+Alternatively, for domains, you hover over the domain on the Domain tab, select **More options (...)**, and choose **Settings**.
+
+Image
+
+
 
 Subdomains currently have general settings only. Fabric admins and domain admins can create, edit and delete sub domains
 
@@ -215,7 +230,7 @@ Select **Contributors** and then specify who will be able to assign workspaces t
 
 ### Specify a default domain
 
-To specify default domain, you must be a domain admin for the domain or a Fabric admin.
+To specify a domain as a default domain, you must be a Fabric admin or a domain admin of the domain.
 
 Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
 
