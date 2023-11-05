@@ -92,16 +92,6 @@ OneLake is designed to allow instant mounting of existing PaaS storage accounts 
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
 
-## Fabric solutions for ISVs
-
-If you're an ISV interested in integrating your solutions with Microsoft Fabric, you can use one of the following paths depending on the level of integration you want to achieve:
-
-- **Interop** - Integrate your solution with the OneLake Foundation and establish basic connections and interoperability with Fabric.
-- **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities within your existing applications. It allows you to actively leverage Fabric capabilities.
-- **Build a Fabric workload** - Create customized workloads and experiences in Fabric. Tailor your offerings to deliver their  value proposition while leveraging Fabric ecosystem.
-
-For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-ecosystem.md).
-
 ## Next steps
 
 - [Microsoft Fabric terminology](fabric-terminology.md)
