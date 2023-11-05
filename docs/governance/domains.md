@@ -12,7 +12,7 @@ ms.date: 10/30/2023
 
 Today, organizations are facing massive growth in data, and there's an increasing need to be able to organize and manage that data in a logical way that facilitates more targeted and efficient use and governance.
 
-To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called data mesh. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
+To meet this challenge, organizations are shifting from traditional IT centric data architectures, where the data is governed and managed centrally, to more federated models organized according to business needs. This federated data architecture is called *data mesh*. A data mesh is a decentralized data architecture that organizes data by specific business domains, such as marketing, sales, human resources, etc.
 
 Currently, Microsoft Fabric's data mesh architecture primarily supports organizing data into domains and enabling data consumers to be able to filter and find content by domain. It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#domain-settings-delegation), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
 
@@ -25,38 +25,36 @@ Currently, Microsoft Fabric's data mesh architecture primarily supports organizi
 
 In Fabric, a domain is a way of logically grouping together all the data in an organization that is relevant to a particular area or field. One of the most common uses for domains is to group data by business department, making it possible for departments to manage their data according to their specific regulations, restrictions, and needs.
 
-To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items included within them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
+To group data into domains, workspaces are associated with domains. When a workspace is associated with a domain, all the items in the workspace are also associated with the domain, and they receive a domain attribute as part of their metadata. Currently, the association of workspaces and the items in them with domains primarily enables a better consumption experience. For instance, in the [OneLake data hub](../get-started/onelake-data-hub.md), users can filter content by domain in order find content that is relevant to them. In addition, some tenant-level settings for managing and governing data can be [delegated to the domain level](#domain-settings-delegation), thus allowing domain-specific configuration of those settings.
 
 ### Subdomains
 
-You can create subdomains under domains. A subdomain is a way for fine tuning the logical grouping of your data. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
+A subdomain is a way for fine tuning the logical grouping of your data. You can create subdomains under domains. For information about how to create subdomains, see [Create subdomains](#create-subdomains). 
  
 ### Domain roles
 
 There are three roles involved in the creation and management of domains:
 
-* **Fabric admin** (or higher): Fabric admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Fabric admins can also see all the defined domains on the Domains page in the admin portal, and they can edit and delete domains.
+* **Fabric admin** (or higher): Fabric admins can create and edit domains, specify domain admins and domain contributors, and associate workspaces with domains. Fabric admins see all the defined domains on the Domains tab in the admin portal, and they can edit and delete domains.
 
 * **Domain admin**: Ideally, the domain admins of a domain are the business owners or designated experts. They should be familiar with the data in their area and the regulations and restrictions that are relevant to it.
 
-    Domain admins have access to the **Domains** page in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the domain image and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
+    Domain admins can access to the **Domains** tab in the admin portal, but they can only see and edit the domains they're admins of. Domain admins can update the domain description, define/update domain contributors, and associate workspaces with the domain. They also can define and update the [domain image](#domain-image) and override tenant settings for any specific settings the tenant admin has delegated to the domain level. They can't delete the domain, change the domain name, or add/delete other domain admins.
 
-* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) whom the domain or Fabric admin have authorized to associate the workspaces they're the admins of to a domain, or to change the current domain association.
+* **Domain contributor**: Domain contributors are [workspace admins](../get-started/roles-workspaces.md) whom a domain or Fabric admin has authorized to assign the workspaces they're the admins of to a domain, or to change the current domain assignment.
 
-    Domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don’t have access to the **Domains** page in the admin portal.
+    Domain contributors assign the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the **Domains** tab in the admin portal.
     
     > [!NOTE]
-    > Remember, to be able to associate a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
+    > Remember, to be able to assign a workspace to a domain, a domain contributor must be a workspace admin (that is, have the [Admin role](../get-started/roles-workspaces.md) in the workspace).
 
 ### Domain settings delegation
 
-Some tenant-level settings for managing and governing data can be [delegated to the domain level](#delegate-settings-to-the-domain-level). This allows domain-specific configuration of those settings.
-
-It also enables federated governance, which means that some governance currently controlled at the tenant level can be [delegated to domain-level control](#delegate-settings-to-the-domain-level), enabling each business unit/department to define its own rules and restrictions according to its specific business needs.
+To allow domain-specific configuration, some tenant-level settings for managing and governing data can be [delegated to the domain level](#delegate-settings-to-the-domain-level). Domain settings delegation enables each business unit/department to define its own rules and restrictions according to its specific business needs.
 
 ### Domain image
 
-When users look for data items in the OneLake data hub, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them of which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected, the image becomes part of the theme of the data hub, as illustrated in the following image.
+When users look for data items in the OneLake data hub, they might want to see only the data items that belong to a particular domain. To do this, they can select the domain in the domain selector on the data hub to display only items belonging to that domain. To remind them which domain's data items they're seeing, you can choose an image to represent your domain. Then, when your domain is selected in the domain selector, the image becomes part of the data hub's theme, as illustrated in the following image.
 
 :::image type="content" source="./media/domains/domain-image-data-hub.png" alt-text="Screenshot of the OneLake data hub with a domain image.":::
 
@@ -64,34 +62,9 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as the default domain for specific users and security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be associated to that (default) domain. These users/security groups generally automatically become domain contributors of the workspaces that assigned in this manner.
+A default domain is a domain that has been specified as the default domain for specific users and/or security groups. This means that when these users/security groups create a new workspace, or when they update an unassigned workspace they're an admin of, that workspace will automatically be assigned to that domain. These users/security groups generally automatically become domain contributors of the workspaces that are assigned in this manner.
 
-Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Specify a default domain](#specify-a-default-domain) for details.
-
-## Set up and manage domains and subdomains
-
-Fabric admins and domain admins set up and manage domains on the Domain page in the admin portal, and on each domain's specific page. You access the specific domain pages from the Domains page.
-
-### Open the Domain page
-
-To open the Domain page, go to the admin portal and select **Domains**.
-
-:::image type="content" source="./media/domains/domains-page.png" alt-text="Screenshot of domains page." lightbox="./media/domains/domains-page.png":::
-
-
-The Domains page contains a list of domains.
-
-* For Fabric admins the list includes all the domains defined in the tenant.
-
-* For domain admins, the list includes just the domains they administer.
-
-Each domain in the list has an options menu that you can access by hovering over the item and selecting **More options (...)**.
-
-### Open a specific domain's page
-
-To open the page of a specific domain, go to the Domain page and select the name of the domain you want to open. Alternatively, hover over the desired domain, select **More options (...)**, and choose **Open** from the menu that appears.
-
-:::image type="content" source="./media/domains/open-domain.png" alt-text="Screenshot of open domain menu option.":::
+For information about specifying a default domain, see [Specify a default domain](#specify-a-default-domain).
 
 ## Create a domain
 
