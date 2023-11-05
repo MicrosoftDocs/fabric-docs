@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, build-2023
-ms.date: 08/06/2023
+ms.date: 11/02/2023
 ms.search.form: 
 ---
 
@@ -46,9 +46,12 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-* Reports
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
+* [Dataflows](../../data-engineering/load-data-lakehouse.md#dataflows)
 * Datasets (except push datasets, live connections, and model v1)
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
+* Reports
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
 
