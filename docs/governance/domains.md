@@ -64,9 +64,9 @@ For information about how to specify an image for a domain, see [Specify a domai
 
 ### Default domain
 
-A default domain is a domain that has been specified as default domain for specific users and security groups. It means that when these users/security groups create a new workspace, or when they update a workspacethat they are an admin of and as yet has no associate domain, that workspace will automatically be associated to that (default) domain. In general, these users/security groups will become "default"’" contributors. Default domain contributors associate the workspaces they're an admin of in the settings of the workspace itself. They don't have access to the Domains page in the admin portal.
+A default domain is a domain that has been specified as the default domain for specific users and security groups. This means that when these users/security groups create a new workspace, or when they update an uassigned workspace they're an admin of, that workspace will automatically be associated to that (default) domain. These users/security groups generally automatically become domain contributors of the workspaces that assigned in this manner.
 
-Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Default domains](#default-domain) for details.
+Default domains are defined by tenant and domain admins in the domains section of the admin portal. See [Specify a default domain](#specify-a-default-domain) for details.
 
 ## Set up and manage domains and subdomains
 
@@ -202,7 +202,7 @@ Select **Admins** and then specify who can Admins can change domain settings and
 
 :::image type="content" source="./media/domains/domain-specify-domain-admins.png" alt-text="Screenshot showing domain admins specification section.":::
 
-### Contributors
+### Specify domain contributors
 
 You must be a domain admin of the domain or a Fabric admin to specify domain contributors.
 
@@ -213,11 +213,11 @@ Select **Contributors** and then specify who will be able to assign workspaces t
 >[!NOTE]
 > For domain contributors to be able to associate their workspaces with their domains, they must have an admin role in the workspaces they are trying to associate with the domain.
 
-### Default domain
+### Specify a default domain
 
 To specify default domain, you must be a domain admin for the domain or a Fabric admin.
 
-Go to Domain Settings and click on the Default Domain tab and specify who will be the users/security group which their WS will be assigned to the domain by default.
+Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
 
 domain-specify-default-domain.png
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
