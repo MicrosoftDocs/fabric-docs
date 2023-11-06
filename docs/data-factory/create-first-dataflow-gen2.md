@@ -150,9 +150,7 @@ Follow these steps to apply transformations and publish:
     You'll now be returned to the workspace. A spinner icon next to your dataflow name indicates publishing is in progress. Once the publishing completes, your dataflow is ready to refresh!
 
     > [!IMPORTANT]
-    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items will be provisioned along with their related SQL Endpoint and Datasets and seen in the below image. These items are shared by all dataflows in the workspace and are required for Dataflows Gen2 to operate, should not be deleted, and should not be used outside of dataflows experience. The items are an implementation detail of Dataflow Gen2 and while currently visible, they will be hidden in the future.
-
-    :::image type="content" source="media/create-first-dataflow-gen2/dataflow-staging-artifacts.png" alt-text="Screenshot of the staging items created by dataflows.":::
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL Endpoint and Datasets. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accesible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
 
 17. In your workspace, select the **Schedule Refresh** icon.
 
