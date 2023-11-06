@@ -15,7 +15,7 @@ Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark t
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-Microsoft Fabric Runtime 1.1 is the default runtime offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
+Microsoft Fabric Runtime 1.1 is one of the runtimes offered within the Microsoft Fabric platform. The Runtime 1.1 major components are:
 
 - Apache Spark 3.3
 - Operating System: Ubuntu 18.04
