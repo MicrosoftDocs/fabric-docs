@@ -14,8 +14,6 @@ ms.search.form: Data Preview and Insights
 
 Data preview provides you with a snapshot of your event data in your eventstream source, eventstream destination, or the eventstream itself. After you add sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:

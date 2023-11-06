@@ -16,9 +16,8 @@ OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure region
 
 ## Disaster recovery
 
-To protect your data from rare region-wide outages, we recommend copying your critical data to another region with a frequency aligned with the needs of your disaster recovery plan.  
-To store your data in two different regions, you need to use data items in two different workspaces. Choose workspaces that are associated with capacities in two different regions.  
+You have the option to enable or disable BCDR (Business Continuity and Disaster Recovery) for a specific capacity through the Capacity Admin Portal. If your capacity has BCDR activated, your data is duplicated and stored in two different geographic regions, making it geo-redundant. The choice of the secondary region is determined by Azure's standard region pairings and cannot be modified.
 
-Data factory in Microsoft Fabric is a useful service for creating and deploying data movement pipelines on a recurring basis. For more information, please refer to [Create your first data pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
+If a catastrophe makes the main data center unreachable, you can use OneLake's APIs through the global endpoint to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster will be lost. After a failover, the new primary data center will have local redundancy only.
 
-If a regional outage occurs, you can then access your data in a different region where the data was copied.
+For a comprehensive understanding of the end-to-end experience, please see the Fabric BCDR documentation.

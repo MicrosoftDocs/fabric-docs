@@ -16,8 +16,6 @@ The Microsoft Fabric event streams feature allows you to easily monitor streamin
 
 In an eventstream, there are two types of monitoring experiences: **Data insights** and **Runtime logs**. You see one or both views, depending on the source or destination you select.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must have:

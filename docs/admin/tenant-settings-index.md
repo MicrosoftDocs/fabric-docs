@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 10/17/2023
+ms.date: 11/02/2023
 ---
 
 # About tenant settings

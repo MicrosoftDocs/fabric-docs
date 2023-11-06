@@ -7,7 +7,7 @@ ms.reviewer:
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 ---
 
 # Manage Power BI visuals admin settings
