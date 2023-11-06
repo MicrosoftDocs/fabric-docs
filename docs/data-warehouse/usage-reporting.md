@@ -45,7 +45,7 @@ You can analyze universal compute capacity usage by workload category, across th
 
 Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
-- **Warehouse Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+- **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - **[!INCLUDE [fabric-se](includes/fabric-se.md)] Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].
 - **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
 

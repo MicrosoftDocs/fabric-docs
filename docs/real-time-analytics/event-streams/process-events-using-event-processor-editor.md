@@ -14,8 +14,6 @@ ms.search.form: Event Processor
 
 The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:

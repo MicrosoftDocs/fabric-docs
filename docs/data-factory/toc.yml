@@ -249,12 +249,10 @@
       items: 
       - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-google-cloud-storage.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-google-cloud-storage-dataflow.md
     - name: Hive LLAP
       items:
       - name: Overview
@@ -265,12 +263,10 @@
       items:
       - name: Overview
         href: connector-http-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-http.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-http-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-http-dataflows.md
     - name: IBM DB2 database
       items:
       - name: Overview
@@ -339,12 +335,10 @@
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-odata.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-odata-copy-activity.md 
-      - name: Configure in Dataflow Gen2
-        href: connector-odata-dataflows.md
     - name: Odbc
       items:
       - name: Overview
@@ -427,12 +421,10 @@
       items:
       - name: Overview
         href: connector-sharepoint-online-list-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-sharepoint-online-list.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-sharepoint-online-list-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-sharepoint-online-list-dataflows.md
     - name: Snowflake
       items:
       - name: Overview
