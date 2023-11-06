@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 10/30/2023
+ms.date: 11/06/2023
 ---
 
 # Fabric domains
@@ -147,7 +147,7 @@ The domain settings side pane has the following tabs:
 * [Image](#specify-a-domain-image): Specify domain image
 * [Admins](#specify-domain-admins): Specify domain admins
 * [Contributors](#specify-domain-contributors): Specify domain contributors
-* [Default domain](#specify-a-default-domain): Set up domain as a default domian
+* [Default domain](#specify-a-default-domain): Set up domain as a default domain
 * [Delegated settings](#delegate-settings-to-the-domain-level): Override tenant-level settings
 
 > [!NOTE]
@@ -192,7 +192,7 @@ Select **Admins** and then specify who can change domain settings and add or rem
 
 You must be a domain admin of the domain or a Fabric admin to specify domain contributors.
 
-Select **Contributors** and then specify who will be able to assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to assign workspaces to the domain. When done, select **Apply**.
+Select **Contributors** and then specify who can assign workspaces to the domain. You can specify everyone in the organization (default), specific users/groups only, or you can allow only tenant admins and the specific domain admins to assign workspaces to the domain. When done, select **Apply**.
 
 :::image type="content" source="./media/domains/domain-specify-domain-contributors.png" alt-text="Screenshot showing domain contributor specification section.":::
 
