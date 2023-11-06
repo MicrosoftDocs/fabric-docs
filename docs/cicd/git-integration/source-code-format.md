@@ -5,8 +5,8 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 06/20/2023
-ms.custom: build-2023
+ms.date: 10/20/2023
+ms.custom: ignite-2023
 ---
 
 # Git integration source code format
