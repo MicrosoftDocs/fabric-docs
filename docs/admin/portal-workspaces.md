@@ -59,7 +59,7 @@ The ribbon at the top of the list and the More options (...) menus of the indivi
 | **Capacity** |Enables you to assign the workspace to Premium capacity or to remove it from Premium capacity. |
 | **Recover** |Enables you to restore an orphaned workspace. |
 | **Restore** |Enables you to restore the MyWorkspace of a user that has left the organization, or a deleted collaborative workspace. For MyWorkspaces, see [Restore a deleted My workspace as an app workspace](#restore-a-deleted-my-workspace-as-an-app-workspace). For collaborative workspaces, see [Restore a deleted collaborative workspace](#restore-a-deleted-collaborative-workspace) |
-| **Permanently delete** |Enables you permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
+| **Permanently delete** |Enables you to permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
 
 >[!NOTE]
 > Admins can also manage and recover workspaces using PowerShell cmdlets.
@@ -94,7 +94,7 @@ By default, deleted collaborative workspaces are retained for seven days. Fabric
 >
 > This setting does not affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
 
-## Restore a deleted collaborative workspace
+### Restore a deleted collaborative workspace
 
 While a deleted collaborative workspace is in a retention period, Fabric administrators can restore it and its contents.
 
@@ -103,7 +103,7 @@ While a deleted collaborative workspace is in a retention period, Fabric adminis
 1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
 1. When done, select **Restore**.
 
-## Permanently delete a deleted collaborative workspace during the retention period
+### Permanently delete a deleted collaborative workspace during the retention period
 
 While a deleted collaborative workspace is in a retention period, Fabric administrators permanently delete it before the end of its retention period.
 
