@@ -10,7 +10,7 @@ ms.date: 06/15/2023
 
 # Fabric settings
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The Fabric settings pane provides links to various kinds of settings you can configure. This article shows how to open the Fabric settings pane and describes the kinds of settings you can access from there.
 
