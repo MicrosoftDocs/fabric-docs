@@ -15,17 +15,15 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview
 
 This article explains the data warehousing experience with the [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) of the Lakehouse, and scenarios for use of the Lakehouse in data warehousing.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created. 
+In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created.
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
 - The [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically generated for every Lakehouse and exposes Delta tables from the Lakehouse as SQL tables that can be queried using the T-SQL language.
 - Every delta table from a Lakehouse is represented as one table. Data should be in delta format.
-- The [default Power BI dataset](semantic-models.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
+- The [default Power BI semantic model](semantic-models.md) is created for every [!INCLUDE [fabric-se](includes/fabric-se.md)] and it follows the naming convention of the Lakehouse objects.
 
 There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric. Microsoft Fabric users can't create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in a workspace. A [!INCLUDE [fabric-se](includes/fabric-se.md)] is automatically created for every Lakehouse. To get a [!INCLUDE [fabric-se](includes/fabric-se.md)], [create a lakehouse](../onelake/create-lakehouse-onelake.md) and a [!INCLUDE [fabric-se](includes/fabric-se.md)] will be automatically created for the Lakehouse.
 
@@ -77,11 +75,11 @@ A [!INCLUDE [fabric-se](includes/fabric-se.md)] is not scoped to data analytics 
 
 This tight, bi-directional integration with the Fabric Lakehouse is always accessible through any engine with open APIs, the Delta format, and of course T-SQL.
 
-### Data Virtualization of external data lakes with Shortcuts
+### Data Virtualization of external data lakes with shortcuts
 
 You can use OneLake [shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines, as well as any delta table stored in Amazon S3.
 
-Any folder referenced using a shortcut can be analyzed from a [!INCLUDE [fabric-se](includes/fabric-se.md)] and a SQL table is created for the referenced dataset. The SQL table can be used to expose data in externally managed data lakes and enable analytics on them.
+Any folder referenced using a shortcut can be analyzed from a [!INCLUDE [fabric-se](includes/fabric-se.md)] and a SQL table is created for the referenced data. The SQL table can be used to expose data in externally managed data lakes and enable analytics on them.
 
 This shortcut acts as a virtual warehouse that can leveraged from a warehouse for additional downstream analytics requirements, or queried directly.
 
@@ -110,7 +108,7 @@ A [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to leave the data in
 
 [Shortcuts](../data-engineering/lakehouse-shortcuts.md) enable you to reference folders in any OneLake location.
 
-Every Microsoft Fabric Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as Delta Lake datasets in OneLake. Shortcuts enable you to reference folders in any OneLake where the Warehouse tables are exposed.
+Every Microsoft Fabric Warehouse stores table data in OneLake. If a table is append-only, the table data is exposed as Delta Lake data in OneLake. Shortcuts enable you to reference folders in any OneLake where the Warehouse tables are exposed.
 
 ### Cross workspace sharing and querying
 
@@ -140,7 +138,7 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analyt
 
 - [What is a lakehouse?](../data-engineering/lakehouse-overview.md)
 - [Create a lakehouse with OneLake](../onelake/create-lakehouse-onelake.md)
-- [Understand default Power BI datasets](semantic-models.md)
+- [Default Power BI semantic models](semantic-models.md)
 - [Load data into the lakehouse](../data-engineering/load-data-lakehouse.md)
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
