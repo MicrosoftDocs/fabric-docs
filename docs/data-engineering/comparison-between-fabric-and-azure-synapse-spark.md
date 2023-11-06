@@ -1,6 +1,6 @@
 ---
 title: Comparison between Fabric and Azure Synapse Spark.
-description: There are some differences between Azure Synapse Spark and Fabric Spark support. Below is a comparison table outlining the key differences. 
+description: There are some differences between Azure Synapse Spark and Fabric Spark support. This article outlines the key differences. 
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
@@ -20,10 +20,10 @@ The following table compares different Spark configurations for Azure Synapse Sp
 |Spark configuration | **Azure Synapse Spark** | **Fabric Spark** |
 | --- | --- | --- |
 | Spark pools | Spark pool <br>- <br>-| Starter pool / Custom pool <br>V-Order <br>High concurrency |
-| Spark configurations | Pool level <br>Notebook/SJD level| Environment level <br>Notebook/SJD level|
+| Spark configurations | Pool level <br>Notebook or Spark job definition level| Environment level <br>Notebook or Spark job definition level|
 | Spark libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>Environment libraries <br>Inline libraries|
 | Resources | Notebook (Python, Scala, Spark SQL, R, .Net) <br>Spark job definition (Python, Scala, .Net) <br>Pipelines <br>Spark-related pipeline activities (Notebook, SJD)| Notebook (Python, Scala, Spark SQL, R) <br>Spark job definition (Python, Scala, R) <br>Pipelines <br> Spark-related pipeline activities (Notebook)|
-| Data | Primary storage (ADLS Gen2) <br>Data residency (Cluster/region based) | Primary storage (OneLake) <br>Data residency (Capacity/region based) |
+| Data | Primary storage (Azure Data Lake Storage Gen2) <br>Data residency (Cluster/region based) | Primary storage (OneLake) <br>Data residency (Capacity/region based) |
 | Metadata | Internal metastore <br>External metastore (using Azure SQL DB for HMS) | Internal metastore (lakehouse) <br>-|
 | Connections | Connector type (Linked services) <br>Data Sources ([13](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary)) <br>Data Source conn. with workspace identity | Connector type (DMTS*) <br>Data Sources ([Dataflow Gen2](/power-query/connectors/)) <br> - |
 | Security | RBAC and access control (11 roles at workspace level) <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (Network Isolation) <br>Fabric Workspace Identity (FWI) <br>Data Exfiltration Protection <br>IP Firewall <br>Trusted Service for Storage Firewall bypass (with workspace identity) <br>Service Tags <br>- <br>Key Vault (via mssparkutils and Linked service) | RBAC and access control (4 roles at workspace level) <br> - <br> - <br>- <br>Fabric Workspace Identity (FWI) <br>- <br> Only Control plane <br> - <br>Service Tags <br> - <br>Key Vault (via mssparkutils (public endpoint)) |
@@ -37,11 +37,11 @@ The following table compares different Spark configurations for Azure Synapse Sp
 
 ## Fabric capability details
 
-- **DMTS integration**: Users still cannot leverage DMTS via notebook and SJDs.
+- **DMTS integration**: You can't use the DMTS via notebook and SJDs.
 - **Git integration**: Git integration and versioning of Spark-related items is [in the roadmap](/fabric/release-plan/data-engineering) but not supported yet in Fabric.
 - **Managed Identity**: Run notebooks/Spark jobs using the workspace identity and support for managed identity for Azure KeyVault in notebooks not supported yet in Fabric.
 - **Livy API and the way to submit and manage Spark jobs**: Livy API is in the roadmap but not exposed yet in Fabric. Users need to create notebooks/SJD using the Fabric UI. 
-- **CI/CD**: Users can leverage Fabric API/SDK, but not built-in support with Deployment Pipelines yet.
+- **CI/CD**: You can use the Fabric API/SDK, but not built-in support with Deployment Pipelines yet.
 - **Spark logs and metrics**: In Azure Synapse you can emit Spark logs and metrics to your own storage, such as Log Analytics, Blob, and Event Hubs. Similarly, you can get a list of spark applications for the workspace from the API. Both capabilities are currently unavailable in Fabric.
 - **JDBC**: JDBC connections support is not available in Fabric.
 - **Concurrency limits**: In terms of concurrency, Azure Synapse Spark has a limit of 50 simultaneous running jobs per Spark pool and 200 queued jobs per Spark pool. The maximum active jobs are 250 per Spark pool and 1000 per workspace. In Microsoft Fabric Spark, the concurrency limits are defined by capacity SKU with varying limits on max concurrent jobs ranging from 1 to 512. Also, Microsoft Fabric Spark has a dynamic reserve-based throttling system to manage concurrency and ensure smooth operation even during peak usage times. Learn more about [Spark concurrency limits](spark-job-concurrency-and-queueing.md) and [Fabric capacities](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All). 
@@ -74,7 +74,7 @@ The following table compares the features and specifications of Azure Synapse Sp
 
 
 - **Runtime**: Spark 2.4, 3.1, and 3.2 versions are not supported in Fabric. Fabric Spark supports Spark 3.3 with Delta 2.2 within [Runtime 1.1](runtime-1-1.md) and Spark 3.4 with Delta 2.4 within [Runtime 1.2](runtime-1-2.md). 
-- **Autoscale**: In Azure Synapse Spark the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
+- **Autoscale**: In Azure Synapse Spark, the pool can scale up to 200 nodes regardless of the node size. In Fabric, the maximum number of nodes is subjected to node size and provisioned capacity. See the following example for the F64 SKU.
 
     | Spark pool size | Azure Synapse Spark | Fabric Spark (Custom Pool, SKU F64) |
     | -- | -- | -- |
@@ -85,18 +85,18 @@ The following table compares the features and specifications of Azure Synapse Sp
     | XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
 
 - **Adjustable node sizes**: In Azure Synapse Spark you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark vcores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark vcores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, the total of vcores in the capacity / vcores per node size = total number of nodes available. Learn more [Spark compute](spark-compute.md).
-- **Node size family**: Fabric Spark pools only support [Memory Optimized SKUs](spark-compute.md) for now. If you're using GPU-accelerated SKU Spark pool in Azure Synapse, those are not available in Fabric.
+- **Node size family**: Fabric Spark pools only support [Memory Optimized SKUs](spark-compute.md) for now. If you're using GPU-accelerated SKU Spark pool in Azure Synapse, they are not available in Fabric.
 - **Node size**: xxlarge node size comes with 432gb of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64vcores. The rest of the node sizes (small - xlarge) keep the same vcores and memory both in [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
-- **Automatic pausing**: if enabled in Azure Synapse Spark, the Apache Spark pool will automatically pause after a specified amount of idle time. This is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric. 
+- **Automatic pausing**: if enabled in Azure Synapse Spark, the Apache Spark pool will automatically pause after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric. 
 - **High concurrency**: Fabric supports [high concurrency in Notebooks](high-concurrency-overview.md).
-- **Multiple Spark pools**: If you want to keep multiple Spark pools, pool selection by notebook or Spark job is supported by Environments in Fabric. 
+- **Multiple Spark pools**: If you want to have multiple Spark pools, pool selection by notebook or Spark job is supported by Environments in Fabric. 
 - **Allow session level packages**: in Azure Synapse Spark, users have an option to enable/disable session level packages in a pool. Session level packages are always allowed in Fabric Spark pools.
 
 ## Spark Configurations comparison
 
 Spark configurations can be applied at different levels:
 
-- **Environment level**: those configurations will be used as the default configuration for all jobs in the environment.
+- **Environment level**: those configurations are used as the default configuration for all jobs in the environment.
 - **Inline level**: you can configure Spark configurations inline using notebooks and SJD.
 
     | Spark configuration| Azure Synapse Spark | Fabric Spark |
@@ -109,9 +109,9 @@ Spark configurations can be applied at different levels:
   While both options are supported in Azure Synapse Spark and Fabric, there are some considerations:
 
 - **Environment level**: In Azure Synapse, you can define multiple Spark configurations and assign them to different Spark pools. You can do that in Fabric by using Environments. 
-- **Inline**: In Azure Synapse, both notebooks and Spark jobs support attaching different Spark configurations. In Fabric, session level configurations can be customized by ```spark.conf.set(<conf_name>, <conf_value>)```. For batch jobs, configurations can also be applied via SparkConf.  
+- **Inline**: In Azure Synapse, both notebooks and Spark jobs support attaching different Spark configurations. In Fabric, session level configurations are customized by ```spark.conf.set(<conf_name>, <conf_value>)```. For batch jobs, configurations can also be applied via SparkConf.  
 - **Import/export**: this option for Spark configurations is available in the Fabric environment artifact. 
-- Additional considerations:
+- **Other considerations:**
     
     - **Immutable Spark configurations**: Some Spark configurations are immutable. If you're getting ``` AnalysisException: Cannot modify the value of a Spark config: <config_name>. See also 'https://spark.apache.org/docs/latest/sql-migration-guide.html#ddl-statements'``` means that that property is immutable. See the list of immutable Spark configurations here.
     - **FAIR scheduler**: Azure Synapse uses FIFO by default, FAIR in Fabric Spark. 
@@ -191,7 +191,7 @@ In terms of Spark job definition, these are important considerations:
 - **Import/export**: in Azure Synapse Spark you can import/export JSON-based Spark job definition from the UI. This feature is not available yet in Fabric.
 - **.NET for Spark C#**: Fabric does not support .Net Spark (C#). However, the recommendation is that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
 - **Pipeline activity support**: Data pipelines in Fabric don't include Spark job definition activity yet. You could use scheduled runs if you want to run your Spark job periodically.
-- **Built-in scheduled run support**: Fabric supports [scheduled runs for SJD](run-spark-job-definition.md).
+- **Built-in scheduled run support**: Fabric supports [scheduled runs for a Spark Job Definition](run-spark-job-definition.md).
 - **Retry policies** enable users to run Spark structured streaming jobs indefinitely.
 
 ## Data and Pipelines comparison
@@ -206,7 +206,7 @@ Data and pipeline considerations:
 
 ### pipelines
 
-- SJD pipeline activity is not supported in Fabric Data Factory pipelines.
+- Spark Job Definition pipeline activity is not supported in Fabric Data Factory pipelines.
 
 ## Hive Metastore (HMS) comparison
 
