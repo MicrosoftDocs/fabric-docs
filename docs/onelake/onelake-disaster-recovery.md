@@ -16,8 +16,8 @@ OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure region
 
 ## Disaster recovery
 
-You have the option to enable or disable BCDR (Business Continuity and Disaster Recovery) for a specific capacity through the Capacity Admin Portal. If your capacity has BCDR activated, your data is duplicated and stored in two different geographic regions, making it geo-redundant. The choice of the secondary region is determined by Azure's standard region pairings and cannot be modified.
+You can enable or disable BCDR (Business Continuity and Disaster Recovery) for a specific capacity through the Capacity Admin Portal. If your capacity has BCDR activated, your data is duplicated and stored in two different geographic regions, making it geo-redundant. The choice of the secondary region is determined by Azure's standard region pairings and can't be modified.
 
-If a catastrophe makes the main data center unreachable, you can use OneLake's APIs through the global endpoint to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster will be lost. After a failover, the new primary data center will have local redundancy only.
+If a disaster makes the primary region unrecoverable, OneLake may initiate a regional failover.  Once the failover has completed, you can use OneLake's APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster will be lost. After a failover, the new primary data center will have local redundancy only.
 
-For a comprehensive understanding of the end-to-end experience, please see the Fabric BCDR documentation.
+For a comprehensive understanding of the end-to-end experience, see the Fabric BCDR documentation.
