@@ -1,6 +1,6 @@
 ---
 title: Pricing scenario - Data pipelines load 1 TB of Parquet data to a Lakehouse table
-description: This article provides an example pricing scenario for loading 1 TB of Parquest data to a Lakehouse table using Data Factory in Microsoft Fabric.
+description: This article provides an example pricing scenario for loading 1 TB of Parquet data to a Lakehouse table using Data Factory in Microsoft Fabric.
 ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
@@ -19,11 +19,11 @@ The prices used in the following example are hypothetical and don’t intend to 
 
 To accomplish this scenario, you need to create a pipeline with the following configuration:
 
-:::image type="content" source="media/pricing-scenarios/load-1tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to a Lakehouse table.":::
+:::image type="content" source="media/pricing-scenarios/load-1-tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the configuration of a pipeline copying CSV data to a Lakehouse table.":::
 
 ## Cost estimation using the Fabric Metrics App
 
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-1-tb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
 The data movement operation utilized 291,960 CU seconds with a 810.16 second (13.5 minute) duration while activity run operation was null since there weren’t any non-copy activities in the pipeline run.
 

@@ -22,21 +22,21 @@
         - name: Data pipelines
           items:
           - name: Load 1 TB of Parquet data to a data Warehouse
-            href: pricing-scenario-load-1tb-parquet-to-data-warehouse.md
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
           - name: Load 1 TB of Parquet data to a data warehouse with staging
-            href: pricing-scenario-load-1tb-parquet-to-data-warehouse-staging.md
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
           - name: Load 1 TB of CSV data to Lakehouse tables
-            href: pricing-scenario-load-1tb-csv-to-lakehouse-table.md
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
           - name: Load 1 TB of CSV data to Lakehouse files
-            href: pricing-scenario-load-1tb-csv-to-lakehouse-files.md
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
           - name: Load 1 TB of Parquet data to a Lakehouse table
-            href: pricing-scenario-load-1tb-parquet-to-lakehouse-table.md
+            href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
         - name: Dataflows Gen2
           items:
           - name: Load 2 GB of on-premises CSV data to a Lakehouse table
-            href: pricing-scenario-dataflows-gen2-load-2gb-csv-to-lakehouse-table.md
+            href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
           - name: Load 2 GB of Parquet data to a Lakehouse table
-            href: pricing-scenario-dataflows-gen2-load-2gb-parquet-to-lakehouse-table.md
+            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
   - name: Get started
     items:
     - name: Create a dataflow

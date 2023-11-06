@@ -33,7 +33,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 ## Cost estimation using the Fabric Metrics App
 
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2gp-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2-gb-on-premises-csv-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-1-metrics-details-1.png" alt-text="Screenshot showing details of the Dataflow Gen2 Refresh cost":::
 

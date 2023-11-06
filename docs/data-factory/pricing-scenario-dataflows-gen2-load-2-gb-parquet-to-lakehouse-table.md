@@ -33,7 +33,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 ## Cost estimation using the Fabric Metrics App
 
-:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2gp-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
+:::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2-gb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-1.png" alt-text="Screenshot showing details of Dataflow Gen2 Refresh consumption.":::
 
@@ -43,7 +43,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-4.png" alt-text="Screenshot showing details of a second Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-5.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Comput, Warehouse Query, and OneLake Compute consumption used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-5.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute, Warehouse Query, and OneLake Compute consumption used in the run.":::
 
 The Standard Compute Meter recorded negligible activity, insufficient for inclusion in the Metrics App report. Thus, we can approximate the consumption for Query executions and Dataflow Gen2 refresh operations as 0 Compute Units (CUs). It's important to note that other operations, including Warehouse Query, SQL Endpoint Query, and Dataset On-Demand Refresh, constitute detailed aspects of Dataflow Gen2 implementation that are currently transparent and necessary for their respective operations. However, these operations will be concealed in future updates and should be disregarded when estimating costs for Dataflow Gen2.
 
@@ -52,7 +52,7 @@ High Scale Dataflow Compute operation meter consumed 10.44 CU(s) + 10.68 CU (s) 
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
-|Metric  |Standard Compute | Shigh Scale Compute  |
+|Metric  |Standard Compute | High Scale Compute  |
 |---------|---------|---------|
 |Effective CU hours billed | 0 / (60*60) = 0  CU hours | 21.12 / (60*60) = 0.0059 CU-hour |
 
