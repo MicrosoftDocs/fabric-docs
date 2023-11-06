@@ -85,6 +85,16 @@
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
           "redirect_document_id": true
         },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": true
+        },
         { 
           "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
