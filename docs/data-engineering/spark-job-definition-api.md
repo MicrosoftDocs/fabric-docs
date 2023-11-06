@@ -31,7 +31,7 @@ The item detail is specified inside the request body. Here's an example of the r
 
 ```json
 {
-    "name": "SJDHelloWorld",
+    "displayName": "SJDHelloWorld",
     "type": "SparkJobDefinition",
     "definition": {
         "format": "SparkJobDefinitionV1",
