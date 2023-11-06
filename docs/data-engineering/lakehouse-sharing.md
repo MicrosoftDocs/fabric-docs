@@ -12,13 +12,14 @@ ms.search.form: Lakehouse Sharing Permissions
 # How lakehouse sharing works?
 By sharing, users grant other users or a group of users access to a lakehouse without giving access to the workspace and the rest of its items. Shared lakehouse can be found through Data Hub or the Shared with Me section in Microsoft Fabrics.
 
-When someone shares a lakehouse, they also grant access to the SQL endpoint and associated default dataset.
+When someone shares a lakehouse, they also grant access to the SQL analytics endpoint and associated default dataset.
 
 Sharing dialog can be started by clicking the Share button next to the lakehouse name in the Workspace view.
 
 ## Sharing and permissions
-Lakehouse sharing by default grants users Read permission on shared lakehouse, associated SQL endpoint, and default dataset. In addition to default permission, the users can receive:
-- ReadData permission on SQL endpoint to access data without SQL policy.
+Lakehouse sharing by default grants users Read permission on shared lakehouse, associated SQL analytics endpoint, and default dataset. In addition to default permission, the users can receive:
+
+- ReadData permission on the SQL analytics endpoint to access data without SQL policy.
 - ReadAll permission on the lakehouse to access all data using Apache Spark.
 - Build permission on the default dataset to allow building Power BI reports on top of the dataset.
 
