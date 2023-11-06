@@ -20,13 +20,13 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 |--|--|--|--|--|
 | DataFactory | Azure Data Factory | Both | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
-| PowerBI | Power BI and Microsoft Fabric | Both | No | Yes |
+| Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
 | KustoAnalytics | Real-Time Analytics | Both | No | No |
 
-## Enable service tags
+## Use service tags
 
-To enable Azure service tags for Fabric, you can follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags). These instructions use SQL Managed Instance as an example.
+You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
 
 ## Next steps
 

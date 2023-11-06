@@ -99,6 +99,12 @@
         href: connector-azure-data-explorer-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-kusto-dataflows.md
+    - name: Azure Data Lake Storage Gen1
+      items:
+      - name: Overview
+        href: connector-azure-data-lake-storage-gen1-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
@@ -107,6 +113,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Configure in Dataflow Gen2
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
+    - name: Azure Database for PostgreSQL
+      items:
+      - name: Overview
+        href: connector-azure-database-for-postgresql-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-database-for-postgresql-copy-activity.md 
     - name: Azure Databricks
       items:
       - name: Overview
