@@ -99,7 +99,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 |--|--|--|--|--|
 | Artificial intelligence (AI) | AI function evaluation. | AI | Power BI | Background |
 | Background query | Queries for refreshing tiles and creating report snapshots. | Semantic model | Power BI | Background |
-| [Dataflow DirectQuery](power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model. | Dataflow Gen1 | Power BI | Interactive |
+| [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model. | Dataflow Gen1 | Power BI | Interactive |
 | [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI | Background |
 | Semantic model on-demand refresh | A background Semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI | Background |
 | Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI | Background |
