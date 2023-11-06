@@ -189,8 +189,6 @@ Fabric Data Factory can perform the following tasks:
 
 This method uses Data Factory Copy assistant to connect to the source dedicated SQL pool, convert the dedicated SQL pool DDL syntax to Fabric, and copy data to Fabric Warehouse. You can select 1 or more target tables (for TPC-DS dataset there are 22 tables). It generates the ForEach to loop through the list of tables selected in the UI and spawn 22 parallel Copy Activity threads.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-copy-data.png" alt-text="Screenshot of Copy Wizard depicting the option to select tables to migrate.":::
-
 - 22 SELECT queries (one for each table selected) were generated and executed in the dedicated SQL pool.
 - Make sure you have the appropriate DWU and resource class to allow the queries generated to be executed. For this case, you need a minimum of DWU1000 with `staticrc10` to allow a maximum of 32 queries to handle 22 queries submitted.
 - Data Factory direct copying data from the dedicated SQL pool to Fabric Warehouse requires staging. The ingestion process consisted of two phases. 
@@ -254,7 +252,7 @@ This Data Pipeline accepts a parameter `SchemaName`, which allows you to specify
 
 In the **Default value** field, enter  a comma-delimited list of table schema indicating which schemas to migrate: `'dbo','tpch'` to provide two schemas, `dbo` and `tpch`.
 
-:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field is 'SchemaName'. In the Default value field,  ":::
+:::image type="content" source="media/migration-synapse-dedicated-sql-pool-warehouse/fabric-data-factory-parameters-schemaname.png" alt-text="Screenshot from Data Factory showing the Parameters tab of a Data Pipeline. In the Name field, 'SchemaName'. In the Default value field, 'dbo','tpch', indicating these two schemas should be migrated. ":::
 
 ##### Pipeline design: Lookup activity
 
