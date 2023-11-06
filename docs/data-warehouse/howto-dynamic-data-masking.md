@@ -5,7 +5,7 @@ author:      SQLStijn-MSFT
 ms.author:   stwynant 
 ms.reviewer: wiassaf
 ms.topic:  how-to
-ms.date:  10/31/2023
+ms.date:  11/06/2023
 ---
 
 # How to implement dynamic data masking in Synapse Data Warehouse
@@ -41,13 +41,13 @@ Before you begin, make sure you have the following:
 1. Select the **New SQL query** option, and under **Blank**, select **New SQL query**.
 1. In your SQL script, define dynamic data masking rules using the `MASKED WITH FUNCTION` clause. For example:
     
-```sql
+    ```sql
     CREATE TABLE dbo.EmployeeData (
         EmployeeID INT
         ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"-",2)') NULL
         ,LastName VARCHAR(50) MASKED WITH (FUNCTION = 'default()') NULL
         ,SSN CHAR(11) MASKED WITH (FUNCTION = 'partial(0,"XXX-XX-",4)') NULL
-		,email VARCHAR(256) NULL
+	,email VARCHAR(256) NULL
         );
     GO
     INSERT INTO dbo.EmployeeData
@@ -60,7 +60,7 @@ Before you begin, make sure you have the following:
 
     - The `FirstName` column shows only the first and last two characters of the string, with `-` in the middle.
     - The `LastName` column shows `XXXX`.
-    - the `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
+    - The `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
 1. Select the **Run** button to execute the script.
 1. Confirm the execution of the script.
 1. The script will apply the specified dynamic data masking rules to the designated columns in your table. 
@@ -102,8 +102,7 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 
 1. You can add a mask to an existing column, using the `MASKED WITH FUNCTION` clause:
 
-    
-```sql
+    ```sql
     ALTER TABLE dbo.EmployeeData
     ALTER COLUMN [email] varchar(256) MASKED WITH (FUNCTION = 'email()');
     GO
@@ -128,5 +127,3 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
-
-
