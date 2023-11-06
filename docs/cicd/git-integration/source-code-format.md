@@ -26,6 +26,7 @@ Each item's directory has specific [mandatory files that define that item](/powe
 The following items are currently supported in Microsoft Fabric:
 
 - [Dataset files](#dataset-files)
+- [Notebook files](#notebook-files)
 - [Paginated report files](#paginated-report-files)
 - [Report files](#report-files)
 
@@ -39,6 +40,14 @@ Dataset folders contain the following files:
 :::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
 
 For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+
+### Notebook files
+
+Notebook folders contain a *.py* file
+
+:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="creenshot of directory tree showing files in the notebook directory.":::
+
+For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md).
 
 ### Paginated report files
 
