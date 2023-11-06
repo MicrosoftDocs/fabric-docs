@@ -59,10 +59,10 @@ landingContent:
             url: create-empty-table.md
       - linkListType: how-to-guide
         links: 
-        - text: Get data from a blob
-          url: get-data-blob.md
-        - text: Get data from a blob container 
-          url: get-data-blob-container.md
+        - text: Get data from Azure storage
+          url: get-data-azure-storage.md
+        - text: Get data from Amazon S3
+          url: get-data-amazon-s3.md
         - text: Get data from Azure Event Hubs
           url: get-data-event-hub.md
         - text: Get data from OneLake
