@@ -55,5 +55,5 @@ For more information, see [Create stored functions](create-functions.md)
 ## Related content
 
 * [Create a database](create-database.md)
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 * [Query data in a KQL queryset](kusto-query-set.md)
