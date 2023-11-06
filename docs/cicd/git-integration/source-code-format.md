@@ -45,7 +45,7 @@ For more information about dataset folders and a complete list of their contents
 
 Notebook folders contain a *.py* file
 
-:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="creenshot of directory tree showing files in the notebook directory.":::
+:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
 
 For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md).
 
