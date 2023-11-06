@@ -48,6 +48,24 @@ When more details regarding the consumption rate are available, a link to the do
 
 This section is divided into Fabric experience. Each experience had a table that lists its operations.
 
+### Data Factory
+
+The Real-Time analytics experience contains operations for [Dataflows Gen2](#dataflows-gen2) and [Pipelines](#pipelines).
+
+#### Dataflows Gen2
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation.      | Dataflow Gen2 | Dataflows Standard Compute  | Background |
+| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint. | Warehouse     | High Scale Dataflow Compute | Background |
+
+#### Pipelines
+
+| Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
+| DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units. | Pipeline | Data Movement       | Background |
+| ActivityRun  | A Data Factory data pipeline activity execution.                                                                         | Pipeline | Data Orchestration  | Background |
+
 ### Data Warehouse
 
 One Data Warehouse core is equivalent to two CUs.
@@ -115,22 +133,7 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 ### Real-Time Analytics
 
-The Real-Time analytics experience contains operations for the following features:
-
-* [Dataflows Gen2](#dataflows-gen2)
-
-* [Event streams](#event-streams)
-
-* [KQL Database and KQL Queryset](#kql-database-and-kql-queryset)
-
-* [Pipelines](#pipelines)
-
-#### Dataflows Gen2
-
-| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
-| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation.      | Dataflow Gen2 | Dataflows Standard Compute  | Background |
-| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint. | Warehouse     | High Scale Dataflow Compute | Background |
+The Real-Time analytics experience contains operations for [Event streams](#event-streams) and [KQL Database and KQL Queryset](#kql-database-and-kql-queryset).
 
 #### Event streams
 
@@ -145,13 +148,6 @@ The Real-Time analytics experience contains operations for the following feature
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
 | KustoUpTime | Measure of the time that the KQL database is Active. | KQL Database or KQL Queryset | KQL Compute         | Interactive |
-
-#### Pipelines
-
-| Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
-| DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units. | Pipeline | Data Movement       | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution.                                                                         | Pipeline | Data Orchestration  | Background |
 
 ### Spark
 
