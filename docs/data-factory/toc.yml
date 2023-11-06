@@ -51,6 +51,12 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+    - name: Migrate to Data Factory
+      items:
+      - name: Migrate from ADF and Power BI
+        href: upgrade-paths.md
+      - name: Move queries from Dataflows Gen1 to Gen2
+        href: move-dataflow-gen1-to-dataflow-gen2.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
@@ -595,8 +601,6 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
-      - name: Move queries from Dataflow Gen1 to Dataflow Gen2
-        href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: Tutorials
       items:  
       - name: Use a dataflow in a pipeline
