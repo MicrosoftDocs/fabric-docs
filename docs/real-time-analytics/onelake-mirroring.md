@@ -20,7 +20,7 @@ In this article, you learn how to enable availability of KQL Database data in On
 
 ## How it works
 
-* There's no additional cost for enabling the policy. You're charged only once for the storage of data in your kQL database.
+* There's no additional cost for enabling the policy. You're charged only once for the storage of data in your KQL database.
 
 When you **enable** the policy on your KQL database or table:
 
