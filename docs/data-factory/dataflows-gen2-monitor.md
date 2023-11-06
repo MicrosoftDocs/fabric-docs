@@ -4,7 +4,7 @@ description: An overview of refresh history and monitoring for dataflows feature
 author: luitwieler
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/3/2023
 ms.author: jeluitwi
 ---
 
@@ -16,7 +16,7 @@ Monitoring your dataflow refreshes is key in ensuring that your dataflows are ru
 
 Refresh history is available using the drop-down menu in your workspace. You can access it by selecting the **Refresh History** button.
 
-:::image type="content" source="./media/dataflows-gen2-monitor/open-refresh-history.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/open-refresh-history.png" alt-text="Screenshot of the dataflow dropdown box with Refresh history emphasized." lightbox="./media/dataflows-gen2-monitor/open-refresh-history.png":::
 
 When you open your dataflow refresh history, you first notice a list of all your data refreshes. This first screen provides you with information about:
 
@@ -25,7 +25,7 @@ When you open your dataflow refresh history, you first notice a list of all your
 - Duration
 - Type
 
-:::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen.":::
+:::image type="content" source="./media/dataflows-gen2-monitor/refresh-history.png" alt-text="Screenshot of the refresh history screen." lightbox="./media/dataflows-gen2-monitor/refresh-history.png":::
 
 You can take some actions right away from this page like start a new refresh, schedule a refresh, or edit the dataflow.
 
