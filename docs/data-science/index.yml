@@ -52,9 +52,9 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Discover relationships in a Power BI dataset using semantic link (preview)
+          - text: Discover relationships in a semantic model, using semantic link (preview)
             url: tutorial-power-bi-relationships.md 
-          - text: Analyze functional dependencies in a Power BI dataset using semantic link (preview)
+          - text: Analyze functional dependencies in a semantic model, using semantic link (preview)
             url: tutorial-power-bi-dependencies.md   
 
   # Card 
@@ -154,5 +154,5 @@ landingContent:
             url: read-write-power-bi.md
           - text: Detect, explore, and validate functional dependencies in your data
             url: semantic-link-validate-data.md
-          - text: Explore and validate relationships in datasets
+          - text: Explore and validate relationships in semantic models
             url: semantic-link-validate-relationship.md
