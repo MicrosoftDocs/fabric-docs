@@ -55,7 +55,7 @@ Learn more about how to [create an Apache Spark job definition](create-spark-job
 
 Follow these key steps for migration:
 * Prerequisites.
-* Step 1: Export Spark job definition from Azure Synapse to OneLake (json).
+* Step 1: Export Spark job definition from Azure Synapse to OneLake (.json).
 * Step 2: Import Spark job definition automatically into Fabric using the Fabric API.
 
 ### Prerequisites
@@ -106,5 +106,5 @@ Step 2 is when Spark job definitions are imported from intermediate storage into
 ## Next steps
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
-- [Migrate data and pipelines](migrate-synapse-spark-job-definition.md)
 - [Migrate notebooks](migrate-synapse-notebooks.md)
+- [Migrate data and pipelines](migrate-synapse-spark-job-definition.md)
