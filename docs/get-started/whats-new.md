@@ -184,6 +184,8 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
+|November 2023|**Power BI semantic models**|Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to [Microsoft Fabric semantic models](../data-warehouse/semantic-models.md) as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).|
+|November 2023|**SQL analytics endpoint**|Microsoft has renamed the SQL endpoint of a Lakehouse to the [SQL *analytics* endpoint of a Lakehouse](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).|
 |October 2023|**Support for sp_rename**|Support for the T-SQL [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true) syntax is now available for both [!INCLUDE [fabric-dw](../data-warehouse/includes/fabric-dw.md)] and [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)].|
 |October 2023|**Query insights**|The [query insights](../data-warehouse/query-insights.md) feature is a scalable, sustainable, and extendable solution to enhance the SQL analytics experience. With historic query data, aggregated insights, and access to actual query text, you can analyze and tune your query performance. |
 |October 2023|**Full DML to Delta Lake Logs**| [Fabric Warehouse now publishes all Inserts, Updates and Deletes](https://blog.fabric.microsoft.com/blog/announcing-fabric-warehouse-publishing-full-dml-to-delta-lake-logs?ft=All) for each table to their [Delta Lake Log](../data-warehouse/query-delta-lake-logs.md) in OneLake.|
