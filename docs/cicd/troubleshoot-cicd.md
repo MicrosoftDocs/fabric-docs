@@ -22,7 +22,7 @@ To understand the considerations and limitations of various lifecycle management
 | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
 | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
 | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#deployed-items) |
-| **Semantic model** |   | [semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations)
+| **Semantic model** |   | [Dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
 
 * [Git integration](#git-integration)  
 

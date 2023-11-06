@@ -96,11 +96,11 @@ You can either assign one workspace to your pipeline and deploy it across the pi
 
 Multi-geo is supported. It may take longer to deploy content between stages in different geographic locations.
 
-### What can I do if I have a semantic model with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
+### What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables?
 
-Semantic models that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a semantic model with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your semantic model so that it works in deployment pipelines.
+Datasets that use DirectQuery or Composite connectivity mode and have variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables aren't supported in deployment pipelines. If your deployment fails and you think it's because you have a dataset with a variation table, you can look for the [variations](/dotnet/api/microsoft.analysisservices.tabular.column.variations) property in your table's columns. You can use one of the methods listed below to edit your semantic model so that it works in deployment pipelines.
 
-* In your semantic model, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
+* In your dataset, instead of using DirectQuery or Composite mode, use [import](/power-bi/connect-data/service-dataset-modes-understand#import-mode) mode.
 
 * Remove the [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables from your semantic model. If necessary, delete any remaining variations from all the columns in your tables. Deleting a variation may invalidate user authored measures, calculated columns and calculated tables. Use this method only if you understand how your semantic model model works as it may result in data corruption in your visuals.
 
