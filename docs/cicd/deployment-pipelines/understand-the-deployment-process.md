@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 09/28/2023
+ms.date: 11/02/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -132,17 +132,15 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Datasets
-
-* Reports
-
-* Dataflows
-
-* Datamarts
-
 * Dashboards
-
+* Dataflows
+* Datamarts
+* Datasets
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
 * Paginated reports
+* Reports
+* [Warehouse](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 

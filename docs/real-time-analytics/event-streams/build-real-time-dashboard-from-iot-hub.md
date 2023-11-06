@@ -15,8 +15,6 @@ ms.search.form: Event Streams Tutorials
 
 If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you begin, make sure you have:

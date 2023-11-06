@@ -4,10 +4,10 @@ description: Learn more about the lakehouse data warehousing experience in Micro
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/04/2023
 ms.topic: conceptual
 ms.custom: build-2023
-ms.search.form: SQL Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # Better together: the lakehouse and warehouse
 
@@ -17,9 +17,9 @@ This article explains the data warehousing experience with the [[!INCLUDE [fabri
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
-## What is a Lakehouse SQL Endpoint?
+## What is a Lakehouse SQL analytics endpoint?
 
-In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) is automatically created. 
+In Fabric, when you [create a lakehouse](../onelake/create-lakehouse-onelake.md), a [[!INCLUDE [fabric-se](includes/fabric-dw.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) is automatically created. 
 
 The [!INCLUDE [fabric-se](includes/fabric-se.md)] enables you to query data in the Lakehouse using T-SQL language and TDS protocol. Every Lakehouse has one [!INCLUDE [fabric-se](includes/fabric-se.md)], and each workspace can have more than one Lakehouse. The number of [!INCLUDE [fabric-se](includes/fabric-se.md)]s in a workspace matches the number of Lakehouse items.
 
@@ -34,7 +34,7 @@ There's no need to create a [!INCLUDE [fabric-se](includes/fabric-se.md)] in Mic
 
 ### Automatic Metadata Discovery
 
-A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#automatically-generated-schema-in-the-sql-endpoint-of-the-lakehouse).
+A seamless process reads the delta logs and from the files folder and ensures SQL metadata for tables, such as statistics, is always up to date. There's no user action needed, and no need to import, copy data, or set up infrastructure. For more information, see [Automatically generated schema in the [!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#automatically-generated-schema-in-the-sql-analytics-endpoint-of-the-lakehouse).
 
 ## Scenarios the Lakehouse enables for data warehousing
 
@@ -134,7 +134,7 @@ Use the following steps to enable cross-workspace data analytics:
 
 Data partitioning is a well-known data access optimization technique in data lakes. Partitioned data sets are stored in the hierarchical folders structures in the format `/year=<year>/month=<month>/day=<day>`, where `year`, `month`, and `day` are the partitioning columns. Partitioned data sets enable faster data access if the queries are filtering data using the predicates that filter data by comparing predicate columns with a value.
 
-A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
+A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) can represent partitioned Delta Lake data sets as SQL tables and enable you to analyze them.
 
 ## Related content
 
@@ -145,5 +145,5 @@ A [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoi
 - [How to copy data using Copy activity in Data pipeline](../data-factory/copy-data-activity.md)
 - [Tutorial: Move data into lakehouse via Copy assistant](../data-factory/tutorial-move-data-lakehouse-copy-assistant.md)
 - [Connectivity](connectivity.md)
-- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] of the lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse)
+- [[!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse)
 - [Query the Warehouse](query-warehouse.md)
