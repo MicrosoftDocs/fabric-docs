@@ -17,7 +17,7 @@ Before you begin your migration, you should verify that [Fabric Data Engineering
 
 The initial step in crafting a migration strategy is to assess suitability. It's worth noting that certain Fabric features related to Spark are currently in development or planning. For more details and updates, visit the [Fabric roadmap](/fabric/release-plan/). 
 
-You can also learn about Fabric security and governance guidance [here](migrate-synapse-overview.md). For Spark, see a detailed comparison [differences between Azure Synapse Spark and Fabric](migrate-synapse-overview.md).
+For Spark, see a detailed comparison [differences between Azure Synapse Spark and Fabric](migrate-synapse-overview.md).
 
 ## Migration scenarios
 
