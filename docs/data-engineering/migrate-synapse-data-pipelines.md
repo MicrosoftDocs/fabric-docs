@@ -24,9 +24,8 @@ You have two options for data migration:
 
 If you’re interacting with ADLS Gen2 and want to avoid data duplication, you can create a shortcut to the ADLS Gen2 source path in OneLake. You can create shortcuts within the **Files** and **Tables** sections of the lakehouse in Fabric with the following considerations:
 
-- The **Files** section is the unmanaged area of the lake. If your data is in CSV, JSON, or Parquet format, we recommend creating a shortcut to this area.
-
-- The **Tables** section is the managed area of the lake. All tables, both Spark-managed and unmanaged tables, are registered here. If your data is in Delta format, you can create a shortcut in this area and the automatic discovery process automatically registers those Delta tables in the lakehouse’s metastore.
+* The **Files** section is the unmanaged area of the lake. If your data is in CSV, JSON, or Parquet format, we recommend creating a shortcut to this area.
+* The **Tables** section is the managed area of the lake. All tables, both Spark-managed and unmanaged tables, are registered here. If your data is in Delta format, you can create a shortcut in this area and the automatic discovery process automatically registers those Delta tables in the lakehouse’s metastore.
 
 Learn more on creating an [ADLS Gen2 shortcut](../onelake/create-adls-shortcut.md).
 
