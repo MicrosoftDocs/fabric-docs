@@ -11,8 +11,6 @@ ms.search.form: Data management
 ---
 # Create materialized views
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
 * Empty materialized view: it includes records ingested after view creation. A creation of this kind returns immediately, with the view instantly being available for query.
@@ -27,7 +25,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Materialized view
 

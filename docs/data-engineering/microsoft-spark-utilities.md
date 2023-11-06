@@ -1,5 +1,5 @@
 ---
-title: Apache Spark utilities for file management tasks
+title: Microsoft Spark Utilities (MSSparkUtils) for Fabric
 description: Use Microsoft Spark Utilities, a built-in package, to work with file systems, get environment variables, chain notebooks together, and work with secrets.
 ms.reviewer: snehagunda
 ms.author: jingzh
@@ -13,8 +13,6 @@ ms.date: 10/20/2023
 # Microsoft Spark Utilities (MSSparkUtils) for Fabric
 
 Microsoft Spark Utilities (MSSparkUtils) is a built-in package to help you easily perform common tasks. You can use MSSparkUtils to work with file systems, to get environment variables, to chain notebooks together, and to work with secrets. MSSparkUtils are available in PySpark (Python) Scala, SparkR notebooks, and Fabric pipelines.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## File system utilities
 
@@ -186,7 +184,75 @@ You can open the snapshot link of the reference run in the cell output. The snap
 :::image type="content" source="media\microsoft-spark-utilities\run-snapshot.png" alt-text="Screenshot of a snapshot example." lightbox="media\microsoft-spark-utilities\run-snapshot.png":::
 
 > [!NOTE]
-> Currently Fabric notebook only supports referencing notebooks within a workspace.
+> - Currently Fabric notebook only supports referencing notebooks within a workspace.
+> - If you use the files under [Notebook Resource](how-to-use-notebook.md#notebook-resources), we recommand to use `mssparkutils.nbResPath` in the referenced notebook to make sure it pointing to the same folder as interactive run.
+
+### Reference run multiple notebooks in parallel 
+
+The method `mssparkutils.notebook.runMultiple()` allows you to run multiple notebooks in parallel or with a pre-defined topological structure. The API is using multi-thread implementation mechanism within a spark session, which means the compute resources are shared by the reference notebook runs.
+
+With `mssparkutils.notebook.runMultiple()`, you can: 
+
+- Execute multiple notebooks simultaneously, without waiting for each one to finish. 
+
+- Specify the dependencies and order of execution for your notebooks, using a simple JSON format. 
+
+- Optimize the use of Spark compute resources and reduce the cost of your Fabric projects. 
+
+- View the Snapshots of each notebook run record in the output, debug/monitor your notebook tasks conveniently. 
+
+- Get the exit value of each executive activity and use them in downstream tasks.
+
+You can also try to run the mssparkutils.notebook.help("runMultiple") to find the example and detailed usage. 
+
+Here is a simple example of running a list of Notebooks in parallel using this method.
+
+```python
+
+mssparkutils.notebook.runMultiple(["NotebookSimple", "NotebookSimple2"])
+
+```
+
+The execution result from root notebook is as below:
+
+:::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list.png" alt-text="Screenshot of reference a list of notebooks." lightbox="media\microsoft-spark-utilities\reference-notebook-list.png":::
+
+Below is an example of running notebooks with topological structure using `mssparkutils.notebook.runMultiple()`, you can leverage this way to orchestrate Notebooks conveniently through code experience.
+
+```python
+# run multiple notebooks with parameters
+DAG = {
+    "activities": [
+        {
+            "name": "NotebookSimple", # activity name, must be unique
+            "path": "NotebookSimple", # notebook path
+            "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
+            "args": {"p1": "changed value", "p2": 100}, # notebook parameters
+        },
+        {
+            "name": "NotebookSimple2",
+            "path": "NotebookSimple2",
+            "timeoutPerCellInSeconds": 120,
+            "args": {"p1": "changed value 2", "p2": 200}
+        },
+        {
+            "name": "NotebookSimple2.2",
+            "path": "NotebookSimple2",
+            "timeoutPerCellInSeconds": 120,
+            "args": {"p1": "changed value 3", "p2": 300},
+            "retry": 1,
+            "retryIntervalInSeconds": 10,
+            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
+        }
+    ]
+}
+mssparkutils.notebook.runMultiple(DAG)
+
+```
+
+> [!NOTE]
+> The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
+
 
 ### Exit a notebook
 

@@ -14,8 +14,6 @@ ms.search.form: Get Started Lakehouse Shortcuts Data Science
 
 This quickstart explains how to reference data stored in external ADLS account and use it in your Data science projects. After completing this quickstart, you'll have a shortcut to ADLS storage in your lakehouse and a notebook with Spark code that accesses your external data.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prepare data for shortcut
 
 1. In Azure create ADLS Gen2 account

@@ -13,8 +13,6 @@ ms.date: 08/23/2023
 
 You can use the Get Metadata activity to retrieve the metadata of any data in a Fabric pipeline. You can use the output from the Get Metadata activity in conditional expressions to perform validation, or consume the metadata in subsequent activities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

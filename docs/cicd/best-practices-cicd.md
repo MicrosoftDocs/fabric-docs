@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.date: 08/10/2023
+ms.date: 11/05/2023
 ms.custom: intro-deployment, build-2023
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
@@ -14,7 +14,7 @@ ms.search.form: Best practices for deployment pipelines, Create deployment pipel
 
 This article provides guidance for data & analytics creators who are managing their content throughout its lifecycle in Microsoft Fabric. The article focuses on the use of [Git integration](./git-integration/intro-to-git-integration.md) for source control and [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) as a release tool. For a general guidance on Enterprise content publishing, [Enterprise content publishing](/power-bi/guidance/powerbi-implementation-planning-usage-scenario-enterprise-content-publishing).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 The article is divided into four sections:
 
@@ -82,7 +82,7 @@ This section provides guidance for working with the deployment pipelines and usi
 
 With Git integration, any developer can back up their work by committing it into Git. To do this properly in Fabric, here are some basic rules:
 
-* Make sure you have an isolated environment to work in, so others don’t override your work before it gets committed. This means working in a Desktop tool (such as [VSCode](https://code.visualstudio.com/), [Power BI Desktop](https://powerbi.microsoft.com/desktop/) or others), or in a separate workspace that other users can’t access.
+* Make sure you have an isolated environment to work in, so others don’t override your work before it gets committed. This means working in a Desktop tool (such as [VS Code](https://code.visualstudio.com/), [Power BI Desktop](https://powerbi.microsoft.com/desktop/) or others), or in a separate workspace that other users can’t access.
 
 * Commit to a branch that you created and no other developer is using. If you’re using a workspace as an authoring environment, read about [working with branches](./git-integration/manage-branches.md).
 
@@ -114,7 +114,7 @@ When you want to work in isolation, use a separate workspace as an isolated envi
 
 ### Use Client tools to edit your work
 
-For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for datasets and reports, [VSCode](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you are working with the [supported structure](./git-integration/source-code-format.md) of the item you are authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
+For items and tools that support it, it might be easier to work with client tools for authoring, such as [Power BI Desktop](https://powerbi.microsoft.com/desktop/) for datasets and reports, [VS Code](https://code.visualstudio.com/) for Notebooks etc. These tools can be your local development environment. After you complete your work, push the changes into the remote repo, and sync the workspace to upload the changes. Just make sure you are working with the [supported structure](./git-integration/source-code-format.md) of the item you are authoring. If you’re not sure, first clone a repo with content already synced to a workspace, then start authoring from there, where the structure is already in place.
 
 ### Managing workspaces and branches
 
@@ -122,7 +122,25 @@ Since a workspace can only be connected to a single branch at a time, it is reco
 
 * If a developer set up a private workspace with all required configurations, they can continue to use that workspace for any future branch they create. When a sprint is over, your changes are merged and you are starting a fresh new task, just switch the connection to a new branch on the same workspace. You can also do this if you suddenly need to fix a bug in the middle of a sprint. Think of it as a working directory on the web.
 
-* Developers using a client tool (such as VSCode, Power BI Desktop or others), don’t necessarily need a workspace. They can create branches and commit changes to that branch locally, push those to the remote repo and create a pull request to the main branch, all without a workspace. A workspace is needed only as a testing environment to check that everything works in a real-life scenario. It's up to you to decide when that should happen.
+* Developers using a client tool (such as VS Code, Power BI Desktop or others), don’t necessarily need a workspace. They can create branches and commit changes to that branch locally, push those to the remote repo and create a pull request to the main branch, all without a workspace. A workspace is needed only as a testing environment to check that everything works in a real-life scenario. It's up to you to decide when that should happen.
+
+### Duplicate an item in a Git repository
+
+To duplicate an item in a Git repository:
+
+1. Copy the entire item directory.
+1. Change the logicalId to something unique for that connected workspace.
+1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
+1. If necessary, update the logicalId and/or display names in any dependencies.
+
+### Duplicate an item in a Git repository
+
+To duplicate an item in a Git repository:
+
+1. Copy the entire item directory.
+1. Change the logicalId to something unique for that connected workspace.
+1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
+1. If necessary, update the logicalId and/or display names in any dependencies.
 
 ## Test
 

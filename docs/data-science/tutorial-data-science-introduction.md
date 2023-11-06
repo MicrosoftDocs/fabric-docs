@@ -13,7 +13,7 @@ ms.date: 5/4/2023
 
 This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience. You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
 

@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the XML format connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: XmlSinkNotSupported
 
 - **Message**: `Write data in XML format is not supported yet, choose a different format!`

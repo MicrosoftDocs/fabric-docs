@@ -43,6 +43,8 @@ landingContent:
             url: transform-data.md
           - text: Migrate to Data Factory
             url: upgrade-paths.md
+          - text: Pricing in Data Factory
+            url: pricing-overview.md
       - linkListType: tutorial
         links:
           - text: Create an end-to-end data integration scenario

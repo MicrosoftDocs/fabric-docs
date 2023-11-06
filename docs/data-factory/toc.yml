@@ -9,6 +9,34 @@
       href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
       href: whats-new.md
+    - name: Pricing in Data Factory
+      items:
+      - name: Pricing overview
+        href: pricing-overview.md 
+      - name: Pricing data pipelines
+        href: pricing-pipelines.md
+      - name: Pricing Dataflows Gen2
+        href: pricing-dataflows-gen2.md
+      - name: Pricing examples
+        items:
+        - name: Data pipelines
+          items:
+          - name: Load 1 TB of Parquet data to a data Warehouse
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
+          - name: Load 1 TB of Parquet data to a data warehouse with staging
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
+          - name: Load 1 TB of CSV data to Lakehouse tables
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
+          - name: Load 1 TB of CSV data to Lakehouse files
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
+          - name: Load 1 TB of Parquet data to a Lakehouse table
+            href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
+        - name: Dataflows Gen2
+          items:
+          - name: Load 2 GB of on-premises CSV data to a Lakehouse table
+            href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
+          - name: Load 2 GB of Parquet data to a Lakehouse table
+            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
   - name: Get started
     items:
     - name: Create a dataflow
@@ -105,6 +133,12 @@
         href: connector-azure-data-explorer-copy-activity.md
       - name: Configure in Dataflow Gen2
         href: connector-kusto-dataflows.md
+    - name: Azure Data Lake Storage Gen1
+      items:
+      - name: Overview
+        href: connector-azure-data-lake-storage-gen1-overview.md
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
       - name: Overview
@@ -113,6 +147,14 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
+      - name: Configure in Dataflow Gen2
+        href: connector-azure-data-lake-storage-gen2-dataflows.md
+    - name: Azure Database for PostgreSQL
+      items:
+      - name: Overview
+        href: connector-azure-database-for-postgresql-overview.md   
+      - name: Configure in Data pipeline Copy activity
+        href: connector-azure-database-for-postgresql-copy-activity.md 
     - name: Azure Databricks
       items:
       - name: Overview
@@ -255,12 +297,10 @@
       items: 
       - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-google-cloud-storage.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-google-cloud-storage-dataflow.md
     - name: Hive LLAP
       items:
       - name: Overview
@@ -271,12 +311,10 @@
       items:
       - name: Overview
         href: connector-http-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-http.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-http-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-http-dataflows.md
     - name: IBM DB2 database
       items:
       - name: Overview
@@ -299,10 +337,10 @@
       items:
       - name: Overview
         href: connector-lakehouse-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-lakehouse.md
+      - name: Configure in data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-lakehouse-dataflows.md
     - name: Microsoft 365
       items:
       - name: Overview
@@ -345,12 +383,10 @@
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-odata.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-odata-copy-activity.md 
-      - name: Configure in Dataflow Gen2
-        href: connector-odata-dataflows.md
     - name: Odbc
       items:
       - name: Overview
@@ -433,12 +469,10 @@
       items:
       - name: Overview
         href: connector-sharepoint-online-list-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-sharepoint-online-list.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in data pipeline Copy activity
         href: connector-sharepoint-online-list-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-sharepoint-online-list-dataflows.md
     - name: Snowflake
       items:
       - name: Overview

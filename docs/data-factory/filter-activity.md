@@ -12,8 +12,6 @@ ms.date: 08/24/2023
 
 You can use a Filter activity in a pipeline to apply a filter expression to an input array.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To get started, you must complete the following prerequisites:

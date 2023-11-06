@@ -15,8 +15,6 @@ ms.date: 05/23/2023
 
 When you create Microsoft Fabric from the Azure portal, it is automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Microsoft Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To make changes to the Data Engineering/Science settings in a capacity, you must have admin role for that capacity. To learn more about the roles that you can assign to users in a capacity, see [Roles in capacities](../admin/roles.md).
 
 Use the following steps to manage the Data Engineering/Science settings for Microsoft Fabric capacity:

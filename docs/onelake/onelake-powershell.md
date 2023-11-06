@@ -11,7 +11,7 @@ ms.date: 09/27/2023
 
 # Manage OneLake with PowerShell
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+Microsoft Fabric OneLake integrates with the Azure PowerShell module for data reading, writing, and management.
 
 ## Connect to OneLake with Azure PowerShell
 

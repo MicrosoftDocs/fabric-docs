@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
+title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)'
 description: This article shows how to use SemPy to calculate measures in Power BI datasets.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,11 +12,11 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->
 
-# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook
+# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)
 
-This tutorial illustrates how to use SemPy to calculate measures in Power BI datasets.
+This tutorial illustrates how to use SemPy (preview) to calculate measures in Power BI datasets.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -141,9 +141,9 @@ fabric.evaluate_measure(dataset, \
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
 
 <!-- nbend -->

@@ -41,10 +41,14 @@ items:
     href: create-lakehouse.md
   - name: Navigate the lakehouse explorer
     href: navigate-lakehouse-explorer.md
-  - name: Lakehouse SQL endpoint
-    href: lakehouse-sql-endpoint.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
   - name: Direct lake mode and PBI reporting
     href: lakehouse-pbi-reporting.md
+  - name: Git and deployment pipelines
+    href: lakehouse-git-deployment-pipelines.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
 - name: Get data into lakehouse
   items:
   - name: Get data into a lakehouse
@@ -129,12 +133,16 @@ items:
       href: apache-spark-history-server.md  
     - name: Monitor Spark capacity consumption
       href: monitor-spark-capacity-consumption.md
+  - name: Intelligent cache
+    href: intelligent-cache.md
 - name: Delta Lake
   items:
     - name: Lakehouse and Delta tables
       href: lakehouse-and-delta-tables.md
     - name: Load to tables
       href: load-to-tables.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
     - name: Delta optimization and V-Order
       href: delta-optimization-and-v-order.md
 - name: Notebooks
@@ -142,7 +150,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md
+    href: author-execute-notebook.md  
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
@@ -151,6 +161,10 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+  - name: Notebook source control and deployment
+    href: notebook-source-control-deployment.md
+  - name: Use Notebook public APIs
+    href: notebook-public-api.md
 - name: VS Code integration 
   items:
   - name: Overview
@@ -163,3 +177,25 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
+- name: Migrate to Fabric
+  items:
+  - name: From Azure Synapse
+    items:
+    - name: Overview
+      href: migrate-synapse-overview.md
+    - name: Migrate Spark pools
+      href: migrate-synapse-spark-pools.md
+    - name: Migrate Spark configurations
+      href: migrate-synapse-spark-configurations.md
+    - name: Migrate Spark libraries
+      href: migrate-synapse-spark-libraries.md
+    - name: Migrate notebooks
+      href: migrate-synapse-notebooks.md
+    - name: Migrate Spark job definition
+      href: migrate-synapse-spark-job-definition.md
+    - name: Migrate data and pipelines
+      href: migrate-synapse-data-pipelines.md
+    - name: Migrate Hive Metastore metadata
+      href: migrate-synapse-hms-metadata.md

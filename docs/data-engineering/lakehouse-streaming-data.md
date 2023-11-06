@@ -16,8 +16,6 @@ Structured Streaming is a scalable and fault-tolerant stream processing engine b
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
 
 * Data streaming throughput optimization
@@ -60,7 +58,6 @@ Delta is added as one of the possible outputs sinks formats used in writeStream.
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
- 
 ```PySpark 
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
@@ -180,4 +177,4 @@ Spark 3.1 and higher versions have a built-in [structured streaming UI](https://
 
 ## Next steps
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with SQL endpoint.
+* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

@@ -7,14 +7,12 @@ author: xujxu
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.search.form: Event Streams Overview
 ---
 
 # Create and manage an eventstream in Microsoft Fabric
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
