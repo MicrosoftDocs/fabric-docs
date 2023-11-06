@@ -89,7 +89,7 @@ Notebooks that contain batch scoring can be scheduled to run using the Notebook 
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with Power BI datasets and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
+Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with semantic models and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same data, but typically in a different code environment or language.
 
 
 Semantic link (preview) allows data scientists to establish a connection between Power BI semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on the semantic models.
