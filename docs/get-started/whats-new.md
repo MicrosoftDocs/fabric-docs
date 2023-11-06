@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 10/31/2023
+ms.date: 11/06/2023
 ms.topic: whats-new
 ---
 
@@ -154,6 +154,7 @@ This section summarizes recent new features and capabilities of the [Data Engine
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
+|November 2023|**Fabric Changing the game: Using your own library with Microsoft Fabric**|A step-by-step guide to [use your own Python library in the Lakehouse](https://blog.fabric.microsoft.com/blog/fabric-changing-the-game-using-your-own-library-with-microsoft-fabric?ft=All). It is quite simple to create your own library with Python and even simpler to reuse it on Fabric.|
 |August 2023|**Fabric changing the game: Logging your workload using Notebooks** | Learn more about [logging your workload into OneLake using notebooks](https://blog.fabric.microsoft.com/blog/fabric-changing-game-logging-your-workload-using-notebooks?ft=All), using the OneLake API Path inside the notebook. |
 |July 2023|**Lakehouse Sharing and Access Permission Management**| [Share a lakehouse and manage permissions](https://blog.fabric.microsoft.com/blog/lakehouse-sharing-and-access-permission-management?ft=All:) so that users can access lakehouse data through the Data Hub, the SQL Endpoint, and the default dataset. |
 |June 2023|**Virtualize your existing data into OneLake with shortcuts** | Connect data silos without moving or copying data with OneLake, which allows you to create [special folders called shortcuts that point to other storage locations](https://blog.fabric.microsoft.com/blog/virtualize-your-existing-data-into-onelake-with-shortcuts).|
@@ -184,7 +185,11 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|October 2023|**Support for sp_rename**|Support for the T-SQL [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true) syntax is now available for both [!INCLUDE [fabric-dw](../data-warehouse/includes/fabric-dw.md)] and [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)].|
+|November 2023|**Dynamic data masking**|[Dynamic Data Masking (DDM)](https://blog.fabric.microsoft.com/blog/announcing-dynamic-data-masking-for-fabric-warehouse-and-lakehouse-sql-endpoint?ft=All) for Fabric Warehouse and the SQL endpoint in the Lakehouse. For more information and samples, see [Dynamic data masking in Fabric data warehousing](../data-warehouse/dynamic-data-masking.md) and [How to implement dynamic data masking in Synapse Data Warehouse](../data-warehouse/howto-dynamic-data-masking.md).|
+|November 2023|**Clone tables with time travel**|You can now use [table clones](../data-warehouse/clone-table.md) to [create a clone of a table based on data up to seven calendar days in the past](https://blog.fabric.microsoft.com/blog/time-travelling-through-data-the-magic-of-table-clones?ft=All).|
+|November 2023|**User experience updates**|Several user experiences in Warehouse have landed, for more information see the November 1 blog post on [Fabric Warehouse user experience updates](https://blog.fabric.microsoft.com/blog/fabric-warehouse-user-experience-updates?ft=All).|
+|November 2023|**Automatic data compaction**|[Automatic data compaction](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse?ft=All) will re-write many smaller parquet files into a few larger parquet files which will improve the performance of reading the table. Data Compaction is one of the ways that we help your Data Warehouse to provide you with great performance and no effort on your part.|
+|October 2023|**Support for sp_rename**|Support for the T-SQL [sp_rename](/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql?view=fabric&preserve-view=true) syntax is now available for both [!INCLUDE [fabric-dw](../data-warehouse/includes/fabric-dw.md)] and [!INCLUDE [fabric-se](../data-warehouse/includes/fabric-se.md)]. For more information, see [Fabric Warehouse support for sp_rename](https://blog.fabric.microsoft.com/blog/announcing-fabric-warehouse-support-for-sp_rename?ft=All).|
 |October 2023|**Query insights**|The [query insights](../data-warehouse/query-insights.md) feature is a scalable, sustainable, and extendable solution to enhance the SQL analytics experience. With historic query data, aggregated insights, and access to actual query text, you can analyze and tune your query performance. |
 |October 2023|**Full DML to Delta Lake Logs**| [Fabric Warehouse now publishes all Inserts, Updates and Deletes](https://blog.fabric.microsoft.com/blog/announcing-fabric-warehouse-publishing-full-dml-to-delta-lake-logs?ft=All) for each table to their [Delta Lake Log](../data-warehouse/query-delta-lake-logs.md) in OneLake.|
 |October 2023|**V-Order write optimization**| V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. Starting this month, all data ingested into Fabric Warehouses use V-Order optimization. |
