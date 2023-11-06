@@ -35,7 +35,7 @@ To enable Microsoft Fabric, you need to have one of the following admin roles:
 
 ## Enable for your tenant
 
-When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant). Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
+When you enable Microsoft Fabric using the tenant setting, users can create Fabric items in that [tenant](../enterprise/licenses.md#tenant), unless capacity admins turned it off for a specific capacity. Depending on the configuration you select, Microsoft Fabric becomes available for everyone in the tenant, or to a selected group of users.
 
 >[!Note]
 >You, or other admins, can override the Microsoft Fabric setting at the [capacity level](#enable-for-a-capacity).
@@ -57,7 +57,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 4. Select **Apply**.
 
 >[!NOTE]
->The *Delegate settings to other admins* option, isn't available.
+>The *Delegate settings to other admins* option, isn't available because its automatically delegated to capacity admins.
 
 ### Enable for a capacity
 
