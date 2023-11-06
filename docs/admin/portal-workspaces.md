@@ -118,7 +118,7 @@ Every Fabric user has a personal workspace called My workspace where they can wo
 
 * [Gain access to the contents of any user's My workspace](#gain-access-to-any-users-my-workspace)
 * [Designate a default capacity for all existing and new My workspaces](#designate-a-default-capacity-for-my-workspaces)
-* [Prevent users from moving My workspaces to a different capacity that may reside in noncompliant regions](#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity)
+* [Prevent users from moving My workspaces to a different capacity that might reside in noncompliant regions](#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity)
 * [Restore deleted My workspaces as app workspaces](#restore-a-deleted-my-workspace-as-an-app-workspace)
 
 These features are described in the following sections.
