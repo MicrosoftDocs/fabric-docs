@@ -20,13 +20,19 @@ In this article, you learn how to enable availability of KQL Database data in On
 
 ## How it works
 
-* When you **enable the policy on your KQL database**, the [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied on the delta tables. The data that's removed from your KQL database at the end of the retention period, is also removed from the delta tables.
-* When you **enable the policy on your KQL database**, existing tables aren't affected. New tables are available in OneLake.
-* When you **disable the policy on your KQL database**, existing tables aren't affected. New tables won't be available in OneLake.
-* When you **enable the policy on your table**, new data is available in OneLake. Existing data isn't backfilled. The data can't be deleted, truncated, or purged. Table schema can't be altered and the table can't be renamed.
-* When you **disable the policy on your table**, the data is soft deleted from OneLake.
-* When you **enable the policy on your table**, deleting the table will permanently delete the folder with the delta table. Deleted tables can't be recovered.
 * There's no additional cost for enabling the policy. You're charged only once for the storage of data in your kQL database.
+
+When you enable the policy on your KQL database or table:
+
+* The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied on the delta tables. The data that's removed from your KQL database at the end of the retention period, is also removed from the delta tables.
+* Existing tables aren't affected. New tables are available in OneLake.
+* New data is available in OneLake. Existing data isn't backfilled. The data can't be deleted, truncated, or purged. Table schema can't be altered and the table can't be renamed.
+* Deleting the table will permanently delete the folder with the delta table. Deleted tables can't be recovered.
+
+When you disable the policy on your KQL database or table:
+
+* Existing tables aren't affected. New tables won't be available in OneLake.
+* The data is soft deleted from OneLake.
 
 ## Prerequisites
 
