@@ -5,7 +5,7 @@ author: midesa
 ms.author: midesa
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 10/23/2023
+ms.date: 11/06/2023
 ms.search.form: Create New Model, Model Comparison
 ---
 
@@ -19,14 +19,14 @@ In [MLflow](https://mlflow.org/), an ML model can include multiple model version
 
 ## Create an ML model
 
-In MLflow, machine learning models include a standard packaging format. This format allows use of those models in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention to save a model in different “flavors” that different downstream tools can understand.
+In MLflow, machine learning models include a standard packaging format. This format allows use of those models in various downstream tools, including batch inferencing on Apache Spark. The format defines a convention to save a model in different "flavors" that different downstream tools can understand.
 
-The user experience can directly create an ML model from the user experience. The MLflow API can also directly create an ML model.
+You can directly create an ML model from the Fabric UI. The MLflow API can also directly create an ML model.
 
-To create an ML model from the user experience, you can:
+To create an ML model from the UI, you can:
 
 1. Create a new data science workspace, or select an existing data science workspace.
-1. From the **+ New** dropdown, select **Model**. This creates an empty model in your data science workspace.
+1. From the **+ New** dropdown, select **Model** to create an empty model in your data science workspace.
 
    :::image type="content" source="media/machine-learning-model/new-drop-down-menu.png" alt-text="Screenshot showing the New drop-down menu." lightbox="media/machine-learning-model/new-drop-down-menu.png":::
 
@@ -50,7 +50,7 @@ A machine learning model contains a collection of model versions for simplified 
 
 ### Track ML models
 
-A machine learning model version represents an individual model that has been registered for tracking.
+A machine learning model version represents an individual model that is registered for tracking.
 
 :::image type="content" source="media/machine-learning-model/ml-model-version-tracking.png" alt-text="Screenshot showing the details screen of a model." lightbox="media/machine-learning-model/ml-model-version-tracking.png":::
 
@@ -69,7 +69,7 @@ To compare and evaluate the quality of machine learning model versions, you can 
 
 #### Visually compare ML models
 
-You can visually compare runs within an existing model. This allows easy navigation between, and sorts across, multiple versions.
+You can visually compare runs within an existing model. Visual comparison allows easy navigation between, and sorts across, multiple versions.
 
 :::image type="content" source="media/machine-learning-model/visual-compare-model-runs.png" alt-text="Screenshot showing a list of runs for comparison." lightbox="media/machine-learning-model/visual-compare-model-runs.png":::
 
