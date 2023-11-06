@@ -11,14 +11,14 @@ ms.date: 11/05/2023
 
 # The Microsoft Purview hub in Microsoft Fabric (preview)
 
-Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced capabilities in the Microsoft Purview portal such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
+Microsoft Purview hub is a centralized page in Fabric that helps Fabric administrators and users manage and govern their Fabric data estate. It contains reports that provide insights about sensitive data and item endorsement, and also serves as a gateway to more advanced capabilities in the Microsoft Purview governance and compliance portals such as Data Catalog, Information Protection, Data Loss Prevention, and Audit.
 
 > [!NOTE]
 > In this document, *Fabric administrators* refers to users who have the [Fabric administrator role](../admin/roles.md) or higher.
 
-The Purview hub has a view for Fabric administrators and a view for other (non-admin) Fabric users.
-* Fabric administrators see insights concerning their organization's entire Fabric data estate. They also see links to capabilities in the Microsoft Purview portal to help them further analyze and manage governance of their organization's Fabric data.
-* Other users see insights about their own Fabric content, as well as links to capabilites in the Microsoft Purview portal that help them further explore their data.
+The Purview hub has a view for Fabric administrators and a view for other (nonadmin) Fabric users.
+* Fabric administrators see insights concerning their organization's entire Fabric data estate. They also see links to capabilities in the Microsoft Purview governance and compliance portals to help them further analyze and manage governance of their organization's Fabric data.
+* Other users see insights about their own Fabric content and links to capabilities in the Microsoft Purview governance portal that help them further explore their data.
 
 When you open the hub, the appropriate view opens. In the sections below, select the appropriate tab to see the information that is relevant to you.
 
@@ -49,7 +49,7 @@ When you select the Microsoft Purview hub option, the hub opens to the view that
 
 # [Fabric admins](#tab/admin-view)
 
-Use the Microsoft Fabric data section of the hub to see insights about your Fabric data. These insights cover your organziations's entire Fabric data estate - that is, all Fabric items, both data and non-data items, of all the users in the organization. Two reports help you analyze the data.
+Use the Microsoft Fabric data section of the hub to see insights about your Fabric data. These insights cover your organization's entire Fabric data estate - that is, all Fabric items, both data and nondata items, of all the users in the organization. Two reports help you analyze the data.
 
 * The **Items** report shows you insights about your organization's Fabric items - how many there are, what kinds they are, how many are promoted or certified, how these promoted and certified items are distributed throughout the workspaces, etc. Such insights might be used to drive adoption of certification in workspaces.
 
@@ -95,11 +95,11 @@ The report contains the following pages:
 
 # [Other users](#tab/data-owner-view)
 
-The Purview hub insights report enables non-admin Fabric users to visualize and analyze in greater detail the extent and distribution of endorsement and sensitivity labeling of the Fabric data they own.
+The Purview hub insights report enables nonadmin Fabric users to visualize and analyze in greater detail the extent and distribution of endorsement and sensitivity labeling of the Fabric data they own.
 
 You access the report by selecting **Open full report** in the Microsoft Purview hub. The report and its associated dataset get generated in your My Workspace, and you can also access the report from there.
 
-:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for non-admin users." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png":::
+:::image type="content" source="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png" alt-text="Screenshot of the Microsoft Purview hub full report for nonadmin users." lightbox="./media/use-microsoft-purview-hub/microsoft-purview-hub-full-report-user.png":::
 
 The report contains the following pages:
 
