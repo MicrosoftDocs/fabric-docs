@@ -105,6 +105,10 @@ Now you'll create a trigger that alerts you if the average time in transit, for 
 
 Congratulations on creating your first object and trigger. As next steps, you might want to try setting up some other triggers on either the *City* or *Package* objects. When you're ready to try using Data Activator on real data, follow the steps in the [Get data for Data Activator](data-activator-get-data-eventstreams.md) article.
 
+Once you’ve finished with the triggers you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the trigger. Select each trigger in turn, and press the Stop button from the ribbon.
+
+:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Trigger stop button for data activator tutorial":::
+
 ## Next steps
 
 * [What is Data Activator?](data-activator-introduction.md)
