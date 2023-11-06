@@ -4,8 +4,8 @@ description: Learn about how to migrate Spark libraries from Azure Synapse Spark
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
-ms.topic: migration
-ms.custom: ignite-2023
+ms.topic: how-to
+ms.custom: fabric-cat
 ms.date: 11/03/2023
 ---
 

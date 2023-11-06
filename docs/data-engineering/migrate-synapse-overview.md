@@ -4,8 +4,8 @@ description: Learn about key considerations on migrating from Azure Synapse Spar
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
-ms.topic: migration
-ms.custom: ignite-2023
+ms.topic: conceptual
+ms.custom: fabric-cat
 ms.date: 11/03/2023
 ---
 
