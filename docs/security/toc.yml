@@ -18,4 +18,6 @@ items:
 - name: Resiliency
   items:
   - name: Resiliency in Fabric
-    href: az-resiliency.md        
+    href: az-resiliency.md
+  - name: BCDR in Fabric
+    href: bcdr.md        
