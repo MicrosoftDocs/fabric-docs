@@ -40,22 +40,24 @@ Before you begin, make sure you have the following:
 1. In the Fabric workspace, navigate to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] for Lakehouse.
 1. Select the **New SQL query** option, and under **Blank**, select **New SQL query**.
 1. In your SQL script, define dynamic data masking rules using the `MASKED WITH FUNCTION` clause. For example:
-    ```sql
+    
+```sql
     CREATE TABLE dbo.EmployeeData (
         EmployeeID INT
         ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"-",2)') NULL
         ,LastName VARCHAR(50) MASKED WITH (FUNCTION = 'default()') NULL
         ,SSN CHAR(11) MASKED WITH (FUNCTION = 'partial(0,"XXX-XX-",4)') NULL
+		,email VARCHAR(256) NULL
         );
     GO
     INSERT INTO dbo.EmployeeData
-        VALUES (1, 'TestFirstName', 'TestLastName', '123-45-6789');
+        VALUES (1, 'TestFirstName', 'TestLastName', '123-45-6789','email@youremail.com');
     GO
     INSERT INTO dbo.EmployeeData
-        VALUES (2, 'First_Name', 'Last_Name', '000-00-0000');
+        VALUES (2, 'First_Name', 'Last_Name', '000-00-0000','email2@youremail2.com');
     GO
     ```
-    In this example, we have created a table `EmployeeData` with dynamic data masking applied to the `FirstName` and `SSN` columns, and a full mask of the `LastName` column.
+
     - The `FirstName` column shows only the first and last two characters of the string, with `-` in the middle.
     - The `LastName` column shows `XXXX`.
     - the `SSN` column shows `XXX-XX-` followed by the last four characters of the string.
@@ -98,19 +100,15 @@ Once the dynamic data masking rules are applied, you can test the masking by que
 
 To manage or modify existing dynamic data masking rules, create a new SQL script.
 
-1. You can add a new column with a mask to the `EmployeeData` table, using the `MASKED WITH FUNCTION` clause:
-    ```sql
+1. You can add a mask to an existing column, using the `MASKED WITH FUNCTION` clause:
+
+    
+```sql
     ALTER TABLE dbo.EmployeeData
-    ADD [email] nvarchar(256) MASKED WITH (FUNCTION = 'partial(1, "@", 5)');
+    ALTER COLUMN [email] varchar(256) MASKED WITH (FUNCTION = 'email()');
     GO
     ```
-1. You can modify the mask on the existing `email` column:
-    ```sql
-    ALTER TABLE dbo.EmployeeData
-    ALTER COLUMN [email] nvarchar(256) MASKED WITH (FUNCTION = 'email()');
-    GO
-    ```
-1. You can remove the mask on the `email` column:
+
     ```sql
     ALTER TABLE dbo.EmployeeData 
     ALTER COLUMN [email] DROP MASKED;
@@ -130,3 +128,5 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
+
+
