@@ -11,7 +11,7 @@ ms.date: 11/03/2023
 
 # Migrate Spark libraries from Azure Synapse to Fabric
 
-Azure Synapse offers different feed and custom library options. In Fabric, each runtime comes with a preinstalled set of libraries (built-in libraries). However, based on your scenarios and specific needs, you can also include other libraries: environment libraries or inline libraries. To move Azure Synapse Spark pool libraries to Fabric, use environment libraries.
+Azure Synapse Spark pool offers different feed and custom library options. In Fabric, each runtime comes with a preinstalled set of libraries (built-in libraries). However, based on your scenarios and specific needs, you can also include other libraries using [environment libraries](migrate-synapse-spark-libraries.md) and inline libraries. To move Azure Synapse Spark pool libraries to Fabric, use environment libraries.
 
 For Spark library considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-spark-libraries.md).
 
@@ -45,3 +45,4 @@ Learn more on adding Spark libraries to an [Environment](migrate-synapse-spark-l
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
+- [Migrate Spark notebooks](migrate-synapse-notebooks.md)

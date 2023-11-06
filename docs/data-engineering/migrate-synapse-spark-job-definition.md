@@ -106,5 +106,5 @@ Step 2 is when Spark job definitions are imported from intermediate storage into
 ## Next steps
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
-- [Migrate data and pipelines](migrate-synapse-spark-job-definition.md)
 - [Migrate notebooks](migrate-synapse-notebooks.md)
+- [Migrate data and pipelines](migrate-synapse-spark-job-definition.md)
