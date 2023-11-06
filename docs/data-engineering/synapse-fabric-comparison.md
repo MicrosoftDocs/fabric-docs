@@ -224,8 +224,6 @@ In terms of Hive MetaStore (HMS), there are some differences:
 
 ## Next steps
 
-Get started with the Data Engineering experience:
-
 - To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
 
 - To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
