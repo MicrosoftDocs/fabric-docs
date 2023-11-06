@@ -165,9 +165,7 @@ items:
     href: notebook-public-api.md
 - name: Environments
   items:
-  - name: Microsoft Fabric Environment overview
-    href: environment-overview.md
-  - name: Environment 101 - create, configure and use an environment
+  - name: Create, configure and use an environment
     href: create-and-use-environment.md
   - name: Manage Spark compute in environments
     href: environment-manage-compute.md

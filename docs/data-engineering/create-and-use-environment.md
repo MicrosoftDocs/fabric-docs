@@ -10,6 +10,10 @@ ms.search.for: Create and use Environment
 
 # Create, configure, and use an environment in Microsoft Fabric
 
+## What is an Environment in Microsoft Fabric
+
+Microsoft Fabric Environment provides flexible configurations for running your Spark jobs. In an Environment, you can select different Spark runtime, configure your compute resources, and install libraries from public repository or upload the custom ones built locally. Environment can be easily attach to the Notebooks and Spark job definitions.
+
 This tutorial gives you an overview of creating, configuring and using an environment.
   
 > [!IMPORTANT]
