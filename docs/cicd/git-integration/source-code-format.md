@@ -34,7 +34,7 @@ Inside each item directory are the [mandatory system files that define the item]
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: the item’s type (dataset, report etc.)
+- `type`: the item’s type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 
@@ -60,9 +60,9 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 Besides the item.config.json file and the item.metadata.json file found in all item folders, each item's directory has specific files that define that item.
 
-### Dataset files
+### Semantic model files
 
-Dataset folders contain the following files:
+Semantic model folders contain the following files:
 
 - definition.pbidataset
 - model.bim
