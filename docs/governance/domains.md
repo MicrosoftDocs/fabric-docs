@@ -79,9 +79,6 @@ To create domain, you must be a Fabric admin.
 
 1. Select **Create**. The domain is created, and you can continue configuring the domain as described in the following sections.
 
-> [!NOTE]
-> Customers using Purview are strongly recommended to create the same domains in Fabric and in Purview for better integration and alignment.
-
 ## Structure your data in the domain
 
 Once you create some domains, you can refine the logic of the way you're structuring your data by creating subdomains for the domains.
@@ -206,6 +203,9 @@ To specify a domain as a default domain, you must be a Fabric admin or a domain 
 Select **Default domain** and specify users and/or security groups. When the specified users and/or security groups create new workspaces, or update unassigned workspaces, those workspaces will automatically be assigned to the domain.
 
 :::image type="content" source="./media/domains/domain-specify-default-domain.png" alt-text="Screenshot showing default domain specification section.":::
+
+> [!Note]
+> The users/security groups specified in the default domain definition generally automatically become domain contributors of the workspaces that get assigned to the domain via the default domain mechanism.
 
 ### Delegate settings to the domain level
 
