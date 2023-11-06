@@ -159,4 +159,7 @@ landingContent:
             url: environment-manage-compute.md
           - text: Manage libraries in environments
             url: environment-manage-library.md
+          - text: Migrate the existing workspace libraries and Spark properties to an environment
+            url: environment-workspace-migration.md
+
 

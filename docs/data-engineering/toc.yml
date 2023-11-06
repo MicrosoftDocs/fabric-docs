@@ -172,7 +172,7 @@ items:
   - name: Manage libraries in environments
     href: environment-manage-library.md
   - name: Migrate the existing workspace libraries and Spark properties
-    href: environment-ws-migration.md
+    href: environment-workspace-migration.md
 - name: VS Code integration 
   items:
   - name: Overview
