@@ -26,13 +26,13 @@ A library is a collection of pre-written code that can be imported to provide ad
 
 ### Scenario 1: admin sets default libraries for the workspace
 
-In order to set default libraries, you have to be the admin of the workspace. You can [create an new Environment](create-and-use-environment.md\#create-an-environment), [install the required libraries](environment-manage-library.md) and then [attach this environment as workspace default](create-and-use-environment.md\#attach-an-environment-as-workspace-default) in workspace setting.
+In order to set default libraries, you have to be the admin of the workspace. You can [create a new Environment](create-and-use-environment.md#create-an-environment), [install the required libraries](environment-manage-library.md), and then [attach this environment as workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default) in workspace setting.
 
 The notebooks and Spark job definitions in the workspace, which are attached to the *Workspace Settings*, start sessions with libraries installed in the workspace's default environment.
 
 ### Scenario 2: persist library specifications for one or multiple code items
 
-You can [install the libraries in an Environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md\#attach-an-environment-to-notebook-or-spark-job-definitions) if you want to persist the library specifications.
+You can [install the libraries in an Environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-notebook-or-spark-job-definitions) if you want to persist the library specifications.
 
 One benefit of doing so is that it saves duplicated effort if running the code requires common libraries all the time. Once successfully installed in the environment, they will be effective in all Spark sessions if the environment is attached.
 
@@ -40,7 +40,7 @@ Another benefit is that library configuration granularity lower than the workspa
 
 ### Scenario 3: in-line installation in interactive run
 
-If you want to use a library, which is not installed, for one-time use in an interactive notebook run, [in-line installation](library-management.md\#in-line-installation) is the most convenient option. In-line commands in Fabric allows you to have the library effective in current notebook Spark session but it won't persist across different sessions.
+If you want to use a library, that is not installed, for one-time use in an interactive notebook run, [in-line installation](library-management.md#in-line-installation) is the most convenient option. In-line commands in Fabric allow you to have the library effective in the current notebook Spark session but it won't persist across different sessions.
 
 Users, who has the permission to run the notebook, can install extra libraries in the Spark session.
 

@@ -59,5 +59,5 @@ If clicked, custom libraries will be downloaded one by one to your local default
 
 ## Next steps
 
-- [Learn how to save and publish the changes in Fabric Environment](create-and-use-environment.md\#save-and-publish-the-changes).
+- [Learn how to save and publish the changes in Fabric Environment](create-and-use-environment.md#save-and-publish-the-changes).
 - [Best practices of library management on Fabric](library-management.md)

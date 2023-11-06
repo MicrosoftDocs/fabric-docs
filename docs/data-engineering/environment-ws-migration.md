@@ -4,7 +4,7 @@ description: Learn how to migrate the existing libraries and Spark properties to
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ---
 
 # Migrate the workspace libraries and Spark properties to a default Environment
