@@ -75,6 +75,8 @@ landingContent:
             url: column-level-security.md
           - text: Share your Warehouse
             url: share-warehouse-manage-permissions.md            
+          - text: User audit logs
+            url: user-audit-logs.md
   # Card 
   - title: Ingest data
     linkLists:

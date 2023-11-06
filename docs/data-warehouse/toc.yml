@@ -108,6 +108,8 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: User audit logs
+    href: user-audit-logs.md
   - name: Dynamic data masking
     href: dynamic-data-masking.md
   - name: How to
