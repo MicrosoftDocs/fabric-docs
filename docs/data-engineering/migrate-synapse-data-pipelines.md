@@ -37,9 +37,9 @@ To use OneLake as a storage layer and move data from ADLS Gen2, you should initi
 To move the existing data to OneLake, you have several options:
 
 * **mssparkutils fastcp**: The [mssparkutils](microsoft-spark-utilities.md) library provides a fastcp API that enables you to copy data between from ADLS Gen2 to OneLake.
-* **AzCopy**: You can use [AzCopy](../../azure/storage/common/storage-use-azcopy-v10) command-line utility to copy data from ADLS Gen2 to OneLake.
+* **AzCopy**: You can use AzCopy command-line utility to copy data from ADLS Gen2 to OneLake.
 * **Data Factory in Fabric**: Use [copy activity](../data-factory/copy-data-activity.md) to copy data.
-* **Use shortcuts**: You can enable ADLS Gen2 historical data in OneLake using [shortcuts]((../onelake/create-adls-shortcut.md)). No data copy needed.
+* **Use shortcuts**: You can enable ADLS Gen2 historical data in OneLake using [shortcuts](../onelake/create-adls-shortcut.md). No data copy needed.
 * **Azure Storage Explorer**: You can move files from ADLS Gen2 location to OneLake using Azure Storage Explorer. See [how integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
 ## Pipelines migration (Spark-related activities)
