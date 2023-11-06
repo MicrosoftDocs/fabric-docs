@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 10/20/2023
+ms.date: 11/06/2023
 ms.custom: ignite-2023
 ---
 
@@ -75,7 +75,7 @@ In addition to the item definition files, each item directory contains one or tw
 - **Version 2** directories contain [PlatformProperties.json](#platformproperties-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can’t have all three files.
+>Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can't have all three files.
 
 ### [Version 1](#tab/v1)
 
@@ -91,11 +91,11 @@ In addition to the item definition files, each item directory contains one or tw
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: the item’s type (dataset, report etc.)
+- `type`: the item's type (dataset, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 
-To rename an item, change the `displayName` in the ‘item.metadata.json’ file. Changing the name of the folder doesn’t change the display name of the item in the workspace.
+To rename an item, change the `displayName` in the 'item.metadata.json' file. Changing the name of the folder doesn't change the display name of the item in the workspace.
 
 ### Config file
 
@@ -111,11 +111,14 @@ The `item.config.json` file contains the following attributes:
 - `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
 - `logicalId`: an automatically generated cross-workspace identifier representing an item and its source control representation.
 
-The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it’s possible to have items in different workspaces with the same logicalId, but a single workspace can’t have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it’s essential not to change it in any way.
+The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it's possible to have items in different workspaces with the same logicalId, but a single workspace can't have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it's essential not to change it in any way.
 
 ### [Version 2](#tab/v2)
 
-## PlatformProperties file
+> [!NOTE]
+> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+
+### PlatformProperties file
 
 In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file. If you have this file, you can't have the other two files.
 
@@ -133,7 +136,7 @@ In version 2, instead of having two source files in each item directory, the *Pl
 
 The PlatformProperties.json file contains the following attributes:
 
-- `type`: the item’s type (dataset, report etc.)
+- `type`: the item's type (dataset, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 - `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
