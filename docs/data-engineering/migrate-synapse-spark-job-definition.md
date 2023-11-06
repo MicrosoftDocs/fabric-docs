@@ -106,5 +106,5 @@ Step 2 is when Spark job definitions are imported from intermediate storage into
 ## Next steps
 
 - [Migrate notebooks](migrate-synapse-notebooks.md)
-- [Migrate data and pipelines](migrate-synapse-spark-job-definition.md)
+- [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
 - [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md)

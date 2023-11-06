@@ -105,4 +105,4 @@ Step 2 is when notebooks are imported from intermediate storage into the Fabric 
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark job definition](migrate-synapse-spark-job-definition.md)
-- [Migrate data and pipelines](migrate-synapse-notebooks.md)
+- [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
