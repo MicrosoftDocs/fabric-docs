@@ -19,5 +19,5 @@ items:
   items:
   - name: Resiliency in Fabric
     href: az-resiliency.md
-  - name: BCDR in Fabric
-    href: bcdr.md        
+  - name: Fabric disaster recovery guide
+    href: disaster-recovery-guide.md
