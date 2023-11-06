@@ -45,11 +45,11 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
     :::image type="content" source="media\ingest-data-pipelines\sample-data-page.png" alt-text="Screenshot showing choices to use sample data or other data sources." lightbox="media\ingest-data-pipelines\sample-data-page.png":::
 
-1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select the **Bing COVID-19** dataset, the **CSV** format, and select **Next**.
+1. In the next page, you can select a dataset, the source file format, and preview the selected dataset. Select **Bing COVID-19**, the **CSV** format, and select **Next**.
 
-    :::image type="content" source="media\ingest-data-pipelines\data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the dataset." lightbox="media\ingest-data-pipelines\data-source-page.png":::
+    :::image type="content" source="media\ingest-data-pipelines\data-source-page.png" alt-text="Screenshot showing different dataset options for the COVID-19 sample, file formats, and a grid showing a preview of the data." lightbox="media\ingest-data-pipelines\data-source-page.png":::
 
-1. The next page, **Data destinations**, allows you to configure the type of the destination dataset. We'll load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Select **Next**.
+1. The next page, **Data destinations**, allows you to configure the type of the destination workspace. We'll load data into a warehouse in our workspace, so select the **Warehouse** tab, and the **Data Warehouse** option. Select **Next**.
 
     :::image type="content" source="media\ingest-data-pipelines\data-destination-type-page.png" alt-text="Screenshot showing different destination options." lightbox="media\ingest-data-pipelines\data-destination-type-page.png":::
 

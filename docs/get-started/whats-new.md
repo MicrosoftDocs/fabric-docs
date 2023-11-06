@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 11/06/2023
+ms.date: 11/15/2023
 ms.topic: whats-new
 ---
 
@@ -185,7 +185,9 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|November 2023|**Dynamic data masking**|[Dynamic Data Masking (DDM)](https://blog.fabric.microsoft.com/blog/announcing-dynamic-data-masking-for-fabric-warehouse-and-lakehouse-sql-endpoint?ft=All) for Fabric Warehouse and the SQL endpoint in the Lakehouse. For more information and samples, see [Dynamic data masking in Fabric data warehousing](../data-warehouse/dynamic-data-masking.md) and [How to implement dynamic data masking in Synapse Data Warehouse](../data-warehouse/howto-dynamic-data-masking.md).|
+|November 2023|**Power BI semantic models**|Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to [Microsoft Fabric semantic models](../data-warehouse/semantic-models.md) as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).|
+|November 2023|**SQL analytics endpoint**|Microsoft has renamed the SQL endpoint of a Lakehouse to the [SQL *analytics* endpoint of a Lakehouse](../data-warehouse/get-started-lakehouse-sql-analytics-endpoint.md).|
+|November 2023|**Dynamic data masking**|[Dynamic Data Masking (DDM)](https://blog.fabric.microsoft.com/blog/announcing-dynamic-data-masking-for-fabric-warehouse-and-lakehouse-sql-endpoint?ft=All) for Fabric Warehouse and the SQL analytics endpoint in the Lakehouse. For more information and samples, see [Dynamic data masking in Fabric data warehousing](../data-warehouse/dynamic-data-masking.md) and [How to implement dynamic data masking in Synapse Data Warehouse](../data-warehouse/howto-dynamic-data-masking.md).|
 |November 2023|**Clone tables with time travel**|You can now use [table clones](../data-warehouse/clone-table.md) to [create a clone of a table based on data up to seven calendar days in the past](https://blog.fabric.microsoft.com/blog/time-travelling-through-data-the-magic-of-table-clones?ft=All).|
 |November 2023|**User experience updates**|Several user experiences in Warehouse have landed, for more information see the November 1 blog post on [Fabric Warehouse user experience updates](https://blog.fabric.microsoft.com/blog/fabric-warehouse-user-experience-updates?ft=All).|
 |November 2023|**Automatic data compaction**|[Automatic data compaction](https://blog.fabric.microsoft.com/blog/announcing-automatic-data-compaction-for-fabric-warehouse?ft=All) will re-write many smaller parquet files into a few larger parquet files which will improve the performance of reading the table. Data Compaction is one of the ways that we help your Data Warehouse to provide you with great performance and no effort on your part.|

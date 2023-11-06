@@ -29,7 +29,7 @@ In this section, we walk you through three distinct experiences available for cr
 
 ### Create a warehouse using the Home hub
 
-The first hub in the left navigation menus is the **Home** hub. You can start creating your warehouse from the **Home** hub by selecting the **Warehouse** card under the **New** section. An empty warehouse is created for you to start creating objects in the warehouse. You can use either a [sample data set](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
+The first hub in the left navigation menus is the **Home** hub. You can start creating your warehouse from the **Home** hub by selecting the **Warehouse** card under the **New** section. An empty warehouse is created for you to start creating objects in the warehouse. You can use either [sample data](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
 
 :::image type="content" source="media\create-warehouse\warehouse-home-hub.png" alt-text="Screenshot showing the Warehouse card in the Home hub." lightbox="media\create-warehouse\warehouse-home-hub.png":::
 
