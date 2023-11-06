@@ -15,9 +15,8 @@ The first step in data and pipeline migration is to identify the data that you w
 
 You have two options for data migration:
 
-- Option 1: Azure Data Lake Storage (ADLS) Gen2 as default storage. If you’re currently using ADLS Gen2 and want to avoid data copying, consider using [shortcuts](../onelake/onelake-shortcuts.md).
-
-- Option 2: OneLake as default storage. If you want to move from ADLS Gen2 to OneLake as a storage layer, consider reading/writing from/to OneLake from your notebooks and Spark job definitions.
+* Option 1: Azure Data Lake Storage (ADLS) Gen2 as default storage. If you’re currently using ADLS Gen2 and want to avoid data copying, consider using [OneLake shortcuts](../onelake/onelake-shortcuts.md).
+* Option 2: OneLake as default storage. If you want to move from ADLS Gen2 to OneLake as a storage layer, consider reading/writing from/to OneLake from your notebooks and Spark job definitions.
 
 ## Data migration
 
@@ -29,19 +28,19 @@ If you’re interacting with ADLS Gen2 and want to avoid data duplication, you c
 
 - The **Tables** section is the managed area of the lake. All tables, both Spark-managed and unmanaged tables, are registered here. If your data is in Delta format, you can create a shortcut in this area and the automatic discovery process automatically registers those Delta tables in the lakehouse’s metastore.
 
+Learn more on creating an [ADLS Gen2 shortcut](../onelake/create-adls-shortcut.md).
+
 ### Option 2: OneLake as storage
 
 To use OneLake as a storage layer and move data from ADLS Gen2, you should initially point the Azure Synapse Spark-related items to OneLake and then transfer the existing data to OneLake. For the former, see [integrate OneLake with Azure Synapse Spark](../onelake/onelake-azure-synapse-analytics.md).
 
 To move the existing data to OneLake, you have several options:
 
-- **mssparkutils fastcp**: The [mssparkutils](microsoft-spark-utilities.md) library provides a fastcp API that enables you to copy data between ADLS accounts.
-
-- **AzCopy**: A command-line utility designed for high-performance uploading, downloading, and copying data to and from Azure Storage.
-
-- **Azure Synapse pipelines or Azure Data Factory**: Use copy activities to copy data.
-
-- **Use shortcuts**: While new data can be read or written to OneLake from Azure Synapse, historical data can be enabled using shortcuts, with no data copy needed.
+* **mssparkutils fastcp**: The [mssparkutils](microsoft-spark-utilities.md) library provides a fastcp API that enables you to copy data between from ADLS Gen2 to OneLake.
+* **AzCopy**: You can use [AzCopy](https://learn.microsoft.com/azure/storage/common/storage-use-azcopy-v10) command-line utility to copy data from ADLS Gen2 to OneLake.
+* **Data Factory in Fabric**: Use [copy activity](../data-factory/copy-data-activity.md) to copy data.
+* **Use shortcuts**: You can enable ADLS Gen2 historical data in OneLake using [shortcuts]((../onelake/create-adls-shortcut.md)). No data copy needed.
+* **Azure Storage Explorer**: You can move files from ADLS Gen2 location to OneLake using Azure Storage Explorer. See [how integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
 ## Pipelines migration (Spark-related activities)
 
