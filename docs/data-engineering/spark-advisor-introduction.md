@@ -11,8 +11,6 @@ ms.search.form: View Spark advisor within a notebook
 
 # Apache Spark advisor for real-time advice on notebooks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The Apache Spark advisor analyzes commands and code run by Apache Spark and displays real-time advice for Notebook runs. The Apache Spark advisor has built-in patterns to help users avoid common mistakes. It offers recommendations for code optimization, performs error analysis, and locates the root cause of failures.
 
 ## Built-in advice

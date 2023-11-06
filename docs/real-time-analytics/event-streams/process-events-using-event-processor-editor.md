@@ -7,14 +7,12 @@ author: xujxu
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.search.form: Event Processor
 ---
 
 # Process event data with event processor editor
 
 The event processor in a Lakehouse destination allows you to process your data before it's ingested into your lakehouse. The event processor editor is a no-code experience that allows you to drag and drop to design the event data processing logic. This article describes how to use the editor to design your processing logic.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

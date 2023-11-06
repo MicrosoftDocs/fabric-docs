@@ -11,8 +11,6 @@ ms.date: 09/26/2023
 
 You can now deactivate one or more activities from a pipeline, and we skip them during validation and during pipeline run. This feature significantly improves pipeline developer efficiency, allowing customers to comment out part of the pipeline, without deleting it from the canvas. You may choose to reactivate them at a later time.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 :::image type="content" source="./media/deactivate-activity/deactivate-01-overview.png" alt-text="Screenshot showing an inactive activity in pipeline.":::
 
 ## Deactivate and reactivate

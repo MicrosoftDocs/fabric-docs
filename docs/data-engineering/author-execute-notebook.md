@@ -378,6 +378,118 @@ IPython Widgets are eventful python objects that have a representation in the br
 1. Global *display* function provided by Fabric doesn't support displaying multiple widgets in one call (for example, *display(a, b)*), which is different from IPython *display* function.
 1. If you close a notebook that contains IPython Widget, you can't see or interact with it until you execute the corresponding cell again.
 
+## Integrate a notebook
+
+### Designate a parameters cell
+
+To parameterize your notebook, select the ellipses (...) to access the **More** commands at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
+
+:::image type="content" source="media\author-execute-notebook\toggle-parameter-cell.png" alt-text="Screenshot showing where to select the Toggle parameter cell option." lightbox="media\author-execute-notebook\toggle-parameter-cell.png":::
+
+The parameter cell is useful for integrating a notebook in a pipeline. Pipeline activity looks for the parameters cell and treats this cell as the default for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
+
+### Assign parameters values from a pipeline
+
+Once you've created a notebook with parameters, you can execute it from a pipeline with the Fabric Notebook activity. After you add the activity to your pipeline canvas, you will be able to set the parameters values under **Base parameters** section on the **Settings** tab.
+
+:::image type="content" source="media\author-execute-notebook\assign-parameter.png" alt-text="Screenshot showing where to assign parameters values from a pipeline." lightbox="media\author-execute-notebook\assign-parameter.png":::
+
+When assigning parameter values, you can use the [pipeline expression language](..\data-factory\expression-language.md) or [functions and variables](..\data-factory\parameters.md).
+
+## Spark session configuration magic command
+
+You can personalize your spark session via a magic command **%%configure**, Fabric notebook support customize vCores, Memory of the Driver and Executor, Spark properties, mount points, pool, and default Lakehouse of the Notebook session, it can be used in both interactive notebook and pipeline notebook activity.  We recommend you to run the **%%configure** at the beginning of your notebook, or the spark session needs to restart to make the settings effect.
+
+```json
+%%configure
+{
+    // You can get a list of valid parameters to config the session from  https://github.com/cloudera/livy#request-body.
+    // Detailed document for %%configure can be found at  https://go.microsoft.com/fwlink/?linkid=2250064.
+    "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
+    "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
+    "executorMemory": "28g",
+    "executorCores": 4,
+    "jars": ["abfs[s]: //<file_system>@<account_name>.dfs.core.windows.net/<path>/myjar.jar", "wasb[s]: //<containername>@<accountname>.blob.core.windows.net/<path>/myjar1.jar"],
+    "conf": {
+        // Example of customized property, you can specify count of lines that Spark SQL returns by configuring "livy.rsc.sql.num-rows".
+        "livy.rsc.sql.num-rows": "3000",
+        "spark.log.level": "ALL"
+    }
+    "defaultLakehouse": {  // This overwrites the default lakehouse for current session
+        "name": "<lakehouse-name>",
+        "id": "<(optional) lakehouse-id>",
+        "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
+    },
+    "mountPoints": [
+        {
+            "mountPoint": "/myMountPoint",
+            "source": "abfs[s]://<file_system>@<account_name>.dfs.core.windows.net/<path>"
+        },
+        {
+            "mountPoint": "/myMountPoint1",
+            "source": "abfs[s]://<file_system>@<account_name>.dfs.core.windows.net/<path1>"
+        },
+    ],
+    "useStarterPool": false,  // Set to true to force using starter pool
+    "useWorkspacePool": "<workspace-pool-name>"
+}
+```
+
+> [!NOTE]
+>
+> - "DriverMemory" and "ExecutorMemory" are recommended to set as same value in %%configure, so do "driverCores" and "executorCores".
+> - "defaultLakehouse" will overwrite the "pinned" Lakehouse on Lakehouse explorer, but it only works on the current notebook session.
+> - You can use %%configure in Fabric pipelines, but if it's not set in the first code cell, the pipeline run will fail due to cannot restart session.
+> - The %%configure used in mssparkutils.notebook.run is going to be ignored but used in %run notebook will continue executing.
+> - The standard Spark configuration properties must be used in the "conf" body. We do not support first level reference for the Spark configuration properties.
+> - Some special spark properties including "spark.driver.cores", "spark.executor.cores", "spark.driver.memory", "spark.executor.memory", "spark.executor.instances" won't take effect in "conf" body.
+>
+
+## Parameterized session configuration from pipeline
+
+Parameterized session configuration allows you to replace the value in %%configure magic with Pipeline run (Notebook activity) parameters. When preparing %%configure code cell, you can override default values (also configurable, 4 and "2000" in the below example) with an object like this:
+
+```
+{
+      "activityParameterName": "paramterNameInPipelineNotebookActivity",
+      "defaultValue": "defaultValueIfNoParamterFromPipelineNotebookActivity"
+} 
+```
+
+```python
+%%configure  
+
+{ 
+    "driverCores": 
+    { 
+        "activityParameterName": "driverCoresFromNotebookActivity", 
+        "defaultValue": 4 
+    }, 
+    "conf": 
+    { 
+        "livy.rsc.sql.num-rows": 
+        { 
+            "activityParameterName": "rows", 
+            "defaultValue": "2000" 
+        } 
+    } 
+} 
+```
+
+Notebook uses default value if run a notebook in interactive mode directly or no parameter that match "activityParameterName" is given from Pipeline Notebook activity.
+
+During the pipeline run mode, you can configure pipeline Notebook activity settings as below:
+
+:::image type="content" source="media\author-execute-notebook\parameterized-session-config.png" alt-text="Screenshot showing where to configure parameterized session." lightbox="media\author-execute-notebook\parameterized-session-config.png":::
+
+If you want to change the session configuration, pipeline Notebook activity parameters name should be same as activityParameterName in the notebook. When running this pipeline, in this example driverCores in %%configure will be replaced by 8 and livy.rsc.sql.num-rows will be replaced by 4000.
+
+> [!NOTE]
+>
+> - If run pipeline failed because of using this new %%configure magic, you can check more error information by running %%configure magic cell in the interactive mode of the notebook.
+> - Notebook schedule run doesn't support parameterized session configuration.
+>
+
 ## Python logging in Notebook
 
 You can find Python logs and set different log levels and format like the sample code shown here:
@@ -413,16 +525,6 @@ customizedLogger.warning("customized warning message")
 customizedLogger.error("customized error message")
 customizedLogger.critical("customized critical message")
 ```
-
-## Integrate a notebook
-
-### Designate a parameters cell
-
-To parameterize your notebook, select the ellipses (...) to access the **More** commands at the cell toolbar. Then select **Toggle parameter cell** to designate the cell as the parameters cell.
-
-:::image type="content" source="media\author-execute-notebook\toggle-parameter-cell.png" alt-text="Screenshot showing where to select the Toggle parameter cell option." lightbox="media\author-execute-notebook\toggle-parameter-cell.png":::
-
-The parameter cell is useful for integrating a notebook in a pipeline. Pipeline activity looks for the parameters cell and treats this cell as the default for the parameters passed in at execution time. The execution engine adds a new cell beneath the parameters cell with input parameters in order to overwrite the default values.
 
 ## Shortcut keys
 

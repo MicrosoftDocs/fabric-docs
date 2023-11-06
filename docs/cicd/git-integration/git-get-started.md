@@ -20,7 +20,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of Git integration](./intro-to-git-integration.md) before you begin.
 
- [!INCLUDE [preview-note](../../includes/preview-note.md)]
+ [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 

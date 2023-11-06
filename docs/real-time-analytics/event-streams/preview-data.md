@@ -7,14 +7,12 @@ author: xujxu
 ms.topic: how-to
 ms.custom: build-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Data Preview and Insights
 ---
 
 # Preview data in an Eventstream item
 
 Data preview provides you with a snapshot of your event data in your eventstream source, eventstream destination, or the eventstream itself. After you add sources and destinations to your eventstream, you can preview the data in each node and visualize how your data flows through the eventstream.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

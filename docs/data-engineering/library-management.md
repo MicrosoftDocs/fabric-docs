@@ -15,8 +15,6 @@ ms.date: 10/20/2023
 
 Each workspace comes with a preinstalled set of libraries available in the Spark run-time that you can use immediately in a notebook or Spark job definition. We refer to these as built-in libraries.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Based on your scenarios and specific needs, you can include other libraries. There are two types of libraries you can include:
 
 - **Feed library**: Feed libraries come from public sources or repositories. You can install Python feed libraries from PyPI and Conda by specifying the source in the Library Management portals. You can also use a Conda environment specification *.yml* file to install libraries.

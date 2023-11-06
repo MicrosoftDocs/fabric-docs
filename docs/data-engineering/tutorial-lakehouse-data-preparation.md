@@ -13,8 +13,6 @@ ms.date: 5/23/2023
 
 In this tutorial, you use notebooks with [Spark runtime](./runtime.md) to transform and prepare the data.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 * [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md)

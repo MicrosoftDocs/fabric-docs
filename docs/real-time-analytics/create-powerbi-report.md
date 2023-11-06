@@ -11,8 +11,6 @@ ms.date: 09/10/2023
 
 # Visualize data in a Power BI report
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to build a Power BI report using a KQL Queryset. The output of your query is used as the dataset of your report.
 
 To use multiple tables to build your Power BI report, see [Use data from a KQL database in Power BI Desktop](power-bi-data-connector.md).
@@ -20,7 +18,7 @@ To use multiple tables to build your Power BI report, see [Use data from a KQL d
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Create a report
 

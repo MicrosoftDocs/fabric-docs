@@ -5,15 +5,13 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom: contperf-fy21q1, intro-deployment, build-2023
-ms.date: 09/28/2023
+ms.date: 11/02/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
 # The deployment pipelines process
 
 The deployment process lets you clone content from one stage in the deployment pipeline to another, typically from development to test, and from test to production.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
@@ -134,17 +132,15 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Datasets
-
-* Reports
-
-* Dataflows
-
-* Datamarts
-
 * Dashboards
-
+* Dataflows
+* Datamarts
+* Datasets
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
 * Paginated reports
+* Reports
+* [Warehouse](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 

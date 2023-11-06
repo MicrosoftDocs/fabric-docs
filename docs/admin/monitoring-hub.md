@@ -5,12 +5,10 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Use the Monitoring hub
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 *Monitoring hub* enables users to monitor various Microsoft Fabric activities, such as dataset refresh and Spark Job runs and many others, from a central location. You can access *Monitoring hub* by selecting its icon from the left pane.
 
