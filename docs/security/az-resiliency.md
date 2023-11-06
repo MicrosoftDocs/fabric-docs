@@ -24,7 +24,7 @@ Availability zones allow Fabric customers to run critical applications with high
 >
 > While Microsoft strives to provide uniform and consistent availability zone support, in some cases of availability-zone failure, Fabric capacities located in Azure regions with higher customer demand fluctuations might experience higher than normal latency.
 >
-> on-prem gateways and large semantic models in Power BI do not currently support availability zones.  
+> On-prem gateways and large semantic models in Power BI do not currently support availability zones.  
 
 Fabric makes commercially-reasonable efforts to provide availability zone support in various regions as follows:
 
