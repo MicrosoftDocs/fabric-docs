@@ -150,7 +150,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md
+    href: author-execute-notebook.md  
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
@@ -177,7 +179,7 @@ items:
     href: explore-lakehouse-with-vs-code.md
   - name: Develop notebook with VS Code web experience
     href: author-notebook-with-vs-code-web.md
-- name: Migration guides
+- name: Migrate to Fabric
   items:
   - name: From Azure Synapse
     items:
@@ -193,5 +195,7 @@ items:
       href: migrate-synapse-notebooks.md
     - name: Migrate Spark job definition
       href: migrate-synapse-spark-job-definition.md
+    - name: Migrate data and pipelines
+      href: migrate-synapse-data-pipelines.md
     - name: Migrate Hive Metastore metadata
       href: migrate-synapse-hms-metadata.md

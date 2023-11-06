@@ -14,7 +14,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 > [!NOTE]
 > This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
-In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides BI creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#deployed-items) that you can deploy.
+In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#deployed-items) that you can deploy.
 
 ## Learn to use deployment pipelines
 
