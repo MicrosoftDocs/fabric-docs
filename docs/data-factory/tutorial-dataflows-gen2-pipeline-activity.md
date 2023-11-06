@@ -59,7 +59,7 @@ A dataflow is a reusable data transformation that can be used in a pipeline. In 
 
     1. Select **Get data**, and then select **More**.
 
-       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-data-more.png" alt-text="Screenshot of the Get data menu with More emphasized":::
+       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/get-data-more.png" alt-text="Screenshot of the Get data menu with More emphasized.":::
 
     1. From **Choose data source**, search for **OData**, and then select the OData connector.
 
