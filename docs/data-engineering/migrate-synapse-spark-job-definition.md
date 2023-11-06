@@ -26,7 +26,7 @@ If you don’t have one already, create a [Fabric workspace](../get-started/crea
 
 To export a Spark job definition from Azure Synapse:
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate the Python/Scala/R Spark job**: Find and identify the Python/Scala/R Spark job definition that you want to migrate.
 1.	**Export the job definition configuration**:
     * In Synapse Studio, open the Spark Job Definition.
@@ -34,7 +34,7 @@ To export a Spark job definition from Azure Synapse:
 
 To create a new Spark job definition (SJD) based on the exported SJD information in Fabric:
 
-1.	**Access Fabric workspace**: Sign-in into Fabric and access your workspace.
+1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com) and access your workspace.
 1.	**Create a new Spark job definition in Fabric**:
     * In Fabric, go to **Data Engineering homepage**.
     * Select **Spark Job Definition.**

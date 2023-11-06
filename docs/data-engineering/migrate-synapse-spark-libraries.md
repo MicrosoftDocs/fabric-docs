@@ -24,7 +24,7 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 You can move Spark pool libraries to an environment as follows:
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate Spark libraries**:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Packages** and locate the Spark libraries for the pool.

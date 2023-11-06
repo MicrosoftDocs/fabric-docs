@@ -24,7 +24,7 @@ For Spark configuration considerations, refer to [differences between Azure Syna
 
 Within an environment, you can set Spark properties and those configurations are applied to the selected environment pool.
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate Spark configurations**:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Apache Spark configuration** and locate the Spark configuration name for the pool.

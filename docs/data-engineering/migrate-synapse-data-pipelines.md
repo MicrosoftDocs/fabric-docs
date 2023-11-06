@@ -57,4 +57,5 @@ If use notebooks and/or Spark job activities in your pipelines, you must move th
 
 ## Next steps
 
-- Migrate hive metastore
+- [Fabric vs. Azure Synapse Spark](migrate-synapse-hms-metadata.md)
+- [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md)

@@ -26,7 +26,7 @@ If you don’t have one already, create a [Fabric workspace](../get-started/crea
 
 To export a notebook from Azure Synapse:
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate the notebook**: In Synapse Studio, locate the notebook you want to export from the **Notebooks** section of your workspace.
 1.	**Export notebook**:
     * Right-click on the notebook you wish to export.
@@ -38,7 +38,7 @@ To export a notebook from Azure Synapse:
 
 To import the exported notebook in Fabric:
 
-1.	**Access Fabric workspace**: Sign-in into Fabric and access your workspace.
+1.	**Access Fabric workspace**: Sign-in into [Fabric](https://app.fabric.microsoft.com) and access your workspace.
 1.	**Navigate to Data Engineering homepage**: Once inside your Fabric workspace, go to Data Engineering homepage.
 1.	**Import notebook**: 
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
