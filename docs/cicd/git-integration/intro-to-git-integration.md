@@ -46,7 +46,7 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-* [Dataflows](../../data-engineering/load-data-lakehouse.md#dataflows)
+* [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines)
 * Datasets (except push datasets, live connections, and model v1)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/how-to-use-notebook.md)

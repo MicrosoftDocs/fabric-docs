@@ -6,7 +6,7 @@ ms.author: midesa
 author: midesa
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 10/23/2023
+ms.date: 11/06/2023
 ms.search.form: Create New Experiment, Run Comparison
 ---
 
@@ -18,7 +18,7 @@ A machine learning *experiment* is the primary unit of organization and control 
 
 Machine learning experiments allow data scientists to log parameters, code versions, metrics, and output files when running their machine learning code. Experiments also let you visualize, search for, and compare runs, as well as download run files and metadata for analysis in other tools.
 
-In this article, you'll learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
+In this article, you learn more about how data scientists can interact with and use machine learning experiments to organize their development process and to track multiple runs.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ To create a machine learning experiment from the UI:
 
    :::image type="content" source="media/machine-learning-experiment/new-menu-experiment-option.png" alt-text="Screenshot showing where to select Experiment in the New menu." lightbox="media/machine-learning-experiment/new-menu-experiment-option.png":::
 
-Once you've created the experiment, you can start adding runs to track run metrics and parameters.
+After creating the experiment, you can start adding runs to track run metrics and parameters.
 
 ### Create an experiment using the MLflow API
 
@@ -78,7 +78,7 @@ Each run includes the following information:
 
 ### View recent runs
 
-You can also view recent runs for an experiment directly from the workspace list view. This allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
+You can also view recent runs for an experiment directly from the workspace list view. This view allows you to keep track of recent activity, quickly jump to the related Spark application, and apply filters based on the run status.
 
 :::image type="content" source="media/machine-learning-experiment/view-recent-runs.png" alt-text="Screenshot of machine learning recent runs and Spark application view." lightbox="media/machine-learning-experiment/view-recent-runs.png":::
 
@@ -88,7 +88,7 @@ To compare and evaluate the quality of your machine learning runs, you can compa
 
 ### Visually compare runs
 
-You can visually compare and filter runs within an existing experiment. This allows you to easily navigate between multiple runs and sort across them.
+You can visually compare and filter runs within an existing experiment. Visual comparison allows you to easily navigate between multiple runs and sort across them.
 
 :::image type="content" source="media/machine-learning-experiment/ml-runs-compare-list.png" alt-text="Screenshot showing a list of runs and the chart view." lightbox="media/machine-learning-experiment/ml-runs-compare-list.png":::
 
@@ -131,13 +131,13 @@ mlflow.search_runs(experiment_ids=[ "1234-5678-90AB-CDEFG" ], max_results=1, ord
 
 ### Compare runs within a Fabric notebook
 
-Users can leverage the MLFlow authoring widget within Fabric notebooks to track MLflow runs specifically generated within each notebook cell. This allows users to track their runs, associated metrics, parameters, and properties right down to the individual cell level.
+You can use the MLFlow authoring widget within Fabric notebooks to track MLflow runs generated within each notebook cell. The widget allows you to track your runs, associated metrics, parameters, and properties right down to the individual cell level.
 
-To obtain a visual comparison, users can also switch to the **Run comparison** view. This presents the data graphically, aiding in the quick identification of patterns or deviations across different runs.
+To obtain a visual comparison, you can also switch to the **Run comparison** view. This view presents the data graphically, aiding in the quick identification of patterns or deviations across different runs.
 
 :::image type="content" source="media/machine-learning-experiment/inline-authoring-mlflow.png" alt-text="Screenshot showing how to use the MLFlow authoring widget." lightbox="media/machine-learning-experiment/inline-authoring-mlflow.png":::
 
-## Save run as a ML model
+## Save run as a machine learning model
 
 Once a run yields the desired result, you can save the run as a model for enhanced model tracking and for model deployment by selecting **Save as a ML model**.
 
