@@ -14,9 +14,6 @@ ms.search.form: Event Streams with Other Fabric Items
 
 Event streams can route the event data to various destinations, including the Fabric items, for example: Fabric Lakehouse, Fabric KQL Database, etc. With the integration between Fabric Eventstream and these Fabric items, you can get the data from Eventstream item inside these Fabric items. This article describes how to use this integration experience within these Fabric items.
 
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisites:
