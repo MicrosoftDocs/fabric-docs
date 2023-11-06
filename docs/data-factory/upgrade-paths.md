@@ -1,6 +1,6 @@
 ---
-title: Upgrade pathways for Data Factory
-description: This article provides details on how customers of Azure Data Factory (ADF) and Power BI can upgrade their existing solutions to Data Factory in Microsoft Fabric.
+title: Migrate to Data Factory
+description: This article provides details on how customers of Azure Data Factory (ADF) and Power BI can migrate their existing solutions to Data Factory in Microsoft Fabric.
 ms.reviewer: jonburchel
 ms.author: weetok
 author: dcstwh
