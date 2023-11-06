@@ -4,7 +4,7 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
-ms.date: 10/12/2023
+ms.date: 11/02/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
@@ -46,7 +46,7 @@ The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allo
 
 ### Which deployments are supported by the APIs?
 
-Here's a list of the different deployment types the APIs support:
+The APIs support the following deployment types:
 
 * **Deploy all** - A single API call that deploys all the content in the workspace to the next stage in the pipeline. For this operation, use the [Deploy all](/rest/api/power-bi/pipelines/deployall) API.
 

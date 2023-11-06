@@ -55,7 +55,7 @@ items:
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
-    href: get-started-lakehouse-sql-endpoint.md
+    href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
   - name: Performance guidelines

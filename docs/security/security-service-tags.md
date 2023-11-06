@@ -10,8 +10,6 @@ ms.date: 10/30/2023
 
 # Service tags
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 You can use Azure [service tags](/azure/virtual-network/service-tags-overview) to enable connections to and from Microsoft Fabric. In Azure, a service tag is a defined group of IP addresses that you can configure to be automatically managed, as a group, to minimize the complexity of updates or changes to network security rules.
 
 ## Which service tags are supported?

@@ -5,7 +5,7 @@ summary: Learn more about the two Data Warehousing experiences in Microsoft Fabr
 
 metadata:
   title: Data Warehousing in Microsoft Fabric # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: Data Warehousing using the SQL Endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
+  description: Data Warehousing using the SQL analytics endpoint and Warehouse in Microsoft Fabric  # Required; article description that is displayed in search results. < 160 chars.
   ms.service: fabric  #Required; use either service or product per approved list. 
   ms.subservice: data-warehouse
   ms.topic: landing-page # Required
@@ -38,14 +38,14 @@ landingContent:
           - text: Create a Warehouse quickstart
             url: create-warehouse.md
   # Card 
-  - title: Get started with SQL Endpoint
+  - title: Get started with SQL analytics endpoint
     linkLists:
       - linkListType: get-started
         links:
           - text: What is a Lakehouse?
             url: ../data-engineering/lakehouse-overview.md
           - text: Better together - the lakehouse and warehouse
-            url: get-started-lakehouse-sql-endpoint.md
+            url: get-started-lakehouse-sql-analytics-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
           - text: Understand default Power BI datasets

@@ -10,8 +10,6 @@ ms.date: 11/06/2023
 
 # Lineage in Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 
 :::image type="content" source="./media/lineage/lineage-view.png" alt-text="Screenshot of the lineage view in Microsoft Fabric." lightbox="./media/lineage/lineage-view.png":::
