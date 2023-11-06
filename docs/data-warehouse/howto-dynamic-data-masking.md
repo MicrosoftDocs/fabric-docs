@@ -47,7 +47,7 @@ Before you begin, make sure you have the following:
         ,FirstName VARCHAR(50) MASKED WITH (FUNCTION = 'partial(1,"-",2)') NULL
         ,LastName VARCHAR(50) MASKED WITH (FUNCTION = 'default()') NULL
         ,SSN CHAR(11) MASKED WITH (FUNCTION = 'partial(0,"XXX-XX-",4)') NULL
-	,email VARCHAR(256) NULL
+        ,email VARCHAR(256) NULL
         );
     GO
     INSERT INTO dbo.EmployeeData
