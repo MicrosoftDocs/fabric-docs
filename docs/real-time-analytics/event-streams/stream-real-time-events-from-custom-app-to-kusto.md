@@ -15,8 +15,6 @@ ms.search.form: Event Streams Tutorials
 
 In this tutorial, you learn how to use the Microsoft Fabric event streams feature to stream real-time events from your custom application into a KQL database. You also discover how to create a near-real-time Power BI report to effectively monitor your business data.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
