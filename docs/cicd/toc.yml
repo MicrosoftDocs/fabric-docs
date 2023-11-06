@@ -53,8 +53,4 @@ items:
   href: faq.md
 - name: Troubleshooting
   href: troubleshoot-cicd.md
-- name: Partner solutions
-  items:
-  - name: ISV partner ecosystem
-    href: partners/partner-ecosystem.md
 
