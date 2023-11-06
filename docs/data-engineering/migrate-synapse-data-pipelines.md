@@ -48,12 +48,11 @@ To move the existing data over, you have several options:
 
 If use notebooks and/or Spark job activities in your pipelines, you must move the existing Azure Synapse pipelines to Fabric pipelines, and reference the target notebooks. The notebook activity is available in Fabric pipelines. Some considerations:
 
-
 - The Spark job definition activity isn't supported within pipelines. If your primary use of the pipeline is to schedule Spark job definitions, consider using the scheduled runs feature for Spark job definitions in Fabric instead.
 
 - Pool selection isn't available in notebook activity.
 
-- For more data pipeline and dataflow migration considerations, see NEED LINK.
+- For more data pipeline and dataflow migration considerations, see [Migrating from Azure Synapse Spark to Fabric](migrate-synapse-overview.md).
 
 ## Next steps
 
