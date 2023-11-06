@@ -62,8 +62,8 @@ For more information about report folders and a complete list of their contents,
 
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
-- A version 1 directory contain [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- A version 2 directory contains [PlatformProperties.json](#platformproperties-file). This file includes the content of both metadata.json and item.config.json files. If you have this file, you can't have the other two files.
+- **Version 1** directories contain [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
+- **Version 2** directories contain [PlatformProperties.json](#platformproperties-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
 >Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can’t have all three files.
