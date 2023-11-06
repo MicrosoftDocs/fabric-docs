@@ -133,6 +133,15 @@ To duplicate an item in a Git repository:
 1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
 1. If necessary, update the logicalId and/or display names in any dependencies.
 
+### Duplicate an item in a Git repository
+
+To duplicate an item in a Git repository:
+
+1. Copy the entire item directory.
+1. Change the logicalId to something unique for that connected workspace.
+1. Change the display name to differentiate it from the original item and to avoid duplicate display name error.
+1. If necessary, update the logicalId and/or display names in any dependencies.
+
 ## Test
 
 This section provides guidance for working with a deployment pipelines test stage.

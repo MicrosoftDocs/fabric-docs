@@ -39,6 +39,8 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 
+* Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
+
 ## Next steps
 
 [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md)

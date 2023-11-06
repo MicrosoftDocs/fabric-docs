@@ -147,3 +147,4 @@ The PlatformProperties.json file contains the following attributes:
 ## Next steps
 
 [Get started with Git integration](./git-get-started.md)
+
