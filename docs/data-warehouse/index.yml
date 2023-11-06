@@ -48,7 +48,7 @@ landingContent:
             url: get-started-lakehouse-sql-analytics-endpoint.md
           - text: Create a lakehouse with OneLake
             url: ../onelake/create-lakehouse-onelake.md
-          - text: Understand default Power BI datasets
+          - text: Default Power BI semantic models
             url: semantic-models.md
           - text: Load data into the Lakehouse
             url: ../data-engineering/load-data-lakehouse.md
@@ -93,9 +93,9 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Datasets
+          - text: Semantic models
             url: semantic-models.md            
-          - text: Model data in the default Power BI dataset
+          - text: Model data in the default Power BI semantic model
             url: default-power-bi-semantic-model.md          
           - text: Define relationships in data models
             url: data-modeling-defining-relationships.md
