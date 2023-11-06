@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 Azure Synapse and Fabric support notebooks. Migrating a notebook from Azure Synapse to Fabric can be done in two different ways:
 
-* Option 1: you can export notebooks from Azure Synapse (ipynb) and import them to Fabric (manually).
+* Option 1: you can export notebooks from Azure Synapse (.ipynb) and import them to Fabric (manually).
 * Option 2: you can use a script to export notebooks from Azure Synapse and import them to Fabric using the API.
 
 For notebook considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-notebooks.md).
@@ -42,7 +42,7 @@ To import the exported notebook in Fabric:
 1.	**Navigate to Data Engineering homepage**: Once inside your Fabric workspace, go to Data Engineering homepage.
 1.	**Import notebook**: 
     * Select **Import notebook.** You can import one or more existing notebooks from your local computer to a Fabric workspace.
-    * Browse for the ipynb notebook files that you downloaded from Azure Synapse.
+    * Browse for the .ipynb notebook files that you downloaded from Azure Synapse.
     * Select the notebook files and click **Upload.**
 1.	**Open and use the Notebook**: Once the import is completed, you can open and use the notebook in your Fabric workspace.
 
@@ -56,7 +56,7 @@ Once the notebook is imported, validate notebook dependencies:
 
 Follow these key steps for migration:
 * Prerequisites.
-* Step 1: Export notebooks from Azure Synapse to OneLake (ipynb).
+* Step 1: Export notebooks from Azure Synapse to OneLake (.ipynb).
 * Step 2: Import notebooks automatically into Fabric using the Fabric API.
 
 ### Prerequisites
@@ -67,7 +67,7 @@ The prerequisites include actions you need to consider before starting notebook 
 
 ### Step 1: Export notebooks from Azure Synapse workspace
 
-The focus of Step 1 is on exporting the notebooks from Azure Synapse workspace to OneLake in ipynb format. This process is as follows:
+The focus of Step 1 is on exporting the notebooks from Azure Synapse workspace to OneLake in .ipynb format. This process is as follows:
 
 * **1.1) Import migration notebook** to Fabric workspace. [This notebook](migrate-synapse-notebooks.md) exports all notebooks from a given Azure Synapse workspace to an intermediate directory in OneLake. Synapse API is used to export notebooks.
 * **1.2) Configure the parameters** in the first command to export notebooks to an intermediate storage (OneLake). The following snippet is used to configure the source and destination parameters. Ensure to replace them with your own values.

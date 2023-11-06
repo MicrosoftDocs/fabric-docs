@@ -11,7 +11,7 @@ ms.date: 11/03/2023
 
 # Migrate Spark configurations from Azure Synapse to Fabric
 
-Apache Spark provides numerous configurations that can be customized to enhance the experience in various scenarios. In Azure Synapse Spark and Fabric Data Engineering, you have the flexibility to incorporate these configurations or properties to tailor your experience. In Fabric, you can add Spark configurations to an environment or use inline Spark properties directly within your Spark jobs. To move Azure Synapse Spark pool configurations to Fabric, use an environment.
+Apache Spark provides numerous configurations that can be customized to enhance the experience in various scenarios. In Azure Synapse Spark and Fabric Data Engineering, you have the flexibility to incorporate these configurations or properties to tailor your experience. In Fabric, you can add Spark configurations to an [environment](migrate-synapse-spark-libraries.md) and use inline Spark properties directly within your Spark jobs. To move Azure Synapse Spark pool configurations to Fabric, use an environment.
 
 For Spark configuration considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-spark-configurations.md).
 
@@ -28,10 +28,10 @@ Within an environment, you can set Spark properties and those configurations are
 1.	**Locate Spark configurations**:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Apache Spark configuration** and locate the Spark configuration name for the pool.
-1.	**Get Spark configurations**: You can either obtain those properties by selecting **View configurations** or exporting the configuration file name from **Configurations + libraries** > **Apache Spark configurations**.
+1.	**Get Spark configurations**: You can either obtain those properties by selecting **View configurations** or exporting configuration (.txt/.conf/.json format) from **Configurations + libraries** > **Apache Spark configurations**.
 1.	Once you have Spark configurations, **add custom Spark properties to your Environment** in Fabric:
     * Within the Environment, go to **Spark Compute** > **Spark properties**.
-    * Add Spark configurations. You can either add each manually or import from yml.
+    * Add Spark configurations. You can either add each manually or import from .yml.
 1.	Click on **Save** and **Publish** changes.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-configurations.png" alt-text="Screenshot showing Spark configurations.":::
