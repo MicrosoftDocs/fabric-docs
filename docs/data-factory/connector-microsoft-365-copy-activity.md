@@ -10,13 +10,15 @@ ms.custom: template-how-to, build-2023
 
 # How to configure Microsoft 365 (Preview) in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365 (Preview). For now, within a single copy activity, you can only ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, as well as Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2 in Avro, Delimited text, JSON, ORC or Parquet format.
+Microsoft Fabric Data pipelines integrate with [Microsoft Graph data connect](/graph/data-connect-concept-overview), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
+
+This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365 (Preview). For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
 
 [!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
-To copy and transform data from Microsoft 365 into Azure, you need to complete the following prerequisite steps:
+To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
 - Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
 - Create and configure an Azure AD web application in Azure Active Directory. For instructions, go to [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal).
