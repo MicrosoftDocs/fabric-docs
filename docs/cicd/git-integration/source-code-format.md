@@ -25,21 +25,21 @@ Each item's directory has specific [mandatory files that define that item](/powe
 
 The following items are currently supported in Microsoft Fabric:
 
-- [Dataset files](#dataset-files)
-- [Notebook files](#notebook-files)
-- [Paginated report files](#paginated-report-files)
-- [Report files](#report-files)
+- [Semantic model](#semantic-model-files)
+- [Notebook](#notebook-files)
+- [Paginated report](#paginated-report-files)
+- [Report](#report-files)
 
-### Dataset files
+### Semantic model files
 
-Dataset folders contain the following files:
+Semantic model folders contain the following files:
 
 - definition.pbidataset
 - model.bim
 
 :::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
 
-For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
 
 ### Notebook files
 
@@ -133,7 +133,7 @@ In version 2, instead of having two source files in each item directory, the *.p
 
 The *.platform* file contains the following attributes:
 
-- `type`: the item's type (dataset, report etc.)
+- `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 - `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
