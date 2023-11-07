@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This tutorial guides you through setting up dbt and deploying your first project to an Azure Fabric Synapse [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This tutorial guides you through setting up dbt and deploying your first project to an Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 [!INCLUDE [preview-note](../includes/preview-note.md)]
 
@@ -81,7 +81,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
           authentication: CLI
           database: <put the database name here>
           driver: ODBC Driver 18 for SQL Server
-          host: <enter your sql endpoint here>
+          host: <enter your SQL analytics endpoint here>
           schema: dbo
           threads: 4
           type: fabric

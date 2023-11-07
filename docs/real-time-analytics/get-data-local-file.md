@@ -12,8 +12,6 @@ ms.search.form: Get data in a KQL Database
 
 # Get data from file
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to get data from a local file into either a new or existing table.
 
 ## Prerequisites

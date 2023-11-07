@@ -58,7 +58,6 @@ Delta is added as one of the possible outputs sinks formats used in writeStream.
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
- 
 ```PySpark 
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
@@ -178,4 +177,4 @@ Spark 3.1 and higher versions have a built-in [structured streaming UI](https://
 
 ## Next steps
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with SQL endpoint.
+* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

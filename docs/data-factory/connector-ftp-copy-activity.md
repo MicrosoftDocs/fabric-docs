@@ -1,5 +1,5 @@
 ---
-title: How to configure FTP in a copy activity
+title: Configure FTP in a copy activity
 description: This article explains how to copy data using FTP.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 08/18/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure FTP in a copy activity
+# Configure FTP in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from FTP.
 
@@ -16,14 +16,14 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 FTP supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
