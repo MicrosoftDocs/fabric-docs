@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Build a report from the OneLake data hub

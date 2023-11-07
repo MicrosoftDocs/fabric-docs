@@ -4,7 +4,7 @@ description: Learn more about utilization reporting for the data warehouse, incl
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: Warehouse billing and utilization
 ---

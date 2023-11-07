@@ -4,7 +4,7 @@ description: Learn about smoothing and throttling principles applicable for data
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ---
 
@@ -15,8 +15,6 @@ ms.topic: conceptual
 This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
 
 This article is specific to data warehousing workloads in Microsoft Fabric. For all Fabric workloads, visit [Throttling in Microsoft Fabric](../enterprise/throttling.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Compute capacity
 

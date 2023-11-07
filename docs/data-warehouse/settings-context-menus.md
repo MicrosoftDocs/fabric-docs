@@ -4,7 +4,7 @@ description: Learn about context menus and settings in the warehouse experience.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Settings are accessible from the context menu or from the Settings icon in the ribbon when you open the item. There are some key differences in the actions you can take in settings depending on if you're interacting with the SQL analytics endpoint or a data warehouse.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Settings options
 

@@ -4,7 +4,7 @@ description: Learn about the roles you can use to manage user access within a wo
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf, jacindaeng
-ms.date: 10/26/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Warehouse roles and permissions, Workspace roles and permissions # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: Warehouse roles and permissions, Workspace roles and permissions
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article details the permissions that workspace roles provide in [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. For instructions on assigning workspace roles, see [Give Workspace Access](../get-started/give-access-workspaces.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Workspace roles
 
