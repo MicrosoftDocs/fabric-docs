@@ -1,5 +1,5 @@
 ---
-title: How to configure Microsoft 365 in a copy activity
+title: Configure Microsoft 365 in a copy activity
 description: This article explains how to copy data using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 05/23/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Microsoft 365 in a copy activity
+# Configure Microsoft 365 in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can only ingest data from Microsoft 365 into **Azure Blob Storage**, **Azure Data Lake Storage Gen1**, and **Azure Data Lake Storage Gen2**.
 

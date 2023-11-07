@@ -22,7 +22,7 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 ## Set up your connection in Dataflow Gen2
 
-The Amazon S3 connector isn't currently supported in Dataflow Gen2.
+The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
 
 ## Set up your connection in a data pipeline
 
