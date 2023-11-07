@@ -25,7 +25,7 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 | **Metadata** | Internal Hive Metastore (HMS) <br>External HMS (using Azure SQL DB) | Internal HMS ([lakehouse](lakehouse-overview.md)) <br>-|
 | **Connections** | Connector type (linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (DMTS) <br>[Data sources](/power-query/connectors/) <br> - |
 | **Security** | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> - <br> - <br>- <br> - <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
-| **DevOps** | Azure DevOps integration <br>CI/CD (No built-in support) | Azure DevOps integration (notebook)<br> Deployment pipelines (notebook) |
+| **DevOps** | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md) (notebook)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) (notebook) |
 | **Developer experience** | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
 | **Logging and monitoring** | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
 | **Business Continuity and Disaster Recovery (BCDR)** | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) | 
@@ -39,9 +39,9 @@ There are some considerations and limitations to be aware of:
 
 - **Managed identity**: Run notebooks/SJD using the workspace identity and support for managed identity for Azure KeyVault in notebooks not supported yet in Fabric.
 
-- **Git integration**: Git integration for notebooks is supported.
+- **Git integration**: [Git integration](../cicd/git-integration/intro-to-git-integration.md) for notebooks is supported using Azure DevOps repos.
 
-- **CI/CD**: You can use the Fabric API/SDK and deployment pipelines.
+- **CI/CD**: You can use the Fabric API/SDK and [deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md).
 
 - **Livy API and the way to submit and manage Spark jobs**: Livy API is in the roadmap but not exposed yet in Fabric. Users need to create notebooks/SJD using the Fabric UI.
 
@@ -147,9 +147,9 @@ There are some considerations:
 | Spark library | Azure Synapse Spark | Fabric Spark |
 | -- | -- | -- |
 | Workspace level | Yes | No |
-| **Environment level | Yes, Pools | Yes, Environments |
+| Environment level | Yes, Pools | Yes, Environments |
 | Inline | Yes | Yes |
-| Import/export** | Yes | Yes |
+| Import/export | Yes | Yes |
 | API/SDK support | Yes | No |
 
 - **Inline**: ``` %%configure``` magic command is still [not fully supported on Fabric at this moment](library-management.md). Don't use it to bring .jar file to your notebook session.
@@ -199,7 +199,7 @@ Notebooks and Spark job definitions (SJD) are primary code items for developing 
 
 ## Spark job definition comparison
 
-In terms of Spark job definition, the following are some important considerations:
+In terms of [Spark job definition](spark-job-definition.md), the following are some important considerations:
 
 |Spark job capability| Azure Synapse Spark | Fabric Spark |
 | -- | -- | -- |
@@ -221,7 +221,7 @@ In terms of Spark job definition, the following are some important consideration
 
 - **Pipeline activity support**: Data pipelines in Fabric don't include Spark job definition activity yet. You could use scheduled runs if you want to run your Spark job periodically.
 
-- **Built-in scheduled run support**: Fabric supports [scheduled runs for a Spark Job Definition](run-spark-job-definition.md).
+- **Built-in scheduled run support**: Fabric supports [scheduled runs for a Spark job definition](run-spark-job-definition.md).
 - **Retry policies** enable users to run Spark structured streaming jobs indefinitely.
 
 > [!NOTE]
