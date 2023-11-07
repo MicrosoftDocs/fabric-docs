@@ -71,10 +71,10 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |                     | Update Warehouse                                      | Update an existing warehouse                                                                                                |
 |                     | Delete Warehouse                                      | Delete an existing warehouse                                                                                                |
 |                     | List Warehouse                                        | List warehouses in your workspace                                                                                           |
-| Data Engineering    |                                                       |                                                                                                                             |
+| [Data Engineering](../../data-engineering/lakehouse-api.md)    |            |                                                                                                                             |
 |                     | Create Lakehouse                                      | Creates Lakehouse along with SQL analytics Endpoint.                                                                        |
 |                     | Update Lakehouse                                      | Updates the name of a lakehouse and the SQL analytics endpoint.                                                             |
-|                     |                                                       | Deletes lakehouse and the associated SQL analytics endpoint.                                                                |
+|                     | Delete Lakehouse                                      | Deletes lakehouse and the associated SQL analytics endpoint.                                                                |
 |                     | Get Properties                                        |                                                                                                                             |
 |                     | List tables in Lakehouse                              |                                                                                                                             |
 |                     | Table Load                                            | Creates delta tables from CSV and parquet files and folders.                                                                |
