@@ -25,21 +25,10 @@ Each item's directory has specific [mandatory files that define that item](/powe
 
 The following items are currently supported in Microsoft Fabric:
 
-- [Semantic model](#semantic-model-files)
 - [Notebook](#notebook-files)
 - [Paginated report](#paginated-report-files)
 - [Report](#report-files)
-
-### Semantic model files
-
-Semantic model folders contain the following files:
-
-- definition.pbidataset
-- model.bim
-
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
-
-For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+- [Semantic model](#semantic-model-files)
 
 ### Notebook files
 
@@ -66,6 +55,17 @@ Report folders contain the following files:
 :::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
 
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
+
+### Semantic model files
+
+Semantic model folders contain the following files:
+
+- definition.pbidataset
+- model.bim
+
+:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
 
 ## Automatically generated system files
 
