@@ -6,7 +6,7 @@ ms.custom: ignite-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 10/18/2023
+ms.date: 11/15/2023
 ---
 # Azure AI services in SynapseML with bring your own key
 
