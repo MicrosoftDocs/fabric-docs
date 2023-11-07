@@ -100,7 +100,7 @@ If you're an ISV interested in integrating your solutions with Microsoft Fabric,
 - **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities within your existing applications. It allows you to actively leverage Fabric capabilities.
 - **Build a Fabric workload** - Create customized workloads and experiences in Fabric. Tailor your offerings to deliver their  value proposition while leveraging Fabric ecosystem.
 
-For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-ecosystem.md).
+For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
 ## Next steps
 
