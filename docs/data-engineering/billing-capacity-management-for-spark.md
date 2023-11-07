@@ -55,3 +55,5 @@ To understand more about Spark capacity usage reporting, visit[Understand Spark 
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)
+* [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
+* [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
