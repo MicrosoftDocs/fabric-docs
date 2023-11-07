@@ -4,8 +4,8 @@ description: Learn about how to migrate Spark libraries from Azure Synapse Spark
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
-ms.topic: migration
-ms.custom: ignite-2023
+ms.topic: how-to
+ms.custom: fabric-cat
 ms.date: 11/03/2023
 ---
 
@@ -24,12 +24,12 @@ For Spark library considerations, refer to [differences between Azure Synapse Sp
 
 You can move Spark pool libraries to an environment as follows:
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate Spark libraries**:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Packages** and locate the Spark libraries for the pool.
 1.	**Get Spark libraries**: Locate the requirements.txt, environment.yml, or workspace packages installed in the pool. Get the list of installed libraries on the pool.
-1.	Once you have Spark libraries, **add custom Spark libraries to the Environment**. Within the Environment, go to **Libraries** and add libraries:
+1.	Once you have Spark libraries, add custom Spark libraries to an environment in [Fabric](https://app.fabric.microsoft.com). Within your **Environment**, go to **Libraries** and add libraries:
     * From **Public libraries,** you can upload a .yml file. You can also install libraries using PyPI and Conda.
     * From **Custom libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
 1.	Click on **Save** and **Publish** changes.
@@ -43,6 +43,6 @@ Learn more on adding Spark libraries to an [Environment](migrate-synapse-spark-l
 
 ## Next steps
 
-- [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
 - [Migrate Spark notebooks](migrate-synapse-notebooks.md)
+- [Migrate Spark job definition](migrate-synapse-spark-job-definition.md)

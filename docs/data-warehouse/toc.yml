@@ -167,6 +167,10 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+- name: Migrate
+  items:
+  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+    href: migration-synapse-dedicated-sql-pool-warehouse.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse
