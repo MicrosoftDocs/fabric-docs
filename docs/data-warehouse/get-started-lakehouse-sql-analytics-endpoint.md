@@ -42,7 +42,7 @@ The Lakehouse, with its [!INCLUDE [fabric-se](includes/fabric-se.md)], powered b
 
 ### Analytics with your Fabric Lakehouse's gold layer
 
-One of the well-known strategies for lake data organization is a [medallion architecture](/azure/databricks/lakehouse/medallion) where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. A [!INCLUDE [fabric-se](includes/fabric-se.md)] can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format, even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] OneLake.
+One of the well-known strategies for lake data organization is a [medallion architecture](../onelake/onelake-medallion-lakehouse-architecture.md) where the files are organized in raw (bronze), consolidated (silver), and refined (gold) layers. A [!INCLUDE [fabric-se](includes/fabric-se.md)] can be used to analyze data in the gold layer of medallion architecture if the files are stored in `Delta Lake` format, even if they're stored outside the [!INCLUDE [product-name](../includes/product-name.md)] OneLake.
 
 You can use [OneLake shortcuts](../data-engineering/lakehouse-shortcuts.md) to reference gold folders in external Azure Data Lake storage accounts that are managed by Synapse Spark or Azure Databricks engines.
 
