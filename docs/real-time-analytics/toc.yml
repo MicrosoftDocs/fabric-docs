@@ -5,9 +5,11 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
-
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
+  - name: KQL Database consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
 - name: Get started
   items:
   - name: End to end tutorial

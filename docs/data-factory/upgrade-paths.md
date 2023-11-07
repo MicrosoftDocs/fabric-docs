@@ -14,7 +14,7 @@ Data Factory in Microsoft Fabric brings Power Query and Azure Data Factory toget
 
 ## Key concepts in Data Factory in Microsoft Fabric
 
-- **Get data and transformation** - Dataflows Gen2 is an evolution of Dataflows in Power BI. Dataflows Gen2 are rearchitected to use Fabric compute engines for data processing and transformation. This enables them to ingest and transform data at any scale.
+- **Get data and transformation** - Dataflow Gen2 is an evolution of dataflows in Power BI. Dataflow Gen2 is rearchitected to use Fabric compute engines for data processing and transformation. This enables them to ingest and transform data at any scale.
 - **Data orchestration** - Using data pipelines already familiar to users of Azure Data Factory (ADF), Microsoft Fabric enables the same orchestration capabilities offered in ADF. As part of the GA release of Fabric, data pipelines support most of the activities available in ADF.
   
   Refer to [this list of activities](activity-overview.md) that are a part of data pipelines in Fabric. The SSIS activity will be added to data pipelines by Q2 CY2024.
@@ -35,9 +35,9 @@ As part of the Data Factory in Microsoft Fabric roadmap, we are working towards 
 - **Mounting of ADF in Fabric** - This feature will enable customers to mount their existing ADF in Microsoft Fabric. All ADF pipelines will work as-is, and continue running on Azure, while enabling you to explore Fabric and work out a more comprehensive upgrade plan.
 - **Upgrade from ADF pipelines to Fabric** - We are working with customers and the community to learn how we can best support upgrades of data pipelines from ADF to Fabric. As part of this, we will deliver an upgrade experience that empowers you to test your existing data pipelines in Fabric using mounting and upgrading the data pipelines.
 
-## Migrate Power BI Dataflows Gen1 to Dataflows Gen2 in Fabric
+## Migrate Power BI Dataflow Gen1 to Dataflow Gen2 in Fabric
 
-Dataflows Gen2 in Fabric provide many advantages and new capabilities compared to Dataflows (Gen1) in Power BI: 
+Dataflow Gen2 in Fabric provides many advantages and new capabilities compared to dataflows (Gen1) in Power BI: 
 
 - High-Scale Get Data ("Fast Copy")
 - High-Scale Data Transformations (using Fabric Lakehouse SQL engine)
@@ -45,16 +45,16 @@ Dataflows Gen2 in Fabric provide many advantages and new capabilities compared t
 - Enhanced Refresh History & Monitoring experience
 - Enhanced Authoring and Publish experiences. 
 
-We encourage customers to start trying out Dataflows Gen2, either to recreate existing Dataflows Gen1 scenarios or to try out new ones. Early feedback on Dataflows Gen2 will help us evolve and mature product capabilities.
+We encourage customers to start trying out Dataflow Gen2, either to recreate existing Dataflow Gen1 scenarios or to try out new ones. Early feedback on Dataflow Gen2 will help us evolve and mature product capabilities.
 
 We have a few options for customers to recreate your Gen1 dataflows as Dataflow Gen2: 
 
-- Export Dataflows Gen1 queries and import them into Dataflows Gen2: You can now export queries in both the Dataflows and Dataflows Gen2 authoring experiences and save them to PQT files that you can then import into Dataflows Gen2. For more information, see [Use the export template feature](move-dataflow-gen1-to-dataflow-gen2.md#use-the-export-template-feature).
-- Copy and paste in Power Query: If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editing experience of your Dataflow Gen2 artifact. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, see[Copy and paste existing Dataflows (Gen1) queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries). 
+- Export Dataflow Gen1 queries and import them into Dataflow Gen2: You can now export queries in both the Dataflows and Dataflow Gen2 authoring experiences and save them to PQT files that you can then import into Dataflow Gen2. For more information, see [Use the export template feature](move-dataflow-gen1-to-dataflow-gen2.md#use-the-export-template-feature).
+- Copy and paste in Power Query: If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editing experience of your Dataflow Gen2 artifact. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, see[Copy and paste existing dataflows (Gen1) queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries). 
 
-Also refer to the following article for further considerations: [Differences between Dataflows Gen1 and Gen2](dataflows-gen2-overview.md)
+Also refer to the following article for further considerations: [Differences between Dataflow Gen1 and Gen2](dataflows-gen2-overview.md)
 
 ## Next steps
 
 - [Pipeline activities supported in Microsoft Fabric](activity-overview.md)
-- [Guide to Dataflows Gen2 for ADF mapping dataflow users](guide-to-dataflows-for-mapping-data-flow-users.md)
+- [Guide to Dataflow Gen2 for ADF mapping dataflow users](guide-to-dataflows-for-mapping-data-flow-users.md)
