@@ -13,8 +13,6 @@ ms.date: 11/01/2023
 
 This article presents a comparison between Spark in Microsoft Fabric and Azure Synapse Spark. It summarizes the key findings and provides an in-depth analysis across various categories. These categories include Spark pools, configuration, libraries, notebooks, and Spark job definition (SJD), along with corresponding details for Fabric Spark.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 The following table compares different Spark configurations for Azure Synapse Spark and Fabric Spark:
 
 |Spark configuration | **Azure Synapse Spark** | **Fabric Spark** |
