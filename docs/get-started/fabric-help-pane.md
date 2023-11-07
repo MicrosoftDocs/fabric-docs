@@ -14,8 +14,6 @@ This article explains how to use the Fabric Help pane. The Help pane is feature-
 
 :::image type="content" source="media/fabric-help-pane/fabric-help.png" alt-text="Screenshot of Fabric with the help pane outlined in red.":::
 
-[!INCLUDE [trial note](../includes/preview-note.md)]
-
 ## The Help pane is feature-aware
 
 The feature-aware state is the default view of the Help pane when you open it without entering any search terms. The Help pane shows a list of recommended topics, resources that are relevant to your current context and location in Fabric, and a list of links for other resources. It has three sections:

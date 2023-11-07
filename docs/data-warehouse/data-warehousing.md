@@ -4,7 +4,7 @@ description: Learn more about the data warehousing experience.
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 6/1/2023
+ms.date: 11/15/2023
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse i
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides customers with a unified product that addresses every aspect of their data estate by offering a complete, SaaS-ified Data, Analytics and AI platform, which is lake centric and open. The foundation of [!INCLUDE [product-name](../includes/product-name.md)] enables the novice user through to the seasoned professional to leverage Database, Analytics, Messaging, Data Integration and Business Intelligence workloads through a rich, easy to use, shared SaaS experience with Microsoft OneLake as the centerpiece. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ### A lake-centric SaaS experience built for any skill level
 

@@ -5,7 +5,7 @@ ms.reviewer: jburchel
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.date: 11/15/2023
 ---
 
 # Run a Script activity and send an output summary by email

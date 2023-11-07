@@ -4,7 +4,7 @@ description: Learn about the T-SQL data types supported the SQL analytics endpoi
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
@@ -16,8 +16,6 @@ ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This artic
 Tables in [!INCLUDE [product-name](../includes/product-name.md)] support the most commonly used T-SQL data types. 
 
 - For more information on table creation, see [Tables](tables.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data types in Warehouse
 

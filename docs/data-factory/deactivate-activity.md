@@ -4,7 +4,7 @@ description: Learn how to deactivate an activity to exclude from pipeline run an
 author: chez-charlie
 ms.author: chez
 ms.topic: conceptual
-ms.date: 09/26/2023
+ms.date: 11/15/2023
 ---
 
 # Deactivate an activity

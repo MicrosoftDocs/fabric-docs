@@ -4,7 +4,7 @@ description: Learn more about options to write TSQL queries on the SQL analytics
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf, kecona
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
@@ -26,8 +26,6 @@ To get started with this tutorial, check the following prerequisites:
 
 > [!NOTE]
 > Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Run a new query in SQL query editor
 

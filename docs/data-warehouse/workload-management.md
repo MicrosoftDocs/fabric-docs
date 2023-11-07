@@ -4,7 +4,7 @@ description: Learn how Microsoft manages data warehouse compute resources to ser
 author: realAngryAnalytics
 ms.author: stevehow
 ms.reviewer: wiassaf
-ms.date: 10/19/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
@@ -13,8 +13,6 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article describes the architecture and workload management behind data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data processing
 

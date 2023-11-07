@@ -4,7 +4,7 @@ description: An overview of refresh history and monitoring for dataflows feature
 author: luitwieler
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 11/3/2023
+ms.date: 11/15/2023
 ms.author: jeluitwi
 ---
 
