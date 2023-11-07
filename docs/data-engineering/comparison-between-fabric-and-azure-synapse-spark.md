@@ -28,7 +28,7 @@ The following table compares different Spark configurations for Azure Synapse Sp
 | Connections | Connector type (Linked services) <br>Data Sources ([13](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary)) <br>Data Source conn. with workspace identity | Connector type (DMTS*) <br>Data Sources ([Dataflow Gen2](/power-query/connectors/)) <br> - |
 | Security | RBAC and access control (11 roles at workspace level) <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (Network Isolation) <br>Fabric Workspace Identity (FWI) <br>Data Exfiltration Protection <br>IP Firewall <br>Trusted Service for Storage Firewall bypass (with workspace identity) <br>Service Tags <br>- <br>Key Vault (via mssparkutils and Linked service) | RBAC and access control (four roles at workspace level) <br> - <br> - <br>- <br>Fabric Workspace Identity (FWI) <br>- <br> Only Control plane <br> - <br>Service Tags <br> - <br>Key Vault (via mssparkutils (public endpoint)) |
 | DevOps | Azure DevOps integration <br>CI/CD (No built-in support) | - <br> - |
-| Developer Experience | IDE Integration (IntelliJ) <br>Studio UI <br>Collaboration (through workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE Integration (VSCode) <br>Studio UI <br>Collaboration (through workspaces and sharing options) <br>- <br>API/SDK <br>mssparkutils |
+| Developer Experience | IDE Integration (IntelliJ) <br>Studio UI <br>Collaboration (through workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE Integration (Visual Studio Code) <br>Studio UI <br>Collaboration (through workspaces and sharing options) <br>- <br>API/SDK <br>mssparkutils |
 | Logging and Monitoring | Spark Advisor <br>Built-in Monitoring Pools and Jobs (through Synapse Studio) <br>Spark History Server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | Spark Advisor <br>Built-in Monitoring Pools and Jobs (through Monitoring Hub) <br>Spark History Server <br>- <br>- <br>- <br>- |
 | BC, HA & Disaster Recovery | BCDR (data)-via ADLS Gen2 | - |
 
@@ -115,7 +115,7 @@ Spark configurations can be applied at different levels:
     
     - **Immutable Spark configurations**: Some Spark configurations are immutable. If you get ``` AnalysisException: Can't modify the value of a Spark config: <config_name>. See also 'https://spark.apache.org/docs/latest/sql-migration-guide.html#ddl-statements'``` means that that property is immutable. See the list of immutable Spark configurations here.
     - **FAIR scheduler**: Azure Synapse uses First in First Out (FIFO) by default, FAIR in Fabric Spark. 
-    - [V-order](delta-optimization-and-v-order.md): write-time optimization applied to the parquet files enabled by default in Fabric Spark pools. This option is suitable for heavy read scenarios (optimized Delta tables) but may add extra write overhead. 
+    - [V-order](delta-optimization-and-v-order.md): write-time optimization applied to the parquet files enabled by default in Fabric Spark pools. This option is suitable for heavy read scenarios (optimized Delta tables) but might add extra write overhead. 
     - [Optimized write](/azure/synapse-analytics/spark/optimize-write-for-apache-spark): This functionality is disabled by default in Azure Synapse but enabled by default for Fabric Spark. It reduces the number of files written and aims to increase the individual file size of the written data. It dynamically optimizes partitions while generating files with a default 128-MB size (this configuration can be changed).
 
 ## Spark Libraries comparison
@@ -138,7 +138,7 @@ Spark libraries can be applied at different levels:
 
 - **Inline**: ``` %%configure``` magic command is still [not fully supported on Fabric at this moment](library-management.md). Don't use it to bring *.jar* file to your notebook session.
 - **Other considerations:**
-    - Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users may need compilation, the addition of custom libraries, and adjusting syntax. See all Fabric Spark pool libraries [here](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-pool-libraries).
+    - Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users might need compilation, the addition of custom libraries, and adjusting syntax. See all Fabric Spark pool libraries [here](https://github.com/microsoft/fabric-migration/tree/main/data-engineering/spark-pool-libraries).
     - When migrating workloads from Azure Synapse Spark to Fabric, users are required to manually verify the compatibility of libraries in Fabric. We recommend the following steps:
         * Initially, users should execute their notebooks or SJDs in Fabric to identify any missing libraries. Utilize the library management feature to add any libraries that aren't present.
         * Later, users should compile a list of libraries used in Azure Synapse and compare it against the libraries available in Fabric. Utilize the library management feature to install any necessary libraries not already available in Fabric.
