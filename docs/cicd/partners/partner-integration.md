@@ -7,7 +7,7 @@ author: mberdugo
 ms.topic: overview
 ms.custom: 
 ms.search.form: 
-ms.date: 11/03/2023
+ms.date: 11/04/2023
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
