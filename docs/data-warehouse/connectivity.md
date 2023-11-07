@@ -147,4 +147,4 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 ## Related content
 
 - [Create a warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md)
-- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-analytics-endpoint.md)

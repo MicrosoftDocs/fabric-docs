@@ -7,7 +7,7 @@ ms.reviewer: wiassaf, salilkanade
 ms.date: 10/31/2023
 ms.topic: conceptual
 ms.custom: build-2023
-ms.search.form: Default dataset overview # This article's title should not change. If so, contact engineering.
+ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
 # Default Power BI semantic models in Microsoft Fabric
 
@@ -29,11 +29,12 @@ Visualizations and analyses in **Power BI reports** can now be built completely 
 
 For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+>[!NOTE]
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 ## Direct Lake mode
 
-[Direct Lake](/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI dataset. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
+[Direct Lake](/power-bi/enterprise/directlake-overview) mode is a groundbreaking new engine capability to analyze very large datasets in Power BI. The technology is based on the idea of loading parquet-formatted files directly from a data lake, without having to query a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and without having to import or duplicate data into a Power BI semantic model. This native integration brings a unique mode of accessing the data from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], called Direct Lake.  
 
 Direct Lake provides the most performant query and reporting experience. Direct Lake is a fast path to load the data from the data lake straight into the Power BI engine, ready for analysis.
 
@@ -43,13 +44,13 @@ Direct Lake provides the most performant query and reporting experience. Direct 
 
 - Direct Lake mode eliminates the Import requirement by loading the data files directly into memory. Because there's no explicit import process, it's possible to pick up any changes at the source as they occur. Direct Lake combines the advantages of DirectQuery and Import mode while avoiding their disadvantages. Direct Lake mode is the ideal choice for analyzing very large datasets and datasets with frequent updates at the source.
 
-Direct Lake mode is the default connection type for Datasets that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source.
+Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source.
 
 ## Understand what's in the default Power BI semantic model
 
-When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI dataset is created. The default dataset is represented with the *(default)* suffix.
+When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix.
 
-The default dataset is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default dataset via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
+The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
 By default, all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are automatically added to the default Power BI semantic model. Users can also manually select tables or views from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they want included in the model for more flexibility. Objects that are in the default Power BI semantic model are created as a layout in the model view.
 
@@ -83,7 +84,7 @@ SQL Server Profiler installs with [SQL Server Management Studio (SSMS)](/sql/ssm
 
 You can script out the default Power BI semantic model from the XMLA endpoint with [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms). 
 
-View the Tabular Model Scripting Language (TMSL) schema of the semantic model by scripting it out via the Object Explorer in SSMS. To connect, use the Semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your semantic model in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the semantic model via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
+View the Tabular Model Scripting Language (TMSL) schema of the semantic model by scripting it out via the Object Explorer in SSMS. To connect, use the semantic model's connection string, which looks like `powerbi://api.powerbi.com/v1.0/myorg/username`. You can find the connection string for your semantic model in the **Settings**, under **Server settings**. From there, you can generate an XMLA script of the semantic model via SSMS's **Script** context menu action. For more information, see [Dataset connectivity with the XMLA endpoint](/power-bi/enterprise/service-premium-connect-tools#connect-with-ssms).
 
 Scripting requires Power BI write permissions on the Power BI semantic model. With read permissions, you can see the data but not the schema of the Power BI semantic model.
 
@@ -119,4 +120,4 @@ If the parquet, Apache Spark, or SQL data types can't be mapped to one of the Po
 ## Related content
 
 - [Define relationships in data models](data-modeling-defining-relationships.md)
-- [Data modeling in the default Power BI semantic model](default-power-bi-semantic-model.md)
+- [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)

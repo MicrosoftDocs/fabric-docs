@@ -18,7 +18,7 @@ To learn about how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set
 
 ## Support in data pipelines
 
-The Azure Blob Storage connector supports the following capabilities in data pipelines:
+The Azure Blob Storage connector supports the following capabilities in data pipelines.
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|

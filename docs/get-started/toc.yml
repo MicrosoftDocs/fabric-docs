@@ -95,7 +95,7 @@ items:
       href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
     - name: Pipeline isn't loading if user deployed with update app via public API
       href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
-    - name: Temp tables in Data Warehouse and SQL Endpoint
+    - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
     - name: OneLake table folder not removed when table dropped in data warehouse
       href: known-issues/known-issue-446-onelake-table-folder-isnt-removed.md  

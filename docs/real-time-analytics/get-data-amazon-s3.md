@@ -11,8 +11,6 @@ ms.search.form: Get data in a KQL Database
 ---
 # Get data from Amazon S3
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this article, you learn how to get data from Amazon S3 into either a new or existing table. Amazon S3 is an object storage service built to store and retrieve data.
 
 For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html).

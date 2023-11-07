@@ -169,6 +169,22 @@ items:
       href: ../data-engineering/monitor-spark-job-definitions.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Monitor Spark application
       href: ../data-engineering/spark-detail-monitoring.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI services
+  items:
+  - name: Overview of AI services in Fabric
+    href: ./ai-services/ai-services-overview.md
+  - name: How-to guides
+    items:
+    - name: Use prebuilt Azure openAI
+      items:
+        - name: with REST API
+          href: ./ai-services/how-to-use-openai-via-rest-api.md
+        - name: with SynapseML or OpenAI Python SDK
+          href: ./ai-services/how-to-use-openai-sdk-synapse.md
+    - name: Use prebuilt text analytics with REST API or SynapseML
+      href: ./ai-services/how-to-use-text-analytics.md
+    - name: Use prebuilt Azure AI translator with REST API or SynapseML 
+      href: ./ai-services/how-to-use-text-translator.md
 - name: Use Python
   items:
   - name: Python overview
@@ -227,8 +243,8 @@ items:
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: What is Azure AI services in SynapseML?
-      href: overview-azure-ai-services.md
+    - name: Azure AI services in SynapseML with bring your own key
+      href: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
   - name: Get started
     items:
     - name: Build your first SynapseML model
