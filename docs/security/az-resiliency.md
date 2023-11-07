@@ -17,7 +17,7 @@ Azure availability zones are at least three physically separate groups of datace
 
 Azure availability zone-enabled services are designed to provide the right level of reliability and flexibility. They can be configured in two ways. They can be either zone redundant, with automatic replication across zones, or zonal, with instances pinned to a specific zone. You can also combine these approaches. For more information on zonal vs. zone-redundant architecture, see [Build solutions with availability zones](/azure/architecture/high-availability/building-solutions-for-high-availability).
 
-Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric makes commercially-reasonable efforts to support zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
+Availability zones allow Fabric customers to run critical applications with higher availability and fault tolerance in the event of datacenter failures. Fabric makes commercially reasonable efforts to support zone-redundant availability zones, such that resources replicate across zones automatically, without any customer intervention.
 
 > [!Note]
 > Fabric currently provides partial availability-zone support in a limited number of regions. This partial availability-zone support covers experiences (and/or certain functionalities within an experience) as listed below. Microsoft might update this list periodically. Experiences such as Data Factory (pipelines), Data Engineering, Data Science, and Event Streams do not support availability zones. Zone availability might not be available for Fabric experiences or features/functionalities that are in preview.
@@ -26,7 +26,7 @@ Availability zones allow Fabric customers to run critical applications with high
 >
 > On-prem gateways and large semantic models in Power BI do not currently support availability zones.  
 
-Fabric makes commercially-reasonable efforts to provide availability zone support in various regions as follows:
+Fabric makes commercially reasonable efforts to provide availability zone support in various regions as follows:
 
 | **Americas**         | **Power BI**                                                          | **Datamarts**                                                         | **Data Warehouses**                                                   | **Real-Time Analytics**                                               |
 |:---------------------|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|:---------------------------------------------------------------------:|
