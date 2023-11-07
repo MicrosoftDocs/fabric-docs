@@ -6,7 +6,7 @@ ms.author: v-myerspeter
 ms.reviewer: wiassaf
 ms.topic: conceptual
 ms.date: 11/06/2023
-ms.custom: cat-fabric
+ms.custom: fabric-cat
 ---
 
 # Implement medallion lakehouse architecture in Microsoft Fabric
