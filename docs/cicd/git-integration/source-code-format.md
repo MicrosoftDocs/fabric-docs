@@ -25,25 +25,14 @@ Each item's directory has specific [mandatory files that define that item](/powe
 
 The following items are currently supported in Microsoft Fabric:
 
-- [Dataset files](#dataset-files)
-- [Notebook files](#notebook-files)
-- [Paginated report files](#paginated-report-files)
-- [Report files](#report-files)
-
-### Dataset files
-
-Dataset folders contain the following files:
-
-- definition.pbidataset
-- model.bim
-
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
-
-For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+- [Notebook](#notebook-files)
+- [Paginated report](#paginated-report-files)
+- [Report](#report-files)
+- [Semantic model](#semantic-model-files)
 
 ### Notebook files
 
-Notebook folders contain a *.py* file
+Notebook folders contain a *.py* file:
 
 :::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
 
@@ -67,15 +56,26 @@ Report folders contain the following files:
 
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
 
+### Semantic model files
+
+Semantic model folders contain the following files:
+
+- definition.pbidataset
+- model.bim
+
+:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+
 ## Automatically generated system files
 
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
 - **Version 1** directories contain [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- **Version 2** directories contain [PlatformProperties.json](#platformproperties-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
+- **Version 2** directories contain [.platform](#platform-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can't have all three files.
+>Your directory must contain either the *item.metadata.json* and *item.config.json* files *or* the *.platform* file. You can't have all three files.
 
 ### [Version 1](#tab/v1)
 
@@ -91,7 +91,7 @@ In addition to the item definition files, each item directory contains one or tw
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: the item's type (dataset, report etc.)
+- `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 
@@ -115,12 +115,9 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ### [Version 2](#tab/v2)
 
-> [!NOTE]
-> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+### Platform file
 
-### PlatformProperties file
-
-In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file. If you have this file, you can't have the other two files.
+In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file. If you have this file, you can't have the other two files.
 
 ```json
 { 
@@ -134,9 +131,9 @@ In version 2, instead of having two source files in each item directory, the *Pl
 }
 ```
 
-The PlatformProperties.json file contains the following attributes:
+The *.platform* file contains the following attributes:
 
-- `type`: the item's type (dataset, report etc.)
+- `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 - `version`: version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
@@ -144,7 +141,9 @@ The PlatformProperties.json file contains the following attributes:
 
 ---
 
+> [!NOTE]
+> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+
 ## Next steps
 
 [Get started with Git integration](./git-get-started.md)
-

@@ -12,7 +12,6 @@ ms.date: 10/30/2023
 
 Dataflows Gen2 enables you to leverage a low-code interface and 300+ data and AI-based transformations, letting you transform data easier and with more flexibility than any other tool.  Dataflows Gen2 are authored using the familiar Power Query experience that’s available today across several Microsoft products and services such as Excel, Power BI, Power Platform, Dynamics 365 Insights applications, and more. Once you publish a dataflow, the dataflow definition is generated - this is the program that will run once the dataflow is refreshed to produce tables in staging storage and/or output destination. During refresh, the definition of a dataflow is used by the dataflow engine to generate an orchestration plan, manage resources, and orchestrate execution of queries across data sources, gateways, and compute engines, and to create tables in either the staging storage or data destination.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 :::image type="content" source="media/pricing-dataflows-gen2/dataflows-gen2-pricing-diagram.png" alt-text="Diagram of the Dataflows Gen2 architecture.":::
 
