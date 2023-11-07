@@ -16,7 +16,7 @@ Azure Synapse and Fabric support notebooks. Migrating a notebook from Azure Syna
 * Option 1: you can export notebooks from Azure Synapse (.ipynb) and import them to Fabric (manually).
 * Option 2: you can use a script to export notebooks from Azure Synapse and import them to Fabric using the API.
 
-For notebook considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-notebooks.md).
+For notebook considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
 ## Prerequisites
 
