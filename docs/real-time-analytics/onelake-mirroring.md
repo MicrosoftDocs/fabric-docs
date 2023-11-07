@@ -20,32 +20,12 @@ In this article, you learn how to enable availability of KQL Database data in On
 
 ## How it works
 
-When you **enable** data availability on:
+The following table describes the behavior of your KQL database and tables when you enable or disable data availability.
 
-KQL Database:
-
-* Existing tables aren't affected. New tables are made available in OneLake.
-* The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data that's removed from your KQL database at the end of the retention period is also removed from OneLake.
-
-A specified table in KQL Database:
-
-* New data is made available in OneLake.
-* Existing data isn't backfilled.
-* Data can't be deleted, truncated, or purged.
-* Table schema can't be altered and the table can't be renamed.
-
-When you **disable** data availability on:
-
-KQL Database:
-
-* Existing tables aren't affected. New tables won't be available in OneLake.
-
-A specified table in KQL Database:
-
-* New data isn't made available in OneLake.
-* Data can be deleted, truncated, or purged.
-* Table schema can be altered and the table can be renamed.
-* Data is soft deleted from OneLake.
+| | Enabled| Disabled|
+|------|---------|--------|
+|**KQL Database**| * Existing tables aren't affected. New tables are made available in OneLake. <br/> * The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data that's removed from your KQL database at the end of the retention period is also removed from OneLake. | * Existing tables aren't affected. New tables won't be available in OneLake. |
+|**A table in KQL Database**| * New data is made available in OneLake. <br/> * Existing data isn't backfilled. <br/> * Data can't be deleted, truncated, or purged. <br/> * Table schema can't be altered and the table can't be renamed. |* New data isn't made available in OneLake. <br/> * Data can be deleted, truncated, or purged. <br/> * Table schema can be altered and the table can be renamed. <br/> * Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
 > There's no additional storage cost to enable data availability, you're charged only once for the data storage.
