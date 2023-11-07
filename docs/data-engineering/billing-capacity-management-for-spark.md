@@ -20,7 +20,7 @@ To understand your Fabric billing, visit [Understand your Azure bill on a Fabric
 ## Fabric Capacity
 
 You as a user could purchase a Fabric capacity from Azure by specifying using an Azure subscription. The size of the capacity determines the amount of computation power available. 
-For Fabric Spark every CU purchased translates to 2 Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. 
+For Fabric Spark every CU purchased translates to 2 Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. A Fabric capacity is shared across all the workspaces added to it and in which the total spark compute allowed gets shared across all the jobs submitted from all the workspaces associated to a capacity. 
 To understand about the different SKUs, cores allocation and throttling on Spark, visit [Understand Spark throttling and queueing](spark-job-concurrency-and-queueing.md).
 
 ## Fabric Spark compute configuration based on purchased Capacity
@@ -54,6 +54,19 @@ All Spark related operations are classified as [background operations](/power-bi
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
 To understand more about Spark capacity usage reporting, visit[Understand Spark Capacity consumption using Capacity Metrics App](monitor-spark-capacity-consumption.md)
+
+## Billing example
+
+Consider the following scenario: 
+There is a Capacity C1 which hosts a Fabric Workspace W1 and this Workspace contains Lakehouse LH1 and Notebook NB1. 
+> Any Spark operation that the notebook(NB1) or lakehouse(LH1) performs is reported against the capacity C1. 
+
+Extending this example to a sceanrio where there is another Capacity C2 which hosts a Fabric Workspace W2 and lets say that this Workspace contains a Spark Job Definition (SJD1) and Lakehouse (LH2). 
+
+> If the Spark Job Definition (SDJ2) from Workspace (W2) reads data from lakehouse (LH1) the usage is reported against the Capacity C2 which is associated with the Workspace (W2) hosting the item.
+> If the Notebook (NB1) performs a read operation from Lakehouse(LH2), the capacity consumption is reported against the Capacity C1 which is powering the workspace W1 that hosts the notebook item. 
+
+Similarly 
 
 ## Next steps
 
