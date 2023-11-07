@@ -13,8 +13,6 @@ ms.date: 09/18/2023
 
 Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Data warehouse and lakehouse properties
 
 | | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** |

@@ -11,7 +11,7 @@ ms.search.form: DataflowGen2
 
 # A guide to learning Dataflows for Mapping Data Flow users
 
-Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflows Gen2. If you’re a developer with a background in Azure Data Factory and Mapping Data Flows, you’ll find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflows Gen2 Power Query user interface.
+Microsoft Fabric’s Data Factory experience provides an intuitive and user-friendly interface using Power Query Online that can help you streamline your data transformation workflows when authoring Dataflow Gen2. If you’re a developer with a background in Azure Data Factory and Mapping Data Flows, you’ll find this guide helpful in mapping your existing Mapping Data Flow transformations to the Dataflow Gen2 Power Query user interface.
 
 ## Global search box
 When first starting to author Dataflows, you can also leverage the Global search box (shortcut: **Alt + Q**) found in the middle of the editor to search for connectors, transformations (actions), queries, and more while you learn your way around the Power Query Online interface.
@@ -23,7 +23,7 @@ When first starting to author Dataflows, you can also leverage the Global search
 
 ## Transformations
 
-When authoring Dataflows Gen2 using the Power Query Online interface, you can use the following table to understand how the current Mapping Data Flows capabilities translate and their equivalent toolbar navigation location in Dataflows Gen2 where applicable.
+When authoring Dataflow Gen2 using the Power Query Online interface, you can use the following table to understand how the current Mapping Data Flows capabilities translate and their equivalent toolbar navigation location in Dataflow Gen2 where applicable.
 
 
 ### Multiple inputs/outputs
@@ -105,7 +105,7 @@ When authoring Dataflows Gen2 using the Power Query Online interface, you can us
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sink.svg" alt-text="Screenshot of the Sink transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/add-data-destination.png" alt-text="Screenshot of the Add data destination icon."::: <br><br> **Navigation:**<br>Home > Add data destination |
 
 ### Considerations and limitations
-The following mapping data flow transformations are not supported in Dataflows Gen2. To vote for support of these operations, please visit [Fabric ideas](https://aka.ms/fabricideas).
+The following mapping data flow transformations are not supported in Dataflow Gen2. To vote for support of these operations, please visit [Fabric ideas](https://aka.ms/fabricideas).
 
 - Assert
 - Stringify

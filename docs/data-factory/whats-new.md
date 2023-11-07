@@ -22,7 +22,7 @@ This page is updated monthly, so revisit it regularly.
 
 ## September 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 #### Authentication
 
@@ -51,7 +51,7 @@ This page is updated monthly, so revisit it regularly.
 
 ## August 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 #### Power Query editor
 
@@ -91,7 +91,7 @@ FTP connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsof
 
 ## July 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 #### Power Query editor
 
@@ -126,7 +126,7 @@ Teams activity [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microso
 
 ## June 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 - Manage connections in the Power Query editor [Learn more](/power-query/manage-connections)
 - Column pair suggestion for Merge operations [Learn more](/power-query/merge-queries-overview#use-the-column-pair-suggestion)

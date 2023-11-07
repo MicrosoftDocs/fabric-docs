@@ -69,10 +69,12 @@ items:
     href: data-science-lineage.md
 - name: Preparing data 
   items:
-  - name: How to read and write data with Pandas
+  - name: Read and write data with Pandas
     href: read-write-pandas.md
-  - name: How to accelerate data prep with Data Wrangler
+  - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Explore and transform Spark data with Data Wrangler (Preview)
+    href: data-wrangler-spark.md
   - name: Read from Power BI and write data usable by Power BI
     href: read-write-power-bi.md
   - name: Explore and validate functional dependencies in your data
