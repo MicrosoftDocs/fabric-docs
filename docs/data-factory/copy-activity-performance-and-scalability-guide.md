@@ -6,12 +6,10 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 10/24/2023
+ms.date: 11/07/2023
 ---
 
-# Copy activity performance
-
-## Copy activity performance and scalability guide
+# Copy activity performance and scalability guide
 
 Sometimes you want to perform a large-scale data migration from data lake or enterprise data warehouse (EDW), to Fabric OneLake. Other times you want to ingest large amounts of data, from different sources into Fabric OneLake, for big data analytics. In each case, it is critical to achieve optimal performance and scalability.
 
@@ -61,8 +59,12 @@ The service provides the following performance optimization features:
 
 ### *Intelligent throughput optimization*
 
-Intelligent throughput optimization allows the service to optimize the throughput intelligently by combining the factors of CPU, memory, and network resource allocation and expected cost of running a single copy activity.  The allowed options to empower a copy activity run intelligently are **Auto, Standard, Balanced, Maximum**. You can also specify the value **between 2 and 256**. [Learn more](copy-activity-performance-optimization-features.md#intelligent-throughput-optimization).
+Intelligent throughput optimization allows the service to optimize the throughput intelligently by combining the factors of CPU, memory, and network resource allocation and expected cost of running a single copy activity.  The allowed options to empower a copy activity run intelligently are **Auto, Standard, Balanced, Maximum**. You can also specify the value **between 4 and 256**.
 
 ### *Parallel copy*
 
-You can set the `parallelCopies property to indicate the parallelism you want the copy activity to use. Think of this property as the maximum number of threads within the copy activity. The threads operate in parallel. The threads either read from your source or write to your sink data stores. [Learn more](copy-activity-performance-optimization-features.md#parallel-copy).
+You can set the 'Degree of copy parallelism' setting in the Settings tab of the Copy activity  to indicate the parallelism you want the copy activity to use. Think of this property as the maximum number of threads within the copy activity. The threads operate in parallel. The threads either read from your source or write to your destination data stores.
+
+The parallel copy is orthogonal to the intelligent throughput optimization setting.  For each copy activity run, by default the service dynamically applies the optimal parallel copy setting based on your source-destination pair and data pattern.
+
+To control the load on machines that host your data stores, or to tune copy performance, you can override the default value and specify a value for the Degree of copy parallelism. The value must be an integer greater than or equal to 1. At run time, for the best performance, the copy activity uses a value that is less than or equal to the value that you set.

@@ -273,12 +273,8 @@
         href: monitoring-hub-pipeline-runs.md
       - name: Run a Script activity and send output by email
         href: script-activity-email-output.md
-      - name: Copy activity performance
-        items:
-        - name: Copy activity performance and scalability guide
-          href: copy-activity-performance-and-scalability-guide.md
-        - name: Copy activity performance optimization features
-          href: copy-activity-performance-optimization-features.md  
+      - name: Copy activity performance and scalability guide
+        href: copy-activity-performance-and-scalability-guide.md
     - name: Tutorials
       items:
       - name: Copy from Azure Blob Storage to Lakehouse
