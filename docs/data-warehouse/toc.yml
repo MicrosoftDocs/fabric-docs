@@ -86,9 +86,9 @@ items:
     href: tutorial-setup-dbt.md          
 - name: Create models and build Power BI reports
   items:
-  - name: Datasets
+  - name: Semantic models
     href: semantic-models.md
-  - name: Model data in the default Power BI dataset
+  - name: Model data in the default Power BI semantic model
     href: default-power-bi-semantic-model.md          
   - name: Define relationships in data models
     href: data-modeling-defining-relationships.md
@@ -108,6 +108,8 @@ items:
     href: column-level-security.md
   - name: Row-level security
     href: row-level-security.md
+  - name: User audit logs
+    href: user-audit-logs.md
   - name: Dynamic data masking
     href: dynamic-data-masking.md
   - name: How to
@@ -165,6 +167,10 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+- name: Migrate
+  items:
+  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+    href: migration-synapse-dedicated-sql-pool-warehouse.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

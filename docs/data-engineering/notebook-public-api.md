@@ -167,19 +167,19 @@ POST https://api.fabric.microsoft.com/v1/workspaces/{{WORKSPACE_ID}}/items/{{ART
             "parameterName": {
                 "value": "new value",
                 "type": "string"
-            },
-            "configuration": {
-                "conf": {
-                    "spark.conf1": "value"
-                },
-                "defaultLakehouse": {  
-                    "name": "<lakehouse-name>",
-                    "id": "<(optional) lakehouse-id>",
-                    "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
-                },
-                "useStarterPool": false,  // Set to true to force using starter pool
-                "useWorkspacePool": "<workspace-pool-name>"
             }
+        },
+        "configuration": {
+            "conf": {
+                "spark.conf1": "value"
+            },
+            "defaultLakehouse": {
+                "name": "<lakehouse-name>",
+                "id": "<(optional) lakehouse-id>",
+                "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>"
+            },
+            "useStarterPool": false,
+            "useWorkspacePool": "<workspace-pool-name>"
         }
     }
 }

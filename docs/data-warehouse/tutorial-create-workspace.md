@@ -19,7 +19,7 @@ Before you can create a warehouse, you need to create a workspace where you'll b
 
 ## Create a workspace
 
-The workspace contains all the items needed for data warehousing, including: Data Factory pipelines, the data warehouse, Power BI datasets, and reports.
+The workspace contains all the items needed for data warehousing, including: Data Factory pipelines, the data warehouse, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com).
 1. Select **Workspaces** > **New workspace**.
