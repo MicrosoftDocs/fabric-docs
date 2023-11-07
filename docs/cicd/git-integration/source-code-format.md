@@ -72,10 +72,10 @@ For more information about report folders and a complete list of their contents,
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
 - **Version 1** directories contain [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- **Version 2** directories contain [PlatformProperties.json](#platformproperties-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
+- **Version 2** directories contain [.platform](#platform-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can't have all three files.
+>Your directory must contain either the item.metadata.json* and *item.config.json* files *or* the *.platform* file. You can't have all three files.
 
 ### [Version 1](#tab/v1)
 
@@ -115,12 +115,9 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ### [Version 2](#tab/v2)
 
-> [!NOTE]
-> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+### Platform file
 
-### PlatformProperties file
-
-In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file. If you have this file, you can't have the other two files.
+In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file. If you have this file, you can't have the other two files.
 
 ```json
 { 
@@ -134,7 +131,7 @@ In version 2, instead of having two source files in each item directory, the *Pl
 }
 ```
 
-The PlatformProperties.json file contains the following attributes:
+The *.platform* file contains the following attributes:
 
 - `type`: the item's type (dataset, report etc.)
 - `displayName`: the name of the item
@@ -144,7 +141,9 @@ The PlatformProperties.json file contains the following attributes:
 
 ---
 
+> [!NOTE]
+> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+
 ## Next steps
 
 [Get started with Git integration](./git-get-started.md)
-
