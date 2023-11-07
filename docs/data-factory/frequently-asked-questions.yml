@@ -56,7 +56,7 @@ sections:
       - question: |
           Is Fabric Dataflow Gen2 similar to Power Query embedded in Azure Data Factory?
         answer: |
-          The Power Query activity within ADF shares similarities with Dataflows Gen2, but it has extra features that enable actions like writing to specific data destinations etc. This comparison aligns more fairly with Dataflows Gen1 (Power BI Dataflows or Power Apps Dataflows). Have a look here for more details: [Differences between Dataflows Gen1 and Gen2](dataflows-gen2-overview.md).
+          The Power Query activity within ADF shares similarities with Dataflow Gen2, but it has extra features that enable actions like writing to specific data destinations etc. This comparison aligns more fairly with Dataflow Gen1 (Power BI dataflows or Power Apps dataflows). Have a look here for more details: [Differences between Dataflow Gen1 and Dataflow Gen2](dataflows-gen2-overview.md).
 
       - question: |
           How can I connect to on-premises data sources in Fabric Data Factory?
@@ -66,7 +66,7 @@ sections:
       - question: |
           Is it possible to connect to existing Private Endpoint (PE) enabled resources in Fabric Data Factory?
         answer: |
-          Presently, the VNET Gateway offers an injective method to seamlessly integrate into your virtual network, providing a robust avenue for using private endpoints to establish secure connections to your data stores. It's important to note that the VNET Gateway only accommodates Fabric dataflow at this moment. However, our upcoming initiatives encompass expanding its capabilities to encompass Fabric pipelines.
+          Presently, the VNet gateway offers an injective method to seamlessly integrate into your virtual network, providing a robust avenue for using private endpoints to establish secure connections to your data stores. It's important to note that the VNet gateway only accommodates Fabric dataflows at this moment. However, our upcoming initiatives encompass expanding its capabilities to encompass Fabric pipelines.
 
       - question: |
           How fast can I ingest data in Fabric Data Pipelines?

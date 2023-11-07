@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 10/29/2023
+ms.date: 11/06/2023
 ms.search.form: Get data in a KQL Database
 ---
 

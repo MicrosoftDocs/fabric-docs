@@ -39,5 +39,5 @@ The data movement operation utilized 267,480 CU seconds with a 1504.42 second (2
 ## Next steps
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
-- [Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
