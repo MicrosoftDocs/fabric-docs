@@ -670,3 +670,5 @@
         href: known-issue-gateway-refreshes.md
       - name: In progress tables refresh history
         href: known-issue-inprogress-refresh-history.md
+      - name: Dataflow Gen1 admin switch affects Gen2
+        href: known-issue-gen1-admin-switch.md
