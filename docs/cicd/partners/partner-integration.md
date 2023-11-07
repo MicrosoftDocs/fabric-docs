@@ -92,7 +92,5 @@ This section will be updated as more Fabric APIs become available.
 
 ## Build a Fabric Workload
 
-:::image type="content" source="media/partner-integration/create-fabric-workload.png" alt-text="Diagram describing the process of creating a Fabric workload.":::
-
 Build a Fabric Workload model is designed to equip ISVs with the tools and platform capabilities required to craft customized workloads and experiences on Fabric. It enables ISVs to tailor their offerings to deliver their value proposition while leveraging the Fabric ecosystem by combining the best of both the worlds.
 We're working closely with select design partners for this integration path and it's currently available by invitation only.
