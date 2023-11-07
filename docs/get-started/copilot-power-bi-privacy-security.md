@@ -34,11 +34,11 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Here are the current limitations of Copilot for Power BI:
 
-- Copilot can’t modify the visuals after it has generated them.
-- Copilot can’t add filters or set slicers if you specify them in the prompts. For example, if you say, “Create a sales report for the last 30 days,” Copilot can't interpret 30 days as a date filter.
-- Copilot can’t make layout changes. For example, if you tell Copilot to resize the visuals, or to align all the visuals perfectly, it won't work.
-- Copilot can’t understand complex intent. For example, suppose you frame a prompt like this: “Generate a report to show incidents by team, incident type, owner of the incident, and do this for only 30 days.” This prompt is complex, and Copilot will probably generate irrelevant visuals.
-- Copilot doesn’t produce a message for the skills that it doesn’t support. For example, if you ask Copilot to edit or add a slicer, it won’t complete the instruction successfully as mentioned above. Unfortunately, it won’t give an error message either.
+- Copilot can't modify the visuals after it has generated them.
+- Copilot can't add filters or set slicers if you specify them in the prompts. For example, if you say, "Create a sales report for the last 30 days," Copilot can't interpret 30 days as a date filter.
+- Copilot can't make layout changes. For example, if you tell Copilot to resize the visuals, or to align all the visuals perfectly, it won't work.
+- Copilot can't understand complex intent. For example, suppose you frame a prompt like this: "Generate a report to show incidents by team, incident type, owner of the incident, and do this for only 30 days." This prompt is complex, and Copilot will probably generate irrelevant visuals.
+- Copilot doesn't produce a message for the skills that it doesn't support. For example, if you ask Copilot to edit or add a slicer, it won't complete the instruction successfully as mentioned above. Unfortunately, it won't give an error message either.
 
 ## Data use in Copilot for Power BI
 

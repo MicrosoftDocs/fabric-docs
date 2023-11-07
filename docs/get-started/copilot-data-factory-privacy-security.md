@@ -22,7 +22,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 ## Capabilities and intended uses of Copilot for Data Factory
 
 - The Copilot features in Data Factory currently support use in Dataflow Gen2. These features include the Copilot chat pane and suggested transformations. 
-- Copilot has the following intended uses: 
+- Copilot has the following intended uses:
 
   - Provide a summary of the query and the applied steps. 
   - Generate new transformation steps for an existing query. 
