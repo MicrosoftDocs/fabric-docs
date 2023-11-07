@@ -36,7 +36,7 @@ To use OneLake as a storage layer and move data from ADLS Gen2, you should initi
 To move the existing data to OneLake, you have several options:
 
 * **mssparkutils fastcp**: The [mssparkutils](microsoft-spark-utilities.md) library provides a fastcp API that enables you to copy data between from ADLS Gen2 to OneLake.
-* **AzCopy**: You can use AzCopy command-line utility to copy data from ADLS Gen2 to OneLake.
+* **AzCopy**: You can use [AzCopy](/azure//storage/common/storage-use-azcopy-v10/) command-line utility to copy data from ADLS Gen2 to OneLake.
 * **Data Factory in Fabric**: Use [copy activity](../data-factory/copy-data-activity.md) to copy data.
 * **Use shortcuts**: You can enable ADLS Gen2 historical data in OneLake using [shortcuts](../onelake/create-adls-shortcut.md). No data copy needed.
 * **Azure Storage Explorer**: You can move files from ADLS Gen2 location to OneLake using Azure Storage Explorer. See [how integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
@@ -45,7 +45,7 @@ To move the existing data to OneLake, you have several options:
 
 If your Azure Synapse data pipelines include notebook and/or Spark job definition activities, you will need to move those pipelines from Azure Synapse to Data Factory data pipelines in Fabric, and reference the target notebooks. The [notebook activity](../data-factory/notebook-activity.md) is available in Data Factory data pipelines. See all  supported data pipeline activities in Fabric [here](../data-factory/activity-overview.md).
 
-- For Spark-related data pipeline activity considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-notebooks.md).
+- For Spark-related data pipeline activity considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 - For notebook migration, refer to [migrate Notebooks from Azure Synapse to Fabric](migrate-synapse-notebooks.md).
 - For data pipeline migration, see [migrate to Data Factory in Fabric](../data-factory/upgrade-paths.md).
 

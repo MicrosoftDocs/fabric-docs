@@ -17,7 +17,7 @@ Before you begin your migration, you should verify that [Fabric Data Engineering
 
 The initial step in crafting a migration strategy is to assess suitability. It's worth noting that certain Fabric features related to Spark are currently in development or planning. For more details and updates, visit the [Fabric roadmap](/fabric/release-plan/). 
 
-For Spark, see a detailed comparison [differences between Azure Synapse Spark and Fabric](migrate-synapse-overview.md).
+For Spark, see a detailed comparison [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
 ## Migration scenarios
 
@@ -34,7 +34,7 @@ Transitioning from Azure Synapse Spark to Fabric Spark requires a deep understan
 
 ## Next steps
 
-- [Fabric vs. Azure Synapse Spark](migrate-synapse-overview.md)
+- [Fabric vs. Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
 - [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md)

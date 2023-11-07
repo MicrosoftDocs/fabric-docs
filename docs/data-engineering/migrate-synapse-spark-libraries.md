@@ -13,7 +13,7 @@ ms.date: 11/03/2023
 
 Azure Synapse Spark pool offers different feed and custom library options. In Fabric, each runtime comes with a preinstalled set of libraries (built-in libraries). However, based on your scenarios and specific needs, you can also include other libraries using [environment libraries](migrate-synapse-spark-libraries.md) and [inline libraries](library-management.md). To move Azure Synapse Spark pool libraries to Fabric, use environment libraries.
 
-For Spark library considerations, refer to [differences between Azure Synapse Spark and Fabric](migrate-synapse-spark-libraries.md).
+For Spark library considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
 ## Prerequisites
 
