@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/28/2023
+ms.date: 11/06/2023
 ms.search.form: Create a table
 ---
 # Create an empty table
@@ -92,7 +92,7 @@ In the **Create table completed** window, the empty table is marked with a green
 
 ## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
 * [Get data from OneLake](get-data-onelake.md)
