@@ -10,9 +10,9 @@ ms.date: 11/06/2023
 
 # Conditional access in Fabric
 
-The Conditional Access feature in Microsoft Entra ID offers a number of ways enterprise customers can secure apps in their tenants, including:
+The Conditional Access feature in Microsoft Entra ID offers several ways enterprise customers can secure apps in their tenants, including:
 
-- Multi-factor authentication
+- Multifactor authentication
 - Allowing only Intune enrolled devices to access specific services
 - Restricting user locations and IP ranges
 For more information on the full capabilities of Conditional Access, see the article [Microsoft Entra Conditional Access documentation](/entra/identity/conditional-access/).
@@ -28,8 +28,8 @@ The following steps show how to configure a conditional access policy for Micros
 1. On the Conditional Access | Overview page, select **+Create new policy**
 1. Provide a name for the policy
 1. Under **Assignments**, select the **Users** field. Then, on the Include tab, choose **Select users and groups** and then check the **Users and groups** checkbox. The Select users and groups pane opens, and you can search for and select a Microsoft Entra user or group for conditional access. When done, click Select.
-1. Place your cursor in the **Target resources** field, and choose **Cloud apps** from the drop down menu. Then, on the Include tab, choose **Select apps** and place your curson in the **Select** field. In the Select side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, and **Azure Storage**. When you've selected all four items, close the side pane by clicking Select.
-1. Under **Access controls**, put your curson in the **Grant** field. In the Grant side pane that appears, check the policy you want to apply, and then click Select.
+1. Place your cursor in the **Target resources** field, and choose **Cloud apps** from the drop-down menu. Then, on the Include tab, choose **Select apps** and place your cursor in the **Select** field. In the Select side pane that appears, find and select **Power BI Service**, **Azure Data Explorer**, **Azure SQL Database**, and **Azure Storage**. When you've selected all four items, close the side pane by clicking Select.
+1. Under **Access controls**, put your cursor in the **Grant** field. In the Grant side pane that appears, check the policy you want to apply, and then click Select.
 1. Set the **Enable policy** toggle to **On**, then select **Create**.
 
 To ensure that conditional access for Fabric works as intended and expected, it's recommended to adhere to the following best practices:
