@@ -13,7 +13,7 @@ ms.search.form: Data Wrangler
 
 # How to accelerate data prep with Data Wrangler in Microsoft Fabric
 
-Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code, in pandas or PySpark, that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
+Data Wrangler is a notebook-based tool that provides users with an immersive interface for exploratory data analysis. The feature combines a grid-like data display with dynamic summary statistics, built-in visualizations, and a library of common data-cleaning operations. Each operation can be applied in a matter of clicks, updating the data display in real time and generating code in pandas or PySpark that can be saved back to the notebook as a reusable function. This article focuses on exploring and transforming pandas DataFrames. Instructions for using Data Wrangler on Spark DataFrames can be found [here](data-wrangler-spark.md).
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/titan
 display(df)
 ```
 
-Under the notebook ribbon “Data” tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
+Under the notebook ribbon "Data" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
 
 > [!TIP]
 > Data Wrangler cannot be opened while the notebook kernel is busy. An executing cell must finish its execution before Data Wrangler can be launched.
@@ -69,7 +69,7 @@ A searchable list of data-cleaning steps can be found in the Operations panel. (
 
 ## Previewing and applying operations
 
-The results of a selected operation will be previewed automatically in the Data Wrangler display grid, and the corresponding code will automatically appear in the panel below the grid. To commit the previewed code, select “Apply” in either place. To get rid of the previewed code and try a new operation, select “Discard.”
+The results of a selected operation will be previewed automatically in the Data Wrangler display grid, and the corresponding code will automatically appear in the panel below the grid. To commit the previewed code, select "Apply" in either place. To get rid of the previewed code and try a new operation, select "Discard."
 
 :::image type="content" source="media/data-wrangler/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler/preview-operation.png":::
 
