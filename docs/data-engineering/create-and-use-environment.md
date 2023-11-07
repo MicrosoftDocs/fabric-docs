@@ -93,8 +93,8 @@ Learn more on [how to manage libraries](environment-manage-library.md)
 To save and publish changes in the Fabric Environment, you can navigate to the **Home** tab.
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot of save and publish the changes.":::
 
-- The **Save** button becomes active when there are changes that haven't been saved. If you refresh the page without saving, all pending changes are lost. If any section contains invalid input, the Save button aredisabled. The Save action applies to all unsaved changes in both *Libraries* and *Spark compute* sections.
-- The **Publish** button becomes active when there are changes that haven't yet been published. You can directly publish these changes without first saving them. Clicking the Publish button takes you to the *Pending changes* page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric Environment runs jobs on the backend to prepare the configurations for use. This process may take several minutes, particularly if there are library changes involved.
+- The **Save** button becomes active when there are changes that haven't been saved. If you refresh the page without saving, all pending changes are lost. If any section contains invalid input, the Save button is disabled. The Save action applies to all unsaved changes in both *Libraries* and *Spark compute* sections.
+- The **Publish** button becomes active when there are changes that haven't yet been published. You can directly publish these changes without first saving them. Clicking the Publish button takes you to the *Pending changes* page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric Environment runs jobs on the backend to prepare the configurations for use. This process takes several minutes, particularly if there are library changes involved.
 
 > [!NOTE]
 > During the publishing process, if changes involve libraries, the system will assist in downloading dependencies and resolving potential conflicts.
