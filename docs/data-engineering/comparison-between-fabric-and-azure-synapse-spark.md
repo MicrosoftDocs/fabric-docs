@@ -26,7 +26,7 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 | **Connections** | Connector type (linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (DMTS) <br>[Data sources](/power-query/connectors/) <br> - |
 | **Security** | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse workspace identity<br>Data Exfiltration Protection (DEP) <br>Service tags <br>Key Vault (via mssparkutils/ linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> - <br> - <br>- <br> - <br>- <br>[Service tags](../security/security-service-tags.md) <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
 | **DevOps** | Azure DevOps integration <br>CI/CD (No built-in support) | Azure DevOps integration (notebook)<br> Deployment pipelines (notebook) |
-| **Developer experience** | IDE Iintegration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
+| **Developer experience** | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
 | **Logging and monitoring** | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
 | **Business Continuity and Disaster Recovery (BCDR)** | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) | 
 
@@ -86,11 +86,11 @@ The following table compares Azure Synapse Spark and Fabric Spark pools:
     | X-Large | Min: 3, Max: 200 | Min: 1, Max: 4 |
     | XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
 
-*  **Adjustable node sizes**: In Azure Synapse Spark you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark vcores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, *the total of vcores in the capacity/vcores per node size = total number of nodes available*. Learn more about [Spark compute](spark-compute.md).
+*  **Adjustable node sizes**: In Azure Synapse Spark, you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark vcores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, *the total of vcores in the capacity/vcores per node size = total number of nodes available*. Learn more about [Spark compute](spark-compute.md).
 
 * **Node size family**: Fabric Spark pools only support [Memory Optimized node size family](spark-compute.md) for now. If you're using GPU-accelerated SKU Spark pool in Azure Synapse, they aren't available in Fabric.
 
-* **Node size**: xxlarge node size comes with 432GB of memory in Azure Synapse, while the same node size has 512GB in Fabric including 64 vcores. The rest of the node sizes (small through xlarge) have the same vcores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
+* **Node size**: xxlarge node size comes with 432 GB of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64 vcores. The rest of the node sizes (small through xlarge) have the same vcores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
 
 * **Automatic pausing**: if enabled in Azure Synapse Spark, the Apache Spark pool will automatically pause after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric. 
 
@@ -126,7 +126,7 @@ While both options are supported in Azure Synapse Spark and Fabric, there are so
 - **Import/export**: this option for Spark configurations is available in the Fabric environment artifact.
 
 - Other considerations:
-    - Immutable Spark configurations: Some Spark configurations are immutable. If you get ``` AnalysisException: Can't modify the value of a Spark config: <config_name>``` means that that property is immutable.
+    - Immutable Spark configurations: Some Spark configurations are immutable. If you get ``` AnalysisException: Can't modify the value of a Spark config: <config_name>```, it means that that property is immutable.
     - FAIR scheduler: FAIR scheduler is used in [high concurrency mode](high-concurrency-overview.md). 
     - V-Order: [V-Order](delta-optimization-and-v-order.md) is write-time optimization applied to the parquet files enabled by default in Fabric Spark pools.
     - Optimized Write: [Optimized Write](delta-optimization-and-v-order.md) is disabled by default in Azure Synapse but enabled by default for Fabric Spark.
@@ -138,7 +138,7 @@ While both options are supported in Azure Synapse Spark and Fabric, there are so
 
 Spark libraries can be applied at different levels:
 
-- **Workspace level**: you cannot upload/install these libraries to your workspace and later assign them to a specific Spark pool in Azure Synapse.
+- **Workspace level**: you can't upload/install these libraries to your workspace and later assign them to a specific Spark pool in Azure Synapse.
 - **Environment level**: you can upload/install libraries to an environment. Environment-level libraries are available to all notebooks and SJD running on the environment.
 - **Inline**: in addition to environment-level libraries, you can also specify inline libraries. For example, at the beginning of a notebook session.
 
@@ -231,7 +231,7 @@ In terms of Spark job definition, the following are some important consideration
 
 In terms of Hive MetaStore (HMS), there are some differences:
 
-|HIve store type| Azure Synapse Spark | Fabric Spark |
+|HMS type| Azure Synapse Spark | Fabric Spark |
 | -- | -- | -- |
 | Internal HMS | Yes | Yes (lakehouse) |
 | External HMS | Yes | No |
