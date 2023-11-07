@@ -20,20 +20,30 @@ In this article, you learn how to enable availability of KQL Database data in On
 
 ## How it works
 
-* There's no additional cost for enabling the policy. You're charged only once for the storage of data in your KQL database.
+* There's no additional cost for enabling data availability. You're charged only once for the storage of data in your KQL database.
 
-When you **enable** data availability on your KQL database or table:
+When you **enable** data availability on:
+
+KQL Database:
 
 * Existing tables aren't affected. New tables are made available in OneLake.
+* The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied to the data in OneLake. Data that's removed from your KQL database at the end of the retention period is also removed from OneLake.
+
+A specified table:
+
 * New data is made available in OneLake.
 * Existing data isn't backfilled.
 * Data can't be deleted, truncated, or purged.
 * Table schema can't be altered and the table can't be renamed.
-* The [Data retention policy](data-policies.md#data-retention-policy) of your KQL database is also applied on the delta tables. Data that's removed from your KQL database at the end of the retention period is also removed from the delta tables.
 
-When you **disable** data availability on your KQL database or table:
+When you **disable** data availability on:
+
+KQL Database:
 
 * Existing tables aren't affected. New tables won't be available in OneLake.
+
+A specified table:
+
 * New data isn't made available in OneLake.
 * Data can be deleted, truncated, or purged.
 * Table schema can be altered and the table can be renamed.
