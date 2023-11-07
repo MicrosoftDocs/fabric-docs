@@ -12,10 +12,10 @@ ms.custom:
 
 A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized" error reasons.
 
-**APPLIES TO:** 
+**APPLIES TO:**
 ✔️ Dataflow Gen2 in Microsoft Fabric
 ✔️ On-premises data gateway in Microsoft Fabric
-✔️ VNET data gateway in Microsoft Fabric
+✔️ VNet data gateway in Microsoft Fabric
 
 **Status:** Open
 
@@ -23,7 +23,7 @@ A known issue is posted where a refresh taking longer than an hour fails with  "
 
 ## Symptoms
 
-When using OAuth2 credentials, the gateway currently doesn't support refreshing tokens automatically when access tokens expire (one hour after the refresh started). If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you may be hitting this error. This limitation for long running refreshes exists for both VNET gateways and on-premises data gateways.
+When you're using OAuth2 credentials, the gateway currently doesn't support refreshing tokens automatically when access tokens expire (one hour after the refresh started). If you get the errors "InvalidConnectionCredentials" or "AccessUnauthorized" when accessing cloud data sources using OAuth2 credentials even though the credentials have been updated recently, you might be hitting this error. This limitation for long running refreshes exists for both VNet gateways and on-premises data gateways.
 
 ## Solutions and workarounds
 
