@@ -6,7 +6,7 @@ ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
 ms.custom: 
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
 
 ---
