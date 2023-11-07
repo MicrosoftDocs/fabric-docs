@@ -12,7 +12,6 @@ ms.date: 10/30/2023
 
 Data pipelines enable you to apply rich out-of-the-box data orchestration capabilities to compose flexible data workflows that meet your enterprise data movement and ingestion needs. These capabilities require different computing service engines that have distinct consumption rates.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 :::image type="content" source="media/pricing-overview/pipelines-pricing-diagram.png" alt-text="Diagram showing the data pipeline pricing model for Data Factory in Microsoft Fabric.":::
 
