@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom: build-2023
-ms.date: 11/06/2023
+ms.date: 11/07/2023
 ---
 
 # Fabric operations
@@ -167,11 +167,7 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 
 ## Changes to Fabric consumption rates
 
-Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice regarding consumption rate changes by email or in-product notification.
-
-Changes to consumption rates are effective from the date stated in the [Microsoft Fabric release plan documentation](/fabric/release-plan/) or the [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/).
-
-If any change to a Microsoft Fabric consumption rate increases the CUs required to use a particular experience, you can use the cancellation option available for your chosen payment method.
+Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
 
 ## Next steps
 
