@@ -13,8 +13,6 @@ ms.date: 05/23/2023
 
 This module takes about 25 minutes to create a dataflow, apply transformations, and move the raw data from the Bronze table into a Gold Lakehouse table. 
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 With the raw data loaded into your Bronze Lakehouse table from the last module, you can now prepare that data and enrich it by combining it with another table that contains discounts for each vendor and their trips during a particular day. This final Gold Lakehouse table is loaded and ready for consumption.
 
 The high-level steps in the dataflow are as follows:
@@ -28,8 +26,8 @@ The high-level steps in the dataflow are as follows:
 
 ## Get data from a Lakehouse table
 
-1. From the sidebar, select **Create**, and then **Dataflow Gen2 (Preview)** to create a new dataflow gen2.
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 (Preview) button highlighted.":::
+1. From the sidebar, select **Create**, and then **Dataflow Gen2** to create a new dataflow gen2.
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted.":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 
@@ -216,6 +214,9 @@ With the output query now fully prepared and with data ready to output, we can d
    :::image type="content" source="media/tutorial-end-to-end-dataflow/choose-destination-settings-dialog.png" alt-text="Screenshot showing the Choose destination settings dialog with the Save settings button highlighted.":::
 
 1. Back in the main editor window, confirm that you see your output destination on the **Query settings** pane for the **Output** table, and then select **Publish**.
+
+    > [!IMPORTANT]
+    > When the first Dataflow Gen2 is created in a workspace, Lakehouse and Warehouse items are provisioned along with their related SQL analytics endpoint and semantic models. These items are shared by all dataflows in the workspace and are required for Dataflow Gen2 to operate, shouldn't be deleted, and aren't intended to be used directly by users. The items are an implementation detail of Dataflow Gen2. The items aren't visible in the workspace, but might be accesible in other experiences such as the Notebook, SQL-endpoint, Lakehouse, and Warehouse experiences. You can recognize the items by their prefix in the name. The prefix of the items is `DataflowsStaging'.
 
 1. _(Optional)_ On the workspace page, you can rename your dataflow by selecting the ellipsis to the right of the dataflow name that appears after you select the row, and choosing **Properties**.
 

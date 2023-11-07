@@ -52,9 +52,9 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Discover relationships in a Power BI dataset using semantic link
+          - text: Discover relationships in a Power BI dataset using semantic link (preview)
             url: tutorial-power-bi-relationships.md 
-          - text: Analyze functional dependencies in a Power BI dataset using semantic link
+          - text: Analyze functional dependencies in a Power BI dataset using semantic link (preview)
             url: tutorial-power-bi-dependencies.md   
 
   # Card 
@@ -73,11 +73,11 @@ landingContent:
       - linkListType: overview
         links:  
         - text: Training Overview
-          url: ./model-training/model-training-overview.md 
+          url: model-training-overview.md 
       - linkListType: how-to-guide
         links:
           - text: Train with Spark MLlib
-            url: ./model-training/fabric-sparkml-tutorial.md 
+            url: fabric-sparkml-tutorial.md 
           - text: Train models with Scikit-learn
             url: train-models-scikit-learn.md 
           - text: Train models with PyTorch
@@ -106,8 +106,8 @@ landingContent:
         links:
           - text: Use OpenAI for big data with SynapseML
             url: open-ai.md
-          - text: Use Congnitive Services with SynapseML
-            url: overview-azure-ai-services.md
+          - text: Use Cognitive Services with SynapseML
+            url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
           - text: Deep learning with ONNX and SynapseML
             url: onnx-overview.md
           - text: Perform multivariate anomaly detection with SynapseML
@@ -142,11 +142,11 @@ landingContent:
           url: /python/api/semantic-link/overview-semantic-link
 
 # Card 
-  - title: Using semantic link
+  - title: Using semantic link (preview)
     linkLists:
       - linkListType: overview
         links:
-          - text: What is semantic link?
+          - text: What is semantic link (preview)?
             url: semantic-link-overview.md
       - linkListType: how-to-guide
         links:

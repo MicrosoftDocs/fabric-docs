@@ -19,7 +19,7 @@ In this tutorial, you walk through the data engineering and data science workflo
 > * Train a model and log it with MLflow
 > * Load the model and make predictions
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 There are different types of recommendation algorithms. This tutorial uses a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 
@@ -656,5 +656,5 @@ userRecs.write.format("delta").mode("overwrite").save(
 
 - [Training and evaluating a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

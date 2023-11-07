@@ -49,7 +49,7 @@ Here's more detail about each of the permissions provided:
 
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
 
-- **"Build reports on the default checkbox" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default dataset that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default dataset, to create Power BI reports against this dataset. The **Build** checkbox is selected by default, but can be unchecked.
+- **"Build reports on the default checkbox" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
 
 When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] Data Hub page.
 
@@ -77,7 +77,7 @@ For example, in the following screenshot, a user with **ReadAll** permissions ca
 
 ### Build permissions
 
-With **Build** permissions, the shared recipient can create reports on top of the default dataset that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the Data Hub or also do the same using Power BI Desktop.
+With **Build** permissions, the shared recipient can create reports on top of the default semantic model that is connected to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The shared recipient can create Power BI reports from the Data Hub or also do the same using Power BI Desktop.
 
 For example, in the following screenshot a user with **Build** permissions can start to **Auto-create** a Power BI report based on the shared warehouse.
 
@@ -100,13 +100,13 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 - **Remove access** removes all item permissions.
 - **Remove ReadData** removes the **ReadData** permissions.
 - **Remove ReadAll** removes **ReadAll** permissions.
-- **Remove build** removes **Build** permissions on the corresponding default dataset.
+- **Remove build** removes **Build** permissions on the corresponding default semantic model.
 
 :::image type="content" source="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png" alt-text="Screenshot showing a user removing the ReadAll permission of a shared recipient." lightbox="media\share-warehouse-manage-permissions\remove-readall-manage-permissions.png":::
 
 ## Limitations
 
-- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions may reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
+- If you provide item permissions or remove users who previously had permissions, permission propagation can take up to two hours. The new permissions will reflect in "Manage permissions" immediately. Sign in again to ensure that the permissions are reflected in your [!INCLUDE [fabric-se](includes/fabric-se.md)].
 - Shared recipients are able to access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using owner's identity (delegated mode). Ensure that the owner of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is not removed from the workspace.
 - Shared recipients only have access to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they receive and not any other items within the same workspace as the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. If you want to provide permissions for other users in your team to collaborate on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] (read and write access), add them as Workspace roles such as "Member" or "Contributor".
 - Currently, when you share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and choose **Read all data using SQL**, the shared recipient can access the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] editor in a read-only mode. These shared recipients can create queries, but cannot currently save their queries.
@@ -114,10 +114,18 @@ You can choose to add or remove permissions using the "Manage permissions" exper
 - If you want to provide granular access to specific objects within the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], share the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] with no additional permissions, then provide granular access to specific objects using T-SQL GRANT statement. For more information, see T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
 - If you see that the **ReadAll** permissions and **ReadData** permissions are disabled in the sharing dialog, refresh the page.
 - Shared recipients do not have permission to reshare a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-- If a report built on top of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is shared with another recipient, the shared recipient needs more permissions to access the report. This depends on the dataset mode:
+- If a report built on top of the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is shared with another recipient, the shared recipient needs more permissions to access the report. This depends on the mode of [access to the semantic model by Power BI](semantic-models.md):
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-  - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+  - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
+
+## Data protection features
+
+Microsoft Fabric data warehousing supports several technologies that administrators can use to protect sensitive data from unauthorized viewing. By securing or obfuscating data from unauthorized users or roles, these security features can provide data protection in both a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] without application changes.
+
+- [Column-level security](column-level-security.md) prevents unauthorized viewing of columns in tables.
+- [Row-level security](row-level-security.md) prevents unauthorized viewing of rows in tables, using familiar `WHERE` clause filter predicates.
+- [Dynamic data masking](dynamic-data-masking.md) prevents unauthorized viewing of sensitive data by using masks to prevent access to complete, such as email addresses or numbers.
 
 ## Related content
 

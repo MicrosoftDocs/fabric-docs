@@ -14,8 +14,6 @@ ms.search.form: product-data-factory
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 Before you can set up a connection in Dataflow Gen2 or a data pipeline, the following prerequisites are required:

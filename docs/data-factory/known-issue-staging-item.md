@@ -1,10 +1,10 @@
 ---
 title: Known issue - Staging items aren't available or are misconfigured
 description: A known issue is posted where a customer is able to see and interact with Staging items such as the Staging Lakehouse and Warehouse.
-author: ptyx507
-ms.author: miescobar
+author: Luitwieler
+ms.author: jeluitwi
 ms.topic: troubleshooting  
-ms.date: 06/05/2023
+ms.date: 10/24/2023
 ms.custom: 
 ---
 
@@ -18,7 +18,7 @@ If a user deletes or modifies any of these staging items, the workspace can be s
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric
 
-**Status:** Open
+**Status:** Closed
 
 **Problem area:** Data Factory
 

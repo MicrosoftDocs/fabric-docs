@@ -14,8 +14,6 @@ ms.search.form: spark_job_definition
 
 Learn how to run a Microsoft Fabric Apache Spark job definition and find the job definition status and details.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you get started, you must:

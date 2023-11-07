@@ -15,8 +15,6 @@ ms.date: 05/23/2023
 
 When you create Microsoft Fabric from the Azure portal, it is automatically added to the Fabric tenant that's associated with the subscription used to create the capacity. With the simplified setup in Microsoft Fabric, there's no need to link the capacity to the Fabric tenant. Because the newly created capacity will be listed in the admin settings pane. This configuration provides a faster experience for admins to start setting up the capacity for their enterprise analytics teams.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To make changes to the Data Engineering/Science settings in a capacity, you must have admin role for that capacity. To learn more about the roles that you can assign to users in a capacity, see [Roles in capacities](../admin/roles.md).
 
 Use the following steps to manage the Data Engineering/Science settings for Microsoft Fabric capacity:
@@ -33,7 +31,7 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
    * **Customized workspace pools:** You can restrict or democratize compute customization to workspace admins by enabling or disabling this option. Enabling this option allows workspace admins to create, update, or delete workspace level custom spark pools. Additionally, it allows you to resize them based on the compute requirements within the maximum cores limit of a capacity.
 
-   * **Runtime version:** As a capacity admin, you can select a default runtime version for the entire capacity. All the new workspaces created in that capacity inherit the selected runtime version. Workspace admins can override the default runtime version inherited and choose a different runtime version based on their workspace level requirements.
+   * **[Runtime version](./runtime.md):** As a capacity admin, you can select a default runtime version for the entire capacity. All the new workspaces created in that capacity inherit the selected runtime version. Workspace admins can override the default runtime version inherited and choose a different runtime version based on their workspace level requirements.
 
    * **Spark properties:** Capacity admins can configure spark properties and their values, which are inherited to all the workspaces in the capacity. Like the spark runtime version, workspace admins can override these properties for their individual workspaces.
 

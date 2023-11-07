@@ -13,8 +13,6 @@ ms.date: 08/21/2023
 
 This article provides suggestions to troubleshoot common problems with the Azure Table Storage connector in Data Factory in Microsoft Fabric.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Error code: AzureTableDuplicateColumnsFromSource
 
 - **Message**: `Duplicate columns with same name '%name;' are detected from source. This is NOT supported by Azure Table Storage destination.`

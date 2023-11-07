@@ -14,8 +14,6 @@ ms.date: 09/27/2023
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Access shortcuts as folders in a Spark notebook
 
 Shortcuts appear as folders in OneLake, and Spark can read from them just like any other folder in OneLake.

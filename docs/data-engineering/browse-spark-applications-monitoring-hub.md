@@ -13,8 +13,6 @@ ms.search.form: Browse Spark applications in Monitoring hub
 
 The Monitoring hub serves as a centralized portal for browsing Apache Spark activities across items. When you are in the Data Engineering or Data Science experience, you can view in-progress Apache Spark applications triggered from Notebooks, Apache Spark job definitions, and Pipelines. You can also search and filter Apache Spark applications based on different criteria. Additionally, you can cancel your in-progress Apache Spark applications and drill down to view more execution details of an Apache Spark application.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Access the monitoring hub
 
 You can access the Monitoring hub to view various Apache Spark activities by selecting **Monitoring hub** in the left-side navigation links.

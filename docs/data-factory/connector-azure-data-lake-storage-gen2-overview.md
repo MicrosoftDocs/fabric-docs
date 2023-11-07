@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Azure Data Lake Storage Gen2 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Support in Dataflow Gen2
 
 To learn about how to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2, go to [Set up your connection in Dataflow Gen2](connector-azure-data-lake-storage-gen2.md#set-up-your-connection-in-dataflow-gen2).

@@ -1,31 +1,29 @@
 ---
-title: How to configure HTTP in a copy activity
+title: Configure HTTP in a copy activity
 description: This article explains how to copy data using HTTP.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/2/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure HTTP in a copy activity
+# Configure HTTP in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to HTTP.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
 HTTP supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -99,4 +97,4 @@ The following table contains more information about the copy activity in HTTP.
 
 ## Next steps
 
-- [How to create an HTTP connection](connector-http.md)
+- [Set up your HTTP connection](connector-http.md)
