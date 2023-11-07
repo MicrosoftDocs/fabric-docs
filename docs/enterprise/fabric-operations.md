@@ -50,7 +50,7 @@ This section is divided into Fabric experience. Each experience had a table that
 
 ### Data Factory
 
-The Real-Time analytics experience contains operations for [Dataflows Gen2](#dataflows-gen2) and [Pipelines](#pipelines).
+The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-gen2) and [Pipelines](#pipelines).
 
 #### Dataflows Gen2
 
@@ -63,48 +63,46 @@ The Real-Time analytics experience contains operations for [Dataflows Gen2](#dat
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
-| DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units. | Pipeline | Data Movement       | Background |
-| ActivityRun  | A Data Factory data pipeline activity execution.                                                                         | Pipeline | Data Orchestration  | Background |
+| DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units. | Pipeline | Data Movement Capacity Usage CU | Background |
+| ActivityRun  | A Data Factory data pipeline activity execution.                                                                         | Pipeline | Data Orchestration Capacity Usage CU | Background |
 
 ### Data Warehouse
 
-One Data Warehouse core is equivalent to two CUs.
+One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivalent to two Fabric Capacity Units (CUs).
 
 | Operation          | Description                                                                                        | Item      | Azure billing meter | Type       |
 | ------------------ | -------------------------------------------------------------------------------------------------- | --------- | ------------------- | ---------- |
-| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse.    | Warehouse | Data Warehouse      | Background |
-| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint. | Warehouse | Data Warehouse      | Background |
+| Warehouse Query    | Compute charge for all user generated and system generated T-SQL statements within a Warehouse.    | Warehouse | Data Warehouse Capacity Usage CU      | Background |
+| SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint. | Warehouse | Data Warehouse Capacity Usage CU     | Background |
 
 ### OneLake
 
 | Operation                                  | Description                                | Item       | Azure Billing Meter                             | Type       |
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
-| OneLake Read via Redirect                  | OneLake Read via Redirect.                  | (Multiple) | OneLake Read Operations                         | Background |
-| OneLake Read via Proxy                     | OneLake Read via Proxy.                     | (Multiple) | OneLake Read Operations via API                 | Background |
-| OneLake Shortcut Read via Redirect         | OneLake Shortcut Read via Redirect.         | (Multiple) | OneLake Read Operations                         | Background |
-| OneLake Shortcut Read via Proxy            | OneLake Shortcut Read via Proxy.            | (Multiple) | OneLake Read Operations via API                 | Background |
-| OneLake Write via Redirect                 | OneLake Write via Redirect.                 | (Multiple) | OneLake Write Operations                        | Background |
-| OneLake Write via Proxy                    | OneLake Write via Proxy.                    | (Multiple) | OneLake Write Operations via API                | Background |
-| OneLake Shortcut Write via Redirect        | OneLake Shortcut Write via Redirect.        | (Multiple) | OneLake Write Operations                        | Background |
-| OneLake Shortcut Write via Proxy           | OneLake Shortcut Write via Proxy.           | (Multiple) | OneLake Write Operations via API                | Background |
+| OneLake Read via Redirect                  | OneLake Read via Redirect.                  | (Multiple) | OneLake Read Operations  Capacity Usage CU                         | Background |
+| OneLake Read via Proxy                     | OneLake Read via Proxy.                     | (Multiple) | OneLake Read Operations via API Capacity Usage CU                 | Background |
+| OneLake Shortcut Read via Redirect         | OneLake Shortcut Read via Redirect.         | (Multiple) | OneLake Read Operations Capacity Usage CU                        | Background |
+| OneLake Shortcut Read via Proxy            | OneLake Shortcut Read via Proxy.            | (Multiple) | OneLake Read Operations via API Capacity Usage CU                 | Background |
+| OneLake Write via Redirect                 | OneLake Write via Redirect.                 | (Multiple) | OneLake Write Operations  Capacity Usage CU                        | Background |
+| OneLake Write via Proxy                    | OneLake Write via Proxy.                    | (Multiple) | OneLake Write Operations via API Capacity Usage CU              | Background |
+| OneLake Shortcut Write via Redirect        | OneLake Shortcut Write via Redirect.        | (Multiple) | OneLake Write Operations Capacity Usage CU                       | Background |
+| OneLake Shortcut Write via Proxy           | OneLake Shortcut Write via Proxy.           | (Multiple) | OneLake Write Operations via API Capacity Usage CU              | Background |
 | OneLake Iterative Write via Redirect       | OneLake Iterative Write via Redirect.       | (Multiple) | OneLake Iterative Write Operations              | Background |
-| OneLake Iterative Read via Redirect        | OneLake Iterative Read via Redirect.        | (Multiple) | OneLake Iterative Read Operations               | Background |
-| OneLake Other Operations                   | OneLake Other Operations.                   | (Multiple) | OneLake Other Operations                        | Background |
-| OneLake Other Operations via Redirect      | OneLake Other Operations via Redirect.      | (Multiple) | OneLake Other Operations via API                | Background |
-| OneLake Iterative Write via Proxy          | OneLake Iterative Write via Proxy.          | (Multiple) | OneLake Iterative Write Operations via API      | Background |
-| OneLake Iterative Read via Proxy           | OneLake Iterative Read via Proxy.           | (Multiple) | OneLake Iterative Read Operations via API       | Background |
-| OneLake Storage                            | OneLake Storage.                            | (Multiple) | OneLake Storage                                 | Background |
-| OneLake BCDR Storage                       | OneLake BCDR Storage.                       | (Multiple) | OneLake Storage                                 | Background |
-| OneLake BCDR Read via Proxy                | OneLake BCDR Read via Proxy.                | (Multiple) | OneLake BCDR Read Operations via API            | Background |
-| OneLake BCDR Write via Proxy               | OneLake BCDR Write via Proxy.               | (Multiple) | OneLake BCDR Write Operations via API           | Background |
-| OneLake BCDR Read via Redirect             | OneLake BCDR Read via Redirect.             | (Multiple) | OneLake BCDR Read Operations                    | Background |
-| OneLake BCDR Write via Redirect            | OneLake BCDR Write via Redirect.            | (Multiple) | OneLake BCDR Write Operations                   | Background |
-| OneLake BCDR Iterative Read via Proxy      | OneLake BCDR Iterative Read via Proxy.      | (Multiple) | OneLake BCDR Iterative Read Operations via API  | Background |
-| OneLake BCDR Iterative Read via Redirect   | OneLake BCDR Iterative Read via Redirect.   | (Multiple) | OneLake BCDR Iterative Read Operations          | Background |
-| OneLake BCDR Iterative Write via Proxy     | OneLake BCDR Iterative Write via Proxy.     | (Multiple) | OneLake BCDR Iterative Write Operations via API | Background |
-| OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect.  | (Multiple) | OneLake BCDR Iterative Write Operations         | Background |
-| OneLake BCDR Other Operations              | OneLake BCDR Other Operations.              | (Multiple) | OneLake BCDR Other Operations                   | Background |
-| OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect. | (Multiple) | OneLake BCDR Other Operations via API           | Background |
+| OneLake Iterative Read via Redirect        | OneLake Iterative Read via Redirect.        | (Multiple) | OneLake Iterative Read Operations Capacity Usage CU              | Background |
+| OneLake Other Operations                   | OneLake Other Operations.                   | (Multiple) | OneLake Other Operations Capacity Usage CU                       | Background |
+| OneLake Other Operations via Redirect      | OneLake Other Operations via Redirect.      | (Multiple) | OneLake Other Operations via API Capacity Usage CU             | Background |
+| OneLake Iterative Write via Proxy          | OneLake Iterative Write via Proxy.          | (Multiple) | OneLake Iterative Write Operations via API Capacity Usage CU    | Background |
+| OneLake Iterative Read via Proxy           | OneLake Iterative Read via Proxy.           | (Multiple) | OneLake Iterative Read Operations via API Capacity Usage CU      | Background |
+| OneLake BCDR Read via Proxy                | OneLake BCDR Read via Proxy.                | (Multiple) | OneLake BCDR Read Operations via API Capacity Usage CU        | Background |
+| OneLake BCDR Write via Proxy               | OneLake BCDR Write via Proxy.               | (Multiple) | OneLake BCDR Write Operations via API Capacity Usage CU        | Background |
+| OneLake BCDR Read via Redirect             | OneLake BCDR Read via Redirect.             | (Multiple) | OneLake BCDR Read Operations Capacity Usage CU             | Background |
+| OneLake BCDR Write via Redirect            | OneLake BCDR Write via Redirect.            | (Multiple) | OneLake BCDR Write Operations Capacity Usage CU               | Background |
+| OneLake BCDR Iterative Read via Proxy      | OneLake BCDR Iterative Read via Proxy.      | (Multiple) | OneLake BCDR Iterative Read Operations via API Capacity Usage CU | Background |
+| OneLake BCDR Iterative Read via Redirect   | OneLake BCDR Iterative Read via Redirect.   | (Multiple) | OneLake BCDR Iterative Read Operations Capacity Usage CU     | Background |
+| OneLake BCDR Iterative Write via Proxy     | OneLake BCDR Iterative Write via Proxy.     | (Multiple) | OneLake BCDR Iterative Write Operations via API Capacity Usage CU | Background |
+| OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect.  | (Multiple) | OneLake BCDR Iterative Write Operations Capacity Usage CU    | Background |
+| OneLake BCDR Other Operations              | OneLake BCDR Other Operations.              | (Multiple) | OneLake BCDR Other Operations Capacity Usage CU       | Background |
+| OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect. | (Multiple) | OneLake BCDR Other Operations via API Capacity Usage CU    | Background |
 
 ### Power BI
 
@@ -115,21 +113,21 @@ The usage for each operation is reported in CU processing time in seconds. Eight
 
 | Operation | Description | Item | Azure billing meter | Type |
 |--|--|--|--|--|
-| Artificial intelligence (AI) | AI function evaluation. | AI | Power BI | Background |
-| Background query | Queries for refreshing tiles and creating report snapshots. | Semantic model | Power BI | Background |
-| [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model. | Dataflow Gen1 | Power BI | Interactive |
-| [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI | Background |
-| Semantic model on-demand refresh | A background Semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI | Background |
-| Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI | Background |
-| Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe). | Report | Power BI | Background |
-| Interactive query | Queries initiated by an on-demand data request from a user. For example, loading a model when opening a report, or user interaction with a report. | Semantic model | Power BI | Interactive |
-| PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API. | Report | Power BI | Background |
-| Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API. | Paginated report | Power BI | Background |
-| Render | A Power BI paginated report viewed in Power BI service. | Paginated report | Power BI | Interactive |
-| Web modeling read | A data model read operation in the semantic model web modeling user experience. | Semantic model | Power BI | Interactive |
-| Web modeling write | A data model write operation in the semantic model web modeling user experience. | Semantic model | Power BI | Interactive |
-| XMLA read | XMLA read operations initiated by the user, for queries and discoveries. | Semantic model | Power BI | Interactive |
-| XMLA write | A background XMLA write operation that changes the model. | Semantic model | Power BI | Background |
+| Artificial intelligence (AI) | AI function evaluation. | AI | Power BI Capacity Usage CU | Background |
+| Background query | Queries for refreshing tiles and creating report snapshots. | Semantic model | Power BI Capacity Usage CU | Background |
+| [Dataflow DirectQuery](/power-bi/transform-model/dataflows/dataflows-directquery) | Connect directly to a dataflow without the need to import the data into a semantic model. | Dataflow Gen1 | Power BI Capacity Usage CU | Interactive |
+| [Dataflow refresh](/power-bi/transform-model/dataflows/dataflows-understand-optimize-refresh) | An on demand or scheduled background dataflow refresh, performed by the service or with REST APIs. | Dataflow Gen1 | Power BI Capacity Usage CU | Background |
+| Semantic model on-demand refresh | A background Semantic model refresh initiated by the user, using the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI Capacity Usage CU | Background |
+| Semantic model scheduled refresh | A scheduled background semantic model refresh, performed by the service, REST APIs, or public XMLA endpoints. | Semantic model | Power BI Capacity Usage CU | Background |
+| Full report email subscription | A PDF or PowerPoint copy of an entire Power BI report, attached to an [email subscription](/power-bi/collaborate-share/end-user-subscribe). | Report | Power BI Capacity Usage CU | Background |
+| Interactive query | Queries initiated by an on-demand data request from a user. For example, loading a model when opening a report, or user interaction with a report. | Semantic model | Power BI Capacity Usage CU | Interactive |
+| PublicApiExport | A Power BI report exported with the [export report to file](/power-bi/developer/embedded/export-to) REST API. | Report | Power BI Capacity Usage CU | Background |
+| Render | A Power BI paginated report exported with the [export paginated report to file](/power-bi/developer/embedded/export-paginated-report) REST API. | Paginated report | Power BI Capacity Usage CU | Background |
+| Render | A Power BI paginated report viewed in Power BI service. | Paginated report | Power BI Capacity Usage CU | Interactive |
+| Web modeling read | A data model read operation in the semantic model web modeling user experience. | Semantic model | Power BI Capacity Usage CU | Interactive |
+| Web modeling write | A data model write operation in the semantic model web modeling user experience. | Semantic model | Power BI Capacity Usage CU | Interactive |
+| XMLA read | XMLA read operations initiated by the user, for queries and discoveries. | Semantic model | Power BI Capacity Usage CU | Interactive |
+| XMLA write | A background XMLA write operation that changes the model. | Semantic model | Power BI Capacity Usage CU | Background |
 
 ### Real-Time Analytics
 
@@ -139,33 +137,33 @@ The Real-Time analytics experience contains operations for [Event streams](#even
 
 | Operation                       | Description                               | Item         | Azure billing meter        | Type       |
 | ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
-| Eventstream Per Hour            | Ingestion or processing for Event Stream. | Event Stream | Event stream               | Background |
-| Eventstream Data Traffic per GB | Data Ingress and Egress.                  | Event Stream | Event streams Data Traffic | Background |
-| Eventstream Processor Per Hour  | ASA Processing.                           | Event Stream | Event streams Processor    | Background |
+| Eventstream Per Hour            | Ingestion or processing for Event Stream. | Event Stream | eventstream Capacity Usage CU               | Background |
+| Eventstream Data Traffic per GB | Data Ingress and Egress.                  | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
+| Eventstream Processor Per Hour  | ASA Processing.                           | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### KQL Database and KQL Queryset
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
-| KustoUpTime | Measure of the time that the KQL database is Active. | KQL Database or KQL Queryset | KQL Compute         | Interactive |
+| KustoUpTime | Measure of the time that the KQL database is Active. | KQL Database or KQL Queryset | KQL Database Capacity Usage CU         | Interactive |
 
 ### Spark
 
-Two Spark cores are equivalent to one CU. To understand how Spark operations consume CUs, refer to [spark pools](../data-engineering/spark-compute.md#spark-pools).
+Two Spark VCores (a unit of computing power for Spark) equals one capacity unit (CU). To understand how Spark operations consume CUs, refer to [spark pools](../data-engineering/spark-compute.md#spark-pools).
 
 | Operation               | Description                                                     | Item                 | Azure billing meter | Type       |
 | ----------------------- | --------------------------------------------------------------- | -------------------- | ------------------- | ---------- |
-| Lakehouse operations    | Users preview table in the Lakehouse explorer.                  | Lakehouse            | Spark Core          | Background |
-| Lakehouse table load    | Users load delta table in the Lakehouse explorer.               | Lakehouse            | Spark Core          | Background |
-| Notebook run            | Synapse Notebook runs manually by users.                        | Synapse Notebook     | Spark Core          | Background |
-| Notebook HC run         | Synapse Notebook runs under the high concurrency Spark session. | Synapse Notebook     | Spark Core          | Background |
-| Notebook scheduled run  | Synapse Notebook runs triggered by notebook scheduled events.   | Synapse Notebook     | Spark Core          | Background |
-| Notebook pipeline run   | Synapse Notebook runs triggered by pipeline.                    | Synapse Notebook     | Spark Core          | Background |
-| Notebook VS Code run    | Synapse Notebook runs in VS Code.                               | Synapse Notebook     | Spark Core          | Background |
-| Spark job run           | Spark batch job runs initiated by user submission.              | Spark Job Definition | Spark Core          | Background |
-| Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events.  | Spark Job Definition | Spark Core          | Background |
-| Spark job pipeline run  | Synapse batch job runs triggered by pipeline.                   | Spark Job Definition | Spark Core          | Background |
-| Spark job VS Code run   | Synapse Spark job definition submitted from VS Code.            | Spark Job Definition | Spark Core          | Background |
+| Lakehouse operations    | Users preview table in the Lakehouse explorer.                  | Lakehouse            | Spark Memory Optimized Capacity Usage CU          | Background |
+| Lakehouse table load    | Users load delta table in the Lakehouse explorer.               | Lakehouse            | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook run            | Synapse Notebook runs manually by users.                        | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook HC run         | Synapse Notebook runs under the high concurrency Spark session. | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook scheduled run  | Synapse Notebook runs triggered by notebook scheduled events.   | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Notebook pipeline run   | Synapse Notebook runs triggered by pipeline.                    | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU         | Background |
+| Notebook VS Code run    | Synapse Notebook runs in VS Code.                               | Synapse Notebook     | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job run           | Spark batch job runs initiated by user submission.              | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job scheduled run | Synapse batch job runs triggered by notebook scheduled events.  | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job pipeline run  | Synapse batch job runs triggered by pipeline.                   | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
+| Spark job VS Code run   | Synapse Spark job definition submitted from VS Code.            | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 
 ## Changes to Fabric consumption rates
 
