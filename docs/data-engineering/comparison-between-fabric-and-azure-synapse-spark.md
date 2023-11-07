@@ -86,6 +86,8 @@ The following table compares Azure Synapse Spark and Fabric Spark pools:
 - **Multiple Spark pools**: If you want to have multiple Spark pools, use [Environments](create-and-use-environment.md) in Fabric to select a pool by notebook or Spark job. 
 - **Allow session level packages**: in Azure Synapse Spark, you can enable/disable session level packages in a pool. Session level packages are always allowed in Fabric Spark pools.
 
+Learn how to [migrate Azure Synapse Spark pools to Fabric](migrate-synapse-spark-pools.md).
+
 ## Spark configurations comparison
 
 Spark configurations can be applied at different levels:
@@ -102,7 +104,6 @@ While both options are supported in Azure Synapse Spark and Fabric, there are so
 | **Import/export** | Yes | Yes (.yml from Environments) |
 | **API/SDK support** | Yes | No |
 
-
 - **Environment level**: In Azure Synapse, you can define multiple Spark configurations and assign them to different Spark pools. You can do that in Fabric by using [Environments](create-and-use-environment.md). 
 - **Inline**: In Azure Synapse, both notebooks and Spark jobs support attaching different Spark configurations. In Fabric, session level configurations are customized with ```spark.conf.set(<conf_name>, <conf_value>)``` setting. For batch jobs, configurations can also be applied via SparkConf.  
 - **Import/export**: this option for Spark configurations is available in the Fabric environment artifact. 
@@ -112,6 +113,9 @@ While both options are supported in Azure Synapse Spark and Fabric, there are so
     - **FAIR scheduler**: FAIR scheduler is used in [high concurrency mode](high-concurrency-overview.md). 
     - **V-Order**: [V-Order](delta-optimization-and-v-order.md) is write-time optimization applied to the parquet files enabled by default in Fabric Spark pools.
     - **Optimized Write**: [Optimized Write](delta-optimization-and-v-order.md) is disabled by default in Azure Synapse but enabled by default for Fabric Spark. It reduces the number of files written and aims to increase the individual file size of the written data. It dynamically optimizes partitions while generating files with a default 128-MB size (this configuration can be changed).
+
+Learn how to [migrate Azure Synapse Spark configurations to Fabric](migrate-synapse-spark-configurations.md).
+
 
 ## Spark libraries comparison
 
@@ -134,6 +138,8 @@ There are some considerations:
 - **Inline**: ``` %%configure``` magic command is still [not fully supported on Fabric at this moment](library-management.md). Don't use it to bring .jar file to your notebook session.
 - Other considerations:
     - **Built-in libraries**: Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users might need compilation, the addition of custom libraries, and adjusting syntax. See built-in Fabric Spark runtime libraries [here](runtime.md).
+
+Learn how to [migrate Azure Synapse Spark libraries to Fabric](migrate-synapse-spark-libraries.md).
 
 ## Notebook comparison
 
@@ -159,9 +165,11 @@ Notebooks and Spark job definitions (SJD) are primary code items for developing 
 - **High concurrency**: In Fabric, you could attach notebooks to the high concurrency session. This option is an alternative for users using ThreadPoolExecutor in Azure Synapse. Learn more [configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md). 
 - **.NET for Spark C#**: Fabric doesn't support .NET Spark (C#). However, the recommendation is that users with [existing workloads written in C# or F# migrate to Python or Scala](/azure/synapse-analytics/spark/spark-dotnet).
 - **Built-in scheduled run support**: Fabric supports scheduled runs for notebooks.
-- **Other considerations:**
+- Other considerations:
     - You can use features inside the Notebook that are only supported in a specific version of Spark. Remember that Spark 2.4 and 3.1 aren't supported in Fabric.
     - If your notebook or Spark job is using a linked service with different data source connections or mount points, you should modify your Spark jobs to use alternative methods for handling connections to external data sources and sinks. Use Spark code to connect to data sources using available Spark libraries.
+
+Learn how to [migrate Azure Synapse Spark notebooks to Fabric](migrate-synapse-notebooks.md).
 
 ## Spark job definition comparison
 
@@ -186,6 +194,8 @@ In terms of Spark job definition, the following are some important consideration
 - **Built-in scheduled run support**: Fabric supports [scheduled runs for a Spark Job Definition](run-spark-job-definition.md).
 - **Retry policies** enable users to run Spark structured streaming jobs indefinitely.
 
+Learn how to [migrate Azure Synapse Spark job definition to Fabric](migrate-synapse-spark-job-definition.md).
+
 ## Hive Metastore (HMS) comparison
 
 In terms of Hive MetaStore (HMS), there are some differences:
@@ -200,18 +210,10 @@ In terms of Hive MetaStore (HMS), there are some differences:
     - **Autodiscovery of Delta tables**: if you use Delta tables only, one way to import them to the metastore is by leveraging the auto-discovery over OneLake shortcuts within the "Tables" section in the lakehouse explorer. It registers existing Delta tables in lakehouse's internally managed metastore, allowing users to query Spark catalog objects produced by Azure Synapse Spark. However, it requires creating a shortcut per table now (for example, with multi-select) nested shortcuts (for example a shortcut to a folder that contains multiple Delta tables) aren't supported yet. See Metadata migration for more details.
     - **3-part naming**: Fabric doesn't support 3-part naming for now. So when importing multiple databases from the metastore to Fabric lakehouse, you can create one lakehouse per database, or (ii) move all tables from different databases to a single lakehouse. The former is used on Metadata migration.
 
+Learn how to [migrate Azure Synapse Spark catalog HMS metadata to Fabric](migrate-synapse-hms-metadata.md).
+
 ## Next steps
 
-- To learn more about lakehouses, see [What is a lakehouse in Microsoft Fabric?](lakehouse-overview.md)
-
-- To get started with a lakehouse, see [Create a lakehouse in Microsoft Fabric](create-lakehouse.md).
-
-- To learn more about Apache Spark job definitions, see [What is an Apache Spark job definition?](spark-job-definition.md)
-
-- To get started with an Apache Spark job definition, see [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md).
-
-- To learn more about notebooks, see [Author and execute the notebook](author-execute-notebook.md).
-
-- To get started with pipeline copy activity, see [How to copy data using copy activity](..\data-factory\copy-data-activity.md).
-
-- [Lakehouse end-to-end scenario: overview and architecture](tutorial-lakehouse-introduction.md)
+- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)
+- [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
+- [Migrate Hive Metastore metadata](migrate-synapse-hms-metadata.md)
