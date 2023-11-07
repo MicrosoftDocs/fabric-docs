@@ -1,10 +1,10 @@
 ---
 title: Warehouse performance guidelines
 description: This article contains a list of performance guidelines for warehouse.
-author: SQLAdventurer
-ms.author: trichter
+author: XiaoyuMSFT
+ms.author: xiaoyul
 ms.reviewer: wiassaf
-ms.date: 09/06/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ---
 # Synapse Data Warehouse in Microsoft Fabric performance guidelines
@@ -13,19 +13,13 @@ ms.topic: conceptual
 
 These are guidelines to help you understand performance of your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. In this article, you'll find guidance and important articles to focus on. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] is a SaaS platform where activities like workload management, concurrency, and storage management are managed internally by the platform. In addition to this internal performance management, you can still improve your performance by developing performant queries against well-designed warehouses.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+## Cold run (cold cache) performance
 
-Included in this document are some specific articles devoted to guidelines that apply only during this Preview period.
+[Caching with local SSD and memory](caching.md) is automatic. The first 1-3 executions of a query perform noticeably slower than subsequent executions. If you are experiencing cold run performance issues, here are a couple of things you can do that can improve your cold run performance:
 
-## Cold run (cold cache) performance during public preview
-
-[Caching with local SSD and memory](caching.md) is automatic. Cold run or first run query performance will be continuously improved during the Preview period. The first 1-3 executions of a query perform noticeably slower than subsequent executions If you are experiencing cold run performance issues during your preview experience, here are a couple of things you can do that can improve your cold run performance:
-
-- Manually create statistics. Auto-statistics is not available in preview at this time. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance during preview.
+- Manually create statistics. Auto-statistics are not currently available. Review the [statistics](statistics.md) article to better understand the role of statistics and for guidance on how to create manual statistics to improve your query performance.
 
 - If using Power BI, use [Direct Lake](../data-engineering/lakehouse-pbi-reporting.md) mode where possible.
-
-- During this preview, execute your query several times and focus on the performance of later executions.
  
 ## Metrics for monitoring performance
 

@@ -5,7 +5,7 @@ author:      SQLStijn-MSFT
 ms.author:   stwynant 
 ms.reviewer: wiassaf
 ms.topic:  how-to
-ms.date:  11/06/2023
+ms.date: 11/15/2023
 ---
 
 # How to implement dynamic data masking in Synapse Data Warehouse

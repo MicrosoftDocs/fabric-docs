@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 07/12/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Sharing is a convenient way to provide users read access to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] for downstream consumption. Sharing allows downstream users in your organization to consume a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using SQL, Spark, or Power BI. You can customize the level of permissions that the shared recipient is granted to provide the appropriate level of access.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > You must be an admin or member in your workspace to share a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].

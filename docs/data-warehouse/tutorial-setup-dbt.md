@@ -4,7 +4,7 @@ description: In this tutorial, learn how to use the dbt adapter for Fabric Data 
 author: MarkPryceMaherMSFT
 ms.author: maprycem
 ms.reviewer: wiassaf
-ms.date: 08/01/2023
+ms.date: 11/15/2023
 ms.topic: tutorial
 ---
 
@@ -13,8 +13,6 @@ ms.topic: tutorial
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This tutorial guides you through setting up dbt and deploying your first project to a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Introduction
 

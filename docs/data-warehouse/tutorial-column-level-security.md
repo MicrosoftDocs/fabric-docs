@@ -5,7 +5,7 @@ author: SQLStijn-MSFT
 ms.author: stwynant 
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 # Implement column-level security in Fabric data warehousing
 
