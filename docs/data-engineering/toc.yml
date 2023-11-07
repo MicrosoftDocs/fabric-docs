@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Engineering?
     href: data-engineering-overview.md
+  - name: Fabric vs. Azure Synapse Spark
+    href: comparison-between-fabric-and-azure-synapse-spark.md
 - name: Get started
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
