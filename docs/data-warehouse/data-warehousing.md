@@ -167,7 +167,7 @@ Recommended use case
    :::column span="1"::: 
  - Exploring and querying delta tables from the lakehouse
  - Staging Data and Archival Zone for analysis
- - Medallion architecture with zones for bronze, silver and gold analysis
+ - [Medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md) with zones for bronze, silver and gold analysis
  - Pairing with Warehouse for enterprise analytics use cases 
    :::column-end:::
    :::column span="1"::: 

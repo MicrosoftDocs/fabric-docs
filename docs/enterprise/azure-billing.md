@@ -4,27 +4,49 @@ description: Learn how to navigate your Azure bill for A Fabric capacity.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 11/02/2023
+ms.date: 11/07/2023
 ---
 
 # Understand your Azure bill on a Fabric capacity
 
-When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) experience.
+When you use a Fabric capacity, your usage charges appear in the Azure portal under your subscription in the [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) experience
 
 ## Invoice meters
 
-In Microsoft Cost Management, your cost analysis and invoice show multiple meters related to your Fabric capacity resource. The following is a complete list of all of the meters.
+In Microsoft Cost Management, your cost analysis and invoice show multiple meters related to your Fabric capacity resource. The following table includes a complete list of all of the meters, and indicated whether they're related to Generally Available (GA) or preview features.
 
-* **Power BI  Usage CU** – Represents the Power BI usage on your capacity.
-* **Data Movement Capacity Usage CU** - Represents the Pipelines usage on your capacity.
-* **Data Warehouse Capacity Usage CU** - Represents the Data Warehouse usage on your capacity.
-* **Dataflows Standard Compute Capacity Usage CU** - Represents the Dataflows usage on your capacity.
-* **eventstreams Processor Capacity Usage CU** - Represents the eventstream usage on your capacity.
-* **KQL Database Capacity Usage CU** - Represents the KQL uptime usage on your capacity.
-* **OneLake Read Operations Capacity Usage CU** - Represents the transaction usage for OneLake operations on your capacity.
-* **Spark Memory Optimized Capacity Usage CU** - Represents the Spark usage on your capacity.
-* **Available Capacity Usage CU** – Represents the available capacity that wasn't used by Fabric.
+| Name                                                  | Description                                                                                                             | State         |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| Available Capacity Usage CU                                       | Represents the available capacity that wasn't used by Fabric.                                                           | GA |
+| Data Movement Capacity Usage CU                                   | Represents the Pipelines Data Movement usage on your capacity                                                           | GA |
+| Data Orchestration Capacity Usage CU                              | Represents the Pipelines Data Orchestration usage on your capacity                                                      | GA |
+| Data Warehouse Capacity Usage CU                                  | Represents the Synapse Data Warehouse usage on your capacity                                                            | GA |
+| Dataflows High Scale Compute Capacity Usage CU                    | Represents the Dataflows High Scale Compute used for staging items on your capacity                                     | GA |
+| Dataflows Standard Compute Capacity Usage CU                      | Represents the Dataflows Standard Compute usage on your capacity                                                        | GA |
+| eventstream Capacity Usage CU                                     | Represents the ingestion or processing usage for Event Streams on your capacity                                         | GA |
+| eventstream Data Traffic per GB Capacity Usage CU                 | Represents the data ingress and egress usage on your capacity                                                           | GA |
+| eventstreams Processor Capacity Usage CU                          | Represents the ASA processing usage on your capacity                                                                    | GA |
+| KQL Database Capacity Usage CU                                    | Represents the KQL database up time usage on your capacity                                                              | GA |
+| OneLake BCDR Iterative Read Operations Capacity Usage CU          | Represents the OneLake BCDR Iterative Read via Redirect transaction compute usage on your capacity                      | GA |
+| OneLake BCDR Iterative Read Operations via API Capacity Usage CU  | Represents the OneLake BCDR Iterative Read via Proxy transaction compute usage on your capacity                         | GA |
+| OneLake BCDR Iterative Write Operations Capacity Usage CU         | Represents the OneLake BCDR Iterative Write via Redirect transaction compute usage on your capacity                     | GA |
+| OneLake BCDR Iterative Write Operations via API Capacity Usage CU | Represents the OneLake BCDR Iterative Write via Proxy transaction compute usage on your capacity                        | GA |
+| OneLake BCDR Other Operations Capacity Usage CU                   | Represents the OneLake BCDR Other transactions compute usage on your capacity                                           | GA |
+| OneLake BCDR Other Operations via API Capacity Usage CU           | Represents the OneLake BCDR Other transactions via Redirect compute usage on your capacity                              | GA |
+| OneLake BCDR Read Operations Capacity Usage CU                    | Represents the OneLake BCDR Read via Redirect & Shortcut Read via Redirect transaction compute usage on your capacity   | GA |
+| OneLake BCDR Read Operations via API Capacity Usage CU            | Represents the OneLake BCDR Read via Proxy & Shortcut Read via Proxy transaction compute usage on your capacity         | GA |
+| OneLake BCDR Write Operations Capacity Usage CU                   | Represents the OneLake BCDR Write via Redirect & Shortcut Write via Redirect transaction compute usage on your capacity | GA |
+| OneLake Iterative Read Operations Capacity Usage CU               | Represents the OneLake Iterative Read via Redirect transaction compute usage on your capacity                           | GA |
+| OneLake Iterative Read Operations via API Capacity Usage CU       | Represents the OneLake Iterative Read via Proxy transaction compute usage on your capacity                              | GA |
+| OneLake Iterative Write Operations Capacity Usage CU              | Represents the OneLake Iterative Write via Redirect transaction compute usage on your capacity                          | GA |
+| OneLake Iterative Write Operations via API Capacity Usage CU      | Represents the OneLake Iterative Write via Proxy transaction compute usage on your capacity                             | GA |
+| OneLake Other Operations Capacity Usage CU                        | Represents the OneLake Other transactions compute usage on your capacity                                                | GA |
+| OneLake Other Operations via API Capacity Usage CU                | Represents the OneLake Other transactions via Redirect compute usage on your capacity                                   | GA |
+| OneLake Read Operations Capacity Usage CU                         | Represents the OneLake Read via Redirect & Shortcut Read via Redirect transaction compute usage on your capacity        | GA |
+| OneLake Read Operations via API Capacity Usage CU                 | Represents the OneLake Read via Proxy & Shortcut Read via Proxy transaction compute usage on your capacity              | GA |
+| OneLake Write Operations Capacity Usage CU                        | Represents the OneLake Write via Redirect & Shortcut Write via Redirect transaction compute usage on your capacity      | GA |
+| Power BI Usage CU                                                 | Represents the Power BI usage on your capacity                                                                          | GA |
+| Spark Memory Optimized Capacity Usage CU                          | Represents the Spark usage on your capacity                                                                             | GA |
 
 The total usage from all meters add up to the cost of the provisioned Fabric capacity.
 
