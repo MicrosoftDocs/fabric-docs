@@ -4,8 +4,8 @@ description: Learn about how to migrate Spark configurations from Azure Synapse 
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
-ms.topic: migration
-ms.custom: ignite-2023
+ms.topic: how-to
+ms.custom: fabric-cat
 ms.date: 11/03/2023
 ---
 
@@ -24,12 +24,12 @@ For Spark configuration considerations, refer to [differences between Azure Syna
 
 Within an environment, you can set Spark properties and those configurations are applied to the selected environment pool.
 
-1.	**Open Synapse Studio**: Sign-in into the Azure portal. Navigate to your Azure Synapse workspace and open the Synapse Studio.
+1.	**Open Synapse Studio**: Sign-in into [Azure](https://portal.azure.com). Navigate to your Azure Synapse workspace and open the Synapse Studio.
 1.	**Locate Spark configurations**:
     * Go to **Manage** area and select on **Apache Spark pools.**
     * Find the Apache Spark pool, select **Apache Spark configuration** and locate the Spark configuration name for the pool.
 1.	**Get Spark configurations**: You can either obtain those properties by selecting **View configurations** or exporting configuration (.txt/.conf/.json format) from **Configurations + libraries** > **Apache Spark configurations**.
-1.	Once you have Spark configurations, **add custom Spark properties to your Environment** in Fabric:
+1.	Once you have Spark configurations, **add custom Spark properties to your Environment** in [Fabric](https://app.fabric.microsoft.com):
     * Within the Environment, go to **Spark Compute** > **Spark properties**.
     * Add Spark configurations. You can either add each manually or import from .yml.
 1.	Click on **Save** and **Publish** changes.
@@ -42,3 +42,4 @@ Learn more on adding Spark configurations to an [Environment](migrate-synapse-sp
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark libraries](migrate-synapse-spark-libraries.md)
+- [Migrate Spark notebooks](migrate-synapse-notebooks.md)
