@@ -91,7 +91,7 @@ In addition to the item definition files, each item directory contains one or tw
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: the item’s type (semantic model, report etc.)
+- `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 
@@ -113,13 +113,25 @@ The `item.config.json` file contains the following attributes:
 
 The logicalId connects an item in a workspace with its corresponding item in a Git branch. Items with the same logicalIds are assumed to be the same. The logicalId preserves the link even if the name or directory change. Since a branch can be synced to multiple workspaces, it's possible to have items in different workspaces with the same logicalId, but a single workspace can't have two items with the same logicalId. The logicalId is created when the workspace is connected to a Git branch or a new item is synced. The logicalId is necessary for Git integration to function properly. Therefore, it's essential not to change it in any way.
 
-## Item definition files
+### [Version 2](#tab/v2)
 
-Besides the item.config.json file and the item.metadata.json file found in all item folders, each item's directory has specific files that define that item.
+### Platform file
 
-### Semantic model files
+In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file. If you have this file, you can't have the other two files.
 
-Semantic model folders contain the following files:
+```json
+{ 
+    version: "2.0", 
+    logicalId: <guid>, 
+}, 
+{
+    "type": <string>, 
+    "displayName": <string>,
+    "description": <string>
+}
+```
+
+The *.platform* file contains the following attributes:
 
 - `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
