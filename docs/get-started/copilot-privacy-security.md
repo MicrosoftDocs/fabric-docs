@@ -24,7 +24,7 @@ This article provides answers to common questions related to business data secur
 ### Your business data is secure
 
 - Copilot features use [Azure OpenAI Service](/azure/ai-services/openai/overview), which is fully controlled by Microsoft. Your data isn't used to train models and isn't available to other customers.
-- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant’s geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn’t available in your region or availability is limited due to high demand. Learn more about admin settings for Copilot (../admin/service-admin-portal-copilot.md).
+- You retain control over where your data is processed. Data processed by Copilot in Fabric stays within your tenant’s geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn’t available in your region or availability is limited due to high demand. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 - Data is stored for up to 30 days and may be reviewed by Microsoft employees for abuse monitoring.
 
 ### Check Copilot outputs before you use them
@@ -113,7 +113,7 @@ Data from Copilot in Fabric is stored by Microsoft for up to 30 days (as outline
 
 *You retain control over where your data is processed.* Data processed by Copilot in Fabric stays within your tenant’s geographic region, unless you explicitly allow data to be processed outside your region—for example, to let your users use Copilot when Azure OpenAI isn’t available in your region or availability is limited due to high demand. (See [where Azure OpenAI is currently available.](/azure/ai-services/openai/concepts/models#model-summary-table-and-region-availability))
 
-To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance**. Learn more about admin settings for Copilot (../admin/service-admin-portal-copilot.md).
+To allow data to be processed elsewhere, your admin can turn on the setting **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance**. Learn more about [admin settings for Copilot](../admin/service-admin-portal-copilot.md).
 
 ## What should I know to use Copilot responsibly?
 
