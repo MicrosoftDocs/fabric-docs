@@ -11,7 +11,7 @@ ms.date: 11/03/2023
 
 # Migrating from Azure Synapse Spark to Fabric
 
-Before you begin your migration, you should verify that [Fabric Data Engineering](data-engineering-overview.md) is the best solution for your workload. Fabric Data Engineering supports [lakehouse](lakehouse-overview.md), [notebook](how-to-use-notebook.md), [environment](migrate-synapse-overview.md), [Spark job definition (SJD)](spark-job-definition.md) and [data pipeline](../data-factory/data-factory-overview.md) items, including different runtime and Spark capabilities support.
+Before you begin your migration, you should verify that [Fabric Data Engineering](data-engineering-overview.md) is the best solution for your workload. Fabric Data Engineering supports [lakehouse](lakehouse-overview.md), [notebook](how-to-use-notebook.md), [environment](create-and-use-environment.md), [Spark job definition (SJD)](spark-job-definition.md) and [data pipeline](../data-factory/data-factory-overview.md) items, including different runtime and Spark capabilities support.
 
 ## Key considerations
 
