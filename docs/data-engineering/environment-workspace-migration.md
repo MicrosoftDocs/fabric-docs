@@ -28,7 +28,7 @@ In the upgraded workspace setting, you can review your existing configurations.
 2. Download existing configurations by clicking **Download all files** button.
 
     The content will be downloaded as different files. **Sparkproperties.yml** records all the Spark properties key value pairs. The **Publiclibrary.yml** records all the public library definitions. The custom packages uploaded by you or your organization are downloaded as **files** one by one.
-    :::image type="content" source="media\environment-migration\prepare-file-2.png" alt-text="Screenshot of downloading files":::
+    :::image type="content" source="media\environment-migration\prepare-file-2.png" alt-text="Screenshot of downloading files.":::
 
 **Once the files are downloaded, you are prepared to migrate.**
 
@@ -38,7 +38,7 @@ In the upgraded workspace setting, you can review your existing configurations.
 
 2. At the home tab of Environment, make sure the **Runtime** version is the same with your existing workspace Runtime.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" alt-text="Screenshot of confirming runtime version":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" alt-text="Screenshot of confirming runtime version.":::
 
 3. *Skip this step if there was no public library in your workspace setting.* Navigate to the **Public Libraries** section, find **Add from .yml** button in the ribbon. Upload the **Publiclibrary.yml**, which was downloaded from the workspace setting.
 
