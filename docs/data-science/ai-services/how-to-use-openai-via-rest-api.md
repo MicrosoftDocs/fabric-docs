@@ -24,8 +24,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 `deployment_name` could be one of:
 
 -   `gpt-35-turbo`
--   `gpt-4` (max requests tokens is 8,192)
--   `gpt-4-32k` (max request tokens is 32,768)
+-   `gpt-35-turbo-16k`
 
 ### Initialization
 
@@ -42,7 +41,7 @@ access_token = mlflow_env_configs.driver_aad_token
 prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
 print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
 
-deployment_name = "gpt-35-turbo"
+deployment_name = "gpt-35-turbo" # deployment name could be `gpt-35-turbo` or `gpt-35-turbo-16k`
 openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/chat/completions?api-version=2023-03-15-preview"
 print("The full uri of ChatGPT is: ", openai_url)
 
@@ -275,8 +274,7 @@ To access Azure OpenAI completions endpoints in Fabric, you can send an API requ
 `deployment_name` could be one of:
 
 -   `text-davinci-003`
--   `text-davinci-002`
--   `code-cushman-001`
+-   `code-cushman-002`
 
 
 ### Initialization
@@ -290,7 +288,7 @@ access_token = mlflow_env_configs.driver_aad_token
 prebuilt_AI_base_url = mlflow_env_configs.workload_endpoint + "cognitive/openai/"
 print("workload endpoint for OpenAI: \n" + prebuilt_AI_base_url)
 
-deployment_name = "text-davinci-002"
+deployment_name = "text-davinci-003" # deployment name could be `text-davinci-003` or `code-cushman-002`
 openai_url = prebuilt_AI_base_url + f"openai/deployments/{deployment_name}/completions?api-version=2022-12-01"
 print("The full uri of Completions is: ", openai_url)
 
