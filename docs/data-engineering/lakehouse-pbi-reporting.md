@@ -26,7 +26,7 @@ This approach gives unprecedented performance and the ability to instantly load 
 
 The default semantic model is retrieving data from a lakehouse on demand. To make sure that data is accessible for the user that is viewing Power BI report, necessary permissions on the underlying lakehouse need to be set.
 
-One option is to give the user *Viewer* role in the workspace and grant necessary permissions to data using SQL endpoint security. Alternatively, the user can be given *Admin, Member, or Contributor* role to have full access to the data.
+One option is to give the user *Viewer* role in the workspace and grant necessary permissions to data using SQL security. Alternatively, the user can be given *Admin, Member, or Contributor* role to have full access to the data.
 
 ## Next steps
 

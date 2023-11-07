@@ -36,6 +36,7 @@ To make it easier to reference a table, folder, or file in the code, you can cop
 
 ## Next steps
 
+- [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)
 - [What is a Lakehouse?](lakehouse-overview.md)
 - [Navigate your Lakehouse?](navigate-lakehouse-explorer.md)
 - [Get data into the Fabric Lakehouse](load-data-lakehouse.md)

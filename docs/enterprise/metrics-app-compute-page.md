@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 11/02/2023
+ms.date: 11/05/2023
 ---
 
 # Understand the metrics app compute page
@@ -164,3 +164,9 @@ User can hover over any value in the visual to see operation level data. User ca
 [Understand the metrics app storage page](metrics-app-storage-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+
+
+## Related content
+
+* [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
+* [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

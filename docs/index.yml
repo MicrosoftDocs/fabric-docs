@@ -124,6 +124,8 @@ productDirectory:
           text: What is Data Engineering?
         - url: data-engineering/create-lakehouse.md
           text: Create a Lakehouse
+        - url: data-engineering/how-to-use-notebook.md
+          text: Create a Notebook
         - url: data-engineering/create-spark-job-definition.md
           text: Create a Spark job definition
         - url: data-engineering/index.yml

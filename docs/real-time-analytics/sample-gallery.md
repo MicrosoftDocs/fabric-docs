@@ -12,8 +12,6 @@ ms.search.form: KQL Queryset
 
 # Sample Gallery
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Real-Time Analytics in Microsoft Fabric offers a sample data gallery containing data in various formats and sizes for you to practice loading data and writing queries. Each dataset in the **Real-Time Analytics Sample Gallery** is loaded into your workspace as a table in a new KQL database. Along with the database, an attached KQL queryset is created, containing sample queries unique to the dataset you selected.
 
 In this article, you learn how to query data from the sample gallery in Real-Time Analytics to get started with analyzing your data.
@@ -25,7 +23,7 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
 ## Get data
 
 1. On the bottom left experience switcher, select **Real-Time Analytics**.
-1. On the **Real-Time Analytics** homepage, select **Use a sample (Preview)**.
+2. On the **Real-Time Analytics** homepage, select **Use a sample**.
     :::image type="content" source="media/sample-gallery/use-sample.png" alt-text="Screenshot of the Real-Time Analytics homepage showing the different items that can be created in this experience. The item titled Use a sample is highlighted." lightbox="media/sample-gallery/use-sample.png":::
 1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the semantic model is automatically generated.
 

@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Engineering?
     href: data-engineering-overview.md
+  - name: Fabric vs. Azure Synapse Spark
+    href: comparison-between-fabric-and-azure-synapse-spark.md
 - name: Get started
   items:
   - name: Decision guide - copy activity, dataflow, or Spark
@@ -150,7 +152,9 @@ items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md
+    href: author-execute-notebook.md  
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
   - name: Run notebooks in High Concurrency mode
     href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
@@ -159,6 +163,20 @@ items:
     href: lakehouse-notebook-explore.md
   - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+  - name: Notebook source control and deployment
+    href: notebook-source-control-deployment.md
+  - name: Use Notebook public APIs
+    href: notebook-public-api.md
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: create-and-use-environment.md
+  - name: Manage Spark compute in environments
+    href: environment-manage-compute.md
+  - name: Manage libraries in environments
+    href: environment-manage-library.md
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: environment-workspace-migration.md
 - name: VS Code integration 
   items:
   - name: Overview
@@ -171,3 +189,25 @@ items:
     href: author-sjd-with-vs-code.md
   - name: Explore lakehouse with VS Code extension
     href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
+- name: Migrate to Fabric
+  items:
+  - name: From Azure Synapse
+    items:
+    - name: Overview
+      href: migrate-synapse-overview.md
+    - name: Migrate Spark pools
+      href: migrate-synapse-spark-pools.md
+    - name: Migrate Spark configurations
+      href: migrate-synapse-spark-configurations.md
+    - name: Migrate Spark libraries
+      href: migrate-synapse-spark-libraries.md
+    - name: Migrate notebooks
+      href: migrate-synapse-notebooks.md
+    - name: Migrate Spark job definition
+      href: migrate-synapse-spark-job-definition.md
+    - name: Migrate data and pipelines
+      href: migrate-synapse-data-pipelines.md
+    - name: Migrate Hive Metastore metadata
+      href: migrate-synapse-hms-metadata.md

@@ -14,8 +14,6 @@ ms.search.form: Event Streams Overview
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Prerequisites
 
 Before you start, you must complete the following prerequisite:

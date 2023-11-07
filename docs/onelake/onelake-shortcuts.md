@@ -61,7 +61,7 @@ display(df)
 
 ### SQL
 
-You can also read shortcuts in the **Tables** section of a lakehouse through the SQL endpoint for the lakehouse. You can access the SQL endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
+You can also read shortcuts in the **Tables** section of a lakehouse through the SQL analytics endpoint for the lakehouse. You can access the SQL analytics endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
 
 ```SQL
 SELECT TOP (100) *
@@ -127,7 +127,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 
 ### S3 shortcuts
 
-You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn’t natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
+You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
 #### Access
 
@@ -232,7 +232,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
 - ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
-- OneLake shortcut target paths can’t contain “%” characters.
+- OneLake shortcut target paths can't contain "%" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.

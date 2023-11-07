@@ -10,8 +10,6 @@ ms.date: 09/12/2023
 
 # Information protection in Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Information protection in Fabric is based on information protection in Power BI. However, it's currently less fully supported than in Power BI. This article describes Fabric's information protection [capabilities](#capabilities), and details current support in the [considerations and limitations](#considerations-and-limitations) section.
 
 ## Capabilities
