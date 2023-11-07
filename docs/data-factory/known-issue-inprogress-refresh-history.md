@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has issues with refresh hi
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting  
-ms.date: 08/24/2023
+ms.date: 11/15/2023
 ms.custom: 
 ---
 

@@ -5,7 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
-ms.date: 10/11/2023
+ms.date: 11/15/2023
 ---
 
 # What's new in Data Factory for Microsoft Fabric

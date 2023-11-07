@@ -4,7 +4,7 @@ description: Compare differences between Dataflow Gen1 and Gen2 in Data Factory 
 author: luitwieler
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 06/05/2023
+ms.date: 11/15/2023
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Overview
 ---

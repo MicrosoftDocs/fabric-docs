@@ -4,7 +4,7 @@ description: A known issue is posted where a refresh taking longer than an hour 
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: troubleshooting  
-ms.date: 09/11/2023
+ms.date: 11/15/2023
 ms.custom: 
 ---
 
