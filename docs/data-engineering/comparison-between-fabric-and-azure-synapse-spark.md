@@ -28,7 +28,7 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 | **DevOps** | Azure DevOps integration <br>CI/CD (no built-in support) | [Azure DevOps integration](../cicd/git-integration/intro-to-git-integration.md) (notebook)<br> [Deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md) (notebook) |
 | **Developer experience** | IDE integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric UI <br>Collaboration (workspaces and sharing) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
 | **Logging and monitoring** | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
-| **Business Continuity and Disaster Recovery (BCDR)** | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) | 
+| **Business continuity and disaster recovery (BCDR)** | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) | 
 
 
 There are some considerations and limitations to be aware of:
@@ -61,7 +61,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools:
 | Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3 | 3.3, 3.4 |
 | Autoscale | Yes | Yes |
 | Dynamic allocation of executors | Yes, up to 200 | Yes, based on capacity |
-| Adjustable node sizes	 | Ye, 3-200 | Yes, 1-based on capacity |
+| Adjustable node sizes	 | Yes, 3-200 | Yes, 1-based on capacity |
 | Minimum node configuration | 3 nodes | 1 node |
 | Node size family | Memory Optimized, GPU accelerated | Memory Optimized |
 | Node size | Small-XXXLarge | Small-XXLarge |
@@ -209,7 +209,7 @@ In terms of [Spark job definition](spark-job-definition.md), the following are s
 | SparkR | No | Yes |
 | Import/export | Yes (UI) | No |
 | Pipeline activity support | Yes | No |
-| Built-in Sscheduled run support | No | Yes |
+| Built-in scheduled run support | No | Yes |
 | Retry policies | No | Yes |
 | API/SDK support | Yes | Yes |
 
