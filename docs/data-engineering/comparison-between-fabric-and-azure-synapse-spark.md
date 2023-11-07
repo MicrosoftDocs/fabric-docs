@@ -17,23 +17,23 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 
 |Category | Azure Synapse Spark | Fabric Spark |
 | --- | --- | --- |
-| **Spark pools** | [Spark pool](/synapse-analytics/quickstart-create-apache-spark-pool-portal/) <br>- <br>-| [Starter pool](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
-| **Spark configurations** | Pool level <br>Notebook or Spark job definition level| Environment level <br>Notebook or Spark job definition level|
-| Spark libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>Environment libraries <br>Inline libraries|
-| Resources | Notebook (Python, Scala, Spark SQL, R, .NET) <br>Spark job definition (Python, Scala, .NET) <br>Pipelines <br>Spark-related pipeline activities (Notebook, SJD)| Notebook (Python, Scala, Spark SQL, R) <br>Spark job definition (Python, Scala, R) <br>Pipelines <br> Spark-related pipeline activities (Notebook)|
-| Data | Primary storage (Azure Data Lake Storage Gen2) <br>Data residency (Cluster/region based) | Primary storage (OneLake) <br>Data residency (Capacity/region based) |
-| Metadata | Internal metastore <br>External metastore (using Azure SQL DB for HMS) | Internal metastore (lakehouse) <br>-|
-| Connections | Connector type (Linked services) <br>Data Sources ([13](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary)) <br>Data Source conn. with workspace identity | Connector type (DMTS*) <br>Data Sources ([Dataflow Gen2](/power-query/connectors/)) <br> - |
-| Security | RBAC and access control (11 roles at workspace level) <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (Network Isolation) <br>Fabric Workspace Identity (FWI) <br>Data Exfiltration Protection <br>IP Firewall <br>Trusted Service for Storage Firewall bypass (with workspace identity) <br>Service Tags <br>- <br>Key Vault (via mssparkutils and Linked service) | RBAC and access control (four roles at workspace level) <br> - <br> - <br>- <br>Fabric Workspace Identity (FWI) <br>- <br> Only Control plane <br> - <br>Service Tags <br> - <br>Key Vault (via mssparkutils (public endpoint)) |
-| DevOps | Azure DevOps integration <br>CI/CD (No built-in support) | - <br> - |
-| Developer Experience | IDE Integration (IntelliJ) <br>Studio UI <br>Collaboration (through workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE Integration (Visual Studio Code) <br>Studio UI <br>Collaboration (through workspaces and sharing options) <br>- <br>API/SDK <br>mssparkutils |
-| Logging and Monitoring | Spark Advisor <br>Built-in Monitoring Pools and Jobs (through Synapse Studio) <br>Spark History Server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | Spark Advisor <br>Built-in Monitoring Pools and Jobs (through Monitoring Hub) <br>Spark History Server <br>- <br>- <br>- <br>- |
-| BC, HA & Disaster Recovery | BCDR (data)-via ADLS Gen2 | - |
+| **Spark pools** | Spark pool <br>- <br>-| [Starter pool](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
+| **Spark configurations** | Pool level <br>Notebook or Spark job definition (SJD) level| [Environment level](create-and-use-environment.md) <br>[Notebook](how-to-use-notebook.md) or [Spark job definition (SJD)](spark-job-definition.md) level|
+| **Spark libraries** | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>[Environment libraries](environment-manage-library.md) <br>[Inline libraries](library-management.md)|
+| **Resources** | Notebook (Python, Scala, Spark SQL, R, .NET) <br>Spark job definition (Python, Scala, .NET) <br>Synapse data pipelines <br>Pipeline activities (notebook, SJD)| [Notebook](how-to-use-notebook.md) (Python, Scala, Spark SQL, R) <br>[Spark job definition](spark-job-definition.md) (Python, Scala, R) <br>[Data Factory data pipelines](../data-factory/create-first-pipeline-with-sample-data.md) <br> [Pipeline activities](../data-factory/activity-overview.md) (notebook)|
+| **Data** | Primary storage (Azure Data Lake Storage Gen2) <br>Data residency (cluster/region based) | Primary storage ([OneLake](../onelake/onelake-overview.md)) <br>Data residency (capacity/region based) |
+| **Metadata** | Internal metastore <br>External metastore (using Azure SQL DB for HMS) | Internal metastore ([lakehouse](lakehouse-overview.md)) <br>-|
+| **Connections** | Connector type (Linked services) <br>[Data sources](/azure/synapse-analytics/spark/apache-spark-secure-credentials-with-tokenlibrary) <br>Data source conn. with workspace identity | Connector type (DMTS*) <br>[Data sources](/power-query/connectors/) <br> - |
+| **Security** | RBAC and access control <br>Storage ACLs (ADLS Gen2) <br>Private Links <br>Managed VNet (network isolation) <br>Synapse Workspace Identity<br>Data Exfiltration Protection (DEP) <br>Trusted Service for Storage Firewall bypass (with workspace identity) <br>Service Tags <br>- <br>Key Vault (via mssparkutils and Linked service) | [RBAC and access control](../get-started/roles-workspaces.md) <br> - <br> - <br>- <br>Fabric Workspace Identity (FWI) <br>- <br> - <br>[Service Tags](../security/security-service-tags.md) <br> - <br>Key Vault (via [mssparkutils](microsoft-spark-utilities.md)) |
+| **DevOps** | Azure DevOps integration <br>CI/CD (No built-in support) | - <br> - |
+| **Developer Experience** | IDE Integration (IntelliJ) <br>Synapse Studio UI <br>Collaboration (through workspaces) <br>Livy API <br>API/SDK <br>mssparkutils | IDE Integration ([VS Code](setup-vs-code-extension.md)) <br>Fabric SaaS UI <br>Collaboration (through workspaces and sharing options) <br>- <br>[API](/rest/api/fabric/)/SDK <br>[mssparkutils](microsoft-spark-utilities.md) |
+| **Logging and Monitoring** | Spark Advisor <br>Built-in monitoring pools and jobs (through Synapse Studio) <br>Spark history server <br>Prometheus/Grafana <br>Log Analytics <br>Storage Account <br>Event Hubs | [Spark Advisor](spark-advisor-introduction.md) <br>Built-in monitoring pools and jobs (through [Monitoring hub](browse-spark-applications-monitoring-hub.md)) <br>[Spark history server](apache-spark-history-server.md) <br>- <br>- <br>- <br>- |
+| **BC, HA & Disaster Recovery** | BCDR (data) ADLS Gen2 | [BCDR (data) OneLake](../onelake/onelake-disaster-recovery.md) |
 
 > [!NOTE]
 > There isn't a one-to-one mapping between linked services and DMTS. The same is applicable for Synapse Vs Fabric APIs.  
 
-## Fabric capability details
+There are some considerations and limitations to be aware of:
 
 - **DMTS integration**: You can't use the DMTS via notebook and SJDs.
 - **Git integration**: Git integration and versioning of Spark-related items is [in the roadmap](/fabric/release-plan/data-engineering) but not supported yet in Fabric.
@@ -41,13 +41,13 @@ The following table compares Azure Synapse Spark and Fabric Spark across differe
 - **Livy API and the way to submit and manage Spark jobs**: Livy API is in the roadmap but not exposed yet in Fabric. Users need to create notebooks/SJD using the Fabric UI. 
 - **CI/CD**: You can use the Fabric API/SDK, but not built-in support with Deployment Pipelines yet.
 - **Spark logs and metrics**: In Azure Synapse you can emit Spark logs and metrics to your own storage, such as Log Analytics, Blob, and Event Hubs. Similarly, you can get a list of spark applications for the workspace from the API. Both capabilities are currently unavailable in Fabric.
-- **JDBC**: JDBC connections support isn't available in Fabric.
+- **JDBC**: JDBC connection support isn't available in Fabric yet.
 - **Concurrency limits**: In terms of concurrency, Azure Synapse Spark has a limit of 50 simultaneous running jobs per Spark pool and 200 queued jobs per Spark pool. The maximum active jobs are 250 per Spark pool and 1000 per workspace. In Microsoft Fabric Spark, capacity SKUs define the concurrency limits. SKUs have varying limits on max concurrent jobs that range from 1 to 512. Also, Microsoft Fabric Spark has a dynamic reserve-based throttling system to manage concurrency and ensure smooth operation even during peak usage times. Learn more about [Spark concurrency limits](spark-job-concurrency-and-queueing.md) and [Fabric capacities](https://blog.fabric.microsoft.com/blog/fabric-capacities-everything-you-need-to-know-about-whats-new-and-whats-coming?ft=All). 
-- **Workload level RBAC**: Fabric only supports four different roles, so more granular RBAC isn't supported.
+- **Workload level RBAC**: Fabric supports four different roles. Learn more [here](../get-started/roles-workspaces.md).
 
 ## Spark pool comparison
 
-The following table compares the features and specifications of Azure Synapse Spark and Fabric Spark pools:
+The following table compares Azure Synapse Spark and Fabric Spark pools:
 
 |Spark setting | Azure Synapse Spark | Fabric Spark |
 | -- | -- | -- |
@@ -82,8 +82,8 @@ The following table compares the features and specifications of Azure Synapse Sp
     | X-Large | Min: 3, Max: 200 | Min: 1, Max: 4 |
     | XX-Large | Min: 3, Max: 200 | Min: 1, Max: 2 |
 
-- **Adjustable node sizes**: In Azure Synapse Spark you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, the total of VCores in the capacity/VCores per node size = total number of nodes available. Learn more [Spark compute](spark-compute.md).
-- **Node size family**: Fabric Spark pools only support [Memory Optimized SKUs](spark-compute.md) for now. If you're using GPU-accelerated SKU Spark pool in Azure Synapse, they aren't available in Fabric.
+- **Adjustable node sizes**: In Azure Synapse Spark you can go up to 200 nodes. In Fabric, the number of nodes you can have in your custom Spark pool depends on your node size and Fabric capacity. Capacity is a measure of how much computing power you can use in Azure. One way to think of it is that two Spark VCores (a unit of computing power for Spark) equals one capacity unit. For example, a Fabric Capacity SKU F64 has 64 capacity units, which is equivalent to 128 Spark VCores. So, if you choose a small node size, you can have up to 32 nodes in your pool (128/4 = 32). Then, *the total of VCores in the capacity/VCores per node size = total number of nodes available*. Learn more [Spark compute](spark-compute.md).
+- **Node size family**: Fabric Spark pools only support [Memory Optimized node size family](spark-compute.md) for now. If you're using GPU-accelerated SKU Spark pool in Azure Synapse, they aren't available in Fabric.
 - **Node size**: xxlarge node size comes with 432 GB of memory in Azure Synapse, while the same node size has 512 GB in Fabric including 64 VCores. The rest of the node sizes (small through xlarge) have the same VCores and memory in both [Azure Synapse](/azure/synapse-analytics/spark/apache-spark-pool-configurations) and [Fabric](spark-compute.md).
 - **Automatic pausing**: if enabled in Azure Synapse Spark, the Apache Spark pool will automatically pause after a specified amount of idle time. This setting is configurable in Azure Synapse (minimum 5 minutes), but custom pools have [a noncustomizable default autopause duration of 2 minutes](create-custom-spark-pools.md) in Fabric after the session expires. The default session expiration is set to 20 minutes in Fabric. 
 - **High concurrency**: Fabric supports [high concurrency in Notebooks](high-concurrency-overview.md).
