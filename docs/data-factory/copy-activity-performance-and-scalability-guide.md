@@ -61,6 +61,15 @@ The service provides the following performance optimization features:
 
 Intelligent throughput optimization allows the service to optimize the throughput intelligently by combining the factors of CPU, memory, and network resource allocation and expected cost of running a single copy activity.  The allowed options to empower a copy activity run intelligently are **Auto, Standard, Balanced, Maximum**. You can also specify the value **between 4 and 256**.
 
+The following table lists the recommended value in different copy scenarios:
+
+| Value | Description |
+| :-|:-|
+| **Auto** | Allow the service to dynamically apply the optimal throughput optimization based on your source-destination pair and data pattern. |
+| **Standard** | Allow the service to dynamically apply the throughput optimization under standard compute resources based on your source-destination pair and data pattern. |
+| **Balanced** | Allow the service to dynamically apply throughput optimization which balances the throughput and available compute resources based on your source-destination pair and data pattern. |
+|  **Maximum** | Allow the service to dynamically apply the throughput optimization by utilizing the maximum available compute resources based on your source-destination pair and data pattern. |
+
 ### *Parallel copy*
 
 You can set the 'Degree of copy parallelism' setting in the Settings tab of the Copy activity  to indicate the parallelism you want the copy activity to use. Think of this property as the maximum number of threads within the copy activity. The threads operate in parallel. The threads either read from your source or write to your destination data stores.
