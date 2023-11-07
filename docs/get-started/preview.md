@@ -21,9 +21,9 @@ Preview experiences and features:
 
 * Are not subject to SLAs and support is provided as best effort in certain cases. However, Microsoft Support is eager to get your feedback on the preview functionality, and might provide best effort support in certain cases.
 
-* May have limited or restricted functionality.
+* Might have limited or restricted functionality.
 
-* May be available only in selected geographic areas.
+* Might be available only in selected geographic areas.
 
 ## Who can enable a preview experiences and features
 
