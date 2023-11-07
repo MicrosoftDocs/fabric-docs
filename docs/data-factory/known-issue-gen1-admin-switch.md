@@ -10,7 +10,7 @@ ms.custom:
 
 # Known issue - Dataflow Gen1 admin switch affects Dataflow Gen2
 
-Users are not able to use Dataflow Gen2 when Dataflow Gen1 admin switch is disabled.
+Users aren't able to use Dataflow Gen2 when Dataflow Gen1 admin switch is disabled.
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
@@ -20,7 +20,7 @@ Users are not able to use Dataflow Gen2 when Dataflow Gen1 admin switch is disab
 
 ## Symptoms
 
-When the Dataflow Gen1 admin switch is disabled, users are not able to use Dataflow Gen2. When the user tries to create a Dataflow Gen2, the user gets the following error message: Request failed with 401(Unauthorized): Unauthorized.
+When the Dataflow Gen1 admin switch is disabled, users aren't able to use Dataflow Gen2. When the user tries to create a Dataflow Gen2, the user gets the following error message: Request failed with 401(Unauthorized): Unauthorized.
 
 ## Solutions and workarounds
 
