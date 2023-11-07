@@ -75,7 +75,7 @@ In addition to the item definition files, each item directory contains one or tw
 - **Version 2** directories contain [.platform](#platform-file). This file includes the content of both *metadata.json* and *item.config.json* files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
->Your directory must contain either the item.metadata.json* and *item.config.json* files *or* the *.platform* file. You can't have all three files.
+>Your directory must contain either the *item.metadata.json* and *item.config.json* files *or* the *.platform* file. You can't have all three files.
 
 ### [Version 1](#tab/v1)
 
