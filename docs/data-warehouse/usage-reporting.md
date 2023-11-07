@@ -33,7 +33,7 @@ In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fab
 
 ## Compute usage reporting
 
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. It's mostly used by capacity administrators to monitor the performance of workloads and their usage, compared to purchased capacity.  
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity.  
 
 Once you have installed the app, select the **Warehouse** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart and the **Items (14 days)** data table now show only **Warehouse** activity.
 
@@ -43,7 +43,7 @@ Once you have installed the app, select the **Warehouse** from the **Select item
 
 You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CU(s)). The table displayed shows aggregated usage across the last 14 days.
 
-Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
+Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] rollup under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
 - **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - **[!INCLUDE [fabric-se](includes/fabric-se.md)] Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].

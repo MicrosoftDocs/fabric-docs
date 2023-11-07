@@ -12,7 +12,7 @@ ms.topic: tutorial
 
 **Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-This tutorial guides you through setting up dbt and deploying your first project to an Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+This tutorial guides you through setting up dbt and deploying your first project to a Fabric [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 
 ## Introduction
 
@@ -47,7 +47,7 @@ Follow this list to install and set up the dbt prerequisites:
 
     A long list of the packages and current versions should be returned from this command.
 
-1. Create a warehouse if you haven't done so already. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
+1. If you don't already have one, create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. You can use the trial capacity for this exercise: [sign up for the Microsoft Fabric free trial](https://aka.ms/try-fabric), [create a workspace](../get-started/create-workspaces.md), and then [create a warehouse](create-warehouse.md).
 
 ## Get started with dbt-fabric adapter
 
