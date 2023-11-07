@@ -448,7 +448,7 @@ Parameterized session configuration allows you to replace the value in %%configu
 
 ```
 {
-      "activityParameterName": "paramterNameInPipelineNotebookActivity",
+      "parameterName": "paramterNameInPipelineNotebookActivity",
       "defaultValue": "defaultValueIfNoParamterFromPipelineNotebookActivity"
 } 
 ```
@@ -459,14 +459,14 @@ Parameterized session configuration allows you to replace the value in %%configu
 { 
     "driverCores": 
     { 
-        "activityParameterName": "driverCoresFromNotebookActivity", 
+        "parameterName": "driverCoresFromNotebookActivity", 
         "defaultValue": 4 
     }, 
     "conf": 
     { 
         "livy.rsc.sql.num-rows": 
         { 
-            "activityParameterName": "rows", 
+            "parameterName": "rows", 
             "defaultValue": "2000" 
         } 
     } 
@@ -479,7 +479,7 @@ During a pipeline run, you can configure pipeline notebook activity settings as 
 
 :::image type="content" source="media\author-execute-notebook\parameterized-session-config.png" alt-text="Screenshot showing where to configure parameterized session." lightbox="media\author-execute-notebook\parameterized-session-config.png":::
 
-If you want to change the session configuration, pipeline notebook activity parameters name should be same as activityParameterName in the notebook. In this example of running a pipeline, driverCores in %%configure are replaced by 8, and livy.rsc.sql.num-rows are replaced by 4000.
+If you want to change the session configuration, pipeline notebook activity parameters name should be same as `parameterName` in the notebook. In this example of running a pipeline, `driverCores` in %%configure are replaced by 8, and `livy.rsc.sql.num-rows` are replaced by 4000.
 
 > [!NOTE]
 >

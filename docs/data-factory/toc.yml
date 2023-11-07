@@ -101,7 +101,7 @@
       items:
       - name: Overview
         href: connector-amazon-s3-compatible-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services
       items:
@@ -129,15 +129,15 @@
       items:
       - name: Overview
         href: connector-azure-data-explorer-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-data-explorer.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-explorer-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-kusto-dataflows.md
     - name: Azure Data Lake Storage Gen1
       items:
       - name: Overview
         href: connector-azure-data-lake-storage-gen1-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
@@ -147,13 +147,11 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure Database for PostgreSQL
       items:
       - name: Overview
         href: connector-azure-database-for-postgresql-overview.md   
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-database-for-postgresql-copy-activity.md 
     - name: Azure Databricks
       items:
@@ -173,19 +171,23 @@
         href: connector-azure-sql-database-overview.md
       - name: Set up your connection
         href: connector-azure-sql-database.md
-      - name: Configure in data pipeline copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
     - name: Azure Synapse Analytics
       items:
       - name: Overview
         href: connector-azure-synapse-analytics-overview.md
-      - name: Configure in data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-synapse-analytics.md
+      - name: Configure in  data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
     - name: Azure Table Storage
       items:
       - name: Overview
         href: connector-azure-table-storage-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-table-storage.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-table-storage-copy-activity.md
     - name: CloudBluePSA
       items:
@@ -214,14 +216,18 @@
     - name: Dataverse
       items:
       - name: Overview
-        href: connector-dataverse-overview.md   
-      - name: Configure in Data pipeline Copy activity
+        href: connector-dataverse-overview.md
+      - name: Set up your connection
+        href: connector-dataverse.md 
+      - name: Configure in a data pipeline Copy activity
         href: connector-dataverse-copy-activity.md 
     - name: Data Warehouse
       items:
       - name: Overview
         href: connector-data-warehouse-overview.md
-      - name: Configure in Data pipeline
+      - name: Set up your connection
+        href: connector-data-warehouse.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
     - name: FHIR
       items:
@@ -279,7 +285,7 @@
       items:
       - name: Overview
         href: connector-ftp-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-ftp-copy-activity.md
     - name: Google Analytics
       items:
@@ -299,7 +305,7 @@
         href: connector-google-cloud-storage-overview.md
       - name: Set up your connection
         href: connector-google-cloud-storage.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
     - name: Hive LLAP
       items:
@@ -313,7 +319,7 @@
         href: connector-http-overview.md
       - name: Set up your connection
         href: connector-http.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-http-copy-activity.md
     - name: IBM DB2 database
       items:
@@ -331,7 +337,9 @@
       items:
       - name: Overview
         href: connector-kql-database-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-kql-database.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-kql-database-copy-activity.md
     - name: Lakehouse
       items:
@@ -339,15 +347,15 @@
         href: connector-lakehouse-overview.md
       - name: Set up your connection
         href: connector-lakehouse.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
     - name: Microsoft 365
       items:
       - name: Overview
         href: connector-microsoft-365-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-microsoft-365.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
     - name: Microsoft Exchange Online
       items:
@@ -359,13 +367,13 @@
       items:
       - name: Overview
         href: connector-mongodb-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-copy-activity.md
     - name: MongoDB Atlas
       items:
       - name: Overview
         href: connector-mongodb-atlas-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-atlas-copy-activity.md
     - name: MongoDB Atlas SQL (Beta)
       items:
@@ -385,7 +393,7 @@
         href: connector-odata-overview.md
       - name: Set up your connection
         href: connector-odata.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-odata-copy-activity.md 
     - name: Odbc
       items:
@@ -405,18 +413,16 @@
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-postgresql-copy-activity.md  
     - name: REST
       items:
       - name: Overview
         href: connector-rest-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-rest.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-rest-copy-activity.md    
-      - name: Configure in Dataflow Gen2
-        href: connector-rest-dataflows.md 
     - name: Salesforce objects
       items:
       - name: Overview
@@ -451,7 +457,7 @@
       items:
       - name: Overview
         href: connector-sftp-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sftp-copy-activity.md
     - name: SharePoint folder
       items:
@@ -471,13 +477,15 @@
         href: connector-sharepoint-online-list-overview.md
       - name: Set up your connection
         href: connector-sharepoint-online-list.md
-      - name: Configure in data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sharepoint-online-list-copy-activity.md
     - name: Snowflake
       items:
       - name: Overview
         href: connector-snowflake-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-snowflake.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
     - name: SQL Server database
       items:
@@ -485,7 +493,7 @@
         href: connector-sql-server-database-overview.md
       - name: Set up your connection
         href: connector-sql-server-database.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sql-server-copy-activity.md  
     - name: Teradata database
       items:

@@ -167,6 +167,16 @@ items:
     href: notebook-source-control-deployment.md
   - name: Use Notebook public APIs
     href: notebook-public-api.md
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: create-and-use-environment.md
+  - name: Manage Spark compute in environments
+    href: environment-manage-compute.md
+  - name: Manage libraries in environments
+    href: environment-manage-library.md
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: environment-workspace-migration.md
 - name: VS Code integration 
   items:
   - name: Overview
