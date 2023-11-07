@@ -400,6 +400,8 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
+* Dataset deployment might fail if there are both native query and proxy models as data sources.
+
 ### Dataflow limitations
 
 * When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
