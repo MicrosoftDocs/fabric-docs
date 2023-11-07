@@ -45,6 +45,18 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+- name: Copilot in Fabric
+  items:
+  - name: Copilot for Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
+  - name: Copilot for Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
