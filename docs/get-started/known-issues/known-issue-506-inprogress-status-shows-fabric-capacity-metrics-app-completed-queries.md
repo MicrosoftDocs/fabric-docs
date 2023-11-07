@@ -10,7 +10,7 @@ ms.custom: known-issue-506
 
 # Known issue - InProgress status shows in Fabric capacity metrics app for completed queries
 
-In the Fabric capacity metrics app, completed queries in the Data Warehouse SQL Endpoint appear with the status as "InProgress" in the interactive operations table on the timepoint page.
+In the Fabric capacity metrics app, completed queries in the Data Warehouse SQL analytics endpoint appear with the status as "InProgress" in the interactive operations table on the timepoint page.
 
 **Status:** Open
 
@@ -18,7 +18,7 @@ In the Fabric capacity metrics app, completed queries in the Data Warehouse SQL 
 
 ## Symptoms
 
-In the interactive operations table on the timepoint page, completed queries in the Data Warehouse SQL Endpoint appear with the status **InProgress**
+In the interactive operations table on the timepoint page, completed queries in the Data Warehouse SQL analytics endpoint appear with the status **InProgress**
 
 ## Solutions and workarounds
 
