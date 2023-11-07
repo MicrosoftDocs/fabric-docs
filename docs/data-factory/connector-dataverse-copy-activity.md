@@ -1,5 +1,5 @@
 ---
-title: How to configure Dataverse in a copy activity
+title: Configure Dataverse in a copy activity
 description: This article explains how to copy data using Dataverse.
 author: jianleishen
 ms.author: jianleishen
@@ -8,7 +8,7 @@ ms.date: 10/18/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Dataverse in a copy activity
+# Configure Dataverse in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Dataverse.
 
