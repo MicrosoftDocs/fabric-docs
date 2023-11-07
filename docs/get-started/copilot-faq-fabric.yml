@@ -40,29 +40,29 @@ sections:
       - question: |
           I loaded the semantic model and Copilot generated a summary, but I don't think that it's accurate
         answer: |
-          This could be because your semantic model has missing values. Because AI is generating the summary, it can try to fill the holes and fabricate data. If you can remove the rows with missing values, this situation could be avoided.
+          This inaccuracy could be because your semantic model has missing values. Because AI is generating the summary, it can try to fill the holes and fabricate data. If you can remove the rows with missing values, this situation could be avoided.
       - question: |
-          I generated the report visuals, but the quality of the visuals concern me. I wouldn't have chosen them myself  
+          I generated the report visuals, but the quality of the visuals concern me. I wouldn't choose them myself  
         answer: |
-          We are continuously looking to improve the quality of the copilot generated visuals. For now we recommend that you make the change by using the Power BI visualization tool.
+          We are continuously looking to improve the quality of the copilot generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
       - question: |
           I generated a summary for the report page using Copilot, but I can't move the summary anywhere on the report page 
         answer: |
           Instead of creating a summary of the report page in the Copilot window, create a narrative visual on the report page and create your summary there. See *Create a narrative summary visual with Copilot for Power BI* (copilot-create-narrative.md) for details.
       - question: |
-          I want to disable Copilot immediately as I'm concerned with the data storage as you mention above
+          I want to disable Copilot immediately as I'm concerned with the data storage as you mention previously
         answer: |
           Contact your help desk to get support from your IT admin.
       - question: |
           I want to suggest new features. How can I do that?  
         answer: |
-          First, thank you for the feedback. It's great that you've found it useful. As part of the feedback sessions, we'll send you a form and you can add your suggestions there.
+          First, thank you for the feedback. It's great that you found it useful. As part of the feedback sessions, we send you a form and you can add your suggestions there.
   - name: Data Factory
     questions:
       - question: |
           I'm a Fabric user. I opened the semantic model in Data Factory. Why can't I see Copilot?  
         answer: |
-          We have only enabled Copilot for Power BI. In the future, we will enable it for other areas of Fabric as well. We don't have a timeline just yet for those areas.
+          We have only enabled Copilot for Power BI. In the future, we'll enable it for other areas of Fabric as well. We don't have a timeline yet for those areas.
 
 additionalContent: |
 

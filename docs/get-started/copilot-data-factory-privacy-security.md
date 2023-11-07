@@ -32,10 +32,10 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Here are the current limitations of Copilot for Data Factory: 
 
-- Copilot is unable to perform transformations or explanations across multiple queries in a single input. For instance, you cannot ask Copilot to "Capitalize all the column headers for each query in my dataflow." 
-- Copilot does not understand previous inputs and cannot undo changes after a user has committed a change when authoring, either via user interface or the chat pane. For example, you cannot ask Copilot to "Undo my last 5 inputs." However, users can still leverage the existing user interface options to delete unwanted steps or queries. 
-- Copilot cannot make layout changes to queries in your session. For example, if you tell Copilot to create a new group for queries in the editor, it doesn't work. 
-- Copilot may produce inaccurate results when the intent is to evaluate data that is not present within the sampled results imported into the sessions data preview. 
+- Copilot can't perform transformations or explanations across multiple queries in a single input. For instance, you can't ask Copilot to "Capitalize all the column headers for each query in my dataflow." 
+- Copilot doesn't understand previous inputs and can't undo changes after a user commits a change when authoring, either via user interface or the chat pane. For example, you can't ask Copilot to "Undo my last 5 inputs." However, users can still use the existing user interface options to delete unwanted steps or queries. 
+- Copilot can't make layout changes to queries in your session. For example, if you tell Copilot to create a new group for queries in the editor, it doesn't work. 
+- Copilot may produce inaccurate results when the intent is to evaluate data that isn't present within the sampled results imported into the sessions data preview. 
 - Copilot doesn't produce a message for the skills that it doesn't support. For example, if you ask Copilot to "Perform statistical analysis and write a summary over the contents of this query", it doesn't complete the instruction successfully as mentioned previously. Unfortunately, it doesn't give an error message either. 
 
 ## Data use of Copilot for Data Factory
@@ -45,7 +45,7 @@ Here are the current limitations of Copilot for Data Factory:
 ## Evaluation of Copilot for Data Factory
  
 - The product team has tested Copilot to see how well the system performs within the context of Gen2 dataflows, and whether AI responses are insightful and useful. 
-- The team also invested in additional harms mitigations, including technological approaches to focusing Copilot's output on topics related to data integration. 
+- The team also invested in other harms mitigations, including technological approaches to focusing Copilot's output on topics related to data integration. 
  
 ## Tips for working with Copilot for Data Factory
 
