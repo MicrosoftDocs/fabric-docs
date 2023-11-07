@@ -5,7 +5,7 @@ author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf
 ms.topic: conceptual
-ms.date: 11/03/2023
+ms.date: 11/06/2023
 ms.custom: cat-fabric
 ---
 
@@ -51,6 +51,8 @@ When you create a lakehouse in Fabric, two physical storage locations are provis
 - **Files** is an unmanaged area for storing data in any file format. Any Delta files stored in this area aren't automatically recognized as tables. If you want to create a table over a Delta Lake folder in the unmanaged area, you'll need to explicitly create a [shortcut](onelake-shortcuts.md) or an external table with a location that points to the unmanaged folder that contains the Delta Lake files in Spark.
 
 The main distinction between the managed area (tables) and the unmanaged area (files) is the automatic table discovery and registration process. This process runs over any folder created in the managed area only, but not in the unmanaged area.
+
+In Microsoft Fabric, the [Lakehouse explorer](../data-engineering/navigate-lakehouse-explorer.md#lakehouse-explorer) provides a unified graphical representation of the whole Lakehouse for users to navigate, access, and update their data.
 
 For more information about automatic table discovery, see [Automatic table discovery and registration](../data-engineering/lakehouse-overview.md#automatic-table-discovery-and-registration).
 
