@@ -45,14 +45,18 @@ items:
     href: create-empty-table.md
   - name: Get data
     items:
-    - name: Get data from a blob
-      href: get-data-blob.md
-    - name: Get data from a blob container
-      href: get-data-blob-container.md
+    - name: Data formats
+      href: ingestion-supported-formats.md
+    - name: Get data from local file
+      href: get-data-local-file.md
+    - name: Get data from Azure storage
+      href: get-data-azure-storage.md
     - name: Get data from Amazon S3
       href: get-data-amazon-s3.md
     - name: Get data from Azure Event Hubs
       href: get-data-event-hub.md
+    - name: Get data from Eventstream
+      href: get-data-eventstream.md
     - name: Get data from OneLake
       href: get-data-onelake.md
   - name: Connectors

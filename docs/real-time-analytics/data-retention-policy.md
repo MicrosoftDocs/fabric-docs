@@ -34,6 +34,6 @@ For more information, see [Retention policy](/azure/data-explorer/kusto/manageme
 
 ## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 * [Create materialized views](materialized-view.md)
 * [Create a table update policy](table-update-policy.md)
