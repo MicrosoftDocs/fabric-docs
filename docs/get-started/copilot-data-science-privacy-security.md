@@ -8,7 +8,7 @@ ms.service: security
 ms.subservice: 
 ms.custom: 
 ms.topic: conceptual
-ms.date: 11/06/2023
+ms.date: 11/07/2023
 ---
 
 # Privacy, security, and responsible use of Copilot for Data Science (preview)

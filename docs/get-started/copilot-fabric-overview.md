@@ -8,7 +8,7 @@ ms.service: security
 ms.subservice: 
 ms.custom: 
 ms.topic: conceptual
-ms.date: 10/30/2023
+ms.date: 11/07/2023
 ---
 
 # Overview of Copilot for Fabric (preview)
