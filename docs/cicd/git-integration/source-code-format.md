@@ -43,7 +43,7 @@ For more information about dataset folders and a complete list of their contents
 
 ### Notebook files
 
-Notebook folders contain a *.py* file
+Notebook folders contain a *.py* file:
 
 :::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
 
@@ -91,7 +91,7 @@ In addition to the item definition files, each item directory contains one or tw
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: the item's type (dataset, report etc.)
+- `type`: the item's type (semantic model, report etc.)
 - `displayName`: the name of the item
 - `description`: (optional) description of the item
 
