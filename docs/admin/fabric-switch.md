@@ -57,7 +57,7 @@ Follow these steps to enable Microsoft Fabric for your tenant.
 4. Select **Apply**.
 
 >[!NOTE]
->The *Delegate settings to other admins* option, isn't available because its automatically delegated to capacity admins.
+>The *Delegate settings to other admins* option, isn't available because it's automatically delegated to capacity admins.
 
 ### Enable for a capacity
 
