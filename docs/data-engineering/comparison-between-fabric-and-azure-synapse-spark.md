@@ -11,16 +11,14 @@ ms.date: 11/01/2023
 
 # Comparison between Fabric and Azure Synapse Spark
 
-This article presents a comparison between Spark in Microsoft Fabric and Azure Synapse Spark. It summarizes the key findings and provides an in-depth analysis across various categories. These categories include Spark pools, configuration, libraries, notebooks, and Spark job definition (SJD), along with corresponding details for Fabric Spark.
+This article presents a comparison between Fabric Data Engineering and Azure Synapse Spark. It summarizes key features and provides an in-depth analysis across various categories. These categories include Spark pools, configuration, libraries, notebooks, and Spark job definition (SJD), along with corresponding details for Fabric Data Engineering.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+The following table compares Azure Synapse Spark and Fabric Spark across different categories:
 
-The following table compares different Spark configurations for Azure Synapse Spark and Fabric Spark:
-
-|Spark configuration | **Azure Synapse Spark** | **Fabric Spark** |
+|Category | Azure Synapse Spark | Fabric Spark |
 | --- | --- | --- |
-| Spark pools | Spark pool <br>- <br>-| Starter pool / Custom pool <br>V-Order <br>High concurrency |
-| Spark configurations | Pool level <br>Notebook or Spark job definition level| Environment level <br>Notebook or Spark job definition level|
+| **Spark pools** | [Spark pool](/synapse-analytics/quickstart-create-apache-spark-pool-portal/) <br>- <br>-| [Starter pool](configure-starter-pools.md) / [Custom pool](create-custom-spark-pools.md) <br>[V-Order](delta-optimization-and-v-order.md) <br>[High concurrency](configure-high-concurrency-session-notebooks.md) |
+| **Spark configurations** | Pool level <br>Notebook or Spark job definition level| Environment level <br>Notebook or Spark job definition level|
 | Spark libraries | Workspace level packages <br>Pool level packages <br>Inline packages | - <br>Environment libraries <br>Inline libraries|
 | Resources | Notebook (Python, Scala, Spark SQL, R, .NET) <br>Spark job definition (Python, Scala, .NET) <br>Pipelines <br>Spark-related pipeline activities (Notebook, SJD)| Notebook (Python, Scala, Spark SQL, R) <br>Spark job definition (Python, Scala, R) <br>Pipelines <br> Spark-related pipeline activities (Notebook)|
 | Data | Primary storage (Azure Data Lake Storage Gen2) <br>Data residency (Cluster/region based) | Primary storage (OneLake) <br>Data residency (Capacity/region based) |
