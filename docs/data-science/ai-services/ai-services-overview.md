@@ -36,7 +36,6 @@ Fabric provides two options for utilizing Azure AI services:
 
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
-- DV3 : A Microsoft internal version of GPT-4 model. GPT-4 can solve difficult problems with greater accuracy than any of OpenAI's previous models. Like GPT-3.5 Turbo, GPT-4 is optimized for chat and works well for traditional completions tasks.
 - GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 - text-davinci-003, a legacy model that can do any language task with better quality, longer output, and consistent instruction.

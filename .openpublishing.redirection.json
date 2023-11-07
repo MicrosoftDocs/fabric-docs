@@ -194,6 +194,16 @@
           "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-http",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
         }
     ]
 }
