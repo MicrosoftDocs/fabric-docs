@@ -49,6 +49,10 @@ To understand more about configuring Spark pools based on the purchased Fabric C
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. It's used by capacity administrators to monitor the performance of workloads and their usage, compared to purchased capacity.  
 
 Once you have installed the app, select the item type **Notebook**,**Lakehouse**,**Spark Job Defintion** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart can now be adjusted to a desired timeframe to understand the usage from all these selected items.
+
+All Spark related operations are classified as [background operations](/power-bi/enterprise/service-premium-smoothing). Capacity consumption from Spark is displayed under a Notebook, a Spark Job Definition, or a Lakehouse, and is aggregated by operation name and item. For example: If you run a notebook job, you can see the notebook run, the CUs used by the notebook (Total Spark VCores/2 as 1 CU gives 2 Spark VCores), duration the job has taken in the report. 
+
+:::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
 To understand more about Spark capacity usage reporting, visit[Understand Spark Capacity consumption using Capacity Metrics App](monitor-spark-capacity-consumption.md)
 
 ## Next steps
