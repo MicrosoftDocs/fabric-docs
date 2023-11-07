@@ -30,7 +30,7 @@ This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI P
 
 ``` python
 import synapse.ml.core
-from synapse.ml.cognitive.openai import *
+from synapse.ml.services.openai import *
 ```
 
 ---
@@ -45,7 +45,7 @@ ChatGPT and GPT-4 are language models optimized for conversational interfaces. T
 import openai
 
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k, dv3}
+    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -67,7 +67,7 @@ We can also stream the response
 
 ``` Python
 response = openai.ChatCompletion.create(
-    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k, dv3}
+    deployment_id='gpt-35-turbo', # deployment_id could be one of {gpt-35-turbo, gpt-35-turbo-16k}
     messages=[
         {"role": "system", "content": "You are a helpful assistant."},
         {"role": "user", "content": "Knock knock."},
@@ -101,31 +101,49 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 
 -   `gpt-35-turbo`
 -   `gpt-35-turbo-16k`
--   `dv3`
 
 ``` python
-df = spark.createDataFrame(
+from pyspark.sql import Row
+from pyspark.sql.types import *
+
+
+def make_message(role, content):
+    return Row(role=role, content=content, name=role)
+
+
+chat_df = spark.createDataFrame(
     [
-        ("apple", "fruits"),
-        ("mercedes", "cars"),
-        ("cake", "dishes"),
-        (None, "none")
+        (
+            [
+                make_message(
+                    "system", "You are an AI chatbot with red as your favorite color"
+                ),
+                make_message("user", "Whats your favorite color"),
+            ],
+        ),
+        (
+            [
+                make_message("system", "You are very excited"),
+                make_message("user", "How are you today"),
+            ],
+        ),
     ]
-).toDF("text", "category")
-```
+).toDF("messages")
 
 
-``` python
-prompt = (
-    OpenAIPrompt()
-    .setDeploymentName("dv3") # deployment_name could be one of {gpt-35-turbo, gpt-35-turbo-16k, dv3}
-    .setOutputCol("outParsed")
-    .setTemperature(0.0)
-    .setPromptTemplate("here is a comma separated list of 5 {category}: {text}, ")
-    .setPostProcessing("csv")
+chat_completion = (
+    OpenAIChatCompletion()
+    .setDeploymentName("gpt-35-turbo-16k") # deploymentName could be one of {gpt-35-turbo, gpt-35-turbo-16k}
+    .setMessagesCol("messages")
+    .setErrorCol("error")
+    .setOutputCol("chat_completions")
 )
-result = prompt.transform(df)
-display(result)
+
+display(
+    chat_completion.transform(chat_df).select(
+        "messages", "chat_completions.choices.message.content"
+    )
+)
 ```
 
 ---
@@ -269,7 +287,7 @@ df = spark.createDataFrame(
 from synapse.ml.cognitive.openai import OpenAICompletion
 from pyspark.sql.functions import col
 
-deployment_name = "text-davinci-003"
+deployment_name = "text-davinci-003" # deployment_name could be text-davinci-003 or code-cushman-002
 completion = (
     OpenAICompletion()
     .setDeploymentName(deployment_name)

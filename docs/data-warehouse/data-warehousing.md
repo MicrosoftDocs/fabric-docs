@@ -7,7 +7,7 @@ ms.reviewer: wiassaf
 ms.date: 6/1/2023
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
+ms.search.form: SQL Analytics Endpoint overview, Warehouse overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.
 ---
 # What is data warehousing in Microsoft Fabric?
 
@@ -21,7 +21,7 @@ ms.search.form: Lakehouse SQL Analytics Endpoint overview, Warehouse overview, W
 
 [!INCLUDE [product-name](../includes/product-name.md)] introduces a lake centric data warehouse built on an enterprise grade distributed processing engine that enables industry leading performance at scale while eliminating the need for configuration and management. Through an easy to use SaaS experience that is tightly integrated with Power BI for easy analysis and reporting, [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] converges the world of data lakes and warehouses with a goal of greatly simplifying an organizations investment in their analytics estate. Data warehousing workloads benefit from the rich capabilities of the SQL engine over an open data format, enabling customers to focus on data preparation, analysis and reporting over a single copy of their data stored in their Microsoft OneLake. 
 
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected dataset that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross-database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
+The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is built for any skill level - from the citizen developer through to the professional developer, DBA or data engineer. The rich set of experiences built into [!INCLUDE [product-name](../includes/product-name.md)] workspace enables customers to reduce their time to insights by having an easily consumable, always connected semantic model that is integrated with Power BI in DirectLake mode. This enables second-to-none industry leading performance that ensures a customer's report always has the most recent data for analysis and reporting. Cross-database querying can be leveraged to quickly and seamlessly leverage multiple data sources that span multiple databases for fast insights and zero data duplication. 
 
 ### Virtual warehouses with cross database querying
 
@@ -167,7 +167,7 @@ Recommended use case
    :::column span="1"::: 
  - Exploring and querying delta tables from the lakehouse
  - Staging Data and Archival Zone for analysis
- - Medallion architecture with zones for bronze, silver and gold analysis
+ - [Medallion lakehouse architecture](../onelake/onelake-medallion-lakehouse-architecture.md) with zones for bronze, silver and gold analysis
  - Pairing with Warehouse for enterprise analytics use cases 
    :::column-end:::
    :::column span="1"::: 

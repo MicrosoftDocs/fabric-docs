@@ -4,8 +4,8 @@ description: Learn about how to migrate HMS metadata from Azure Synapse Spark to
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
-ms.topic: migration
-ms.custom: ignite-2023
+ms.topic: how-to
+ms.custom: fabric-cat
 ms.date: 11/03/2023
 ---
 
@@ -142,5 +142,5 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 ## Next steps
 
 - [Fabric vs. Azure Synapse Spark](migrate-synapse-hms-metadata.md)
-- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark Job Definitions (SJD)](migrate-synapse-spark-job-definition.md)
+- Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)
 
