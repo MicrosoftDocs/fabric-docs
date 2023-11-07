@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.custom: references_regions, build-2023
 ms.topic: overview
-ms.date: 05/23/2023
+ms.date: 11/07/2023
 ---
 
 # Fabric region availability
@@ -31,6 +31,7 @@ Europe
 * WestEurope
 * FranceCentral
 * NorwayEast
+* SwedenCentral
 * SwitzerlandNorth
 * SwitzerlandWest
 * UKSouth
