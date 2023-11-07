@@ -21,14 +21,14 @@ The Data Engineering/Science experience at workspace setting has been upgraded. 
 ## Prepare the files for migration
 
 In the upgraded workspace setting, you can review your existing configurations.
-:::image type="content" source="media\environment-migration\prepare-file-1.png" alt-text="Screenshot of preparing the files for migration-1":::
+:::image type="content" source="media\environment-migration\prepare-file-1.png" alt-text="Screenshot of preparing the files for migration-1.":::
 
 1. Record the current **Runtime** version.
 
 2. Download existing configurations by clicking **Download all files** button.
 
     The content will be downloaded as different files. **Sparkproperties.yml** records all the Spark properties key value pairs. The **Publiclibrary.yml** records all the public library definitions. The custom packages uploaded by you or your organization are downloaded as **files** one by one.
-    :::image type="content" source="media\environment-migration\prepare-file-2.png" alt-text="Screenshot of downloading files":::
+    :::image type="content" source="media\environment-migration\prepare-file-2.png" "Screenshot of downloading files":::
 
 **Once the files are downloaded, you are prepared to migrate.**
 
@@ -38,15 +38,15 @@ In the upgraded workspace setting, you can review your existing configurations.
 
 2. At the home tab of Environment, make sure the **Runtime** version is the same with your existing workspace Runtime.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" alt-text="Screenshot of confirming runtime version":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-runtime.png" "Screenshot of confirming runtime version":::
 
 3. *Skip this step if there was no public library in your workspace setting.* Navigate to the **Public Libraries** section, find **Add from .yml** button in the ribbon. Upload the **Publiclibrary.yml**, which was downloaded from the workspace setting.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-public-library.png" alt-text="Screenshot of installing public library":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-public-library.png" alt-text="Screenshot of installing public library.":::
 
 4. *Skip this step if there was no custom library in your workspace setting.* Navigate to the **Custom Libraries** section, find **Upload** button in the ribbon. Upload the **custom library files**, which was downloaded from the workspace setting.
 
-    :::image type="content" source="media\environment-migration\create-and-configure-env-custom-library.png" alt-text="Screenshot of install custom library":::
+    :::image type="content" source="media\environment-migration\create-and-configure-env-custom-library.png" alt-text="Screenshot of install custom library.":::
 
 5. *Skip this step if there was no Spark property in your workspace setting.* Navigate to the **Spark properties** section, find **Upload** button in the ribbon. Upload the **Sparkproperties.yml**, which was downloaded from the workspace setting.
 
@@ -63,17 +63,19 @@ In the upgraded workspace setting, you can review your existing configurations.
 1. Navigate to Workspace settings -- Data Engineering/Science -- Environment again, click **Enable environment** button to clean the existing configurations and start the journey with Workspace level Environment.
 
     This screen appears if the existing configurations are deleted successfully.
-    :::image type="content" source="media\environment-migration\enable-default-env-new-workspace-setting.png" alt-text="Screenshot of new workspace setting":::
+    :::image type="content" source="media\environment-migration\enable-default-env-new-workspace-setting.png" alt-text="Screenshot of new workspace setting.":::
 
 2. Turn on the **Customize environment** toggle. This toggle allows you to attach an Environment as workspace default.
 
-    :::image type="content" source="media\environment-migration\enable-default-env-turn-on-toggle.png" alt-text="Screenshot of turn on customize environment toggle":::
+    :::image type="content" source="media\environment-migration\enable-default-env-turn-on-toggle.png" alt-text="Screenshot of turning on customize environment toggle.":::
 
 3. Attach the environment you configured as the workspace default.
 
-    :::image type="content" source="media\environment-migration\enable-default-env-attach-default.png" alt-text="Screenshot of attach default environment":::
+    :::image type="content" source="media\environment-migration\enable-default-env-attach-default.png" alt-text="Screenshot of attaching default environment.":::
+
     **Now, we successfully migrate the existing configurations to an Environment.**
-    :::image type="content" source="media\environment-migration\success.png" alt-text="Migration done":::
+   
+    :::image type="content" source="media\environment-migration\success.png" alt-text="Screenshot of migration succeeds.":::
 
 ## Next steps
 
