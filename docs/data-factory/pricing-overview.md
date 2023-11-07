@@ -22,7 +22,7 @@ You can manage your Fabric Data Factory run costs easily with simplified billing
 
 ## Data Factory pricing meters
 
-Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflows Gen2 use **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
+Whether you’re a citizen or professional developer, Data Factory enables you to develop enterprise-scale data integration solutions with next-generation dataflows and data pipelines. These experiences operate on multiple services with different capacity meters. Data pipelines use **Data Orchestration** and **Data Movement** meters, while Dataflow Gen2 uses **Standard Compute** and **High Scale Compute**. Additionally, like other Fabric experiences, the common meter for storage consumption is OneLake Storage.
 
 :::image type="content" source="media/pricing-overview/pricing-meters.svg" alt-text="Diagram showing the pricing meters for Data Factory in Microsoft Fabric.":::
 
@@ -36,7 +36,7 @@ Here are some example scenarios for pricing of data pipelines:
 - [Load 1 TB CSV files to a Lakehouse files with binary copy](pricing-scenario-load-1-tb-csv-to-lakehouse-files.md)
 - [Load 1 TB Parquet to a Lakehouse table](pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md)
 
-Here are some pricing examples for Dataflows Gen2:
+Here are some pricing examples for Dataflow Gen2:
 
 - [Load on-premises 2 GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
 - [Load 2 GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
@@ -44,4 +44,4 @@ Here are some pricing examples for Dataflows Gen2:
 ## Next steps
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
-- [Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
