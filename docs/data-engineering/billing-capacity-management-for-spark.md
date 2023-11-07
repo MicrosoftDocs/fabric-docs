@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.custom: ignite-2023
 ms.date: 11/07/2023
 ---
-# What is Spark compute in Microsoft Fabric?
+# Billing and utilization reporting for Fabric Spark
 
 **Applies to:** [!INCLUDE[fabric-de-and-ds](includes/fabric-de-ds.md)]
 
@@ -21,7 +21,7 @@ To understand your Fabric billing, visit [Understand your Azure bill on a Fabric
 
 You as a user could purchase a Fabric capacity from Azure by specifying using an Azure subscription. The size of the capacity determines the amount of computation power available. 
 For Fabric Spark every CU purchased translates to 2 Spark VCores. For example if you purchase a Fabric capacity F128, this translates to 256 SparkVCores. 
-To understand about the different SKUs, cores allocation and throttling on Spark, visit [Understand Spark throttling and queueing](/spark-job-concurrency-and-queueing.md).
+To understand about the different SKUs, cores allocation and throttling on Spark, visit [Understand Spark throttling and queueing](spark-job-concurrency-and-queueing.md).
 
 ## Fabric Spark compute configuration based on purchased Capacity
 
