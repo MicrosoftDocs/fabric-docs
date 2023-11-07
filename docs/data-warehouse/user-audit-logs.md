@@ -37,17 +37,17 @@ The following operations are available in the user audit logs for [!INCLUDE [fab
 | Resumed a suspended [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `ResumeSuspendedWarehouse` |  | 
 | Renamed a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `RenameWarehouse` |  | 
 | Shared a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `ShareWarehouse` |  | 
-| Connected to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] from an external app | `ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp` |  | 
+| Connected to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] from an external app | `ConnectWarehouseAndSqlAnalyticsEndpointLakehouseFromExternalApp` | Previously named "Connected to a warehouse or default warehouse from an external app" (Operation name: `ConnectWarehouseAndDefaultWarehouseFromExternalApp`) | 
 | Created a SQL query from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `CreateSqlQueryFromWarehouse` |  | 
 | Created a visual query from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `CreateVisualQueryFromWarehouse` |  | 
 | Deleted a SQL query from a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | `DeleteSqlQueryFromWarehouse` | This audit event covers both deleting SQL and visual queries from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] | 
-| Updated a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpdateSqlAnalyticsEndpointLakehouse` |  | 
-| Updated settings for a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpdateSqlAnalyticsEndpointLakehouseSettings` |  | 
-| Upserted parameters from a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpsertSqlAnalyticsEndpointLakehouseParameters` |  | 
-| Viewed a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `ViewSqlAnalyticsEndpointLakehouse` |  | 
-| Canceled a [!INCLUDE [fabric-se](includes/fabric-se.md)]  batch | `CancelSqlAnalyticsEndpointlakehouseBatch` |  | 
-| Resumed a suspended [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `ResumeSuspendedSqlAnalyticsEndpointLakehouse` |  | 
-| Refreshed metadata for a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `RefreshSqlAnalyticsEndpointLakehouseMetadata` |  | 
+| Updated a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpdateSqlAnalyticsEndpointLakehouse` | Previously named "Updated a default warehouse" (Operation name: `UpdateDefaultWarehouse`) | 
+| Updated settings for a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpdateSqlAnalyticsEndpointLakehouseSettings` | Previously named "Updated settings for a default warehouse" (Operation name: `UpdateDefaultWarehouseSettings`) | 
+| Upserted parameters from a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `UpsertSqlAnalyticsEndpointLakehouseParameters` | Previously named "Updated parameters from a default warehouse" (Operation name: `UpsertDefaultWarehouseParameters`) | 
+| Viewed a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `ViewSqlAnalyticsEndpointLakehouse` | Previously named "Viewed a default warehouse" (Operation name: `ViewDefaultWarehouse`) | 
+| Canceled a [!INCLUDE [fabric-se](includes/fabric-se.md)]  batch | `CancelSqlAnalyticsEndpointlakehouseBatch` | Previously named "Canceled a default warehouse" (Operation name: `CancelDefaultWarehouseBatch`) | 
+| Resumed a suspended [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `ResumeSuspendedSqlAnalyticsEndpointLakehouse` | Previously named "Resumed a suspended default warehouse" (Operation name: `ResumeSuspendedDefaultWarehouse`) | 
+| Refreshed metadata for a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `RefreshSqlAnalyticsEndpointLakehouseMetadata` | Previously named "Refreshed metadata for a default warehouse" (Operation name: `RefreshDefaultWarehouseMetadata`) | 
 | Created a SQL query from a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `CreateSqlQueryFromSqlAnalyticsEndpointLakehouse` |  | 
 | Created a visual query from a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `CreateVisualQueryFromSqlAnalyticsEndpointLakehouse` |  |
 | Deleted a SQL query from a [!INCLUDE [fabric-se](includes/fabric-se.md)]  | `DeleteSqlQueryFromSqlAnalyticsEndpointLakehouse` | This audit event covers both deleting SQL and visual queries from the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse. |
