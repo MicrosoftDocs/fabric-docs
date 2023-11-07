@@ -10,7 +10,7 @@ ms.custom: template-how-to, build-2023
 
 # Set up your Dataverse connection
 
-This article outlines the steps to create an Dataverse connection.
+This article outlines the steps to create a Dataverse connection.
 
 ## Supported authentication types
 
