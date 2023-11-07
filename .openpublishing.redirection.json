@@ -204,6 +204,21 @@
           "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-rest",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
         }
     ]
 }
