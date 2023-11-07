@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ---
 
 # Pricing scenario using a data pipeline to load 1 TB of Parquet data to a data warehouse with staging

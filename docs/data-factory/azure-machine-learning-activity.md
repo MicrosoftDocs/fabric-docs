@@ -5,7 +5,7 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Azure Machine Learning activity to run a job on an Azure Machine Learning instance

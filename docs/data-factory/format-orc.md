@@ -4,7 +4,7 @@ description: This article explains how to configure ORC format in the data pipel
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

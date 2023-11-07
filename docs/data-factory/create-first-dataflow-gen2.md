@@ -6,7 +6,7 @@ ms.author: jeluitwi
 author: luitwieler
 ms.topic: quickstart 
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 11/1/2023
+ms.date: 11/15/2023
 ms.search.form: DataflowGen2 Tutorials
 ---
 

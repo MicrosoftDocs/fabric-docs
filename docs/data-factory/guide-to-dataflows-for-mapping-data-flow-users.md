@@ -4,7 +4,7 @@ description: Guide on common transformations from Azure Data Factory Mapping Dat
 author: itsnotaboutthecell
 ms.topic: overview
 ms.custom: 
-ms.date: 08/03/2023
+ms.date: 11/15/2023
 ms.author: alpowers
 ms.search.form: DataflowGen2
 ---

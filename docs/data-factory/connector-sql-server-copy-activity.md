@@ -4,7 +4,7 @@ description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/25/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

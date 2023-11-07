@@ -2,7 +2,7 @@
 title: Dataflow Gen2 connectors in Microsoft Fabric
 description: Provides a list of all the supported Dataflow Gen2 connectors used by Data Factory in Microsoft Fabric.
 author: DougKlopfenstein
-ms.date: 11/6/2023
+ms.date: 11/15/2023
 ms.author: dougklo
 ms.topic: overview
 ms.custom: build-2023
