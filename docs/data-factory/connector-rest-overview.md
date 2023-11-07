@@ -14,7 +14,7 @@ The REST connector is supported in Data Factory in [!INCLUDE [product-name](../i
 
 ## Support in Dataflow Gen2
 
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the REST connector in Dataflow Gen2. To get REST data in Dataflow Gen2, use the [Web API](/powerquery/connectors/web/web) connector instead.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the REST connector in Dataflow Gen2. To get REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector instead.
 
 ## Support in data pipelines
 

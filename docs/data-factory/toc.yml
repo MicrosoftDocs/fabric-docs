@@ -95,8 +95,6 @@
       items:
       - name: Overview
         href: connector-amazon-s3-compatible-overview.md
-      - name: Set up your connection
-        href: connector-amazon-s3-compatible.md
       - name: Configure in a data pipeline Copy activity
         href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services

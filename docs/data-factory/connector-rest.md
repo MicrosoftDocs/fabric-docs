@@ -25,7 +25,7 @@ This REST connector supports the following authentication types for copy and Dat
 
 ## Set up your connection in Dataflow Gen2
 
-The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/powerquery/connectors/web/web) connector.
+The Microsoft 365 connector isn't currently supported in Dataflow Gen2. To connect to REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector.
 
 ## Set up your connection in a data pipeline
 
