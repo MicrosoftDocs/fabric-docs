@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.search.form: lakehouse api
 ---
 

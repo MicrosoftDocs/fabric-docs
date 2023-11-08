@@ -6,7 +6,7 @@ ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 11/01/2023
+ms.date: 11/15/2023
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
@@ -86,7 +86,7 @@ In this example, we show you how to use in-line commands to manage libraries. Su
 
 You can use in-line commands to enable *altair* on your notebook session without affecting other sessions of the notebook or other items.
 
-1. Run the following commands in a notebook code cell to install the *altair* library and *vega_datasets*, which contains dataset you can use to visualize:
+1. Run the following commands in a notebook code cell to install the *altair* library and *vega_datasets*, which contains semantic model you can use to visualize:
 
    ```python
    %conda install altair          # install latest version through conda command
@@ -95,7 +95,7 @@ You can use in-line commands to enable *altair* on your notebook session without
 
    The output of the cell output indicates the result of installation.
 
-2. Import the package and dataset by running the following codes in another notebook cell:
+1. Import the package and semantic model by running the following codes in another notebook cell:
 
    ```python
    import altair as alt

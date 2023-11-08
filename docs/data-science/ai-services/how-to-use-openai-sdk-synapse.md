@@ -6,7 +6,7 @@ ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom: ignite-2023
-ms.date: 10/18/2023
+ms.date: 11/15/2023
 ms.search.form:
 ---
 # Use Azure OpenAI in Fabric with Python SDK and Synapse ML (preview)
@@ -23,7 +23,7 @@ This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI P
 
 
 ``` Python
-%pip install openai
+%pip install openai==0.28.1
 ```
 
 # [SynapseML](#tab/synapseml)
@@ -272,7 +272,7 @@ This sample shows that we could use one single `OpenAICompletion` instance to co
 df = spark.createDataFrame(
     [
         ("A neutron star is the collapsed core of a massive supergiant star, which had a total mass of between 10 and 25 solar masses, possibly more if the star was especially metal-rich.[1] Neutron stars are the smallest and densest stellar objects, excluding black holes and hypothetical white holes, quark stars, and strange stars.[2] Neutron stars have a radius on the order of 10 kilometres (6.2 mi) and a mass of about 1.4 solar masses.[3] They result from the supernova explosion of a massive star, combined with gravitational collapse, that compresses the core past white dwarf star density to that of atomic nuclei.\n\nTl;dr",),
-        ("Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet’s most beloved cooking guru has a buzzy new book and a fresh new perspective:",),
+        ("Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:",),
         ("### Postgres SQL tables, with their properties:\n#\n# Employee(id, name, department_id)\n# Department(id, name, address)\n# Salary_Payments(id, employee_id, amount, date)\n#\n### A query to list the names of the departments which employed more than 10 employees in the last 3 months",),
         ("Write a quick sort function using Python.",),
         ("Product description: A home milkshake maker\nSeed words: fast, healthy, compact.\nProduct names: HomeShaker, Fit Shaker, QuickShake, Shake Maker\n\nProduct description: A pair of shoes that can fit any foot size.\nSeed words: adaptable, fit, omni-fit.",),

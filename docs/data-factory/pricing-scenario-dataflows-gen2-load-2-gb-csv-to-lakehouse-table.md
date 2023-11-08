@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ---
 
 # Pricing scenario using Dataflow Gen2 to load 2 GB of on-premises CSV data to a Lakehouse table

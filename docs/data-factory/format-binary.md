@@ -4,7 +4,7 @@ description: This article explains how to configure Binary format in the data pi
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

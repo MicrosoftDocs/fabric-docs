@@ -37,7 +37,7 @@ Items that aren't paired or that were changed get one of the following labels:
 
 - **Different** – An item that exists both in the source and the target stage, where one of the versions was changed after the last deployment. After deployment, the item in the source stage will overwrite the item in the target stage, regardless of where the change was made.
 
-    Datasets with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the datasets are deployed from the source stage to the target stage.
+    Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
 
 - **Missing from** – This item appears in the target stage, but not in the source stage.
 
@@ -46,7 +46,7 @@ Items that aren't paired or that were changed get one of the following labels:
 
 ## Review changes to paired items
 
-If a text item, like a dataset, is different, hover over it to see the **Change review** button.
+If a text item, like a semantic model, is different, hover over it to see the **Change review** button.
 
 :::image type="content" source="./media/compare-pipeline-content/granular-change-button.png" alt-text="Screenshot showing the change review button next to an item.":::
 
@@ -105,7 +105,7 @@ Close the window when you finish examining the differences and deploy to the nex
 
 ## Considerations and limitations
 
-- The *change review* feature only supports schema changes for textual item types. Currently it supports datasets, excluding data modeling format v1, and dataflows.
+- The *change review* feature only supports schema changes for textual item types. Currently it supports semantic models, excluding data modeling format v1, and dataflows.
 
 - An item can be tagged as *Different*, but still not qualify for change review. In these cases, the **Change review** button is disabled. For example:
   - Settings changes such as name change.

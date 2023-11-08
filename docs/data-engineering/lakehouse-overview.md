@@ -6,7 +6,7 @@ ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Lakehouse Overview
 ---
 
@@ -18,7 +18,7 @@ Microsoft Fabric Lakehouse is a data architecture platform for storing, managing
 
 ## Lakehouse SQL analytics endpoint
 
-The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default dataset during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
+The Lakehouse creates a serving layer by automatically generating a SQL analytics endpoint and a default semantic model during creation. This new see-through functionality allows user to work directly on top of the Delta tables in the lake to provide a frictionless and performant experience all the way from data ingestion to reporting.
 
 It's important to note that the [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) is a read-only experience and doesn't support the full T-SQL surface area of a transactional data warehouse.
 

@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: weetok
 author: dcstwh
 ms.topic: conceptual
-ms.date: 11/2/2023
+ms.date: 11/15/2023
 ---
 
 # Migrate to Data Factory in Microsoft Fabric

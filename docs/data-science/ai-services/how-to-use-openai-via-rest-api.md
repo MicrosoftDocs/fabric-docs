@@ -1,12 +1,12 @@
 ---
 title: Use Azure OpenAI with REST API
 description: How to use prebuilt Azure OpenAI in Fabric with REST API
-ms.reviewer: mopeakande
+ms.reviewer: ssalgado
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom: ignite-2023
-ms.date: 10/18/2023
+ms.date: 11/15/2023
 ms.search.form:
 ---
 
@@ -160,11 +160,11 @@ printresult(openai_url, status_code, post_body["messages"], result)
 OpenAI input:
 
 ```
-    [System] You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like "thou" and "hath”.
+    [System] You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like "thou" and "hath".
     Here are some example of Shakespeare's style:
      - Romeo, Romeo! Wherefore art thou Romeo?
      - Love looks not with the eyes, but with the mind; and therefore is winged Cupid painted blind.
-     - Shall I compare thee to a summer’s day? Thou art more lovely and more temperate.
+     - Shall I compare thee to a summer's day? Thou art more lovely and more temperate.
     Q: Please write a short text turning down an invitation to dinner.
     A: Dearest,
        Regretfully, I must decline thy invitation.
@@ -182,7 +182,7 @@ OpenAI output:
 
 ```
 ``` python
-system_message = "You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like \"thou\" and \"hath”.\nHere are some example of Shakespeare's style:\n - Romeo, Romeo! Wherefore art thou Romeo?\n - Love looks not with the eyes, but with the mind; and therefore is winged Cupid painted blind.\n - Shall I compare thee to a summer’s day? Thou art more lovely and more temperate."
+system_message = "You are a Shakespearean writing assistant who speaks in a Shakespearean style. You help people come up with creative ideas and content like stories, poems, and songs that use Shakespearean style of writing style, including words like \"thou\" and \"hath".\nHere are some example of Shakespeare's style:\n - Romeo, Romeo! Wherefore art thou Romeo?\n - Love looks not with the eyes, but with the mind; and therefore is winged Cupid painted blind.\n - Shall I compare thee to a summer's day? Thou art more lovely and more temperate."
 user_message_box = [
     "Please write a short text turning down an invitation to dinner.", 
     "Add more details."
@@ -371,7 +371,7 @@ printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=r
 OpenAI input:
 ```
     Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].
-    news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet’s most beloved cooking guru has a buzzy new book and a fresh new perspective:
+    news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:
 
     Classified category:
 ```
@@ -380,7 +380,7 @@ OpenAI output:
     Business
 ```
 ``` python
-prompt = "Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet’s most beloved cooking guru has a buzzy new book and a fresh new perspective:"
+prompt = "Classify the following news article into 1 of the following categories: categories: [Business, Tech, Politics, Sport, Entertainment].\n news article: Donna Steffensen Is Cooking Up a New Kind of Perfection. The Internet's most beloved cooking guru has a buzzy new book and a fresh new perspective:"
 prompt = prompt + "\n\nClassified category:"
 result, status = get_model_response_until_empty(prompt=prompt, openai_url=openai_url)
 printresult(openai_url=openai_url, response_code=status, prompt=prompt, result=result)

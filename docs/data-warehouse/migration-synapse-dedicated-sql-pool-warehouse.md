@@ -4,7 +4,7 @@ description: This article details the strategy, considerations, and methods of m
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: arturv, johoang
-ms.date: 11/02/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---

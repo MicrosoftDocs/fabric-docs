@@ -5,7 +5,7 @@ ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial 
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2

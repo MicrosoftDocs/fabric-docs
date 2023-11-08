@@ -31,7 +31,7 @@ The many controls in the admin portal are listed in the table below with links t
 | [Tenant settings](tenant-settings-index.md) | Enable, disable, and configure Microsoft Fabric. |
 | [Usage metrics](service-admin-portal-usage-metrics.md) | View usage metrics related to your organization. |
 | [Users](service-admin-portal-users.md) | Manage users in the Microsoft 365 admin portal. |
-| [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and dataset workload settings. |
+| [Premium Per User](service-admin-portal-premium-per-user.md) | Configure auto refresh and semantic model workload settings. |
 | [Audit logs](service-admin-portal-audit-logs.md) | Audit Microsoft Fabric activities in the Microsoft Purview compliance portal. |
 | [Capacity settings](service-admin-portal-capacity-settings.md) | Manage Microsoft Fabric F, Power BI Premium P, and Power BI Embedded EM and A capacities. |
 | [Refresh summary](service-admin-portal-refresh-summary.md) | Schedule refresh on a capacity and view the details of refreshes that occurred. |

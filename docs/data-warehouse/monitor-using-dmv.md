@@ -4,7 +4,7 @@ description: Learn about monitoring with the available Dynamic Management Views.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to monitor connections, sessions, and requests using query lifecycle DMVs
 

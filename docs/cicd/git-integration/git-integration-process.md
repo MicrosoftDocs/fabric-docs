@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 08/23/2023
+ms.date: 11/15/2023
 ms.custom: build-2023
 ---
 
@@ -13,7 +13,7 @@ ms.custom: build-2023
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Permissions
 
@@ -126,7 +126,7 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
 - The [authentication method](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multi-factor authentication, Power BI needs to require multi-factor authentication as well.
-- Direct Query and composite models on Power BI Datasets and Analysis Services aren't supported at this time.
+- Direct Query and composite models on Power BI semantic models and Analysis Services aren't supported at this time.
 - Private custom visuals aren't supported.
 
 ## Workspace limitations

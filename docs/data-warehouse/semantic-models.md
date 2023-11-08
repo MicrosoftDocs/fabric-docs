@@ -4,7 +4,7 @@ description: Learn more about default Power BI semantic models in Microsoft Fabr
 author: chuckles22
 ms.author: chweb
 ms.reviewer: wiassaf, salilkanade
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
@@ -30,7 +30,7 @@ Visualizations and analyses in **Power BI reports** can now be built completely 
 For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 >[!NOTE]
-> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 ## Direct Lake mode
 

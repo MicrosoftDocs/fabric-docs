@@ -6,7 +6,7 @@ ms.author: aimurg
 author: murggu
 ms.topic: conceptual
 ms.custom: fabric-cat
-ms.date: 11/10/2023
+ms.date: 11/15/2023
 ---
 
 # Migrate data and pipelines from Azure Synapse to Microsoft Fabric

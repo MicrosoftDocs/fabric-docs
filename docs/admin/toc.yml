@@ -123,7 +123,7 @@ items:
       href: service-admin-portal-template-app.md
     - name: Q&A settings
       href: service-admin-portal-qa.md
-    - name: Dataset security
+    - name: Semantic model security
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md

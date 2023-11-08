@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.date: 10/22/2023
+ms.date: 11/15/2023
 ---
 
 # Runtime 1.2

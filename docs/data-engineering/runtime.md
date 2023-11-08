@@ -6,7 +6,7 @@ ms.author: eskot
 author: ekote
 ms.topic: overview
 ms.custom: build-2023
-ms.date: 10/24/2023
+ms.date: 11/15/2023
 ---
 
 # Apache Spark Runtimes in Fabric

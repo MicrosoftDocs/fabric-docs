@@ -1,21 +1,21 @@
 ---
-title: Library management in Environment
-description: Learn how to include public and custom libraries in the Environment.
+title: Library management in environment
+description: Learn how to include public and custom libraries in the environment.
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 11/01/2023
+ms.date: 11/15/2023
 ms.search.for: Manage libraries in Environment
 ---
 
-# Library management in Fabric Environment
+# Library management in Fabric environment
 
-Libraries provide reusable code that developers want to include. Except for the built-in libraries coming with each Spark runtime, users can also install **public library** and **custom library** in Fabric Environment.
+Libraries provide reusable code that developers want to include. Except for the built-in libraries coming with each Spark runtime, users can also install **public library** and **custom library** in Fabric environment.
 
 ## Public library
 
 Public libraries are sourced from repositories such as PyPI and Conda, which are currently supported.
-:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of Environment LM - public library.":::
+:::image type="content" source="media\environment-lm\env-library-management-public-library.png" alt-text="Screenshot of environment LM - public library.":::
 
 ### Add new public library
 
@@ -48,11 +48,11 @@ Custom libraries refer to code built by you or your organization, and are suppor
 > *.tar.gz* files are only supported for R language
 > Use the *.whl* format for Python language
 
-:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of Environment LM - custom library.":::
+:::image type="content" source="media\environment-lm\env-library-management-custom-library.png" alt-text="Screenshot of environment LM - custom library.":::
 
 ### Upload the custom library
 
-You can upload your custom codes from your local directory to the Fabric Environment.
+You can upload your custom codes from your local directory to the Fabric environment.
 
 ### Delete the custom library
 
@@ -64,5 +64,5 @@ If clicked, custom libraries start to downloaded one by one to your local defaul
 
 ## Next steps
 
-- [Learn how to save and publish the changes in Fabric Environment.](create-and-use-environment.md#save-and-publish-the-changes).
+- [Learn how to save and publish the changes in Fabric environment.](create-and-use-environment.md#save-and-publish-the-changes).
 - [Best practices of library management on Fabric](library-management.md)
