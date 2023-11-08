@@ -5,7 +5,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/20/2023
+ms.date: 11/15/2023
 ---
 
 # Disaster recovery guidance for OneLake
