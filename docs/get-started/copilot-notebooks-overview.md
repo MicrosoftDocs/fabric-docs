@@ -1,6 +1,6 @@
 ---
 title: Overview of Copilot Notebooks in Microsoft Fabric (preview)
-description: Learn about Copilot for notebooks, an AI assistant that helps analyze and visualize data..
+description: Learn about Copilot for notebooks, an AI assistant that helps analyze and visualize data.
 author: nelgson
 ms.author: rarikhy
 ms.reviewer: franksolomon
