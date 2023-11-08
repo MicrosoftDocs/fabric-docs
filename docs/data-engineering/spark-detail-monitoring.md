@@ -68,13 +68,13 @@ The executor usage graph visually displays the allocation of Spark job executors
 
 - For Allocated, refers to the core situation that is allocated during the running of Spark application.
 - For Maximum instances, refers to the maximum number of cores allocated to the Spark application.
-- For Running, rfers to the actual number of cores used by the Spark application when it is running. Click at a point in time while the spark application is running. You can see the running executor core allocation details at the bottom of the graph.
+- For Running, refers to the actual number of cores used by the Spark application when it is running. Click at a point in time while the spark application is running. You can see the running executor core allocation details at the bottom of the graph.
 
     :::image type="content" source="media\spark-detail-monitoring\running-executor-core-allocation-details.png" alt-text="Screenshot showing the running executor core allocation details." lightbox="media\spark-detail-monitoring\running-executor-core-allocation-details.png":::
 
 - For Idled, it is the number of unused cores while the Spark application is running.
 
-In some cases, at some time points the number of tasks may exceed the capacity of the executor cores (i.e., task numbers > total executor cores / spark.task.cpus). This is as expected, because there's time gap between a task marked as running and it is actually running on an executor core. So some tasks may be shown as running, but it does not run on any core.
+In some cases, at some time points the number of tasks might exceed the capacity of the executor cores (i.e., task numbers > total executor cores / spark.task.cpus). This is as expected, because there's time gap between a task marked as running and it is actually running on an executor core. So some tasks might be shown as running, but it does not run on any core.
 
 
 Select the color icon to select or unselect the corresponding content in all graph.
