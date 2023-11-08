@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
 ms.custom: build-2023
-ms.date: 08/21/2023
+ms.date: 11/15/2023
 ---
 
 # Troubleshoot the Azure Database for PostgreSQL connector in Data Factory in Microsoft Fabric

@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
 ---
 
@@ -56,7 +56,7 @@ You can create an eventstream and a lakehouse from the **Workspace** page or the
 After you create both your new eventstream and lakehouse successfully, these items appear in your workspace:
 
 - **citypwr-es**: an Eventstream item
-- **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL analytics endpoint item.
+- **citypwrdata**: a Lakehouse item, a semantic model (default) item, and a SQL endpoint item.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
 
@@ -163,7 +163,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
 ## Build a Power BI report with the ingested events data
 
-1. Go to your workspace and select the **citypwrdata** dataset, which the system automatically added when you created the new **citypwrdata** lakehouse.
+1. Go to your workspace and select the **citypwrdata** semantic model, which the system automatically added when you created the new **citypwrdata** lakehouse.
 
 1. From the **Create a report** menu in the ribbon, select **Auto-create** or **Start from scratch**.
 

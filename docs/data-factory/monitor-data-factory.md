@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
 ms.topic: how-to 
-ms.date: 10/11/2023
+ms.date: 11/15/2023
 ---
 
 # How to monitor activity in [!INCLUDE [product-name](../includes/product-name.md)]

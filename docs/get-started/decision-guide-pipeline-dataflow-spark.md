@@ -13,8 +13,6 @@ ms.date: 5/12/2023
 
 Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your Microsoft Fabric workloads.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Copy activity, dataflow, and Spark properties
 
 | | **Pipeline copy activity** | **Dataflow Gen 2** | **Spark** |

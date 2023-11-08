@@ -14,8 +14,6 @@ ms.date: 05/23/2023
 
 Learn the definitions of terms used in Microsoft Fabric, including terms specific to Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## General terms
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
@@ -26,7 +24,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory.
 
-- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, datasets, etc. For more information, see [Workspaces](workspaces.md) article.
+- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
 ## Synapse Data Engineering
 

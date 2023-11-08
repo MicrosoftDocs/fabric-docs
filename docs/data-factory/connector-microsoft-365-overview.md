@@ -1,16 +1,16 @@
 ---
-title: Microsoft 365 connector overview
-description: This article explains the overview of using Microsoft 365.
+title: Microsoft 365 (Preview) connector overview
+description: This article explains the overview of using Microsoft 365 (Preview).
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/6/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Microsoft 365 connector overview
+# Microsoft 365 (Preview) connector overview
 
-The Microsoft 365 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+The Microsoft 365 (Preview) connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
 ## Support in Dataflow Gen2
 

@@ -19,7 +19,7 @@ Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). F
 
 ## Create a workspace
 
-In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
+In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com/).
 

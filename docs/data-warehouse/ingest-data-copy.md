@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Warehouse with the COPY statemen
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Ingesting data
@@ -20,8 +20,6 @@ This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes
 
 > [!NOTE]
 > To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a table
 

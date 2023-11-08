@@ -6,7 +6,7 @@ ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
 ms.custom: build-2023
-ms.date: 11/1/2023
+ms.date: 11/15/2023
 ---
 
 # Quickstart: Move and transform data with dataflows and data pipelines

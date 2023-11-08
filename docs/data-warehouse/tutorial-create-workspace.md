@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Create a Microsoft Fabric workspace
@@ -14,8 +14,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Before you can create a warehouse, you need to create a workspace where you'll build out the remainder of the tutorial.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a workspace
 

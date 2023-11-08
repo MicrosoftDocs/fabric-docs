@@ -4,7 +4,7 @@ description: This article explains the overview of using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/6/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

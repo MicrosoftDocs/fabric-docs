@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ---
 
 # Data Factory pricing in Microsoft Fabric

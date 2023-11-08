@@ -12,8 +12,6 @@ ms.date: 05/25/2023
 
 This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product experience, such as Data Factory Home, visit the relevant page for that product experience. 
 
-[!INCLUDE [trial note](../includes/preview-note.md)]
-
 ## Overview of Home 
 
 On Home, you see items that you create and that you have permission to use. These items are from all the workspaces that you access. That means that the items available on everyone's Home are different. At first, you might not have much content, but that changes as you start to create and share [!INCLUDE [product-name](../includes/product-name.md)] items.

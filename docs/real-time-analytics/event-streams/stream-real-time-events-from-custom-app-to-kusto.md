@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 06/16/2023
+ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
 #CustomerIntent: As a developer, I want to stream real-time events from my app to a Microsoft Fabric KQL database by using Fabric event streams, and then build reports for business users.
 ---
@@ -253,7 +253,7 @@ After the data is ingested into your KQL database, you can analyze it according 
 
 ## Next steps
 
-In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query dataset to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
+In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query semantic model to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
 
 If you want to discover more advanced functionalities for working with Fabric eventstreams, you might find the following resources helpful:
 

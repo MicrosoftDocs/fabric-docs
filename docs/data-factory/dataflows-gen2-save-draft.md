@@ -4,7 +4,7 @@ description: This article describes how to save a draft version of your dataflow
 author: luitwieler
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.author: jeluitwi
 ms.search.form: DataflowGen2 Tutorials
 ---

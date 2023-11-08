@@ -12,8 +12,6 @@ ms.search.form: Python Language
 
 # Use Python for Apache Spark
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 Microsoft Fabric provides built-in Python support for Apache Spark. This includes support for [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
 
 ## Create and run notebook sessions

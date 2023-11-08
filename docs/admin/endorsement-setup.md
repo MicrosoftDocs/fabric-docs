@@ -25,7 +25,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 1. In the Admin portal, go to Tenant settings.
 1. Under the Export and sharing settings section, expand the Certification section.
 
-   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up dataset and dataflow certification.":::
+   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up semantic model and dataflow certification.":::
 
 1. Set the toggle to **Enabled**.
 1. If your organization has a published certification policy, provide its URL here. This becomes the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-item-certification). If you don't supply a link, users who want to request certification of their item will be advised to contact their Fabric administrator.

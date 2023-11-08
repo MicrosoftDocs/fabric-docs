@@ -70,13 +70,13 @@ Before you start, you must have:
    display(df)
    ```
 
-1. To access and analyze this Delta table via Power BI, select **New Power BI dataset**.
+1. To access and analyze this Delta table via Power BI, select **New Power BI semantic model**.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new Power BI dataset.":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-pbi-dataset.png" alt-text="Screenshot showing how to create new Power BI semantic model.":::
 
 1. Select the shortcut and then select **Confirm**.
 
-   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-dataset.png" alt-text="Screenshot showing new dataset setup.":::
+   :::image type="content" source="media\onelake-shortcuts-adb-quickstart\new-dataset.png" alt-text="Screenshot showing new semantic model setup.":::
 
 1. When the data is published, select **Start from scratch**.
 

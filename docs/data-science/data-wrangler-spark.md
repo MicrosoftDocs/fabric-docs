@@ -6,7 +6,7 @@ ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
 ms.custom: ignite-2023
-ms.date: 11/14/2023
+ms.date: 11/15/2023
 
 ms.search.form: Data Wrangler
 ---
@@ -35,7 +35,7 @@ df = spark.createDataFrame(pd.read_csv("https://raw.githubusercontent.com/plotly
 display(df)
 ```
 
-Under the notebook ribbon “Data” tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
+Under the notebook ribbon "Data" tab, use the Data Wrangler dropdown prompt to browse active DataFrames available for editing. Select the one you wish to open in Data Wrangler.
 
 > [!TIP]
 > Data Wrangler cannot be opened while the notebook kernel is busy. An executing cell must finish its execution before Data Wrangler can be launched.
@@ -67,7 +67,7 @@ A searchable list of data-cleaning steps can be found in the Operations panel. (
 
 ## Previewing and applying operations
 
-The results of a selected operation are automatically previewed in the Data Wrangler display grid, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select “Apply” in either place. To get rid of the previewed code and try a new operation, select “Discard.”
+The results of a selected operation are automatically previewed in the Data Wrangler display grid, and the corresponding code automatically appears in the panel below the grid. To commit the previewed code, select "Apply" in either place. To get rid of the previewed code and try a new operation, select "Discard."
 
 :::image type="content" source="media/data-wrangler-spark/preview-operation.png" alt-text="Screenshot showing a Data Wrangler operation in progress." lightbox="media/data-wrangler-spark/preview-operation.png":::
 

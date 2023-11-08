@@ -53,7 +53,7 @@ Different [license](../enterprise/licenses.md) mode provides different sets of f
 
 ### Default storage format
 
-Power BI datasets can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large datasets beyond the default limit can be enabled with the Large dataset storage format setting. When enabled, dataset size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about [large dataset storage format](/power-bi/enterprise/service-premium-large-models#enable-large-models).
+Power BI semantic models can store data in a highly compressed in-memory cache for optimized query performance, enabling fast user interactivity. With Premium capacities, large semantic models beyond the default limit can be enabled with the Large semantic model storage format setting. When enabled, semantic model size is limited by the Premium capacity size or the maximum size set by the administrator. Learn more about [large semantic model storage format](/power-bi/enterprise/service-premium-large-models#enable-large-models).
 
 ### Template apps
   

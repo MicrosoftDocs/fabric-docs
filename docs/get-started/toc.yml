@@ -45,6 +45,7 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+    maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
@@ -75,7 +76,7 @@ items:
       href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
     - name: Selecting view account link in account manager shows wrong page
       href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
-    - name: Admin monitoring dataset refresh fails and credentials expire
+    - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region
       href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md

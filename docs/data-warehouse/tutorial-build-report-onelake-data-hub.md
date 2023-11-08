@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Build a report from the OneLake data hub
@@ -24,7 +24,7 @@ Learn how to build a report with the data you ingested into your [!INCLUDE [fabr
 1. From the item list, select `WideWorldImporters` with the type of **Semantic model (default)**.
 
    > [!NOTE]
-   > Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).
+   > Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 1. In the **Visualize this data** section, select **Create a report** > **Auto-create**. A report is generated from the `dimension_customer` table that was loaded in the previous section.
 
