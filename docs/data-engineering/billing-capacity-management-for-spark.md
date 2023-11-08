@@ -14,8 +14,7 @@ ms.date: 11/07/2023
 
 This article explains the compute utilization and reporting for Spark which powers the Synapse Data Engineering and Science workloads in Microsoft Fabric. The compute utilization includes lakehouse operations like table preview, load to delta, notebook runs from the interface, scheduled runs, runs triggered by notebook steps in the pipelines, and spark job definition runs. 
 
-Like other experiences in Microsoft Fabric, Data Engineering also uses the capacity associated with a workspace to run these job and your overall capacity charges appear in the Azure portal under your [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) subscription.
-To learn more about Fabric billing, see [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
+Like other experiences in Microsoft Fabric, Data Engineering also uses the capacity associated with a workspace to run these job and your overall capacity charges appear in the Azure portal under your [Microsoft Cost Management](/azure/cost-management-billing/cost-management-billing-overview) subscription. To learn more about Fabric billing, see [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md).
 
 ## Fabric capacity
 
@@ -32,7 +31,7 @@ Fabric Spark compute offers two options when it comes to compute configuration.
    :::image type="content" source="media/spark-compute/starter-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of starter pools." lightbox="media/spark-compute/starter-pool-billing-states-high-level.png":::
 
    For example, if you submit a notebook job to a starter pool, you're billed only for the time period where the notebook session is active. The billed time doesn't include the idle time or the time taken to personalize the session with the Spark context.
-   To understand more about configuring Starter pools based on the purchased Fabric Capacity SKU, visit[Configuring Starter Pools based on Fabric Capacity](configure-starter-pools.md)
+   To understand more about configuring Starter pools based on the purchased Fabric Capacity SKU, visit [Configuring Starter Pools based on Fabric Capacity](configure-starter-pools.md)
 
 2. **Spark pools**: These are custom pools, where you get to customize on what size of resources you need for your data analysis tasks. You can give your Spark pool a name, and choose how many and how large the nodes (the machines that do the work) are. You can also tell Spark how to adjust the number of nodes depending on how much work you have. Creating a Spark pool is free; you only pay when you run a Spark job on the pool, and then Spark sets up the nodes for you.
 
@@ -42,7 +41,7 @@ Fabric Spark compute offers two options when it comes to compute configuration.
 
    :::image type="content" source="media/spark-compute/custom-pool-billing-states-high-level.png" alt-text="Diagram showing the high-level stages in billing of custom pools." lightbox="media/spark-compute/custom-pool-billing-states-high-level.png":::
 
-   For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context. To understand more about configuring Spark pools based on the purchased Fabric Capacity SKU, visit[Configuring Pools based on Fabric Capacity](spark-compute.md)
+   For example, if you submit a notebook job to a custom Spark pool, you're only charged for the time period when the session is active. The billing for that notebook session stops once the Spark session has stopped or expired. You aren't charged for the time taken to acquire cluster instances from the cloud or for the time taken for initializing the Spark context. To understand more about configuring Spark pools based on the purchased Fabric Capacity SKU, visit [Configuring Pools based on Fabric Capacity](spark-compute.md)
 
 ## Spark compute usage reporting
 
@@ -53,7 +52,7 @@ Once you have installed the app, select the item type **Notebook**,**Lakehouse**
 All Spark related operations are classified as [background operations](/power-bi/enterprise/service-premium-smoothing). Capacity consumption from Spark is displayed under a Notebook, a Spark Job Definition, or a Lakehouse, and is aggregated by operation name and item. For example: If you run a notebook job, you can see the notebook run, the CUs used by the notebook (Total Spark VCores/2 as 1 CU gives 2 Spark VCores), duration the job has taken in the report. 
 
 :::image type="content" source="media\monitor-spark-capacity-consumption\items-report.png" alt-text="Screenshot showing items report." lightbox="media\monitor-spark-capacity-consumption\items-report.png":::
-To understand more about Spark capacity usage reporting, visit[Understand Spark Capacity consumption using Capacity Metrics App](monitor-spark-capacity-consumption.md)
+To understand more about Spark capacity usage reporting, visit [Understand Spark Capacity consumption using Capacity Metrics App](monitor-spark-capacity-consumption.md)
 
 ## Billing example
 
