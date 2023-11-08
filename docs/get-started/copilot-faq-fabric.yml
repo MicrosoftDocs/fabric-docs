@@ -1,7 +1,7 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Copilot for Fabric: FAQ"
-  description: This article answers frequently asked questions about Copilot for Fabric and Power BI.
+  title: "Copilot for Microsoft Fabric: FAQ"
+  description: This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
   author: maggiesMSFT
   ms.author: maggies
   ms.reviewer: ''
@@ -10,9 +10,9 @@ metadata:
   ms.topic: faq
   ms.date: 11/07/2023
 
-title: "Copilot for Fabric: FAQ"
+title: "Copilot for Microsoft Fabric: FAQ"
 summary: |
-  This article answers frequently asked questions about Copilot for Fabric and Power BI.
+  This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
 
 sections:
   - name: Power BI

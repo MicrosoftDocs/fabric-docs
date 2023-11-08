@@ -1,6 +1,6 @@
 ---
-title: "Privacy, security, and responsible use for Copilot (preview)" 
-description: Learn about privacy, security, and responsible use for Copilot.
+title: "Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)" 
+description: Learn about privacy, security, and responsible use for Copilot in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
@@ -9,7 +9,7 @@ ms.topic: conceptual
 ms.date: 11/07/2023
 ---
 
-# Privacy, security, and responsible use for Copilot (preview)
+# Privacy, security, and responsible use for Copilot Microsoft Fabric (preview)
 
 With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 

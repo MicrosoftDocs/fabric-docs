@@ -1,6 +1,6 @@
 ---
 title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
-description: Interact with the chat panel in Copilot.
+description: Interact with the chat panel in Copilot for Data Science and Data Engineering.
 author: rrikhy
 ms.author: rarikhy
 ms.topic: how-to
@@ -12,7 +12,7 @@ ms.date: 11/13/2023
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-Copilot for notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
+Copilot for Data Science and Data Engineering notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
 ## Prerequisites
 
