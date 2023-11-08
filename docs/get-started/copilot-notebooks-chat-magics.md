@@ -9,14 +9,14 @@ ms.date: 10/13/2023
 
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
 ---
+# Overview of Chat-magics in Microsoft Fabric Notebooks
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-# Overview of Chat-magics in Microsoft Fabric Notebooks
-
 The Chat-magics Python library enhances your data science and engineering workflow in Microsoft Fabric notebooks. It seamlessly integrates with the Fabric environment, and allows execution of specialized IPython magic commands in a notebook cell, to provide real-time outputs. IPython magic commands and more background on usage can be found here: https://ipython.readthedocs.io/en/stable/interactive/magics.html#. 
 
-[!NOTE] Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+> [!NOTE]
+> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
 
 ## Capabilities of Chat-magics
 

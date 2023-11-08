@@ -1,6 +1,6 @@
 ---
-title: How to use the Copilot for Data Science and Data Engineering chat panel (preview)
-description: Interacting with the chat panel in copilot
+title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
+description: Interact with the chat panel in Copilot
 author: rrikhy
 ms.author: rarikhy
 ms.service: machine-learning
@@ -9,16 +9,16 @@ ms.date: 10/13/2023
 
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks. 
 ---
+# Use the Copilot for Data Science and Data Engineering chat panel
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-# Use Copilot for Data Science and Data Engineering chat panel
-
-The Copilot for notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. The Copilot streamlines data analysis by eliminating complex coding.
+Copilot for notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
 ## Prerequisites
 
-[!NOTE] Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+> [!NOTE]
+> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
 
 To use Copilot in Data Science:
 
@@ -53,19 +53,19 @@ To use Copilot in Data Science:
 
 [!IMPORTANT] **PICTURE OF COPILOT HELPFUL LINKS PANE**
 
-### "Key Capabilities"
+### Key Capabilities
 
 1. AI Assistance: Generate code, query data, and get suggestions to accelerate your workflow.
 1. Data Insights: Quick data analysis and visualization capabilities.
 1. Explanations: Copilot can provide natural language explanations of notebook cells, and can provide an overview for notebook activity as it runs.
 1. Fixing Errors: Copilot can also fix notebook run errors as they arise. Copilot shares context with the notebook cells (executed output) and can provide helpful suggestions.
 
-### "Important Notices"
+### Important Notices
 
 1. Inaccuracies: Potential for inaccuracies exists. Review AI-generated content carefully.
 1. Data Storage: Customer data is temporarily stored, to identify harmful use of AI.
 
-## "Getting started with Copilot chat in notebooks"
+## Getting started with Copilot chat in notebooks
 
 1. Copilot for Data Science and Data Engineering offers helpful starter prompts to get started: "Load data from my lakehouse into a dataframe", "Generate insights from data".
 
@@ -76,7 +76,7 @@ To use Copilot in Data Science:
 
 :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
 
-## "Regular usage of the Copilot chat panel"
+## Regular usage of the Copilot chat panel
 
 1. The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
 1. You can "copy" or "insert" code from the chat panel. At the top of each code block, you have two buttons that allow input of items directly into the notebook.

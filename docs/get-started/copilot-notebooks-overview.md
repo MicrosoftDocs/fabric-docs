@@ -10,14 +10,14 @@ ms.custom: build-2023, build-2023-fabric
 ms.date: 11/02/2023
 ms.search.form: Data Science Overview
 ---
+# What is Copilot for Data Science and Data Engineering? (preview)
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-# What is Copilot for Data Science and Data Engineering (preview)?
+Copilot for notebooks is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to add your data as a dataframe. You can ask your questions in the chat panel, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
-The Copilot for notebooks is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to add your data as a dataframe. You can ask your questions in the chat panel, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. The Copilot streamlines data analysis by eliminating complex coding.
-
-[!NOTE] Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+> [!NOTE]
+> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
 
 ## Introduction to Copilot for Data Science and Data Engineering for Fabric Data Science
 
@@ -41,7 +41,7 @@ To maximize Copilot effectiveness, load a table or dataset as a dataframe in you
 - “What is the average age of customers in this dataset?”
 - “Show me a bar chart of sales by region”
 
-and more. The Copilot responds with the answer or the code, which you can copy and paste it your notebook. Copilot for Data Science and Data Engineering is a convenient, interactive way to explore and analyze your data.
+And more. Copilot responds with the answer or the code, which you can copy and paste it your notebook. Copilot for Data Science and Data Engineering is a convenient, interactive way to explore and analyze your data.
 
 As you use Copilot, you can also invoke the magic commands inside of a notebook cell to obtain output directly in the notebook. For example, for natural language answers to responses, you can ask questions using the "%%chat" command, such as:
 
@@ -61,19 +61,19 @@ Can you generate code for a logistic regression that fits this data?
 
 :::image type="content" source="media/copilot-notebooks-overview/copilot-logistic-regression.png" alt-text="Screenshot showing logistic regression code generation." lightbox="media/copilot-notebooks-overview/copilot-logistic-regression.png":::
 
-Copilot for Data Science and Data Engineering also has schema and metadata awareness of tables in the lakehouse. Copilot can provide relevant information in context of your data in an attached lakehouse. For example, you can ask
+Copilot for Data Science and Data Engineering also has schema and metadata awareness of tables in the lakehouse. Copilot can provide relevant information in context of your data in an attached lakehouse. For example, you can ask:
 
 - “How many tables are in the lakehouse?”
 - “What are the columns of the table customers?”
 
-Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask “Create a dataframe from sales.csv”. The Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
+Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask “Create a dataframe from sales.csv”. Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
 
 ## Tips
 
-1. "Clear" your conversation in the Copilot chat panel with the broom located at the top of the chat panel. Copilot retains knowledge of any inputs or outputs during the session, but this helps if you find the current content distracting.
-1. Use the chat magics library to configure settings about Copilot, including privacy settings. The default sharing mode is designed to maximize the context sharing Copilot has access to, so limiting the information provided to copilot can directly and significantly impact the relevance of its responses.
-1. When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
-1. You can "drag" the sidebar of the copilot chat to expand the chat panel, to view code more clearly or for readability of the outputs on your screen.
+- "Clear" your conversation in the Copilot chat panel with the broom located at the top of the chat panel. Copilot retains knowledge of any inputs or outputs during the session, but this helps if you find the current content distracting.
+- Use the chat magics library to configure settings about Copilot, including privacy settings. The default sharing mode is designed to maximize the context sharing Copilot has access to, so limiting the information provided to copilot can directly and significantly impact the relevance of its responses.
+- When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
+- You can "drag" the sidebar of the copilot chat to expand the chat panel, to view code more clearly or for readability of the outputs on your screen.
 
 ## Next steps
 
