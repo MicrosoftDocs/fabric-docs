@@ -3,7 +3,6 @@ title: Overview of Chat-magics in Microsoft Fabric Notebooks (preview)
 description: "A detailed overview of the Chat-magics Python library, highlighting its capabilities for invoking IPython magic commands in Microsoft Fabric notebooks."
 author: rrikhy
 ms.author: rarikhy
-ms.service: machine-learning
 ms.topic: how-to #Required; leave this attribute/value as-is
 ms.date: 11/13/2023
 

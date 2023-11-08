@@ -3,7 +3,6 @@ title: Use the Copilot for Data Science and Data Engineering chat panel (preview
 description: Interact with the chat panel in Copilot.
 author: rrikhy
 ms.author: rarikhy
-ms.service: machine-learning
 ms.topic: how-to
 ms.date: 11/13/2023
 
