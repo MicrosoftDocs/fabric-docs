@@ -6,7 +6,7 @@ ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom: ignite-2023
-ms.date: 10/18/2023
+ms.date: 11/15/2023
 ms.search.form:
 ---
 
@@ -85,20 +85,20 @@ from pprint import pprint
 import uuid
 
 post_body = {
-	"kind": "SentimentAnalysis",
-	"parameters": {
-		"modelVersion": "latest",
-		"opinionMining": "True"
-	},
-	"analysisInput":{
-		"documents":[
-			{
-				"id":"1",
-				"language":"en",
-				"text": "The food and service were unacceptable. The concierge was nice, however."
-			}
-		]
-	}
+    "kind": "SentimentAnalysis",
+    "parameters": {
+        "modelVersion": "latest",
+        "opinionMining": "True"
+    },
+    "analysisInput":{
+        "documents":[
+            {
+                "id":"1",
+                "language":"en",
+                "text": "The food and service were unacceptable. The concierge was nice, however."
+            }
+        ]
+    }
 } 
 
 post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())

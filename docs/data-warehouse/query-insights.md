@@ -4,7 +4,7 @@ description: Query insights makes past query execution data and aggregated insig
 author: mariyaali
 ms.author: mariyaali
 ms.reviewer: wiassaf
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: query history monitoring # This article's title should not change. If so, contact engineering.
 ---
@@ -12,8 +12,6 @@ ms.search.form: query history monitoring # This article's title should not chang
 # Query insights in Fabric data warehousing
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In [!INCLUDE [product-name](../includes/product-name.md)], the query insights feature is a scalable, sustainable, and extendable solution to enhance the SQL analytics experience. With historical query data, aggregated insights, and access to actual query text, you can analyze and tune your query performance. QI provides information on queries run in a user's context only, system queries aren't considered.
 

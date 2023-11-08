@@ -4,7 +4,7 @@ description: Learn how to use the Fabric Capacity Metrics app to observe Microso
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.search.form: Warehouse billing and utilization
 ---

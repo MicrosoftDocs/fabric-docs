@@ -5,7 +5,7 @@ ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
 ms.topic: tutorial 
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 
 # Pattern to incrementally amass data with Dataflow Gen2
@@ -25,7 +25,7 @@ The high-level steps in this tutorial are as follows:
 
 ## Prerequisites
 
-You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you are using the diagram view in Dataflows Gen2. To check if you are using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
+You must have a Microsoft Fabric enabled workspace. If you don't already have one, refer to [Create a workspace](../get-started/create-workspaces.md). Also, the tutorial assumes you are using the diagram view in Dataflow Gen2. To check if you are using the diagram view, in the top ribbon go to **View** and make sure **Diagram view** is selected.
 
 ## Create a dataflow to load data from an OData source into a lakehouse
 

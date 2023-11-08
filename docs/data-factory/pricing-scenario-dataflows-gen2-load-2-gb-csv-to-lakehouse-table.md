@@ -1,16 +1,16 @@
 ---
-title: Pricing scenario - Dataflows Gen2 load 2 GB on-premises CSV file to a Lakehouse table
-description: This article provides an example pricing scenario for loading 2 GB of on-premises CSV data to a Lakehouse table using Dataflows Gen2 for Data Factory in Microsoft Fabric.
+title: Pricing scenario - Dataflow Gen2 loads 2 GB on-premises CSV file to a Lakehouse table
+description: This article provides an example pricing scenario for loading 2 GB of on-premises CSV data to a Lakehouse table using Dataflow Gen2 for Data Factory in Microsoft Fabric.
 ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ---
 
-# Pricing scenario using Dataflows Gen2 to load 2 GB of on-premises CSV data to a Lakehouse table
+# Pricing scenario using Dataflow Gen2 to load 2 GB of on-premises CSV data to a Lakehouse table
 
-In this scenario, Dataflows Gen2 was used to load 2 GB of on-premises CSV data to a Lakehouse table in Microsoft Fabric.
+In this scenario, Dataflow Gen2 was used to load 2 GB of on-premises CSV data to a Lakehouse table in Microsoft Fabric.
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
@@ -58,5 +58,5 @@ The Dataflow Gen2 Refresh operation consumed 4749.42 CU seconds, and two High Sc
 ## Next steps
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
-- [Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

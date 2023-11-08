@@ -4,7 +4,7 @@ description: This article describes how to use a dataflow in a pipeline.
 author: luitwieler
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.author: jeluitwi
 ---
 

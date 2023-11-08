@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: product-data-factory
 ---
 
@@ -29,7 +29,7 @@ Data Factory in Fabric combines the ease-of-use of [Power Query](/power-query) w
 ## Introduction - Understand three key features of Data Factory
 
 - Data ingestion: The Copy activity in pipelines lets you move petabyte-scale data from hundreds of data sources into your data Lakehouse for further processing.
-- Data transformation and preparation: Dataflows gen2 provide a low-code interface for transforming your data using 300+ data transformations, with the ability to load the transformed results into multiple destinations such as Azure SQL databases, Lakehouse, and more.
+- Data transformation and preparation: Dataflow Gen2 provides a low-code interface for transforming your data using 300+ data transformations, with the ability to load the transformed results into multiple destinations such as Azure SQL databases, Lakehouse, and more.
 - End-to-end integration flow automation: Pipelines provide orchestration of activities that include [Copy, Dataflow, and Notebook activities, and more](activity-overview.md). This lets you manage activities all in one place. Activities in a pipeline can be chained together to operate sequentially, or they can operate independently in parallel.
 
 In this end-to-end data integration use case, you learn:

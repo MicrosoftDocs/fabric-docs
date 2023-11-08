@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has disabled Dataflow Gen1
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting  
-ms.date: 11/06/2023
+ms.date: 11/15/2023
 ms.custom: 
 ---
 

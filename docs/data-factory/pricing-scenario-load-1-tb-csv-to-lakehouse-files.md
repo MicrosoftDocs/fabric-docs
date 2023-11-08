@@ -5,7 +5,7 @@ ms.reviewer: jonburchel
 ms.author: adija
 author: adityajain2408
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ---
 
 # Pricing scenario using a data pipeline to load 1 TB of CSV data to Lakehouse files
@@ -39,5 +39,5 @@ The data movement operation utilized 95,760 CU seconds with a 290.27 second (4.8
 ## Next steps
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
-- [Dataflows Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
+- [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)

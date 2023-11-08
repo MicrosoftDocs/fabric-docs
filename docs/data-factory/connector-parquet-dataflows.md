@@ -4,7 +4,7 @@ description: This article details how to use the Data Factory Parquet connector 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/6/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

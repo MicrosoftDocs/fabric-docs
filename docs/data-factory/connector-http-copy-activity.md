@@ -4,7 +4,7 @@ description: This article explains how to copy data using HTTP.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/2/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

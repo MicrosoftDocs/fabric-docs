@@ -6,7 +6,7 @@ ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/23/2023
+ms.date: 11/15/2023
 ---
 
 # Data warehouse tutorial introduction
@@ -14,8 +14,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [[!INCLUDE [product-name](../includes/product-name.md)]](../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With [!INCLUDE [product-name](../includes/product-name.md)], there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that [!INCLUDE [product-name](../includes/product-name.md)] offers. Additionally, [Microsoft Purview](../governance/microsoft-purview-fabric.md) is included by default in every tenant to meet compliance and governance needs.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Purpose of this tutorial
 

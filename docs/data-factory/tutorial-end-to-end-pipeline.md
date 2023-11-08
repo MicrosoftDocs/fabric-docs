@@ -6,7 +6,7 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 06/06/2023
+ms.date: 11/15/2023
 ---
 
 # Module 1: Create a pipeline with Data Factory

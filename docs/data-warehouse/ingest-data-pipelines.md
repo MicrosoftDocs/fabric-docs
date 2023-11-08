@@ -4,7 +4,7 @@ description: Follow steps to ingest data into a Warehouse with data pipelines in
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
@@ -19,8 +19,6 @@ In this tutorial, you'll create a new pipeline that loads sample data into a [!I
 
 > [!NOTE]
 > Some features from Azure Data Factory are not available in [!INCLUDE [product-name](../includes/product-name.md)], but the concepts are interchangeable. You can learn more about Azure Data Factory and Pipelines on [Pipelines and activities in Azure Data Factory and Azure Synapse Analytics](/azure/data-factory/concepts-pipelines-activities). For a quickstart, visit [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a data pipeline
 

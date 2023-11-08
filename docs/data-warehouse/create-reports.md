@@ -4,7 +4,7 @@ description: Learn about reports in the warehouse experience.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Reporting # This article's title should not change. If so, contact engineering.
@@ -50,7 +50,7 @@ You can use integrated Data hub experience in Power BI Desktop to select your [[
 Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
 
 1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.
-1. Select the **Warehouse (preview) connector** from the **Get data** or connect to the default semantic model from **Data hub**. 
+1. Select the **Warehouse  connector** from the **Get data** or connect to the default semantic model from **Data hub**. 
 1. Paste the SQL connection string into the connector dialog. 
 1. For authentication, select *organizational account*.
 1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
