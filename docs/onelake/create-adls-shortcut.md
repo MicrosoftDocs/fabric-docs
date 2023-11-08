@@ -7,7 +7,7 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/27/2023
+ms.date: 11/15/2023
 ---
 
 # Create an Azure Data Lake Storage Gen2 shortcut

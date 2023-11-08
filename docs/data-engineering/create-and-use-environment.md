@@ -4,13 +4,13 @@ description: Learn how to create and use a Fabric environment in your notebooks 
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ms.search.for: Create and use Environment
 ---
 
 # Create, configure, and use an environment in Microsoft Fabric
 
-Microsoft Fabric Environment provides flexible configurations for running your Spark jobs. In an Environment, you can select different Spark runtime, configure your compute resources, and install libraries from public repository or upload the custom ones built locally. Environment can be easily attached to the Notebooks and Spark job definitions.
+Microsoft Fabric environment provides flexible configurations for running your Spark jobs. In an environment, you can select different Spark runtime, configure your compute resources, and install libraries from public repository or upload the custom ones built locally. Environment can be easily attached to the Notebooks and Spark job definitions.
 
 This tutorial gives you an overview of creating, configuring, and using an environment.
   
@@ -31,7 +31,7 @@ There are multiple entry points for creating an environment.
 - **Data Science** homepage
 
     Similar to the data engineering homepage,  from the **Data Science** homepage, navigate to the **New** section and create an environment by selecting the **Environment** card.
-    :::image type="content" source="media\environment-introduction\env-data-science-card.png" alt-text="Screenshot of Environment card in DS homepage.":::
+    :::image type="content" source="media\environment-introduction\env-data-science-card.png" alt-text="Screenshot of environment card in DS homepage.":::
 
 - **Workspace** view
 
@@ -41,7 +41,7 @@ There are multiple entry points for creating an environment.
 - **Creation hub**
 
     In the creation hub, you can find the **Environment** card under both **Data Engineering** and **Data Science** sections.
-    :::image type="content" source="media\environment-introduction\env-creation-hub-card.png" alt-text="Screenshot of Environment card in creation hub.":::
+    :::image type="content" source="media\environment-introduction\env-creation-hub-card.png" alt-text="Screenshot of environment card in creation hub.":::
 
 ### Create an environment from the attachment dropdowns
 
@@ -50,17 +50,17 @@ You can also create a new environment from the location where you attach the env
 - **Notebook attachment dropdown**
 
     In the **Home** tab of the Notebook ribbon, there's a dropdown to attach an environment. Open the **Workspace default** menu item and select **New Environment** to create a new one.
-    :::image type="content" source="media\environment-introduction\env-dropdown-notebook.png" alt-text="Screenshot of Environment creation through attachment dropdown in Notebook.":::
+    :::image type="content" source="media\environment-introduction\env-dropdown-notebook.png" alt-text="Screenshot of environment creation through attachment dropdown in Notebook.":::
 
 - **Spark job definition attachment dropdown**
 
     In the **Home** tab of the Spark job definition ribbon, there's a dropdown to attach an environment. Open the **Workspace default** menu item and select **New Environment** to create a new one.
-    :::image type="content" source="media\environment-introduction\env-dropdown-spark-job-definition.png" alt-text="Screenshot of Environment creation through attachment dropdown in SJD.":::
+    :::image type="content" source="media\environment-introduction\env-dropdown-spark-job-definition.png" alt-text="Screenshot of environment creation through attachment dropdown in SJD.":::
 
 - **Workspace setting attachment dropdown**
 
     In the **Data Engineering/Science** section of the workspace setting, the workspace admin can attach an environment as workspace default. Learn more at [how to attach an environment as workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default). You can also create a new one through the **Environment** dropdown.
-    :::image type="content" source="media\environment-introduction\env-dropdown-workspace.png" alt-text="Screenshot of Environment creation through attachment dropdown in WS setting.":::
+    :::image type="content" source="media\environment-introduction\env-dropdown-workspace.png" alt-text="Screenshot of environment creation through attachment dropdown in WS setting.":::
 
 ## Configure an environment
 
@@ -70,7 +70,7 @@ There are three major components you can configure for an environment: Spark run
 
 For an environment, you can choose from various [Spark runtimes](runtime.md), each with its own default settings and pre-installed packages. To view the available runtimes, navigate to the **Home** tab of the environment and select the **Runtime** dropdown. Select a runtime that best suits your needs.
 
-:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot of choosing runtime in Environment.":::
+:::image type="content" source="media\environment-introduction\env-runtime-dropdown.png" alt-text="Screenshot of choosing runtime in environment.":::
 
 > [!IMPORTANT]
 >
@@ -80,7 +80,7 @@ For an environment, you can choose from various [Spark runtimes](runtime.md), ea
 
 ### Configure Spark compute
 
-[Microsoft Fabric Spark compute](spark-compute.md) provides unparalleled speed and efficiency of running on Spark as well as requirement-tailored experiences. In the Environment, you can choose from various pools created by workspace admins and capacity admins. You can further adjust the configurations and manage Spark properties to be effective on Spark sessions.
+[Microsoft Fabric Spark compute](spark-compute.md) provides unparalleled speed and efficiency of running on Spark as well as requirement-tailored experiences. In the environment, you can choose from various pools created by workspace admins and capacity admins. You can further adjust the configurations and manage Spark properties to be effective on Spark sessions.
 Learn more at [how to configure Spark compute.](environment-manage-compute.md)
 
 ### Manage libraries
@@ -90,11 +90,11 @@ Learn more on [how to manage libraries](environment-manage-library.md)
 
 ### Save and publish the changes
 
-To save and publish changes in the Fabric Environment, you can navigate to the **Home** tab.
+To save and publish changes in the Fabric environment, you can navigate to the **Home** tab.
 :::image type="content" source="media\environment-introduction\env-save-and-publish.png" alt-text="Screenshot of save and publish the changes.":::
 
 - The **Save** button becomes active when there are changes that haven't been saved. If you refresh the page without saving, all pending changes are lost. If any section contains invalid input, the Save button is disabled. The Save action applies to all unsaved changes in both *Libraries* and *Spark compute* sections.
-- The **Publish** button becomes active when there are changes that haven't yet been published. You can directly publish these changes without first saving them. Clicking the Publish button takes you to the *Pending changes* page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric Environment runs jobs on the backend to prepare the configurations for use. This process takes several minutes, particularly if there are library changes involved.
+- The **Publish** button becomes active when there are changes that haven't yet been published. You can directly publish these changes without first saving them. Clicking the Publish button takes you to the *Pending changes* page where you can review all the changes before publishing. Once you choose to **Publish all** the changes, the Fabric environment runs jobs on the backend to prepare the configurations for use. This process takes several minutes, particularly if there are library changes involved.
 
 > [!NOTE]
 > During the publishing process, if changes involve libraries, the system will assist in downloading dependencies and resolving potential conflicts.
@@ -107,7 +107,7 @@ A **banner** promoting Save and Publish will appear when there are pending chang
 
 ## Attach an environment
 
-Microsoft Fabric Environment can be attached to your Data Engineering/Science workspaces or your Notebooks and Spark job definitions.
+Microsoft Fabric environment can be attached to your Data Engineering/Science workspaces or your Notebooks and Spark job definitions.
 
 ### Attach an environment as workspace default
 
@@ -126,7 +126,7 @@ The **Set default environment** toggle can enhance the user experience. By defau
 
 #### Workspaces with existing library or Spark properties
 
-The release of the Environment has brought a major upgrade to the *Data Engineering/Data Science* section in workspace settings. As part of this upgrade, library management and adding new Spark properties at the workspace level are no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-workspace-migration.md) to migrate them to an environment and attach as workspace default.
+The release of the environment has brought a major upgrade to the *Data Engineering/Data Science* section in workspace settings. As part of this upgrade, library management and adding new Spark properties at the workspace level are no longer supported. You can follow ["Migrate the workspace libraries and Spark properties to a default environment"](environment-workspace-migration.md) to migrate them to an environment and attach as workspace default.
 
 ### Attach an environment to Notebook or Spark job definitions
 
@@ -138,5 +138,5 @@ You can find the **Environment** dropdown in both Notebook and Spark job definit
 
 ## Next steps
 
-- [Learn how to configure the Spark compute in Environment](environment-manage-compute.md)
-- [Learn how to install libraries in Environment](environment-manage-library.md)
+- [Learn how to configure the Spark compute in environment](environment-manage-compute.md)
+- [Learn how to install libraries in environment](environment-manage-library.md)

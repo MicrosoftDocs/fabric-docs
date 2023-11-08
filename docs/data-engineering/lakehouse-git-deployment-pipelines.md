@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ms.search.form: lakehouse git deployment pipelines alm ci cd
 ---
 

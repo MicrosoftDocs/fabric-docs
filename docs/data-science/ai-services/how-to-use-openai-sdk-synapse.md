@@ -23,7 +23,7 @@ This article shows examples of how to use Azure OpenAI in Fabric using [OpenAI P
 
 
 ``` Python
-%pip install openai
+%pip install openai==0.28.1
 ```
 
 # [SynapseML](#tab/synapseml)

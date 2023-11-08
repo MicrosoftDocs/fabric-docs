@@ -7,7 +7,7 @@ author: JeneZhang
 ms.topic: how-to
 ms.custom: build-2023
 ms.search.form: Develop and run notebooks
-ms.date: 10/09/2023
+ms.date: 11/15/2023
 ---
 
 # Develop, execute, and manage Microsoft Fabric notebooks
@@ -32,7 +32,7 @@ We provide rich operations to develop notebooks:
 - [Move a cell](#move-a-cell)
 - [Delete a cell](#delete-a-cell)
 - [Collapse a cell input](#collapse-a-cell-input)
-- [Expand a cell output](#expand-a-cell-output)
+- [Collapse a cell output](#collapse-a-cell-output)
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
@@ -154,16 +154,16 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 
 <!-- ![Animated GIF of collapsing cell input.](media/author-execute-notebook/collapse-cell-input.gif) -->
 
-### Expand a cell output
+### Collapse a cell output
 
-Select the **More commands** ellipses (...) on the cell toolbar of a collapsed cell, and select **Show output**.
+Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse the current cell's output. To expand it again, select **Show output** when the cell output is collapsed.
 
 ### Lock or freeze a cell
 
 The lock and freeze cell operations allow you to make cells read-only or stop code cells from being run on an individual basis.
 
 ![Animated GIF of lock or freeze a cell.](media/author-execute-notebook/lock-and-freeze-cell.gif)
-<!---
+
 ### Merge and split cells
 
 You can use **Merge with previous cell** or **Merge with next cell** to merge related cells conveniently.
@@ -171,7 +171,6 @@ You can use **Merge with previous cell** or **Merge with next cell** to merge re
 Selecting **Split cell** helps you split irrelevant statements to multiple cells. The operation splits the code according to your cursor's line position.
 
 :::image type="content" source="media\author-execute-notebook\merge-split-cell.png" alt-text="Screenshot showing the entry of merge split cells." lightbox="media\author-execute-notebook\merge-split-cell.png":::
--->
 
 ### Notebook contents
 
