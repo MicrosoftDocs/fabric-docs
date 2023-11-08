@@ -13,7 +13,7 @@ ms.date: 11/02/2023
 Before metadata scanning can be run over an organization's Microsoft Fabric workspaces, it must be set up by a Fabric administrator. Setting up metadata scanning involves two steps:
 
 1. Enabling service principal authentication for read-only admin APIs.
-1. Enabling tenant settings for detailed dataset metadata scanning.
+1. Enabling tenant settings for detailed semantic model metadata scanning.
 
 ## Enable service principal authentication for read-only admin APIs
 
@@ -27,7 +27,7 @@ If you don't want to enable service principal authentication, metadata scanning 
 
 Two tenant settings control metadata scanning:
 
-* **Enhance admin APIs responses with detailed metadata**: This setting turns on Model caching and enhances API responses with low-level dataset metadata (for example, name and description) for tables, columns, and measures.
+* **Enhance admin APIs responses with detailed metadata**: This setting turns on Model caching and enhances API responses with low-level semantic model metadata (for example, name and description) for tables, columns, and measures.
 * **Enhance admin APIs responses with DAX and mashup expressions**: This setting allows the API response to include DAX expressions and Mashup queries. This setting can only be enabled if the first setting is also enabled.
 
 To enable these settings, go to **Admin portal > Tenant settings > Admin API settings**.

@@ -1,5 +1,5 @@
 ---
-title: 'Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)'
+title: 'Tutorial: Analyze functional dependencies in a Power BI semantic model (preview)'
 description: This article shows how to analyze functional dependencies that exist in columns of a DataFrame.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,26 +12,26 @@ ms.date: 09/27/2023
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_dependencies_tutorial.ipynb -->
 
-# Tutorial: Analyze functional dependencies in a Power BI sample dataset (preview)
+# Tutorial: Analyze functional dependencies in a semantic model (preview)
 
-In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of datasets. By using SemPy (preview) in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
+In this tutorial, you build upon prior work done by a Power BI analyst and stored in the form of semantic models (Power BI datasets). By using SemPy (preview) in the Synapse Data Science experience within Microsoft Fabric, you analyze functional dependencies that exist in columns of a DataFrame. This analysis helps to discover nontrivial data quality issues in order to gain more accurate insights.
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
-- Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
+- Apply domain knowledge to formulate hypotheses about functional dependencies in a semantic model.
 - Get familiarized with components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that support integration with Power BI and help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
-    - Useful functions for pulling Power BI datasets from a Fabric workspace into your notebook.
-    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
+    - Useful functions for pulling semantic models from a Fabric workspace into your notebook.
+    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your semantic models.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) dataset from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets) and upload it to your workspace.
+* Download the [_Customer Profitability Sample.pbix_](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets/Customer%20Profitability%20Sample.pbix) semantic model from the [fabric-samples GitHub repository](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/datasets) and upload it to your workspace.
 
 ### Follow along in the notebook
 
@@ -58,7 +58,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 ## Load and preprocess the data
 
-This tutorial uses a standard Power BI sample dataset [Customer Profitability Sample.pbix](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets). For a description of the dataset, see [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).
+This tutorial uses a standard sample semantic model [Customer Profitability Sample.pbix](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-science/datasets). For a description of the semantic model, see [Customer Profitability sample for Power BI](/power-bi/create-reports/sample-customer-profitability).
 
 1. Load the Power BI data into FabricDataFrames, using SemPy's `read_table` function:
 
@@ -202,7 +202,7 @@ Check out other tutorials for semantic link / SemPy:
 
 - [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
 - [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link (preview)](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in a semantic model using semantic link (preview)](tutorial-power-bi-relationships.md)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
 
 <!-- nbend -->

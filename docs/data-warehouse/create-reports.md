@@ -25,7 +25,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 - [Power BI Desktop](/power-bi/fundamentals/desktop-getting-started)
 
 > [!NOTE]
-> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 ## Create reports using the Power BI service
 

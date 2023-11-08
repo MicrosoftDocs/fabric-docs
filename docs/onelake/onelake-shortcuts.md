@@ -103,7 +103,7 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut*. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through Power BI Datasets or T-SQL, **the calling user's identity is not passed through to the shortcut target.** The calling item owner's identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through Power BI semantic models or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.
 
 ### ADLS shortcuts
 

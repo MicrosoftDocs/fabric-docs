@@ -30,7 +30,7 @@ Visualizations and analyses in **Power BI reports** can now be built completely 
 For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
 >[!NOTE]
-> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see [New name for Power BI datasets](/power-bi/connect-data/service-datasets-rename).
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 ## Direct Lake mode
 
