@@ -6,7 +6,7 @@ ms.author: aimurg
 author: murggu
 ms.topic: conceptual
 ms.custom: fabric-cat
-ms.date: 11/03/2023
+ms.date: 11/15/2023
 ---
 
 # Migrating from Azure Synapse Spark to Fabric

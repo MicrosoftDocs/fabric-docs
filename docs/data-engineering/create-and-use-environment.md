@@ -4,7 +4,7 @@ description: Learn how to create and use a Fabric environment in your notebooks 
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 10/01/2023
+ms.date: 11/15/2023
 ms.search.for: Create and use Environment
 ---
 

@@ -6,7 +6,7 @@ ms.author: aimurg
 author: murggu
 ms.topic: how-to
 ms.custom: fabric-cat
-ms.date: 11/03/2023
+ms.date: 11/15/2023
 ---
 
 # Migrate Hive Metastore metadata from Azure Synapse to Fabric

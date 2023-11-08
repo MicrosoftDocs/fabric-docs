@@ -5,7 +5,7 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: conceptual
-ms.date: 11/2/2023
+ms.date: 11/15/2023
 ms.search.form: Notebook REST API ci cd
 ---
 
