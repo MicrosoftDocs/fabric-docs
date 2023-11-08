@@ -1,5 +1,5 @@
 ---
-title: OneLake Consumption
+title: OneLake consumption
 description: Information on how OneLake usage affects your CU consumption.  
 ms.author: eloldag
 author: eloldag
