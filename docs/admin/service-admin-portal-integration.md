@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/07/2023
 LocalizationGroup: Administration
 ---
 
@@ -117,21 +117,9 @@ To learn more, see [Power BI content management in Power Apps solutions](/power-
 
 ## Users can view Power BI files saved in OneDrive and SharePoint (Preview)
 
-This setting will be removed from the admin portal the first week of October, 2023. The state of the setting directly below this one, **User can view Power BI files saved in OneDrive and SharePoint (Preview) - UPDATE** will then go into effect.
-
-This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization.
+This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization. This setting is on by default.
 
 :::image type="content" source="media/service-admin-portal-integration/admin-integration-viewer.png" alt-text="Screenshot of admin setting called: Users can view Power BI items saved in OneDrive and SharePoint.":::
-
-Learn more about [viewing Power BI files saved in OneDrive and SharePoint](/power-bi/collaborate-share/service-sharepoint-viewer).
-
-## Users can view Power BI files saved in OneDrive and SharePoint (Preview) - UPDATE
-
-The state of this setting is not currently in effect in your tenant. If you don't want this setting on by default in your tenant, you need to disable it *before September 29th, 2023*. During the first week of October, this setting will take effect and the setting directly above this one, **Users can view Power BI files saved in OneDrive and SharePoint (Preview)** will be removed from the admin portal.
-
-This setting allows users to view Power BI files saved in OneDrive for Business and SharePoint Online document libraries in their browser without needing to download the file and open in Power BI Desktop on their local machine. When enabled, the setting applies to all users in your organization.
-
-:::image type="content" source="media/service-admin-portal-integration/admin-integration-viewer-update.png" alt-text="Screenshot of admin setting called Users can view Power BI files saved in OneDrive and SharePoint (Preview).":::
 
 Learn more about [viewing Power BI files saved in OneDrive and SharePoint](/power-bi/collaborate-share/service-sharepoint-viewer).
 

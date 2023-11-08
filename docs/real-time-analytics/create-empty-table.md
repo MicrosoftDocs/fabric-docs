@@ -6,7 +6,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/28/2023
+ms.date: 11/06/2023
 ms.search.form: Create a table
 ---
 # Create an empty table
