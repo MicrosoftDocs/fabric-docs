@@ -4,7 +4,7 @@ description: An Environment contains a collection of configurations, and one of 
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: overview
-ms.date: 11/01/2023
+ms.date: 11/15/2023
 ms.search.for: Manage Spark compute in Environment
 ---
 

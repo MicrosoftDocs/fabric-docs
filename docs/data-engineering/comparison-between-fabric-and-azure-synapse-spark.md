@@ -6,7 +6,7 @@ ms.author: jejiang
 author: jejiang
 ms.topic: overview
 ms.custom: fabric-cat
-ms.date: 11/01/2023
+ms.date: 11/15/2023
 ---
 
 # Comparison between Fabric and Azure Synapse Spark

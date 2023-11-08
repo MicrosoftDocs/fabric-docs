@@ -4,7 +4,7 @@ description: Learn how to include public and custom libraries in the Environment
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
-ms.date: 11/01/2023
+ms.date: 11/15/2023
 ms.search.for: Manage libraries in Environment
 ---
 
