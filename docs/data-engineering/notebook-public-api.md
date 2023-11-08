@@ -10,13 +10,13 @@ ms.search.form: Notebook REST API ci cd
 ---
 
 
-# Manage and execute Fabric notebooks with public APIs
+# Manage and execute notebooks in Fabric with APIs
 
 The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available notebook REST APIs and their usage.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-With the notebook public APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
+With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
 These **Item management** actions are available for notebooks:
 
