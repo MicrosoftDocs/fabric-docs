@@ -5,7 +5,7 @@ ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
 ms.topic: conceptual
-ms.date: 09/27/2023
+ms.date: 11/15/2023
 ---
 
 # Get started securing your data in OneLake

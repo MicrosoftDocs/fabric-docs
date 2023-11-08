@@ -6,7 +6,7 @@ ms.author: eloldag
 author: eloldag
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/27/2023
+ms.date: 11/15/2023
 ---
 
 # Bring your data to OneLake with Lakehouse
