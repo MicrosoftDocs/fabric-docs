@@ -71,6 +71,8 @@ items:
       href: spark-compute.md
     - name: Configure starter pools
       href: configure-starter-pools.md
+    - name: Billing and utilization
+      href: billing-capacity-management-for-spark.md
     - name: Apache Spark Runtimes
       items:
         - name: Runtimes overview
