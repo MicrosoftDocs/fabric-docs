@@ -31,6 +31,24 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
+## Copilot in Fabric
+
+## Copilot for Data Factory
+
+## Copilot for Data Science
+
+## Copilot for Power BI
+
+## Copilot for Data Engineering
+
+## Copilot for Data Warehouse
+
+## Copilot for Enterprise
+
+## Copilot for Real Time Analytics
+
+## Copilot for Power BI
+
 ## Notes by release
 
 Additional information for future releases or feature updates will appear here.

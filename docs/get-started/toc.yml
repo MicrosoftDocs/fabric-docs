@@ -63,6 +63,14 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: copilot-notebooks-overview.md
+    - name: Overview of Chat-magics in Notebooks
+      href: copilot-notebooks-chat-magics.md
+    - name: Use the Copilot chat panel
+      href: copilot-notebooks-chat-magics.md
     maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md

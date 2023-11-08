@@ -1,11 +1,11 @@
 ---
 title: Use the Copilot for Data Science and Data Engineering chat panel (preview)
-description: Interact with the chat panel in Copilot
+description: Interact with the chat panel in Copilot.
 author: rrikhy
 ms.author: rarikhy
 ms.service: machine-learning
 ms.topic: how-to
-ms.date: 10/13/2023
+ms.date: 11/13/2023
 
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks. 
 ---
@@ -22,12 +22,12 @@ Copilot for notebooks is an AI assistant that helps you analyze and visualize da
 
 To use Copilot in Data Science:
 
-1. Your Fabric admin must enable it in the administration portal.
-1. The workspace you use must have the F64 and above license SKU.
+- Your Fabric admin must enable it in the administration portal.
+- The workspace you use must have the F64 and above license SKU.
 
 ## "Azure OpenAI Enablement"
 
-1. Azure OpenAI must be enabled within Fabric at the tenant level.
+- Azure OpenAI must be enabled within Fabric at the tenant level.
 
 > [!NOTE]
 > If your workspace is provisioned in a region without GPU capacity, and your data is not enabled to flow cross-geo, Copilot will not function properly and you will see errors.
@@ -36,22 +36,24 @@ To use Copilot in Data Science:
 
 1. To use the Copilot pane, The installation cell for chat-magics must successfully execute within your Spark session.
 
-[!IMPORTANT] **PICTURE OF EXECUTED NOTEBOOK CELL**
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png" alt-text="PICTURE OF EXECUTED NOTEBOOK CELL.":::
 
->[!IMPORTANT]
-> If your Spark session terminates, the context for chat-magics will also terminate, also wiping the context for the Copilot pane.
+    >[!IMPORTANT]
+    > If your Spark session terminates, the context for chat-magics will also terminate, also wiping the context for the Copilot pane.
 
 1. Verify that all these conditions are met before proceeding with the Copilot Chat Pane.
 
 ## Open Copilot chat panel inside the notebook
 
 1. Select the Copilot button on the notebook ribbon
-[!IMPORTANT] **PICTURE OF COPILOT RIBBON**
+
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="PICTURE OF COPILOT RIBBON.":::
+
 1. To open Copilot, select the Copilot button at the top of the Notebook.
 1. Te Copilot chat panel on the right side of your notebook opens.
 1. A panel opens, to provide overview information and helpful links.
 
-[!IMPORTANT] **PICTURE OF COPILOT HELPFUL LINKS PANE**
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="PICTURE OF COPILOT HELPFUL LINKS PANE.":::
 
 ### Key Capabilities
 

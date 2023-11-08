@@ -1,16 +1,16 @@
 ---
-title: Copilot Notebooks in Microsoft Fabric (preview)
-description: Learn about Copilot notebooks.
+title: Overview of Copilot Notebooks in Microsoft Fabric (preview)
+description: Learn about Copilot for notebooks, an AI assistant that helps analyze and visualize data..
 author: nelgson
 ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
 ms.service: machine-learning
 ms.custom: build-2023, build-2023-fabric
-ms.date: 11/02/2023
+ms.date: 11/13/2023
 ms.search.form: Data Science Overview
 ---
-# What is Copilot for Data Science and Data Engineering? (preview)
+# Overview of Copilot for Data Science and Data Engineering (preview)
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
