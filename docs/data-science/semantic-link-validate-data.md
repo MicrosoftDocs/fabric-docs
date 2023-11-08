@@ -221,5 +221,5 @@ However, it's essential to carefully consider the context of your data and the f
 
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 - [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Explore and validate relationships in Power BI datasets (preview)](semantic-link-validate-relationship.md)
+- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
 - [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)

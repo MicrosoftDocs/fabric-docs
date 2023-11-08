@@ -42,7 +42,7 @@ To access the chart options:
    | Aggregation | Method to aggregate data in your visualization. |
 
    > [!NOTE]
-   > By default the _display(df)_ function will only take the first 1000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole dataset. A Spark job will be triggered when the chart setting changes. Please note that it may take several minutes to complete the calculation and render the chart.
+   > By default the _display(df)_ function will only take the first 1000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole semantic model. A Spark job will be triggered when the chart setting changes. Please note that it may take several minutes to complete the calculation and render the chart.
 
 1. Once done, you can view and interact with your final visualization!
 

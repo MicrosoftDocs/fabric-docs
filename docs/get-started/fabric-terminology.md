@@ -24,7 +24,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory.
 
-- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, datasets, etc. For more information, see [Workspaces](workspaces.md) article.
+- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
 ## Synapse Data Engineering
 

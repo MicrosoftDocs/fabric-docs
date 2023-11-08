@@ -8,7 +8,7 @@ ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Configure Microsoft 365 in a copy activity
+# Configure Microsoft 365 (Preview) in a copy activity
 
 Microsoft Fabric Data pipelines integrate with [Microsoft Graph data connect](/graph/data-connect-concept-overview), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
 

@@ -34,7 +34,7 @@ To promote an item, you must have write permissions on the item you want to prom
 
 1. Expand the endorsement section and select **Promoted**.
 
-    If you're promoting a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
+    If you're promoting a Power BI semantic model and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the semantic model to find it. See [semantic model discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
     :::image type="content" source="./media/endorsement-promote-certify/promote-item.png" alt-text="Screenshot of promoting an item.":::
 
@@ -52,7 +52,7 @@ Item certification is a significant responsibility, and only authorized users ca
 
 1. Expand the endorsement section and select **Certified**.
 
-    If you're certifying a Power BI dataset and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the dataset to find it. See [dataset discovery](/power-bi/collaborate-share/service-discovery) for more detail.
+    If you're certifying a Power BI semantic model and see a **Make discoverable** checkbox, it means you can make it possible for users who don't have access to the semantic model to find it. See [semantic model discovery](/power-bi/collaborate-share/service-discovery) for more detail.
 
     :::image type="content" source="./media/endorsement-promote-certify/certify-item.png" alt-text="Screenshot of certifying an item.":::
 
@@ -75,4 +75,4 @@ If you would like to certify your item but aren't authorized to do so, follow th
 
 * [Read more about endorsement](../governance/endorsement-overview.md)
 * [Enable content certification](../admin/endorsement-setup.md) (Fabric admins)
-* [Read more about dataset discoverability](/power-bi/collaborate-share/service-discovery)
+* [Read more about semantic model discoverability](/power-bi/collaborate-share/service-discovery)

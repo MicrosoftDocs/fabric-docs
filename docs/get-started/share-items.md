@@ -144,7 +144,7 @@ Depending on the item being shared, you may find a different set of permissions 
 |Share|Recipient can share the item and grant permissions up to the permissions that they have. For example, if the original recipient has *Share*, *Edit*, and *Read* permissions, they can at most grant *Share*, *Edit*, and *Read* permissions to the next recipient.|
 |Read All with SQL analytics endpoint|Read data from the SQL analytics endpoint of the Lakehouse or Warehouse data through TDS endpoints.|
 |Read all with Apache Spark|Read Lakehouse or Data warehouse data through OneLake APIs and Spark. Read Lakehouse data through Lakehouse explorer.|
-|Build|Build new content on the dataset.|
+|Build|Build new content on the semantic model.|
 |Execute|Execute or cancel execution of the item.|
 
 ## Considerations and limitations
