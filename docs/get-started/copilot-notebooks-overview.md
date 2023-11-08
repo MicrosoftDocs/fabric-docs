@@ -1,6 +1,6 @@
 ---
 title: Overview of Copilot for Data Science and Data Engineering in Microsoft Fabric (preview)
-description: Learn about Copilot for for Data Science and Data Engineering, an AI assistant that helps analyze and visualize data.
+description: Learn about Copilot for Data Science and Data Engineering, an AI assistant that helps analyze and visualize data.
 author: nelgson
 ms.author: rarikhy
 ms.reviewer: franksolomon
@@ -13,7 +13,7 @@ ms.search.form: Data Science Overview
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-Copilot for for Data Science and Data Engineering is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to add your data as a dataframe. You can ask your questions in the chat panel, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
+Copilot for Data Science and Data Engineering is an AI assistant that helps analyze and visualize data. It works with Lakehouse tables and files, Power BI Datasets, and pandas/spark/fabric dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to add your data as a dataframe. You can ask your questions in the chat panel, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
 > [!NOTE]
 > Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
