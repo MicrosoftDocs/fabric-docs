@@ -36,10 +36,10 @@ Run the cell at the top of the notebook. After the cell successfully executes, y
 
 :::image type="content" source="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png" alt-text="Screenshot showing successful cell execution." lightbox="media/copilot-notebooks-overview/copilot-cell-executed-successfully.png":::
 
-To maximize Copilot effectiveness, load a table or dataset as a dataframe in your notebook. This way, the AI can access the data and understand its structure and content. Then, start chatting with the AI. Select the chat icon in the notebook toolbar, and type your question or request in the chat panel. For example, you can ask
+To maximize Copilot effectiveness, load a table or dataset as a dataframe in your notebook. This way, the AI can access the data and understand its structure and content. Then, start chatting with the AI. Select the chat icon in the notebook toolbar, and type your question or request in the chat panel. For example, you can ask:
 
-- “What is the average age of customers in this dataset?”
-- “Show me a bar chart of sales by region”
+- "What is the average age of customers in this dataset?"
+- "Show me a bar chart of sales by region"
 
 And more. Copilot responds with the answer or the code, which you can copy and paste it your notebook. Copilot for Data Science and Data Engineering is a convenient, interactive way to explore and analyze your data.
 
@@ -63,10 +63,10 @@ Can you generate code for a logistic regression that fits this data?
 
 Copilot for Data Science and Data Engineering also has schema and metadata awareness of tables in the lakehouse. Copilot can provide relevant information in context of your data in an attached lakehouse. For example, you can ask:
 
-- “How many tables are in the lakehouse?”
-- “What are the columns of the table customers?”
+- "How many tables are in the lakehouse?"
+- "What are the columns of the table customers?"
 
-Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask “Create a dataframe from sales.csv”. Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
+Copilot responds with the relevant information if you added the lakehouse to the notebook. Copilot also has awareness of the names of files added to any lakehouse attached to the notebook. You can refer to those files by name in your chat. For example, if you have a file named **sales.csv** in your lakehouse, you can ask "Create a dataframe from sales.csv". Copilot generates the code and displays it in the chat panel. With Copilot for notebooks, you can easily access and query your data from different sources. You don't need the exact command syntax to do it.
 
 ## Tips
 

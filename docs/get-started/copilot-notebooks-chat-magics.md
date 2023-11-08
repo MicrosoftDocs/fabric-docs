@@ -43,8 +43,8 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 ## Get started with Chat-magics
 
 1. Open a new or existing Microsoft Fabric notebook.
-1. Click the 'Copilot' button on the notebook ribbon to output the Chat-magics initialization code into a new notebook cell.
-1. Run the cell when it is added at the top of your notebook. 
+1. Select the **Copilot** button on the notebook ribbon to output the Chat-magics initialization code into a new notebook cell.
+1. Run the cell when it is added at the top of your notebook.
 
 ## Verify the Chat-magics installation
 

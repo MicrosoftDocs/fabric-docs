@@ -55,10 +55,10 @@ To use Copilot in Data Science:
 
 ### Key Capabilities
 
-1. AI Assistance: Generate code, query data, and get suggestions to accelerate your workflow.
-1. Data Insights: Quick data analysis and visualization capabilities.
-1. Explanations: Copilot can provide natural language explanations of notebook cells, and can provide an overview for notebook activity as it runs.
-1. Fixing Errors: Copilot can also fix notebook run errors as they arise. Copilot shares context with the notebook cells (executed output) and can provide helpful suggestions.
+- AI Assistance: Generate code, query data, and get suggestions to accelerate your workflow.
+- Data Insights: Quick data analysis and visualization capabilities.
+- Explanations: Copilot can provide natural language explanations of notebook cells, and can provide an overview for notebook activity as it runs.
+- Fixing Errors: Copilot can also fix notebook run errors as they arise. Copilot shares context with the notebook cells (executed output) and can provide helpful suggestions.
 
 ### Important Notices
 
@@ -69,12 +69,12 @@ To use Copilot in Data Science:
 
 1. Copilot for Data Science and Data Engineering offers helpful starter prompts to get started: "Load data from my lakehouse into a dataframe", "Generate insights from data".
 
-:::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
 
 1. Each of these selections outputs chat text in the text panel. As the user, you must fill out the specific details of the data you'd like to use.
 1. You can then input any type of request you have in the chat box.
 
-:::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
 
 ## Regular usage of the Copilot chat panel
 
