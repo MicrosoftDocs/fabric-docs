@@ -28,10 +28,6 @@ highlightedContent:
       itemType: get-started
       url: get-started/fabric-trial.md
     # Card
-    - title: Microsoft Fabric preview information
-      itemType: concept
-      url: get-started/preview.md      
-    # Card
     - title: Enable Fabric for your organization
       itemType: quickstart
       url: admin/fabric-switch.md
@@ -42,7 +38,11 @@ highlightedContent:
     # Card
     - title: Microsoft Fabric licenses
       itemType: concept
-      url: enterprise/licenses.md              
+      url: enterprise/licenses.md 
+    # Card
+    - title: Copilot in Microsoft Fabric
+      itemType: concept
+      url: /get-started/copilot-fabric-overview          
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -54,8 +54,6 @@ productDirectory:
 
       imageSrc: ./media/fabric-icon.png
       links:
-        - url: get-started/microsoft-fabric-overview.md
-          text: What is Fabric?
         - url: enterprise/licenses.md
           text: Microsoft Fabric licenses
         - url: enterprise/buy-subscription.md
@@ -220,7 +218,7 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Training modules
+    - title: Learning
 
       imageSrc: ./media/education-icon.svg
       links:
