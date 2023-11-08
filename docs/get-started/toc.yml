@@ -45,6 +45,32 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+- name: Copilot in Fabric
+  items:
+  - name: Copilot for Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
+  - name: Copilot for Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: copilot-notebooks-overview.md
+    - name: Overview of Chat-magics in Notebooks
+      href: copilot-notebooks-chat-magics.md
+    - name: Use the Copilot chat panel
+      href: copilot-notebooks-chat-magics.md
     maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
