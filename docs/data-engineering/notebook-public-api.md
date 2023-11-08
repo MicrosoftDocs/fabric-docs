@@ -1,6 +1,6 @@
 ---
-title: Introduction of Notebook Public API
-description: Instruction of notebook Public API.
+title: Manage and execute Fabric notebooks with public APIs
+description: Learn about the Fabric notebook public APIs, including how to create and get a notebook with definition, and run a notebook on demand.
 ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
@@ -10,54 +10,52 @@ ms.search.form: Notebook REST API ci cd
 ---
 
 
-# Manage and execute Notebook with public API
+# Manage and execute notebooks in Fabric with APIs
+
+The Microsoft Fabric REST API provides a service endpoint for the create, read, update, and delete (CRUD) operations of a Fabric item. This article describes the available notebook REST APIs and their usage.
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-## Overview
+With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
-The Microsoft Fabric REST API provides a service endpoint for the CRUD operation of a Fabric item. This article is to showcase the notebook available REST APIs and their usage.
+These **Item management** actions are available for notebooks:
 
-With the notebook public APIs, data engineers/data scientists can automate their own pipelines and establish CI/CD conveniently and efficiently. It also makes it easy for users to manage and manipulate Fabric notebook items and integrate notebooks with other tools and systems.
-
-Here are the **Item management** actions that are available for Notebook.
-
-|Action   |Description  |
+|Action|Description|
 |---------|---------|
 |Create item |Creates a notebook inside a workspace.|
 |Update item |Updates the metadata of a notebook.|
 |Update item definition |Updates the content of a notebook.|
-|Delete item |Deletes a notebook|
+|Delete item |Deletes a notebook.|
 |Get item |Gets the metadata of a notebook.|
 |Get item definition |Gets the content of a notebook.|
 |List item | List all items in a workspace.|
 
-You can find more details in the public API doc: [Items - REST API](/rest/api/fabric/)
+For more information, see [Items - REST API](/rest/api/fabric/).
 
-Here are the **Job Scheduler** actions that are available for Notebook.
+The following **Job scheduler** actions are available for notebooks:
 
-|Action   |Description  |
+|Action|Description|
 |---------|---------|
 |Run on demand Item Job|Run notebook with parameterization.|
 |Cancel Item Job Instance|Cancel notebook job run.|
 |Get Item Job Instance| Get notebook run status.|
 
-You can find more details in the public API doc: [Job Scheduler](/rest/api/fabric/)
+For more information, see [Job Scheduler](/rest/api/fabric/).
 
 ## Notebook REST API usage examples
 
-Here are the usage examples for specific notebook public APIs, you can follow the instructions to test them and verify the result.
+Use the following instructions to test usage examples for specific notebook public APIs and verify the results.
 
 > [!NOTE]
-> Only notebook-unique usage examples are illustrated in the article, the Fabric item common API examples are not covered here.
+> These scenarios only cover notebook-unique usage examples. Fabric item common API examples are not covered here.
 
 ### Prerequisites
 
-Microsoft Fabric Rest API defines a unified endpoint for operations. The placeholders `{WORKSPACE_ID}` and `{ARTIFACT_ID}` should be replaced with the appropriate values when trying the examples in this article.
+The Fabric Rest API defines a unified endpoint for operations. Replace the placeholders `{WORKSPACE_ID}` and `{ARTIFACT_ID}` with appropriate values when you follow the examples in this article.
 
 ### Create a notebook with a definition
 
-You can create a Notebook item with an existing _.ipynb_ file using the following example:
+Create a notebook item with an existing .ipynb file:
 
 **Request**
 
@@ -117,12 +115,11 @@ The payload in the request is a base64 string converted from the following sampl
 ```
 
 > [!NOTE]
->
-> You can change the notebook default Lakehouse or attached Environment by changing notebook content `metadata.trident.lakehouse` or `metadata.trident.environment`.
+> You can change the notebook default lakehouse or attached environment by changing notebook content `metadata.trident.lakehouse` or `metadata.trident.environment`.
 
-## Get notebook with definition
+## Get a notebook with a definition
 
-You can get the notebook content by using this API, we support setting the format as ipynb in the query string to get an ipynb format notebook.
+Use the following API to get the notebook content. Fabric supports you setting the format as .ipynb in the query string to get an .ipynb notebook.
 
 **Request**
 
@@ -148,13 +145,13 @@ Status code: 200
 }
 ```
 
-### Run notebook on demand
+### Run a notebook on demand
 
-You can schedule your notebook run by using this API, The Spark job will start to execute after a successful request.
+Schedule your notebook run with the following API. The Spark job starts executing after a successful request.
 
-We support passing `parameters` in the request body to parameterize the notebook run, the values will be consumed by [Notebook parameter cell](author-execute-notebook.md#designate-a-parameters-cell).
+Fabric supports passing `parameters` in the request body to parameterize the notebook run. The values are consumed by the [notebook parameter cell](author-execute-notebook.md#designate-a-parameters-cell).
 
-You can also use `configuration` to personalize the Spark session of notebook run. `Configuration`  shares the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
+You can also use `configuration` to personalize the Spark session of notebook run. `configuration` shares the same contract with the [Spark session configuration magic command](author-execute-notebook.md#spark-session-configuration-magic-command).
 
 **Request**
 
@@ -194,10 +191,10 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/4b218778-e7a5-4d73-8187
 Retry-After: 60
 ```
 
-With the `location`, you can use [_Get Item Job Instance_](/rest/api/fabric/) to view job status or use [_Cancel Item Job Instance_](/rest/api/fabric/) to cancel this notebook run.
+With `location`, you can use [Get Item Job Instance](/rest/api/fabric/) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/) to cancel the current notebook run.
 
 ## Next steps
 
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
-- [Notebook Source control and Deployment](notebook-source-control-deployment.md)
-- [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)
+- [Notebook source control and deployment](notebook-source-control-deployment.md)
+- [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)
