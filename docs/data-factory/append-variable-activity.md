@@ -5,14 +5,12 @@ ms.reviewer: jburchel
 ms.author: chez
 author: chez-charlie
 ms.topic: how-to
-ms.date: 08/23/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Append Variable activity in Fabric
 
 Use the Append Variable activity to add a value to an existing array variable defined in a Fabric pipeline.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

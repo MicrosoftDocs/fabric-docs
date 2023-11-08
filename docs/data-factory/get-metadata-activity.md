@@ -6,14 +6,12 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Get Metadata activity to look up data from a data source
 
 You can use the Get Metadata activity to retrieve the metadata of any data in a Fabric pipeline. You can use the output from the Get Metadata activity in conditional expressions to perform validation, or consume the metadata in subsequent activities.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

@@ -94,7 +94,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|May 2023|**Microsoft Fabric - How can a SQL user or DBA connect**|This blog reviews how to [connect to a Lakehouse SQL Endpoint or Warehouse through the Tabular Data Stream, or TDS endpoint](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/microsoft-fabric-how-can-a-sql-user-or-dba-connect-part-2/ba-p/3836343), familiar to all modern web applications that interact with a SQL Server endpoint.|
+|May 2023|**Microsoft Fabric - How can a SQL user or DBA connect**|This blog reviews how to [connect to a Lakehouse SQL analytics endpoint or Warehouse through the Tabular Data Stream, or TDS endpoint](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/microsoft-fabric-how-can-a-sql-user-or-dba-connect-part-2/ba-p/3836343), familiar to all modern web applications that interact with a SQL Server endpoint.|
 --> 
 
 ## Fabric Real-Time Analytics

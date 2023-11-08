@@ -13,7 +13,7 @@ ms.date: 5/4/2023
 
 This set of tutorials demonstrates a sample end-to-end scenario in the Fabric data science experience. You'll implement each step from data ingestion, cleansing, and preparation, to training machine learning models and generating insights, and then consume those insights using visualization tools like Power BI.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 If you're new to Microsoft Fabric, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
 
@@ -56,7 +56,7 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 ### Different components of the data science scenario
 
-**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, Power BI datasets and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
+**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, semantic models, and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
 
 **Explore, clean, and prepare** - The data science experience on Fabric supports data cleansing, transformation, exploration and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using Python library `seaborn` and data cleansing and preparation using Apache Spark.
 

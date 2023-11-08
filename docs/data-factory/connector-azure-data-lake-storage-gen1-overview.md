@@ -4,7 +4,7 @@ description: This article provides an overview of the Azure Data Lake Storage Ge
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
@@ -12,7 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Azure Data Lake Storage Gen1 connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported in Data pipeline
 

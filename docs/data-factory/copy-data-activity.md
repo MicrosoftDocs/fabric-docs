@@ -6,14 +6,12 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # How to copy data using copy activity
 
 In Data Pipeline, you can use the Copy activity to copy data among data stores located in the cloud. 
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 After you copy the data, you can use other activities to further transform and analyze it. You can also use the Copy activity to publish transformation and analysis results for business intelligence (BI) and application consumption.
 

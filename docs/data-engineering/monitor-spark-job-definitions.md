@@ -16,8 +16,6 @@ Using the Spark job definition item's inline monitoring, you can track the follo
 * Monitor the progress and status of a running Spark job definition.
 * View the status and duration of previous Spark job definition runs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 You can get this information from the **Recent Runs** contextual menu in the workspace or by browsing the Spark job definition activities in the monitoring hub.
 
 ## Spark job definition inline monitoring

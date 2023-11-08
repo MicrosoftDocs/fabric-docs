@@ -5,7 +5,7 @@ ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
-ms.date: 10/11/2023
+ms.date: 11/15/2023
 ---
 
 # What's new in Data Factory for Microsoft Fabric
@@ -20,9 +20,34 @@ Data Factory for Microsoft Fabric is improved on an ongoing basis. To stay up to
 
 This page is updated monthly, so revisit it regularly.  
 
-## September 2023
+## October 2023
 
 ### Dataflows Gen2
+
+#### Data connectivity
+
+- SAP HANA (Connector update) [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573562)
+- New certified connector - Emplifi Metrics [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573563)
+- Bug fixes and reliability improvements [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573564)
+
+### Pipelines
+
+#### Activities
+
+- AML activity [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573567)
+- Deactivate/Reactivate activity state (Preview) [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573568)
+
+#### Productivity
+
+- Category redesign of activities [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573570)
+- Copy runtime performance improvement [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573571)
+- Integer data type available for variables [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573572)
+- Pipeline name now supported in system variables [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573573)
+- Support for Type editing in Copy activity mappings [Learn more](https://blog.fabric.microsoft.com/blog/microsoft-fabric-october-2023-update-2?ft=All#post-4652-_Toc148573574)
+
+## September 2023
+
+### Dataflow Gen2
 
 #### Authentication
 
@@ -51,7 +76,7 @@ This page is updated monthly, so revisit it regularly.
 
 ## August 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 #### Power Query editor
 
@@ -91,7 +116,7 @@ FTP connector [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microsof
 
 ## July 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 #### Power Query editor
 
@@ -126,7 +151,7 @@ Teams activity [Learn more](https://blog.fabric.microsoft.com/en-us/blog/microso
 
 ## June 2023
 
-### Dataflows Gen2
+### Dataflow Gen2
 
 - Manage connections in the Power Query editor [Learn more](/power-query/manage-connections)
 - Column pair suggestion for Merge operations [Learn more](/power-query/merge-queries-overview#use-the-column-pair-suggestion)

@@ -6,13 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.custom: tenant-setting, build-2023
 ms.topic: how-to
-ms.date: 10/27/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Workspace tenant settings
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
@@ -35,13 +33,13 @@ The admin portal has another section of settings about the workspaces in your te
 
 In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) for details.
 
-## Use datasets across workspaces
+## Use semantic models across workspaces
 
-Admins can control which users in the organization can use datasets across workspaces. When this setting is enabled, users still need the required Build permission for a specific dataset.
+Admins can control which users in the organization can use semantic models across workspaces. When this setting is enabled, users still need the required Build permission for a specific semantic model.
 
-:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use datasets across workspaces":::
+:::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces":::
 
-For more information, see [Intro to datasets across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
+For more information, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
 
 ## Identify your workspace ID
 

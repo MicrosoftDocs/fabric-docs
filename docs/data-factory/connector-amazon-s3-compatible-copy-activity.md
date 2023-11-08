@@ -1,18 +1,17 @@
 ---
-title: How to configure Amazon S3 Compatible in copy activity
+title: Configure Amazon S3 Compatible in a copy activity
 description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Amazon S3 Compatible in copy activity
+# Configure Amazon S3 Compatible in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from Amazon S3 Compatible.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Required permissions
 

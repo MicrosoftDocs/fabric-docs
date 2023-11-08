@@ -11,8 +11,6 @@ ms.search.form: KQL Database
 ---
 # Create a KQL database
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In Real-Time Analytics, you interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.

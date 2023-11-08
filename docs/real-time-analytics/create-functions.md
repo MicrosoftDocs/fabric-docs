@@ -12,8 +12,6 @@ ms.search.form: product-kusto
 
 # Create stored functions
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 
 * Built-in functions, which are hard-coded functions that can't be modified by users.
@@ -29,7 +27,7 @@ For more information on the `.create-or-alter` `function` command, see [`.create
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Functions
 
@@ -54,5 +52,5 @@ This feature allows you to create or alter an existing function using the `.crea
 ## Related content
 
 * [Query data in a KQL queryset](kusto-query-set.md)
-* [Change the data retention policy](data-retention-policy.md)
+* [Change data policies](data-policies.md)
 * [Create a table update policy](table-update-policy.md)

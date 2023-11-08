@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/02/2023
 ---
 
 # Enable service principal authentication for read-only admin APIs
@@ -50,7 +50,7 @@ To enable service principal authentication for Power BI read-only APIs, follow t
 
 Service principal authentication is currently supported for the following read-only admin APIs.
 
-* [GetGroupsAsAdmin](/rest/api/power-bi/admin/groups_getgroupsasadmin) with $expand for dashboards, datasets, reports, and dataflows 
+* [GetGroupsAsAdmin](/rest/api/power-bi/admin/groups_getgroupsasadmin) with $expand for dashboards, semantic models, reports, and dataflows 
 * [GetGroupUsersAsAdmin](/rest/api/power-bi/admin/groups-get-group-users-as-admin)
 * [GetDashboardsAsAdmin](/rest/api/power-bi/admin/dashboards_getdashboardsasadmin) with $expand tiles
 * [GetDashboardUsersAsAdmin](/rest/api/power-bi/admin/dashboards-get-dashboard-users-as-admin)

@@ -7,14 +7,12 @@ author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 09/27/2023
+ms.date: 11/15/2023
 ---
 
 # Access Fabric OneLake shortcuts in a Spark notebook
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Access shortcuts as folders in a Spark notebook
 

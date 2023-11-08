@@ -85,11 +85,11 @@ After the connection with Azure Log Analytics (LA), activity log data is sent co
 
 ### System storage
 
-System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own datasets, Excel reports, and those items that someone has shared with you, are included in your system storage.
+System storage is the place to manage your semantic model storage in your individual or workspace account so you can keep publishing reports and semantic models. Your own semantic models, Excel reports, and those items that someone has shared with you, are included in your system storage.
 
 In the system storage, you can view how much storage you  have used and free up the storage by deleting the items in it.
 
-Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
+Keep in mind that you or someone else may have reports and dashboards based on a semantic model. If you delete the semantic model, those reports and dashboards don't work anymore.
 
 :::image type="content" source="media/workspaces/system-storage.png" alt-text="Screenshot showing Manage your storage." lightbox="media/workspaces/system-storage.png":::
 
@@ -124,7 +124,7 @@ Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing
 
 Limitations to be aware of:
 
-- Workspaces can contain a maximum of 1,000 datasets, or 1,000 reports per dataset.
+- Workspaces can contain a maximum of 1,000 semantic models, or 1,000 reports per semantic model.
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 

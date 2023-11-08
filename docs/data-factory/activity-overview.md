@@ -6,15 +6,13 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: overview 
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Activity Overview
 ---
 
 # Activity overview
 
 This article helps you understand activities in [!INCLUDE [product-name](../includes/product-name.md)] and use them to construct end-to-end data-driven workflows for your data movement and data processing scenarios.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Overview
 

@@ -1,18 +1,17 @@
 ---
-title: How to configure Azure Data Lake Storage Gen1 in copy activity
+title: Configure Azure Data Lake Storage Gen1 in copy activity
 description: This article explains how to copy data using Azure Data Lake Storage Gen1.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/30/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Azure Data Lake Storage Gen1 in copy activity
+# Configure Azure Data Lake Storage Gen1 in copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen1.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 

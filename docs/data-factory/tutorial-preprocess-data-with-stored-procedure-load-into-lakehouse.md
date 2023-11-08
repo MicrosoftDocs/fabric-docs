@@ -6,15 +6,13 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial 
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Tutorials
 ---
 
 # Preprocess data with a stored procedure before loading into Lakehouse
 
 In this tutorial, we show you how to use a pipeline Script activity to run a stored procedure to create a table and preprocess the data in a Synapse Data Warehouse. After that, we load the preprocessed table into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

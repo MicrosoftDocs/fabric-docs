@@ -4,15 +4,13 @@ description: This article explains how to configure Parquet format in the data p
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/15/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
 # Parquet format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 This article outlines how to configure Parquet format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 

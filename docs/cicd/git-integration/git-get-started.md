@@ -20,7 +20,7 @@ This article walks you through the following basic tasks in Microsoft Fabric’s
 
 It’s recommended to read the [overview of Git integration](./intro-to-git-integration.md) before you begin.
 
- [!INCLUDE [preview-note](../../includes/preview-note.md)]
+ [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Prerequisites
 
@@ -157,7 +157,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - After you commit changes, you might notice some unexpected changes to the item that you didn't make. These changes are semantically insignificant and can happen for several reasons. For example:
 
-  - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a dataset column in Git and import this change to the workspace, the next time you commit changes to the dataset, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
+  - Manually changing the item definition file. These changes are valid, but might be different than if done through the editors. For example, if you rename a semantic model column in Git and import this change to the workspace, the next time you commit changes to the semantic model, the *bim* file will register as changed and the modified column pushed to the back of the `columns` array. This is because the AS engine that generates the *bim* files pushes renamed columns to the end of the array. This change doesn't affect the way the item operates.
   
   - Committing a file that uses *CRLF* line breaks. The service uses *LF* (line feed) line breaks. If you had item files in the Git repo with *CRLF* line breaks, when you commit from the service these files are changed to *LF*. For example, if you open a report in desktop, save the *.pbip* project and upload it to Git using *CRLF*.
 

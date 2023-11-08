@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 08/31/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,7 +18,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Review questions
 
-When this setting is enabled, dataset owners can review questions end-users ask about their data.
+When this setting is enabled, semantic model owners can review questions end-users ask about their data.
 
 To learn more, see [Intro to Q&A tooling to train Power BI Q&A](/power-bi/natural-language/q-and-a-tooling-intro).
 

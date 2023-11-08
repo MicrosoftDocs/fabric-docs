@@ -4,15 +4,13 @@ description: This article explains how to copy data using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
 # Configure Azure SQL Database in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 

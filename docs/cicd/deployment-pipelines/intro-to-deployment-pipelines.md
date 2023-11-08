@@ -16,8 +16,6 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 
 In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#deployed-items) that you can deploy.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 ## Learn to use deployment pipelines
 
 You can learn how to use the deployment pipelines tool by following these links.

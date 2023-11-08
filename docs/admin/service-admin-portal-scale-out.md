@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom: tenant-setting
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -16,11 +16,11 @@ LocalizationGroup: Administration
 
 Scale-out tenant settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-## Scale out queries for large datasets (Preview)
+## Scale out queries for large semantic models (Preview)
 
-For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across other dataset replicas when query volume is high. Scale-out is enabled on a tenant by default.
+For semantic models that use the large semantic model storage format, Power BI Premium can automatically distribute queries across other semantic model replicas when query volume is high. Scale-out is enabled on a tenant by default.
 
-For more information, see [Power BI dataset scale-out](/power-bi/enterprise/service-premium-scale-out).
+For more information, see [Power BI semantic model scale-out](/power-bi/enterprise/service-premium-scale-out).
 
 ## Next steps
 

@@ -1,18 +1,17 @@
 ---
-title: How to configure Azure Data Explorer in a copy activity
+title: Configure Azure Data Explorer in a copy activity
 description: This article explains how to copy data using Azure Data Explorer.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/23/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure Azure Data Explorer in a copy activity
+# Configure Azure Data Explorer in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Data Explorer.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 

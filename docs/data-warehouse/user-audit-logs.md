@@ -4,7 +4,7 @@ description: Learn about auditing user activity on Microsoft Fabric data warehou
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---

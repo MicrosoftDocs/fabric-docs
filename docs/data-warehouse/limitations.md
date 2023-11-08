@@ -4,10 +4,10 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 10/24/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023, references_regions
-ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
+ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations in Microsoft Fabric
 
@@ -15,24 +15,19 @@ ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title
 
 This article details the current limitations in [!INCLUDE [product-name](../includes/product-name.md)].
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Limitations
 
-Data Warehousing in Microsoft Fabric is currently in preview. The focus of this preview is on providing a rich set of SaaS features and functionality tailored to all skill levels. The preview delivers on the promise of providing a simplified experience through an open data format over a single copy of data. This release is not focused on performance, concurrency, and scale. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally as we progress towards General Availability of data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
-
-Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article.
+Current general product limitations for Data Warehousing in Microsoft Fabric are listed in this article, with feature level limitations called out in the corresponding feature article. Additional functionality will build upon the world class, industry-leading performance and concurrency story, and will land incrementally. For more information on the future of Microsoft Fabric, see [Fabric Roadmap](https://blog.fabric.microsoft.com/en-us/blog/announcing-the-fabric-roadmap?ft=All).
 
 - At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
-- Warehouse recovery capabilities are not available during preview.
-- Data warehousing is not supported for *multiple* geographies at this time. Your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and Lakehouse items should not be moved to a different region during preview. 
+- Data warehousing is not supported for *multiple* geographies at this time.
 
 For more limitations in specific areas, see:
 
 - [Clone table](clone-table.md#limitations)
 - [Connectivity](connectivity.md#considerations-and-limitations)
 - [Data types in Microsoft Fabric](data-types.md)
-- [Datasets](datasets.md#limitations)
+- [Semantic models](semantic-models.md#limitations)
 - [Delta lake logs](query-delta-lake-logs.md#limitations)
 - [Pause and resume in Fabric data warehousing](pause-resume.md#considerations-and-limitations)
 - [Share your Warehouse](share-warehouse-manage-permissions.md#limitations)
@@ -50,7 +45,7 @@ The following Azure regions are currently not supported for [!INCLUDE [fabric-dw
    - Israel
    - Italy
 
-## Limitations of the SQL Endpoint
+## Limitations of the SQL analytics endpoint
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.
 

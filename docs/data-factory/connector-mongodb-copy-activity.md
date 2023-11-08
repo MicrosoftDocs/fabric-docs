@@ -1,18 +1,17 @@
 ---
-title: How to configure MongoDB in a copy activity
+title: Configure MongoDB in a copy activity
 description: This article explains how to copy data using MongoDB.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/08/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure MongoDB in a copy activity
+# Configure MongoDB in a copy activity
 
 This article outlines how to use the copy activity in data pipelines to copy data from and to MongoDB.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 

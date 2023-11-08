@@ -4,7 +4,7 @@ description: Learn how Warehouse in Microsoft Fabric publishes Delta Lake logs
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
@@ -45,7 +45,7 @@ You can locate Delta Lake logs via the following methods:
 
 - Delta Lake logs can be found via [Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md), through Spark connections such as the Power BI Direct Lake mode, or using any other service that can read delta tables.
  
-- Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer (Preview) in Windows, as shown in the following screenshot.
+- Delta Lake logs can be found in the `_delta_log` folder of each table through the OneLake Explorer  in Windows, as shown in the following screenshot.
 
     :::image type="content" source="media/query-delta-lake-logs/onelake-explorer-delta-log.png" alt-text="A screenshot of the Windows OneLake Explorer, showing the path to the delta logs folder for the call_center table.":::
 
