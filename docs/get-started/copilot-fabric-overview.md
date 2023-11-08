@@ -37,8 +37,6 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 
 ## Copilot for Data Science
 
-## Copilot for Power BI
-
 ## Copilot for Data Engineering
 
 ## Copilot for Data Warehouse
