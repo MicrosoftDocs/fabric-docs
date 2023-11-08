@@ -72,7 +72,6 @@
                 "data-warehouse/**/*.yml": "data-warehouse",
                 "enterprise/**/*.md": "enterprise",
                 "enterprise/**/*.yml": "enterprise",
-                "get-started/**/*.md": "get-started",
                 "get-started/**/*.yml": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
