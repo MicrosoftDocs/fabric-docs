@@ -35,7 +35,7 @@ To use Copilot in Data Science:
 
 1. To use the Copilot pane, The installation cell for chat-magics must successfully execute within your Spark session.
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png" alt-text="PICTURE OF EXECUTED NOTEBOOK CELL.":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-cell-executed-successfully.png" alt-text="Screenshot showing executed notebook cell.":::
 
     >[!IMPORTANT]
     > If your Spark session terminates, the context for chat-magics will also terminate, also wiping the context for the Copilot pane.
@@ -46,13 +46,13 @@ To use Copilot in Data Science:
 
 1. Select the Copilot button on the notebook ribbon
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="PICTURE OF COPILOT RIBBON.":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot showing Copilot ribbon.":::
 
 1. To open Copilot, select the Copilot button at the top of the Notebook.
 1. Te Copilot chat panel on the right side of your notebook opens.
 1. A panel opens, to provide overview information and helpful links.
 
-    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="PICTURE OF COPILOT HELPFUL LINKS PANE.":::
+    :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="Screenshot showing Copilot helpful links pane.":::
 
 ### Key Capabilities
 
@@ -63,8 +63,8 @@ To use Copilot in Data Science:
 
 ### Important Notices
 
-1. Inaccuracies: Potential for inaccuracies exists. Review AI-generated content carefully.
-1. Data Storage: Customer data is temporarily stored, to identify harmful use of AI.
+- **Inaccuracies**: Potential for inaccuracies exists. Review AI-generated content carefully.
+- **Data Storage**: Customer data is temporarily stored, to identify harmful use of AI.
 
 ## Getting started with Copilot chat in notebooks
 
