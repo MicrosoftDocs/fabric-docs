@@ -4,8 +4,6 @@ description: Learn about privacy, security, and responsible use of Copilot for D
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
-ms.service: security
-ms.subservice: 
 ms.custom: 
 ms.topic: conceptual
 ms.date: 11/07/2023

@@ -4,8 +4,6 @@ description: Learn about how to enable Copilot in Fabric.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
-ms.service: security
-ms.subservice: 
 ms.custom: 
 ms.topic: conceptual
 ms.date: 11/07/2023
