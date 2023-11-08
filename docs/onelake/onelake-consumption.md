@@ -65,20 +65,20 @@ This table defines CU consumption when OneLake data is accessed using most appli
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
 | **OneLake BCDR Read via Redirect** | OneLake BCDR Read via Redirect | Every 4MB, per 10,000 | 104 CU seconds |
-| **OneLake BCDR Write via Redirect** | OneLake BCDR Write via Redirect | Every 4MB, per 10,000 | 2940 CU seconds |
-| **OneLake BCDR Iterative Read via Redirect** | OneLake BCDR Iterative Read via Redirect | Per 10,000 | 2940 CU seconds |
-| **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2940 CU seconds |
+| **OneLake BCDR Write via Redirect** | OneLake BCDR Write via Redirect | Every 4MB, per 10,000 | 3056 CU seconds |
+| **OneLake BCDR Iterative Read via Redirect** | OneLake BCDR Iterative Read via Redirect | Per 10,000 | 1626 CU seconds |
+| **OneLake BCDR Iterative Write via Redirect** | OneLake BCDR Iterative Write via Redirect | Per 100 | 2730 CU seconds |
 | **OneLake BCDR Other Operations Via Redirect** | OneLake BCDR Other Operations Via Redirect | Per 10,000 | 104 CU seconds |
 
 This table defines CU consumption when OneLake data is accessed using applications running outside of Fabric environments when disaster recovery is enabled. For example, custom applications using Azure Data Lake Storage (ADLS) APIs or OneLake file explorer.
 
 | **Operation** | **Description** | **Operation Unit of Measure** | **Capacity Units** |
 |---|---|---|---|
-| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4MB, per 10,000 | 359 CU seconds |
-| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4MB, per 10,000 | 4060 CU seconds |
+| **OneLake BCDR Read via Proxy** | OneLake BCDR Read via Proxy | Every 4MB, per 10,000 | 306 CU seconds |
+| **OneLake BCDR Write via Proxy** | OneLake BCDR Write via Proxy | Every 4MB, per 10,000 | 3870 CU seconds |
 | **OneLake BCDR Iterative Read via Proxy** | OneLake BCDR Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
-| **OneLake BCDR Iterative Write via Proxy** | OneLake BCDR Iterative Write via Proxy | Per 100 | 3678 CU seconds |
-| **OneLake BCDR Other Operations** | OneLake BCDR Other Operations | Per 10,000 | 359 CU seconds |
+| **OneLake BCDR Iterative Write via Proxy** | OneLake BCDR Iterative Write via Proxy | Per 100 | 3415.5 CU seconds |
+| **OneLake BCDR Other Operations** | OneLake BCDR Other Operations | Per 10,000 | 306 CU seconds |
 
 ## Changes to Microsoft Fabric workload consumption rate
 
