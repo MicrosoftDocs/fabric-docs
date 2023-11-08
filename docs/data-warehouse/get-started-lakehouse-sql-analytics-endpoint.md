@@ -4,7 +4,7 @@ description: Learn more about the lakehouse data warehousing experience in Micro
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 11/04/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Analytics Endpoint overview, Warehouse in workspace overview # This article's title should not change. If so, contact engineering.

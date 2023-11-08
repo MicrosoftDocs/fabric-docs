@@ -4,7 +4,7 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
 ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
@@ -17,8 +17,6 @@ This article describes how to get started with [!INCLUDE [fabric-dw](includes/fa
 
 > [!NOTE]
 > It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query a warehouse](query-warehouse.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!TIP]
 > You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.

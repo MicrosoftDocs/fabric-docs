@@ -4,7 +4,7 @@ description: This article provides information about how to create a Google BigQ
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/20/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 

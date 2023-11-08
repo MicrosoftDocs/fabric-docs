@@ -63,6 +63,7 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+    maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items

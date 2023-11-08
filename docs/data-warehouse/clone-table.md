@@ -4,7 +4,7 @@ description: Learn about table clones in Microsoft Fabric.
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 10/24/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
@@ -20,8 +20,6 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 - Table clones help to create historical reports that reflect the state of data as it existed as of a specific point-in-time in the past.
 
 You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What is zero-copy clone?
 

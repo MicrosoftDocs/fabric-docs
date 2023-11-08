@@ -1,12 +1,12 @@
 ---
 title: Model scoring with PREDICT
 description: Learn how to operationalize machine learning models in Fabric with a scalable function called PREDICT.
-ms.reviewer: mopeakande
+ms.reviewer: franksolomon
 ms.author: erenorbey
 author: orbey
 ms.topic: how-to
 ms.custom: ignite-2023
-ms.date: 11/14/2023
+ms.date: 11/15/2023
 ms.search.form: Predict
 ---
 

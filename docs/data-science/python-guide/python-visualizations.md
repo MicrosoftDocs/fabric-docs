@@ -12,8 +12,6 @@ ms.search.form: Python Language
 
 # Analyze data with Apache Spark and Python
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 In this tutorial, you'll learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. 
 
 In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.microsoft.com/services/open-datasets/catalog/nyc-taxi-limousine-commission-yellow-taxi-trip-records/) dataset. The data is available through Azure Open Datasets. This subset of the dataset contains information about yellow taxi trips: information about each trip, the start and end time and locations, the cost, and other interesting attributes.

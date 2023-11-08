@@ -14,8 +14,6 @@ ms.date: 08/06/2023
 
 In this article, you find a comprehensive list of end-to-end tutorials available in Microsoft Fabric. These tutorials guide you through a scenario that covers the entire process, from data acquisition to data consumption. They're designed to help you develop a foundational understanding of the Fabric UI, the various experiences supported by Fabric and their integration points, and the professional and citizen developer experiences that are available.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Multi-experience tutorials
 
 The following table lists tutorials that span multiple Fabric experiences.

@@ -6,7 +6,7 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 08/23/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Get Metadata activity to look up data from a data source

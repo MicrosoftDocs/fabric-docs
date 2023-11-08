@@ -6,7 +6,7 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Lookup activity to look up data from a data source

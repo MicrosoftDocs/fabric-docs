@@ -6,7 +6,7 @@ ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 04/23/2023
+ms.date: 11/15/2023
 ms.search.form: R Language
 ---
 
@@ -39,7 +39,7 @@ sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt
 
 ## Use sparklyr to read data
 
-A new Spark session contains no data. The first step is to either load data into your Spark session’s memory, or point Spark to the location of the data so it can access the data on-demand.
+A new Spark session contains no data. The first step is to either load data into your Spark session's memory, or point Spark to the location of the data so it can access the data on-demand.
 
 ```R
 # load the sparklyr package
@@ -100,7 +100,7 @@ dplyr::show_query(cargroup)
 
 ### Use SQL
 
-It’s also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
+It's also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
 
 ```R
 library(DBI)
@@ -148,7 +148,7 @@ head(mtcars_sparklr)
 
 ## Machine learning
 
-Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
+Here's an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car's fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
 ### Generate testing and training data sets
 
