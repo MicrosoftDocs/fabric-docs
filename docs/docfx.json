@@ -73,6 +73,7 @@
                 "enterprise/**/*.md": "enterprise",
                 "enterprise/**/*.yml": "enterprise",
                 "get-started/**/*.yml": "get-started",
+                "get-started/**/*.md": "get-started",
                 "governance/**/*.md": "governance",
                 "governance/**/*.yml": "governance",
                 "onelake/**/*.md": "onelake",
