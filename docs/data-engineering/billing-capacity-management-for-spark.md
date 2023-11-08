@@ -6,7 +6,7 @@ ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
 ms.custom: ignite-2023
-ms.date: 11/07/2023
+ms.date: 11/15/2023
 ---
 # Billing and utilization reporting for Spark in Microsoft Fabric
 
