@@ -81,12 +81,8 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
 | OneLake Read via Redirect                  | OneLake Read via Redirect                   | (Multiple) | OneLake Read Operations  Capacity Usage CU                         | Background |
 | OneLake Read via Proxy                     | OneLake Read via Proxy                      | (Multiple) | OneLake Read Operations via API Capacity Usage CU                 | Background |
-| OneLake Shortcut Read via Redirect         | OneLake Shortcut Read via Redirect          | (Multiple) | OneLake Read Operations Capacity Usage CU                        | Background |
-| OneLake Shortcut Read via Proxy            | OneLake Shortcut Read via Proxy             | (Multiple) | OneLake Read Operations via API Capacity Usage CU                 | Background |
 | OneLake Write via Redirect                 | OneLake Write via Redirect                  | (Multiple) | OneLake Write Operations  Capacity Usage CU                        | Background |
 | OneLake Write via Proxy                    | OneLake Write via Proxy                     | (Multiple) | OneLake Write Operations via API Capacity Usage CU              | Background |
-| OneLake Shortcut Write via Redirect        | OneLake Shortcut Write via Redirect         | (Multiple) | OneLake Write Operations Capacity Usage CU                       | Background |
-| OneLake Shortcut Write via Proxy           | OneLake Shortcut Write via Proxy            | (Multiple) | OneLake Write Operations via API Capacity Usage CU              | Background |
 | OneLake Iterative Write via Redirect       | OneLake Iterative Write via Redirect        | (Multiple) | OneLake Iterative Write Operations              | Background |
 | OneLake Iterative Read via Redirect        | OneLake Iterative Read via Redirect         | (Multiple) | OneLake Iterative Read Operations Capacity Usage CU              | Background |
 | OneLake Other Operations                   | OneLake Other Operations                    | (Multiple) | OneLake Other Operations Capacity Usage CU                       | Background |
@@ -103,6 +99,8 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect   | (Multiple) | OneLake BCDR Iterative Write Operations Capacity Usage CU    | Background |
 | OneLake BCDR Other Operations              | OneLake BCDR Other Operations               | (Multiple) | OneLake BCDR Other Operations Capacity Usage CU       | Background |
 | OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect  | (Multiple) | OneLake BCDR Other Operations via API Capacity Usage CU    | Background |
+
+One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
 
 ### Power BI
 
