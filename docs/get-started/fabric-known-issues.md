@@ -4,7 +4,7 @@ description: Identify issues that are affecting your Fabric trial.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 10/23/2023
+ms.date: 11/9/2023
 ms.custom: build-2023
 ---
 # Fabric (Preview) trial known issues
@@ -19,6 +19,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  536  | Administration & Management | [Feature Usage and Adoption report activity missing](known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md)  | November 9, 2023 |
 |  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |
 |  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |
 |  519  | Administration & Management | [Capacity Metrics app shows variance between workload summary and operations](known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md)  | October 13, 2023 |
@@ -44,8 +45,6 @@ Select the **Title** to view more information about that specific known issue. F
 |  462  | Administration & Management | [Fabric users see the workspace git status column display synced for unsupported items](known-issues/known-issue-462-fabric-user-git-column-synced-activity.md)    |  July 26, 2023  | Fixed: October 13, 2023 |
 |  458  | Data Factory                | [Not able to add Lookup activity output to body object of Office 365](known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md)    |  July 26, 2023  | Fixed: October 13, 2023 |
 |  473  | OneLake                     | [Fabric items can't be created in a workspace moved to a capacity in a different region](known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md)    |  August 7, 2023  | Fixed: September 28, 2023 |
-|  456  | OneLake                     | [OneLake file explorer doesn't contain items under My workspace](known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md)    |  July 26, 2023  | Fixed: August 24, 2023 |
-|  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  | Fixed: August 24, 2023 |
 
 ## Next steps
 
