@@ -54,14 +54,14 @@ productDirectory:
 
       imageSrc: ./media/fabric-icon.png
       links:
-        - url: enterprise/licenses.md
-          text: Microsoft Fabric licenses
         - url: enterprise/buy-subscription.md
           text: Buy a Microsoft Fabric subscription
         - url: get-started/fabric-home.md
           text: Navigate the Fabric portal          
         - url: get-started/workspaces.md
-          text: Workspaces in Fabric
+          text: Fabric workspaces and settings
+        - url: get-started/whats-new.md
+          text: What's new in Fabric?
         - url: get-started/index.yml
           text: See more
 
@@ -70,12 +70,12 @@ productDirectory:
 
       imageSrc: ./media/power-bi-icon.png
       links:
-        - url: admin/fabric-switch.md
-          text: Enable Microsoft Fabric for your organization
         - url: /power-bi/fundamentals/power-bi-overview
           text: What is Power BI?
         - url: /power-bi/transform-model/datamarts/datamarts-overview
           text: What is a datamart?
+        - url: /power-bi/paginated-reports/report-builder-shared-datasets
+          text: Create a paginated report
         - url: /power-bi/connect-data/service-azure-and-power-bi
           text: Azure and Power BI integration
         - url: /power-bi/
@@ -93,7 +93,7 @@ productDirectory:
         - url: onelake/create-lakehouse-onelake.md
           text: Create a lakehouse with OneLake
         - url: onelake/onelake-azure-synapse-analytics.md
-          text: OneLake and Azure Synapse Analytics integration
+          text: Integration with Azure Synapse Analytics
         - url: onelake/index.yml
           text: See more
 
@@ -109,7 +109,7 @@ productDirectory:
         - url: data-factory/create-first-dataflow-gen2.md
           text: Create your first dataflow
         - url: data-factory/connector-overview.md
-          text: Connectors
+          text: Explore connectors
         - url: data-factory/index.yml
           text: See more
 
@@ -122,10 +122,10 @@ productDirectory:
           text: What is Data Engineering?
         - url: data-engineering/create-lakehouse.md
           text: Create a Lakehouse
-        - url: data-engineering/how-to-use-notebook.md
-          text: Create a Notebook
         - url: data-engineering/create-spark-job-definition.md
-          text: Create a Spark job definition
+          text: Configure and use an environment
+        - url: data-engineering/migrate-synapse-overview.md
+          text: Migrate data into lakehouse
         - url: data-engineering/index.yml
           text: See more
 
@@ -151,11 +151,13 @@ productDirectory:
       imageSrc: ./media/synapse-data-warehouse-icon.png
       links:
         - url: data-warehouse/data-warehousing.md
-          text: What is Data Warehouse?
+          text: What is Data Warehousing?
         - url: data-warehouse/create-warehouse.md
           text: Create a Warehouse
         - url: data-warehouse/sql-query-editor.md
           text: Query using SQL query editor
+          text: Migrate data into warehouse
+        - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
         - url: data-warehouse/index.yml
           text: See more
 
@@ -170,8 +172,47 @@ productDirectory:
           text: What is Event streams?
         - url: real-time-analytics/create-database.md
           text: Create a database
+        - url: /real-time-analytics/query-table.md
+          text: Query with KQL
         - url: real-time-analytics/index.yml
           text: See more
+
+    # Card
+    - title: Data Activator
+
+      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      links:
+        - url: data-activator/data-activator-introduction.md
+          text: What is Data Activator?
+        - url: data-activator/data-activator-get-data-power-bi.md
+          text: Get data from Power BI
+        - url: data-activator/data-activator-get-data-eventstreams.md
+          text: Get data from Eventstreams
+        - url: data-activator/data-activator-tutorial.md
+          text: Create objects and triggers - Tutorial 
+        - url: data-activator/index.yml
+          text: See more
+
+    # Card
+    - title: Learning
+
+      imageSrc: ./media/education-icon.svg
+      links:
+        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+          text: End-to-end analytics using Fabric
+        - url: /training/modules/get-started-lakehouses/
+          text: Get started with lakehouses
+        - url: /training/modules/use-data-factory-pipelines-fabric/
+          text: Use Data Factory pipelines
+        - url: /training/modules/get-started-data-science-fabric/
+          text: Get started with Data science
+        - url: /training/paths/get-started-fabric/
+          text: See more
+
+productDirectory:
+  title: Shared Experiences in Power BI and Fabric
+  summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
+  items:
 
     # Card
     - title: Admin and governance
@@ -215,22 +256,6 @@ productDirectory:
         - url: /power-bi/troubleshoot/
           text: Troubleshoot issues
         - url: get-started/index.yml
-          text: See more
-
-    # Card
-    - title: Learning
-
-      imageSrc: ./media/education-icon.svg
-      links:
-        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
-          text: End-to-end analytics using Fabric
-        - url: /training/modules/get-started-lakehouses/
-          text: Get started with lakehouses
-        - url: /training/modules/use-data-factory-pipelines-fabric/
-          text: Use Data Factory pipelines
-        - url: /training/modules/get-started-data-science-fabric/
-          text: Get started with Data science
-        - url: /training/paths/get-started-fabric/
           text: See more
 
 
