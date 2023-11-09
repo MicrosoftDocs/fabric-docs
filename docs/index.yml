@@ -194,20 +194,35 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Learning
+    - title: Training
 
       imageSrc: ./media/education-icon.svg
       links:
         - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
           text: End-to-end analytics using Fabric
-        - url: /training/modules/get-started-lakehouses/
-          text: Get started with lakehouses
-        - url: /training/modules/use-data-factory-pipelines-fabric/
-          text: Use Data Factory pipelines
-        - url: /training/modules/get-started-data-science-fabric/
-          text: Get started with Data science
+        - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
+          text: Skill up with the cloud skills challenge
+        - url: training/browse/?products=fabric&resource_type=module
+          text: Explore role-based learning paths
         - url: /training/paths/get-started-fabric/
           text: See more
+
+    # Card
+    - title: Community
+
+      imageSrc: ./media/education-icon.svg
+      links:
+        - url: /training/paths/get-started-fabric/
+          text: Ask questions in our forums 
+        - url: /training/paths/get-started-fabric/
+          text: Join a user group
+        - url: /training/paths/get-started-fabric/
+          text: Vote and contribute product ideas 
+        - url: /training/paths/get-started-fabric/
+          text: Blog - What’s new in Fabric
+        - url: /training/paths/get-started-fabric/
+          text: See more
+
 
 productDirectory:
   title: Shared Experiences in Power BI and Fabric
