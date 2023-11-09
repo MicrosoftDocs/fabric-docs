@@ -21,7 +21,7 @@ Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored
 
 ## Copilot for Power BI
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. See the article (/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. See the article "Overview of Copilot for Power BI" (/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
 ## How do I use Copilot responsibly?
 
