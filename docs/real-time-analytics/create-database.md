@@ -71,7 +71,7 @@ The main page of your KQL database shows an overview of the contents in your dat
 
 ## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
 * [Get data from OneLake](get-data-onelake.md)

@@ -73,7 +73,7 @@ Select **Close** to return to your database landing page.
 
 For more information about tasks performed in this tutorial, see:
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 
 ## Next steps
 
