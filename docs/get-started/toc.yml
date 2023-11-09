@@ -45,6 +45,7 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+    maintainContext: true
 - name: Copilot in Fabric
   items:
   - name: Copilot for Fabric overview
@@ -71,7 +72,6 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
-    maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
