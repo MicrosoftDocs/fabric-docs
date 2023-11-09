@@ -27,12 +27,20 @@ items:
     href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Develop and run notebooks
     href: ../data-engineering/author-execute-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Format code in notebooks
+    href: ../data-engineering/author-notebook-format-code.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Run notebooks in high concurrency mode
+    href: ../data-engineering/configure-high-concurrency-session-notebooks.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Notebook visualization
     href: ../data-engineering/notebook-visualization.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Explore data in lakehouse
     href: ../data-engineering/lakehouse-notebook-explore.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Load data in lakehouse
     href: ../data-engineering/lakehouse-notebook-load-data.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Notebook source control and deployment
+    href: ../data-engineering/notebook-source-control-deployment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use Notebook public APIs
+    href: ../data-engineering/notebook-public-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
   - name: Python tutorials
