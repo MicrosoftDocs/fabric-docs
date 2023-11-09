@@ -224,7 +224,7 @@ productDirectory:
           text: See more
 
 
-productDirectory:
+additionalContent:
   title: Shared Experiences in Power BI and Fabric
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
