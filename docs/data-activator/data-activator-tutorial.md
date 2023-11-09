@@ -107,7 +107,7 @@ Congratulations on creating your first object and trigger. As next steps, you mi
 
 Once you’ve finished with the triggers you created as part of the tutorial, be sure to stop them so you don’t incur any charges for background processing of the trigger. Select each trigger in turn, and press the Stop button from the ribbon.
 
-:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Trigger stop button for data activator tutorial":::
+:::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
 ## Next steps
 
