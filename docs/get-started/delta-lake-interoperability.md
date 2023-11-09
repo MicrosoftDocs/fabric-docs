@@ -28,16 +28,16 @@ The following matrix contains key Delta Lake features and its supportability sta
 
 |Workload|Name-based column mappings|Deletion vectors|V-Order writing|Table Optimization and Maintenance|Write Partitions|Read Partitions|Delta reader/writer version and default table features|
 |---------|---------|---------|---------|---------|---------|---------|---------|
-|Data Warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|Reader: 3 Writer: 7 Deletion Vectors|
+|Data Warehouse Delta Lake export|No|Yes|Yes|Yes|No|Yes|Reader: 3<br/Writer: 7<br/>Deletion Vectors|
 SQL Analytics Endpoint|No|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Fabric Spark Runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1 Writer: 2 |
-Fabric Spark Runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1 Writer: 2 |
-Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1 Writer: 2 |
-Data Pipelines|No|No|Yes|No|Yes,|Yes|Reader: 1 Writer: 2 Overwrite only|
+Fabric Spark Runtime 1.2|Yes|Yes|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Fabric Spark Runtime 1.1|Yes|No|Yes|Yes|Yes|Yes|Reader: 1<br/>Writer: 2|
+Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
+Data Pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
 PowerBI Direct Lake Semantic Models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
-Export Power BI Semantic Models into One Lake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2 Writer: 5|
-Kusto|No|No|No|No|Yes|Yes|Reader: 1 Writer: 1|
-EventStreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1 Writer: 2|
+Export Power BI Semantic Models into One Lake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2<br/>Writer: 5|
+Kusto|No|No|No|No|Yes|Yes|Reader: 1<br/>Writer: 1|
+EventStreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
 > [!NOTE]
 >
