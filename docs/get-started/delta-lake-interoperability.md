@@ -14,15 +14,15 @@ ms.search.form: delta lake interoperability
 
 In Microsoft Fabric, the Delta Lake table format is used as the standard for analytics. [Delta Lake](https://docs.delta.io/latest/delta-intro.html) is an open-source storage layer that brings ACID (Atomicity, Consistency, Isolation, Durability) transactions to big data and analytics workloads. 
 
-All Microsoft Fabric workloads produce and consume Delta Lake tables, driving interoperability and unifying the product experience. Delta Lake tables produced by one compute-engine, such as SQL Data Warehouse or Synapse Spark, may be consumed by any other engine, such as Power BI. Data ingestion in Microsoft Fabric also produces Delta Tables by default, and it’s easy to integrate external data lakes containing Delta Lake tables using OneLake’s Shortcuts capabilities. 
+All Microsoft Fabric workloads produce and consume Delta Lake tables, driving interoperability and unifying the product experience. Delta Lake tables produced by one compute-engine, such as SQL Data Warehouse or Synapse Spark, can be consumed by any other engine, such as Power BI. Data ingestion in Microsoft Fabric also produces Delta Tables by default, and it’s easy to integrate external data lakes containing Delta Lake tables using OneLake’s Shortcuts capabilities.
 
 ## Delta Lake features and Microsoft Fabric workloads
 
-To achieve interoperability, all Microsoft Fabric workloads align on Delta Lake features and Microsoft Fabric capabilities. Note that some workloads only write to Delta Lake tables, while others read from it. 
+To achieve interoperability, all Microsoft Fabric workloads align on Delta Lake features and Microsoft Fabric capabilities. Some workloads only write to Delta Lake tables, while others read from it.
 
-* Writers: Data Warehouse, Event Streams and Export Power BI Semantic Models into One Lake. 
-* Readers: SQL Analytics Endpoint, and PowerBI Direct Lake Semantic Models 
-* Writers and readers: Fabric Spark Runtime, Dataflows, Data Pipelines, and Kusto  
+* Writers: Data Warehouse, Event Streams, and Export Power BI Semantic Models into One Lake.
+* Readers: SQL Analytics Endpoint, and PowerBI Direct Lake Semantic Models.
+* Writers and readers: Fabric Spark Runtime, Dataflows, Data Pipelines, and Kusto.
 
 The following matrix contains key Delta Lake features and its supportability state on each Microsoft Fabric workload.
 
@@ -46,7 +46,7 @@ EventStreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1 Writer: 2|
 
 ## Current limitations
 
-The following Delta Lake features are not supported in Microsoft Fabric.
+The following Delta Lake features aren't supported in Microsoft Fabric.
 
 * Column mappings using IDs.
 * Delta Lake 3.x UniForm.
