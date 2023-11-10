@@ -232,7 +232,7 @@ additionalContent:
     - title: Shared Experiences in Power BI and Fabric # < 60 chars (optional)
       summary: Learn about Shared experiences in Power BI and Microsoft Fabric.
       items:
-      
+
     # Card
     - title: Admin and governance
 
@@ -280,9 +280,9 @@ additionalContent:
 
 # additionalContent section (optional)
 # Card with summary style
-additionalContent:
+#additionalContent:
   # Supports up to 3 sections
-  sections:
+#  sections:
     - title: Related products # < 60 chars (optional)
       items:
         # Card
