@@ -51,12 +51,12 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
-    - name: Migrate to Data Factory
+  - name: Migrate to Fabric
       items:
       - name: Migrate from ADF and Power BI
         href: upgrade-paths.md
       - name: Move queries from Dataflow Gen1 to Gen2
-        href: move-dataflow-gen1-to-dataflow-gen2.md
+        href: move-dataflow-gen1-to-dataflow-gen2.md      
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
