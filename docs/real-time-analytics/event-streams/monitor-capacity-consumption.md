@@ -14,6 +14,9 @@ ms.search.form: Monitor event streams capacity consumption
 
 This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
 
+> [!IMPORTANT]
+> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units (SKU: F4).
+
 ## Operation types
 The event streams usage is defined by three operation types, which are described in the following table. The table provides information about event streams operations shown in the Fabric Capacity Metrics app and their Fabric consumption rates. For more information about the app, see [Microsoft Fabric Capacity Metrics app](../../enterprise/metrics-app.md).
  
