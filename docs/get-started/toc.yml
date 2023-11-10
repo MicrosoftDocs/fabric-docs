@@ -80,6 +80,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric - chart
