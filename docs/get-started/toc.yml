@@ -45,6 +45,7 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+    maintainContext: true
 - name: Copilot in Fabric
   items:
   - name: Copilot for Fabric overview
@@ -80,6 +81,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric - chart
