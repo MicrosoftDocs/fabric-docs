@@ -235,7 +235,7 @@ additionalContent:
       # Card
       - title: Admin and governance
 
-        imageSrc: ./media/administrator-icon.svg
+#        imageSrc: ./media/administrator-icon.svg
         links:
           - url: enterprise/buy-subscription.md
             text: Buy a Microsoft Fabric subscription     
@@ -251,7 +251,7 @@ additionalContent:
       # Card
       - title: Developer experience
   
-        imageSrc: ./media/developer-icon.svg
+#        imageSrc: ./media/developer-icon.svg
         links:
           - url: /rest/api/fabric/
             text: REST APIs
@@ -265,7 +265,7 @@ additionalContent:
       # Card
       - title: Troubleshooting 
   
-        imageSrc: ./media/support-icon.svg
+#        imageSrc: ./media/support-icon.svg
         links:
           - url: /power-bi/support/service-support-options
             text: Create a support ticket
