@@ -224,11 +224,15 @@ productDirectory:
           text: See more
 
 
+# additionalContent section (optional)
+# Card with summary style
 additionalContent:
-  title: Shared Experiences in Power BI and Fabric
-  summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
-  items:
-
+  # Supports up to 3 sections
+  sections:
+    - title: Shared Experiences in Power BI and Fabric # < 60 chars (optional)
+      summary: Learn about Shared experiences in Power BI and Microsoft Fabric.
+      items:
+      
     # Card
     - title: Admin and governance
 
