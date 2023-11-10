@@ -6,7 +6,7 @@ ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
 ms.custom: build-2023, build-2023-fabric
-ms.date: 11/13/2023
+ms.date: 11/09/2023
 ms.search.form: Data Science Overview
 ---
 # Overview of Copilot for Data Science and Data Engineering (preview)

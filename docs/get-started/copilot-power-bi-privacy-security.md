@@ -6,7 +6,7 @@ ms.author: maggies
 ms.reviewer: 'guptamaya'
 ms.custom: 
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 11/09/2023
 ---
 
 # Privacy, security, and responsible use for Copilot for Power BI (preview)

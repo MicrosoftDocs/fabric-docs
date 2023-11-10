@@ -6,7 +6,7 @@ ms.author: maggies
 ms.reviewer: 'guptamaya'
 ms.custom: 
 ms.topic: conceptual
-ms.date: 11/08/2023
+ms.date: 11/09/2023
 ---
 
 # Overview of Copilot for Fabric (preview)
@@ -18,6 +18,11 @@ Before your business starts using Copilot capabilities in Fabric, you may have q
 ## Copilot for Data Science and Data Engineering
 
 Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
+
+
+## Copilot for Data Factory
+
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
 
 ## Copilot for Power BI
 
@@ -36,6 +41,8 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 - Copilot responses can include inaccurate or low-quality content, so make sure to review outputs before using them in your work.
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
+
+## Available regions
 
 ## Notes by release
 

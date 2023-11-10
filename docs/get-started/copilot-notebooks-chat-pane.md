@@ -4,7 +4,7 @@ description: Interact with the chat panel in Copilot for Data Science and Data E
 author: rrikhy
 ms.author: rarikhy
 ms.topic: how-to
-ms.date: 11/13/2023
+ms.date: 11/09/2023
 
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks. 
 ---
