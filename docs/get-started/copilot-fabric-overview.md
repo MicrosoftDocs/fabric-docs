@@ -6,7 +6,7 @@ ms.author: maggies
 ms.reviewer: 'guptamaya'
 ms.custom: 
 ms.topic: conceptual
-ms.date: 11/09/2023
+ms.date: 11/10/2023
 ---
 
 # Overview of Copilot for Fabric (preview)
@@ -19,14 +19,13 @@ Before your business starts using Copilot capabilities in Fabric, you may have q
 
 Copilot for Data Engineering and Data Science is an AI-enhanced toolset tailored to support data professionals in their workflow. It provides intelligent code completion, automates routine tasks, and supplies industry-standard code templates to facilitate building robust data pipelines and crafting complex analytical models. Utilizing advanced machine learning algorithms, Copilot offers contextual code suggestions that adapt to the specific task at hand, helping you code more effectively and with greater ease. From data preparation to insight generation, Microsoft Fabric Copilot acts as an interactive aide, lightening the load on engineers and scientists and expediting the journey from raw data to meaningful conclusions.
 
-
 ## Copilot for Data Factory
 
 Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent code generation to transform data with ease and generates code explanations to help you better understand complex tasks.
 
 ## Copilot for Power BI
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. See the article "Overview of Copilot for Power BI" (/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. See the article "Overview of Copilot for Power BI" (/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
 ## How do I use Copilot responsibly?
 

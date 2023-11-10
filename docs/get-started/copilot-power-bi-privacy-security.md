@@ -22,11 +22,9 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 - By using Copilot for Power BI, you can quickly create reports with just a few clicks. Copilot can save you hours of effort building your report pages.
 - Copilot provides a summary of your dataset and an outline of suggested pages for your report. Then it generates those pages for the report. After you open a blank report with a semantic model, Copilot can generate:
 
-  - A summary of the dataset.
   - Suggested topics.
   - A report outline: for example, what each page in the report will be about, and how many pages it will create.
   - The visuals for the individual pages.
-  - A summary of the current page.
 
 ## Limitations of Copilot for Power BI
 

@@ -8,7 +8,7 @@ metadata:
   ms.service: fabric
   ms.subservice: 
   ms.topic: faq
-  ms.date: 11/09/2023
+  ms.date: 11/10/2023
 
 title: "Copilot for Microsoft Fabric: FAQ"
 summary: |
@@ -44,11 +44,11 @@ sections:
       - question: |
           I generated the report visuals, but the quality of the visuals concern me. I wouldn't choose them myself  
         answer: |
-          We are continuously looking to improve the quality of the copilot generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
+          We're continuously looking to improve the quality of the copilot generated visuals. For now, we recommend that you make the change by using the Power BI visualization tool.
       - question: |
-          I generated a summary for the report page using Copilot, but I can't move the summary anywhere on the report page 
+          The accuracy of the narrative visual concerns me. 
         answer: |
-          Instead of creating a summary of the report page in the Copilot window, create a narrative visual on the report page and create your summary there. See *Create a narrative summary visual with Copilot for Power BI* (copilot-create-narrative.md) for details.
+          We're continuously working to improve the accuracy of the narrative visual results. The Power BI team already has plans to improve the accuracy over the coming months. As a public preview, there might be mistakes. Know that we're working toward making the tool as accurate as possible. In the meantime, we recommend using the custom prompts as an additional tool to try to tweak the summary to meet your needs.
       - question: |
           I want to disable Copilot immediately as I'm concerned with the data storage as you mention previously
         answer: |
@@ -57,6 +57,7 @@ sections:
           I want to suggest new features. How can I do that?  
         answer: |
           First, thank you for the feedback. It's great that you found it useful. As part of the feedback sessions, we send you a form and you can add your suggestions there.
+
   - name: Data Factory
     questions:
       - question: |
