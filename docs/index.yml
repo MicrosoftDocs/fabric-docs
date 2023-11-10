@@ -232,66 +232,65 @@ additionalContent:
     - title: Shared Experiences in Power BI and Fabric # < 60 chars (optional)
       summary: Learn about Shared experiences in Power BI and Microsoft Fabric.
       items:
+      # Card
+      - title: Admin and governance
 
-    # Card
-    - title: Admin and governance
-
-      imageSrc: ./media/administrator-icon.svg
-      links:
-        - url: enterprise/buy-subscription.md
-          text: Buy a Microsoft Fabric subscription     
-        - url: admin/microsoft-fabric-admin.md
-          text: Fabric administration
-        - url: governance/governance-compliance-overview.md
-          text: Data governance and compliance
-        - url: security/security-overview.md
-          text: Security
-        - url: admin/index.yml
-          text: See more
-
-    # Card
-    - title: Developer experience
-
-      imageSrc: ./media/developer-icon.svg
-      links:
-        - url: /rest/api/fabric/
-          text: REST APIs
-        - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
-          text: Deployment pipelines
-        - url: cicd/git-integration/intro-to-git-integration.md
-          text: Git integration
-        - url: cicd/index.yml
-          text: See more
-
-    # Card
-    - title: Troubleshooting 
-
-      imageSrc: ./media/support-icon.svg
-      links:
-        - url: /power-bi/support/service-support-options
-          text: Create a support ticket
-        - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
-          text: Known issues
-        - url: /power-bi/troubleshoot/
-          text: Troubleshoot issues
-        - url: get-started/index.yml
-          text: See more
-
-
+        imageSrc: ./media/administrator-icon.svg
+        links:
+          - url: enterprise/buy-subscription.md
+            text: Buy a Microsoft Fabric subscription     
+          - url: admin/microsoft-fabric-admin.md
+            text: Fabric administration
+          - url: governance/governance-compliance-overview.md
+            text: Data governance and compliance
+          - url: security/security-overview.md
+            text: Security
+          - url: admin/index.yml
+            text: See more
+  
+      # Card
+      - title: Developer experience
+  
+        imageSrc: ./media/developer-icon.svg
+        links:
+          - url: /rest/api/fabric/
+            text: REST APIs
+          - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+            text: Deployment pipelines
+          - url: cicd/git-integration/intro-to-git-integration.md
+            text: Git integration
+          - url: cicd/index.yml
+            text: See more
+  
+      # Card
+      - title: Troubleshooting 
+  
+        imageSrc: ./media/support-icon.svg
+        links:
+          - url: /power-bi/support/service-support-options
+            text: Create a support ticket
+          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
+            text: Known issues
+          - url: /power-bi/troubleshoot/
+            text: Troubleshoot issues
+          - url: get-started/index.yml
+            text: See more
+  
+  
 # additionalContent section (optional)
 # Card with summary style
 #additionalContent:
-  # Supports up to 3 sections
-  sections:
+    # Supports up to 3 sections
+#    sections:
     - title: Related products # < 60 chars (optional)
       items:
-        # Card
-        - title: Power Platform
-          summary: Power Platform is a low-code platform that allows users to easily create and automate business solutions using Power Apps, Power Automate, and Power BI.
-          url: /power-platform/
-        - title: Azure Synapse Analytics
-          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
-          url: /azure/synapse-analytics/
-        - title: Azure Data Factory
-          summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
-          url: /azure/data-factory/
+      # Card
+      - title: Power Platform
+        summary: Power Platform is a low-code platform that allows users to easily create and automate business solutions using Power Apps, Power Automate, and Power BI.
+        url: /power-platform/
+      - title: Azure Synapse Analytics
+        summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
+        url: /azure/synapse-analytics/
+      - title: Azure Data Factory
+        summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
+        url: /azure/data-factory/
