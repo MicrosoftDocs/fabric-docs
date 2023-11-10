@@ -42,7 +42,7 @@ highlightedContent:
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
-      url: /get-started/copilot-fabric-overview          
+      url: get-started/copilot-fabric-overview.md          
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -172,7 +172,7 @@ productDirectory:
           text: What is Event streams?
         - url: real-time-analytics/create-database.md
           text: Create a database
-        - url: /real-time-analytics/query-table.md
+        - url: real-time-analytics/query-table.md
           text: Query with KQL
         - url: real-time-analytics/index.yml
           text: See more
@@ -210,7 +210,7 @@ productDirectory:
     # Card
     - title: Community
 
-      imageSrc: ./media/education-icon.svg
+      imageSrc: /office/media/icons/users-group.svg
       links:
         - url: /training/paths/get-started-fabric/
           text: Ask questions in our forums 
