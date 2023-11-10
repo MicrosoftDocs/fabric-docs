@@ -156,8 +156,8 @@ productDirectory:
           text: Create a Warehouse
         - url: data-warehouse/sql-query-editor.md
           text: Query using SQL query editor
-          text: Migrate data into warehouse
         - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
+          text: Migrate data into warehouse
         - url: data-warehouse/index.yml
           text: See more
 
@@ -280,9 +280,9 @@ additionalContent:
 
 # additionalContent section (optional)
 # Card with summary style
-#additionalContent:
+additionalContent:
   # Supports up to 3 sections
-#  sections:
+  sections:
     - title: Related products # < 60 chars (optional)
       items:
         # Card
