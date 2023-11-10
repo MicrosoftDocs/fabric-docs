@@ -280,7 +280,7 @@ additionalContent:
 
 # additionalContent section (optional)
 # Card with summary style
-additionalContent:
+#additionalContent:
   # Supports up to 3 sections
   sections:
     - title: Related products # < 60 chars (optional)
