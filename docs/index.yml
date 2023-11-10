@@ -180,7 +180,7 @@ productDirectory:
     # Card
     - title: Data Activator
 
-      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      imageSrc: ./media/data-activator-icon.png
       links:
         - url: data-activator/data-activator-introduction.md
           text: What is Data Activator?
@@ -202,7 +202,7 @@ productDirectory:
           text: End-to-end analytics using Fabric
         - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
           text: Skill up with the cloud skills challenge
-        - url: training/browse/?products=fabric&resource_type=module
+        - url: /training/browse/?products=fabric&resource_type=module
           text: Explore role-based learning paths
         - url: /training/paths/get-started-fabric/
           text: See more
@@ -229,13 +229,12 @@ productDirectory:
 additionalContent:
   # Supports up to 3 sections
   sections:
-    - title: Shared Experiences in Power BI and Fabric # < 60 chars (optional)
+    - title: Shared platform experiences # < 60 chars (optional)
       summary: Learn about Shared experiences in Power BI and Microsoft Fabric.
       items:
       # Card
       - title: Admin and governance
-
-#        imageSrc: ./media/administrator-icon.svg
+       imageSrc: ./media/administrator-icon.svg
         links:
           - url: enterprise/buy-subscription.md
             text: Buy a Microsoft Fabric subscription     
@@ -249,7 +248,7 @@ additionalContent:
             text: See more
   
       # Card
-      - title: Developer experience
+      - title: Developer
   
 #        imageSrc: ./media/developer-icon.svg
         links:
