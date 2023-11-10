@@ -234,7 +234,7 @@ additionalContent:
       items:
       # Card
       - title: Admin and governance
-       imageSrc: ./media/administrator-icon.svg
+#       imageSrc: ./media/administrator-icon.svg
         links:
           - url: enterprise/buy-subscription.md
             text: Buy a Microsoft Fabric subscription     
