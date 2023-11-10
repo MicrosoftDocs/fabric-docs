@@ -110,6 +110,7 @@ If data is coming from multiple data stores, you can port the data into the data
 
 The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
 
+- 1024 maximum columns per table
 - Computed columns
 - Indexed views
 - Partitioned tables
