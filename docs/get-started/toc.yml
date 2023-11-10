@@ -46,6 +46,32 @@ items:
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
     maintainContext: true
+- name: Copilot in Fabric
+  items:
+  - name: Copilot for Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
+  - name: Copilot for Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: copilot-notebooks-overview.md
+    - name: Overview of Chat-magics in Notebooks
+      href: copilot-notebooks-chat-magics.md
+    - name: Use the Copilot chat panel
+      href: copilot-notebooks-chat-pane.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
@@ -54,6 +80,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric - chart
