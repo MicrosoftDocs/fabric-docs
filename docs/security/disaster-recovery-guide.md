@@ -152,7 +152,30 @@ This guide walks you through the recovery procedures for the Data Engineering ex
 
 ### Lakehouse 
 
-Lakehouse items from the original region remain unavailable to customers. To recover the functionality of an item, customers can re-create it in a new Lakehouse item in workspace C2.W2. We recommend two main approaches for recovering Lakehouse:  
+Lakehouse items from the original region remain unavailable to customers. To recover the functionality of an item, customers can re-create it in a new Lakehouse item in workspace C2.W2. We recommend two main approaches for recovering Lakehouse:
+
+Approach 1: Using custom script to copy Lakehouse delta tables and files.
+
+Customers can recreate Lakehouses by using a custom Scala script.
+
+1. Create the Lakehouse item (e.g., LH1) in the newly created workspace C2.W2.
+
+1. Create a new Notebook in the workspace C2.W2.
+
+1. To recover the tables and files from the original Lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the Notebook to get the ABFS paths of files and tables from the original Lakehouse.
+
+    :::image type="content" source="./media/disaster-recovery-guide/get-abfs-paths-for-notebook.png" alt-text="Image of code needed to get ABFS path of files and tables from original Lakehouse.":::
+
+1. Use the following code example to copy tables and files to the newly created Lakehouse.
+
+    1. For delta tables, you need to copy table one at a time to recover in the new Lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
+    1. Reach out to the support team for the timestamp of failover required in the script.
+
+    :::image type="content" source="./media/disaster-recovery-guide/copy-tables-for-notebook.png" alt-text="Image of code needed to copy tables on at a time.":::
+
+1. Once you run the script, the table will appear in the new Lakehouse item.
+
+ 
 
  
 
