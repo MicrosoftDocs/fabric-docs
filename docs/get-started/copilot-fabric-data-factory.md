@@ -1,6 +1,6 @@
 ---
 title: Copilot for Data Factory overview
-description: "Learn how to create a workspace: a collection of items such as lakehouses, warehouses, and reports built to deliver key metrics for your organization."
+description: "Learn how Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions."
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: abnarain
@@ -12,7 +12,7 @@ ms.custom:
 
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
-Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent [Mashup](../powerquery-m/m-spec-introduction.md) code generation to transform data using natural language input and generates code explanations to help you better understand earlier generated complex queries and tasks.
+Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent [Mashup](/powerquery-m/m-spec-introduction.md) code generation to transform data using natural language input and generates code explanations to help you better understand earlier generated complex queries and tasks.
 
 ## Supported capabilities
 
@@ -33,11 +33,11 @@ With Dataflow Gen2, you can:
 
     :::image type="content" source="media/copilot-fabric-data-factory/get-data-from-starter-prompt.png" alt-text="Screenshot showing Get data from the starter prompt.":::
 
-1. In the **Get data** window, search for Odata and select the **Odata** connector.
+1. In the **Get data** window, search for OData and select the **OData** connector.
 
     :::image type="content" source="media/copilot-fabric-data-factory/search-odata-connector.png" alt-text="Screenshot showing Select the OData connector.":::
 
-1. In the Connect to data source for the Odata connector, input the following text into the URL field:
+1. In the Connect to data source for the OData connector, input the following text into the URL field:
 
     ```
     https://services.odata.org/V4/Northwind/Northwind.svc/
@@ -59,10 +59,12 @@ With Dataflow Gen2, you can:
 1. Select the column header for the Total Employees column and choose the option **Sort descending**. The **Undo** button should disappear because you modified the query.
 
  
-1. Select the Order_Details query, and in the Copilot pane type this text: ```Only keep orders whose quantities are above the median value``````, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card. 
-1. Either select the **Undo** button or type the text Undo (any text case) and press **Enter** in the Copilot pane to remove the step.
+1. Select the Order_Details query, and in the Copilot pane type this text: ```Only keep orders whose quantities are above the median value```, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card. 
+1. Either select the **Undo** button or type the text ```Undo``` (any text case) and press **Enter** in the Copilot pane to remove the step.
  
-1. To leverage the power of Azure Open AI when creating or transforming your data, ask for Copilot to create sample data by typing this text: ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```. 
+1. To leverage the power of Azure Open AI when creating or transforming your data, ask for Copilot to create sample data by typing this text:
+
+    ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```. 
 
     Copilot has added a new query to the Queries pane list containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
 
