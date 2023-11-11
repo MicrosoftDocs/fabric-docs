@@ -37,6 +37,9 @@ The following lakehouse information is serialized and tracked in a git connected
 > [!NOTE]
 > The tracked logical guid is an automatically generated cross-workspace identifier representing an item and its source control representation.
 
+> [!IMPORTANT]
+> Only the Lakehouse container artifact is tracked in git in the current experience. Tables, folders, shortcuts and other metadata changes aren't tracked and versioned in git.
+
 ### Lakehouse git integration capabilities
 
 The following capabilities are available:
@@ -55,9 +58,9 @@ Lakehouse deployment pipelines integration capabilities:
 * Deployment across dev, test, and production workspaces.
 
 * Lakehouse can be removed as a dependent object upon deployment. Mapping different Lakehouses within the deployment pipeline context is also supported.
-  * If nothing is specified during deployment pipeline configuration, a new Lakehouse object with same name, is created in the target workspace. Notebook and Spark Job Definitions are remapped to reference the new Lakehouse object in the new workspace.
+  * If nothing is specified during deployment pipeline configuration, a new empty Lakehouse object with same name is created in the target workspace. Notebook and Spark Job Definitions are remapped to reference the new Lakehouse object in the new workspace.
 
-  * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new Lakehouse object with same name, is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved as requested__.
+  * If the Lakehouse dependency is configured to reference a different Lakehouse during deployment pipeline configuration time, such as the upstream Lakehouse, a new empty Lakehouse object with same name still is created in the target workspace, __but Notebooks and Spark Job Definitions references are preserved to a different Lakehouse as requested__.
 
   * SQL Analytics endpoints and semantic models are provisioned as part of the Lakehouse deployment.
 
