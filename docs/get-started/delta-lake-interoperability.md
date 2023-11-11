@@ -22,7 +22,7 @@ To achieve interoperability, all the Fabric experiences align on the Delta Lake 
 
 * **Writers:** Data Warehouse, Event streams, and exported Power BI semantic models into OneLake.
 * **Readers:** SQL analytics endpoint, and PowerBI direct lake semantic models.
-* **Writers and readers:** Fabric spark runtime, dataflows, data pipelines, and Kusto.
+* **Writers and readers:** Fabric spark runtime, dataflows, data pipelines, and KQL DB.
 
 The following matrix shows key Delta Lake features and its supportability on each Fabric capability.
 
@@ -36,7 +36,7 @@ Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
 Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
 Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
 Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2<br/>Writer: 5|
-Kusto|No|No|No|No|Yes|Yes|Reader: 1<br/>Writer: 1|
+KQL DB|No|No|No|No|Yes|Yes|Reader: 1<br/>Writer: 1|
 EventStreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
 > [!NOTE]
