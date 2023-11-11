@@ -175,10 +175,6 @@ Customers can recreate Lakehouses by using a custom Scala script.
 
 1. Once you run the script, the table will appear in the new Lakehouse item.
 
- 
-
- 
-
 ## Next steps
 
 * [Resiliency in Azure](/azure/availability-zones/overview)
