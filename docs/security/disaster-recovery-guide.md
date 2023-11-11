@@ -50,12 +50,14 @@ Fabric provides a disaster recovery switch on the capacity settings page. It is 
 * **BCDR continuity for Power BI**: While disaster recovery for OneLake data can be toggled on and off, BCDR for Power BI is always supported, regardless of this toggle's state.
 * **Frequency**: To maintain stability and prevent constant toggling, once a customer changes the disaster recovery capacity setting, they need to wait 30 days before being able to alter it again.
 
-:::image type="content" source="./media/security/disaster-recovery-guide/disaster-recovery-capacity-setting.png" alt-text="Screenshot of the Disaster Recovery tenant setting.":::
+:::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-capacity-setting.png" alt-text="Screenshot of the Disaster Recovery tenant setting.":::
 
 > [!NOTE]
 > After turning on the setting, it can take up to 72 hours for the data to start replicating.
 
 #### Data replication
+
+When Fabric customers turn on the disaster recovery capacity setting, cross-region replication is enabled as a disaster recovery capability for OneLake data. Geo-redundancy storage is provisioned as the default storage by the Fabric platform at the capacity level. The Fabric platform aligns with Azure regions to provision the geo-redundancy pairs. However, note that some regions do not have an Azure pair region, or the pair region does not support Fabric. For these regions, geo-redundant storage (GRS) is not be available. Please see Regions with availability zones and no region pair and Fabric region availability for more information.
 
 #### Billing
 
