@@ -104,17 +104,43 @@ Although the Fabric platform and Power BI will be in read-only mode and other Fa
 
 OneLake data remains accessible through multiple channels:
 
-* OneLake ADLS Gen2 API (How do I connect to OneLake?) 
+* OneLake ADLS Gen2 API: See [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
 
-Examples of tools that can connect to OneLake data: 
+    Examples of tools that can connect to OneLake data:
 
-Azure Storage Explorer (Integrate OneLake with Azure Storage Explorer)  
+    * Azure Storage Explorer: See [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md)
 
-OneLake File Explorer (Use OneLake file explorer to access Fabric data) 
+    * OneLake File Explorer: See [Use OneLake file explorer to access Fabric data](../onelake/onelake-file-explorer.md)
 
 ### Phase 3: Recovery plan
 
+While Fabric ensures that data remains accessible after a disaster, customers can also act to fully restore their services to the state before the incident. This section provides a step-by-step guide to help customers through the recovery process, ensuring a swift return to regular operations.
+
 #### Common steps
+
+1. Create Fabric capacity in a paired region after the disaster: Create a new Fabric capacity in your primary region's paired region after a disaster. Buy a Microsoft Fabric subscription.
+
+1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
+
+1. Create item with the same names as the ones you want to recover. This is important if your code or business processes rely on a particular naming convention.
+
+1. Restore the items: For each item, follow the relevant guidance section below to restore the item.
+
+##### Sample Scenario
+
+Let's say you have a capacity C1 in region A that has a workspace W1. If you've turned on disaster recovery for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, C1 shifts to its backup in region B. Here's a recovery guide:
+
+1. Create a new Fabric capacity C2 in a new region.
+
+1. Create a new W2 workspace in C2, including its corresponding items with same names as in C1.W1.  
+
+1. Copy data from the disrupted C1.W1 to C2.W2.
+
+1. Follow the dedicated instructions for each component to restore items to their full function.
+
+The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
+
+:::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-scenario.png" alt-text="Diagram showing a scenario for disaster, failover, and full recovery.":::
 
 #### Dedicated Fabric experience plans
 
