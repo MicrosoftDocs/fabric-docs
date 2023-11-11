@@ -118,13 +118,13 @@ While Fabric ensures that data remains accessible after a disaster, customers ca
 
 #### Common steps
 
-1. Create Fabric capacity in a paired region after the disaster: Create a new Fabric capacity in your primary region's paired region after a disaster. Buy a Microsoft Fabric subscription.
+1. Create a new Fabric capacity in your primary region's paired region after a disaster. Buy a Microsoft Fabric subscription.
 
 1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
 
-1. Create item with the same names as the ones you want to recover. This is important if your code or business processes rely on a particular naming convention.
+1. Create items with the same names as the ones you want to recover. This is important if your code or business processes rely on a particular naming convention.
 
-1. Restore the items: For each item, follow the relevant guidance section below to restore the item.
+1. Restore the items. For each item, follow the relevant guidance section below to restore the item.
 
 ##### Sample Scenario
 
