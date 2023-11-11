@@ -56,17 +56,17 @@ With Dataflow Gen2, you can:
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-filter-rows.png" alt-text="Screenshot showing Filter rows." lightbox="media/copilot-fabric-data-factory/copilot-filter-rows.png":::
 
 1. Select the Employees query, and in the Copilot pane type this text: ```Count the total number of employees by City```, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card and an **Undo** button.
-1. Select the column header for the Total Employees column and choose the option **Sort descending**. The **Undo** button should disappear because you modified the query.
+1. Select the column header for the Total Employees column and choose the option **Sort descending**. The **Undo** button disappears because you modified the query.
 
  
 1. Select the Order_Details query, and in the Copilot pane type this text: ```Only keep orders whose quantities are above the median value```, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card. 
 1. Either select the **Undo** button or type the text ```Undo``` (any text case) and press **Enter** in the Copilot pane to remove the step.
  
-1. To leverage the power of Azure Open AI when creating or transforming your data, ask for Copilot to create sample data by typing this text:
+1. To leverage the power of Azure Open AI when creating or transforming your data, ask Copilot to create sample data by typing this text:
 
-    ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```. 
+    ```Create a new query with sample data that lists all the Microsoft OS versions and the year they were released```
 
-    Copilot has added a new query to the Queries pane list containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
+    Copilot adds a new query to the Queries pane list, containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
 
 ## Next steps
 
