@@ -142,7 +142,19 @@ The following image illustrates this scenario. The box on the left shows the dis
 
 :::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-scenario.png" alt-text="Diagram showing a scenario for disaster, failover, and full recovery.":::
 
-#### Dedicated Fabric experience plans
+## Dedicated Fabric experience plans
+
+This section provides dedicated step-by-step guides for each Fabric experience to help customers through the recovery process.
+ 
+## Data Engineering
+
+This guide walks you through the recovery procedures for the Data Engineering experience. It covers Lakehouse, Notebook, and Spark Job Definition.
+
+### Lakehouse 
+
+Lakehouse items from the original region remain unavailable to customers. To recover the functionality of an item, customers can re-create it in a new Lakehouse item in workspace C2.W2. We recommend two main approaches for recovering Lakehouse:  
+
+ 
 
 ## Next steps
 
