@@ -166,6 +166,10 @@ Customers can recreate Lakehouses by using a custom Scala script.
 
     :::image type="content" source="./media/disaster-recovery-guide/get-abfs-paths-for-notebook.png" alt-text="Image of code needed to get ABFS path of files and tables from original Lakehouse.":::
 
+```
+mssparkutils.fs.ls('abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
+```
+
 1. Use the following code example to copy tables and files to the newly created Lakehouse.
 
     1. For delta tables, you need to copy table one at a time to recover in the new Lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
