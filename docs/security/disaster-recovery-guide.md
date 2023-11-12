@@ -285,13 +285,13 @@ For details about Azure Storage Explorer, see [Integrate OneLake with Azure Stor
 
 ### Data Science 
 
-ML Model and Experiment 
+#### ML Model and Experiment
 
-Data Science items from the primary region remain unavailable to customers and the content and metadata in the ML Model/Experiment will not be replicated to the secondary. If customers want to fully recover them in the new region, they will need to save the code content in a version control system (e.g., GIT) or in an external repository and manually rerun the code content after disaster:  
+Data Science items from the primary region remain unavailable to customers, and the content and metadata in ML models/experiments will not be replicated to the secondary region. To fully recover them in the new region, save the code content in a version control system (e.g., Git) or in an external repository, and manually rerun the code content after the disaster.
 
-Recover ML model or Experiment in Notebook. Please refer to the Notebook recovery steps. 
+1. Recover the ML model or experiment in a notebook. Refer to the [Notebook recovery steps](#notebook).
 
-Configuration, historically run metrics and metadata will not be replicated to the paired region. You will have to re-run each version of your data science code to fully recover ML model and Experiment after disaster.  
+1. Configuration, historically run metrics, and metadata will not be replicated to the paired region. You'll have to re-run each version of your data science code to fully recover ML models and experiments after the disaster.  
 
 ## Next steps
 

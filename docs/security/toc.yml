@@ -19,5 +19,7 @@ items:
   items:
   - name: Resiliency in Fabric
     href: az-resiliency.md
-  - name: Fabric disaster recovery guide
-    href: disaster-recovery-guide.md
+  - name: Disaster recovery
+    items:  
+    - name: Disaster recovery in Fabric
+      href: disaster-recovery-guide.md
