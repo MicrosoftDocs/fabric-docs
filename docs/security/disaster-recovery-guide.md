@@ -191,7 +191,7 @@ Customers can recreate Lakehouses by using a custom Scala script.
     }
      
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
-```
+    ```
 
 1. Once you run the script, the table will appear in the new Lakehouse item.
 
@@ -201,6 +201,48 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts and/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover non-Delta table metadata.
+
+### Notebook 
+
+Notebook items from the primary region remain unavailable to customers and the code in the Notebook will not be replicated to the secondary. If customers want to recover the code in the new region, there are two main approaches to recover Notebook code content: 
+
+ 
+
+Approach 1: User-managed redundancy with Git integration (in public preview) 
+
+The best way to make this easy and quick is to integrate your existing live Fabric workspace with your ADO Git repo, then synchronize your Notebook with your ADO repo. This way, you can failover to another workspace in another region and then use the repo to rebuild notebook in the new workspace region by using "Git integration" feature.  
+
+Setup git integration and click “Connect and sync” with ADO repo.  
+
+The synced Notebook is shown below. 
+
+Recover the Notebook by ADO repo with simple clicks. 
+
+In the newly created workspace. Connect to your azure ADO repo again. 
+
+Click the Source control button. Then click the relevant branch of the repo. Then click update all. The original notebook will appear.  
+
+If the original notebook has default Lakehouse, users can refer to the above “Lakehouse” section to recover the Lakehouse and then connect the new recovered Lakehouse to the newly recovered notebook. 
+
+A screenshot of a computer
+
+Description automatically generated 
+
+The git integration does not support syncing files and folders in Resources explorer as well as notebook snapshots.  
+
+If the original notebook has files in Resources explorer.  
+
+Ensure to save files or folders at local disk or at some other place. 
+
+Re-upload the file from your local disk or cloud drives to the recovered Notebook. 
+
+If the original Notebook has notebook snapshots. Please also save the notebook snapshots at your local or your own version control system as well. 
+
+ 
+
+ 
+
+For more information about Git integration, please see Overview of Fabric Git integration 
 
 ## Next steps
 
