@@ -154,7 +154,7 @@ This guide walks you through the recovery procedures for the Data Engineering ex
 
 Lakehouse items from the original region remain unavailable to customers. To recover the functionality of an item, customers can re-create it in a new Lakehouse item in workspace C2.W2. We recommend two main approaches for recovering Lakehouse:
 
-Approach 1: Using custom script to copy Lakehouse delta tables and files.
+#### Approach 1: Using custom script to copy Lakehouse delta tables and files
 
 Customers can recreate Lakehouses by using a custom Scala script.
 
@@ -164,36 +164,43 @@ Customers can recreate Lakehouses by using a custom Scala script.
 
 1. To recover the tables and files from the original Lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the Notebook to get the ABFS paths of files and tables from the original Lakehouse.
 
-```
-mssparkutils.fs.ls('abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
-```
+    ```
+    mssparkutils.fs.ls('abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
+    ```
 
 1. Use the following code example to copy tables and files to the newly created Lakehouse.
 
     1. For delta tables, you need to copy table one at a time to recover in the new Lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
     1. Reach out to the support team for the timestamp of failover required in the script.
 
-```
-%%spark
-val source="abfs path to original Lakehouse file or table directory"
-val destination="abfs path to new Lakehouse file or table directory"
-val timestamp= //timestamp provided by Support
-
-mssparkutils.fs.cp(source, destination, true)
-
-val filesToDelete = mssparkutils.fs.ls(s"$source/_delta_log")
-    .filter{sf => sf.isFile && sf.modifyTime > timestamp}
- 
-for(fileToDelte <- filesToDelete) {
-    val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
-    println(s"Deleting file $destFileToDelete")
-    mssparkutils.fs.rm(destFileToDelete, false)
-}
- 
-mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
+    ```
+    %%spark
+    val source="abfs path to original Lakehouse file or table directory"
+    val destination="abfs path to new Lakehouse file or table directory"
+    val timestamp= //timestamp provided by Support
+    
+    mssparkutils.fs.cp(source, destination, true)
+    
+    val filesToDelete = mssparkutils.fs.ls(s"$source/_delta_log")
+        .filter{sf => sf.isFile && sf.modifyTime > timestamp}
+     
+    for(fileToDelte <- filesToDelete) {
+        val destFileToDelete = s"$destination/_delta_log/${fileToDelte.name}"
+        println(s"Deleting file $destFileToDelete")
+        mssparkutils.fs.rm(destFileToDelete, false)
+    }
+     
+    mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
 ```
 
 1. Once you run the script, the table will appear in the new Lakehouse item.
+
+#### Approach 2: Use Azure Storage Explorer to copy files and tables
+
+To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer to copy the specific files and tables from the Lakehouse item you want to recover.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer) for detailed steps. For large data sizes, use [Approach 1].(#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
+
+> [!NOTE]
+> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts and/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover non-Delta table metadata.
 
 ## Next steps
 
