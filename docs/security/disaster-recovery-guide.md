@@ -197,52 +197,101 @@ Customers can recreate Lakehouses by using a custom Scala script.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
-To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer to copy the specific files and tables from the Lakehouse item you want to recover.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer) for detailed steps. For large data sizes, use [Approach 1].(#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
+To recover only specific Lakehouse files or tables from the original lakehouse, use Azure Storage Explorer to copy the specific files and tables from the Lakehouse item you want to recover.  Refer to [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md) for detailed steps. For large data sizes, use [Approach 1].(#approach-1-using-custom-script-to-copy-lakehouse-delta-tables-and-files).
 
 > [!NOTE]
-> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts and/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover non-Delta table metadata.
+> The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover non-Delta table metadata.
 
 ### Notebook 
 
-Notebook items from the primary region remain unavailable to customers and the code in the Notebook will not be replicated to the secondary. If customers want to recover the code in the new region, there are two main approaches to recover Notebook code content: 
+Notebook items from the primary region remain unavailable to customers and the code in the notebook will not be replicated to the secondary region. To recover the Notebook code in the new region, there are two main approaches to recovering Notebook code content.
 
- 
+#### Approach 1: User-managed redundancy with Git integration (in public preview)
 
-Approach 1: User-managed redundancy with Git integration (in public preview) 
+The best way to make this easy and quick is to integrate your existing live Fabric workspace with your ADO Git repo, then synchronize your notebook with your ADO repo. This way, you can failover to another workspace in another region and then use the repo to rebuild the notebook in the new workspace region by using the "Git integration" feature.  
 
-The best way to make this easy and quick is to integrate your existing live Fabric workspace with your ADO Git repo, then synchronize your Notebook with your ADO repo. This way, you can failover to another workspace in another region and then use the repo to rebuild notebook in the new workspace region by using "Git integration" feature.  
+1. Setup Git integration and click **Connect and sync** with ADO repo.
 
-Setup git integration and click “Connect and sync” with ADO repo.  
+    :::code language="{language}" source="{source}" range="{range}":::
 
-The synced Notebook is shown below. 
+    The following image shows the synced notebook.
 
-Recover the Notebook by ADO repo with simple clicks. 
+    :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-In the newly created workspace. Connect to your azure ADO repo again. 
+1. Recover the notebook by ADO repo with simple clicks.
 
-Click the Source control button. Then click the relevant branch of the repo. Then click update all. The original notebook will appear.  
+    1. In the newly created workspace, connect to your Azure ADO repo again.
 
-If the original notebook has default Lakehouse, users can refer to the above “Lakehouse” section to recover the Lakehouse and then connect the new recovered Lakehouse to the newly recovered notebook. 
+        :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-A screenshot of a computer
+    1. Click the Source control button. Then click the relevant branch of the repo. Then click update all. The original notebook will appear.
+    
+        :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-Description automatically generated 
+    1. If the original notebook has a default lakehouse, users can refer to the [Lakehouse section](#lakehouse) to recover the lakehouse and then connect the newly recovered lakehouse to the newly recovered notebook.
+    
+       :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-The git integration does not support syncing files and folders in Resources explorer as well as notebook snapshots.  
+    1. The Git integration does not support syncing files, folders, or Notebook snapshots in Resources explorer.
 
-If the original notebook has files in Resources explorer.  
+        1. If the original notebook has files in Resources explorer.
+    
+            1. Be sure to save files or folders to a local disk or to some other place.
+            1. Re-upload the file from your local disk or cloud drives to the recovered notebook.
+        
+        1. If the original notebook has Notebook snapshots. also save the notebook snapshots to your own version control system or local disk.
+        
+            :::image type="content" source="{source}" alt-text="{alt-text}":::
+            
+            :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-Ensure to save files or folders at local disk or at some other place. 
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration).
 
-Re-upload the file from your local disk or cloud drives to the recovered Notebook. 
+#### Approach 2: Manual approach to backup code content
 
-If the original Notebook has notebook snapshots. Please also save the notebook snapshots at your local or your own version control system as well. 
+If you don't take the Git integration approach, you can save the latest version of your code, files in Resources explorer and notebook snapshots in a version control system (e.g., Git) or in an external repository, and manually recover the Notebook content after a disaster:
 
- 
+1. Use the "Import Notebook" feature to import the notebook code you want to recover.
 
- 
+    :::image type="content" source="{source}" alt-text="{alt-text}":::
 
-For more information about Git integration, please see Overview of Fabric Git integration 
+1. After import, go to your desired workspace (e.g., “C2.W2”) to access it.
+
+1. If the original notebook has a default lakehouse, refer to the [Lakehouse section](#lakehouse). Then connect the newly recovered lakehouse (that has the same content as the original default lakehouse) to the newly recovered notebook.
+
+1. If the original notebook has files or folders in Resources explorer, re-upload the files or folders saved in the user's version control system.
+
+### Spark Job Definition
+
+Spark Job Definition (SJD) items from the primary region remain unavailable to customers, and the main definition file and Reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, there are two main approaches you call follow. Note that historical runs of SJD will not be recovered.
+
+#### Manual approach to backup code content
+
+You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
+
+1. Create a new SJD item (e.g., SJD1) in the new workspace C2.W2, with the same settings and configurations as the original SJD item (e.g. language, environment, etc.).
+
+1. Use Azure Storage Explorer to copy Libs, Mains and Snapshots from the original SJD item to the new SJD item.
+
+    :::image type="content" source="{source}" alt-text="{alt-text}":::
+
+1. The code content will appear in the newly created SJD. You'll need to manually add  the newly recovered Lakehouse reference to the job (Refer to the [Lakehouse recovery steps](#lakehouse)). Users will need to re-enter the original command line arguments manually.
+
+    :::image type="content" source="{source}" alt-text="{alt-text}":::
+
+Now you can run or schedule your newly recovered SJD.
+
+For details about Azure Storage Explorer, see [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
+
+### Data Science 
+
+ML Model and Experiment 
+
+Data Science items from the primary region remain unavailable to customers and the content and metadata in the ML Model/Experiment will not be replicated to the secondary. If customers want to fully recover them in the new region, they will need to save the code content in a version control system (e.g., GIT) or in an external repository and manually rerun the code content after disaster:  
+
+Recover ML model or Experiment in Notebook. Please refer to the Notebook recovery steps. 
+
+Configuration, historically run metrics and metadata will not be replicated to the paired region. You will have to re-run each version of your data science code to fully recover ML model and Experiment after disaster.  
 
 ## Next steps
 
