@@ -207,11 +207,11 @@ If you don't take the Git integration approach, you can save the latest version 
 
 1. If the original notebook has files or folders in Resources explorer, re-upload the files or folders saved in the user's version control system.
 
-### Spark Job Definition
+## Spark Job Definition
 
 Spark Job Definition (SJD) items from the primary region remain unavailable to customers, and the main definition file and Reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, there are two main approaches you call follow. Note that historical runs of SJD will not be recovered.
 
-#### Manual approach to backup code content
+### Manual approach to backup code content
 
 You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
 
@@ -229,9 +229,9 @@ Now you can run or schedule your newly recovered SJD.
 
 For details about Azure Storage Explorer, see [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md).
 
-### Data Science 
+## Data Science 
 
-#### ML Model and Experiment
+### ML Model and Experiment
 
 Data Science items from the primary region remain unavailable to customers, and the content and metadata in ML models/experiments will not be replicated to the secondary region. To fully recover them in the new region, save the code content in a version control system (e.g., Git) or in an external repository, and manually rerun the code content after the disaster.
 
@@ -239,9 +239,9 @@ Data Science items from the primary region remain unavailable to customers, and 
 
 1. Configuration, historically run metrics, and metadata will not be replicated to the paired region. You'll have to re-run each version of your data science code to fully recover ML models and experiments after the disaster.
 
-### Data Warehouse
+## Data Warehouse
 
-#### Warehouse
+### Warehouse
 
 Warehouse items from the original region remain unavailable to customers. To recover warehouses, use the following two steps.
 
@@ -252,7 +252,7 @@ Warehouse items from the original region remain unavailable to customers. To rec
 > [!NOTE]
 > It's recommended that you keep your Warehouse code (schema, table, view, stored procedure, function definitions, and security codes) versioned and saved in a safe location such as Git or an external repository according to your development practices.
 
-##### Data ingestion via Lakehouse and T-SQL code
+#### Data ingestion via Lakehouse and T-SQL code
 
 In newly created Workspace C2.W2:
 
@@ -283,11 +283,11 @@ In newly created Workspace C2.W2:
 > [!NOTE]
 > For customers who need cross-regional disaster recovery and fully automated business continuity, we recommend keeping two Fabric Warehouse setups in separate Fabric regions and maintaining code and data parity by doing regular deployments and data ingestion to both sites.
 
-### Data Factory
+## Data Factory
 
 Data Factory items from the primary region remain unavailable to customers and the settings and configuration in data pipelines or dataflow gen2s will not be replicated to the secondary region. To achieve disaster recovery in the event of a whole region failure, you'll need to recreate your Data Integration items in another workspace from a different region. The following sections outline the details.
 
-#### Dataflows Gen2
+### Dataflows Gen2
 
 If you want to recover a Dataflow Gen2 item in the new region, you need to export a PQT file to a version control system such as Git, or save it in an external repository, and then manually recover the Dataflow Gen2 content after the disaster.
 
@@ -309,13 +309,13 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 1. The template is then imported into your new Dataflow Gen2 item.
 
-#### Data Pipelines
+### Data Pipelines
 
 Customers can't access data pipelines in the event of regional disaster, and the configurations are not replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions. 
 
-### Real-time analytics
+## Real-Time Analytics
 
-#### KQL Database  
+### KQL Database  
 
 KQL Database users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, your KQL Database data remains safe and accessible.
 
@@ -335,7 +335,7 @@ Use the following steps to guarantee an effective disaster recovery solution for
 
 1. **Parallel Data Ingestion**: As you import or ingest data into one KQL database, make sure that the same dataset is ingested into the other KQL database concurrently. This guarantees data uniformity and timely availability across both clusters.
 
-#### Eventstream
+### Eventstream
 
 An eventstream is a centralized place in the Fabric platform for capturing, transforming, and routing real-time events to various destinations (e.g., lakehouses, KQL databases) with a no-code experience. So long as the destinations are supported by disaster recovery, eventstreams will not lose data. Therefore, customers could use disaster recovery supported destinations to guarantee data availability.
 
