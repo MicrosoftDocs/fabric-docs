@@ -10,76 +10,17 @@ ms.date: 11/12/2023
 
 # Experience-specific disaster recovery guidance
 
-This document describes a disaster recovery plan for Fabric that is designed to help organizations keep their data safe and accessible if an unplanned regional disaster occurs. It covers strategy, features, and recovery steps. 
+This document provides experience-specific guidance for recovering your Fabric data in the event of a regional disaster. 
 
-## How can I prepare for disaster?
+## Sample scenario
 
-While Fabric provides disaster recovery features to support data resilience, customers **must** follow certain manual steps to maximize data protection during disruptions. This section details the actions and methods customers should take to prepare for potential disruptions.
+A number of the guidance sections in this document use the following sample scenario for purposes of explanation and illustration. Refer back to this scenario as necessary.
 
-### Phase 1: Prepare
-
-* **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
-
-Create data backups: Copy critical data stored outside of OneLake to another region at a frequency based on your disaster recovery plan.
-
-### Phase 2: Disaster failover
-
-When a major disaster renders the primary region unrecoverable, Microsoft Fabric initiates a regional failover. Access to the Fabric portal will be unavailable until the failover is complete. A notification will be posted on the [Microsoft Fabric support page](https://support.fabric.microsoft.com/support/).
-
-The time it takes for failover to complete after being initiated can vary, although it typically takes less than one hour. Once failover is complete, the Fabric platform and Power BI will be in read-only mode. Other Fabric items will remain unavailable to customers. Here's what you can expect:
-
-* **Fabric portal**: You can access the portal, and read operations such as browsing existing workspaces and items will continue to work. All write operations, such as creating or modifying a workspace, will be paused.
-
-* **Power BI**: You can perform read operations, such as displaying dashboards and reports. Refreshes, report publish operations, dashboard and report modifications, and other operations that require changes to metadata aren't supported.
-
-* **Lakehouse/Warehouse**: You can't open these items, but files can be accessed via OneLake APIs or tools.
-
-* **Spark Job Definition**: You can't open Spark Job Definition items, but code files can be accessed via OneLake APIs or tools. Any metadata or configuration will be saved after failover.  
-
-* **Notebook**: You can't open Notebooks, and code content **won't** be saved after the disaster.
-
-* **ML Model/Experiment**: You can't open the ML model or Experiment. Code content and metadata such as run metrics and configurations won't be saved after the disaster.
-
-* **Dataflow Gen2/Pipeline/Eventstream**: You can't open these items, but you can use supported disaster recovery destinations (Lakehouse or Warehouse) to protect data.
-
-* **Kusto**: You won’t be able to access Kusto after failover. Additional prerequisite steps are required to protect Kusto data.
-
-Although the Fabric platform and Power BI will be in read-only mode and other Fabric items will be unavailable, customers can access their data stored in OneLake using APIs or third-party tools, and they retain the ability to perform read-write operations on that data. This ensures that critical data remains accessible and modifiable, and mitigates potential disruption of your business operations.
-
-OneLake data remains accessible through multiple channels:
-
-* OneLake ADLS Gen2 API: See [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
-
-    Examples of tools that can connect to OneLake data:
-
-    * Azure Storage Explorer: See [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md)
-
-    * OneLake File Explorer: See [Use OneLake file explorer to access Fabric data](../onelake/onelake-file-explorer.md)
-
-### Phase 3: Recovery plan
-
-While Fabric ensures that data remains accessible after a disaster, customers can also act to fully restore their services to the state before the incident. This section provides a step-by-step guide to help customers through the recovery process, ensuring a swift return to regular operations.
-
-#### Common steps
-
-1. Create a new Fabric capacity in your primary region's paired region after a disaster. Buy a Microsoft Fabric subscription.
-
-1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
-
-1. Create items with the same names as the ones you want to recover. This is important if your code or business processes rely on a particular naming convention.
-
-1. Restore the items. For each item, follow the relevant guidance section below to restore the item.
-
-##### Sample Scenario
-
-Let's say you have a capacity C1 in region A that has a workspace W1. If you've turned on disaster recovery for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, C1 shifts to its backup in region B. Here's a recovery guide:
+Let's say you have a capacity C1 in region A that has a workspace W1. If you've [turned on disaster recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting) for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, C1 shifts to its backup in region B. Here's the general recovery plan:
 
 1. Create a new Fabric capacity C2 in a new region.
-
 1. Create a new W2 workspace in C2, including its corresponding items with same names as in C1.W1.  
-
 1. Copy data from the disrupted C1.W1 to C2.W2.
-
 1. Follow the dedicated instructions for each component to restore items to their full function.
 
 The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
@@ -88,13 +29,13 @@ The following image illustrates this scenario. The box on the left shows the dis
 
 ## Dedicated Fabric experience plans
 
-This section provides dedicated step-by-step guides for each Fabric experience to help customers through the recovery process.
+The following sections provide dedicated step-by-step guides for each Fabric experience to help customers through the recovery process.
  
 ## Data Engineering
 
 This guide walks you through the recovery procedures for the Data Engineering experience. It covers Lakehouse, Notebook, and Spark Job Definition.
 
-### Lakehouse 
+### Lakehouse
 
 Lakehouse items from the original region remain unavailable to customers. To recover the functionality of an item, customers can re-create it in a new Lakehouse item in workspace C2.W2. We recommend two main approaches for recovering Lakehouse:
 
@@ -103,20 +44,14 @@ Lakehouse items from the original region remain unavailable to customers. To rec
 Customers can recreate Lakehouses by using a custom Scala script.
 
 1. Create the Lakehouse item (for example, LH1) in the newly created workspace C2.W2.
-
 1. Create a new Notebook in the workspace C2.W2.
-
 1. To recover the tables and files from the original Lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the Notebook to get the ABFS paths of files and tables from the original Lakehouse.
-
     ```
     mssparkutils.fs.ls('abfs[s]://<workspace>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
     ```
-
 1. Use the following code example to copy tables and files to the newly created Lakehouse.
-
     1. For delta tables, you need to copy table one at a time to recover in the new Lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
     1. Reach out to the support team for the timestamp of failover required in the script.
-
     ```
     %%spark
     val source="abfs path to original Lakehouse file or table directory"
@@ -136,7 +71,6 @@ Customers can recreate Lakehouses by using a custom Scala script.
      
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
-
 1. Once you run the script, the table will appear in the new Lakehouse item.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
@@ -146,7 +80,7 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 > [!NOTE]
 > The two approaches described above recover both the metadata and data for Delta-formatted tables, because the metadata is co-located and stored with the data in OneLake. For non-Delta formatted tables (e.g. CSV, Parquet, etc.) that are created using Spark Data Definition Language (DDL) scripts/commands, the user is responsible for maintaining and re-running the Spark DDL scripts/commands to recover non-Delta table metadata.
 
-### Notebook 
+### Notebook
 
 Notebook items from the primary region remain unavailable to customers and the code in the notebook won't be replicated to the secondary region. To recover the Notebook code in the new region, there are two main approaches to recovering Notebook code content.
 
@@ -349,7 +283,6 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Add identical destinations for each Eventstream item in different regions.
 
-## Next steps
+## Related information
 
-* [Resiliency in Azure](/azure/availability-zones/overview)
 * [Microsoft Fabric disaster recovery guide](./disaster-recovery-guide.md)
