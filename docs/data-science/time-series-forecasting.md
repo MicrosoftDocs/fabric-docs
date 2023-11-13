@@ -24,8 +24,8 @@ In this notebook, we'll build a program to forecast time series data that has se
 
 You can follow along in a notebook one of two ways: 
 
-- open and run the built-in notebook in the Data Science experience,
-- or upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
 
 #### Open built-in notebook
 

@@ -34,8 +34,8 @@ The summary of main steps you take in this notebook are:
 
 You can follow along in a notebook one of two ways: 
 
-- open and run the built-in notebook in the Data Science experience,
-- or upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
 
 #### Open built-in notebook
 

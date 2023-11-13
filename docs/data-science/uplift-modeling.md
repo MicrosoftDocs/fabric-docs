@@ -13,7 +13,7 @@ ms.date: 09/15/2023
 
 # Creating, training, and evaluating uplift models in Microsoft Fabric
 
-In this article, learn how to create, train and evaluate uplift models and apply uplift modeling technique.
+In this article, learn how to create, train, and evaluate uplift models and apply uplift modeling technique.
 
 
 
@@ -48,8 +48,8 @@ In this article, learn how to create, train and evaluate uplift models and apply
 
 You can follow along in a notebook one of two ways: 
 
-- open and run the built-in notebook in the Data Science experience,
-- or upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
 
 #### Open built-in notebook
 
