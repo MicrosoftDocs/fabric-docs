@@ -104,8 +104,10 @@ The best way to make this easy and quick is to integrate your existing live Fabr
         1. If the original notebook has files in Resources explorer:
             1. Be sure to save files or folders to a local disk or to some other place.
             1. Re-upload the file from your local disk or cloud drives to the recovered notebook.
-        1. If the original notebook has Notebook snapshots. also save the notebook snapshots to your own version control system or local disk.
+        1. If the original notebook has Notebook snapshots, also save the notebook snapshots to your own version control system or local disk.
+        
             :::image type="content" source="./media/experience-specific-guidance/notebook-save-snapshots1.png" alt-text="Screenshot showing how to run notebook to save snapshots.":::
+
             :::image type="content" source="./media/experience-specific-guidance/notebook-save-snapshots2.png" alt-text="Screenshot showing how to save notebook snapshots.":::
 
 For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
@@ -192,12 +194,18 @@ Data Factory items from the primary region remain unavailable to customers and t
 If you want to recover a Dataflow Gen2 item in the new region, you need to export a PQT file to a version control system such as Git, or save it in an external repository, and then manually recover the Dataflow Gen2 content after the disaster.
 
 1. From your Dataflow Gen2 item, in the Home tab of the Power Query editor, select **Export template**.
+
     :::image type="content" source="./media/experience-specific-guidance/dataflow-gen2-export-template.png" alt-text="Screenshot showing the Power Query editor, with the Export template option emphasized.":::
+
 1. In the Export template dialog, enter a name (mandatory) and description (optional) for this template. When done, select **OK**.
+
     :::image type="content" source="./media/experience-specific-guidance/dataflow-gen2-export-template2.png" alt-text="Screenshot showing how to export a template.":::
+
 1. After the disaster, create a new Dataflow Gen2 item in the new workspace "C2.W2".
 1. From the current view pane of the Power Query editor, select **Import from a Power Query template**.
+
     :::image type="content" source="./media/experience-specific-guidance/dataflow-gen2-import-from-power-query-template.png" alt-text="Screenshot showing the current view with Import from a Power Query template emphasized.":::
+
 1. In the Open dialog, browse to your default downloads folder and select the *.pqt* file you saved in the previous steps. Then select **Open**.
 1. The template is then imported into your new Dataflow Gen2 item.
 
