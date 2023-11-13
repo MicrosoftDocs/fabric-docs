@@ -18,7 +18,7 @@ While Fabric provides disaster recovery features to support data resilience, cus
 
 ### Phase 1: Prepare
 
-* **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
+* **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](./disaster-recovery-guide.md#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
 
 Create data backups: Copy critical data stored outside of OneLake to another region at a frequency based on your disaster recovery plan.
 
@@ -191,7 +191,7 @@ The best way to make this easy and quick is to integrate your existing live Fabr
             
             :::image type="content" source="./media/experience-specific-guidance/notebook-save-snapshots2.png" alt-text="Screenshot showing how to save notebook snapshots.":::
 
-For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration).
+For more information about Git integration, see [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md).
 
 #### Approach 2: Manual approach to backup code content
 
