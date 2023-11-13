@@ -291,7 +291,86 @@ Data Science items from the primary region remain unavailable to customers, and 
 
 1. Recover the ML model or experiment in a notebook. Refer to the [Notebook recovery steps](#notebook).
 
-1. Configuration, historically run metrics, and metadata will not be replicated to the paired region. You'll have to re-run each version of your data science code to fully recover ML models and experiments after the disaster.  
+1. Configuration, historically run metrics, and metadata will not be replicated to the paired region. You'll have to re-run each version of your data science code to fully recover ML models and experiments after the disaster.
+
+### Data Warehouse
+
+#### Warehouse
+
+Warehouse items from the original region remain unavailable to customers. To recover warehouses, use the following two steps.
+
+1. Create a new interim lakehouse in workspace C2.W2 to copy data to from the original warehouse.
+
+1. Populate the warehouse's delta tables by leveraging Warehouse Object Explorer and 3rd party naming conventions in the T-SQL area.
+
+> [!NOTE]
+> It's recommended that you keep your Warehouse code (schema, table, view, stored procedure, function definitions, and security codes) versioned and saved in a safe location such as Git or an external repository according to your development practices.
+
+##### Data ingestion via Lakehouse and T-SQL code
+
+In newly created Workspace C2.W2:
+
+1. Create an interim lakehouse "LH2" in C2.W2.
+
+1. Recover the delta tables in the interim lakehouse from the original warehouse by following the [Lakehouse recovery steps](#lakehouse).
+
+1. Create a new Warehouse item "WH2" in C2.W2.
+
+1. Connect the interim Lakehouse item in your Warehouse explorer.
+
+    :::image type="content" source="./media/disaster-recovery-guide/connect-temp-lakehouse-to-warehouse.png" alt-text="Screenshot of Warehouse Explorer during warehouse recovery.":::
+
+1. Depending on how you are going to deploy table definitions prior to data import, the actual T-SQL used for imports can vary. You can use INSERT INTO, SELECT INTO or CREATE TABLE AS SELECT approach to recover Warehouse tables from Lakehouse. Further in the example, we would be using INSERT INTO flavor.
+
+    ```
+    USE WH1
+
+INSERT INTO [dbo].[aggregate_sale_by_date_city]([Date],[City],[StateProvince],[SalesTerritory],[SumOfTotalExcludingTax],[SumOfTaxAmount],[SumOfTotalIncludingTax], [SumOfProfit])
+
+SELECT [Date],[City],[StateProvince],[SalesTerritory],[SumOfTotalExcludingTax],[SumOfTaxAmount],[SumOfTotalIncludingTax], [SumOfProfit]
+FROM  [LH11].[dbo].[aggregate_sale_by_date_city] 
+GO 
+    ```
+1. Lastly, change the connection string in applications using your Fabric Warehouse.
+
+> [!NOTE]
+> For customers who need cross-regional disaster recovery and fully automated business continuity, we recommend keeping two Fabric Warehouse setups in separate Fabric regions and maintaining code and data parity by doing regular deployments and data ingestion to both sites.
+
+Data Factory 
+
+Data Factory items from the primary region remain unavailable to customers and the settings and configuration in the Pipeline or Dataflow Gen2 will not be replicated to the secondary. To achieve disaster recovery in the event of an entire region failure, you will need to recreate your Data Integration items in another workspace from a different region. Here are the details: 
+
+ 
+
+Dataflows Gen 2 
+
+If customers want to recover the Dataflow Gen2 in the new region, you will need to export a PQT file in a version control system, like GIT, or saved in an external repository and manually recover the Dataflow Gen2 content after disaster: 
+
+From your Dataflow Gen2 item, in the Home tab of the Power Query editor, select Export template. Screenshot showing the Power Query editor, with the Export template option emphasized. 
+
+In Export template, enter the name you want to call this template in Name. Optionally, you can add a description for this template in Description. Select OK 
+
+Screenshot showing the Export template dialog box, with Contoso Sample 48 entered in Name. 
+
+(After disaster) Create a new Dataflow Gen2 in the new workspace “C2.W2.” 
+
+From the current view pane of the Power Query editor, select Import from a Power Query template. Screenshot showing the current view with Import from a Power Query template emphasized. 
+
+In the Open dialog box, browse to your default Downloads folder and select the .pqt file you saved in the previous steps. The select Open. 
+
+The template is then imported to your new Dataflow Gen2. 
+
+ 
+
+Data Pipelines 
+
+Customers cannot access Pipeline in the event of regional disaster and the configurations are not replicated to the paired region. We recommend that you build your critical pipelines in multiple workspaces across different regions. 
+
+ 
+
+Note: Git Integration is coming soon for Data Pipelines in Fabric Data Factory, as well as import and export features. These features will allow you to easily recreate your pipelines in another workspace in another region in case of a region failure.  
+
+ 
 
 ## Next steps
 
