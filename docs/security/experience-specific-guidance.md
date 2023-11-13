@@ -76,7 +76,7 @@ While Fabric provides disaster recovery features to support data resilience, cus
 
 * **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
 
-* **Create data backups**: Copy critical data stored outside of OneLake to another region at a frequency based on your disaster recovery plan.
+Create data backups: Copy critical data stored outside of OneLake to another region at a frequency based on your disaster recovery plan.
 
 ### Phase 2: Disaster failover
 
