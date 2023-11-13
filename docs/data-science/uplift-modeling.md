@@ -44,7 +44,20 @@ In this article, learn how to create, train and evaluate uplift models and apply
 - A familiarity with [How to use Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
 - A Lakehouse. The Lakehouse is used to store data for this example. For more information, see [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-### Follow along in notebook
+## Follow along in notebook
+
+You can follow along in a notebook one of two ways: 
+
+- open and run the built-in notebook in the Data Science experience,
+- or upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Uplift modelling** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
 
 [AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) is the notebook that accompanies this tutorial.
 

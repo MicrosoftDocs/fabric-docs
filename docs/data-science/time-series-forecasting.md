@@ -15,20 +15,33 @@ ms.date: 09/15/2023
 
 In this notebook, we'll build a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
-
-
 ## Prerequisites
 
 - A familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
 - A Lakehouse. The Lakehouse is used to store data for this example. For more information, visit [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-### Follow along in notebook
+## Follow along in notebook
+
+You can follow along in a notebook one of two ways: 
+
+- open and run the built-in notebook in the Data Science experience,
+- or upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Time series** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
 
 [AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb -->
+
+## About the dataset
 
 The dataset is a record of every building sold in New York City property market during a 13-year period. Refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) for definition of columns in the spreadsheet. The dataset looks like the following table:
 

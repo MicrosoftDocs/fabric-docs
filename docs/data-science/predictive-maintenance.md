@@ -32,6 +32,19 @@ The summary of main steps you take in this notebook are:
 
 ## Follow along in notebook
 
+You can follow along in a notebook one of two ways: 
+
+- open and run the built-in notebook in the Data Science experience,
+- or upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Machine failure** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
 [AISample - Predictive Maintenance](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Predictive%20Maintenance.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
