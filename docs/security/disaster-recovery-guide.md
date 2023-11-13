@@ -75,7 +75,6 @@ While Fabric provides disaster recovery features to support data resilience, cus
 ### Phase 1: Prepare
 
 * **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
-
 * **Create data backups**: Copy critical data stored outside of OneLake to another region at a frequency based on your disaster recovery plan.
 
 ### Phase 2: Disaster failover
@@ -98,9 +97,7 @@ Although the Fabric platform and Power BI will be in read-only mode and other Fa
 OneLake data remains accessible through multiple channels:
 
 * OneLake ADLS Gen2 API: See [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
-
     Examples of tools that can connect to OneLake data:
-
     * Azure Storage Explorer: See [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md)
     * OneLake File Explorer: See [Use OneLake file explorer to access Fabric data](../onelake/onelake-file-explorer.md)
 
