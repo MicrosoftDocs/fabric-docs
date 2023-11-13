@@ -26,13 +26,13 @@ A library is a collection of pre-written code that can be imported to provide ex
 
 ### Scenario 1: admin sets default libraries for the workspace
 
-In order to set default libraries, you have to be the admin of the workspace. You can [create a new Environment](create-and-use-environment.md#create-an-environment), [install the required libraries](environment-manage-library.md), and then [attach this environment as workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default) in workspace setting.
+In order to set default libraries, you have to be the admin of the workspace. You can [create a new environment](create-and-use-environment.md#create-an-environment), [install the required libraries](environment-manage-library.md), and then [attach this environment as workspace default](create-and-use-environment.md#attach-an-environment-as-workspace-default) in workspace setting.
 
 The notebooks and Spark job definitions in the workspace, which are attached to the *Workspace Settings*, start sessions with libraries installed in the workspace's default environment.
 
 ### Scenario 2: persist library specifications for one or multiple code items
 
-You can [install the libraries in an Environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-notebook-or-spark-job-definitions) if you want to persist the library specifications.
+You can [install the libraries in an environment](environment-manage-library.md) and [attach it to the code items](create-and-use-environment.md#attach-an-environment-to-a-notebook-or-a-spark-job-definition) if you want to persist the library specifications.
 
 One benefit of doing so is that it saves duplicated effort if running the code requires common libraries all the time. Once successfully installed in the environment, they are effective in all Spark sessions if the environment is attached.
 
@@ -161,4 +161,4 @@ To install an R feed library:
 
 ## Next steps
 
-- [Learn more about Fabric Environment](create-and-use-environment.md).
+- [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).
