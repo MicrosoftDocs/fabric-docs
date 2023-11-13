@@ -85,20 +85,13 @@ When a major disaster renders the primary region unrecoverable, Microsoft Fabric
 The time it takes for failover to complete after being initiated can vary, although it typically takes less than one hour. Once failover is complete, the Fabric platform and Power BI will be in read-only mode. Other Fabric items will remain unavailable to customers. Here's what you can expect:
 
 * **Fabric portal**: You can access the portal, and read operations such as browsing existing workspaces and items will continue to work. All write operations, such as creating or modifying a workspace, will be paused.
-
 * **Power BI**: You can perform read operations, such as displaying dashboards and reports. Refreshes, report publish operations, dashboard and report modifications, and other operations that require changes to metadata are not supported.
-
 * **Lakehouse/Warehouse**: You can't open these items, but files can be accessed via OneLake APIs or tools.
-
 * **Spark Job Definition**: You can't open Spark Job Definition items, but code files can be accessed via OneLake APIs or tools. Any metadata or configuration will be saved after failover.  
-
-* **Notebook**: You can't open Notebooks, and code content **won't** be saved after the disaster.
-
+* **Notebook**: You can't open notebooks, and code content **won't** be saved after the disaster.
 * **ML Model/Experiment**: You can't open the ML model or Experiment. Code content and metadata such as run metrics and configurations will not be saved after the disaster.
-
 * **Dataflow Gen2/Pipeline/Eventstream**: You can't open these items, but you can use supported disaster recovery destinations (Lakehouse or Warehouse) to protect data.
-
-* **Kusto**: You won’t be able to access Kusto after failover. Additional prerequisite steps are required to protect Kusto data.
+* **KQL Database/Queryset**: You won't be able to access KQL databases and querysets after failover. Additional prerequisite steps are required to protect KQL Database/Queryset data.
 
 Although the Fabric platform and Power BI will be in read-only mode and other Fabric items will be unavailable, customers can access their data stored in OneLake using APIs or third-party tools, and they retain the ability to perform read-write operations on that data. This ensures that critical data remains accessible and modifiable, and mitigates potential disruption of your business operations.
 
@@ -109,7 +102,6 @@ OneLake data remains accessible through multiple channels:
     Examples of tools that can connect to OneLake data:
 
     * Azure Storage Explorer: See [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md)
-
     * OneLake File Explorer: See [Use OneLake file explorer to access Fabric data](../onelake/onelake-file-explorer.md)
 
 ### Phase 3: Recovery plan
@@ -119,30 +111,14 @@ While Fabric ensures that data remains accessible after a disaster, customers ca
 #### Common steps
 
 1. Create a new Fabric capacity in your primary region's paired region after a disaster. Buy a Microsoft Fabric subscription.
-
 1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
-
 1. Create items with the same names as the ones you want to recover. This is important if your code or business processes rely on a particular naming convention.
-
-1. Restore the items. For each item, follow the relevant guidance section below to restore the item.
-
-##### Sample Scenario
-
-Let's say you have a capacity C1 in region A that has a workspace W1. If you've turned on disaster recovery for capacity C1, OneLake data will be replicated to a backup in region B. If region A faces disruptions, C1 shifts to its backup in region B. Here's a recovery guide:
-
-1. Create a new Fabric capacity C2 in a new region.
-
-1. Create a new W2 workspace in C2, including its corresponding items with same names as in C1.W1.  
-
-1. Copy data from the disrupted C1.W1 to C2.W2.
-
-1. Follow the dedicated instructions for each component to restore items to their full function.
-
-The following image illustrates this scenario. The box on the left shows the disrupted region. The box in the middle represents the continued availability of the data after failover, and the box on the right shows the fully covered situation after the customer acts to restore their services to full function.
-
-:::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-scenario.png" alt-text="Diagram showing a scenario for disaster, failover, and full recovery.":::
+1. Restore the items. For each item, follow the relevant section in the [Experience-specific disaster recovery guidance](./experience-specific-guidance.md) to restore the item.
 
 ## Next steps
 
-* [Resiliency in Azure](/azure/availability-zones/overview)
 * [Experience-specific disaster recovery guidance](./experience-specific-guidance.md)
+
+## Related information
+
+* [Resiliency in Azure](/azure/availability-zones/overview)
