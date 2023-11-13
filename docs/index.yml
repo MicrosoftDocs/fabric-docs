@@ -194,17 +194,31 @@ productDirectory:
           text: See more
 
     # Card
+    - title: Copilot in Fabric
+
+      imageSrc: ./media/copilot-icon.svg
+      links:
+        - url: get-started/copilot-fabric-overview.md
+          text: Introduction to copilot in Fabric
+        - url: get-started/copilot-fabric-enable.md
+          text: Enable copilot
+        - url: get-started/copilot-notebooks-overview.md
+          text: Copilot for notebooks
+        - url: get-started/copilot-faq-fabric.md
+          text: See more
+
+    # Card
     - title: Training
 
       imageSrc: ./media/education-icon.svg
       links:
-        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
-          text: End-to-end analytics using Fabric
         - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
           text: Skill up with the cloud skills challenge
+        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+          text: End-to-end analytics using Fabric
         - url: /training/browse/?products=fabric&resource_type=module
           text: Explore role-based learning paths
-        - url: /training/paths/get-started-fabric/
+        - url: /training/browse/?products=fabric&resource_type=module
           text: See more
 
     # Card
@@ -212,15 +226,15 @@ productDirectory:
 
       imageSrc: /office/media/icons/users-group.svg
       links:
-        - url: /training/paths/get-started-fabric/
+        - url: https://community.fabric.microsoft.com/
           text: Ask questions in our forums 
-        - url: /training/paths/get-started-fabric/
+        - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
           text: Join a user group
-        - url: /training/paths/get-started-fabric/
+        - url: https://ideas.fabric.microsoft.com/
           text: Vote and contribute product ideas 
-        - url: /training/paths/get-started-fabric/
-          text: Blog - What’s new in Fabric
-        - url: /training/paths/get-started-fabric/
+        - url: https://blog.fabric.microsoft.com/blog/
+          text: Fabric updates blog
+        - url: https://community.fabric.microsoft.com/
           text: See more
 
 
