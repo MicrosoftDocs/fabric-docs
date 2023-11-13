@@ -204,7 +204,7 @@ productDirectory:
           text: Enable copilot
         - url: get-started/copilot-notebooks-overview.md
           text: Copilot for notebooks
-        - url: get-started/copilot-faq-fabric.md
+        - url: get-started/copilot-privacy-security.md
           text: See more
 
     # Card
