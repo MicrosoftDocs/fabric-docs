@@ -184,8 +184,6 @@ productDirectory:
       links:
         - url: data-activator/data-activator-introduction.md
           text: What is Data Activator?
-        - url: data-activator/data-activator-get-data-power-bi.md
-          text: Get data from Power BI
         - url: data-activator/data-activator-get-data-eventstreams.md
           text: Get data from Eventstreams
         - url: data-activator/data-activator-tutorial.md
@@ -216,7 +214,7 @@ productDirectory:
           text: Skill up with the cloud skills challenge
         - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
           text: End-to-end analytics using Fabric
-        - url: /training/browse/?products=fabric&resource_type=module
+        - url: /training/browse/?products=fabric&resource_type=learning%20path
           text: Explore role-based learning paths
         - url: /training/browse/?products=fabric&resource_type=module
           text: See more
@@ -234,8 +232,6 @@ productDirectory:
           text: Vote and contribute product ideas 
         - url: https://blog.fabric.microsoft.com/blog/
           text: Fabric updates blog
-        - url: https://community.fabric.microsoft.com/
-          text: See more
 
 
 # additionalContent section (optional)
