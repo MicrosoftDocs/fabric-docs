@@ -3,9 +3,11 @@ title: Known issue - Failure occurs when accessing a renamed Lakehouse or Wareho
 description: A known issue is posted where a failure occurs when accessing a renamed Lakehouse or Warehouse
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting 
+ms.topic: troubleshooting
 ms.date: 10/13/2023
-ms.custom: known-issue-463
+ms.custom:
+  - known-issue-463
+  - ignite-2023
 ---
 
 # Known issue - Failure occurs when accessing a renamed Lakehouse or Warehouse

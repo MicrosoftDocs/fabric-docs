@@ -6,6 +6,8 @@ ms.author: mariyaali
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: query history monitoring # This article's title should not change. If so, contact engineering.
 ---
 

@@ -4,7 +4,9 @@ description: Learn about how to enable Copilot in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
-ms.custom: 
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 11/07/2023
 ---

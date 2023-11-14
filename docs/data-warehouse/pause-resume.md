@@ -6,6 +6,8 @@ ms.author: sosivara
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ---
 
 # Pause and resume in Fabric data warehousing

@@ -1,10 +1,12 @@
 ---
 title: Find content from Microsoft Fabric Home
-description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content. 
+description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
 author: mihart
 ms.author: mihart
-ms.topic: conceptual  
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/25/2023
 ---
 
