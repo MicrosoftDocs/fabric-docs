@@ -33,8 +33,8 @@ You can move Spark pool libraries to an environment as follows:
     * Find the Apache Spark pool, select **Packages** and locate the Spark libraries for the pool.
 1.	**Get Spark libraries**: Locate the requirements.txt, environment.yml, or workspace packages installed in the pool. Get the list of installed libraries on the pool.
 1.	Once you have Spark libraries, add custom Spark libraries to an environment in [Fabric](https://app.fabric.microsoft.com). Within your **Environment**, go to **Libraries** and add libraries:
-    * From **Public libraries,** you can upload a .yml file. You can also install libraries using PyPI and Conda.
-    * From **Custom libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
+    * From **Public Libraries,** you can upload a .yml file. You can also install libraries using PyPI and Conda.
+    * From **Custom Libraries,** you can install libraries by using .jar/.whl/.tar.gz files.
 1.	Click on **Save** and **Publish** changes.
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-libraries.png" alt-text="Screenshot showing Spark libraries.":::
