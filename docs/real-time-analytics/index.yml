@@ -4,16 +4,17 @@ title: Real-Time Analytics documentation in Microsoft Fabric
 summary: Real-Time Analytics is a fully managed big data analytics platform optimized for streaming, time-series data. It contains a dedicated query language and engine with exceptional performance for searching structured, semi-structured, and unstructured data with high performance. Real-Time Analytics is fully integrated with the entire suite of Fabric products, for both data loading and advanced visualization scenarios.
 
 metadata:
-  title: Real-Time Analytics in Microsoft Fabric documentation 
-  description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis. 
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  title: Real-Time Analytics in Microsoft Fabric documentation
+  description: Learn about Real-Time Analytics, a portfolio of capabilities that provides an end-to-end analytics streaming solution for high velocity, low latency data analysis.
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: real-time-analytics
-  ms.topic: landing-page 
-  ms.collection: collection 
+  ms.custom:
+    - ignite-2023
+  ms.topic: landing-page
+  ms.collection: collection
   author: YaelSchuster
-  ms.author: yaschust 
-  ms.date: 01/27/2020 
-
+  ms.author: yaschust
+  ms.date: 01/27/2020
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -118,4 +119,3 @@ landingContent:
             url: /training/modules/gain-insights-data-kusto-query-language/
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
-

@@ -1,11 +1,13 @@
 ---
 title: Sample Gallery
-description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset. 
+description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/13/2023
 ms.search.form: KQL Queryset
 ---

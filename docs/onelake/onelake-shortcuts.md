@@ -6,7 +6,10 @@ ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 09/27/2023
 ---
 

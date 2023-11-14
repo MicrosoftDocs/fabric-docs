@@ -4,7 +4,9 @@ description: Include file for the Amazon S3 shortcut prerequisite in Real-Time A
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/25/2023
 ---
 

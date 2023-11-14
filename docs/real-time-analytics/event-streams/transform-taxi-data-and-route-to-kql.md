@@ -1,14 +1,15 @@
 ---
 title: Explore and transform sample taxi data in Eventstream for KQL Database integration
-description: This article provides instruction on how to explore and transform sample taxi data in Fabric Eventstream and then route them to KQL database. 
+description: This article provides instruction on how to explore and transform sample taxi data in Fabric Eventstream and then route them to KQL database.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
-ms.custom: 
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
-
 ---
 
 # Tutorial: Explore and transform sample taxi data in Eventstream for KQL Database integration
