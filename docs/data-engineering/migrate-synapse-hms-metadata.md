@@ -15,6 +15,9 @@ The initial step in the Hive Metastore (HMS) migration involves determining the 
 
 For HMS considerations, refer to [differences between Azure Synapse Spark and Fabric](comparison-between-fabric-and-azure-synapse-spark.md).
 
+> [!NOTE]
+> Alternatively, if your ADLS Gen2 contains Delta tables, you can [create a OneLake shortcut to a Delta table in ADLS Gen2](../onelake/onelake-shortcuts-adb-quickstart.md).
+
 ## Prerequisites
 
 * If you don’t have one already, create a [Fabric workspace](../get-started/create-workspaces.md) in your tenant.
