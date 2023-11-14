@@ -4,8 +4,10 @@ description: Learn about activities.
 ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
-ms.topic: overview 
-ms.custom: build-2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Pipeline Activity Overview
 ---

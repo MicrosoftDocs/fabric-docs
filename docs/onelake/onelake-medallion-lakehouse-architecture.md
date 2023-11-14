@@ -6,7 +6,10 @@ ms.author: v-myerspeter
 ms.reviewer: wiassaf
 ms.topic: conceptual
 ms.date: 11/15/2023
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
+  - ignite-2023
+  - ignite-2023-fabric
 ---
 
 # Implement medallion lakehouse architecture in Microsoft Fabric

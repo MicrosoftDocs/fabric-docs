@@ -4,7 +4,10 @@ description: This article provides an overview of the governance and compliance 
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 05/23/2023
 ---
 

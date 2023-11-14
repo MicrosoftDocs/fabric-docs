@@ -5,7 +5,10 @@ author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to, build-2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Configure SQL server in a copy activity
@@ -240,4 +243,3 @@ See the following table for the summary and more information for the SQL server 
 ## Next steps
 
 - [SQL server overview](connector-azure-sql-database-overview.md)
-

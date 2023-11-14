@@ -1,9 +1,11 @@
 ---
 title: Data Factory Dataflow Gen2 limitations
-description: Identifies limitations that are specific to Data Factory in Microsoft Fabric Dataflow Gen2 features. 
+description: Identifies limitations that are specific to Data Factory in Microsoft Fabric Dataflow Gen2 features.
 author: ssabat
 ms.author: susabat
-ms.topic: troubleshooting    
+ms.topic: troubleshooting
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 

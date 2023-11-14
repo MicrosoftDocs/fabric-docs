@@ -4,7 +4,10 @@ description: Understand Microsoft Fabric concepts such as tenants, capacities an
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/02/2023
 ---
 

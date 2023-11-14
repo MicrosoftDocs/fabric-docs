@@ -3,9 +3,10 @@ title: Known issue - Gateway Refreshes longer than an hour fail
 description: A known issue is posted where a refresh taking longer than an hour fails with  "InvalidConnectionCredentials" or "AccessUnauthorized" error reasons.
 author: nikkiwaghani
 ms.author: nikkiwaghani
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 11/15/2023
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ---
 
 # Known issue - Gateway refreshes longer than an hour fail

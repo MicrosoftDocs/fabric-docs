@@ -1,10 +1,14 @@
 ---
 title: Resiliency in Microsoft Fabric #Required;
-description: Find out about resiliency in Microsoft Fabric #Required; 
+description: Find out about resiliency in Microsoft Fabric #Required;
 author: paulinbar #Required; your GitHub user alias, with correct capitalization.
 ms.author: painbar #Required; Microsoft alias of author; optional team alias.
 ms.topic: reliability-article
-ms.custom: subject-reliability, references_regions, build-2023
+ms.custom:
+  - subject-reliability
+  - references_regions
+  - build-2023
+  - ignite-2023
 ms.date: 11/07/2023 #Required; mm/dd/yyyy format.
 ---
 

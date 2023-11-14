@@ -6,8 +6,9 @@ reviewer: msakande
 ms.author: alsavelv
 author: alsavelv
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/27/2023
-#customer intent:
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_relationships_tutorial.ipynb -->

@@ -4,7 +4,9 @@ description: Learn how to compare the content of the source stage and target sta
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/09/2023
 ms.search.form: Deployment pipelines operations
 ---

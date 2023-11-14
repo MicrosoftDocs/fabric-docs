@@ -1,10 +1,13 @@
 ---
-title: Assign a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline 
+title: Assign a workspace to a Microsoft Fabric Application lifecycle management (ALM) deployment pipeline
 description: Learn how to assign and unassign a workspace to a deployment pipeline, the Microsoft Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - build-2023
+  - ignite-2023
 ms.date: 10/25/2023
 ms.search.form: Deployment pipelines operations
 ---

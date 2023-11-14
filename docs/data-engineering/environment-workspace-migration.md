@@ -1,9 +1,12 @@
 ---
-title: Migrate workspace libraries and Spark properties to a default environment 
+title: Migrate workspace libraries and Spark properties to a default environment
 description: Learn how to migrate your existing libraries and Spark properties to a Fabric environment.
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

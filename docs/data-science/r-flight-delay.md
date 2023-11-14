@@ -4,8 +4,10 @@ description: How to predict flight delay using tidymodels packages and build a P
 ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
-ms.topic: tutorial 
-ms.custom: build-2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 # customer intent: As a data scientist, I want to use R to predict flight delay

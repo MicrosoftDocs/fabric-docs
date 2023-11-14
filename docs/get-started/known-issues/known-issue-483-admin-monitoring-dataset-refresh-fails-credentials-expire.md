@@ -3,9 +3,11 @@ title: Known issue - Admin monitoring semantic model refresh fails and credentia
 description: A known issue is posted where the admin monitoring semantic model refresh fails and credentials expire
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting 
+ms.topic: troubleshooting
 ms.date: 08/24/2023
-ms.custom: known-issue-483
+ms.custom:
+  - known-issue-483
+  - ignite-2023
 ---
 
 # Known issue - Admin monitoring semantic model refresh fails and credentials expire

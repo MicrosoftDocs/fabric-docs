@@ -6,14 +6,15 @@ summary: Data engineering in Microsoft Fabric enables users to design, build, an
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
   description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: data-engineering 
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-engineering
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
   ms.date: 05/23/2023
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -161,5 +162,3 @@ landingContent:
             url: environment-manage-library.md
           - text: Migrate the existing workspace libraries and Spark properties to an environment
             url: environment-workspace-migration.md
-
-

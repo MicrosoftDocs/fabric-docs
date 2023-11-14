@@ -6,10 +6,12 @@ metadata:
   ms.author: maggies
   ms.reviewer: ''
   ms.service: fabric
-  ms.subservice: 
+  ms.subservice:
+  ms.custom:
+    - ignite-2023
+    - ignite-2023-fabric
   ms.topic: faq
   ms.date: 11/07/2023
-
 title: "Copilot for Microsoft Fabric: FAQ"
 summary: |
   This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.

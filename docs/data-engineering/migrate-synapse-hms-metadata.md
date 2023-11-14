@@ -5,7 +5,10 @@ ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
 ms.topic: how-to
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 
@@ -143,4 +146,3 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 
 - [Fabric vs. Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)
-

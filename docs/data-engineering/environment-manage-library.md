@@ -4,6 +4,9 @@ description: Learn how to include public and custom libraries in Fabric environm
 ms.author: shuaijunye
 author: shuaijunye
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.for: Manage libraries in Environment
 ---

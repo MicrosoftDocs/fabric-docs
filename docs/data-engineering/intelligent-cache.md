@@ -5,6 +5,9 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

@@ -5,7 +5,10 @@ author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to, build-2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Azure Data Lake Storage Gen2 connection

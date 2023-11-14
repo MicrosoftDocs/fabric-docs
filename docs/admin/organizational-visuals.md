@@ -6,6 +6,8 @@ ms.author: monaberdugo
 ms.reviewer:
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: conceptual
 ms.date: 11/02/2023
 ---

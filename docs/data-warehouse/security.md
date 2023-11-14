@@ -6,7 +6,9 @@ ms.author: cynotebo
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 # Security for data warehousing in Microsoft Fabric

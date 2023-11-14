@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ---
 # Concurrency limits and queueing in Microsoft Fabric Spark

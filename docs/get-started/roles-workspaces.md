@@ -6,7 +6,9 @@ ms.author: maggies
 ms.reviewer: yicw, mesrivas
 ms.topic: conceptual
 ms.date: 05/24/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Roles in workspaces in Microsoft Fabric
@@ -61,5 +63,3 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 - [Data warehouse security](../data-warehouse/workspace-roles.md)
 - [Data engineering security](../data-engineering/workspace-roles-lakehouse.md)
 - [Data science roles and permissions](../data-science/models-experiments-rbac.md)
-
-

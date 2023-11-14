@@ -4,7 +4,9 @@ description: Customer Lockbox for Microsoft Fabric is a service that allows cust
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/08/2023
 ---
 

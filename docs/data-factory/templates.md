@@ -4,8 +4,10 @@ description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.topic: conceptual 
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Pipeline Template
 ---

@@ -4,7 +4,10 @@ description: Learn how to view and understand info about workspaces and manage w
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: admin-portal, build-2023
+ms.custom:
+  - admin-portal
+  - build-2023
+  - ignite-2023
 ms.topic: how-to
 ms.date: 11/06/2023
 LocalizationGroup: Administration

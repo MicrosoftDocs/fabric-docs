@@ -6,6 +6,8 @@ reviewer: msakande
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/06/2023
 #customer intent: As a data scientist, I want to build a fraud detection model so that I can use it to detect future fraudulent transactions.
 ---

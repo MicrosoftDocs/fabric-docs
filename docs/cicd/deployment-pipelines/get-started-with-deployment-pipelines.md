@@ -4,7 +4,11 @@ description: Learn how to use deployment pipelines, the Fabric Application lifec
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: contperf-fy21q1, intro-get-started, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - intro-get-started
+  - build-2023
+  - ignite-2023
 ms.date: 10/08/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---

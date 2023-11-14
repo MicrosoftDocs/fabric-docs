@@ -6,7 +6,10 @@ ms.author: joanpo
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023, references_regions
+ms.custom:
+  - build-2023
+  - references_regions
+  - ignite-2023
 ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # Limitations in Microsoft Fabric

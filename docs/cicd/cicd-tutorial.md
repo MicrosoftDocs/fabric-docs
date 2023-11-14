@@ -4,7 +4,9 @@ description: Understand the workflow of using Git integration with deployment pi
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: tutorial 
+ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 07/12/2023
 ---
 

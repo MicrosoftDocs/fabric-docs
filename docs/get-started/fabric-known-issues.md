@@ -1,11 +1,13 @@
 ---
 title: Fabric (Preview) trial known issues
-description: Identify issues that are affecting your Fabric trial. 
+description: Identify issues that are affecting your Fabric trial.
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting    
+ms.topic: troubleshooting
 ms.date: 10/23/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 # Fabric (Preview) trial known issues
 

@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Notebook visualization
 ms.date: 11/15/2023
 ---

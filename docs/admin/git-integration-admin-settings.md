@@ -4,7 +4,9 @@ description: Learn about what the feature switches affecting git integration do 
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/02/2023
 ---
 
