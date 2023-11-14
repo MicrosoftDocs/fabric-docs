@@ -26,6 +26,7 @@ Select the **Title** to view more information about that specific known issue.
 | Refreshes through a gateway | [Gateway refreshes longer than an hour fail](known-issue-gateway-refreshes.md) | August 3, 2023 |
 | Refresh history reports in progress for some tables that failed | [Refresh history reports in progress for some tables that failed](known-issue-inprogress-refresh-history.md) | August 24, 2023 |
 | Dataflow Gen1 admin switch affects Dataflow Gen2 | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issue-gen1-admin-switch.md) | November 6, 2023 |
+| Failed to publish Dataflow Gen2 | [Failed to publish Dataflow Gen2](known-issue-gen1-admin-switch.md) | November 11, 2023 |
 
 ## Recently closed known issues
 
