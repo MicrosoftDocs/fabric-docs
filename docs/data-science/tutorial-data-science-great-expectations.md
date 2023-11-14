@@ -1,0 +1,369 @@
+---
+title: Data science tutorials - prepare your system
+description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
+ms.reviewer: sgilley
+ms.author: amjafari
+author: amhjf
+ms.topic: tutorial
+ms.custom: build-2023
+ms.date: 5/4/2023
+---
+
+# Tutorial: Use Great Expectations to validate Power BI semantic models
+
+This tutorial illustrates how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI datasets.
+
+### In this tutorial, you learn how to:
+- Leverage Great Expectation's Fabric Data Source (built on semantic link) to validate constraints on datasets in your Fabric workspace. 
+    - Configure a GX Data Context, Data Assets, and Expectations.
+    - Run a GX Checkpoint to view validation results. 
+- Use semantic link to analyze raw data.
+
+## Prerequisites
+
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+* Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
+* Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file and upload it to your workspace.
+
+## Follow along in notebook
+
+[great_expectations_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along](./includes/follow-along.md)]
+
+<!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-sempy/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb -->
+
+## Set up the notebook
+
+In this section, you set up a notebook environment with the necessary modules and data.
+
+1. Install `SemPy` and the relevant `Great Expectations` libraries from PyPI using the `%pip` in-line installation capability within the notebook.
+
+
+```python
+# install libraries
+%pip install semantic-link great-expectations great_expectations_experimental great_expectations_zipcode_expectations
+
+# load %%dax cell magic
+%load_ext sempy
+```
+
+2. Perform necessary imports of modules that you'll need later: 
+
+
+```python
+import great_expectations as gx
+from great_expectations.expectations.expectation import ExpectationConfiguration
+from great_expectations_zipcode_expectations.expectations import expect_column_values_to_be_valid_zip5
+```
+
+## Set up GX Data Context and Data Source
+
+In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/terms/data_context/). This serves as an entry point for GX operations and holds all relevant configurations.
+
+
+```python
+context = gx.get_context()
+```
+
+You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample PBIX](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-retail-analysis).
+
+
+```python
+ds = context.sources.add_fabric_powerbi("Retail Analysis Data Source", dataset="Retail Analysis Sample PBIX")
+```
+
+## Specify Data Assets
+
+Define [Data Assets](https://docs.greatexpectations.io/docs/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom DAX query.
+
+Here, you'll add multiple assets:
+* Power BI table
+* Power BI measure
+* Custom DAX query
+* [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
+
+
+##### Power BI Table
+
+Add a Power BI table as a data asset.
+
+
+```python
+ds.add_powerbi_table_asset("Store Asset", table="Store")
+```
+
+##### Power BI Measure
+If your dataset contains preconfigured measures, you can add these as assets following a similar API to SemPy's `evaluate_measure`. 
+
+
+```python
+ds.add_powerbi_measure_asset(
+    "Total Units Asset",
+    measure="TotalUnits",
+    groupby_columns=["Time[FiscalYear]", "Time[FiscalMonth]"]
+)
+```
+
+##### DAX
+If you'd like to define your own measures or have more control over specific rows, you can add a DAX asset with a custom DAX query. Here, we define a `Total Units Ratio` measure by dividing two existing measures.
+
+
+```python
+ds.add_powerbi_dax_asset(
+    "Total Units YoY Asset",
+    dax_string=
+    """
+    EVALUATE SUMMARIZECOLUMNS(
+        'Time'[FiscalYear],
+        'Time'[FiscalMonth],
+        "Total Units Ratio", DIVIDE([Total Units This Year], [Total Units Last Year])
+    )    
+    """
+)
+```
+
+##### DMV Query
+In some cases, it may be helpful to leverage [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. See "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" for more information.
+
+
+```python
+ds.add_powerbi_dax_asset(
+    "Referential Integrity Violation",
+    dax_string=
+    """
+    SELECT
+        [Database_name],
+        [Dimension_Name],
+        [RIVIOLATION_COUNT]
+    FROM $SYSTEM.DISCOVER_STORAGE_TABLES
+    """
+)
+```
+
+## Expectations
+
+In order to add specific constraints to the assets defined above, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/terms/expectation) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/)
+
+Start by adding a "Retail Store Suite" with two expectations:
+* a valid zip code
+* a table with row count between 80 and 200
+
+
+```python
+suite_store = context.add_expectation_suite("Retail Store Suite")
+
+suite_store.add_expectation(ExpectationConfiguration("expect_column_values_to_be_valid_zip5", { "column": "PostalCode" }))
+suite_store.add_expectation(ExpectationConfiguration("expect_table_row_count_to_be_between", { "min_value": 80, "max_value": 200 }))
+
+context.add_or_update_expectation_suite(expectation_suite=suite_store)
+```
+
+##### `TotalUnits` Measure
+
+Add a "Retail Measure Suite" with one expectation:
+* Column values should be greater than 50,000
+
+
+```python
+suite_measure = context.add_expectation_suite("Retail Measure Suite")
+suite_measure.add_expectation(ExpectationConfiguration(
+    "expect_column_values_to_be_between", 
+    {
+        "column": "TotalUnits",
+        "min_value": 50000
+    }
+))
+
+context.add_or_update_expectation_suite(expectation_suite=suite_measure)
+```
+
+##### `Total Units Ratio` DAX
+
+Add a "Retail DAX Suite" with one expectation::
+* Column values for Total Units Ratio shoud be between 0.8 and 1.5
+
+
+```python
+suite_dax = context.add_expectation_suite("Retail DAX Suite")
+suite_dax.add_expectation(ExpectationConfiguration(
+    "expect_column_values_to_be_between", 
+    {
+        "column": "[Total Units Ratio]",
+        "min_value": 0.8,
+        "max_value": 1.5
+    }
+))
+
+context.add_or_update_expectation_suite(expectation_suite=suite_dax)
+```
+
+##### Referential Integrity Violations (DMV)
+
+Add a"Retail DMV Suite" with one expectation:
+* the RIVIOLATION_COUNT should be 0
+
+
+```python
+suite_dmv = context.add_expectation_suite("Retail DMV Suite")
+# There should be no RI violations
+suite_dmv.add_expectation(ExpectationConfiguration(
+    "expect_column_values_to_be_in_set", 
+    {
+        "column": "RIVIOLATION_COUNT",
+        "value_set": [0]
+    }
+))
+context.add_or_update_expectation_suite(expectation_suite=suite_dmv)
+```
+
+## Validation
+
+To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/terms/checkpoint) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/guides/validation/validate_data_overview).
+
+
+```python
+checkpoint_config = {
+    "name": f"Retail Analysis Checkpoint",
+    "validations": [
+        {
+            "expectation_suite_name": "Retail Store Suite",
+            "batch_request": {
+                "datasource_name": "Retail Analysis Data Source",
+                "data_asset_name": "Store Asset",
+            },
+        },
+        {
+            "expectation_suite_name": "Retail Measure Suite",
+            "batch_request": {
+                "datasource_name": "Retail Analysis Data Source",
+                "data_asset_name": "Total Units Asset",
+            },
+        },
+        {
+            "expectation_suite_name": "Retail DAX Suite",
+            "batch_request": {
+                "datasource_name": "Retail Analysis Data Source",
+                "data_asset_name": "Total Units YoY Asset",
+            },
+        },
+        {
+            "expectation_suite_name": "Retail DMV Suite",
+            "batch_request": {
+                "datasource_name": "Retail Analysis Data Source",
+                "data_asset_name": "Referential Integrity Violation",
+            },
+        },
+    ],
+}
+checkpoint = context.add_checkpoint(
+    **checkpoint_config
+)
+```
+
+Now run the checkpoint and extract the results as a pandas DataFrame for simple formatting.
+
+
+```python
+result = checkpoint.run()
+```
+
+Process and print your results.
+
+
+```python
+import pandas as pd
+
+data = []
+
+for run_result in result.run_results:
+    for validation_result in result.run_results[run_result]["validation_result"]["results"]:
+        row = {
+            "Batch ID": run_result.batch_identifier,
+            "type": validation_result.expectation_config.expectation_type,
+            "success": validation_result.success
+        }
+
+        row.update(dict(validation_result.result))
+        
+        data.append(row)
+
+result_df = pd.DataFrame.from_records(data)    
+
+result_df[["Batch ID", "type", "success", "element_count", "unexpected_count", "partial_unexpected_list"]]
+```
+
+From these results you can see that all your expectations have passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
+
+## Diagnostics
+
+Using semantic link, you can fetch the source data to understand which exact years are out of range. Semantic link provides an inline magic for executing DAX queries, which we can use to execute the same query we passed into the GX Data Asset and visualize the resulting values.
+
+
+```python
+%%dax "Retail Analysis Sample PBIX"
+
+EVALUATE SUMMARIZECOLUMNS(
+    'Time'[FiscalYear],
+    'Time'[FiscalMonth],
+    "Total Units Ratio", DIVIDE([Total Units This Year], [Total Units Last Year])
+)
+```
+
+Save these results in a DataFrame.
+
+
+```python
+df = _
+```
+
+Plot the results.
+
+
+```python
+import matplotlib.pyplot as plt
+
+df["Total Units % Change YoY"] = (df["[Total Units Ratio]"] - 1)
+
+df.set_index(["Time[FiscalYear]", "Time[FiscalMonth]"]).plot.bar(y="Total Units % Change YoY")
+
+plt.axhline(0)
+
+plt.axhline(-0.2, color="red", linestyle="dotted")
+plt.axhline( 0.5, color="red", linestyle="dotted")
+
+None
+```
+
+From this, you can see that April and July were slightly out of range and can then take further steps to investigate.
+
+## Storing GX Configuration
+
+As the data in your dataset changes over time, you may want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, the conext could have been instatiated as a File Conext (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context))
+
+
+```python
+context = context.convert_to_file_context()
+```
+
+Now that you've saved the context, copy the **gx** directory to your lakehouse.
+
+
+```python
+# copy GX directory to attached lakehouse
+!cp -r gx/ /lakehouse/default/Files/gx
+```
+
+Now, future contexts can be created with `context = gx.get_context(project_root_dir="<your path here>")` and will contain all the configurations from above.
+
+@@ If you attach the lakehouse to a new notebook, use:
+`context = gx.get_context(project_root_dir="/lakehouse/default/Files/gx")` 
+to retrieve the context.  IS THIS RIGHT?
+
+<!-- nbend -->
+
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)
