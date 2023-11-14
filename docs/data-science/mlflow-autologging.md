@@ -1,11 +1,13 @@
 ---
 title: Autologging in Microsoft Fabric
-description: Use autologging with MLflow to automatically capture machine learning metrics and parameters 
+description: Use autologging with MLflow to automatically capture machine learning metrics and parameters
 ms.reviewer: mopeakande
 ms.author: midesa
-author: midesa 
+author: midesa
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 

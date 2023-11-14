@@ -5,7 +5,9 @@ ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/15/2023
 ---
 

@@ -5,7 +5,9 @@ ms.reviewer: lagayhar
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/23/2023
 ---
 

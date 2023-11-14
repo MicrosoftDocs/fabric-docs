@@ -6,7 +6,9 @@ ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
 # Define relationships in data models for data warehousing in Microsoft Fabric

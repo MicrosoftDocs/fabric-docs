@@ -3,8 +3,11 @@ title: Disaster recovery guidance for Fabric Data Science
 description: Guidance for disaster recovery in Fabric Data Science
 ms.reviewer: larryfr
 ms.author: midesa
-author: midesa 
+author: midesa
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 10/13/2023
 ---
 
