@@ -5,12 +5,10 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
 ms.custom: build-2023
-ms.date: 10/30/2023
+ms.date: 11/05/2023
 ---
 
 # Understand the metrics app compute page
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
@@ -149,7 +147,7 @@ User can hover over any value in the visual to see operation level data. User ca
 
     You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
 
-    Sorting the matrix by the *performance delta* column helps identify datasets that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small datasets with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
+    Sorting the matrix by the *performance delta* column helps identify semantic models that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
 
 * **Billing type** - Displays information if the item is billable or not.
 
@@ -166,3 +164,9 @@ User can hover over any value in the visual to see operation level data. User ca
 [Understand the metrics app storage page](metrics-app-storage-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+
+
+## Related content
+
+* [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
+* [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

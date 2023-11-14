@@ -4,15 +4,13 @@ description: This article provides information about how to create an Azure HDIn
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/18/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
 # Set up your Azure HDInsight on AKS Trino connection
 
 This article outlines the steps to create an Azure HDInsight on AKS Trino connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 

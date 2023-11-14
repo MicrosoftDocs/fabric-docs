@@ -3,17 +3,18 @@ title: Use the Monitoring hub to manage Apache Spark applications
 description: Learn how to access the monitoring hub and use it to sort, search, filter, manage, and cancel Apache Spark applications.
 author: jejiang
 ms.author: jejiang
-ms.topic: overview 
+ms.topic: overview
 ms.date: 05/23/2023
-ms.custom: template-howto, build-2023
-ms.search.form: Browse Spark applications in Monitoring hub 
+ms.custom:
+  - template-howto
+  - build-2023
+  - ignite-2023
+ms.search.form: Browse Spark applications in Monitoring hub
 ---
 
 # Browse the Apache Spark applications in the Fabric monitoring hub
 
 The Monitoring hub serves as a centralized portal for browsing Apache Spark activities across items. When you are in the Data Engineering or Data Science experience, you can view in-progress Apache Spark applications triggered from Notebooks, Apache Spark job definitions, and Pipelines. You can also search and filter Apache Spark applications based on different criteria. Additionally, you can cancel your in-progress Apache Spark applications and drill down to view more execution details of an Apache Spark application.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Access the monitoring hub
 

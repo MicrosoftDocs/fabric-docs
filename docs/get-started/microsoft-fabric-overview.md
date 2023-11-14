@@ -18,8 +18,6 @@ With Fabric, you don't need to piece together different services from multiple v
 
 The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## SaaS foundation
 
 Microsoft Fabric brings together new and existing components from Power BI, Azure Synapse, and Azure Data Factory into a single integrated environment. These components are then presented in various customized user experiences.
@@ -80,7 +78,7 @@ The tenant maps to the root of OneLake and is at the top level of the hierarchy.
 
 The following image shows the various Fabric items where data is stored. It's an example of how various items within Fabric would store data inside OneLake. As displayed, you can create multiple workspaces within a tenant, create multiple lakehouses within each workspace. A lakehouse is a collection of files, folders, and tables that represents a database over a data lake. To learn more, see [What is a lakehouse?](../data-engineering/lakehouse-overview.md).
 
-:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and datasets within a workspace within a tenant.":::
+:::image type="content" source="media\microsoft-fabric-overview\hierarchy-within-tenant.png" alt-text="Diagram of the hierarchy of items like lakehouses and semantic models within a workspace within a tenant.":::
 
 Every developer and business unit in the tenant can instantly create their own workspaces in OneLake. They can ingest data into their own lakehouses, start processing, analyzing, and collaborating on the data, just like OneDrive in Office.
 
@@ -91,6 +89,16 @@ All the Microsoft Fabric compute experiences are prewired to OneLake, just like 
 OneLake is designed to allow instant mounting of existing PaaS storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. There's no need to migrate or move any of the existing data. Using shortcuts, you can access the data stored in Azure Data Lake Storage.
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
+
+## Fabric solutions for ISVs
+
+If you're an ISV interested in integrating your solutions with Microsoft Fabric, you can use one of the following paths depending on the level of integration you want to achieve:
+
+- **Interop** - Integrate your solution with the OneLake Foundation and establish basic connections and interoperability with Fabric.
+- **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities within your existing applications. It allows you to actively leverage Fabric capabilities.
+- **Build a Fabric workload** - Create customized workloads and experiences in Fabric. Tailor your offerings to deliver their  value proposition while leveraging Fabric ecosystem.
+
+For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
 ## Next steps
 

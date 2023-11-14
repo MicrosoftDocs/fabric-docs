@@ -1,10 +1,10 @@
 ---
 title: Security for data warehousing
-description: Learn more about securing the SQL Endpoint and Warehouse in Microsoft Fabric.
+description: Learn more about securing the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 10/05/2023
+ms.date: 11/15/2023
 ms.topic: overview
 ms.custom: build-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
@@ -14,8 +14,6 @@ ms.search.form: Warehouse roles and permissions # This article's title should no
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article covers security topics for securing the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 For information on [!INCLUDE [product-name](../includes/product-name.md)] security, see [Security in Microsoft Fabric](../security/security-overview.md).
 

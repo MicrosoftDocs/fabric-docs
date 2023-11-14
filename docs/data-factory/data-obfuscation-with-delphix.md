@@ -4,15 +4,13 @@ description: This article describes how to use Delphix Compliance Services maski
 author: ptyx507
 ms.topic: how-to
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.author: miescobar
 ---
 
 # Data obfuscation in Data Factory with Delphix Compliance Services
 
 The following how-to outlines the use of Delphix Compliance Services (DCS) in Data Factory in Microsoft Fabric dataflows to mask sensitive data prior to delivery.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 DCS is a highly scalable masking API service that automatically masks personally identifiable information (PII), supplanting manual processes for delivering compliant data. Its out-of-the-box and configurable algorithms replace sensitive data values with fictitious yet realistic ones, so teams mitigate risk while ensuring end-users can easily consume the right data.
 

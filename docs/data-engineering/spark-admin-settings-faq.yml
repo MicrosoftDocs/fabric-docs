@@ -5,12 +5,12 @@ metadata:
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
+  ms.custom:
+    - ignite-2023
   ms.date: 05/23/2023
 title: Apache Spark workspace administration settings FAQ
 summary: |
   This article lists answers to frequently asked questions about Apache Spark workspace administration settings.
-
-  > [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 sections:
   - name: Workspace administration settings

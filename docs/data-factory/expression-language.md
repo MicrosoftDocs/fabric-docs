@@ -6,14 +6,12 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # Expressions and functions for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 This article provides details about expressions and functions supported by Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]. 
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Expressions
 

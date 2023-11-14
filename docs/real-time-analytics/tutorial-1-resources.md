@@ -11,8 +11,6 @@ ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md).
 

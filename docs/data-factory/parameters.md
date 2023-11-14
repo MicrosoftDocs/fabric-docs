@@ -6,14 +6,12 @@ ms.author: jburchel
 author: jonburchel
 ms.topic: conceptual 
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 This document describes how to use parameters in your pipelines for Data Factory in Fabric.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 

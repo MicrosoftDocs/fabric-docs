@@ -10,8 +10,6 @@ ms.date: 06/08/2023
 
 # Customer Lockbox for Microsoft Fabric
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer-lockbox-overview) to control how Microsoft engineers access your data. In this article you'll learn how Customer Lockbox requests are initiated, tracked, and stored for later reviews and audits.
 
 Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [!INCLUDE [product-name](../includes/product-name.md)] service support request. Customer Lockbox can also be used when Microsoft identifies a problem, and a Microsoft-initiated event is opened to investigate the issue.

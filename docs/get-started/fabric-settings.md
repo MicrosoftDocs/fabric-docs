@@ -10,7 +10,7 @@ ms.date: 06/15/2023
 
 # Fabric settings
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The Fabric settings pane provides links to various kinds of settings you can configure. This article shows how to open the Fabric settings pane and describes the kinds of settings you can access from there.
 
@@ -39,7 +39,7 @@ The resources and extensions section provides links to pages where users can use
 | Link| Description|
 |:-----------|:--------------|
 |Manage personal/group storage|Opens the personal/group storage management page, where you can see and manage data items that you own or that have been shared with you. |
-|Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI items (dashboards, datasets, workbooks, reports, datamarts, and dataflows) that are in the current workspace. |
+|Power BI settings| Opens the Power BI settings page, where you can get to the settings pages for the Power BI items (dashboards, semantic models, workbooks, reports, datamarts, and dataflows) that are in the current workspace. |
 |Manage connections and gateways| Opens page where you can manage connections, on-premises data gateways, and virtual networks data gateways. |
 |Manage embed codes| Opens a page where you can manage [embed codes](/power-bi/collaborate-share/service-publish-to-web) you have created. |
 |Azure Analysis Services migrations| Opens up a page where you can [migrate your Azure Analysis Services datasets to Power BI Premium](/power-bi/enterprise/aas-pbi-migration-overview).  |

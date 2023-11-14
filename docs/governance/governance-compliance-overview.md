@@ -10,8 +10,6 @@ ms.date: 05/23/2023
 
 # What is Microsoft Fabric governance and compliance?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Microsoft Fabric governance and compliance is a set of capabilities that help you manage, protect, and monitor your organization's sensitive information. This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information.
 
 ## Information protection
@@ -20,7 +18,7 @@ Information protection in Fabric enables you to discover, classify, and protect 
 
 ## Data loss prevention
 
-Data loss prevention (DLP) policies help organizations detect and protect their sensitive data. Currently, Fabric supports DLP for Power BI datasets only. DLP policies detect upload of sensitive data into datasets. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for dataset owners and alerts for security admins. DLP policies can also be configured to allow data owners to override them. For more information, see [Data loss prevention policies for Power BI](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
+Data loss prevention (DLP) policies help organizations detect and protect their sensitive data. Currently, Fabric supports DLP for Power BI semantic models only. DLP policies detect upload of sensitive data into semantic models. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for semantic model owners and alerts for security admins. DLP policies can also be configured to allow data owners to override them. For more information, see [Data loss prevention policies for Power BI](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 
 ## Endorsement
 

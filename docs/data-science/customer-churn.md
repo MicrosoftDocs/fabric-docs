@@ -13,7 +13,7 @@ ms.date: 09/15/2023
 
 In this tutorial, you'll see a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are
 
@@ -609,8 +609,8 @@ Use these steps to access your saved table in Power BI.
 1. On the left, select **OneLake data hub**.
 1. Select the lakehouse that you added to this notebook.
 1. On the top right, select **Open** under the section titled **Open this Lakehouse**.
-1. Select New Power BI dataset on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI dataset linked to the predictions.
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
+1. Select **New semantic model** on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI semantic model linked to the predictions.
+1. On the tools at the top of the semantic model's page, select **New report** to open the Power BI report authoring page.
 
 Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.
 
@@ -635,7 +635,7 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ## Next steps
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
 
 

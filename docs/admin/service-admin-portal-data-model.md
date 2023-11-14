@@ -1,14 +1,16 @@
 ---
 title: Data model tenant settings
-description: Learn how to configure data model settings as the Fabric administrator. 
+description: Learn how to configure data model settings as the Fabric administrator.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 

@@ -5,14 +5,12 @@ author: chez-charlie
 ms.author: chez
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 08/24/2023
+ms.date: 11/15/2023
 ---
 
 # Use the Filter activity to filter items from an array
 
 You can use a Filter activity in a pipeline to apply a filter expression to an input array.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

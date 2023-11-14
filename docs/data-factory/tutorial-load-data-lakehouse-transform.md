@@ -6,14 +6,12 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial 
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 
 # Copy sample data into Lakehouse and transform with a dataflow with Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 In this tutorial, we provide end-to-end steps to a common scenario that uses the pipeline to load source data into Lakehouse at high performance copy and then transform the data by dataflow to make users can easily load and transform data.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

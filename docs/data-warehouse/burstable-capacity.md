@@ -4,7 +4,7 @@ description: Learn more about how burstable capacity is used and limited with SK
 author: realAngryAnalytics
 ms.author: stevehow
 ms.reviewer: wiassaf
-ms.date: 10/19/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
@@ -12,8 +12,6 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 # Burstable capacity in Fabric data warehousing
 
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A Fabric capacity is a distinct pool of resources that's size (or SKU) determines the amount of computational power available. [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] provide burstable capacity that allows workloads to use more resources to achieve better performance.
 

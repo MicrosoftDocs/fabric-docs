@@ -6,12 +6,10 @@ author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 09/28/2023
+ms.date: 10/25/2023
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to create and use a new KQL queryset.
 
@@ -22,7 +20,7 @@ The KQL Queryset uses the Kusto Query language for creating queries, and also su
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with data
+* A [KQL database](create-database.md) with editing permissions and data
 
 ## Create a KQL queryset
 
@@ -87,7 +85,7 @@ The following examples use data that is publicly available at [https://kustosamp
 
 ## Copy query
 
-You may want to copy or share the queries you create.
+You might want to copy or share the queries you create.
 
 1. At the top of the query window, select the **Manage** tab.
 1. Select **Copy**

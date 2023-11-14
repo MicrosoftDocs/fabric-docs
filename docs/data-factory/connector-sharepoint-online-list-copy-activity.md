@@ -1,18 +1,16 @@
 ---
-title: How to configure SharePoint Online List in a copy activity
+title: Configure SharePoint Online List in a copy activity
 description: This article explains how to copy data using SharePoint Online List.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# How to configure SharePoint Online List in a copy activity
+# Configure SharePoint Online List in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from SharePoint Online List.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -111,5 +109,4 @@ The following table contains more information about a copy activity in SharePoin
 
 ## Next steps
 
-- [How to create a SharePoint Online List connection](connector-sharepoint-online-list.md)
-- [Connect to a SharePoint Online list in dataflows](connector-sharepoint-online-list-dataflows.md)
+- [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md)

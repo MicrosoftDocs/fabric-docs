@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/29/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,7 +20,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Usage metrics for content creators
 
-When this setting is on, users in the organization can see usage metrics for dashboards, reports, and datasets for which they have appropriate permissions.
+When this setting is on, users in the organization can see usage metrics for dashboards, reports, and semantic models for which they have appropriate permissions.
 
 To learn more, see [Monitor usage metrics in the workspaces](/power-bi/collaborate-share/service-modern-usage-metrics).
 

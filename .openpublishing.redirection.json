@@ -6,6 +6,11 @@
         "redirect_document_id": false
       },
       {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+       "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -17,12 +22,22 @@
       },
       {
         "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
-        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
-        "redirect_document_id": true
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
         },
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
         "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
         "redirect_document_id": true
         },
         {
@@ -106,6 +121,16 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-warehouse/datasets.md",
+          "redirect_url": "/fabric/data-warehouse/semantic-models",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/model-default-power-bi-dataset.md",
+          "redirect_url": "/fabric/data-warehouse/default-power-bi-semantic-model",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/enterprise/metrics-app-onelake-page.md",
           "redirect_url": "/fabric/data-factory/metrics-app-storage-page.md",
           "redirect_document_id": false
@@ -128,6 +153,71 @@
         {
           "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
           "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
+          "redirect_url": "/fabric/real-time-analytics/data-policies",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-google-cloud-storage-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-google-cloud-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-http",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
           "redirect_document_id": false
         }
     ]

@@ -6,15 +6,13 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: overview
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.date: 11/15/2023
+ms.search.form: Event Streams Overview
 ---
 
 # Microsoft Fabric event streams - overview
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-Time Analytics** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Centralized place for event data
 

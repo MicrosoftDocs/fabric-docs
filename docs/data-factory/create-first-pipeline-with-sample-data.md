@@ -6,15 +6,13 @@ ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: quickstart
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Tutorials
 ---
 
 # Quickstart: Create your first pipeline to copy data
 
 In this quickstart, you build a data pipeline to move a Sample dataset to the Lakehouse. This experience shows you a quick demo about how to use pipeline copy activity and how to load data into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

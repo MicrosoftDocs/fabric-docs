@@ -14,7 +14,7 @@ ms.search.form: Read and Write Pandas
 
 [!INCLUDE [product-name](../includes/product-name.md)] notebooks support seamless interaction with Lakehouse data using Pandas, the most popular Python library for data exploration and processing. Within a notebook, users can quickly read data from—and write data back to—their Lakehouses in a variety of file formats. This guide provides code samples to help you get started in your own notebook.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -133,4 +133,4 @@ df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json")
 ## Next steps
 
 - Use Data Wrangler to [clean and prepare your data](data-wrangler.md)
-- Start [training ML models](./model-training/model-training-overview.md)
+- Start [training ML models](model-training-overview.md)

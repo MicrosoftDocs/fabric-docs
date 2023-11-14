@@ -10,8 +10,6 @@ ms.date: 09/27/2023
 
 # OneLake security
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with user identities, service principals, and managed identities. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
 
 :::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
@@ -31,7 +29,7 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 
 Within a workspace, Fabric items can have permissions configured separately from the workspace roles. You can configure permissions either through sharing an item or by managing the permissions of an item. The following permissions determine a user's ability to perform actions on data in OneLake.
 
-| **Permission Name** | **Sharing text** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL endpoint?** |
+| **Permission Name** | **Sharing text** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
 |----------|----------|----------|----------|--------------|
 | Read | *No share boxes selected* | No | No | No |
 | ReadData | Read all SQL endpoint data | No | No | Yes |
@@ -40,7 +38,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ## Compute-specific security
 
-Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine, but those conditions may not apply to users in certain Fabric roles when they access OneLake directly. For more information on what types of compute security you can define, see the documentation for Warehouse, Real-time analytics, and Power BI datasets.
+Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine, but those conditions may not apply to users in certain Fabric roles when they access OneLake directly. For more information on what types of compute security you can define, see the documentation for Warehouse, Real-time analytics, and Power BI semantic models.
 
 As a rule, users in the Viewer role can only access data through select compute engines and any security rules defined in those engines apply. All other roles have direct OneLake access, allowing them to query data through Spark, APIs, or a OneLake File Explorer. However, compute-specific security still applies to those users when accessing data through that compute engine.
 

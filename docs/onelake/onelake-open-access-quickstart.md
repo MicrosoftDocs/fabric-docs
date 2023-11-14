@@ -11,8 +11,6 @@ ms.date: 09/27/2023
 
 # Ingest data into OneLake and analyze with Azure Databricks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 In this guide, you will:
 
 - Create a pipeline in a workspace and ingest data into your OneLake in Delta format.
@@ -39,7 +37,7 @@ Before you start, you must have:
 
 1. For this exercise, select the **NYC Taxi - Green** sample data as the data source and then select **Next**.
 
-   :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample dataset.":::
+   :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample semantic model.":::
 
 1. On the preview screen, select **Next**.
 

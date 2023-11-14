@@ -5,7 +5,7 @@ author: jonburchel
 ms.author: jburchel
 ms.topic: include
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ---
 > [!IMPORTANT]
 > [!INCLUDE [product-name](../../includes/product-name.md)] is currently in PREVIEW.

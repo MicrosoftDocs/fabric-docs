@@ -14,8 +14,6 @@ ms.date: 09/27/2023
 
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly connect to your existing data sources such as Azure, Amazon Web Services (AWS), and OneLake through a unified namespace. OneLake manages all permissions and credentials, so you don't need to separately configure each Fabric experience to connect to each data source. Additionally, you can use shortcuts to eliminate edge copies of data and reduce process latency associated with data copies and staging.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## What are shortcuts?
 
 Shortcuts are objects in OneLake that point to other storage locations. The location can be internal or external to OneLake. The location that a shortcut points to is known as the target path of the shortcut. The location where the shortcut appears is known as the shortcut path. Shortcuts appear as folders in OneLake and any experience or service that has access to OneLake can use them. Shortcuts behave like symbolic links. They're an independent object from the target. If you delete a shortcut, the target remains unaffected. If you move, rename, or delete a target path, the shortcut can break.
@@ -63,7 +61,7 @@ display(df)
 
 ### SQL
 
-You can also read shortcuts in the **Tables** section of a lakehouse through the SQL endpoint for the lakehouse. You can access the SQL endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
+You can also read shortcuts in the **Tables** section of a lakehouse through the SQL analytics endpoint for the lakehouse. You can access the SQL analytics endpoint through the mode selector of the lakehouse or through SQL Server Management Studio (SSMS).
 
 ```SQL
 SELECT TOP (100) *
@@ -105,7 +103,7 @@ Internal OneLake shortcuts allow you to reference data within existing Fabric it
 When a user accesses data through a shortcut to another OneLake location, the identity of the calling user is used to authorize access to the data in the target path of the shortcut*. This user must have permissions in the target location to read the data.
 
 > [!IMPORTANT]
-> When accessing shortcuts through Power BI Datasets or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.
+> When accessing shortcuts through Power BI semantic models or T-SQL, **the calling user’s identity is not passed through to the shortcut target.** The calling item owner’s identity is passed instead, delegating access to the calling user.
 
 ### ADLS shortcuts
 
@@ -129,7 +127,7 @@ ADLS shortcuts use a delegated authorization model. In this model, the shortcut 
 
 ### S3 shortcuts
 
-You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn’t natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
+You can also create shortcuts to Amazon S3 accounts. When you create shortcuts to Amazon S3, the target path must contain a bucket name at a minimum. S3 doesn't natively support hierarchical namespaces but you can use prefixes to mimic a directory structure. You can include prefixes in the shortcut path to further narrow the scope of data accessible through the shortcut. When you access data through an S3 shortcut, prefixes are represented as folders.
 
 #### Access
 
@@ -234,7 +232,7 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
 - ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
-- OneLake shortcut target paths can’t contain “%” characters.
+- OneLake shortcut target paths can't contain "%" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.

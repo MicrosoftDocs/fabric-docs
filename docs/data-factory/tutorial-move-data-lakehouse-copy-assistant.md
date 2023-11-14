@@ -6,15 +6,13 @@ ms.author: jianleishen
 author: jianleishen
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Copy Assistant
 ---
 
 # Move data from Azure SQL DB into Lakehouse via copy assistant
 
 This tutorial describes the steps to move data into Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 Two approaches are provided using the copy assistant:
 
