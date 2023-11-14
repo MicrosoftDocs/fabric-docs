@@ -3,9 +3,10 @@ title: Known issue - In progress tables refresh history
 description: A known issue is posted where a customer has issues with refresh history reports in progress for some tables that failed.
 author: luitwieler
 ms.author: jeluitwi
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 11/15/2023
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ---
 
 # Known issue - In progress refresh history

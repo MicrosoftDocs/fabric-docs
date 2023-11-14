@@ -3,7 +3,8 @@ title: A guide to learning Dataflows for Mapping Data Flow users
 description: Guide on common transformations from Azure Data Factory Mapping Dataflows and their equivalent transformations in Power Query inside of Dataflows
 author: itsnotaboutthecell
 ms.topic: overview
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ms.author: alpowers
 ms.search.form: DataflowGen2

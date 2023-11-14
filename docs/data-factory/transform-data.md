@@ -5,7 +5,10 @@ ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
 ms.topic: quickstart
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

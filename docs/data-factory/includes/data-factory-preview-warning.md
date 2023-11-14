@@ -4,7 +4,9 @@ description: Include file for the Data Factory in Microsoft Fabric preview warni
 author: jonburchel
 ms.author: jburchel
 ms.topic: include
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 > [!IMPORTANT]

@@ -4,7 +4,9 @@ description: Learn how to monitor pipeline runs and dataflows in Data Factory fo
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
-ms.topic: how-to 
+ms.topic: how-to
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 
