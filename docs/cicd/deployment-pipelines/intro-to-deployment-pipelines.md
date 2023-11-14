@@ -1,10 +1,13 @@
 ---
-title: Overview of Fabric deployment pipelines 
+title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---

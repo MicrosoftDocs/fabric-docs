@@ -4,7 +4,11 @@ description: Understand how deployment pipelines, the Fabric Application lifecyc
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, intro-deployment, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - intro-deployment
+  - build-2023
+  - ignite-2023
 ms.date: 11/02/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---

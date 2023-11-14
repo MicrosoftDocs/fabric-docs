@@ -1,10 +1,13 @@
 ---
-title: Fabric Application lifecycle management (ALM) deployment pipelines history 
+title: Fabric Application lifecycle management (ALM) deployment pipelines history
 description: Learn how the history feature works in the deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment history
 ---

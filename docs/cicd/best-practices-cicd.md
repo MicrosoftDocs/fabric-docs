@@ -6,7 +6,10 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.date: 11/05/2023
-ms.custom: intro-deployment, build-2023
+ms.custom:
+  - intro-deployment
+  - build-2023
+  - ignite-2023
 ms.search.form: Best practices for deployment pipelines, Create deployment pipeline, Introduction to Deployment pipelines, Best practices for Deployment pipelines
 ---
 

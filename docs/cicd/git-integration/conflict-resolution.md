@@ -6,7 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 10/16/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Conflict resolution

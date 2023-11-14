@@ -4,6 +4,8 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 11/02/2023
 ---
 

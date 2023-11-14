@@ -3,10 +3,13 @@ title: Use the Monitoring hub to manage Apache Spark applications
 description: Learn how to access the monitoring hub and use it to sort, search, filter, manage, and cancel Apache Spark applications.
 author: jejiang
 ms.author: jejiang
-ms.topic: overview 
+ms.topic: overview
 ms.date: 05/23/2023
-ms.custom: template-howto, build-2023
-ms.search.form: Browse Spark applications in Monitoring hub 
+ms.custom:
+  - template-howto
+  - build-2023
+  - ignite-2023
+ms.search.form: Browse Spark applications in Monitoring hub
 ---
 
 # Browse the Apache Spark applications in the Fabric monitoring hub
