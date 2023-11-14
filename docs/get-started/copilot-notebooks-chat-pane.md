@@ -26,14 +26,14 @@ To use Copilot in Data Science:
 - Your Fabric admin must enable it in the administration portal.
 - The workspace you use must have the F64 and above license SKU.
 
-## "Azure OpenAI Enablement"
+## Azure OpenAI enablement
 
 - Azure OpenAI must be enabled within Fabric at the tenant level.
 
 > [!NOTE]
 > If your workspace is provisioned in a region without GPU capacity, and your data is not enabled to flow cross-geo, Copilot will not function properly and you will see errors.
 
-## "Successful Execution of Chat-Magics Installation Cell"
+## Successful execution of Chat-Magics installation cell
 
 1. To use the Copilot pane, The installation cell for chat-magics must successfully execute within your Spark session.
 
@@ -50,27 +50,27 @@ To use Copilot in Data Science:
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-ribbon-button.png" alt-text="Screenshot showing Copilot ribbon.":::
 
-1. To open Copilot, select the Copilot button at the top of the Notebook.
-1. Te Copilot chat panel on the right side of your notebook opens.
+1. To open Copilot, select the **Copilot** button at the top of the Notebook.
+1. The Copilot chat panel opens on the right side of your notebook.
 1. A panel opens, to provide overview information and helpful links.
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-helpful-links.png" alt-text="Screenshot showing Copilot helpful links pane.":::
 
-### Key Capabilities
+### Key capabilities
 
-- AI Assistance: Generate code, query data, and get suggestions to accelerate your workflow.
-- Data Insights: Quick data analysis and visualization capabilities.
-- Explanations: Copilot can provide natural language explanations of notebook cells, and can provide an overview for notebook activity as it runs.
-- Fixing Errors: Copilot can also fix notebook run errors as they arise. Copilot shares context with the notebook cells (executed output) and can provide helpful suggestions.
+- **AI assistance**: Generate code, query data, and get suggestions to accelerate your workflow.
+- **Data insights**: Quick data analysis and visualization capabilities.
+- **Explanations**: Copilot can provide natural language explanations of notebook cells, and can provide an overview for notebook activity as it runs.
+- **Fixing errors**: Copilot can also fix notebook run errors as they arise. Copilot shares context with the notebook cells (executed output) and can provide helpful suggestions.
 
-### Important Notices
+### Important notices
 
 - **Inaccuracies**: Potential for inaccuracies exists. Review AI-generated content carefully.
-- **Data Storage**: Customer data is temporarily stored, to identify harmful use of AI.
+- **Data storage**: Customer data is temporarily stored, to identify harmful use of AI.
 
 ## Getting started with Copilot chat in notebooks
 
-1. Copilot for Data Science and Data Engineering offers helpful starter prompts to get started: "Load data from my lakehouse into a dataframe", "Generate insights from data".
+1. Copilot for Data Science and Data Engineering offers helpful starter prompts to get started. For example, "Load data from my lakehouse into a dataframe", or "Generate insights from data".
 
     :::image type="content" source="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png" alt-text="Screenshot showing the Copilot starting prompts." lightbox="media/copilot-notebooks-chat-pane/copilot-starter-prompts.png":::
 
@@ -81,11 +81,11 @@ To use Copilot in Data Science:
 
 ## Regular usage of the Copilot chat panel
 
-1. The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
-1. You can "copy" or "insert" code from the chat panel. At the top of each code block, you have two buttons that allow input of items directly into the notebook.
-1. To clear your conversation, select the "Broom" icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it terminates.
-1. Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
-1. Transparency: Read our Transparency Note for details on data and algorithm use.
+- The more specifically you describe your goals in your chat panel entries, the more accurate the Copilot responses.
+- You can "copy" or "insert" code from the chat panel. At the top of each code block, two buttons allow input of items directly into the notebook.
+- To clear your conversation, select the **Broom** icon at the top to remove your conversation from the pane. It clears the pane of any input or output, but the context remains in the session until it ends.
+- Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
+- Transparency: Read our Transparency Note for details on data and algorithm use.
 
 ## Next steps
 

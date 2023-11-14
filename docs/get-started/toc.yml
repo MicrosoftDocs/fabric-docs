@@ -72,6 +72,7 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
+    maintainContext: true
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
