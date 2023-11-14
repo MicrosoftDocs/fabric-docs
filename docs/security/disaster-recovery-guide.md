@@ -4,7 +4,10 @@ description: Find out about Microsoft Fabric's recovery plan in the event of a d
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/06/2023
 ---
 
