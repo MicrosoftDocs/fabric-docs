@@ -131,10 +131,22 @@ items:
     items:
     - name: Overview
       href: ../data-engineering/spark-compute.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-    - name: Runtime
-      href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Configure starter pools
+      href: ../data-engineering/configure-starter-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Billing and utilization
+      href: ../data-engineering/billing-capacity-management-for-spark.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+        - name: Runtime 1.2 (Spark 3.4)
+          href: ../data-engineering/runtime-1-2.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+        - name: Runtime 1.1 (Spark 3.3)
+          href: ../data-engineering/runtime-1-1.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Create custom pools
       href: ../data-engineering/create-custom-spark-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: High Concurrency mode
+      href: ../data-engineering/high-concurrency-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Autotune Spark configuration
       href: ../data-engineering/autotune.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Spark concurrency limits and queueing
@@ -147,6 +159,8 @@ items:
       href: ../data-engineering/create-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Run a Spark job definition
       href: ../data-engineering/run-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Spark job definition API tutorial
+      href: ../data-engineering/spark-job-definition-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Spark development
     items:
     - name: Spark utilities
@@ -162,10 +176,10 @@ items:
     - name: Spark workspace settings 
       href: ../data-engineering/workspace-admin-settings.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Spark admin settings - FAQ
-      href: ../data-engineering/spark-admin-settings-faq.yml?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      href: ../data-engineering/spark-admin-settings-faq.yml?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json 
   - name: Spark monitoring
     items:
-    - name: Spark monitoring overview
+    - name: Apache Spark monitoring overview
       href: ../data-engineering/spark-monitoring-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Apache Spark Advisor
       href: ../data-engineering/spark-advisor-introduction.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
@@ -179,6 +193,12 @@ items:
       href: ../data-engineering/monitor-spark-job-definitions.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Monitor Spark application
       href: ../data-engineering/spark-detail-monitoring.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Navigate the Apache Spark history server
+      href: ../data-engineering/apache-spark-history-server.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json  
+    - name: Monitor Spark capacity consumption
+      href: ../data-engineering/monitor-spark-capacity-consumption.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Intelligent cache
+    href: ../data-engineering/intelligent-cache.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: AI services
   items:
   - name: Overview of AI services in Fabric
