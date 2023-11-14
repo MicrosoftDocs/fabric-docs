@@ -5,7 +5,10 @@ author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to, build-2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Connect to Binary format in dataflows

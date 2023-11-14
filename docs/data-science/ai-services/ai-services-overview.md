@@ -5,9 +5,12 @@ ms.reviewer: ssalgado
 author: ruixinxu
 ms.author: ruxu
 ms.topic: overview
-ms.custom: references_regions
+ms.custom:
+  - references_regions
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
-ms.search.form: 
+ms.search.form:
 ---
 
 # AI services in Fabric (preview)
@@ -88,5 +91,3 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)
-
-

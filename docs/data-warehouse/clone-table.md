@@ -6,6 +6,8 @@ ms.author: ajagadish
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric

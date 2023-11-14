@@ -4,7 +4,9 @@ description: Learn about Copilot for Fabric, which brings a new way to transform
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
-ms.custom: 
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.topic: conceptual
 ms.date: 11/08/2023
 ---

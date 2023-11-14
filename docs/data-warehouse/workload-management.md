@@ -6,6 +6,8 @@ ms.author: stevehow
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Workload management

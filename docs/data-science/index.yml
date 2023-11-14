@@ -6,14 +6,15 @@ summary: Learn more about the Data Science experience in Microsoft Fabric  # < 1
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-science
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: s-polly #Required; your GitHub user alias, with correct capitalization.
   ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
   ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:

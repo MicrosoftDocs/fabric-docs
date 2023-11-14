@@ -3,9 +3,11 @@ title: Known issue - Data warehouse with more than 20,000 tables fails to load
 description: A known issue is posted where a data warehouse with more than 20,000 tables fails to load
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting 
+ms.topic: troubleshooting
 ms.date: 10/23/2023
-ms.custom: known-issue-529
+ms.custom:
+  - known-issue-529
+  - ignite-2023
 ---
 
 # Known issue - Data warehouse with more than 20,000 tables fails to load

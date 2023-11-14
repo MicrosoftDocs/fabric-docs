@@ -5,6 +5,8 @@ ms.author: cynotebo
 author: cynotebo
 ms.reviewer: wiassaf, stwynant
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---

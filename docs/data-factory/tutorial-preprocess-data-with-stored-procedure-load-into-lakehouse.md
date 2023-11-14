@@ -4,8 +4,10 @@ description: This tutorial shows you how to preprocess data with a stored proced
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: tutorial 
-ms.custom: build-2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Pipeline Tutorials
 ---

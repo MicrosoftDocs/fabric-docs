@@ -5,7 +5,9 @@ author: orbey
 ms.author: erenorbey
 ms.reviewer: franksolomon
 ms.topic: how-to
-ms.custom: ignite-2023
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 
 ms.search.form: Data Wrangler

@@ -4,6 +4,8 @@ description: Learn how to navigate your Azure bill for A Fabric capacity.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 11/07/2023
 ---
 

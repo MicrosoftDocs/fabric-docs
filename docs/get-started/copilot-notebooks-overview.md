@@ -5,7 +5,11 @@ author: nelgson
 ms.author: rarikhy
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.custom: build-2023, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/13/2023
 ms.search.form: Data Science Overview
 ---

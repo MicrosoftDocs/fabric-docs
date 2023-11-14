@@ -6,7 +6,10 @@ ms.author: wiassaf
 ms.reviewer: arturv, johoang
 ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: fabric-cat
+ms.custom:
+  - fabric-cat
+  - ignite-2023
+  - ignite-2023-fabric
 ---
 
 # Migration​: ​Azure Synapse Analytics dedicated SQL pools to Fabric

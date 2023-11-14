@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/16/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---
@@ -259,6 +261,3 @@ Train and register machine learning models with this data:
 
 > [!div class="nextstepaction"]
 > [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
-
-
-

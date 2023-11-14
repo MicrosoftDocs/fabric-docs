@@ -4,8 +4,10 @@ description: End to end example of using R to analyze, visualize the avocado pri
 ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
-ms.topic: tutorial 
-ms.custom: build-2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---

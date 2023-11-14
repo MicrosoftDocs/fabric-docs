@@ -3,9 +3,11 @@ title: Known issue - InProgress status shows in Fabric capacity metrics app for 
 description: A known issue is posted where InProgress status shows in Fabric capacity metrics app for completed queries
 author: mihart
 ms.author: jessicamo
-ms.topic: troubleshooting 
+ms.topic: troubleshooting
 ms.date: 10/05/2023
-ms.custom: known-issue-506
+ms.custom:
+  - known-issue-506
+  - ignite-2023
 ---
 
 # Known issue - InProgress status shows in Fabric capacity metrics app for completed queries
