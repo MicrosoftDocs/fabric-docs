@@ -4,7 +4,7 @@ description: T-SQL surface area of the SQL Endpoint and Warehouse in Microsoft F
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 11/1/2023
+ms.date: 11/14/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
