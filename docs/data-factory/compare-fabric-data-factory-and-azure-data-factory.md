@@ -1,11 +1,14 @@
 ---
 title: Differences between Data Factory in Fabric and Azure
-description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric 
+description: This article provides information about compare differences between Azure Data Factory and Data Factory in Microsoft Fabric
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
 ms.date: 11/15/2023
-ms.custom: template-how-to, buyild-2023
+ms.custom:
+  - template-how-to
+  - buyild-2023
+  - ignite-2023
 ms.search.form: Pipeline Activity Overview
 ---
 

@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: lakehouse load to delta lake tables
 ---

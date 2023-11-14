@@ -4,8 +4,10 @@ description: Learn how to monitor Spark capacity consumption.
 ms.reviewer: snehagunda
 author: jejiang
 ms.author: jejiang
-ms.topic: how-to 
-ms.custom: build-2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Monitor Spark capacity consumption
 ---

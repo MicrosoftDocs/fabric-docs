@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: get-started
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: csv load to delta to pbi report
 ---

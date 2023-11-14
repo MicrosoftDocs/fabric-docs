@@ -5,6 +5,8 @@ metadata:
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
+  ms.custom:
+    - ignite-2023
   ms.date: 05/23/2023
 title: Apache Spark workspace administration settings FAQ
 summary: |

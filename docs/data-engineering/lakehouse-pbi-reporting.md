@@ -1,11 +1,13 @@
 ---
 title: Direct lake mode and Power BI reporting
-description: Learn how to build Power BI reports on top of lakehouse data in Microsoft Fabric 
+description: Learn how to build Power BI reports on top of lakehouse data in Microsoft Fabric
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse PBI Reporting
 ---

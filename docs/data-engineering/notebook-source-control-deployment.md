@@ -5,6 +5,9 @@ ms.reviewer: snehagunda
 ms.author: jingzh
 author: JeneZhang
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.form: Notebook git deployment pipelines alm ci cd
 ---

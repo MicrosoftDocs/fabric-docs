@@ -4,6 +4,9 @@ description: A Fabric environment contains a collection of configurations, inclu
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: overview
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ms.search.for: Manage Spark compute in Environment
 ---
