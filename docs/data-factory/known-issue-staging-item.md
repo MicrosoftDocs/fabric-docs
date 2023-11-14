@@ -3,9 +3,10 @@ title: Known issue - Staging items aren't available or are misconfigured
 description: A known issue is posted where a customer is able to see and interact with Staging items such as the Staging Lakehouse and Warehouse.
 author: Luitwieler
 ms.author: jeluitwi
-ms.topic: troubleshooting  
+ms.topic: troubleshooting
 ms.date: 11/15/2023
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ---
 
 # Known issue - Staging items aren't hidden and can be modified by the end-user

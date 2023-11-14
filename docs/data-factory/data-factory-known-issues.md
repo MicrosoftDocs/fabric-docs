@@ -1,11 +1,12 @@
 ---
 title: Data Factory known issues
-description: Identify issues that are affecting Data Factory features. 
+description: Identify issues that are affecting Data Factory features.
 author: ssabat
 ms.author: susabat
-ms.topic: troubleshooting    
+ms.topic: troubleshooting
 ms.date: 11/15/2023
-ms.custom:  
+ms.custom:
+  - ignite-2023
 ---
 
 # Data Factory known issues

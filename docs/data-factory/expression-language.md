@@ -4,8 +4,10 @@ description: This article provides information about expressions and functions t
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.topic: conceptual 
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 

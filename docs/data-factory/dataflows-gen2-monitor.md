@@ -3,7 +3,9 @@ title: An overview of refresh history and monitoring for dataflows.
 description: An overview of refresh history and monitoring for dataflows features.
 author: luitwieler
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.author: jeluitwi
 ---

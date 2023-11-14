@@ -5,7 +5,9 @@ author: DougKlopfenstein
 ms.date: 11/15/2023
 ms.author: dougklo
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: product-data-factory
 ---
 

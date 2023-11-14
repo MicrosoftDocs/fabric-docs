@@ -4,8 +4,10 @@ description: Learn how to monitor pipeline runs from the Monitoring hub.
 ms.reviewer: jonburchel
 ms.author: chugu
 author: chugugrace
-ms.topic: how-to 
-ms.custom: build-2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 
