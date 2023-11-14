@@ -4,7 +4,9 @@ description: Learn how the business to business feature in Microsoft Fabric work
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 
