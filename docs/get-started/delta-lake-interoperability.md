@@ -1,11 +1,13 @@
 ---
 title: Delta Lake table format interoperability
-description: Delta Lake table format interoperability reference for Microsoft Fabric 
+description: Delta Lake table format interoperability reference for Microsoft Fabric
 ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/9/2023
 ms.search.form: delta lake interoperability
 ---

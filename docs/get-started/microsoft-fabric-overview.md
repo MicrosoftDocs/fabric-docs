@@ -5,7 +5,12 @@ ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
 ms.search.form: product-trident
 ms.date: 06/30/2023
 ---

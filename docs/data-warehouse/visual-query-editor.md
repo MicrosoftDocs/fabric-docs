@@ -6,7 +6,9 @@ ms.author: prlangad
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the visual query editor

@@ -5,7 +5,9 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 

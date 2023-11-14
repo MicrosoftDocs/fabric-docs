@@ -5,7 +5,9 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/18/2023
 ---
 

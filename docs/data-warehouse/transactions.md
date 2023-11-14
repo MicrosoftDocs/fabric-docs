@@ -6,7 +6,9 @@ ms.author: kecona
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Transactions in Warehouse tables in Microsoft Fabric

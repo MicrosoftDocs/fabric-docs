@@ -6,7 +6,9 @@ ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
 ms.date: 04/30/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023-fabric
 ---
 
 # Discover data items in the OneLake data hub
