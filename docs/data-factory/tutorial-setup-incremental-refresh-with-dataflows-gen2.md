@@ -4,7 +4,9 @@ description: This tutorial takes 15 minutes, and describes how to incrementally 
 ms.reviewer: jburchel
 ms.author: jeluitwi
 author: luitwieler
-ms.topic: tutorial 
+ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 

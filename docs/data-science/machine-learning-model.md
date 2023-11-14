@@ -4,7 +4,9 @@ description: Learn how to create machine learning models, manage versions within
 author: midesa
 ms.author: midesa
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ms.search.form: Create New Model, Model Comparison
 ---

@@ -2,9 +2,11 @@
 title: Column-level security in Fabric data warehousing
 description: Learn about column-level security in tables in Fabric data warehousing.
 author: SQLStijn-MSFT
-ms.author: stwynant 
+ms.author: stwynant
 ms.reviewer: wiassaf
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 # Column-level security in Fabric data warehousing

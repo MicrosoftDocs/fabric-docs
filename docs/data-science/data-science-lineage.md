@@ -3,9 +3,11 @@ title: Data science lineage
 description: Track relationships between data science items
 ms.reviewer: mopeakande
 ms.author: midesa
-author: midesa 
+author: midesa
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ---
 

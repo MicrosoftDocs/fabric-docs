@@ -4,7 +4,9 @@ description: Learn about newly updated/added features in Data Factory for Micros
 ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
-ms.topic: overview 
+ms.topic: overview
+ms.custom:
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 
