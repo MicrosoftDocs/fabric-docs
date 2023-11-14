@@ -6,7 +6,8 @@ ms.author: painbar
 ms.reviewer: yicw, mesrivas
 ms.topic: how-to
 ms.date: 09/06/2023
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ---
 
 # Share items in Microsoft Fabric

@@ -1,10 +1,13 @@
 ---
 title: OneLake consumption
-description: Information on how OneLake usage affects your CU consumption.  
+description: Information on how OneLake usage affects your CU consumption.
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/15/2023
 ---
 

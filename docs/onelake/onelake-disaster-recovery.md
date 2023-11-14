@@ -4,7 +4,9 @@ description: How to plan for disaster recovery of your OneLake data in Microsoft
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/15/2023
 ---
 

@@ -5,6 +5,8 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: KQL Database
 ---

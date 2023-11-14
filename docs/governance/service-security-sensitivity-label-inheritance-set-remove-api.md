@@ -7,6 +7,7 @@ ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: how-to
 ms.custom:
+  - ignite-2023
 ms.date: 09/12/2023
 LocalizationGroup: Data from files
 ---

@@ -5,7 +5,9 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: product-trident, Manage your workspace
 ms.date: 06/14/2023
 ---
