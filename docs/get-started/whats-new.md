@@ -6,6 +6,8 @@ ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
 ms.date: 11/15/2023
 ms.topic: whats-new
+ms.custom:
+  - ignite-2023
 ---
 
 # What's new in Microsoft Fabric?

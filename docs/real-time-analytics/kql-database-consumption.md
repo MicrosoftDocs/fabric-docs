@@ -5,6 +5,9 @@ ms.reviewer: bwatts
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/02/2023
 ms.search.form: KQL Database, Overview
 ---

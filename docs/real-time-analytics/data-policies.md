@@ -5,7 +5,10 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 10/22/2023
 ms.search.form: product-kusto
 ---
