@@ -4,10 +4,12 @@ description: Learn how to view Apache Spark job progress below the Notebook cell
 ms.reviewer: snehagunda
 author: jejiang
 ms.author: jejiang
-ms.topic: how-to 
-ms.custom: build-2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 02/24/2023
-ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook 
+ms.search.form: Monitor notebook all runs, monitor Spark jobs within a notebook
 ---
 
 # Monitor Spark jobs within a notebook
