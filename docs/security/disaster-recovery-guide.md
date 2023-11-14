@@ -113,7 +113,7 @@ OneLake data remains accessible through multiple channels:
 
 * OneLake ADLS Gen2 API: See [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)
 
-    Examples of tools that can connect to OneLake data:
+* Examples of tools that can connect to OneLake data:
     
     * Azure Storage Explorer: See [Integrate OneLake with Azure Storage Explorer](../onelake/onelake-azure-storage-explorer.md)
 
