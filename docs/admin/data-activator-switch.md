@@ -4,6 +4,9 @@ description: Learn how to enable Data Activator in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/07/2023
 ---
 

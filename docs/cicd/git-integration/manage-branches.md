@@ -6,7 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.date: 06/23/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Manage branches in Microsoft Fabric workspaces
