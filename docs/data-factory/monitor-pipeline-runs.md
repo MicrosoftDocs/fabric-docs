@@ -53,7 +53,7 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 A Gantt chart is a view that lets you see the run history over a time range. If you switch to a Gantt view, all pipeline runs will be grouped by name, displayed as bars relative to how long the run took.
 
-:::image type="content" lightbox="media/monitor-pipeline-runs/gantt-view.png" source="media/monitor-pipeline-runs/gantt-view.png" alt-text="Screenshot showing where to switch between views.":::
+:::image type="content" source="media/monitor-pipeline-runs/gantt-view.png" alt-text="Screenshot showing where to switch between views.":::
 
 The length of the bar relates to the duration of the pipeline. You can select the bar to view more details.
 
