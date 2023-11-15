@@ -7,13 +7,14 @@ author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
 ms.date: 11/14/2023
+#Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
 
 # Tutorial: Use Great Expectations (GX) to validate Power BI semantic models
 
-This tutorial illustrates how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
+In this tutorial, you'll learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
 
-In this tutorial, you learn how to:
+This tutorial shows you how to:
 
 - Apply Great Expectation's Fabric Data Source (built on semantic link) to validate constraints on datasets in your Fabric workspace. 
     - Configure a GX Data Context, Data Assets, and Expectations.
@@ -25,7 +26,8 @@ In this tutorial, you learn how to:
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
-* Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file and upload it to your workspace.
+* Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file. 
+* In your workspace, use the **Upload** button to upload the _Retail Analysis Sample PBIX.pbix_ file to the workspace.
 
 ## Follow along in notebook
 
@@ -68,7 +70,7 @@ In order to get started with Great Expectations, you first have to set up a GX [
 context = gx.get_context()
 ```
 
-You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-retail-analysis).
+You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](/power-bi/create-reports/sample-retail-analysis).
 
 
 ```python
@@ -83,7 +85,7 @@ Here, you'll add multiple assets:
 * Power BI table
 * Power BI measure
 * Custom DAX query
-* [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
+* [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
 
 
 ### Power BI Table
@@ -128,7 +130,7 @@ ds.add_powerbi_dax_asset(
 
 ### DMV Query
 
-In some cases, it might be helpful to use [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
+In some cases, it might be helpful to use [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
 
 
 ```python
