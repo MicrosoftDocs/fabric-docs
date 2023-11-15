@@ -1,17 +1,18 @@
 ---
-title: Use the extended Spark history server to debug apps 
+title: Use the extended Spark history server to debug apps
 description: Use the extended Spark history server to debug and diagnose Spark applications in Fabric.
 author: jejiang
 ms.author: jejiang
-ms.topic: overview 
+ms.topic: overview
 ms.date: 04/30/2023
-ms.custom: template-howto, build-2023
+ms.custom:
+  - template-howto
+  - build-2023
+  - ignite-2023
 ms.search.form: Spark history server to debug apps
 ---
 
 # Use extended Apache Spark history server to debug and diagnose Apache Spark applications
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article provides guidance on how to use the extended Apache Spark history server to debug and diagnose completed and running Spark applications.
 

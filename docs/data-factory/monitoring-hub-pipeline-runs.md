@@ -4,16 +4,16 @@ description: Learn how to monitor pipeline runs from the Monitoring hub.
 ms.reviewer: jonburchel
 ms.author: chugu
 author: chugugrace
-ms.topic: how-to 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Browse data pipeline runs in the Monitoring hub
 
 The Monitoring hub serves as a centralized portal for browsing data pipeline runs across items, when you are in the **Data Factory** or **Data Engineering** experience.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Access the monitoring hub
 
@@ -68,4 +68,4 @@ If you need more information about detail activity runs of the data pipeline run
 ## Next steps
 
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
-- [Quickstart: Create your first Dataflows Gen2 to get and transform data](create-first-dataflow-gen2.md)
+- [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)

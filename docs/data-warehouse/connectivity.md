@@ -5,8 +5,10 @@ author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 06/01/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 # Connectivity to data warehousing in Microsoft Fabric
@@ -16,8 +18,6 @@ ms.search.form: Warehouse connectivity # This article's title should not change.
 In Microsoft [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] is accessible through a Tabular Data Stream, or TDS endpoint, familiar to all modern web applications that interact with a SQL Server endpoint. This is referred to as the SQL Connection String within the [!INCLUDE [product-name](../includes/product-name.md)] user interface.
 
 This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To get started, you must complete the following prerequisites:
 
@@ -147,4 +147,4 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 ## Related content
 
 - [Create a warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md)
-- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-analytics-endpoint.md)
