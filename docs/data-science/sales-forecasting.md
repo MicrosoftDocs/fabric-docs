@@ -133,7 +133,7 @@ mlflow.autolog(disable=True)  # Disable MLflow autologging
 
 ### Read raw data from the lakehouse
 
-Read raw data from the **Files** section of the lakehouse. Add additional columns for different date parts and the same information is used to create partitioned delta table. Since the raw date is stored as an Excel file, you need to use Pandas to read the raw data.
+Read raw data from the **Files** section of the lakehouse. Add more columns for different date parts and the same information is used to create partitioned delta table. Since the raw date is stored as an Excel file, you need to use Pandas to read the raw data.
 
 
 ```python
@@ -145,7 +145,7 @@ df = pd.read_excel("/lakehouse/default/Files/salesforecast/raw/Superstore.xlsx")
 
 ### Import libraries
 
-Prior to any analysis, you need to import the required libraries.
+Before any analysis, you need to import the required libraries.
 
 
 ```python
@@ -302,7 +302,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 ### Tune hyperparameters
 
-SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)` respectively and hence 7 parameters to tune. Prior to model training, you need to set up these parameters, which are defined in the following sections.
+SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)` respectively and hence 7 parameters to tune. Before model training, you need to set up these parameters, which are defined in the following sections.
 
 #### Order Parameters `(p, d, q)`:
 - `p`: The order of the autoregressive (AR) component, indicating how many past observations are considered. Also known as the AR order.
