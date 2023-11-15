@@ -5,7 +5,9 @@ ms.reviewer: lagayhar
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/23/2023
 ---
 
@@ -19,7 +21,7 @@ In this tutorial, you walk through the data engineering and data science workflo
 > * Train a model and log it with MLflow
 > * Load the model and make predictions
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 There are different types of recommendation algorithms. This tutorial uses a model based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 
@@ -39,9 +41,22 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Follow along in notebook
 
+You can follow along in a notebook one of two ways: 
+
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Book recommendation** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
 [AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Book%20Recommendation.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Step 1: Load the data
 
@@ -656,5 +671,5 @@ userRecs.write.format("delta").mode("overwrite").save(
 
 - [Training and evaluating a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

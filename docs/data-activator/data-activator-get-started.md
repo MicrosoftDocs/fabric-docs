@@ -4,7 +4,8 @@ description: Learn how to get started using Data Activator.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - ignite-2023-fabric
 ms.date: 10/03/2023
 ---
 

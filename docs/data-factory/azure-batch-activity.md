@@ -5,7 +5,9 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.date: 10/17/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Azure Batch activity to run a command on an Azure Batch instance

@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/16/2023
 ---
 
@@ -13,7 +15,7 @@ ms.date: 10/16/2023
 
 In this tutorial, you'll learn to import the registered LightGBMClassifier model that was trained in part 3 using the Microsoft Fabric MLflow model registry, and perform batch predictions on a test dataset loaded from a lakehouse.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 Microsoft Fabric allows you to operationalize machine learning models with a scalable function called PREDICT, which supports batch scoring in any compute engine. You can generate batch predictions directly from a Microsoft Fabric notebook or from a given model's item page. Learn about [PREDICT](https://aka.ms/fabric-predict).  
 
@@ -39,7 +41,7 @@ This part 4 of 5 in the tutorial series. To complete this tutorial, first comple
 
 [4-predict.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/4-predict.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 > [!IMPORTANT]
 > Attach the same lakehouse you used in the other parts of this series.

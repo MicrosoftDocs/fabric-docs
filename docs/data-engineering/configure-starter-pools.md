@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ---
 # Configuring starter pools in Microsoft Fabric
@@ -13,8 +15,6 @@ ms.date: 10/20/2023
 In this article, we explain how to customize starter pools in Microsoft Fabric for your analytics workloads. Starter pools are a fast and easy way to use Spark on the Microsoft Fabric platform within seconds. You can use Spark sessions right away, instead of waiting for Spark to set up the nodes for you, which helps you do more with data and get insights quicker.
 
 Starter pools have Spark clusters that are always on and ready for your requests. They use medium-sized nodes and can be scaled up based on your workload requirements.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 You can specify the maximum nodes for autoscaling based on the data engineering or data science workload requirements. Based on the max nodes you configure, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance.
 

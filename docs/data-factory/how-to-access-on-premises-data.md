@@ -4,17 +4,15 @@ description: This article describes how to configure a gateway to access on-prem
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: On-premises data sources gateway
 ---
 
 # How to access on-premises data sources in Data Factory for Microsoft Fabric
 
 Data Factory for Microsoft Fabric is a powerful cloud-based data integration service that allows you to create, schedule, and manage workflows for various data sources. In scenarios where your data sources are located on-premises, Microsoft provides the On-Premises Data Gateway to securely bridge the gap between your on-premises environment and the cloud. This document will guide you through the process of accessing on-premises data sources within Data Factory for Microsoft Fabric using the On-Premises Data Gateway.
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
 
 ## Create an on-premises data gateway
 

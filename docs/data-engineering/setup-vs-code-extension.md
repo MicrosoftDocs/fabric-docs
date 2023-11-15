@@ -5,16 +5,16 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 05/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: VSCodeExtension
 ---
 
 # What is the Synapse Visual Studio Code extension?
 
 The Synapse Visual Studio Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Visual Studio (VS) Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
 
@@ -48,7 +48,7 @@ Run the **conda.sh** in the terminal:
 
 ## Install the extension and prepare your environment
 
-1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension.
 
 1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 
@@ -79,6 +79,11 @@ To select a Fabric workspace, you must have a workspace created. If you don't ha
 Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
 
 :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
+
+### Current Limitations
+
+- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
+- Shell command start with "!" is not supported.
 
 ## Next steps
 

@@ -5,7 +5,9 @@ ms.reviewer: adieldar
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/16/2023
 ms.search.form: product-kusto
 ---
@@ -20,7 +22,7 @@ The Python plugin runs a user-defined function (UDF) using a Python script. The 
 ## Prerequisite
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Enable the plugin
 

@@ -3,9 +3,10 @@ title: Known issue - Dataflow Gen1 admin switch affects Dataflow Gen2
 description: A known issue is posted where a customer has disabled Dataflow Gen1 admin switch and it affects Dataflow Gen2.
 author: luitwieler
 ms.author: jeluitwi
-ms.topic: troubleshooting  
-ms.date: 11/06/2023
-ms.custom: 
+ms.topic: troubleshooting
+ms.date: 11/15/2023
+ms.custom:
+  - ignite-2023
 ---
 
 # Known issue - Dataflow Gen1 admin switch affects Dataflow Gen2

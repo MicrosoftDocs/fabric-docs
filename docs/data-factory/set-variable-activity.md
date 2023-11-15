@@ -5,14 +5,14 @@ ms.reviewer: jburchel
 ms.author: chez
 author: chez-charlie
 ms.topic: how-to
-ms.date: 08/23/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Set Variable activity in Fabric
 
 Use the Set Variable activity to set the value of an existing variable of type String, Bool, or Array defined in a pipeline in Data Factory for Microsoft Fabric or use the Set Variable activity to set a pipeline return value.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

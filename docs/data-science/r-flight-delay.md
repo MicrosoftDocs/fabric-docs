@@ -4,8 +4,10 @@ description: How to predict flight delay using tidymodels packages and build a P
 ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
-ms.topic: tutorial 
-ms.custom: build-2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 # customer intent: As a data scientist, I want to use R to predict flight delay
@@ -15,7 +17,7 @@ ms.search.form: R Language
 
 This article uses the [nycflights13](https://github.com/hadley/nycflights13) data to predict whether a plane arrives more than 30 minutes late. We then use the prediction results to build an interactive Power BI dashboard. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 In this tutorial, you learn how to:
 
@@ -83,7 +85,7 @@ flight_data <-
   mutate_if(is.character, as.factor)
 ```
 
-Before you start building up your model, let’s take a quick look at a few specific variables that are important for both preprocessing and modeling.
+Before you start building up your model, let's take a quick look at a few specific variables that are important for both preprocessing and modeling.
 
 Notice that the variable called `arr_delay` is a factor variable. It's important that your outcome variable for training a logistic regression model is a factor.
 
@@ -293,7 +295,7 @@ temp_delta<-"Tables/nycflight13"
 write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true")
 ```
 
-You can now use this table to create a Power BI dataset. 
+You can now use this table to create a semantic model. 
 
 1. On the left, select **OneLake data hub**.
 1. Select the Lakehouse you attached to your notebook.
@@ -301,12 +303,12 @@ You can now use this table to create a Power BI dataset.
 
     :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot shows where to open the lakehouse.":::
 
-1. On the top, select **New Power BI dataset**.
-1. Select **nycflight13** for your new dataset, then select **Confirm**.
-1. Your Power BI dataset is created.  At the top, select **New report**.
+1. On the top, select **New semantic model**.
+1. Select **nycflight13** for your new semantic model, then select **Confirm**.
+1. Your semantic model is created.  At the top, select **New report**.
 1. Select or drag fields from the data and visualizations panes onto the report canvas to build your report.
 
-:::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Graph of Power BI dataset.":::
+:::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Graph of semantic model.":::
 
 To create the report shown at the beginning of this section, use the following visualizations and data:
 
