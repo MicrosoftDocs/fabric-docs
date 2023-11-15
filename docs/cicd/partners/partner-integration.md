@@ -5,11 +5,9 @@ ms.reviewer: richin
 ms.author: monaberdugo
 author: mberdugo
 ms.topic: overview
-ms.custom:
-  - ignite-2023
-  - ignite-2023-fabric
-ms.search.form:
-ms.date: 11/04/2023
+ms.custom: 
+ms.search.form: 
+ms.date: 11/15/2023
 ---
 
 # Microsoft Fabric Integration Pathways for ISVs
@@ -55,7 +53,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 ### Database Mirroring
 
-You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases here (Link to Priya’s blog).
+You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases at [Introducing Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric/).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram of database mirroring.":::
 
@@ -81,9 +79,9 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |                     | List tables in Lakehouse                              |                                                                                                                             |
 |                     | Table Load                                            | Creates delta tables from CSV and parquet files and folders.                                                                |
 | OneLake             |                                                       |                                                                                                                             |
-|                     | [Create Shortcut](/rest/api/fabric/core/onelake-shortcuts/create-shortcut)   | Creates a new shortcut.                                                                                                     |
-|                     | [Delete Shortcut](/rest/api/fabric/core/onelake-shortcuts/delete-shortcut)   | Deletes the shortcut but doesn't delete destination storage folder.                                                        |
-|                     | [Get Shortcut](/rest/api/fabric/core/onelake-shortcuts/get-shortcut)                                          | Returns shortcut Properties.                                                                                                |
+|                     | [Create Shortcut](/rest/api/fabric/)   | Creates a new shortcut.                                                                                                     |
+|                     | [Delete Shortcut](/rest/api/fabric/)   | Deletes the shortcut but doesn't delete destination storage folder.                                                        |
+|                     | [Get Shortcut](/rest/api/fabric/)                                          | Returns shortcut Properties.                                                                                                |
 |                     | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)           | ADLS Gen2 APIs to create and manage file systems, directories, and path.                                                    |
 | Workspace           |                                                       |                                                                                                                             |
 |                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | create Workspace, get Workspace details, Delete Workspace, assign workspace to a capacity, add a workspace role assignment. |
@@ -93,6 +91,8 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 This section will be updated as more Fabric APIs become available.
 
 ## Build a Fabric Workload
+
+:::image type="content" source="media/partner-integration/fabric-workload.png" alt-text="Diagram showing how to create your own fabric workload.":::
 
 Build a Fabric Workload model is designed to equip ISVs with the tools and platform capabilities required to craft customized workloads and experiences on Fabric. It enables ISVs to tailor their offerings to deliver their value proposition while leveraging the Fabric ecosystem by combining the best of both the worlds.
 We're working closely with select design partners for this integration path and it's currently available by invitation only.

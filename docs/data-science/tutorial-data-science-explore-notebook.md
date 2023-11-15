@@ -43,7 +43,7 @@ This is part 2 of 5 in the tutorial series. To complete this tutorial, first com
 
 [2-explore-cleanse-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 > [!IMPORTANT]
 > Attach the same lakehouse you used in Part 1.

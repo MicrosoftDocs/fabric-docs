@@ -66,6 +66,7 @@ These items remain in the home region for the tenant:
 - Permissions
 - Semantic model credentials
 - Power BI Embedded Analytics Playground saved state
+- Metadata linked to Purview Data Map
 
 ## View capacity regions
 
