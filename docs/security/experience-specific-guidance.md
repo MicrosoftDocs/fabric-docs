@@ -269,6 +269,8 @@ Customers can't access data pipelines in the event of regional disaster, and the
 
 ## Real-Time Analytics
 
+This guide walks you through the recovery procedures for the Real-Time Analytics experience. It covers KQL databases/querysets and eventstreams.
+
 ### KQL Database/Queryset
 
 KQL database/queryset users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, data in your KQL databases querysets remains safe and accessible.
