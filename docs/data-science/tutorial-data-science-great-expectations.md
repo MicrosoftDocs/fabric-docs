@@ -1,20 +1,21 @@
 ---
-title: Data science tutorials - prepare your system
-description: Before you begin following the data science end-to-end scenario, learn about prerequisites, the sample dataset, and the lakehouse and notebooks you need.
+title: "Tutorial: Use Great Expectations to validate Power BI semantic models"
+description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom: build-2023
-ms.date: 5/4/2023
+ms.date: 11/14/2023
 ---
 
 # Tutorial: Use Great Expectations to validate Power BI semantic models
 
-This tutorial illustrates how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI datasets.
+This tutorial illustrates how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
 
-### In this tutorial, you learn how to:
-- Leverage Great Expectation's Fabric Data Source (built on semantic link) to validate constraints on datasets in your Fabric workspace. 
+In this tutorial, you learn how to:
+
+- Apply Great Expectation's Fabric Data Source (built on semantic link) to validate constraints on datasets in your Fabric workspace. 
     - Configure a GX Data Context, Data Assets, and Expectations.
     - Run a GX Checkpoint to view validation results. 
 - Use semantic link to analyze raw data.
@@ -22,6 +23,7 @@ This tutorial illustrates how to use SemPy together with [Great Expectations](ht
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 * Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) file and upload it to your workspace.
 
@@ -59,14 +61,14 @@ from great_expectations_zipcode_expectations.expectations import expect_column_v
 
 ## Set up GX Data Context and Data Source
 
-In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/terms/data_context/). This serves as an entry point for GX operations and holds all relevant configurations.
+In order to get started with Great Expectations, you first have to set up a GX [Data Context](https://docs.greatexpectations.io/docs/terms/data_context/). The context serves as an entry point for GX operations and holds all relevant configurations.
 
 
 ```python
 context = gx.get_context()
 ```
 
-You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample PBIX](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-retail-analysis).
+You can now add your Fabric dataset to this context as a [Data Source](https://docs.greatexpectations.io/docs/terms/datasource) to start interacting with the data. This tutorial uses a standard Power BI sample semantic model [Retail Analysis Sample .pbix file](https://learn.microsoft.com/en-us/power-bi/create-reports/sample-retail-analysis).
 
 
 ```python
@@ -75,7 +77,7 @@ ds = context.sources.add_fabric_powerbi("Retail Analysis Data Source", dataset="
 
 ## Specify Data Assets
 
-Define [Data Assets](https://docs.greatexpectations.io/docs/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom DAX query.
+Define [Data Assets](https://docs.greatexpectations.io/docs/terms/data_asset) to specify the subset of data you'd like to work with. The asset can be as simple as full tables, or be as complex as a custom Data Analysis Expressions (DAX) query.
 
 Here, you'll add multiple assets:
 * Power BI table
@@ -84,7 +86,7 @@ Here, you'll add multiple assets:
 * [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
 
 
-##### Power BI Table
+### Power BI Table
 
 Add a Power BI table as a data asset.
 
@@ -93,8 +95,9 @@ Add a Power BI table as a data asset.
 ds.add_powerbi_table_asset("Store Asset", table="Store")
 ```
 
-##### Power BI Measure
-If your dataset contains preconfigured measures, you can add these as assets following a similar API to SemPy's `evaluate_measure`. 
+### Power BI Measure
+
+If your dataset contains preconfigured measures, you add the measures as assets following a similar API to SemPy's `evaluate_measure`. 
 
 
 ```python
@@ -105,7 +108,7 @@ ds.add_powerbi_measure_asset(
 )
 ```
 
-##### DAX
+### DAX
 If you'd like to define your own measures or have more control over specific rows, you can add a DAX asset with a custom DAX query. Here, we define a `Total Units Ratio` measure by dividing two existing measures.
 
 
@@ -123,8 +126,9 @@ ds.add_powerbi_dax_asset(
 )
 ```
 
-##### DMV Query
-In some cases, it may be helpful to leverage [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. See "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" for more information.
+### DMV Query
+
+In some cases, it might be helpful to use [Dynamic Management View](https://learn.microsoft.com/en-us/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
 
 
 ```python
@@ -143,7 +147,7 @@ ds.add_powerbi_dax_asset(
 
 ## Expectations
 
-In order to add specific constraints to the assets defined above, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/terms/expectation) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/)
+In order to add specific constraints to the assets, you first have to configure [Expectation Suites](https://docs.greatexpectations.io/docs/terms/expectation_suite). After adding individual [Expectations](https://docs.greatexpectations.io/docs/terms/expectation) to each suite, you can then update the Data Context set up in the beginning with the new suite. For a full list of available expectations, see the [GX Expectation Gallery](https://greatexpectations.io/expectations/).
 
 Start by adding a "Retail Store Suite" with two expectations:
 * a valid zip code
@@ -159,9 +163,10 @@ suite_store.add_expectation(ExpectationConfiguration("expect_table_row_count_to_
 context.add_or_update_expectation_suite(expectation_suite=suite_store)
 ```
 
-##### `TotalUnits` Measure
+### `TotalUnits` Measure
 
 Add a "Retail Measure Suite" with one expectation:
+
 * Column values should be greater than 50,000
 
 
@@ -178,10 +183,11 @@ suite_measure.add_expectation(ExpectationConfiguration(
 context.add_or_update_expectation_suite(expectation_suite=suite_measure)
 ```
 
-##### `Total Units Ratio` DAX
+### `Total Units Ratio` DAX
 
-Add a "Retail DAX Suite" with one expectation::
-* Column values for Total Units Ratio shoud be between 0.8 and 1.5
+Add a "Retail DAX Suite" with one expectation:
+
+* Column values for Total Units Ratio should be between 0.8 and 1.5
 
 
 ```python
@@ -198,9 +204,10 @@ suite_dax.add_expectation(ExpectationConfiguration(
 context.add_or_update_expectation_suite(expectation_suite=suite_dax)
 ```
 
-##### Referential Integrity Violations (DMV)
+### Referential Integrity Violations (DMV)
 
-Add a"Retail DMV Suite" with one expectation:
+Add a "Retail DMV Suite" with one expectation:
+
 * the RIVIOLATION_COUNT should be 0
 
 
@@ -293,11 +300,11 @@ result_df = pd.DataFrame.from_records(data)
 result_df[["Batch ID", "type", "success", "element_count", "unexpected_count", "partial_unexpected_list"]]
 ```
 
-From these results you can see that all your expectations have passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
+From these results you can see that all your expectations passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
 
 ## Diagnostics
 
-Using semantic link, you can fetch the source data to understand which exact years are out of range. Semantic link provides an inline magic for executing DAX queries, which we can use to execute the same query we passed into the GX Data Asset and visualize the resulting values.
+Using semantic link, you can fetch the source data to understand which exact years are out of range. Semantic link provides an inline magic for executing DAX queries. Use semantic link to execute the same query you passed into the GX Data Asset and visualize the resulting values.
 
 
 ```python
@@ -335,18 +342,18 @@ plt.axhline( 0.5, color="red", linestyle="dotted")
 None
 ```
 
-From this, you can see that April and July were slightly out of range and can then take further steps to investigate.
+From the plot, you can see that April and July were slightly out of range and can then take further steps to investigate.
 
 ## Storing GX Configuration
 
-As the data in your dataset changes over time, you may want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, the conext could have been instatiated as a File Conext (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context))
+As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context).
 
 
 ```python
 context = context.convert_to_file_context()
 ```
 
-Now that you've saved the context, copy the **gx** directory to your lakehouse.
+Now that you saved the context, copy the `gx` directory to your lakehouse.
 
 
 ```python
@@ -354,11 +361,9 @@ Now that you've saved the context, copy the **gx** directory to your lakehouse.
 !cp -r gx/ /lakehouse/default/Files/gx
 ```
 
-Now, future contexts can be created with `context = gx.get_context(project_root_dir="<your path here>")` and will contain all the configurations from above.
+Now, future contexts can be created with `context = gx.get_context(project_root_dir="<your path here>")` to use all the configurations from this tutorial.
 
-@@ If you attach the lakehouse to a new notebook, use:
-`context = gx.get_context(project_root_dir="/lakehouse/default/Files/gx")` 
-to retrieve the context.  IS THIS RIGHT?
+For example, in a new notebook, attach the same lakehouse and use `context = gx.get_context(project_root_dir="/lakehouse/default/Files/gx")` to retrieve the context. 
 
 <!-- nbend -->
 
