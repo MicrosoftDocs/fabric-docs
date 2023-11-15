@@ -1,18 +1,18 @@
 ---
-title: Visualize data with Apache Spark and Python 
+title: Visualize data with Apache Spark and Python
 description: Create rich data visualizations by using Apache Spark and Python
 ms.reviewer: mopeakande
 author: midesa
 ms.author: midesa
-ms.topic: overview 
-ms.custom: build-2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: Python Language
 ---
 
 # Analyze data with Apache Spark and Python
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you'll learn how to perform exploratory data analysis by using Azure Open Datasets and Apache Spark. 
 

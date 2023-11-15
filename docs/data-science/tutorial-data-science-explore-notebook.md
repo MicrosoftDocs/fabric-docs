@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/16/2023
 #  CustomerIntent: As a data scientist, I want to explore and visualize my data in a notebook.
 ---
@@ -18,7 +20,7 @@ You'll use `seaborn`, a Python data visualization library that provides a high-l
 
 You'll also use [Data Wrangler](data-wrangler.md), a notebook-based tool that provides you with an immersive experience to conduct exploratory data analysis and cleaning.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are:
 
@@ -41,7 +43,7 @@ This is part 2 of 5 in the tutorial series. To complete this tutorial, first com
 
 [2-explore-cleanse-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/2-explore-cleanse-data.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 > [!IMPORTANT]
 > Attach the same lakehouse you used in Part 1.
@@ -259,6 +261,3 @@ Train and register machine learning models with this data:
 
 > [!div class="nextstepaction"]
 > [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
-
-
-

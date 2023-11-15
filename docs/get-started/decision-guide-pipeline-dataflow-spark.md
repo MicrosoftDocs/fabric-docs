@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/12/2023
 ---
 
 # Microsoft Fabric decision guide: copy activity, dataflow, or Spark
 
 Use this reference guide and the example scenarios to help you in deciding whether you need a copy activity, a dataflow, or Spark for your Microsoft Fabric workloads.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Copy activity, dataflow, and Spark properties
 

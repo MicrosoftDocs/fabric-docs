@@ -5,13 +5,15 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Overview
 ---
 # What is the difference between Real-Time Analytics and Azure Data Explorer?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Real-Time Analytics is a data analytics SaaS experience in the Microsoft Fabric offering. Azure Data Explorer is a PaaS service in Azure. Kusto in Real-Time Analytics (KQL Database and KQL Queryset) and Azure Data Explorer share the same core engine with the identical core capabilities, but different management behavior. This article details the difference between the two services. Real-Time Analytics also offers other capabilities, such as [Eventstreams](event-streams/overview.md), and has many aspects that are managed at the workspace level.
 

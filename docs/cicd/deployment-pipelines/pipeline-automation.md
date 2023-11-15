@@ -4,14 +4,14 @@ description: Learn how to automate your deployment pipeline, the Microsoft Fabri
 author: data-goblin
 ms.author: v-kurtbuhler
 ms.topic: conceptual
-ms.date: 10/12/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # Automate your deployment pipeline by using APIs and Azure DevOps
 
 The Microsoft Fabric [deployment pipelines](intro-to-deployment-pipelines.md) tool enables business intelligence teams to build an efficient and reusable release process for their Fabric content.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the deployment pipelines API operations.
 
@@ -48,7 +48,7 @@ The [deployment pipelines Power BI REST APIs](/rest/api/power-bi/pipelines) allo
 
 ### Which deployments are supported by the APIs?
 
-Here's a list of the different deployment types the APIs support:
+The APIs support the following deployment types:
 
 * **Deploy all** - A single API call that deploys all the content in the workspace to the next stage in the pipeline. For this operation, use the [Deploy all](/rest/api/power-bi/pipelines/deployall) API.
 
@@ -123,7 +123,7 @@ You can also download the entire [`PowerBI-Developer-Samples`](https://github.co
 
 ### PowerShell example
 
-This section describes an example PowerShell script that deploys a dataset, report, and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
+This section describes an example PowerShell script that deploys a semantic model, report, and dashboard, from the development stage to the test stage. The script then checks whether the deployment was successful.
 
 To run a PowerShell script that performs a deployment, you need the following components. You can add any of these parts into [tasks](/azure/devops/pipelines/tasks/utility/powershell) in your Azure pipeline stages.
 
@@ -178,7 +178,7 @@ To run a PowerShell script that performs a deployment, you need the following co
 
 * Deployment by using APIs is subject to the same [limitations](understand-the-deployment-process.md#considerations-and-limitations) as the deployment pipelines user interface.
 
-* A *service principal* can't configure *OAuth* credentials. After you deploy new items, the signed in *service principal* becomes the owner of any deployed paginated reports and datasets. In such cases, a refresh can't be completed.
+* A *service principal* can't configure *OAuth* credentials. After you deploy new items, the signed in *service principal* becomes the owner of any deployed paginated reports and semantic models. In such cases, a refresh can't be completed.
 
 * Deploying dataflows by using a *service principal* isn't supported.
 

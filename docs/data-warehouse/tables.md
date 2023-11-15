@@ -4,9 +4,11 @@ description: Learn about tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Tables in data warehousing in Microsoft Fabric
@@ -18,8 +20,6 @@ This article details key concepts for designing tables in [!INCLUDE [product-nam
 In tables, data is logically organized in a row-and-column format. Each row represents a unique record, and each column represents a field in the record.
 
 - In [!INCLUDE[fabricdw](includes/fabric-dw.md)], tables are database objects that contain all the transactional data. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Determine table category
 
@@ -108,8 +108,9 @@ If data is coming from multiple data stores, you can port the data into the data
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports many, but not all, of the table features offered by other databases.
 
-The following list shows some of the table features that aren't currently supported. During preview, this list is subject to change.
+The following list shows some of the table features that aren't currently supported.  
 
+- 1024 maximum columns per table
 - Computed columns
 - Indexed views
 - Partitioned tables

@@ -5,16 +5,16 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: delta lake v-order optimization
 ---
 
 # Delta Lake table optimization and V-Order
 
 The [Lakehouse](lakehouse-overview.md) and the [Delta Lake](lakehouse-and-delta-tables.md) table format are central to [!INCLUDE [product-name](../includes/product-name.md)], assuring that tables are optimized for analytics is a key requirement. This guide covers Delta Lake table optimization concepts, configurations and how to apply it to most common Big Data usage patterns.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What is V-Order?
 
@@ -24,9 +24,9 @@ Power BI and SQL engines make use of Microsoft Verti-Scan technology and V-Order
 
 V-Order works by applying special sorting, row group distribution, dictionary encoding and compression on parquet files, thus requiring less network, disk, and CPU resources in compute engines to read it, providing cost efficiency and performance.  V-Order sorting has a 15% impact on average write times but provides up to 50% more compression.
 
-Its __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
+It's __100% open-source parquet format compliant__; all parquet engines can read it as a regular parquet files. Delta tables are more efficient than ever; features such as Z-Order are compatible with V-Order. Table properties and optimization commands can be used on control V-Order on its partitions.
 
-V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc. are orthogonal to V-Order, as such, are compatible and may be used together for extra benefits.
+V-Order is applied at the parquet file level. Delta tables and its features, such as Z-Order, compaction, vacuum, time travel, etc. are orthogonal to V-Order, as such, are compatible and can be used together for extra benefits.
 
 ## Controlling V-Order writes
 
@@ -218,9 +218,9 @@ DeltaTable.createOrReplace(spark)\
 
 ## What is Optimized Write?
 
-Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables may have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
+Analytical workloads on Big Data processing engines such as Apache Spark perform most efficiently when using standardized larger file sizes. The relation between the file size, the number of files, the number of Spark workers and its configurations, play a critical role on performance. Ingesting data into data lake tables might have the inherited characteristic of constantly writing lots of small files; this scenario is commonly known as the "small file problem".
 
-Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size may be changed per workload requirements using configurations.
+Optimize Write is a Delta Lake on [!INCLUDE [product-name](../includes/product-name.md)] and Azure Synapse Analytics feature in the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data. The target file size can be changed per workload requirements using configurations.
 
 The feature is __enabled by default__ in [!INCLUDE [product-name](../includes/product-name.md)] [Runtime for Apache Spark](./runtime.md). To learn more about Optimize Write usage scenarios, read the article [The need for optimize write on Apache Spark](/azure/synapse-analytics/spark/optimize-write-for-apache-spark)
 
@@ -234,12 +234,14 @@ The implementation is controlled by the ```spark.microsoft.delta.merge.lowShuffl
 
 As Delta tables change, performance and storage cost efficiency tend to degrade for the following reasons:
 
-- New data added to the table may skew data
+- New data added to the table might skew data
 - Batch and streaming data ingestion rates might bring in many small files
 - Update and delete operations eventually create read overhead; parquet files are immutable by design, so Delta tables adds new parquet files which the changeset, further amplifying  the issues imposed by the first two items.
 - No longer needed data files and log files available in the storage.
 
 In order to keep the tables at the best state for best performance, perform bin-compaction and vacuuming operations in the Delta tables. Bin-compaction is achieved by the [OPTIMIZE](https://docs.delta.io/latest/optimizations-oss.html) command; it merges all changes into bigger, consolidated parquet files. Dereferenced storage clean-up is achieved by the [VACUUM](https://docs.delta.io/latest/delta-utility.html#-delta-vacuum) command.
+
+The table maintenance commands *OPTIMIZE* and *VACUUM* can be used within notebooks and Spark Job Definitions, and then orchestrated using platform capabilities. Lakehouse in Fabric offers a functionality to use the user interface to perform ad-hoc table maintenance as explained in the [Delta Lake table maintenance](lakehouse-table-maintenance.md) article.
 
 > [!IMPORTANT]
 > Properly designing the table physical structure based on the ingestion frequency and expected read patterns is likely more important than running the optimization commands described in this section.

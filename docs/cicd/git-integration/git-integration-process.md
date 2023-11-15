@@ -4,16 +4,18 @@ description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual 
-ms.date: 11/12/2023
-ms.custom: build-2023
+ms.topic: conceptual
+ms.date: 11/15/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Basic concepts in Git integration
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Permissions
 
