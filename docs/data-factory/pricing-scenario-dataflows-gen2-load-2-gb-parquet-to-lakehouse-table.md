@@ -13,7 +13,7 @@ ms.date: 11/15/2023
 
 # Pricing scenario using Dataflow Gen2 to load 2 GB of Parquet data to a Lakehouse table
 
-In this scenario, Dataflow Gen2 was used to load 2 GB of Parquet data stored in Azure Data Lake Storage (ADLS) Gen2 to a Lakehouse table in Microsoft Fabric.
+In this scenario, Dataflow Gen2 was used to load 2 GB of Parquet data stored in Azure Data Lake Storage (ADLS) Gen2 to a Lakehouse table in Microsoft Fabric. We used the NYC Taxi-green sample data for the Parquet data.
 
 The prices used in the following example are hypothetical and don’t intend to imply exact actual pricing. These are just to demonstrate how you can estimate, plan, and manage cost for Data Factory projects in Microsoft Fabric. Also, since Fabric capacities are priced uniquely across regions, we use the pay-as-you-go pricing for a Fabric capacity at US West 2 (a typical Azure region), at $0.18 per CU per hour. Refer here to [Microsoft Fabric - Pricing](https://azure.microsoft.com/pricing/details/microsoft-fabric/) to explore other Fabric capacity pricing options.
 
@@ -38,28 +38,29 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/fabric-metrics-app-load-2-gb-parquet-to-lakehouse-table.png" alt-text="Screenshot showing the duration and CU consumption of the job in the Fabric Metrics App.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-1.png" alt-text="Screenshot showing details of Dataflow Gen2 Refresh consumption.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-1.png" alt-text="Screenshot showing details of Dataflow Gen2 Refresh duration and CU consumption.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-2.png" alt-text="Screenshot showing details of Query and Dataset On-Demand Refresh cost.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-2.png" alt-text="Screenshot showing details of SQL Endpoint Query duration and CU consumption used in the run.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-3.png" alt-text="Screenshot showing details of the first Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-3.png" alt-text="Screenshot showing details of Warehouse Query and OneLake Compute duration and CU consumption used in the run.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-4.png" alt-text="Screenshot showing details of a second Dataflow Gen2 High Scale Dataflow Compute consumption and SQL Endpoint Query used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-4.png" alt-text="Screenshot showing details of Query and Dataset On-Demand Refresh duration and CU consumption and SQL Endpoint Query used in the run.":::
 
-:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-5.png" alt-text="Screenshot showing details of Dataflow Gen2 High Scale Dataflow Compute, Warehouse Query, and OneLake Compute consumption used in the run.":::
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-5.png" alt-text="Screenshot showing details of a second Query and Dataset On-Demand Refresh duration and CU consumption used in the run.":::
 
-The Standard Compute Meter recorded negligible activity, insufficient for inclusion in the Metrics App report. Thus, we can approximate the consumption for Query executions and Dataflow Gen2 refresh operations as 0 Compute Units (CUs). It's important to note that other operations, including Warehouse Query, SQL Endpoint Query, and Dataset On-Demand Refresh, constitute detailed aspects of Dataflow Gen2 implementation that are currently transparent and necessary for their respective operations. However, these operations will be concealed in future updates and should be disregarded when estimating costs for Dataflow Gen2.
+:::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-6.png" alt-text="Screenshot showing details of OneLake Compute and 2 High Scale Dataflow Compute duration and CU consumption used in the run.":::
 
-High Scale Dataflow Compute operation meter consumed 10.44 CU(s) + 10.68 CU (s) = 21.12 CU(s).
+The High Scale Dataflow Compute Meter recorded negligible activity. Standard Compute meter for Dataflow Gen2 refresh operations consume 112,098.540 Compute Units (CUs). It's important to consider that other operations, including Warehouse Query, SQL Endpoint Query, and Dataset On-Demand Refresh, constitute detailed aspects of Dataflow Gen2 implementation that are currently transparent and necessary for their respective operations. However, these operations will be concealed in future updates and should be disregarded when estimating costs for Dataflow Gen2.
 
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
 
 |Metric  |Standard Compute | High Scale Compute  |
 |---------|---------|---------|
-|Effective CU hours billed | 0 / (60*60) = 0  CU hours | 21.12 / (60*60) = 0.0059 CU-hour |
+|Total CU seconds | 112,098.54 CU seconds | 0 CU seconds |
+|Effective CU-hours billed | 112,098.54 / (60*60) = 31.14 CU hours | 0 / (60*60) = 0 CU hours |
 
-**Total run cost at $0.18/CU hour** = (0.0059 CU-hours) * ($0.18/CU hour) ~= **$0.0011**
+**Total run cost at $0.18/CU hour** = (31.14 CU-hours) * ($0.18/CU hour) ~= **$5.60**
 
 ## Next steps
 
