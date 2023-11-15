@@ -44,7 +44,7 @@ Microsoft Purview works with Microsoft Fabric so users can discover and manage M
 - **Microsoft Purview Data Loss Prevention (DLP)** - DLP policies are currently supported in Fabric for Power BI semantic models only. DLP policies detect upload of sensitive data into semantic models. They can detect sensitivity labels and sensitive info types, such as credit card and social security numbers. They can be configured to generate policy tips for semantic model owners and alerts for security admins. DLP policies can also be configured to allow data owners to override them. For more information, see [data loss prevention policies](/power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview).
 - **Microsoft Purview Audit** - all Microsoft Fabric user activities are logged and available in the Microsoft Purview audit log. For more information, see [track user activities for Microsoft Fabric](../admin/track-user-activities.md) and [track user activities in Power BI](/power-bi/admin/service-admin-auditing#use-the-audit-log).
 
-Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solitions to monitor and manage Microsoft Fabric as well.
+Microsoft Purview and Microsoft Fabric will continue to work more closely together. Soon you'll be able to use more solutions to monitor and manage Microsoft Fabric as well.
 
 ## Microsoft Purview Hub
 
