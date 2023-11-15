@@ -2,7 +2,9 @@
 title: Analyze time series
 description: Use SynapseML and Azure AI services for multivariate anomaly detection.
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
@@ -311,5 +313,5 @@ Finally, the last plot shows the contribution of the data from each sensor to th
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use AI services with SynapseML](overview-azure-ai-services.md)
+- [How to use AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to use SynapseML to tune hyperparameters](hyperparameter-tuning-fighting-breast-cancer.md)

@@ -4,17 +4,16 @@ description: This article provides an overview of the Azure Cosmos DB for NoSQL 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/26/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Azure Cosmos DB for NoSQL connector overview
 
 The Azure Cosmos DB for NoSQL connector is supported in Data Factory in Microsoft Fabric with the following capabilities.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
-Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 in Dataflow Gen2.
 
 ## Support in Dataflow Gen2
 

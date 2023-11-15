@@ -6,14 +6,15 @@ summary: Data engineering in Microsoft Fabric enables users to design, build, an
 metadata:
   title: Data Engineering in Microsoft Fabric documentation
   description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
-  ms.subservice: data-engineering 
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-engineering
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: SnehaGunda
   ms.author: sngun
   ms.date: 05/23/2023
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -60,7 +61,10 @@ landingContent:
             url: lakehouse-notebook-explore.md
           - text: Visualize notebooks
             url: notebook-visualization.md
-
+          - text: Notebooks source control and deployment
+            url: notebook-source-control-deployment.md
+          - text: Use MSSparkUtils in notebook
+            url: microsoft-spark-utilities.md
   # Card 
   - title: Delta Lake
     linkLists:
@@ -74,6 +78,28 @@ landingContent:
             url: delta-optimization-and-v-order.md
           - text: Load to tables
             url: load-to-tables.md
+
+  # Card 
+  - title: Lakehouse end-to-end tutorial
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse scenario overview
+            url: tutorial-lakehouse-introduction.md
+      - linkListType: tutorial
+        links:
+          - text: Step 1 - Create a workspace
+            url: tutorial-lakehouse-get-started.md
+          - text: Step 2 - Create a lakehouse
+            url: tutorial-build-lakehouse.md
+          - text: Step 3 - Ingest data into lakehouse
+            url: tutorial-lakehouse-data-ingestion.md
+          - text: Step 4 - Transform data into delta tables
+            url: tutorial-lakehouse-data-preparation.md
+          - text: Step 5 - Build a report
+            url: tutorial-lakehouse-build-report.md
+          - text: Step 6 - Clean up resources
+            url: tutorial-lakehouse-clean-up.md
 
   # Card 
   - title: Apache Spark
@@ -106,28 +132,6 @@ landingContent:
             url: capacity-settings-management.md
 
   # Card 
-  - title: Lakehouse end-to-end tutorial
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Lakehouse scenario overview
-            url: tutorial-lakehouse-introduction.md
-      - linkListType: tutorial
-        links:
-          - text: Step 1 - Create a workspace
-            url: tutorial-lakehouse-get-started.md
-          - text: Step 2 - Create a lakehouse
-            url: tutorial-build-lakehouse.md
-          - text: Step 3 - Ingest data into lakehouse
-            url: tutorial-lakehouse-data-ingestion.md
-          - text: Step 4 - Transform data into delta tables
-            url: tutorial-lakehouse-data-preparation.md
-          - text: Step 5 - Build a report
-            url: tutorial-lakehouse-build-report.md
-          - text: Step 6 - Clean up resources
-            url: tutorial-lakehouse-clean-up.md
-
-  # Card 
   - title: VS Code integration
     linkLists:
       - linkListType: how-to-guide
@@ -140,3 +144,21 @@ landingContent:
             url: author-sjd-with-vs-code.md
           - text: Explore lakehouse from VS Code
             url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md
+
+  # Card 
+  - title: Get started with environment
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Fabric environments
+            url: create-and-use-environment.md
+      - linkListType: how-to-guide
+        links:
+          - text: Manage Spark compute in environments
+            url: environment-manage-compute.md
+          - text: Manage libraries in environments
+            url: environment-manage-library.md
+          - text: Migrate the existing workspace libraries and Spark properties to an environment
+            url: environment-workspace-migration.md

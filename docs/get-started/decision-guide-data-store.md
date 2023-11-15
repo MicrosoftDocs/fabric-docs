@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: quickstart
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/18/2023
 ---
 
 # Microsoft Fabric decision guide: choose a data store
 
 Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data warehouse and lakehouse properties
 
