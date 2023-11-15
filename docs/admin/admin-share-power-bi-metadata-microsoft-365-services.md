@@ -6,10 +6,12 @@ ms.author: painbar
 ms.reviewer: 'jadelynray'
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: conceptual
-ms.date: 07/23/2023
-Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
+ms.date: 11/02/2023
 LocalizationGroup: Admin
+Customer intent: As a Fabric admin, I need to know what information is passed from Fabric and Microsoft Graph to Microsoft 365.
 ---
 
 # Share data with your Microsoft 365 services

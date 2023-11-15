@@ -3,9 +3,11 @@ title: Machine learning permissions
 description: Understand the permissions required for machine learning models and experiments in [!INCLUDE [product-name](../includes/product-name.md)] and how to assign these permissions to users.
 ms.reviewer: scottpolly
 ms.author: midesa
-author: midesa 
+author: midesa
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 
@@ -13,7 +15,7 @@ ms.date: 05/23/2023
 
 This article describes machine learning model and experiment permissions in [!INCLUDE [product-name](../includes/product-name.md)] and how these permissions are acquired by users.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 > [!NOTE]
 > After you create a workspace in [!INCLUDE [product-name](../includes/product-name.md)], or if you have an admin role in a workspace, you can give others access to it by assigning them a different role.

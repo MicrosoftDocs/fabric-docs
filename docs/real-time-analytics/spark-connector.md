@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Notebooks
 ---
 # Tutorial: Use a notebook with Apache Spark to query a KQL database
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a [!INCLUDE [product-name](../includes/product-name.md)] notebook to read and write data to a KQL database using Apache Spark. This tutorial uses precreated datasets and notebooks in both the Real-time Analytics and the Data Engineering environments in [!INCLUDE [product-name](../includes/product-name.md)]. For more information on notebooks, see [How to use [!INCLUDE [product-name](../includes/product-name.md)] notebooks](../data-engineering/how-to-use-notebook.md).
 
@@ -31,15 +31,15 @@ Specifically, you learn how to:
 ## 1- Create a KQL database
 
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select the **KQL Database (Preview)** tile.
+2. Select the **KQL Database** tile.
 
     :::image type="content" source="media/jupyter-notebook/kql-database-tile.png" alt-text="Screenshot of new KQL database tile in Real-Time Analytics.":::
 
-1. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
+3. In the **KQL Database name** field, enter *nycGreenTaxi*, then select **Create**.
 
     The KQL database has now been created within the context of the selected workspace.
 
-1. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+4. Copy the **Query URI** from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
     :::image type="content" source="media/spark-connector/query-uri.png" alt-text=" Screenshot of the database details card that shows the database details. The Query URI option titled Copy URI is highlighted.":::
 

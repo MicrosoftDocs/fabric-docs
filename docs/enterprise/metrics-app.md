@@ -4,13 +4,13 @@ description: Learn how to evaluate your Microsoft Fabric capacity's health, by r
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 >[!NOTE]
 >The Microsoft Fabric Capacity Metrics app has been updated to include support for both EM/A and P SKUs.
@@ -37,7 +37,9 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Updates from version 1 to version 1.1 are installed in a new workspace.
 
-* Sampling may occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
+* Sampling might occur while exporting data from the Export Data page. See second and third bullet in [Considerations and limitations](/power-bi/visuals/power-bi-visualization-export-data?tabs=powerbi-desktop#considerations-and-limitations).
+
+* Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 
 * Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 

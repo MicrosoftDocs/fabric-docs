@@ -4,9 +4,11 @@ description: Follow steps to ingest data into a Warehouse with the COPY statemen
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Ingesting data
 ---
 
@@ -16,12 +18,10 @@ ms.search.form: Ingesting data
 
 The COPY statement is the primary way to ingest data into [!INCLUDE [fabric-dw](includes/fabric-dw.md)] tables. COPY performs high high-throughput data ingestion from an external Azure storage account, with the flexibility to configure source file format options, a location to store rejected rows, skipping header rows, and other options. 
 
-This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table using the T-SQL COPY statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this dataset, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
+This tutorial shows data ingestion examples for a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] table using the T-SQL COPY statement. It uses the Bing COVID-19 sample data from the Azure Open Datasets. For details about this data, including its schema and usage rights, see [Bing COVID-19](/azure/open-datasets/dataset-bing-covid-19?tabs=azure-storage).
 
 > [!NOTE]
 > To learn more about the T-SQL COPY statement including more examples and the full syntax, see [COPY (Transact-SQL)](/sql/t-sql/statements/copy-into-transact-sql?view=fabric&preserve-view=true).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create a table
 
@@ -60,7 +60,7 @@ Before you use the COPY statement, the destination table needs to be created. To
 
 ## Ingest Parquet data using the COPY statement
 
-In the first example, we load data using a Parquet source. Since this dataset is publicly available and doesn't require authentication, you can easily copy this data by specifying the source and the destination. No authentication details are needed. You'll only need to specify the `FILE_TYPE` argument.
+In the first example, we load data using a Parquet source. Since this data is publicly available and doesn't require authentication, you can easily copy this data by specifying the source and the destination. No authentication details are needed. You'll only need to specify the `FILE_TYPE` argument.
 
 Use the following code to run the COPY statement with a Parquet source:
 

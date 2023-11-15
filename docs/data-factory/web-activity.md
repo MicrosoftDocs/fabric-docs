@@ -5,14 +5,14 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Web activity to call REST APIs in pipelines
 
 Web Activity can be used to call a custom REST endpoint from an Azure Data Factory or Synapse pipeline. You can pass datasets and linked services to be consumed and accessed by the activity.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
 > The maximum supported output response payload size is 4 MB.

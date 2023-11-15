@@ -4,13 +4,14 @@ description: Understand Microsoft Fabric concepts such as tenants, capacities an
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 09/04/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/02/2023
 ---
 
 # Microsoft Fabric concepts and licenses
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity license](#capacity-license), and at least one [per-user license](#per-user-licenses).
 
