@@ -37,9 +37,22 @@ The main steps in this tutorial are
 
 ## Follow along in the notebook
 
- [AIsample - R Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
+You can follow along in a notebook one of two ways: 
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Fraud detection** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
+[AIsample - R Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Fraud%20Detection.ipynb -->
 
