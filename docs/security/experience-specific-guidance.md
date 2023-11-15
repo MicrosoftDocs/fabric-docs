@@ -42,29 +42,29 @@ The following sections provide step-by-step guides for each Fabric experience to
  
 ## Data Engineering
 
-This guide walks you through the recovery procedures for the Data Engineering experience. It covers Lakehouse, Notebook, and Spark Job Definition.
+This guide walks you through the recovery procedures for the Data Engineering experience. It covers lakehouses, notebooks, and Spark job definitions.
 
 ### Lakehouse
 
-Lakehouse items from the original region remain unavailable to customers. To recover the item, customers can re-create it in workspace C2.W2. We recommend two approaches for recovering lakehouses:
+Lakehouses from the original region remain unavailable to customers. To recover a lakehouse, customers can re-create it in workspace C2.W2. We recommend two approaches for recovering lakehouses:
 
 #### Approach 1: Using custom script to copy Lakehouse Delta tables and files
 
-Customers can recreate Lakehouses by using a custom Scala script.
+Customers can recreate lakehouses by using a custom Scala script.
 
-1. Create the Lakehouse item (for example, LH1) in the newly created workspace C2.W2.
+1. Create the lakehouse (for example, LH1) in the newly created workspace C2.W2.
 
-1. Create a new Notebook in the workspace C2.W2.
+1. Create a new notebook in the workspace C2.W2.
 
-1. To recover the tables and files from the original Lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
+1. To recover the tables and files from the original lakehouse, you need to use the ABFS path to access the data (see [Connecting to Microsoft OneLake](../onelake/onelake-access-api.md)). You can use the code example below (see [Introduction to Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python/)) in the notebook to get the ABFS paths of files and tables from the original lakehouse. (Replace C1.W1 with the actual workspace name)
 
     ```
     mssparkutils.fs.ls('abfs[s]://<C1.W1>@onelake.dfs.fabric.microsoft.com/<item>.<itemtype>/<Tables>/<fileName>')
     ```
 
-1. Use the following code example to copy tables and files to the newly created Lakehouse.
+1. Use the following code example to copy tables and files to the newly created lakehouse.
 
-    1. For delta tables, you need to copy table one at a time to recover in the new Lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
+    1. For Delta tables, you need to copy table one at a time to recover in the new lakehouse. In the case of Lakehouse files, you can copy the complete file structure with all the underlying folders with a single execution.
 
     1. Reach out to the support team for the timestamp of failover required in the script.
 
@@ -88,7 +88,7 @@ Customers can recreate Lakehouses by using a custom Scala script.
     mssparkutils.fs.write(s"$destination/_delta_log/_last_checkpoint", "", true)
     ```
 
-1. Once you run the script, the tables will appear in the new Lakehouse item.
+1. Once you run the script, the tables will appear in the new lakehouse.
 
 #### Approach 2: Use Azure Storage Explorer to copy files and tables
 
@@ -99,7 +99,7 @@ To recover only specific Lakehouse files or tables from the original lakehouse, 
 
 ### Notebook
 
-Notebook items from the primary region remain unavailable to customers and the code in the notebook won't be replicated to the secondary region. To recover the Notebook code in the new region, there are two approaches to recovering Notebook code content.
+Notebooks from the primary region remain unavailable to customers and the code in notebooks won't be replicated to the secondary region. To recover Notebook code in the new region, there are two approaches to recovering Notebook code content.
 
 #### Approach 1: User-managed redundancy with Git integration (in public preview)
 
@@ -159,9 +159,9 @@ If you don't take the Git integration approach, you can save the latest version 
 
 1. If the original notebook has files or folders in the resource explorer, re-upload the files or folders saved in the user's version control system.
 
-## Spark Job Definition
+### Spark Job Definition
 
-Spark Job Definition (SJD) items from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Note that historical runs of the SJD won't be recovered.
+Spark job definitions (SJD) from the primary region remain unavailable to customers, and the main definition file and reference file in the notebook will be replicated to the secondary region via OneLake. If you want to recover the SJD in the new region, you can follow the manual steps described below to recover the SJD. Note that historical runs of the SJD won't be recovered.
 
 You can recover the SJD items by copying the code from the original region by using Azure Storage Explorer and manually reconnecting Lakehouse references after the disaster.
 
@@ -181,9 +181,11 @@ For details about Azure Storage Explorer, see [Integrate OneLake with Azure Stor
 
 ## Data Science
 
+This guide walks you through the recovery procedures for the Data Science experience. It covers ML models and experiments.
+
 ### ML Model and Experiment
 
-Data Science items from the primary region remain unavailable to customers, and the content and metadata in ML models/experiments won't be replicated to the secondary region. To fully recover them in the new region, save the code content in a version control system (such as Git), and manually rerun the code content after the disaster.
+Data Science items from the primary region remain unavailable to customers, and the content and metadata in ML models and experiments won't be replicated to the secondary region. To fully recover them in the new region, save the code content in a version control system (such as Git), and manually rerun the code content after the disaster.
 
 1. Recover the notebook. Refer to the [Notebook recovery steps](#notebook).
 
@@ -191,9 +193,11 @@ Data Science items from the primary region remain unavailable to customers, and 
 
 ## Data Warehouse
 
+This guide walks you through the recovery procedures for the Data Warehouse experience. It covers warehouses.
+
 ### Warehouse
 
-Warehouse items from the original region remain unavailable to customers. To recover warehouses, use the following two steps.
+Warehouses from the original region remain unavailable to customers. To recover warehouses, use the following two steps.
 
 1. Create a new interim lakehouse in workspace C2.W2 for the data you'll copy over from the original warehouse.
 
@@ -204,19 +208,19 @@ Warehouse items from the original region remain unavailable to customers. To rec
 
 #### Data ingestion via Lakehouse and T-SQL code
 
-In newly created Workspace C2.W2:
+In newly created workspace C2.W2:
 
 1. Create an interim lakehouse "LH2" in C2.W2.
 
 1. Recover the Delta tables in the interim lakehouse from the original warehouse by following the [Lakehouse recovery steps](#lakehouse).
 
-1. Create a new Warehouse item "WH2" in C2.W2.
+1. Create a new warehouse "WH2" in C2.W2.
 
-1. Connect the interim Lakehouse item in your Warehouse explorer.
+1. Connect the interim lakehouse in your warehouse explorer.
 
-    :::image type="content" source="./media/experience-specific-guidance/connect-temp-lakehouse-to-warehouse.png" alt-text="Screenshot of Warehouse Explorer during warehouse recovery.":::
+    :::image type="content" source="./media/experience-specific-guidance/connect-temp-lakehouse-to-warehouse.png" alt-text="Screenshot of warehouse Explorer during warehouse recovery.":::
 
-1. Depending on how you're going to deploy table definitions prior to data import, the actual T-SQL used for imports can vary. You can use INSERT INTO, SELECT INTO or CREATE TABLE AS SELECT approach to recover Warehouse tables from Lakehouse. Further in the example, we would be using INSERT INTO flavor. (If you use the code below, replace samples with actual table and column names)
+1. Depending on how you're going to deploy table definitions prior to data import, the actual T-SQL used for imports can vary. You can use INSERT INTO, SELECT INTO or CREATE TABLE AS SELECT approach to recover Warehouse tables from lakehouses. Further in the example, we would be using INSERT INTO flavor. (If you use the code below, replace samples with actual table and column names)
 
     ```
     USE WH1
@@ -228,7 +232,7 @@ In newly created Workspace C2.W2:
     GO
     ```
 
-1. Lastly, change the connection string in applications using your Fabric Warehouse.
+1. Lastly, change the connection string in applications using your Fabric warehouse.
 
 > [!NOTE]
 > For customers who need cross-regional disaster recovery and fully automated business continuity, we recommend keeping two Fabric Warehouse setups in separate Fabric regions and maintaining code and data parity by doing regular deployments and data ingestion to both sites.
@@ -261,13 +265,13 @@ If you want to recover a Dataflow Gen2 item in the new region, you need to expor
 
 ### Data Pipelines
 
-Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions. 
+Customers can't access data pipelines in the event of regional disaster, and the configurations aren't replicated to the paired region. We recommend building your critical data pipelines in multiple workspaces across different regions.
 
 ## Real-Time Analytics
 
 ### KQL Database/Queryset
 
-KQL Database/Queryset users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, your KQL Database/Queryset data remains safe and accessible.
+KQL database/queryset users must undertake proactive measures to protect against a regional disaster. The following approach ensures that, in the event of a regional disaster, data in your KQL databases querysets remains safe and accessible.
 
 Use the following steps to guarantee an effective disaster recovery solution for KQL databases and querysets.
 
@@ -297,7 +301,7 @@ Customers can also achieve geo-redundancy by deploying identical Eventstream wor
 
 1. Connect these new items to the identical data sources.
 
-1. Add identical destinations for each Eventstream item in different regions.
+1. Add identical destinations for each eventstream in different regions.
 
 ## Related information
 
