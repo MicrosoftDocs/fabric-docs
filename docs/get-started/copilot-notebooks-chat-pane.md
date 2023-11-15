@@ -4,6 +4,7 @@ description: Interact with the chat panel in Copilot for Data Science and Data E
 author: rrikhy
 ms.author: rarikhy
 ms.topic: how-to
+ms:custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.date: 11/14/2023

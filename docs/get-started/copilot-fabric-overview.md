@@ -43,12 +43,6 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
-## Available regions
-
-## Notes by release
-
-Additional information for future releases or feature updates will appear here.
-
 ## Next steps
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
