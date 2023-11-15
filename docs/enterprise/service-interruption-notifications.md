@@ -6,8 +6,10 @@ ms.author: kesharab
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: troubleshooting
-ms.date: 09/11/2023
+ms.date: 11/02/2023
 ---
 
 # Service interruption notifications
@@ -22,7 +24,7 @@ At this time, emails are sent for the following *reliability scenarios*:
 - Model refresh reliability
 - Query refresh reliability
 
-Notifications are sent when there's an *extended delay* in operations like opening reports, dataset refresh, or query executions. After an incident is resolved, you receive a follow-up email.
+Notifications are sent when there's an *extended delay* in operations like opening reports, semantic model refresh, or query executions. After an incident is resolved, you receive a follow-up email.
 
 > [!NOTE]
 > This feature is currently available only for capacities in Power BI Premium. It's not available for shared or embedded capacity.

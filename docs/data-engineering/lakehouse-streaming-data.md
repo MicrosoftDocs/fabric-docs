@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
@@ -15,8 +17,6 @@ ms.search.form: Lakehouse Spark Structured Streaming
 Structured Streaming is a scalable and fault-tolerant stream processing engine built on Spark. Spark takes care of running the streaming operation incrementally and continuously as data continues to arrive.
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
 
@@ -60,7 +60,6 @@ Delta is added as one of the possible outputs sinks formats used in writeStream.
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
- 
 ```PySpark 
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
@@ -97,8 +96,8 @@ rawData = df \
 
 Data partitioning is a critical part in creating a robust streaming solution: partitioning improves the way data is organized, and it also improves the throughput. Files easily get fragmented after Delta operations, resulting in too many small files. And too large files are also a problem, due to the long time to write them on the disk. The challenge with data partitioning is finding the proper balance that results in optimal file sizes. Spark supports partitioning in memory and on disk. Properly partitioned data can provide the best performance when persisting data to Delta Lake and querying data from Delta Lake. 
 
-- When partitioning data on disk, you can choose how to partition the data based on columns by using *partitionBy()*. *partitionBy()* is a function used to partition large dataset into smaller files based on one or multiple columns provided while writing to disk. Partitioning is a way to improve the performance of query when working with a large dataset. Avoid choosing a column that generates too small or too large partitions. Define a partition based on a set of columns with a good cardinality and split the data into files of optimal size. 
-- Partitioning data in memory can be done using *repartition()* or *coalesce()* transformations, distributing data on multiple worker nodes and creating multiple tasks that can read and process data in parallel using the fundamentals of Resilient Distributed Dataset (RDD). It allows dividing dataset into logical partitions, which can be computed on different nodes of the cluster. 
+- When partitioning data on disk, you can choose how to partition the data based on columns by using *partitionBy()*. *partitionBy()* is a function used to partition large semantic model into smaller files based on one or multiple columns provided while writing to disk. Partitioning is a way to improve the performance of query when working with a large semantic model. Avoid choosing a column that generates too small or too large partitions. Define a partition based on a set of columns with a good cardinality and split the data into files of optimal size. 
+- Partitioning data in memory can be done using *repartition()* or *coalesce()* transformations, distributing data on multiple worker nodes and creating multiple tasks that can read and process data in parallel using the fundamentals of Resilient Distributed Dataset (RDD). It allows dividing semantic model into logical partitions, which can be computed on different nodes of the cluster. 
     - *repartition()* is used to increase or decrease the number of partitions in memory. Repartition reshuffles whole data over the network and balances it across all partitions.  
     - *coalesce()* is only used to decrease the number of partitions efficiently. That is an optimized version of *repartition()* where the movement of data across all partitions is lower using coalesce(). 
 
@@ -180,4 +179,4 @@ Spark 3.1 and higher versions have a built-in [structured streaming UI](https://
 
 ## Next steps
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with SQL endpoint.
+* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

@@ -6,6 +6,8 @@ reviewer: msakande
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/06/2023
 #customer intent: As a data scientist, I want to build a fraud detection model so that I can use it to detect future fraudulent transactions.
 ---
@@ -22,7 +24,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 > * Save and register the best-performing machine learning model.
 > * Load the machine learning model for scoring and making predictions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -564,5 +566,5 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
 
 * [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 * [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-* [Train machine learning models](model-training/model-training-overview.md)
+* [Train machine learning models](model-training-overview.md)
 * [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

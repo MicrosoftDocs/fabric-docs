@@ -4,8 +4,10 @@ description: End to end example of using R to analyze, visualize the avocado pri
 ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
-ms.topic: tutorial 
-ms.custom: build-2023
+ms.topic: tutorial
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---
@@ -15,7 +17,7 @@ ms.search.form: R Language
 
 This article shows an end to end example of using R to analyze, visualize the avocado prices in the US, and predict future avocado prices.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 :::image type="content" source="media/r-avocado/avocado.png" alt-text="Photograph of avocado.":::
 
