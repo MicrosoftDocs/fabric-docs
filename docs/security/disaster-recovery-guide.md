@@ -17,7 +17,7 @@ This document describes a disaster recovery plan for Fabric that is designed to 
 
 ## What does the Fabric disaster recovery plan include?
 
-The goal of the Fabric disaster recovery plan is to keep your organization's data safe and accessible. Power BI, now a part of the Fabric, has a solid disaster recovery system in place. For other Fabric experiences, while a full disaster recovery system isn't currently supported, the [disaster decovery capacity setting](#disaster-recovery-capacity-setting) makes it possible to ensure that that data stored in OneLake is backed up across regions. This means that even if there's a regional disaster, you can still access your data.
+The goal of the Fabric disaster recovery plan is to keep your organization's data safe and accessible. Power BI, now a part of the Fabric, has a solid disaster recovery system in place. For other Fabric experiences, while a full disaster recovery system isn't currently supported, the [disaster recovery capacity setting](#disaster-recovery-capacity-setting) makes it possible to ensure that that data stored in OneLake is backed up across regions. This means that even if there's a regional disaster, you can still access your data.
 
 ### Power BI
 
