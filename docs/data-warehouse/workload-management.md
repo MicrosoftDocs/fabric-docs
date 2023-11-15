@@ -4,8 +4,10 @@ description: Learn how Microsoft manages data warehouse compute resources to ser
 author: realAngryAnalytics
 ms.author: stevehow
 ms.reviewer: wiassaf
-ms.date: 10/19/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Workload management
@@ -13,8 +15,6 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 **Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article describes the architecture and workload management behind data warehousing in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Data processing
 
@@ -56,13 +56,6 @@ In the backend compute pool of [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in 
 
 :::image type="content" source="media\workload-management\etl-isolation.svg" alt-text="Diagram that shows isolation of ingestion activities." lightbox="media\workload-management\etl-isolation.svg":::
 
-## Sessions
-
-The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] have a user session limit of 512 per workspace. When this limit is reached an error will be returned: `The user session limit for the workspace is 512 and has been reached`.
-
-> [!NOTE]
-> As Microsoft Fabric is a SaaS platform, there are many system connections that run to continuously optimize the environment. DMVs show both system and user sessions. For more information, see [Monitor using DMVs](monitor-using-dmv.md).
-
 ## Best practices
 
 The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a natural isolation boundary of the distributed compute system. Workloads can take advantage of this boundary to manage both cost and performance.
@@ -75,6 +68,6 @@ The [!INCLUDE [product-name](../includes/product-name.md)] workspace provides a 
 
 - [OneLake, the OneDrive for data](../onelake/onelake-overview.md)
 - [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
-- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse](get-started-lakehouse-sql-analytics-endpoint.md)
 - [Burstable capacity in Fabric data warehousing](burstable-capacity.md)
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)

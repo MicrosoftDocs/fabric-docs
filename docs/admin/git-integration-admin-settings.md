@@ -4,13 +4,13 @@ description: Learn about what the feature switches affecting git integration do 
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 09/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # Git integration tenant settings
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 

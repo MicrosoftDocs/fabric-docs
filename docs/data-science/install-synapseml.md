@@ -2,6 +2,8 @@
 title: Install a different version of SynapseML on Microsoft Fabric
 description: Instruction of how to install SynapseML on Fabric
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
 ms.reviewer: larryfr
 author: JessicaXYWang
 ms.author: jessiwang
@@ -52,5 +54,5 @@ print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 ## Next steps
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
-- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
+- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

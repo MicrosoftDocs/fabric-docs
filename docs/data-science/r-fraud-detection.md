@@ -1,11 +1,13 @@
 ---
 title: "Tutorial: Use R to detect fraud"
 
-description: This tutorial shows a data science work flow in R, with an end-to-end example, building a model to detect fraud. 
+description: This tutorial shows a data science work flow in R, with an end-to-end example, building a model to detect fraud.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/21/2023
 ms.search.form: R Language
 # customer intent: As a data scientist, I want to create a model to predict churn with R
@@ -15,7 +17,7 @@ ms.search.form: R Language
 
 In this tutorial, you'll walk through the Synapse Data Science in Microsoft Fabric workflow with an end-to-end example. The scenario is to build a fraud detection model, using ML algorithms trained on historical data and then use the model to detect future fraudulent transactions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are
 

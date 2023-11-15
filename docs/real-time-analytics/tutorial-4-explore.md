@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 4: Explore your data with KQL and SQL
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md).

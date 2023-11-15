@@ -4,15 +4,17 @@ description: Learn how to enable and disable Fabric tenant settings.
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 10/17/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # About tenant settings
 
 **Tenant settings** enable fine-grained control over the features that are made available to your organization. If you have concerns around sensitive data, some of our features might not be right for your organization, or you might only want a particular feature to be available to a specific group.
 
-Tenant settings that control the availability of features in the Power BI user interface can help to establish governance policies, but they're not a security measure. For example, the **Export data** setting doesn't restrict the permissions of a Power BI user on a dataset. Power BI users with read access to a dataset have the permission to query this dataset and might be able to persist the results without using the **Export data** feature in the Power BI user interface.
+Tenant settings that control the availability of features in the Power BI user interface can help to establish governance policies, but they're not a security measure. For example, the **Export data** setting doesn't restrict the permissions of a Power BI user on a semantic model. Power BI users with read access to a semantic model have the permission to query this semantic model and might be able to persist the results without using the **Export data** feature in the Power BI user interface.
 
 > [!NOTE]
 > It can take up to 15 minutes for a setting change to take effect for everyone in your organization.
@@ -66,11 +68,11 @@ Many of the settings can have one of three states:
 | [Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports) | When people attempt to publish a report, they see a custom message before it gets published. |
 | **[Workspace settings](portal-workspace.md)** |  |
 | [Create workspaces (new workspace experience)](portal-workspace.md#create-workspaces-new-workspace-experience) | Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace is created when a template app is installed. |
-| [Use datasets across workspaces](portal-workspace.md#use-datasets-across-workspaces) | Users in the organization can use datasets across workspaces if they have the required Build permission. |
+| [Use semantic models across workspaces](portal-workspace.md#use-semantic-models-across-workspaces) | Users in the organization can use semantic models across workspaces if they have the required Build permission. |
 | [Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace) | Turn on this setting to prevent users from reassigning their personal workspaces (My workspace) from Premium capacities to shared capacities. |
 | **[Information protection](service-admin-portal-information-protection.md)** |  |
 | [Allow users to apply sensitivity labels for content](service-admin-portal-information-protection.md#allow-users-to-apply-sensitivity-labels-for-content) | This setting lets you add sensitivity labels from Microsoft Purview Information Protection in Power BI.|
-| [Apply sensitivity labels from data sources to their data in Power BI](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources) | When this setting is enabled, Power BI datasets that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI. Only sensitivity labels from supported data sources are applied. |
+| [Apply sensitivity labels from data sources to their data in Power BI](/power-bi/enterprise/service-security-sensitivity-label-inheritance-from-data-sources) | When this setting is enabled, Power BI semantic models that connect to sensitivity-labeled data in supported data sources can inherit those labels, so that the data remains classified and secure when brought into Power BI. Only sensitivity labels from supported data sources are applied. |
 | [Automatically apply sensitivity labels to downstream content](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance) | With this setting enabled, whenever a sensitivity label is changed or applied to Fabric content, the label is also applied to its eligible downstream content. |
 | [Allow workspace admins to override automatically applied sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement#relaxations-to-accommodate-automatic-labeling-scenarios) | With this setting enabled, workspace admins can change or remove sensitivity labels that were applied automatically by Fabric, for example, as a result of label inheritance. |
 | [Restrict content with protected labels from being shared via link with everyone in your organization](service-admin-portal-information-protection.md#restrict-content-with-protected-labels-from-being-shared-via-link-with-everyone-in-your-organization) | This setting prevents content with protection settings in the sensitivity label from being shared via link with everyone in your organization. |
@@ -84,7 +86,7 @@ Many of the settings can have one of three states:
 | [Export to Excel](/power-bi/visuals/power-bi-visualization-export-data) | Users in the organization can export the data from a visualization or paginated report to an Excel file.  |
 | [Export to .csv](/power-bi/paginated-reports/report-builder/export-csv-file-report-builder) | Users in the organization can export data from a tile, visualization, or paginated report to a .csv file.  |
 | [Download reports](/power-bi/create-reports/service-export-to-pbix) | Users in the organization can download .pbix files and paginated reports. |
-| [Users can work with datasets in Excel using a live connection](/power-bi/collaborate-share/service-analyze-in-excel) | Users can export data to Excel from a report visual or dataset, or export a dataset to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint. |
+| [Users can work with semantic models in Excel using a live connection](/power-bi/collaborate-share/service-analyze-in-excel) | Users can export data to Excel from a report visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint. |
 | Export reports as [PowerPoint presentations](/power-bi/collaborate-share/end-user-powerpoint) or [PDF documents](/power-bi/collaborate-share/end-user-pdf) | Users in the organization can export reports as PowerPoint files or PDF documents. |
 | Export reports as MHTML documents | Users in the organization can export paginated reports as MHTML documents. |
 | [Export reports as Word documents](/power-bi/paginated-reports/report-builder/export-microsoft-word-report-builder) | Users in the organization can export paginated reports as Word documents. |
@@ -101,20 +103,20 @@ Many of the settings can have one of three states:
 | [Enable Microsoft Teams integration](/power-bi/collaborate-share/service-collaborate-microsoft-teams) | Users can access features associated with the Microsoft Teams and Power BI integration. This includes launching Teams experiences from the Power BI service like chats, the Power BI app for Teams, and receiving Power BI notifications in Teams. |
 | [Install Power BI app for Microsoft Teams automatically](service-admin-portal-export-sharing.md#install-power-bi-app-for-microsoft-teams-automatically) | The Power BI app for Microsoft Teams is installed automatically for users when they use Microsoft Fabric. |
 | [Enable Power BI add-in for PowerPoint](service-admin-portal-export-sharing.md#enable-power-bi-add-in-for-powerpoint) | Let people in your organization embed live, interactive data from Power BI into their PowerPoint presentations. |
-| [Allow DirectQuery connections to Power BI datasets](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-datasets) | DirectQuery connections allow users to make changes to existing datasets or use them to build new ones. |
-| [Guest users can work with shared datasets in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants) | Authorized guest users of datasets shared with them by users in your organization can access and build on those datasets in their own tenant. |
+| [Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models) | DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones. |
+| [Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants) | Authorized guest users of semantic models shared with them by users in your organization can access and build on those semantic models in their own tenant. |
 | [Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing) | If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. |
 | **[Discovery settings](service-admin-portal-discovery.md)** |  |
 | [Make promoted content discoverable](/power-bi/collaborate-share/service-discovery) | Allow users you specify who have permissions to [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to also mark that content as discoverable. |
 | [Make certified content discoverable](/power-bi/collaborate-share/service-discovery)  | Allow users who can [certify content](/power-bi/collaborate-share/service-endorse-content#certify-content) to make that content discoverable by users who don't have access to it. |
 | [Discover content](../get-started/onelake-data-hub.md#find-recommended-items) | Allow specified users to find endorsed content that's marked as discoverable, even if they don't yet have access to it. |
 | **[Content pack and app settings](service-admin-portal-content-pack-app.md)** |  |
-| [Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create) | Users in the organization can create template content packs and apps that use datasets built on one data source in Power BI Desktop. |
+| [Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create) | Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop. |
 | [Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users) | Report creators can share apps directly with end users without requiring installation from [AppSource](https://appsource.microsoft.com). |
 | [Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization) | This setting lets you choose which users can publish content packs and apps to the entire organization. |
 | **[Integration settings](service-admin-portal-integration.md)** |  |
-| [Allow XMLA endpoints and Analyze in Excel with on-premises datasets](/power-bi/collaborate-share/service-analyze-in-excel) | Users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools). |
-| [Dataset Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries) | Users in the organization can query datasets by using Data Analysis Expressions (DAX) through Power BI REST APIs. |
+| [Allow XMLA endpoints and Analyze in Excel with on-premises datasets](/power-bi/collaborate-share/service-analyze-in-excel) | Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools). |
+| [Dataset Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries) | Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs. |
 | [Use ArcGIS Maps for Power BI](/power-bi/visuals/power-bi-visualizations-arcgis) | Users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri. |
 | [Use global search for Power BI](/power-bi/consumer/end-user-search-sort) | Users in the organization can use external search features that rely on Azure Search. |
 | [Use Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started) | Users in the organization can use the Azure Maps visual for Power BI. |
@@ -136,7 +138,7 @@ Many of the settings can have one of three states:
 | **[R and Python visuals settings](service-admin-portal-r-python-visuals.md)** |  |
 | [Interact with and share R and Python visuals](service-admin-portal-r-python-visuals.md#interact-with-and-share-r-and-python-visuals) | Users in the organization can interact with and share visuals created with R or Python scripts. |
 | **[Audit and usage settings](service-admin-portal-audit-usage.md)** |  |
-| [Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics) | Users in the organization can see usage metrics for dashboards, reports, and datasets for which they have appropriate permissions. |
+| [Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics) | Users in the organization can see usage metrics for dashboards, reports, and semantic models for which they have appropriate permissions. |
 | [Per-user data in usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports) | Usage metrics for content creators expose display names and email addresses of users who access content. |
 | [Azure Log Analytics connections for workspace administrators](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure) | Users can connect their Premium workspaces to Azure Log Analytics to monitor the connected workspaces. |
 | **[Dashboard settings](service-admin-portal-dashboard.md)** |  |
@@ -157,10 +159,10 @@ Many of the settings can have one of three states:
 | [Install template apps](service-admin-portal-template-app.md#install-template-apps) | Users in the organization can install template apps from [Microsoft AppSource](https://appsource.microsoft.com). When a template app is installed, an upgraded workspace is created. |
 | Install template apps not listed in AppSource | Users in the organization can install template apps that were **not** published to Microsoft AppSource. |
 | **[Q&amp;A settings](service-admin-portal-qa.md)** |  |
-| Review questions | Allow dataset owners to review questions people asked about their data. |
+| Review questions | Allow semantic model owners to review questions people asked about their data. |
 | [Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms) | Allow people to share Q&amp;A synonyms with your organization. |
-| **[Dataset security](service-admin-portal-dataset-security.md)** |  |
-| Block republish and disable package refresh | Disable package refresh, and only allow the dataset owner to publish updates. |
+| **[Semantic model security](service-admin-portal-dataset-security.md)** |  |
+| Block republish and disable package refresh | Disable package refresh, and only allow the semantic model owner to publish updates. |
 | **[Advanced networking](service-admin-portal-advanced-networking.md)** |  |
 | [Azure Private Link](/power-bi/enterprise/service-security-private-links) | Increase security by allowing people to use a [Private Link](/azure/private-link) to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email. |
 | [Block Public Internet Access](/power-bi/enterprise/service-security-private-links) | For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. |
@@ -169,7 +171,7 @@ Many of the settings can have one of three states:
 | **[User experience experiments](service-admin-portal-user-experience-experiments.md)** |  |
 | Help Power BI optimize your experience | Users in this organization get minor user experience variations that the Power BI team is experimenting with, including content, layout, and design, before they go live for all users. |
 | **[Share data with your Microsoft 365 services](admin-share-power-bi-metadata-microsoft-365-services.md)** |  |
-| [Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off) | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same [geographical region](/power-bi/admin/service-admin-where-is-my-tenant-located). |
+| [Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off) | Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric semantic models will not be displayed.<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same [geographical region](/power-bi/admin/service-admin-where-is-my-tenant-located). |
 | **[Insights settings](service-admin-portal-insights.md)** |  |
 | [Receive notifications for top insights (preview)](/power-bi/create-reports/insights) | Users in the organization can enable notifications for top insights in report settings. |
 | Show entry points for insights (preview) | Users in the organization can use entry points for requesting insights inside reports. |
@@ -181,7 +183,7 @@ Many of the settings can have one of three states:
 | [Allow quick measure suggestions (preview)](/power-bi/transform-model/quick-measure-suggestions) | Allow users to use natural language to generate suggested measures. |
 | [Allow user data to leave their geography](/power-bi/transform-model/quick-measure-suggestions#limitations-and-considerations) | Quick measure suggestions are currently processed in the US. When this setting is enabled, users get quick measure suggestions for data outside the US. |
 | **[Scale-out settings](service-admin-portal-scale-out.md)** |  |
-| [Scale out queries for large datasets (Preview)](/power-bi/enterprise/service-premium-scale-out) | For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across additional dataset replicas when query volume is high. |
+| [Scale out queries for large semantic models (Preview)](/power-bi/enterprise/service-premium-scale-out) | For semantic models that use the large semantic model storage format, Power BI Premium can automatically distribute queries across additional semantic model replicas when query volume is high. |
 | **[OneLake settings](service-admin-portal-onelake.md)** |  |
 | [Users can access data stored in OneLake with apps external to Fabric](../onelake/onelake-security.md#allow-apps-running-outside-of-fabric-to-access-data-via-onelake) | Users can access data stored in OneLake with apps external to the Fabric environment, such as custom applications created with Azure Data Lake Storage (ADLS) APIs, OneLake File Explorer, and Databricks. Users can already access data stored in OneLake with apps internal to the Fabric environment, such as Spark, Data Engineering, and Data Warehouse. |
 | [Users can sync data in OneLake with the OneLake File Explorer app](../onelake/onelake-file-explorer.md) | Turn on this setting to allow users to use OneLake File Explorer. This app will sync OneLake items to Windows File Explorer, similar to OneDrive. |

@@ -4,13 +4,13 @@ description: This article provides an overview of the admin role in Microsoft Fa
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 07/16/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # What is Microsoft Fabric admin?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric admin is the management of the organization-wide settings that control how Microsoft Fabric works. Users that are assigned to admin roles configure, monitor, and provision organizational resources. This article provides an overview of admin roles, tasks, and tools to help you get started.
 
