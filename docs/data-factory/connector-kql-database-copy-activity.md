@@ -1,14 +1,17 @@
 ---
-title: How to configure KQL Database in a copy activity
+title: Configure KQL Database in a copy activity
 description: This article explains how to copy data using KQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure KQL Database in a copy activity
+# Configure KQL Database in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to KQL Database.
 

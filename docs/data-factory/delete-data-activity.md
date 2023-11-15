@@ -5,8 +5,10 @@ ms.reviewer: jburchel
 ms.author: yexu
 author: dearandyxu
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 08/17/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Delete data activity to look up data from a data source

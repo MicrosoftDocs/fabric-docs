@@ -4,8 +4,11 @@ description: This article explains how to copy data using Amazon S3.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/13/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Configure Amazon S3 in a copy activity
@@ -24,14 +27,14 @@ For the full list of Amazon S3 permissions, go to [Specifying Permissions in a P
 
 Amazon S3 supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 

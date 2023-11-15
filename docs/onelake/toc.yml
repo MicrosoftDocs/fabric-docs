@@ -9,6 +9,8 @@ items:
   items:
   - name: Bring your data to OneLake with Lakehouse
     href: create-lakehouse-onelake.md
+  - name: Implement medallion lakehouse architecture
+    href: onelake-medallion-lakehouse-architecture.md
   - name: Transform with Spark and query data with SQL
     href: onelake-onecopy-quickstart.md
   - name: Connect to ADLS and transform data with Azure Databricks
@@ -63,3 +65,5 @@ items:
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
+- name: OneLake compute and storage consumption
+  href: onelake-consumption.md

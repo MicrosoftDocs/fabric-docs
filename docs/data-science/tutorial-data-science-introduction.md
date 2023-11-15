@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/4/2023
 ---
 
@@ -56,7 +58,7 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 ### Different components of the data science scenario
 
-**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, Power BI datasets and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
+**Data sources** - Fabric makes it easy and quick to connect to Azure Data Services, other cloud platforms, and on-premises data sources to ingest data from. Using Fabric Notebooks you can ingest data from the built-in Lakehouse, Data Warehouse, semantic models, and various Apache Spark and Python supported custom data sources. This tutorial series focuses on ingesting and loading data from a lakehouse.
 
 **Explore, clean, and prepare** - The data science experience on Fabric supports data cleansing, transformation, exploration and featurization by using built-in experiences on Spark as well as Python based tools like Data Wrangler and SemPy Library. This tutorial will showcase data exploration using Python library `seaborn` and data cleansing and preparation using Apache Spark.
 

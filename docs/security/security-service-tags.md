@@ -4,13 +4,13 @@ description: Learn how to use service tags in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/30/2023
 ---
 
 # Service tags
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 You can use Azure [service tags](/azure/virtual-network/service-tags-overview) to enable connections to and from Microsoft Fabric. In Azure, a service tag is a defined group of IP addresses that you can configure to be automatically managed, as a group, to minimize the complexity of updates or changes to network security rules.
 
@@ -22,13 +22,13 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 |--|--|--|--|--|
 | DataFactory | Azure Data Factory | Both | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
-| PowerBI | Power BI and Microsoft Fabric | Both | No | Yes |
+| Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
 | KustoAnalytics | Real-Time Analytics | Both | No | No |
 
-## Enable service tags
+## Use service tags
 
-To enable Azure service tags for Fabric, you can follow the instructions in [Use service tags with Power BI](/power-bi/enterprise/service-premium-service-tags). These instructions use SQL Managed Instance as an example.
+You can use the service tags to define network access controls on [network security groups](/azure/virtual-network/network-security-groups-overview#service-tags), [Azure Firewall](/azure/firewall/service-tags), and user-defined routes.
 
 ## Next steps
 

@@ -5,14 +5,14 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/10/2023
 ms.search.form: product-kusto
 ---
 
 # Create stored functions
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Functions are reusable queries or query parts. Real-Time Analytics supports two kinds of functions:
 

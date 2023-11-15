@@ -4,9 +4,11 @@ description: Learn how to monitor pipeline runs.
 ms.reviewer: jonburchel
 ms.author: noelleli
 author: n0elleli
-ms.topic: how-to 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to monitor data pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]

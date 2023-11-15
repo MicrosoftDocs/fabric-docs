@@ -5,7 +5,10 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: conceptual
-ms.date: 10/27/2023
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 ---
 
 # Intelligent cache in Microsoft Fabric

@@ -4,7 +4,9 @@ description: Learn how metadata scanning can help you govern your organizations 
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/15/2023
 ---
 

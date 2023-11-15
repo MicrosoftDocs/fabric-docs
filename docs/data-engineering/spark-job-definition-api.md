@@ -5,8 +5,12 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 10/25/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: spark_job_definition
 ---
 
@@ -31,7 +35,7 @@ The item detail is specified inside the request body. Here's an example of the r
 
 ```json
 {
-    "name": "SJDHelloWorld",
+    "displayName": "SJDHelloWorld",
     "type": "SparkJobDefinition",
     "definition": {
         "format": "SparkJobDefinitionV1",

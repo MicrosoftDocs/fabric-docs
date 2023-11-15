@@ -1,14 +1,17 @@
 ---
-title: How to configure REST in a copy activity
+title: Configure REST in a copy activity
 description: This article explains how to copy data using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure REST in a copy activity
+# Configure REST in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
 

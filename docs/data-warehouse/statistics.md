@@ -6,7 +6,9 @@ ms.author: emtehran
 ms.reviewer: wiassaf
 ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Optimization # This article's title should not change. If so, contact engineering.
 ---
 # Statistics in Fabric data warehousing
@@ -14,8 +16,6 @@ ms.search.form: Optimization # This article's title should not change. If so, co
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 The [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] uses a query engine to create an execution plan for a given SQL query. When you submit a query, the query optimizer tries to enumerate all possible plans and choose the most efficient candidate. To determine which plan would require the least overhead (I/O, CPU, memory), the engine needs to be able to evaluate the amount of work or rows that might be processed at each operator. Then, based on each plan's cost, it chooses the one with the least amount of estimated work. Statistics are objects that contain relevant information about your data, to allow query optimizer to estimate these costs.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to leverage statistics
 

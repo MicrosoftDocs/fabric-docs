@@ -5,16 +5,16 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 10/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Source and Destination
 ---
 
 # Add and manage a destination in an eventstream
 
 Once you have created an eventstream in Microsoft Fabric, you can route data to different destinations. The types of destinations that you can add to your eventstream are KQL Database, Lakehouse, Custom App and Reflex. See the [Supported destinations](#supported-destinations) section for details.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

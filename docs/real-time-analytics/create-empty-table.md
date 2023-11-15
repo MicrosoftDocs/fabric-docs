@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 09/28/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/06/2023
 ms.search.form: Create a table
 ---
 # Create an empty table
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
 
@@ -92,7 +92,7 @@ In the **Create table completed** window, the empty table is marked with a green
 
 ## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
 * [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
 * [Get data from OneLake](get-data-onelake.md)

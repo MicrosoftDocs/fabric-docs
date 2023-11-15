@@ -1,14 +1,17 @@
 ---
-title: How to configure SQL server in copy activity
+title: Configure SQL server in a copy activity
 description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/25/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure SQL server in copy activity
+# Configure SQL server in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to SQL server.
 
@@ -240,4 +243,3 @@ See the following table for the summary and more information for the SQL server 
 ## Next steps
 
 - [SQL server overview](connector-azure-sql-database-overview.md)
-

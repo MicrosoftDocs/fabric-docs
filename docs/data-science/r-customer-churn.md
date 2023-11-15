@@ -1,11 +1,13 @@
 ---
 title: "Tutorial: Use R to predict churn"
 
-description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn. 
+description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/21/2023
 # customer intent: As a data scientist, I want to create a model to predict churn with R
 ---
@@ -590,7 +592,7 @@ Use these steps to access your saved table in Power BI.
 1. On the left, select **OneLake data hub**.
 1. Select the lakehouse that you added to this notebook.
 1. On the top right, select **Open** under the section titled **Open this Lakehouse**.
-1. Select New Power BI dataset on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI dataset linked to the predictions.
+1. Select **New semantic model** on the top ribbon and select `df_pred_results`, then select **Continue** to create a new semantic model linked to the predictions.
 1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
 
 Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.

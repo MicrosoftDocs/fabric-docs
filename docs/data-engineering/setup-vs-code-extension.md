@@ -5,8 +5,10 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 05/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: VSCodeExtension
 ---
 
@@ -77,6 +79,11 @@ To select a Fabric workspace, you must have a workspace created. If you don't ha
 Once you have a workspace, choose it by selecting the **Select Workspace** option. A list appears of all workspaces that you have access to; select the one you want from the list.
 
 :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
+
+### Current Limitations
+
+- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
+- Shell command start with "!" is not supported.
 
 ## Next steps
 

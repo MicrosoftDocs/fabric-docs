@@ -1,21 +1,21 @@
 ---
 title: Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
-description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric. 
+description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 08/31/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
-#CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a real-time dashboard to monitor the health my devices. 
+#CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a real-time dashboard to monitor the health my devices.
 ---
 
 # Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
 
 If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

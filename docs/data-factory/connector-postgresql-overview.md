@@ -4,8 +4,11 @@ description: This article provides an overview of the supported capabilities of 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/31/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # PostgreSQL database connector overview
@@ -27,5 +30,3 @@ The PostgreSQL database connector supports the following capabilities in Data pi
 | **Lookup activity** | None | Basic |
 
 To learn more about the copy activity configuration for PostgreSQL database in Data pipeline, go to [Configure in a data pipeline copy activity](connector-postgresql-copy-activity.md).
-
-

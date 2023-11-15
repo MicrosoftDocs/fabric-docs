@@ -5,16 +5,16 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Event Streams Tutorials
 ---
 
 # Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse
 
 This tutorial shows you how to use the Microsoft Fabric event streams feature to ingest, filter, and transform real-time events and send them in Delta Lake format from your Azure event hub to a lakehouse. You also learn how to build a Power BI report to visualize business insights in your events data.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 In this tutorial, you learn how to:
 
@@ -58,7 +58,7 @@ You can create an eventstream and a lakehouse from the **Workspace** page or the
 After you create both your new eventstream and lakehouse successfully, these items appear in your workspace:
 
 - **citypwr-es**: an Eventstream item
-- **citypwrdata**: a Lakehouse item, a Dataset (default) item, and a SQL endpoint item.
+- **citypwrdata**: a Lakehouse item, a semantic model (default) item, and a SQL endpoint item.
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/four-items-list.png" alt-text="Screenshot showing the list of four items added to your workspace.":::
 
@@ -165,7 +165,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
 ## Build a Power BI report with the ingested events data
 
-1. Go to your workspace and select the **citypwrdata** dataset, which the system automatically added when you created the new **citypwrdata** lakehouse.
+1. Go to your workspace and select the **citypwrdata** semantic model, which the system automatically added when you created the new **citypwrdata** lakehouse.
 
 1. From the **Create a report** menu in the ribbon, select **Auto-create** or **Start from scratch**.
 

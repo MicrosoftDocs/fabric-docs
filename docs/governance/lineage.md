@@ -4,13 +4,13 @@ description: Learn how to view the lineage of Fabric items.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 10/25/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/06/2023
 ---
 
 # Lineage in Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 

@@ -6,6 +6,8 @@ reviewer: msakande
 ms.author: marcozo
 author: eisber
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 06/23/2023
 ms.search.form: semantic link
 ---
@@ -55,12 +57,12 @@ df_geo = df.to_geopandas(lat_col="lat", long_col="long")
 df_geo.explore()
 ```
 
-Alternatively, you could read from a Power BI dataset into a FabricDataFrame, and in that case, the metadata will be autopopulated.
+Alternatively, you could read from a semantic model into a FabricDataFrame, and in that case, the metadata will be autopopulated.
 
 ```Python
 from sempy.fabric import FabricDataFrame
 
-# Alternative: reading from Power BI dataset
+# Alternative: reading from semantic model
 import sempy.fabric as fabric
 df = fabric.read_table("my_dataset_name", "my_countries")
 
@@ -118,4 +120,4 @@ The following points provide a breakdown of the code snippet:
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
 - [Power BI connectivity with semantic link and Microsoft Fabric (preview)](semantic-link-power-bi.md)
-- [Semantic data propagation from Power BI datasets (preview)](semantic-link-semantic-propagation.md)
+- [Semantic data propagation from semantic models (preview)](semantic-link-semantic-propagation.md)

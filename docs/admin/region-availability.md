@@ -3,9 +3,12 @@ title: Fabric region availability
 description: Learn which regions Fabric is available in.
 author: paulinbar
 ms.author: painbar
-ms.custom: references_regions, build-2023
+ms.custom:
+  - references_regions
+  - build-2023
+  - ignite-2023
 ms.topic: overview
-ms.date: 11/02/2023
+ms.date: 11/07/2023
 ---
 
 # Fabric region availability
@@ -29,6 +32,7 @@ Europe
 * WestEurope
 * FranceCentral
 * NorwayEast
+* SwedenCentral
 * SwitzerlandNorth
 * SwitzerlandWest
 * UKSouth

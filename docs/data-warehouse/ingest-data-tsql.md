@@ -4,9 +4,11 @@ description: Follow steps to ingest data into a Warehouse table using Transact-S
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Ingesting data
 ---
 
@@ -15,8 +17,6 @@ ms.search.form: Ingesting data
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 The Transact-SQL language offers options you can use to load data at scale from existing tables in your lakehouse and warehouse into new tables in your warehouse. These options are convenient if you need to create new versions of a table with aggregated data, versions of tables with a subset of the rows, or to create a table as a result of a complex query. Let's explore some examples.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Creating a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
 

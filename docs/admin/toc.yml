@@ -11,6 +11,8 @@ items:
   items:
   - name: Enable Fabric for your organization
     href: fabric-switch.md
+  - name: Enable Data Activator for your organization
+    href: data-activator-switch.md    
   - name: Region availability
     href: region-availability.md
   - name: Find your Fabric home region
@@ -101,6 +103,8 @@ items:
       href: service-admin-portal-discovery.md
     - name: Content pack and app settings
       href: service-admin-portal-content-pack-app.md
+    - name: Copilot settings
+      href: service-admin-portal-copilot.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals

@@ -5,7 +5,9 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the WebHook activity to call an endpoint and wait for it to complete

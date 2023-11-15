@@ -1,14 +1,17 @@
 ---
-title: How to configure Azure Table Storage in a copy activity
+title: Configure Azure Table Storage in a copy activity
 description: This article explains how to copy data using Azure Table Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/19/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Table Storage in a copy activity
+# Configure Azure Table Storage in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Table Storage.
 

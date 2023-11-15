@@ -4,7 +4,9 @@ description: Learn how to make quality content easier to find through promotion 
 author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 07/15/2023
 ---
 

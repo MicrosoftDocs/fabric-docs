@@ -5,7 +5,12 @@ ms.reviewer: sngun
 ms.author: gesaur
 author: gsaurer
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
 ms.search.form: product-trident
 ms.date: 06/30/2023
 ---
@@ -17,8 +22,6 @@ Microsoft Fabric is an all-in-one analytics solution for enterprises that covers
 With Fabric, you don't need to piece together different services from multiple vendors. Instead, you can enjoy a highly integrated, end-to-end, and easy-to-use product that is designed to simplify your analytics needs.
 
 The platform is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SaaS foundation
 
@@ -91,6 +94,16 @@ All the Microsoft Fabric compute experiences are prewired to OneLake, just like 
 OneLake is designed to allow instant mounting of existing PaaS storage accounts into OneLake with the [Shortcut](../onelake/onelake-shortcuts.md) feature. There's no need to migrate or move any of the existing data. Using shortcuts, you can access the data stored in Azure Data Lake Storage.
 
 Additionally, shortcuts allow you to easily share data between users and applications without moving or duplicating information. The shortcut capability extends to other storage systems, allowing you to compose and analyze data across clouds with transparent, intelligent caching that reduces egress costs and brings data closer to compute.
+
+## Fabric solutions for ISVs
+
+If you're an ISV interested in integrating your solutions with Microsoft Fabric, you can use one of the following paths depending on the level of integration you want to achieve:
+
+- **Interop** - Integrate your solution with the OneLake Foundation and establish basic connections and interoperability with Fabric.
+- **Develop on Fabric** - Build your solution on top of the Fabric platform or seamlessly embed Fabric's functionalities within your existing applications. It allows you to actively leverage Fabric capabilities.
+- **Build a Fabric workload** - Create customized workloads and experiences in Fabric. Tailor your offerings to deliver their  value proposition while leveraging Fabric ecosystem.
+
+For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
 ## Next steps
 

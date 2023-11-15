@@ -4,8 +4,11 @@ description: This article details how to use the Data Factory Lakehouse connecto
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 11/1/2023
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - ignite-2023
+  - ignite-2023-fabric
 ---
 
 # Set up your Lakehouse connection

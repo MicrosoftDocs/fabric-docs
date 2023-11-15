@@ -1,10 +1,12 @@
 ---
 title: "Tutorial: Create, evaluate, and score a churn prediction model"
-description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn. 
+description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/15/2023
 # customer intent: As a data scientist, I want to create a model to predict churn.
 ---
@@ -609,8 +611,8 @@ Use these steps to access your saved table in Power BI.
 1. On the left, select **OneLake data hub**.
 1. Select the lakehouse that you added to this notebook.
 1. On the top right, select **Open** under the section titled **Open this Lakehouse**.
-1. Select New Power BI dataset on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI dataset linked to the predictions.
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
+1. Select **New semantic model** on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI semantic model linked to the predictions.
+1. On the tools at the top of the semantic model's page, select **New report** to open the Power BI report authoring page.
 
 Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.
 
@@ -637,5 +639,3 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
-
-

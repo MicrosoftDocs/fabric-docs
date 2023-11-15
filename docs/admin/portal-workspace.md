@@ -4,7 +4,10 @@ description: Learn how to configure workspace tenant settings as a Fabric admin.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: tenant-setting, build-2023
+ms.custom:
+  - tenant-setting
+  - build-2023
+  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -40,6 +43,10 @@ Admins can control which users in the organization can use semantic models acros
 :::image type="content" source="media/portal-workspace/power-bi-admin-datasets-workspaces.png" alt-text="Use semantic models across workspaces":::
 
 For more information, see [Intro to semantic models across workspaces](/power-bi/connect-data/service-datasets-across-workspaces).
+
+## Identify your workspace ID
+
+The easiest way to find your workspace ID is in the URL of the Fabric site for an item in a workspace. As in Power BI, the Fabric URL contains the workspace ID, which is the unique identifier after `/groups/` in the URL, for example: `https://powerbi.com/groups/11aa111-a11a-1111-1abc-aa1111aaaa/...`. Alternatively, you can find the workspace ID in the Power BI Admin portal settings by selecting **Details** next to the workspace name.
 
 ## Block users from reassigning personal workspaces (My Workspace)
 

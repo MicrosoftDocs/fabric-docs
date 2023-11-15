@@ -5,8 +5,10 @@ ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Lakehouse Explorer
 ---
 
@@ -34,7 +36,7 @@ The main view area of the Lakehouse page is the space where most of the data int
 
 Our table preview datagrid is equipped it with a suite of powerful features that elevate your data interactions to make working with your data even more seamless. Here's are some key features:
 
-- Sort columns in ascending or descending order with a simple click. This feature provides you with full control over your data's organization while working with large datasets or when you need to quickly identify trends.
+- Sort columns in ascending or descending order with a simple click. This feature provides you with full control over your data's organization while working with large semantic models or when you need to quickly identify trends.
 
 - Filter data by substring or by selecting from a list of available values in your table.
 
@@ -65,7 +67,7 @@ There are several ways to load data into your Lakehouse from the explorer page:
 
 - **Shortcut** Creating shortcuts to connect to existing data into your Lakehouse without having to directly copy it. Find additional information [here](lakehouse-shortcuts.md)**.
 
-- **Samples:** Quickly ingest sample data to jump-start your exploration of datasets and tables.
+- **Samples:** Quickly ingest sample data to jump-start your exploration of semantic models and tables.
 
 Discover different use cases to understand the best way to [load data in your lakehouse](load-data-lakehouse.md).
 

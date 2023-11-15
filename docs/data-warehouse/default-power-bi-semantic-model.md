@@ -4,12 +4,12 @@ description: Learn how to model your data in the default Power BI semantic model
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 10/31/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
 ms.custom: build-2023
 ms.search.form: Model view # This article's title should not change. If so, contact engineering.
 ---
-# Data modeling in the default Power BI semantic model in Microsoft Fabric
+# Model data in the default Power BI semantic model in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
@@ -19,7 +19,8 @@ While all constraints are translated to relationships, currently in Power BI, on
 
 Automatic translation of constraints to relationships in the default Power BI semantic model is only applicable for tables in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], not currently supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> [!NOTE]
+> Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
 ## Data modeling properties
 

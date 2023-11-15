@@ -4,8 +4,11 @@ description: This article explains how to configure XML format in the data pipel
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # XML format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] 

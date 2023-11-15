@@ -4,9 +4,11 @@ description: Learn how to use Stored procedure activity to execute a SQL stored 
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: how-to 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to use Stored procedure activity

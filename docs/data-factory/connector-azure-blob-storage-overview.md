@@ -4,8 +4,11 @@ description: This article explains the overview of using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/09/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Azure Blob Storage connector overview
@@ -18,7 +21,7 @@ To learn about how to connect to Azure Blob Storage in Dataflow Gen2, go to [Set
 
 ## Support in data pipelines
 
-The Azure Blob Storage connector supports the following capabilities in data pipelines:
+The Azure Blob Storage connector supports the following capabilities in data pipelines.
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|

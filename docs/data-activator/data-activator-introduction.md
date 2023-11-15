@@ -4,7 +4,8 @@ description: Learn about Data Activator and how it works.
 author: davidiseminger
 ms.author: davidi
 ms.topic: concept
-ms.custom: 
+ms.custom:
+  - ignite-2023
 ms.search.form: product-reflex
 ms.date: 10/03/2023
 ---
@@ -66,4 +67,3 @@ Properties are useful when you want to reuse logic across multiple triggers. You
 You can also learn more about Microsoft Fabric:
 
 * [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md)
-

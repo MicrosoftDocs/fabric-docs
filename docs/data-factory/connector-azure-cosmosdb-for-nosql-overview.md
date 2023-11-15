@@ -4,8 +4,11 @@ description: This article provides an overview of the Azure Cosmos DB for NoSQL 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/26/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Azure Cosmos DB for NoSQL connector overview

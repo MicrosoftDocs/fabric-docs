@@ -5,7 +5,10 @@ ms.reviewer: mopeakande
 ms.author: midesa
 author: midesa
 ms.topic: how-to
-ms.date: 10/13/2023
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 ---
 
 # Train explainable boosting machines - regression (preview)

@@ -6,6 +6,11 @@
         "redirect_document_id": false
       },
       {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+       "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -17,8 +22,8 @@
       },
       {
         "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
-        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
-        "redirect_document_id": true
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
         },
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
@@ -76,16 +81,6 @@
           "redirect_document_id": true
         },
         {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
-          "redirect_document_id": false
-        },
-        {
-          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
-          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
-          "redirect_document_id": true
-        },
-        {
           "source_path_from_root": "/docs/data-factory/known-issues.md",
           "redirect_url": "/fabric/data-factory/data-factory-limitations",
           "redirect_document_id": false
@@ -103,6 +98,16 @@
         {
           "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
           "redirect_url": "/fabric/data-factory/known-issue-staging-item",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
           "redirect_document_id": true
         },
         { 
@@ -156,6 +161,11 @@
           "redirect_document_id": true
         },
         {
+          "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
           "redirect_url": "/fabric/real-time-analytics/data-policies",
           "redirect_document_id": false
@@ -183,6 +193,31 @@
         {
           "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
           "redirect_url": "/fabric/data-factory/connector-http",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
           "redirect_document_id": false
         }
     ]

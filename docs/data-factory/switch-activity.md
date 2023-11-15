@@ -5,7 +5,9 @@ author: chez-charlie
 ms.author: chez
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 08/21/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Switch activity to conditionally branch execution in a pipeline

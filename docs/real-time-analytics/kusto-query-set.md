@@ -5,13 +5,15 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.date: 10/25/2023
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to create and use a new KQL queryset.
 

@@ -4,13 +4,14 @@ description: This article provides an overview of the governance and compliance 
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 05/23/2023
 ---
 
 # What is Microsoft Fabric governance and compliance?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric governance and compliance is a set of capabilities that help you manage, protect, and monitor your organization's sensitive information. This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information.
 

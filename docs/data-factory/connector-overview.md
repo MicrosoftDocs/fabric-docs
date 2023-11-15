@@ -4,9 +4,12 @@ description: Learn about data connectors.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
-ms.topic: overview 
-ms.custom: build-2023
-ms.date: 09/18/2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 ms.search.form: product-data-factory
 ---
 

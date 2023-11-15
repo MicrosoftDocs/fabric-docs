@@ -4,7 +4,10 @@ description: Understand the Microsoft Fabric Monitoring hub and the information 
 author: davidiseminger
 ms.author: davidi
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 11/02/2023
 ---
 

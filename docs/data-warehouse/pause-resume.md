@@ -4,8 +4,10 @@ description: Learn more about the pause and resume capacity for data warehousing
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/20/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ---
 
 # Pause and resume in Fabric data warehousing

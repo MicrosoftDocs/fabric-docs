@@ -5,17 +5,16 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom: ignite-2023
-ms.date: 2/11/2023
+ms.custom:
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 ms.search.form: Event Streams with Other Fabric Items
 ---
 
 # Get data from Eventstream in multiple Fabric items
 
 Event streams can route the event data to various destinations, including the Fabric items, for example: Fabric Lakehouse, Fabric KQL Database, etc. With the integration between Fabric Eventstream and these Fabric items, you can get the data from Eventstream item inside these Fabric items. This article describes how to use this integration experience within these Fabric items.
-
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 

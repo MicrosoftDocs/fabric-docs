@@ -1,14 +1,17 @@
 ---
-title: How to configure Amazon Redshift in a copy activity
+title: Configure Amazon Redshift in a copy activity
 description: This article explains how to copy data using Amazon Redshift.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/18/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Amazon Redshift in a copy activity
+# Configure Amazon Redshift in a copy activity
 
 This article outlines how to use the copy activity in data pipelines to copy data from Amazon Redshift.
 

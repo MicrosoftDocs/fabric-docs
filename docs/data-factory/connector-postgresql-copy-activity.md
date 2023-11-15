@@ -1,14 +1,17 @@
 ---
-title: How to configure PostgreSQL in a copy activity
+title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/20/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure PostgreSQL in a copy activity
+# Configure PostgreSQL in a copy activity
 
 This article outlines how to use the copy activity in data pipelines to copy data from PostgreSQL.
 
