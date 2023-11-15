@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ms.search.form: spark_job_definition
 ---
@@ -13,8 +15,6 @@ ms.search.form: spark_job_definition
 # Schedule and run an Apache Spark job definition
 
 Learn how to run a Microsoft Fabric Apache Spark job definition and find the job definition status and details.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

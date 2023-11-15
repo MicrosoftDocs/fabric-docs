@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ms.search.form: Create Spark Job Definition,spark_job_definition
 ---
@@ -13,8 +15,6 @@ ms.search.form: Create Spark Job Definition,spark_job_definition
 # How to create an Apache Spark job definition in Fabric
 
 In this tutorial, learn how to create a Spark job definition in Microsoft Fabric.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

@@ -5,7 +5,9 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/23/2023
 ---
 
@@ -13,15 +15,13 @@ ms.date: 5/23/2023
 
 Before you can begin creating the lakehouse, you need to create a workspace where you can build out the remainder of the tutorial.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). For public preview, the Fabric (Preview) trial requires a Power BI license. If you don't have one, [sign up for a Power BI free license,](https://app.fabric.microsoft.com) and then you can start the Fabric (Preview) trial.
 
 ## Create a workspace
 
-In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI datasets, and reports.
+In this step, you create a Fabric workspace. The workspace contains all the items needed for this lakehouse tutorial, which includes lakehouse, dataflows, Data Factory pipelines, the notebooks, Power BI semantic models, and reports.
 
 1. Sign in to [Power BI](https://powerbi.com/).
 

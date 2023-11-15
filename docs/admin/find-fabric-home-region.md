@@ -4,13 +4,13 @@ description: Learn how to find what your Fabric home region is.
 author: paulinbar
 ms.author: painbar
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # Find your Fabric home region
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To find your Fabric home region, follow these steps:
 

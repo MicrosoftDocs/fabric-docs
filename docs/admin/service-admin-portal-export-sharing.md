@@ -1,14 +1,16 @@
 ---
 title: Export and sharing tenant settings
-description: Learn how to configure export and sharing settings in Fabric. 
+description: Learn how to configure export and sharing settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/06/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -95,9 +97,9 @@ Users in the organization can download .pbix files and paginated reports.
 
 To learn more, see [Download a report from the Power BI service to Power BI Desktop](/power-bi/create-reports/service-export-to-pbix).
 
-## Users can work with Power BI datasets in Excel using a live connection
+## Users can work with Power BI semantic models in Excel using a live connection
 
-Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or dataset, or export a dataset to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
+Turn this setting on to allow users to export data to Microsoft Excel from a Power BI visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.
 
 To learn more, see [Create Excel workbooks with refreshable Power BI data](/power-bi/collaborate-share/service-analyze-in-excel).
 
@@ -223,30 +225,30 @@ This integration requires that your organization's Microsoft Office admin has en
 >[!NOTE]
 > If you turn this setting off, that doesn't prevent people from using the add-in starting from PowerPoint. To completely block adding live Power BI report pages to PowerPoint slides using the add-in, the add-in must be turned off in both Power BI and PowerPoint.
 
-## Allow DirectQuery connections to Power BI datasets
+## Allow DirectQuery connections to Power BI semantic models
 
 When this setting is turned on (default), users can use DirectQuery to connect to Azure Analysis Services or Power BI datasets.
 
 To learn more about DirectQuery, see [Use DirectQuery in Power BI Desktop](/power-bi/connect-data/desktop-use-directquery).
 
-If you turn this switch off, it effectively stops users from publishing new composite models on Power BI datasets to the service. Existing reports that leverage a composite model on a Power BI dataset continue to work, and users are still able to create composite models using Desktop, but they can't publish to the service.
+If you turn this switch off, it effectively stops users from publishing new composite models on Power BI semantic models to the service. Existing reports that leverage a composite model on a Power BI semantic model continue to work, and users are still able to create composite models using Desktop, but they can't publish to the service.
 
 To learn more about composite models, see [Use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
 >[!NOTE]
-> Live connections to Power BI datasets aren't affected by this switch, nor are live or DirectQuery connections to Azure Analysis Services. These continue to work regardless of whether the setting is on or off. In addition, any published reports that leverage a composite model on a Power BI dataset continue to work even if the setting has been turned off after they were published.
+> Live connections to Power BI semantic models aren't affected by this switch, nor are live or DirectQuery connections to Azure Analysis Services. These continue to work regardless of whether the setting is on or off. In addition, any published reports that leverage a composite model on a Power BI semantic model continue to work even if the setting has been turned off after they were published.
 
-## Guest users can work with shared datasets in their own tenants
+## Guest users can work with shared semantic models in their own tenants
 
-When this setting is turned on, Azure AD B2B guest users of datasets shared with them by users in your organization can access and build on those datasets in their own tenant.
+When this setting is turned on, Azure AD B2B guest users of semantic models shared with them by users in your organization can access and build on those semantic models in their own tenant.
 
-This setting is off by default for customers. If this setting is disabled, a guest user can still access the dataset in the provider tenant but not in their own tenant.
+This setting is off by default for customers. If this setting is disabled, a guest user can still access the semantic model in the provider tenant but not in their own tenant.
 
 ## Allow specific users to turn on external data sharing
 
-As a Fabric admin, you can specify which users or user groups in your organization can share datasets externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared datasets in their own tenants.
+As a Fabric admin, you can specify which users or user groups in your organization can share semantic models externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own tenants.
 
-Disabling this setting prevents any user from sharing datasets externally by blocking the ability of users to turn on external sharing for datasets they own or manage.
+Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
 
 ## Next steps
 

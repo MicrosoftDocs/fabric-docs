@@ -1,19 +1,22 @@
 ---
 title: What is Data engineering in Microsoft Fabric?
-description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers. 
+description: Learn about Data engineering core concepts in Microsoft Fabric and the analytics functionality it offers.
 ms.reviewer: snehagunda
 ms.author: avinandac
 author: avinandaMS
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
 ms.date: 05/23/2023
 ---
 
 # What is Data engineering in Microsoft Fabric?
 
 Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Microsoft Fabric provides various data engineering capabilities to ensure that your data is easily accessible, well-organized, and of high-quality. From the data engineering homepage, you can:
 

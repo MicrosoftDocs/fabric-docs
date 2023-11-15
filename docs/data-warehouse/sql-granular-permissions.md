@@ -5,7 +5,9 @@ ms.author: cynotebo
 author: cynotebo
 ms.reviewer: wiassaf, stwynant
 ms.topic: conceptual
-ms.date: 10/05/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -20,8 +22,6 @@ For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](incl
 - Object-level-security can be managed using GRANT, REVOKE, and DENY syntax.
     - For more information, see T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
 - Users can be assigned to SQL roles, both custom and built-in database roles.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## User granular permissions
 

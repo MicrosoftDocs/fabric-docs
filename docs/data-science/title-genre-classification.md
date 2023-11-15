@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/15/2023
 #customer intent: As a data scientist, I want to create, evaluate, and score a text classification model.
 ---
@@ -14,7 +16,7 @@ ms.date: 09/15/2023
 
 In this tutorial, you'll see an end-to-end data science workflow for a text classification model using Microsoft Fabric. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this notebook are:
 
@@ -259,7 +261,7 @@ display(token_df.limit(20))
 
 Display the wordcloud for each class.
 
-A wordcloud is a visually prominent presentation of “keywords” that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
+A wordcloud is a visually prominent presentation of "keywords" that appear frequently in text data. The wordcloud is effective because the rendering of keywords forms a cloud-like color picture to better capture the main text data at a glance. Learn [more about `wordcloud`](https://github.com/amueller/word_cloud).
 
 
 
@@ -502,5 +504,5 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ## Next steps
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

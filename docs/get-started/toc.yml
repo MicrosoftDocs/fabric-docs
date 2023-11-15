@@ -45,6 +45,34 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+- name: Copilot in Fabric
+  items:
+  - name: Copilot for Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
+  - name: Copilot for Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Factory
+    href: copilot-fabric-data-factory.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: copilot-notebooks-overview.md
+    - name: Overview of Chat-magics in Notebooks
+      href: copilot-notebooks-chat-magics.md
+    - name: Use the Copilot chat panel
+      href: copilot-notebooks-chat-pane.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Promote or certify items
@@ -53,6 +81,8 @@ items:
   href: share-items.md
 - name: Apply sensitivity labels
   href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
 - name: Known issues
   items:
     - name: Active known issues for Fabric - chart
@@ -77,7 +107,7 @@ items:
       href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
     - name: Selecting view account link in account manager shows wrong page
       href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
-    - name: Admin monitoring dataset refresh fails and credentials expire
+    - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region
       href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
@@ -97,7 +127,7 @@ items:
       href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
     - name: Pipeline isn't loading if user deployed with update app via public API
       href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
-    - name: Temp tables in Data Warehouse and SQL Endpoint
+    - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
     - name: OneLake table folder not removed when table dropped in data warehouse
       href: known-issues/known-issue-446-onelake-table-folder-isnt-removed.md  

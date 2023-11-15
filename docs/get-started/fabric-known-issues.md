@@ -1,11 +1,13 @@
 ---
 title: Fabric (Preview) trial known issues
-description: Identify issues that are affecting your Fabric trial. 
+description: Identify issues that are affecting your Fabric trial.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
 ms.date: 11/9/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 # Fabric (Preview) trial known issues
 
@@ -29,7 +31,7 @@ Select the **Title** to view more information about that specific known issue.
 |  483  | Administration & Management | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md)  | August 24, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
 |  453  | Data Warehouse              | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md)    |  July 10, 2023  |
-|  447  | Data Warehouse              | [Temp tables in Data Warehouse and SQL Endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
+|  447  | Data Warehouse              | [Temp tables in Data Warehouse and SQL analytics endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
 |  446  | Data Warehouse              | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-onelake-table-folder-isnt-removed.md)    |  July 5, 2023  |
 
 ## Recently closed known issues

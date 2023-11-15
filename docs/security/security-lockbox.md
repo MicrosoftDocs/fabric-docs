@@ -4,13 +4,13 @@ description: Customer Lockbox for Microsoft Fabric is a service that allows cust
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/08/2023
 ---
 
 # Customer Lockbox for Microsoft Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Use [Customer Lockbox for Microsoft Azure](/azure/security/fundamentals/customer-lockbox-overview) to control how Microsoft engineers access your data. In this article you'll learn how Customer Lockbox requests are initiated, tracked, and stored for later reviews and audits.
 
