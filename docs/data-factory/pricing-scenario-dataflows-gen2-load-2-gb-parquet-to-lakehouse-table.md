@@ -50,7 +50,7 @@ To accomplish this scenario, you need to create a dataflow with the following st
 
 :::image type="content" source="media/pricing-scenarios/dataflows-gen2-scenario-2-metrics-details-6.png" alt-text="Screenshot showing details of OneLake Compute and 2 High Scale Dataflow Compute duration and CU consumption used in the run.":::
 
-The High Scale Dataflow Compute Meter recorded negligible activity. Standard Compute meter for Dataflow Gen2 refresh operations consume 112,098.540 Compute Units (CUs). It's important to consider that other operations, including Warehouse Query, SQL Endpoint Query, and Dataset On-Demand Refresh, constitute detailed aspects of Dataflow Gen2 implementation that are currently transparent and necessary for their respective operations. However, these operations will be concealed in future updates and should be disregarded when estimating costs for Dataflow Gen2.
+The High Scale Dataflow Compute Meter recorded negligible activity. Standard Compute meter for Dataflow Gen2 refresh operations consumes 112,098.540 Compute Units (CUs). It's important to consider that other operations, including Warehouse Query, SQL Endpoint Query, and Dataset On-Demand Refresh, constitute detailed aspects of Dataflow Gen2 implementation that are currently transparent and necessary for their respective operations. However, these operations will be concealed in future updates and should be disregarded when estimating costs for Dataflow Gen2.
 
 > [!NOTE]
 > Although reported as a metric, the actual duration of the run isn't relevant when calculating the effective CU hours with the Fabric Metrics App since the CU seconds metric it also reports already accounts for its duration.
