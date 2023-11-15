@@ -47,7 +47,9 @@ The following Python code snippet demonstrates how to use `find_dependencies`.
 
 ```python
 from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependencies
+from sempy.dependencies import plot_dependency_metadata
+import pandas as pd
+
 
 df = FabricDataFrame(pd.read_csv("your_data.csv"))
 
