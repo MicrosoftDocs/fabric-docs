@@ -7,7 +7,7 @@ ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/13/2023
+ms.date: 11/14/2023
 
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
 ---
