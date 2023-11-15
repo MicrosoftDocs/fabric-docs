@@ -53,7 +53,7 @@ Shortcuts in Microsoft OneLake allow you to unify your data across domains, clou
 
 ### Database Mirroring
 
-You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases here (Link to Priya’s blog).
+You’ve seen the shortcuts, now you’re wondering about integration capabilities with external databases and warehouses. Mirroring provides a modern way of accessing and ingesting data continuously and seamlessly from any database or data warehouse into the Data warehousing experience in Microsoft Fabric. Mirror is all in near real-time thus giving users immediate access to changes in the source. You can learn more about mirroring and the supported databases at [Introducing Mirroring in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric/).
 
 :::image type="content" source="media/partner-integration/database-mirroring.png" alt-text="Diagram of database mirroring.":::
 
