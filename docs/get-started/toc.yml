@@ -45,7 +45,6 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
-    maintainContext: true
 - name: Copilot in Fabric
   items:
   - name: Copilot for Fabric overview
@@ -64,6 +63,8 @@ items:
       href: copilot-data-science-privacy-security.md
     - name: Responsible use in Power BI
       href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Factory
+    href: copilot-fabric-data-factory.md
   - name: Copilot for Data Science and Data Engineering
     items:
     - name: Copilot for Data Science and Data Engineering
@@ -88,6 +89,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Feature Usage and Adoption report activity missing
+      href: known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md
     - name: Creating or updating Fabric items is blocked
       href: known-issues/known-issue-530-creating-updating-fabric-items-blocked.md
     - name: Data warehouse with more than 20,000 tables fails to load

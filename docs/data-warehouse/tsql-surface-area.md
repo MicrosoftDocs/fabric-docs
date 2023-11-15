@@ -43,7 +43,7 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Recursive queries
 - Result Set Caching
 - Schema and Table names can't contain / or \
-- SELECT - FOR (except JSON)
+- SELECT - FOR
 - SET ROWCOUNT
 - SET TRANSACTION ISOLATION LEVEL
 - `sp_showspaceused`
