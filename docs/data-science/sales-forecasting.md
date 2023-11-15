@@ -37,7 +37,7 @@ The main steps in this notebook are:
 
 [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Superstore%20Forecast.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Superstore%20Forecast.ipynb -->
 
