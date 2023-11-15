@@ -123,7 +123,7 @@ OneLake data remains accessible through multiple channels:
 
 While Fabric ensures that data remains accessible after a disaster, customers can also act to fully restore their services to the state before the incident. This section provides a step-by-step guide to help customers through the recovery process.
 
-#### Common steps
+#### Recovery steps
 
 1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, we recommend selecting a region outside your primary geo to increase the likelihood of successful capacity creation. For information about creating a capacity, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
