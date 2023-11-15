@@ -6,7 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 10/16/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Conflict resolution
@@ -15,7 +17,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
 

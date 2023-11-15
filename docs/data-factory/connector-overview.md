@@ -4,17 +4,18 @@ description: Learn about data connectors.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
-ms.topic: overview 
-ms.custom: build-2023
-ms.date: 09/18/2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 ms.search.form: product-data-factory
 ---
 
 # Connector overview
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 

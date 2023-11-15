@@ -4,15 +4,16 @@ description: Understand the Microsoft Fabric Monitoring hub and the information 
 author: davidiseminger
 ms.author: davidi
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/02/2023
 ---
 
 # Use the Monitoring hub
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-*Monitoring hub* enables users to monitor various Microsoft Fabric activities, such as dataset refresh and Spark Job runs and many others, from a central location. You can access *Monitoring hub* by selecting its icon from the left pane.
+*Monitoring hub* enables users to monitor various Microsoft Fabric activities, such as semantic model refresh and Spark Job runs and many others, from a central location. You can access *Monitoring hub* by selecting its icon from the left pane.
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-01.png" alt-text="Screen shot of Monitoring hub in left pane.":::
 
@@ -24,7 +25,7 @@ Verify that the [new workspace experience](portal-workspace.md#create-workspaces
 
 ## Permissions required
 
-All items for which a user has read permissions [dataset permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-dataset-permissions) will appear in the Monitoring Hub.
+All items for which a user has read permissions [semantic model permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-dataset-permissions) will appear in the Monitoring Hub.
 
 ## Using the Monitoring hub
 
@@ -32,7 +33,7 @@ All items for which a user has read permissions [dataset permissions](/power-bi/
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-02.png" alt-text="Screen shot of Monitoring hub in context with Power BI.":::
 
-Because there might be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *Dataset*, *Dataflow Gen2*, and *Datamart* items.
+Because there might be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *semantic model*, *Dataflow Gen2*, and *Datamart* items.
 
 You can dismiss filters by selecting the *x* beside the filter button, and you can select different filters by using the filter drop-down in the upper right corner of the window. You can also filter by keyword. 
 
@@ -44,7 +45,7 @@ The first seven columns in the list of items are shared across all Monitoring hu
 
 When you select an item from the list, Monitoring hub displays detailed information about that item. 
 
-When you hover over an item's name, any available quick actions for the item type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the item itself when you hover, for example, *View run history* for datasets that are in Monitoring hub, to display their refresh activities. 
+When you hover over an item's name, any available quick actions for the item type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the item itself when you hover, for example, *View run history* for semantic models that are in Monitoring hub, to display their refresh activities. 
 
 
 ## Next steps

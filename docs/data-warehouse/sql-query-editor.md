@@ -4,9 +4,11 @@ description: Learn how to use the SQL query editor.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf, jacindaeng
-ms.date: 10/02/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the SQL query editor
@@ -20,8 +22,6 @@ This article describes how to use the SQL query editor in the [!INCLUDE [product
 - You can quickly [view data in the Data preview](data-preview.md).
 
 The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SQL query editor in the Fabric portal
 

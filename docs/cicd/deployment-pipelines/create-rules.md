@@ -4,7 +4,10 @@ description: Learn how to create rules to simplify deploying content with Fabric
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - contperf-fy21q1
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment rules
 ---
@@ -13,16 +16,14 @@ ms.search.form: Deployment rules
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
-When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a dataset in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate dataset. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
 You can configure data source rules and parameter rules. The following table lists the type of items you can configure rules for, and the type of rule you can configure for each one.
 
 ||Data source rule  |Parameter rule  |Details  |
 |---------|---------|---------|---------|
 |**Dataflow**         |✅ |✅ |Use to determine the values of the data sources or parameters for a specific dataflow. |
-|**Dataset**          |✅ |✅ |Use to determine the values of the data sources or parameters for a specific dataset.         |
+|**Semantic model**          |✅ |✅ |Use to determine the values of the data sources or parameters for a specific semantic model.         |
 |**Datamart**         |✅ |✅ |Use to determine the values of the data sources or parameters for a specific datamart.         |
 |**Paginated report** |✅ |❌ |Defined for the data sources of each paginated report. You can use these rules to determine the data sources of the paginated report. |
 
@@ -31,17 +32,17 @@ You can configure data source rules and parameter rules. The following table lis
 
 ## Create a deployment rule
 
-To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the datasets with the newly created rules from the source stage to the target stage where the rules were created. Your rules won't apply until you deploy the datasets from the source to the target stage.
+To create a deployment rule, follow the steps in this section. After you create all the deployment rules you need, deploy the semantic models with the newly created rules from the source stage to the target stage where the rules were created. Your rules won't apply until you deploy the semantic models from the source to the target stage.
 
 1. In the pipeline stage you want to create a deployment rule for, select **Deployment rules**.
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
-2. You can set rules to **dataflows**, **datasets**, **datamarts**, and **paginated reports**. To find the item you want to set a rule for, use the search functionality or filter functionalities.
+2. You can set rules to **dataflows**, **semantic model**, **datamarts**, and **paginated reports**. To find the item you want to set a rule for, use the search functionality or filter functionalities.
 
     :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
 
-3. Select the dataflow, dataset, datamart, or paginated report you want to create a rule for.
+3. Select the dataflow, semantic model, datamart, or paginated report you want to create a rule for.
 
     :::image type="content" source="media/create-rules/deployment-rules-selection.png" alt-text="A screenshot of the deployment rules pane, showing two datasets in the datasets tab. To configure a rule, select an item from one of the tabs.":::
 
@@ -60,12 +61,12 @@ To create a deployment rule, follow the steps in this section. After you create 
         >[!NOTE]
         >
         >* *Data source rules* will be grayed out if you're not the owner of the item you're creating a rule for, or if your item doesn't contain any data sources.
-        >* For *dataflows*, *datasets* and *paginated reports*, the data source list is taken from the source pipeline stage.
+        >* For *dataflows*, *semantic models* and *paginated reports*, the data source list is taken from the source pipeline stage.
         >* You can’t use the same data source in more than one rule.
 
     * **Parameter rules** - Select a parameter from the list of parameters; the current value is shown. Edit the value to the value you want to take effect after each deployment.
 
-## Supported data sources for dataflow and dataset rules
+## Supported data sources for dataflow and semantic model rules
 
 Data source rules can be defined for the following data sources:
 
@@ -95,7 +96,7 @@ For other data sources, we recommend [using parameters to configure your data so
 
 This section lists the limitations for the deployment rules.
 
-* To create a deployment rule, you must be the owner of the dataflow, dataset, or paginated report you're creating a rule for.
+* To create a deployment rule, you must be the owner of the dataflow, semantic model, or paginated report you're creating a rule for.
 
 * Deployment rules can't be created in the development stage.
 
@@ -107,7 +108,7 @@ This section lists the limitations for the deployment rules.
 
 * Data source rules for common data model (CDM) folders in a dataflow, aren't supported.
 
-* Rules for datasets that use dataflows as their source, aren't supported.
+* Rules for semantic models that use dataflows as their source, aren't supported.
 
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule won't be valid anymore, and deployment will fail.
 
