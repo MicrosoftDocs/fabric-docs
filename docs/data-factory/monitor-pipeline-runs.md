@@ -37,7 +37,9 @@ In this how-to guide, you'll learn the different ways to review and monitor your
 
 1. To find additional information on your pipeline runs **Input** and **Output**, select the input or output links to the right of the relevant row in the Activity Runs.
 
-   :::image type="content" source="media/monitor-pipeline-runs/pipeline-input-details.png" alt-text="Screenshot of Input details.":::
+1. You can select **Update pipeline** to make changes to your pipeline from this screen. This selection will take you back in the pipeline canvas.
+
+1. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
 
 1. To view performance details, select an activity from the list of **Activity Runs**. Performance details will pop up.
 
@@ -46,16 +48,6 @@ In this how-to guide, you'll learn the different ways to review and monitor your
    More details can be found under **Duration breakdown** and **Advanced**.  
 
    :::image type="content" source="media/monitor-pipeline-runs/copy-data-details.png" alt-text="Screenshot of additional details for copy data run.":::
-
-1. Select **Update pipeline** to make changes to your pipeline. This selection will land you back in the pipeline canvas.
-
-   :::image type="content" lightbox="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" source="media/monitor-pipeline-runs/update-pipeline-on-canvas.png" alt-text="Screenshot showing where to select Update pipeline.":::
-
-1. You can also **Rerun** your data pipeline. You can choose to rerun the entire pipeline or only rerun the pipeline from the failed activity.  
-
-   :::image type="content" lightbox="media/monitor-pipeline-runs/rerun.png" source="media/monitor-pipeline-runs/rerun.png" alt-text="Screenshot showing where to select Rerun.":::
-
-   :::image type="content" lightbox="media/monitor-pipeline-runs/rerun-menu.png" source="media/monitor-pipeline-runs/rerun-menu.png" alt-text="Screenshot showing Rerun menu options.":::
 
 ## Gantt view
 
