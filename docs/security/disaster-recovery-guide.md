@@ -125,7 +125,7 @@ While Fabric ensures that data remains accessible after a disaster, customers ca
 
 #### Common steps
 
-1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, we recommend selecting a region outside your primary geo to increase the likelihood of successful capacity creation. [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, we recommend selecting a region outside your primary geo to increase the likelihood of successful capacity creation. For information about creating a capacity, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
 
