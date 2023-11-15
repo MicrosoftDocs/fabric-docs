@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/07/2023
 ms.search.form: product-kusto
 ---
 # Access an existing KQL database
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to access an existing KQL database and optionally copy the **Query URI** and the **Ingestion URI** to run queries, store management commands, or to get data.
 

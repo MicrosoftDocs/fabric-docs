@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 02/24/2023
 ms.search.form: Monitor Spark application details
 ---
 
 # Apache Spark application detail monitoring
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application, allowing you to keep an eye on the recent run status, issues, and progress of your jobs.
 

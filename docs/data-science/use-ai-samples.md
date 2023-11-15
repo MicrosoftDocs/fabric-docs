@@ -5,7 +5,11 @@ ms.reviewer: lagayhar
 ms.author: amjafari
 author: amhjf
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 
@@ -13,7 +17,7 @@ ms.date: 05/23/2023
 
 In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy, and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience offers and explore examples of how ML models can address your common business problems.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Install Python libraries
 

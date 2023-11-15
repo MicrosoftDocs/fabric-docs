@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/23/2023
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
 In this tutorial, you ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

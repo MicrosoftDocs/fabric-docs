@@ -5,7 +5,9 @@ ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/15/2023
 ---
 
@@ -13,7 +15,7 @@ ms.date: 09/15/2023
 
 In this article, learn how to create, train and evaluate uplift models and apply uplift modeling technique.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 - What is uplift modeling?
 

@@ -4,9 +4,11 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
@@ -17,8 +19,6 @@ Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] i
 
 > [!IMPORTANT]  
 > To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Table constraints
 
