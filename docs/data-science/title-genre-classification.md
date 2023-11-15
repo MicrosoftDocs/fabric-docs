@@ -36,9 +36,22 @@ The main steps in this notebook are:
 
 ## Follow along in notebook
 
- [AIsample - Title Genre Classification.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Title%20Genre%20Classification.ipynb) is the notebook that accompanies this tutorial.
+You can follow along in a notebook one of two ways: 
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Title genre classification** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
+[AIsample - Title Genre Classification.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Title%20Genre%20Classification.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Title%20Genre%20Classification.ipynb -->
 
