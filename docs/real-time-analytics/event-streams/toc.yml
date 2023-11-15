@@ -23,3 +23,5 @@ items:
   href: build-real-time-dashboard-from-iot-hub.md
 - name: Explore and transform taxi data for KQL database integration
   href: transform-taxi-data-and-route-to-kql.md
+- name: Monitor event streams capacity consumption
+  href: monitor-capacity-consumption.md
