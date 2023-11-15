@@ -1,13 +1,15 @@
 ---
 title: Add custom branding to the Power BI service
-description: Custom branding lets you change the look and feel of the Power BI service to match your organization's theme. 
+description: Custom branding lets you change the look and feel of the Power BI service to match your organization's theme.
 author: KesemSharabi
 ms.author: kesharab
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.topic: how-to 
-ms.date: 09/15/2023
-ms.custom: template-how-to
+ms.topic: how-to
+ms.date: 11/02/2023
+ms.custom:
+  - template-how-to
+  - ignite-2023
 ---
 
 # Add custom branding to the Power BI service

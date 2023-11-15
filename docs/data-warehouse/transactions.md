@@ -4,9 +4,11 @@ description: Learn how to use transactions and how to insert and modify data in 
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Transactions in Warehouse tables in Microsoft Fabric
@@ -19,8 +21,6 @@ You can modify data that is stored in tables in a [!INCLUDE [fabric-dw](includes
 
 - For example, you could commit inserts to multiples tables, or, none of the tables if an error arises. If you're changing details about a purchase order that affects three tables, you can group those changes into a single transaction. That means when those tables are queried, they either all have the changes or none of them do. Transactions are a common practice for when you need to ensure your data is consistent across multiple tables. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Transactional capabilities
 
 The same transactional capabilities are supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)], but for read-only queries.
@@ -32,7 +32,7 @@ Transactions can also be used for sequential SELECT statements to ensure the tab
 
 ## Cross-database query transaction support
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL Endpoint of the Lakehouse](data-warehousing.md#sql-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL Endpoint and each workspace can have more than one lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL analytics endpoint and each workspace can have more than one lakehouse.
 
 ## DDL support within transactions
 

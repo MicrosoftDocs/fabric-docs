@@ -3,9 +3,10 @@ title: Known issue - Lineage view edit dataflow button
 description: A known issue is posted where a customer gets taken to the Dataflow Gen1 experience when clicking the Edit button from within the Lineage view of a workspace.
 author: ptyx507
 ms.author: miescobar
-ms.topic: troubleshooting  
-ms.date: 06/5/2023
-ms.custom: 
+ms.topic: troubleshooting
+ms.date: 11/15/2023
+ms.custom:
+  - ignite-2023
 ---
 
 # Known issue - Lineage view edit dataflow button

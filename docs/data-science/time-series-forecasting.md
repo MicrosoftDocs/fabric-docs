@@ -5,7 +5,9 @@ ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/15/2023
 ---
 
@@ -13,20 +15,33 @@ ms.date: 09/15/2023
 
 In this notebook, we'll build a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 - A familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
 - A Lakehouse. The Lakehouse is used to store data for this example. For more information, visit [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-### Follow along in notebook
+## Follow along in notebook
+
+You can follow along in a notebook one of two ways: 
+
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Time series** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
 
 [AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb -->
+
+## About the dataset
 
 The dataset is a record of every building sold in New York City property market during a 13-year period. Refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) for definition of columns in the spreadsheet. The dataset looks like the following table:
 
@@ -235,11 +250,16 @@ fig2 = m.plot_components(forecast)
 
 We can use the Prophet built-in cross validation functionality to measure the forecast error on historical data. The following parameters indicate we should start with 11 years of training data, then make predictions every 30 days, within a one year horizon.
 
+> [!IMPORTANT]
+> If you're running the [built-in notebook](#open-built-in-notebook) for this tutorial, make this change in the notebook's code to avoid getting an error when you run the following cell:
+>
+> Replace `df_cv = cross_validation(m, initial="11 Y", period="30 days", horizon="365 days")` with `df_cv = cross_validation(m, initial="4017 days", period="30 days", horizon="365 days")` to match the code in this article.
+
 ```python
 from prophet.diagnostics import cross_validation
 from prophet.diagnostics import performance_metrics
 
-df_cv = cross_validation(m, initial="11 Y", period="30 days", horizon="365 days")
+df_cv = cross_validation(m, initial="4017 days", period="30 days", horizon="365 days")
 df_p = performance_metrics(df_cv, monthly=True)
 ```
 

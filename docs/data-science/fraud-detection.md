@@ -6,6 +6,8 @@ reviewer: msakande
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/06/2023
 #customer intent: As a data scientist, I want to build a fraud detection model so that I can use it to detect future fraudulent transactions.
 ---
@@ -22,19 +24,30 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 > * Save and register the best-performing machine learning model.
 > * Load the machine learning model for scoring and making predictions.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
 * If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
-### Follow along in the notebook
+## Follow along in the notebook
+
+You can follow along in a notebook one of two ways: 
+
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Fraud detection** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
 
 [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb -->
 
@@ -564,5 +577,5 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
 
 * [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 * [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-* [Train machine learning models](model-training/model-training-overview.md)
+* [Train machine learning models](model-training-overview.md)
 * [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
