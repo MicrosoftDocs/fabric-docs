@@ -1,6 +1,6 @@
 ---
 title: Follow along in notebook
-description: Steps to upload notebooks to use with get started tutorials.
+description: Steps to upload notebooks from GitHub to use with get started tutorials.
 author: sdgilley
 ms.author: sgilley
 ms.topic: include
