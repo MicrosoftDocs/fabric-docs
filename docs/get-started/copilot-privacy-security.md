@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 11/09/2023
 ---
 
 # Privacy, security, and responsible use for Copilot Microsoft Fabric (preview)
@@ -46,7 +46,7 @@ In general, these features are designed to generate natural language, code, or o
 
 (b) [grounding data](#grounding) that the feature has access to.
 
-For example, Power BI and Data Science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Data Science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
+For example, Power BI, Data Factory, and Data Science offer Copilot chats where you can ask questions and get responses that are contextualized on your data. Copilot for Power BI can also create reports and other visualizations. Copilot for Data Factory can transform your data and explain what steps it has applied. Data Science offers Copilot features outside of the chat pane, such as custom IPython magic commands in notebooks. Copilot chats may be added to other experiences in Fabric, along with other features that are powered by Azure OpenAI under the hood.
 
 This information is sent to Azure OpenAI Service, where it's processed and an output is generated. Therefore, data processed by Azure OpenAI can include:  
 
