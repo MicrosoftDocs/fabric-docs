@@ -5,7 +5,7 @@ author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: snehagunda
 ms.topic: how-to
-ms.custom: cat-fabric
+ms.custom: fabric-cat
 ms.date: 10/30/2023
 ---
 
