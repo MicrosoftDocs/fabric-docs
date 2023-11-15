@@ -17,7 +17,7 @@ This document describes a disaster recovery plan for Fabric that is designed to 
 
 ## What does the Fabric disaster recovery plan include?
 
-The goal of the Fabric disaster recovery plan is to keep your organization's data safe and accessible. Power BI, now a part of the Fabric, has a solid disaster recovery system in place. For other Fabric experiences, while a full disaster recovery system isn't currently supported, the [Disaster Recovery capacity setting](#disaster-recovery-capacity-setting) makes it possible to ensure that that data stored in OneLake is backed up across regions. This means that even if there's a regional disaster, you can still access your data.
+The goal of the Fabric disaster recovery plan is to keep your organization's data safe and accessible. Power BI, now a part of the Fabric, has a solid disaster recovery system in place. For other Fabric experiences, while a full disaster recovery system isn't currently supported, the [disaster decovery capacity setting](#disaster-recovery-capacity-setting) makes it possible to ensure that that data stored in OneLake is backed up across regions. This means that even if there's a regional disaster, you can still access your data.
 
 ### Power BI
 
@@ -49,7 +49,7 @@ Fabric provides a disaster recovery switch on the capacity settings page. It's a
 
 * **Role access**: Only users with the [capacity admin](/power-bi/enterprise/service-admin-premium-manage#setting-up-a-new-capacity-power-bi-premium/) role or higher can use this switch.
 
-* **Granularity**: The granularity of the switch is the capacity Level. It's available for both Premium and Fabric capacities.
+* **Granularity**: The granularity of the switch is the capacity level. It's available for both Premium and Fabric capacities.
 
 * **Data scope**: The disaster recovery toggle specifically addresses OneLake data, which includes Lakehouse and Warehouse data. **The switch does not influence customers data stored outside OneLake.**
 
@@ -57,7 +57,7 @@ Fabric provides a disaster recovery switch on the capacity settings page. It's a
 
 * **Frequency**: To maintain stability and prevent constant toggling, once a customer changes the disaster recovery capacity setting, they need to wait 30 days before being able to alter it again.
 
-:::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-capacity-setting.png" alt-text="Screenshot of the Disaster Recovery tenant setting.":::
+:::image type="content" source="./media/disaster-recovery-guide/disaster-recovery-capacity-setting.png" alt-text="Screenshot of the disaster recovery tenant setting.":::
 
 > [!NOTE]
 > After turning on the setting, it can take up to 72 hours for the data to start replicating.
@@ -67,7 +67,7 @@ Fabric provides a disaster recovery switch on the capacity settings page. It's a
 When Fabric customers turn on the disaster recovery capacity setting, cross-region replication is enabled as a disaster recovery capability for OneLake data. The Fabric platform aligns with Azure regions to provision the geo-redundancy pairs. However, note that some regions don't have an Azure pair region, or the pair region doesn't support Fabric. For these regions, data replication isn't available. For more information, see [Regions with availability zones and no region pair](/azure/reliability/cross-region-replication-azure#regions-with-availability-zones-and-no-region-pair/) and [Fabric region availability](../admin/region-availability.md).
 
 > [!NOTE]
-> While Fabric offers a data replication solution in OneLake to support disaster recovery, there are notable limitations. For instance, KQL Database/Queryset data is stored externally to OneLake, which means that a separate disaster recovery approach is needed. Refer to the following sections for the details of the disaster recovery approach for each Fabric item.
+> While Fabric offers a data replication solution in OneLake to support disaster recovery, there are notable limitations. For instance, the data of KQL databases and querysets is stored externally to OneLake, which means that a separate disaster recovery approach is needed. Refer to the following sections for the details of the disaster recovery approach for each Fabric item.
 
 #### Billing
 
@@ -81,7 +81,7 @@ While Fabric provides disaster recovery features to support data resiliency, cus
 
 ### Phase 1: Prepare
 
-* **Activate the Disaster Recovery capacity settings**: Regularly review and set the **[Disaster Recovery](#disaster-recovery-capacity-setting)** to make sure they meet your protection and performance needs.
+* **Activate the disaster recovery capacity settings**: Regularly review and set the [disaster recovery capacity settings](#disaster-recovery-capacity-setting) to make sure they meet your protection and performance needs.
 
 * **Create data backups**: Copy critical data stored outside of OneLake to another region in a way that aligns to your disaster recovery plan.
 
@@ -97,15 +97,15 @@ The time it takes for failover to complete can vary, although it typically takes
 
 * **Lakehouse/Warehouse**: You can't open these items, but files can be accessed via OneLake APIs or tools.
 
-* **Spark Job Definition**: You can't open Spark Job Definition items, but code files can be accessed via OneLake APIs or tools. Any metadata or configuration will be saved after failover.
+* **Spark Job Definition**: You can't open Spark job definitions, but code files can be accessed via OneLake APIs or tools. Any metadata or configuration will be saved after failover.
   
-* **Notebook**: You can't open notebooks, and code content **won't** be saved after the disaster.
+* **Notebook**: You can't open notebooks, and code content won't be saved after the disaster.
 
-* **ML Model/Experiment**: You can't open the ML model or Experiment. Code content and metadata such as run metrics and configurations won't be saved after the disaster.
+* **ML Model/Experiment**: You can't open ML models or experiments. Code content and metadata such as run metrics and configurations won't be saved after the disaster.
 
-* **Dataflow Gen2/Pipeline/Eventstream**: You can't open these items, but you can use supported disaster recovery destinations (Lakehouse or Warehouse) to protect data.
+* **Dataflow Gen2/Pipeline/Eventstream**: You can't open these items, but you can use supported disaster recovery destinations (lakehouses or warehouses) to protect data.
 
-* **KQL Database/Queryset**: You won't be able to access KQL databases and querysets after failover. Additional prerequisite steps are required to protect KQL Database/Queryset data.
+* **KQL Database/Queryset**: You won't be able to access KQL databases and querysets after failover. Additional prerequisite steps are required to protect the data in KQL databases and querysets.
 
 Although the Fabric portal and Power BI will be in read-only mode, and other Fabric items will be unavailable, customers can access their data stored in OneLake using APIs or third-party tools, and they retain the ability to perform read-write operations on that data. This ensures that critical data remains accessible and modifiable, and mitigates potential disruption of your business operations.
 
@@ -125,11 +125,11 @@ While Fabric ensures that data remains accessible after a disaster, customers ca
 
 #### Recovery steps
 
-1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, we recommend selecting a region outside your primary geo to increase the likelihood of successful capacity creation. For information about creating a capacity, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
+1. Create a new Fabric capacity in any region after a disaster. Given the high demand during such events, we recommend selecting a region outside your primary geo to increase likelihood of compute service availability. For information about creating a capacity, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
 
 1. Create workspaces in the newly created capacity. If necessary, use the same names as the old workspaces.
 
-1. Create items with the same names as the ones you want to recover. This is important if you use the custom script to recover Lakehouse and Warehouse items.
+1. Create items with the same names as the ones you want to recover. This is important if you use the custom script to recover lakehouses and warehouses.
 
 1. Restore the items. For each item, follow the relevant section in the [Experience-specific disaster recovery guidance](./experience-specific-guidance.md) to restore the item.
 
