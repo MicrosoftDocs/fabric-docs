@@ -68,4 +68,4 @@ You successfully connected your KQL database as a data source in Power BI Deskto
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create reports and dashboards in Power BI](/power-bi/create-reports/).
+> [Create reports and dashboards in Power BI](/power-bi/create-reports/)
