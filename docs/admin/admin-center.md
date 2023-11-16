@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 11/16/2023
 ---
 
 # What is the admin portal?
@@ -51,7 +51,9 @@ To get to the admin portal, follow these steps:
 
 1. Sign in to Microsoft Fabric using your admin account credentials.
 
-2. Select the cog symbol and from the menu select **Admin portal**.
+2. Select **Fabric settings** and then from the menu select **Admin portal**.
+
+    :::image type="content" source="./media/admin-center/admin-portal-option-settings-menu.png" alt-text="Screenshot showing Admin portal option on the Fabric settings menu.":::
 
 ## Next steps
 

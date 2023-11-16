@@ -6,13 +6,10 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: product-reflex
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 
 # Data Activator limitations
-
-> [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
 
 Data Activator is subject to the following limitations and considerations.
 
