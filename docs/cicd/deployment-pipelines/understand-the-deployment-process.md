@@ -132,7 +132,7 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
-## Deployed items
+## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
@@ -150,17 +150,11 @@ When you deploy content from one pipeline stage to another, the copied content c
 Deployment pipelines doesn't support the following items:
 
 * Datasets that don't originate from a *.pbix*
-
 * PUSH datasets
-
 * Streaming dataflows
-
 * Reports based on unsupported datasets
-
 * [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
-
 * Workbooks
-
 * Metrics
 
 ## Item properties copied during deployment
