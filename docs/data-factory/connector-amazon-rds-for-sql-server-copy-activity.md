@@ -57,11 +57,11 @@ Under **Advanced**, you can specify the following fields:
 
 - **Query timeout (minutes)**: Specify the timeout for query command execution, default is 120 minutes. If a parameter is set for this property, allowed values are timespan, such as "02:00:00" (120 minutes).
 
-- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **None**, **Read committed**, **Read uncommitted**, **Repeatable read**, **Serializable**, or **Snapshot**. If not specified, the database's default isolation level is used. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
+- **Isolation level**: Specifies the transaction locking behavior for the SQL source. The allowed values are: **Read committed**, **Read uncommitted**, **Repeatable read**, **Serializable**, **Snapshot**. If not specified, the database's default isolation level is used. Refer to [IsolationLevel Enum](/dotnet/api/system.data.isolationlevel) for more details.
 
     :::image type="content" source="./media/connector-amazon-rds-for-sql-server/isolation-level.png" alt-text="Screenshot showing Isolation level settings.":::
 
-- **Partition option**: Specify the data partitioning options used to load data from Amazon RDS for SQL Server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from an Amazon RDS for SQL Server is controlled by **Degree of copy parallelism** in copy activity settings tab.
+- **Partition option**: Specify the data partitioning options used to load data from Amazon RDS for SQL Server. Allowed values are: **None** (default), **Physical partitions of table**, and **Dynamic range**. When a partition option is enabled (that is, not **None**), the degree of parallelism to concurrently load data from Amazon RDS for SQL Server is controlled by **Degree of copy parallelism** in copy activity settings tab.
 
   - **None**: Choose this setting to not use a partition.
   - **Physical partitions of table**: When using a physical partition, the partition column and mechanism are automatically determined based on your physical table definition.
