@@ -44,13 +44,13 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **OneLake data hub**, and then **KQL Databases**.
 
-    :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropwdown menu of the OneLake data hub.":::
+    :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropdown menu of the OneLake data hub.":::
 
     A list of KQL Databases that you have access to appears in the **OneLake data hub** window.
 
 1. Select a KQL database to use as a data source, and then select **Connect**.
 
-    :::image type="content" source="media/power-bi-data-connector/one-lake-data-hub.png" alt-text="Screenshot of OneLake data hub showing a list of KQL Database available for conenction in Power BI Desktop.":::
+    :::image type="content" source="media/power-bi-data-connector/one-lake-data-hub.png" alt-text="Screenshot of OneLake data hub showing a list of KQL Database available for connection in Power BI Desktop.":::
 
 1. Provide your credentials in the authentication window.
 1. On the **Navigator** screen, select the tables you want to connect, and then select **Load**.
@@ -65,7 +65,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
 :::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
 
-You've successfully connected your KQL database as a data source in Power BI Desktop.
+You successfully connected your KQL database as a data source in Power BI Desktop.
 
 ## Next step
 
