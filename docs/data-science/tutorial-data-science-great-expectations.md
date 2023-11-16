@@ -33,7 +33,7 @@ This tutorial shows you how to:
 
 [great_expectations_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along](includes/follow-along.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-sempy/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb -->
 
@@ -85,7 +85,7 @@ Here, you'll add multiple assets:
 * Power BI table
 * Power BI measure
 * Custom DAX query
-* [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
+* [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services) (DMV) query
 
 
 ### Power BI table
@@ -130,7 +130,7 @@ ds.add_powerbi_dax_asset(
 
 ### DMV query
 
-In some cases, it might be helpful to use [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
+In some cases, it might be helpful to use [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
 
 
 ```python
