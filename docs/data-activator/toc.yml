@@ -25,7 +25,7 @@ items:
     href: data-activator-trigger-power-automate-flows.md         
   - name: Data Activator limitations
     href: data-activator-limitations.md
-  - name: Troubleshooting
+  - name: Troubleshoot Data Activator errors
     href: data-activator-troubleshooting.md
 - name: Tutorial
   items:
