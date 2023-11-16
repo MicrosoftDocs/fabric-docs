@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 11/16/2023
 ---
 
 # What is the admin portal?
