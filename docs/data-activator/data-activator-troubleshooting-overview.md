@@ -14,9 +14,9 @@ If a problem occurs with any of your Data Activator events, objects, or triggers
 
 ## In this section
 
-* [Troubleshoot data ingestion errors](data-activator-troubleshoot-ingestion.md)
-* [Troubleshoot trigger evaluation errors](data-activator-troubleshoot-trigger.md)
-* [Troubleshoot alert and action errors](data-activator-troubleshoot-action.md)
+* [Troubleshoot data ingestion errors](data-activator-troubleshooting-ingestion.md)
+* [Troubleshoot trigger evaluation errors](data-activator-troubleshooting-trigger.md)
+* [Troubleshoot alert and action errors](data-activator-troubleshooting-action.md)
 
 ## Next steps
 
