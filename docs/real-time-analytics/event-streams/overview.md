@@ -24,7 +24,7 @@ Everything in Fabric event streams focuses on event data. Capturing, transformin
 
 ## Various source connectors
 
-The event streams feature provides you with various source connectors to fetch event data from diverse sources, such as **Sample data** and **Azure Event Hubs**. It also offers **Custom App**, the connection endpoint that enables you to develop your own applications to push event data into your eventstreams.
+The event streams feature provides you with various source connectors to fetch event data from diverse sources, such as **Sample data**, **Azure Event Hubs** and **Azure IoT Hub**. It also offers **Custom App**, a connection endpoint that enables you to develop your own applications to push event data into your eventstreams with multiple protocols.
 
 ## No-code experience
 
