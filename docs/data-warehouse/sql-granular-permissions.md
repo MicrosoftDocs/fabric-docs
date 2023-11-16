@@ -71,9 +71,9 @@ INNER JOIN sys.database_permissions AS pe
  ON pe.grantee_principal_id = pr.principal_id;
 ```
 
-## Row-level, column-level security and dynamic data masking
+## Data protection features
 
-You can secure column filters and predicate-based row filters on tables in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] to roles and users in Microsoft Fabric. You can also mask sensitive data using dynamic data masking:
+You can secure column filters and predicate-based row filters on tables in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] to roles and users in Microsoft Fabric. You can also mask sensitive data from non-admins using dynamic data masking.
 
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Column-level security in Fabric data warehousing](column-level-security.md)
