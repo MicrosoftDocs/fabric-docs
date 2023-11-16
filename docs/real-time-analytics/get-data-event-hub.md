@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/17/2023
+ms.date: 11/16/2023
 ms.search.form: Get data in a KQL Database, Data connection
 ---
 # Get data from Azure Event Hubs
@@ -55,7 +55,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 | c | **Primary key** | The key associated with the SAS policy | In this example, starts with *PGGIISb009*...
 | d | **Connection string-primary key** | In this field you only want to copy the event hub namespace, which can be found as part of the connection string. | *eventhubpm15910.servicebus.windows.net*
 
-## Select a data source
+## Source
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
 
@@ -65,7 +65,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 
     :::image type="content" source="media/get-data-event-hub/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-event-hub/select-data-source.png":::
 
-### Configure tab
+## Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -74,7 +74,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 
 1. Either select **Create new connection**, or select **Existing connection** and jump ahead to the [next step](#connect-the-cloud-connection-to-your-kql-database).
 
-#### Create new connection
+### Create new connection
 
 1. Fill out the **Connection settings** according to the following table:
 
@@ -92,7 +92,7 @@ Within the SAS policy pane, take note of the following four fields. You might wa
 
 1. Select **Save**. A new cloud data connection between Fabric and Event Hubs is created.
 
-#### Connect the cloud connection to your KQL database
+### Connect the cloud connection to your KQL database
 
 Whether you have created a new cloud connection, or you're using an existing one, you need to define the consumer group. You can optionally set parameters that further define aspects of the connection between the KQL database and the cloud connection.
 
@@ -110,7 +110,7 @@ Whether you have created a new cloud connection, or you're using an existing one
 
 1. Select **Next** to continue to the [Inspect tab](#inspect-the-data).
 
-#### Event system properties
+### Event system properties
 
 System properties store properties that are set by the Event Hubs service at the time the event is enqueued. The data connection to the event hub can embed a selected set of system properties into the data ingested into a table based on a given mapping.
 
@@ -122,7 +122,7 @@ System properties store properties that are set by the Event Hubs service at the
 |    x-opt-publisher    |   string  | The publisher name, if the message was sent to a publisher endpoint.     |
 |  x-opt-partition-key  |   string  |  The partition key of the corresponding partition that stored the event. |
 
-### Inspect the data
+## Inspect
 
 To complete the ingestion process, select **Finish**.
 
@@ -145,7 +145,7 @@ Optionally:
 
 [!INCLUDE [mapping-transformations](../includes/real-time-analytics/mapping-transformations.md)]
 
-#### Schema mapping for Event Hubs Capture Avro files
+### Schema mapping for Event Hubs Capture Avro files
 
 One way to consume Event Hubs data is to [capture events through Azure Event Hubs in Azure Blob Storage or Azure Data Lake Storage](/azure/event-hubs/event-hubs-capture-overview?context=/fabric/context/context). You can then ingest the capture files as they are written using an [Event Grid Data Connection](/azure/data-explorer/ingest-data-event-grid-overview?context=/fabric/context/context).
 
