@@ -32,7 +32,7 @@ The drag and drop experience gives you an intuitive and easy way to create your 
 
 ## Multiple destinations
 
-The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL Database**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL Database**, **Reflex**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
 
 :::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
 
