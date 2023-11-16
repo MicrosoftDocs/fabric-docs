@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 11/15/2023
 ---
 
 # About tenant settings
@@ -110,10 +110,10 @@ Many of the settings can have one of three states:
 | [Make promoted content discoverable](/power-bi/collaborate-share/service-discovery) | Allow users you specify who have permissions to [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to also mark that content as discoverable. |
 | [Make certified content discoverable](/power-bi/collaborate-share/service-discovery)  | Allow users who can [certify content](/power-bi/collaborate-share/service-endorse-content#certify-content) to make that content discoverable by users who don't have access to it. |
 | [Discover content](../get-started/onelake-data-hub.md#find-recommended-items) | Allow specified users to find endorsed content that's marked as discoverable, even if they don't yet have access to it. |
-| **[Content pack and app settings](service-admin-portal-content-pack-app.md)** |  |
-| [Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create) | Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop. |
+| **[App settings](service-admin-portal-app.md)** |  |
+| [Create template organizational apps](/power-bi/connect-data/service-template-apps-create) | Users in the organization can create template apps that use semantic models built on one data source in Power BI Desktop. |
 | [Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users) | Report creators can share apps directly with end users without requiring installation from [AppSource](https://appsource.microsoft.com). |
-| [Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization) | This setting lets you choose which users can publish content packs and apps to the entire organization. |
+| [Publish apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization) | This setting lets you choose which users can publish and apps to the entire organization. |
 | **[Integration settings](service-admin-portal-integration.md)** |  |
 | [Allow XMLA endpoints and Analyze in Excel with on-premises datasets](/power-bi/collaborate-share/service-analyze-in-excel) | Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to [XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools). |
 | [Dataset Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries) | Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs. |
