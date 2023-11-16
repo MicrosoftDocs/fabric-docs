@@ -21,7 +21,7 @@ To create reports with Power BI service using a KQL queryset, see [Create a Powe
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with data with editing permissions
+* A [KQL database](create-database.md) with editing permissions and data
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started)
 
 ## Connectivity modes
@@ -39,8 +39,10 @@ Use **DirectQuery** mode when:
 
 For more information on connectivity modes, see [Import and Direct Query connectivity modes](/power-bi/desktop-directquery-about).
 
+## Use data in Power BI
+
 1. Launch Power BI Desktop.
-1. On the **Home** tab, select **OneLake data hub**, and then **KQL Databases**.
+1. On the **Home** tab, select **OneLake data hub** > **KQL Databases**.
 
     :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropdown menu of the OneLake data hub.":::
 
@@ -53,7 +55,7 @@ For more information on connectivity modes, see [Import and Direct Query connect
 1. Provide your credentials in the authentication window.
 1. On the **Navigator** screen, select the tables you want to connect, and then select **Load**.
 
-    Optionally, if you want to shape your data first, select **Transform data** to launch Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
+    Optionally, if you want to shape your data first, select **Transform data** to launch the Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
 
     :::image type="content" source="media/power-bi-data-connector/navigator-pane.png" alt-text="Screenshot of the navigator pane showing the selected tables for connection.":::
 
