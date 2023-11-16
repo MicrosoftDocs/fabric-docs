@@ -138,5 +138,5 @@ When you deploy content between pipeline stages, configuring deployment rules en
 
 ## Next steps
 
-[Assign a workspace to a pipeline stage](assign-pipeline.md)
-[Troubleshooting deployment pipelines](../troubleshoot-cicd.md#deployment-pipelines)
+* [Assign a workspace to a pipeline stage](assign-pipeline.md)
+* [Troubleshooting deployment pipelines](../troubleshoot-cicd.md#deployment-pipelines)
