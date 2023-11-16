@@ -5,13 +5,10 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 
 # Detection conditions in Data Activator
-
-> [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
 
 This article describes the range of detection conditions available to you when you create a trigger.
 

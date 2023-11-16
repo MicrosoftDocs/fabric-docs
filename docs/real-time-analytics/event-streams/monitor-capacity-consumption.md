@@ -10,8 +10,6 @@ ms.search.form: Monitor event streams capacity consumption
 
 # Monitor capacity consumption for Microsoft Fabric event streams
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
-
 This article contains information on how Microsoft Fabric event streams usage is billed and reported. 
 
 ## Operation types

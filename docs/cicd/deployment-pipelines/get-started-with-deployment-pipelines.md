@@ -9,13 +9,13 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 10/08/2023
+ms.date: 11/16/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](intro-to-deployment-pipelines.md), before you proceed.
+This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./understand-the-deployment-process.md#supported-items) before you proceed.
 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
@@ -139,3 +139,4 @@ When you deploy content between pipeline stages, configuring deployment rules en
 ## Next steps
 
 [Assign a workspace to a pipeline stage](assign-pipeline.md)
+[Troubleshooting deployment pipelines](../troubleshoot-cicd.md)
