@@ -10,6 +10,9 @@ ms.date: 11/16/2023
 
 # Troubleshoot Data Activator Errors
 
+> [!IMPORTANT]
+> Data Activator is currently in preview.
+
 If a problem occurs with any of your Data Activator events, objects, or triggers after you have created them, then Data Activator will send you an email alert containing an error code. This article explains the meaning of the error codes that you can receive, and describes the steps you can take to fix the associated problems.
 
 ## Data ingestion error codes
