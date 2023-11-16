@@ -5,13 +5,10 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 11/15/2023
 ---
 
 # Get data for Data Activator from Eventstreams
-
-> [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
 
 You can get data for use in Data Activator from many sources. This article describes how to get data from Eventstreams.
 
