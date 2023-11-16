@@ -88,7 +88,7 @@ Here, you'll add multiple assets:
 * [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) query
 
 
-### Power BI Table
+### Power BI table
 
 Add a Power BI table as a data asset.
 
@@ -97,7 +97,7 @@ Add a Power BI table as a data asset.
 ds.add_powerbi_table_asset("Store Asset", table="Store")
 ```
 
-### Power BI Measure
+### Power BI measure
 
 If your dataset contains preconfigured measures, you add the measures as assets following a similar API to SemPy's `evaluate_measure`. 
 
@@ -128,7 +128,7 @@ ds.add_powerbi_dax_asset(
 )
 ```
 
-### DMV Query
+### DMV query
 
 In some cases, it might be helpful to use [Dynamic Management View](/analysis-services/instances/use-dynamic-management-views-dmvs-to-monitor-analysis-services?view=asallproducts-allversions) (DMV) calculations as part of the data validation process. For example, you can keep track of the number of referential integrity violations within your dataset. For more information, see "[Clean data = faster reports](https://dax.tips/2019/11/28/clean-data-faster-reports/)" 
 
@@ -346,9 +346,9 @@ None
 
 From the plot, you can see that April and July were slightly out of range and can then take further steps to investigate.
 
-## Storing GX Configuration
+## Storing GX configuration
 
-As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context).
+As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context)).
 
 
 ```python
@@ -356,6 +356,9 @@ context = context.convert_to_file_context()
 ```
 
 Now that you saved the context, copy the `gx` directory to your lakehouse.
+
+> [!IMPORTANT]
+> **This cell assumes you  [added a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook.** If there is no lakehouse attached, you won't see an error, but you also won't later be able to get the context. If you add a lakehouse now, the kernel will restart, so you'll have to re-run the entire notebook to get back to this point.
 
 
 ```python
