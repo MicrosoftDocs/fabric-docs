@@ -279,17 +279,17 @@ Use the following steps to guarantee an effective disaster recovery solution for
 
 1. **Establish independent KQL databases**: Configure two or more independent KQL databases/querysets on dedicated Fabric capacities. These should be set up across two different Azure regions (preferably Azure-paired regions) to maximize resilience.
 
-1. **Replicate management activities**: Any management action taken in one KQL Database/Queryset cluster should be mirrored in the other. This ensures that both clusters remain in sync. Key activities to replicate include:
+1. **Replicate management activities**: Any management action taken in one KQL database should be mirrored in the other. This ensures that both databases remain in sync. Key activities to replicate include:
 
-    * **Tables**: Make sure that the table structures and schema definitions are consistent across both clusters.
+    * **Tables**: Make sure that the table structures and schema definitions are consistent across the databases.
 
     * **Mapping**: Duplicate any required mappings. Make sure that data sources and destinations align correctly.
 
-    * **Policies**: Make sure that both clusters have similar data retention, access, and other relevant policies.
+    * **Policies**: Make sure that both databases have similar data retention, access, and other relevant policies.
 
 1. **Manage authentication and authorization**: For each replica, set up the required permissions. Make sure that proper authorization levels are established, granting access to the required personnel while maintaining security standards.
 
-1. **Parallel data ingestion**: As you import or ingest data into one KQL database/queryset, make sure that the same dataset is ingested into the other KQL database/queryset concurrently. This guarantees data uniformity and timely availability across both clusters.
+1. **Parallel data ingestion**: To keep the data consistent and ready in multiple regions, load the same dataset into each KQL database at the same time as you ingest it.
 
 ### Eventstream
 
