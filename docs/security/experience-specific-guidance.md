@@ -289,7 +289,7 @@ Use the following steps to guarantee an effective disaster recovery solution for
 
 1. **Manage authentication and authorization**: For each replica, set up the required permissions. Make sure that proper authorization levels are established, granting access to the required personnel while maintaining security standards.
 
-1. **Parallel data ingestion**: To keep the data consistent and ready in multiple regions, load the same dataset into each Kusto database at the same time as you ingest it.
+1. **Parallel data ingestion**: To keep the data consistent and ready in multiple regions, load the same dataset into each KQL database at the same time as you ingest it.
 
 ### Eventstream
 
