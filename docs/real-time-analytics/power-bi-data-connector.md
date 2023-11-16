@@ -61,7 +61,7 @@ For more information on connectivity modes, see [Import and Direct Query connect
 
 1. Select **DirectQuery** to connect directly to the data source, and then select **OK**.
 
-:::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
+    :::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
 
 You successfully connected your KQL database as a data source in Power BI Desktop. You can now visualize your data in a Power BI report.
 
