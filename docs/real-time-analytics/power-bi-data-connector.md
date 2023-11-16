@@ -65,7 +65,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
 :::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
 
-You successfully connected your KQL database as a data source in Power BI Desktop.
+You successfully connected your KQL database as a data source in Power BI Desktop. You can now visualize your data in a Power BI report.
 
 ## Next step
 
