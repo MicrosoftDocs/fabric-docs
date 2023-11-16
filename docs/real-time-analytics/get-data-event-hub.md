@@ -108,7 +108,7 @@ Whether you have created a new cloud connection, or you're using an existing one
     | Event system properties |  For more information, see [event hub system properties](/azure/service-bus-messaging/service-bus-amqp-protocol-guide#message-annotations?context=/fabric/context/context). If there are multiple records per event message, the system properties are added to the first one. See [event system properties](#event-system-properties).|
     | Event retrieval start date| The data connection retrieves existing event hub events created since the Event retrieval start date. It can only retrieve events retained by the event hub, based on its retention period. The time zone is UTC. If no time is specified, the default time is the time at which the data connection is created. |
 
-1. Select **Next** to continue to the [Inspect tab](#inspect-the-data).
+1. Select **Next** to continue to the [Inspect tab](#inspect).
 
 ### Event system properties
 
