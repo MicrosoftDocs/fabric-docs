@@ -18,7 +18,7 @@ This tutorial shows you how to:
 
 > [!div class="checklist"]
 >
-> - Validate constraints on dataset in your Fabric workspace with Great Expectation's Fabric Data Source (built on semantic link).
+> - Validate constraints on a dataset in your Fabric workspace with Great Expectation's Fabric Data Source (built on semantic link).
 >     - Configure a GX Data Context, Data Assets, and Expectations.
 >     - View validation results with a GX Checkpoint.
 > - Use semantic link to analyze raw data.
