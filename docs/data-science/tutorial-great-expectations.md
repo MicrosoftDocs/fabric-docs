@@ -37,7 +37,7 @@ This tutorial shows you how to:
 
 [!INCLUDE [follow-along](./includes/follow-along.md)]
 
-<!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-sempy/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb -->
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/great_expectations_tutorial.ipynb -->
 
 ## Set up the notebook
 
