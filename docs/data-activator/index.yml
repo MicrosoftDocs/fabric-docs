@@ -53,7 +53,7 @@ landingContent:
             url: data-activator-trigger-power-automate-flows.md           
           - text: Data Activator limitations
             url: data-activator-limitations.md
-          - text: Troubleshooting
+          - text: Troubleshoot Data Activator Errors
             url: data-activator-troubleshooting.md                   
             
   - title: Tutorial
