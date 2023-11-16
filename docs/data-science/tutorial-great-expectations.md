@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Validate data with Great Expectations (GX)"
+title: "Tutorial: Validate data using SemPy and Great Expectations (GX)"
 description: Illustrates how to use SemPy together with Great Expectations to perform data validation on Power BI semantic models.
 ms.reviewer: sgilley
 ms.author: taniaarya
@@ -10,7 +10,7 @@ ms.date: 11/14/2023
 #Customer intent: As a data scientist, I want to validate my data to ensure it meets my expectations.
 ---
 
-# Tutorial: Validate data with Great Expectations (GX)
+# Tutorial: Validate data using SemPy and Great Expectations (GX)
 
 In this tutorial, you learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
 
