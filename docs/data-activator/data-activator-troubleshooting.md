@@ -12,12 +12,6 @@ ms.date: 11/16/2023
 
 If a problem occurs with any of your Data Activator events, objects, or triggers after you have created them, then Data Activator will send you an email alert containing an error code. This article explains the meaning of the error codes that you can receive, and describes the steps you can take to fix the associated problems.
 
-### In this article
-
-* [Data ingestion error codes](#Data-ingestion-error-codes)
-* [Trigger evaluation error codes](#Trigger-evaluation-error-codes)
-* [Alert and Action Error codes](#Alert-and-Action-Error-codes)
-
 ## Data ingestion error codes
 
 The following error codes represent problems that can occur when Data Activator ingests data from Power BI datasets and Eventstreams items.
