@@ -38,7 +38,7 @@ In this tutorial, you learn how to:
 
 The [powerbi_relationships_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_relationships_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 

@@ -46,7 +46,7 @@ In this tutorial, you learn how to:
 
 The [relationships_detection_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/relationships_detection_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 

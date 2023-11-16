@@ -74,14 +74,14 @@ In this example, we will load the data into a Pandas dataframe and then convert 
 1. Run the following lines to create a Spark DataFrame by pasting the code into a new cell. This step retrieves the data via the Open Datasets API. We can filter this data down to look at a specific window of data. The following code example uses `start_date` and `end_date` to apply a filter that returns a single month of data.
 
     ```python
-     from azureml.opendatasets import NycTlcYellow
+    from azureml.opendatasets import NycTlcYellow
     
     end_date = parser.parse('2018-06-06')
     start_date = parser.parse('2018-05-01')
     nyc_tlc = NycTlcYellow(start_date=start_date, end_date=end_date)
     nyc_tlc_pd = nyc_tlc.to_pandas_dataframe()
 
-    nyc_tlc_df = spark.createDataFrame(nyc_tlc__pd).repartition(20)
+    nyc_tlc_df = spark.createDataFrame(nyc_tlc_pd).repartition(20)
 
     ```
 
