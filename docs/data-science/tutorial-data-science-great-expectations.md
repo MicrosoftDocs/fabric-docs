@@ -12,14 +12,16 @@ ms.date: 11/14/2023
 
 # Tutorial: Use Great Expectations (GX) to validate Power BI semantic models
 
-In this tutorial, you'll learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
+In this tutorial, you learn how to use SemPy together with [Great Expectations](https://greatexpectations.io/) (GX) to perform data validation on Power BI semantic models.
 
 This tutorial shows you how to:
 
-- Apply Great Expectation's Fabric Data Source (built on semantic link) to validate constraints on datasets in your Fabric workspace. 
-    - Configure a GX Data Context, Data Assets, and Expectations.
-    - Run a GX Checkpoint to view validation results. 
-- Use semantic link to analyze raw data.
+> [!div class="checklist"]
+>
+> - Validate constraints on dataset in your Fabric workspace with Great Expectation's Fabric Data Source (built on semantic link).
+>     - Configure a GX Data Context, Data Assets, and Expectations.
+>     - View validation results with a GX Checkpoint.
+> - Use semantic link to analyze raw data.
 
 ## Prerequisites
 
