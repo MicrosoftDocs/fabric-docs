@@ -16,7 +16,7 @@ ms.date: 09/28/2023
 
 In this article, you learn how to connect your KQL database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
 
-To create reports with Power BI service using a KQL Queryset, see [Create a Power BI report](create-powerbi-report.md).
+To create reports with Power BI service using a KQL queryset, see [Create a Power BI report](create-powerbi-report.md).
 
 ## Prerequisites
 
@@ -39,8 +39,6 @@ Use **DirectQuery** mode when:
 
 For more information on connectivity modes, see [Import and Direct Query connectivity modes](/power-bi/desktop-directquery-about).
 
-To use your **KQL database** as a data source in Power BI, you need to add the Azure Data Explorer connector.
-
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **OneLake data hub**, and then **KQL Databases**.
 
@@ -48,7 +46,7 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     A list of KQL Databases that you have access to appears in the **OneLake data hub** window.
 
-1. Select a KQL database to use as a data source, and then select **Connect**.
+1. Select a KQL database to use as a data source in Power BI, and then select **Connect**.
 
     :::image type="content" source="media/power-bi-data-connector/one-lake-data-hub.png" alt-text="Screenshot of OneLake data hub showing a list of KQL Database available for connection in Power BI Desktop.":::
 
@@ -59,9 +57,9 @@ To use your **KQL database** as a data source in Power BI, you need to add the A
 
     :::image type="content" source="media/power-bi-data-connector/navigator-pane.png" alt-text="Screenshot of the navigator pane showing the selected tables for connection.":::
 
-    The **Connection settings** window that appears lists the data connectivity modes. The connectivity mode determines whether Power BI imports the data or connects directly to the data source.
+    The **Connection settings** window that appears lists the data connectivity modes. The connectivity mode determines whether Power BI imports the data or connects directly to the data source. For more information, see [Connectivity modes](#connectivity-modes).
 
-1. Select **DirectQuery** to connect directly to the data source, and then select **OK**. For more information, see [Connectivity modes](#connectivity-modes).
+1. Select **DirectQuery** to connect directly to the data source, and then select **OK**.
 
 :::image type="content" source="media/power-bi-data-connector/connection-settings.png" alt-text="Screenshot of the connection settings pane showing the two available connectivity modes. DirectQuery is selected.":::
 
