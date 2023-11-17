@@ -194,7 +194,7 @@ When forecasting the sales in real-world business scenarios, there's often a nee
 
 In this notebook, your focus is on forecasting overall sales for a specific product category. First, perform some pre-processing on the data by dropping unnecessary columns that include `Row ID`, `Order ID`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit`. 
 
-Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you require to forecast the sales for a specific location or category, you might need to adjust the pre-processing step accordingly.
+Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you need to forecast sales for a specific location or category, you might need to adjust the pr-processing step accordingly.
 
 
 
