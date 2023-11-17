@@ -18,7 +18,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 
 Forecasting is a crucial asset in sales, harnessing historical data and predictive methods to provide insights into future trends. You can analyze past sales to identify patterns, and learn from consumer behavior, to optimize inventory, production, and marketing strategies. This proactive approach enhances adaptability, responsiveness, and overall performance of businesses in a dynamic marketplace.
 
-The main steps in this notebook are:
+The main steps in this tutorial are:
 
 > [!div class="checklist"]
 > * Load the data.
