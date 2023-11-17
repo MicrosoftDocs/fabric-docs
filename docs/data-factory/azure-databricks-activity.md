@@ -58,7 +58,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Selecting the **Settings** tab, you can choose between 3 options which **Azure Databricks type** you would like to orchestrate.
 
-    :::image type="content" source="media/azure-databricks-activity/databricks-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Databricks activity.":::
+:::image type="content" source="media/azure-databricks-activity/databricks-activity-settings.png" alt-text="Screenshot showing the Settings tab of the Azure Databricks activity.":::
 
 #### Orchestrating the Notebook type in Azure Databricks activity:
 
