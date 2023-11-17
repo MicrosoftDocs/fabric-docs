@@ -1,5 +1,5 @@
 ---
-title: General Troubleshooting
+title: General troubleshooting
 description: Learn how to troubleshoot external control activities for Data Factory in Microsoft Fabric.
 author: nabhishek
 ms.topic: troubleshooting
@@ -439,7 +439,7 @@ The following table applies to Azure Batch.
 
 - **Recommendation**: Verify the batch URL.
  
-## Web Activity  
+## Web activity  
 
 ### Error Code: 2001
 
