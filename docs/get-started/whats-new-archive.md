@@ -18,7 +18,7 @@ To follow the latest in Fabric news and features, see the [Microsoft Fabric Blog
 
 ## Community
 
-This section summarizes new Microsoft Fabric community opportunities for prospective and current influencers and MVPs. To learn about the Microsoft MVP Award and to find MVPs, see [mvp.microsoft.com](https://mvp.microsoft.com/).
+This section summarizes previous Microsoft Fabric community opportunities for prospective and current influencers and MVPs. To learn about the Microsoft MVP Award and to find MVPs, see [mvp.microsoft.com](https://mvp.microsoft.com/).
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- | 
@@ -27,7 +27,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 <!--
 ## Fabric samples and guidance
 
-This section summarizes new guidance and sample project resources for Microsoft Fabric.
+This section summarizes archived guidance and sample project resources for Microsoft Fabric.
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
@@ -119,7 +119,7 @@ This section summarizes archived improvements and features for [real-time analyt
 
 ## Microsoft Fabric core features
 
-News and feature announcements core to the Microsoft Fabric experience.
+Archived news and feature announcements core to the Microsoft Fabric experience.
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |

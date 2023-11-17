@@ -18,14 +18,15 @@ For older updates, review [previous updates in Microsoft Fabric](whats-new-archi
 
 > [!IMPORTANT]
 > [Microsoft Fabric has been announced!](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)
->
-> - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
-> - Get started with [end-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md).
-> - [Power BI User Groups are now Fabric User Groups](https://aka.ms/FabricUserGroupsAnnouncement)! Join a local [Fabric User Group](https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups) or [join a local event](https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events).
 
 ## New to Microsoft Fabric?
 
 This section includes articles and announcements for users new to Microsoft Fabric.
+
+- [Learning Paths for Fabric](/training/browse/?terms=fabric&resource_type=learning%20path)
+- [Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
+- [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
+- [Definitions of terms used in Microsoft Fabric](fabric-terminology.md)
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
@@ -77,19 +78,21 @@ The following table lists the features of Microsoft Fabric that have transitione
 
 ## Community
 
-This section summarizes new Microsoft Fabric community opportunities for prospective and current influencers and MVPs. To learn about the Microsoft MVP Award and to find MVPs, see [mvp.microsoft.com](https://mvp.microsoft.com/).
+This section summarizes new Microsoft Fabric community opportunities for prospective and current influencers and MVPs.
 
-> [!NOTE]
-> Are you a student? Learn more about the [Microsoft Learn Student Ambassadors program](https://mvp.microsoft.com/studentambassadors).
+- Join a local [Fabric User Group](https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups) or [join a local event](https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events).
+- To learn about the Microsoft MVP Award and to find MVPs, see [mvp.microsoft.com](https://mvp.microsoft.com/).
+- Are you a student? Learn more about the [Microsoft Learn Student Ambassadors program](https://mvp.microsoft.com/studentambassadors).
 
 |**Month** | **Feature** | **Learn more** |
-|:-- |:-- | :-- | 
+|:-- |:-- | :-- |
 |November 2023|**Skill up on Fabric with the Microsoft Learn Cloud Skills Challenge**|We are excited to announce the [Microsoft Ignite: Microsoft Fabric Challenge](https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabric_update_blog) as part of the Microsoft Learn Cloud Skills Challenge. [Skill up for in-demand tech scenarios](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc1969343448), and enter to win a VIP pass to the next Microsoft Ignite. The challenge is on until January 15, 2024. The challenge helps you prepare for the Microsoft Certified: Fabric Analytics Engineer Associate certification and [new Microsoft Applied Skills credentials](/credentials/browse/?credential_types=applied%20skills&products=microsoft-fabric%3Fwt.mc_id%3Dappliedskills_ignitedata_blog_wwl) covering the lakehouse and data warehouse scenarios, which are coming in the next months. |
 |October 2023|**Microsoft Fabric MVP Corner – October 2023**|[Highlights of selected content related to Fabric and created by MVPs from October 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-october-2023?ft=All).|
 |September 2023|**Microsoft Fabric MVP Corner – September 2023**|[Highlights of selected content related to Fabric and created by MVPs from September 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-september-2023?ft=All).|
 |August 2023|**Microsoft Fabric MVP Corner – August 2023**|[Highlights of selected content related to Fabric and created by MVPs from August 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-august-2023?ft=All). |
 |July 2023|**Microsoft Fabric MVP Corner – July 2023**| [Highlights of selected content related to Fabric and created by MVPs in July 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-july-2023?ft=All:).|
 |June 2023|**Microsoft Fabric MVP Corner – June 2023**| The Fabric MVP Corner blog series to [highlight selected content related to Fabric and created by MVPs in June 2023](https://blog.fabric.microsoft.com/blog/microsoft-fabric-mvp-corner-june-2023/). |
+|May 2023|**Fabric User Groups**|[Power BI User Groups are now Fabric User Groups](https://aka.ms/FabricUserGroupsAnnouncement)! |
 
 ## Power BI
 
@@ -258,7 +261,6 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |November 2023|**Mirroring in Microsoft Fabric**|Any database can be accessed and managed centrally from within Fabric without having to switch database clients. By just providing connection details, [your database is instantly available in Fabric as a Mirrored database](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric?ft=All). Azure Cosmos DB, Azure SQL Database, and Snowflake customers will be able to use Mirroring. SQL Server, Azure PostgreSQL, Azure MySQL, MongoDB, and other databases and data warehouses will be coming in CY24. |
-|November 2023|**Migrate from Azure Synapse dedicated SQL pools**|A detailed guide with a migration runbook is available for [migrations from Azure Synapse Data Warehouse dedicated SQL pools into Microsoft Fabric](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md).|
 |November 2023|**TRIM T-SQL support**|You can now use the `TRIM` command to remove spaces or specific characters from strings by using the keywords LEADING, TRAILING or BOTH in [TRIM (Transact-SQL)](/sql/t-sql/functions/trim-transact-sql?view=fabric&preserve-view=true). |
 |November 2023|**GENERATE_SERIES T-SQL support**|Generates a series of numbers within a given interval with [GENERATE_SERIES (Transact-SQL)](/sql/t-sql/functions/generate-series-transact-sql?view=fabric&preserve-view=true). The interval and the step between series values are defined by the user. |
 |November 2023|**SSD metadata caching**|File and rowgroup metadata are now also cached with in-memory and SSD cache, further improving performance.|
@@ -291,7 +293,8 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 #### Synapse Data Warehouse samples and guidance
 
 |**Month** | **Feature** | **Learn more** |
-|:-- |:-- | :-- | 
+|:-- |:-- | :-- |
+|November 2023|**Migrate from Azure Synapse dedicated SQL pools**|A detailed guide with a migration runbook is available for [migrations from Azure Synapse Data Warehouse dedicated SQL pools into Microsoft Fabric](../data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md).|
 |August 2023|**Efficient Data Partitioning with Microsoft Fabric: Best Practices and Implementation Guide**|A proposed [method for data partitioning using Fabric notebooks](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/efficient-data-partitioning-with-microsoft-fabric-best-practices/ba-p/3890097). Data partitioning is a data management technique used to divide a large dataset into smaller, more manageable subsets called partitions or shards. |
 |May 2023|**Microsoft Fabric - How can a SQL user or DBA connect**|This blog reviews how to [connect to a SQL analytics endpoint of the Lakehouse or the Warehouse through the Tabular Data Stream, or TDS endpoint](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/microsoft-fabric-how-can-a-sql-user-or-dba-connect-part-2/ba-p/3836343), familiar to all modern web applications that interact with a SQL Server endpoint.|
 
@@ -449,9 +452,6 @@ For older updates, review [previous updates in Microsoft Fabric](whats-new-archi
 
 - [Modernization Best Practices and Reusable Assets Blog](https://techcommunity.microsoft.com/t5/modernization-best-practices-and/bg-p/ModernizationBestPracticesBlog)
 - [Azure Data Explorer Blog](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/bg-p/AzureDataExplorer)
-- [Get started with Microsoft Fabric](/training/paths/get-started-fabric/)
-- [Microsoft Training Learning Paths for Fabric](/training/browse/?terms=fabric&resource_type=learning%20path)
-- [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
 - [Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/)
 - [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/)
 - [Microsoft Fabric terminology](fabric-terminology.md)
