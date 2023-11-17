@@ -56,12 +56,7 @@ The dataset contains the churn status of 9995 instances of sales of different pr
 |11|CA-2014-115812|2014-06-09|2014-06-09|Standard Class|Standard Class|Brosina Hoffman|Consumer|United States|Los Angeles|California|90032|West|FUR-TA-10001539|Furniture|Tables|Chromcraft Rectangular Conference Tables|1706.184|9|0.2|85.3092|
 |31|US-2015-150630|2015-09-17|2015-09-21|Standard Class|TB-21520|Tracy Blumstein|Consumer|United States|Philadelphia|Pennsylvania|19140|East|OFF-EN-10001509|Office Supplies|Envelopes|Poly String Tie Envelopes|3.264|2|0.2|1.1016
 
-
-
-> [!TIP]
-> By defining the following parameters, you can apply this notebook on different datasets easily.
-
-
+By defining the following parameters, you can apply this notebook on different datasets easily.
 
 ```python
 IS_CUSTOM_DATA = False  # if TRUE, dataset has to be uploaded manually
@@ -105,17 +100,7 @@ if not IS_CUSTOM_DATA:
     print("Downloaded demo data files into lakehouse.")
 ```
 
-Start recording the time it takes to run this notebook.
-
-
-```python
-# Record the notebook running time
-import time
-
-ts = time.time()
-```
-
-### Set up the MLflow experiment tracking
+### Set up MLflow experiment tracking
 
 Microsoft Fabric extends the MLflow autologging capabilities by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to the workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
