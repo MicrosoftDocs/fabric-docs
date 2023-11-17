@@ -18,7 +18,7 @@ In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabri
 
 Forecasting is a crucial asset in sales, harnessing historical data and predictive methods to provide insights into future trends. You can analyze past sales to identify patterns, and learn from consumer behavior, to optimize inventory, production, and marketing strategies. This proactive approach enhances adaptability, responsiveness, and overall performance of businesses in a dynamic marketplace.
 
-The main steps in this notebook are:
+The main steps in this tutorial are:
 
 > [!div class="checklist"]
 > * Load the data.
@@ -76,7 +76,7 @@ EXPERIMENT_NAME = "aisample-superstore-forecast"  # MLflow experiment name
 The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
+> Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.
 
 
 ```python
@@ -171,7 +171,7 @@ print(furniture['Order Date'].min(), furniture['Order Date'].max())
 
 ### Pre-process the data
 
-In real-world business scenarios, when forecasting the sales there's often a need to predict sales in three distinct categories:
+When forecasting the sales in real-world business scenarios, there's often a need to predict sales in three distinct categories:
 
 - Forecast sales for a specific category of customers
 - Forecast sales for a specific product category and customer combination
@@ -179,7 +179,7 @@ In real-world business scenarios, when forecasting the sales there's often a nee
 
 In this notebook, your focus is on forecasting overall sales for a specific product category. First, perform some pre-processing on the data by dropping unnecessary columns that include `Row ID`, `Order ID`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit`. 
 
-Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you require to forecast the sales for a specific location or category, you might need to adjust the pre-processing step accordingly.
+Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you need to forecast sales for a specific location or category, you might need to adjust the pre-processing step accordingly.
 
 
 
