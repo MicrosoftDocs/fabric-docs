@@ -100,7 +100,7 @@ Follow along in the [Predictive maintenance](predictive-maintenance.md) tutorial
 
 ## Sales forecast
 
-In this tutorial, you use predict future sales for different categories of products at a superstore. This is accomplished by training a model on historical data.
+In this tutorial, you predict future sales for different categories of products at a superstore. This is accomplished by training a model on historical data.
 
 Follow along in the [Sales forecasting](sales-forecasting.md) tutorial.
 
