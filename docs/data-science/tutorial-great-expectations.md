@@ -306,7 +306,7 @@ result_df = pd.DataFrame.from_records(data)
 result_df[["Batch ID", "type", "success", "element_count", "unexpected_count", "partial_unexpected_list"]]
 ```
 
-:::image type="content" source="media/tutorial-great-expectations/validation.png" alt-text="Table shows the validation results.":::
+:::image type="content" source="media/tutorial-great-expectations/validation.png" alt-text="Table shows the validation results." lightbox="media/tutorial-great-expectations/validation.png":::
 
 From these results you can see that all your expectations passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
 
