@@ -71,7 +71,7 @@ Follow these steps to create an eventstream in your workspace:
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/open-event-processor.png" alt-text="Screenshot that shows where to open event processor in Eventstream." lightbox="./media/transform-sample-data-and-to-kql/open-event-processor.png":::
 
-3. On the **Event processing editor**, select the line between Eventstream and the KQL Database, and add a **Group by** operation. We want to calculate the number of bikes on the street so under **Aggregation** we choose **SUM** and select the field **No_Bikes**.
+3. On the **Event processing editor**, select the line between Eventstream and the KQL Database, and add a **Group by** operation. Our goal is to calculate the number of bikes rented every minute on the street. Under **Aggregation**, select **SUM** for the aggregation and **No_Bikes** for the field.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/configure-group-by.png" alt-text="Screenshot that shows where to group by operation in Eventstream." lightbox="./media/transform-sample-data-and-to-kql/configure-group-by.png":::
 
@@ -106,4 +106,4 @@ If you want to learn more about ingesting and processing data streams using Even
 
 - [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
-- [Stream real-time events from a custom app to a Microsoft Fabric KQL Database](./stream-real-time-events-from-custom-app-to-kusto.md)
+- [Stream real-time events from a custom app to a Microsoft Fabric KQL database](./stream-real-time-events-from-custom-app-to-kusto.md)
