@@ -54,6 +54,7 @@ Control activity | Description
 ---------------- | -----------
 [Append variable](append-variable-activity.md) | Add a value to an existing array variable.
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
+[Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
 [Deactivate activity](deactivate-activity.md) | Deactivates another activity.
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
