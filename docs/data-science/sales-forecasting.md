@@ -48,7 +48,7 @@ The main steps in this notebook are:
 
 The dataset contains the churn status of 9995 instances of sales of different products, along with 21 attributes that include: `Row ID`, `Order ID`, `Order Date`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category`, `Product Name`, `Sales`, `Quantity`, `Discount`, and `Profit`.
 
-- Superstore.xlsx
+- _Superstore.xlsx_
 
 |"Row ID|"Order ID"|"Order Date"|"Ship Date"|"Ship Mode"|"Customer ID"|"Customer Name"|"Segment"|"Country"|"City"|"State"|"Postal Code"|"Region"|"Product ID"|"Category"|"Sub-Category"|"Product Name"|"Sales"|"Quantity"|"Discount"|"Profit"|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
