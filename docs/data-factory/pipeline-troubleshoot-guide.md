@@ -13,7 +13,7 @@ This article explores common troubleshooting methods for external control activi
 
 ## Connector and copy activity
 
-For connector issues such as an encounter error using the copy activity, refer to the [Troubleshoot Connectors](connector-troubleshoot-guide.md) article.
+For connector issues such as an encounter error using the copy activity, refer to the [Troubleshoot Connectors](/azure/data-factory/connector-troubleshoot-guide) article.
 
 ## Azure Databricks
 
@@ -55,7 +55,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Cause**: `Bad authoring.`
 
-- **Recommendation**: Verify the [connection definition](compute-linked-services.md#azure-databricks-linked-service).
+- **Recommendation**: Verify the [connection definition](/azure/data-factory/compute-linked-services#azure-databricks-linked-service).
 
 <br/> 
 
@@ -63,7 +63,7 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Cause**: `Bad authoring.`
 
-- **Recommendation**: Verify the [connection definition](compute-linked-services.md#azure-databricks-linked-service).
+- **Recommendation**: Verify the [connection definition]/azure/data-factory/compute-linked-services#azure-databricks-linked-service).
 
 <br/> 
 
@@ -135,11 +135,11 @@ For connector issues such as an encounter error using the copy activity, refer t
 
 - **Symptoms**: Your Boolean run output starts coming as string (for example, `"0"` or `"1"`) instead of expected int (for example, `0` or `1`).
 
-   :::image type="content" source="media/data-factory-troubleshoot-guide/databricks-pipeline.png" alt-text="Screenshot of the Databricks pipeline.":::
+   :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/databricks-pipeline.png" alt-text="Screenshot of the Databricks pipeline.":::
 
     You noticed this change on September 28, 2021 at around 9 AM IST when your pipeline relying on this output started failing. No change was made on the pipeline, and the Boolean output data arrived as expected prior to the failure.
 
-   :::image type="content" source="media/data-factory-troubleshoot-guide/old-and-new-output.png" alt-text="Screenshot of the difference in the output.":::
+   :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/old-and-new-output.png" alt-text="Screenshot of the difference in the output.":::
 
 - **Cause**: This issue is caused by a recent change, which is by design. After the change, if the result is a number that starts with zero, Data Factory will convert the number to the octal value, which is a bug. This number is always 0 or 1, which never caused issues before the change. So to fix the octal conversion, the string output is passed from the Notebook run as is. 
 
@@ -465,14 +465,6 @@ The following table applies to Azure Batch.
 
 - **Recommendation**: Reduce pipeline concurrency. You might have to distribute the trigger time of your pipelines.  
 
-### Error Code: 2010
-
-- **Message**: `The Self-hosted Data Factory runtime ‘<SHIR name>’ is offline`
-
-- **Cause**: The self-hosted Data Factory runtime is offline or the Azure Data Factory runtime is expired or not registered.
-
-- **Recommendation**: Make sure your self-hosted Data Factory runtime is up and running. Refer to [Troubleshoot self-hosted Data Factory runtime](self-hosted-integration-runtime-troubleshoot-guide.md) for more information.
-
 ### Error Code: 2105
 
 - **Message**: `The value type '<provided data type>', in key '<key name>' is not expected type '<expected data type>'`
@@ -507,7 +499,7 @@ The following table applies to Azure Batch.
     
        1. In the HTTPS tab, select both **Capture HTTPS CONNECTs** and **Decrypt HTTPS traffic**.
     
-          :::image type="content" source="media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Fiddler options":::
+          :::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/fiddler-options.png" alt-text="Fiddler options":::
     
     1. If your application uses TLS/SSL certificates, add the Fiddler certificate to your device.
     
@@ -563,7 +555,7 @@ The following table applies to Azure Batch.
 
 ### Activity stuck issue
 
-When you observe that the activity is running much longer than your normal runs with barely no progress, it may happen to be stuck. You can try canceling it and retry to see if it helps. If it's a copy activity, you can learn about the performance monitoring and troubleshooting from [Troubleshoot copy activity performance](copy-activity-performance-troubleshooting.md); if it's a data flow, learn from [Mapping data flows performance](concepts-data-flow-performance.md) and tuning guide.
+When you observe that the activity is running much longer than your normal runs with barely no progress, it may happen to be stuck. You can try canceling it and retry to see if it helps. If it's a copy activity, you can learn about the performance monitoring and troubleshooting from [Troubleshoot copy activity performance](/azure/data-factory/copy-activity-performance-troubleshooting); if it's a data flow, learn from [Mapping data flows performance](/azure/data-factory/concepts-data-flow-performance) and tuning guide.
 
 ### Payload is too large
 
@@ -588,27 +580,27 @@ When you observe that the activity is running much longer than your normal runs 
 
 **Cause:** Even if in the Execute Pipeline you create the parameter of type array, as shown in the below image, the pipeline will fail.
 
-:::image type="content" source="media/data-factory-troubleshoot-guide/parameter-type-array.png" alt-text="Screenshot showing the parameters of the Execute Pipeline activity.":::
+:::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/parameter-type-array.png" alt-text="Screenshot showing the parameters of the Execute Pipeline activity.":::
 
 This is due to the fact that the payload is passed from the parent pipeline to the child as string. We can see it when we check the input passed to the child pipeline.
 
-:::image type="content" source="media/data-factory-troubleshoot-guide/input-type-string.png" alt-text="Screenshot showing the input type string.":::
+:::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/input-type-string.png" alt-text="Screenshot showing the input type string.":::
 
 **Recommendation:** To solve the issue we can leverage the create array function as shown in the below image.
 
-:::image type="content" source="media/data-factory-troubleshoot-guide/create-array-function.png" alt-text="Screenshot showing how to use the create array function.":::
+:::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/create-array-function.png" alt-text="Screenshot showing how to use the create array function.":::
 
 Then our pipeline will succeed. And we can see in the input box that the parameter passed is an array.
 
-:::image type="content" source="media/data-factory-troubleshoot-guide/input-type-array.png" alt-text="Screenshot showing input type array.":::
+:::image type="content" source="/azure/data-factory/media/data-factory-troubleshoot-guide/input-type-array.png" alt-text="Screenshot showing input type array.":::
 
 ## Next steps
 
 For more troubleshooting help, try these resources:
 
-* [Data Factory blog](https://techcommunity.microsoft.com/t5/azure-data-factory-blog/bg-p/AzureDataFactoryBlog)
-* [Data Factory feature requests](/answers/topics/azure-data-factory.html)
-* [Stack Overflow forum for Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
-* [Twitter information about Data Factory](https://twitter.com/hashtag/DataFactory)
-* [Azure videos](https://azure.microsoft.com/resources/videos/index/)
-* [Microsoft Q&A question page](/answers/topics/azure-data-factory.html)
+- [Data Factory blog](https://techcommunity.microsoft.com/t5/azure-data-factory-blog/bg-p/AzureDataFactoryBlog)
+- [Data Factory feature requests](/answers/topics/azure-data-factory.html)
+- [Stack Overflow forum for Data Factory](https://stackoverflow.com/questions/tagged/azure-data-factory)
+- [Twitter information about Data Factory](https://twitter.com/hashtag/DataFactory)
+- [Azure videos](https://azure.microsoft.com/resources/videos/index/)
+- [Microsoft Q&A question page](/answers/topics/azure-data-factory.html)
