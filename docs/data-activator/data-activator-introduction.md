@@ -7,10 +7,13 @@ ms.topic: concept
 ms.custom:
   - ignite-2023
 ms.search.form: product-reflex
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # What is Data Activator?
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 Data Activator is a no-code experience in Microsoft Fabric for automatically taking actions when patterns or conditions are detected in changing data. It monitors data in Power BI reports and Eventstreams items, for when the data hits certain thresholds or matches other patterns. It then automatically takes appropriate action such as alerting users or kicking off Power Automate workflows.
 

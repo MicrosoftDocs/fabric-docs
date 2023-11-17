@@ -6,10 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom:
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Get started with Data Activator
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 The first step in using Data Activator is for your administrator to enable Data Activator for your organization. The following image shows where to enable Data Activator in the Admin portal.
 
