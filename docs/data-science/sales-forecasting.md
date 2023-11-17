@@ -115,7 +115,7 @@ import time
 ts = time.time()
 ```
 
-### Set up the MLflow experiment tracking
+### Set up MLflow experiment tracking
 
 Microsoft Fabric extends the MLflow autologging capabilities by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to the workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
