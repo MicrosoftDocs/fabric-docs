@@ -326,6 +326,8 @@ print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[4]))
 
 - The default is an `AR(1)` model, which refers to `(1,0,0)`. However, keep in mind that the appropriate values for `p`, `q`, and `d` can vary from one time series to another, and determining the optimal values often involves analyzing the autocorrelation and partial autocorrelation functions (ACF and PACF) of the time series data and using model selection criteria like AIC or BIC. It's common practice to try different combinations of p, q, and d and evaluate the model's performance for a given dataset. The parameters for the seasonal order `(P, D, Q, s)` are similar in concept to the non-seasonal order parameters `(p, q, d)`. 
 
+Tune the hyperparameters:
+
 
 ```python
 # Tune the hyperparameters to determine the best model
