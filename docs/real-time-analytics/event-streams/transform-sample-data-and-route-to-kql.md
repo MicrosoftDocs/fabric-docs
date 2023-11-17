@@ -18,7 +18,8 @@ Eventstream is a streaming platform that allows you to ingest, transform, and ro
 
 ## Prerequisites
 
-* Access to a premium workspace where your Eventstream and KQL Database are located.
+* Access to a premium workspace with **Contributor** or above permissions where your Eventstream and KQL Database are located.
+* A KQL Database created in your workspace.
 
 ## Create an eventstream and add sample bike data
 
@@ -66,7 +67,7 @@ Follow these steps to create an eventstream in your workspace:
     * **Destination table**: Name of your KQL table. You can also enter a name to create a new table for example "bike-count."
     * **Input data format**: Choose **JSON** as the data format for your KQL table.
 
-2. In the right pane, scroll down and select **Open event processor**. This action opens a new window allowing you add real-time operations to your data streams using a no-code editor.
+2. In the right pane, scroll down and select **Open event processor**. This action opens a new frame allowing you to add real-time operations to your data streams using a no-code editor.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/open-event-processor.png" alt-text="Screenshot that shows where to open event processor in Eventstream." lightbox="./media/transform-sample-data-and-to-kql/open-event-processor.png":::
 
@@ -79,7 +80,7 @@ Follow these steps to create an eventstream in your workspace:
     * **Time window**: Tumbling
     * **Duration**: 1 Minute
 
-4. After the Group by operation is added to your eventstream. You can select the operation on and preview the processing result. Then select **Save** to close the Event processor.
+4. Select the **Group by** operation on the editor and preview the processing result. Finally select **Save** to close the Event processor and complete the configuration for the KQL destination.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/preview-group-by.png" alt-text="Screenshot that shows where to preview group by data in Eventstream." lightbox="./media/transform-sample-data-and-to-kql/preview-group-by.png":::
 
@@ -103,6 +104,6 @@ You successfully completed the tutorial on exploring and transforming bike-shari
 
 If you want to learn more about ingesting and processing data streams using Eventstream, check out the following resources:
 
-- [Introduction to Microsoft Fabric Eventstream](./overview.md)
+- [Introduction to Microsoft Fabric event streams](./overview.md)
 - [Ingest, filter, and transform real-time events and send them to a Microsoft Fabric lakehouse](./transform-and-stream-real-time-events-to-lakehouse.md)
 - [Stream real-time events from a custom app to a Microsoft Fabric KQL Database](./stream-real-time-events-from-custom-app-to-kusto.md)
