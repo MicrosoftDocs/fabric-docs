@@ -47,4 +47,4 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot for Fabric: FAQ](copilot-faq-fabric.yml)
-- [AI services in Fabric (preview)](/data-science/ai-services/ai-services-overview.md)
+- [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
