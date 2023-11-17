@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 11/10/2023
+ms.date: 11/17/2023
 ---
 
 # Overview of Copilot for Fabric (preview)
@@ -47,3 +47,4 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot for Fabric: FAQ](copilot-faq-fabric.yml)
+- [AI services in Fabric (preview)](/data-science/ai-services/ai-services-overview.md)
