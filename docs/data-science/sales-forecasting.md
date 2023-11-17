@@ -186,7 +186,7 @@ print(furniture['Order Date'].min(), furniture['Order Date'].max())
 
 ### Pre-process the data
 
-In real-world business scenarios, when forecasting the sales there's often a need to predict sales in three distinct categories:
+When forecasting the sales in real-world business scenarios, there's often a need to predict sales in three distinct categories:
 
 - Forecast sales for a specific category of customers
 - Forecast sales for a specific product category and customer combination
