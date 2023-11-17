@@ -306,6 +306,8 @@ result_df = pd.DataFrame.from_records(data)
 result_df[["Batch ID", "type", "success", "element_count", "unexpected_count", "partial_unexpected_list"]]
 ```
 
+:::image type="content" source="media/tutorial-great-expectations/validation.png" alt-text="Table shows the validation results.":::
+
 From these results you can see that all your expectations passed the validation, except for the "Total Units YoY Asset" that you defined through a custom DAX query. 
 
 ## Diagnostics
@@ -322,6 +324,8 @@ EVALUATE SUMMARIZECOLUMNS(
     "Total Units Ratio", DIVIDE([Total Units This Year], [Total Units Last Year])
 )
 ```
+
+:::image type="content" source="media/tutorial-great-expectations/table.png" alt-text="Table shows the results from the DAX query summarization.":::
 
 Save these results in a DataFrame.
 
@@ -347,6 +351,8 @@ plt.axhline( 0.5, color="red", linestyle="dotted")
 
 None
 ```
+
+:::image type="content" source="media/tutorial-great-expectations/plot.jpg" alt-text="Plot shows the results of the DAX query summarization.":::
 
 From the plot, you can see that April and July were slightly out of range and can then take further steps to investigate.
 
