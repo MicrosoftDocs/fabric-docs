@@ -81,7 +81,7 @@ EXPERIMENT_NAME = "aisample-superstore-forecast"  # MLflow experiment name
 The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> **Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.**
+> Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.
 
 
 ```python
