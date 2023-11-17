@@ -227,8 +227,8 @@
         },
         {
           "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
-          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql",
-          "redirect_document_id": false
+          "redirect_url": "/docs/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql.md",
+          "redirect_document_id": true
         }
     ]
 }
