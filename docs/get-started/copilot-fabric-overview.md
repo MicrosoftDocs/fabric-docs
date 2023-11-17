@@ -43,6 +43,10 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
+## Available regions
+
+For the list of Azure regions where prebuilt AI services in Fabric are now available, see the [Available regions](../data-science/ai-services/ai-services-overview#available-regions) section of the article "AI services in Fabric (preview)."
+
 ## Next steps
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
