@@ -80,9 +80,11 @@ Follow these steps to create an eventstream in your workspace:
     * **Time window**: Tumbling
     * **Duration**: 1 Minute
 
-4. Select the **Group by** operation on the editor and preview the processing result. Finally select **Save** to close the Event processor and complete the configuration for the KQL destination.
+4. Select the **Group by** operation on the editor and preview the processing result. Then select **Save** to close the Event processor.
 
     :::image type="content" source="./media/transform-sample-data-and-to-kql/preview-group-by.png" alt-text="Screenshot that shows where to preview group by data in Eventstream." lightbox="./media/transform-sample-data-and-to-kql/preview-group-by.png":::
+
+5. Finally, select **Add** to finish the configuration for KQL database destination.
 
 ## View result in the KQL table
 
