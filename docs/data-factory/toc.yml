@@ -517,6 +517,8 @@
         href: append-variable-activity.md
       - name: Azure Batch activity
         href: azure-batch-activity.md
+      - name: Azure Databricks activity
+        href: azure-databricks-activity.md
       - name: Azure Machine Learning activity
         href: azure-machine-learning-activity.md
       - name: Copy activity
@@ -629,6 +631,8 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Pipeline activities troubleshooting guide
+      href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
       - name: Azure Data Explorer
