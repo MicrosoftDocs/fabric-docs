@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 11/19/2023
 ---
 
 # Understand the metrics app timepoint page
@@ -30,7 +30,7 @@ When the total combined CU for *interactive* and *background* operations exceeds
 
 This section describes the operations of the visuals in the top row of the timepoint page.
 
-* **Top left card** - Displays the timepoint used to get to this page.
+* **Start/end card** - Displays the start and end date and time (timepoint) used to get to this page.
 
 * **Heartbeat line chart** - Shows a 60 minute window of CU activity. Use this visual to establish the duration of peaks and troughs.
 
@@ -59,7 +59,7 @@ This section describes the operations of the visuals in the top row of the timep
 
 * **Capacity CU card** - Displays the total number of CU seconds allowed for this capacity, for a given 30 second timepoint window. User can hover over card to see bifurcation of Base CU (s) and Autoscale CU (s). When autoscale is enabled, the card will change its color to yellow.
 
-## Interactive Operations
+## Interactive operations for timerange
 
 A table showing every [interactive operation](/power-bi/enterprise/service-premium-interactive-background-operations) that contributed CU usage in the viewed timepoint. Once an interactive operation completes, all of the CU seconds used by it get attributed to the timepoint window.
 
@@ -96,25 +96,29 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 * **Operation ID** - A unique identifier assigned to an individual operation.
 
-## Background Operations
+* **Smoothing start** - The time smoothing started for the operation.
+
+* **Smoothing end** - The time smoothing ended for the operation.
+
+## Background operations for timerange
 
 A table showing every background operation that contributed CU usage to the viewed timepoint. Every background operation that completed in the prior 24 hours (defined as a 2,880 x 30 second timepoint window), contributes a small portion of its total usage to the CU value. This means that a background operation that completed the previous day can contribute some CU activity to determine if the capacity is in overload. For more information see [performance smoothing](/power-bi/enterprise/service-premium-smoothing).
 
-All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table. However, the background operations table doesn't have a *users* column.
+All the columns in the background operations table are similar to the ones in the [interactive operations](#interactive-operations) table.
 
-## Burndown table
+## Burndown table for timerange
 
 A table showing the *add*, *burndown* and *cumulative* percent by experiences, for the last 30 seconds.
 
 * **Experience** - The name of the experience.
 
-* **Add %** - The percentage of carryforward added compared to the capacity, for the last 30 seconds.
+* **Add %** - The percentage of carryforward added compared to the capacity, for a 30 seconds window.
 
-* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for the last 30 seconds. 
+* **Burndown %** - The percentage of carryforward burndown compared to the capacity, for a 30 seconds window.
 
-* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for the last 30 seconds.
+* **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for a 30 seconds window.
 
-## Overages 
+## Overages
 
 You can change the overages visual scale to display 10 minutes, 60 minutes and 24 hours. Carryforward only takes into account billable operations.
 
