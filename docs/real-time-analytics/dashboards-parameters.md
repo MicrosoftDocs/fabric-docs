@@ -318,7 +318,7 @@ Once you have [added data sources](real-time-dashboard.md#add-data-source) to yo
     * **Values**: Select all
     * **Default value**: StormEventsSample
 
-    <!-- :::image type="content" source="media/dashboard-parameters/data-source-parameter.png" alt-text="Screenshot of data source parameters."::: -->
+    :::image type="content" source="media/dashboard-parameters/data-source-parameter.png" alt-text="Screenshot of data source parameters.":::
 
 1. Select **Done**.
 
@@ -329,7 +329,7 @@ The new parameter is now visible in the parameter list at the top of the dashboa
 1. Navigate to the query of a new or existing tile.
 1. In **Source**, select the name of your new parameter under **Data source parameters**, such as the new **Source** parameter.
 
-    <!-- :::image type="content" source="media/dashboard-parameters/data-source-parameter-in-query.png" alt-text="Screenshot of selecting a data source parameter in the query."::: -->
+    :::image type="content" source="media/dashboard-parameters/data-source-parameter-in-query.png" alt-text="Screenshot of selecting a data source parameter in the query.":::
 
 1. Select **Apply changes**.
 1. Use the **Source** parameter to change the data source for this connected query.
