@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/05/2023
+ms.date: 11/19/2023
 ---
 
 # Understand the metrics app compute page
@@ -84,11 +84,15 @@ Use the tabs at the top of the visual to toggle between interactive delay, inter
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - Billable interactive operations are delayed if the value is above 100%.
+  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
   
-  * **Interactive rejection** - Billable interactive operations are rejected if the value is above 100%.
+  * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
 
-  * **Background rejection** - Billable background operations are rejected if the value is above 100%.
+  * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
+
+#### Throttling example
+
+When looking at the interactive rejection tab, if you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before interactive rejection starts, and user requested interactive jobs are rejected.
 
 ### Overages
   
