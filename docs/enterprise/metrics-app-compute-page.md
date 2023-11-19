@@ -44,9 +44,6 @@ Displays CU usage over time. Use the tabs at the top right corner of the visual 
 
 The utilization chart displays the following elements:
 
->[!NOTE]
->Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background non-billable* and *Interactive non-billable* columns.
-
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
     
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that are not directly triggered by users, such as data refreshes.
