@@ -13,7 +13,7 @@ ms.custom:
 ms.date: 09/28/2023
 ---
 
-## Connect KQL Database as a data source in Power BI Desktop
+# Connect KQL Database as a data source in Power BI Desktop
 
 In this article, you learn how to connect your KQL database as a data source to Power BI Desktop. Once connected, you can use multiple tables to build your Power BI reports.
 
