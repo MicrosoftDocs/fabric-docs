@@ -84,7 +84,7 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 |                     | [Get Shortcut](/rest/api/fabric/)                                          | Returns shortcut Properties.                                                                                                |
 |                     | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)           | ADLS Gen2 APIs to create and manage file systems, directories, and path.                                                    |
 | Workspace           |                                                       |                                                                                                                             |
-|                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | create Workspace, get Workspace details, Delete Workspace, assign workspace to a capacity, add a workspace role assignment. |
+|                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
 | Fabric Data Factory | Coming soon                                           |                                                                                                                             |
 | Real Time Analytics | Coming Soon                                           |                                                                                                                             |
 
