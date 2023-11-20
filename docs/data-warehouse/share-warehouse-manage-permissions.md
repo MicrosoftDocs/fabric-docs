@@ -49,7 +49,7 @@ Here's more detail about each of the permissions provided:
 
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
 
-- **"Build reports on the default checkbox" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
+- **"Build reports on the default dataset" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
 
 When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] Data Hub page.
 
