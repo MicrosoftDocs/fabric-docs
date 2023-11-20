@@ -220,7 +220,7 @@ Many of the settings can have one of three states:
 |Invite external users to your organization|Users can invite external users to the organization through Power BI sharing and permission experiences for reports, dashboards, and apps. Once invited, external users will become Azure Active Directory business-to-business (B2B) guest users. [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485)|
 |Allow Azure Active Directory guest users to edit and manage content in the organization|Users can invite Azure Active Directory business-to-business (B2B) guest users to have the browse experience and request access to content. [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485).|
 |Show Azure Active Directory guests in lists of suggested people|When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address).|
-|Publish to web|People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to [Embed codes](./service-admin-portal-embed-codes) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web. [Learn more about Publish to web](https://go.microsoft.com/fwlink/?LinkID=859242)|
+|Publish to web|People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to [Embed codes](./service-admin-portal-embed-codes.md) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web. [Learn more about Publish to web](https://go.microsoft.com/fwlink/?LinkID=859242)|
 |Copy and paste visuals|Users in the organization can copy visuals from a tile or report visual and paste them as static images into external applications.|
 |Export to Excel|Users in the organization can export the data from a visualization or paginated report to an Excel file. [Learn More](https://go.microsoft.com/fwlink/?linkid=2143053)|
 |Export to .csv|Users in the organization can export data from a tile, visualization, or paginated report to a .csv file. [Learn More](https://go.microsoft.com/fwlink/?linkid=2143055)|
@@ -334,8 +334,6 @@ Many of the settings can have one of three states:
 |Users can synchronize workspace items with their Git repositories (preview)|Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories.[Learn More](https://go.microsoft.com/fwlink/?linkid=2240844)|
 |Users can export items to Git repositories in other geographical locations (preview)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
 |Users can export workspace items with applied sensitivity labels to Git repositories (preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
-
-
 
 
 ## Next steps
