@@ -75,8 +75,8 @@ In addition to the item definition files, each item directory contains one or tw
 ```json
 { 
     "type": "report", 
-    "displayName": "Cool Blue",
-    "description": "First quarter status report"
+    "displayName": "All visual ypes vv31333",
+    "description": "This is a report"
 } 
 ```
 
@@ -108,17 +108,20 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ## PlatformProperties file
 
-In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file. If you have this file, you can't have the other two files.
+In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file along with a *$schema* property. If you have this file, you can't have the other two files.
 
 ```json
-{ 
-    version: "2.0", 
-    logicalId: "e553e3b0-0260-4141-a42a-70a24872f88d", 
-}, 
 {
-    "type": "report", 
-    "displayName": "Cool Blue",
-    "description": "First quarter status report"
+    "version": "2.0",
+    "$schema": https://developer.microsoft.com/json-schemas/fabric/platform/platformProperties.json,
+    "config": {
+        "logicalId": "e553e3b0-0260-4141-a42a-70a24872f88d"
+    },
+    "metadata": {
+        "type": "report",
+        "displayName": "All visual ypes vv31333",
+        "description": "This is a report"
+    }
 }
 ```
 
