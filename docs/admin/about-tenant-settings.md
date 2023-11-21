@@ -31,7 +31,7 @@ You can identify new settings according to their *new* icon.  
 
 Go to the admin portal and select **Tenant settings**.
 
-:::image type="content" source="media/tenant-settings-index/admin-portal-tenant-settings.png" alt-text="Screenshot of how to get to the tenant settings":::
+:::image type="content" source="media/tenant-settings-index/admin-portal-tenant-settings.png" alt-text="Screenshot of how to get to the tenant settings.":::
 
 ## How to use the tenant settings
 

@@ -14,6 +14,8 @@ ms.date: 11/21/2023
 
 This article lists all Fabric tenant settings, along with a brief description of each. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
 
+## Index
+
 | Name | Description |
 |------|-------|
 |**[Microsoft Fabric](fabric-switch.md)**||
@@ -134,7 +136,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |**[User experience experiments](service-admin-portal-user-experience-experiments.md)**||
 |Help Power BI optimize your experience|Users in this organization will get minor user experience variations that the Power BI team is experimenting with, including content, layout, and design, before they go live for all users.|
 |**[Share data with your Microsoft 365 services](admin-share-power-bi-metadata-microsoft-365-services.md)**||
-|[Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in M365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and M365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
+|[Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
 |**[Insights settings](service-admin-portal-insights.md)**||
 |[Receive notifications for top insights (preview)](/power-bi/create-reports/insights)|Users in the organization can enable notifications for top insights in report settings|
 |Show entry points for insights (preview)|Users in the organization can use entry points for requesting insights inside reports|
@@ -156,7 +158,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |Users can export workspace items with applied sensitivity labels to Git repositories (preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
 
 
-## Next steps
+## Related information
 
 - [What is the admin portal?](admin-center.md)
 - [About tenant settings](about-tenant-settings.md)
