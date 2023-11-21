@@ -4,7 +4,7 @@ description: Learn more about the pause and resume capacity for data warehousing
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 11/21/2023
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -22,7 +22,9 @@ A [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse in [!INCLUDE [produ
 
 An administrator can pause an active Fabric capacity at any time, even while SQL statements are executing. Users can expect the following behavior when a capacity is paused:
 
-- New requests: Once a capacity is paused, users cannot execute new SQL statements or queries. This also includes activity on the Fabric portal like create operations, loading data grid, opening model view, opening visual query editor. Any new activity attempted after capacity is paused return the following error message `Unable to complete the action because this Fabric capacity is currently paused.`
+- New requests: Once a capacity is paused, users cannot execute new SQL statements or queries. This also includes activity on the Fabric portal like create operations, loading data grid, opening model view, opening visual query editor. Any new activity attempted after capacity is paused returns the following error message `Unable to complete the action because this Fabric capacity is currently paused.`
+    - In client application tools like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio), users signing in to a paused capacity will get the same error text with SQL error code: 24800.
+    - In client application tools like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio), users attempting to run a new TSQL query on an existing connection when capacity is paused will see the same error text with SQL error code: 24802.
 - In-flight requests: Any open requests, like SQL statements in execution, or activity on [the SQL Query Editor](sql-query-editor.md), [visual query editor](visual-query-editor.md), or modeling view, are canceled with an error message like `Unable to complete the action because this Fabric capacity is currently paused.`
 - User transactions: When a capacity gets paused in the middle of a user transaction like `BEGIN TRAN` and `COMMIT TRAN`, the transactions roll back.
 
