@@ -58,7 +58,7 @@ Follow these steps to return the look of Power BI to the default settings:
 2. From the navigation bar, select **Settings** > **Admin portal** > **Custom branding**.
 3. Select **Remove custom branding**, then select **Publish** to go back to the Power BI default look.
 
-## Next steps
+## Related content
 
 Give your users a consistent online experience by applying custom branding to other services. Custom branding settings aren't shared between Microsoft 365 and Power BI, but your users will see branding that you apply to your organization's Azure Active Directory sign-in page.
 

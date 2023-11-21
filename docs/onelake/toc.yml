@@ -33,7 +33,7 @@ items:
   items:
   - name: How do I connect to OneLake?
     href: onelake-access-api.md
-  - name: OneLake API parity
+  - name: OneLake parity and integration
     href: onelake-api-parity.md
   - name: Use Python to manage OneLake
     href: onelake-access-python.md

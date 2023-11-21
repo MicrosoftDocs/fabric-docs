@@ -67,6 +67,6 @@ You can [download a sign-in report](/azure/active-directory/reports-monitoring/q
 
 Sign-in-related data is available for up to seven days, unless your organization has an Azure AD premium license. If you use Azure AD Premium P1 or Azure AD Premium P2, you can see data for the past 30 days. For more information, see [How long does Azure AD store reporting data?](/azure/active-directory/reports-monitoring/reference-reports-data-retention).
 
-## Next steps
+## Related content
 
-[Use the Monitoring hub](monitoring-hub.md)
+- [Use the Monitoring hub](monitoring-hub.md)
