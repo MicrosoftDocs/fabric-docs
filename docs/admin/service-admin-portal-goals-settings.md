@@ -24,6 +24,6 @@ Users in the organization can create and use metrics in Power BI.
 
 To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

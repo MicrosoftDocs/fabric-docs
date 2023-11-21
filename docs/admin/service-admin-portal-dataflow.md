@@ -25,6 +25,6 @@ Users in the organization can create and use dataflows. For an overview of dataf
 > [!NOTE]
 > This setting applies to the entire organization and can't be limited to specific groups.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

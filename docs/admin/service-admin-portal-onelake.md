@@ -30,6 +30,6 @@ Turn on this setting to allow users to use OneLake File Explorer. This app will 
 
 To learn more, see [OneLake File Explorer](../onelake/onelake-file-explorer.md).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

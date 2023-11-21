@@ -57,7 +57,7 @@ Many of the settings can have one of three states:
 
     :::image type="content" source="media/tenant-settings-index/fabric-admin-tenant-settings-enabled-specific-except.png" alt-text="Screenshot of enabled except state tenant setting.":::
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
 - [Tenant settings index](tenant-settings-index.md)

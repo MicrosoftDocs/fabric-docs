@@ -55,10 +55,8 @@ To get to the admin portal, follow these steps:
 
     :::image type="content" source="./media/admin-center/admin-portal-option-settings-menu.png" alt-text="Screenshot showing Admin portal option on the Fabric settings menu.":::
 
-## Next steps
+## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
-
 * [Workspace tenant settings](portal-workspace.md)
-
 * [Manage workspaces](portal-workspaces.md)
