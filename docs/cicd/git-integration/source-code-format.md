@@ -65,7 +65,7 @@ Semantic model folders contain the following files:
 
 :::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
 
-For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
 
 ## Automatically generated system files
 
@@ -91,7 +91,7 @@ In addition to the item definition files, each item directory contains one or tw
 
 The item.metadata.json file contains the following attributes:
 
-- `type`: (string) The item’s type (dataset, report etc.)
+- `type`: (string) The item’s type (semantic model, report etc.)
 - `displayName`: (string) The name of the item
 - `description`: (optional string) Description of the item
 
@@ -138,7 +138,7 @@ The PlatformProperties.json file contains the following attributes:
 
 - `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
 - `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
-- `type`: (string) The item’s type (dataset, report etc.)
+- `type`: (string) The item’s type (semantic model, report etc.)
 - `displayName`: (string) The name of the item.
 - `description`: (optional string) Description of the item.
 
