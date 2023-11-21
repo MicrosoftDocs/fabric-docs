@@ -11,35 +11,33 @@ ms.custom:
 ms.date: 09/15/2023
 ---
 
-# Training and evaluating a time series forecasting model in Microsoft Fabric
+# Train and evaluate a time series forecasting model in Microsoft Fabric
 
-In this notebook, we'll build a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
+In this notebook, you build a program to forecast time series data that has seasonal cycles. You use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
 ## Prerequisites
 
 - A familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
-- A Lakehouse. The Lakehouse is used to store data for this example. For more information, visit [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+- A lakehouse. The lakehouse is used to store data for this example. For more information, visit [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-## Follow along in notebook
+## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can follow along in a notebook one of two ways:
 
 - Open and run the built-in notebook in the Data Science experience.
 - Upload your notebook from GitHub to the Data Science experience.
 
-#### Open built-in notebook
+### Open the built-in notebook
 
 **Time series** is the sample notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import notebook from GitHub
+### Import the notebook from GitHub
 
 [AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
-
-<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb -->
 
 ## About the dataset
 
@@ -66,7 +64,7 @@ For the seasonality component, Prophet models weekly and yearly seasonality usin
 
 ## Step 1: Load the data
 
-### Download dataset and upload to a Data Lakehouse
+### Download the dataset and upload to a data lakehouse
 
 A data lakehouse is a data architecture that provides a central repository for data. There are 15 csv files containing property sales records from five boroughs in New York between 2003 and 2015. For convenience, these files are compressed in the `nyc_property_sales.tar` file. This file is available in a public blob storage resource.
 
@@ -97,9 +95,9 @@ else:
     os.system(f"tar -zxvf {TAR_FILE_PATH}{TAR_FILE_NAME} -C {CSV_FILE_PATH}")
 ```
 
-### Create dataframe from Lakehouse
+### Create a DataFrame from a lakehouse
 
-The `display` function prints the dataframe, and automatically gives chart views.
+The `display` function prints the DataFrame, and automatically gives chart views.
 
 ```python
 df = (
@@ -246,9 +244,9 @@ Visualize trend and yearly seasonality. The light blue area reflects uncertainty
 fig2 = m.plot_components(forecast)
 ```
 
-### Cross validation
+### Cross-validation
 
-We can use the Prophet built-in cross validation functionality to measure the forecast error on historical data. The following parameters indicate we should start with 11 years of training data, then make predictions every 30 days, within a one year horizon.
+We can use the Prophet built-in cross-validation functionality to measure the forecast error on historical data. The following parameters indicate we should start with 11 years of training data, then make predictions every 30 days, within a one year horizon.
 
 > [!IMPORTANT]
 > If you're running the [built-in notebook](#open-built-in-notebook) for this tutorial, make this change in the notebook's code to avoid getting an error when you run the following cell:
@@ -267,7 +265,7 @@ df_p = performance_metrics(df_cv, monthly=True)
 display(df_p)
 ```
 
-## Step 4: Log and load model with MLflow
+## Step 4: Log and load the model by using MLflow
 
 Store the trained model for later use.
 
