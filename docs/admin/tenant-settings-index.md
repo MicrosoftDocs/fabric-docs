@@ -261,7 +261,7 @@ Many of the settings can have one of three states:
 |[Use Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|Users in the organization can use the Azure Maps visualization.|
 |[Map and filled map visuals](/power-bi/visuals/power-bi-visualization-filled-maps-choropleths)|Allow people in your org to use the map and filled map visualizations in their reports.|
 |[Integration with SharePoint and Microsoft Lists](service-admin-portal-integration.md#integration-with-sharepoint-and-microsoft-lists)|Users in the organization can launch Power BI from SharePoint lists and Microsoft Lists. Then they can build Power BI reports on the data in those lists and publish them back to the lists.|
-|[Dremio SSO](https)|Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.|
+|[Dremio SSO](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi)|Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.|
 |[Snowflake SSO](/power-bi/connect-data/service-connect-snowflake)|Enable SSO capability for Snowflake. By enabling, user access token information, including name and email, will be sent to Snowflake for authentication.  [Learn More](https://aka.ms/snowflakesso)|
 |[Redshift SSO](/power-bi/connect-data/service-gateway-sso-overview)|Enable SSO capability for Redshift. By enabling, user access token information, including name and email, will be sent to Redshift for authentication.|
 |[Google BigQuery SSO](/power-query/connectors/google-bigquery-aad)|Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.|
@@ -334,7 +334,6 @@ Many of the settings can have one of three states:
 |[Users can synchronize workspace items with their Git repositories (preview)](../cicd/git-integration/intro-to-git-integration.md)|Users can import and export workspace items to Git repositories for collaboration and version control. Turn off this setting to prevent users from syncing workspace items with their Git repositories. [Learn More](https://go.microsoft.com/fwlink/?linkid=2240844)|
 |[Users can export items to Git repositories in other geographical locations (preview)](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
 |Users can export workspace items with applied sensitivity labels to Git repositories (preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
-
 
 ## Next steps
 
