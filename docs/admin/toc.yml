@@ -85,8 +85,10 @@ items:
 - name: Fabric tenant settings
   items:
   - name: About tenant settings
+    href: about-tenant-settings.md
+  - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings list
+  - name: Tenant settings sections
     expanded: false
     items:
     - name: Microsoft Fabric (Preview)
