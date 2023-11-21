@@ -65,7 +65,16 @@ The following section lists various default configurations and the max node limi
 
 ## Known Issues 
 
-As Starter Pools are sized with Medium nodes (8 Spark Cores), users with F2 capacities could see a slower session start of 2-3 minutes.
+### Slower Session Start Times in Starter Pools with Single Node Configuration
+
+#### Issue Description:
+Starter Pools in Microsoft Fabric, primarily utilized for data engineering and science workloads, default to Medium node sizing (8 Spark Cores). Currently, an identified issue arises when the maximum node configuration is limited to a single node. In such cases, the system attempts to accommodate both the driver and executor within this single node Starter Pool, leading to a noticeable delay in session startup times.
+
+#### Impact:
+Users may experience a session start delay ranging from 2-3 minutes.
+
+#### Status:
+Our team is actively working on resolving this issue. We anticipate a solution to be implemented shortly, which will improve session start times to ~5 seconds in single node Starter Pool configurations.
 
 ## Next steps
 

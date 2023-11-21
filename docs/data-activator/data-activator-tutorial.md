@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Data Activator tutorial using sample data
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
 

@@ -76,6 +76,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
+          "redirect_url": "/fabric/admin/service-admin-portal-app",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
           "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
           "redirect_document_id": true
@@ -218,6 +223,11 @@
         {
           "source_path_from_root": "/docs/data-factory/known-issue-template.md",
           "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
           "redirect_document_id": false
         }
     ]
