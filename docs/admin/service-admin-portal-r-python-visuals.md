@@ -28,6 +28,6 @@ Users in the organization can interact with and share visuals created with R or 
 > [!NOTE]
 > This setting applies to the entire organization and can't be limited to specific groups.
 
-## Next steps
+## Related content
 
 - [About tenant settings](tenant-settings-index.md)

@@ -24,7 +24,7 @@ Users can edit data models in the Power BI service (preview) tenant settings. Th
 
 To learn more, see [Enabling data model editing in the admin portal](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
 * [Edit data models in the Power BI service(preview)](/power-bi/transform-model/service-edit-data-models)
