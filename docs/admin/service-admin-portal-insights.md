@@ -30,6 +30,6 @@ Users in the organization can use entry points for requesting insights inside re
 
 To learn more about insights, see [Find Insights in your reports](/power-bi/create-reports/insights).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

@@ -46,6 +46,6 @@ Enable this setting to allow all users, or a specific group of users, to export 
 
 Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md).
 
-## Next steps
+## Related content
 
 - [About tenant settings](tenant-settings-index.md)

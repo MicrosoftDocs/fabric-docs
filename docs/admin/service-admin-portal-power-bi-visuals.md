@@ -38,6 +38,6 @@ Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi
 
 To learn more, see [Export data to file](organizational-visuals.md#export-data-to-file).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

@@ -104,8 +104,7 @@ This section lists the report's considerations and limitations.
 
 * Capacities with the same name but different IDs are counted as separate records.
 
-## Next steps
+## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
-
 * [Admin overview](microsoft-fabric-admin.md)

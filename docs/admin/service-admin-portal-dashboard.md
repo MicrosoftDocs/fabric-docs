@@ -27,6 +27,6 @@ To learn more, see [Add images, videos, and more to your dashboard](/power-bi/cr
 > [!NOTE]
 > This could expose your organization to security risks via malicious web content.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
