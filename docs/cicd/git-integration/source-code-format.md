@@ -25,20 +25,18 @@ Each item's directory has specific [mandatory files that define that item](/powe
 
 The following items are currently supported in Microsoft Fabric:
 
-- [Dataset files](#dataset-files)
-- [Paginated report files](#paginated-report-files)
-- [Report files](#report-files)
+- [Notebook](#notebook-files)
+- [Paginated report](#paginated-report-files)
+- [Report](#report-files)
+- [Semantic model](#semantic-model-files)
 
-### Dataset files
+### Notebook files
 
-Dataset folders contain the following files:
+Notebook folders contain a *.py* file:
 
-- definition.pbidataset
-- model.bim
+:::image type="content" source="./media/source-code-format/notebook-directory.png" alt-text="Screenshot of directory tree showing files in the notebook directory.":::
 
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
-
-For more information about dataset folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
+For instructions on using Git integration with notebooks, see [Notebook source control and deployment](../../data-engineering/notebook-source-control-deployment.md).
 
 ### Paginated report files
 
@@ -57,6 +55,17 @@ Report folders contain the following files:
 :::image type="content" source="./media/source-code-format/report-directory.png" alt-text="Screenshot of directory tree showing files in the report directory.":::
 
 For more information about report folders and a complete list of their contents, see [Power BI Desktop project report folder](/power-bi/developer/projects/projects-report).
+
+### Semantic model files
+
+Semantic model folders contain the following files:
+
+- definition.pbidataset
+- model.bim
+
+:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+
+For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
 
 ## Automatically generated system files
 
