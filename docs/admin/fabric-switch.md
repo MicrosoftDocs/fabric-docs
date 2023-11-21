@@ -93,8 +93,7 @@ Users that don't have Microsoft Fabric enabled, can:
 
 * View Microsoft Fabric icons in capacities where other users have Microsoft Fabric enabled, as long as they have at least read-only access to that capacity.
 
-## Next steps
+## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-
 * [Enable Data Activator](data-activator-switch.md)
