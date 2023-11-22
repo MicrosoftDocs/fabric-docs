@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to Dynamics CRM.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Prerequisites
 
 To use this connector with Azure AD service-principal authentication, you must set up server-to-server (S2S) authentication in Dynamics CRM. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal). 
@@ -38,7 +36,7 @@ For **General** tab configuration, go to [General settings](activity-overview.md
 
 Go to **Source** tab to configure your copy activity source. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-dataverse/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
+:::image type="content" source="./media/connector-dynamics-crm/source.png" alt-text="Screenshot showing source tab and the list of properties." :::
 
 The following properties are **required**:
 
@@ -78,7 +76,7 @@ Under **Advanced**, you can specify the following fields:
 
 Go to **Destination** tab to configure your copy activity destination. See the following content for the detailed configuration.
 
-:::image type="content" source="./media/connector-dataverse/destination.png" alt-text="Screenshot showing destination tab and the list of properties." :::
+:::image type="content" source="./media/connector-dynamics-crm/destination.png" alt-text="Screenshot showing destination tab and the list of properties." :::
 
 The following properties are **required**:
 
