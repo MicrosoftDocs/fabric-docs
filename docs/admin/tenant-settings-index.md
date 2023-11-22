@@ -7,19 +7,18 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/21/2023
+ms.date: 11/22/2023
 ---
 
 # Tenant settings index
 
 This article lists all Fabric tenant settings, along with a brief description of each. For more information about tenant settings in general, see [About tenant settings](about-tenant-settings.md).
 
-
 ## [Microsoft Fabric](fabric-switch.md)
 
 | Setting name | Description |
 |------|-------|
-|[Data Activator (preview)](../data-activator/data-activator-get-started.md)|Turn on Data Activator Preview to allow users to define a specific set of conditions about their data, and then receive notifications when those conditions are met. After they receive notifications, users can take action to correct the change in conditions. This setting can be managed at both the tenant and the capacity levels. Data Activator is currently available in  [these regions](https://go.microsoft.com/fwlink/?linkid=2250213). When you turn on Data Activator, you agree to the  [Data Activator Preview terms](https://go.microsoft.com/fwlink/?linkid=2244647).  [Learn more](https://go.microsoft.com/fwlink/?linkid=2237360)|
+|Data Activator (preview)|Turn on Data Activator Preview to allow users to define a specific set of conditions about their data, and then receive notifications when those conditions are met. After they receive notifications, users can take action to correct the change in conditions. This setting can be managed at both the tenant and the capacity levels. Data Activator is currently available in  [these regions](https://go.microsoft.com/fwlink/?linkid=2250213). When you turn on Data Activator, you agree to the  [Data Activator Preview terms](https://go.microsoft.com/fwlink/?linkid=2244647).  [Learn more](https://go.microsoft.com/fwlink/?linkid=2237360)|
 |[Users can create Fabric items](fabric-switch.md)|Users can use production-ready features to create Fabric items. Turning off this setting doesn't impact users’ ability to create Power BI items. This setting can be managed at both the tenant and the capacity levels.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2247554)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
@@ -269,7 +268,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Users can export items to Git repositories in other geographical locations (preview)](git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview)|The workspace and the Git repository may reside in different geographies. Turn on this setting to allow users to export items to Git repositories in other geographies.|
 |[Users can export workspace items with applied sensitivity labels to Git repositories (preview)](git-integration-admin-settings.md#users-can-export-workspace-items-with-applied-sensitivity-labels-to-git-repositories-preview)|Turn on this setting to allow users to export items with applied sensitivity labels to their Git repositories.|
 
-## Related information
+## Related content
 
 - [What is the admin portal?](admin-center.md)
 - [About tenant settings](about-tenant-settings.md)
