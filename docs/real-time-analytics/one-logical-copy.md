@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/07/2023
+ms.date: 11/22/2023
 ---
 # One logical copy
 
@@ -42,11 +42,11 @@ You can enable data availability either on a KQL database or table level.
 1. To enable data availability, browse to the details page of your KQL database or table.
 1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** (pencil) icon.
 
-    :::image type="content" source="media/onelake-mirroring/onelake-folder.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake folder option highlighted.":::
+    :::image type="content" source="media/one-logical-copy/onelake-folder.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake folder option highlighted.":::
 
 1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few minutes for the data to be available in OneLake.
 
-    :::image type="content" source="media/onelake-mirroring/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
+    :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
 You've enabled data availability in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 

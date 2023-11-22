@@ -182,4 +182,4 @@ In the **Data preparation** window, all three steps are marked with green check 
 
 * [Query data in a KQL queryset](kusto-query-set.md)
 * [Visualize data in a Power BI report](create-powerbi-report.md)
-* [One logical copy](onelake-mirroring.md)
+* [One logical copy](one-logical-copy.md)
