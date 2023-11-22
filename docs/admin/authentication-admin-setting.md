@@ -50,6 +50,7 @@ Authentication is supported in the following scenarios:
 * Mobile
 
 Authentication is not supported in the following scenarios:
+
 * Sovereign Clouds
 * RS Service
 * Embed
