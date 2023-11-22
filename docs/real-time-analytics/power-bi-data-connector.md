@@ -56,7 +56,7 @@ For more information on connectivity modes, see [Import and Direct Query connect
 
 ### Load data
 
-1. On the **Navigator** window that opens, select the tables you want to connect, and then select **Load**.
+1. In the **Navigator** window, select the tables you want to connect, and then select **Load**.
 
     Optionally, if you want to shape your data first, select **Transform data** to launch the Power Query Editor. For more information, see [Shape data](/power-bi/fundamentals/desktop-getting-started?source=recommendations&branch=main#shape-data).
 
