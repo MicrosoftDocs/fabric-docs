@@ -7,7 +7,6 @@ ms.reviewer:
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom:
-  - ignite-2023
 ms.topic: conceptual
 ms.date: 11/22/2023
 ---
