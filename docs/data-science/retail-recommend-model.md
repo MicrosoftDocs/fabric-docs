@@ -1,5 +1,5 @@
 ---
-title: Create, evaluate, and score a recommendation system
+title: "Tutorial: Create, evaluate, and score a recommendation system"
 description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
 ms.reviewer: lagayhar
 ms.author: amjafari
@@ -9,18 +9,19 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/23/2023
+#customer intent: As a data scientist, I want to create a recommendation model to provide predictions.
 ---
 
-# Create, evaluate, and score a recommendation system in Microsoft Fabric
+# Tutorial: Create, evaluate, and score a recommendation system in Microsoft Fabric
 
-In this tutorial, you walk through the data engineering and data science workflow with an end-to-end tutorial. The scenario is to build a recommender for online book recommendation. The main steps in this tutorial are:
+In this tutorial, you walk through an end-to-end data engineering and data science workflow. The scenario is to build a model for online book recommendations. The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
-> * Upload the data into a lakehouse
-> * Perform exploratory analysis on the data
-> * Train a model and log it by using MLflow
-> * Load the model and make predictions
+> * Upload the data into a lakehouse.
+> * Perform exploratory analysis on the data.
+> * Train a model and log it by using MLflow.
+> * Load the model and make predictions.
 
 There are various types of recommendation algorithms. This tutorial uses a model-based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 
@@ -28,7 +29,7 @@ There are various types of recommendation algorithms. This tutorial uses a model
 
 ALS tries to estimate the ratings matrix R as the product of two lower-rank matrices, U and V, where U * Vt = R. Typically, these approximations are called *factor* matrices.
 
-The general approach is iterative. During each iteration, one of the factor matrices is held constant, while the other is solved for using least squares. The newly solved factor matrix is then held constant while solving for the other factor matrix.
+The general approach is iterative. During each iteration, one of the factor matrices is held constant, while you solve the other for using least squares. The newly solved factor matrix is then held constant while you solve the other factor matrix.
 
 :::image type="content" source="media/retail-recommend-model/factor-matrices.png" alt-text="Screenshot of two side-by-side factor matrices." lightbox="media/retail-recommend-model/factor-matrices.png":::
 
@@ -40,7 +41,7 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 ## Follow along in a notebook
 
-You can follow along in a notebook one of two ways:
+You can follow along in a notebook in one of two ways:
 
 - Open and run the built-in notebook in the Data Science experience.
 - Upload your notebook from GitHub to the Data Science experience.
@@ -75,7 +76,7 @@ The book recommendation dataset in this scenario consists of three separate data
   | 276725 | 034545104X | 0 |
   | 276726 | 0155061224 | 5 |
 
-- *Users.csv*: User IDs, which have been anonymized and mapped to integers. Demographic data, such as location and age, are provided if available. If this data is unavailable, the value is *null*.
+- *Users.csv*: User IDs have been anonymized and mapped to integers. Demographic data, such as location and age, are provided if available. If this data is unavailable, the value is `null`.
 
   | User-ID | Location | Age |
   |---|---|---|
@@ -98,7 +99,7 @@ RATING_COL = (
 IS_SAMPLE = True  # If True, use only <SAMPLE_ROWS> rows of data for training; otherwise, use all data
 SAMPLE_ROWS = 5000  # If IS_SAMPLE is True, use only this number of rows for training
 
-DATA_FOLDER = "Files/book-recommendation/"  # folder that contains the datasets
+DATA_FOLDER = "Files/book-recommendation/"  # Folder that contains the datasets
 ITEMS_FILE = "Books.csv"  # File that contains the item information
 USERS_FILE = "Users.csv"  # File that contains the user information
 RATINGS_FILE = "Ratings.csv"  # File that contains the rating information
@@ -185,8 +186,8 @@ import pyspark.sql.functions as F
 from pyspark.ml.feature import StringIndexer
 import matplotlib.pyplot as plt
 import seaborn as sns
-color = sns.color_palette()  # adjusting plotting style
-import pandas as pd  # dataframes
+color = sns.color_palette()  # Adjusting plotting style
+import pandas as pd  # DataFrames
 ```
 
 Use the following code to look at the DataFrame that contains the book data:
@@ -239,7 +240,7 @@ display(df_users, summary=True)
 
 Add a `_user_id` column for later use. The `_user_id` value must be an integer for recommendation models. In the following code, you use `StringIndexer` to transform `USER_ID_COL` to indices.
 
-The book dataset already contains a `User-ID` column, which is an integer. However, adding a `_user_id` column for compatibility to different datasets makes this example more robust. To add the `_user_id` column, use the following code:
+The book dataset already contains a `User-ID` column, which is an integer. However, adding a `_user_id` column for compatibility with different datasets makes this example more robust. To add the `_user_id` column, use the following code:
 
 ```python
 df_users = (
@@ -276,7 +277,7 @@ sns.countplot(y="Book-Title",palette = 'Paired',data= df_books, order=df_books['
 plt.title("Top 10 books per number of ratings")
 ```
 
-*Selected Poems* is most favorable among users, according to ratings. The books *Adventures of Huckleberry Finn*, *The Secret Garden*, and *Dracula*, have the same rating.
+*Selected Poems* is most favorable among users, according to ratings. The books *Adventures of Huckleberry Finn*, *The Secret Garden*, and *Dracula* have the same rating.
 
 :::image type="content" source="./media/retail-recommend-model/top-books.png" alt-text="Graph of the top-rated books.":::
 
@@ -292,7 +293,7 @@ df_all_columns = [
     c for c in df_all.columns if c not in ["_user_id", "_item_id", RATING_COL]
 ]
 
-# Reorders the columns to ensure that _user_id, _item_id, and Book-Rating are the first three columns
+# Reorder the columns to ensure that _user_id, _item_id, and Book-Rating are the first three columns
 df_all = (
     df_all.select(["_user_id", "_item_id", RATING_COL] + df_all_columns)
     .withColumn("id", F.monotonically_increasing_id())
@@ -346,16 +347,16 @@ plt.show()
 
 ### Prepare training and testing datasets
 
-Before training, you need to perform some data preparation steps for the ALS recommender. Use the following code to prepare the data. The code performs the following actions:
+Before training, you need to perform some data preparation steps for the ALS matrix. Use the following code to prepare the data. The code performs the following actions:
 
 * Casts the rating column into the correct type
 * Samples the training data with user ratings
-* Splits the data into training and test datasets
+* Splits the data into training and testing datasets
 
 ```python
 if IS_SAMPLE:
     # Must sort by '_user_id' before performing limit to ensure that ALS works normally
-    # If train and test datasets have no common _user_id, ALS will fail
+    # If training and testing datasets have no common _user_id, ALS will fail
     df_all = df_all.sort("_user_id").limit(SAMPLE_ROWS)
 
 # Cast the column into the correct type
@@ -375,7 +376,7 @@ for i in ratings:
 train = df_all.sampleBy(RATING_COL, fractions=fractions_train)
 
 # Join with leftanti will select all rows from df_all with rating > 0 and not in the training dataset; for example, the remaining 20% of the dataset
-# Test dataset
+# Testing dataset
 test = df_all.join(train, on="id", how="leftanti").sampleBy(
     RATING_COL, fractions=fractions_test
 )
@@ -412,7 +413,7 @@ print(f"max user_id: {df_all.agg({'_item_id': 'max'}).collect()[0][0]}")
 
 ## Step 3: Develop and train the model
 
-You explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an ALS recommender to give users personalized recommendations.
+You explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an ALS model to give users personalized recommendations.
 
 ### Define the model
 
@@ -657,7 +658,7 @@ The output is similar to the following table:
 To write the recommendations back to the lakehouse, use the following code:
 
 ```python
-# Code to save the userRecs into the lakehouse
+# Code to save userRecs into the lakehouse
 userRecs.write.format("delta").mode("overwrite").save(
     f"{DATA_FOLDER}/predictions/userRecs"
 )

@@ -56,9 +56,9 @@ Build a model to predict the churn rate for bank customers. The churn rate, also
 
 Follow along in the [tutorial for predicting customer churn](customer-churn.md).
 
-### Recommender
+### Recommendations
 
-An online bookstore wants to increase sales by providing customized recommendations. By using customer book rating data, you can develop and deploy a recommendation to provide predictions.
+An online bookstore wants to increase sales by providing customized recommendations. By using customer book rating data, you can develop and deploy a recommendation model to provide predictions.
 
 Follow along in the [tutorial for training a retail recommendation model](retail-recommend-model.md).
 
@@ -70,7 +70,7 @@ Follow along in the [tutorial for fraud detection](fraud-detection.md).
 
 ### Forecasting
 
-By using historical New York City property sales data and Facebook Prophet, build a time series model with trend, seasonality, and holiday information to forecast what sales will look like in future cycles.
+By using historical New York City property sales data and Facebook Prophet, build a time series model with trend and seasonality information to forecast what sales will look like in future cycles.
 
 Follow along in the [tutorial for time series forecasting](time-series-forecasting.md).
 
