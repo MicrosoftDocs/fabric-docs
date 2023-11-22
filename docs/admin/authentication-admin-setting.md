@@ -25,3 +25,32 @@ The Authentication API tenant admin settings is configured in the tenant setting
 :::image type="content" source="./media/authentication-admin-settings/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
 
 To learn more, see [Introduction to Git integration](/power-bi/developer/visuals/authentication-api.md).
+
+## Considerations and limitations
+
+Authentication is blocked if any of the following conditions apply:​
+
+* The tenant switch is turned off.
+
+* The user isn't signed in (in Desktop).
+
+* The admin or user hasn't given consent.
+
+* The ISV has not preauthorized the Power BI application.
+
+* The format of the AADAuthentication Privilege parameter is invalid.
+
+* The visual is not publicly approved and is not in Debug Visual mode.
+
+Authentication is supported in the following scenarios:
+
+* Web
+* Desktop
+* RS Desktop
+* Mobile
+
+Authentication is not supported in the following scenarios:
+* Sovereign Clouds
+* RS Service
+* Embed
+* Teams (Microsoft Entra ID dialogs aren't supported)
