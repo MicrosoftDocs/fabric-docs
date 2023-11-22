@@ -92,8 +92,7 @@ You can also assign users to roles by using PowerShell. Users are managed in Azu
     ```
 To learn more about using PowerShell to assign admin roles, see [AzureAD Directory Roles](/powershell/module/azuread/#directory-roles).
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)
-
 * [What is the admin monitoring workspace?](monitoring-workspace.md)

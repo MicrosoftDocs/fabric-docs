@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 11/10/2023
+ms.date: 11/17/2023
 ---
 
 # Overview of Copilot for Fabric (preview)
@@ -27,7 +27,7 @@ Copilot for Data Factory is an AI-enhanced toolset that supports both citizen an
 
 ## Copilot for Power BI
 
-Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. See the article Overview of Copilot for Power BI (/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
+Power BI has introduced generative AI that allows you to create reports automatically by selecting the topic for a report or by prompting Copilot for Power BI on a particular topic. You can use Copilot for Power BI to generate a summary for the report page that you just created, and generate synonyms for better Q&A capabilities. See the article [Overview of Copilot for Power BI](/power-bi/create-reports/copilot-introduction) for details of the features and how to use Copilot for Power BI.
 
 ## How do I use Copilot responsibly?
 
@@ -43,7 +43,12 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 - Reviews of outputs should be done by people who are able to meaningfully evaluate the content's accuracy and appropriateness.
 - Today, Copilot features work best in the English language. Other languages may not perform as well.
 
+## Available regions
+
+For the list of Azure regions where prebuilt AI services in Fabric are now available, see the [Available regions](../data-science/ai-services/ai-services-overview.md#available-regions) section of the article "AI services in Fabric (preview)."
+
 ## Next steps
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot for Fabric: FAQ](copilot-faq-fabric.yml)
+- [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)

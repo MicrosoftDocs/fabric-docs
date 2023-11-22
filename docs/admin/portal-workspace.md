@@ -32,9 +32,9 @@ For classic workspaces based on Microsoft 365 Groups, administration continues t
 
 The admin portal has another section of settings about the workspaces in your tenant. In that section, you can sort and filter the list of workspaces and display the details for each workspace. See [Manage workspaces](portal-workspaces.md) for details.
 
-**Publish content packs and apps**
+**Publish apps**
 
-In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish content packs and apps to the entire organization](service-admin-portal-content-pack-app.md#publish-content-packs-and-apps-to-the-entire-organization) for details.
+In the admin portal, you also control which users have permissions to distribute apps to the organization. See [Publish apps to the entire organization](service-admin-portal-app.md#publish-apps-to-the-entire-organization) for details.
 
 ## Use semantic models across workspaces
 
@@ -61,6 +61,6 @@ To turn on the setting:
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 
-## Next steps
+## Related content
 
 [About tenant settings](tenant-settings-index.md)

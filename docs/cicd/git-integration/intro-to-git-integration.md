@@ -49,7 +49,8 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-* [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines)
+<!--- * [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines) ---> 
+
 * Datasets (except push datasets, live connections, and model v1)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/how-to-use-notebook.md)
@@ -63,6 +64,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.  
 * If the workspace and Git repo are in two different geographical regions, [cross-geo exports must be enabled](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) by the tenant admin.  
 * Azure DevOps **on-prem** is not supported.
+* Sovereign clouds are not supported.
 
 ## Next steps
 

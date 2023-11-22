@@ -101,7 +101,7 @@ An app using service principal authentication that calls read-only admin APIs **
 * The service principal can make rest API calls, but you can't open Fabric with service principal credentials.
 * Fabric admin rights are required to enable service principal in the Admin API settings in the Fabric admin portal.
 
-## Next steps
+## Related content
 
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Set up metadata scanning](./metadata-scanning-setup.md)
