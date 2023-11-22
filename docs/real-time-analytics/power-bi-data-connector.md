@@ -39,7 +39,7 @@ Use **DirectQuery** mode when:
 
 For more information on connectivity modes, see [Import and Direct Query connectivity modes](/power-bi/desktop-directquery-about).
 
-## Add data source
+## Connect data source
 
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **OneLake data hub** > **KQL Databases**.
@@ -53,6 +53,8 @@ For more information on connectivity modes, see [Import and Direct Query connect
     :::image type="content" source="media/power-bi-data-connector/one-lake-data-hub.png" alt-text="Screenshot of OneLake data hub showing a list of KQL Database available for connection in Power BI Desktop.":::
 
 1. Provide your credentials in the authentication window.
+
+### Load data
 
 1. On the **Navigator** window that opens, select the tables you want to connect, and then select **Load**.
 
