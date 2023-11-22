@@ -14,7 +14,7 @@ Notebooks are both readable documents containing data analysis descriptions and 
 
 There are two ways to create a Fabric notebooks that connect to your KQL database:
 
-* [Use snippets in an existing notebook](#use-snippets-in-an-existing-notebook)
+* [Use snippets in an existing notebook](#use-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
 
 ## Prerequisites
@@ -22,10 +22,17 @@ There are two ways to create a Fabric notebooks that connect to your KQL databas
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions
 
-## Use snippets in an existing notebook
+## Use snippets in a notebook
 
+Fabric notebooks provide [code snippets](../data-engineering/author-execute-notebook.md#code-snippets) that help you easily write commonly used code patterns. You can use snippets to write or read data in a KQL database using KQL.
 
-:::image type="content" source="media/notebooks/kusto-snippet.gif" alt-text="Screen capture of using a kusto snippet to use KQL in a Fabric notebook.":::
+1. Navigate to an existing notebook or create a new one.
+1. In a code cell, begin typing "Kusto".
+
+    :::image type="content" source="media/notebooks/kusto-snippet.gif" alt-text="Screen capture of using a kusto snippet to use KQL in a Fabric notebook.":::
+
+1. Select the operation you want to perform.
+1. 
 
 ## Create a notebook from a KQL database
 
