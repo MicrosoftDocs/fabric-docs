@@ -61,6 +61,6 @@ To turn on the setting:
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 
-## Next steps
+## Related content
 
 [About tenant settings](tenant-settings-index.md)

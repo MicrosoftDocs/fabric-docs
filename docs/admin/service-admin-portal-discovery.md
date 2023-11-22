@@ -36,6 +36,6 @@ Allow users to find and request access to content they don't have access to if i
 
 To learn more, see [Find recommended items](/fabric/get-started/onelake-data-hub#find-recommended-items).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
