@@ -20,6 +20,6 @@ In Fabric, user activities are logged in the Power BI activity log and in the un
 
 * For all other Fabric items: Currently, only *create*, *read*, *update*, and *delete* operations.
 
-## Next steps
+## Related content
 
 * [Track user activities in Power BI](/power-bi/enterprise/service-admin-auditing)

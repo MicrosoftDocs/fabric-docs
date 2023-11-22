@@ -51,6 +51,6 @@ For extra security, you can block the use of resource key-based authentication. 
 
 This setting applies to the entire organization. You can't apply it only to a select security group.
 
-## Next steps
+## Related content
 
 - [About tenant settings](tenant-settings-index.md)

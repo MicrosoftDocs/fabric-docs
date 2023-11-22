@@ -102,8 +102,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 - It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
 - Multi-Geo doesn't support Metrics.
 
-## Next steps
+## Related content
 
 - [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
-
 - [Multi-Geo support for Power BI Embedded](/power-bi/developer/embedded/embedded-multi-geo)

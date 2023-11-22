@@ -135,6 +135,6 @@ During public preview, if a user has enabled share through the Power BI Desktop 
 
 Learn more about [sharing links through Power BI Desktop](/power-bi/create-reports/desktop-sharepoint-save-share).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

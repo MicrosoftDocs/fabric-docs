@@ -60,6 +60,6 @@ This tile shows a view of your top users based on how many reports they have. Th
 
 Due to the move to Microsoft Fabric, some tiles in the Admin Portal Usage Metrics are rendered blank.
 
-## Next steps
+## Related content
 
-[What is the admin portal?](admin-center.md)
+- [What is the admin portal?](admin-center.md)

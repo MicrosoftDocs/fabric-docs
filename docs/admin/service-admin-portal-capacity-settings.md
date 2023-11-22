@@ -49,6 +49,6 @@ For more information about Power BI Embedded, see:
 
 * Pause and start a capacity Azure - [Pause and start your Power BI Embedded capacity in the Azure portal](/power-bi/developer/embedded/azure-pbie-pause-start)
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)

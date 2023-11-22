@@ -30,6 +30,6 @@ Quick measure suggestions are currently processed in the US. When this setting i
 
 To learn more, see [Limitations and considerations](/power-bi/transform-model/quick-measure-suggestions#limitations-and-considerations).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

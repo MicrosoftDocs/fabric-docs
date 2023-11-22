@@ -18,6 +18,7 @@ Microsoft Fabric Public Preview is available in the Azure regions listed in this
 To find out what your Fabric home region is, see [Find your Fabric home region](./find-fabric-home-region.md).
 
 Asia Pacific
+
 * AustraliaEast
 * AustraliaSoutheast
 * CentralIndia
@@ -28,6 +29,7 @@ Asia Pacific
 * SouthIndia
 
 Europe
+
 * NorthEurope
 * WestEurope
 * FranceCentral
@@ -39,6 +41,7 @@ Europe
 * UKWest
 
 Americas
+
 * BrazilSouth
 * CanadaCentral
 * CanadaEast
@@ -51,11 +54,11 @@ Americas
 * WestUS3
 
 Middle East and Africa
+
 * SouthAfricaNorth
 * UAENorth
 
-
-## Next steps
+## Related content
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Find your Fabric home region](./find-fabric-home-region.md)
