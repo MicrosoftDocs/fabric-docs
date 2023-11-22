@@ -292,4 +292,5 @@ In particular, you learned how to:
 
 ## Next steps
 
-[Manage Git branches](./git-integration/manage-branches.md)
+* [Power BI Desktop projects and Azure DevOps build pipelines](/power-bi/developer/projects/projects-build-pipelines)
+* [Manage Git branches](./git-integration/manage-branches.md)
