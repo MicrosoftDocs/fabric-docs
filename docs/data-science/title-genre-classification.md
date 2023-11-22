@@ -16,7 +16,7 @@ ms.date: 09/15/2023
 
 In this tutorial, you walk through an end-to-end data science workflow for a text classification model by using Microsoft Fabric. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
-The main steps in this notebook are:
+The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
@@ -152,7 +152,7 @@ import mlflow
 
 Define some hyperparameters for model training.
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > Modify these hyperparameters only if you understand each parameter.
 
 ```python
@@ -214,7 +214,7 @@ df = (
 display(df.limit(20))
 ```
 
-Then apply class balancing to address any bias:
+Apply class balancing to address any bias:
 
 ```python
 # Create an instance of ClassBalancer and set the input column to LABEL_COL
@@ -227,7 +227,7 @@ df = cb.fit(df).transform(df)
 display(df.limit(20))
 ```
 
-Tokenize the dataset by splitting the paragraphs and sentences into smaller units that can be more easily assigned meaning. Then remove the stopwords to improve the performance. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications, where the idea is to remove the words that occur commonly across all the documents in the corpus.
+Tokenize the dataset by splitting the paragraphs and sentences into smaller units that can be more easily assigned meaning. Then remove the stopwords to improve the performance. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications, where the idea is to remove words that occur commonly across all the documents in the corpus.
 
 ```python
 # Text transformer
@@ -242,7 +242,7 @@ token_df = pipeline.fit(df).transform(df)
 display(token_df.limit(20))
 ```
 
-Display the wordcloud library for each class. A wordcloud library is a visually prominent presentation of "keywords" that appear frequently in text data. The wordcloud library is effective because the rendering of keywords forms a cloudlike color picture to better capture the main text data at a glance. [Learn more about wordcloud](https://github.com/amueller/word_cloud).
+Display the wordcloud library for each class. A wordcloud library is a visually prominent presentation of keywords that appear frequently in text data. The wordcloud library is effective because the rendering of keywords forms a cloudlike color picture to better capture the main text data at a glance. [Learn more about wordcloud](https://github.com/amueller/word_cloud).
 
 ```python
 # WordCloud
@@ -296,12 +296,12 @@ display(vec_df.limit(20))
 
 ## Step 4: Train and evaluate the model
 
-With your data in place, now define the model. In this section, train a logistic regression model to classify the vectorized text.
+With your data in place, define the model. In this section, you train a logistic regression model to classify the vectorized text.
 
-### Prepare training and test datasets
+### Prepare training and testing datasets
 
 ```python
-# Split the dataset into training and test sets
+# Split the dataset into training and testing
 (train_df, test_df) = vec_df.randomSplit((0.8, 0.2), seed=42)
 ```
 
@@ -309,7 +309,7 @@ With your data in place, now define the model. In this section, train a logistic
 
 A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
 
-When you track machine learning experiments, you manage all the experiments and their components, such as parameters, metrics, models, and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results using saved experiments. [Learn more about machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
+When you track machine learning experiments, you manage all the experiments and their components, such as parameters, metrics, models, and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results by using saved experiments. [Learn more about machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
 ```python
 # Build the logistic regression classifier
@@ -324,7 +324,7 @@ lr = (
 
 ### Tune hyperparameters
 
-Construct a grid of parameters to search over the hyperparameters and a cross evaluator estimator to produce a CrossValidatorModel.
+Construct a grid of parameters to search over the hyperparameters and a cross-evaluator estimator to produce a `CrossValidator` model:
 
 ```python
 # Construct a grid search to select the best values for the training parameters
@@ -343,7 +343,7 @@ else:
     evaluator_metrics = ["areaUnderROC", "areaUnderPR"]
 evaluator = evaluator_cls(labelCol="labelIdx", weightCol="weight")
 
-# Construct a cross evaluator estimator
+# Construct a cross-evaluator estimator
 crossval = CrossValidator(
     estimator=lr,
     estimatorParamMaps=param_grid,
@@ -355,7 +355,7 @@ crossval = CrossValidator(
 
 ### Evaluate the model
 
-You now have models to compare by evaluating them on the test dataset. If a model has been well trained, it should demonstrate high performance on the relevant metrics on the validation and test datasets.
+You now have models to compare by evaluating them on the testing dataset. If a model is well trained, it should demonstrate high performance on the relevant metrics on the validation and testing datasets.
 
 ```python
 def evaluate(model, df):
@@ -370,7 +370,7 @@ def evaluate(model, df):
 
 ### Track experiments by using MLflow
 
-Start the training and evaluation and use MLflow to track all experiments and log parameters, metrics, and the models. All this information is logged under the experiment name in the workspace.
+Start the training and evaluation. Use MLflow to track all experiments and log parameters, metrics, and models. All this information is logged under the experiment name in the workspace.
 
 ```python
 with mlflow.start_run(run_name="lr"):
@@ -438,11 +438,11 @@ To view your experiments:
 
 ## Step 5: Score and save prediction results
 
-Microsoft Fabric offers a scalable function called PREDICT that supports batch scoring in any compute engine and enables customers to operationalize machine learning models. You can create batch predictions straight from a notebook or the item page for a particular model. Learn more about [PREDICT](https://aka.ms/fabric-predict) and how to use it in Microsoft Fabric.
+Microsoft Fabric offers a scalable function called PREDICT that supports batch scoring in any compute engine and helps customers to operationalize machine learning models. You can create batch predictions straight from a notebook or the item page for a particular model. To learn more about PREDICT and how to use it in Fabric, see [Machine learning model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
 
-From the above evaluation results, model 1 has the largest Area Under the Precision-Recall Curve (AUPRC) and Area Under the Curve Receiver Operating Characteristic (AUC-ROC) metrics. Thus you should use model 1 for prediction.
+From the preceding evaluation results, model 1 has the largest Area Under the Precision-Recall Curve (AUPRC) and Area Under the Curve Receiver Operating Characteristic (AUC-ROC) metrics. Thus you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to assess the performance of binary classifiers. However, sometimes, it's more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (positive predictive value or PPV) and Recall (true positive rate or TPR) in a single visualization.
+The AUC-ROC measure is widely used to assess the performance of binary classifiers. But it's sometimes more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization.
 
 ```python
 # Load the best model
@@ -455,7 +455,7 @@ batch_predictions.show(5)
 ```
 
 ```python
-# Code to save the userRecs in the lakehouse
+# Code to save userRecs in the lakehouse
 batch_predictions.write.format("delta").mode("overwrite").save(
     f"{DATA_FOLDER}/predictions/batch_predictions"
 )

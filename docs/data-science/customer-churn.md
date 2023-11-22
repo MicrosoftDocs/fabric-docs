@@ -85,7 +85,7 @@ The dataset also includes columns that should have no impact on the customer's d
 
 The event that defines the customer's churn is the closing of the customer's bank account. The column `Exited` in the dataset refers to the customer's abandonment. Because you don't have much context about these attributes, you can proceed without having background information about the dataset. Your aim is to understand how these attributes contribute to the `Exited` status.
 
-Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data. Moreover, confusion matrix accuracy might not be meaningful for imbalanced classification. It might be better to also measure the accuracy by using the area under the precision-recall curve (AUPRC).
+Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data. Moreover, confusion matrix accuracy might not be meaningful for imbalanced classification. It might be better to also measure the accuracy by using the Area Under the Precision-Recall Curve (AUPRC) metric.
 
 |CustomerID|Surname|CreditScore|Geography|Gender|Age|Tenure|Balance|NumOfProducts|HasCrCard|IsActiveMember|EstimatedSalary|Exited|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -329,7 +329,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 ## Step 4: Do model training and tracking
 
-With your data in place, you can now define the model. You'll apply Random Forest and LightGBM models in this notebook.
+With your data in place, you can now define the model. You'll apply random forest and LightGBM models in this notebook.
 
 Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. Also use MLflow and Fabric autologging to track the experiments.
 
@@ -376,7 +376,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, confusion_matrix, recall_score, roc_auc_score, classification_report
 ```
 
-### Prepare training and test datasets
+### Prepare training and testing datasets
 
 ```python
 y = df_clean["Exited"]
@@ -389,7 +389,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random
 
 The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE by using the `imblearn` library that you installed in step 1.
 
-Apply SMOTE to only the training dataset. Leave the test dataset in its original imbalanced distribution, so you can get a valid approximation of how the model will perform on the original data. This experiment represents the situation in production.
+Apply SMOTE to only the training dataset. Leave the testing dataset in its original imbalanced distribution, so you can get a valid approximation of how the model will perform on the original data. This experiment represents the situation in production.
 
 ```python
 from collections import Counter
@@ -404,7 +404,7 @@ For more information, see [SMOTE](https://imbalanced-learn.org/stable/references
 
 ### Train the model
 
-Train the model by using Random Forest with a maximum depth of four and with four features:
+Train the model by using random forest with a maximum depth of four and with four features:
 
 ```python
 mlflow.sklearn.autolog(registered_model_name='rfc1_sm')  # Register the trained model with autologging
@@ -421,7 +421,7 @@ with mlflow.start_run(run_name="rfc1_sm") as run:
     roc_auc_rfc1_sm = roc_auc_score(y_res, rfc1_sm.predict_proba(X_res)[:, 1])
 ```
 
-Train the model by using Random Forest with a maximum depth of eight and with six features:
+Train the model by using random forest with a maximum depth of eight and with six features:
 
 ```python
 mlflow.sklearn.autolog(registered_model_name='rfc2_sm')  # Register the trained model with autologging
@@ -485,11 +485,11 @@ load_model_rfc2_sm = mlflow.sklearn.load_model(f"runs:/{rfc2_sm_run_id}/model")
 load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/model")
 ```
 
-### Assess the performance of the saved models on the test dataset
+### Assess the performance of the saved models on the testing dataset
 
 ```python
-ypred_rfc1_sm = load_model_rfc1_sm.predict(X_test) # Random Forest with maximum depth of 4 and 4 features
-ypred_rfc2_sm = load_model_rfc2_sm.predict(X_test) # Random Forest with maximum depth of 8 and 6 features
+ypred_rfc1_sm = load_model_rfc1_sm.predict(X_test) # Random forest with maximum depth of 4 and 4 features
+ypred_rfc2_sm = load_model_rfc2_sm.predict(X_test) # Random forest with maximum depth of 8 and 6 features
 ypred_lgbm1_sm = load_model_lgbm1_sm.predict(X_test) # LightGBM
 ```
 
@@ -524,7 +524,7 @@ def plot_confusion_matrix(cm, classes,
     plt.xlabel('Predicted label')
 ```
 
-Create a confusion matrix for the Random Forest classifier with a maximum depth of four and with four features:
+Create a confusion matrix for the random forest classifier with a maximum depth of four and with four features:
 
 ```python
 cfm = confusion_matrix(y_test, y_pred=ypred_rfc1_sm)
@@ -533,9 +533,9 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-4.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for Random Forest with a maximum depth of four.":::
+:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-4.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of four.":::
 
-Create a confusion matrix for the Random Forest classifier with maximum depth of eight and with six features:
+Create a confusion matrix for the random forest classifier with maximum depth of eight and with six features:
 
 ```python
 cfm = confusion_matrix(y_test, y_pred=ypred_rfc2_sm)
@@ -544,7 +544,7 @@ plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
 tn, fp, fn, tp = cfm.ravel()
 ```
 
-:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for Random Forest with a maximum depth of eight.":::
+:::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of eight.":::
 
 Create the confusion matrix for LightGBM:
 
