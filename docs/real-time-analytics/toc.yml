@@ -118,6 +118,8 @@ items:
       href: onelake-shortcuts.md
   - name: Notebooks
     items:
+    - name: Query data in a KQL database from Fabric notebooks
+      href: notebooks.md
     - name: Use a notebook with Kqlmagic to query a KQL database
       href: jupyter-notebook.md
     - name: Use a notebook with Apache Spark to query a KQL database

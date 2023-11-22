@@ -1,5 +1,5 @@
 ---
-title: Query data in a KQL Database from Microsoft Fabric notebooks using KQL
+title: Query data in a KQL Database from Microsoft Fabric notebooks
 description: Learn how to query data in a KQL Database from Microsoft Fabric Notebooks using KQL (Kusto Query Language)
 ms.reviewer: orhasban
 ms.author: yaschust
@@ -8,13 +8,13 @@ ms.topic: how-to
 ms.date: 11/21/2023
 ms.search.form: Notebooks
 --- 
-# Query data in a KQL Database from Fabric notebooks using KQL
+# Query data in a KQL Database from Fabric notebooks
 
 Notebooks are both readable documents containing data analysis descriptions and results as well as executable documents that can be run to perform data analysis. In this article, you learn how to use a Fabric notebook to connect to data in a [KQL Database](create-database.md) and run queries using native [KQL (Kusto Query Language)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). For more information on notebooks, see [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 
 There are two ways to create a Fabric notebooks that connect to your KQL database:
 
-* [Use snippets in an existing notebook](#use-snippets-in-a-notebook)
+* [Use snippets in a notebook](#use-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
 
 ## Prerequisites
@@ -27,12 +27,19 @@ There are two ways to create a Fabric notebooks that connect to your KQL databas
 Fabric notebooks provide [code snippets](../data-engineering/author-execute-notebook.md#code-snippets) that help you easily write commonly used code patterns. You can use snippets to write or read data in a KQL database using KQL.
 
 1. Navigate to an existing notebook or create a new one.
-1. In a code cell, begin typing "Kusto".
+1. In a code cell, begin typing "kusto".
 
     :::image type="content" source="media/notebooks/kusto-snippet.gif" alt-text="Screen capture of using a kusto snippet to use KQL in a Fabric notebook.":::
 
-1. Select the operation you want to perform.
-1. 
+1. Select the snippet that corresponds to the operation you want to perform: **Write data to a KQL database** or **Read data from a KQL database**.
+1. Enter the following information within the quotation marks of each field in the data cell:
+
+| Field | Description | Related links
+|---|---|---|
+| kustoQuery | The KQL query to be run. | [KQL overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric)
+| KustoUri | The query URI of your KQL database. | [Copy a KQL database URI](access-database-copy-uri.md#copy-uri)
+| database | The name of your KQL database. | [Create a KQL database](create-database.md)
+| data | The data to be written to the table.
 
 ## Create a notebook from a KQL database
 
