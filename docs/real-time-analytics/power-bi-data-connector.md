@@ -44,7 +44,7 @@ For more information on connectivity modes, see [Import and Direct Query connect
 1. Launch Power BI Desktop.
 1. On the **Home** tab, select **OneLake data hub** > **KQL Databases**.
 
-    :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropdown menu of the OneLake data hub.":::
+    :::image type="content" source="media/power-bi-data-connector/power-bi-desktop.png" alt-text="Screenshot of Power BI Desktop showing the dropdown menu of the OneLake data hub."  lightbox="media/power-bi-data-connector/power-bi-desktop-extended.png" :::
 
     A list of KQL Databases that you have access to appears in the **OneLake data hub** window.
 
