@@ -53,4 +53,5 @@ You've enabled data availability in your KQL database. You can now access all th
 ## Related content
 
 * To expose the data in Onelake, see [Create a shortcut in OneLake](../onelake/create-onelake-shortcut.md)
+* To create a OneLake shortcut in Lakehouse, see [What are shortcuts in lakehouse?](../data-engineering/lakehouse-shortcuts.md)
 * To query referenced data from OneLake in your KQL database or table, see [Create a OneLake shortcut in KQL Database](onelake-shortcuts.md?tab=onelake-shortcut)
