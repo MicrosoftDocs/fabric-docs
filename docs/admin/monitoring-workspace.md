@@ -74,8 +74,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions."
 
-## Next steps
+## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-
 * [Feature usage and adoption report](feature-usage-adoption.md)

@@ -87,6 +87,6 @@ The tables below list the data that is shared with Microsoft 365 services.
 |ActorID|Users Azure AD ID for the user who acted on the content|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
 
-## Next steps
+## Related content
 
 - [About tenant settings](tenant-settings-index.md)
