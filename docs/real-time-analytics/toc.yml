@@ -122,24 +122,24 @@ items:
         href: ../data-factory/connector-kusto-dataflows.md
       - name: Data connectors
         href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
-  - name: Data management
-    items:
-    - name: Data management overview  
-      href: data-management.md
-    - name: Change data policies
-      href: data-policies.md
-    - name: Create a table update policy
-      href: table-update-policy.md
-    - name: Create materialized views
-      href: materialized-view.md
-    - name: Create stored functions
-      href: create-functions.md 
-    - name: Enable Python plugin
-      href: python-plugin.md
-  - name: Management commands
-    href: management/toc.yml
-  - name: API
-    href: api/toc.yml
+    - name: Data management
+      items:
+      - name: Data management overview  
+        href: data-management.md
+      - name: Change data policies
+        href: data-policies.md
+      - name: Create a table update policy
+        href: table-update-policy.md
+      - name: Create materialized views
+        href: materialized-view.md
+      - name: Create stored functions
+        href: create-functions.md 
+      - name: Enable Python plugin
+        href: python-plugin.md
+    - name: Management commands
+      href: management/toc.yml
+    - name: API
+      href: api/toc.yml
 - name: Analyze and model data
   items:
   - name: KQL Queryset
