@@ -2,6 +2,7 @@ items:
 - name: Real-Time Analytics documentation
   href: index.yml
 - name: Overview
+  expanded: true
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
