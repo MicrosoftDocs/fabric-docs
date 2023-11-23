@@ -20,39 +20,44 @@ One-time data loading is often needed for historical data, or for adding dimensi
 
 ## Get dimension data from blob storage
 
+1. Open the Fabric samples repository on GitHub to download the [Locations data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/ny-yellow-taxi-location-info.csv)
+
+    :::image type="content" source="media/realtime-analytics-tutorial/github-data.png" alt-text="Screenshot of the Fabric samples repository showing the dimensions data file.":::
+
+1. Save the file locally.
+
+    > [!NOTE]
+    > The data must be saved in the `.csv` file format.
+
 1. Browse to your KQL database named *NycTaxiDB*.
 1. Select **Get data**.
 
     In the **Get data** window, the **Source** tab is selected.
 
     :::image type="content" source="media/realtime-analytics-tutorial/select-data-source.png" alt-text="Screenshot of the get data window showing the data sources available for ingestion.":::
-1. Select **Azure storage**.
+1. Select **Local file**.
 
 ### Configure
 
 1. Select **+ New table**, and enter *Locations* as the table name.
-1. In the **URI** field, paste the following storage connection string to the blob container where the files are located, and then select **+**.
-
-    > *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/*
-
+1. Either drag the *Locations data* file into the window, or select **Browse for files** and then select the file.
 1. Select **Next**.
 
    :::image type="content" source="media/realtime-analytics-tutorial/configure-source.png" alt-text="Screenshot of the destination window showing the data source connection string." lightbox="media/realtime-analytics-tutorial/configure-source.png":::
 
 ### Inspect
 
-1. Select **Format** and then **CSV** to change the schema data format.
-1. From the **Schema  definition file** dropdown, select the first file. The tool automatically infers the schema based on your data. No changes are necessary.
-1. Select **Finish**.
+The inspect tab opens with a preview of the data. The tool automatically infers the schema based on your data. No changes are necessary.
 
-1. Select **Next: Schema**.
+:::image type="content" source="media/realtime-analytics-tutorial/inspect-source.png" alt-text="Screenshot of the inspection window showing the Location data schema.":::
+
+Select **Finish** to complete the ingestion process.
 
 ### Summary
 
-In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully.
-loaded.
+In the **Data preparation** window, all three steps are marked with green check marks when the data has been successfully loaded.
 
-:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed." lightbox="media/realtime-analytics-tutorial/data-ingestion-complete.png":::
+:::image type="content" source="media/realtime-analytics-tutorial/summary.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
 Select **Close** to return to your database landing page.
 
@@ -60,7 +65,7 @@ Select **Close** to return to your database landing page.
 
 For more information about tasks performed in this tutorial, see:
 
-* [Get data from Azure storage](get-data-azure-storage.md)
+* [Get data from file](get-data-local-file.md)
 
 ## Next steps
 
