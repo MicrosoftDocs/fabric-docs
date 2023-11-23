@@ -94,6 +94,8 @@ items:
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
+  - name: Keyboard shortcuts
+    href: keyboard-shortcuts.md
 - name: Query data
   items:
   - name: Use example queries
