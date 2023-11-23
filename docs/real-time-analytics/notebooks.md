@@ -48,13 +48,13 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
 When you create a notebook as a related item in a KQL database, the notebook is prepopulated with connection information.
 
 1. Browse to your KQL database.
-1. Select **New related item** > **Notebook**
+1. Select **New related item** > **Notebook**.
 
     :::image type="content" source="media/notebooks/related-item-notebook.png" alt-text="Screenshot of creating a notebook as a related item in a KQL database.":::
 
     A notebook is created with the KustoUri and database details prepopulated.
 
-1. Enter the KQL query to be evaluated.
+1. Enter the KQL query to be evaluated in the *kustoQuery* field.
 
     :::image type="content" source="media/notebooks/notebook-created.png" alt-text="Screenshot of notebook that is created from a KQL database.":::
 
