@@ -7,11 +7,6 @@ items:
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
-  - name: KQL Database consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
-- name: Get started
-  items:
   - name: End to end tutorial
     items:
     - name: Tutorial - Introduction
@@ -30,24 +25,87 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
-  - name: Sample Gallery
-    displayName: Query sample data
-    href: sample-gallery.md
-- name: Event streams
-  href: event-streams/toc.yml
-- name: KQL Database
+- name: Scenarios
   items:
-  - name: Create a KQL database
-    href: create-database.md
-  - name: Access an existing KQL database
-    displayName: copy URI, copy query URI, copy ingestion URI
-    href: access-database-copy-uri.md
-  - name: Create a database shortcut
-    href: database-shortcut.md
-  - name: Create an empty table
-    href: create-empty-table.md
-  - name: Get data
+  - name: Samples
+    items: 
+    - name: KQL Database sample gallery
+      displayName: Query sample data
+      href: sample-gallery.md
+- name: Store data
+  items:
+  - name: Resource consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
+  - name: KQL Database
     items:
+    - name: Create a KQL database
+      href: create-database.md
+    - name: Access an existing KQL database
+      displayName: copy URI, copy query URI, copy ingestion URI
+      href: access-database-copy-uri.md
+    - name: Create a database shortcut
+      href: database-shortcut.md
+    - name: Create an empty table
+      href: create-empty-table.md
+    - name: Data management
+      items:
+      - name: Data management overview  
+        href: data-management.md
+      - name: Change the data retention policy
+        href: data-retention-policy.md
+      - name: Create a table update policy
+        href: table-update-policy.md
+      - name: Create materialized views
+        href: materialized-view.md
+      - name: Create stored functions
+        href: create-functions.md 
+      - name: Enable Python plugin
+        href: python-plugin.md
+    - name: Management commands
+      href: management/toc.yml
+    - name: API
+      href: api/toc.yml
+    - name: OneLake
+      items:
+      - name: One logical copy
+        href: onelake-mirroring.md
+      - name: Create OneLake shortcuts
+        href: onelake-shortcuts.md
+- name: Get data
+  items:
+  - name: Event streams
+    items:
+    - name: What is Event streams?
+      href: overview.md
+    - name: Create and manage an eventstream
+      href: event-streams/create-manage-an-eventstream.md
+    - name: Monitor event streams capacity consumption
+      href: event-streams/monitor-capacity-consumption.md
+    - name: Add and manage sources
+      href: event-streams/add-manage-eventstream-sources.md
+    - name: Add and manage destinations
+      href: event-streams/add-manage-eventstream-destinations.md
+    - name: Process events using event processor
+      href: event-streams/process-events-using-event-processor-editor.md
+    - name: Preview data
+      href: event-streams/preview-data.md
+    - name: Monitor event streams
+      href: event-streams/monitor.md
+    - name: Tutorials
+      items:
+      - name: Transform and stream real-time events to Microsoft Fabric Lakehouse
+        href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
+      - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
+        href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
+      - name: Build a real-time dashboard by streaming data from Azure IoT Hub
+        href: event-streams/build-real-time-dashboard-from-iot-hub.md
+      - name: Explore and transform bike-sharing data for KQL database integration
+        href: event-streams/transform-sample-data-and-route-to-kql.md
+    - name: Integrate with other Fabric items
+      href: event-streams/get-data-from-eventstream-in-multiple-fabric-items.md
+  - name: Get data in a KQL Database
+    items: 
     - name: Data formats
       href: ingestion-supported-formats.md
     - name: Get data from local file
@@ -58,18 +116,18 @@ items:
       href: get-data-amazon-s3.md
     - name: Get data from Azure Event Hubs
       href: get-data-event-hub.md
-    - name: Get data from Eventstream
-      href: get-data-eventstream.md
     - name: Get data from OneLake
       href: get-data-onelake.md
-  - name: Connectors
-    items:
-    - name: Configure KQL Database in a data pipeline
-      href: ../data-factory/connector-kql-database-copy-activity.md
-    - name: Connect to KQL Database in dataflows
-      href: ../data-factory/connector-kusto-dataflows.md
-    - name: Data connectors
-      href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
+    - name: Get data from Event streams to KQL database
+      href: get-data-eventstream.md
+    - name: Connectors
+      items:
+      - name: Configure KQL Database in a data pipeline
+        href: ../data-factory/connector-kql-database-copy-activity.md
+      - name: Connect to KQL Database in dataflows
+        href: ../data-factory/connector-kusto-dataflows.md
+      - name: Data connectors
+        href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
   - name: Data management
     items:
     - name: Data management overview  
@@ -88,15 +146,27 @@ items:
     href: management/toc.yml
   - name: API
     href: api/toc.yml
-- name: KQL Queryset
+- name: Analyze and model data
   items:
-  - name: Query data in a KQL Queryset
-    href: kusto-query-set.md
-  - name: Customize results in the KQL Queryset results grid
-    href: customize-results.md
-  - name: Keyboard shortcuts
-    href: keyboard-shortcuts.md
-- name: Query data
+  - name: KQL Queryset
+    items:
+    - name: Query data in a KQL Queryset
+      href: kusto-query-set.md
+    - name: Customize results in the KQL Queryset results grid
+      href: customize-results.md
+  - name: Use a notebook with Kqlmagic to query a KQL database
+    href: jupyter-notebook.md
+  - name: Use a notebook with Apache Spark to query a KQL database
+    href: spark-connector.md
+- name: Visualize data
+  items:
+  - name: Power BI
+    items:
+    - name: Visualize data in a Power BI report
+      href: create-powerbi-report.md
+    - name: Use data from a KQL database in Power BI Desktop
+      href: power-bi-data-connector.md   
+- name: Use KQL
   items:
   - name: Use example queries
     href: query-table.md
@@ -104,23 +174,3 @@ items:
     href: kusto-query-language/toc.yml
   - name: Functions library
     href: functions-library/toc.yml
-- name: Integrate with other experiences
-  items:
-  - name: Power BI
-    items:
-    - name: Visualize data in a Power BI report
-      href: create-powerbi-report.md
-    - name: Connect KQL Database to Power BI Desktop
-      href: power-bi-data-connector.md
-  - name: OneLake
-    items:
-    - name: One logical copy
-      href: onelake-mirroring.md
-    - name: Create OneLake shortcuts
-      href: onelake-shortcuts.md
-  - name: Notebooks
-    items:
-    - name: Use a notebook with Kqlmagic to query a KQL database
-      href: jupyter-notebook.md
-    - name: Use a notebook with Apache Spark to query a KQL database
-      href: spark-connector.md
