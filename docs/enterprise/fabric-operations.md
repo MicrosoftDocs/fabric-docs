@@ -59,15 +59,18 @@ The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-
 
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute  | Background |
-| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute | Background |
+| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
+| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
+The consumption rates for Dataflows Gen2 are documented [here.](../data-factory/pricing-dataflows-gen2.md)
 #### Pipelines
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
 | DataMovement | The amount of time used by the copy activity in a Data Factory pipeline divided by the number of data integration units  | Pipeline | Data Movement Capacity Usage CU | Background |
 | ActivityRun  | A Data Factory data pipeline activity execution                                                                          | Pipeline | Data Orchestration Capacity Usage CU | Background |
+
+The consumption rates for Pipelines are documented [here.](../data-factory/pricing-pipelines.md)
 
 ### Data Warehouse
 
@@ -142,11 +145,15 @@ The Real-Time analytics experience contains operations for [Event streams](#even
 | Eventstream Data Traffic per GB | Data Ingress and Egress                   | Event Stream | eventstream Data Traffic per GB Capacity Usage CU | Background |
 | Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
 
+The consumption rates for Event streams are documented [here.](../real-time-analytics/event-streams/monitor-capacity-consumption.md)
+
 #### KQL Database and KQL Queryset
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
 | KustoUpTime | Measure of the time that the KQL database is Active  | KQL Database or KQL Queryset | KQL Database Capacity Usage CU         | Interactive |
+
+The consumption rates for KQL are documented [here.](../real-time-analytics/kql-database-consumption.md)
 
 ### Spark
 
@@ -166,9 +173,10 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 
-## Changes to Fabric consumption rates
-
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
+> [!IMPORTANT]
+>## Changes to Fabric consumption rates
+>
+>Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
 
 ## Next steps
 
