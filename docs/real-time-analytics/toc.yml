@@ -25,13 +25,7 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
-- name: Scenarios
-  items:
-  - name: Samples
-    items: 
-    - name: KQL Database sample gallery
-      displayName: Query sample data
-      href: sample-gallery.md
+
 - name: Store data
   items:
   - name: Resource consumption
@@ -154,6 +148,9 @@ items:
       href: kusto-query-set.md
     - name: Customize results in the KQL Queryset results grid
       href: customize-results.md
+    - name: KQL Database sample gallery
+      displayName: Query sample data
+      href: sample-gallery.md
   - name: Use a notebook with Kqlmagic to query a KQL database
     href: jupyter-notebook.md
   - name: Use a notebook with Apache Spark to query a KQL database
