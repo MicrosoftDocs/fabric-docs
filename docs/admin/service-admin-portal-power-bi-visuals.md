@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/07/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -36,6 +38,6 @@ Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi
 
 To learn more, see [Export data to file](organizational-visuals.md#export-data-to-file).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

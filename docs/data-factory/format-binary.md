@@ -4,15 +4,16 @@ description: This article explains how to configure Binary format in the data pi
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Binary format for Data Factory in Microsoft Fabric
 
 This article outlines how to configure Binary format in Data Factory.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 

@@ -5,9 +5,11 @@ items:
   items:
   - name: What is Real-Time Analytics?
     href: overview.md
-
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
+  - name: KQL Database consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
 - name: Get started
   items:
   - name: End to end tutorial
@@ -72,8 +74,8 @@ items:
     items:
     - name: Data management overview  
       href: data-management.md
-    - name: Change the data retention policy
-      href: data-retention-policy.md
+    - name: Change data policies
+      href: data-policies.md
     - name: Create a table update policy
       href: table-update-policy.md
     - name: Create materialized views
@@ -92,6 +94,8 @@ items:
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
+  - name: Keyboard shortcuts
+    href: keyboard-shortcuts.md
 - name: Query data
   items:
   - name: Use example queries

@@ -1,21 +1,22 @@
 ---
 title: Security for data warehousing
-description: Learn more about securing the SQL Endpoint and Warehouse in Microsoft Fabric.
+description: Learn more about securing the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 10/05/2023
+ms.date: 11/15/2023
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
+
 # Security for data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article covers security topics for securing the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the lakehouse and the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 For information on [!INCLUDE [product-name](../includes/product-name.md)] security, see [Security in Microsoft Fabric](../security/security-overview.md).
 
@@ -78,6 +79,7 @@ For details on column-level security, see [Column-level security in Fabric data 
 
 Dynamic data masking helps prevent unauthorized viewing of sensitive data by enabling administrators to specify how much sensitive data to reveal, with minimal effect on the application layer. Dynamic data masking can be configured on designated database fields to hide sensitive data in the result sets of queries. With dynamic data masking, the data in the database isn't changed, so it can be used with existing applications since masking rules are applied to query results. Many applications can mask sensitive data without modifying existing queries.
 
+For details on dynamic data masking, see [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md).
 
 ## Share a warehouse
 

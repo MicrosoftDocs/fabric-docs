@@ -4,17 +4,17 @@ description: Learn about activities.
 ms.reviewer: pennyzhou-msft
 ms.author: jburchel
 author: jonburchel
-ms.topic: overview 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: Pipeline Activity Overview
 ---
 
 # Activity overview
 
 This article helps you understand activities in [!INCLUDE [product-name](../includes/product-name.md)] and use them to construct end-to-end data-driven workflows for your data movement and data processing scenarios.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Overview
 
@@ -54,6 +54,7 @@ Control activity | Description
 ---------------- | -----------
 [Append variable](append-variable-activity.md) | Add a value to an existing array variable.
 [Azure Batch activity](azure-batch-activity.md) | Runs an Azure Batch script.
+[Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
 [Deactivate activity](deactivate-activity.md) | Deactivates another activity.
 [Filter](filter-activity.md) | Apply a filter expression to an input array.

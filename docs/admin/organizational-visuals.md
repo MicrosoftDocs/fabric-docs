@@ -6,8 +6,10 @@ ms.author: monaberdugo
 ms.reviewer:
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: conceptual
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 ---
 
 # Manage Power BI visuals admin settings
@@ -224,10 +226,8 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 5. Delete the visual that was uploaded from a file.  
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
-
 - [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
-
 - [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)

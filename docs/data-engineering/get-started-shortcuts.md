@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Get Started Lakehouse Shortcuts Data Science
 ---
@@ -13,8 +15,6 @@ ms.search.form: Get Started Lakehouse Shortcuts Data Science
 # Referencing data in lakehouse for Data Science projects
 
 This quickstart explains how to reference data stored in external ADLS account and use it in your Data science projects. After completing this quickstart, you'll have a shortcut to ADLS storage in your lakehouse and a notebook with Spark code that accesses your external data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prepare data for shortcut
 

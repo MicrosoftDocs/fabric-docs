@@ -4,21 +4,15 @@ description: Learn how to read the Microsoft Fabric Capacity metrics app's stora
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.custom: build-2023
-ms.date: 10/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/19/2023
 ---
 
 # Understand the metrics app storage page
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information. It is divided into the following sections:
-
-- Filters
-- Cards
-- Table visual 
-- Column charts
-- Export data
+The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information.
 
 ## Filters
 
@@ -28,7 +22,9 @@ There are two report filters located at the top of the page and one filter locat
 
 * **Date Range** - Select the date range. The app displays results for the selected date range.
 
-* **Experience** - Select the Microsoft Fabric experience you want the app to display results for.
+* **Experience** - Select the Fabric experience you want the app to display results for.
+
+* **Storage type** - Select the Fabric storage type you want the app to display results for.
 
 ## Cards
 

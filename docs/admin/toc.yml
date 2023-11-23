@@ -11,6 +11,8 @@ items:
   items:
   - name: Enable Fabric for your organization
     href: fabric-switch.md
+  - name: Enable Data Activator for your organization
+    href: data-activator-switch.md    
   - name: Region availability
     href: region-availability.md
   - name: Find your Fabric home region
@@ -83,8 +85,10 @@ items:
 - name: Fabric tenant settings
   items:
   - name: About tenant settings
+    href: about-tenant-settings.md
+  - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings list
+  - name: Tenant settings sections
     expanded: false
     items:
     - name: Microsoft Fabric (Preview)
@@ -99,8 +103,10 @@ items:
       href: service-admin-portal-export-sharing.md
     - name: Discovery settings
       href: service-admin-portal-discovery.md
-    - name: Content pack and app settings
-      href: service-admin-portal-content-pack-app.md
+    - name: App settings
+      href: service-admin-portal-app.md
+    - name: Copilot settings
+      href: service-admin-portal-copilot.md
     - name: Integration settings
       href: service-admin-portal-integration.md
     - name: Power BI visuals
@@ -121,7 +127,7 @@ items:
       href: service-admin-portal-template-app.md
     - name: Q&A settings
       href: service-admin-portal-qa.md
-    - name: Dataset security
+    - name: Semantic model security
       href: service-admin-portal-dataset-security.md
     - name: Advanced networking 
       href: service-admin-portal-advanced-networking.md

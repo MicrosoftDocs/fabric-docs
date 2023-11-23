@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -115,6 +117,6 @@ To restore a deleted My workspace as an app workspace:
 
 After the deleted workspace has been restored as an app workspace, it's just like any other app workspace. 
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)

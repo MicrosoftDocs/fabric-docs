@@ -4,13 +4,13 @@ description: This article explains the Microsoft Fabric admin roles.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 07/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # Understand Microsoft Fabric admin roles
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 To be a Microsoft Fabric admin for your organization, you must be in one of the following roles:
 
@@ -92,8 +92,7 @@ You can also assign users to roles by using PowerShell. Users are managed in Azu
     ```
 To learn more about using PowerShell to assign admin roles, see [AzureAD Directory Roles](/powershell/module/azuread/#directory-roles).
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)
-
 * [What is the admin monitoring workspace?](monitoring-workspace.md)

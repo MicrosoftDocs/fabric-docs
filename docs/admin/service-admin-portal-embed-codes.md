@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -30,8 +32,7 @@ Disabling the embed codes is described in [Publish to web](service-admin-portal-
 
 To delete embed codes, select the codes you want to delete and then select **Delete**.
 
-## Next steps
+## Related content
 
 - [Publish to web](service-admin-portal-export-sharing.md#publish-to-web)
-
 - [What is the admin portal?](admin-center.md)

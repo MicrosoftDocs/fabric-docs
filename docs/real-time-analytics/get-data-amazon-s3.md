@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 10/17/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/16/2023
 ms.search.form: Get data in a KQL Database
 ---
 # Get data from Amazon S3
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to get data from Amazon S3 into either a new or existing table. Amazon S3 is an object storage service built to store and retrieve data.
 
@@ -23,7 +23,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 * A [KQL database](create-database.md) with editing permissions
 * An Amazon S3 bucket with data
 
-## Select a data source
+## Source
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
 
@@ -33,7 +33,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
     :::image type="content" source="media/get-data-amazon-s3/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-amazon-s3/select-data-source.png":::
 
-### Configure tab
+## Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
@@ -50,7 +50,7 @@ For more information on Amazon S3, see [What is Amazon S3?](https://docs.aws.ama
 
 1. Select **Next**.
 
-## Inspect the data
+## Inspect
 
 The **Inspect** tab opens with a preview of the data.
 

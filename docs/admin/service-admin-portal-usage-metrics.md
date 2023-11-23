@@ -6,7 +6,9 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
@@ -26,9 +28,9 @@ The following sections of the article show a breakdown of what you can see in ea
 
 ### Number of users
 
-This tile is in the first section of the report. It shows a distinct count of all dashboards, reports, and datasets in a workspace, and it refers to users. The second section of the report contains a similar tile that refers to groups.
+This tile is in the first section of the report. It shows a distinct count of all dashboards, reports, and semantic models in a workspace, and it refers to users. The second section of the report contains a similar tile that refers to groups.
   
-![Screenshot of a Power BI dashboard tile showing number of user dashboards, number of user reports, and number of user datasets in a three column table chart.](media/service-admin-portal-usage-metrics/powerbi-admin-usage-metrics-number-tiles.png)
+![Screenshot of a Power BI dashboard tile showing number of user dashboards, number of user reports, and number of user semantic models in a three column table chart.](media/service-admin-portal-usage-metrics/powerbi-admin-usage-metrics-number-tiles.png)
 
 ### Consumed dashboards
 
@@ -58,6 +60,6 @@ This tile shows a view of your top users based on how many reports they have. Th
 
 Due to the move to Microsoft Fabric, some tiles in the Admin Portal Usage Metrics are rendered blank.
 
-## Next steps
+## Related content
 
-[What is the admin portal?](admin-center.md)
+- [What is the admin portal?](admin-center.md)

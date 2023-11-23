@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -20,6 +22,6 @@ You manage Power BI users, groups, and admins in the [Microsoft 365 admin center
 
 ![Screenshot of the Microsoft 365 admin center link.](media/service-admin-portal-users/powerbi-admin-manage-users.png)
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)

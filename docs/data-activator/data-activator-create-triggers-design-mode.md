@@ -6,13 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Design Mode
-ms.date: 10/03/2023
+ms.date: 11/16/2023
 ---
 
 # Create Data Activator triggers in design mode
 
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 Once you have [assigned data to objects](data-activator-assign-data-objects.md#assign-data-to-objects-in-data-activator), you can create triggers to act on your data. You do this in **Design Mode,** which you can access from the tab at the bottom of your screen. 
 

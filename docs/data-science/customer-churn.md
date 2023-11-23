@@ -1,10 +1,12 @@
 ---
 title: "Tutorial: Create, evaluate, and score a churn prediction model"
-description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn. 
+description: This tutorial demonstrates a data science work flow with an end-to-end example, building a model to predict churn.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/15/2023
 # customer intent: As a data scientist, I want to create a model to predict churn.
 ---
@@ -13,7 +15,7 @@ ms.date: 09/15/2023
 
 In this tutorial, you'll see a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are
 
@@ -34,9 +36,22 @@ The main steps in this tutorial are
 
 ## Follow along in notebook
 
- [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb) is the notebook that accompanies this tutorial.
+You can follow along in a notebook one of two ways: 
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Customer churn** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
+[AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb -->
 
@@ -609,8 +624,8 @@ Use these steps to access your saved table in Power BI.
 1. On the left, select **OneLake data hub**.
 1. Select the lakehouse that you added to this notebook.
 1. On the top right, select **Open** under the section titled **Open this Lakehouse**.
-1. Select New Power BI dataset on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI dataset linked to the predictions.
-1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
+1. Select **New semantic model** on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI semantic model linked to the predictions.
+1. On the tools at the top of the semantic model's page, select **New report** to open the Power BI report authoring page.
 
 Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.
 
@@ -635,7 +650,5 @@ print(f"Full run cost {int(time.time() - ts)} seconds.")
 ## Next steps
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-- [Train machine learning models](model-training/model-training-overview.md)
+- [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
-
-

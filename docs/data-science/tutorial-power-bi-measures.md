@@ -1,42 +1,43 @@
 ---
-title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook'
-description: This article shows how to use SemPy to calculate measures in Power BI datasets.
+title: 'Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)'
+description: This article shows how to use SemPy to calculate measures in Power BI semantic models.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: alsavelv
 author: alsavelv
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/27/2023
-#customer intent:
 ---
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb -->
 
-# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook
+# Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)
 
-This tutorial illustrates how to use SemPy to calculate measures in Power BI datasets.
+This tutorial illustrates how to use SemPy (preview) to calculate measures in semantic models (Power BI datasets).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
 - Evaluate Power BI measures programmatically via a Python interface of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)).
 - Get familiarized with components of SemPy that help to bridge the gap between AI and BI. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
-    - Useful functions that allow you to fetch Power BI datasets, including raw data, configurations, and measures.
+    - Useful functions that allow you to fetch semantic models, including raw data, configurations, and measures.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 * Select **Workspaces** from the left navigation pane to find and select your workspace. This workspace becomes your current workspace.
 
-* Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) dataset and upload it to your workspace.
+* Download the [_Retail Analysis Sample PBIX.pbix_](https://download.microsoft.com/download/9/6/D/96DDC2FF-2568-491D-AAFA-AFDD6F763AE3/Retail%20Analysis%20Sample%20PBIX.pbix) semantic model and upload it to your workspace.
 
 ### Follow along in the notebook
 
 The [powerbi_measures_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/powerbi_measures_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 
@@ -54,13 +55,13 @@ In this section, you set up a notebook environment with the necessary modules an
     import sempy.fabric as fabric
     ```
 
-1. You can connect to the Power BI workspace. List the datasets in the workspace:
+1. You can connect to the Power BI workspace. List the semantic models in the workspace:
 
     ```python
     fabric.list_datasets()
     ```
 
-1. Load the dataset. In this tutorial, you use the _Retail Analysis Sample PBIX_ dataset:
+1. Load the semantic model. In this tutorial, you use the _Retail Analysis Sample PBIX_ semantic model:
 
     ```python
     dataset = "Retail Analysis Sample PBIX"
@@ -68,7 +69,7 @@ In this section, you set up a notebook environment with the necessary modules an
 
 ## List workspace measures
 
-List measures in the dataset, using SemPy's `list_measures` function as follows:
+List measures in the semantic model, using SemPy's `list_measures` function as follows:
 
 ```python
 fabric.list_measures(dataset)
@@ -94,7 +95,7 @@ You can group the measure output by certain columns by supplying the extra param
 fabric.evaluate_measure(dataset, measure="Average Selling Area Size", groupby_columns=["Store[Chain]", "Store[DistrictName]"])
 ```
 
-In the previous code, you grouped by the columns `Chain` and `DistrictName` of the `Store` table in the dataset.
+In the previous code, you grouped by the columns `Chain` and `DistrictName` of the `Store` table in the semantic model.
 
 ### Evaluate a measure with filters
 
@@ -111,7 +112,7 @@ In the previous code, `Store` is the name of the table, `Territory` is the name 
 
 ### Evaluate a measure across multiple tables
 
-You can group the measure by columns that span across multiple tables in the dataset.
+You can group the measure by columns that span across multiple tables in the semantic model.
 
 ```python
 fabric.evaluate_measure(dataset, measure="Total Units Last Year", groupby_columns=["Store[Territory]", "Sales[ItemID]"])
@@ -127,7 +128,7 @@ fabric.evaluate_measure(dataset, measure=["Average Selling Area Size", "Total St
 
 ## Use Power BI XMLA connector
 
-The default dataset client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the back end to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
+The default semantic model client is backed by Power BI's REST APIs. If there are any issues running queries with this client, it's possible to switch the back end to Power BI's XMLA interface using `use_xmla=True`. The SemPy parameters remain the same for measure calculation with XMLA.
 
 ```python
 fabric.evaluate_measure(dataset, \
@@ -141,9 +142,10 @@ fabric.evaluate_measure(dataset, \
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
 
 <!-- nbend -->

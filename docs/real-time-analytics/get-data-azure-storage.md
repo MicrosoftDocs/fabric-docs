@@ -5,14 +5,14 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 10/17/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/16/2023
 ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from Azure storage
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to get data from Azure storage (ADLS Gen2 container, blob container, or individual blobs) into either a new or existing table.
 
@@ -22,7 +22,7 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 * A [KQL database](create-database.md) with editing permissions
 * A [storage account](/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal)
 
-## Select a data source
+## Source
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
 
@@ -32,7 +32,7 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
     :::image type="content" source="media/get-data-azure-storage/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-azure-storage/select-data-source.png":::
 
-### Configure tab
+## Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+ New table** and enter a table name.
 
@@ -63,7 +63,7 @@ In this article, you learn how to get data from Azure storage (ADLS Gen2 contain
 
 1. Select **Next**
 
-## Inspect the data
+## Inspect
 
 The **Inspect** tab opens with a preview of the data.
 

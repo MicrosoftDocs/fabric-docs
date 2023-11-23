@@ -6,15 +6,17 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
 # Manage Premium Per User
 
-[Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) is a way to license Premium features on a per user basis. After the first user is assigned a PPU license, associated features can be turned on in any workspace. Admins can manage the auto refresh and dataset workload settings that are shown to users and their default values. For example, access to the XMLA endpoint can be turned off, set to read only, or set to read and write.
+[Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq) is a way to license Premium features on a per user basis. After the first user is assigned a PPU license, associated features can be turned on in any workspace. Admins can manage the auto refresh and semantic model workload settings that are shown to users and their default values. For example, access to the XMLA endpoint can be turned off, set to read only, or set to read and write.
 
 ## PPU settings
 
@@ -32,14 +34,12 @@ Use the following settings to override the *automatic refresh* settings in indiv
 
 * **Change detection measure** - Use to specify a minimum value for all the reports in the PPU capacity that use [change detection](/power-bi/create-reports/desktop-automatic-page-refresh#change-detection). The Power BI service overrides any change detection settings that are higher than this setting.
 
-### Dataset workload settings
+### Semantic model workload settings
 
-[XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools) allow Microsoft and third-party apps and tools to connect to Power BI datasets. Use this setting to determine if in the PPU capacity XMLA endpoints are turned off, or configured for read only or read and write.
+[XMLA endpoints](/power-bi/enterprise/service-premium-connect-tools) allow Microsoft and third-party apps and tools to connect to Power BI semantic models. Use this setting to determine if in the PPU capacity XMLA endpoints are turned off, or configured for read only or read and write.
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
-
 - [Power BI Premium Per User FAQ](/power-bi/enterprise/service-premium-per-user-faq)
-
 - [Automatic page refresh in Power BI](/power-bi/create-reports/desktop-automatic-page-refresh)

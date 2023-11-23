@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/23/2023
 ---
 
 # Lakehouse tutorial: Clean up Fabric resources
 
 As a final step in the tutorial, clean up your resources. This article shows how to delete the workspace.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 

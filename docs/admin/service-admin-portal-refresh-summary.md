@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/19/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -28,6 +30,6 @@ To view details for a specific refresh instance, select the instance and then se
 
 The history tab lists all the refreshes that took place in all the capacities you're an admin of. The table headers allow you to sort the information and apply filters. Use the *refresh* button to refresh the table's results, and the *export* button to export a .csv file.
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)

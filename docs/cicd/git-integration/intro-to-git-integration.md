@@ -1,18 +1,21 @@
 ---
-title: Overview of Fabric Git integration 
+title: Overview of Fabric Git integration
 description: An introduction to Git integration the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
-ms.date: 08/06/2023
-ms.search.form: 
+ms.custom:
+  - contperf-fy21q1
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
+ms.search.form:
 ---
 
 # Introduction to Git integration
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 > [!NOTE]
 > This articles in this section are about version control using Git integration. To manage deployment of your app, see the [deployment pipelines](../deployment-pipelines/intro-to-deployment-pipelines.md) documentation.
@@ -46,9 +49,13 @@ Before you enable Git integration, make sure you understand the following possib
 
 The following items are currently supported:
 
-* Reports
-* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
+<!--- * [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines) ---> 
+
 * Datasets (except push datasets, live connections, and model v1)
+* [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
+* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+* [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
+* Reports
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
 
@@ -57,6 +64,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 * Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.  
 * If the workspace and Git repo are in two different geographical regions, [cross-geo exports must be enabled](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview) by the tenant admin.  
 * Azure DevOps **on-prem** is not supported.
+* Sovereign clouds are not supported.
 
 ## Next steps
 

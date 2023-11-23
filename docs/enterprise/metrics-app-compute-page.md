@@ -4,13 +4,13 @@ description: Learn how to read the Microsoft Fabric Capacity metrics app's compu
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: how to
-ms.custom: build-2023
-ms.date: 10/30/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/19/2023
 ---
 
 # Understand the metrics app compute page
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The Microsoft Fabric Capacity Metrics app's compute page provides an overview of your capacity's performance. It's divided into the three visuals listed below. The top two visuals include a ribbon chart and a line and stacked column chart, and the bottom visual is a matrix table.
 
@@ -43,9 +43,6 @@ Displays CU usage over time. Use the tabs at the top right corner of the visual 
 * **Logarithmic** - Display the information using a logarithmic scale that depends on your CUs consumption.
 
 The utilization chart displays the following elements:
-
->[!NOTE]
->Microsoft Fabric is in preview. Some workloads within Fabric are in preview and others are not. Preview workloads are not billable and their consumption is available from the *Background non-billable* and *Interactive non-billable* columns.
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30 second period. This column refers to billable operations.
     
@@ -84,11 +81,15 @@ Use the tabs at the top of the visual to toggle between interactive delay, inter
 
 The throttling chart displays the following elements:
 
-  * **Interactive delay** - Billable interactive operations are delayed if the value is above 100%.
+  * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
   
-  * **Interactive rejection** - Billable interactive operations are rejected if the value is above 100%.
+  * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
 
-  * **Background rejection** - Billable background operations are rejected if the value is above 100%.
+  * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
+
+#### Throttling example
+
+When looking at the interactive rejection tab, if you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before interactive rejection starts, and user requested interactive jobs are rejected.
 
 ### Overages
   
@@ -149,7 +150,7 @@ User can hover over any value in the visual to see operation level data. User ca
 
     You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
 
-    Sorting the matrix by the *performance delta* column helps identify datasets that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small datasets with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
+    Sorting the matrix by the *performance delta* column helps identify semantic models that have had the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity may not reflect a true picture, as they can easily show large positive or negative values.
 
 * **Billing type** - Displays information if the item is billable or not.
 
@@ -166,3 +167,9 @@ User can hover over any value in the visual to see operation level data. User ca
 [Understand the metrics app storage page](metrics-app-storage-page.md)
 
 [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+
+
+## Related content
+
+* [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
+* [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

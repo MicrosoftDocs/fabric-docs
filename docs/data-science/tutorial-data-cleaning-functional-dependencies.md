@@ -1,30 +1,31 @@
 ---
-title: 'Tutorial: Clean data with functional dependencies'
+title: 'Tutorial: Clean data with functional dependencies (preview)'
 description: This article shows how to use information about functional dependencies in data for data cleaning.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: alsavelv
 author: alsavelv
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/27/2023
-#customer intent:
 ---
 
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb -->
 
-# Tutorial: Clean data with functional dependencies
+# Tutorial: Clean data with functional dependencies (preview)
 
-In this tutorial, you use functional dependencies for data cleaning. A functional dependency exists when one column in a dataset is a function of another column. For example, a _zip code_ column might determine the values in a _city_ column. A functional dependency manifests itself as a one-to-many relationship between the values in two or more columns within a DataFrame. This tutorial uses the _Synthea_ dataset to show how functional relationships can help to detect data quality problems.
+In this tutorial, you use functional dependencies for data cleaning. A functional dependency exists when one column in a semantic model (a Power BI dataset) is a function of another column. For example, a _zip code_ column might determine the values in a _city_ column. A functional dependency manifests itself as a one-to-many relationship between the values in two or more columns within a DataFrame. This tutorial uses the _Synthea_ dataset to show how functional relationships can help to detect data quality problems.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this tutorial, you learn how to:
 
-- Apply domain knowledge to formulate hypotheses about functional dependencies in a dataset.
+- Apply domain knowledge to formulate hypotheses about functional dependencies in a semantic model.
 - Get familiarized with components of semantic link's Python library ([SemPy](/python/api/semantic-link-sempy)) that help to automate data quality analysis. These components include:
     - FabricDataFrame - a pandas-like structure enhanced with additional semantic information.
-    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your datasets.
+    - Useful functions that automate the evaluation of hypotheses about functional dependencies and that identify violations of relationships in your semantic models.
 
 ## Prerequisites
 
@@ -35,7 +36,7 @@ In this tutorial, you learn how to:
 
 The [data_cleaning_functional_dependencies_tutorial.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/semantic-link-samples/data_cleaning_functional_dependencies_tutorial.ipynb) notebook accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 ## Set up the notebook
 
@@ -133,7 +134,7 @@ There are other peculiarities in the graph. For example, `NAME` doesn't determin
 
 ## Summarize data quality issues detected with SemPy
 
-Going back to the graph of dependency violations, you can see that there are several interesting data quality issues present in this dataset:
+Going back to the graph of dependency violations, you can see that there are several interesting data quality issues present in this semantic model:
 
 - Some city names are all uppercase. This issue is easy to fix using string methods.
 - Some city names have qualifiers (or prefixes), such as "North" and "East". For example, the zip code "2128" maps to "EAST BOSTON" once and to "BOSTON" once. A similar issue occurs between "NORTH DARTHMOUTH" and "DARTHMOUTH". You could try to drop these qualifiers or map the zip codes to the city with the most common occurrence.
@@ -177,9 +178,10 @@ Going back to the graph of dependency violations, you can see that there are sev
 
 Check out other tutorials for semantic link / SemPy:
 
-- [Tutorial: Analyze functional dependencies in a Power BI sample dataset](tutorial-power-bi-dependencies.md)
-- [Tutorial: Discover relationships in the _Synthea_ dataset using semantic link](tutorial-relationships-detection.md)
-- [Tutorial: Discover relationships in a Power BI dataset using semantic link](tutorial-power-bi-relationships.md)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [Tutorial: Analyze functional dependencies in a sample semantic model (preview)](tutorial-power-bi-dependencies.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [Tutorial: Discover relationships in a semantic model, using semantic link (preview)](tutorial-power-bi-relationships.md)
+- [Tutorial: Discover relationships in the _Synthea_ dataset, using semantic link (preview)](tutorial-relationships-detection.md)
+- [Tutorial: Validate data using SemPy and Great Expectations (GX) (preview)](tutorial-great-expectations.md)
 
 <!-- nbend -->

@@ -6,14 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Data Mode
-ms.date: 10/03/2023
+ms.date: 11/16/2023
 ---
 
 # Assign data to objects in Data Activator
 
-
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
 

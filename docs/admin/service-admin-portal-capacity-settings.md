@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/15/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -47,6 +49,6 @@ For more information about Power BI Embedded, see:
 
 * Pause and start a capacity Azure - [Pause and start your Power BI Embedded capacity in the Azure portal](/power-bi/developer/embedded/azure-pbie-pause-start)
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)

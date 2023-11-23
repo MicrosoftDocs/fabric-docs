@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md).
@@ -44,7 +44,7 @@ ms.search.form: Get started
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable availability in OneLake](onelake-mirroring.md#enable-availability-in-onelake)
+* [Enable availability in OneLake](one-logical-copy.md#enable-availability-in-onelake)
 
 ## Next steps
 

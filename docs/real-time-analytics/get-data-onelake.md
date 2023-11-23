@@ -5,14 +5,14 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from OneLake
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to get data from OneLake into either a new or existing table.
 
@@ -42,7 +42,7 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 1. Return to your workspace and select a KQL database.
 
-## Select a data source
+## Source
 
 1. On the lower ribbon of your KQL database, select **Get Data**.
 
@@ -52,7 +52,7 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
     :::image type="content" source="media/get-data-onelake/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-onelake/select-data-source.png":::
 
-### Configure tab
+## Configure
 
 1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
@@ -68,7 +68,7 @@ In this article, you learn how to get data from OneLake into either a new or exi
 
 1. Select **Next**.
 
-## Inspect the data
+## Inspect
 
 The **Inspect** tab opens with a preview of the data.
 

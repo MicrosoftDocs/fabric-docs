@@ -4,13 +4,13 @@ description: Learn how to enable certification for Fabric content.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 07/15/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/02/2023
 ---
 
 # Set up item certification
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Your organization can certify selected items to identify them an as authoritative sources for critical information. Currently, all Fabric items except Power BI dashboards can be certified.
 
@@ -27,7 +27,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 1. In the Admin portal, go to Tenant settings.
 1. Under the Export and sharing settings section, expand the Certification section.
 
-   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up dataset and dataflow certification.":::
+   :::image type="content" source="./media/endorsement-setup/certification-setup-dialog.png" alt-text="Screenshot of how to set up semantic model and dataflow certification.":::
 
 1. Set the toggle to **Enabled**.
 1. If your organization has a published certification policy, provide its URL here. This becomes the **Learn more** link in the certification section of the [endorsement settings dialog](../get-started/endorsement-promote-certify.md#request-item-certification). If you don't supply a link, users who want to request certification of their item will be advised to contact their Fabric administrator.
@@ -42,7 +42,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 
 1. Select **Apply**.
 
-## Next steps
+## Related content
 
 * [Read about endorsement in Fabric](../governance/endorsement-overview.md)
 * [Promote Fabric items](../get-started/endorsement-promote-certify.md#promote-items)

@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/30/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -23,6 +25,6 @@ Users in the organization can create and use dataflows. For an overview of dataf
 > [!NOTE]
 > This setting applies to the entire organization and can't be limited to specific groups.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

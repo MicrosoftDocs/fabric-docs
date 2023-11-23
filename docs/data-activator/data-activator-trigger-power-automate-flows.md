@@ -5,13 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 10/03/2023
+ms.date: 11/16/2023
 ---
 
 # Use Custom Actions to trigger Power Automate Flows
 
 > [!IMPORTANT]
-> Microsoft Fabric and Data Activator are in preview.
+> Data Activator is currently in preview.
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 

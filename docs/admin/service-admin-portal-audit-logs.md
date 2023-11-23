@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: admin-portal
+ms.custom:
+  - admin-portal
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/18/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -20,6 +22,6 @@ You manage Power BI audit logs in the Microsoft Purview compliance portal. The A
 
 To use audit logs, make sure the [Create audit logs for internal activity auditing and compliance](service-admin-portal-audit-usage.md#azure-log-analytics-connections-for-workspace-administrators) setting is enabled.
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)

@@ -1,14 +1,16 @@
 ---
-title: Advanced networking admin settings 
+title: Advanced networking admin settings
 description: Learn how to configure advanced networking admin settings in Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -28,6 +30,6 @@ For extra security, block access to your Power BI tenant via the public internet
 
 To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

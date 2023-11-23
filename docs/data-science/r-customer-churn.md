@@ -1,11 +1,13 @@
 ---
 title: "Tutorial: Use R to predict churn"
 
-description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn. 
+description: This tutorial shows a data science work flow  in R, with an end-to-end example, building a model to predict churn.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
+ms.custom:
+  - ignite-2023
 ms.date: 09/21/2023
 # customer intent: As a data scientist, I want to create a model to predict churn with R
 ---
@@ -14,7 +16,7 @@ ms.date: 09/21/2023
 
 In this tutorial, you'll see a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict whether bank customers would churn or not. The churn rate, also known as the rate of attrition refers to the rate at which bank customers stop doing business with the bank.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 The main steps in this tutorial are
 
@@ -35,9 +37,22 @@ The main steps in this tutorial are
 
 ## Follow along in the notebook
 
- [AIsample - R Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb is the notebook that accompanies this tutorial.
+You can follow along in a notebook one of two ways: 
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+- Open and run the built-in notebook in the Data Science experience.
+- Upload your notebook from GitHub to the Data Science experience.
+
+#### Open built-in notebook
+
+**Customer churn** is the sample notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
+
+#### Import notebook from GitHub
+
+[AIsample - R Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb) is the notebook that accompanies this tutorial.
+
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb -->
 
@@ -590,7 +605,7 @@ Use these steps to access your saved table in Power BI.
 1. On the left, select **OneLake data hub**.
 1. Select the lakehouse that you added to this notebook.
 1. On the top right, select **Open** under the section titled **Open this Lakehouse**.
-1. Select New Power BI dataset on the top ribbon and select `df_pred_results`, then select **Continue** to create a new Power BI dataset linked to the predictions.
+1. Select **New semantic model** on the top ribbon and select `df_pred_results`, then select **Continue** to create a new semantic model linked to the predictions.
 1. On the tools at the top of the dataset page, select **New report** to open the Power BI report authoring page.
 
 Some example visualizations are shown here. The data panel shows the delta tables and columns from the table to select. Upon selecting appropriate x and y axes, you can pick the filters and functions, for example, sum or average of the table column.

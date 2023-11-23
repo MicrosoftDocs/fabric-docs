@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/08/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -28,6 +30,6 @@ Users in the organization can use entry points for requesting insights inside re
 
 To learn more about insights, see [Find Insights in your reports](/power-bi/create-reports/insights).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

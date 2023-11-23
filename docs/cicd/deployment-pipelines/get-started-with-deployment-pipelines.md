@@ -4,16 +4,18 @@ description: Learn how to use deployment pipelines, the Fabric Application lifec
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
-ms.custom: contperf-fy21q1, intro-get-started, build-2023
-ms.date: 10/08/2023
+ms.custom:
+  - contperf-fy21q1
+  - intro-get-started
+  - build-2023
+  - ignite-2023
+ms.date: 11/16/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Get started with deployment pipelines
 
-This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. It's recommended to read the [deployment pipelines introduction](intro-to-deployment-pipelines.md), before you proceed.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+This article walks you through the basic settings required for using deployment pipelines in Microsoft Fabric. We recommend reading the [deployment pipelines introduction](intro-to-deployment-pipelines.md) and understanding [which items can be deployed](./understand-the-deployment-process.md#supported-items) before you proceed.
 
 You can also complete the [Create and manage a Fabric deployment pipeline](/training/modules/power-bi-deployment-pipelines) training module, which shows you step by step how to create a deployment pipeline.
 
@@ -130,10 +132,11 @@ To examine the differences between the two pipelines before you deploy, see [com
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content, while keeping some settings intact. For example, if you want a dataset in a production stage to point to a production database, you can define a rule for this. The rule is defined in the production stage, under the appropriate dataset. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content, while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
 [Read about how to define deployment rules.](create-rules.md)
 
 ## Next steps
 
-[Assign a workspace to a pipeline stage](assign-pipeline.md)
+* [Assign a workspace to a pipeline stage](assign-pipeline.md)
+* [Troubleshooting deployment pipelines](../troubleshoot-cicd.md#deployment-pipelines)
