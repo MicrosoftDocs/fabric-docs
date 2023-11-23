@@ -1,7 +1,7 @@
 ---
 title: Keyboard shortcuts
 description: Learn about keyboard shortcuts (hot keys) in Real-Time Analytics.
-ms.reviewer: tzgitlin
+ms.reviewer: mibar
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: reference
