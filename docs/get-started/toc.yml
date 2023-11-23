@@ -89,6 +89,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Lakehouse doesn't recognize table names with special characters
+      href: known-issues/known-issue-563-lakehouse-doesnt-recognize-table-names-special-characters.md
     - name: OneLake compute transactions not reported in Metrics app
       href: known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md
     - name: Making model changes to a semantic model might not work
