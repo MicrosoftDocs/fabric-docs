@@ -26,7 +26,7 @@ To create reports with Power BI service using a KQL queryset, see [Create a Powe
 
 ## Connectivity modes
 
-Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports or dashboards, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
+Power BI supports *Import* and *DirectQuery* connectivity modes. When building Power BI reports, choose your connectivity mode depending on your scenario, scale, and performance requirements. Using **Import** mode copies your data to Power BI. In contrast, using **DirectQuery** mode queries your data directly from your KQL database.
 
 Use **Import** mode when:
 
