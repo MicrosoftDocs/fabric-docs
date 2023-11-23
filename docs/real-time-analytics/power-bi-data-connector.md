@@ -21,7 +21,7 @@ To create reports with Power BI service using a KQL queryset, see [Create a Powe
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions and data
+* A [KQL database](create-database.md) with data
 * [Power BI Desktop](https://powerbi.microsoft.com/get-started)
 
 ## Connectivity modes
@@ -73,4 +73,4 @@ You successfully connected your KQL database as a data source in Power BI Deskto
 ## Next step
 
 > [!div class="nextstepaction"]
-> [Create reports and dashboards in Power BI](/power-bi/create-reports/)
+> [Create reports in Power BI](/power-bi/create-reports/)
