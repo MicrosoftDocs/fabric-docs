@@ -36,7 +36,7 @@ For more information, see [Caching policy](data-policies.md#caching-policy).
 
 To expose the data in your KQL database to all Microsoft Fabric experiences, create a OneLake shortcut.
 
-For more information, see [One logical copy](onelake-mirroring.md).
+For more information, see [One logical copy](one-logical-copy.md).
 
 ## Table update policy
 
