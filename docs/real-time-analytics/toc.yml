@@ -149,9 +149,9 @@ items:
       href: kusto-query-set.md
     - name: Customize results in the KQL Queryset results grid
       href: customize-results.md
-        - name: Keyboard shortcuts
-           href: keyboard-shortcuts.md
-        - name: KQL Database sample gallery
+    - name: Keyboard shortcuts
+      href: keyboard-shortcuts.md
+    - name: KQL Database sample gallery
       displayName: Query sample data
       href: sample-gallery.md
   - name: Use a notebook with Kqlmagic to query a KQL database
