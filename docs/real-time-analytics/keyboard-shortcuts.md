@@ -15,8 +15,6 @@ Keyboard shortcuts provide a quick way to navigate websites, and allow users to 
 
 This article lists Windows keyboard shortcuts that work in the query editor window and results grid in both KQL Queryset and the Explore your data window in KQL Database.
 
-In the query editor, select <kbd>F1</kbd> to view a list of keyboard shortcuts in the command palette.
-
 The letters that appear below represent letter keys on your keyboard. For example, to use <kbd>G</kbd>+<kbd>N</kbd>, hold down the <kbd>G</kbd> key and then press <kbd>N</kbd>. If the command is <kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>Ctrl</kbd>+<kbd>X</kbd>, keep pressing <kbd>Ctrl</kbd>, and simultaneously press <kbd>K</kbd> and then <kbd>X</kbd>.
 
 ## Query editor
