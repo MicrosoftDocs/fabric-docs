@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 The Amazon RDS for SQL Server connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Support in Data pipeline
 
 The Amazon RDS for SQL Server connector supports the following capabilities in Data pipeline:

@@ -12,8 +12,6 @@ ms.custom: template-how-to, build-2023
 
 This article outlines how to use the copy activity in a data pipeline to copy data from Amazon RDS for SQL Server.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported configuration
 
 For the configuration of each tab under copy activity, go to the following sections respectively.
@@ -69,17 +67,17 @@ Under **Advanced**, you can specify the following fields:
 
     - **Partition column name**: Specify the name of the source column in **integer or date/datetime** type (`int`, `smallint`, `bigint`, `date`, `smalldatetime`, `datetime`, `datetime2`, or `datetimeoffset`) that's used by range partitioning for parallel copy. If not specified, the index or the primary key of the table is auto-detected and used as the partition column.
     
-         If you use a query to retrieve the source data, hook `?AdfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from SQL database](#parallel-copy-from-sql-database) section.
+         If you use a query to retrieve the source data, hook `?AdfDynamicRangePartitionCondition` in the WHERE clause. For an example, see the [Parallel copy from Amazon RDS for SQL Server](#parallel-copy-from-amazon-rds-for-sql-server) section.
 
-    - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from SQL database](#parallel-copy-from-sql-database) section.
-    - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from SQL database](#parallel-copy-from-sql-database) section.
+    - **Partition upper bound**: Specify the maximum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Amazon RDS for SQL Server](#parallel-copy-from-amazon-rds-for-sql-server) section.
+    - **Partition lower bound**: Specify the minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. For an example, see the [Parallel copy from Amazon RDS for SQL Server](#parallel-copy-from-amazon-rds-for-sql-server) section.
 
 - **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 Note the following points:
 
 - If **Query** is specified for source, the copy activity runs this query against the Amazon RDS for SQL Server source to get the data. You also can specify a stored procedure by specifying **Stored procedure name** and **Stored procedure parameters** if the stored procedure takes parameters.
-- When using stored procedure in source to retrieve data, note if your stored procedure is designed as returning different schema when different parameter value is passed in, you may encounter failure or see unexpected result when importing schema from UI or when copying data to SQL database with auto table creation.
+- When using stored procedure in source to retrieve data, note if your stored procedure is designed as returning different schema when different parameter value is passed in, you may encounter failure or see unexpected result when importing schema from UI or when copying data to Amazon RDS for SQL Server with auto table creation.
 
 ### Mapping
 
@@ -89,7 +87,7 @@ For **Mapping** tab configuration, go to [Configure your mappings under mapping 
 
 For **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
-## Parallel copy from SQL database
+## Parallel copy from Amazon RDS for SQL Server
 
 The Amazon RDS for SQL Server connector in copy activity provides built-in data partitioning to copy data in parallel. You can find data partitioning options on the **Source** tab of the copy activity.
 
@@ -139,7 +137,7 @@ See the following table for the summary and more information for the Amazon RDS 
 |**Data store type**|Your data store type.| **External** |Yes|/|
 |**Connection** |Your connection to the source data store.|< your connection > |Yes|connection|
 |**Connection type** |Your connection type. Select **Amazon RDS for SQL Server**.|**Amazon RDS for SQL Server** |Yes|/|
-|**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |No |/|
+|**Use query** |The custom SQL query to read data.|• Table<br>• Query<br>• Stored procedure |Yes |/|
 |**Table** | Your source data table. |< name of your destination table>|No |schema <br> table|
 |**Query** | The custom SQL query to read data. |< your query > |No |sqlReaderQuery|
 |**Stored procedure name** |This property is the name of the stored procedure that reads data from the source table. The last SQL statement must be a SELECT statement in the stored procedure.|< stored procedure name > |No |sqlReaderStoredProcedureName|
