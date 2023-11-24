@@ -19,7 +19,7 @@ This article provides suggestions to troubleshoot common problems with the delim
 
 - **Message**: `Bad data is found at line %rowIndex; in source %fileName;.`
 
-- **Recommendation**: You can ignore the bad data by setting "Fault tolerance" as "Skip incompatible rows" in copy activity.
+- **Recommendation**: Ignore the bad data by setting **Fault tolerance** to **Skip incompatible rows** in the copy activity.
 
 ## Error code: DelimitedTextColumnNameNotAllowNull
 
