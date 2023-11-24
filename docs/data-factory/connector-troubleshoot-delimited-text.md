@@ -15,6 +15,12 @@ ms.date: 11/15/2023
 
 This article provides suggestions to troubleshoot common problems with the delimited text format connector in Data Factory in Microsoft Fabric.
 
+## Error code: DelimitedTextBadDataDetected
+
+- **Message**: `Bad data is found at line %rowIndex; in source %fileName;.`
+
+- **Recommendation**: You can ignore the bad data by setting "Fault tolerance" as "Skip incompatible rows" in copy activity.
+
 ## Error code: DelimitedTextColumnNameNotAllowNull
 
 - **Message**: `The name of column index %index; is empty. Make sure column name is properly specified in the header row.`
