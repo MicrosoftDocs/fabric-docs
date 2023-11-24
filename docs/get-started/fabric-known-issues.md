@@ -21,7 +21,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
-|  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-doesnt-recognize-table-names-special-characters.md)  | November 22, 2023 |
+|  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
 |  553  | OneLake | [OneLake compute transactions not reported in Metrics app](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023 |
 |  549  | Data Warehouse | [Making model changes to a semantic model might not work](known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md)  | November 15, 2023 |
 |  536  | Administration & Management | [Feature Usage and Adoption report activity missing](known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md)  | November 9, 2023 |
