@@ -57,7 +57,7 @@ Select **Finish** to complete the ingestion process.
 
 In the **Data preparation** window, all three steps are marked with green check marks when the data ingestion finishes.
 
-:::image type="content" source="media/realtime-analytics-tutorial/summary.png" alt-text="Screenshot of summary page with data ingestion completed.":::
+:::image type="content" source="media/realtime-analytics-tutorial/summary.png" alt-text="Screenshot of summary page with data ingestion completed."  lightbox="media/realtime-analytics-tutorial/summary.png":::
 
 Select **Close** to return to your database landing page.
 
