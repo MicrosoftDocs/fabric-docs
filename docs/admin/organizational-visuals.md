@@ -120,7 +120,7 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Obtain Microsoft Entra access token
 
-When this setting is enabled, visuals can obtain Microsoft Entra ID (formally known as Azure AD) access tokens for signed-in users using the SSO authentication API. This enables single sign-on authentication. The default setting is disabled.
+When this setting is enabled, visuals can obtain Microsoft Entra ID (formally known as Azure AD) access tokens for signed-in users using the SSO authentication API. This enables single sign-on authentication. Disabling this setting is disabled also disables it for organizational store visuals. The default setting is disabled.
 
 :::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
 
@@ -130,7 +130,7 @@ When this setting is enabled, visuals can obtain Microsoft Entra ID (formally kn
 
 3. Choose who can download files:
 
-   * Select **The entire organization** option to allow everyone in your organization to download data from a visual into a file.
+   * Select **The entire organization** option to allow everyone in your organization obtain a Microsoft Entra ID access tokens.
    * Select the **Specific security groups** option to limit downloading files to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option.
 
 4. Select **Apply**.
