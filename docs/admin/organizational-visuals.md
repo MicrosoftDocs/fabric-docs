@@ -137,10 +137,6 @@ When this setting is enabled, visuals can obtain Microsoft Entra ID (formally kn
 
 UI changes to tenant settings apply only to the Power BI service. To enable users in your organization to obtain access tokens in Power BI Desktop, use AD Group Policy.
 
-|Key  |Value name  |Value  |
-|---------|---------|---------|
-|Software\Policies\Microsoft\Power BI Desktop\    |AllowCVToExportDataToFile    |0 - Disable (default) </br>1 - Enable         |
-
 ## Organizational visuals
 
 As a Fabric admin, you can manage the list of Power BI visuals available in your organization's [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store). The **Organizational visuals** tab, in the *Admin portal*, allows you to add and remove visuals and decide which visuals will automatically display in the visualization pane of your organization's users. You can add to the list any type of visual including uncertified visuals and *.pbiviz* visuals, even if they contradict the [tenant settings](#power-bi-visuals-tenant-settings) of your organization.
@@ -255,6 +251,6 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 ## Related content
 
-- [What is the admin portal?](admin-center.md)
-- [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
-- [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)
+* [What is the admin portal?](admin-center.md)
+* [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
+* [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)
