@@ -16,7 +16,7 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md).
 
-One-time data loading is often needed for historical data, or for adding dimension tables. Recall that the dataset you've ingested with Eventstream doesn't contain latitude and longitude data. In this section, you're going to load additional information on the pick-up locations and drop-off from a blob storage container.
+One-time data loading is often needed for historical data, or for adding dimension tables. Recall that the dataset you ingested with Eventstream doesn't contain latitude and longitude data. In this section, you're going to load additional information on the pick-up locations and drop-off from a blob storage container.
 
 ## Get dimension data from blob storage
 
@@ -55,7 +55,7 @@ Select **Finish** to complete the ingestion process.
 
 ### Summary
 
-In the **Data preparation** window, all three steps are marked with green check marks when the data has been successfully loaded.
+In the **Data preparation** window, all three steps are marked with green check marks when the data ingestion finishes.
 
 :::image type="content" source="media/realtime-analytics-tutorial/summary.png" alt-text="Screenshot of summary page with data ingestion completed.":::
 
