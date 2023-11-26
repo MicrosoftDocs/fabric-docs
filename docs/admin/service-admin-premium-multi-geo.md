@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 11/23/2023
 LocalizationGroup: Premium
 ---
 
@@ -100,10 +100,9 @@ Large-storage format semantic models shouldn't be moved from the region where th
 - The detailed semantic model metadata that is cached as part of [enhanced metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning) is always stored in the home region, even if the scanned semantic model is located in a remote region.
 - The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo at this time.
 - It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
-- Multi-Geo doesn't support Metrics.
+- Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
-## Next steps
+## Related content
 
 - [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
-
 - [Multi-Geo support for Power BI Embedded](/power-bi/developer/embedded/embedded-multi-geo)

@@ -11,7 +11,7 @@ metadata:
     - ignite-2023
     - ignite-2023-fabric
   ms.topic: faq
-  ms.date: 11/10/2023
+  ms.date: 11/21/2023
 title: "Copilot for Microsoft Fabric: FAQ"
 summary: |
   This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
@@ -22,7 +22,7 @@ sections:
       - question: |
           I loaded my semantic model, but it doesn't meet all the criteria listed in the data evaluation. What should I do?  
         answer: |
-          The criteria listed in *Evaluate your data for use with Copilot for Power BI* (copilot-evaluate-data.md) is important because it helps you get a better quality report. As long as you meet seven of the eight points, including Consistency, the quality of the reports generated should be good.  
+          The criteria listed in [Update your data model to work well with Copilot for Power BI](/power-bi/create-reports/copilot-evaluate-data) is important because it helps you get a better quality report. As long as you meet seven of the eight points, including Consistency, the quality of the reports generated should be good.  
 
           If your data doesn't meet that criteria, we recommend spending the time to bring it into compliance.  
       - question: |
@@ -30,7 +30,7 @@ sections:
         answer: |
           First, check with your admin to see if they have enabled Copilot.
 
-          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the *Create a report with Copilot for the Power BI service* (copilot-create-report.md) article.
+          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the [Create a report with Copilot for the Power BI service](/power-bi/create-reports/copilot-create-report) article.
 
           If you load a semantic model and still can't see the Copilot button, file a bug here: Copilot Bug Template.
       - question: |

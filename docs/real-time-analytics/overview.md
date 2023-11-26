@@ -81,7 +81,7 @@ See how these items work together in the end-to-end streaming data consumption a
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
   * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](onelake-shortcuts.md?tab=onelake-shortcut).
   * Data from [OneLake can be loaded](get-data-onelake.md) into Real-Time Analytics.
-  * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](onelake-mirroring.md).
+  * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](one-logical-copy.md).
 * Data loaded into Real-Time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md).
 * Data loaded into Real-Time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or [Spark](spark-connector.md) Notebooks in Data Engineering.
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).

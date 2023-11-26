@@ -38,6 +38,6 @@ Admins use this setting to decide which users can publish apps to the entire org
 
 To learn more, see [Publish an app in Power BI](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

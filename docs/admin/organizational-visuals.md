@@ -253,10 +253,8 @@ Sometimes an organization develops its own Power BI visual and distributes it in
 
 5. Delete the visual that was uploaded from a file.  
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
-
 - [Visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals)
-
 - [Organizational visuals in Power BI](/power-bi/developer/visuals/power-bi-custom-visuals-organization)

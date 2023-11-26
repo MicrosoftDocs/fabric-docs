@@ -48,6 +48,6 @@ To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metada
 > [!NOTE]
 > For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](metadata-scanning-setup.md).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
