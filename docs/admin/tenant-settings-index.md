@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/22/2023
+ms.date: 11/26/2023
 ---
 
 # Tenant settings index

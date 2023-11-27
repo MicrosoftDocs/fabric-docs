@@ -94,6 +94,8 @@ items:
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
+  - name: Keyboard shortcuts
+    href: keyboard-shortcuts.md
 - name: Query data
   items:
   - name: Use example queries
@@ -108,7 +110,7 @@ items:
     items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
-    - name: Use data from a KQL database in Power BI Desktop
+    - name: Connect KQL Database to Power BI Desktop
       href: power-bi-data-connector.md
   - name: OneLake
     items:
