@@ -60,7 +60,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | -- | -- | -- |
 | Live pool (pre-warm instances) | - | Yes, Starter pools |
 | Custom pool| Yes | Yes |
-| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3 | 3.3, 3.4 |
+| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3, 3.4 | 3.3, 3.4 |
 | Autoscale | Yes | Yes |
 | Dynamic allocation of executors | Yes, up to 200 | Yes, based on capacity |
 | Adjustable node sizes | Yes, 3-200 | Yes, 1-based on capacity |
