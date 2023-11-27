@@ -28,8 +28,8 @@ Delimited text format is supported for the following activities and connectors a
 |  | [HTTP](connector-http-copy-activity.md)| 
 | **Supported activity** | [Copy activity](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
-|  | GetMetadata activity |
-|  | Delete activity | 
+|  | [GetMetadata activity](get-metadata-activity.md) |
+|  | [Delete activity](delete-data-activity.md) | 
 
 ## Delimited text format in copy activity
 

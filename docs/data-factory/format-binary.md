@@ -27,8 +27,8 @@ Binary format is supported for the following activities and connectors as source
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
 | **Supported activity** | [Copy activity](copy-data-activity.md) |
-|  | GetMetadata activity |
-|  | Delete activity |
+|  | [GetMetadata activity](get-metadata-activity.md) |
+|  | [Delete activity](delete-data-activity.md) |
 
 ## Binary format in copy activity
 
