@@ -73,6 +73,9 @@ The following section lists various cores-based limits for Spark workloads based
 | F2048 | - | 4096 | 3686 | 11058 | 1229 | 8602 | 2048 |
 | Trial Capacity | P1 | 128 | 38 | 115 | 13 | 90 | NA |
 
+Example calculation:
+*F64 SKU* offers *128 Spark VCores*. The maximum reserve percentage of *interactive jobs* is 90%.  That means *Interactive max cores (with bursting)* can be calculated as 128 vCores x 3 BurstFactor x 0.9 MaxReserve = 345,6 which rounds to 346 as can be seen in the table.
+
 > [!NOTE]
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
 
