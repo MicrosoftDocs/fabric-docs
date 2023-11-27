@@ -120,7 +120,7 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Obtain Microsoft Entra access token
 
-When this setting is enabled, visuals can obtain Microsoft Entra ID (formally known as Azure AD) access tokens for signed-in users using the SSO authentication API. This enables single sign-on authentication. Disabling this setting is disabled also disables it for organizational store visuals. The default setting is disabled.
+When this setting is enabled, visuals can obtain Microsoft Entra ID (formally known as Azure AD) access tokens for signed-in users using the SSO authentication API. This enables single sign-on authentication. Disabling this setting also disables it for organizational store visuals. The default setting is disabled.
 
 :::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
 
