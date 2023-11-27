@@ -68,8 +68,6 @@ items:
     href: portal-workspace.md
 - name: Feature set up
   items:
-  - name: Set up git integration
-    href: git-integration-admin-settings.md
   - name: Set up item certification
     href: endorsement-setup.md
   - name: Configure notifications
@@ -117,6 +115,8 @@ items:
       href: service-admin-portal-audit-usage.md
     - name: Dashboard settings
       href: service-admin-portal-dashboard.md
+    - name: Git integration settings
+      href: git-integration-admin-settings.md
     - name: Developer settings
       href: service-admin-portal-developer.md
     - name: Admin API settings
