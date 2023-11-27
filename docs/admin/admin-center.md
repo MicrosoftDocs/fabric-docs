@@ -49,7 +49,7 @@ The many controls in the admin portal are listed in the table below with links t
 
 To get to the admin portal, follow these steps:
 
-1. Sign in to Microsoft Fabric using your admin account credentials.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
 
 2. Select **Fabric settings** and then from the menu select **Admin portal**.
 
