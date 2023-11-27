@@ -144,7 +144,7 @@
                 "fabric-powerbi-docs",
                 "capaedac-PowerBI",
                 "powerbi",
-                "Power-bi-docs"
+                "Powerbi-docs"
             ],
             "data-warehouse/**.*": [
                 "fabric-datawarehouse-docs"
