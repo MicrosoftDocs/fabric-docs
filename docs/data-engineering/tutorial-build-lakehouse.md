@@ -64,7 +64,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
-1. In this tutorial, you have already associated the customer data to a lakehouse. Incase you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
+1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
 
 1. Navigate to the **wwilakehouse** in your workspace.
 
