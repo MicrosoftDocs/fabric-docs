@@ -89,7 +89,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Write behavior**: The write behavior of the operation. This property is required, and you must select **Upsert**. If you use **Add dynamic content**, specify the value to Upsert.
 - **Alternate key name**: Specify the alternate key name defined on your entity to upsert records. 
-- **Ignore null values**: Indicates whether to ignore null values from input data during write operation. It is selected by default. 
+- **Ignore null values**: Indicates whether to ignore null values from input data during write operation. It is unselected by default. 
     - When it is selected: Leave the data in the destination object unchanged when doing upsert/update operation, and insert defined default value when doing insert operation. 
     - When it is unselected: Update the data in the destination object to NULL when doing upsert/update operation, and insert NULL value when doing insert operation.
 - **Write batch size**: Specify the row count of data written to Dynamics CRM in each batch. 
