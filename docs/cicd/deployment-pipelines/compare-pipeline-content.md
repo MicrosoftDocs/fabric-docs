@@ -116,6 +116,6 @@ Close the window when you finish examining the differences and deploy to the nex
 
 - The content in the change review window may look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
 
-## Next steps
+## Related content
 
 [Deploy content to the next stage](deploy-content.md)
