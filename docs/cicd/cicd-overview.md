@@ -31,7 +31,7 @@ Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipel
 
 For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from there using deployment pipelines.
 
-## Next steps
+## Related content
 
 * [End to end lifecycle management tutorial](./cicd-tutorial.md)
 * [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
