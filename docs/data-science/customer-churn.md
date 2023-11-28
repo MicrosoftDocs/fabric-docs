@@ -165,7 +165,7 @@ This code converts the Spark DataFrame to a pandas DataFrame for easier processi
 df = df.toPandas()
 ```
 
-## Step 3: Do exploratory data analysis
+## Step 3: Perform exploratory data analysis
 
 ### Display raw data
 
@@ -327,7 +327,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 - Customers who aren't active have a higher churn rate.
 - Gender and tenure years don't seem to have an impact on a customer's decision to close a bank account.
 
-## Step 4: Do model training and tracking
+## Step 4: Perform model training and tracking
 
 With your data in place, you can now define the model. You'll apply random forest and LightGBM models in this notebook.
 
@@ -385,7 +385,7 @@ X = df_clean.drop("Exited",axis=1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=SEED)
 ```
 
-### Apply SMOTE to the training data to synthesize new samples for the minority class
+### Apply SMOTE to the training data
 
 The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE by using the `imblearn` library that you installed in step 1.
 

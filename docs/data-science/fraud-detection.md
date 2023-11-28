@@ -14,7 +14,9 @@ ms.date: 09/06/2023
 
 # Tutorial: Create, evaluate, and score a fraud detection model
 
-In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data, and then use the model to detect future fraudulent transactions. The steps that you take are:
+In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
+
+The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
@@ -68,7 +70,7 @@ For this tutorial, you install the imbalanced learn (`imblearn`) library in your
 
 ## Step 2: Load the data
 
-The fraud detection dataset contains credit card transactions that European cardholders made in September 2013 over the course of two days. The dataset contains only numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was applied to the original features. The only features that haven't been transformed with PCA are `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
+The fraud detection dataset contains credit card transactions that European cardholders made in September 2013 over the course of two days. The dataset contains only numerical features, which is the result of a Principal Component Analysis (PCA) transformation that was applied to the original features. The only features that weren't transformed with PCA are `Time` and `Amount`. To protect confidentiality, we can't provide the original features or more background information about the dataset.
 
 Here are some details about the dataset:
 
@@ -236,7 +238,7 @@ In this section, you begin by exploring the raw data and high-level statistics. 
     plt.show()
     ```
 
-    When the data is highly imbalanced, these box plots might not demonstrate accurate insights. Alternatively, you can address the class imbalance problem first and then create the same plots for more accurate insights.
+    When the data is highly imbalanced, these box plots might not demonstrate accurate insights. Alternatively, you can address the `Class` imbalance problem first and then create the same plots for more accurate insights.
 
 ## Step 4: Train and evaluate the models
 
@@ -255,7 +257,7 @@ feature_cols = [c for c in df_pd.columns.tolist() if c not in [TARGET_COL]]
 
 ```
 
-### Apply SMOTE to the training data to synthesize new samples for the minority class
+### Apply SMOTE to the training dataset
 
 The `imblearn` library uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class.
 
@@ -413,7 +415,7 @@ In this section, you evaluate the two trained models:
 
 A *confusion matrix* displays the number of true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN) that a model produces when it's scored with test data. For binary classification, you get a `2x2` confusion matrix. For multiclass classification, you get an `nxn` confusion matrix, where `n` is the number of classes.
 
-1. Use a confusion matrix to summarize the performances of the trained machine learning models on the test data:
+1. Use a confusion matrix to summarize the performance of the trained machine learning models on the test data:
 
     ```python
     # Collect confusion matrix values
@@ -456,7 +458,7 @@ A *confusion matrix* displays the number of true positives (TP), true negatives 
 
 The Area Under the Curve Receiver Operating Characteristic (AUC-ROC) measure is widely used to assess the performance of binary classifiers. AUC-ROC is a chart that visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
 
-In some cases, it's more appropriate to evaluate your classifier based on the AUPRC measure. AUPRC is a curve that combines these rates:
+In some cases, it's more appropriate to evaluate your classifier based on the Area Under the Precision-Recall Curve (AUPRC) measure. AUPRC is a curve that combines these rates:
 
 - The precision, also called the positive predictive value (PPV)
 - The recall, also called TPR
@@ -490,7 +492,7 @@ To evaluate performance by using the AUC-ROC and AUPRC measures:
     
     ```
 
-1. Log the AUC-ROC and AUPRC metrics for the model trained on imbalanced data:
+1. Log the AUC-ROC and AUPRC metrics for the model that you trained on imbalanced data:
 
     ```python
     with mlflow.start_run(run_id=raw_run.info.run_id):
@@ -499,7 +501,7 @@ To evaluate performance by using the AUC-ROC and AUPRC measures:
         mlflow.log_params({"Data_Enhancement": "None", "DATA_FILE": DATA_FILE})
     ```
 
-1. Log the AUC-ROC and AUPRC metrics for the model trained on balanced data:
+1. Log the AUC-ROC and AUPRC metrics for the model that you trained on balanced data:
 
     ```python
     with mlflow.start_run(run_id=smote_run.info.run_id):
@@ -508,13 +510,13 @@ To evaluate performance by using the AUC-ROC and AUPRC measures:
         mlflow.log_params({"Data_Enhancement": "SMOTE", "DATA_FILE": DATA_FILE})
     ```
 
-The model trained on balanced data returns higher AUC-ROC and AUPRC values compared to the model trained on imbalanced data. Based on these measures, SMOTE appears to be an effective technique for enhancing model performance when you're working with highly imbalanced data.
+The model that you trained on balanced data returns higher AUC-ROC and AUPRC values compared to the model that you trained on imbalanced data. Based on these measures, SMOTE appears to be an effective technique for enhancing model performance when you're working with highly imbalanced data.
 
 As shown in the following image, any experiment is logged along with its respective name. You can track the experiment's parameters and performance metrics in your workspace.
 
 :::image type="content" source="media/fraud-detection/fraud-detection-experiment-mlflow.png" alt-text="Screenshot of the tracked experiment." lightbox="media/fraud-detection/fraud-detection-experiment-mlflow.png":::
 
-The following image also shows performance metrics for the model trained on the balanced dataset (in **Version 2**). You can select **Version 1** to see the metrics for the model trained on the imbalanced dataset. When you compare the metrics, you notice that AUROC is higher for the model trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0` and predicting `1` classes as `1`.
+The following image also shows performance metrics for the model that you trained on the balanced dataset (in **Version 2**). You can select **Version 1** to see the metrics for the model that you trained on the imbalanced dataset. When you compare the metrics, you notice that AUROC is higher for the model that you trained with the balanced dataset. These results indicate that this model is better at correctly predicting `0` classes as `0` and predicting `1` classes as `1`.
 
 :::image type="content" source="media/fraud-detection/fraud-detection-model-mlflow.png" alt-text="Screenshot of logged model performance metrics and model parameters." lightbox="media/fraud-detection/fraud-detection-model-mlflow.png":::
 

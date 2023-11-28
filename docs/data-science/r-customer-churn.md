@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
 ms.date: 09/21/2023
-# customer intent: As a data scientist, I want to create a model to predict churn with R.
+# customer intent: As a data scientist, I want to create a model to predict churn by using R.
 ---
 
 # Tutorial: Use R to create, evaluate, and score a churn prediction model
@@ -53,14 +53,14 @@ You can follow along in a notebook in one of two ways:
 
 ## Step 1: Install custom libraries
 
-When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages` and `devtools::install_version`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
+When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use inline installation capabilities such as `install.packages` and `devtools::install_version`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
 
 In this tutorial, you use `install.packages()` to install the `imbalance` and `randomForest` libraries. Set `quiet` to `TRUE` to make output more concise:
 
 ```r
 # Install imbalance for SMOTE
 install.packages("imbalance", quiet = TRUE)
-# Install Random Forest algorithm
+# Install the random forest algorithm
 install.packages("randomForest", quiet=TRUE)
 ```
 
@@ -137,7 +137,7 @@ download_path <- "/lakehouse/default/Files/churn/raw"
 rdf <- readr::read_csv(paste0(download_path, "/", fname))
 ```
 
-## Step 3: Do exploratory data analysis
+## Step 3: Perform exploratory data analysis
 
 ### Display raw data
 
@@ -317,7 +317,7 @@ for (item in numeric_variables[1:2]) {
 }
 ```
 
-:::image type="content" source="media/r-customer-churn/histogram.png" alt-text="Graph that shows the distribution of credit score and age.":::
+:::image type="content" source="media/r-customer-churn/histogram.png" alt-text="Screenshot of a graph that shows the distribution of credit score and age.":::
 
 ```r
 # Set the overall layout of the graphics window
@@ -336,7 +336,7 @@ for (item in numeric_variables[3:5]) {
 }
 ```
 
-:::image type="content" source="media/r-customer-churn/histogram-2.png" alt-text="Graph that shows the distribution of numeric variables.":::
+:::image type="content" source="media/r-customer-churn/histogram-2.png" alt-text="Screenshot of a graph that shows the distribution of numeric variables.":::
 
 ### Perform feature engineering
 
@@ -378,7 +378,7 @@ cat(paste0("Spark dataframe saved to delta table: ", table_name))
 - Customers who aren't active have a higher churn rate.
 - Gender and tenure years don't seem to have an impact on a customer's decision to close a bank account.
 
-## Step 4: Do model training
+## Step 4: Perform model training
 
 With your data in place, you can now define the model by applying random forest and LightGBM models. Use `randomForest` and `lightgbm` to implement the models within a few lines of code.
 
@@ -411,7 +411,7 @@ y_test <- y[!split]
 train_df <- cbind(X_train, y_train)
 ```
 
-### Apply SMOTE to the training data to synthesize new samples for the minority class
+### Apply SMOTE to the training dataset
 
 The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE by using the `imblearn` library that you installed in step 1.
 
@@ -545,7 +545,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-4.png" alt-text="Graph that shows a confusion matrix for random forest with four features.":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-4.png" alt-text="Screenshot of a graph that shows a confusion matrix for random forest with four features.":::
 
 Create a confusion matrix for the random forest classifier with six features:
 
@@ -558,7 +558,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-6.png" alt-text="Graph that shows a confusion matrix for random forest with six features.":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-random-forest-6.png" alt-text="Screenshot of a graph that shows a confusion matrix for random forest with six features.":::
 
 Create a confusion matrix for LightGBM:
 
@@ -571,7 +571,7 @@ fn <- cfm[2,1]
 tp <- cfm[2,2]
 ```
 
-:::image type="content" source="media/r-customer-churn/confusion-matrix-lightgbm.png" alt-text="Graph that shows a confusion matrix for LightGBM.":::
+:::image type="content" source="media/r-customer-churn/confusion-matrix-lightgbm.png" alt-text="Screenshot of a graph that shows a confusion matrix for LightGBM.":::
 
 ### Save results for Power BI
 

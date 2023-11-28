@@ -191,7 +191,7 @@ If you want to disable Microsoft Fabric autologging in a notebook session, call 
 raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSchema=True)
 ```
 
-## Step 3: Do exploratory data analysis
+## Step 3: Perform exploratory data analysis
 
 Explore the dataset by using the `display` command to view high-level statistics of the dataset and show the chart views:
 
