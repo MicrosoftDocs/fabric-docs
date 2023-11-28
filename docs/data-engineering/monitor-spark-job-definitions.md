@@ -39,7 +39,7 @@ To view all the Spark applications related to a Spark job definition, go to the 
 
 :::image type="content" source="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png" alt-text="Screenshot showing the spark job definition runs in Monitoring hub." lightbox="media\monitor-spark-job-definitions\spark-job-definition-runs-in-monitoring-hub.png":::
 
-## Next steps
+## Related content
 
 The next step after viewing the details of an Apache Spark application is to view Spark job progress below the Notebook cell. You can refer to
 

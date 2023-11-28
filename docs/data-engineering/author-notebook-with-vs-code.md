@@ -123,7 +123,7 @@ By selecting the kernel **synapse-spark-kernel** shipped with this extension, yo
 
 :::image type="content" source="media\vscode\run-notebook.png" alt-text="Screenshot showing where to run a notebook.":::
 
-## Next steps
+## Related content
 
 - [Spark Job Definition experience in VS Code](author-sjd-with-vs-code.md)
 - [Explore lakehouse from VS Code](explore-lakehouse-with-vs-code.md)

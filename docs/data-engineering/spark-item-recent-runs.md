@@ -34,7 +34,6 @@ We can open **Recent runs** pane with the following steps:
 
     :::image type="content" source="media\spark-item-recent-runs\from-pipeline-open-the-recent-run.png" alt-text="Screenshot showing where to select Recent runs from pipeline." lightbox="media\spark-item-recent-runs\from-pipeline-open-the-recent-run.png":::
 
-
 ## All runs within a Notebook
 
 We can open **Recent runs** pane within a notebook by following steps:
@@ -59,7 +58,7 @@ In the **Recent runs** pane, you can view a list of applications, including **Ap
 
 Selecting the application name link navigates to spark application details where we can get to see the logs, data and skew details for the Spark run.
 
-## Next steps
+## Related content
 
 The next step after viewing the list of running Apache Spark applications is to view the application details. You can refer to:
 

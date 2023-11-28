@@ -74,7 +74,7 @@ Learn more on creating and using an [Environment](environment-manage-compute.md)
 
 :::image type="content" source="media\migrate-synapse\migrate-spark-pool-custom-environment.png" alt-text="Screenshot showing custom environment.":::
 
-## Next steps
+## Related content
 
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
 - [Migrate Spark libraries](migrate-synapse-spark-libraries.md)

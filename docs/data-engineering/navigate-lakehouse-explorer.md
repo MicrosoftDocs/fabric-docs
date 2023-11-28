@@ -75,7 +75,7 @@ Discover different use cases to understand the best way to [load data in your la
 
 The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from the Lakehouse experience by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which will allow you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
 
-## Next steps
+## Related content
 
 We hope this guide helps you make the most of the Lakehouse Explorer and its diverse functionalities. Feel free to explore, experiment, and make your data management tasks more efficient.
 
