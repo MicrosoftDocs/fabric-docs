@@ -111,6 +111,6 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 > [!NOTE]
 > Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
 
-## Next steps
+## Related content
 
 [Get started with Git integration](./git-get-started.md)
