@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create, evaluate, and score a machine fault detection model"
+title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
 ms.reviewer: lagayhar
 ms.author: amjafari
@@ -9,23 +9,23 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/23/2023
-#customer intent: As a data scientist, I want to create, evaluate, and score a machine fault detection model so that I can predict mechanical failure.
+#customer intent: As a data scientist, I want to create, evaluate, and score a machine fault detection model so that I can predict mechanical failures.
 ---
 
 # Create, evaluate, and score a machine fault detection model
 
-In this tutorial, you learn the data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis so that you can proactively identify issues and take actions before a machine's failure. In this scenario, the aim is to predict whether a machine will experience a failure based on process temperature, rotational speed, or other features.
+In this tutorial, you walk through a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis so that you can proactively identify issues and take actions before a machine's failure. In this scenario, the aim is to predict whether a machine will experience a failure based on process temperature, rotational speed, or other features.
 
 The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
-> * Install custom libraries.
-> * Load and process the data.
-> * Understand the data through exploratory data analysis.
-> * Train machine learning models by using scikit-learn, LightGBM, and MLflow, and track experiments by using the Fabric autologging feature.
-> * Score the trained model by using the Fabric PREDICT feature, save the best model, and load it for predictions.
-> * Demonstrate the model performance via visualizations in Power BI.
+> - Install custom libraries.
+> - Load and process the data.
+> - Understand the data through exploratory data analysis.
+> - Train machine learning models by using scikit-learn, LightGBM, and MLflow, and track experiments by using the Fabric autologging feature.
+> - Score the trained model by using the Fabric PREDICT feature, save the best model, and load it for predictions.
+> - Demonstrate the model's performance via visualizations in Power BI.
 
 ## Prerequisites
 
@@ -40,13 +40,13 @@ You can follow along in a notebook in one of two ways:
 - Open and run the built-in notebook in the Data Science experience.
 - Upload your notebook from GitHub to the Data Science experience.
 
-#### Open the built-in notebook
+### Open the built-in notebook
 
 **Machine failure** is the sample notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import the notebook from GitHub
+### Import the notebook from GitHub
 
 [AISample - Predictive Maintenance](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Predictive%20Maintenance.ipynb) is the notebook that accompanies this tutorial.
 
@@ -79,12 +79,12 @@ The dataset simulates logging of a manufacturing machine's parameters as a funct
 - Rotational speed in revolutions per minute (RPM).
 - Torque in Newton meters (Nm).
 - Tool wear in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of wear to the tool in the process, respectively.
-- A machine failure label, which indicates whether the machine has failed in this data point for any of the following five independent failure modes:
+- A machine failure label, which indicates whether the machine failed in this data point for any of the following independent failure modes:
 
   - Tool wear failure (TWF). The tool is replaced or fails at a randomly selected tool wear time from 200 through 240 minutes.
   - Heat dissipation failure (HDF). Heat dissipation causes a process failure if the difference between air and process temperature is below 8.6 K and the tool's rotational speed is below 1,380 RPM.
   - Power failure (PWF). The product of torque and rotational speed (in radians per second or rad/s) equals the power required for the process. The process fails if this power is below 3,500 watts or above 9,000 watts.
-  - Overstrain failure (OSF). If the product of tool wear and torque exceeds 11,000 minimum Nm for the L product variant (12,000 M, 13,000 H), the process fails due to overstrain.
+  - Overstrain failure (OSF). If the product of tool wear and torque exceeds 11,000 Nm for the L product variant (12,000 M, 13,000 H), the process fails due to overstrain.
   - Random failure (RNF). Each process has a chance of 0.1% to fail regardless of its process parameters.
 
 > [!NOTE]
@@ -92,16 +92,16 @@ The dataset simulates logging of a manufacturing machine's parameters as a funct
 
 ### Download the dataset and upload to the lakehouse
 
-Connect to Azure Open Datasets Container and load the Predictive Maintenance dataset. The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
+Connect to the Azure Open Datasets container and load the Predictive Maintenance dataset. The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> Add a lakehouse to the notebook before running it. Failure to do so results in an error. For information on adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
+> Add a lakehouse to the notebook before you run it. If you don't, you'll get an error. For information on adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
 
 ```python
-# Download demo data files into lakehouse if not exist
+# Download demo data files into the lakehouse if they don't exist
 import os, requests
-DATA_FOLDER = "Files/predictive_maintenance/"  # folder containing the dataset
-DATA_FILE = "predictive_maintenance.csv"  # data file name
+DATA_FOLDER = "Files/predictive_maintenance/"  # Folder that contains the dataset
+DATA_FILE = "predictive_maintenance.csv"  # Data file name
 remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection"
 file_list = ["predictive_maintenance.csv"]
 download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
@@ -119,7 +119,7 @@ for fname in file_list:
 print("Downloaded demo data files into lakehouse.")
 ```
 
-Once the dataset is downloaded into the lakehouse, you can load it as a Spark DataFrame.
+After you download the dataset into the lakehouse, you can load it as a Spark DataFrame:
 
 ```python
 df = (
@@ -133,7 +133,7 @@ df.show(5)
 
 The following table shows a preview of the data:
 
-|"UDI"|"Product ID"|"Type"|"Air temperature [K]"|"Process temperature [K]"|"Rotational speed [rpm]"|"Torque [Nm]"|"Tool wear [min]"|"Target"|"Failure Type"|
+|UDI|Product ID|Type|Air temperature [K]|Process temperature [K]|Rotational speed [rpm]|Torque [Nm]|Tool wear [min]|Target|Failure Type|
 |---|----------|----|-------------------|-----------------------|----------------------|-----------|---------------|------|------------|
 |  1|    M14860|   M|              298.1|                  308.6|                  1551|       42.8|              0|     0|  No Failure|
 |  2|    L47181|   L|              298.2|                  308.7|                  1408|       46.3|              3|     0|  No Failure|
@@ -141,12 +141,12 @@ The following table shows a preview of the data:
 |  4|    L47183|   L|              298.2|                  308.6|                  1433|       39.5|              7|     0|  No Failure|
 |  5|    L47184|   L|              298.2|                  308.7|                  1408|       40.0|              9|     0|  No Failure|
 
-### Write Spark dataframe to lakehouse delta table
+### Write a Spark DataFrame to a lakehouse delta table
 
-Format the data (for example, replace space with underscore) to facilitate spark operations in subsequent steps.
+Format the data (for example, replace space with an underscore) to facilitate Spark operations in subsequent steps:
 
 ```python
-# replace space in column name with underscore to avoid invalid character while saving 
+# Replace the space in the column name with an underscore to avoid an invalid character while saving 
 df = df.toDF(*(c.replace(' ', '_') for c in df.columns))
 table_name = "predictive_maintenance_data"
 df.show(5)
@@ -154,7 +154,7 @@ df.show(5)
 
 The following table shows a preview of the data with processed column names:
 
-|"UDI"|"Product_ID"|"Type"|"Air_temperature_[K]"|"Process_temperature_[K]"|"Rotational_speed_[rpm]"|"Torque_[Nm]"|"Tool_wear_[min]"|"Target"|"Failure_Type"|
+|UDI|Product_ID|Type|Air_temperature_[K]|Process_temperature_[K]|Rotational_speed_[rpm]|Torque_[Nm]|Tool_wear_[min]|Target|Failure_Type|
 |---|----------|----|-------------------|-----------------------|----------------------|-----------|---------------|------|------------|
 |  1|    M14860|   M|              298.1|                  308.6|                  1551|       42.8|              0|     0|  No Failure|
 |  2|    L47181|   L|              298.2|                  308.7|                  1408|       46.3|              3|     0|  No Failure|
@@ -163,7 +163,7 @@ The following table shows a preview of the data with processed column names:
 |  5|    L47184|   L|              298.2|                  308.7|                  1408|       40.0|              9|     0|  No Failure|
 
 ```python
-# save data with processed columns to the lakehouse 
+# Save data with processed columns to the lakehouse 
 df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
@@ -239,7 +239,7 @@ fig.delaxes(axes[1,2])
 
 :::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Graph plot of the features.":::
 
-As shown in the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse. They appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.
+As shown in the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse. They appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to a new dataset.
 
 ### Inspect the target variable for class imbalance
 
@@ -481,7 +481,7 @@ with mlflow.start_run() as run:
 
 ## Step 5: Select the model and predict outputs
 
-In the previous section, you trained three different classifiers: random forest, logistic regression, and XGBoost. You have the choice to either programmatically access the results or use the user interface (UI).
+In the previous section, you trained three classifiers: random forest, logistic regression, and XGBoost. You have the choice to either programmatically access the results or use the user interface (UI).
 
 To use the UI path, go to your workspace and filter the models.
 
@@ -489,7 +489,7 @@ To use the UI path, go to your workspace and filter the models.
 
 Then select individual models for details of their performance.
 
-:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of the model performance.":::
+:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models.":::
 
 The following example shows how to programmatically access the models through MLflow:
 
@@ -511,7 +511,7 @@ for run_name, run_id in runs.items():
 print(df_metrics)
 ```
 
-Although XGBoost yielded the best results on the training dataset, it performs poorly on the testing data set, which indicates overfitting. The logistic regression classifier performs poorly on both the training and testing datasets. Overall, random forest strikes a good balance between training performance and avoiding overfitting.
+Although XGBoost yields the best results on the training dataset, it performs poorly on the testing dataset, which indicates overfitting. The logistic regression classifier performs poorly on both the training and testing datasets. Overall, random forest strikes a good balance between training performance and avoiding overfitting.
 
 In the following section, choose the registered random forest model and perform prediction by using the [PREDICT](https://aka.ms/fabric-predict) feature:
 
@@ -561,7 +561,7 @@ The following table shows the output:
 Save the data into the lakehouse so that you can access the data for future use, such as creating a Power BI dashboard:
 
 ```python
-# Save test data to the lakehouse for use in future sections. 
+# Save test data to the lakehouse for use in the next section. 
 table_name = "predictive_maintenance_test_with_predictions"
 predictions.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
@@ -575,7 +575,7 @@ You can demonstrate the results in an offline format by using a Power BI dashboa
 
 The dashboard shows that `Tool_wear` and `Torque` create a noticeable boundary between failed and unfailed cases, as you expected from the earlier correlation analysis in step 2.
 
-## Next steps
+## Related content
 
 - [Train and evaluate a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)

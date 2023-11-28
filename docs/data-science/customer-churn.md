@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create, evaluate, and score a churn prediction model"
+title: 'Tutorial: Create, evaluate, and score a churn prediction model'
 description: This tutorial demonstrates a data science workflow with an end-to-end example of building a model to predict churn.
 ms.reviewer: sgilley
 ms.author: amjafari
@@ -24,13 +24,13 @@ The main steps in this tutorial are:
 > - Understand and process the data through exploratory data analysis, and demonstrate the use of the Fabric Data Wrangler feature.
 > - Train machine learning models by using scikit-learn and LightGBM, and track experiments by using MLflow and the Fabric autologging feature.
 > - Evaluate and save the final machine learning model.
-> - Demonstrate the model performance via visualizations in Power BI.
+> - Demonstrate the model's performance via visualizations in Power BI.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 
@@ -83,7 +83,7 @@ The dataset in *churn.csv* contains a churn status of 10,000 customers, along wi
 
 The dataset also includes columns that should have no impact on the customer's decision to leave the bank. These columns include row number, customer ID, and customer surname.
 
-The event that defines the customer's churn is the closing of the customer's bank account. The column `Exited` in the dataset refers to the customer's abandonment. Because you don't have much context about these attributes, you can proceed without having background information about the dataset. Your aim is to understand how these attributes contribute to the `Exited` status.
+The event that defines the customer's churn is the closing of the customer's bank account. The column `Exited` in the dataset refers to the customer's abandonment. Because you don't have much context for these attributes, you can proceed without having background information about the dataset. Your aim is to understand how these attributes contribute to the `Exited` status.
 
 Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data. Moreover, confusion matrix accuracy might not be meaningful for imbalanced classification. It might be better to also measure the accuracy by using the Area Under the Precision-Recall Curve (AUPRC) metric.
 
@@ -320,7 +320,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 ### Summary of observations from the exploratory data analysis
 
-- Most of the customers are from France. Spain has a lower churn rate compared to France and Germany.
+- Most of the customers are from France. Spain has the lowest churn rate, compared to France and Germany.
 - Most of the customers have credit cards.
 - There are customers whose ages are above 60 and whose credit scores are below 400, but they can't be considered outliers.
 - Very few customers have more than two of the bank's products.
@@ -586,7 +586,7 @@ Use these steps to access your saved table in Power BI:
 The following screenshot shows some example visualizations. The data panel shows the delta tables and columns to select from a table. After you select an appropriate category (x) axis and value (y) axis, you can choose the filters and functions. For example, you can choose a sum or average of the table column.
 
 > [!NOTE]
-> The screenshot is an illustrated example of how you would analyze the saved prediction results in Power BI. For a real use case of customer churn, the platform user might have to do more thorough ideation of what visualizations to create, based on subject matter expertise and what their organization and business analytics team have standardized as metrics.
+> The screenshot is an illustrated example of how you would analyze the saved prediction results in Power BI. For a real use case of customer churn, the platform users might have to do more thorough ideation of what visualizations to create, based on subject matter expertise and what their organization and business analytics team have standardized as metrics.
 
 :::image type="content" source="./media/tutorial-bank-churn/power-bi-dashboard.png" alt-text="Screenshot that shows a Power BI dashboard example.":::
 
@@ -603,7 +603,7 @@ Finally, customers who have lower credit scores would most likely leave the bank
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
-## Next steps
+## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)

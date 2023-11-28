@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create, evaluate, and score a text classification model"
+title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
 ms.reviewer: sgilley
 ms.author: amjafari
@@ -30,7 +30,7 @@ The main steps in this tutorial are:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 
@@ -98,7 +98,7 @@ The following code downloads a publicly available version of the dataset and the
 
 ```python
 if not IS_CUSTOM_DATA:
-    # Download demo data files into the lakehouse if it doesn't exist
+    # Download demo data files into the lakehouse if they don't exist
     import os, requests
 
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification"
@@ -466,7 +466,7 @@ batch_predictions.write.format("delta").mode("overwrite").save(
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
 
-## Next steps
+## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)

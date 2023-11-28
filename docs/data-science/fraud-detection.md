@@ -17,50 +17,49 @@ ms.date: 09/06/2023
 In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data, and then use the model to detect future fraudulent transactions. The steps that you take are:
 
 > [!div class="checklist"]
-> * Install custom libraries.
-> * Load the data.
-> * Understand and process the data through exploratory data analysis.
-> * Train a machine learning model by using scikit-learn, and track experiments by using MLflow and the Fabric autologging feature.
-> * Save and register the best-performing machine learning model.
-> * Load the machine learning model for scoring and making predictions.
+>
+> - Install custom libraries.
+> - Load the data.
+> - Understand and process the data through exploratory data analysis.
+> - Train a machine learning model by using scikit-learn, and track experiments by using MLflow and the Fabric autologging feature.
+> - Save and register the best-performing machine learning model.
+> - Load the machine learning model for scoring and making predictions.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
-## Follow along in the notebook
+## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can follow along in a notebook in one of two ways:
 
 - Open and run the built-in notebook in the Data Science experience.
 - Upload your notebook from GitHub to the Data Science experience.
 
-#### Open built-in notebook
+### Open the built-in notebook
 
 **Fraud detection** is the sample notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import notebook from GitHub
+### Import the notebook from GitHub
 
 [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb) is the notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
-<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb -->
-
 ## Step 1: Install custom libraries
 
-When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library (such as `imblearn`) for your Apache Spark session. You can install libraries in one of two ways:
+When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
 
-* Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
-* Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
+- Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
+- Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
 
 For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 
-For this tutorial, you install the `imblearn` library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
+For this tutorial, you install the imbalanced learn (`imblearn`) library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
 
 ```python
 # Use pip to install imblearn
@@ -73,32 +72,23 @@ The fraud detection dataset contains credit card transactions that European card
 
 Here are some details about the dataset:
 
-* The features `V1`, `V2`, `V3`, …, `V28` are the principal components obtained with PCA.
-* The feature `Time` contains the elapsed seconds between a transaction and the first transaction in the dataset.
-* The feature `Amount` is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning.
-* The column `Class` is the response (target) variable and takes the value `1` for fraud and `0` otherwise.
+- The features `V1`, `V2`, `V3`, …, `V28` are the principal components obtained with PCA.
+- The feature `Time` contains the elapsed seconds between a transaction and the first transaction in the dataset.
+- The feature `Amount` is the transaction amount. You can use this feature for example-dependent, cost-sensitive learning.
+- The column `Class` is the response (target) variable. It takes the value `1` for fraud and `0` otherwise.
 
 Out of the 284,807 transactions, only 492 are fraudulent. The minority class (fraud) accounts for only about 0.172% of the data, so the dataset is highly imbalanced.
 
-The following table shows a preview of the _creditcard.csv_ data:
+The following table shows a preview of the *creditcard.csv* data:
 
 |Time|V1|V2|V3|V4|V5|V6|V7|V8|V9|V10|V11|V12|V13|V14|V15|V16|V17|V18|V19|V20|V21|V22|V23|V24|V25|V26|V27|V28|Amount|Class|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |0|-1.3598071336738|-0.0727811733098497|2.53634673796914|1.37815522427443|-0.338320769942518|0.462387777762292|0.239598554061257|0.0986979012610507|0.363786969611213|0.0907941719789316|-0.551599533260813|-0.617800855762348|-0.991389847235408|-0.311169353699879|1.46817697209427|-0.470400525259478|0.207971241929242|0.0257905801985591|0.403992960255733|0.251412098239705|-0.018306777944153|0.277837575558899|-0.110473910188767|0.0669280749146731|0.128539358273528|-0.189114843888824|0.133558376740387|-0.0210530534538215|149.62|"0"|
 |0|1.19185711131486|0.26615071205963|0.16648011335321|0.448154078460911|0.0600176492822243|-0.0823608088155687|-0.0788029833323113|0.0851016549148104|-0.255425128109186|-0.166974414004614|1.61272666105479|1.06523531137287|0.48909501589608|-0.143772296441519|0.635558093258208|0.463917041022171|-0.114804663102346|-0.183361270123994|-0.145783041325259|-0.0690831352230203|-0.225775248033138|-0.638671952771851|0.101288021253234|-0.339846475529127|0.167170404418143|0.125894532368176|-0.00898309914322813|0.0147241691924927|2.69|"0"|
 
-### Introduction to SMOTE
-
-The `imblearn` (imbalanced learn) library uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when there are too few examples of the minority class for a model to effectively learn the decision boundary.
-
-SMOTE is the most widely used approach to synthesize new samples for the minority class. To learn more about SMOTE, see the [scikit-learn reference page for the SMOTE method](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) and the [scikit-learn user guide on oversampling](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
-
-> [!TIP]
-> You can apply the SMOTE approach by using the `imblearn` library that you installed in Step 1.
-
 ### Download the dataset and upload to the lakehouse
 
-By defining the following parameters, you can easily apply your notebook on different datasets:
+Define the following parameters if you want use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually
@@ -172,7 +162,7 @@ df = (
 
 ## Step 3: Perform exploratory data analysis
 
-In this section, you begin by exploring the raw data and high-level statistics. You then transform the data by casting the columns into the correct types and converting from a Spark DataFrame into a pandas DataFrame for easier visualization. Finally, you explore and visualize the class distributions in the data.
+In this section, you begin by exploring the raw data and high-level statistics. You then transform the data by casting the columns into the correct types and converting the Spark DataFrame to a pandas DataFrame for easier visualization. Finally, you explore and visualize the class distributions in the data.
 
 ### Display the raw data
 
@@ -208,7 +198,7 @@ In this section, you begin by exploring the raw data and high-level statistics. 
         df = df.limit(SAMPLE_ROWS)
     ```
 
-1. Convert Spark DataFrame to pandas DataFrame for easier visualization and processing:
+1. Convert the Spark DataFrame to pandas DataFrame for easier visualization and processing:
 
     ```python
     df_pd = df.toPandas()
@@ -248,16 +238,16 @@ In this section, you begin by exploring the raw data and high-level statistics. 
 
     When the data is highly imbalanced, these box plots might not demonstrate accurate insights. Alternatively, you can address the class imbalance problem first and then create the same plots for more accurate insights.
 
-## Step 4: Train and evaluate models
+## Step 4: Train and evaluate the models
 
-In this section, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset (via SMOTE). Then, you compare the performance of both models.
+In this section, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
-### Prepare training and test datasets
+### Prepare training and testing datasets
 
-Before training, split the data into the training and test datasets:
+Before training, split the data into the training and testing datasets:
 
 ```python
-# Split the dataset into training and test sets
+# Split the dataset into training and testing sets
 from sklearn.model_selection import train_test_split
 
 train, test = train_test_split(df_pd, test_size=0.15)
@@ -267,7 +257,9 @@ feature_cols = [c for c in df_pd.columns.tolist() if c not in [TARGET_COL]]
 
 ### Apply SMOTE to the training data to synthesize new samples for the minority class
 
-Apply SMOTE only to the training dataset, and not to the test dataset. When you score the model with the test data, you want an approximation of the model's performance on unseen data in production. For this approximation to be valid, your test data needs to represent production data as closely as possible by having the original imbalanced distribution.
+The `imblearn` library uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class.
+
+Apply SMOTE only to the training dataset, and not to the testing dataset. When you score the model with the test data, you want an approximation of the model's performance on unseen data in production. For this approximation to be valid, your test data needs to represent production data as closely as possible by having the original imbalanced distribution.
 
 ```python
 # Apply SMOTE to the training data
@@ -285,6 +277,8 @@ print("Resampled dataset shape %s" % Counter(y_res))
 
 new_train = pd.concat([X_res, y_res], axis=1)
 ```
+
+To learn more about SMOTE, see the [scikit-learn reference page for the SMOTE method](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html) and the [scikit-learn user guide on oversampling](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
 
 ### Train machine learning models and run experiments
 
@@ -368,8 +362,8 @@ The important features are drastically different when you train a model with the
 
 In this section, you evaluate the two trained models:
 
-* `model` trained on raw, *imbalanced data*
-* `smote_model` trained on *balanced data*
+- `model` trained on raw, imbalanced data
+- `smote_model` trained on balanced data
 
 #### Compute model metrics
 
@@ -460,12 +454,12 @@ A *confusion matrix* displays the number of true positives (TP), true negatives 
 
 #### Evaluate model performance by using AUC-ROC and AUPRC measures
 
-The *Area Under the Curve Receiver Operating Characteristic (AUC-ROC)* measure is widely used to assess the performance of binary classifiers. AUC-ROC is a chart that visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
+The Area Under the Curve Receiver Operating Characteristic (AUC-ROC) measure is widely used to assess the performance of binary classifiers. AUC-ROC is a chart that visualizes the trade-off between the true positive rate (TPR) and the false positive rate (FPR).
 
-In some cases, it's more appropriate to evaluate your classifier based on the *Area Under the Precision-Recall Curve (AUPRC)* measure. AUPRC is a curve that combines these rates:
+In some cases, it's more appropriate to evaluate your classifier based on the AUPRC measure. AUPRC is a curve that combines these rates:
 
-* The precision, also called the positive predictive value (PPV)
-* The recall, also called TPR
+- The precision, also called the positive predictive value (PPV)
+- The recall, also called TPR
 
 To evaluate performance by using the AUC-ROC and AUPRC measures:
 
@@ -545,7 +539,7 @@ Microsoft Fabric allows users to operationalize machine learning models by using
 
 You can generate batch predictions directly from the Microsoft Fabric notebook or from a model's item page. For more information on how to use `PREDICT`, see [Model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
 
-1. Load the better-performing model (*Version 2*) for batch scoring and generate the prediction results:
+1. Load the better-performing model (**Version 2**) for batch scoring and generate the prediction results:
 
     ```python
     from synapse.ml.predict import MLFlowTransformer
@@ -564,18 +558,16 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
     batch_predictions = model.transform(test_spark)
     ```
 
-1. Save predictions into the lakehouse:
+1. Save predictions to the lakehouse:
 
     ```python
-    # Save the predictions into the lakehouse
+    # Save the predictions to the lakehouse
     batch_predictions.write.format("delta").mode("overwrite").save(f"{DATA_FOLDER}/predictions/batch_predictions")
     ```
 
-<!-- nbend -->
-
 ## Related content
 
-* [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
-* [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-* [Train machine learning models](model-training-overview.md)
-* [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+- [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
+- [Train machine learning models](model-training-overview.md)
+- [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

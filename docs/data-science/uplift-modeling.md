@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create, train, and evaluate an uplift model"
+title: 'Tutorial: Create, train, and evaluate an uplift model'
 description: Review this notebook to learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
 ms.reviewer: franksolomon
 ms.author: narsam
@@ -40,10 +40,10 @@ The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
-> * Upload the data into a lakehouse.
-> * Perform exploratory analysis on the data.
-> * Train a model.
-> * Log and load the model by using MLflow.
+> - Upload the data into a lakehouse.
+> - Perform exploratory analysis on the data.
+> - Train a model.
+> - Log and load the model by using MLflow.
 
 ## Prerequisites
 
@@ -145,7 +145,7 @@ year = {2018}
 
 ```python
 if not IS_CUSTOM_DATA:
-    # Download demo data files into the lakehouse if it doesn't exist
+    # Download demo data files into the lakehouse if they don't exist
     import os, requests
 
     remote_url = "http://go.criteo.net/criteo-research-uplift-v2.1.csv.gz"
@@ -423,7 +423,7 @@ loaded_treatmentmodel = mlflow.spark.load_model(
 )
 ```
 
-## Next steps
+## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)

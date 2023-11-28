@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Train and evaluate a time series forecasting model"
+title: 'Tutorial: Train and evaluate a time series forecasting model'
 description: This demonstration shows how to develop a model to forecast time series data that has seasonal cycles.
 ms.reviewer: franksolomon
 ms.author: narsam
@@ -20,10 +20,10 @@ The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >
-> * Upload the data into a lakehouse.
-> * Perform exploratory analysis on the data.
-> * Train a model.
-> * Log and load the model by using MLflow.
+> - Upload the data into a lakehouse.
+> - Perform exploratory analysis on the data.
+> - Train a model.
+> - Log and load the model by using MLflow.
 
 ## Prerequisites
 
@@ -303,7 +303,7 @@ with mlflow.start_run() as run:
 loaded_model = mlflow.prophet.load_model(model_uri)
 ```
 
-## Next steps
+## Related content
 
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)

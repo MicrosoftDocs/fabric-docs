@@ -1,5 +1,5 @@
 ---
-title: "Tutorial: Create, evaluate, and score a recommendation system"
+title: 'Tutorial: Create, evaluate, and score a recommendation system'
 description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
 ms.reviewer: lagayhar
 ms.author: amjafari
@@ -18,10 +18,10 @@ In this tutorial, you walk through an end-to-end data engineering and data scien
 
 > [!div class="checklist"]
 >
-> * Upload the data into a lakehouse.
-> * Perform exploratory analysis on the data.
-> * Train a model and log it by using MLflow.
-> * Load the model and make predictions.
+> - Upload the data into a lakehouse.
+> - Perform exploratory analysis on the data.
+> - Train a model and log it by using MLflow.
+> - Load the model and make predictions.
 
 There are various types of recommendation algorithms. This tutorial uses a model-based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
 
@@ -37,7 +37,7 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 
@@ -349,9 +349,9 @@ plt.show()
 
 Before training, you need to perform some data preparation steps for the ALS matrix. Use the following code to prepare the data. The code performs the following actions:
 
-* Casts the rating column into the correct type
-* Samples the training data with user ratings
-* Splits the data into training and testing datasets
+- Casts the rating column into the correct type
+- Samples the training data with user ratings
+- Splits the data into training and testing datasets
 
 ```python
 if IS_SAMPLE:
@@ -664,7 +664,7 @@ userRecs.write.format("delta").mode("overwrite").save(
 )
 ```
 
-## Next steps
+## Related content
 
 - [Train and evaluate a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
