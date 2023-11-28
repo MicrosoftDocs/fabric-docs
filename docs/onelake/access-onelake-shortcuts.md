@@ -70,6 +70,6 @@ You can also access shortcuts through the Azure Blob Filesystem (ABFS) driver or
 
 1. Select the copy icon next to the **ABFS path** or **URL** in the **Properties** screen.
 
-## Next steps
+## Related content
 
 - [OneLake access and APIs](onelake-access-api.md)
