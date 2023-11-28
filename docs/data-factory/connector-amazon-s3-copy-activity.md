@@ -76,13 +76,13 @@ The following properties are **required**:
     - **Bucket**: Specify the S3 bucket name. It is required.
     - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
 
-        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. See more examples in [Folder and file filter examples](/azure/data-factory/connector-amazon-s3#folder-and-file-filter-examples).
+        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. See more examples in [Folder and file filter examples](/azure/data-factory/connector-amazon-simple-storage-service#folder-and-file-filter-examples).
     :::image type="content" source="./media/connector-amazon-s3/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path.":::
       *Wildcard folder path*: The folder path with wildcard characters under the given bucket to filter source folders.
 
       *Wildcard file name*: The file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
-  - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-amazon-s3#file-list-examples).
+  - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-amazon-simple-storage-service#file-list-examples).
 
       :::image type="content" source="./media/connector-amazon-s3/path-to-file-list.png" alt-text="Screenshot showing list of files.":::
     - **Folder path**: Specify the path to the folder under given bucket. It is required.
