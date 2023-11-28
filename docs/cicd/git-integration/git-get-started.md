@@ -165,7 +165,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the Git integration feature.
 
-## Next steps
+## Related content
 
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)

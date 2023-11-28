@@ -70,7 +70,7 @@ If you're not sure what changes were made and which version to choose and don’
 1. In git, merge the new branch into the original branch
 1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
 
-## Next steps
+## Related content
 
 - [Manually update after a failed update](./partial-update.md)
 - [Lifecycle management Frequently asked questions](../faq.md)
