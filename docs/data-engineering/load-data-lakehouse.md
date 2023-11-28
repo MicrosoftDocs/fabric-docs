@@ -61,7 +61,7 @@ You can use available Spark libraries to connect to a data source directly, load
 | **Large data source** | Use Copy tool in pipelines |
 | **Complex data transformations** | Use Notebook code |
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)

@@ -87,8 +87,7 @@ The following image shows the source, destination and data transformation:
 
 * **Consume**: To demonstrate data consumption, you see how you can use the DirectLake feature of Power BI to create reports, dashboards and directly query data from the lakehouse. Additionally, we demonstrate how you can make your data available to third party reporting tools by using the TDS/SQL analytics endpoint. This endpoint allows you to connect to the warehouse and run SQL queries for analytics.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn how to
 > [!div class="nextstepaction"]
 > [Create a lakehouse](tutorial-lakehouse-get-started.md)

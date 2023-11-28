@@ -35,7 +35,7 @@ If you determine that Fabric Data Engineering is the right choice for migrating 
 
 Transitioning from Azure Synapse Spark to Fabric Spark requires a deep understanding of your current architecture and the differences between Azure Synapse Spark and Fabric. The first crucial step is an assessment, followed by the creation of a detailed migration plan. This plan can be customized to match your system's unique traits, phase dependencies, and workload complexities.
 
-## Next steps
+## Related content
 
 - [Fabric vs. Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)

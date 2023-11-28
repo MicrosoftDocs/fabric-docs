@@ -141,7 +141,7 @@ The **Environment** menu appears in both the notebook and Spark job definition H
 >[!NOTE]
 > If you switch to a different environment while in an active session, the newly selected environment will not take effect until the next session.
 
-## Next steps
+## Related content
 
 - [Spark compute configuration settings in Fabric environments](environment-manage-compute.md)
 - [Library management in Fabric environments](environment-manage-library.md)

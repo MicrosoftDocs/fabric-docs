@@ -196,7 +196,7 @@ Retry-After: 60
 
 With `location`, you can use [Get Item Job Instance](/rest/api/fabric/) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/) to cancel the current notebook run.
 
-## Next steps
+## Related content
 
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Notebook source control and deployment](notebook-source-control-deployment.md)

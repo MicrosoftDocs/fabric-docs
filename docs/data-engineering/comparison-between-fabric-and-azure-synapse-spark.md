@@ -244,7 +244,7 @@ Hive MetaStore (HMS) differences and considerations:
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark catalog HMS metadata to Fabric](migrate-synapse-hms-metadata.md).
 
-## Next steps
+## Related content
 
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md), and [Spark job definitions](migrate-synapse-spark-job-definition.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
