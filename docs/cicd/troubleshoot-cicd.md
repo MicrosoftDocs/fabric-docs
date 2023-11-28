@@ -462,7 +462,7 @@ Use this section to troubleshoot pipeline [rules](deployment-pipelines/create-ru
 |Multiple data sources aren't supported |A semantic model rule can't be applied due to its data source configuration. Either remove the rule, or rewrite the semantic model queries using standard Power BI Desktop tools. |
 |Target semantic model can only be changed by its owner |Your rule will overwrite some semantic models in the destination workspace. You must be the owner of any semantic model that will be overwritten. |  
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)
 * [Assign a workspace to a pipeline stage](deployment-pipelines/assign-pipeline.md)

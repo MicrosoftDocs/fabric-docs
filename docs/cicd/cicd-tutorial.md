@@ -290,7 +290,7 @@ In particular, you learned how to:
 * Apply Git best practices to work alone and collaborate with teammates on changes.
 * Combine Git and deployment pipelines for an efficient end to end release process.
 
-## Next steps
+## Related content
 
 * [Power BI Desktop projects and Azure DevOps build pipelines](/power-bi/developer/projects/projects-build-pipelines)
 * [Manage Git branches](./git-integration/manage-branches.md)
