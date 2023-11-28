@@ -188,7 +188,7 @@ To run a PowerShell script that performs a deployment, you need the following co
 
 * Creating a customized pipeline of 2-10 stages is currently supported only through the UI.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Deployment pipelines best practices](../best-practices-cicd.md)

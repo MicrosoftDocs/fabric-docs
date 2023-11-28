@@ -9,7 +9,7 @@ ms.custom:
   - intro-get-started
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 11/26/2023
 ms.search.form: Create deployment pipeline, Create a deployment pipeline, Introduction to Deployment pipelines
 ---
 
@@ -96,7 +96,7 @@ Follow the instructions in the link to [assign a workspace to a pipeline](assign
 
 By default, the final stage of the pipeline is made public. A consumer of a public stage who has no access to the pipeline sees it as a regular workspace, without the stage name and deployment pipeline icon on the workspace page next to the workspace name.
 
-at least one stage must be public, but you can have more. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
+You can have as many public stages as you want, or none at all. To change the public status of a stage at any time, go to the pipeline stage settings and check or uncheck the **Make this stage public** box.
 
 :::image type="content" source="media/get-started-with-deployment-pipelines/stage-settings.png" alt-text="Screenshot showing the stage settings icon next to the name of the stage on the deployment pipelines page.":::
 
@@ -136,7 +136,7 @@ When you deploy content between pipeline stages, configuring deployment rules en
 
 [Read about how to define deployment rules.](create-rules.md)
 
-## Next steps
+## Related content
 
 * [Assign a workspace to a pipeline stage](assign-pipeline.md)
 * [Troubleshooting deployment pipelines](../troubleshoot-cicd.md#deployment-pipelines)
