@@ -66,7 +66,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 * Azure DevOps **on-prem** is not supported.
 * Sovereign clouds are not supported.
 
-## Next steps
+## Related content
 
 * [Get started with Git integration](./git-get-started.md)
 * [Understand the Git integration process](./git-integration-process.md)
