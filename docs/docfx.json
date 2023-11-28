@@ -140,28 +140,28 @@
             "**.*": [ 
                 "fabric-powerbi-docs"
             ],
-            "admin/**.*": [
+            "admin/**/*.md": [
                 "fabric-powerbi-docs",
                 "capaedac-PowerBI",
                 "powerbi",
                 "Powerbi-docs"
             ],
-            "data-warehouse/**.*": [
+            "data-warehouse/**/*.md": [
                 "fabric-datawarehouse-docs"
             ],
-            "data-engineering/**.*": [
+            "data-engineering/**/*.md": [
                 "fabric-dataengineering-docs"
             ],
-            "data-factory/**.*": [
+            "data-factory/**/*.md": [
                 "fabric-datafactory-docs"
             ],
-            "real-time-analytics/**.*": [
+            "real-time-analytics/**/*.md": [
                 "fabric-realtimeanalytics-docs"
             ],
-            "data-science/**.*": [
+            "data-science/**/*.md": [
                 "fabric-datascience-docs"
             ],
-            "data-activator/**.*": [
+            "data-activator/**/*.md": [
                 "fabric-dataactivator-docs"
             ]
         },

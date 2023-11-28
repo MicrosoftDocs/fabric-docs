@@ -38,6 +38,6 @@ Try to switch to branch with unsupported artifact
 1. Manually remove the dependency. The easiest way to do this is to delete the item.
 1. Switch branches or update again.
 
-## Next steps
+## Related content
 
 [Maintain your git branches](./manage-branches.md)

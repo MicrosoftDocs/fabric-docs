@@ -415,6 +415,6 @@ This section lists most of the limitations in deployment pipelines.
 
 * To deploy a datamart, you need to be the datamart owner.
 
-## Next steps
+## Related content
 
 [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
