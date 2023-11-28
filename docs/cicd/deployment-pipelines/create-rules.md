@@ -119,7 +119,7 @@ This section lists the limitations for the deployment rules.
 >[!NOTE]
 >Parameter rules aren't supported for paginated reports.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md)
