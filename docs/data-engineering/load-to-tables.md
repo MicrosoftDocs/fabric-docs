@@ -46,7 +46,7 @@ The following standard applies to the Load to table experience:
 
 - For CSV files, separator can't be empty, be longer than **8 characters** or use any of the following characters: **```(```**, **```)```**, **```[```**, **```]```**,**```{```**, **```}```**, single quote (**```'```**), double quote (**```"```**), and white space.
 
-## Next steps
+## Related content
 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [CSV file upload to Delta for Power BI reporting](get-started-csv-upload.md)

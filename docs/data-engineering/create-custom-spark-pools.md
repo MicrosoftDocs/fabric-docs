@@ -45,7 +45,7 @@ To create or manage the Spark pool associated with your workspace:
 
 These custom pools have a default autopause duration of 2 minutes. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
 
-## Next steps
+## Related content
 
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).

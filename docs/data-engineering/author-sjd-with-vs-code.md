@@ -107,7 +107,7 @@ You can edit the detail properties of Spark job definitions, such as command-lin
 
    :::image type="content" source="media\vscode\push-sjd-property.png" alt-text="Screenshot showing where to select the Publish SJD Property option for a Spark job definition.":::
 
-## Next steps
+## Related content
 
 - [Explore lakehouse in VS Code](explore-lakehouse-with-vs-code.md)
 - [Notebook experience in VS Code](author-notebook-with-vs-code.md)

@@ -68,8 +68,7 @@ Consider the following scenario:
   * If the Spark Job Definition (SDJ2) from Workspace (W2) reads data from lakehouse (LH1) the usage is reported against the Capacity C2 which is associated with the Workspace (W2) hosting the item.
   * If the Notebook (NB1) performs a read operation from Lakehouse(LH2), the capacity consumption is reported against the Capacity C1 which is powering the workspace W1 that hosts the notebook item. 
 
-
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)

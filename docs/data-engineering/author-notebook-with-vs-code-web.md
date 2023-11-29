@@ -54,3 +54,7 @@ You can also delete any existing file/folder in the notebook file system.
 You can run a notebook in the VS Code for the web experience by selecting the **Run** button in the notebook editor. Before you run the notebook, make sure to select the **Synapse VS Code -Remote** as the kernel. The kernel is selected in the top right corner of the notebook editor.
 
 :::image type="content" source="media\vscode\select-synapse-kernel.png" alt-text="Screenshot showing how to run notebook in VS Code for the Web.":::
+
+## Related content
+
+- [Create and manage Microsoft Fabric notebooks in Visual Studio Code](author-notebook-with-vs-code.md)

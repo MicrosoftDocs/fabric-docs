@@ -41,7 +41,7 @@ Within an environment, you can set Spark properties and those configurations are
 
 Learn more on adding Spark configurations to an [Environment](create-and-use-environment.md).
 
-## Next steps
+## Related content
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark libraries](migrate-synapse-spark-libraries.md)
