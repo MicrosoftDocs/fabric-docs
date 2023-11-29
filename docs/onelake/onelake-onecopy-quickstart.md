@@ -93,6 +93,6 @@ Before you begin, you must:
    SELECT TOP (100) * FROM [<replace with item name>].[dbo].[dim_city];
    ```
 
-## Next steps
+## Related content
 
 - [Connect to ADLS using a OneLake shortcut](onelake-shortcuts-adb-quickstart.md)

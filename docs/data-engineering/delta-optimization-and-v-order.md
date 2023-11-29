@@ -272,7 +272,7 @@ OPTIMIZE <table|fileOrFolderPath> WHERE predicate;
 OPTIMIZE <table|fileOrFolderPath> WHERE predicate [ZORDER BY (col_name1, col_name2, ...)];
 ```
 
-## Next steps
+## Related content
 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Lakehouse and Delta Lake](lakehouse-and-delta-tables.md)

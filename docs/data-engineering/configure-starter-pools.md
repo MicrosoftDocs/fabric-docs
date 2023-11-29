@@ -76,7 +76,7 @@ Users may experience a session start delay ranging from 2-3 minutes.
 #### Status:
 Our team is actively working on resolving this issue. We anticipate a solution to be implemented shortly, which will improve session start times to ~5 seconds in single node Starter Pool configurations.
 
-## Next steps
+## Related content
 
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).

@@ -37,8 +37,6 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
 1. When the warning pops up, select **Delete**.
 
-## Next steps
+## Related content
 
-Advance to the next article to learn about
-> [!div class="nextstepaction"]
-> [Options to get data into lakehouse](load-data-lakehouse.md)
+- [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md)

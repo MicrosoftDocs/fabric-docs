@@ -43,8 +43,7 @@ In this step, you create a Fabric workspace. The workspace contains all the item
 
 1. Select **Apply** to create and open the workspace.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Create a lakehouse in Microsoft Fabric](tutorial-build-lakehouse.md)

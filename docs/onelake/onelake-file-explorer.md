@@ -152,6 +152,7 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 | :::image type="icon" source="media\onelake-file-explorer\green-checkmark.png"::: | Green tick | The file is downloaded to your local computer. |
 | :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: | Sync pending arrows | Sync is in progress. This icon may appear when you're uploading files. If the sync pending arrows are persistent, then your file or folder may have an error syncing. You can find more information in the client-side logs on your local machine under `%temp%\OneLake\Diagnostics\`.|
 
-## Next steps
+## Related content
 
 - Learn more about [OneLake security](onelake-security.md).
+- [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)

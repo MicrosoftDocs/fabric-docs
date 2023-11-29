@@ -70,7 +70,7 @@ If you need to cancel an in-progress Apache Spark application, hover over its ro
 
 If you need more information about Apache Spark execution statistics, access Apache Spark logs, or check input and output data, you can click on the name of an Apache Spark application to navigate to its corresponding Apache Spark application detail page.
 
-## Next steps
+## Related content
 
 - [Apache Spark monitoring overview](spark-monitoring-overview.md)
 - [Browse item's recent runs](spark-item-recent-runs.md)
