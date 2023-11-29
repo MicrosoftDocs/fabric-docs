@@ -45,7 +45,13 @@ Once you have installed and launched the application, you can now see your OneLa
 
 - If Windows search is disabled, OneLake file explorer fails to start.
 
-- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).  
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
+
+- In the event of a file failing to sync due to a network issue, using the **Sync from Onelake** option may not be effective for pending files. To initiate synchronization,
+
+  1. You will have to manually open the file & save it again prompting the sync process.
+  
+  1. If your application lacks the option to resave, an alternative method is to trigger a modify event using PowerShell by executing this command: (Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date
 
 ## Scenarios
 
