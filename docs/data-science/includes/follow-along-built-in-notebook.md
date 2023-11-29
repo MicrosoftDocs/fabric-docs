@@ -7,9 +7,9 @@ ms.topic: include
 ms.date: 11/13/2023
 ---
 
-To open the tutorial's built-in sample notebook in the Data Science experience:
+To open the tutorial's built-in sample notebook in the Synapse Data Science experience:
 
-1. Go to the Data Science home page.
+1. Go to the Synapse Data Science home page.
 1. Select **Use a sample**.
 1. Select the corresponding sample:
 

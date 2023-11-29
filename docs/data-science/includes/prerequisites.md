@@ -14,6 +14,6 @@ ms.date: 06/08/2023
 
 - Sign in to [[!INCLUDE [product-name](../../includes/product-name.md)]](https://fabric.microsoft.com/).
 
-- Switch to the Data Science experience by using the experience switcher icon on the left side of your home page.
+- Switch to the Synapse Data Science experience by using the experience switcher icon on the left side of your home page.
 
    :::image type="content" source="../media/tutorial-data-science-prepare-system/switch-to-data-science.png" alt-text="Screenshot of the experience switcher menu, showing where to select Data Science." lightbox="../media/tutorial-data-science-prepare-system/switch-to-data-science.png":::
