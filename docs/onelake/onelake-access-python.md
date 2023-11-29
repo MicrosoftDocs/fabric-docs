@@ -138,7 +138,7 @@ To run this sample, save the preceding code into a file `listOneLakeDirectory.py
 python listOneLakeDirectory.py
 ```
 
-## Learn more
+## Related content
 
 - [Use Python to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
 - [OneLake parity and integration](onelake-api-parity.md)
