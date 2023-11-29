@@ -59,7 +59,7 @@ You can follow along in a notebook one of two ways:
 
 ### Dataset
 
-The dataset contains the churn status of 9995 instances of sales of different products, along with 21 attributes that include: `Row ID`, `Order ID`, `Order Date`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category`, `Product Name`, `Sales`, `Quantity`, `Discount`, and `Profit`.
+The dataset contains 9995 instances of sales of different products, along with 21 attributes that include: `Row ID`, `Order ID`, `Order Date`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category`, `Product Name`, `Sales`, `Quantity`, `Discount`, and `Profit`.
 
 - _Superstore.xlsx_
 
@@ -166,7 +166,7 @@ from sklearn.metrics import mean_squared_error,mean_absolute_percentage_error
 
 ### Display the raw data
 
-To review the dataset, it's recommended to manually go through a subset of the data to gain a better understanding. In this regard, you could use the `display` function to print the DataFrame. You can also show the "Chart" views to easily visualize subsets of the dataset.
+To review the dataset, it's recommended to manually go through a subset of the data to gain a better understanding. In this regard, you could use the `display` function to print the DataFrame. You can also show the `Chart` views to easily visualize subsets of the dataset.
 
 
 ```python
@@ -190,7 +190,7 @@ When forecasting the sales in real-world business scenarios, there's often a nee
 - Forecast sales for a specific product category and customer combination
 - Forecast overall sales for a specific product category
 
-In this notebook, your focus is on forecasting overall sales for a specific product category. First, perform some pre-processing on the data by dropping unnecessary columns that include `Row ID`, `Order ID`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit`. 
+The focus here is to forecast overall sales for a specific product category. First, perform some pre-processing on the data by dropping unnecessary columns that include `Row ID`, `Order ID`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit`. 
 
 Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you need to forecast sales for a specific location or category, you might need to adjust the pre-processing step accordingly.
 
@@ -234,7 +234,7 @@ y.plot(figsize=(12, 3))
 plt.show()
 ```
 
-Prior to any statistical analysis, you need to import `statsmodels`. `Statsmodels` is a Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests and statistical data exploration.
+Prior to any statistical analysis, you need to import `statsmodels`, which is a Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests and statistical data exploration.
 
 
 ```python
@@ -300,7 +300,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 ### Tune hyperparameters
 
-SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)` respectively and hence 7 parameters to tune. Before model training, you need to set up these parameters, which are defined in the following sections.
+SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)`, respectively, and hence there are a total of 7 parameters to tune. Before model training, you need to set up these parameters, which are defined in the following sections.
 
 #### Order Parameters `(p, d, q)`:
 - `p`: The order of the autoregressive (AR) component, indicating how many past observations are considered. Also known as the AR order.
@@ -337,7 +337,7 @@ print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[4]))
 
 - The `enforce_invertibility` parameter controls whether or not the model should enforce invertibility on the estimated parameters during the optimization process. When `enforce_invertibility` is set to `True` (the default), it indicates that the SARIMAX model should enforce invertibility on the estimated parameters. Invertibility ensures that the model is well-defined and that the estimated autoregressive (AR) and moving average (MA) coefficients are within the range of stationarity. Enforcing invertibility is typically recommended to ensure that the SARIMAX model adheres to the theoretical requirements for a stable time series model. It also helps prevent issues with model estimation and stability.
 
-- The default is an `AR(1)` model, which refers to `(1,0,0)`. However, keep in mind that the appropriate values for `p`, `q`, and `d` can vary from one time series to another, and determining the optimal values often involves analyzing the autocorrelation and partial autocorrelation functions (ACF and PACF) of the time series data and using model selection criteria like AIC or BIC. It's common practice to try different combinations of p, q, and d and evaluate the model's performance for a given dataset. The parameters for the seasonal order `(P, D, Q, s)` are similar in concept to the non-seasonal order parameters `(p, q, d)`. 
+- The default is an `AR(1)` model, which refers to `(1,0,0)`. However, keep in mind that the appropriate values for `p`, `q`, and `d` can vary from one time series to another, and determining the optimal values often involves analyzing the autocorrelation and partial autocorrelation functions (ACF and PACF) of the time series data and using model selection criteria like the Akaike Information Criterion (AIC) or Bayesian Information Criterion (BIC). It's common practice to try different combinations of p, q, and d and evaluate the model's performance for a given dataset. The parameters for the seasonal order `(P, D, Q, s)` are similar in concept to the non-seasonal order parameters `(p, q, d)`. 
 
 Tune the hyperparameters:
 
@@ -381,9 +381,9 @@ In the following, you visualize a time series forecast for furniture sales data,
 ```python
 # Plot the forecasting results
 pred = results.get_prediction(start=maximim_date, end=maximim_date+pd.DateOffset(months=6), dynamic=False) # Forecast for the next 6 months (months=6)
-pred_ci = pred.conf_int() # Extract the confidence intervals for the predictions.
+pred_ci = pred.conf_int() # Extract the confidence intervals for the predictions
 ax = y['2019':].plot(label='observed')
-pred.predicted_mean.plot(ax=ax, label='One-step ahead Forecast', alpha=.7, figsize=(12, 7))
+pred.predicted_mean.plot(ax=ax, label='One-step ahead forecast', alpha=.7, figsize=(12, 7))
 ax.fill_between(pred_ci.index,
                 pred_ci.iloc[:, 0],
                 pred_ci.iloc[:, 1], color='k', alpha=.2)
