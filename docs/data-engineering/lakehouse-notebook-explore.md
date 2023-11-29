@@ -74,6 +74,6 @@ The structure of the Lakehouse shown in the Notebook is the same as the one in t
 > [!NOTE]
 > The notebook will be created under your current workspace.
 
-## Next steps
+## Related content
 
 - [How to use a notebook to load data into your lakehouse](lakehouse-notebook-load-data.md)

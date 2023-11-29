@@ -161,6 +161,6 @@ To install an R feed library:
    spark.lapply(c("hello world", "good morning", "good evening"), hello)
    ```
 
-## Next steps
+## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).

@@ -79,6 +79,6 @@ Business users can build Power BI reports directly on top of OneLake using the n
 
 *Example diagram showing loading data using Spark, querying using T-SQL, and viewing the data in a Power BI report.*
 
-## Next steps
+## Related content
 
 - [Creating a lakehouse with OneLake](create-lakehouse-onelake.md)

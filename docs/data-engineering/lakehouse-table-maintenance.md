@@ -60,7 +60,7 @@ After **Run now** is selected, a Spark maintenance job is submitted for executio
 1. Jobs on different tables can execute in parallel.
 1. Table maintenance jobs can be easily tracked in the Monitoring Hub. Look for "TableMaintenance" text within the activity name column in the monitoring hub main page.
 
-## Next steps
+## Related content
 
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)

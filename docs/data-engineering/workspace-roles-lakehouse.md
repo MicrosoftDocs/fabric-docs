@@ -28,6 +28,6 @@ In a lakehouse the users with Admin, Member, and Contributor roles can perform a
 > [!IMPORTANT]
 > When accessing data using the SQL analytics endpoint with Viewer role, **make sure SQL access policy is granted to read required tables**.
 
-## Next steps
+## Related content
 
 - [Roles in workspaces](../get-started/roles-workspaces.md)

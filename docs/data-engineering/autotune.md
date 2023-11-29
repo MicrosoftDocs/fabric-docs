@@ -163,6 +163,6 @@ To ensure that autotune meets the desired performance standards and is fit for i
 
 We prioritize data privacy and security. Your data is only used to train the model that serves your specific workload. We take stringent measures to ensure that no sensitive information is used in our storage or training processes.
 
-## Next steps
+## Related content
 
 - [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md)

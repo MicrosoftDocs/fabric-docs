@@ -30,6 +30,6 @@ As the session is already running, this provides users with an instant run exper
 
 As part of Spark session initialization, a REPL core is created. Every time a new item starts sharing the same session and the executors are allocated in FAIR based manner to these notebooks running in these REPL cores inside the Spark application preventing starvation scenarios.
 
-## Next steps
+## Related content
 
 - To get started with high concurrency mode in notebooks, see [Configure high concurrency mode for Fabric notebooks](configure-high-concurrency-session-notebooks.md).

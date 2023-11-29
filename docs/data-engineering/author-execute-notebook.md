@@ -575,7 +575,7 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 To find all shortcut keys, select **View** on the notebook ribbon, and then select **Keybindings**.
 
-## Next steps
+## Related content
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)

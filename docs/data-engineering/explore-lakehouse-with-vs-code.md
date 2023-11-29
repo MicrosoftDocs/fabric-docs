@@ -36,7 +36,7 @@ To make it easier to reference a table, folder, or file in the code, you can cop
 
 :::image type="content" source="media\vscode\copy-path.png" alt-text="Screenshot of the right-click menu, showing where to select from the copy options.":::
 
-## Next steps
+## Related content
 
 - [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)
 - [What is a Lakehouse?](lakehouse-overview.md)

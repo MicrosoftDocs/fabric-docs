@@ -37,8 +37,7 @@ Use the following steps to manage the Data Engineering/Science settings for Micr
 
 1. After configuring, select **Apply**
 
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Workspace](workspace-admin-settings.md)
-
 * [Learn about the Spark Compute for Fabric Data Engineering/Science experiences](spark-compute.md)

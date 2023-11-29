@@ -106,7 +106,7 @@ Step 2 is when Spark job definitions are imported from intermediate storage into
 > [!NOTE]
 > The export option outputs a json metadata file. Ensure that Spark job definition executable files, reference files, and arguments are accessible from Fabric.
 
-## Next steps
+## Related content
 
 - [Migrate notebooks](migrate-synapse-notebooks.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)
