@@ -76,7 +76,7 @@ The book recommendation dataset in this scenario consists of three separate data
   | 276725 | 034545104X | 0 |
   | 276726 | 0155061224 | 5 |
 
-- *Users.csv*: User IDs have been anonymized and mapped to integers. Demographic data, such as location and age, are provided if available. If this data is unavailable, the value is `null`.
+- *Users.csv*: User IDs are anonymized and mapped to integers. Demographic data, such as location and age, are provided if available. If this data is unavailable, the value is `null`.
 
   | User-ID | Location | Age |
   |---|---|---|

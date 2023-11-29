@@ -75,7 +75,7 @@ The dataset contains a churn status of 10,000 customers, along with 14 attribute
 - Tenure (years of being the bank's customer)
 - Account balance
 - Estimated salary
-- Number of products that the customer has purchased through the bank
+- Number of products that the customer purchased through the bank
 - Credit card status (whether the customer has a credit card or not)
 - Active member status (whether the person is an active bank customer or not)
 
@@ -428,7 +428,7 @@ message(sprintf("Negative class(Non-Exited) takes %.2f%% of the dataset.", round
 
 In the training dataset:
 
-- `Positive class(Exited)` refers the minority class, which takes 20.34% of the dataset.
+- `Positive class(Exited)` refers to the minority class, which takes 20.34% of the dataset.
 - `Negative class(Non-Exited)` refers to the majority class, which takes 79.66% of the dataset.
 
 The next cell rewrites the oversample function in `imbalance` library to generate a balanced dataset:

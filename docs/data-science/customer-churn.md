@@ -77,7 +77,7 @@ The dataset in *churn.csv* contains a churn status of 10,000 customers, along wi
 - Tenure (years of being the bank's customer)
 - Account balance
 - Estimated salary
-- Number of products that the customer has purchased through the bank
+- Number of products that the customer purchased through the bank
 - Credit card status (whether the customer has a credit card or not)
 - Active member status (whether the person is an active bank customer or not)
 
@@ -94,7 +94,7 @@ Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Be
 
 ### Download the dataset and upload to the lakehouse
 
-Define the following parameters if you want use this notebook with different datasets:
+Define the following parameters if you want to use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If TRUE, the dataset has to be uploaded manually

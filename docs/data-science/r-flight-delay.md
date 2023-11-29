@@ -251,7 +251,7 @@ flights_aug %>%
 
 ## Build a Power BI report
 
-The model result is fairly good. Use the results of flight delay prediction to build an interactive Power BI dashboard. Show the number of flights by carrier and the number of flights by destination. The dashboard can also filter by the results of delay prediction.  
+The model result is fairly good. Use the results of flight delay prediction to build an interactive Power BI dashboard. Show the number of flights by carrier and the number of flights by destination. The dashboard can also filter by the results of delay prediction.
 
 :::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Screenshot that shows bar charts for number of flights by carrier and number of flights by destination in a Power BI report.":::
 
@@ -312,11 +312,11 @@ You can now use the delta table to create a semantic model:
 
    1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked bar chart with:
       - Y-axis: **carrier_name**.
-      - X-axis: **flight**.  Select **Count** for the aggregation.
+      - X-axis: **flight**. Select **Count** for the aggregation.
       - Legend: **origin_name**.
    1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked bar chart with:
       - Y-axis: **dest_name**.
-      - X-axis: **flight**.  Select **Count** for the aggregation.
+      - X-axis: **flight**. Select **Count** for the aggregation.
       - Legend: **origin_name**.
    1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false"::: Slicer with:
       - Field: **_pred_class**.

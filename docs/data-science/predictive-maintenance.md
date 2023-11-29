@@ -170,7 +170,7 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 ## Step 3: Preprocess data and perform exploratory data analysis
 
-Convert the Spark DataFrame to a pandas DataFrame to use pandas-compatible popular plotting libraries.
+Convert the Spark DataFrame to a pandas DataFrame so you can use pandas-compatible popular plotting libraries.
 
 > [!TIP]
 > For a large dataset, you might need to load a portion of it.
