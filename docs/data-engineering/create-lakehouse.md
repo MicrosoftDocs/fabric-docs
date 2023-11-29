@@ -57,7 +57,7 @@ There are a few ways you can get started with the creation process:
 > [!NOTE]
 > The lakehouse will be created under the current workspace you are in.
 
-## Next steps
+## Related content
 
 Now that you have successfully created your Lakehouse, learn more about:
 

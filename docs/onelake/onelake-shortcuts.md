@@ -243,6 +243,6 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 
-## Next steps
+## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)

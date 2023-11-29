@@ -68,6 +68,6 @@ From a snapshot, you can take three actions:
 
 :::image type="content" source="media\run-spark-job-definition\sjd-snapshot-actions.png" alt-text="Screenshot of the snapshot menu options." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
 
-## Next steps
+## Related content
 
 - [Microsoft Spark Utilities (MSSparkUtils) for Fabric](microsoft-spark-utilities.md)

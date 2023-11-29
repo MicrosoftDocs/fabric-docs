@@ -28,7 +28,7 @@ You can select the name of the application you want to view in the application l
 
 Open the **Recent runs** page of the notebook or Spark job definition, you can view the status of the Apache application.
 
-- Success 
+- Success
 
 :::image type="content" source="media\spark-detail-monitoring\job-succeeded.png" alt-text="Screenshot showing where Succeeded status appears." lightbox="media\spark-detail-monitoring\job-succeeded.png":::
 
@@ -75,7 +75,6 @@ The executor usage graph visually displays the allocation of Spark job executors
 - For Idled, it is the number of unused cores while the Spark application is running.
 
 In some cases, at some time points the number of tasks might exceed the capacity of the executor cores (i.e., task numbers > total executor cores / spark.task.cpus). This is as expected, because there's time gap between a task marked as running and it is actually running on an executor core. So some tasks might be shown as running, but it does not run on any core.
-
 
 Select the color icon to select or unselect the corresponding content in all graph.
 
@@ -136,7 +135,7 @@ The diagnostic panel provides users with real-time recommendations and error ana
 
 :::image type="content" source="media\spark-detail-monitoring\diagnostics.png" alt-text="Screenshot showing the diagnostics for spark application." lightbox="media\spark-detail-monitoring\diagnostics.png":::
 
-## Next steps
+## Related content
 
 The next step after viewing the details of an Apache Spark application is to view **Spark job progress** below the Notebook cell. You can refer to:
 

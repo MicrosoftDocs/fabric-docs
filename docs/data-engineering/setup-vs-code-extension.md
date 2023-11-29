@@ -85,7 +85,7 @@ Once you have a workspace, choose it by selecting the **Select Workspace** optio
 - The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
 - Shell command start with "!" is not supported.
 
-## Next steps
+## Related content
 
 In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 
