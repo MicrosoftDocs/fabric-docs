@@ -31,3 +31,6 @@ items:
   - name: Real-Time Analytics
     tocHref: /azure/data-explorer/
     topicHref: /fabric/real-time-analytics/index
+  - name: Microsoft Fabric Security
+    tocHref: /azure/reliability
+    topicHref: /fabric/security/index
