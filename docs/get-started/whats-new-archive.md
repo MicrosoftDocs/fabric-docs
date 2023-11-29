@@ -100,7 +100,7 @@ This section summarizes archived improvements and features for [real-time analyt
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-|May 2023|**What's New in Kusto – Build 2023!**|Announcing the [Synapse Real Time Analytics in Microsoft Fabric (Preview)](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/what-s-new-in-kusto-build-2023/ba-p/3829467)!|
+|May 2023|**What's New in Kusto – Build 2023!**|Announcing the [Synapse Real Time Analytics in Microsoft Fabric](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/what-s-new-in-kusto-build-2023/ba-p/3829467)!|
 
 
 #### Synapse Real-Time Analytics samples and guidance
