@@ -26,7 +26,7 @@ To scale your capacity you need:
 
 1. Sign into the [Azure portal](https://portal.azure.com/).
 
-2. Select the **Microsoft Fabric (preview)** service to see your capacities. You can search for *Microsoft Fabric (preview)* in the search menu.
+2. Select the **Microsoft Fabric** service to see your capacities. You can search for *Microsoft Fabric* in the search menu.
 
 3. Select the capacity you want to scale. The current size for each capacity is listed under *SKU*. When you make your selection, information about that capacity is displayed next to it. This information includes the current capacity scale  under *SKU*.
 
