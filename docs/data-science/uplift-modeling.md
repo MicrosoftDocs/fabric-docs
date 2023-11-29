@@ -54,8 +54,8 @@ The main steps in this tutorial are:
 
 You can follow along in a notebook in one of two ways:
 
-- Open and run the built-in notebook in the Data Science experience.
-- Upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience.
+- Upload your notebook from GitHub to the Synapse Data Science experience.
 
 ### Open the built-in notebook
 

@@ -15,15 +15,15 @@ ms.date: 05/23/2023
 
 # Use end-to-end AI samples in Microsoft Fabric
 
-The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software as a service (SaaS) experience in [!INCLUDE [product-name](../includes/product-name.md)], can help professionals in the field of machine learning to easily build, deploy, and operationalize their machine learning models in a single analytics platform, while collaborating with other key roles. Begin here to understand the capabilities that the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience offers and explore examples of how machine learning models can address your common business problems.
+The [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] software as a service (SaaS) experience in [!INCLUDE [product-name](../includes/product-name.md)] can help professionals in the field of machine learning to easily build, deploy, and operationalize their machine learning models in a single analytics platform, while collaborating with other key roles. Begin here to understand the capabilities that the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience offers and explore examples of how machine learning models can address your common business problems.
 
 ## Install Python libraries
 
 Some of the end-to-end AI samples require additional libraries when you're developing machine learning models or doing ad hoc data analysis. You can use either of the following options to quickly install these libraries for your Apache Spark session.
 
-### Install with in-line installation capabilities
+### Install with inline installation capabilities
 
-You can use the in-line installation capabilities (for example, `%pip` or `%conda`) in your notebook to install new libraries. This option installs the libraries only in the current notebook and not in the workspace.
+You can use the [inline installation capabilities](python-guide/python-library-management.md#in-line-installation) (for example, `%pip` or `%conda`) in your notebook to install new libraries. This option installs the libraries only in the current notebook and not in the workspace.
 
 To install a library, use the following code. Replace `<library name>` with the name of your library, such as `imblearn` or `wordcloud`.
 
@@ -34,8 +34,6 @@ To install a library, use the following code. Replace `<library name>` with the 
 # Use conda to install libraries
 %conda install <library name>
 ```
-
-For more information on in-line installation capabilities, see [In-line installation](python-guide/python-library-management.md#in-line-installation).
 
 ### Install directly in your workspace
 
@@ -76,16 +74,16 @@ Follow along in the [tutorial for time series forecasting](time-series-forecasti
 
 ### Text classification
 
-Apply text classification with word2vec and a linear-regression model on Spark to predict whether a book in the British Library is fiction or nonfiction based on book metadata.
+Apply text classification with word2vec and a linear regression model in Spark to predict whether a book in the British Library is fiction or nonfiction, based on book metadata.
 
 Follow along in the [tutorial for text classification](title-genre-classification.md).
 
 ### Uplift model
 
-Estimate the causal impact of certain medical treatments on an individual's behavior by using an uplift model. Walk through how to create, train, and evaluate the model. Touch on four core learnings in these modules:
+Estimate the causal impact of certain medical treatments on an individual's behavior by using an uplift model. Touch on four core learnings in these modules:
 
 - Data-processing module: extracts features, treatments, and labels.
-- Training module: targets to predict the difference between an individual's behavior when there's a treatment and when there's no treatment, by using a classical machine learning model like LightGBM.
+- Training module: targets predicting the difference between an individual's behavior when there's a treatment and when there's no treatment, by using a classical machine learning model like LightGBM.
 - Prediction module: calls the uplift model to predict on test data.
 - Evaluation module: evaluates the effect of the uplift model on test data.
 

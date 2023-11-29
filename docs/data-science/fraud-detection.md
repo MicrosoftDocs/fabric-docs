@@ -37,8 +37,8 @@ The main steps in this tutorial are:
 
 You can follow along in a notebook in one of two ways:
 
-- Open and run the built-in notebook in the Data Science experience.
-- Upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience.
+- Upload your notebook from GitHub to the Synapse Data Science experience.
 
 ### Open the built-in notebook
 
@@ -134,7 +134,7 @@ if not IS_CUSTOM_DATA:
 
 Experiment tracking is the process of saving all relevant experiment-related information for every experiment that you run. Sometimes, it's easy to observe that there's no way to get better results when you're running a particular experiment. In such a situation, you're better off simply stopping the experiment and trying a new one.
 
-The Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)] includes an autologging feature. This feature reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends MLflow's autologging capabilities and is deeply integrated into the Data Science experience.
+The Synapse Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)] includes an autologging feature. This feature reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends MLflow's autologging capabilities and is deeply integrated into the Synapse Data Science experience.
 
 By using autologging, you can easily track and compare the performance of different models and experiments without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
