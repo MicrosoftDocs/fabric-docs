@@ -103,7 +103,7 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. In the SQL analytics endpoint view under **Tables**, select the table that your script uses to land data. You can then preview your data from the SQL analytics endpoint.
 
-## Next steps
+## Related content
 
 - [Spark Job Definition](spark-job-definition.md)
 - [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)

@@ -26,6 +26,6 @@ To run a Spark job definition, you must have at least one lakehouse associated w
 > [!IMPORTANT]
 > The Spark job definition item is currently in PREVIEW.
 
-## Next steps
+## Related content
 
 - [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md)

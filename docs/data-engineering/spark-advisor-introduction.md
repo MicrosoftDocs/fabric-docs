@@ -47,6 +47,7 @@ Unable to find the relation(s) specified in the hint. Verify that the relation(s
 ```scala
 spark.sql("SELECT /*+ BROADCAST(unknownTable) */ * FROM t1 INNER JOIN t2 ON t1.str = t2.str")
 ```
+
 ### A hint in the query prevents another hint from being applied
 
 The selected query contains a hint that prevents another hint from being applied.
@@ -54,6 +55,7 @@ The selected query contains a hint that prevents another hint from being applied
 ```scala
 spark.sql("SELECT /*+ BROADCAST(t1), MERGE(t1, t2) */ * FROM t1 INNER JOIN t2 ON t1.str = t2.str")
 ```
+
 ### Enable 'spark.advise.divisionExprConvertRule.enable' to reduce rounding error propagation
 
 This query contains the expression with Double type. We recommend that you enable the configuration 'spark.advise.divisionExprConvertRule.enable', which can help reduce the division expressions and to reduce the rounding error propagation.
@@ -67,6 +69,7 @@ This query contains the expression with Double type. We recommend that you enabl
 This query contains time consuming join due to "Or" condition within query. We recommend that you enable the configuration 'spark.advise.nonEqJoinConvertRule.enable', which can help to convert the join triggered by "Or" condition to SMJ or BHJ to accelerate this query.
 
 ## User experience
+
 The Apache Spark advisor displays the advice, including info, warnings, and errors, at Notebook cell output in real-time.
 
 - Info
@@ -78,7 +81,7 @@ The Apache Spark advisor displays the advice, including info, warnings, and erro
 - Error
     :::image type="content" source="media\spark-advisor-introduction\errors.png" alt-text="Screenshot showing the errors.":::
 
-## Next steps
+## Related content
 
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
 - [Monitor Apache Spark job definition](monitor-spark-job-definitions.md)

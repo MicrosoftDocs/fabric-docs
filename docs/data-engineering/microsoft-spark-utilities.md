@@ -521,6 +521,6 @@ mssparkutils.fs.unmount("/test")
 
 - Mounting an ADLS Gen1 storage account isn't supported.
 
-## Next steps
+## Related content
 
 - [Library management](library-management.md)

@@ -93,8 +93,8 @@ Admins can now enable autologging for their machine learning models and experime
 [Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
 :::image type="content" source="media\workspace-admin-settings\automatic-log-settings.png" alt-text="Screenshot showing autolog settings page.":::
 
+## Related content
 
-## Next steps
-- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
+* Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml).

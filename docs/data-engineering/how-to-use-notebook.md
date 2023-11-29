@@ -162,6 +162,6 @@ Fabric notebooks support two modes that you can easily switch between: **Editing
 - **Editing mode**: You can edit and run the cells and collaborate with others on the notebook.
 - **Viewing mode**: You can only view the cell content, output, and comments of the notebook. All the operations that make changes to the notebook are disabled.
 
-## Next steps
+## Related content
 
 - [Author and execute notebooks](author-execute-notebook.md)

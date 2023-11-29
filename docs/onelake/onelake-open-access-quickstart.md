@@ -72,6 +72,6 @@ Before you start, you must have:
     update delta.`abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Tables/nycsample` set vendorID = 99999 where vendorID = 1;
     ```
 
-## Next steps
+## Related content
 
 - [Transform data with Spark and query with SQL](onelake-onecopy-quickstart.md)

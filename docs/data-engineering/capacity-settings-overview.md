@@ -23,6 +23,6 @@ From the Admin portal, navigate to the **Data Engineering/Science Settings** sec
 
 :::image type="content" source="media\capacity-settings\capacity-settings-without-user-defined-pools.gif" alt-text="A gif showing the  configuration of capacity settings for Data Engineering/Science.":::
 
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-management.md)

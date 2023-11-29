@@ -75,7 +75,7 @@ Accessibility has always been a top priority to ensure that Lakehouse is inclusi
 
 - **Form fields and Labels:** All form fields have associated labels, simplifying data input for everyone, including those using screen readers.
 
-## Next steps
+## Related content
 
 In this overview, you get a basic understanding of a lakehouse. Advance to the next article to learn how to create and use your own lakehouse:
 
