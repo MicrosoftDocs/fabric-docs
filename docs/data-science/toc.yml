@@ -61,6 +61,8 @@ items:
       href: uplift-modeling.md
     - name: Machine failure prediction
       href: predictive-maintenance.md
+    - name: Sales forecasting
+      href: sales-forecasting.md
   - name: R tutorials
     items:
     - name: Customer churn

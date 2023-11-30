@@ -95,6 +95,12 @@ Proactively predict mechanical failures by training multiple models on historica
 
 Follow along in the [tutorial for predictive maintenance](predictive-maintenance.md).
 
+### Sales forecast
+
+Predict future sales for categories of products at a superstore. Accomplish this task by training a model on historical data.
+
+Follow along in the [tutorial for sales forecasting](sales-forecasting.md).
+
 ## Next steps
 
 - [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
