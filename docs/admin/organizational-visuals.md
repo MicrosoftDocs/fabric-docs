@@ -128,7 +128,7 @@ When this setting is enabled, visuals can obtain Microsoft Entra ID (formerly kn
 
 2. Select **Enabled**.
 
-3. Choose who can obtain a token:
+3. Choose who can render this API:
 
    * Select **The entire organization** option to permit everyone in your organization to allow visuals to obtain a Microsoft Entra ID access tokens.
    * Select the **Specific security groups** option to limit obtaining access tokens to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option. Only a user listed in the permitted security group can render the API.
