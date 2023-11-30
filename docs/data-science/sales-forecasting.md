@@ -468,7 +468,7 @@ The light blue line in the graph represents the actual sales values, while the d
 
 Based on this observation, it's justifiable to have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions regarding inventory management, raw material procurement, and other business-related considerations.
 
-:::image type="content" source="./media/sales-forecasting/powerbi-forecast.png" alt-text="Screenshot of the Power BI report.":::
+:::image type="content" source="./media/sales-forecasting/power-bi-forecast.png" alt-text="Screenshot of the Power BI report.":::
 
 ## Related content
 
