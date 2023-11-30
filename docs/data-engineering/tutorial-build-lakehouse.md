@@ -57,8 +57,8 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
 
-1. In the **Query settings** pane, update the **Name** field to **dimension_customer**.    
-   
+1. In the **Query settings** pane, update the **Name** field to **dimension_customer**.
+
    > [!NOTE]
    > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
 
@@ -116,8 +116,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
 
-## Next steps
+## Next step
 
-Advance to the next article to learn how to
 > [!div class="nextstepaction"]
 > [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md)

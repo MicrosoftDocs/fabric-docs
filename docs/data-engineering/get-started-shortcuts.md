@@ -52,7 +52,7 @@ This quickstart explains how to reference data stored in external ADLS account a
 1. Execute code to get file content
 1. Add code for data analysis
 
-## Next steps
+## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

@@ -52,7 +52,7 @@ If your Azure Synapse data pipelines include notebook and/or Spark job definitio
 - For notebook migration, refer to [migrate notebooks from Azure Synapse to Fabric](migrate-synapse-notebooks.md).
 - For data pipeline migration, see [migrate to Data Factory in Fabric](../data-factory/upgrade-paths.md).
 
-## Next steps
+## Related content
 
 - [Migrate Spark notebooks](migrate-synapse-notebooks.md)
 - [Migrate Spark job definition](migrate-synapse-spark-job-definition.md)

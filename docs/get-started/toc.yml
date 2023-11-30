@@ -5,7 +5,7 @@ items:
   items:
   - name: What is Microsoft Fabric?
     href: microsoft-fabric-overview.md
-  - name: Start a Fabric (Preview) trial
+  - name: Start a Fabric trial
     href: fabric-trial.md
   - name: Microsoft Fabric preview information
     href: preview.md    

@@ -81,7 +81,7 @@ GET https://onelake.dfs.fabric.microsoft.com/myWorkspace?resource=filesystem&rec
 PUT https://onelake.dfs.fabric.microsoft.com/myWorkspace/myLakehouse.Lakehouse/Files/newFolder/?resource=directory
 ```
 
-## Next steps
+## Related content
 
 - [Connect to OneLake using Python](onelake-access-python.md)
 - [Use Azure Storage Explorer to manage OneLake](onelake-azure-storage-explorer.md)

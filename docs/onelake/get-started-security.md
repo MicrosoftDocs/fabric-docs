@@ -80,7 +80,7 @@ Use the following general rules as a guide when structuring data in OneLake to k
   > [!NOTE]
   > Viewers with ReadAll access can bypass any object-level security settings by accessing the data in OneLake directly. Ensure that you only grant ReadAll permissions to users who should see the data without any restrictions.
 
-## Next steps
+## Related content
 
 - [Workspace roles](../get-started/roles-workspaces.md)
 - [OneLake security](onelake-security.md)

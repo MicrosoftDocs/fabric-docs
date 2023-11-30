@@ -357,6 +357,6 @@ df = pd.DataFrame([[38.0, 2.0, 18.0, 22.0, 21, np.nan],[19, 439, 6, 452, 226,232
 df
 ```
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)

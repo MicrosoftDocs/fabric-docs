@@ -98,8 +98,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Prepare and transform data](tutorial-lakehouse-data-preparation.md)
