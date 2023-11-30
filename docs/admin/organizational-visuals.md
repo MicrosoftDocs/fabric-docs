@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom:
 ms.topic: conceptual
-ms.date: 11/22/2023
+ms.date: 11/30/2023
 ---
 
 # Manage Power BI visuals admin settings
@@ -130,8 +130,8 @@ When this setting is enabled, visuals can obtain Microsoft Entra ID (formerly kn
 
 3. Choose who can obtain a token:
 
-   * Select **The entire organization** option to allow everyone in your organization obtain a Microsoft Entra ID access tokens.
-   * Select the **Specific security groups** option to limit downloading files to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option.
+   * Select **The entire organization** option to permit everyone in your organization to allow visuals to obtain a Microsoft Entra ID access tokens.
+   * Select the **Specific security groups** option to limit obtaining access tokens to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option. A user who isn't listed in the permitted security group can't render the API.
 
 4. Select **Apply**.
 
