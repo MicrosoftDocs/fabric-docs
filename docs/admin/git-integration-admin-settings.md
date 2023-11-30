@@ -10,7 +10,7 @@ ms.date: 11/30/2023
 
 # Git integration tenant settings
 
-The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. When then tenant admin enables any of these settings, they can choose to delegate control of them to the workspace admin or capacity admin.
+The git integration tenant admin settings are configured in the tenant settings section of the admin portal. The tenant admin can choose to delegate control of them to the workspace admin or capacity admin.
 
 For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
@@ -34,7 +34,7 @@ To get started with Git integration, see [Manage a workspace with Git](../cicd/g
 If a workspace capacity is in one geographic location (for example, Central US) while the Azure DevOps repo is in another location (for example, West Europe), the Fabric admin can decide whether to allow users to commit metadata (or perform other git actions) to another geographical location. Only the metadata of the item is exported. Item data and user related information are not exported.  
 Enable this setting to allow all users, or a specific group or users, to export metadata to other geographical locations.
 
-:::image type="content" source="./media/git-integration-admin-settings/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of sensitivity labels switch.":::
+:::image type="content" source="./media/git-integration-admin-settings/multi-geo-switch.png" alt-text="Screenshot of multi geo switch switch.":::
 
 ## Users can export workspace items with applied sensitivity labels to Git repositories (Preview)
 
@@ -42,7 +42,7 @@ Sensitivity labels aren't included when exporting an item. Therefore, the Fabric
 
 Enable this setting to allow all users, or a specific group of users, to export items without their sensitivity labels.
 
-:::image type="content" source="./media/git-integration-admin-settings/enable-git-integration-switch.png" alt-text="Screenshot of git integration switch.":::
+:::image type="content" source="./media/git-integration-admin-settings/git-integration-sensitivity-labels-switch.png" alt-text="Screenshot of sensitivity labels switch.":::
 
 Learn more about [sensitivity labels](../get-started/apply-sensitivity-labels.md).
 
