@@ -61,9 +61,9 @@ You can follow along in a notebook one of two ways:
 
 The dataset contains 9995 instances of sales of different products, along with 21 attributes that include: `Row ID`, `Order ID`, `Order Date`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category`, `Product Name`, `Sales`, `Quantity`, `Discount`, and `Profit`.
 
-- _Superstore.xlsx_
+The following table is from the _Superstore.xlsx_ file used in this notebook.
 
-|"Row ID|"Order ID"|"Order Date"|"Ship Date"|"Ship Mode"|"Customer ID"|"Customer Name"|"Segment"|"Country"|"City"|"State"|"Postal Code"|"Region"|"Product ID"|"Category"|"Sub-Category"|"Product Name"|"Sales"|"Quantity"|"Discount"|"Profit"|
+|"Row ID"|"Order ID"|"Order Date"|"Ship Date"|"Ship Mode"|"Customer ID"|"Customer Name"|"Segment"|"Country"|"City"|"State"|"Postal Code"|"Region"|"Product ID"|"Category"|"Sub-Category"|"Product Name"|"Sales"|"Quantity"|"Discount"|"Profit"|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |4|US-2015-108966|2015-10-11|2015-10-18|Standard Class|SO-20335|Sean O'Donnell|Consumer|United States|Fort Lauderdale|Florida|33311|South|FUR-TA-10000577|Furniture|Tables|Bretford CR4500 Series Slim Rectangular Table|957.5775|5|0.45|-383.0310|
 |11|CA-2014-115812|2014-06-09|2014-06-09|Standard Class|Standard Class|Brosina Hoffman|Consumer|United States|Los Angeles|California|90032|West|FUR-TA-10001539|Furniture|Tables|Chromcraft Rectangular Conference Tables|1706.184|9|0.2|85.3092|
@@ -139,7 +139,7 @@ import pandas as pd
 df = pd.read_excel("/lakehouse/default/Files/salesforecast/raw/Superstore.xlsx")
 ```
 
-## Step 2: Exploratory data analysis
+## Step 2: Perform exploratory data analysis
 
 ### Import libraries
 
@@ -302,12 +302,12 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)`, respectively, and hence there are a total of 7 parameters to tune. Before model training, you need to set up these parameters, which are defined in the following sections.
 
-#### Order Parameters `(p, d, q)`:
+#### Order parameters `(p, d, q)`
 - `p`: The order of the autoregressive (AR) component, indicating how many past observations are considered. Also known as the AR order.
 - `d`: The degree of differencing required to make the time series stationary. Also known as the differencing order.
 - `q`: The order of the moving average (MA) component, indicating how many past white noise error terms are considered. Also known as the MA order.
 
-#### Seasonal Order Parameters `(P, D, Q, s)`:
+#### Seasonal order parameters `(P, D, Q, s)`
 
 - `P`: The seasonal order of the autoregressive (AR) component, similar to `p` but for the seasonal part.
 - `D`: The seasonal order of differencing, similar to `d` but for the seasonal part.
@@ -359,7 +359,7 @@ for param in pdq:
 
 Upon evaluation of the above results, you can determine the values for both the order parameters and then seasonal order parameters. The choice is `order=(0, 1, 1)` and `seasonal_order=(0, 1, 1, 12)`, which offers the lowest AIC (for example, 279.58) and hence are used to train the model in the following.
 
-#### Train the model
+### Train the model
 
 
 
@@ -470,7 +470,7 @@ The light blue line in the graph represents the actual sales values, while the d
 
 Based on this observation, it's justifiable to have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions regarding inventory management, raw material procurement, and other business-related considerations.
 
-:::image type="content" source="./media/sales-forecasting/powerbi-forecast.png" alt-text="Screeenshot of the Power BI report.":::
+:::image type="content" source="./media/sales-forecasting/powerbi-forecast.png" alt-text="Screenshot of the Power BI report.":::
 
 ## Related content
 
