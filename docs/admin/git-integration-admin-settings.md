@@ -10,7 +10,8 @@ ms.date: 11/30/2023
 
 # Git integration tenant settings
 
-The git integration tenant admin settings are configured in the tenant settings section of the admin portal. The tenant admin can choose to delegate control of them to the workspace admin or capacity admin.
+The git integration tenant admin settings are configured in the tenant settings section of the admin portal.  
+The tenant admin can choose to delegate control of these switches to the workspace admin or capacity admin.
 
 For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
