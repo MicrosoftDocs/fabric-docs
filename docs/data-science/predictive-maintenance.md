@@ -57,7 +57,7 @@ You can follow along in a notebook in one of two ways:
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
 
 - Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
-- Install libraries directly in your workspace, so that all notebooks in your workspace can use the libraries.
+- Install libraries directly in your workspace, so that all notebooks in your workspace can use them.
 
 For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 

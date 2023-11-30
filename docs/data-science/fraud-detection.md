@@ -14,7 +14,7 @@ ms.date: 09/06/2023
 
 # Tutorial: Create, evaluate, and score a fraud detection model
 
-In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
+In this tutorial, you walk through a [!INCLUDE [product-name](../includes/product-name.md)] data science workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
 
 The main steps in this tutorial are:
 
@@ -57,11 +57,11 @@ You can follow along in a notebook in one of two ways:
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
 
 - Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
-- Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
+- Install libraries directly in your workspace, so that all notebooks in your workspace can use them.
 
 For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 
-For this tutorial, you install the imbalanced learn (`imblearn`) library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
+For this tutorial, you install the imbalanced learning (`imblearn`) library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
 
 ```python
 # Use pip to install imblearn
@@ -108,7 +108,7 @@ EXPERIMENT_NAME = "aisample-fraud"  # MLflow experiment name
 The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. If you don't, you'll get an error.
+> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. If you don't, you'll get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -136,7 +136,7 @@ Experiment tracking is the process of saving all relevant experiment-related inf
 
 The Synapse Data Science experience in [!INCLUDE [product-name](../includes/product-name.md)] includes an autologging feature. This feature reduces the amount of code required to automatically log the parameters, metrics, and items of a machine learning model during training. The feature extends MLflow's autologging capabilities and is deeply integrated into the Synapse Data Science experience.
 
-By using autologging, you can easily track and compare the performance of different models and experiments without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+By using autologging, you can easily track and compare the performance of models and experiments without the need for manual tracking. For more information, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 You can disable Microsoft Fabric autologging in a notebook session by calling `mlflow.autolog()` and setting `disable=True`:
 
@@ -200,7 +200,7 @@ In this section, you begin by exploring the raw data and high-level statistics. 
         df = df.limit(SAMPLE_ROWS)
     ```
 
-1. Convert the Spark DataFrame to pandas DataFrame for easier visualization and processing:
+1. Convert the Spark DataFrame to a pandas DataFrame for easier visualization and processing:
 
     ```python
     df_pd = df.toPandas()
@@ -369,7 +369,7 @@ In this section, you evaluate the two trained models:
 
 #### Compute model metrics
 
-1. Define a `prediction_to_spark` function that performs predictions and converts the prediction results into a Spark DataFrame. You can later compute model statistics on the prediction results by using [SynapseML](https://aka.ms/fabric/SynapseEval).
+1. Define a `prediction_to_spark` function that performs predictions and converts the prediction results to a Spark DataFrame. You can later compute model statistics on the prediction results by using [SynapseML](https://aka.ms/fabric/SynapseEval).
 
     ```python
     from pyspark.sql.functions import col

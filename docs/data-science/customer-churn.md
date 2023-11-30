@@ -85,7 +85,7 @@ The dataset also includes columns that should have no impact on the customer's d
 
 The event that defines the customer's churn is the closing of the customer's bank account. The column `Exited` in the dataset refers to the customer's abandonment. Because you don't have much context for these attributes, you can proceed without having background information about the dataset. Your aim is to understand how these attributes contribute to the `Exited` status.
 
-Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data. Moreover, confusion matrix accuracy might not be meaningful for imbalanced classification. It might be better to also measure the accuracy by using the Area Under the Precision-Recall Curve (AUPRC) metric.
+Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Because of the class imbalance ratio, we recommend generating synthetic data. Moreover, the accuracy of a confusion matrix might not be meaningful for imbalanced classification. It might be better to also measure the accuracy by using the Area Under the Precision-Recall Curve (AUPRC) metric.
 
 |CustomerID|Surname|CreditScore|Geography|Gender|Age|Tenure|Balance|NumOfProducts|HasCrCard|IsActiveMember|EstimatedSalary|Exited|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -493,9 +493,9 @@ ypred_rfc2_sm = load_model_rfc2_sm.predict(X_test) # Random forest with maximum 
 ypred_lgbm1_sm = load_model_lgbm1_sm.predict(X_test) # LightGBM
 ```
 
-### Show true/false positives/negatives by using the confusion matrix
+### Show true/false positives/negatives by using a confusion matrix
 
-Develop a script to plot the confusion matrix so you can evaluate the accuracy of the classification. You can also plot a confusion matrix by using SynapseML tools, as shown in the [fraud detection sample](https://aka.ms/samples/frauddectection).
+Develop a script to plot a confusion matrix so you can evaluate the accuracy of the classification. You can also plot a confusion matrix by using SynapseML tools, as shown in the [fraud detection sample](https://aka.ms/samples/frauddectection).
 
 ```python
 def plot_confusion_matrix(cm, classes,
@@ -546,7 +546,7 @@ tn, fp, fn, tp = cfm.ravel()
 
 :::image type="content" source="media/tutorial-bank-churn/confusion-random-forest-depth-8.jpg" alt-text="Screenshot that shows a notebook display of a confusion matrix for random forest with a maximum depth of eight.":::
 
-Create the confusion matrix for LightGBM:
+Create a confusion matrix for LightGBM:
 
 ```python
 cfm = confusion_matrix(y_test, y_pred=ypred_lgbm1_sm)

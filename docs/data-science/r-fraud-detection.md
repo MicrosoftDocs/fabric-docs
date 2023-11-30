@@ -55,7 +55,7 @@ You can follow along in a notebook in one of two ways:
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use in-line installation capabilities such as `install.packages` and `devtools::install_version`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
 
-For this notebook, you use `install.packages()` to install the imbalanced learn library (imported as `imbalance`).  Set `quiet` to `TRUE` to make output more concise:
+For this notebook, you use `install.packages()` to install the imbalanced learning library (imported as `imbalance`).  Set `quiet` to `TRUE` to make output more concise:
 
 ```r
 # Install imbalance for SMOTE
