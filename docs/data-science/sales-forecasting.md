@@ -12,8 +12,6 @@ ms.date: 11/14/2023
 
 # Develop, evaluate, and score a forecasting model for superstore sales
 
-## Introduction
-
 In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. This scenario is to build a forecasting model that uses historic sales data to predict the sales for different categories of products at a superstore.
 
 Forecasting is a crucial asset in sales, harnessing historical data and predictive methods to provide insights into future trends. You can analyze past sales to identify patterns, and learn from consumer behavior, to optimize inventory, production, and marketing strategies. This proactive approach enhances adaptability, responsiveness, and overall performance of businesses in a dynamic marketplace.
