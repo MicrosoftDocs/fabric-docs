@@ -5,19 +5,19 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 11/02/2023
+ms.date: 11/30/2023
 ---
 
 # Git integration tenant settings
 
-The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+The git integration tenant admin settings are configured in the tenant settings section of the Admin portal. When then tenant admin enables any of these settings, they can choose to delegate control of them to the workspace admin or capacity admin.
+
+For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 :::image type="content" source="./media/git-integration-admin-settings/workspace-settings.png" alt-text="Screenshot of workspace settings.":::
 
 > [!IMPORTANT]
-> The switches that control git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](fabric-switch.md) is turned on. If Fabric is disabled, git integration can't work regardless of the status of these switches.
+> The switches that control git integration are part of Microsoft Fabric and only work if the [Fabric admin switch](fabric-switch.md) is turned on. If Fabric is disabled, git integration doesn't work regardless of the status of these switches.
 
 ## Users can synchronize workspace items with their Git repositories (Preview)
 
