@@ -21,7 +21,7 @@ The app is updated often with new features and functionalities and provides the 
 
 ## Install the app
 
-You must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization with the right permissions can view the app.
+You must be a capacity admin to install and view the Microsoft Fabric Capacity Metrics app.
 
 To install the app, follow the instructions in [Install the Microsoft Fabric Capacity Metrics app](metrics-app-install.md).
 
