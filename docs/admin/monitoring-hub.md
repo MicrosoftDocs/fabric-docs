@@ -17,7 +17,7 @@ ms.date: 11/02/2023
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-01.png" alt-text="Screen shot of Monitoring hub in left pane.":::
 
-*Monitoring hub* is available for Power BI, Data Factory, Data Engineering and Data Science during the Microsoft Fabric public preview. 
+*Monitoring hub* is available for Power BI, Data Factory, Data Engineering and Data Science.
 
 ## Prerequisites
 
