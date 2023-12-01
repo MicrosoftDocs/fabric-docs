@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
 ms.date: 09/06/2023
-#customer intent: As a data scientist, I want to build a fraud detection model so that I can use it to detect future fraudulent transactions.
+#customer intent: As a data scientist, I want to build a machine learning model so I can detect future fraudulent transactions.
 ---
 
 # Tutorial: Create, evaluate, and score a fraud detection model
 
-In this tutorial, you walk through a [!INCLUDE [product-name](../includes/product-name.md)] data science workflow with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
 
 The main steps in this tutorial are:
 

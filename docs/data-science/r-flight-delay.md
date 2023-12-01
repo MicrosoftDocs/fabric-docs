@@ -10,7 +10,7 @@ ms.custom:
   - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
-#customer intent: As a data scientist, I want to use R to predict flight delay.
+#customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
 ---
 
 # Tutorial: Use R to predict flight delay

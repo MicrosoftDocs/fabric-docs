@@ -9,7 +9,7 @@ ms.custom:
   - ignite-2023
 ms.date: 09/21/2023
 ms.search.form: R Language
-#customer intent: As a data scientist, I want to create a model to predict fraud detection by using R.
+#customer intent: As a data scientist, I want to build a machine learning model in R so I can detect future fraudulent transactions.
 ---
 
 # Tutorial: Use R to create, evaluate, and score a fraud detection model

@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/23/2023
-#customer intent: As a data scientist, I want to create a recommendation model to provide predictions.
+#customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---
 
 # Tutorial: Create, evaluate, and score a recommendation system

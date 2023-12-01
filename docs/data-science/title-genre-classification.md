@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 09/15/2023
-#customer intent: As a data scientist, I want to create, evaluate, and score a text classification model to predict a category based on a single attribute.
+#customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model

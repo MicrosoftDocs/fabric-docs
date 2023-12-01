@@ -53,7 +53,7 @@ You can follow along in a notebook in one of two ways:
 
 ## Step 1: Load the data
 
-The dataset contains 9,995 instances of sales of various products, along with 21 attributes. The following table is from the _Superstore.xlsx_ file used in this notebook.
+The dataset contains 9,995 instances of sales of various products, along with 21 attributes. The following table is from the *Superstore.xlsx* file used in this notebook.
 
 |Row ID|Order ID|Order Date|Ship Date|Ship Mode|Customer ID|Customer Name|Segment|Country|City|State|Postal Code|Region|Product ID|Category|Sub-Category|Product Name|Sales|Quantity|Discount|Profit|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -108,16 +108,15 @@ if not IS_CUSTOM_DATA:
 
 Microsoft Fabric extends the MLflow autologging capabilities by automatically capturing the values of input parameters and output metrics of a machine learning model as you're training it. This information is then logged to the workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
+If you want to turn off Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
+
 ```python
 # Set up MLflow for experiment tracking
 import mlflow
 
 mlflow.set_experiment(EXPERIMENT_NAME)
-mlflow.autolog(disable=True)  # Disable MLflow autologging
+mlflow.autolog(disable=True)  # Turn off MLflow autologging
 ```
-
-> [!NOTE]
-> If you want to disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`.
 
 ### Read raw data from the lakehouse
 
@@ -154,7 +153,7 @@ from sklearn.metrics import mean_squared_error,mean_absolute_percentage_error
 
 ### Display the raw data
 
-To review the dataset, we recommend that you manually go through a subset of the data to gain a better understanding. In this regard, you can use the `display` function to print the DataFrame. You can also show the `Chart` views to easily visualize subsets of the dataset.
+To review the dataset, we recommend that you manually go through a subset of the data to gain a better understanding. For this task, you can use the `display` function to print the DataFrame. You can also show the `Chart` views to easily visualize subsets of the dataset.
 
 ```python
 display(df)
@@ -174,8 +173,7 @@ In real-world business scenarios, there's often a need to predict sales in three
 
 - A specific product category
 - A specific customer category
-- A specific combination of product category and customer category.
-
+- A specific combination of product category and customer category
 
 First, perform some preprocessing on the data by dropping unnecessary columns. Some of the columns (such as `Row ID`, `Order ID`,`Customer ID`, and `Customer Name`) are unnecessary because they have no impact. Because the focus here is to forecast the overall sales for a specific product category (`Furniture`) across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, and `Postal Code`. If you need to forecast sales for a specific location or category, you might need to adjust the preprocessing step accordingly.
 
@@ -283,13 +281,13 @@ The order parameters are:
 
 - `p`: The order of the AR component. It represents the number of past observations in the time series that are used to predict the current value.
 
-  Typically, `p` should be a non-negative integer. Common values are in the range of `0` to `3`, although higher values are possible depending on the specific characteristics of the data. A higher `p` value indicates a longer memory of past values in the model.
+  Typically, this parameter should be a non-negative integer. Common values are in the range of `0` to `3`, although higher values are possible depending on the specific characteristics of the data. A higher `p` value indicates a longer memory of past values in the model.
 
 - `d`: The differencing order. It's the number of times that the time series needs to be differenced to achieve stationarity.
 
   This parameter should be a non-negative integer. Common values are in the range of `0` to `2`. A `d` value of `0` means the time series is already stationary. Higher values indicate the number of differencing operations required to make it stationary.
 
-- `q`: The order of the MA component. It represents the number of past white noise error terms that are used to predict the current value.
+- `q`: The order of the MA component. It represents the number of past white-noise error terms that are used to predict the current value.
 
   This parameter should be a non-negative integer. Common values are in the range of `0` to `3`, but higher values might be necessary for certain time series. A higher `q` value indicates a stronger reliance on past error terms to make predictions.
 
@@ -326,11 +324,11 @@ You should also be aware of these parameters:
   
   Enforcing invertibility helps ensure that the SARIMAX model adheres to the theoretical requirements for a stable time series model. It also helps prevent issues with model estimation and stability.
 
-The default is an `AR(1)` model, which refers to `(1, 0, 0)`. However, it's common practice to try different combinations of the order and seasonal order parameters and evaluate the model's performance for a dataset. Keep in mind that the appropriate values can vary from one time series to another.
+The default is an `AR(1)` model, which refers to `(1, 0, 0)`. However, it's common practice to try different combinations of the order parameters and seasonal order parameters and evaluate the model's performance for a dataset. Keep in mind that the appropriate values can vary from one time series to another.
 
 Determining the optimal values often involves analyzing the autocorrelation function (ACF) and partial autocorrelation function (PACF) of the time series data. It also often involves using model selection criteria like the Akaike information criterion (AIC) or the Bayesian information criterion (BIC).
 
-Now, tune the hyperparameters:
+Tune the hyperparameters:
 
 ```python
 # Tune the hyperparameters to determine the best model
@@ -387,7 +385,7 @@ predictions = results.get_prediction(start=maximim_date-pd.DateOffset(months=6-1
 predictions_future = results.get_prediction(start=maximim_date+ pd.DateOffset(months=1),end=maximim_date+ pd.DateOffset(months=6),dynamic=False)
 ```
 
-You use `predictions` to assess the model's performance by contrasting it with the actual values, whereas `predictions_future` is indicative of future forecasting.
+You use `predictions` to assess the model's performance by contrasting it with the actual values, whereas `predictions_future` indicates future forecasting.
 
 ```python
 # Log the model and parameters
@@ -450,7 +448,7 @@ MAPE is a straightforward metric. A 10% MAPE represents that the average deviati
 
 The light blue line in the following graph represents the actual sales values. The dark blue line represents the forecasted sales values. An analysis of the comparison between actual and forecasted sales reveals that the model effectively predicts sales for the `Furniture` category during the first six months of 2023.
 
-Based on this observation, you can have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions about inventory management, raw material procurement, and other business-related considerations.
+Based on this observation, you can have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions about inventory management, procurement of raw materials, and other business-related considerations.
 
 :::image type="content" source="./media/sales-forecasting/power-bi-forecast.png" alt-text="Screenshot of a Power BI report.":::
 

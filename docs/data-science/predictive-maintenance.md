@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/23/2023
-#customer intent: As a data scientist, I want to create, evaluate, and score a machine fault detection model so that I can predict mechanical failures.
+#customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
 
 # Create, evaluate, and score a machine fault detection model

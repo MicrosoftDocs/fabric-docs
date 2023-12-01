@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
 ms.date: 09/15/2023
-#customer intent: As a data scientist, I want to create a model to predict churn.
+#customer intent: As a data scientist, I want to build a machine learning model so I can predict customer churn.
 ---
 
 # Tutorial: Create, evaluate, and score a churn prediction model
