@@ -75,35 +75,35 @@ items:
       href: copilot-notebooks-chat-pane.md
 - name: Fabric adoption roadmap
   items: 
-  - name: "Introduction"
+  - name: Introduction
     href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context
-  - name: "Maturity levels"
+  - name: Maturity levels
     href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
-  - name: "Data culture"
+  - name: Data culture
     href: /power-bi/guidance/fabric-adoption-roadmap-data-culture?context=/fabric/context/context
-  - name: "Executive sponsorship"
+  - name: Executive sponsorship
     href: /power-bi/guidance/fabric-adoption-roadmap-executive-sponsorship?context=/fabric/context/context
-  - name: "Business alignment"
+  - name: Business alignment
     href: /power-bi/guidance/fabric-adoption-roadmap-business-alignment?context=/fabric/context/context
-  - name: "Content ownership"
+  - name: Content ownership
     href: /power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management?context=/fabric/context/context
-  - name: "Content delivery scope"
+  - name: Content delivery scope
     href: /power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope?context=/fabric/context/context
-  - name: "Center of Excellence"
+  - name: Center of Excellence
     href: /power-bi/guidance/fabric-adoption-roadmap-center-of-excellence?context=/fabric/context/context
-  - name: "Governance"
+  - name: Governance
     href: /power-bi/guidance/fabric-adoption-roadmap-governance?context=/fabric/context/context
-  - name: "Mentoring and user enablement"
+  - name: Mentoring and user enablement
     href: /power-bi/guidance/fabric-adoption-roadmap-mentoring-and-user-enablement?context=/fabric/context/context
-  - name: "Community of practice"
+  - name: Community of practice
     href: /power-bi/guidance/fabric-adoption-roadmap-community-of-practice?context=/fabric/context/context
-  - name: "User support"
+  - name: User support
     href: /power-bi/guidance/fabric-adoption-roadmap-user-support?context=/fabric/context/context
-  - name: "System oversight"
+  - name: System oversight
     href: /power-bi/guidance/fabric-adoption-roadmap-system-oversight?context=/fabric/context/context
-  - name: "Change management"
+  - name: Change management
     href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
-  - name: "Conclusion"
+  - name: Conclusion
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
