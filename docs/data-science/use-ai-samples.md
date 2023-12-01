@@ -13,7 +13,7 @@ ms.custom:
 ms.date: 05/23/2023
 ---
 
-# How-to use end-to-end AI samples in Microsoft Fabric
+# How to use end-to-end AI samples in Microsoft Fabric
 
 In providing the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] SaaS experience we want to enable ML professionals to easily and frictionlessly build, deploy, and operationalize their machine learning models, in a single analytics platform, while collaborating with other key roles. Begin here to understand the various capabilities the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] experience offers and explore examples of how ML models can address your common business problems.
 
@@ -98,6 +98,11 @@ In this tutorial, you proactively predict mechanical failures. This is accomplis
 
 Follow along in the [Predictive maintenance](predictive-maintenance.md) tutorial.
 
+## Sales forecast
+
+In this tutorial, you predict future sales for different categories of products at a superstore. This is accomplished by training a model on historical data.
+
+Follow along in the [Sales forecasting](sales-forecasting.md) tutorial.
 
 ## Next steps
 

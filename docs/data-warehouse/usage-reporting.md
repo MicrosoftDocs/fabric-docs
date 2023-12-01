@@ -37,7 +37,7 @@ In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fab
 
 The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity.  
 
-Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization can be have permissions granted or shared to view the app. For more information, see [Install the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md#install-the-app).
+Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization can have permissions granted or shared to view the app. For more information, see [Install the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md#install-the-app).
 
 Once you have installed the app, select the **Warehouse** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart and the **Items (14 days)** data table now show only **Warehouse** activity.
 
