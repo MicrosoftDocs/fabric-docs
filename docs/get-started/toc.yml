@@ -76,7 +76,7 @@ items:
 - name: Fabric adoption roadmap
   items: 
   - name: Introduction
-    href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context
+    href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context&bc=/fabric/breadcrumb/toc.json
   - name: Maturity levels
     href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
   - name: Data culture
