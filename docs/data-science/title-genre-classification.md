@@ -193,7 +193,7 @@ raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSche
 
 ## Step 3: Perform exploratory data analysis
 
-Explore the dataset by using the `display` command to view high-level statistics of the dataset and show the chart views:
+Explore the dataset by using the `display` command to view high-level statistics for the dataset and show the chart views:
 
 ```python
 display(raw_df.limit(20))

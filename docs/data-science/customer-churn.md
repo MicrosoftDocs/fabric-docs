@@ -37,7 +37,7 @@ The main steps in this tutorial are:
 You can follow along in a notebook in one of two ways:
 
 - Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload a notebook from GitHub to the Synapse Data Science experience.
+- Upload your notebook from GitHub to the Synapse Data Science experience.
 
 ### Open the built-in notebook
 
@@ -117,7 +117,7 @@ import os, requests
 if not IS_CUSTOM_DATA:
 # Using an Azure Synapse Analytics blob, this can be done in one line
 
-# Download demo data files into a lakehouse if they don't exist
+# Download demo data files into the lakehouse if they don't exist
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
     file_list = ["churn.csv"]
     download_path = "/lakehouse/default/Files/churn/raw"

@@ -61,7 +61,7 @@ When you're developing a machine learning model or doing ad hoc data analysis, y
 
 For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 
-For this tutorial, you install the imbalanced learning (`imblearn`) library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
+For this tutorial, you install the imbalanced-learn (`imblearn`) library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook:
 
 ```python
 # Use pip to install imblearn

@@ -58,11 +58,11 @@ The dataset is a record of every building sold in the New York City property mar
 | Manhattan | ALPHABET CITY | 07  RENTALS - WALKUP APARTMENTS | 0.0 | 384.0 | 17.0 |  | C4 | 225 EAST 2ND   STREET |  | 10009.0 | 10.0 | 0.0 | 10.0 | 2145.0 | 6670.0 | 1900.0 | 2.0 | C4 | 275000.0 | 2007-06-19 |
 | Manhattan | ALPHABET CITY | 07  RENTALS - WALKUP APARTMENTS | 2.0 | 405.0 | 12.0 |  | C7 | 508 EAST 12TH   STREET |  | 10009.0 | 28.0 | 2.0 | 30.0 | 3872.0 | 15428.0 | 1930.0 | 2.0 | C7 | 7794005.0 | 2007-05-21 |
 
-You'll build a model to forecast the monthly volume of property trade based on history data. The forecast uses [Facebook Prophet](https://facebook.github.io/prophet/), which provides a fast and automated forecast procedure. It also handles seasonality well.
+You'll build a model to forecast the monthly volume of property trades based on history data. The forecast uses [Facebook Prophet](https://facebook.github.io/prophet/), which provides a fast and automated forecast procedure. It also handles seasonality well.
 
 ## Install Prophet
 
-First, install [Facebook Prophet](https://facebook.github.io/prophet/). Facebook developed the Prophet open-source time series forecasting library. It uses a decomposable time series model that has three main components: trend, seasonality, and holidays.
+First, install [Facebook Prophet](https://facebook.github.io/prophet/). Facebook developed the Prophet open-source time series forecasting library. It uses a decomposable time series model that has three main components: trend, seasonality, and holiday.
 
 For the trend component, Prophet assumes a piece-wise constant rate of growth, with automatic selection of change points.
 
@@ -221,7 +221,7 @@ df_pandas["y"] = df_pandas["total_sales"]
 
 Now, fit the model. Choose `multiplicative` seasonality, to reflect the fact that seasonality is no longer a constant additive factor like the default that Prophet assumes. As shown in a previous cell, you printed the data for total property sales per month, and the vibration amplitude isn't consistent. This means that simple additive seasonality won't fit the data well.
 
-Use Markov Chain Monte Carlo (MCMC) methods to calculate the posterior mean distribution. By default, Prophet uses the Stan L-BFGS method to fit the model, which finds a maximum *a posteriori probability* (MAP) estimate.
+Use Markov Chain Monte Carlo (MCMC) methods to calculate the posterior mean distribution. By default, Prophet uses the Stan L-BFGS method to fit the model, which finds a maximum *a posteriori* probability (MAP) estimate.
 
 ```python
 from prophet import Prophet

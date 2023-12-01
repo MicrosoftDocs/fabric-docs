@@ -31,8 +31,6 @@ In this tutorial, you learn how to:
 
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
-- Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or to create a lakehouse.
-
 ## Install packages
 
 To use code in this article, install the `nycflights13` package:
@@ -91,7 +89,7 @@ Notice that the variable called `arr_delay` is a factor variable. It's important
 glimpse(flight_data)
 ```
 
-About 16% of the flights in this data set arrived more than 30 minutes late.
+About 16% of the flights in this dataset arrived more than 30 minutes late.
 
 ```r
 flight_data %>% 

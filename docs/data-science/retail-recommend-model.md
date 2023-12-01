@@ -214,7 +214,7 @@ Display the DataFrame and check whether the `_item_id` value increases monotonic
 display(df_items.sort(F.col("_item_id").desc()))
 ```
 
-Use the following code to plot the top 10 authors with the maximum number of books. Agatha Christie is the leading author with over 600 books, followed by William Shakespeare.
+Use the following code to plot the top 10 authors with the maximum number of books. Agatha Christie is the leading author with more than 600 books, followed by William Shakespeare.
 
 ```python
 df_books = df_items.toPandas() # Create a pandas DataFrame from the Spark DataFrame for visualization
@@ -538,7 +538,7 @@ def evaluate(model, data, verbose=0):
 
 ### Track the experiment by using MLflow
 
-MLflow is used to track all the experiments and to log parameters, metrics, and the models. To start training and evaluating models, use the following code:
+Use MLflow to track all the experiments and to log parameters, metrics, and models. To start training and evaluating models, use the following code:
 
 ```python
 from mlflow.models.signature import infer_signature
@@ -549,7 +549,7 @@ with mlflow.start_run(run_name="als"):
     best_metrics = {"RMSE": 10e6, "MAE": 10e6, "R2": 0, "Explained variance": 0}
     best_index = 0
     # Evaluate models
-    # Log model, metrics, and parameters
+    # Log models, metrics, and parameters
     for idx, model in enumerate(models.subModels):
         with mlflow.start_run(nested=True, run_name=f"als_{idx}") as run:
             print("\nEvaluating on testing data:")
@@ -591,7 +591,7 @@ with mlflow.start_run(run_name="als"):
                     "DATA_FOLDER": DATA_FOLDER,
                 }
             )
-    # Log best model and related metrics and parameters to the parent run
+    # Log the best model and related metrics and parameters to the parent run
     mlflow.spark.log_model(
         models.subModels[best_index],
         f"{EXPERIMENT_NAME}-alsmodel",

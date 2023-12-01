@@ -82,7 +82,7 @@ IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually
 DATA_FOLDER = "Files/uplift-modelling"
 DATA_FILE = "criteo-research-uplift-v2.1.csv"
 
-# data schema
+# Data schema
 FEATURE_COLUMNS = [f"f{i}" for i in range(12)]
 TREATMENT_COLUMN = "treatment"
 LABEL_COLUMN = "visit"
@@ -343,7 +343,7 @@ def uplift_plot(uplift_df):
     """
     gain_x = uplift_df.percent_rank
     gain_y = uplift_df.group_uplift
-    # plot the data
+    # Plot the data
     plt.figure(figsize=(10, 6))
     mpl.rcParams["font.size"] = 8
 

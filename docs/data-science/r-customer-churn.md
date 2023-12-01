@@ -13,7 +13,7 @@ ms.date: 09/21/2023
 
 # Tutorial: Use R to create, evaluate, and score a churn prediction model
 
-In this tutorial, you walk through a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict the churn rate for bank customers. The churn rate, also called the rate of attrition, refers to the rate at which bank customers stop doing business with the bank.
+In this tutorial, you walk through a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict the churn rate for bank customers. The churn rate, also called the rate of attrition, refers to the rate at which customers stop doing business with the bank.
 
 The main steps in this tutorial are:
 

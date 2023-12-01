@@ -24,14 +24,14 @@ The main steps in this tutorial are:
 > - Load and process the data.
 > - Understand the data through exploratory data analysis.
 > - Train machine learning models by using scikit-learn, LightGBM, and MLflow, and track experiments by using the Fabric autologging feature.
-> - Score the trained model by using the Fabric PREDICT feature, save the best model, and load it for predictions.
+> - Score the trained models by using the Fabric PREDICT feature, save the best model, and load it for predictions.
 > - Demonstrate the model's performance via visualizations in Power BI.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-- A Microsoft Fabric lakehouse to store data for this example. If you don't have a lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md). If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 
@@ -74,7 +74,7 @@ The dataset simulates logging of a manufacturing machine's parameters as a funct
 
 - A unique identifier (UID) that ranges from 1 to 10000.
 - A product ID that consists of a letter L, M, or H. The letter indicates the product quality variant and a variant-specific serial number. Low-quality, medium-quality, and high-quality variants make up 60%, 30%, and 10% of all products, respectively.
-- Air temperature in kelvin.
+- Air temperature in kelvin (K).
 - Process temperature in kelvin.
 - Rotational speed in revolutions per minute (RPM).
 - Torque in Newton meters (Nm).
@@ -143,7 +143,7 @@ The following table shows a preview of the data:
 
 ### Write a Spark DataFrame to a lakehouse delta table
 
-Format the data (for example, replace space with an underscore) to facilitate Spark operations in subsequent steps:
+Format the data (for example, replace the space with an underscore) to facilitate Spark operations in subsequent steps:
 
 ```python
 # Replace the space in the column name with an underscore to avoid an invalid character while saving 
@@ -316,9 +316,9 @@ plt.show()
 
 You successfully balanced the dataset and can move to model training.
 
-## Step 4: Train and evaluate the model
+## Step 4: Train and evaluate the models
 
-Use [MLflow](https://aka.ms/fabric-autologging) to register models, train and compare models, and pick the best model for your prediction purpose. For model training, you use the following three models:
+Use [MLflow](https://aka.ms/fabric-autologging) to register models, train and compare models, and choose the best model for your prediction purpose. For model training, you use the following three models:
 
 - Random forest classifier
 - Logistic regression classifier
@@ -479,7 +479,7 @@ with mlflow.start_run() as run:
     mlflow.log_metric("recall_test", recall_test)
 ```
 
-## Step 5: Select the model and predict outputs
+## Step 5: Select the best model and predict outputs
 
 In the previous section, you trained three classifiers: random forest, logistic regression, and XGBoost. You have the choice to either programmatically access the results or use the user interface (UI).
 
@@ -526,7 +526,7 @@ model = MLFlowTransformer(
 )
 ```
 
-Now that you've created an MLFlowTransformer object to load the model for inferencing, use the Transformer API to score the model on the testing dataset:
+Now that you've created an `MLFlowTransformer` object to load the model for inferencing, use the Transformer API to score the model on the testing dataset:
 
 ```python
 predictions = model.transform(spark.createDataFrame(X_test))
