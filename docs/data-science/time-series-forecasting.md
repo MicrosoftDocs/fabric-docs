@@ -12,9 +12,9 @@ ms.date: 09/15/2023
 #customer intent: As a data scientist, I want to build a time series model with trend and seasonality information to forecast future cycles.
 ---
 
-# Train and evaluate a time series forecasting model in Microsoft Fabric
+# Train and evaluate a time series forecasting model
 
-In this tutorial, you build a program to forecast time series data that has seasonal cycles. You use the [NYC property sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates that range from 2003 through 2015. This dataset is published by the New York City Department of Finance on the [NYC Open Data portal](https://opendata.cityofnewyork.us/).
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a program to forecast time series data that has seasonal cycles. You use the [NYC property sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates that range from 2003 through 2015. This dataset is published by the New York City Department of Finance on the [NYC Open Data portal](https://opendata.cityofnewyork.us/).
 
 The main steps in this tutorial are:
 

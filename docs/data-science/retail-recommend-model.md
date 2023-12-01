@@ -12,9 +12,9 @@ ms.date: 08/23/2023
 #customer intent: As a data scientist, I want to create a recommendation model to provide predictions.
 ---
 
-# Tutorial: Create, evaluate, and score a recommendation system in Microsoft Fabric
+# Tutorial: Create, evaluate, and score a recommendation system
 
-In this tutorial, you walk through an end-to-end data engineering and data science workflow. The scenario is to build a model for online book recommendations. The main steps in this tutorial are:
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a model for online book recommendations. The main steps in this tutorial are:
 
 > [!div class="checklist"]
 >

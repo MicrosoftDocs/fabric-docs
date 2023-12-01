@@ -14,7 +14,7 @@ ms.date: 09/15/2023
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-In this tutorial, you walk through an end-to-end data science workflow for a text classification model by using Microsoft Fabric. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model by using [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
 
 The main steps in this tutorial are:
 
@@ -121,7 +121,7 @@ if not IS_CUSTOM_DATA:
 
 ### Import required libraries
 
-Prior to any processing, you need to import required libraries, including those for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
+Before any processing, you need to import required libraries, including those for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
 
 ```python
 import numpy as np

@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.custom:
   - ignite-2023
 ms.date: 09/21/2023
-# customer intent: As a data scientist, I want to create a model to predict churn by using R.
+#customer intent: As a data scientist, I want to create a model to predict churn by using R.
 ---
 
 # Tutorial: Use R to create, evaluate, and score a churn prediction model
 
-In this tutorial, you walk through a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a model to predict the churn rate for bank customers. The churn rate, also called the rate of attrition, refers to the rate at which customers stop doing business with the bank.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a model in R to predict the churn rate for bank customers. The churn rate, also called the rate of attrition, refers to the rate at which customers stop doing business with the bank.
 
 The main steps in this tutorial are:
 

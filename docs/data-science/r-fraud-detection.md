@@ -9,12 +9,12 @@ ms.custom:
   - ignite-2023
 ms.date: 09/21/2023
 ms.search.form: R Language
-# customer intent: As a data scientist, I want to create a model to predict fraud detection by using R.
+#customer intent: As a data scientist, I want to create a model to predict fraud detection by using R.
 ---
 
 # Tutorial: Use R to create, evaluate, and score a fraud detection model
 
-In this tutorial, you walk through a Microsoft Fabric data science workflow in R with an end-to-end example. The scenario is to build a fraud detection model by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a fraud detection model in R by using machine learning algorithms trained on historical data. You can then use the model to detect future fraudulent transactions.
 
 The main steps in this tutorial are:
 

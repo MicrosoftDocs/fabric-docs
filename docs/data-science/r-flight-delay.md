@@ -10,12 +10,12 @@ ms.custom:
   - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
-# customer intent: As a data scientist, I want to use R to predict flight delay.
+#customer intent: As a data scientist, I want to use R to predict flight delay.
 ---
 
 # Tutorial: Use R to predict flight delay
 
-In this tutorial, you use the [nycflights13](https://github.com/hadley/nycflights13) data to predict whether a plane will arrive more than 30 minutes late. You then use the prediction results to build an interactive Power BI dashboard.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. You use the [nycflights13](https://github.com/hadley/nycflights13) data and R to predict whether a plane will arrive more than 30 minutes late. You then use the prediction results to build an interactive Power BI dashboard.
 
 In this tutorial, you learn how to:
 

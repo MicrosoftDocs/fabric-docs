@@ -14,7 +14,7 @@ ms.date: 08/23/2023
 
 # Create, evaluate, and score a machine fault detection model
 
-In this tutorial, you walk through a Microsoft Fabric data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis so that you can proactively identify issues and take actions before a machine's failure. In this scenario, the aim is to predict whether a machine will experience a failure based on process temperature, rotational speed, or other features.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to use machine learning to have a more systematic approach to fault diagnosis so that you can proactively identify issues and take actions before a machine's failure. In this scenario, the aim is to predict whether a machine will experience a failure based on process temperature, rotational speed, or other features.
 
 The main steps in this tutorial are:
 

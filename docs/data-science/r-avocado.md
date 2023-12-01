@@ -10,12 +10,12 @@ ms.custom:
   - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
-# customer intent: As a data scientist, I want to create a model to predict prices by using R.
+#customer intent: As a data scientist, I want to create a model to predict prices by using R.
 ---
 
 # Tutorial: Use R to predict avocado prices
 
-This tutorial shows an end-to-end example of using R to analyze and visualize avocado prices in the United States, so you can build a machine learning model that predicts future avocado prices.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. You use R to analyze and visualize avocado prices in the United States, so you can build a machine learning model that predicts future avocado prices.
 
 The main steps in this tutorial are:
 

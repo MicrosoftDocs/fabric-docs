@@ -12,9 +12,9 @@ ms.date: 09/15/2023
 #customer intent: As a data scientist, I want to create, evaluate, and score an uplift model to estimate causal impact.
 ---
 
-# Tutorial: Create, train, and evaluate an uplift model in Microsoft Fabric
+# Tutorial: Create, train, and evaluate an uplift model
 
-In this tutorial, you learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. You learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
 
 Uplift modeling is a family of causal inference technology that uses machine learning models to estimate the causal effect of a treatment on an individual's behavior. This type of modeling classifies individuals into these categories:
 
