@@ -20,7 +20,24 @@ To get started, you must complete the following prerequisites:
 
 - A Microsoft Fabric tenant account with an active subscription. Create an account for free.
 - Make sure you have a Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
-- Create a data pipeline follow steps in [Create a data pipeline](tutorial-load-sample-data-to-data-warehouse.md#create-a-data-pipeline) section.
+
+## Create a data pipeline
+
+1. Navigate to [Power BI](https://app.powerbi.com/).
+1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
+
+   :::image type="content" source="media/copy-data-activity/select-data-factory.png" alt-text="Screenshot with the data factory experience emphasized.":::
+
+1. Navigate to your [!INCLUDE [product-name](../includes/product-name.md)] workspace. If you created a new workspace in the prior Prerequisites section, use this one.
+
+   :::image type="content" source="media/copy-data-activity/navigate-to-workspace.png" alt-text="Screenshot of the workspaces window where you navigate to your workspace.":::
+
+1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
+
+   :::image type="content" source="media/copy-data-activity/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+
+   :::image type="content" source="media/copy-data-activity/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
+
 
 ## Copy data using data pipeline
 
