@@ -56,17 +56,19 @@ The following properties are **required**:
 - **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
   - **File path**: If you choose this type, the data can be copied from the specified file system or folder/file path specified previously.
-  - **Wildcard file path**: Specify the folder or file path with wildcard characters under the specified file system to filter source folders or files.
+  - **Wildcard file path**: If you choose this type, specify the File system and Wildcard paths.
+  
+    - **File system**: The Azure Data Lake Storage Gen2 file system name.
+  
+    - **Wildcard paths**: Specify the folder or file path with wildcard characters under the specified file system to filter source folders or files.
 
-    Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-storage#folder-and-file-filter-examples).
-
-    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::
-
-    - **File system**: The Azure Data Lake Storage Gen2 file system name.    
-
-    - *Wildcard folder path*: Specify the folder path with wildcard characters under your specified file system to filter source folders.
-
-    - *Wildcard file name*: Specify the file name with wildcard characters under your specified file system + folder path (or wildcard folder path) to filter source files.
+        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-storage#folder-and-file-filter-examples).
+    
+        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::  
+    
+        - *Wildcard folder path*: Specify the folder path with wildcard characters under your specified file system to filter source folders.
+    
+        - *Wildcard file name*: Specify the file name with wildcard characters under your specified file system + folder path (or wildcard folder path) to filter source files.
 
   - **List of files**: Indicates you want to copy a given file set. Specify **Folder path** and **Path to file list** to point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path. For more examples, go to [File list examples](/azure/data-factory/connector-azure-data-lake-storage#file-list-examples).
 
@@ -84,6 +86,7 @@ Under **Advanced**, you can specify the following fields:
 - **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as List of files.
 
   - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
+  
   - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
 
   When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
