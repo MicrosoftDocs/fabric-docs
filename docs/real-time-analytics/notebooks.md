@@ -33,13 +33,13 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
 
 1. Select the snippet that corresponds to the operation you want to perform: **Write data to a KQL database** or **Read data from a KQL database**.
 
-    The following code snippet shows the example data read code:
+    The following code snippet shows the example data read operation:
 
     ```Python
     # Example of query for reading data from Kusto. Replace T with your <tablename>.
     kustoQuery = "['T'] | take 10"
     # The query URI for reading the data e.g. https://<>.kusto.data.microsoft.com.
-    kustoUri = "https://hnkhd12011909468629945.z0.kusto.data.microsoft.com"
+    kustoUri = "https://<yourKQLdatabaseURI>.z0.kusto.data.microsoft.com"
     # The database with data to be read.
     database = "DocsDatabase"
     # The access credentials.
@@ -55,7 +55,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     kustoDf.show()
     ```
 
-    The following code snippet shows the example write data code:
+    The following code snippet shows the example write data operation:
 
     ```Python
     # The Kusto cluster uri to write the data. The query Uri is of the form https://<>.kusto.data.microsoft.com 
