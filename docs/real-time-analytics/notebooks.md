@@ -33,13 +33,52 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
 
 1. Select the snippet that corresponds to the operation you want to perform: **Write data to a KQL database** or **Read data from a KQL database**.
 
-    The following image shows the example data read code:
+    The following code snippet shows the example data read code:
 
-    :::image type="content" source="media/notebooks/read-query-example.png" alt-text="Screenshot of Fabric notebook with kusto read query example.":::
+    ```Python
+    # Example of query for reading data from Kusto. Replace T with your <tablename>.
+    kustoQuery = "['T'] | take 10"
+    # The query URI for reading the data e.g. https://<>.kusto.data.microsoft.com.
+    kustoUri = "https://hnkhd12011909468629945.z0.kusto.data.microsoft.com"
+    # The database with data to be read.
+    database = "DocsDatabase"
+    # The access credentials.
+    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    kustoDf  = spark.read\
+        .format("com.microsoft.kusto.spark.synapse.datasource")\
+        .option("accessToken", accessToken)\
+        .option("kustoCluster", kustoUri)\
+        .option("kustoDatabase", database)\
+        .option("kustoQuery", kustoQuery).load()
+    
+    # Example that uses the result data frame.
+    kustoDf.show()
+    ```
 
-    The following image shows the example write data code:
+    The following code snippet shows the example write data code:
 
-    :::image type="content" source="media/notebooks/write-query-example.png" alt-text="Screenshot of Fabric notebook with kusto write example.":::
+    ```Python
+    # The Kusto cluster uri to write the data. The query Uri is of the form https://<>.kusto.data.microsoft.com 
+    kustoUri = ""
+    # The database to write the data
+    database = ""
+    # The table to write the data 
+    table    = ""
+    # The access credentials for the write
+    accessToken = mssparkutils.credentials.getToken(kustoUri)
+    
+    # Generate a range of 5 rows with Id's 5 to 9
+    data = spark.range(5,10) 
+    
+    # Write data to a Kusto table
+    data.write.\
+    format("com.microsoft.kusto.spark.synapse.datasource").\
+    option("kustoCluster",kustoUri).\
+    option("kustoDatabase",database).\
+    option("kustoTable", table).\
+    option("accessToken", accessToken ).\
+    option("tableCreateOptions", "CreateIfNotExist").mode("Append").save()
+    ```
 
 1. Enter the required information within the quotation marks of each field in the data cell:
 
