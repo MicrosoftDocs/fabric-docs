@@ -93,7 +93,7 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
 
 ## Create a notebook from a KQL database
 
-When you create a notebook as a related item in a KQL database, the notebook is prepopulated with connection information.
+When you create a notebook as a related item in a KQL database, the notebook is given the same name as the KQL database and is prepopulated with connection information.
 
 1. Browse to your KQL database.
 1. Select **New related item** > **Notebook**.
