@@ -32,7 +32,16 @@ Fabric notebooks provide [code snippets](../data-engineering/author-execute-note
     :::image type="content" source="media/notebooks/kusto-snippet.gif" alt-text="Screen capture of using a kusto snippet to use KQL in a Fabric notebook.":::
 
 1. Select the snippet that corresponds to the operation you want to perform: **Write data to a KQL database** or **Read data from a KQL database**.
-1. Enter the following information within the quotation marks of each field in the data cell:
+
+    The following image shows the example data read code:
+
+    :::image type="content" source="media/notebooks/read-query-example.png" alt-text="Screenshot of Fabric notebook with kusto read query example.":::
+
+    The following image shows the example write data code:
+
+    :::image type="content" source="media/notebooks/write-query-example.png" alt-text="Screenshot of Fabric notebook with kusto write example.":::
+
+1. Enter the required information within the quotation marks of each field in the data cell:
 
     | Field | Description | Related links |
     |---|---|---|
