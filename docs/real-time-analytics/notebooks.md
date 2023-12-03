@@ -104,7 +104,7 @@ When you create a notebook as a related item in a KQL database, the notebook is 
 
 1. Enter the KQL query to be evaluated in the *kustoQuery* field.
 
-    :::image type="content" source="media/notebooks/notebook-created.png" alt-text="Screenshot of notebook that is created from a KQL database.":::
+    :::image type="content" source="media/notebooks/notebook-created.png" alt-text="Screenshot of notebook that is created from a KQL database." lightbox="media/notebooks/notebook-created.png":::
 
 1. Run the code cell.
 
