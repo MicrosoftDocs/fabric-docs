@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/26/2023
+ms.date: 12/03/2023
 ---
 
 # Tenant settings index
@@ -35,7 +35,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 | Setting name | Description |
 |------|-------|
 |[Create workspaces (new workspace experience)](portal-workspace.md#create-workspaces-new-workspace-experience)|Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace will be created when a template app is installed.|
-|Use datasets across workspaces|Users in the organization can use datasets across workspaces if they have the required Build permission.|
+|[Use semantic models across workspaces](portal-workspace.md#use-semantic-models-across-workspaces)|Users in the organization can use semantic models across workspaces if they have the required Build permission.|
 |[Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace)|Turn on this setting to prevent users from reassigning their personal workspaces (My Workspace) from Premium capacities to shared capacities.  [Learn More](https://aka.ms/RestrictMyFolderCapacity)|
 |[Define workspace retention period](portal-workspaces.md#workspace-retention)|Turn on this setting to define a retention period during which you can restore a deleted workspace and recover items in it. At the end of the retention period, the workspace is permanently deleted. By default, workspaces are always retained for a minimum of 7 days before they're permanently deleted.<br><br>Turn off this setting to accept the minimum retention period of 7 days. After 7 days the workspace and items in it will be permanently deleted.<br><br>Enter the number of days to retain a workspace before it's permanently deleted. My Workspace workspaces will be retained for 30 days automatically. Other workspaces can be retained for up to 90 days.|
 
@@ -62,7 +62,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Export to Excel](/power-bi/visuals/power-bi-visualization-export-data)|Users in the organization can export the data from a visualization or paginated report to an Excel file.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143053)|
 |[Export to .csv](/power-bi/paginated-reports/report-builder/export-csv-file-report-builder)|Users in the organization can export data from a tile, visualization, or paginated report to a .csv file.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143055)|
 |[Download reports](/power-bi/create-reports/service-export-to-pbix)|Users in the organization can download .pbix files and paginated reports.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143210)|
-|Users can work with datasets in Excel using a live connection|Users can export data to Excel from a report visual or dataset, or export a dataset to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143211)|
+|[Users can work with semantic models in Excel using a live connection](/power-bi/collaborate-share/service-analyze-in-excel)|Users can export data to Excel from a report visual or semantic model, or export a semantic model to an Excel workbook with Analyze in Excel, both options with a live connection to the XMLA endpoint.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143211)|
 |Export reports as PowerPoint presentations or PDF documents|Users in the organization can export reports as PowerPoint files or PDF documents.|
 |Export reports as MHTML documents|Users in the organization can export Paginated reports as MHTML documents.|
 |[Export reports as Word documents](/power-bi/paginated-reports/report-builder/export-microsoft-word-report-builder)|Users in the organization can export Paginated reports as Word documents.|
@@ -79,9 +79,9 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Enable Microsoft Teams integration](/power-bi/collaborate-share/service-collaborate-microsoft-teams)|This setting allows people in the organization to access features associated with the Microsoft Teams and Power BI integration. This includes launching Teams experiences from the Power BI service like chats, the Power BI app for Teams, and receiving Power BI notifications in Teams. To completely enable or disable Teams integration, work with your Teams admin.|
 |[Install Power BI app for Microsoft Teams automatically](service-admin-portal-export-sharing.md#install-power-bi-app-for-microsoft-teams-automatically)|The Power BI app for Microsoft Teams is installed automatically for users when they use Microsoft Fabric. The app is installed for users if they have Microsoft Teams and the Power BI app is allowed in the Teams Admin Portal. When the app is installed, users receive notifications in Teams and can more easily discover and collaborate with colleagues. The Power BI app for Teams provides users with the ability to open all Fabric content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2171149).|
 |[Enable Power BI add-in for PowerPoint](service-admin-portal-export-sharing.md#enable-power-bi-add-in-for-powerpoint)|Let people in your org embed Power BI data into their PowerPoint presentations. This integration requires that your organization's Microsoft Office admin has enabled support for add-ins.|
-|Allow DirectQuery connections to Power BI datasets|DirectQuery connections allow users to make changes to existing datasets or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
-|Guest users can work with shared datasets in their own tenants|Authorized guest users can discover datasets shared with them in the OneLake data hub (in Power BI Desktop), and then work with these datasets in their own Power BI tenants.|
-|[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared datasets in their own Power BI tenants.|
+|[Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models)|DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
+|[Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants)|Authorized guest users can discover semantic models shared with them in the OneLake data hub (in Power BI Desktop), and then work with these semantic models in their own Power BI tenants.|
+|[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own Power BI tenants.|
 
 ## [Discovery settings](service-admin-portal-discovery.md)
 
@@ -95,7 +95,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template content packs and apps that use datasets built on one data source in Power BI Desktop.|
+|[Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop.|
 |[Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users)|Users can share apps directly with end users without requiring installation from AppSource.|
 |[Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish content packs and apps to the entire organization.|
 
@@ -103,8 +103,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Allow XMLA endpoints and Analyze in Excel with on-premises datasets](/power-bi/collaborate-share/service-analyze-in-excel)|Users in the organization can use Excel to view and interact with on-premises Power BI datasets. This also allows connections to XMLA endpoints.|
-|[Dataset Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries)|Users in the organization can query datasets by using Data Analysis Expressions (DAX) through Power BI REST APIs.|
+|[Allow XMLA endpoints and Analyze in Excel with on-premises semantic models](/power-bi/collaborate-share/service-analyze-in-excel)|Users in the organization can use Excel to view and interact with on-premises Power BI semantic models. This also allows connections to XMLA endpoints.|
+|[Semantic Model Execute Queries REST API](/rest/api/power-bi/datasets/execute-queries)|Users in the organization can query semantic models by using Data Analysis Expressions (DAX) through Power BI REST APIs.|
 |[Use ArcGIS Maps for Power BI](/power-bi/visuals/power-bi-visualizations-arcgis)|Users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.|
 |[Use global search for Power BI](/power-bi/consumer/end-user-search-sort)|NO DESCRIPTION IN UI|
 |[Use Azure Maps visual](/azure/azure-maps/power-bi-visual-get-started)|Users in the organization can use the Azure Maps visualization.|
@@ -120,9 +120,9 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive for Business or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
 |[Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop](service-admin-portal-integration.md#users-can-share-links-to-power-bi-files-stored-in-onedrive-and-sharepoint-through-power-bi-desktop)|Users who have saved Power BI files (.pbix) to OneDrive and SharePoint can share links to those files using Power BI Desktop. [Learn More](https://go.microsoft.com/fwlink/?linkid=2227462)|
 |Enable granular access control for all data connections|Enforce strict access control for all data connection types. When this is turned on, shared items will be disconnected from data sources if they’re edited by users who don’t have permission to use the data connections.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2226159)|
-|Datasets can export data to OneLake (preview)|Datasets configured for OneLake integration can send import tables to OneLake. Once the data is in OneLake, users can include the exported tables in Fabric items, including lakehouses and warehouses.|
-|Users can store dataset tables in OneLake (preview)|When users turn on OneLake integration for their datasets, data imported into dataset tables can be stored in OneLake. To allow users to turn on OneLake integration for their datasets, you'll also need to turn on the "Datasets can export data to OneLake" tenant setting.|
-|Dataset owners can choose to automatically update datasets from files imported from OneDrive or SharePoint|Dataset owners can choose to allow datasets to be automatically updated with changes made to the corresponding Power BI files (.pbix) stored in OneDrive or SharePoint. File changes can include new and modified data connections.<br><br>Turn off this setting to prevent automatic updates to datasets.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2240760)|
+|Semantic models can export data to OneLake (preview)|Semantic models configured for OneLake integration can send import tables to OneLake. Once the data is in OneLake, users can include the exported tables in Fabric items, including lakehouses and warehouses.|
+|Users can store semantic model tables in OneLake (preview)|When users turn on OneLake integration for their semantic models, data imported into semantic model tables can be stored in OneLake. To allow users to turn on OneLake integration for their semantic models, you'll also need to turn on the "Semantic models can export data to OneLake" tenant setting.|
+|[Semantic model owners can choose to automatically update semantic models from files imported from OneDrive or SharePoint](/power-bi/connect-data/refresh-desktop-file-onedrive)|Semantic model owners can choose to allow semantic models to be automatically updated with changes made to the corresponding Power BI files (.pbix) stored in OneDrive or SharePoint. File changes can include new and modified data connections.<br><br>Turn off this setting to prevent automatic updates to semantic models.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2240760)|
 
 ## [Power BI visuals](/power-bi/admin/organizational-visuals)
 
@@ -142,7 +142,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics)|Users in the organization can see usage metrics for dashboards, reports and datasets that they have appropriate permissions to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2152884)|
+|[Usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics)|Users in the organization can see usage metrics for dashboards, reports and semantic models that they have appropriate permissions to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2152884)|
 |[Per-user data in usage metrics for content creators](/power-bi/collaborate-share/service-modern-usage-metrics#exclude-user-information-from-usage-metrics-reports)|Usage metrics for content creators will expose display names and email addresses of users who are accessing content.|
 |[Azure Log Analytics connections for workspace administrators](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure)|NO DESCRIPTION IN UI|
 
@@ -159,14 +159,14 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Embed content in apps](/power-bi/developer/embedded/embedded-analytics-power-bi)|Users in the organization can embed Power BI dashboards and reports in Web applications using "Embed for your customers" method.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2141877)|
 |[Allow service principals to use Power BI APIs](/power-bi/developer/embedded/embed-service-principal)|Web apps registered in Azure Active Directory (Azure AD) will use an assigned service principal to access Power BI APIs without a signed in user. To allow an app to use service principal authentication its service principal must be included in an allowed security group.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2055030)|
 |[Allow service principals to create and use profiles](/power-bi/developer/embedded/embed-multi-tenancy)|Allow service principals in your organization to create and use profiles.|
-|[Block ResourceKey Authentication](service-admin-portal-developer.md#block-resourcekey-authentication)|For extra security, block using resource key based authentication. This means users not allowed to use streaming datasets API using resource key.|
+|[Block ResourceKey Authentication](service-admin-portal-developer.md#block-resourcekey-authentication)|For extra security, block using resource key based authentication. This means users not allowed to use streaming semantic models API using resource key.|
 
 ## [Admin API settings](service-admin-portal-admin-api-settings.md)
 
 | Setting name | Description |
 |------|-------|
-|[Allow service principals to use read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)|Web apps registered in Azure Active Directory (Azure AD) will use an assigned service principal to access read-only admin APIs without a signed in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group. By including the service principal in the allowed security group, you're giving the service principal read-only access to all the information available through admin APIs (current and future). For example, user names and emails, dataset and report detailed metadata.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
-|[Enhance admin APIs responses with detailed metadata](service-admin-portal-admin-api-settings.md#enhance-admin-apis-responses-with-detailed-metadata)|Users and service principals allowed to call Power BI admin APIs may get detailed metadata about Power BI items. For example, responses from GetScanResult APIs will contain the names of dataset tables and columns.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153790)<br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
+|[Allow service principals to use read-only admin APIs](/power-bi/enterprise/read-only-apis-service-principal-authentication)|Web apps registered in Azure Active Directory (Azure AD) will use an assigned service principal to access read-only admin APIs without a signed in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group. By including the service principal in the allowed security group, you're giving the service principal read-only access to all the information available through admin APIs (current and future). For example, user names and emails, semantic model and report detailed metadata.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
+|[Enhance admin APIs responses with detailed metadata](service-admin-portal-admin-api-settings.md#enhance-admin-apis-responses-with-detailed-metadata)|Users and service principals allowed to call Power BI admin APIs may get detailed metadata about Power BI items. For example, responses from GetScanResult APIs will contain the names of semantic model tables and columns.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153790)<br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
 |[Enhance admin APIs responses with DAX and mashup expressions](service-admin-portal-admin-api-settings.md#enhance-admin-apis-responses-with-dax-and-mashup-expressions)|Users and service principals eligible to call Power BI admin APIs will get detailed metadata about queries and expressions comprising Power BI items. For example, responses from GetScanResult API will contain DAX and mashup expressions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153889)<br><br>Note: For this setting to apply to service principals, make sure the tenant setting allowing service principals to use read-only admin APIs is enabled.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2110545)|
 
 ## [Gen1 dataflow settings](service-admin-portal-dataflow.md)
@@ -187,14 +187,14 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|Review questions|Allow dataset owners to review questions people asked about their data.|
+|Review questions|Allow semantic model owners to review questions people asked about their data.|
 |[Synonym sharing](/power-bi/natural-language/q-and-a-tooling-intro#field-synonyms)|Allow people to share Q&amp;A synonyms with your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2163449)|
 
-## Dataset Security
+## Semantic Model Security
 
 | Setting name | Description |
 |------|-------|
-|Block republish and disable package refresh|Disable package refresh, and only allow the dataset owner to publish updates.|
+|Block republish and disable package refresh|Disable package refresh, and only allow the semantic model owner to publish updates.|
 
 ## [Advanced networking](service-admin-portal-advanced-networking.md)
 
@@ -219,7 +219,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric datasets will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
+|[Users can see Microsoft Fabric metadata in Microsoft 365](admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off)|Turn on this setting to store and display certain Microsoft Fabric metadata in Microsoft 365 services. Users might see Microsoft Fabric metadata (including content titles and types or open and sharing history) in Microsoft 365 services like search results and recommended content lists. Metadata from Microsoft Fabric semantic models will not be displayed.<br><br>Users can browse or get recommendations only for content they have access to.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2202379)<br><br>This setting is automatically enabled only if your Microsoft Fabric and Microsoft 365 tenants are in the same geographical region. You may disable this setting. [Where is my Microsoft Fabric tenant located?](https://go.microsoft.com/fwlink/?linkid=2237979)|
 
 ## [Insights settings](service-admin-portal-insights.md)
 
@@ -238,7 +238,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Users can edit data models in the Power BI service (preview)](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal)|Turn on this setting to allow users to edit data models in the service. This setting doesn't apply to DirectLake datasets or editing a dataset through an API or XMLA endpoint.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227332)|
+|[Users can edit data models in the Power BI service (preview)](/power-bi/transform-model/service-edit-data-models#enabling-data-model-editing-in-the-admin-portal)|Turn on this setting to allow users to edit data models in the service. This setting doesn't apply to DirectLake semantic models or editing a semantic model through an API or XMLA endpoint.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227332)|
 
 ## [Quick measure suggestions](service-admin-portal-quick-measure-suggestions-settings.md)
 
@@ -251,7 +251,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|Scale out queries for large datasets (preview)|For datasets that use the large dataset storage format, Power BI Premium can automatically distribute queries across additional dataset replicas when query volume is high.|
+|[Scale out queries for large semantic models (preview)](/power-bi/enterprise/service-premium-scale-out)|For semantic models that use the large semantic model storage format, Power BI Premium can automatically distribute queries across additional semantic model replicas when query volume is high.|
 
 ## [OneLake settings](service-admin-portal-onelake.md)
 
