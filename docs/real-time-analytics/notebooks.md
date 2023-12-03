@@ -14,7 +14,7 @@ Notebooks are both readable documents containing data analysis descriptions and 
 
 There are two ways to use Fabric notebooks with data from your KQL database:
 
-* [Use kusto snippets in a notebook](#use-kusto-snippets-in-a-notebook)
+* [Use Kusto snippets in a notebook](#use-kusto-snippets-in-a-notebook)
 * [Create a notebook from a KQL database](#create-a-notebook-from-a-kql-database)
 
 ## Prerequisites
