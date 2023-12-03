@@ -1,5 +1,5 @@
 ---
-title: Use notebooks with data from a KQL database
+title: Use Fabric notebooks with data from a KQL database
 description: Learn how to query data in a KQL Database from Microsoft Fabric Notebooks using KQL (Kusto Query Language)
 ms.reviewer: orhasban
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 11/21/2023
 ms.search.form: Notebooks
 --- 
-# Use notebooks with data from a KQL database
+# Use Fabric notebooks with data from a KQL database
 
 Notebooks are both readable documents containing data analysis descriptions and results and executable documents that can be run to perform data analysis. In this article, you learn how to use a Microsoft Fabric notebook to connect to data in a [KQL Database](create-database.md) and run queries using native [KQL (Kusto Query Language)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). For more information on notebooks, see [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 
