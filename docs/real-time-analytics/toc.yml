@@ -90,7 +90,9 @@ items:
     href: api/toc.yml
 - name: KQL Queryset
   items:
-  - name: Query data in a KQL Queryset
+  - name: Create a KQL queryset
+    href: create-query-set.md
+  - name: Query data in a KQL queryset
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
@@ -128,6 +130,8 @@ items:
       href: onelake-shortcuts.md
   - name: Notebooks
     items:
+    - name: Use Fabric notebooks with data from a KQL database
+      href: notebooks.md
     - name: Use a notebook with Kqlmagic to query a KQL database
       href: jupyter-notebook.md
     - name: Use a notebook with Apache Spark to query a KQL database
