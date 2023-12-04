@@ -86,7 +86,7 @@ This section walks you through some of the query and visualization capabilities 
 
 For more information about tasks performed in this tutorial, see:
 
-* [Create a KQL queryset](kusto-query-set.md#create-a-kql-queryset)
+* [Create a KQL queryset](create-kusto-query-set.md)
 * [Write a query](kusto-query-set.md#write-a-query)
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 

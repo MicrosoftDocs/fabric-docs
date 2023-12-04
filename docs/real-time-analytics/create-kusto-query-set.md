@@ -1,6 +1,6 @@
 ---
-title: Query data in a KQL queryset
-description: Learn how to use the KQL queryset to query the data in your KQL database in Real-Time Analytics.
+title: Create a KQL queryset
+description: Learn how to create a KQL queryset to query the data in your KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
@@ -13,7 +13,7 @@ ms.custom:
 ms.date: 12/04/2023
 ms.search.form: KQL Queryset
 ---
-# Query data in a KQL queryset
+# Create a KQL queryset
 
 In this article, you learn how to create a new KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.
 
