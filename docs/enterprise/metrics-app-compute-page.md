@@ -166,4 +166,4 @@ User can hover over any value in the visual to see operation level data. User ca
 * [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
 * [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
 * [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)
-* [Data Factory pricing](../fabric/data-factory/pricing-overview)
+* [Data Factory pricing](../fabric/data-factory/pricing-overview.md)
