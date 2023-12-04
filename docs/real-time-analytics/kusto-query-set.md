@@ -15,9 +15,7 @@ ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
 
-In this article, you learn how to use a KQL queryset.
-
-The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database. Each tab in the KQL queryset can be associated with a different KQL database, and lets your save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
+In this article, you learn how to use a KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.
 
 The KQL Queryset uses the Kusto Query language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
@@ -40,7 +38,9 @@ To connect your KQL queryset to a database:
 
     A list of tables associated with this database will appear below the database name.
 
-## Manage tabs
+## Manage queryset tabs
+
+Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets your save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
 
 :::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
 
