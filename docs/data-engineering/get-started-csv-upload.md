@@ -65,7 +65,7 @@ In this tutorial you learn to:
 
    :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing semantic model and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
 
-## Next steps
+## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

@@ -54,6 +54,6 @@ $colitems = Get-AzDataLakeGen2ChildItem -Context $ctx -FileSystem $workspaceName
 "Total file size: " + ($colitems.sum / 1GB) + " GB"
 ```
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure Synapse Analytics](onelake-azure-synapse-analytics.md)

@@ -44,3 +44,7 @@ Now when you move a folder (cut and paste or drag and drop) from a location outs
 ## Support lifecycle
 
 Only the most recent version of OneLake file explorer is supported. If you contact support for OneLake file explorer, they ask you to upgrade to the most recent version. Download the latest [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671).
+
+## Related content
+
+- [Use OneLake file explorer to access Fabric data](onelake-file-explorer.md)

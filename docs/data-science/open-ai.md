@@ -27,7 +27,7 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. Or download the notebook and import it into Synapse Analytics
 
 1. [Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/2abfbdaadded0eff17ee0e5ea1908758e6d7a222/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb) (select **Raw**, then save the file)
-1. Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Databricks [import into the Databricks Workspace](/en-us/azure/databricks/notebooks/notebooks-manage#create-a-notebook). If using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
+1. Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
 1. Install SynapseML on your cluster. Please see the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If using Fabric, please check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This requires pasting an extra cell at the top of the notebook you imported. 
 1. Connect your notebook to a cluster and follow along, editing and running the cells.
 

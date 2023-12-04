@@ -184,8 +184,7 @@ Both the approaches produce a similar outcome. You can choose based on your back
 
 Also you may notice that you're writing data as delta lake files. The automatic table discovery and registration feature of Fabric picks up and registers them in the metastore. You don't need to explicitly call `CREATE TABLE` statements to create tables to use with SQL.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Build reports using Power BI](tutorial-lakehouse-build-report.md)

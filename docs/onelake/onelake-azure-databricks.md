@@ -79,6 +79,6 @@ Before you connect, you must have:
 
 Congratulations. You can now read and write data in Fabric using Azure Databricks.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure HDInsight](onelake-azure-hdinsight.md)

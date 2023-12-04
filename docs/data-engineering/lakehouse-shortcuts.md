@@ -24,6 +24,6 @@ To create a shortcut, open Lakehouse Explorer and select where to place the shor
 
 Shortcuts to Microsoft Fabric internal sources will use the calling user identity. External shortcuts will use connectivity details, including security details specified when the shortcut is created.
 
-## Next steps
+## Related content
 
 - [Learn more about shortcuts](../onelake/onelake-shortcuts.md)

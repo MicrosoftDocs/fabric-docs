@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/19/2023
+ms.date: 11/23/2023
 ---
 
 # Understand the metrics app compute page
@@ -101,9 +101,8 @@ The overages chart displays the following elements:
   
   * **Burndown %** - Blue columns represent the carryforward percent burned down for the current 30 second period.
   
-  * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30 second period. 
+  * **Cumulative %** - Red line represent the cumulative carryforward percent for the current 30 second period. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
   
-
 Once you select a column in the chart, you can use the *Explore* button to drill through to the [timepoint](metrics-app-timepoint-page.md) page.
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
@@ -119,7 +118,6 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 >[!NOTE]
 >Non billable usage does not drain capacity or lead to throttling or auto scale. 
-
 
 ## Matrix by item and operation
 
@@ -162,14 +160,12 @@ User can hover over any value in the visual to see operation level data. User ca
         - If item has both billable and non-billable operations
         - If item has operations that are in transition period from non-billable to billable.
 
-## Next steps
-
-[Understand the metrics app storage page](metrics-app-storage-page.md)
-
-[Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
-
-
 ## Related content
 
+* [Understand the metrics app storage page](metrics-app-storage-page.md)
+
+* [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
+
 * [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
+
 * [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)
