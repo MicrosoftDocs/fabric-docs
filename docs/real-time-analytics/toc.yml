@@ -90,7 +90,9 @@ items:
     href: api/toc.yml
 - name: KQL Queryset
   items:
-  - name: Query data in a KQL Queryset
+  - name: Create a KQL queryset
+    href: create-query-set.md
+  - name: Query data in a KQL queryset
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid
     href: customize-results.md
