@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.topic: overview
-ms.date: 11/07/2023
+ms.date: 12/04/2023
 ---
 
 # Fabric region availability
@@ -33,6 +33,7 @@ Europe
 * NorthEurope
 * WestEurope
 * FranceCentral
+* GermanyWestCentral
 * NorwayEast
 * SwedenCentral
 * SwitzerlandNorth
