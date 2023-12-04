@@ -38,16 +38,6 @@ To connect your KQL queryset to a database:
 
     A list of tables associated with this database will appear below the database name.
 
-## Manage queryset tabs
-
-Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
-
-:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
-
-* **Rename a tab**: Select the **pencil icon** next to the tab name.
-* **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
-* **Change the existing database connection**: Under **Database**, select the existing database connection to open the data hub.
-
 ## Write a query
 
 Now that you're connected to your data source, you can run queries on this data. The KQL Queryset uses the Kusto Query Language (KQL) to query data from any of the databases you have access to. To learn more about KQL, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/).
@@ -60,6 +50,16 @@ The following examples use data that is publicly available at [https://kustosamp
     The resulting query output is displayed in the results grid, which appears below the query pane. Notice the green check indicating that the query has finished successfully, and time used to compute the query results.
 
     :::image type="content" source="media/kusto-query-set/query-window.png" alt-text="Screenshot of the KQL Queryset showing the results of a query. Both the query and the results pane are highlighted."  lightbox="media/kusto-query-set/query-window.png":::
+
+## Manage queryset tabs
+
+Within a KQL queryset, you can create multiple tabs. Each tab can be associated with a different KQL database, and lets you save queries for later use or share with others to collaborate on data exploration. You can also change the KQL database associated with any tab, allowing you to run the same query on data in different states.
+
+:::image type="content" source="media/kusto-query-set/manage-tabs.png" alt-text="Screenshot of the options for editing tabs in the KQL Queryset.":::
+
+* **Rename a tab**: Select the **pencil icon** next to the tab name.
+* **Add a new tab**: Select the plus **+** to the right of the existing tabs. Different tabs can be connected to different databases.
+* **Change the existing database connection**: Under **Database**, select the existing database connection to open the data hub.
 
 ## Copy query
 
@@ -87,6 +87,8 @@ This is a one-time method to export a CSV file containing the query results.
 1. Save the CSV file locally.
 
 ## Delete KQL queryset
+
+To delete your KQL queryset:
 
 1. Select the workspace to which your KQL queryset is associated.
 1. Hover over the KQL queryset you wish to delete. Select **More [...]**, then select **Delete**.
