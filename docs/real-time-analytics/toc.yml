@@ -91,7 +91,7 @@ items:
 - name: KQL Queryset
   items:
   - name: Create a KQL queryset
-    href: kusto-query-set.md
+    href: create-query-set.md
   - name: Query data in a KQL queryset
     href: kusto-query-set.md
   - name: Customize results in the KQL Queryset results grid

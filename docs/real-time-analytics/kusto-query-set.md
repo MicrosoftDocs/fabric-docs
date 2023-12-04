@@ -32,7 +32,7 @@ Queries run in the context of a database. You can change the associated database
 
 To connect your KQL queryset to a database:
 
-1. [Open your KQL queryset](create-kusto-query-set.md#open-an-existing-kql-queryset).
+1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
 1. Select **Select database**, and then select a database from the data hub that appears.
 
