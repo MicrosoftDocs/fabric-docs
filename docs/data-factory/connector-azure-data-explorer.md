@@ -28,7 +28,7 @@ The Azure Data Explorer connector supports the following authentication types fo
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Data Explorer. The following links provide the specific Power Query connector information you need to connect to Azure Data Explorer in Dataflow Gen2:
 
-- To get started using the Azure Data Explorer connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Azure Data Explorer connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Azure Data Explorer prerequisites](/power-query/connectors/azure-data-explorer#prerequisites) before connecting to the Azure Data Explorer connector.
 - To connect to the Azure Data Explorer connector from Power Query, go to [Connect to Azure Data Explorer from Power Query Online](/power-query/connectors/azure-data-explorer#connect-to-azure-data-explorer-from-power-query-online).
 
