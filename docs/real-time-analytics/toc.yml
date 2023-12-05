@@ -26,47 +26,6 @@ items:
       href: tutorial-6-build-report.md
     - name: 7- Clean up resources
       href: tutorial-7-clean-up-resources.md
-
-- name: Store data
-  items:
-  - name: Resource consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
-  - name: KQL Database
-    items:
-    - name: Create a KQL database
-      href: create-database.md
-    - name: Access an existing KQL database
-      displayName: copy URI, copy query URI, copy ingestion URI
-      href: access-database-copy-uri.md
-    - name: Create a database shortcut
-      href: database-shortcut.md
-    - name: Create an empty table
-      href: create-empty-table.md
-    - name: Data management
-      items:
-      - name: Data management overview  
-        href: data-management.md
-      - name: Change the data retention policy
-        href: data-retention-policy.md
-      - name: Create a table update policy
-        href: table-update-policy.md
-      - name: Create materialized views
-        href: materialized-view.md
-      - name: Create stored functions
-        href: create-functions.md 
-      - name: Enable Python plugin
-        href: python-plugin.md
-    - name: Management commands
-      href: management/toc.yml
-    - name: API
-      href: api/toc.yml
-    - name: OneLake
-      items:
-      - name: One logical copy
-        href: onelake-mirroring.md
-      - name: Create OneLake shortcuts
-        href: onelake-shortcuts.md
 - name: Get data
   items:
   - name: Event streams
@@ -141,23 +100,71 @@ items:
       href: management/toc.yml
     - name: API
       href: api/toc.yml
+- name: Store data
+  items:
+  - name: Resource consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
+  - name: KQL Database
+    items:
+    - name: Create a KQL database
+      href: create-database.md
+    - name: Access an existing KQL database
+      displayName: copy URI, copy query URI, copy ingestion URI
+      href: access-database-copy-uri.md
+    - name: Create a database shortcut
+      href: database-shortcut.md
+    - name: Create an empty table
+      href: create-empty-table.md
+    - name: Data management
+      items:
+      - name: Data management overview  
+        href: data-management.md
+      - name: Change the data retention policy
+        href: data-retention-policy.md
+      - name: Create a table update policy
+        href: table-update-policy.md
+      - name: Create materialized views
+        href: materialized-view.md
+      - name: Create stored functions
+        href: create-functions.md 
+      - name: Enable Python plugin
+        href: python-plugin.md
+    - name: Management commands
+      href: management/toc.yml
+    - name: API
+      href: api/toc.yml
+    - name: OneLake
+      items:
+      - name: One logical copy
+        href: onelake-mirroring.md
+      - name: Create OneLake shortcuts
+        href: onelake-shortcuts.md
 - name: Analyze and model data
   items:
   - name: KQL Queryset
     items:
-    - name: Query data in a KQL Queryset
+    - name: Create a KQL queryset
+      href: create-query-set.md
+    - name: Query data in a KQL queryset
       href: kusto-query-set.md
     - name: Customize results in the KQL Queryset results grid
       href: customize-results.md
     - name: Keyboard shortcuts
       href: keyboard-shortcuts.md
+    - name: Use example queries
+      href: query-table.md
     - name: KQL Database sample gallery
       displayName: Query sample data
       href: sample-gallery.md
-  - name: Use a notebook with Kqlmagic to query a KQL database
-    href: jupyter-notebook.md
-  - name: Use a notebook with Apache Spark to query a KQL database
-    href: spark-connector.md
+  - name: Notebooks
+    items:
+    - name: Use Fabric notebooks with data from a KQL database
+      href: notebooks.md
+    - name: Use a notebook with Kqlmagic to query a KQL database
+      href: jupyter-notebook.md
+    - name: Use a notebook with Apache Spark to query a KQL database
+      href: spark-connector.md
 - name: Visualize data
   items:
   - name: Power BI
@@ -166,11 +173,15 @@ items:
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
       href: power-bi-data-connector.md   
-- name: Use KQL
+- name: Respond to data
   items:
-  - name: Use example queries
-    href: query-table.md
+  
+- name: KQL reference
+  items:
   - name: Kusto Query Language
     href: kusto-query-language/toc.yml
   - name: Functions library
     href: functions-library/toc.yml
+
+
+

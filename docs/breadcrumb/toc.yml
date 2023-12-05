@@ -24,6 +24,9 @@ items:
   - name: Security
     tocHref: /fabric/security/
     topicHref: /fabric/security/index
+  - name: Get started
+    tocHref: /fabric/get-started/
+    topicHref: /fabric/get-started/index
 - name: Microsoft Fabric
   tocHref: /azure/
   topicHref: /fabric/index

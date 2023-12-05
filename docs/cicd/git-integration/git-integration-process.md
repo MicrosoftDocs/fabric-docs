@@ -161,7 +161,7 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in Git.
 
-## Next steps
+## Related content
 
 - [Manage branches](./manage-branches.md)
 - [Resolve errors and conflicts](./conflict-resolution.md)

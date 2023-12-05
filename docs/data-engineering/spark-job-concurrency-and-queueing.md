@@ -24,7 +24,7 @@ Once they have purchased the capacity, admins can create workspaces within the c
 
 ## Concurrency throttling and queueing
 
-Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. Because users can use different items like notebooks, Spark job definitions, and lakehouses in any workspace, and the usage varies across different enterprise teams, they could run into starvation scenarios where there's dependency on only type of item (like a Spark job definition). This situation could result in users sharing the capacity from running a notebook-based job or any lakehouse-based operation like load to table. 
+Fabric Spark enforces a cores-based throttling and queueing mechanism, where users can submit jobs based on the purchased Fabric capacity SKUs. The queueing mechanism is a simple FIFO-based queue, which checks for available job slots and automatically retries the jobs once the capacity has become available. Because users can use different items like notebooks, Spark job definitions, and lakehouses in any workspace, and the usage varies across different enterprise teams, they could run into starvation scenarios where there's dependency on only type of item (like a Spark job definition). This situation could result in users sharing the capacity from running a notebook-based job or any lakehouse-based operation like load to table.
 
 Microsoft Fabric Spark supports two types of jobs, **interactive** and **batch**. Below is a table detailing the jobs and their respective groups:
 
@@ -51,7 +51,7 @@ When interactive jobs exceed these reserves and when the capacity is at its maxi
 
 With queueing enabled, batch jobs are added to the queue and automatically retried when the capacity is freed up.
 
-Fabric capacities offer bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased. 
+Fabric capacities offer bursting which allows you to consume extra compute cores beyond what have been purchased to speed the execution of a workload. For Spark workloads bursting allows users to submit jobs with a total of 3X the Spark VCores purchased.
 
 > [!NOTE]
 > The bursting factor only increases the total number of Spark VCores to help with the concurrency but doesn't increase the max cores per job. Users can't submit a job that requires more cores than what their Fabric capacity offers.
@@ -72,6 +72,9 @@ The following section lists various cores-based limits for Spark workloads based
 | F1024 | - | 2048 | 1843 | 5530 | 614 | 4301 | 1024 |
 | F2048 | - | 4096 | 3686 | 11058 | 1229 | 8602 | 2048 |
 | Trial Capacity | P1 | 128 | 38 | 115 | 13 | 90 | NA |
+
+Example calculation:
+*F64 SKU* offers *128 Spark VCores*. The maximum reserve percentage of *interactive jobs* is 90%.  That means *Interactive max cores (with bursting)* can be calculated as 128 vCores x 3 BurstFactor x 0.9 MaxReserve = 345,6 which rounds to 346 as can be seen in the table.
 
 > [!NOTE]
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
@@ -97,8 +100,7 @@ Learn more about the default starter pool configurations based on the Fabric Cap
 | F1024            | 1024           | 2048         | 80                        | 76       |
 | F2048            | 2048           | 4096         | 80                        | 153      |
 
-
-## Next steps
+## Related content
 
 - Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).
 - Learn about the [Spark compute for Fabric](spark-compute.md) data engineering and data science experiences.

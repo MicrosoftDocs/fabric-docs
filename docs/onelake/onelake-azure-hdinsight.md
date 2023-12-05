@@ -59,6 +59,6 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
 You can now read and write data in OneLake using your Jupyter notebook in an HDI Spark cluster.
 
-## Next steps
+## Related content
 
 - [OneLake security](onelake-security.md)

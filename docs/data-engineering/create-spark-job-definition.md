@@ -125,6 +125,6 @@ There are a few options to further customize the execution of Spark job definiti
 
    :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to set up retry policy." lightbox="media\create-spark-job-definition\retry-policy.png":::
 
-## Next steps
+## Related content
 
 - [Run an Apache Spark job definition](run-spark-job-definition.md)

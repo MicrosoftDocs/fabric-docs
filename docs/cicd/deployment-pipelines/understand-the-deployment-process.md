@@ -9,7 +9,7 @@ ms.custom:
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 12/05/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -139,7 +139,7 @@ When you deploy content from one pipeline stage to another, the copied content c
 * Dataflows
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Paginated reports
 * Reports
 * [Warehouse](../../data-warehouse/data-warehousing.md)
@@ -415,6 +415,6 @@ This section lists most of the limitations in deployment pipelines.
 
 * To deploy a datamart, you need to be the datamart owner.
 
-## Next steps
+## Related content
 
 [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

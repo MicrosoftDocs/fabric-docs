@@ -86,3 +86,7 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 ## Changes to Microsoft Fabric workload consumption rate
 
 Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
+
+## Related content
+
+- [Disaster recovery guidance for OneLake](onelake-disaster-recovery.md)

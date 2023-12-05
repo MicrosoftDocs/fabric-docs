@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/19/2023
+ms.date: 11/23/2023
 ---
 
 # Understand the metrics app timepoint page
@@ -118,6 +118,8 @@ A table showing the *add*, *burndown* and *cumulative* percent by experiences, f
 
 * **Cumulative %** - The percentage of cumulative carryforward compared to the capacity, for a 30 seconds window.
 
+* **Minutes to burndown** - The estimated time, in minutes, it'll take the cumulative CUs to burndown, assuming no further consumption or smoothing takes place.
+
 ## Overages
 
 You can change the overages visual scale to display 10 minutes, 60 minutes and 24 hours. Carryforward only takes into account billable operations.
@@ -126,9 +128,7 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
   
 * **Burndown %** - The blue columns represent the percentage of carryforward burned down within the specified timepoint window.
   
-* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window.
-
-
+* **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
 
 ## Next steps
 

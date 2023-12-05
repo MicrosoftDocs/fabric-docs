@@ -227,7 +227,7 @@ Sometimes there are issues in production that require a quick fix. Deploying a f
 
 If you're using deployment from Git, we recommend following the practices described in [Adopt a Git branching strategy](/azure/devops/repos/git/git-branching-guidance#port-changes-back-to-the-main-branch).
 
-## Next steps
+## Related content
 
 * [End to end lifecycle management tutorial](./cicd-tutorial.md)
 * [Get started with Git integration](git-integration/git-get-started.md)

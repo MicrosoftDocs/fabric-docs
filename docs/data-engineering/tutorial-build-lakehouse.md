@@ -57,18 +57,18 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
 
-1. In the **Query settings** pane, enter **dimension_customer** for the **Name** field. From the menu items, select **Add data destination** and select **Lakehouse**.
+1. In the **Query settings** pane, update the **Name** field to **dimension_customer**.
+
+   > [!NOTE]
+   > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
-1. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
+1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
 
 1. Navigate to the **wwilakehouse** in your workspace.
 
 1. If the **dimension_customer** table doesn't exist, select the **New table** setting and enter the table name **dimension_customer**. If the table already exists, select the **Existing table** setting and choose **dimension_customer** from the list of tables in the object explorer. Select **Next**.
-
-   > [!NOTE]
-   > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
 
    :::image type="content" source="media\tutorial-build-lakehouse\choose-destination-table.png" alt-text="Screenshot showing how to choose the destination table.":::
 
@@ -116,8 +116,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
 
-## Next steps
+## Next step
 
-Advance to the next article to learn how to
 > [!div class="nextstepaction"]
 > [Ingest data into the lakehouse](tutorial-lakehouse-data-ingestion.md)
