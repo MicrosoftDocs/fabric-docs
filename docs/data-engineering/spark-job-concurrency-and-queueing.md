@@ -30,12 +30,12 @@ Microsoft Fabric Spark supports two types of jobs, **interactive** and **batch**
 
 | Job Type    | Operation                                         |
 | ----------- | ------------------------------------------------- |
-|             | Jobs submitted from notebook                      |
-|             | Scheduled notebook jobs                           |
+| Interactive  | Jobs submitted from notebook                      |
+| Interactive  | Scheduled notebook jobs                           |
 | Interactive | Notebook jobs from pipelines                      |
-|             | Lakehouse operations like Table Preview           |
-|             | Spark job definitions                             |
-| Batch       | Lakehouse operations like load to delta           |
+| Batch   | Lakehouse operations like Table Preview           |
+| Batch   | Spark job definitions                             |
+| Batch   | Lakehouse operations like load to delta           |
 
 
 To avoid these blocking scenarios, Microsoft Fabric applies a **dynamic reserve-based throttling** for jobs from these items, based on two job types. Because notebook- and lakehouse-based jobs are more interactive and real-time, they're classified as **interactive**. Spark job definitions are classified as **batch**. As part of this dynamic reserve, minimum and maximum reserve bounds are maintained for these job types. The reserves address use cases where an enterprise team could experience peak usage scenarios, having their entire capacity consumed by batch jobs. During those peak hours, users are blocked from using interactive items like notebooks or lakehouses. With this approach, every capacity has a minimum reserve of 30% of the total jobs allocated for interactive jobs (5% for lakehouses and 25% for notebooks), and a minimum reserve of 10% for batch jobs.
@@ -44,8 +44,8 @@ To avoid these blocking scenarios, Microsoft Fabric applies a **dynamic reserve-
 |--|--|--|--|
 | Batch | Spark job definition | 10 | 70 |
 | Interactive | Interactive min and max | 30 | 90 |
-|  | Notebook | 25 | 85 |
-|  | Lakehouse | 5 | 65 |
+| Interactive | Notebook | 25 | 85 |
+| Interactive | Lakehouse | 5 | 65 |
 
 When interactive jobs exceed these reserves and when the capacity is at its maximum utilization due to concurrent running jobs, they're throttled with the message *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later.*
 
