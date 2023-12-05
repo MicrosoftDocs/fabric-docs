@@ -128,8 +128,8 @@ To understand the considerations and limitations of various lifecycle management
 
 To resolve the issue, delete the problematic item(s):
 
-* If the item isn't supported by Git (for example, Dashboards), delete it manually from the workspace.
-* If the item is supported by Git (for example, reports), delete it either from Git (if it exists) or from the workspace.
+* If the item isn't [supported by Git](./git-integration/intro-to-git-integration.md#supported-items) (for example, Dashboards), delete it manually from the workspace.
+* If the item is [supported by Git](./git-integration/intro-to-git-integration.md#supported-items) (for example, reports), delete it either from Git (if it exists) or from the workspace.
 
 Select **Update All**.  
 For more information, see [Manually Update from Git](./git-integration/partial-update.md).
