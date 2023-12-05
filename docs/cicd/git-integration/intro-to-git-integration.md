@@ -53,7 +53,7 @@ The following items are currently supported:
 
 * Datasets (except push datasets, live connections, and model v1)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports
 
