@@ -31,9 +31,9 @@ items:
   - name: Event streams
     items:
     - name: What is Event streams?
-      href: overview.md
+      href: /event-streams/overview.md
     - name: Create and manage an eventstream
-      href: event-streams/create-manage-an-eventstream.md
+      href: /event-streams/create-manage-an-eventstream.md
     - name: Monitor event streams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Add and manage sources
@@ -82,24 +82,6 @@ items:
         href: ../data-factory/connector-kusto-dataflows.md
       - name: Data connectors
         href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
-    - name: Data management
-      items:
-      - name: Data management overview  
-        href: data-management.md
-      - name: Change data policies
-        href: data-policies.md
-      - name: Create a table update policy
-        href: table-update-policy.md
-      - name: Create materialized views
-        href: materialized-view.md
-      - name: Create stored functions
-        href: create-functions.md 
-      - name: Enable Python plugin
-        href: python-plugin.md
-    - name: Management commands
-      href: management/toc.yml
-    - name: API
-      href: api/toc.yml
 - name: Store data
   items:
   - name: Resource consumption
@@ -154,7 +136,7 @@ items:
       href: keyboard-shortcuts.md
     - name: Use example queries
       href: query-table.md
-    - name: KQL Database sample gallery
+    - name: Sample gallery
       displayName: Query sample data
       href: sample-gallery.md
   - name: Notebooks
@@ -175,7 +157,7 @@ items:
       href: power-bi-data-connector.md   
 - name: Respond to data
   items:
-  
+
 - name: KQL reference
   items:
   - name: Kusto Query Language
