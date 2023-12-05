@@ -31,9 +31,9 @@ items:
   - name: Event streams
     items:
     - name: What is Event streams?
-      href: /event-streams/overview.md
+      href: event-streams/overview.md
     - name: Create and manage an eventstream
-      href: /event-streams/create-manage-an-eventstream.md
+      href: event-streams/create-manage-an-eventstream.md
     - name: Monitor event streams capacity consumption
       href: event-streams/monitor-capacity-consumption.md
     - name: Add and manage sources
@@ -157,6 +157,33 @@ items:
       href: power-bi-data-connector.md   
 - name: Respond to data
   items:
+  - name: What is Data Activator?
+    href: ../data-activator/data-activator-introduction.md
+  - name: Get started with Data Activator
+    href: ../data-activator/data-activator-get-started.md    
+  - name: Tutorial
+    href: ../data-activator/data-activator-tutorial.md
+  - name: Get data in Data Activator
+    items:
+    - name: Get data from Power BI
+      href: ../data-activator/data-activator-get-data-power-bi.md
+    - name: Get data from Eventstreams
+      href: ../data-activator/data-activator-get-data-eventstreams.md        
+  - name: Create objects and triggers
+    items:
+    - name: Assign data to objects in Data Mode
+      href: ../data-activator/data-activator-assign-data-objects.md    
+    - name: Create triggers in design mode
+      href: ../data-activator/data-activator-create-triggers-design-mode.md        
+    - name: Detection conditions
+      href: ../data-activator/data-activator-detection-conditions.md            
+    - name: Use custom actions to trigger Power Automate flows
+      href: ../data-activator/data-activator-trigger-power-automate-flows.md         
+    - name: Data Activator limitations
+      href: ../data-activator/data-activator-limitations.md
+    - name: Troubleshoot errors
+      href: ../data-activator/data-activator-troubleshooting.md
+
 
 - name: KQL reference
   items:
