@@ -137,7 +137,7 @@
             }
         },
         "search.app": {
-            "**.*": [ 
+            "get-started/**/*.md": [ 
                 "fabric-powerbi-docs"
             ],
             "admin/**/*.md": [
