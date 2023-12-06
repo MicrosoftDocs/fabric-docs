@@ -93,13 +93,13 @@ conceptualContent:
         - title: Troubleshooting 
           links:
           - url: /power-bi/support/service-support-options
-            itemType: troubleshooting
+            itemType: concept
             text: Create a support ticket
           - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
-            itemType: troubleshooting
+            itemType: concept
             text: Known issues
           - url: /power-bi/troubleshoot/
-            itemType: troubleshooting
+            itemType: concept
             text: Troubleshoot issues
           footerLink:
             url: get-started/index.yml
@@ -139,7 +139,6 @@ productDirectory:
   title: Explore Microsoft Fabric experiences
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
-
     # Card
     - title: Power BI
 
