@@ -28,7 +28,7 @@ The Data Warehouse connector supports the following authentication types for cop
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a Data Warehouse. The following links provide the specific Power Query connector information you need to connect to a Data Warehouse in Dataflow Gen2:
 
-- To get started using the Warehouse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Warehouse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Warehouse prerequisites](/power-query/connectors/warehouse#prerequisites) before connecting to the Warehouse connector.
 - To connect to the Warehouse connector from Power Query, go to [Connect to a Warehouse from Power Query Online](/power-query/connectors/warehouse#connect-to-a-warehouse-from-power-query-online).
 
