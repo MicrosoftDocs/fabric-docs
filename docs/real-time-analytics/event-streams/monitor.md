@@ -52,9 +52,9 @@ To view data insights for an eventstream:
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-### Data insights in Azure event hub source and lakehouse destination nodes
+### Data insights in Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode) nodes
 
-The following metrics are available on the **Data insights** tab for Azure event hub source and lakehouse destination nodes:
+The following metrics are available on the **Data insights** tab for Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode) nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
@@ -65,14 +65,15 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **Runtime errors** | Count | Total number of errors related to event processing. |
 | **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
+| **watermark delay** | Count | Maximum watermark delay across all partitions of all outputs in the job. |
 
-To view the data insights for an Azure event hub source or a lakehouse destination:
+To view the data insights for an Azure event hub source, lakehouse destination or KQL database destination(Event processing before ingestion mode):
 
-1. Select the Azure event hub source node or lakehouse destination node in the main editor canvas
+1. Select the Azure event hub source node ,lakehouse destination node or KQL database destination node in the main editor canvas
 
 1. In the lower pane, select the **Data insights** tab.
 
-1. If there's data inside the Azure event hub source or lakehouse destination, the metrics chart appears on the **Data insights** tab.
+1. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the metrics chart appears on the **Data insights** tab.
 
 1. On the right side of the tab, select the checkboxes next to the metrics you want to display.
 
@@ -82,17 +83,17 @@ To view the data insights for an Azure event hub source or a lakehouse destinati
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for an Azure event hub source or a lakehouse destination:
+To view the runtime logs for Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode):
 
-1. Select the Azure event hub source node or lakehouse destination node in the main editor canvas.
+1. Select the Azure event hub source, lakehouse destination or KQL database destination in the main editor canvas.
 
-1. In the lower pane, select the **Runtime logs** tab.
+2. In the lower pane, select the **Runtime logs** tab.
 
-1. If there's data inside the Azure event hub source or lakehouse destination, the logs appear on the **Runtime logs** tab.
+3. If there's data inside the Azure event hub source , lakehouse destination or KQL database destination, the logs appear on the **Runtime logs** tab.
 
-1. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
+4. Search the logs with the **Filter by keyword** option, or filter the list by changing the severity or type.
 
-1. To see the most current logs, select **Refresh**.
+5. To see the most current logs, select **Refresh**.
 
 :::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
 
