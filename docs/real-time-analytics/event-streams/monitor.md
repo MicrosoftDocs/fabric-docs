@@ -58,9 +58,9 @@ The following metrics are available on the **Data insights** tab for Azure event
 
 | Metric | Unit | Description |
 |--|--|--|
-| **Input events** | Count | Number of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination) or from an Azure event hub source (in an Azure event hub source). |
-| **Input event bytes** | Bytes | Amount of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination) or from an Azure event hub source (in an Azure event hub source). |
-| **Output events** | Count | Number of event data that the eventstream engine sends to a lakehouse (in a lakehouse destination) or an eventstream (in an Azure event hub source). |
+| **Input events** | Count | Number of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination or KQL database destination), or from an Azure event hub source (in an Azure event hub source). |
+| **Input event bytes** | Bytes | Amount of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination or KQL database destination), or from an Azure event hub source (in an Azure event hub source). |
+| **Output events** | Count | Number of event data that the eventstream engine sends to a lakehouse or KQL database(in a lakehouse destination or KQL database destination),  or an eventstream (in an Azure event hub source). |
 | **Backlogged input events** | Count | Number of input events that are backlogged in the eventstream engine. |
 | **Runtime errors** | Count | Total number of errors related to event processing. |
 | **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
@@ -71,11 +71,11 @@ To view the data insights for an Azure event hub source, lakehouse destination o
 
 1. Select the Azure event hub source node ,lakehouse destination node or KQL database destination node in the main editor canvas
 
-1. In the lower pane, select the **Data insights** tab.
+2. In the lower pane, select the **Data insights** tab.
 
-1. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the metrics chart appears on the **Data insights** tab.
+3. If there's data inside the Azure event hub source, lakehouse destination or KQL database destination, the metrics chart appears on the **Data insights** tab.
 
-1. On the right side of the tab, select the checkboxes next to the metrics you want to display.
+4. On the right side of the tab, select the checkboxes next to the metrics you want to display.
 
 :::image type="content" source="./media/monitor/source-destination-metrics.png" alt-text="Screenshot showing the source and destination metrics." lightbox="./media/monitor/source-destination-metrics.png" :::
 
