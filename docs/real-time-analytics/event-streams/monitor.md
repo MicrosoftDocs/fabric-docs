@@ -52,7 +52,7 @@ To view data insights for an eventstream:
 
 :::image type="content" source="./media/monitor/eventstream-metrics.png" alt-text="Screenshot showing the eventstream metrics." lightbox="./media/monitor/eventstream-metrics.png" :::
 
-### Data insights in Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode) nodes
+### Data insights in Azure event hub source, lakehouse destination and KQL database destination nodes
 
 The following metrics are available on the **Data insights** tab for Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode) nodes:
 
@@ -65,7 +65,7 @@ The following metrics are available on the **Data insights** tab for Azure event
 | **Runtime errors** | Count | Total number of errors related to event processing. |
 | **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
-| **watermark delay** | Count | Maximum watermark delay across all partitions of all outputs in the job. |
+| **Watermark delay** | Count | Maximum watermark delay across all partitions of all outputs in the job. |
 
 To view the data insights for an Azure event hub source, lakehouse destination or KQL database destination(Event processing before ingestion mode):
 
