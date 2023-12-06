@@ -45,26 +45,100 @@ highlightedContent:
       itemType: concept
       url: get-started/copilot-fabric-overview.md          
 
+# conceptualContent section (optional)
+conceptualContent:
+# itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
+  sections:
+    - title: Microsoft Fabric fundamentals # < 60 chars (Optional; Remove if not applicable.)
+      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
+      items:
+        # Card
+        - title: "Microsoft Fabric: Get started"
+          links:
+          - url: get-started/fabric-home.md
+            itemType: how-to-guide
+            text: Navigate the Fabric portal          
+          - url: get-started/workspaces.md
+            itemType: concept
+            text: Fabric workspaces and settings
+          - url: get-started/whats-new.md
+            itemType: tutorial
+            text: What's new in Microsoft Fabric?
+          - url: enterprise/buy-subscription.md
+            itemType: concept
+            text: Buy a Microsoft Fabric subscription
+          # footerLink (optional)
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Platform admin and governance
+          links:
+          - url: admin/microsoft-fabric-admin.md
+            itemType: how-to-guide
+            text: Fabric administration
+          - url: governance/governance-compliance-overview.md
+            itemType: how-to-guide
+            text: Data governance and compliance
+          - url: admin/monitoring-workspace.md
+            itemType: concept
+            text: Admin monitoring workspace
+          - url: security/security-overview.md
+            itemType: how-to-guide
+            text: Security
+          footerLink:
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Troubleshooting 
+          links:
+          - url: /power-bi/support/service-support-options
+            itemType: troubleshooting
+            text: Create a support ticket
+          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
+            itemType: troubleshooting
+            text: Known issues
+          - url: /power-bi/troubleshoot/
+            itemType: troubleshooting
+            text: Troubleshoot issues
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Training
+          links:
+            - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
+              itemType: training
+              text: Skill up with the cloud skills challenge
+            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+              itemType: training
+              text: End-to-end analytics using Fabric
+            - url: /training/browse/?products=fabric&resource_type=learning%20path
+              itemType: training
+              text: Explore role-based learning paths
+          footerLink:
+              url: /training/browse/?products=fabric&resource_type=module
+              text: See more
+        # Card
+        - title: Community
+          links:
+            - url: https://community.fabric.microsoft.com/
+              itemType: concept
+              text: Ask questions in our forums 
+            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
+              itemType: concept
+              text: Join a user group
+            - url: https://ideas.fabric.microsoft.com/
+              itemType: concept
+              text: Vote and contribute product ideas 
+            - url: https://blog.fabric.microsoft.com/blog/
+              itemType: concept
+              text: Fabric updates blog
+
 productDirectory:
   title: Explore Microsoft Fabric experiences
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
-
-    # Card
-    - title: Get started
-
-      imageSrc: ./media/fabric-icon.png
-      links:
-        - url: enterprise/buy-subscription.md
-          text: Buy a Microsoft Fabric subscription
-        - url: get-started/fabric-home.md
-          text: Navigate the Fabric portal          
-        - url: get-started/workspaces.md
-          text: Fabric workspaces and settings
-        - url: get-started/whats-new.md
-          text: What's new in Fabric?
-        - url: get-started/index.yml
-          text: See more
 
     # Card
     - title: Power BI
@@ -206,33 +280,6 @@ productDirectory:
         - url: get-started/copilot-privacy-security.md
           text: See more
 
-    # Card
-    - title: Training
-
-      imageSrc: ./media/education-icon.svg
-      links:
-        - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
-          text: Skill up with the cloud skills challenge
-        - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
-          text: End-to-end analytics using Fabric
-        - url: /training/browse/?products=fabric&resource_type=learning%20path
-          text: Explore role-based learning paths
-        - url: /training/browse/?products=fabric&resource_type=module
-          text: See more
-
-    # Card
-    - title: Community
-
-      imageSrc: /office/media/icons/users-group.svg
-      links:
-        - url: https://community.fabric.microsoft.com/
-          text: Ask questions in our forums 
-        - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
-          text: Join a user group
-        - url: https://ideas.fabric.microsoft.com/
-          text: Vote and contribute product ideas 
-        - url: https://blog.fabric.microsoft.com/blog/
-          text: Fabric updates blog
 
 
 # additionalContent section (optional)
@@ -243,20 +290,6 @@ additionalContent:
     - title: Shared platform experiences # < 60 chars (optional)
       summary: Learn about Shared experiences in Power BI and Microsoft Fabric.
       items:
-      # Card
-      - title: Admin and governance
-#       imageSrc: ./media/administrator-icon.svg
-        links:
-          - url: enterprise/buy-subscription.md
-            text: Buy a Microsoft Fabric subscription     
-          - url: admin/microsoft-fabric-admin.md
-            text: Fabric administration
-          - url: governance/governance-compliance-overview.md
-            text: Data governance and compliance
-          - url: security/security-overview.md
-            text: Security
-          - url: admin/index.yml
-            text: See more
   
       # Card
       - title: Developer
@@ -271,22 +304,7 @@ additionalContent:
             text: Git integration
           - url: cicd/index.yml
             text: See more
-  
-      # Card
-      - title: Troubleshooting 
-  
-#        imageSrc: ./media/support-icon.svg
-        links:
-          - url: /power-bi/support/service-support-options
-            text: Create a support ticket
-          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
-            text: Known issues
-          - url: /power-bi/troubleshoot/
-            text: Troubleshoot issues
-          - url: get-started/index.yml
-            text: See more
-  
-  
+ 
 # additionalContent section (optional)
 # Card with summary style
 #additionalContent:
