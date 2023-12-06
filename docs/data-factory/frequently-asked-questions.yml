@@ -21,7 +21,7 @@ sections:
           Azure Data Factory (ADF) and Azure Synapse pipelines maintain a separate Platform as a Service (PaaS) roadmaps. These two solutions continue to coexist alongside Fabric Data Factory, which serves as the Software as a Service (SaaS) offering. ADF and Synapse pipelines remain fully supported, and there are no plans for depreciation. It's important to highlight that, for any upcoming projects, our suggestion is to initiate them using Fabric Data Factory. Additionally, we have strategies in place to facilitate the transition of ADF and Synapse pipelines to Fabric Data Factory, enabling them to take advantage of new Fabric functionalities.
 
       - question: |
-          Given the substantial functionality gaps in public preview of Fabric Data Factory, what are the reasons for choosing it over ADF / Synapse pipelines? 
+          Given the functionality gaps in Data Factory for Fabric, what are the reasons for choosing it over ADF / Synapse pipelines? 
         answer: |
           As we strive to bridge functionality gaps and incorporate the robust data pipeline orchestration and workflow capabilities found in ADF / Azure Synapse pipelines into Fabric Data Factory, we acknowledge that certain features present in ADF / Synapse pipelines might be essential for your needs. While you're encouraged to continue utilizing ADF / Synapse pipelines if these features are necessary, we encourage you to first explore your new data integration possibilities in Fabric. Your feedback on which features are pivotal for your success is invaluable. To facilitate this, we're actively working on introducing a new capability, enabling the migration of your existing data factories from Azure into Fabric workspaces as well.
 
@@ -48,7 +48,7 @@ sections:
       - question: |
           How do I migrate existing pipelines from Azure Data Factory (or) Azure Synapse workspace to Fabric Data Factory? 
         answer: |
-          Currently with Fabric Data Factory in Public preview, the only available method is to recreate the pipelines in Fabric Data Factory. We're diligently developing a new feature that empowers users to effectively oversee and manage both Fabric and ADF pipelines within the Fabric platform. This innovative new capability not only guarantees the seamless preservation of product continuity but also grants users the opportunity to immerse themselves in the enhanced functionalities offered by Fabric's data integration capabilities.
+          Currently, the only available method is to recreate the pipelines in Fabric Data Factory. We're diligently developing a new feature that empowers users to effectively oversee and manage both Fabric and ADF pipelines within the Fabric platform. This innovative new capability not only guarantees the seamless preservation of product continuity but also grants users the opportunity to immerse themselves in the enhanced functionalities offered by Fabric's data integration capabilities.
 
       - question: |
           How do I track and monitor the capacity of Fabric used with the pipelines?
