@@ -132,6 +132,8 @@ items:
     href: query-delta-lake-logs.md
 - name: Data recovery
   items:
+  - name: Restore in-place
+    href: restore-in-place.md
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal
