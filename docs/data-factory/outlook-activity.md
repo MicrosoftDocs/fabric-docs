@@ -26,7 +26,7 @@ To use an Office 365 Outlook activity in a pipeline, complete the following step
 ### Creating the activity
 
 1. Create a new pipeline in your workspace.
-1. Search for Office 365 Outlook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. It might be necessary to expand the activities list on the far right side of the pane, or the Outlook icon may be compressed without labeling text beneath it, as shown in this image, depending on the window width of your browser.
+1. Search for Office 365 Outlook in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. It might be necessary to expand the activities list on the far right side of the pane, or the Outlook icon can be compressed without labeling text beneath it, as shown in this image, depending on the window width of your browser.
 
    :::image type="content" source="media/outlook-activity/add-outlook-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Office 365 Outlook activity highlighted.":::
 
@@ -44,9 +44,9 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. An authentication dialog appears for you to provide credentials for the account you want to use in Outlook. After that, a confirmation appears for you to allow access to Outlook from your pipeline. Select **Allow access** on the confirmation dialog to connect your Outlook activity to your account.
 
-1. Once connected, you can choose provide details for the email, including its recipients, subject, body, as well as other details such as a custom from address, CC and BCC recipients, sentitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-language.md).
+1. Once connected, you can choose to provide details for the email, including its recipients, subject, body. You can also include **Advanced** details such as a custom from address, CC and BCC recipients, sensitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-language.md).
 
-   :::image type="content" source="media/outlook-activity/email-settings.png" alt-text="Screenshot showing the Teams activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
+   :::image type="content" source="media/outlook-activity/email-settings.png" alt-text="Screenshot showing the Office 365 Outlook activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
 
 ## Save and run or schedule the pipeline
 
