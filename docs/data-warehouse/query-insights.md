@@ -4,11 +4,11 @@ description: Query insights makes past query execution data and aggregated insig
 author: mariyaali
 ms.author: mariyaali
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/06/2023
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.search.form: query history monitoring # This article's title should not change. If so, contact engineering.
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 
 # Query insights in Fabric data warehousing
