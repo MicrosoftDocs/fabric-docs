@@ -7,9 +7,7 @@ items:
     href: overview.md
   - name: Compare with Azure Data Explorer
     href: realtime-analytics-compare.md
-  - name: KQL Database consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
+
 - name: Get started
   items:
   - name: End to end tutorial
@@ -37,6 +35,9 @@ items:
   href: event-streams/toc.yml
 - name: KQL Database
   items:
+  - name: KQL Database consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
   - name: Create a KQL database
     href: create-database.md
   - name: Access an existing KQL database
@@ -126,5 +127,5 @@ items:
       href: notebooks.md
     - name: Use a notebook with Kqlmagic to query a KQL database
       href: jupyter-notebook.md
-    - name: Use a notebook with Apache Spark to query a KQL database
+    - name: "Tutorial: Use a notebook with Apache Spark to query a KQL database"
       href: spark-connector.md
