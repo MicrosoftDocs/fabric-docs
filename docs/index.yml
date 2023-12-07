@@ -49,7 +49,7 @@ highlightedContent:
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
-    - title: Microsoft Fabric fundamentals # < 60 chars (Optional; Remove if not applicable.)
+    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
       summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
@@ -90,20 +90,20 @@ conceptualContent:
             url: admin/index.yml
             text: See more
         # Card
-        - title: Troubleshooting 
+        - title: Developer
           links:
-          - url: /power-bi/support/service-support-options
-            itemType: concept
-            text: Create a support ticket
-          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
-            itemType: concept
-            text: Known issues
-          - url: /power-bi/troubleshoot/
-            itemType: concept
-            text: Troubleshoot issues
+            - url: /rest/api/fabric/
+              itemType: reference
+              text: REST APIs
+            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+              itemType: concept
+              text: Deployment pipelines
+            - url: cicd/git-integration/intro-to-git-integration.md
+              itemType: concept
+              text: Git integration
           footerLink:
-            url: get-started/index.yml
-            text: See more
+              url: cicd/index.yml
+              text: See more
         # Card
         - title: Training
           links:
@@ -135,20 +135,20 @@ conceptualContent:
               itemType: concept
               text: Fabric updates blog
         # Card
-        - title: Developer
+        - title: Troubleshooting 
           links:
-            - url: /rest/api/fabric/
-              itemType: reference
-              text: REST APIs
-            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
-              itemType: concept
-              text: Deployment pipelines
-            - url: cicd/git-integration/intro-to-git-integration.md
-              itemType: concept
-              text: Git integration
-            - url: cicd/index.yml
-              itemType: concept
-              text: See more
+          - url: /power-bi/support/service-support-options
+            itemType: concept
+            text: Create a support ticket
+          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
+            itemType: concept
+            text: Known issues
+          - url: /power-bi/troubleshoot/
+            itemType: concept
+            text: Troubleshoot issues
+          footerLink:
+            url: get-started/index.yml
+            text: See more
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
@@ -315,7 +315,7 @@ additionalContent:
       - text: Azure Synapse Analytics documentation
         url: /azure/synapse-analytics/
       - text: Get started with Azure Synapse Analytics
-        url: /azure/synapse-analytics/get-started.md
+        url: azure/synapse-analytics/get-started.md
     - title: Azure Data Factory
       summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
       url: /azure/data-factory/
@@ -323,4 +323,4 @@ additionalContent:
       - text: Azure Data Factory documentation
         url: /azure/data-factory/
       - text: Get started with Azure Data Factory
-        url: /azure/data-factory/quickstart-get-started.md
+        url: azure/data-factory/quickstart-get-started.md
