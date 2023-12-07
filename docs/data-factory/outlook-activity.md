@@ -44,7 +44,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. An authentication dialog appears for you to provide credentials for the account you want to use in Outlook. After that, a confirmation appears for you to allow access to Outlook from your pipeline. Select **Allow access** on the confirmation dialog to connect your Outlook activity to your account.
 
-1. Once connected, you can choose provide details for the email, including its recipients, subject, body, as well as other details such as a custom from address, CC and BCC recipients, sentitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-langugage.md).
+1. Once connected, you can choose provide details for the email, including its recipients, subject, body, as well as other details such as a custom from address, CC and BCC recipients, sentitivity, and a custom reply-to address. All of the fields support [dynamic expressions](expression-language.md).
 
    :::image type="content" source="media/outlook-activity/email-settings.png" alt-text="Screenshot showing the Teams activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
 
