@@ -241,6 +241,12 @@
         href: connector-data-warehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
+    - name: Dynamics CRM
+      items:
+      - name: Overview
+        href: connector-dynamics-crm-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-dynamics-crm-copy-activity.md
     - name: FHIR
       items:
       - name: Overview
