@@ -1,14 +1,14 @@
 ---
-title: Known issue - OneLake compute transactions not reported in Metrics app
-description: A known issue is posted where OneLake compute transactions aren't reported in Metrics app
+title: Known issue - OneLake compute transactions don't count against capacity limits
+description: A known issue is posted where OneLake compute transactions don't count against capacity limits
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 11/15/2023
+ms.date: 12/08/2023
 ms.custom: known-issue-553
 ---
 
-# Known issue - OneLake compute transactions not reported in Metrics app
+# Known issue - OneLake compute transactions don't count against capacity limits
 
 The Microsoft Fabric Capacity Metrics app doesn't show data for OneLake transaction usage reporting. OneLake compute doesn't appear in the Fabric Capacity Metrics app and doesn't count against capacity limits. OneLake storage reporting doesn't have any issues and is reported correctly.
 
