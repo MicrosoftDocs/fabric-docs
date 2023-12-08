@@ -72,17 +72,17 @@ The tables below list the data that is shared with Microsoft 365 services.
 |SharingLinksURL|Sharing Link as per [Share a report using a link](/power-bi/collaborate-share/service-share-dashboards#share-a-report-via-link)|["https://app.powerbi.com/links/xyz123"]|
 |IconURL||cdn.com/report.png|
 |Description|Content description as per [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop)|Sample containing retail sales data|
-|Owner/Creator|Microsoft Entra user Principal Name of the User that Created the Content as per [Microsoft Entra user principal name](/azure/active-directory/hybrid/plan-connect-userprincipalname/)|user1@griffin1.org|
+|Owner/Creator|Microsoft Entra user principal name of the User that Created the Content as per [Microsoft Entra user principal name](/azure/active-directory/hybrid/plan-connect-userprincipalname/)|user1@griffin1.org|
 |CreatedDate|Date the content was created|2011-06-30T23:32:46Z|
 |LastModifiedDate|Last modified date for the content|2011-06-30T23:32:46Z|
-|LastModifiedUser|Microsoft Entra user Principal Name for the last person who modified the content|user1@griffin1.org|
+|LastModifiedUser|Microsoft Entra user principal name for the last person who modified the content|user1@griffin1.org|
 
 **User activity that is leveraged for showing Fabric content within your "Recents" and "Recommended" sections at Office.com**
 
 |Property|What is Shared|Example|
 |---------|---------|---------|---------|
 |LastRefreshDate|Last refresh date for the content|2011-06-30T23:32:46Z|
-|UserID|Microsoft Entra user Principal Name for the user who acted on the content|user1@griffin1.org|
+|UserID|Microsoft Entra user principal name for the user who acted on the content|user1@griffin1.org|
 |SignalType|The type of action the user took on the content (Viewed, Modified)|Viewed|
 |ActorID|Users Microsoft Entra ID for the user who acted on the content|aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee|
 |StartTime/EndTime|Date/Time the user performed the action on the content|2011-06-30T23:32:46Z|
