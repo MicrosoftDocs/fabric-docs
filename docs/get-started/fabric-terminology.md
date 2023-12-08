@@ -24,7 +24,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
-- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory.
+- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 

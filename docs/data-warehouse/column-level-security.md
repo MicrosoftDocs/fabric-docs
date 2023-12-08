@@ -29,7 +29,7 @@ Implement column-level security with the [GRANT](/sql/t-sql/statements/grant-tr
 
 Column-level security is applied to [shared warehouse or lakehouse](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
 
-Only Microsoft Entra ID authentication is supported.
+Only Microsoft Entra authentication is supported.
 
 ## Example
 

@@ -15,7 +15,7 @@ ms.date: 11/02/2023
 
 [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a platform that allows users to get, create, share, and visualize data using an array of tools. To share content and collaborate in Microsoft Fabric, your organization needs to have an [F or P capacity license](#capacity-license), and at least one [per-user license](#per-user-licenses).
 
-A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Azure Active Directory tenant for the entire company and has deployed Fabric workspaces in Fabric capacities according to corporate function. Retail company B has two Azure Active Directory tenants, one in the United States and another in Europe. It deployed Fabric workspaces and capacities by location in each of the tenants.
+A Microsoft Fabric deployment can be organized in various ways according to your organizational needs. This illustration shows two different ways of deploying Fabric in an organization. Retail company A has a single Microsoft Entra tenant for the entire company and has deployed Fabric workspaces in Fabric capacities according to corporate function. Retail company B has two Microsoft Entra tenants, one in the United States and another in Europe. It deployed Fabric workspaces and capacities by location in each of the tenants.
 
 :::image type="content" source="media/licenses/tenants-capacities.png" alt-text="Illustration. Org A has one tenant with three capacities. Org B has two tenants, each with a few capacities. Every capacity has workspaces." lightbox="media/licenses/tenants-capacities.png":::
 
@@ -25,7 +25,7 @@ This section describes tenants, capacities, and workspaces, which are helpful in
 
 ### Tenant
 
-Microsoft Fabric is deployed to an [Azure Active Directory tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant). Each tenant is tied to a specific Domain Name System (DNS) and additional domains can be added to the tenant. If you don't already have a Microsoft Azure Active Directory tenant, you can either add your domain to an existing tenant or a tenant will be created when you acquire a free, trial or paid license for a Microsoft online service. Once you have your tenant, you can add capacities to it. To create a tenant, see [Quickstart: Create a new tenant in Azure Active Directory](/azure/active-directory/fundamentals/create-new-tenant).
+Microsoft Fabric is deployed to an [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant). Each tenant is tied to a specific Domain Name System (DNS) and additional domains can be added to the tenant. If you don't already have a Microsoft Entra tenant, you can either add your domain to an existing tenant or a tenant will be created when you acquire a free, trial or paid license for a Microsoft online service. Once you have your tenant, you can add capacities to it. To create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](/azure/active-directory/fundamentals/create-new-tenant).
 
 ### Capacity
 
@@ -35,7 +35,7 @@ A Microsoft Fabric capacity resides on a tenant. Each capacity that sits under a
 
 [Workspaces](../get-started/workspaces.md) reside within capacities and are used as containers for Microsoft Fabric items. Each Microsoft Fabric user has a personal workspace known as *My Workspace*. More workspaces can be created to enable collaboration.  
 
-Each Azure Active Directory tenant that has Fabric deployed to it, has a shared capacity which hosts all the *My Workspaces* and the workspaces with Pro or Premium Per User license mode. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, workspaces - including *My Workspaces* - can be assigned to any capacity in your tenant.
+Each Microsoft Entra tenant that has Fabric deployed to it, has a shared capacity which hosts all the *My Workspaces* and the workspaces with Pro or Premium Per User license mode. By default, workspaces are created in your tenant's shared capacity. When your tenant has other capacities, workspaces - including *My Workspaces* - can be assigned to any capacity in your tenant.
 
 >[!NOTE]
 >If you're using a [Power BI Premium](/power-bi/enterprise/service-premium-what-is) capacity, Microsoft Fabric items aren't enabled. To enable support for Microsoft Fabric items on your Power BI capacity, [enable Microsoft Fabric](../admin/fabric-switch.md).
