@@ -1,11 +1,11 @@
 ---
 title: Activity Parity between Azure Data Factory (ADF) and Fabric Data Factory
 description: This documentation provides an overview of the activity parity between Azure Data Factory (ADF) and Fabric Data Factory.
-author: lle 
+author: lrtoyou1223 
 ms.author: lle
-ms.topic: how-to (need confirm content)
+ms.topic: how-to 
 ms.date: 12/07/2023
-ms.custom: template-how-to, build-2023 (need confirm content)
+ms.custom: template-how-to, build-2023 
 ---
 
 # Activity Parity between Azure Data Factory (ADF) and Fabric Data Factory
