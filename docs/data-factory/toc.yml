@@ -81,6 +81,12 @@
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md    
+    - name: Amazon RDS for SQL Server
+      items:
+      - name: Overview
+        href: connector-amazon-rds-for-sql-server-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-amazon-rds-for-sql-server-copy-activity.md      
     - name: Amazon Redshift
       items:
       - name: Overview
@@ -173,6 +179,12 @@
         href: connector-azure-sql-database.md
       - name: Configure in a data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
+    - name: Azure SQL Database Managed Instance
+      items:
+      - name: Overview
+        href: connector-azure-sql-database-managed-instance-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-azure-sql-database-managed-instance-copy-activity.md    
     - name: Azure Synapse Analytics
       items:
       - name: Overview
@@ -229,6 +241,12 @@
         href: connector-data-warehouse.md
       - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
+    - name: Dynamics CRM
+      items:
+      - name: Overview
+        href: connector-dynamics-crm-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-dynamics-crm-copy-activity.md
     - name: FHIR
       items:
       - name: Overview
@@ -523,6 +541,8 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Dataflow activity
+        href: dataflow-activity.md
       - name: Deactivate an activity
         href: deactivate-activity.md        
       - name: Delete data activity
@@ -543,6 +563,8 @@
         href: lookup-activity.md
       - name: Notebook activity
         href: notebook-activity.md
+      - name: Office 365 Outlook activity
+        href: outlook-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Set Variable Activity

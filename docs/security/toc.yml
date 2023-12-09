@@ -15,13 +15,9 @@ items:
     href: security-lockbox.md
   - name: Service tags
     href: security-service-tags.md
-- name: Resiliency
+- name: Reliability
   items:
-  - name: Resiliency in Fabric
-    href: az-resiliency.md
-  - name: Disaster recovery
-    items:  
-    - name: Disaster recovery in Fabric
-      href: disaster-recovery-guide.md
-    - name: Recovery guides by experience
-      href: experience-specific-guidance.md
+  - name: Reliability in Microsoft Fabric
+    href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
+  - name: Disaster recovery guides by experience
+    href: experience-specific-guidance.md
