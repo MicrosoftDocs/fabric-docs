@@ -13,9 +13,9 @@ ms.custom: fabric-cat
 
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
-It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments that's typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however this feature isn't supported in a Warehouse in Microsoft Fabric.
+It's a common requirement in data warehouses to assign a unique identifier to each row of a table. In SQL Server-based environments that's typically done by creating an [identity column](/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-ver16&preserve-view=true) in a table, however this feature isn't supported in a Warehouse in Microsoft Fabric. Instead, you'll need to use a workaround technique.
 
-## Work around technique
+## Workaround technique
 
 This article describes a workaround technique that generates unique identifiers in a Warehouse table.
 
