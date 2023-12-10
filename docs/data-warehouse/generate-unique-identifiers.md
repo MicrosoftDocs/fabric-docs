@@ -21,20 +21,20 @@ This article describes a workaround technique that generates unique identifiers 
 
 ### Step 1: Create a table with an identifier column
 
-First, you should create a table that includes a column that will store the unique identifier. The column data type should be either [int or bigint](data-types.md#data-types-in-warehouse), depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row must be assigned an identifier.
+First, you should create a table that includes a column that stores unique identifier values. The column data type should be set to either [int or bigint](data-types.md#data-types-in-warehouse), depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
 
 The following script creates an example table named **Orders\_with\_Identifier** in the **dbo** schema.
 
 ```sql
 --Drop a table named 'Orders_with_Identifier' in schema 'dbo', if it exists
-IF OBJECT_ID('[dbo].[Orders\_with\_Identifier]', 'U') IS NOT NULL
+IF OBJECT_ID('[dbo].[Orders_with_Identifier]', 'U') IS NOT NULL
     DROP TABLE [dbo].[Orders_with_Identifier];
 GO
 
 CREATE TABLE [dbo].[Orders_with_Identifier] (
-    [RowID] BIGINT NOT NULL,
+    [ID] BIGINT NOT NULL,
     [O_OrderKey] BIGINT NULL,
-    [O_CustKey] BIGINT NULL,
+    [O_CustomerKey] BIGINT NULL,
     [O_OrderStatus] VARCHAR(1) NULL,
     [O_TotalPrice] DECIMAL(15, 2) NULL,
     [O_OrderDate] DATE NULL,
@@ -54,11 +54,11 @@ The following script assigns the last identifier value to the **@MaxID** variabl
 
 ```sql
 --Assign the last identifier value to a variable
---If the table doesn't contain any rows, assign zero to the variable.
+--If the table doesn't contain any rows yet, assign zero to the variable
 DECLARE @MaxID AS BIGINT;
 
 IF EXISTS(SELECT * FROM [dbo].[Orders_with_Identifier])
-    SET @MaxID = (SELECT MAX([RowID]) FROM [dbo].[Orders_with_Identifier]);
+    SET @MaxID = (SELECT MAX([ID]) FROM [dbo].[Orders_with_Identifier]);
 ELSE
     SET @MaxID = 0;
 ```
@@ -67,15 +67,15 @@ ELSE
 
 When you insert rows into the table, unique and sequential numbers are computed by adding the value of the **@MaxID** variable to the values returned by the [ROW\_NUMBER](/sql/t-sql/functions/row-number-transact-sql?view=sql-server-ver16&preserve-view=true) function. This function is a window function that computes a sequential row number starting with 1.
 
-The following script, which is run in the same batch as the script in step 2, inserts rows into the **Orders\_with\_Identifier** table. The values for the **RowID** column are computed by adding the **@MaxID** variable to values returned by the `ROW_NUMBER` function. The function must have an order by clause, which defines the logical order of the rows within the result set. When it's set to `SELECT NULL`, no logical order is imposed, meaning identifier values are arbitrarily assigned. This order by clause results in the fastest possible execution time.
+The following script—which is run in the same batch as the script in step 2—inserts rows into the **Orders\_with\_Identifier** table. The values for the **ID** column are computed by adding the **@MaxID** variable to values returned by the `ROW_NUMBER` function. The function must have an `ORDER BY` clause, which defines the logical order of the rows within the result set. When it's set to `SELECT NULL`, no logical order is imposed, meaning identifier values are arbitrarily assigned. This order by clause results in the fastest possible execution time.
 
 ```sql
---Insert new rows with unique identifier values
+--Insert new rows with unique identifiers
 INSERT INTO [dbo].[Orders_with_Identifier]
 SELECT
-    @MaxID + ROW_NUMBER() OVER(ORDER BY (SELECT NULL)) AS [RowID],
+    @MaxID + ROW_NUMBER() OVER(ORDER BY (SELECT NULL)) AS [ID],
     [src].[O_OrderKey],
-    [src].[O_CustKey],
+    [src].[O_CustomerKey],
     [src].[O_OrderStatus],
     [src].[O_TotalPrice],
     [src].[O_OrderDate],
