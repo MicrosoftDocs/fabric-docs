@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/03/2023
+ms.date: 12/10/2023
 ---
 
 # Tenant settings index
@@ -131,6 +131,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow visuals created using the Power BI SDK](/power-bi/admin/organizational-visuals#visuals-from-appsource-or-a-file)|Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the "Organizational visuals" page are not affected by this setting.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2121300)|
 |[Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals)|Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2036068)|
 |[Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file)|Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409)|
+|[Allow custom visuals to get user Azure Active Directory access tokens](./organizational-visuals.md#obtain-microsoft-entra-access-token)|Enabling this setting will allow custom visuals to obtain Azure Active Directory access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
 
 ## [R and Python visuals settings](service-admin-portal-r-python-visuals.md)
 
