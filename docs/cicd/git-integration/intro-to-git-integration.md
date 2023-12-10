@@ -51,11 +51,11 @@ The following items are currently supported:
 
 <!--- * [Data pipelines](../../data-factory/data-factory-overview.md#data-pipelines) --->
 
-* Datasets (except push datasets, live connections, and model v1)
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
-* Reports
+* Reports (except reports connect to semantic models hosted in Azure Analysis Services, SQL Server Analysis Services or MyWorkspace)
+* Semantic models (except push datasets, live connections, and model v1)
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
 
