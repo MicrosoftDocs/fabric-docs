@@ -73,7 +73,7 @@ You might want to copy or share the queries you create.
     The following table outlines the many options for how to share a query.
 
     > [!IMPORTANT]
-    > The user who is receiving the query link must also have viewing permissions to the underlying data in order to be able to execute the query and view results.
+    > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
     
     |Action|Description|
     |--|--|
