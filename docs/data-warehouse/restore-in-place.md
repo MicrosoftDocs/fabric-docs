@@ -44,7 +44,7 @@ System-generated restore points cannot be deleted, as the restore points are use
 
 Any number of user-defined restore points aligned with your specific business or organizational recovery strategy can be created. User-defined restore points are available for seven calendar days and are automatically deleted on your behalf after the expiry of the retention period.
 
-Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+Currently, you can trigger the user-defined restore point creation through any of publicly available REST API tools. <!-- For an example, see the tutorial [Create user-defined restore points](tutorial-restore-in-place-warehouse.md#create-user-defined-restore-points). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/auto-draft/)<!-- [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/)-->.
 
 ### Restore point retention
 
@@ -74,7 +74,7 @@ When you restore, the current warehouse is *replaced* with the restored warehous
 
 Each restore point references a UTC timestamp when the restore point was created.
 
-To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/auto-draft/). <!-- [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/). -->
 
 ### Security
 
@@ -85,7 +85,7 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 
 - A recovery point cannot be restored to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
 - Restore points cannot be retained beyond the default seven day retention period. This retention period is not currently configurable.
-- The ability to perform restore in-place either through UX or through T-SQL is currently not supported, currently only supported via API call. <!-- For an example, see [Tutorial: Restore a Warehouse using REST API in Microsoft Fabric](tutorial-restore-in-place-warehouse.md). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+- The ability to perform restore in-place either through UX or through T-SQL is currently not supported, currently only supported via API call. <!-- For an example, see [Tutorial: Restore a Warehouse using REST API in Microsoft Fabric](tutorial-restore-in-place-warehouse.md). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/auto-draft/)<!-- [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/) -->.
     - Currently, only the publicly available REST APIs provide the following functionalities of a restore in-place. 
         - Creation of user-defined restore points
         - List of the system-generated and user-defined restore points
