@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 12/04/2023
+ms.date: 12/11/2023
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -63,15 +63,25 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 ## Copy query
 
-You might want to copy or share the queries you create.
+You might want to copy or share the queries you create. 
 
-1. At the top of the query window, select the **Manage** tab.
-1. Select **Copy**
+1. At the top of the query window, select the **Home** tab.
+1. Select **Copy query**.
 
     :::image type="content" source="media/kusto-query-set/copy-query-results.png" alt-text="Screenshot of the Manage tab of the KQL Queryset showing the dropdown of the copy query or query results option.":::
 
-1. You can either select **Query** to copy the text of the most recent query, or select **Results** to copy the output table.
-1. You can now paste this information into any editor, such as Microsoft Word.
+    The following table outlines the many options for how to share a query.
+
+    |Action|Description|
+    |--|--|
+    |Copy query | Copy the query text.
+    |Link to clipboard|Copy a deep link that can be used to run the query.|
+    |Link and query to clipboard|Copy a link that can be used to run the query and the text of the query.|
+    |Link, query and results to clipboard|Copy a link that can be used to run the query, the text of the query, and the results of the query.|
+    |Copy results|Copy the results of the query.|
+
+1. Select the desired sharing action from the above table.
+1. Paste this information into any editor, such as Microsoft Word.
 
 ## Export query data as CSV
 
