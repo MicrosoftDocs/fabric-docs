@@ -698,3 +698,5 @@
         href: known-issue-inprogress-refresh-history.md
       - name: Dataflow Gen1 admin switch affects Gen2
         href: known-issue-gen1-admin-switch.md
+      - name: Dataflow Gen2 failed to publish
+        href: known-issue-failed-to-publish-dataflow-gen2.md
