@@ -137,7 +137,7 @@ You can migrate your existing workspaces into a trial capacity using workspace s
 
 :::image type="content" source="media/fabric-trial/migrate-to-trial.png" alt-text="Screenshot of the trial workspace settings.":::
 
-## Next steps
+## Related content
 
 - Learn about [licenses](../enterprise/licenses.md)
 
