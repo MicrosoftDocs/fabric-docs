@@ -18,7 +18,7 @@ With a Fabric trial, you get the following:
 
 * Full access to all of the Fabric experiences and features.
 
-* OneLake storage up to 1 TB
+* OneLake storage up to 1 TB.
 
 * Users can create Fabric items and collaborate with others in the Fabric trial capacity. This includes:
     * Creating [Workspaces](workspaces.md) (folders) for projects that support Fabric capabilities.
