@@ -107,6 +107,8 @@ items:
     href: customize-dashboard-visuals.md
   - name: Apply conditional formatting
     href: dashboards-conditional-formatting.md
+  - name: Use parameters in Real-Time Dashboards
+    href: dashboards-parameters.md
 - name: Query data
   items:
   - name: Use example queries
