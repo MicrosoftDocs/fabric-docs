@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: alpowers
 ms.topic: conceptual
-ms.date: 11/10/2023
+ms.date: 12/11/2023
 ms.custom: 
 ---
 # Copilot for Data Factory overview
