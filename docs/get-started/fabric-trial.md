@@ -67,11 +67,11 @@ If your Fabric administrator has [enabled Microsoft Fabric for the tenant](../ad
 
 You may cancel your trial from the Account manager. When you cancel your free Fabric trial, the trial capacity, with all of its workspaces and their contents, is deleted. In addition, you can't:
 
--   Create workspaces that support Fabric capabilities.
+- Create workspaces that support Fabric capabilities.
 
--   Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
+- Share Fabric items, such as machine learning models, warehouses, and notebooks, and collaborate on them with other Fabric users.
 
--   Create analytics solutions using these Fabric items.
+- Create analytics solutions using these Fabric items.
 
 Additionally, if you cancel your trial, you may not be able to start another trial. If you want to retain your data and continue to use Microsoft Fabric, you can [purchase a capacity](../enterprise/buy-subscription.md) and migrate your workspaces to that capacity. To learn more about workspaces and license mode settings, see [Workspaces](workspaces.md).
 
@@ -87,19 +87,19 @@ If you don't see the **Start trial** button in your Account manager:
 
 If you do see the **Start trial** button in your Account manager:
 
-- You might not be able to start a trial if your tenant has exhausted its limit of trial capacities. If that is the case, you have the following options:
+- You might not be able to start a trial if your tenant exhausted its limit of trial capacities. If that is the case, you have the following options:
 
-    - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
+  - [Purchase a Fabric capacity from Azure](https://portal.azure.com/) by performing a search for *Microsoft Fabric*.
 
-    - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
+  - Request another trial capacity user to share their trial capacity workspace with you. [Give users access to workspaces](give-access-workspaces.md)
 
-    - To increase tenant trial capacity limits, reach out to your Fabric administrator to create a Microsoft support ticket.
+  - To increase tenant trial capacity limits, reach out to your Fabric administrator to create a Microsoft support ticket.
 
 **In Workplace settings, I can't assign a workspace to the trial capacity**
 
-This known bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here. 
+This known bug occurs when the Fabric administrator turns off trials after you start a trial. To add your workspace to the trial capacity, open the Admin portal by selecting it from the gear icon in the top menu bar. Then, select **Trial > Capacity settings** and choose the name of the capacity. If you don't see your workspace assigned, add it here.
 
-:::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal."::: 
+:::image type="content" source="media/fabric-trial/capacity-wk-assignment.png" alt-text="Screenshot of the Capacities page in the Admin portal.":::
 
 **What is the region for my Fabric trial capacity?**
 
