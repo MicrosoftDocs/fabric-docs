@@ -20,6 +20,9 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 
 Restore in-place is an essential part of data recovery that allows restoration of the warehouse to a prior known good state. A restore overwrites the existing warehouse, using restore points from the existing warehouse.
 
+> [!NOTE]
+> The restore points and restore in place features are currently in preview.
+
 ## What are restore points?
 
 Restore points are recovery points of the warehouse created by copying only the metadata, while referencing the data files in OneLake. The metadata is copied while the underlying data of the warehouse stored as parquet files are not copied. These restore points can be used to recover the warehouse as of prior point in time.
