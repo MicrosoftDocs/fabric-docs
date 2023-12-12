@@ -1,6 +1,6 @@
 ---
-title: Overview of Copilot for Fabric (preview)
-description: Learn about Copilot for Fabric, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
+title: Overview of Copilot in Fabric (preview)
+description: Learn about Copilot in Fabric, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: 'guptamaya'
@@ -11,7 +11,7 @@ ms.topic: conceptual
 ms.date: 11/17/2023
 ---
 
-# Overview of Copilot for Fabric (preview)
+# Overview of Copilot in Fabric (preview)
 
 With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 
@@ -50,5 +50,5 @@ For the list of Azure regions where prebuilt AI services in Fabric are now avail
 ## Next steps
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
-- [Copilot for Fabric: FAQ](copilot-faq-fabric.yml)
+- [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
