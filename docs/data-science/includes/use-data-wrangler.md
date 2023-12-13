@@ -47,7 +47,7 @@ On the left panel is a list of operations (such as **Find and replace**, **Forma
 Use Data Wrangler to drop rows with missing data across all columns.
 
 1. Select **Drop missing values** from **Find and replace**.
-1. Select **All columns** from the drop-down list.
+1. Choose **Select all** from the **Target columns**.
 
     :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-missing.png" alt-text="Screenshot shows dropping missing rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-missing.png":::
 
