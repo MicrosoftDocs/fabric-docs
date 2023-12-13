@@ -4,7 +4,7 @@ description: "Learn about a workaround technique to generate unique identifiers 
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: wiassaf
-ms.date: 12/10/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.custom: fabric-cat
 ---
@@ -23,7 +23,7 @@ This article describes a workaround technique that generates unique identifiers 
 
 First, you should create a table that includes a column that stores unique identifier values. The column data type should be set to either [int or bigint](data-types.md#data-types-in-warehouse), depending on the volume of data you expect to store. You should also define the column as `NOT NULL` to ensure that every row is assigned an identifier.
 
-The following script creates an example table named **Orders\_with\_Identifier** in the **dbo** schema.
+The following code creates an example table named **Orders\_with\_Identifier** in the **dbo** schema.
 
 ```sql
 --Drop a table named 'Orders_with_Identifier' in schema 'dbo', if it exists
@@ -50,7 +50,7 @@ GO
 
 Before you insert rows into the table, you need to determine the last identifier value stored in the table. You can do that by retrieving the _maximum_ identifier value. This value should be assigned to a variable so you can refer to it when you insert table rows (in the next step).
 
-The following script assigns the last identifier value to a variable named **@MaxID**.
+The following code assigns the last identifier value to a variable named **@MaxID**.
 
 ```sql
 --Assign the last identifier value to a variable
@@ -67,7 +67,7 @@ ELSE
 
 When you insert rows into the table, unique and sequential numbers are computed by adding the value of the **@MaxID** variable to the values returned by the [ROW\_NUMBER](/sql/t-sql/functions/row-number-transact-sql?view=sql-server-ver16&preserve-view=true) function. This function is a window function that computes a sequential row number starting with 1.
 
-The following script—which is run in the same batch as the script in step 2—inserts rows into the **Orders\_with\_Identifier** table. The values for the **Row\_ID** column are computed by adding the **@MaxID** variable to values returned by the `ROW_NUMBER` function. The function must have an `ORDER BY` clause, which defines the logical order of the rows within the result set. However when it's set to `SELECT NULL`, no logical order is imposed, meaning identifier values are arbitrarily assigned. This order by clause results in a faster execution time.
+The following code—which is run in the same batch as the script in step 2—inserts rows into the **Orders\_with\_Identifier** table. The values for the **Row\_ID** column are computed by adding the **@MaxID** variable to values returned by the `ROW_NUMBER` function. The function must have an `ORDER BY` clause, which defines the logical order of the rows within the result set. However when it's set to `SELECT NULL`, no logical order is imposed, meaning identifier values are arbitrarily assigned. This order by clause results in a faster execution time.
 
 ```sql
 --Insert new rows with unique identifiers
