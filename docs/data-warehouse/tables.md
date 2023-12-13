@@ -4,7 +4,7 @@ description: Learn about tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.custom:
   - build-2023

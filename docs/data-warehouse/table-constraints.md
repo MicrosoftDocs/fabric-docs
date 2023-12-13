@@ -15,14 +15,14 @@ ms.search.form: Warehouse design and development # This article's title should n
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Learn about table constraints in [!INCLUDE [fabricse](../../includes/fabric-se.md)] and [!INCLUDE [fabricdw](../../includes/fabric-dw.md)] in [!INCLUDE [fabric](../../includes/fabric.md)], including the primary key, foreign keys, and unique keys.
+Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [fabric](includes/fabric.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
 > To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
 
 ## Table constraints
 
-[!INCLUDE [fabricse](../../includes/fabric-se.md)] and [!INCLUDE [fabricdw](../../includes/fabric-dw.md)] in [!INCLUDE [fabric](../../includes/fabric.md)] support these table constraints: 
+[!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 - UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
@@ -30,17 +30,17 @@ Learn about table constraints in [!INCLUDE [fabricse](../../includes/fabric-se.m
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
-- [!INCLUDE [fabricse](../../includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
+- [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 ## Remarks
 
-Having primary key, foreign key and/or unique key allows [!INCLUDE [fabricse](../../includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
+Having primary key, foreign key and/or unique key allows [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 ALTER TABLE cannot be part of an explicit transaction.
 
 > [!IMPORTANT]  
-> After creating a table with primary key or unique constraint in [!INCLUDE [fabricse](../../includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], make sure all values in those columns are unique. A violation of that can cause the query to return inaccurate result. Foreign keys are not enforced.
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabricse](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], make sure all values in those columns are unique. A violation of that can cause the query to return inaccurate result. Foreign keys are not enforced.
 
 This example shows how a query might return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
