@@ -8,7 +8,7 @@
     - name: Data Factory training
       href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
-      href: whats-new.md
+      href: ../get-started/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
     - name: Pricing in Data Factory
       items:
       - name: Pricing overview
