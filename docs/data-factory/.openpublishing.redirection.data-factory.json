@@ -7,7 +7,7 @@
         },
         {
             "source_path_from_root": "/docs/data-factory/whats-new.md",
-            "redirect_url": "/fabric/get-started/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
+            "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
             "redirect_document_id": true
         }
     ]
