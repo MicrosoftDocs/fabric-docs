@@ -90,5 +90,5 @@ FROM [dbo].[Orders] AS [src];
 
 - [Design tables in Warehouse in Microsoft Fabric](tables.md)
 - [Data types in Microsoft Fabric](data-types.md)
-- [ROW\_NUMBER (Transact-SQL)](/sql/t-sql/functions/row-number-transact-sql?view=fabric&preserve-view=true)
+- [ROW_NUMBER (Transact-SQL)](/sql/t-sql/functions/row-number-transact-sql?view=fabric&preserve-view=true)
 - [SELECT - OVER Clause (Transact-SQL)](/sql/t-sql/queries/select-over-clause-transact-sql?view=fabric&preserve-view=true)
