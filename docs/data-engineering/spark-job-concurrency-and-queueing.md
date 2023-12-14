@@ -52,7 +52,7 @@ The following section lists various cores-based limits for Spark workloads based
 | Trial Capacity | P1 | 128 | 384 |  NA |
 
 Example calculation:
-*F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores thats available for a single Spark job.  That means *a single Notebook or Spark Job Defintion or Lakehouse Job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
+*F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores available for a single Spark job.  That means *a single Notebook or Spark Job Definition or Lakehouse Job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
 
 > [!NOTE]
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
