@@ -47,13 +47,13 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. In the **Lakehouse explorer**, you see options to load data into lakehouse. Select **New Dataflow Gen2**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse.":::
+   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option-inline.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse." lightbox="media\tutorial-build-lakehouse\load-data-lakehouse-option.png":::
 
 1. On the new dataflow pane, select **Import from a Text/CSV file**.
 
 1. On the **Connect to data source** pane, select the **Upload file** radio button. Drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload-inline.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
 
 1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
 
@@ -62,7 +62,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
    > [!NOTE]
    > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination-inline.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
 1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
 
