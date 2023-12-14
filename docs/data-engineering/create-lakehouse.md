@@ -30,7 +30,7 @@ There are a few ways you can get started with the creation process:
 
    - You can easily create a lakehouse through the **Lakehouse** card under the **New** section in the homepage.
 
-   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse card." lightbox=="media\create-lakehouse\lakehouse-card.png":::
+   :::image type="content" source="media\create-lakehouse\lakehouse-card-inline.png" alt-text="Screenshot showing the lakehouse card." lightbox="media\create-lakehouse\lakehouse-card.png":::
 
 1. **Workspace** view
 
