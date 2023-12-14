@@ -36,20 +36,20 @@ Fabric capacities offer bursting which allows you to consume extra compute cores
 
 The following section lists various cores-based limits for Spark workloads based on Microsoft Fabric capacity SKUs:
 
-| Fabric capacity SKU | Equivalent Power BI SKU | Spark VCores | Queue limit |
-|--|--|--|--|--|--|--|--|
-| F2 | - | 4 | 4 |
-| F4 | - | 8 | 4 |
-| F8 | - | 16 | 8 |
-| F16 | - | 32 | 16 |
-| F32 | - | 64 | 32 |
-| F64 | P1 | 128  | 64 |
-| F128 | P2 | 256 | 128 |
-| F256 | P3 | 512 | 256 |
-| F512 | P4 | 1024 | 512 |
-| F1024 | - | 2048 | 1024 |
-| F2048 | - | 4096 | 2048 |
-| Trial Capacity | P1 | 128 | NA |
+| Fabric capacity SKU | Equivalent Power BI SKU | Spark VCores | Max Spark VCores with Burst Factor | Queue limit |
+|--|--|--|--|--|
+| F2 | - | 4 | 20 | 4 |
+| F4 | - | 8 | 24 | 4 |
+| F8 | - | 16 | 48 | 8 |
+| F16 | - | 32 | 96 | 16 |
+| F32 | - | 64 | 192 | 32 |
+| F64 | P1 | 128 | 384 | 64 |
+| F128 | P2 | 256 | 768 | 128 |
+| F256 | P3 | 512 | 1536 | 256 |
+| F512 | P4 | 1024 | 3072 | 512 |
+| F1024 | - | 2048 | 6144 | 1024 |
+| F2048 | - | 4096 | 12288 | 2048 |
+| Trial Capacity | P1 | 128 | 384 |  NA |
 
 Example calculation:
 *F64 SKU* offers *128 Spark VCores*. The burst factor applied for a F64 SKU is 3, which gives a total of 384 Spark Vcores. The burst factor is only applied to help with concurrency and does not increase the max cores thats available for a single Spark job.  That means *a single Notebook or Spark Job Defintion or Lakehouse Job* can use a pool configuration of max 128 vCores and 3 jobs with the same configuration can be run concurrently. If notebooks are using a smaller compute configuration, they can be run concurrently till the max utilization reaches the 384 SparkVcore limit.
