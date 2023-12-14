@@ -244,6 +244,11 @@
           "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
           "redirect_url": "/azure/reliability/reliability-fabric",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebooks.md",
+          "redirect_url": "/fabric/real-time-analytics/notebooks",
+          "redirect_document_id": false
         }
     ]
 }
