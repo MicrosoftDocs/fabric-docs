@@ -54,22 +54,22 @@ To view data insights for an eventstream:
 
 ### Data insights in Azure event hub source, lakehouse destination and KQL database destination nodes
 
-The following metrics are available on the **Data insights** tab for Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode) nodes:
+The following metrics are available on the **Data insights** tab for Azure event hub source, lakehouse destination, and KQL database destination ('Event processing before ingestion' mode) nodes:
 
 | Metric | Unit | Description |
 |--|--|--|
 | **Input events** | Count | Number of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination or KQL database destination), or from an Azure event hub source (in an Azure event hub source). |
 | **Input event bytes** | Bytes | Amount of event data that the eventstream engine pulls from an eventstream (in a lakehouse destination or KQL database destination), or from an Azure event hub source (in an Azure event hub source). |
-| **Output events** | Count | Number of event data that the eventstream engine sends to a lakehouse or KQL database(in a lakehouse destination or KQL database destination),  or an eventstream (in an Azure event hub source). |
+| **Output events** | Count | Number of event data that the eventstream engine sends to a lakehouse or KQL database (in a lakehouse destination or KQL database destination),  or an eventstream (in an Azure event hub source). |
 | **Backlogged input events** | Count | Number of input events that are backlogged in the eventstream engine. |
 | **Runtime errors** | Count | Total number of errors related to event processing. |
 | **Data conversion errors** | Count | Number of output events that couldn't be converted to the expected output schema. |
 | **deserialization errors** | Count | Number of input events that couldn't be deserialized inside the eventstream engine. |
-| **Watermark delay** | Count | Maximum watermark delay across all partitions of all outputs in the job. |
+| **Watermark delay** | Second | Maximum watermark delay across all partitions of all outputs for this source or destination. It is computed as the wall clock time minus the largest watermark. |
 
-To view the data insights for an Azure event hub source, lakehouse destination or KQL database destination(Event processing before ingestion mode):
+To view the data insights for an Azure event hub source, lakehouse destination or KQL database destination ('Event processing before ingestion' mode):
 
-1. Select the Azure event hub source node ,lakehouse destination node or KQL database destination node in the main editor canvas
+1. Select the Azure event hub source node, lakehouse destination node or KQL database destination node in the main editor canvas
 
 2. In the lower pane, select the **Data insights** tab.
 
@@ -83,7 +83,7 @@ To view the data insights for an Azure event hub source, lakehouse destination o
 
 The **Runtime logs** tab enables you to check the detailed logs that occur in the eventstream engine. Runtime logs have three severity levels: warning, error, and information.
 
-To view the runtime logs for Azure event hub source, lakehouse destination and KQL database destination(Event processing before ingestion mode):
+To view the runtime logs for Azure event hub source, lakehouse destination and KQL database destination ('Event processing before ingestion' mode):
 
 1. Select the Azure event hub source, lakehouse destination or KQL database destination in the main editor canvas.
 
