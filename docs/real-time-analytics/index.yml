@@ -77,8 +77,6 @@ landingContent:
     linkLists:
       - linkListType: tutorial
         links:
-          - text: Use a notebook with Kqlmagic to query a KQL database
-            url: jupyter-notebook.md
           - text: Use a notebook with Apache Spark to query a KQL database
             url: spark-connector.md
           - text: Create a shortcut to access data in OneLake

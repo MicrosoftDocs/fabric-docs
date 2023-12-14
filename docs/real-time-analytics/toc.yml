@@ -135,7 +135,5 @@ items:
     items:
     - name: Use Fabric notebooks with data from a KQL database
       href: notebooks.md
-    - name: Use a notebook with Kqlmagic to query a KQL database
-      href: jupyter-notebook.md
     - name: "Tutorial: Use a notebook with Apache Spark to query a KQL database"
       href: spark-connector.md
