@@ -29,7 +29,7 @@ To manage the starter pool associated with your workspace:
 
 1. Go to your workspace and choose the **Workspace settings**.
 
-   :::image type="content" source="media\configure-starter-pools\data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
+   :::image type="content" source="media\configure-starter-pools\data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
 1. Then, select the **Data Engineering/Science** option to expand the menu.
 
