@@ -60,7 +60,7 @@ Use the following steps to create a Spark Job Definition:
 
 1. Under "Data Engineering", select **Spark Job Definition**.
 
-   :::image type="content" source="media\get-started-streaming\new-sjd.png" alt-text="Screenshot showing new Spark Job Definition dialog":::
+   :::image type="content" source="media\get-started-streaming\new-sjd-inline.png" alt-text="Screenshot showing new Spark Job Definition dialog" lightbox="media\get-started-streaming\new-sjd.png":::
 
 1. Enter name of your Spark Job Definition and select **Create**.
 
