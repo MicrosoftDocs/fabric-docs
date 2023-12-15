@@ -24,14 +24,14 @@ In this tutorial you learn to:
 
 ## Create a Lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering** experience
-1. Make sure you are in desired workspace or select/create one
-1. Select **Lakehouse** icon under New section in the main mage
+1. In Microsoft Fabric, select **Synapse Data Engineering**.
+1. Make sure that you're in your desired workspace, or select or create one.
+1. In the home page, select **Lakehouse**.
 
-   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse-inline.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
 
-1. Enter name of your Lakehouse
-1. Select **Create**
+1. Enter name of your Lakehouse.
+1. Select **Create**.
 1. Download the "Taxi Zone Lookup Table" [CSV file](https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv) from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), and save to a location in your computer.
 
 ## Upload a CSV file to the Lakehouse
