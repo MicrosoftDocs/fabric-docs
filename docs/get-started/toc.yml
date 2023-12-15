@@ -121,6 +121,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Reflex item creation fails due to a token creation failure
+      href: known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md
+    - name: Product switcher and creation process inadvertently show Fabric experiences
+      href: known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md      
+    - name: Git integration tab disappears in Workspace settings
+      href: known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md
     - name: Tables aren't visible to the SQL analytics endpoint for some shortcuts
       href: known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md
     - name: Lakehouse doesn't recognize table names with special characters

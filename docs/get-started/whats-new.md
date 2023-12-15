@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 11/30/2023
+ms.date: 12/15/2023
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -30,6 +30,7 @@ This section includes articles and announcements for users new to Microsoft Fabr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|December 2023|**Fabric platform Security Fundamentals**|Learn more about the [big-picture perspective of the Microsoft Fabric security architecture](../security/security-fundamentals.md) by describing how the main security flows in the system work.|
 |November 2023|**Microsoft Fabric, explained for existing Synapse users**|A focus on [what customers using the current Platform-as-a-Service (PaaS) version of Synapse can expect](https://blog.fabric.microsoft.com/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=All). We'll explain what the general availability of Fabric means for your current investments (spoiler: we fully support them), but also how to think about the future.|
 |November 2023|**Microsoft Fabric is now generally available**|[Microsoft Fabric is now generally available for purchase](https://www.microsoft.com/microsoft-fabric/blog/2023/11/15/prepare-your-data-for-ai-innovation-with-microsoft-fabric-now-generally-available/). Microsoft Fabric can reshape how your teams work with data by bringing everyone together on a single, AI-powered platform built for the era of AI. This includes the experiences of Fabric: Power BI, Data Factory, Data Engineering, Data Science, Real-Time Analytics, Data Warehouse, and the overall Fabric platform. |
 |November 2023|**Fabric workloads are now generally available!**|[Microsoft Fabric is now generally available!](https://blog.fabric.microsoft.com/blog/fabric-workloads-are-now-generally-available?ft=All) Microsoft Fabric Synapse Data Warehouse, Data Engineering & Data Science, Real-Time Analytics, Data Factory, OneLake, and the overall Fabric platform are now generally available.|
