@@ -26,7 +26,7 @@ In this tutorial you learn to:
 
 1. In Microsoft Fabric, select **Synapse Data Engineering**.
 1. Make sure that you're in your desired workspace, or select or create one.
-1. In the home page, select **Lakehouse**.
+1. In the **Home** page, select **Lakehouse**.
 
    :::image type="content" source="media\get-started-csv-upload\new-lakehouse-inline.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
 
