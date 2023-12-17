@@ -9,11 +9,11 @@ ms.custom:
   - contperf-fy21q1
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 12/17/2023
 ms.search.form:
 ---
 
-# Introduction to Git integration
+# Introduction to Git integration (preview)
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
