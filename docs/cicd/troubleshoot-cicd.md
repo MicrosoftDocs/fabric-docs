@@ -378,6 +378,8 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 #### Deployment problem: My datamart deployment failed because of a circular dependency
 
+:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
+
 **Solution**: To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
