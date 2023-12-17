@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/12/2023
+ms.date: 12/17/2023
 ---
 
 # Tenant settings index
@@ -91,13 +91,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Make certified content discoverable](/power-bi/collaborate-share/service-discovery)|Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 |[Discover content](../get-started/onelake-data-hub.md#find-recommended-items)|Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 
-## [Content pack and app settings](service-admin-portal-content-pack-app.md)
+## App settings
 
 | Setting name | Description |
 |------|-------|
-|[Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop.|
+|[Create template organizational apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template apps that use semantic models built on one data source in Power BI Desktop.|
 |[Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users)|Users can share apps directly with end users without requiring installation from AppSource.|
-|[Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish content packs and apps to the entire organization.|
+|[Publish apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish apps to the entire organization.|
 
 ## [Integration settings](service-admin-portal-integration.md)
 
