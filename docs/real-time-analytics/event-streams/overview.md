@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/05/2023
 ms.search.form: Event Streams Overview
 ---
 
