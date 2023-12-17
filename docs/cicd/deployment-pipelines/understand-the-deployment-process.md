@@ -381,6 +381,8 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
+* The deployment fails if any of the items have circular or self dependencies.
+
 ### Semantic model limitations
 
 * Datasets that use real-time data connectivity can't be deployed.

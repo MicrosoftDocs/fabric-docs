@@ -318,8 +318,15 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 ### My semantic model deployment failed
 
-**Cause**: There could be a few possible reasons for your semantic model deployment to fail. One of the reasons may be due to a large semantic model that isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).  
-**Solution**: If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+**Cause**: There could be a few possible reasons for your semantic model deployment to fail. The following are possible reasons for failure:
+
+* A large semantic model isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).
+* The semantic model contains a circular or self dependency. In this case you'll see the following error message: *One or more items failed to deploy because it will result in a two way dependency between items*.
+
+**Solution**:
+
+* If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+* If your semantic model contains a circular or self dependency, remove the dependency and redeploy.
 
 ### I have a semantic model with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
@@ -368,6 +375,10 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 #### Deployment problem: I can't deploy a datamart in the pipeline
 
 **Solution**: To deploy a datamart, you must be the owner of the datamart.
+
+#### Deployment problem: My datamart deployment failed because of a circular dependency
+
+**Solution**: To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 
