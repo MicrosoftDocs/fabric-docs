@@ -234,6 +234,21 @@
           "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
           "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
           "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/security/az-resiliency.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
+          "redirect_url": "/fabric/real-time-analytics/notebooks",
+          "redirect_document_id": false
         }
     ]
 }
