@@ -381,7 +381,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
-* The deployment fails if any of the items have circular or self dependencies.
+* The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
 
 ### Semantic model limitations
 
