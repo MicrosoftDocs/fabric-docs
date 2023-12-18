@@ -34,7 +34,7 @@ There are two ways you can run a Spark job definition:
 
 - Schedule a Spark job definition by setting up a schedule plan on the **Settings** tab. Select **Settings** on the toolbar, then select **Schedule**.
 
-  :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition.png" alt-text="Screenshot showing where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
+  :::image type="content" source="media\run-spark-job-definition\schedule-spark-job-definition-inline.png" alt-text="Screenshot showing where to select Schedule on the Settings tab." lightbox="media\run-spark-job-definition\schedule-spark-job-definition.png":::
 
 > [!IMPORTANT]
 > To run, a Spark job definition must have a main definition file and a default lakehouse context.
