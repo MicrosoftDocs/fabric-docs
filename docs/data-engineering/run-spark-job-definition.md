@@ -30,7 +30,7 @@ There are two ways you can run a Spark job definition:
 
 - Run a Spark job definition manually by selecting **Run** from the Spark job definition item in the job list.
 
-  :::image type="content" source="media\run-spark-job-definition\select-run.png" alt-text="Screenshot showing where to select Run." lightbox="media\run-spark-job-definition\select-run.png":::
+  :::image type="content" source="media\run-spark-job-definition\select-run-inline.png" alt-text="Screenshot showing where to select Run." lightbox="media\run-spark-job-definition\select-run.png":::
 
 - Schedule a Spark job definition by setting up a schedule plan on the **Settings** tab. Select **Settings** on the toolbar, then select **Schedule**.
 
