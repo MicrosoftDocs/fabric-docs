@@ -9,7 +9,7 @@ ms.custom:
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 12/05/2023
+ms.date: 12/17/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -381,7 +381,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
-### Dataset limitations
+### Semantic model limitations
 
 * Datasets that use real-time data connectivity can't be deployed.
 
