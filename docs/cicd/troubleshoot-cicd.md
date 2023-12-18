@@ -321,7 +321,7 @@ To use this script, you need to provide a *workspace name* and a *user principal
 **Cause**: There could be a few possible reasons for your semantic model deployment to fail. The following are possible reasons for failure:
 
 * A large semantic model isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).
-* The semantic model contains a circular or self dependency. In this case you'll see the following error message: *One or more items failed to deploy because it will result in a two way dependency between items*.
+* The semantic model contains a circular or self dependency (for example, item A references item B and item B references item A). In this case you'll see the following error message: *One or more items failed to deploy because it will result in a two way dependency between items*.
 
 **Solution**:
 
@@ -380,7 +380,7 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 
 :::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
 
-**Solution**: To deploy the datamart, remove the circular dependency and redeploy.
+**Solution**: There is either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 
