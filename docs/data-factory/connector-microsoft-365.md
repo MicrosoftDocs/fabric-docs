@@ -1,6 +1,6 @@
 ---
-title: How to create a Microsoft 365 (Preview) connection
-description: This article provides information about how to do create Microsoft 365 (Preview) connection in [!INCLUDE [product-name](../includes/product-name.md)].
+title: How to create a Microsoft 365 connection
+description: This article provides information about how to do create Microsoft 365 connection in [!INCLUDE [product-name](../includes/product-name.md)].
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
@@ -11,9 +11,9 @@ ms.custom:
   - ignite-2023
 ---
 
-# How to create a Microsoft 365 (Preview) connection
+# How to create a Microsoft 365 connection
 
-This article outlines the steps to create a Microsoft 365 (Preview) connection.
+This article outlines the steps to create a Microsoft 365 connection.
 
 ## Supported authentication types
 

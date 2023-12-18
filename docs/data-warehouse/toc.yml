@@ -68,6 +68,8 @@ items:
     href: tsql-surface-area.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
+  - name: Generate unique identifiers
+    href: generate-unique-identifiers.md
   - name: Transactions
     href: transactions.md 
   - name: Warehouse settings and context menus
@@ -132,6 +134,8 @@ items:
     href: query-delta-lake-logs.md
 - name: Data recovery
   items:
+  - name: Restore in-place
+    href: restore-in-place.md
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal

@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 11/30/2023
+ms.date: 12/15/2023
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -30,6 +30,7 @@ This section includes articles and announcements for users new to Microsoft Fabr
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|December 2023|**Fabric platform Security Fundamentals**|Learn more about the [big-picture perspective of the Microsoft Fabric security architecture](../security/security-fundamentals.md) by describing how the main security flows in the system work.|
 |November 2023|**Microsoft Fabric, explained for existing Synapse users**|A focus on [what customers using the current Platform-as-a-Service (PaaS) version of Synapse can expect](https://blog.fabric.microsoft.com/blog/microsoft-fabric-explained-for-existing-synapse-users?ft=All). We'll explain what the general availability of Fabric means for your current investments (spoiler: we fully support them), but also how to think about the future.|
 |November 2023|**Microsoft Fabric is now generally available**|[Microsoft Fabric is now generally available for purchase](https://www.microsoft.com/microsoft-fabric/blog/2023/11/15/prepare-your-data-for-ai-innovation-with-microsoft-fabric-now-generally-available/). Microsoft Fabric can reshape how your teams work with data by bringing everyone together on a single, AI-powered platform built for the era of AI. This includes the experiences of Fabric: Power BI, Data Factory, Data Engineering, Data Science, Real-Time Analytics, Data Warehouse, and the overall Fabric platform. |
 |November 2023|**Fabric workloads are now generally available!**|[Microsoft Fabric is now generally available!](https://blog.fabric.microsoft.com/blog/fabric-workloads-are-now-generally-available?ft=All) Microsoft Fabric Synapse Data Warehouse, Data Engineering & Data Science, Real-Time Analytics, Data Factory, OneLake, and the overall Fabric platform are now generally available.|
@@ -66,6 +67,7 @@ The following table lists the features of Microsoft Fabric that are currently in
 |**Notebook Git integration preview**|[Fabric notebooks now offer Git integration for source control using Azure DevOps](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc123778966). It allows users to easily control the notebook code versions and manage the git branches by leveraging the Fabric Git functions and Azure DevOps. |
 |**Notebook in Deployment Pipeline Preview**|Now you can also [use notebooks to deploy your code across different environments](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc667667104), such as development, test, and production. You can also use deployment rules to customize the behavior of your notebooks when they are deployed, such as changing the default Lakehouse of a Notebook. [Get started with deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md) to set up your deployment pipeline, Notebook will show up in the deployment content automatically. |
 |**Splunk add-on preview**| [Microsoft Fabric add-on for Splunk](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#splunk) allows users to ingest logs from Splunk platform into a Fabric KQL DB using the Kusto python SDK.|
+|**Warehouse restore points and restore in place**|You can now [create restore points and perform an in-place restore of a warehouse](../data-warehouse/restore-in-place.md) to a past point in time.|
 |**VNet Gateways in Dataflow Gen2 preview**|[VNet Data Gateway support for Dataflows Gen2 in Fabric](/data-integration/vnet/overview) is now in preview. The [VNet data gateway](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc113045086) helps to connect from Fabric Dataflows Gen2 to Azure data services within a VNet, without the need of an on-premises data gateway. |  
 
 ## Generally available features
@@ -263,6 +265,7 @@ This section summarizes recent improvements and features for [Synapse Data Wareh
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|December 2023|**Restore points and restore in place**|You can now [create restore points and perform an in-place restore of a warehouse](../data-warehouse/restore-in-place.md) to a past point in time. The restore points and restore in place features are currently in preview.|
 |November 2023|**Mirroring in Microsoft Fabric**|Any database can be accessed and managed centrally from within Fabric without having to switch database clients. By just providing connection details, [your database is instantly available in Fabric as a Mirrored database](https://blog.fabric.microsoft.com/blog/introducing-mirroring-in-microsoft-fabric?ft=All). Azure Cosmos DB, Azure SQL Database, and Snowflake customers will be able to use Mirroring. SQL Server, Azure PostgreSQL, Azure MySQL, MongoDB, and other databases and data warehouses will be coming in CY24. |
 |November 2023|**TRIM T-SQL support**|You can now use the `TRIM` command to remove spaces or specific characters from strings by using the keywords LEADING, TRAILING or BOTH in [TRIM (Transact-SQL)](/sql/t-sql/functions/trim-transact-sql?view=fabric&preserve-view=true). |
 |November 2023|**GENERATE_SERIES T-SQL support**|Generates a series of numbers within a given interval with [GENERATE_SERIES (Transact-SQL)](/sql/t-sql/functions/generate-series-transact-sql?view=fabric&preserve-view=true). The interval and the step between series values are defined by the user. |

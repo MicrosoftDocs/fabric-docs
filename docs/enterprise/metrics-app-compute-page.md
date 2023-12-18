@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/23/2023
+ms.date: 12/11/2023
 ---
 
 # Understand the metrics app compute page
@@ -79,6 +79,8 @@ Use the tabs at the top right corner of the visual to toggle how the visual is d
 
 Use the tabs at the top of the visual to toggle between interactive delay, interactive rejection and background rejection. Timepoints with a value that's above 100% are rendered with darker color.
 
+The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, that will cause user requested jobs to be rejected.
+
 The throttling chart displays the following elements:
 
   * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
@@ -86,10 +88,6 @@ The throttling chart displays the following elements:
   * **Interactive rejection** - Interactive operations get rejected when *60 min Interactive %* smoothing crosses the *Interactive rejection* threshold.
 
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
-
-#### Throttling example
-
-When looking at the interactive rejection tab, if you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before interactive rejection starts, and user requested interactive jobs are rejected.
 
 ### Overages
   
@@ -163,9 +161,7 @@ User can hover over any value in the visual to see operation level data. User ca
 ## Related content
 
 * [Understand the metrics app storage page](metrics-app-storage-page.md)
-
 * [Understand the metrics app timepoint page](metrics-app-timepoint-page.md)
-
 * [KQL Database consumption](../real-time-analytics/kql-database-consumption.md)
-
 * [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)
+* [Data Factory pricing](../data-factory/pricing-overview.md)

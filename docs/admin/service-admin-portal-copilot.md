@@ -10,7 +10,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.date: 12/14/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,7 +18,7 @@ LocalizationGroup: Administration
 
 Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service (preview)**, with following two settings:
 
-- Users can use a preview of Copilot and other features powered by Azure OpenAI.
+- Admins can turn on Copilot for specific security groups, or for their entire organization. Users in those groups can use a preview of Copilot and other features powered by Azure OpenAI.
 
     :::image type="content" source="media/service-admin-portal-copilot/copilot-open-ai-service.png" alt-text="Screenshot of Copilot setting in the admin portal.":::
 

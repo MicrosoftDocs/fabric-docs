@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/06/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 # Connectivity to data warehousing in Microsoft Fabric
@@ -143,6 +143,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
 - On connection to a warehouse, you might receive an error that "The token size exceeded the maximum allowed payload size". This is due to having a large number of warehouses within the workspace or being a member of a large number of Microsoft Entra ID groups. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- Linked server connections from SQL Server are not supported.
 
 ## Related content
 
