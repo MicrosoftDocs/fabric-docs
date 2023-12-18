@@ -44,7 +44,7 @@ There are two ways you can run a Spark job definition:
 
 Three to five seconds after you've submitted the run, a new row appears under the **Runs** tab. The row shows details about your new run. The **Status** column shows the near real-time status of the job, and the **Run kind** column shows if the job is manual or scheduled.
 
-:::image type="content" source="media\run-spark-job-definition\runs-tab-details.png" alt-text="Screenshot of Runs list details." lightbox="media\run-spark-job-definition\runs-tab-details.png":::
+:::image type="content" source="media\run-spark-job-definition\runs-tab-details-inline.png" alt-text="Screenshot of Runs list details." lightbox="media\run-spark-job-definition\runs-tab-details.png":::
 
 For more information on how to monitor a job, see [Monitor your Apache Spark job definition](monitor-spark-job-definitions.md).
 
@@ -52,13 +52,13 @@ For more information on how to monitor a job, see [Monitor your Apache Spark job
 
 Once the job is submitted, you can cancel the job by selecting **Cancel active run** from the Spark job definition item in the job list.
 
-:::image type="content" source="media\run-spark-job-definition\cancel-job.png" alt-text="Screenshot showing where to select Cancel active run." lightbox="media\run-spark-job-definition\cancel-job.png":::
+:::image type="content" source="media\run-spark-job-definition\cancel-job-inline.png" alt-text="Screenshot showing where to select Cancel active run." lightbox="media\run-spark-job-definition\cancel-job.png":::
 
 ## Spark job definition snapshot
 
 The Spark job definition stores its latest state. To view the snapshot of the history run, select **View Snapshot** from the Spark job definition item in the job list. The snapshot shows the state of the job definition when the job is submitted, including the main definition file, the reference file, the command line arguments, the referenced lakehouse, and the Spark properties.
 
-:::image type="content" source="media\run-spark-job-definition\view-job-snapshot.png" alt-text="Screenshot showing where to select View Snapshot." lightbox="media\run-spark-job-definition\view-job-snapshot.png":::
+:::image type="content" source="media\run-spark-job-definition\view-job-snapshot-inline.png" alt-text="Screenshot showing where to select View Snapshot." lightbox="media\run-spark-job-definition\view-job-snapshot.png":::
 
 From a snapshot, you can take three actions:
 
@@ -66,7 +66,7 @@ From a snapshot, you can take three actions:
 - **Open Spark job definition**: Open the current Spark job definition.
 - **Restore**: Restore the job definition with the snapshot. The job definition is restored to the state when the job was submitted.
 
-:::image type="content" source="media\run-spark-job-definition\sjd-snapshot-actions.png" alt-text="Screenshot of the snapshot menu options." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
+:::image type="content" source="media\run-spark-job-definition-inline.png" alt-text="Screenshot of the snapshot menu options." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
 
 ## Related content
 
