@@ -66,7 +66,7 @@ From a snapshot, you can take three actions:
 - **Open Spark job definition**: Open the current Spark job definition.
 - **Restore**: Restore the job definition with the snapshot. The job definition is restored to the state when the job was submitted.
 
-:::image type="content" source="media\run-spark-job-definition-inline.png" alt-text="Screenshot of the snapshot menu options." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
+:::image type="content" source="media\run-spark-job-definition\sjd-snapshot-actions-inline.png" alt-text="Screenshot of the snapshot menu options." lightbox="media\run-spark-job-definition\sjd-snapshot-actions.png":::
 
 ## Related content
 
