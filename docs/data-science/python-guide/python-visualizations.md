@@ -20,7 +20,7 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
   
 ## Prerequisites
 
-[!INCLUDE [prerequisites](../../includes/feature-preview-note.md)]
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
 
 ## Download and prepare the data
 
