@@ -35,15 +35,15 @@ There are a few ways you can get started with the creation process:
 
 - **Data engineering homepage**: You can easily create a Spark job definition through the **Spark Job Definition** card under the **New** section in the homepage.
 
-:::image type="content" source="media\create-spark-job-definition\spark-job-definition-card-inline.png" alt-text="Screenshot showing where to select the Spark job definition card." lightbox="media\create-spark-job-definition\spark-job-definition-card.png":::
+  :::image type="content" source="media\create-spark-job-definition\spark-job-definition-card-inline.png" alt-text="Screenshot showing where to select the Spark job definition card." lightbox="media\create-spark-job-definition\spark-job-definition-card.png":::
 
 - **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are in the **Data Engineering** experience by using the **New** dropdown menu.
 
-:::image type="content" source="media\create-spark-job-definition\data-engineering-new-inline.png" alt-text="Screenshot showing where to select Spark job definition in the New menu." lightbox="media\create-spark-job-definition\data-engineering-new.png":::
+  :::image type="content" source="media\create-spark-job-definition\data-engineering-new-inline.png" alt-text="Screenshot showing where to select Spark job definition in the New menu." lightbox="media\create-spark-job-definition\data-engineering-new.png":::
 
 - **Create view**: Another entry point to create a Spark job definition is the **Create** page under **Data Engineering**.
 
-:::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering-inline.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub." lightbox="media\create-spark-job-definition\create-hub-data-engineering.png":::
+  :::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering-inline.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub." lightbox="media\create-spark-job-definition\create-hub-data-engineering.png":::
 
 You need to give your Spark job definition a name when you create it. The name must be unique within the current workspace. The new Spark job definition is created in your current workspace.
 
