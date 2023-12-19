@@ -37,7 +37,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open-inline.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button."="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open-inline.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
 
 1. After the import is successful, you can go to items view of the workspace and see the newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
 
