@@ -118,7 +118,7 @@ items:
       href: api/toc.yml
     - name: OneLake
       items:
-      - name: One logical copy
+      - name: One logical copy (Preview)
         href: one-logical-copy.md
       - name: Create OneLake shortcuts
         href: onelake-shortcuts.md
