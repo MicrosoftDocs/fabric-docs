@@ -24,7 +24,7 @@ Fabric has a new tenant setting group, **Copilot and Azure OpenAI Service (previ
 
 - Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance.
 
-    :::image type="content" source="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-sg.png" alt-text="Screenshot of Copilot setting for sending data outside your tenant's geographic region, compliance boundary, or national cloud instance.":::
+    :::image type="content" source="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-sg.png" alt-text="Screenshot of Copilot setting for sending data outside your tenant's geographic region, compliance boundary, or national cloud instance." lightbox="media/service-admin-portal-copilot/copilot-data-sent-azure-ai-outside-sg.png":::
 
 By default, the **Tenant settings** for Fabric OpenAI are disabled. Ask your tenant admins to enable them if they're willing and allowed to use the features powered by Azure OpenAI.
 
