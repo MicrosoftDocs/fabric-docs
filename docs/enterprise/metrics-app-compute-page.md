@@ -18,9 +18,11 @@ At the top of each page, the **Capacity Name** field allows you to select the ca
 
 ## Multi metric ribbon chart
 
-A ribbon chart that provides an hourly view of your capacity's usage. To identify daily patterns, drill down to a specific day. Selecting each stacked column filters the main matrix and the other visuals according to your selection.
+The multi metric ribbon chart provides an hourly view of your capacity's usage. To identify daily patterns, drill down to a specific day. Selecting each stacked column filters the main matrix and the other visuals according to your selection.
 
-The Multi metric column ribbon displays the following four values. You'll see the top results for these values per item during the past two weeks.
+:::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart.":::
+
+The multi metric column ribbon displays the following four values. You'll see the top results for these values per item during the past two weeks.
 
 * **CU** - Capacity Units (CU) processing time in seconds.
 
@@ -81,6 +83,8 @@ Use the tabs at the top of the visual to toggle between interactive delay, inter
 
 The interactive and background rejection tabs work in the same way. If you see that you utilized 75% of the future capacity consumption for a specific timepoint, you have 15 minutes remaining before the start of interactive or background rejection, which causes user requested jobs to be rejected.
 
+:::image type="content" source="media/fabric-drill-through.gif" alt-text="Animation that shows the drill through option for a selected time point.":::
+
 The throttling chart displays the following elements:
 
   * **Interactive delay** - Interactive operations get delayed when *10 min Interactive %* smoothing crosses the *Interactive delay* threshold.
@@ -92,6 +96,8 @@ The throttling chart displays the following elements:
 ### Overages
   
 Displays the *add*, *burndown, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
+
+:::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time.":::
 
 The overages chart displays the following elements:
 
