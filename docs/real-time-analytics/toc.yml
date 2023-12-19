@@ -84,6 +84,8 @@ items:
         href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
 - name: Store data
   items:
+  - name: Eventhouse
+    href: eventhouse.md
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: kql-database-consumption.md
