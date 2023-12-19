@@ -147,10 +147,8 @@ items:
       href: spark-connector.md
 - name: Visualize data
   items:
-  - name: Power BI
-    items:
   - name: Real-Time Dashboard
-   items:
+    items:
   - name: Visualize data with Real-Time Dashboards
     href: real-time-dashboard.md
   - name: Customize Real-Time Dashboard visuals
@@ -159,6 +157,8 @@ items:
     href: dashboards-conditional-formatting.md
   - name: Use parameters in Real-Time Dashboards
     href: dashboards-parameters.md
+  - name: Power BI
+    items:
     - name: Visualize data in a Power BI report
       href: create-powerbi-report.md
     - name: Connect KQL Database in Power BI Desktop
