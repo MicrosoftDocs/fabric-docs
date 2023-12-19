@@ -84,12 +84,14 @@ To learn more, see [Export the data that was used to create a visualization](/po
 
 ## Export to .csv
 
-Users in the organization can export data from a tile, visualization, or paginated report to a .csv file.
+Users in the organization can export data from a tile, visualization, or paginated report to a *.csv* file.
 
-To learn more, see [Export Power BI paginated report to a CSV file](/power-bi/paginated-reports/report-builder/export-csv-file-report-builder).
+To turn this setting on or off:
 
-> [!NOTE]
-> Fabric automatically [applies a sensitivity label](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-labels-and-protection-on-exported-data) on the exported file and protects it according to the label's file encryption settings.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Export to .csv**.
+1. Turn the switch on or off.
+1. Under **Apply to**, select the scope of users that the setting will affect.
+1. Select **Apply** to save your changes.
 
 ## Download reports
 

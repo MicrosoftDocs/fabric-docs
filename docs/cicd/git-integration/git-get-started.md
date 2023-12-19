@@ -5,13 +5,13 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 08/03/2023
+ms.date: 12/17/2023
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Manage a workspace with Git
+# Manage a workspace with Git (preview)
 
 This article walks you through the following basic tasks in Microsoft Fabric’s Git integration tool:
 
