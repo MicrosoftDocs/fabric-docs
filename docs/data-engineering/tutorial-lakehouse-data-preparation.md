@@ -37,7 +37,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open-inline.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button."="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
 
 1. After the import is successful, you can go to items view of the workspace and see the newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
 
@@ -57,7 +57,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
 
-   To start the notebook and execute all the cells in sequence, select **Run All** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
+   To start the notebook and execute all the cells in sequence, select **Run all** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon.":::
 
