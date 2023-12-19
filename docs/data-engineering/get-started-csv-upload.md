@@ -58,7 +58,7 @@ In this tutorial you learn to:
 ## Generate a semantic model and create a Power BI report
 
 1. Select **New Power BI semantic model** on the Lakehouse ribbon.
-1. Select the table to be added to the semantic model model, select the **Confirm** button.
+1. Select the table to be added to the semantic model, select the **Confirm** button.
 1. On the semantic model editing experience, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
 1. Select **New report** on the ribbon.
 1. Use the report builder experience to design a Power BI report.
