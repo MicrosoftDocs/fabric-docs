@@ -119,7 +119,7 @@ items:
     - name: OneLake
       items:
       - name: One logical copy
-        href: onelake-mirroring.md
+        href: one-logical-copy.md
       - name: Create OneLake shortcuts
         href: onelake-shortcuts.md
 - name: Analyze and model data
