@@ -19,7 +19,7 @@ To explore and transform any pandas Dataframes in your notebook, launch Data Wra
 
 Data Wrangler launches and generates a descriptive overview of your data. The table in the middle shows each data column. The **Summary** panel next to the table shows information about the DataFrame. When you select a column in the table, the summary updates with information about the selected column.  In some instances, the data displayed and summarized will be a truncated view of your DataFrame.  When this happens, you'll see warning image in the summary pane.  Hover over this warning to view text explaining the situation.
 
-:::image type="content" source="../media/tutorial-data-science-explore-notebook/preview.png" alt-text="Screenshot shows data wrangler overview." lightbox="../media/tutorial-data-science-explore-notebook/preview.png":::
+:::image type="content" source="../media/tutorial-data-science-explore-notebook/preview-inline.png" alt-text="Screenshot shows data wrangler overview." lightbox="../media/tutorial-data-science-explore-notebook/preview.png":::
 
 Each operation you do can be applied in a matter of clicks, updating the data display in real time and generating code that you can save back to your notebook as a reusable function.  
 
@@ -37,7 +37,7 @@ On the left panel is a list of operations (such as **Find and replace**, **Forma
 
     In the middle panel is a preview of the results of this operation. Under the preview is the code to perform the operation. In this instance, the data appears to be unchanged.  But since you're looking at a truncated view, it's a good idea to still apply the operation.
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-duplicate.png" alt-text="Screenshot shows dropping duplicate rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-duplicate.png":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-duplicate-inline.png" alt-text="Screenshot shows dropping duplicate rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-duplicate.png":::
 
 
 1. Select **Apply** (either at the side or at the bottom) to go to the next step.
@@ -47,9 +47,9 @@ On the left panel is a list of operations (such as **Find and replace**, **Forma
 Use Data Wrangler to drop rows with missing data across all columns.
 
 1. Select **Drop missing values** from **Find and replace**.
-1. Select **All columns** from the drop-down list.
+1. Choose **Select all** from the **Target columns**.
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-missing.png" alt-text="Screenshot shows dropping missing rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-missing.png":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-missing-inline.png" alt-text="Screenshot shows dropping missing rows in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-missing.png":::
 
 1. Select **Apply** to go on to the next step.
 
@@ -60,7 +60,7 @@ Use Data Wrangler to drop columns that you don't need.
 1. Expand **Schema** and select **Drop columns**.
 1. Select **RowNumber**, **CustomerId**, **Surname**.  These columns appear in red in the preview, to show they're changed by the code (in this case, dropped.)
 
-    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-columns.png" alt-text="Screenshot shows dropping columns in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-columns.png":::
+    :::image type="content" source="../media/tutorial-data-science-explore-notebook/drop-columns-inline.png" alt-text="Screenshot shows dropping columns in Data Wrangler." lightbox="../media/tutorial-data-science-explore-notebook/drop-columns.png":::
 
 1. Select **Apply** to go on to the next step.
 
