@@ -55,12 +55,12 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    1. Select **Confirm.**
 
-      :::image type="content" source="media\tutorial-lakehouse-build-report\create-relationship-dialog.png" alt-text="Screenshot of the Create Relationship dialog box, showing where to select Assume referential integrity.":::
+      :::image type="content" source="media\tutorial-lakehouse-build-report\create-relationship-dialog.png" alt-text="Screenshot of the New relationship dialog box, showing where to select Assume referential integrity.":::
 
    > [!NOTE]
    > When defining relationships for this report, make sure you have a many to one relationship from the **fact_sale** table (Table 1) to the **dimension_\*** tables (Table 2) and not vice versa.
 
-1. Next, add these relationships with the same **Create Relationship** settings as shown above but with the following tables and columns:
+1. Next, add these relationships with the same **New relationship** settings as shown above but with the following tables and columns:
 
    * StockItemKey(fact_sale) - StockItemKey(dimension_stock_item)
    * Salespersonkey(fact_sale) - EmployeeKey(dimension_employee)
