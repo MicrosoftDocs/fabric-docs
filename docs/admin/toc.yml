@@ -31,7 +31,7 @@ items:
   - name: Logs
     items:    
     - name: Track user activities in Microsoft Fabric
-      href: track-operations.md
+      href: track-user-activities.md
     - name: Operation list
       href: operation-list.md           
   - name: Use the Monitoring hub
