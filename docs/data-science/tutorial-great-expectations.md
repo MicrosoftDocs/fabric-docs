@@ -232,7 +232,7 @@ context.add_or_update_expectation_suite(expectation_suite=suite_dmv)
 
 ## Validation
 
-To actually run the specified expectations against the data, first create a [Checkpoint]([https://docs.greatexpectations.io/docs/terms/checkpoint](https://docs.greatexpectations.io/docs/reference/learn/terms/checkpoint)) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/oss/guides/validation/validate_data_overview).
+To actually run the specified expectations against the data, first create a [Checkpoint](https://docs.greatexpectations.io/docs/reference/learn/terms/checkpoint) and add it to the context. For more information on Checkpoint configuration, see [Data Validation workflow](https://docs.greatexpectations.io/docs/oss/guides/validation/validate_data_overview).
 
 
 ```python
@@ -358,7 +358,7 @@ From the plot, you can see that April and July were slightly out of range and ca
 
 ## Storing GX configuration
 
-As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context#specify-a-folder-containing-a-previously-initialized-filesystem-data-context)).
+As the data in your dataset changes over time, you might want to rerun the GX validations you just performed. Currently, the Data Context (containing the connected Data Assets, Expectation Suites, and Checkpoint) lives ephemerally, but it can be converted to a File Context for future use. Alternatively, you can instantiate a File Context (see [Instantiate a Data Context](https://docs.greatexpectations.io/docs/oss/guides/setup/configuring_data_contexts/instantiating_data_contexts/instantiate_data_context)).
 
 
 ```python
