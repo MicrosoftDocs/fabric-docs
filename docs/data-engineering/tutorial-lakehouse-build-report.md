@@ -29,17 +29,18 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
 1. From your **wwilakehouse** lakehouse, select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right drop-down menu.":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint-inline.png" alt-text="Screenshot showing where to find and select SQL analytics endpoint from the top right drop-down menu." lightbox="media\tutorial-lakehouse-build-report\load-data-choose-sql-endpoint.png":::
 
 1. From the SQL endpoint pane, you should be able to see all the tables you created. If you don't see them yet, select the **Refresh** icon at the top. Next, select the **Model** tab at the bottom to open the default Power BI semantic model.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model-inline.png" alt-text="Screenshot showing where to select the Refresh icon and the Model tab." lightbox="media\tutorial-lakehouse-build-report\warehouse-mode-refresh-model.png":::
 
-1. For this data model, you need to define the relationship between different tables so that you can create reports and visualizations based on data coming across different tables. From the **fact_sale** table, drag the **CityKey** field and drop it on the **CityKey** field in the **dimension_city** table to create a relationship. The **Create Relationship** dialog box appears.
+1. For this data model, you need to define the relationship between different tables so that you can create reports and visualizations based on data coming across different tables. From the **fact_sale** table, drag the **CityKey** field and drop it on the **CityKey** field in the **dimension_city** table to create a relationship. The **New relationship** dialog box appears.
 
    :::image type="content" source="media\tutorial-lakehouse-build-report\drag-drop-tables-relationships.png" alt-text="Screenshot showing drag and drop fields across tables to create relationships.":::
 
-1. In the **Create Relationship** dialog box:
+1. In the **New relationship** dialog box:
+
    1. Table 1 is populated with **fact_sale** and the column of CityKey.
 
    1. Table 2 is populated with **dimension_city** and the column of CityKey.
@@ -68,11 +69,11 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    After you add these relationships, your data model is ready for reporting as shown in the following image:
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\new-report-relationships.png" alt-text="Screenshot of a New report screen showing multiple table relationships." lightbox="media\tutorial-lakehouse-build-report\new-report-relationships.png":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\new-report-relationships-inline.png" alt-text="Screenshot of a New report screen showing multiple table relationships." lightbox="media\tutorial-lakehouse-build-report\new-report-relationships.png":::
 
 1. Select **New report** to start creating reports/dashboards in Power BI. On the Power BI report canvas, you can create reports to meet your business requirements by dragging required columns from the **Data** pane to the canvas and using one or more of available visualizations.
 
-   :::image type="content" source="media\tutorial-lakehouse-build-report\report-canvas-drag-columns.png" alt-text="Screenshot of the Power BI report canvas, showing where to select columns in the Data pane." lightbox="media\tutorial-lakehouse-build-report\report-canvas-drag-columns.png":::
+   :::image type="content" source="media\tutorial-lakehouse-build-report\report-canvas-drag-columns-inline.png" alt-text="Screenshot of the Power BI report canvas, showing where to select columns in the Data pane." lightbox="media\tutorial-lakehouse-build-report\report-canvas-drag-columns.png":::
 
 1. Add a title:
    1. In the Ribbon, select **Text box**.
@@ -82,7 +83,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
    1. Highlight the text and increase size to 20 and place in the upper left of the report page.
 
 1. Add a Card:
-   1. On the **Data** pane, expand **fact_sales** and check the box next to **Profit**. This selection creates a column chart and adds the field to the Y-axis.
+   1. On the **Data** pane, expand **fact_sale** and check the box next to **Profit**. This selection creates a column chart and adds the field to the Y-axis.
 
    1. With the bar chart selected, select the **Card** visual in the visualization pane. This selection converts the visual to a card.
 
@@ -101,7 +102,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    1. Resize the Bar chart to fill in the area under the title and Card.
 
-      :::image type="content" source="media\tutorial-lakehouse-build-report\resize-bar-chart-under-card.png" alt-text="Screenshot of a resized bar chart positioned below a card." lightbox="media\tutorial-lakehouse-build-report\resize-bar-chart-under-card.png":::
+      :::image type="content" source="media\tutorial-lakehouse-build-report\resize-bar-chart-under-card.png" alt-text="Screenshot of a resized bar chart positioned below a card.":::
 
 1. Click anywhere on the blank canvas (or press the Esc key) so the bar chart is no longer selected.
 
@@ -112,11 +113,11 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    1. Reposition and resize the stacked area chart to the right of the card and bar chart visuals created in the previous steps.
 
-   1. On the **Data** pane, expand **fact_sales** and check the box next to **Profit**. Expand dimension_date and check the box next to **FiscalMonthNumber**. This selection creates a filled line chart showing profit by fiscal month.
+   1. On the **Data** pane, expand **fact_sales** and check the box next to **Profit**. Expand **dimension_date** and check the box next to **FiscalMonthNumber**. This selection creates a filled line chart showing profit by fiscal month.
 
    1. On the **Data** pane, expand **dimension_stock_item** and drag **BuyingPackage** into the Legend field well. This selection adds a line for each of the Buying Packages.
 
-      :::image type="content" source="media\tutorial-lakehouse-build-report\data-pane-change-chart.png" alt-text="Screenshot of the data pane showing how to add lines to the chart." lightbox="media\tutorial-lakehouse-build-report\data-pane-change-chart.png":::
+      :::image type="content" source="media\tutorial-lakehouse-build-report\data-pane-change-chart-inline.png" alt-text="Screenshot of the data pane showing how to add lines to the chart." lightbox="media\tutorial-lakehouse-build-report\data-pane-change-chart.png":::
 
 1. Click anywhere on the blank canvas (or press the Esc key) so the stacked area chart is no longer selected.
 
@@ -129,7 +130,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    1. On the **Data** pane, expand **dimension_employee** and check the box next to **Employee**. This selection adds the field to the X-axis.
 
-      :::image type="content" source="media\tutorial-lakehouse-build-report\add-field-x-axis.png" alt-text="Screenshot showing how to add a field to the x axis." lightbox="media\tutorial-lakehouse-build-report\add-field-x-axis.png":::
+      :::image type="content" source="media\tutorial-lakehouse-build-report\add-field-x-axis-inline.png" alt-text="Screenshot showing how to add a field to the x axis." lightbox="media\tutorial-lakehouse-build-report\add-field-x-axis.png":::
 
 1. Click anywhere on the blank canvas (or press the Esc key) so the chart is no longer selected.
 
