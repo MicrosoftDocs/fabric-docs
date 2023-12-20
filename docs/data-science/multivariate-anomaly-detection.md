@@ -25,7 +25,7 @@ To learn more about the Azure AI Anomaly Detector, refer to [this documentation 
 
 Follow the instructions to create an `Anomaly Detector` resource using the Azure portal or alternatively, you can also use the Azure CLI to create this resource.
 
-After you set up an `Anomaly Detector`, you can explore methods of handling data of various forms. The catalog of services within Azure AI provides several options: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api), [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector), [Translation](https://azure.microsoft.com/en-us/products/ai-services/ai-translator), and [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/).
+After you set up an `Anomaly Detector`, you can explore methods of handling data of various forms. The catalog of services within Azure AI provides several options: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api), [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector), [Translation](https://azure.microsoft.com/products/ai-services/ai-translator), and [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/).
 
 ### Create an Anomaly Detector resource
 
