@@ -10,7 +10,7 @@ ms.date: 12/20/2023
 
 # Operation list
 
-The following operations are available in both the audit and activity logs.
+The following operations are available in the audit logs.
 
 | Friendly name | Operation name | Notes |
 |---|---|---|
