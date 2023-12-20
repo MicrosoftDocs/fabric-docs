@@ -67,7 +67,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | File path type | File path |
    | File path | Container name (first text box): sampledata<br>Directory name (second text box): WideWorldImportersDW/parquet |
    | Recursively | Checked |
-   | File Format | Binary |
+   | File format | Binary |
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details-inline.png" alt-text="Screenshot of the source tab showing where to enter the specific details." lightbox="media\tutorial-lakehouse-data-ingestion\source-tab-details.png":::
 
@@ -78,9 +78,9 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Data store type | Workspace |
    | Workspace data store type | Lakehouse |
    | Lakehouse | wwilakehouse |
-   | Root Folder | Files |
+   | Root folder | Files |
    | File path | Directory name (first text box): wwi-raw-data |
-   | File Format | Binary |
+   | File format | Binary |
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details-inline.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details." lightbox="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png":::
 
