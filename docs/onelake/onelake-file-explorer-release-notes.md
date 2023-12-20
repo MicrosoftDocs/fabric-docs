@@ -28,7 +28,7 @@ With this menu option, you can easily find details about what's new in the lates
 
 ### TLS 1.3 support
 
-We will default to latest TLS 1.3 version supported by Windows. Support for TLS 1.3 is recommended for maintaining the security and privacy of data exchanged over the internet.
+OneLake file explorer will default to the latest TLS version supported by Windows, currently TLS 1.3. Support for TLS 1.3 is recommended for maintaining the security and privacy of data exchanged over the internet.
  
 ## September 2023 Update (v 1.0.10.0)
 
