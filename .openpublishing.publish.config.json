@@ -20,8 +20,7 @@
     "cl-github-maintainer@microsoft.com"
   ],
   "sync_notification_subscribers": [
-    "sngun@microsoft.com",
-    "jasonh@microsoft.com"
+    "sngun@microsoft.com"
   ],
   "contributors_to_exclude": [
     "jasonwhowell"
@@ -62,10 +61,6 @@
       "Pdf"
     ],
     "main": [
-      "Publish",
-      "Pdf"
-    ],
-    "release-public-preview": [
       "Publish",
       "Pdf"
     ]
