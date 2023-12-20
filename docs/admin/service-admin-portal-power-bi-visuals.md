@@ -27,7 +27,7 @@ All the Power BI visuals admin settings, including Power BI visuals tenant setti
 
 ## Allow visuals created using the Power BI SDK
 
-Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting. 
+Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting.
 
 To learn more, see [Visuals from AppSource or a file](organizational-visuals.md#visuals-from-appsource-or-a-file).
 
