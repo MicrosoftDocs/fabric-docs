@@ -107,7 +107,7 @@ To understand the considerations and limitations of various lifecycle management
 #### The Commit button is disabled
 
 **Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
-**Solution**: To enable commits, update your workspace .
+**Solution**: To enable commits, update your workspace.
 
 ### Update issues
 
@@ -454,7 +454,7 @@ If one of the rule options is greyed out, it could be because of the following r
 
 * Your semantic model contains a function connected to a data source. In such cases, data source rules aren't supported.
 
-* Your data source is using parameters. You can't create a data source rule for a dasemantic modeltaset that uses parameters. Create a parameter rule instead.
+* Your data source is using parameters. You can't create a data source rule for a semantic model that uses parameters. Create a parameter rule instead.
 
 #### I can't connect to a semantic model when creating a new semantic model rule
 
