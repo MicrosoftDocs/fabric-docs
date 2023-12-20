@@ -41,13 +41,11 @@ Once you have installed and launched the application, you can now see your OneLa
 
 - Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- Users can't update Office files (.pptx, .docx etc.).
-
 - If Windows search is disabled, OneLake file explorer fails to start.
 
 - Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
 
-- If a file fails to sync due to a network issue, you will have to trigger the Sync to OneLake. You can do this by opening the file & saving it, prompting the sync process. Alternatively, you can trigger a modify event [using PowerShell](https://learn.microsoft.com/fabric/onelake/onelake-powershell) by executing this command: (Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date
+- If a file fails to sync due to a network issue, you will have to trigger the Sync to OneLake. You can do this by opening the file & saving it, prompting the sync process. Alternatively, you can trigger a modify event [using PowerShell](onelake-powershell.md) by executing this command: (Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date
 
 ## Scenarios
 
