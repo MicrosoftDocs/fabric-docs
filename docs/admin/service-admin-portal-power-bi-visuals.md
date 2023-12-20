@@ -45,7 +45,7 @@ To learn more, see [Export data to file](organizational-visuals.md#export-data-t
 
 ## Allow custom visuals to get user Microsoft Entra ID access tokens
 
-Enabling this setting allows [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) to obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
+Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
 
 To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#obtain-microsoft-entra-access-token).
 
