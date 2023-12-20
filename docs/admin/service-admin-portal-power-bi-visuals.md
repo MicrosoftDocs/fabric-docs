@@ -10,7 +10,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 12/20/2023
 LocalizationGroup: Administration
 ---
 
@@ -19,6 +19,11 @@ LocalizationGroup: Administration
 These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
 All the Power BI visuals admin settings, including Power BI visuals tenant settings, are described in [Manage Power BI visuals admin settings](organizational-visuals.md).
+
+* [Allow visuals created using the Power BI SDK](#allow-visuals-created-using-the-power-bi-sdk)
+* [Add and use certified visuals only (block uncertified)](#add-and-use-certified-visuals-only-block-uncertified)
+* [Allow downloads from custom visuals](#allow-downloads-from-custom-visuals)
+* [Allow custom visuals to get user Microsoft Entra ID access tokens](#allow-custom-visuals-to-get-user-microsoft-entra-id-access-tokens)
 
 ## Allow visuals created using the Power BI SDK
 
@@ -37,6 +42,12 @@ To learn more, see [Certified Power BI visuals](organizational-visuals.md#certif
 Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) download any information available to the visual (such as summarized data and visual configuration) upon user consent. It's not affected by download restrictions applied in your organization's Export and sharing settings.
 
 To learn more, see [Export data to file](organizational-visuals.md#export-data-to-file).
+
+## Allow custom visuals to get user Microsoft Entra ID access tokens
+
+Enabling this setting allows [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) to obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
+
+To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#obtain-microsoft-entra-access-token).
 
 ## Related content
 
