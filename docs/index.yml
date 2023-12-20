@@ -46,7 +46,7 @@ highlightedContent:
       url: get-started/copilot-fabric-overview.md          
 
 # conceptualContent section (optional)
-productDirectory:
+conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   sections:
     - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
@@ -150,7 +150,7 @@ productDirectory:
             url: get-started/index.yml
             text: See more
 
-conceptualContent:
+productDirectory:
   title: Explore Microsoft Fabric experiences
   summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
   items:
