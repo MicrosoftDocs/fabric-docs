@@ -28,6 +28,12 @@ items:
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
+  - name: Logs
+    items:    
+    - name: Track user activities in Microsoft Fabric
+      href: track-operations.md
+    - name: Operation list
+      href: operation-list.md           
   - name: Use the Monitoring hub
     href: monitoring-hub.md 
   - name: Track user activities
