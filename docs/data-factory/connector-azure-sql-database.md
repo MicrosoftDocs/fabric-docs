@@ -99,7 +99,7 @@ Open **Edit credentials**. You'll notice the sign in interface. Enter your accou
 
 To use service principal authentication, follow these steps:
 
-1. [Create a Microsoft Entra application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the connection:
+1. [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the connection:
 
     - Tenant ID
     - Application ID

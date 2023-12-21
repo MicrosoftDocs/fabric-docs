@@ -89,7 +89,7 @@ To learn more, see [Overview of single sign-on for on-premises data gateways in 
 
 Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.
 
-To learn more, see [Google BigQuery (Microsoft Entra ID)](/power-query/connectors/google-bigquery-aad).
+To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-bigquery-aad).
 
 ## Oracle SSO
 

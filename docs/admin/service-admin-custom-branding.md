@@ -62,6 +62,6 @@ Follow these steps to return the look of Power BI to the default settings:
 
 Give your users a consistent online experience by applying custom branding to other services. Custom branding settings aren't shared between Microsoft 365 and Power BI, but your users will see branding that you apply to your organization's Microsoft Entra sign-in page.
 
-- [Add branding to your organization's Microsoft Entra sign-in page](/azure/active-directory/fundamentals/customize-branding)
+- [Add branding to your organization's Microsoft Entra sign-in page](/entra/fundamentals/how-to-customize-branding)
 - [Customize the Microsoft 365 theme for your organization](/microsoft-365/admin/setup/customize-your-organization-theme)
 - [Add featured content to Power BI Home](/power-bi/collaborate-share/service-featured-content)

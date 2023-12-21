@@ -15,7 +15,7 @@ LocalizationGroup: Administration
 
 # Find users who have signed in
 
-If you're an admin for your organization, and want to see who has signed in to Fabric, use [Microsoft Entra access and usage reports](/azure/active-directory/reports-monitoring/concept-sign-ins), which are also known as the sign-in logs.
+If you're an admin for your organization, and want to see who has signed into Fabric, use [Microsoft Entra access and usage reports](/entra/identity/monitoring-health/concept-sign-ins), which are also known as the sign-in logs.
 
 > [!NOTE]
 > The *Sign-in logs* report provides useful information, but it doesn't identify the type of license for each user. Use the Microsoft 365 admin center to view licenses.
@@ -30,7 +30,7 @@ Any user can view a report of their own sign-ins. To see a report for all users,
 
 To view sign-in activity, follow these steps:
 
-1. Sign in to the [Microsoft Entra admin center](https://aad.portal.azure.com), and then select **Microsoft Entra ID** from the portal menu.
+1. Sign in to the [Microsoft Entra admin center](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView), and then select **Microsoft Entra ID** from the portal menu.
 
 1. From the resource menu, select **Monitoring** > **Sign-in logs**.
 
@@ -67,7 +67,7 @@ You can [download a sign-in report](/azure/active-directory/reports-monitoring/q
 
 ## Data retention
 
-Sign-in-related data is available for up to seven days, unless your organization has a Microsoft Entra ID P1 or P2 license. If you use Microsoft Entra ID P1 or Microsoft Entra ID P2, you can see data for the past 30 days. For more information, see [How long does Microsoft Entra ID store reporting data?](/azure/active-directory/reports-monitoring/reference-reports-data-retention).
+Sign-in-related data is available for up to seven days, unless your organization has a Microsoft Entra ID P1 or P2 license. If you use Microsoft Entra ID P1 or Microsoft Entra ID P2, you can see data for the past 30 days. For more information, see [How long does Microsoft Entra ID store reporting data?](/entra/identity/monitoring-health/reference-reports-data-retention).
 
 ## Related content
 

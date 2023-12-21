@@ -72,7 +72,7 @@ The tables below list the data that is shared with Microsoft 365 services.
 |SharingLinksURL|Sharing Link as per [Share a report using a link](/power-bi/collaborate-share/service-share-dashboards#share-a-report-via-link)|["https://app.powerbi.com/links/xyz123"]|
 |IconURL||cdn.com/report.png|
 |Description|Content description as per [Report settings](/power-bi/create-reports/power-bi-report-settings?tabs=powerbi-desktop)|Sample containing retail sales data|
-|Owner/Creator|Microsoft Entra user principal name of the User that Created the Content as per [Microsoft Entra user principal name](/azure/active-directory/hybrid/plan-connect-userprincipalname/)|user1@griffin1.org|
+|Owner/Creator|Microsoft Entra user principal name of the User that Created the Content as per [Microsoft Entra user principal name](/entra/identity/hybrid/connect/plan-connect-userprincipalname)|user1@griffin1.org|
 |CreatedDate|Date the content was created|2011-06-30T23:32:46Z|
 |LastModifiedDate|Last modified date for the content|2011-06-30T23:32:46Z|
 |LastModifiedUser|Microsoft Entra user principal name for the last person who modified the content|user1@griffin1.org|
