@@ -12,7 +12,7 @@ ms.date: 09/27/2023
 
 # OneLake security
 
-OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with user identities, service principals, and managed identities. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
+OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Microsoft Entra authentication and is compatible with user identities, service principals, and managed identities. Using Microsoft Entra ID and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
 
 :::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
 
@@ -52,7 +52,7 @@ Shortcuts in Microsoft Fabric allow for simplified data management, but have som
 
 ## Authentication
 
-OneLake uses Azure Active Directory (Azure AD) for authentication; you can use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools, which use Azure AD authentication and map it to the permissions you set in the Fabric portal.
+OneLake uses Microsoft Entra ID for authentication; you can use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools, which use Microsoft Entra authentication and map it to the permissions you set in the Fabric portal.
 
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups.

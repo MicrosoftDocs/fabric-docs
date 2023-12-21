@@ -40,9 +40,9 @@ To assign users to an admin role in the Microsoft 365 admin portal, follow these
 
 ## Assign users to the admin role with PowerShell
 
-You can also assign users to roles by using PowerShell. Users are managed in Azure Active Directory (Azure AD). If you don't already have the Azure AD PowerShell module, [download and install the latest version](https://www.powershellgallery.com/packages/AzureAD/).
+You can also assign users to roles by using PowerShell. Users are managed in Microsoft Entra ID. If you don't already have the Azure AD PowerShell module, [download and install the latest version](https://www.powershellgallery.com/packages/AzureAD/).
 
-1. Connect to Azure AD:
+1. Connect to Microsoft Entra ID:
    ```powershell
    Connect-AzureAD
    ```

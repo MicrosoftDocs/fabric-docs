@@ -53,7 +53,7 @@ Before you begin, make sure you have the following:
     ```sql
     SELECT * FROM YourSchema.YourTable;
     ```
-1. Similar results for the user will be filtered with other applications that use Microsoft Entra ID authentication for database access.
+1. Similar results for the user will be filtered with other applications that use Microsoft Entra authentication for database access.
 
 ## 4. Monitor and maintain column-level security
 
