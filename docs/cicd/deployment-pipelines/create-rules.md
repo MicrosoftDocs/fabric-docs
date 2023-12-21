@@ -67,9 +67,7 @@ To create a deployment rule, follow the steps in this section. After you create 
          Select a parameter from the list of parameters; the current value is shown. Edit the value to the value you want to take effect after each deployment.
 
     * **Default lakehouse rules**
-         This rule only applies to notebooks. Select a default lakehouse that will be connected to the notebook in the target stage.
-
-        :::image type="content" source="media/create-rules/default-lakehouse-rule.png" alt-text="Screenshot of UI for creating a default lakehouse for a notebook.":::
+         This rule only applies to notebooks. Select a default lakehouse that will be connected to the notebook in the target stage. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
 
 ## Supported data sources for dataflow and semantic model rules
 
