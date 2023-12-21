@@ -12,17 +12,15 @@ ms.search.form: Pipeline Tutorials
 
 # Load data to Lakehouse using partition in a Data pipeline
 
-The partition feature in Lakehouse table as destination offers the capability to load data to Lakehouse table with partitions. The partitions are generated in Lakehouse destination, and then benefits the downstream jobs or consumption. 
+The partition feature in Lakehouse table as destination offers the capability to load data to Lakehouse table with partitions. The partitions are generated in Lakehouse destination, and then benefit the downstream jobs or consumption. 
 
 This tutorial helps you learn how to load data to Lakehouse using partition in a Data pipeline. As an example, you will try to load sample dataset into Lakehouse using one or multiple partition columns by taking the following steps. The sample dataset **Public Holidays** is used as sample data.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisite
 
 - Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
-### Create a data pipeline
+## Create a data pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
