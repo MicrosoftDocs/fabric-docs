@@ -38,7 +38,7 @@ Displays usage and throttling for the selected capacity. Use the tabs at the top
 
 Displays CU usage over time. 
 
-:::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart.":::
+:::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
 
 Use the tabs at the top right corner of the visual to toggle how the visual is displayed.
 
@@ -68,7 +68,7 @@ The utilization chart displays the following elements:
 
 Displays delay and rejection over time.
 
-:::image type="content" source="media/fabric-drill-through.gif" alt-text="Animation that shows the drill through option for a selected time point.":::
+:::image type="content" source="media/fabric-drill-through.gif" alt-text="Animation that shows the drill through option for a selected time point." lightbox="media/fabric-drill-through.gif":::
 
 Throttling is based on the amount of future capacity consumption resulting from the following smoothing policies.
 
@@ -101,7 +101,7 @@ The throttling chart displays the following elements:
   
 Displays the *add*, *burndown*, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
 
-:::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time.":::
+:::image type="content" source="media/fabric-cross-filter-overages.gif" alt-text="Animation that shows overage over time." lightbox="media/fabric-cross-filter-overages.gif":::
 
 The overages chart displays the following elements:
 
