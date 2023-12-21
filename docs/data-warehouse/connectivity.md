@@ -49,7 +49,7 @@ The following steps detail how to start at the [!INCLUDE [product-name](../inclu
 
    :::image type="content" source="media\connectivity\object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu." lightbox="media\connectivity\object-explorer-connect-menu.png":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only **Azure Active Directory - MFA** authentication is supported.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported.
 
    :::image type="content" source="media\connectivity\connect-server-window.png" alt-text="Screenshot showing the Connect to server window." lightbox="media\connectivity\connect-server-window.png":::
 
@@ -142,7 +142,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-d
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- On connection to a warehouse, you might receive an error that "The token size exceeded the maximum allowed payload size". This is due to having a large number of warehouses within the workspace or being a member of a large number of Microsoft Entra ID groups. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- On connection to a warehouse, you might receive an error that "The token size exceeded the maximum allowed payload size". This is due to having a large number of warehouses within the workspace or being a member of a large number of Microsoft Entra groups. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
 - Linked server connections from SQL Server are not supported.
 
 ## Related content
