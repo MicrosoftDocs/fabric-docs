@@ -92,7 +92,7 @@ Let's connect this workspace to the main branch of your Azure repo so all team m
 
    :::image type="content" source="./media/cicd-tutorial/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed.":::
 
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into the workspace.
+1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into the workspace.
 
 1. From the dropdown menu, specify the following details about the branch you want to connect to:
 

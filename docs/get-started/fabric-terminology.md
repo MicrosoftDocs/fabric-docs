@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident
-ms.date: 05/23/2023
+ms.date: 12/14/2023
 ---
 
 # Microsoft Fabric terminology
@@ -24,7 +24,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
-- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with an Azure Active Directory.
+- **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
 
 - **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
@@ -68,7 +68,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse Real-Time Analytics
 
-- **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
+- **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
 
 - **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 

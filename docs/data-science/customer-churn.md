@@ -51,6 +51,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Bank%20Customer%20Churn.ipynb -->
+
 ## Step 1: Install custom libraries
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use `%pip install` or `%conda install`.
@@ -602,6 +604,8 @@ Finally, customers who have lower credit scores would most likely leave the bank
 # Determine the entire runtime
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
+
+<!-- nbend -->
 
 ## Related content
 

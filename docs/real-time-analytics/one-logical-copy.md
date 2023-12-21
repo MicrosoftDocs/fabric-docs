@@ -1,5 +1,5 @@
 ---
-title: One logical copy
+title: One logical copy (Preview)
 description: Learn how to enable KQL Database data availability in OneLake.
 ms.reviewer: tzgitlin
 ms.author: yaschust
@@ -8,11 +8,13 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/22/2023
+ms.date: 12/19/2023
 ---
-# One logical copy
+# One logical copy (Preview)
 
 You can create a one logical copy of KQL Database data by enabling data availability in OneLake. Enabling data availability of your KQL database in OneLake means that you can query data with high performance and low latency in your KQL database, and query the same data in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
+
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 Delta Lake is a unified data lake table format that achieves seamless data access across all compute engines in Microsoft Fabric. For more information on Delta Lake, see [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake).
 

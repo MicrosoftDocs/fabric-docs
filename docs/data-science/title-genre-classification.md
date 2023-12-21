@@ -51,6 +51,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Title%20Genre%20Classification.ipynb -->
+
 ## Step 1: Install custom libraries
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use `%pip install` or `%conda install`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
@@ -465,6 +467,8 @@ batch_predictions.write.format("delta").mode("overwrite").save(
 # Determine the entire runtime
 print(f"Full run cost {int(time.time() - ts)} seconds.")
 ```
+
+<!-- nbend -->
 
 ## Related content
 

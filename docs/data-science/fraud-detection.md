@@ -52,6 +52,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Fraud%20Detection.ipynb -->
+
 ## Step 1: Install custom libraries
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
@@ -566,6 +568,8 @@ You can generate batch predictions directly from the Microsoft Fabric notebook o
     # Save the predictions to the lakehouse
     batch_predictions.write.format("delta").mode("overwrite").save(f"{DATA_FOLDER}/predictions/batch_predictions")
     ```
+
+<!-- nbend -->
 
 ## Related content
 

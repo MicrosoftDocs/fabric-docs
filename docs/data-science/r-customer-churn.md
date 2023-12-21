@@ -51,6 +51,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Bank%20Customer%20Churn.ipynb -->
+
 ## Step 1: Install custom libraries
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use inline installation capabilities such as `install.packages` and `devtools::install_version`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
@@ -620,6 +622,8 @@ Finally, customers who have lower credit scores would most likely leave the bank
 # Determine the entire runtime
 cat(paste0("Full run cost ", as.integer(Sys.time() - ts), " seconds.\n"))
 ```
+
+<!-- nbend -->
 
 ## Related content
 

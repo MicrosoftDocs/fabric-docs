@@ -69,6 +69,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modeling.ipynb -->
+
 ## Step 1: Load the data
 
 The following examples assume that you run the code from cells in a notebook. For information on creating and using notebooks, see [How to use notebooks](../data-engineering/how-to-use-notebook.md).
@@ -422,6 +424,8 @@ loaded_treatmentmodel = mlflow.spark.load_model(
     f"{model_uri}-treatmentmodel", dfs_tmpdir="Files/spark"
 )
 ```
+
+<!-- nbend -->
 
 ## Related content
 

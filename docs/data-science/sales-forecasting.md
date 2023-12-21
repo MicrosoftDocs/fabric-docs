@@ -51,6 +51,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Superstore%20Forecast.ipynb -->
+
 ## Step 1: Load the data
 
 The dataset contains 9,995 instances of sales of various products, along with 21 attributes. The following table is from the *Superstore.xlsx* file used in this notebook.
@@ -451,6 +453,8 @@ The light blue line in the following graph represents the actual sales values. T
 Based on this observation, you can have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions about inventory management, procurement of raw materials, and other business-related considerations.
 
 :::image type="content" source="./media/sales-forecasting/power-bi-forecast.png" alt-text="Screenshot of a Power BI report.":::
+
+<!-- nbend -->
 
 ## Related content
 

@@ -51,6 +51,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/r/AIsample%20-%20R%20Fraud%20Detection.ipynb -->
+
 ## Step 1: Install custom libraries
 
 When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use inline installation capabilities such as `install.packages` and `devtools::install_version`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
@@ -498,6 +500,8 @@ plot(smote_pr)
 :::image type="content" source="media/r-fraud-detection/auprc-curve-balanced.png" alt-text="Screenshot of a graph that shows the AUPRC curve for the balanced model.":::
 
 The preceding figures clearly show that the model that you trained on the balanced dataset outperforms the model that you trained on the imbalanced dataset, in terms of both AUC-ROC and AUPRC scores. This outcome suggests that SMOTE is an effective technique to enhance model performance when you're working with highly imbalanced data.
+
+<!-- nbend -->
 
 ## Related content
 

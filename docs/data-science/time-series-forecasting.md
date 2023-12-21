@@ -49,6 +49,8 @@ You can follow along in a notebook in one of two ways:
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
+<!-- nbstart https://raw.githubusercontent.com/microsoft/fabric-samples/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb -->
+
 ## About the dataset
 
 The dataset is a record of every building sold in the New York City property market during a 13-year period. For definitions of columns in the spreadsheet, refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) on the NYC Department of Finance website. The dataset looks like the following table:
@@ -302,6 +304,8 @@ with mlflow.start_run() as run:
 # Load the model back
 loaded_model = mlflow.prophet.load_model(model_uri)
 ```
+
+<!-- nbend -->
 
 ## Related content
 
