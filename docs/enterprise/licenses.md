@@ -25,7 +25,7 @@ This section describes tenants, capacities, and workspaces, which are helpful in
 
 ### Tenant
 
-Microsoft Fabric is deployed to an [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant). Each tenant is tied to a specific Domain Name System (DNS) and additional domains can be added to the tenant. If you don't already have a Microsoft Entra tenant, you can either add your domain to an existing tenant or a tenant will be created when you acquire a free, trial or paid license for a Microsoft online service. Once you have your tenant, you can add capacities to it. To create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](/azure/active-directory/fundamentals/create-new-tenant).
+Microsoft Fabric is deployed to a [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-an-azure-ad-tenant). Each tenant is tied to a specific Domain Name System (DNS) and additional domains can be added to the tenant. If you don't already have a Microsoft Entra tenant, you can either add your domain to an existing tenant or a tenant will be created when you acquire a free, trial or paid license for a Microsoft online service. Once you have your tenant, you can add capacities to it. To create a tenant, see [Quickstart: Create a new tenant in Microsoft Entra ID](/azure/active-directory/fundamentals/create-new-tenant).
 
 ### Capacity
 
