@@ -18,7 +18,7 @@ Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [
 
 ## Enable Customer Lockbox for Microsoft Fabric
 
-To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be an Azure AD Global Administrator. To assign roles in Azure AD, see [Assign Azure AD roles to users](/azure/active-directory/roles/manage-roles-portal).
+To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be a Microsoft Entra Global Administrator. To assign roles in Microsoft Entra ID, see [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 
 1. Open the Azure portal.
 
@@ -46,7 +46,7 @@ When the request requires direct access to customer data, a Customer Lockbox req
 
 These steps describe a Microsoft initiated Customer Lockbox request, for [!INCLUDE [product-name](../includes/product-name.md)] service.
 
-1. The Azure AD Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
+1. The Microsoft Entra Global Administrator receives a pending access request notification email from Microsoft. The admin who received the email, becomes the designated approver.
 
     :::image type="content" source="media/security-lockbox/email-example.png" alt-text="Screenshot of pending access request notification email from Microsoft." lightbox="media/security-lockbox/email-example.png":::
 
