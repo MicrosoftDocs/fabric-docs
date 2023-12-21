@@ -94,7 +94,7 @@ This error code means that Data Activator couldn't send the alert on your trigge
 
 ### TeamsDisabled
 
-This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra ID tenant has blocked the Microsoft Teams service principal (SP). To resolve the problem, contact your Entra ID administrator and request that they unblock the Teams SP.
+This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra tenant has blocked the Microsoft Teams service principal (SP). To resolve the problem, contact your Microsoft Entra administrator and request that they unblock the Teams SP.
 
 
 ## Next steps

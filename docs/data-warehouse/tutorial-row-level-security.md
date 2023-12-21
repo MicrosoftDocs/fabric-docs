@@ -76,7 +76,7 @@ Before you begin, make sure you have the following:
     SELECT * FROM sampleschema.sampletable
     ```
 
-1. Similar filtered results for the user will be filtered with other applications that use Microsoft Entra ID authentication for database access.
+1. Similar filtered results for the user will be filtered with other applications that use Microsoft Entra authentication for database access.
 
 ## 4. Monitor and maintain row-level security
 
