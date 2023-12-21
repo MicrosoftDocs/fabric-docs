@@ -19,7 +19,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 1. The SharePoint List Online connector uses service principal authentication to connect to SharePoint. Follow these steps to set it up:
 
-1. Register an application with the Microsoft identity platform. To learn how, go to [Quickstart: Register an application with the Microsoft identity platform](/azure/active-directory/develop/quickstart-register-app). Make note of these values, which you use to define the connection:
+1. Register an application with the Microsoft identity platform. To learn how, go to [Quickstart: Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app). Make note of these values, which you use to define the connection:
 
    - Application ID
    - Application key

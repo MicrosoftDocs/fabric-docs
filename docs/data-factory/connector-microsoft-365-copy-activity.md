@@ -22,10 +22,10 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
 - Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
-- Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal).
+- Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 - Make note of the following values, which you use to define the connection for Microsoft 365:
 Tenant ID. For instructions, go to [Get tenant ID](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
-- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
+- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
 Add the user identity who will be making the data access request as the owner of the Microsoft Entra web application (from the Microsoft Entra web application > **Settings** > **Owners** > **Add owner**).
 - The user identity must be in the Microsoft 365 organization you're getting data from and must not be a Guest user.
 

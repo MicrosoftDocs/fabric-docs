@@ -18,7 +18,7 @@ Typically, Customer Lockbox is used to help Microsoft engineers troubleshoot a [
 
 ## Enable Customer Lockbox for Microsoft Fabric
 
-To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be a Microsoft Entra Global Administrator. To assign roles in Microsoft Entra ID, see [Assign Microsoft Entra roles to users](/azure/active-directory/roles/manage-roles-portal).
+To enable Customer Lockbox for [!INCLUDE [product-name](../includes/product-name.md)], you must be a Microsoft Entra Global Administrator. To assign roles in Microsoft Entra ID, see [Assign Microsoft Entra roles to users](/entra/identity/role-based-access-control/manage-roles-portal).
 
 1. Open the Azure portal.
 
