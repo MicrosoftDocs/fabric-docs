@@ -159,6 +159,8 @@ landingContent:
     linkLists:
       - linkListType: architecture
         links:
+          - text: Restore in-place
+            url: restore-in-place.md
           - text: Clone tables
             url: clone-table.md
           - text: Clone tables in the Fabric portal

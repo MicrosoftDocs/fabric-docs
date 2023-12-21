@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident
-ms.date: 05/23/2023
+ms.date: 12/14/2023
 ---
 
 # Microsoft Fabric terminology
@@ -68,7 +68,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 ## Synapse Real-Time Analytics
 
-- **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/jupyter-notebook.md).
+- **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
 
 - **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 

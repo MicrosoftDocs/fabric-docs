@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/03/2023
+ms.date: 12/17/2023
 ---
 
 # Tenant settings index
@@ -91,13 +91,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Make certified content discoverable](/power-bi/collaborate-share/service-discovery)|Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 |[Discover content](../get-started/onelake-data-hub.md#find-recommended-items)|Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 
-## [Content pack and app settings](service-admin-portal-content-pack-app.md)
+## App settings
 
 | Setting name | Description |
 |------|-------|
-|[Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop.|
+|[Create template organizational apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template apps that use semantic models built on one data source in Power BI Desktop.|
 |[Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users)|Users can share apps directly with end users without requiring installation from AppSource.|
-|[Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish content packs and apps to the entire organization.|
+|[Publish apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish apps to the entire organization.|
 
 ## [Integration settings](service-admin-portal-integration.md)
 
@@ -131,6 +131,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow visuals created using the Power BI SDK](/power-bi/admin/organizational-visuals#visuals-from-appsource-or-a-file)|Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the "Organizational visuals" page are not affected by this setting.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2121300)|
 |[Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals)|Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2036068)|
 |[Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file)|Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409)|
+|[Allow custom visuals to get user Azure Active Directory access tokens](./organizational-visuals.md#obtain-microsoft-entra-access-token)|Enabling this setting will allow custom visuals to obtain Azure Active Directory access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
 
 ## [R and Python visuals settings](service-admin-portal-r-python-visuals.md)
 
@@ -200,7 +201,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore) |  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
+|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore)  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 |[Block Public Internet Access](/power-bi/enterprise/service-security-private-links)|For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. [Learn More](https://aka.ms/PrivateLinksLearnMore) [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 
 ## [Metrics settings](service-admin-portal-goals-settings.md)
