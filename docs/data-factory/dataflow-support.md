@@ -66,7 +66,7 @@ The connectors are listed in alphabetical order in separate tables for each lett
 
 | &nbsp; | &nbsp; | Connectors | &nbsp; | &nbsp; |
 | --- | --- | --- | --- | --- |
-| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Microsoft Entra ID) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
+| [:::image type="icon" source="media/dataflow-support/google-analytics-64.png":::<br/>**Google Analytics**](connector-google-analytics.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery**](connector-google-bigquery.md)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/database-64.png":::<br/>**Google BigQuery<br/>(Azure AD) (Beta)**](/power-query/connectors/google-bigquery-aad)<br/>By Microsoft | [:::image type="icon" source="media/dataflow-support/google-sheets-64.png":::<br/>**Google Sheets**](/power-query/connectors/google-sheets)<br/>By Microsoft | |
 
 ## H
 
