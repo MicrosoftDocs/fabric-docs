@@ -20,7 +20,7 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 
 - Make sure you have a Project Microsoft Fabric enabled Workspace: [Create a workspace](../get-started/create-workspaces.md).
 
-## Create a data pipeline
+## Create a Data pipeline
 
 1. Navigate to [Power BI](https://app.powerbi.com/).
 1. Select the Power BI icon in the bottom left of the screen, then select **Data factory** to open homepage of Data Factory.
@@ -33,14 +33,14 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 
 1. Select **Data pipeline** and then input a pipeline name to create a new pipeline.
 
-   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new data pipeline button in the newly created workspace.":::
+   :::image type="content" source="media/create-first-pipeline/select-pipeline.png" alt-text="Screenshot showing the new Data pipeline button in the newly created workspace.":::
 
    :::image type="content" source="media/tutorial-load-sample-data-to-data-warehouse/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
 
 ## Load data to Lakehouse using partition columns
 
-1. Open your data pipeline and add a copy activity by selecting **Add pipeline activity** -> **Copy data**. Under **Source**, select **Sample dataset**, and select **Browse**, then select **Public Holidays**.
+1. Open your Data pipeline and add a copy activity by selecting **Add pipeline activity** -> **Copy data**. Under **Source**, select **Sample dataset**, and select **Browse**, then select **Public Holidays**.
 
     :::image type="content" source="media/tutorial-lakehouse-partition/data-store-type-sample-dataset.png" alt-text="Screenshot of using sample dataset.":::
 
