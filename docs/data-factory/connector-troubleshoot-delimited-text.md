@@ -8,12 +8,20 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 12/19/2023
 ---
 
 # Troubleshoot the delimited text format connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the delimited text format connector in Data Factory in Microsoft Fabric.
+
+## Error code: DelimitedTextBadDataDetected
+
+- **Message**: `Bad data is found at line %rowIndex; in source %fileName;.`
+
+- **Cause**: Invalid delimited text data.
+
+- **Recommendation**: Ignore the bad data by setting **Fault tolerance** to **Skip incompatible rows** in the copy activity.
 
 ## Error code: DelimitedTextColumnNameNotAllowNull
 
@@ -22,7 +30,6 @@ This article provides suggestions to troubleshoot common problems with the delim
 - **Cause**: When 'firstRowAsHeader' is set in the activity, the first row is used as the column name. This error means that the first row contains an empty value (for example, 'ColumnA, ColumnB').
 
 - **Recommendation**:  Check the first row, and fix the value if it is empty.
-
 
 ## Error code: DelimitedTextMoreColumnsThanDefined
 

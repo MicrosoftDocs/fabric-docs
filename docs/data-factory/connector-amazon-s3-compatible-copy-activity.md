@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 11/24/2023
 ms.custom:
   - template-how-to
   - build-2023
@@ -48,7 +48,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 ### General
 
-For **General** tab configuration, go to [General](activity-overview.md#general-settings).
+Refer to the [**General** settings](activity-overview.md#general-settings) guidance to configure the **General** settings tab.
 
 ### Source
 
@@ -66,7 +66,7 @@ The following properties are **required**:
   - **File path**: If you choose this type, the data can be copied from the given bucket or the given bucket and folder path specified.
 
   - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
-    - **Bucket**: Specify the S3 Compatible Storage bucket name.
+    - **Bucket**: Specify the S3 Compatible Storage bucket name. It is required.
     - **Prefix**: Specify the configured prefix for the S3 key name under the given bucket to filter source S3 files. S3 keys whose names start with `bucket/this_prefix` are selected. It utilizes S3's service-side filter, which provides better performance than a wildcard filter.
   
       When you use prefix and choose to copy to file-based destination with preserving hierarchy, note the sub-path after the last "/" in prefix will be preserved. For example, you have source `bucket/folder/subfolder/file.txt`, and configure prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
@@ -74,7 +74,7 @@ The following properties are **required**:
     :::image type="content" source="./media/connector-amazon-s3-compatible/prefix.png" alt-text="Screenshot showing prefix.":::
 
   - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
-    - **Bucket**: Specify the S3 Compatible Storage bucket name.
+    - **Bucket**: Specify the S3 Compatible Storage bucket name. It is required.
     - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
 
         Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. See more examples in [Folder and file filter examples](/azure/data-factory/connector-amazon-s3-compatible-storage#folder-and-file-filter-examples).
@@ -141,7 +141,7 @@ The following tables contain more information about the copy activity in Amazon 
 | **Connection** |Your connection to the source data store.|\<your Amazon S3 Compatible connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3 Compatible**|Yes|/|
 | **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |• folderPath，fileName<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath |
-| **File path** | The folder/file path to the source file. | < file path> | Yes | fileName<br>folderpath |
+| **File path** | The folder/file path to the source file. | < file path> | Yes for **File path**| bucketName<br>fileName<br>folderpath |
 | **Bucket** | The S3 Compatible Storage bucket name. | \<your bucket name> |Yes|bucketName|
 | **Prefix** | The configured prefix for the S3 key name under the given bucket to filter source S3 files. | \<your prefix> |No|prefix|
 | **Wildcard paths** | The folder/file path with wildcard characters under the configured bucket to filter source folders/files. | < your wildcard file path > | Yes for **Wildcard file name** | wildcardFolderPath<br>wildcardFileName |
