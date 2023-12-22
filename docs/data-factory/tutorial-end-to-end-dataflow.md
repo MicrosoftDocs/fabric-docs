@@ -153,7 +153,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
 
    Choose each of the two suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
 
