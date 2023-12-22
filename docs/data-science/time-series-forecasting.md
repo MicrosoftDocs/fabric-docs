@@ -250,11 +250,6 @@ fig2 = m.plot_components(forecast)
 
 We can use the Prophet built-in cross validation functionality to measure the forecast error on historical data. The following parameters indicate we should start with 11 years of training data, then make predictions every 30 days, within a one year horizon.
 
-> [!IMPORTANT]
-> If you're running the [built-in notebook](#open-built-in-notebook) for this tutorial, make this change in the notebook's code to avoid getting an error when you run the following cell:
->
-> Replace `df_cv = cross_validation(m, initial="11 Y", period="30 days", horizon="365 days")` with `df_cv = cross_validation(m, initial="4017 days", period="30 days", horizon="365 days")` to match the code in this article.
-
 ```python
 from prophet.diagnostics import cross_validation
 from prophet.diagnostics import performance_metrics
