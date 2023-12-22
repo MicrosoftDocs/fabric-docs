@@ -83,7 +83,7 @@ The high-level steps in the dataflow are as follows:
 
 1. Select the **Ipep_Pickup_Datetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters-inline.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown." lightbox="media/tutorial-end-to-end-dataflow/date-filters.png":::
 
 1. In the **Filter rows** dialog, select dates between January 1, 2015, and January 31, 2015, then select **OK**.
 
@@ -133,7 +133,7 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 1. Select the **Discount** column and then select the **Transform** tab on the menu. Select **Number column**, and then select **Standard** numeric transformations from the submenu, and choose **Divide**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values-inline.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column." lightbox="media/tutorial-end-to-end-dataflow/divide-column-values.png":::
 
 1. On the **Divide** dialog, enter the value 100.
 
@@ -153,7 +153,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog-inline.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed." lightbox="media/tutorial-end-to-end-dataflow/merge-dialog.png":::
 
    Choose each of the two suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
 
