@@ -18,9 +18,7 @@ An Eventhouse allows you to manage multiple databases at once, and to consolidat
 
 While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is still enabled on a database or table level.
 
-Autoscale
-
-Region/zonality?
+Auto scale? 
 
 ## Control panel
 
