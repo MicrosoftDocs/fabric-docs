@@ -5,9 +5,9 @@ items:
   items:
   - name: What is Microsoft Fabric governance and compliance?
     href: governance-compliance-overview.md
-    - name: Security overview
+  - name: Security overview
     href: ../security/security-overview.md
-    - name: Admin overview
+  - name: Admin overview
     href: ../admin/microsoft-fabric-admin.md
 - name: Get started
   items:
