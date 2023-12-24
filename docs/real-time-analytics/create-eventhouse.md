@@ -4,16 +4,17 @@ description: Learn about how to create an Eventhouse for data storage in Real-Ti
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
-ms.topic: Conceptual
+ms.topic: how-to
 ms.date: 12/24/2023
 ms.search.form: Eventhouse
 ---
 # Create an Eventhouse (Preview)
 
-
-What is an eventhouse? link to overview, blah blah,  [Eventhouse overview (Preview)](eventhouse.md)
+An Eventhouse allows you to manage multiple databases at once, and to consolidate small databases into a larger unit for billing purposes. For more information, see [Eventhouse overview (Preview)](eventhouse.md)
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
+In this article, you learn how to create an Eventhouse, add new databases to an Eventhouse, and delete an Eventhouse.
 
 ## Prerequisites
 
@@ -25,7 +26,10 @@ What is an eventhouse? link to overview, blah blah,  [Eventhouse overview (Previ
 
     :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Analytics.":::
 
-1. Enter a name for an Eventhouse. Both an Eventhouse and its child KQL database are created with the same name.
+1. Enter a name Eventhouse. Both an Eventhouse and its child KQL database are created with the same name.
+
+    > [!NOTE]
+    > The Eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
     :::image type="content" source="media/eventhouse/create-eventhouse.png" alt-text="Screenshot of creating Eventhouse by entering name in Real-Time Analytics.":::
 
@@ -33,18 +37,23 @@ What is an eventhouse? link to overview, blah blah,  [Eventhouse overview (Previ
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page":::
 
-1. Select **+ New** to create a new database. Enter a database name.
+## Add a KQL database in the Eventhouse
+
+1. To create a new KQL database in the existing Eventhouse, select **+ New**.
 
     :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
 
+1. Choose the database type - default, or [database shortcut](database-shortcut.md).
+1. Enter a database name, and select **Create**.
+
 ## Delete an Eventhouse
+
+When you delete an Eventhouse, both the Eventhouse and all its child KQL databases are deleted forever.
 
 1. Browse to the Eventhouse item in your workspace.
 1. Select **More menu** [**...**] > **Delete**.
 
     :::image type="content" source="media/eventhouse/delete-eventhouse.png" alt-text="Screenshot of deleting Eventhouse.":::
-
-    Both the Eventhouse and all the related KQL databases are deleted and cannot be recovered.
 
 ## Related content
 
