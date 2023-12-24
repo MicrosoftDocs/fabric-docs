@@ -8,7 +8,7 @@ ms.topic: Conceptual
 ms.date: 12/21/2023
 ms.search.form: Eventhouse
 ---
-# Eventhouse (Preview)
+# Eventhouse overview (Preview)
 
 In Real-Time Analytics, you interact with your data in the context of Eventhouses, databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables.
 
@@ -21,3 +21,6 @@ While Eventhouse is in preview, you can create a standalone [KQL database](creat
 Autoscale
 
 Region/zonality?
+
+## Monitor
+

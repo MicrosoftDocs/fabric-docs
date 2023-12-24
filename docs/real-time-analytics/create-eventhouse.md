@@ -34,6 +34,11 @@ What is an eventhouse? link to overview, blah blah,  [Eventhouse overview (Previ
 
     :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
 
+## Delete an Eventhouse
+
+:::image type="content" source="media/eventhouse/delete-eventhouse.png" alt-text="Screenshot of deleting Eventhouse.":::
+
+
 ## Related content
 
 * [Eventhouse overview (Preview)](eventhouse.md)
