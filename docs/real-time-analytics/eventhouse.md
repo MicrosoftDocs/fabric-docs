@@ -14,24 +14,28 @@ In Real-Time Analytics, you interact with your data in the context of Eventhouse
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-An Eventhouse allows you to manage multiple databases at once, and consolidate small databases into a larger unit. Sharing and permissions can be set at Eventhouse or database levels. As Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md).
+An Eventhouse allows you to manage multiple databases at once, and consolidate small databases into a larger unit. Sharing and permissions can be set at Eventhouse or database levels. While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is still enabled on a database or table level.
 
 Autoscale
 
 Region/zonality?
 
-Can create an ADX-to-RTA database follower under the EH
-
-Mirroring ? Right now database or table level, will probably be also eventhouse level
-
 ## How does it work?
 
+Create a new item from the workspace homepage.
 
-Create EH by putting a name
-You are brought to the database that is created simultaneously by default
-You can add more databases
+:::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Analytics.":::
 
+When you enter a name for an Eventhouse, both an Eventhouse and a KQL database are created with the same name. 
+
+:::image type="content" source="media/eventhouse/create-eventhouse.png" alt-text="Screenshot of creating Eventhouse by entering name in Real-Time Analytics.":::
+
+You can add more databases. When you are on the database details page for any of the databases that is a child of the Eventhouse, you will see a menu item to view Eventhouse level information.
 
 :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page":::
 
+
 :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
+
+
+YOU WILL BE ABLE TO MANAGE THEM ALL FROM EVENTHOUSE LEVEL?? UPDATE WHEN RELEVANT
