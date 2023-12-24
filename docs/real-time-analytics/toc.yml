@@ -85,7 +85,11 @@ items:
 - name: Store data
   items:
   - name: Eventhouse (Preview)
-    href: eventhouse.md
+    items:
+    - name: Eventhouse overview (Preview)
+      href: eventhouse.md
+    - name: Create an Eventhouse (Preview)
+      href: create-eventhouse.md 
   - name: Resource consumption
     displayName: consumption, CU, metrics app, monitor, billing, usage
     href: kql-database-consumption.md
