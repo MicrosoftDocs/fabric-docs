@@ -90,9 +90,6 @@ items:
       href: eventhouse.md
     - name: Create an Eventhouse (Preview)
       href: create-eventhouse.md 
-  - name: Resource consumption
-    displayName: consumption, CU, metrics app, monitor, billing, usage
-    href: kql-database-consumption.md
   - name: KQL Database
     items:
     - name: Create a KQL database
@@ -128,6 +125,9 @@ items:
         href: onelake-mirroring.md
       - name: Create OneLake shortcuts
         href: onelake-shortcuts.md
+  - name: Resource consumption
+    displayName: consumption, CU, metrics app, monitor, billing, usage
+    href: kql-database-consumption.md
 - name: Analyze and model data
   items:
   - name: KQL Queryset
