@@ -24,3 +24,8 @@ Region/zonality?
 
 ## Monitor
 
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Create an Eventhouse](create-eventhouse.md)
