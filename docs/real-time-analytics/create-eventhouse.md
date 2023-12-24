@@ -50,6 +50,3 @@ What is an eventhouse? link to overview, blah blah,  [Eventhouse overview (Previ
 
 * [Eventhouse overview (Preview)](eventhouse.md)
 * [Create a KQL database](create-database.md)
-
-
-YOU WILL BE ABLE TO MANAGE THEM ALL FROM EVENTHOUSE LEVEL?? UPDATE WHEN RELEVANT

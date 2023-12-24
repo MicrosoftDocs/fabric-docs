@@ -22,6 +22,10 @@ Autoscale
 
 Region/zonality?
 
+## Control panel
+
+YOU WILL BE ABLE TO MANAGE THEM ALL FROM EVENTHOUSE LEVEL?? UPDATE WHEN RELEVANT
+
 ## Monitor
 
 
