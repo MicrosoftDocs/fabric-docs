@@ -4,6 +4,6 @@ items:
 - name: Overview
   href: extensibility-overview.md
 - name: Frontend
-  href: frontend.md
+  href: extensibility-frontend.md
 - name: Backend
-  href: backend.md
+  href: extensibility-backend.md
