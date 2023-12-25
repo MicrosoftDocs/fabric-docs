@@ -1,0 +1,9 @@
+items:
+- name: Extensions documentation
+  href: index.yml
+- name: Overview
+  href: extensibility-overview.md
+- name: Frontend
+  href: extensibility-frontend.md
+- name: Backend
+  href: extensibility-backend.md

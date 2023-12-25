@@ -1,0 +1,36 @@
+### YamlMime:Landing
+
+title: Microsoft Fabric extensibility documentation
+summary: Understand how Microsoft Fabric extensibility works.
+
+metadata:
+  title: Microsoft Fabric extensibility
+  description: A landing page for Microsoft Fabric extensibility documentation
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: governance
+  ms.topic: landing-page # Required
+  author: paulinbar
+  ms.author: painbar
+  ms.date: 12/25/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  # Card 
+  - title: About Extensibility
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Microsoft Fabric extensibility?
+            url: extensibility-overview.md         
+      
+  # Card 
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Configure the frontend
+            url: extensibility-frontend.md
+          - text: Configure the backend
+            url: extensibility-backend.md
