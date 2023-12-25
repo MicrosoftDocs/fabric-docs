@@ -39,7 +39,9 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
 ## Add a KQL database in the Eventhouse
 
-1. To create a new KQL database in the existing Eventhouse, select **+ New**.
+In this section, you add a new KQL database to an existing Eventhouse.
+
+1. From the Eventhouse pane, select **+ New**.
 
     :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
 
