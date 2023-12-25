@@ -45,7 +45,6 @@ In this section, you add a new KQL database to an existing Eventhouse.
 
     :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
 
-1. Choose the database type - default, or [database shortcut](database-shortcut.md).
 1. Enter a database name, and select **Create**.
 
 ## Delete an Eventhouse
