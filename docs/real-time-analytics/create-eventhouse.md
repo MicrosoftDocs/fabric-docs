@@ -37,6 +37,18 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
     :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page":::
 
+## View all databases in an Eventhouse
+
+1. From the Eventhouse pane, select **Browse all databases**.
+
+    :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of Eventhouse pane with Browse all databases highlighted in a red box.":::'
+
+    A window opens with details about all the databases in this Eventhouse.
+
+    :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Analytics.":::
+
+1. To explore a specific database, select the name of this database from the list. 
+
 ## Add a KQL database in the Eventhouse
 
 In this section, you add a new KQL database to an existing Eventhouse.
