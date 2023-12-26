@@ -204,7 +204,7 @@ The following operations are available in the audit logs.
 | Drop Lakehouse Folder | DropLakehouseFolder |  |
 | Drop Lakehouse Table | DropLakehouseTable |  |
 | Edit Artifact Endorsement | EditArtifactEndorsement |  |
-| Edit mounted warehouse endorsements | EditMountedWarehouseEndorsement | Generated when mounted warehouse endorsementes are edited |
+| Edit mounted warehouse endorsements | EditMountedWarehouseEndorsement | Generated when mounted warehouse endorsements are edited |
 | Edit Report Description | EditReportDescription |  |
 | Edit Sql Analytics Endpoint Lakehouse Endorsement | EditSqlAnalyticsEndpointLakehouseEndorsement | Edited a lakehouse SQL analytics endpoint endorsement |
 | Edit Tile | EditTile | Edit Tile is a dashboard activity which is generated on changes or edits to settings for tiles in a Power BI Dashboard |
@@ -376,7 +376,7 @@ The following operations are available in the audit logs.
 | Refresh Goal Current Value Rollup | RefreshGoalCurrentValueRollup |  |
 | Refresh Goal Target Value Rollup | RefreshGoalTargetValueRollup |  |
 | Refresh Lakehouse Data | RefreshLakehouseData |  |
-| Refresh mounted warehouse metadata | RefreshMountedWarehouseMetadata | Generated when mounted wharehouse metadata is refreshed |
+| Refresh mounted warehouse metadata | RefreshMountedWarehouseMetadata | Generated when mounted warehouse metadata is refreshed |
 | Refresh Sql Analytics Endpoint Lakehouse Metadata | RefreshSqlAnalyticsEndpointLakehouseMetadata | Refreshed metadata for a lakehouse SQL analytics endpoint |
 | Refreshed current value of Power BI metric | RefreshGoalCurrentValue |  |
 | Refreshed target value of Power BI metric | RefreshGoalTargetValue |  |
