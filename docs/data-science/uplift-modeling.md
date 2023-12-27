@@ -333,11 +333,6 @@ display(test_ranked_df.limit(20))
 
 Now, plot the uplift curve on the prediction of the testing dataset. You must convert the PySpark DataFrame to a pandas DataFrame before plotting.
 
-> [!IMPORTANT]
-> If you're running the [built-in notebook](#open-the-built-in-notebook) for this tutorial, make this change in the notebook's code to avoid getting an error when you run the following cell:
->
-> Replace `plt.grid(b=True, which="major")` with `plt.grid()` to match the code in this article.
-
 ```python
 def uplift_plot(uplift_df):
     """
