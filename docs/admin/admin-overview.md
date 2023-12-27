@@ -47,7 +47,7 @@ Fabric admins can assign and manage [Fabric admin roles](../admin/roles.md). Adm
 
 Fabric is composed of tenants, capacities, and workspaces. Your organization might have one or more tenants, each with at least one capacity. Workspaces reside in capacities, and are where data is created, transformed, and consumed. Each organization can organize its tenants, capacities, and workspaces in accordance with their organizational structure. For example, in an organization with one tenant, capacities can be organized according to the organizational functions, and workspaces can be created according to each function's divisions.
 
-Fabric admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/) and [OneLake](../onelake/onelake-overview.md).
+Fabric admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
 
 To distribute admin management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint  the right admins at the right level. You no longer need global admins with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free global admins to concentrate on organizational processes, and allow experts to directly manage data in their fields.
 
@@ -63,7 +63,7 @@ With a set of [governance](../governance/governance-compliance-overview.md) and 
 
 [Data residency](../admin/admin-share-power-bi-metadata-microsoft-365-services.md) is also supported in Fabric. As an admin, by deciding where your tenants and capacities are created, you can specify your [organization's data storage location](/power-bi/guidance/powerbi-implementation-planning-tenant-setup#location-for-data-storage).
 
-You can also control your organization's [disaster recovery capacity setting](azure/reliability/reliability-fabric#disaster-recovery-capacity-setting) to make sure your data is safe if a disaster happens.
+You can also control your organization's [disaster recovery capacity setting](/azure/reliability/reliability-fabric#disaster-recovery-capacity-setting) to make sure your data is safe if a disaster happens.
 
 ## Control
 
@@ -97,7 +97,7 @@ The [monitoring hub](../admin/monitoring-hub.md) lets you review Fabric activiti
 
 ### View logs
 
-Audit logs allow you to [track user activities in Fabric](../admin/track-user-activities.md). You can search the logs and see which [operations](../admin/operation-list) were performed in your organization. Reviewing the logs can have many uses in your organization, such as making sure policies are followed and debugging unexpected system behavior.
+Audit logs allow you to [track user activities in Fabric](../admin/track-user-activities.md). You can search the logs and see which [operations](../admin/operation-list.md) were performed in your organization. Reviewing the logs can have many uses in your organization, such as making sure policies are followed and debugging unexpected system behavior.
 
 ### Understand consumption
 
