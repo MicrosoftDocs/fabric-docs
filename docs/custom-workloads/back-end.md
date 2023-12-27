@@ -1,38 +1,34 @@
 ---
-title: Fabric extensibility backend
-description: Learn about building the backend of a customized Fabric workload.
-author: paulinbar
-ms.author: painbar
-ms.reviewer: muliwienrib
+title: Front end developer sample
+description: This article describes the front end interface for developing a custom app in Microsoft Fabric.
+author: mberdugo
+ms.author: monaberdugo
+ms.reviewer: muli
+ms.service: fabric
+ms.subservice: 
 ms.topic: how-to
-ms.custom:
-ms.date: 12/27/2023
+ms.date: 
 ---
 
-# Fabric extensibility backend boilerplate
+# Fabric Extension - BE Boilerplate
 
 ## Introduction
 
 This repository serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide will help you set up the environment and configure the necessary components to get started. The key components and their roles in the architecture are outlined below:
 
 #### Frontend (FE)
-
 The frontend is responsible for managing the user experience (UX) and behavior. It communicates with the Fabric FE portal via an IFrame, facilitating seamless interaction with the user.
 
 #### Backend (BE)
-
 The backend plays a crucial role in storing both data and metadata. It utilizes CRUD operations to create Workload (WL) items along with metadata, and executes jobs to populate data in storage. The communication between the frontend and backend is established through public APIs.
 
 #### Azure Relay and Fabric SDK
-
 Azure Relay acts as a conduit for interactions between the BE development box and the Fabric BE. The Fabric SDK, installed on the BE development box, enhances the communication and integration capabilities.
 
 #### Lakehouse Integration
-
 Our architecture seamlessly integrates with Lakehouse, allowing operations such as saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
 
 #### Authentication and Security
-
 Azure Active Directory (AAD) is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
 This overview provides a glimpse into the intricacies of our architecture. For detailed information on project configuration, guidelines, and getting started, please refer to the respective sections in this README.
@@ -53,7 +49,6 @@ Our project operates on the .NET 7 framework, necessitating the installation of 
 Ensure that the NuGet Package Manager is integrated into your Visual Studio installation. This tool is required for streamlined management of external libraries and packages essential for our project.
 
 #### NuGet package management
-
 	<NuspecFile>Packages\manifest\ManifestPackage.nuspec</NuspecFile>
 This property specifies the path to the NuSpec file used for creating the NuGet package. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
 <br /><br />
@@ -69,7 +64,6 @@ This property, when set to true, indicates that the project is packable, meaning
 The generated NuGet package will be located in the **src\bin\Debug** directory after the build process.
 
 #### Dependencies
-
 The BE Boilerplate depends on the following Azure SDK packages:
 
 * Azure.Core
@@ -116,7 +110,6 @@ Lastly, our Software Development Kit (SDK) serves as the conduit linking our pro
 	</Target>
 
 	</Project>
-
 ## Getting Started
 
 To set up the boilerplate/sample project on your local machine, follow these steps:
@@ -177,7 +170,6 @@ If you see no errors, it means the connection is established, registration is su
 ![logging](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/e9998a51-8059-4d5b-8fb5-25dbdb199578)
 
 ## CRUD Operations
-
 CRUD, an acronym for Create, Read, Update, and Delete, serves as a foundational framework within Fabric, offering a unified approach for managing diverse artifacts through a common set of APIs.
 
 ![CRUD](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/f67ca9c5-29c1-4292-a1a6-2adba4b6770d)
@@ -417,8 +409,3 @@ We welcome contributions to this project. If you find any issues or want to add 
 1. Make your changes and commit them.
 1. Push your changes to your forked repository.
 1. Create a pull request with a clear description of your changes.
-
-## Related content
-
-* [Fabric extensibility overview](extensibility-overview.md)
-* [Fabric extensibility frontend](extensibility-frontend.md)
