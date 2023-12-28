@@ -43,29 +43,30 @@ By combining these two components, the Fabric UX Workload enables ISVs to seamle
 
 The following diagram depicts how Fabric is using the Manifest for reading the Workload's metadata and behavior and how it is embedding the Workload's Web App inside of Fabric's iFrame.
 
-![DEVX diagram](./docs/devxDiagram.png)
+:::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="DEVX diagram example.":::``
 
 ### Installation and Usage
 
 A prerequisite for using custom workloads in Fabric is enabling this feature in Admin Portal by the Tenant Administrator.
 This is done by enabling the switch 'Workload extensions (preview)' - either for the entire organization, or for specific groups within the organization.
 
-![Workloads tenant switch](./docs/tenantSwitch.png)
+:::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="DEVX diagram example.":::
+![Workloads tenant switch](./docs/tenantSwitch.png)``
 
 To get started with the Sample Project, follow these simple steps:
 
-0. **Verify** `Node.js` and `npm` are installed. The `npm` version should be at least **9** (installing **latest** `Node.js` and `npm` is ok.)
-
+1. **Verify** `Node.js` and `npm` are installed and that the `npm` version is at least **9** (installing **latest** `Node.js` and `npm` is ok.)
 
 1. **Install**. Notice existing packages under `node_modules` !
    Clone the repository:
 
-   ```
+   ```console
    git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
    ```
 
    Under the repository folder, go to `Frontend` and run **npm install** 
-   ``` 
+
+   ```console
    <repository folder>\Frontend> npm install
     ```
 
@@ -73,14 +74,14 @@ To get started with the Sample Project, follow these simple steps:
    These packages are not **YET** available on public npm feeds, and so deleting them will render the repo unusable.
    In case of issues with the npm install (when merging mismatching versions, etc.), delete everything under `node_modules` **except** for the `@trident` folder, and delete the `package-lock.json` file, before rerunning **npm install**.
 
+1. **Start server**
 
-2. **Start server**
-   ```
+   ```console
    <repository folder>\Frontend> npm start
    ```
 
    This starts a **local** Node.js server (using `webpack`), that Microsoft Fabric will connect to when in Development Mode.
-   
+
    Refer to the localhost server notes for port details, that appear after it has started.
    Current port is `60006`.
    After the localhost server has been started, opening the URL: `127.0.0.1:60006/manifests` will fetch the contents of the `localWorkloadManifest.json` manifest file.
@@ -91,36 +92,39 @@ To get started with the Sample Project, follow these simple steps:
 
    If you make changes to the `localWorkloadManifest.json` manifest file, refresh the Fabric page to reload the manifest.
 
-3. **Run**
+1. **Run**
    In Fabric - enable the Frontend Developer mode setting, allowing Fabric to access your localhost server
    This is done via Developer Settings --> Fabric Developer Mode (and a refresh of the page).
    This setting is persisted in the current browser.
 
-   ![Enabling Developer Mode](./docs/devMode.png)
-   
-   
+   :::image type="content" source="./media/extensibility-frontend/dev-mode.png" alt-text="Product Switcher Example ImageEnable developer mode.":::
 
 ## Sample Usage
 
 Running a typical *Hello World* test scenario:
 
 After starting the local server and enabling Dev Mode, the menu at the left bottom corner should show the new Sample Workload:
-![Product Switcher Example Image](./docs/productSwitcher.png)
+
+:::image type="content" source="./media/extensibility-frontend/product-switcher.png" alt-text="Product Switcher Example Image.":::
 
 Select the **Sample Workload** and navigate the user to the Sample workload Home page. The upper section presents the Create Experience:
-![Create Card Image](./docs/createCard.png)
+
+:::image type="content" source="./media/extensibility-frontend/create-card.png" alt-text="Create Card Image.":::
 
 Click on the *Sample Workload* card to open the Sample Workload's UI within Fabric:
-![Main Sample UI image](./docs/sampleEditor.png)
+
+:::image type="content" source="./media/extensibility-frontend/sample-editor.png" alt-text="[Main Sample UI image.":::
 
 Explore the various controls to see Fabric's ExtensionClient API (SDK) capabilities - open Notifications and Dialogs, Navigate to pages, get Theme and Workload settings, Execute Actions, etc. Most of the available SDK functionality is either wired to the buttons' actions, or registered as callbacks. The results are usually a Notification or a Message Box, showing that some API has been invoked. 
 Some examples:
+
 * the *Execute Action* calls the `action.execute()` API with an action named "sample.Action". The action's functionality is to show a Notification
 * click on the *Save* button on the Ribbon to call the `dialog.open()` API, which opens a dialog where a user provides a name and saves the item in Fabric (this is further explored in the CRUD section below)
 * *Get Theme Settings* button shows a list of Fabric's Theme configurations (via the `theme.get()` API)
 
 The Sample Workload UI is hosted in a Fabric `iframe` which we can see when we examine the page's DOM:
-![IFrame embedding image](./docs/iframeDOM.png)
+
+:::image type="content" source="./media/extensibility-frontend/iframe-dom.png" alt-text="IFrame embedding image.":::
 
 ## Package Structure
 
@@ -130,15 +134,15 @@ This is the package directory layout, with a description of the essential compon
 * **Manifests** - location of the Frontend manifest file (detailed below)
 * **node_modules** - the sample workload is shipped with pre-installed SDK packages - under `@trident` -  as their NPM package is not yet publically available
 * **src** - Workload code:
-    + **index.ts** - main initialization file, `boostrap`-ing the `index.worker` and `index.ui` IFrames - *detailed below*
-    + **App.tsx** - routing of paths to pages, e.g. - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
-    + **assets** - location for images(`svg`, `jpg`, `png`, ...), that can be referenced in the **Manifest** and be shown in the UI. E.g. `assets/github.svg` is set in the manifest as the Product's icon.
-    + **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc...)
-    + **controller** - the Controller that is calling the SDK APIs
-    + **models** - the contracts and models in use by the UI itself and for communication with the boilerplate's Backend
-    + **tools** - 
-      + `webpack.config.js` - configuration of the local Node.js server
-      + `manifest.reader.js` - reading the Manifest file
+  * **index.ts** - main initialization file, `boostrap`-ing the `index.worker` and `index.ui` IFrames - *detailed below*
+  * **App.tsx** - routing of paths to pages, e.g. - `/sample-workload-editor` is routed to the `SampleWorkloadEditor` function under `components`
+  * **assets** - location for images(`svg`, `jpg`, `png`, ...), that can be referenced in the **Manifest** and be shown in the UI. E.g. `assets/github.svg` is set in the manifest as the Product's icon.
+  * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc...)
+  * **controller** - the Controller that is calling the SDK APIs
+  * **models** - the contracts and models in use by the UI itself and for communication with the boilerplate's Backend
+  * **tools** - 
+    * `webpack.config.js` - configuration of the local Node.js server
+    * `manifest.reader.js` - reading the Manifest file
 
 ## Diving into the code
 
@@ -198,7 +202,8 @@ The current workspace objectId is passed into the Frontend-only experience as we
 ```
 
 The invocation and handling of action can be described by this diagram:
-![Actions Invocation](./docs/actions.png)
+
+:::image type="content" source="./media/extensibility-frontend/actions.png" alt-text="Diagram of actions invocation.":::
 
 ### index.ui
 
@@ -307,7 +312,9 @@ An attempt to create an item under a non-compatible workspace will fail.
 ! Currently a saved item doesn't automatically appear in the workspace and a page refresh is needed. 
 
 #### GET
+
 When clicking on an existing Sample Workload item in the workspace view, Fabric navigates to the route that is defined in the Frontend manifest, under `artifacts`-->`editor`-->`path`:
+
 ```
 "artifacts": [
 		{
@@ -319,7 +326,8 @@ When clicking on an existing Sample Workload item in the workspace view, Fabric 
 ```
 
 As we invoke `artifactCrud.getArtifact`, the data is loaded from Fabric's backend (along with data from the Workload Backend), and is loaded into the `artifactItem` object of the opened GUI.
-![Opening existing items](./docs/itemsInWorkspace.png)
+
+:::image type="content" source="./media/extensibility-frontend/items-in-workspace.png" alt-text="Opening existing items.":::
 
 #### UPDATE
 
@@ -328,9 +336,9 @@ An existing item can be updated via `artifactCrud.updateArtifact` - currently th
 #### DELETE
 
 The delete operation can be called either from Fabric's Workspace view (as a general action available for all items), or via an explicit call from the Workload to `artifactCrud.deleteArtifact`.
-Both calls would end up going throught the Workload backend's `onDeleteItem` callback
+Both calls would end up going through the Workload backend's `onDeleteItem` callback
 
- ### Authentication
+### Authentication
 
  In sample workload editor, there's a section that lets you navigate to the authentication section.
  Before using authentication API, an AAD app is required to be configured the right way in AAD.
@@ -347,7 +355,8 @@ Both calls would end up going throught the Workload backend's `onDeleteItem` cal
 ## Debugging
 
 Open the **Source** tab of the browser's DevTools (F12) to see the Worker and UI IFrames:
-![Debugging image](./docs/debugging.png)
+
+:::image type="content" source="./media/extensibility-frontend/debugging.png" alt-text="Debugging image.":::
 
 We can place a breakpoint both in the Worker IFrame and see the main `switch` on the incoming Action, as well as debug the UI IFrame, e.g. the code inside `SampleWorkloadEditor`.
 
@@ -364,7 +373,7 @@ Changes to the manifest's entries, the wiring of different actions and updating 
 
 ## Extension Client SDK - supported APIs
 
-The SDK documentation is located [in the docs section of this repo](./docs/client-3p/index.html)
+The SDK documentation is located [in the docs section of this repo](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/docs/client-3p/index.html)
 To view it, download or clone the repo. and open the `index.html` from the file system.
 This is the API documentation that can be seen in each of the SDK's files.
 
@@ -397,9 +406,6 @@ A list of the currently- supported APIs:
 * artifactSchedule.runArtifactJob
 * artifactSchedule.cancelArtifactJob
 * artifactRecentRuns.open
-
-## Known Issues
-
 
 ## Related content
 

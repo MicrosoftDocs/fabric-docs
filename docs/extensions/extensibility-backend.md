@@ -11,9 +11,7 @@ ms.date: 12/27/2023
 
 # Fabric extensibility backend boilerplate
 
-## Introduction
-
-This repository serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide will help you set up the environment and configure the necessary components to get started. The key components and their roles in the architecture are outlined below:
+This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-developer-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide will help you set up the environment and configure the necessary components to get started. The key components and their roles in the architecture are outlined below:
 
 #### Frontend (FE)
 
@@ -35,40 +33,34 @@ Our architecture seamlessly integrates with Lakehouse, allowing operations such 
 
 Azure Active Directory (AAD) is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
-This overview provides a glimpse into the intricacies of our architecture. For detailed information on project configuration, guidelines, and getting started, please refer to the respective sections in this README.
+This overview provides a glimpse into our architecture. For more information on project configuration, guidelines, and getting started, refer to the respective sections in this [README](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/README.md).
 
-![OVERALL](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/4bddb066-50bd-43a2-b85e-d0cb41347eda)
+:::image type="content" source="./media/extensibility-backend/overview.png" alt-text="Diagram showing how Fabric SDK integrated into Fabric.":::
 
 The frontend (FE) establishes communication with the Fabric FE portal via an IFrame. The portal, in turn, interacts with the Fabric backend (BE) by making calls to its exposed public APIs.
 
-For interactions between the BE development box and the Fabric BE, the Azure Relay serve as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource. 
+For interactions between the BE development box and the Fabric BE, the Azure Relay serve as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
 The communication is facilitated through the use of Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
 
 The authentication for all communication within these components is ensured through Azure Active Directory (AAD), providing a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
 
 ## Project Configuration Guidelines
 
-Our project operates on the .NET 7 framework, necessitating the installation of the .NET 7.0 SDK, available for download from the official .NET website. As our project harnesses the capabilities of .NET 7, it is required to use Visual Studio 2022. NET 6.0 or higher in Visual Studio 2019 is not supported.
+Our project operates on the .NET 7 framework, necessitating the installation of the .NET 7.0 SDK, available for download from the [official .NET website](https://dotnet.microsoft.com/). As our project harnesses the capabilities of .NET 7, you need to use Visual Studio 2022. NET 6.0 or higher in Visual Studio 2019 is not supported.
 
 Ensure that the NuGet Package Manager is integrated into your Visual Studio installation. This tool is required for streamlined management of external libraries and packages essential for our project.
 
-#### NuGet package management
+### NuGet package management
 
-	<NuspecFile>Packages\manifest\ManifestPackage.nuspec</NuspecFile>
-This property specifies the path to the NuSpec file used for creating the NuGet package. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
-<br /><br />
+* `<NuspecFile>Packages\manifest\ManifestPackage.nuspec</NuspecFile>`: This property specifies the path to the NuSpec file used for creating the NuGet package. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
 
-	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This is particularly useful to ensure that the package is always up-to-date with the latest changes in the project.
-<br /><br />
+* `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This is particularly useful to ensure that the package is always up-to-date with the latest changes in the project.
 
-	<IsPackable>true</IsPackable>
-This property, when set to true, indicates that the project is packable, meaning it can be packaged into a NuGet package. It is an essential property for projects intended to produce NuGet packages during the build process.
-<br /><br />
+* `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It is an essential property for projects intended to produce NuGet packages during the build process.
 
-The generated NuGet package will be located in the **src\bin\Debug** directory after the build process.
+The generated NuGet package is located in the **src\bin\Debug** directory after the build process.
 
-#### Dependencies
+### Dependencies
 
 The BE Boilerplate depends on the following Azure SDK packages:
 
@@ -77,9 +69,10 @@ The BE Boilerplate depends on the following Azure SDK packages:
 * Azure.Storage.Files.DataLake
 Additionally, incorporate the Microsoft Identity package, as it plays a crucial role in implementing secure authentication and authorization, particularly when interfacing with Azure Active Directory (AAD) or other identity providers.
 
-Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. Although the SDK will eventually become public and seamlessly installable during the build process, it currently resides within the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section prior to the build process.
+Lastly, our Software Development Kit (SDK) serves as the conduit linking our project to Fabric. The SDK will currently resides in the repository in src/packages/fabric. To configure the NuGet Package Manager, specify the path in the 'Package Sources' section prior to the build process.
 
-	﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+```
+	<Project Sdk="Microsoft.NET.Sdk.Web">
 
 	  <PropertyGroup>
 	    <TargetFramework>net7.0</TargetFramework>
@@ -116,18 +109,19 @@ Lastly, our Software Development Kit (SDK) serves as the conduit linking our pro
 	</Target>
 
 	</Project>
+```
 
 ## Getting Started
 
 To set up the boilerplate/sample project on your local machine, follow these steps:
 
 1. Clone the Boilerplate: git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
-2. Open Solution in Visual Studio 2022 (since our project works with net7).
-3. Install Microsoft.Fabric.Workload.Sdk (nupkg and dependencies exist in src/packages/fabric).
+1. Open Solution in Visual Studio 2022 (since our project works with net7).
+1. Install Microsoft.Fabric.Workload.Sdk (nupkg and dependencies exist in src/packages/fabric).
    One approach is to configuring your package manager to include a local source (by accessing 'Tools -> NuGet Package Manager -> Package Manager Settings -> Package Sources') that points to ./Packages/fabric:
 ![local](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/11fd1bca-18d1-4a0f-8e4b-8425511f782d)
 
-4. Setup Workload Configuration\
+1. Setup Workload Configuration\
 	&nbsp;&nbsp;a. Copy workload-dev-mode.json from src/Config to C:\.\
 	&nbsp;&nbsp;b. In the workload-dev-mode.json file, update the following fields to match your configuration:\
 		&emsp;&emsp;i. EnvironmentType: The environment to work with.\
@@ -139,7 +133,7 @@ To set up the boilerplate/sample project on your local machine, follow these ste
 		&emsp;&emsp;iii. ClientSecret: The secret for the workload AAD application.\
 		&emsp;&emsp;iv. Audience: Audience for incoming AAD tokens.\
 	&nbsp;&nbsp;Please note that there is work to merge the two configuration files into one.
-5. Manifest Package\
+1. Manifest Package\
 To generate a manifest package file, build Fabric_Extension_BE_Boilerplate which will run a 3 step process to generate the manifest package file:
 
 	a. Trigger Fabric_Extension_BE_Boilerplate_WorkloadManifestValidator.exe on workloadManifest.xml in Packages\manifest\files\
@@ -150,7 +144,7 @@ To generate a manifest package file, build Fabric_Extension_BE_Boilerplate which
 	c. After successful validation, pack the WorkloadManifest.xml and FrontendManifest.json files\
 	&emsp;into ManifestPackage.1.0.0.nupkg. The resulting package can be found in **src\bin\Debug**.\
 Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-dev-mode.json configuration file.
-7. Program.cs
+1. Program.cs
 	Serves as the entry point and startup script for your application. In this file, you can configure various services, initialize the application, and start the web host. It plays a pivotal role in setting up the foundation of your project.
 	Example: Registering a Custom Workload Configuration, one of the services you can configure in Program.cs is a custom workload configuration. This service allows you to define specific settings for your workload, which can be essential for 		tailoring your application's behavior:
 	    services.AddSingleton(sp => new FabricWorkloadConfiguration
@@ -158,8 +152,8 @@ Copy the ManifestPackage.1.0.0.nupkg file to the path defined in the workload-de
 		    WorkloadName = "Fabric.WorkloadSample",
 		});
 	
-8. Build to ensure your project can access the required dependencies for compilation and execution. 
-9. Lastly, change your startup project in Visual Studio to the 'Boilerplate' project and simply click the "Run" button. 
+1. Build to ensure your project can access the required dependencies for compilation and execution. 
+1. Lastly, change your startup project in Visual Studio to the 'Boilerplate' project and simply click the "Run" button. 
 ![Run](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/138197766/16da53ad-013a-4382-b6cd-51acc4352c52)
 
 Upon the initialization of the workload, an authentication prompt will be presented. It is essential to highlight that administrative privileges for the capacity are a prerequisite:
