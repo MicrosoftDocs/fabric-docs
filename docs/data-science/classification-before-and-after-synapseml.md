@@ -6,7 +6,7 @@ ms.custom: build-2023
 ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 06/13/2023
+ms.date: 12/28/2023
 ---
 # Classification - before and after SynapseML
 
@@ -22,7 +22,7 @@ hyperparameters and choosing the best model.
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Setup
 
