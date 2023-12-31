@@ -41,9 +41,9 @@ Any use of third-party trademarks or logos are subject to those third-party's po
   - [Resources](#resources)
 - [Publication Process (TBD)](#publication)
 
-## What is Fabric
-
 ## Introduction
+
+### What is Fabric
 
 Microsoft Fabric is a comprehensive analytics solution designed for enterprise-level applications. This platform encompasses a wide range of services, including data engineering, real-time analytics, and business intelligence, all consolidated within a single, unified framework.
 The key advantage of Microsoft Fabric is its integrated approach, that eliminates the need for disparate services from multiple vendors. Users can leverage this platform to streamline their analytics processes, with all services accessible from a single source of truth.
@@ -95,15 +95,10 @@ These are data visualization applications that are entirely based on existing Fa
 
 ## Build Your Own Workloads
 
-This chapter will cover the basic concepts and components of Fabric, and a dive into the step-by-step process of creating a workload. We’ll cover everything from setting up your environment, to configuring your workload, to deploying and managing it.
+This chapter will cover the basic concepts and components of Fabric, and a dive into the step-by-step process of creating a workload. We’ll cover everything from setting up your environment, to configuring your workload, to deploying and managing it. In the following sections, we will introduce the key components of our system and provide an overview of the architecture. These components work together to create a robust and flexible platform for your development needs.
 
-### Note
-
- Please ensure that you have these tools installed and properly configured before proceeding with the guide. If you don’t have these tools installed, you can find installation instructions on their respective official websites.
-
-### Introducing Workloads
-
-In the following sections, we will introduce the key components of our system and provide an overview of the architecture. These components work together to create a robust and flexible platform for your development needs. Let’s delve into these components and their roles within our architecture.
+> [!NOTE]
+> Before proceeding with the guide, ensure that you have these tools installed and properly configured. If you don’t have these tools installed, you can find installation instructions on their respective official websites.
 
 ### Fabric Workload Diagram
 
@@ -115,7 +110,7 @@ The following diagram is a high-level overview of how workloads function within 
 
 For more detailed diagrams depicting the communication and authentication of the various components see the [BE Authentication and Security](Backend/README.md#authentication-and-security) and the [Authentication Overview](Authentication/overview.md#authentication-overview) diagrams.
 
-![Alt text](<ISV E2E Architecture flow overview-1.png>)
+:::image type="content" source="./media/extensibility-overview/architecture-flow-overview.png" alt-text="Diagram of ISV end to end architecture flow.":::
 
 #### Frontend (FE)
 
@@ -143,71 +138,50 @@ We employ Entra ID (formerly AAD) for robust and secure authentication, ensuring
 
 ### Frontend prerequisites
 
-Before we dive into the guide, there are a few prerequisites that you need to have installed on your system. These tools will be used throughout the guide, so it’s important to ensure that you have them set up correctly.
+There are a few prerequisites that you need to have installed on your system. These tools are used throughout the guide, so it’s important to ensure that you have them set up correctly.
 
-#### Git
+- [Git](https://github.com/join) - A distributed version control system that we’ll use to manage and track changes to our project.
 
-A distributed version control system that we’ll use to manage and track changes to our project.
+- [NPM (Node Package Manager)](https://www.npmjs.com/) - This is the default package manager for Node.js and it’s used to manage and share the packages that you use in your project.
 
-#### NPM (Node Package Manager)
+- [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We’ll use this to run our server-side JavaScript code.
 
-This is the default package manager for Node.js and it’s used to manage and share the packages that you use in your project.
+- [Webpack](https://webpack.js.org/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
-#### Node.js
-
-An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We’ll use this to run our server-side JavaScript code.
-
-#### Webpack
-
-A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
-
-#### Webpack CLI
-
-The command line interface for Webpack. This allows us to use Webpack from the command line.
+- [Webpack CLI](https://webpack.js.org/api/cli/) - The command line interface for Webpack. This allows us to use Webpack from the command line.
 This guide outlines the setup for development workload sample in Fabric tenant. It involves enabling the workload feature and Developer mode in the designated tenant. It assumes you have Node.js and npm installed, and walks you through the entire process of running a locally hosted workload frontend.
 
-In the context of executing the workload SDK sample and building a workload, it is strongly recommended to employ a dedicated development tenant. This practice ensures an isolated environment, minimizing the risk of inadvertent disruptions or modifications to production systems. Moreover, it provides an additional layer of security, safeguarding production data from potential exposure or compromise. Adherence to this recommendation aligns with industry best practices and contributes to a robust, reliable, and secure development lifecycle.
+When executing the workload SDK sample and building a workload, industry best practice is to use a dedicated development tenant. This practice ensures an isolated environment, minimizing the risk of inadvertent disruptions or modifications to production systems. It also provides an additional layer of security, safeguarding production data from potential exposure or compromise. 
 
 ### Frontend Guides
 
-#### [FE Quick Setup guide](Frontend/README.md#installation-and-usage): provides a fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
+-[FE Quick Setup guide](./extensibility-frontend.md#installation-and-usage): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
 
-#### [FE Deep Dive guide](Frontend/README.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. 
-
-It’s ideal for those who want to tailor the workload to their specific needs.
+- [FE Deep Dive guide](./extensibility-frontend.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. It’s ideal if you want to tailor the workload to your specific needs.
 The UX workload frontend, a standard web app, uses an extension client SDK to operate within the Fabric portal, providing workload-Specific UI experiences. This SDK can be installed in Angular or React applications, with React recommended for compatibility with the Fluent UI library. The package also includes a UX workload Sample implementation built on Fluent UI, designed for React. Alongside the web app, workloads must provide a UX workload Frontend Manifest, a JSON resource containing essential information about the workload. This combination allows workloads to integrate their web applications within the Fabric portal, ensuring a consistent user experience.
 
 > [!NOTE]
 >
-> - Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](Frontend/README.md).
+> - Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](./extensibility-frontend.md).
 > - Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](Authentication/Setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
 
 ## Getting Started with the Workload Backend
 
-This chapter provides a comprehensive walkthrough for setting up and configuring the workload BE. Fabric developer sample project is built on the .NET 7 framework and utilizes various tools and packages to deliver a high-performance backend solution.
+This section walks you through how to set up and configure the workload BE. Fabric developer sample project is built on the .NET 7 framework and utilizes various tools and packages to deliver a high-performance backend solution.
 
 ### Backend prerequisites
 
 Before proceeding with the project setup, ensure the following tools and packages are installed and configured:
 
-#### .NET 7.0 SDK
+- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/visual-studio-sdks)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - Note that .NET 6.0 or higher in Visual Studio 2019 is not supported.
+- [NuGet Package Manager](https://www.nuget.org/)
+- The workload BE has dependencies on the following Azure SDK packages:
 
-The project is built on the .NET 7 framework. Download and install the .NET 7.0 SDK from the official .NET website.
-
-#### Visual Studio 2022
-
-The project requires Visual Studio 2022 due to its dependency on .NET 7. Note that .NET 6.0 or higher in Visual Studio 2019 is not supported.
-
-#### NuGet Package Manager
-
-The NuGet Package Manager should be integrated into your Visual Studio installation for managing external libraries and packages.
-
-#### The workload BE has dependencies on the following Azure SDK packages:
-
-* Azure.Core
-* Azure.Identity
-* Azure.Storage.Files.DataLake
-* Microsoft Identity package
+  - Azure.Core
+  - Azure.Identity
+  - Azure.Storage.Files.DataLake
+  - Microsoft Identity package
 
 #### Workload BE Guide
 
@@ -217,14 +191,14 @@ With the prerequisites in place, you can proceed with the project configuration.
 
 Here are all the resources included and referenced. These documents provide additional information and can serve as a reference:
 
-* [Authentication Overview](Authentication/overview.md)
-* [Authentication Setup Guide](Authentication/Setup.md)
-* [Authentication JavaScript API](Authentication/authJSAPI.md)
-* [Backend Configuration Guide](Backend/README.md)
-* [Frontend Configuration Guide](Frontend/README.md)
-* [Frontend Manifest](Frontend/frontendManifest.md)
-* [Backend API Requests Authentication Overview](BACKENDAUTH.md)
-* [Monitoring Hub Configuration Guide](MonitoringHub.md)
+- [Authentication Overview](Authentication/overview.md)
+- [Authentication Setup Guide](Authentication/Setup.md)
+- [Authentication JavaScript API](Authentication/authJSAPI.md)
+- [Backend Configuration Guide].(./extensibility-backend.md))
+- [Frontend Configuration Guide](./extensibility-frontend.md)
+- [Frontend Manifest](Frontend/frontendManifest.md)
+- [Backend API Requests Authentication Overview](BACKENDAUTH.md)
+- [Monitoring Hub Configuration Guide](MonitoringHub.md)
 
 ## Publication
 
@@ -236,5 +210,5 @@ See [Release Notes](./ReleaseNotes.md)
 
 ## Related content
 
-* [Fabric extensibility frontend](extensibility-frontend.md)
-* [Fabric extensibility backend](extensibility-backend.md)
+- [Fabric extensibility frontend](extensibility-frontend.md)
+- [Fabric extensibility backend](extensibility-backend.md)

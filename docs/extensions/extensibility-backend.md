@@ -13,23 +13,23 @@ ms.date: 12/27/2023
 
 This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-developer-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide will help you set up the environment and configure the necessary components to get started. The key components and their roles in the architecture are outlined below:
 
-#### Frontend (FE)
+## Frontend (FE)
 
 The frontend is responsible for managing the user experience (UX) and behavior. It communicates with the Fabric FE portal via an IFrame, facilitating seamless interaction with the user.
 
-#### Backend (BE)
+## Backend (BE)
 
 The backend plays a crucial role in storing both data and metadata. It utilizes CRUD operations to create Workload (WL) items along with metadata, and executes jobs to populate data in storage. The communication between the frontend and backend is established through public APIs.
 
-#### Azure Relay and Fabric SDK
+## Azure Relay and Fabric SDK
 
 Azure Relay acts as a conduit for interactions between the BE development box and the Fabric BE. The Fabric SDK, installed on the BE development box, enhances the communication and integration capabilities.
 
-#### Lakehouse Integration
+## Lakehouse Integration
 
 Our architecture seamlessly integrates with Lakehouse, allowing operations such as saving, reading, and fetching data. The interaction is facilitated through Azure Relay and the Fabric SDK, ensuring secure and authenticated communication.
 
-#### Authentication and Security
+## Authentication and Security
 
 Azure Active Directory (AAD) is employed for secure authentication, ensuring that all interactions within the architecture are authorized and secure.
 
@@ -43,6 +43,8 @@ For interactions between the BE development box and the Fabric BE, the Azure Rel
 The communication is facilitated through the use of Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
 
 The authentication for all communication within these components is ensured through Azure Active Directory (AAD), providing a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
+
+-------------------
 
 ## Project Configuration Guidelines
 

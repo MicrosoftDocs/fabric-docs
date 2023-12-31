@@ -50,8 +50,7 @@ The following diagram depicts how Fabric is using the Manifest for reading the W
 A prerequisite for using custom workloads in Fabric is enabling this feature in Admin Portal by the Tenant Administrator.
 This is done by enabling the switch 'Workload extensions (preview)' - either for the entire organization, or for specific groups within the organization.
 
-:::image type="content" source="./media/extensibility-frontend/devx-diagram.png" alt-text="DEVX diagram example.":::
-![Workloads tenant switch](./docs/tenantSwitch.png)``
+:::image type="content" source="./media/extensibility-frontend/tenant-switch.png" alt-text="Workloads tenant switch.":::
 
 To get started with the Sample Project, follow these simple steps:
 
@@ -286,7 +285,7 @@ An example with `notification.open()` API:
 ### CRUD operations
 
 While a Frontend-only development scenario is easily supported, the full End-to-end developer experience requires saving, reading and editing existing workload items.
-The setup and use of the Backend side is described in details in the Backend section of this repository [Backend documentation](../Backend/README.md)
+The setup and use of the Backend side is described in details in the [Fabric extensibility backend boilerplate].
 
 Once the backend is up and running, and the Fabric.WorkloadSample.SampleWorkloadArtifact type is **registered in Fabric**, it's possible to perform CRUD operations on this type.
 These operations are exposed via `ArtifactCrudAPI` inside of `ExtensionClientAPI` - [ArtifactCrud API](./node_modules/@trident/extension-client-3p/src/lib/apis/artifact-crud-api.d.ts)
@@ -368,7 +367,7 @@ Additional information can be found [on the Fluent UI page](https://develop.flue
 ## Frontend Manifest customization
 
 As mentioned, the frontend manifest describes the frontend aspects of the workload - appearance of the product, names, visual assets, available actions, and is the main point of contact of Fabric with the workload. 
-For our sample workload, the `localWorkloadManifest.json` is the manifest that is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [here](./frontendManifest.md).
+For our sample workload, the `localWorkloadManifest.json` is the manifest that is loaded into Fabric in Developer mode, and its various sections, definitions and examples of the manifest are shown [in the frontend manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/frontendManifest.md).
 Changes to the manifest's entries, the wiring of different actions and updating of visual assets can be seen in real time after a page refresh.
 
 ## Extension Client SDK - supported APIs
