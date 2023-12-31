@@ -107,11 +107,11 @@ This section lists the limitations for the deployment rules.
 
 * When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.md#lost-connections-after-deployment), rules for that workspace are lost. To use these rules again, reconfigure them.
 
-* Datasource rules for dataflows that have other dataflows as sources, aren't supported.
+* Data source rules for dataflows that have other dataflows as sources, aren't supported.
 
-* Datasource rules for common data model (CDM) folders in a dataflow, aren't supported.
+* Data source rules for common data model (CDM) folders in a dataflow, aren't supported.
 
-* Datasource rules for semantic models that use dataflows as their source, aren't supported.
+* Data source rules for semantic models that use dataflows as their source, aren't supported.
 
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule isn't valid anymore, and deployment fails.
 
