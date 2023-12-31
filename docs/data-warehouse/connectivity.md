@@ -37,6 +37,9 @@ The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the sta
 To retrieve the connection string, follow these steps:
 
 1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select **More options**. 
+
+   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options button is boxed.":::
+
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
 
    :::image type="content" source="media\connectivity\warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\warehouse-copy-sql-connection-string.png":::
