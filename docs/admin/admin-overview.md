@@ -9,19 +9,7 @@ ms.date: 12/27/2023
 
 # Administration overview
 
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric offers a comprehensive set of features for dealing with data. Fabric features are organized in the following fabric experiences:
-
-* [OneLake](../onelake/onelake-overview.md)- Store your data.
-
-* [Data Science](../data-science/data-science-overview.md) - Explore data.
-
-* [Data Warehouse](../data-warehouse/data-warehousing.md)- Analyze data.
-
-* [Data Engineering](../data-engineering/data-engineering-overview.md) - Collect, store, process, and analyze large volumes of data.
-
-* [Data Factory](../data-factory/data-factory-overview.md) - Transform your data.
-
-* [Power BI](/power-bi/fundamentals/power-bi-overview) - Visualize your data.
+[!INCLUDE [fabric-overview](../../includes/fabric-overview.md)]
 
 All these experiences reside in the cloud based Fabric platform. Although it appears that anyone in the organization can do anything they want in Fabric, this isn't the case. Fabric allows admins to control who has access to data. This approach allows users to try out new features without compromising sensitive data. Many features also have their own set of settings that can be controlled by admins. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
@@ -124,4 +112,3 @@ This section provides a high level list of some of Fabric admin capabilities men
 * [Security overview](../security/security-overview.md)
 
 * [Governance and compliance overview](../governance/governance-compliance-overview.md)
-t
