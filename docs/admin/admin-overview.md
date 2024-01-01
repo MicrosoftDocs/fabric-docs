@@ -9,7 +9,7 @@ ms.date: 12/27/2023
 
 # Administration overview
 
-[!INCLUDE [fabric-overview](../../includes/fabric-overview.md)]
+[!INCLUDE [fabric-overview](../includes/fabric-overview.md)]
 
 All these experiences reside in the cloud based Fabric platform. Although it appears that anyone in the organization can do anything they want in Fabric, this isn't the case. Fabric allows admins to control who has access to data. This approach allows users to try out new features without compromising sensitive data. Many features also have their own set of settings that can be controlled by admins. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
@@ -101,11 +101,11 @@ This section provides a high level list of some of Fabric admin capabilities men
 
 | Capability |Description |
 |------------|------------|
-| [Tenant settings](../admin/about-tenant-settings.md)  | Control Fabric settings across your organization |
-| [workspace roles](../get-started/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
 | [Capacity Metrics app](../enterprise/metrics-app.md)  | Monitor your organization's consumption          |
 | [Feature usage and adoption report](../admin/feature-usage-adoption.md)        | Review the usage of Fabric features       |
+| [Tenant settings](../admin/about-tenant-settings.md)  | Control Fabric settings across your organization |
 | [Track user activities in Microsoft Fabric](../admin/track-user-activities.md) | Use log entries to view Fabric operations |
+| [workspace roles](../get-started/roles-workspaces.md) | Set up permissions for Fabric workspaces         |
 
 ## Related content
 

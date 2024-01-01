@@ -9,7 +9,7 @@ ms.date: 12/15/2023
 
 # Security in Microsoft Fabric
 
-[!INCLUDE [fabric-overview](../../includes/fabric-overview.md)]
+[!INCLUDE [fabric-overview](../includes/fabric-overview.md)]
 
 As a SaaS service, Fabric offers comprehensive security for the entire platform. It removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can leverage the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage and control your security settings, in line with your changing needs and demands.
 
@@ -57,6 +57,16 @@ Your organization might store data in other locations that are not part of the F
 
 ## Capabilities
 
+Review this section for a list of some of the security features available in Microsoft Fabric.
+
+| Capability |Description |
+|------------|------------|
+| [Conditional access](security-conditional-access.md)  | Secure your apps by using Microsoft Entra ID |
+| [Lockbox](security-lockbox.md)  | Control how Microsoft engineers access your data                   |
+| [OneLake security](../onelake/onelake-security.md) | Learn how to secure your data in OneLake. |
+| [Resiliency](az-resiliency.md) | Reliability and regional resiliency with Azure availability zones   |
+| [Service tags](security-service-tags.md) | Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric |
+
 RLS and OLS
 
 Permissions (workspace, item, roles)
@@ -71,7 +81,7 @@ Multi tenancy
 
 * [Governance and compliance overview](../governance/governance-compliance-overview.md)
 
-
+* [Microsoft Fabric licenses](../enterprise/licenses.md)
 
 
 
@@ -88,17 +98,4 @@ Security and reliability are key foundational features for every organization. I
 
 ## Security features
 
-Review this section for a list of the security features available in Microsoft Fabric.
 
-- [Conditional access](security-conditional-access.md) - Secure your apps by using Microsoft Entra ID.
-- [Resiliency](az-resiliency.md) - Reliability and regional resiliency with Azure availability zones.
-- [Lockbox](security-lockbox.md) - Control how Microsoft engineers access your data.
-- [Service tags](security-service-tags.md) - Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric.
-- [OneLake security](../onelake/onelake-security.md) - Learn how to secure your data in OneLake.
-
-## Related content
-
-For more information about Fabric security, see the following resources.
-
-- [Microsoft Fabric security fundamentals](security-fundamentals.md)
-- [Microsoft Fabric licenses](../enterprise/licenses.md)
