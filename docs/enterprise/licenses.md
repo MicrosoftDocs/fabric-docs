@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/02/2023
+ms.date: 12/31/2023
 ---
 
 # Microsoft Fabric concepts and licenses
@@ -86,11 +86,9 @@ The capacity and SKUs table lists the Microsoft Fabric SKUs. Capacity Units (CU)
 | F256 | 256 | P3/A6 | 32 |
 | F512 | 512 | P4/A7 | 64 |
 | F1024 | 1024 | P5/A8 | 128 |
-| F2048<sup>**</sup> | 2048 | - | 256 |
+| F2048 | 2048 | - | 256 |
 
 <sup>*</sup>SKUs that are smaller than F64 require a Pro or Premium Per User (PPU) license, or a Power BI individual trial to consume Power BI content.
-
-<sup>**</sup>If you purchase an F2048 through the Azure portal, you will not be able to access it through the Fabric admin portal and it will not be available for workspace migration.
 
 ### Per user licenses
 
