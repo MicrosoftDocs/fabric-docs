@@ -119,6 +119,8 @@ This section lists the limitations for the deployment rules.
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they didn't take effect yet.
 
+* Creating data source rules on a semantic model that uses Native query and DirectQuery together is not supported.
+
 >[!NOTE]
 >Parameter rules aren't supported for paginated reports.
 
