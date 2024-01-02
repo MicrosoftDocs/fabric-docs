@@ -149,7 +149,7 @@ This is the package directory layout, with a description of the essential compon
 
 Before bootstrapping, we check if we need to close the window by checking the path - this is needed for authentication API (see more in authentication section).
 
-```
+```javascript
 const redirectUriPath = '/close';
 const url = new URL(window.location.href);
 if (url.pathname?.startsWith(redirectUriPath)) {
@@ -163,7 +163,7 @@ Every Fabric Workload App needs to support being loaded in two modes:
 * Worker mode: App in worker mode runs in an invisible IFrame, which is mainly used to receive commands sent from the outside world and respond to them.
 `@trident/extension-client-3p` provides a `bootstrap()` method to simplify the initialization steps. The bootstrap() method internally detects whether the current App is loaded in UI mode or worker mode, and then calls the appropriate initialization method (initializeUI vs. initializeWorker). After the initialization is complete, bootstrap() notifies Fabric micro-frontend framework of the initialization success or failure.
 
-```
+```javascript
 bootstrap({
     initializeWorker: (params) =>
         import('./index.worker').then(({ initialize }) => initialize(params)),
