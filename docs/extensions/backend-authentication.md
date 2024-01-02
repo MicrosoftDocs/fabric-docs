@@ -42,6 +42,7 @@ The main authentication checks performed for the SubjectAndAppToken are:
 3. **AppToken Properties Validation**: The `appToken` should not have an `scp` claim but should have an `idtyp` claim with 'app' as value. We also check that `tid` claim in the workload publisher tenant id.
 
     Sample appToken claims:
+
     ```json
     {
     "aud": "api://localdevinstance/12345678-77f3-4fcc-bdaa-487b920cb7ee/Fabric.WorkloadSample/123",

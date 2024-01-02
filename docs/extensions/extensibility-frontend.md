@@ -177,7 +177,8 @@ bootstrap({
 Here we have the main 'onAction' registration, handling events sent from the Fabric host, which are themselves triggered by executed *actions*.
 These actions can be either sent by the workload itself - to Fabric - and then called-back into the onAction handler; or initiated by the Fabric host - e.g. when clicking on 'Create Sample Item - Frontend Only', Fabric triggers the action 'open.createSampleWorkloadFrontendOnly', and the onAction handler initiates the opening of the workload main UI page, as seen in the code below.
 The current workspace objectId is passed into the Frontend-only experience as well.
-```
+
+```javascript
    extensionClient.action.onAction((message) => {
         switch (message.action) {
             /**
