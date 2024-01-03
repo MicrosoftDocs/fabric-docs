@@ -107,17 +107,19 @@ This section lists the limitations for the deployment rules.
 
 * When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.md#lost-connections-after-deployment), rules for that workspace are lost. To use these rules again, reconfigure them.
 
-* Datasource rules for dataflows that have other dataflows as sources, aren't supported.
+* Data source rules for dataflows that have other dataflows as sources, aren't supported.
 
-* Datasource rules for common data model (CDM) folders in a dataflow, aren't supported.
+* Data source rules for common data model (CDM) folders in a dataflow, aren't supported.
 
-* Datasource rules for semantic models that use dataflows as their source, aren't supported.
+* Data source rules for semantic models that use dataflows as their source, aren't supported.
 
 * If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule isn't valid anymore, and deployment fails.
 
 * After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
 * Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they didn't take effect yet.
+
+* Creating data source rules on a semantic model that uses Native query and DirectQuery together is not supported.
 
 >[!NOTE]
 >Parameter rules aren't supported for paginated reports.
