@@ -395,7 +395,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together.
+* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
 
