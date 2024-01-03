@@ -90,9 +90,9 @@ The screen layout is like the main editor. It consists of three sections, shown 
 
 1. **Canvas with diagram view**: In this pane, you can design your data transformation logic by selecting an operator (from the **Operations** menu) and connecting the eventstream and the destination nodes via the newly created operator node. You can drag and drop connecting lines or select and delete connections.
 
-- 1. **Right editing pane**: This pane allows you to configure the selected operation node or view the schema of the eventstream and destination.
+1. **Right editing pane**: This pane allows you to configure the selected operation node or view the schema of the eventstream and destination.
 
-- 1. **Bottom pane with data preview and authoring error tabs**: In this pane, preview the data in a selected node with **Data preview** tab. The **Authoring errors** tab lists any incomplete or incorrect configuration in the operation nodes.
+1. **Bottom pane with data preview and authoring error tabs**: In this pane, preview the data in a selected node with **Data preview** tab. The **Authoring errors** tab lists any incomplete or incorrect configuration in the operation nodes.
 
 ### Authoring errors
 
