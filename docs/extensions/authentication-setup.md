@@ -44,24 +44,23 @@ New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 
 ## Configuring your application in Microsoft Entra Id
 
-To work with authentication, you will need to have an application registered in Microsoft Entra Id, if you don't have an application registered, follow [this guide](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
+To work with authentication, you will need to have an application registered in Microsoft Entra Id, if you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
 
 You will need to apply the following configurations to your application:
+
 * Application should be a multi tenant app.
-* For Dev applications, the redirect URI should be configured as "http://localhost:60006/close" with SPA platform.
+* For Dev applications, the redirect URI should be configured as `http://localhost:60006/close` with SPA platform.
   This is required for our consent support - you may also add other redirect URIs as desired.
   
-Please note that the redirect URI should be a URI that simply closes the page when navigating to it, "http://localhost:60006/close" is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](../Frontend/src/index.ts) (If you change it, make sure it matches the one configured on your application). 
- 
+Please note that the redirect URI should be a URI that simply closes the page when navigating to it, `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](../Frontend/src/index.ts) (If you change it, make sure it matches the one configured on your application). 
+
   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/bdd63045-e63d-4a76-a407-61064458eaa6)
-
-
 
   **Note:** you can configure the redirect URI after creating the application under Manage -> Authentication.
 
 Next, you will need to change the Application Id URI for your application, to do so, go to Manage -> Expose an API, and edit the Application ID URI for your app:
 
-  * For development scenario, the Application ID URI should start with: "api://localdevinstance/[Workload's publisher's [tenant id](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-find-tenant) in lower case (tenant id of user used in fabric to run the sample)]/[Name of your workload]" and an optional sub-path at the end that starts with "/" (see examples).
+  * For development scenario, the Application ID URI should start with: "api://localdevinstance/[Workload's publisher's [tenant id](/entra/fundamentals/how-to-find-tenant) in lower case (tenant id of user used in fabric to run the sample)]/[Name of your workload]" and an optional sub-path at the end that starts with "/" (see examples).
 
     1. Workloadname name must be exactly how it's specified in the manifest.
     2. ID URI should not end with a slash.
@@ -130,27 +129,30 @@ Next, you will need to configure your workloadManifest.xml, go to [src/Packages/
 ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/6223464e-05a7-4c7e-97e8-2fd86cc10a2b)
 
 ## Configuring your workload local manifest and acquiring a token for your application (FrontEnd)
-After configuring your application, you will need to add the following configurations to your [local workload manifest](../Frontend/README.md#extension-section):  
+
+After configuring your application, you will need to add the following configurations to your [local workload manifest](../Frontend/README.md#extension-section): 
+ 
 Under "extension", add "devAADAppConfig": {  
 			  "audience": "", // The ID URI configured in your application for developer scenario  
 			  "redirectUri": "http://localhost:60006/close", // or the path you configured in index.ts  
 			  "appId": "" // your app Id  
 		  }
+
    ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/9fe741c5-f0d5-4d28-bb9d-906c44af8795)
 
 
 ## Ask for a token and consent the application
+
 **Note: This is needed for CRUD/Jobs to work.**  
 Run the frontend sample and create a sample item, scroll down until you see Navigate to authentication page button and click on it to go to the authentication section which looks like this:
 ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/bbd546e7-6008-44c2-85d6-8823b80cbcb3)
 
 Check "Request initial consent" and click on get access token button - this should trigger a consent for your application:
-(Additional information on how to handle consents will be updated soon).  
+(Additional information on how to handle consents will be updated soon).
+
 ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/361f6bdf-a86a-4930-83a6-4f328e6aac24)
 
 Note that this consent includes the dependencies you added earlier in "Add API Permissions".
-
-
 
 After finishing setting up you should be able to work with CRUD/Jobs operations, you also should be able to get an access token to your application in the client side.
 You can use the authentication page in the frontend sample as a playground to call your workload APIs (you can see what kind of APIs the backend sample offers in Backend/src/controllers).
