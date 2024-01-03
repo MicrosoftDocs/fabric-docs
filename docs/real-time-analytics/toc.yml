@@ -62,6 +62,8 @@ items:
     items: 
     - name: Data formats
       href: ingestion-supported-formats.md
+    - name: Schema optimization best practices
+      href: schema-best-practice.md
     - name: Get data from local file
       href: get-data-local-file.md
     - name: Get data from Azure storage
