@@ -46,7 +46,7 @@ With this menu option, you can now easily find your client-side logs, which can 
 
 ### Option to sign in to different accounts
 
-When you install OneLake file explorer, you can now choose which account to sign-in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then select **Sign Out**. Signing out exits OneLake file explorer and pauses the sync. To sign in with another account, start OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application. Previously, when you started OneLake file explorer, it automatically used the Microsoft Azure Active Directory identity currently logged into Windows to sync Fabric workspaces and items.
+When you install OneLake file explorer, you can now choose which account to sign-in with. To switch accounts, right-click the OneLake icon in the Windows notification area, select **Account**, and then select **Sign Out**. Signing out exits OneLake file explorer and pauses the sync. To sign in with another account, start OneLake file explorer again by searching for "OneLake" using Windows search (Windows + S) and select the OneLake application. Previously, when you started OneLake file explorer, it automatically used the Microsoft Entra ID currently logged into Windows to sync Fabric workspaces and items.
 
 When you sign in with another account, you see the list of workspaces and items refresh in OneLake file explorer. If you continue to workspaces associated with the previous account, you can manually refresh the view by selecting **Sync from OneLake**. Those workspaces are inaccessible while you're signed into a different account.
 
