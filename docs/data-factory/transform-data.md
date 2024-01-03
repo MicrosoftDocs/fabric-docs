@@ -57,7 +57,7 @@ Follow these steps to set up your dataflow.
 
 1. If it isn't selected, select the **Diagram view** button along the status bar at the bottom of the page, or select **Diagram view** under the **View** menu at the top of the Power Query editor. Either of these options can toggle the diagram view.
 
-   :::image type="content" source="media/transform-data/select-diagram-view-nline.png" alt-text="Screenshot showing where to select diagram view." lightbox="media/transform-data/select-diagram-view.png":::
+   :::image type="content" source="media/transform-data/select-diagram-view-inline.png" alt-text="Screenshot showing where to select diagram view." lightbox="media/transform-data/select-diagram-view.png":::
 
 1. Right-click your **SalesLT Customer** query, or select the vertical ellipsis on the right of the query, then select **Merge queries**.  
 
