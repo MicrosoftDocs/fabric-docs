@@ -49,6 +49,14 @@ For more information about Power BI Embedded, see:
 
 * Pause and start a capacity Azure - [Pause and start your Power BI Embedded capacity in the Azure portal](/power-bi/developer/embedded/azure-pbie-pause-start)
 
+## Fabric capacity deletion
+
+ When a Fabric capacity is deleted, the Fabric items in workspaces are soft-deleted and cannot be used. Classic items can still be used. 
+
+
+
+When a workspace with soft-deleted Fabric items is moved to a Fabric (or premium) workspace, the items are restored.
+
 ## Related content
 
 - [What is the admin portal?](admin-center.md)
