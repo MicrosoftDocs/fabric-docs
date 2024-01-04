@@ -1,8 +1,10 @@
 items:
-- name: Kusto query overview
+- name: Kusto Query Language overview
   href: /azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric
 - name: Syntax conventions
   href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context-rta&pivots=fabric
+- name: Kusto Query Language learning resources
+  href: /azure/data-explorer/kusto/../kql-learning-resources?context=/fabric/context/context-rta&pivots=fabric
 - name: Add a comment in KQL
   href: /azure/data-explorer/kusto/query/comment?context=/fabric/context/context-rta&pivots=fabric
 - name: Get started with KQL
@@ -37,9 +39,9 @@ items:
     - name: 'Learning path: Create queries for Microsoft Sentinel using Kusto Query
         Language'
       href: /training/paths/sc-200-utilize-kql-for-azure-sentinel/?context=/fabric/context/context-rta&pivots=fabric
-- name: Query best practices
+- name: Best practices for KQL queries
   items:
-  - name: Best practices
+  - name: Best practices for KQL queries
     href: /azure/data-explorer/kusto/query/best-practices?context=/fabric/context/context-rta&pivots=fabric
   - name: Optimize queries that use named expressions
     displayName: let statement, user defined functions, as operator, calculated
@@ -91,6 +93,7 @@ items:
     href: /azure/data-explorer/kusto/query/scalar-data-types/long?context=/fabric/context/context-rta&pivots=fabric
   - name: real
     href: /azure/data-explorer/kusto/query/scalar-data-types/real?context=/fabric/context/context-rta&pivots=fabric
+    displayName: double
   - name: string
     href: /azure/data-explorer/kusto/query/scalar-data-types/string?context=/fabric/context/context-rta&pivots=fabric
   - name: timespan
@@ -263,6 +266,8 @@ items:
       - name: pivotchart
         displayName: pivot chart
         href: /azure/data-explorer/kusto/query/visualization-pivotchart?context=/fabric/context/context-rta&pivots=fabric
+      - name: Plotly
+        href: /azure/data-explorer/kusto/query/visualization-plotly?context=/fabric/context/context-rta&pivots=fabric
       - name: scatterchart
         displayName: scatter chart
         href: /azure/data-explorer/kusto/query/visualization-scatterchart?context=/fabric/context/context-rta&pivots=fabric
@@ -719,6 +724,12 @@ items:
   - name: endofyear()
     displayName: endofyear() end of year
     href: /azure/data-explorer/kusto/query/endofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+  - name: erf()
+    displayName: Gaussian, error function, statistics, distribution
+    href: /azure/data-explorer/kusto/query/erf-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: erfc()
+    displayName: complementary error function, statistics, distribution
+    href: /azure/data-explorer/kusto/query/erfc-function?context=/fabric/context/context-rta&pivots=fabric
   - name: estimate_data_size()
     displayName: estimate_data_size() estimate data size
     href: /azure/data-explorer/kusto/query/estimate-data-sizefunction?context=/fabric/context/context-rta&pivots=fabric
@@ -1266,6 +1277,18 @@ items:
     href: /azure/data-explorer/kusto/query/varianceif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
   - name: variancep()
     href: /azure/data-explorer/kusto/query/variancep-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+- name: Graph operators
+  items:
+  - name: Graph operators overview
+    href: /azure/data-explorer/kusto/query/graph-operators?context=/fabric/context/context-rta&pivots=fabric
+  - name: make-graph
+    href: /azure/data-explorer/kusto/query/make-graph-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-match
+    href: /azure/data-explorer/kusto/query/graph-match-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-merge
+    href: /azure/data-explorer/kusto/query/graph-merge-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-to-table
+    href: /azure/data-explorer/kusto/query/graph-to-table-operator?context=/fabric/context/context-rta&pivots=fabric
 - name: Geospatial
   items:
   - name: Geospatial clustering overview

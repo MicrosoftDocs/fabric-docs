@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.topic: include
 ms.custom: 
-ms.date: 9/24/2023
+ms.date: 12/20/2023
 ---
 To integrate Git with your Microsoft Fabric workspace, you need to set up the following prerequisites in both Azure DevOps and Fabric.
 
@@ -18,7 +18,9 @@ To integrate Git with your Microsoft Fabric workspace, you need to set up the fo
 
 To access the Git integration feature, you need one of the following:
 
-- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). Your Power BI premium license still works for all Power BI features.
+- [Power BI Premium license](/power-bi/enterprise/service-premium-what-is). A Power BI premium license supports all Power BI items only.
 - [Fabric capacity](/fabric/enterprise/licenses#capacity-and-skus). A Fabric capacity is required to use all supported Fabric items.
 
-In addition, your organization’s administrator has to [enable the Fabric switch](/fabric/admin/fabric-switch). If this switch is disabled, contact your administrator.
+In addition, your organization’s administrator has to [enable the **Users can create Fabric items** tenant switch](/fabric/admin/about-tenant-settings#how-to-get-to-the-tenant-settings) from the Admin portal.
+
+:::image type="content" source="/fabric/includes/media/github-prereqs/fabric-switch.png" alt-text="Screenshot of Fabric switch enabled.":::

@@ -19,9 +19,9 @@ This Amazon S3 connector is supported in Data Factory for [!INCLUDE [product-nam
 
 Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 in Dataflow Gen2.
 
-## Support in data pipelines
+## Support in Data pipeline
 
-The Amazon S3 connector supports the following capabilities in data pipelines:
+The Amazon S3 connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -30,6 +30,6 @@ The Amazon S3 connector supports the following capabilities in data pipelines:
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
 
-To learn about how to connect to Amazon S3 data in data pipelines, go to [Set up your Amazon S3 connection](connector-amazon-s3.md#set-up-your-connection-in-a-data-pipeline).
+To learn about how to connect to Amazon S3 data in Data pipeline, go to [Set up your Amazon S3 connection](connector-amazon-s3.md#set-up-your-connection-in-a-data-pipeline).
 
-To learn about the copy activity configuration for Amazon S3 in data pipelines, go to [Configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md).
+To learn about the copy activity configuration for Amazon S3 in Data pipeline, go to [Configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md).

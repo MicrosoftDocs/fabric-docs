@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 12/18/2023
 ---
 
 # Buy a Microsoft Fabric subscription
@@ -46,7 +46,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
 
-1. Select the **Microsoft Fabric (preview)** service. You can search for *Microsoft Fabric (preview)* using the search menu.
+1. Select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
 
 2. Select **Create Fabric Capacity**.
 
@@ -72,6 +72,6 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
 Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
-## Next steps
+## Related content
 
 [Microsoft Fabric licenses](licenses.md)

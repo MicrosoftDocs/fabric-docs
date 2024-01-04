@@ -173,7 +173,7 @@ df_users = (
 )
 ```
 
-## Step 2. Perform exploratory data analysis
+## Step 2: Perform exploratory data analysis
 
 ### Display raw data
 
@@ -409,7 +409,7 @@ print(f"max user_id: {df_all.agg({'_user_id': 'max'}).collect()[0][0]}")
 print(f"max user_id: {df_all.agg({'_item_id': 'max'}).collect()[0][0]}")
 ```
 
-## Step 3. Develop and train the Model
+## Step 3: Develop and train the Model
 
 You've explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an Alternating Least Squares (ALS) recommender to give users personalized recommendations.
 

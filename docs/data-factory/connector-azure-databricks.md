@@ -23,7 +23,7 @@ The Azure Databricks connector supports the following authentication types for c
 |:---|:---|:---|
 |Username/Password| n/a | √ |
 |Personal Access Token| n/a | √ |
-|Azure Active Directory| n/a | √ |
+|Microsoft Entra ID| n/a | √ |
 
 ## Set up your connection in Dataflow Gen2
 

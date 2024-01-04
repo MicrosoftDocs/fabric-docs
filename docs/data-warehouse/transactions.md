@@ -4,7 +4,7 @@ description: Learn how to use transactions and how to insert and modify data in 
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -69,6 +69,7 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.
+- ALTER TABLE is not supported within an explicit transaction.
 - At this time, there's limited T-SQL functionality in the warehouse. See [TSQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 - If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics can still reflect the uncommitted data, causing inaccurate [statistics](statistics.md). Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 

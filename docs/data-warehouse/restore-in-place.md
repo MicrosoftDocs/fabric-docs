@@ -20,6 +20,9 @@ ms.search.form: Warehouse Restore # This article's title should not change. If s
 
 Restore in-place is an essential part of data recovery that allows restoration of the warehouse to a prior known good state. A restore overwrites the existing warehouse, using restore points from the existing warehouse.
 
+> [!NOTE]
+> The restore points and restore in place features are currently in preview.
+
 ## What are restore points?
 
 Restore points are recovery points of the warehouse created by copying only the metadata, while referencing the data files in OneLake. The metadata is copied while the underlying data of the warehouse stored as parquet files are not copied. These restore points can be used to recover the warehouse as of prior point in time.
@@ -74,7 +77,7 @@ When you restore, the current warehouse is *replaced* with the restored warehous
 
 Each restore point references a UTC timestamp when the restore point was created.
 
-To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
+To restore a warehouse in-place, choose a restore point and issue a restore command. If you encounter Error 5064 after requesting a restore, resubmit the restore again. For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/). 
 
 ### Security
 
@@ -86,7 +89,7 @@ To restore a warehouse in-place, choose a restore point and issue a restore comm
 - A recovery point cannot be restored to create a new warehouse with a different name, either within or across the [!INCLUDE [product-name](../includes/product-name.md)] workspaces.
 - Restore points cannot be retained beyond the default seven day retention period. This retention period is not currently configurable.
 - The ability to perform restore in-place either through UX or through T-SQL is currently not supported, currently only supported via API call. <!-- For an example, see [Tutorial: Restore a Warehouse using REST API in Microsoft Fabric](tutorial-restore-in-place-warehouse.md). --> For an example, you can [use the third-party POSTMAN tool with steps detailed in this Fabric blog](https://blog.fabric.microsoft.com/blog/the-art-of-data-warehouse-recovery-within-microsoft-fabric/).
-    - Currently, only the publicly available REST APIs provide the following functionalities of a restore in-place. 
+    - Currently, only the publicly available REST APIs provide the following functionalities of a restore in-place.
         - Creation of user-defined restore points
         - List of the system-generated and user-defined restore points
         - Deletion of user-defined restore points

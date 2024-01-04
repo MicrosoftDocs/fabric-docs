@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/10/2023
+ms.date: 12/24/2023
 ---
 
 # Tenant settings index
@@ -56,7 +56,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow Azure Active Directory guest users to access Microsoft Fabric](/power-bi/enterprise/service-admin-azure-ad-b2b)|Azure Active Directory business-to-business (B2B) guest users can access Microsoft Fabric and Fabric contents that they have permissions to.|
 |[Invite external users to your organization](/power-bi/enterprise/service-admin-azure-ad-b2b#invite-guest-users)|Users can invite external users to the organization through Power BI sharing and permission experiences for reports, dashboards, and apps. Once invited, external users will become Azure Active Directory business-to-business (B2B) guest users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485)|
 |[Allow Azure Active Directory guest users to edit and manage content in the organization](/power-bi/enterprise/service-admin-azure-ad-b2b)|Users can invite Azure Active Directory business-to-business (B2B) guest users to have the browse experience and request access to content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485).|
-|[Show Azure Active Directory guests in lists of suggested people](service-admin-portal-export-sharing.md#show-azure-active-directory-guests-in-lists-of-suggested-people)|When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address).|
+|[Show Azure Active Directory guests in lists of suggested people](service-admin-portal-export-sharing.md#show-microsoft-entra-guests-in-lists-of-suggested-people)|When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address).|
 |[Publish to web](service-admin-portal-export-sharing.md#publish-to-web)|People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to [Embed codes](./service-admin-portal-embed-codes.md) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web.  [Learn more about Publish to web](https://go.microsoft.com/fwlink/?LinkID=859242)|
 |Copy and paste visuals|Users in the organization can copy visuals from a tile or report visual and paste them as static images into external applications.|
 |[Export to Excel](/power-bi/visuals/power-bi-visualization-export-data)|Users in the organization can export the data from a visualization or paginated report to an Excel file.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143053)|
@@ -91,13 +91,13 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Make certified content discoverable](/power-bi/collaborate-share/service-discovery)|Allow users in the org who can certify content to make content they certify discoverable by users who don't have access to it.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 |[Discover content](../get-started/onelake-data-hub.md#find-recommended-items)|Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2156467)|
 
-## [Content pack and app settings](service-admin-portal-content-pack-app.md)
+## App settings
 
 | Setting name | Description |
 |------|-------|
-|[Create template organizational content packs and apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template content packs and apps that use semantic models built on one data source in Power BI Desktop.|
+|[Create template organizational apps](/power-bi/connect-data/service-template-apps-create)|Users in the organization can create template apps that use semantic models built on one data source in Power BI Desktop.|
 |[Push apps to end users](/power-bi/collaborate-share/service-create-distribute-apps#automatically-install-apps-for-end-users)|Users can share apps directly with end users without requiring installation from AppSource.|
-|[Publish content packs and apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish content packs and apps to the entire organization.|
+|[Publish apps to the entire organization](/power-bi/collaborate-share/service-create-distribute-apps#publish-the-app-to-your-entire-organization)|Users in the organization can publish apps to the entire organization.|
 
 ## [Integration settings](service-admin-portal-integration.md)
 
@@ -201,7 +201,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore) |  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
+|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore)  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 |[Block Public Internet Access](/power-bi/enterprise/service-security-private-links)|For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. [Learn More](https://aka.ms/PrivateLinksLearnMore) [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 
 ## [Metrics settings](service-admin-portal-goals-settings.md)

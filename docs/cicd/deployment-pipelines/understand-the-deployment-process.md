@@ -9,7 +9,7 @@ ms.custom:
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 12/05/2023
+ms.date: 12/17/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -381,7 +381,9 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
-### Dataset limitations
+* The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
+
+### Semantic model limitations
 
 * Datasets that use real-time data connectivity can't be deployed.
 
@@ -393,7 +395,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Semantic model deployment might fail if there are both native query and proxy models as data sources.
+* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
 
