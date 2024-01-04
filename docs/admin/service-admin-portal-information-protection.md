@@ -67,14 +67,14 @@ When enabled, users with less elevated usage rights on an encrypted sensitivity 
 
 Less elevated usage rights in this context means the following set of usage rights:
 
-    * View Content (VIEW)
-    * Edit Content (DOCEDIT)
-    * Save (EDIT)
-    * Copy and extract content (EXCTRACT)
-    * Allow Macros (OBJMODEL)
+  * View Content (VIEW)
+  * Edit Content (DOCEDIT)
+  * Save (EDIT)
+  * Copy and extract content (EXCTRACT)
+  * Allow Macros (OBJMODEL)
 
-    > [!NOTE]
-    > Usage rights are granted to users by compliance admins in the Microsoft Purview compliance portal as part of sensitivity label definition.
+   > [!NOTE]
+   > Usage rights are granted to users by compliance admins in the Microsoft Purview compliance portal as part of sensitivity label definition.
 
 The following are the restrictions apply so that protection is preserved and control of protection settings remains with users that have more elevated usage rights.
 
