@@ -6,7 +6,7 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: product-reflex
-ms.date: 11/16/2023
+ms.date: 01/04/2024
 ---
 
 # Data Activator limitations
@@ -15,6 +15,12 @@ ms.date: 11/16/2023
 > Data Activator is currently in preview.
 
 Data Activator is subject to the following limitations and considerations.
+
+## General limitations
+
+Data activator has the following general limitations:
+
+* Creation of an alert for a report using Dynamic M parameter is not currently supported
 
 ## Supported Power BI visuals
 
