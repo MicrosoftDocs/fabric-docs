@@ -9,9 +9,7 @@ ms.date: 12/27/2023
 
 # Administration overview
 
-[!INCLUDE [fabric-overview](../includes/fabric-overview.md)]
-
-All these experiences reside in the cloud based Fabric platform. Although it appears that anyone in the organization can do anything they want in Fabric, this isn't the case. Fabric allows admins to control who has access to data. This approach allows users to try out new features without compromising sensitive data. Many features also have their own set of settings that can be controlled by admins. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. Fabric unified administration enables you to [secure](../security/security-overview.md) and [govern](../governance/governance-compliance-overview.md) data across the platform, and [manage](#manage) Fabric features. Controlling feature access and capabilities allow you to comply with company policies and external rules and regulations. Fabric also allows admins to [delegate](#delegate-admin-rights) their responsibilities. Delegation lets you create different groups of admins for different tasks in your organization. Delegating admin responsibilities can reduce pressure that might cause one admin team to become a bottleneck for organizational processes.
 
 ## Manage
 

@@ -9,7 +9,7 @@ ms.date: 12/15/2023
 
 # Security in Microsoft Fabric
 
-[!INCLUDE [fabric-overview](../includes/fabric-overview.md)]
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data.
 
 As a SaaS service, Fabric offers a complete security package for the entire platform. Fabric removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage and control your security settings, in line with your changing needs and demands.
 
@@ -25,13 +25,13 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Multi tenancy
+## Support multi tenancy
 
-Big organizations can use Fabric in multiple tenants, with multiple capacities across multiple geographies. Fabric ensures that your data is secure across regions. 
+Big organizations can use Fabric in multiple tenants, with multiple capacities across multiple geographies. Fabric ensures that your data is secure across regions.
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
-* **Data resiliency** - ???
+* **Data resiliency** - Data availability in case of a disaster.
 
 * **Disaster recovery** - [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric) includes [cross-region disaster recovery and business continuity](/azure/reliability/reliability-fabric).
 
@@ -55,7 +55,7 @@ Fabric allows different people in your organization to consume data when and whe
 
 In this section, you learn how to import data into Fabric, how it's kept secure, and how you can make sure that data is only consumed by the right people in your organization. For more information about data in Fabric, review [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
-### Import and export
+### Import data from a secure network
 
 Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes.
 
