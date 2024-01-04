@@ -83,7 +83,7 @@ Less elevated usage rights in this context means that the user must have all of 
 
 ### Restrictions
 
-The following are the restrictions apply so that protection is preserved and control of protection settings remains with users that have more elevated usage rights.
+The following are the restrictions that apply so that protection is preserved and control of protection settings remains with users that have more elevated usage rights.
 
 * Users with less elevated usage rights can't export to formats that don't support sensitivity labels, such as CSV files.
 * Users with less elevated usage rights can't change the label on the PBIX file.
