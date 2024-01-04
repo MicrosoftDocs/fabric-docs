@@ -75,7 +75,7 @@ Less elevated usage rights in this context means that the user must have all of 
   * View Content (VIEW)
   * Edit Content (DOCEDIT)
   * Save (EDIT)
-  * Copy and extract content (EXCTRACT)
+  * Copy and extract content (EXTRACT)
   * Allow Macros (OBJMODEL)
 
    > [!NOTE]
