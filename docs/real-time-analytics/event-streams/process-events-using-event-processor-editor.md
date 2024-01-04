@@ -102,12 +102,12 @@ You can view **Authoring errors** in the bottom panel of the **Event processor e
 
 - **Node ID**: Indicates the ID of the operation node where the Authoring error occurred.
 - **Node type**: Indicates the type of the operation node where the Authoring error occurred.
-- **Level**: Indicates the severity of the Authoring error, there are two levels, Fatal and Information. Fatal level Authoring error means that your event processor has serious problems and can't be saved or run. Information level Authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
-- **Error**: Indicates the specific information of the Authoring error, briefly describing the cause and impact of the Authoring error. You can select the **Show details** tab to see details.
+- **Level**: Indicates the severity of the Authoring error, there are two levels, **Fatal** and **Information**. Fatal level authoring error means that your event processor has serious problems and can't be saved or run. Information level authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
+- **Error**: Indicates the specific information of the authoring error, briefly describing the cause and impact of the authoring error. You can select the **Show details** tab to see details.
 
-Since event streams and KQL databases support different data types, the process of data type conversion may generate Authoring errors.
+Since Eventstream and KQL Database support different data types, the process of data type conversion may generate authoring errors.
 
-The following table shows the results of data type conversion from event streams to KQL databases. The columns represent the data types supported by event streams, and the rows represent the data types supported by KQL databases. The cells indicate the conversion results, which can be one of the following three:
+The following table shows the results of data type conversion from Eventstream to KQL Database. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by KQL Database. The cells indicate the conversion results, which can be one of the following three:
 
 ✔️ Indicates successful conversion, no errors or warnings are generated.
 
@@ -124,11 +124,11 @@ The following table shows the results of data type conversion from event streams
 | **Record**   |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
 | **Array**    |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
 
-As you can see from the table, some data type conversions are successful, such as string to string. These conversions do not generate any Authoring errors, and do not affect the operation of your event processor.
+As you can see from the table, some data type conversions are successful, such as string to string. These conversions do not generate any authoring errors, and do not affect the operation of your event processor.
 
-Some data type conversions are impossible, such as int to string. These conversions generate fatal level authoring errors, causing your event processor to fail to save. You need to modify your data mapping, or your eventstream or KQL table data types, to avoid these errors.
+Some data type conversions are impossible, such as int to string. These conversions generate fatal level authoring errors, causing your event processor to fail to save. You need to change your data type either in your Eventstream or in KQL table to avoid these errors.
 
-Some data type conversions are possible, but not precise, such as int to real. These conversions generate information level authoring errors, indicating the mismatch between data types, and the automatic conversion results. These conversions may cause your data to lose precision or structure. You can choose whether to ignore these errors, or modify your data mapping, or your eventstream or KQL table data types, to optimize your event processor.
+Some data type conversions are possible, but not precise, such as int to real. These conversions generate information level authoring errors, indicating the mismatch between data types, and the automatic conversion results. These conversions may cause your data to lose precision or structure. You can choose whether to ignore these errors, or modify your data type either in your Eventstream or in KQL table to optimize your event processor.
 
 ## Transformation operators
 
@@ -177,8 +177,8 @@ You can also add a new field with the built-in functions to aggregate the data f
 
 The following table shows the results of changing the data type using manage fields.The columns represents the original data type, and the rows represents the target data type.
 
-- If there is a ✔️ in the cell, it means that it can be converted directly without authoring errors.
-- If there is a ❌ in the cell, it means that it cannot be converted and fatal authoring error is generated.
+- If there is a ✔️ in the cell, it means that it can be converted directly and the target data type option is shown in the dropdown list.
+- If there is a ❌ in the cell, it means that it cannot be converted and the target data type option is not shown in the dropdown list.
 - If there is a ⚠️ in the cell, it means that it can be converted, but it needs to meet certain conditions, such as the string format must conform to the requirements of the target data type. For example, when converting from string to int, the string needs to be a valid integer form, such as “123”, not “abc”.
 
 |      | int                      | Float                     | string                      | datetime                    | Record | Array |
