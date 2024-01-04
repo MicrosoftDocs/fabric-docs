@@ -63,9 +63,14 @@ To learn more about protection settings for sensitivity labels, see [Restrict ac
 
 ## Users with co-author permissions can edit encrypted PBIX files (preview)
 
-When enabled, users with less elevated usage rights on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with restrictions.
+When enabled, users with [less elevated usage rights](#less-elevated-usage-rights) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions).
 
-Less elevated usage rights in this context means the following set of usage rights:
+> [!NOTE]
+> The [XXX feature switch in Power BI Desktop](#desktop-preview-feature-switch-for-editing-by-users-with-less-elevated-usage-rights) must be selected in order for a user with less elevated permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label.  To enable/disable the feature switch, in Desktop choose **File** > **Options and settings** > **Options** > **Preview features**, and select/unselect **XXX**.
+
+### Less elevated usage rights
+
+Less elevated usage rights in this context means that the user must have all of the following usage rights:
 
   * View Content (VIEW)
   * Edit Content (DOCEDIT)
@@ -76,6 +81,8 @@ Less elevated usage rights in this context means the following set of usage righ
    > [!NOTE]
    > Usage rights are granted to users by compliance admins in the Microsoft Purview compliance portal as part of sensitivity label definition.
 
+### Restrictions
+
 The following are the restrictions apply so that protection is preserved and control of protection settings remains with users that have more elevated usage rights.
 
 * Users with less elevated usage rights can't export to formats that don't support sensitivity labels, such as CSV files.
@@ -83,6 +90,10 @@ The following are the restrictions apply so that protection is preserved and con
 * Users with less elevated usage rights can republish the PBIX file only to the original workspace they downloaded it from.
 
 For more information, see [Sensitivity label change enforcement](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement).
+
+### Desktop preview feature switch for editing by users with less elevated usage rights
+
+The [XXX feature switch in Power BI Desktop](#desktop-preview-feature-switch) must be selected in order for a user with less elevated usage rights to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. To enable/disable the feature switch, in Desktop choose **File** > **Options and settings** > **Options** > **Preview features**, and select/unselect **XXX**. The switch in enabled by default.
 
 ## Related content
 
