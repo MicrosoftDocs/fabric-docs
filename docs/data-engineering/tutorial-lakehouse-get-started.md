@@ -39,7 +39,7 @@ In this step, you create a Fabric workspace. The workspace contains all the item
 
    * **Advanced**: Under **License mode**, select **Trial** capacity. You can also choose **Fabric capacity** with F64 SKU or a Power BI **Premium capacity** with P1 SKU if you have access to them. These SKUs provide you access to all the Fabric capabilities.
 
-      :::image type="content" source="media\tutorial-lakehouse-get-started\select-premium-capacity.png" alt-text="Screenshot of the Advanced options dialog box.":::
+      :::image type="content" source="media\tutorial-lakehouse-get-started\select-trial-capacity.png" alt-text="Screenshot of the Advanced options dialog box.":::
 
 1. Select **Apply** to create and open the workspace.
 
