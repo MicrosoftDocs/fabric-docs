@@ -51,11 +51,7 @@ For more information about Power BI Embedded, see:
 
 ## Fabric capacity deletion
 
- When a Fabric capacity is deleted, the Fabric items in workspaces are soft-deleted and cannot be used. Classic items can still be used. 
-
-
-
-When a workspace with soft-deleted Fabric items is moved to a Fabric (or premium) workspace, the items are restored.
+When a Fabric capacity is deleted, non-Power BI Fabric items in workspaces assigned to that capacity are soft-deleted, meaning not that they are irretrievably deleted, but rather that they become usable. Power BI items are not affected. If a workspace with soft-deleted Fabric items is moved to a Fabric (or premium) workspace, the items are restored and become usable once again.
 
 ## Related content
 
