@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 12/21/2023
+ms.date: 01/04/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -169,6 +169,7 @@ This section summarizes recent new features and capabilities of [Data Factory in
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- | 
+|January 2024|**Use Fabric Data Factory Data Pipelines to Orchestrate Notebook-based Workflows**|Guidance and good practices when [building Fabric Spark Notebook workflows using Data Factory in Fabric](https://blog.fabric.microsoft.com/blog/use-fabric-data-factory-data-pipelines-to-orchestrate-notebook-based-workflows?ft=All) with data pipelines.|
 |December 2023|**Read data from Delta Lake tables with the DeltaLake.Table M function**|The [DeltaLake.Table](/powerquery-m/deltalake-table) is [a new function in Power Query's M language for reading data from Delta Lake tables](https://blog.fabric.microsoft.com/blog/read-data-from-delta-lake-tables-with-the-deltalake-table-m-function?ft=All). This function is now available in Power Query in Power BI Desktop and in Dataflows Gen1 and Gen2 and replaces the need to use community-developed solution.|
 |October 2023|**Microsoft Fabric Data Factory Webinar Series – October 2023**|You are invited to [join our October webinar series](https://blog.fabric.microsoft.com/blog/microsoft-fabric-data-factory-webinar-series-october-2023?ft=All), where we will show you how to use Data Factory to transform and orchestrate your data in various scenarios.|
 |September 2023|**Notify Outlook and Teams channel/group from a Microsoft Fabric pipeline**|Learn how to [send notifications to both Teams channels/groups and Outlook emails](https://blog.fabric.microsoft.com/blog/notifying-outlook-and-teams-channel-group-from-a-microsoft-fabric-pipeline?ft=All). |
@@ -232,6 +233,7 @@ This section summarizes recent new features and capabilities of the [Data Engine
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- | 
+|January 2024|**Use Fabric Data Factory Data Pipelines to Orchestrate Notebook-based Workflows**|Guidance and good practices when [building Fabric Spark Notebook workflows using Data Factory in Fabric](https://blog.fabric.microsoft.com/blog/use-fabric-data-factory-data-pipelines-to-orchestrate-notebook-based-workflows?ft=All) with data pipelines.|
 |November 2023|**Fabric Changing the game: Using your own library with Microsoft Fabric**|A step-by-step guide to [use your own Python library in the Lakehouse](https://blog.fabric.microsoft.com/blog/fabric-changing-the-game-using-your-own-library-with-microsoft-fabric?ft=All). It is quite simple to create your own library with Python and even simpler to reuse it on Fabric.|
 |August 2023|**Fabric changing the game: Logging your workload using Notebooks** | Learn more about [logging your workload into OneLake using notebooks](https://blog.fabric.microsoft.com/blog/fabric-changing-game-logging-your-workload-using-notebooks?ft=All), using the OneLake API Path inside the notebook. |
 |July 2023|**Lakehouse Sharing and Access Permission Management**| [Share a lakehouse and manage permissions](https://blog.fabric.microsoft.com/blog/lakehouse-sharing-and-access-permission-management?ft=All:) so that users can access lakehouse data through the Data Hub, the SQL analytics endpoint, and the default semantic model. |
@@ -267,6 +269,7 @@ This section summarizes recent improvements and features for the [Data Science e
 
 |**Month** | **Feature** | **Learn more**|
 |:-- |:-- | :-- |
+|December 2023|**Using Microsoft Fabric's Lakehouse Data and prompt flow in Azure Machine Learning Service to create RAG applications**|A [step-by-step RAG application through prompt flow in Azure Machine Learning Service](https://blog.fabric.microsoft.com/blog/using-microsoft-fabrics-lakehouse-data-and-prompt-flow-in-azure-machine-learning-service-to-create-rag-applications?ft=All) combined with Microsoft Fabric's Lakehouse data.|
 |November 2023|**New data science happy path tutorial in Microsoft Fabric**|We've updated the [Data Science Happy Path tutorial for Microsoft Fabric](https://aka.ms/fabric/DSHappyPath). This [new comprehensive tutorial demonstrates the entire data science workflow](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc682688594), using a bank customer churn problem as the context.|
 |November 2023|**New data science samples**|We've expanded our [collection of data science samples](https://fabric.microsoft.com/home?experience=data-science) to include new [end-to-end R samples and new quick tutorial samples for "Explaining Model Outputs" and "Visualizing Model Behavior."](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-5122-_Toc2079157298).|
 |November 2023|**New data science forecasting sample**|The [new Data Science sample on sales forecasting](https://fabric.microsoft.com/home?experience=data-science) was developed in collaboration with [Sonata Software](https://www.sonata-software.com/). This new sample encompasses the entire data science workflow, spanning from data cleaning to Power BI visualization. The notebook covers the steps to develop, evaluate, and score a forecasting model for superstore sales, harnessing the power of the SARIMAX algorithm. |
