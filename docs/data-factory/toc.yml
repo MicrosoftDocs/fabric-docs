@@ -37,6 +37,8 @@
             href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
           - name: Load 2 GB of Parquet data to a Lakehouse table
             href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
+    - name: Keyboard shortcuts
+      href: keyboard-shortcuts.md
   - name: Get started
     items:
     - name: Create a dataflow
