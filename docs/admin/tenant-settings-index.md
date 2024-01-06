@@ -5,9 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 12/24/2023
+ms.date: 01/06/2024
 ---
 
 # Tenant settings index
