@@ -7,12 +7,14 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 01/07/2024
 ---
 
 # Pause and resume your capacity
 
 Microsoft Fabric lets you pause and resume your capacity. When your capacity isn't operational, you can pause it to enable cost savings for your organization. Later, when you want to resume work on your capacity, you can reactivate it.
+
+To monitor paused capacities, see [Monitor a paused capacity](monitor-paused-capacity.md)
 
 > [!IMPORTANT]
 > Pausing a capacity can prevent Microsoft Fabric content from being available. Before you pause your capacity, make sure the capacity is not being used.
