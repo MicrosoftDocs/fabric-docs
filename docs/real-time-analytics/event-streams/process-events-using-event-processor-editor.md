@@ -111,14 +111,14 @@ The following table shows the results of data type conversion from Eventstream t
 
 ✔️ Indicates successful conversion, no errors or warnings are generated.
 
-❌ Indicates impossible conversion, fatal authoring error is generated. The error message is similar to: Column "{0}" has invalid KQL Database column type "{1}". The record schema type "{2}" types only.
+❌ Indicates impossible conversion, fatal authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not match the expected type "{2}" in the selected KQL table. and cannot be auto-converted.
 
 ⚠️ Indicates possible but inaccurate conversion, information authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not exactly match the expected type "{2}" in the selected KQL table. It will be auto-converted to "{2}".
 
 | | string | bool | datetime | dynamic | guid | int | long | real | timespan | decimal |
 |:--------:|:------:|:----:|:--------:|:-------:|:----:|:---:|:----:|:----:|:--------:|:-------:|
-| **Int**      |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ⚠️  |  ✔️   |  ⚠️   |    ❌     |    ✔️    |
-| **Float**    |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ✔️   |    ❌     |   ✔️    |
+| **Int64**      |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ⚠️  |  ✔️   |  ⚠️   |    ❌     |    ✔️    |
+| **Double**    |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ⚠️   |    ❌     |   ⚠️    |
 | **String**   |   ✔️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
 | **Datetime** |   ⚠️    |  ❌   |    ✔️     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
 | **Record**   |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
@@ -181,10 +181,10 @@ The following table shows the results of changing the data type using manage fie
 - If there is a ❌ in the cell, it means that it cannot be converted and the target data type option is not shown in the dropdown list.
 - If there is a ⚠️ in the cell, it means that it can be converted, but it needs to meet certain conditions, such as the string format must conform to the requirements of the target data type. For example, when converting from string to int, the string needs to be a valid integer form, such as “123”, not “abc”.
 
-|      | int                      | Float                     | string                      | datetime                    | Record | Array |
+|      | Int64                      | Double                     | String                      | Datetime                    | Record | Array |
 |:------:|:-------------------------:|:-------------------------:|:---------------------------:|:---------------------------:|:------:|:-----:|
-| **int**     | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
-| **Float**  | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **Int64**     | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **Double**  | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
 | **String** | ⚠️ | ⚠️ | ✔️                           | ⚠️ | ❌      | ❌     |
 | **Datetime** | ❌                         | ❌                         | ✔️                           | ✔️                           | ❌      | ❌     |
 | **Record** | ❌                         | ❌                         | ✔️                           | ❌                           | ✔️      | ❌     |
