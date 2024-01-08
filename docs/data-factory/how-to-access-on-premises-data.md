@@ -49,7 +49,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 1. You can use the Dataflow Gen2 to perform any necessary data transformations based on your requirements.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/transform-data-inline.png" lightbox="media/how-to-access-on-premises-data/transform-data.png" alt-text="Screenshow showing the Power Query editor with some transformations applied to the sample data source.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/transform-data-inline.png" lightbox="media/how-to-access-on-premises-data/transform-data.png" alt-text="Screenshot showing the Power Query editor with some transformations applied to the sample data source.":::
 
 1. Use the **Add data destination** button on the **Home** tab of the Power Query editor to add a destination for your data from the on-premises source.
 
