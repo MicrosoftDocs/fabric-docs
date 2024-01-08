@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
+  - name: What is SynapseML?
+    href: synapse-overview.md
 - name: Get started
   items:
   - name: Data science tutorial introduction

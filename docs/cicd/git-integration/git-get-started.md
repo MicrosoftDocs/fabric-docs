@@ -42,7 +42,7 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into Fabric.
+1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 

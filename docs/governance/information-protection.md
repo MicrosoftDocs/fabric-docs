@@ -18,7 +18,7 @@ Information protection in Fabric is based on information protection in Power BI.
 
 The following table summarizes the information protection capabilities in Fabric that help you achieve maximum coverage of the sensitive information in your organization. Fabric support is indicated in the third column. See the sections under [Considerations and limitations](#considerations-and-limitations) for details.
 
-|Capability|Scenario|Public preview support|
+|Capability|Scenario|Support status|
 |:----------|:---------|:----------|
 |Manual labeling| Users can manually apply sensitive labels to Fabric items|[Supported for all Fabric items](#manual-labeling).|
 |Default labeling| When an item is created or edited, it gets a default sensitivity label unless a label is applied through other means.|[Supported for all Fabric items, with limitations](#default-labeling). |
@@ -99,6 +99,6 @@ Sensitivity label inheritance upon export is supported for Power BI items only i
 
 To see the supported export paths for Power BI items, see [Supported export paths in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview#supported-export-paths).
 
-## Next steps
+## Related content
 
 * [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)

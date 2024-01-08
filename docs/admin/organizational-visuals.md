@@ -120,17 +120,17 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Obtain Microsoft Entra access token
 
-When this setting is enabled, visuals can obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for the signed-in users using the Authentication API. The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
+When this setting is enabled, visuals can obtain Microsoft Entra ID (formerly known as Azure Active Directory) access tokens for the signed-in users using the Authentication API. The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
 
 :::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
 
-1. Expand the **Allow custom visuals to get user Azure Active Directory access tokens** settings.
+1. Expand the **Allow custom visuals to get user Microsoft Entra access tokens** settings.
 
 2. Select **Enabled**.
 
 3. Choose who can render this API:
 
-   * Select **The entire organization** option to allow visuals to obtain Microsoft Entra ID access tokens for every user in your organization.
+   * Select **The entire organization** option to allow visuals to obtain Microsoft Entra access tokens for every user in your organization.
    * Select the **Specific security groups** option to limit obtaining access tokens to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option. Only a user listed in the permitted security group can render the API.
 
 4. Select **Apply**.

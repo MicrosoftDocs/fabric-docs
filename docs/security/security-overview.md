@@ -15,7 +15,7 @@ Security and reliability are key foundational features for every organization. I
 
 Review this section for a list of the security features available in Microsoft Fabric.
 
-- [Conditional access](security-conditional-access.md) - Secure your apps by using Microsoft Entra ID ([previously known as Azure Active Directory](/entra/fundamentals/new-name)).
+- [Conditional access](security-conditional-access.md) - Secure your apps by using Microsoft Entra ID.
 - [Resiliency](az-resiliency.md) - Reliability and regional resiliency with Azure availability zones.
 - [Lockbox](security-lockbox.md) - Control how Microsoft engineers access your data.
 - [Service tags](security-service-tags.md) - Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric.
