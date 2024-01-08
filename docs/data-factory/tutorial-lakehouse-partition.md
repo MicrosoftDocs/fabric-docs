@@ -73,19 +73,19 @@ This tutorial helps you learn how to load data to Lakehouse using partition in a
 5. After the pipeline runs successfully, go to your **Lakehouse**. Find the table that you copied. Right-click the table name and select **View files**. 
 
 
-    For one partition column (countryOrRegion), the table is partitioned to different folders by country names. The special character in column name is encoded, and you may see the file name is different from column values when you view files in Lakehouse.
+    For one partition column (countryOrRegion), the table is partitioned to different folders by country or region names. The special character in column name is encoded, and you may see the file name is different from column values when you view files in Lakehouse.
     
     :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-view-files.png" alt-text="Screenshot showing file view in Lakehouse.":::
     
     :::image type="content" source="media/tutorial-lakehouse-partition/lakehouse-partition-public-holiday-files.png" alt-text="Screenshot showing the file view of copied public holiday data.":::
     
-    For multiple partition columns, you will find the table is partitioned into different folders by country names. 
+    For multiple partition columns, you will find the table is partitioned into different folders by country or region names. 
         
-    :::image type="content" source="media/tutorial-lakehouse-partition/partition-country-folder.png" alt-text="Screenshot showing partition country folder.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/partition-country-folder.png" alt-text="Screenshot showing partition country or region folder.":::
         
-    Select one folder, for example **contryOrRegion=United States**. The table partitioned by the country name is partitioned again by the added second column isPaidTimeOff’s value: `True` or `False` or `__HIVE_DEFAULT_PARTITION__`(represents empty value in Sample dataset).
+    Select one folder, for example **contryOrRegion=United States**. The table partitioned by the country or region name is partitioned again by the added second column isPaidTimeOff’s value: `True` or `False` or `__HIVE_DEFAULT_PARTITION__`(represents empty value in Sample dataset).
             
-    :::image type="content" source="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" alt-text="Screenshot showing country partition by ispaidtimeoff.":::
+    :::image type="content" source="media/tutorial-lakehouse-partition/country-partition-by-ispaidtimeoff.png" alt-text="Screenshot showing country or region partition by ispaidtimeoff.":::
             
     Similarly, if you add three columns to partition the table, you will get the second level folder partitioned by the third column added.
         
