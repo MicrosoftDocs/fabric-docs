@@ -11,6 +11,7 @@ ms.custom:
 ms.date: 12/06/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
+
 # Connectivity to data warehousing in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -30,7 +31,7 @@ In [!INCLUDE [product-name](../includes/product-name.md)], two types of authenti
 - Microsoft Entra ID (formerly Azure Active Directory) user principals, or user identities
 - Microsoft Entra ID (formerly Azure Active Directory) service principals
 
-The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
+The SQL connection string respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
 
 ## Retrieve the SQL connection string
 
