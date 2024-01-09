@@ -5,8 +5,8 @@ ms.reviewer: avnera
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.date: 01/03/2024
+ms.date: 01/09/2024
 ---
 # Schema optimization best practices
 
-[!INCLUDE [schema-best-practice](~/../kusto-repo/data-explorer/includes/schema-best-practice.md)]
+[!INCLUDE [schema-best-practice](~/../kusto-repo/data-explorer/includes/cross-repo/schema-best-practice.md)]
