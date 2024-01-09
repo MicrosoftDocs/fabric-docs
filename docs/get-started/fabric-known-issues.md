@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 12/15/2023
+ms.date: 01/08/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -21,6 +21,7 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 |
 |  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
 |  580  | Administration & Management | [**Git integration** tab disappears in **Workspace settings**](known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md)  | December 15, 2023 |
@@ -46,8 +47,6 @@ Select the **Title** to view more information about that specific known issue. F
 |  536  | Administration & Management | [Feature Usage and Adoption report activity missing](known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md)  | November 9, 2023 | Fixed: December 13, 2023 |
 |  521  | Administration & Management | [New throttling logic delayed for Power BI and eventstream](known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md)  | October 5, 2023 | Fixed: December 13, 2023 |
 |  519  | Administration & Management | [Capacity Metrics app shows variance between workload summary and operations](known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md)  | October 13, 2023 | Fixed: December 13, 2023 |
-|  453  | Data Warehouse              | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md)    |  July 10, 2023  | Fixed: November 15, 2023 |
-|  446  | Data Warehouse              | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-onelake-table-folder-isnt-removed.md)    |  July 5, 2023  | Fixed: November 15, 2023 |
 
 ## Next steps
 
