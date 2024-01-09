@@ -1,6 +1,6 @@
 ---
-title: Connector Parity between Azure Data Factory (ADF) and Fabric Data Factory
-description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Fabric Data Factory.
+title: Connector Continuity between Azure Data Factory (ADF) and Data Factory in Fabric
+description: This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric.
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
@@ -8,13 +8,13 @@ ms.date: 12/07/2023
 ms.custom: template-how-to, build-2023
 ---
 
-# Connector Parity between Azure Data Factory (ADF) and Fabric Data Factory
+# Connector Continuity between Azure Data Factory (ADF) and Data Factory in Fabric
 
-This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Fabric Data Factory. Connectors play a pivotal role in data integration, enabling the seamless flow of data between various data sources and destinations. Understanding the connector parity between these two platforms is crucial for planning your data workflows.
+This documentation provides an in-depth comparison of connector availability between Azure Data Factory (ADF) and Data Factory in Fabric. Connectors play a pivotal role in data integration, enabling the seamless flow of data between various data sources and destinations. Understanding the connector continuity between these two platforms is essential for planning your data workflows.
 
-## Connector Parity Overview
+## Connector Overview
 
-In Fabric Data Factory, we have strived to achieve a high- level of connector parity with Azure Data Factory. Effective Fabric GA, specific connectors previously exclusive to ADF will now be available in Fabric Data Factory. Here is a detailed breakdown of the connectors and their availability in both ADF and Fabric Data Factory:
+With Data Factory in Microsoft Fabric, data pipelines provide connectivity to a rich set of data sources. See below for the list of connectors available in Azure Data Factory and Data Factory in Fabric.
 
 |Connector Type |ADF (Source/Sink)|Fabric Data Factory (Source/Sink)|
 |:---|:---|:---|
@@ -130,4 +130,4 @@ In Fabric Data Factory, we have strived to achieve a high- level of connector pa
 
 ## Conclusion
 
-Fabric Data Factory offers a seamless transition from Azure Data Factory while providing a high degree of connector parity and introducing new connectors to broaden your data integration capabilities. Please refer to this documentation for more details [Connector overview](connector-overview.md).
+To learn how to use the connectors available in Data Factory in Fabric, refer to [Connector overview](connector-overview.md).
