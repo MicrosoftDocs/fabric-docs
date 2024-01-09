@@ -294,6 +294,21 @@ productDirectory:
         - url: get-started/copilot-privacy-security.md
           text: See more
 
+    # Card
+    - title: Industry solutions
+
+      imageSrc: ./media/industry-solutions-icon.svgsvg
+      links:
+        - url: get-started/copilot-fabric-overview.md
+          text: Retail solutions
+        - url: get-started/copilot-fabric-enable.md
+          text: Sustainability solutions
+        - url: get-started/copilot-notebooks-overview.md
+          text: Healthcare solutions
+        - url: get-started/copilot-privacy-security.md
+          text: See more
+
+
 additionalContent:
 # additionalContent section (optional)
 # Card with summary style
