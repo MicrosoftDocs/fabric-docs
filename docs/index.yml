@@ -297,7 +297,7 @@ productDirectory:
     # Card
     - title: Industry solutions
 
-      imageSrc: ./media/industry-solutions-icon.svgsvg
+      imageSrc: ./media/industry-solutions-icon.svg
       links:
         - url: get-started/copilot-fabric-overview.md
           text: Retail solutions
