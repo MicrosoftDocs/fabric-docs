@@ -12,7 +12,7 @@ ms.date: 01/09/2024
 
 # Understand the metrics app timepoint page
 
-All the activities in the capacity are ranked according to their compute impact. Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity units (CU) usage.
+All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity's usage.
 
 Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
 
