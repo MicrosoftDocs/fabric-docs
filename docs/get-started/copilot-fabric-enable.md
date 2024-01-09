@@ -17,7 +17,7 @@ Before your business can start using Copilot capabilities in Microsoft Fabric, y
 
 > [!NOTE]
 >
-> - Your administrator needs to enable the tenant switch before you start using copilot. See the article [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) for details. 
+> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
 > - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
 > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
 
