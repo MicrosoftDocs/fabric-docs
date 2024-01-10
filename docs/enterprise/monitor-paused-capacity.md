@@ -20,7 +20,7 @@ The [system events](metrics-app-compute-page.md#system-events) table lists all t
 
 To allow your capacity to perform at the highest level, its usage is [smoothed](throttling.md#balance-between-performance-and-reliability) over time. When you pause your capacity, the remaining smoothed operations are executed. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual.
 
-The spike provides a good indication that a capacity was paused. You can hover over it spike to view and see the state of the capacity in the tooltip.
+The spike provides an indication that your capacity was paused. You can hover over the spike to view and see the state of the capacity in the tooltip.
 
 :::image type="content" source="media/monitor-paused-capacity/suspended-capacity.png" alt-text="Screenshot showing a card that lists a suspended capacity in the utilization tab in the Microsoft Fabric capacity metrics app.":::
 
@@ -30,7 +30,7 @@ You can find out what's the percentage of [carry forward](throttling.md#carry-fo
 
 1. Locate the paused capacity timepoint by reviewing the spike in the utilization visual.
 
-2. From the paused capacity timepoint, drill through to the [Timepoint Detail](metrics-app-timepoint-page.md) page.
+2. Right-click the paused capacity's timepoint, and drill through to the [Timepoint Detail](metrics-app-timepoint-page.md) page.
 
 3. Hover over the SKU card. A tooltip displays the remaining cumulative carry forward percent.
 
