@@ -11,6 +11,7 @@ ms.author: jessiwang
 ms.date: 05/08/2023
 ---
 # Recipe: Azure AI services - Multivariate Anomaly Detection 
+
 This recipe shows how you can use SynapseML and Azure AI services on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train a model for multivariate anomaly detection using the Azure AI services, and we then use to the model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors. 
 
 To learn more about the Azure AI Anomaly Detector, refer to [this documentation page](/azure/ai-services/anomaly-detector/). 
@@ -21,12 +22,16 @@ To learn more about the Azure AI Anomaly Detector, refer to [this documentation 
 
 
 ## Setup
-### Create an Anomaly Detector resource
+
 Follow the instructions to create an `Anomaly Detector` resource using the Azure portal or alternatively, you can also use the Azure CLI to create this resource.
 
-- In the Azure portal, click `Create` in your resource group, and then type `Anomaly Detector`. Click on the Anomaly Detector resource.
-- Give the resource a name, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then click `Review + Create` and then `Create`.
-- Once the Anomaly Detector resource is created, open it and click on the `Keys and Endpoints` panel on the left. Copy the key for the Anomaly Detector resource into the `ANOMALY_API_KEY` environment variable, or store it in the `anomalyKey` variable.
+After you set up an `Anomaly Detector`, you can explore methods of handling data of various forms. The catalog of services within Azure AI provides several options: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api), [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector), [Translation](https://azure.microsoft.com/products/ai-services/ai-translator), and [Document Intelligence](https://azure.microsoft.com/products/ai-services/ai-document-intelligence/).
+
+### Create an Anomaly Detector resource
+
+- In the Azure portal, select **Create** in your resource group, and then type **Anomaly Detector**. Select the Anomaly Detector resource.
+- Give the resource a name, and ideally use the same region as the rest of your resource group. Use the default options for the rest, and then select **Review + Create** and then **Create**.
+- Once the Anomaly Detector resource is created, open it and select the `Keys and Endpoints` panel on the left. Copy the key for the Anomaly Detector resource into the `ANOMALY_API_KEY` environment variable, or store it in the `anomalyKey` variable.
 
 ### Create a Storage Account resource
 In order to save intermediate data, you need to create an Azure Blob Storage Account. Within that storage account, create a container for storing the intermediate data. Make note of the container name, and copy the connection string to that container. You need it later to populate the `containerName` variable and the `BLOB_CONNECTION_STRING` environment variable.

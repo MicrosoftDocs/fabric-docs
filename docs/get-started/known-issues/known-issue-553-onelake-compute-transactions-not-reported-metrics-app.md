@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake compute transactions don't co
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 12/08/2023
+ms.date: 12/20/2023
 ms.custom: known-issue-553
 ---
 
@@ -23,6 +23,8 @@ You don't see OneLake compute usage in the Microsoft Fabric Capacity Metrics app
 ## Solutions and workarounds
 
 No workarounds at this time. This article will be updated when the fix is released.
+
+For updates and information about how to monitor your usage, check [OneLake consumption](/fabric/onelake/onelake-consumption).
 
 ## Next steps
 

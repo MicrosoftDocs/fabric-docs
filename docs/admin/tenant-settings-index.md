@@ -5,9 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-  - build-2023
-  - ignite-2023
-ms.date: 12/17/2023
+ms.date: 01/06/2024
 ---
 
 # Tenant settings index
@@ -56,7 +54,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow Azure Active Directory guest users to access Microsoft Fabric](/power-bi/enterprise/service-admin-azure-ad-b2b)|Azure Active Directory business-to-business (B2B) guest users can access Microsoft Fabric and Fabric contents that they have permissions to.|
 |[Invite external users to your organization](/power-bi/enterprise/service-admin-azure-ad-b2b#invite-guest-users)|Users can invite external users to the organization through Power BI sharing and permission experiences for reports, dashboards, and apps. Once invited, external users will become Azure Active Directory business-to-business (B2B) guest users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485)|
 |[Allow Azure Active Directory guest users to edit and manage content in the organization](/power-bi/enterprise/service-admin-azure-ad-b2b)|Users can invite Azure Active Directory business-to-business (B2B) guest users to have the browse experience and request access to content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2038485).|
-|[Show Azure Active Directory guests in lists of suggested people](service-admin-portal-export-sharing.md#show-azure-active-directory-guests-in-lists-of-suggested-people)|When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address).|
+|[Show Azure Active Directory guests in lists of suggested people](service-admin-portal-export-sharing.md#show-microsoft-entra-guests-in-lists-of-suggested-people)|When searching for people in Microsoft Fabric, you see a list of suggested people that includes Azure Active Directory (Azure AD) members and guests. When disabled, guests aren't shown in the suggested people list (it's still possible to share with guests by providing their full email address).|
 |[Publish to web](service-admin-portal-export-sharing.md#publish-to-web)|People in your org can publish public reports on the web. Publicly published reports don't require authentication to view them.<br><br>Go to [Embed codes](./service-admin-portal-embed-codes.md) in the admin portal to review and manage public embed codes. If any of the codes contain private or confidential content remove them.<br><br>Review embed codes regularly to make sure no confidential information is live on the web.  [Learn more about Publish to web](https://go.microsoft.com/fwlink/?LinkID=859242)|
 |Copy and paste visuals|Users in the organization can copy visuals from a tile or report visual and paste them as static images into external applications.|
 |[Export to Excel](/power-bi/visuals/power-bi-visualization-export-data)|Users in the organization can export the data from a visualization or paginated report to an Excel file.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2143053)|
