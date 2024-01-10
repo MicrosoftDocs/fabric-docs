@@ -23,6 +23,7 @@ You can track storage usage in the Fabric Capacity Metrics app.  For more inform
 ## Transactions
 
 Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric Spark.  OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
+OneLake uses the same mappings as ADLS to classify the operation to the category as [here](https://learn.microsoft.com/en-us/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 > [!NOTE]
 > There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake is not reporting transaction usage in the Fabric Capacity Metrics app.  OneLake transaction usage is also not counting against capacity limits. OneLake will provide notice before correcting the issue.  See “Changes to Microsoft Fabric Workload Consumption Rate” section on this page.
@@ -48,6 +49,12 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 | **OneLake Iterative Read via Proxy** | OneLake Iterative Read via Proxy | Per 10,000 | 4798 CU seconds |
 | **OneLake Iterative Write via Proxy** | OneLake Iterative Write via Proxy | Per 100 | 2117.95 CU seconds |
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
+
+## Shortcuts
+When data is accessed (read/written) using OneLake shortcuts, the capacity that belongs to the workspace that has the shortcut will be charged for transactions, whereas the capacity where the data resides is only charged for the data stored.
+
+## Paused Capacity
+When a capacity is paused, the data stored will continue to be billed to the capacity. You can delete the entire workspace while capacity is paused, however, to delete any Fabric items, capacity needs to be resumed. Transactions are rejected when capacity is paused, so there won't be transaction billing when capacity is paused.
 
 ## Disaster recovery
 
