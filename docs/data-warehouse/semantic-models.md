@@ -51,7 +51,7 @@ Direct Lake mode is the default connection type for semantic models that use a [
 
 ## Understand what's in the default Power BI semantic model
 
-When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix.
+When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md) or [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md), a default Power BI semantic model is created. The default semantic model is represented with the *(default)* suffix.
 
 The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
