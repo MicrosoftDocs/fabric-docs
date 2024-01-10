@@ -38,13 +38,15 @@ Dataflows|Yes|Yes|Yes|No|Yes|Yes|Reader: 1<br/>Writer: 2<br/>|
 Data pipelines|No|No|Yes|No|Yes, overwrite only|Yes|Reader: 1<br/>Writer: 2|
 Power BI direct lake semantic models|Yes|Yes|N/A (not applicable)|N/A (not applicable)|N/A (not applicable)|Yes|N/A (not applicable)|
 Export Power BI semantic models into OneLake|Yes|N/A (not applicable)|Yes|No|Yes|N/A (not applicable)|Reader: 2<br/>Writer: 5|
-KQL databases|Yes|Yes|No|No|Yes|Yes|Reader: 1<br/>Writer: 1|
+KQL databases|Yes|Yes|No|No#|Yes|Yes|Reader: 1<br/>Writer: 1|
 Eventstreams|No|No|No|No|Yes|N/A (not applicable)|Reader: 1<br/>Writer: 2|
 
 > [!NOTE]
 >
 > * Fabric doesn't write name-based column mappings by default. The default Fabric experience generates tables that are compatible across the service. Delta lake, produced by third-party services, may have incompatible table features.
 > * Some Fabric experiences do not have inherited table optimization and maintenance capabilities, such as bin-compaction, V-order, and clean up of old unreferenced files. To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
+> * Some Fabric experiences do not have inherited table optimization and maintenance capabilities, such as bin-compaction, V-order, and clean up of old unreferenced files. To keep Delta Lake tables optimal for analytics, follow the techniques in [Use table maintenance feature to manage delta tables in Fabric](../data-engineering/lakehouse-table-maintenance.md) for tables ingested using those experiences.
+> * #KQL databases provide certain table maintenance capabilities such as [retention](../real-time-analytics/data-policies), data is removed at the end of retention period from OneLake. Refer [One Logical copy](../real-time-analytics/one-logical-copy).
 
 ## Current limitations
 
