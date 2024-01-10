@@ -32,6 +32,7 @@ Visualizations and analyses in **Power BI reports** can now be built completely 
 
 For more on Power BI, see [Power BI guidance](/power-bi/guidance/).
 
+[comment]: a link is missing below ('New name for Power BI datasets' should probably link to here? https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-rename)
 >[!NOTE]
 > Microsoft has renamed the Power BI *dataset* content type to *semantic model*. This applies to Microsoft Fabric as well. For more information, see New name for Power BI datasets.
 
