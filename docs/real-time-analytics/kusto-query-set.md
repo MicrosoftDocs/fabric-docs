@@ -17,7 +17,7 @@ ms.search.form: KQL Queryset
 
 In this article, you learn how to use a KQL queryset. The KQL Queryset is the item used to run queries, view, and customize query results on data from a KQL database.
 
-The KQL Queryset uses the Kusto Query language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
+The KQL Queryset uses the Kusto Query Language for creating queries, and also supports many SQL functions. For more information about the query language, see [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context).
 
 ## Prerequisites
 
