@@ -69,7 +69,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Recursively | Checked |
    | File format | Binary |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details." lightbox="media\tutorial-lakehouse-data-ingestion\source-tab-details.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details.":::
 
 1. Under the **Destination** tab of the selected copy data activity, specify the following properties:
 
