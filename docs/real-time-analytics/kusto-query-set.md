@@ -24,11 +24,11 @@ The KQL Queryset uses the Kusto Query language for creating queries, and also su
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
-## Connect to a database
+## Select a database
 
 Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor.
 
-To connect your KQL queryset to a database:
+To associate your KQL queryset with a database:
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
