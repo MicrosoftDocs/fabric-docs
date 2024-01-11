@@ -8,7 +8,7 @@ ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom:
 ms.topic: conceptual
-ms.date: 11/30/2023
+ms.date: 01/11/2024
 ---
 
 # Manage Power BI visuals admin settings
@@ -120,7 +120,7 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Obtain Microsoft Entra access token
 
-When this setting is enabled, visuals can obtain Microsoft Entra ID (formerly known as Azure Active Directory) access tokens for the signed-in users using the Authentication API. The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
+When this setting is enabled, visuals can obtain [Microsoft Entra ID (formerly known as Azure Active Directory) access tokens](/entra/identity/authentication/concept-authentication-oath-tokens) for the signed-in users using the [Authentication API](/graph/api/resources/authenticationmethods-overview). The setting is disabled by default and applies to all Appsource visuals, including those managed by your organizational store.
 
 :::image type="content" source="./media/organizational-visuals/authentication-setting.png" alt-text="Screenshot of authentication switch.":::
 
