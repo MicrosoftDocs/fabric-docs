@@ -23,7 +23,7 @@ You can track storage usage in the Fabric Capacity Metrics app.  For more inform
 ## Transactions
 
 Requests to OneLake, such as reading or writing data, consume Fabric Capacity Units. The rates in this page define how much capacity units are consumed for a given type of operation. OneLake data can be accessed from applications running inside of Fabric environments, such as Fabric Spark.  OneLake can also be accessed from applications running outside of Fabric environments such as via APIs. How the data in OneLake is accessed has a bearing on how many CUs are consumed.
-OneLake uses the same mappings as ADLS to classify the operation to the category as [here](https://learn.microsoft.com/azure/storage/blobs/map-rest-apis-transaction-categories).
+OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 > [!NOTE]
 > There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake is not reporting transaction usage in the Fabric Capacity Metrics app.  OneLake transaction usage is also not counting against capacity limits. OneLake will provide notice before correcting the issue.  See “Changes to Microsoft Fabric Workload Consumption Rate” section on this page.
