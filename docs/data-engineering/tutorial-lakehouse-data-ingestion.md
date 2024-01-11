@@ -88,7 +88,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    This action triggers data copy from the underlying data source to the specified lakehouse and might take up to a minute to complete. You can monitor the execution of the pipeline and its activity under the **Output** tab, which appears when you click anywhere on the canvas. Optionally, you can select the glasses icon, which appears when you hover over the name, to look at the details of the data transfer.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab-inline.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab." lightbox="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\save-run-output-tab.png" alt-text="Screenshot showing where to select Save and Run, and where to find the run details and glasses icon on the Output tab.":::
 
 1. Once the data is copied, go to the items view of the workspace and select your new lakehouse (**wwilakehouse**) to launch the **Lakehouse explorer**.
 
@@ -96,7 +96,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Validate that in the **Lakehouse explorer** view, a new folder **wwi-raw-data** has been created and data for all the tables have been copied there.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table-inline.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
 ## Next step
 
