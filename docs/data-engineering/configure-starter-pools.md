@@ -37,7 +37,7 @@ To manage the starter pool associated with your workspace:
 
 1. Select the **StarterPool** option.
 
-   :::image type="content" source="media\configure-starter-pools\starter-pool-settings-inline.png" alt-text="Screenshot showing starter pool configuration options.":::
+   :::image type="content" source="media\configure-starter-pools\starter-pool-settings.png" alt-text="Screenshot showing starter pool configuration options.":::
 
 1. You can set the maximum node configuration for your starter pools to an allowed number based on the purchased capacity or reduce the default max node configuration to a smaller value when running smaller workloads.
 
