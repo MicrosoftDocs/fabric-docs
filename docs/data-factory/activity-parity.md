@@ -8,11 +8,11 @@ ms.date: 12/07/2023
 ms.custom: template-how-to, build-2023 
 ---
 
-# Activity Continuity between Azure Data Factory (ADF) and Data Factory in Fabric
+# Activity continuity between Azure Data Factory (ADF) and Data Factory in Fabric
 
 This documentation provides an overview of the activity continuity between Azure Data Factory (ADF) and Data Factory in Fabric. As you plan your data integration and orchestration workflows, it's essential to understand which activities are available on each platform. Data Factory in Fabric aims to offer comprehensive capabilities while maintaining compatibility with ADF.
 
-## Activity Parity Overview
+## Activity parity overview
 
 With Data Factory in Microsoft Fabric, we continue to maintain a high degree of continuity with Azure Data Factory. Approximately 90% of activities accessible in ADF are already available under Data Factory in Fabric. Here is a breakdown of the activities and their availability in both ADF and Data Factory in Fabric:
 
@@ -55,7 +55,7 @@ With Data Factory in Microsoft Fabric, we continue to maintain a high degree of 
 |Power Query (ADF only - Wrangling Dataflow)|Deprecated|N/A|
 |USQL|Deprecated|N/A|
 
-## New Activities in Fabric Data Factory
+## New activities in Fabric Data Factory
 
 In addition to maintaining activity continuity, Data Factory in Fabric introduces some new activities to meet your richer orchestration needs. These new activities are:
 
