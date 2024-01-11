@@ -51,14 +51,14 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 | **OneLake Other Operations** | OneLake Other Operations | Per 10,000 | 306 CU seconds |
 
 ## Shortcuts
-When data is accessed (read/written) using OneLake shortcuts, the capacity that belongs to the workspace that has the shortcut will be charged for transactions, whereas the capacity where the data resides is only charged for the data stored.
+When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) will be billed for the data stored.
 
 ## Paused Capacity
 When a capacity is paused, the data stored will continue to be billed to the capacity. You can delete the entire workspace while capacity is paused, however, to delete any Fabric items, capacity needs to be resumed. Transactions are rejected when capacity is paused, so there won't be transaction billing when capacity is paused.
 
 ## Disaster recovery
 
-OneLake usage when disaster recovery is enabled is also defined by data stored and the number of transactions.  
+OneLake usage when disaster recovery is enabled is also defined by the amount of data stored and the number of transactions.  
 
 ## Disaster recovery storage
 
