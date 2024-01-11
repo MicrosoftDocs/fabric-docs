@@ -10,7 +10,7 @@ ms.date: 01/11/2024
 
 # Use the Scope activity to execute a script in Azure Data Lake Analytics
 
-You canuse a Scope activity in a pipeline to execute a custom script in Azure Data Lake Analytics.
+You can use a Scope activity in a pipeline to execute a custom script in Azure Data Lake Analytics (ADLA).
 
 ## Prerequisites
 
@@ -26,7 +26,7 @@ To use a Scope activity in a pipeline, complete the following steps:
 ### Create the activity
 
 1. Create a new pipeline in your workspace.
-1. Search for **Scope** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. You may need to expand the activities toolbar since there are many activities, sometimes more than can fit on its initially visible area.
+1. Search for **Scope** in the pipeline **Activities** pane, and select it to add it to the pipeline canvas. You might need to expand the activities toolbar since there are many activities, sometimes more than can fit on its initially visible area.
 
    :::image type="content" source="media/scope-activity/add-scope-activity-to-pipeline.png" alt-text="Screenshot of the Fabric UI with the Activities pane and Scope activity highlighted.":::
 
@@ -44,13 +44,13 @@ Select the **ADLA Account** tab of the Scope activity. Select an existing accoun
 
 ### Script settings
 
-Select the **Script** tab of the Scope activity and select an existing or create a new script connection, as well as a script path for the activity. Optionally provide any script parameters, as well as advanced settings for the script.
+Select the **Script** tab of the Scope activity and select an existing or create a new script connection, as well as a script path for the activity. Optionally provide any script parameters, and advanced settings for the script.
 
 :::image type="content" source="media/scope-activity/scope-activity-script-settings.png" alt-text="Screenshot showing the Script tab of the Scope activity settings.":::
 
 ## Save and run or schedule the pipeline
 
-When your pipeline is finished, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings. This simple pipeline will execute the child activity of the Until activity exactly 1 time, changing the pipeline variable value from 0 to 1, after which the Until expression evaluates to true and terminate.
+When your pipeline is finished, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
