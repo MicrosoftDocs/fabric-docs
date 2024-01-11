@@ -43,9 +43,9 @@ This feature allows you to create or alter an existing function using the `.crea
 
     :::image type="content" source="media/create-functions/create-function.png" alt-text="Screenshot of the Explore your data window showing the newly created function in Real-Time Analytics." lightbox="media/create-functions/create-function.png":::
 
-    Stored functions appear under **Functions** in the **Data tree**.
+    Stored functions appear under **Functions** in the **Explorer** pane.
 
-    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Data tree showing the list of stored user-defined functions.":::
+    :::image type="content" source="media/create-functions/functions-object-tree.png" alt-text="Screenshot of Explorer pane showing the list of stored user-defined functions.":::
 
 1. In the **Explore your data** window, run a query to check that you have successfully created or altered your function.
 

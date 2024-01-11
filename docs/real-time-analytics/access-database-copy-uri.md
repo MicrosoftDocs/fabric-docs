@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/07/2023
+ms.date: 01/11/2024
 ms.search.form: product-kusto
 ---
 # Access an existing KQL database
@@ -47,7 +47,7 @@ The following table lists the two types of URIs that you can copy from the **Dat
 |Ingestion URI |URI that can be used to get data.|
 
 1. Access an [existing KQL database](#access-an-existing-kql-database).
-1. Copy the desired URI type from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+1. Copy the desired URI type from the **Database details** card in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
 
 ## Related content
 
