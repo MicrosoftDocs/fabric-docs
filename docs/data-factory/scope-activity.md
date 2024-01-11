@@ -40,7 +40,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **ADLA Account** tab of the Scope activity. Select an existing account connection or create a new connection to your ADLA account.
 
-:::image type="content" source="media/wait-activity/scope-activity-azure-data-lake-analytics-account-settings-tab.png" alt-text="Screenshot showing the ADLA Account settings tab of the Scope activity.":::
+:::image type="content" source="media/scope-activity/scope-activity-azure-data-lake-analytics-account-settings-tab.png" alt-text="Screenshot showing the ADLA Account settings tab of the Scope activity.":::
 
 ### Script settings
 
