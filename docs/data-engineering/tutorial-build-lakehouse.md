@@ -47,13 +47,13 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. In the **Lakehouse explorer**, you see options to load data into lakehouse. Select **New Dataflow Gen2**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option-inline.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse." lightbox="media\tutorial-build-lakehouse\load-data-lakehouse-option.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\load-data-lakehouse-option.png" alt-text="Screenshot showing where to select New Dataflow Gen2 option to load data into your lakehouse.":::
 
 1. On the new dataflow pane, select **Import from a Text/CSV file**.
 
 1. On the **Connect to data source** pane, select the **Upload file** radio button. Drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload-inline.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file.":::
 
 1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
 
@@ -62,7 +62,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
    > [!NOTE]
    > Fabric adds a space and number at the end of the table name by default. Table names must be lower case and must not contain spaces. Please rename it appropriately and remove any spaces from the table name.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination-inline.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lgihtbox"media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
 1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
 
@@ -86,11 +86,11 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. Once the dataflow is refreshed, select your new lakehouse in the left navigation panel to view the **dimension_customer** delta table. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table-inline.png" alt-text="Screenshot of the delta table, showing where to select SQL analytics endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table" alt-text="Screenshot of the delta table, showing where to select SQL analytics endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table":::
 
 1. Select the **dimension_customer** table to preview its data or select **New SQL query** to write your SQL statements.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql-inline.png" alt-text="Screenshot of the SQL analytics endpoint screen, showing where to select New SQL query." lightbox="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the SQL analytics endpoint screen, showing where to select New SQL query."":::
 
 1. The following sample query aggregates the row count based on the *BuyingGroup* column of the *dimension_customer* table. SQL query files are saved automatically for future reference, and you can rename or delete these files based on your need.
 
@@ -110,11 +110,11 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated report, or let Power BI automatically create a report based on your data. For this tutorial, under **Explore this data**, select **Auto-create a report**. In the next tutorial, we create a report from scratch.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report-inline.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report.":::
 
 1. Since the table is a dimension and there are no measures in it, Power BI creates a measure for the row count and aggregates it across different columns, and creates different charts as shown in the following image. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirement by including or excluding other tables or columns.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report-inline.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\quick-summary-report.png" alt-text="Screenshot of a Quick summary page displaying four different bar charts." lightbox="media\tutorial-build-lakehouse\quick-summary-report.png":::
 
 ## Next step
 
