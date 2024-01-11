@@ -35,7 +35,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select all the notebooks that were downloaded in the step 1 of this section.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open-inline.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button." lightbox="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button.":::
 
 1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
