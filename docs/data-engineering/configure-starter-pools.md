@@ -29,7 +29,7 @@ To manage the starter pool associated with your workspace:
 
 1. Go to your workspace and choose the **Workspace settings**.
 
-   :::image type="content" source="media\configure-starter-pools\data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
+   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
 1. Then, select the **Data Engineering/Science** option to expand the menu.
 
@@ -37,7 +37,7 @@ To manage the starter pool associated with your workspace:
 
 1. Select the **StarterPool** option.
 
-   :::image type="content" source="media\configure-starter-pools\starter-pool-settings-inline.png" alt-text="Screenshot showing starter pool configuration options." lightbox="media\configure-starter-pools\starter-pool-settings.png":::
+   :::image type="content" source="media\configure-starter-pools\starter-pool-settings-inline.png" alt-text="Screenshot showing starter pool configuration options.":::
 
 1. You can set the maximum node configuration for your starter pools to an allowed number based on the purchased capacity or reduce the default max node configuration to a smaller value when running smaller workloads.
 
