@@ -295,17 +295,17 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Industry solutions
+    - title: Industry solutions in Fabric
 
       imageSrc: ./media/industry-solutions-icon.svg
       links:
-        - url: get-started/copilot-fabric-overview.md
-          text: Retail solutions
-        - url: get-started/copilot-fabric-enable.md
-          text: Sustainability solutions
-        - url: get-started/copilot-notebooks-overview.md
-          text: Healthcare solutions
-        - url: get-started/copilot-privacy-security.md
+        - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
+          text: Retail data solutions
+        - url: /industry/retail/retail-data-solutions/deploy-retail-industry-data-model
+          text: Deploy Retail industry data model
+        - url: /industry/retail/retail-data-solutions/configure-retail-industry-data-model
+          text: Configure Retail industry data model
+        - url: /industry/retail
           text: See more
 
 
