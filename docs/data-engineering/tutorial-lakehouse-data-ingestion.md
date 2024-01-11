@@ -33,7 +33,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. On your newly created data factory pipeline, select **Add pipeline activity** to add an activity to the pipeline and select **Copy data**. This action adds copy data activity to the pipeline canvas.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data-inline.png" alt-text="Screenshot showing where to select Add pipeline activity and Copy data." lightbox="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\pipeline-copy-data.png" alt-text="Screenshot showing where to select Add pipeline activity and Copy data.":::
 
 1. Select the newly added copy data activity from the canvas. Activity properties appear in a pane below the canvas (you may need to expand the pane upwards by dragging the top edge). Under the **General** tab in the properties pane, specify the name for the copy data activity **Data Copy to Lakehouse**.
 
@@ -41,11 +41,11 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Under **Source** tab of the selected copy data activity, select **External** as **Data store type** and then select **+ New** to create a new connection to data source.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external-inline.png" alt-text="screenshot showing where to select External and + New on the Source tab." lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="screenshot showing where to select External and + New on the Source tab.":::
 
 1. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it. On the **New connection** wizard, select **Azure Blob Storage** and then select **Continue**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\new-connection-azure-blob-storage-inline.png" alt-text="Screenshot of the New connection wizard, showing where to select Azure Blob Storage." lightbox="media\tutorial-lakehouse-data-ingestion\new-connection-azure-blob-storage.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\new-connection-azure-blob-storage.png" alt-text="Screenshot of the New connection wizard, showing where to select Azure Blob Storage.":::
 
 1. On the next screen of the **New connection** wizard, enter the following details and select **Create** to create the connection to the data source.
 
@@ -56,7 +56,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Connection name | wwisampledata |
    | Authentication kind | Anonymous |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\connection-settings-details-inline.png" alt-text="Screenshot of the Connection settings screen, showing where to enter the details and select Create." lightbox="media\tutorial-lakehouse-data-ingestion\connection-settings-details.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\connection-settings-details.png" alt-text="Screenshot of the Connection settings screen, showing where to enter the details and select Create.":::
 
 1. Once the new connection is created, return to the **Source** tab of the copy data activity, and the newly created connection is selected by default. Specify the following properties before moving to the destination settings.
 
@@ -69,7 +69,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Recursively | Checked |
    | File format | Binary |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details-inline.png" alt-text="Screenshot of the source tab showing where to enter the specific details." lightbox="media\tutorial-lakehouse-data-ingestion\source-tab-details.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details." lightbox="media\tutorial-lakehouse-data-ingestion\source-tab-details.png":::
 
 1. Under the **Destination** tab of the selected copy data activity, specify the following properties:
 
@@ -82,7 +82,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | File path | Directory name (first text box): wwi-raw-data |
    | File format | Binary |
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details-inline.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details." lightbox="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details.":::
 
 1. You have finished configuring the copy data activity. Select the **Save** button on the top ribbon (under **Home**) to save your changes, and select **Run** to execute your pipeline and its activity. You can also schedule pipelines to refresh data at defined intervals to meet your business requirements. For this tutorial, we run the pipeline only once by clicking on **Run** button.
 
@@ -92,11 +92,11 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Once the data is copied, go to the items view of the workspace and select your new lakehouse (**wwilakehouse**) to launch the **Lakehouse explorer**.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse-inline.png" alt-text="Screenshot showing where to select the lakehouse to launch the Lakehouse explorer." lightbox="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\item-view-select-lakehouse.png" alt-text="Screenshot showing where to select the lakehouse to launch the Lakehouse explorer.":::
 
 1. Validate that in the **Lakehouse explorer** view, a new folder **wwi-raw-data** has been created and data for all the tables have been copied there.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table-inline.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer." lightbox="media\tutorial-lakehouse-data-ingestion\validate-destination-table.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table-inline.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
 ## Next step
 
