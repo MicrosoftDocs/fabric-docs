@@ -53,7 +53,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 
    1. Select the box next to **Assume referential integrity.**
 
-   1. Select **Confirm.**
+   1. Select **OK**.
 
       :::image type="content" source="media\tutorial-lakehouse-build-report\create-relationship-dialog.png" alt-text="Screenshot of the New relationship dialog box, showing where to select Assume referential integrity.":::
 
