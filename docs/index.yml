@@ -105,19 +105,22 @@ conceptualContent:
               url: cicd/index.yml
               text: See more
         # Card
-        - title: Training
+        - title: Learning
           links:
-            - url: https://www.microsoft.com/cloudskillschallenge/ignite/registration/2023?ocid=ignite23_CSC_fabricdocs_card
+            - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
+              itemType: training
+              text: Jumpstart your career with the Career Hub
+            - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
               itemType: training
               text: Skill up with the cloud skills challenge
-            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
-              itemType: training
-              text: End-to-end analytics using Fabric
-            - url: /training/browse/?products=fabric&resource_type=learning%20path
+            - url: /training/fabric?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
               text: Explore role-based learning paths
+            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+              itemType: training
+              text: Explore end-to-end tutorials
           footerLink:
-              url: /training/browse/?products=fabric&resource_type=module
+              url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               text: See more
         # Card
         - title: Community
