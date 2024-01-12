@@ -300,7 +300,7 @@ productDirectory:
       imageSrc: ./media/industry-solutions-icon.svg
       links:
         - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
-          text: Retail data solutions - overview
+          text: What is retail data solutions?
         - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
           text: Deploy Retail data solutions
         - url: /industry/retail/retail-data-solutions/troubleshoot-retail-data-solutions
