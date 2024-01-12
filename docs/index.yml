@@ -294,6 +294,21 @@ productDirectory:
         - url: get-started/copilot-privacy-security.md
           text: See more
 
+    # Card
+    - title: Industry solutions in Fabric
+
+      imageSrc: ./media/industry-solutions-icon.svg
+      links:
+        - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
+          text: Retail data solutions
+        - url: /industry/retail/retail-data-solutions/deploy-retail-industry-data-model
+          text: Deploy Retail industry data model
+        - url: /industry/retail/retail-data-solutions/configure-retail-industry-data-model
+          text: Configure Retail industry data model
+        - url: /industry/retail
+          text: See more
+
+
 additionalContent:
 # additionalContent section (optional)
 # Card with summary style
