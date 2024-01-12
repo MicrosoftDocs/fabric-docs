@@ -29,19 +29,19 @@ To manage the starter pool associated with your workspace:
 
 1. Go to your workspace and choose the **Workspace settings**.
 
-   :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
+   :::image type="content" source="media\configure-starter-pools\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media\configure-starter-pools\data-engineering-menu.png":::
 
-1. Then, select the **Data Engineering/Science** option to expand the menu. Navigate to the **Spark Compute** option from the left-hand menu.
+1. Then, select the **Data Engineering/Science** option to expand the menu.
 
-   :::image type="content" source="media/workspace-admin-settings/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view." lightbox="media/workspace-admin-settings/spark-compute-detail-view.png" :::
+   :::image type="content" source="media/configure-starter-pools/spark-compute-detail-view.png" alt-text="Screenshot showing Spark Settings detail view.":::
 
 1. Select the **StarterPool** option.
 
-   :::image type="content" source="media\workspace-admin-settings\starter-pool-settings.png" alt-text="Screenshot showing starter pool configuration options.":::
+   :::image type="content" source="media\configure-starter-pools\starter-pool-settings.png" alt-text="Screenshot showing starter pool configuration options.":::
 
 1. You can set the maximum node configuration for your starter pools to an allowed number based on the purchased capacity or reduce the default max node configuration to a smaller value when running smaller workloads.
 
-   :::image type="content" source="media\workspace-admin-settings\starter-pool-max-node.png" alt-text="Screenshot showing starter pool max node and max executor options for autoscaling and dynamic allocation.":::
+   :::image type="content" source="media\configure-starter-pools\starter-pool-max-node.png" alt-text="Screenshot showing starter pool max node and max executor options for autoscaling and dynamic allocation.":::
 
 The following section lists various default configurations and the max node limits supported for starter pools based on Microsoft Fabric capacity SKUs:
 
