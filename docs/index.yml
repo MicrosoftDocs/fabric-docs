@@ -295,7 +295,7 @@ productDirectory:
           text: See more
 
     # Card
-    - title: Industry solutions in Fabric
+    - title: Industry Solutions in Fabric
 
       imageSrc: ./media/industry-solutions-icon.svg
       links:
