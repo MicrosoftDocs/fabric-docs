@@ -39,6 +39,9 @@ To pause your capacity:
 
 5. Select **Yes** to confirm you want to pause the capacity.
 
+## Impact of Pausing on your usage and the Azure Bill
+When you pause your capacity, any smoothed capacity usage that would be reported after the capacity pauses will be reconciled towards your capacity compute bill. This usage shows up as a one time reconciliation event in the capacity metrics app and will represent an increase in your Azure bill. To better understand the impact of pausing your capacity and how to review the reconciled usage, review [this document](monitor-paused-capacity.md).
+
 ## Resume your capacity
 
 Restart usage by resuming your capacity. Resuming your capacity also resumes billing. Content assigned to this capacity becomes available once the capacity is resumed.
