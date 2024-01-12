@@ -66,6 +66,6 @@ In this example, you can use service principal to connect to Azure Data Lake Sto
 
 8. Fill in the **Service principal key** in the connection settings. You can find the service principal key in Azure where the SPN was created.
 
-   :::image type="content" source="media/service-principals/service-principal-key.png" alt-text="Screenshot emphasizing where to find the service principal key in Azure.":::
+   :::image type="content" source="media/service-principals/service-principal-key.png" alt-text="Screenshot emphasizing where to find the service principal key in Azure." lightbox="media/service-principals/service-principal-key.png":::
 
 9. Finally, select **Next** in the connection settings to authenticate to the data source.
