@@ -41,7 +41,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Under **Source** tab of the selected copy data activity, select **External** as **Data store type** and then select **+ New** to create a new connection to data source.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="screenshot showing where to select External and + New on the Source tab.":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="Screenshot showing where to select External and + New on the Source tab.":::
 
 1. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it. On the **New connection** wizard, select **Azure Blob Storage** and then select **Continue**.
 
