@@ -4,7 +4,7 @@ description: A known issue is posted where a customer tries to publish a Dataflo
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting  
-ms.date: 11/10/2023
+ms.date: 01/12/2024
 ms.custom: 
 ---
 
@@ -14,7 +14,7 @@ Users get the following error message when they try to publish a Dataflow Gen2: 
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
-**Status:** Active
+**Status:** Fixed: January 12, 2024
 
 **Problem area:** Data Factory
 
