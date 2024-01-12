@@ -34,7 +34,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. In the **New lakehouse** dialog box, enter **wwilakehouse** in the **Name** field.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\new-lakehouse-name.png" alt-text="Screenshot of the New lakehouse dialog box." lightbox="media\tutorial-build-lakehouse\new-lakehouse-name.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\new-lakehouse-name.png" alt-text="Screenshot of the New lakehouse dialog box.":::
 
 1. Select **Create** to create and open the new lakehouse.
 
@@ -53,7 +53,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. On the **Connect to data source** pane, select the **Upload file** radio button. Drag and drop the *dimension_customer.csv* file that you downloaded in step 1. After the file is uploaded, select **Next**.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file." lightbox="media\tutorial-build-lakehouse\connection-settings-upload.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\connection-settings-upload.png" alt-text="Screenshot showing where to select Upload file and where to drag the previously downloaded file.":::
 
 1. From the **Preview file data** page, preview the data and select **Create** to proceed and return back to the dataflow canvas.
 
@@ -72,7 +72,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\choose-destination-table.png" alt-text="Screenshot showing how to choose the destination table.":::
 
-1. On the **Choose destination settings** pane, select **Replace** as **Update method**. Select **Save Settings** to return to the dataflow canvas.
+1. On the **Choose destination settings** pane, select **Replace** as **Update method**. Select **Save settings** to return to the dataflow canvas.
 
 1. From the dataflow canvas, you can easily transform the data based on your business requirements. For simplicity, we aren't making any changes in this tutorial. To proceed, select **Publish** at the bottom right of the screen.
 
@@ -90,7 +90,7 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
 1. Select the **dimension_customer** table to preview its data or select **New SQL query** to write your SQL statements.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the SQL analytics endpoint screen, showing where to select New SQL query." lightbox="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\warehouse-mode-new-sql.png" alt-text="Screenshot of the SQL analytics endpoint screen, showing where to select New SQL query.":::
 
 1. The following sample query aggregates the row count based on the *BuyingGroup* column of the *dimension_customer* table. SQL query files are saved automatically for future reference, and you can rename or delete these files based on your need.
 
@@ -108,9 +108,9 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\workspace-default-dataset.png" alt-text="Screenshot showing the default semantic model that was created when the new lakehouse was created.":::
 
-1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated report, or let Power BI automatically create a report based on your data. For this tutorial, select **Auto-create** under **Create a report**. In the next tutorial, we create a report from scratch.
+1. From the semantic model pane, you can view all the tables. You have options to create reports either from scratch, paginated report, or let Power BI automatically create a report based on your data. For this tutorial, under **Explore this data**, select **Auto-create a report**. In the next tutorial, we create a report from scratch.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report." lightbox="media\tutorial-build-lakehouse\dataset-details-create-report.png":::
+   :::image type="content" source="media\tutorial-build-lakehouse\dataset-details-create-report.png" alt-text="Screenshot of the semantic model details page, showing where to select Create a report.":::
 
 1. Since the table is a dimension and there are no measures in it, Power BI creates a measure for the row count and aggregates it across different columns, and creates different charts as shown in the following image. You can save this report for the future by selecting **Save** from the top ribbon. You can make more changes to this report to meet your requirement by including or excluding other tables or columns.
 
