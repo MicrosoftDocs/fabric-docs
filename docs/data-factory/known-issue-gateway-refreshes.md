@@ -4,7 +4,7 @@ description: A known issue is posted where a refresh taking longer than an hour 
 author: nikkiwaghani
 ms.author: nikkiwaghani
 ms.topic: troubleshooting
-ms.date: 11/15/2023
+ms.date: 01/12/2024
 ms.custom:
   - ignite-2023
 ---
@@ -18,7 +18,7 @@ A known issue is posted where a refresh taking longer than an hour fails with  "
 ✔️ On-premises data gateway in Microsoft Fabric
 ✔️ VNet data gateway in Microsoft Fabric
 
-**Status:** Open
+**Status:** Removed: January 12, 2024
 
 **Problem area:** Data Factory
 
@@ -28,4 +28,4 @@ When you're using OAuth2 credentials, the gateway currently doesn't support refr
 
 ## Solutions and workarounds
 
-Shorten queries to run in less than an hour.
+The limitation has been documented in [On-premises data gateway considerations for data destinations in Dataflow Gen2](/fabric/data-factory/gateway-considerations-output-destinations#evaluation-time-outs).  To work around the issue, shorten queries to run in less than an hour.
