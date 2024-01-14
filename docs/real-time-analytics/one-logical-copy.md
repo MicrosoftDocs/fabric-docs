@@ -44,7 +44,7 @@ You can enable data availability either on a KQL database or table level.
 1. To enable data availability, browse to the details page of your KQL database or table.
 1. Next to **OneLake availability** in the **Database details** pane, select the **Edit** (pencil) icon.
 
-    :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted.":::
+    :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
 1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few minutes for the data to be available in OneLake.
 
