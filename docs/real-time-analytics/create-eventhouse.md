@@ -31,11 +31,11 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
     > [!NOTE]
     > The Eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
 
-    :::image type="content" source="media/eventhouse/create-eventhouse.png" alt-text="Screenshot of creating Eventhouse by entering name in Real-Time Analytics.":::
+    :::image type="content" source="media/eventhouse/create-eventhouse.png" alt-text="Screenshot of creating Eventhouse by entering name in Real-Time Analytics." lightbox="media/eventhouse/create-eventhouse.png":::
 
 1. The [database details](create-database.md#database-details) page opens for the default database in the newly created Eventhouse. To view all the databases in this Eventhouse or create new databases, select the **Eventhouse** menu item.
 
-    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page":::
+    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page" lightbox="media/eventhouse/choose-eventhouse.png":::
 
 ## View all databases in an Eventhouse
 
@@ -72,7 +72,7 @@ In this section, you add a new KQL database to an existing Eventhouse.
 1. In the top righthand side of the Eventhouse details page, select **Eventhouse settings** > **Guaranteed availability**
 1. From the dropdown, select the size corresponding to the [minimium available CU](eventhouse.md#guaranteed-availability) size you want to apply to this Eventhouse.
 
-    :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct guaranteed availability in Real-Time Analytics Eventhouse.":::
+    :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct guaranteed availability in Real-Time Analytics Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
 
 
 ## Delete an Eventhouse
