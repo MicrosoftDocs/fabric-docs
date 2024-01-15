@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 01/11/2024
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
@@ -33,7 +33,7 @@ ms.search.form: Get started
 
 1. In the **Database details** card, select the **pencil** icon.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-availability.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-availability.png":::
 
 1. Toggle the button to **Active** and select **Done**.
 
