@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/06/2024
+ms.date: 01/14/2024
 ---
 
 # Tenant settings index

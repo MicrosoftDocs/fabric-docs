@@ -4,7 +4,7 @@ description: "Learn about Microsoft Fabric security fundamentals and how the mai
 author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: sergeig, vparasuraman
-ms.date: 12/15/2023
+ms.date: 01/14/2024
 ms.topic: conceptual
 ms.custom: fabric-cat
 ---
@@ -15,25 +15,13 @@ This article presents a big-picture perspective of the Microsoft Fabric security
 
 The article is primarily targeted at Fabric administrators, who are responsible for overseeing Fabric in the organization. It's also relevant to enterprise security stakeholders, including security administrators, network administrators, Azure administrators, workspace administrators, and database administrators.
 
-> [!NOTE]
-> This article intentionally provides a high-level overview of the Fabric security architecture. It contains many links to Fabric and Azure documentation, and we encourage you to follow these links when you want more detail.
-
-## Background
-
-[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). It's also a platform that offers a comprehensive range of services, including data lake, data engineering, and data integration—all in one place.
-
-With Fabric, you don't need to piece together different services from multiple vendors. Instead, you benefit from a highly integrated, end-to-end, and easy-to-use product that's designed to simplify your analytics needs. Fabric was designed from the outset to protect sensitive assets. For more information, see [What is Microsoft Fabric?](../get-started/microsoft-fabric-overview.md).
-
 ## Fabric platform
 
-The Fabric platform is built on a foundation of software as a service (SaaS), which delivers reliability, simplicity, and scalability. It's built on Azure, which is Microsoft's public cloud computing platform.
+[Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is an all-in-one analytics solution for enterprises that covers everything from data movement to data science, real-time analytics, and business intelligence (BI). The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include [Lakehouse](../data-engineering/lakehouse-overview.md), [Data Factory](../data-factory/data-factory-overview.md), [Synapse Data Engineering](../data-engineering/data-engineering-overview.md), [Synapse Data Warehouse](../data-warehouse/data-warehousing.md), [Power BI](/power-bi/fundamentals/power-bi-overview), and others.
 
-Traditionally, many data products have been platform as a service (PaaS), requiring an administrator of the service to set up security, compliance, and governance for each service. Because Fabric is a SaaS service, many of these features are built into the SaaS platform and require no setup or minimal setup.
+With Fabric, you don't need to piece together different services from multiple vendors. Instead, you benefit from a highly integrated, end-to-end, and easy-to-use product that's designed to simplify your analytics needs. Fabric was designed from the outset to protect sensitive assets.
 
-> [!IMPORTANT]
-> IT professionals who are familiar with managing or administering PaaS services should pay close attention to this article. That's because the security architecture for SaaS is significantly different.
-
-The Fabric platform comprises a series of services and infrastructure components that support the common functionality for all [Fabric experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric). Collectively, they offer a comprehensive set of analytics experiences designed to work together seamlessly. Experiences include Data Factory, Synapse Data Engineering, Synapse Data Warehouse, Power BI, and others.
+The Fabric platform is built on a foundation of software as a service (SaaS), which delivers reliability, simplicity, and scalability. It's built on Azure, which is Microsoft's public cloud computing platform. Traditionally, many data products have been platform as a service (PaaS), requiring an administrator of the service to set up security, compliance, and governance for each service. Because Fabric is a SaaS service, many of these features are built into the SaaS platform and require no setup or minimal setup.
 
 ### Architectural diagram
 
@@ -43,11 +31,15 @@ The architectural diagram below shows a high-level representation of the Fabric 
 
 The architectural diagram depicts the following concepts.
 
-1. A user uses a browser or a client application, like Power BI Desktop, to connect to the Fabric service. 
-1. Authentication is handled by Microsoft Entra ID ([previously known as Azure Active Directory](/entra/fundamentals/new-name)), which is the cloud-based identity and access management service that authenticates the user (or service principal) and manages access to Fabric. 
-1. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user. 
-1. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region. 
-1. The back-end capacity platform is responsible for compute operations and for storing customer data, and it's located in the capacity region. It leverages Azure core services in that region as necessary for specific Fabric experiences. 
+1. A user uses a browser or a client application, like Power BI Desktop, to connect to the Fabric service.
+
+2. Authentication is handled by Microsoft Entra ID, [previously known as Azure Active Directory](/entra/fundamentals/new-name), which is the cloud-based identity and access management service that authenticates the user or [service principal](/entra/identity-platform/app-objects-and-service-principals?tabs=browser#service-principal-object) and manages access to Fabric.
+
+3. The web front end receives user requests and facilitates login. It also routes requests and serves front-end content to the user.
+
+4. The metadata platform stores tenant metadata, which can include customer data. Fabric services query this platform on demand in order to retrieve authorization information and to authorize and validate user requests. It's located in the tenant home region.
+
+5. The back-end capacity platform is responsible for compute operations and for storing customer data, and it's located in the capacity region. It leverages Azure core services in that region as necessary for specific Fabric experiences.
 
 Fabric platform infrastructure services are multitenant. There is logical isolation between tenants. These services don't process complex user input and are all written in managed code. Platform services never run any user-written code.
 
@@ -55,17 +47,13 @@ The metadata platform and the back-end capacity platform each run in secured vir
 
 The application layer ensures that tenants are only able to access data from within their own tenant.
 
-## Authentication and authorization
-
-This section provides an overview of how authentication and authorization works in Fabric.
-
-### Authentication
+## Authentication
 
 Fabric relies on Microsoft Entra ID to authenticate users (or service principals). When authenticated, users receive [access tokens](/entra/identity-platform/access-tokens) from Microsoft Entra ID. Fabric uses these tokens to perform operations in the context of the user.
 
 A key feature of Microsoft Entra ID is [conditional access](security-conditional-access.md). Conditional access ensures that tenants are secure by enforcing multifactor authentication, allowing only [Microsoft Intune](/mem/intune/fundamentals/what-is-intune) enrolled devices to access specific services. Conditional access also restricts user locations and IP ranges.
 
-### Authorization
+## Authorization
 
 All Fabric permissions are stored centrally by the metadata platform. Fabric services query the metadata platform on demand in order to retrieve authorization information and to authorize and validate user requests.
 
@@ -97,13 +85,11 @@ Inbound Fabric communication also enforces TLS 1.2 and negotiates to TLS 1.3, wh
 
 ## Telemetry
 
-The Fabric platform telemetry store is designed to be compliant with data and privacy regulations for customers in all regions where Fabric is available, including the European Union (EU). For more information, see [EU Data Boundary Services](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/MPSA#EUDataBoundaryServices).
-
-Telemetry is used to maintain performance and reliability of the Fabric platform.
+Telemetry is used to maintain performance and reliability of the Fabric platform. The Fabric platform telemetry store is designed to be compliant with data and privacy regulations for customers in all regions where Fabric is available, including the European Union (EU). For more information, see [EU Data Boundary Services](https://www.microsoft.com/licensing/terms/product/PrivacyandSecurityTerms/MPSA#EUDataBoundaryServices).
 
 ## OneLake
 
-[OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the entire organization, and it's automatically provisioned for every Fabric tenant. It's built on Azure and it can store any type of file—structured or unstructured. Also, all Fabric items, like warehouses and lakehouses, automatically store their data in OneLake.
+[OneLake](../onelake/onelake-overview.md) is a single, unified, logical data lake for the entire organization, and it's automatically provisioned for every Fabric tenant. It's built on Azure and it can store any type of file, structured or unstructured. Also, all Fabric items, like warehouses and lakehouses, automatically store their data in OneLake.
 
 OneLake supports the same [Azure Data Lake Storage Gen2 (ADLS Gen2)](/azure/storage/blobs/data-lake-storage-introduction) [APIs](../onelake/onelake-api-parity.md) and SDKs, therefore it's compatible with existing ADLS Gen2 applications, including [Azure Databricks](/azure/databricks/introduction/).
 
@@ -117,9 +103,7 @@ For more information, see [OneLake security (Workspace security)](../onelake/one
 
 ### Item security
 
-Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. Item security provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per-item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
-
-For information, see [OneLake security (Item security)](../onelake/onelake-security.md#item-security).
+Within a workspace, you can assign permissions directly to Fabric items, like warehouses and lakehouses. [Item security](../onelake/onelake-security.md#item-security) provides the flexibility to grant access to an individual Fabric item without granting access to the entire workspace. Users can set up per item permissions either by [sharing an item](../get-started/share-items.md) or by managing the permissions of an item.
 
 ## Compliance resources
 

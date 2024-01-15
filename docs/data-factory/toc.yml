@@ -55,6 +55,10 @@
       href: monitor-data-factory.md
   - name: Migrate to Fabric
     items:
+    - name: Activity Continuity between ADF and Data Factory in Fabric
+      href: activity-parity.md
+    - name: Connector Continuity between ADF and Data Factory in Fabric
+      href: connector-parity.md
     - name: Migrate from ADF and Power BI
       href: upgrade-paths.md
     - name: Move queries from Dataflow Gen1 to Gen2
@@ -569,6 +573,8 @@
         href: notebook-activity.md
       - name: Office 365 Outlook activity
         href: outlook-activity.md
+      - name: Scope activity
+        href: scope-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Set Variable Activity

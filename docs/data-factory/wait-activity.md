@@ -42,11 +42,11 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 Select the **Settings** tab of the Wait activity. Specify a number of seconds for execution to wait before continuing. You can directly enter a number, or use a dynamic expression to derive a value from any of the available functions and variables for expressions.
 
-:::image type="content" source="media/wait-activity/wait-activity-settings.png" alt-text="Screenshot showing the Until activity Settings tab.":::
+:::image type="content" source="media/wait-activity/wait-activity-settings.png" alt-text="Screenshot showing the Wait activity Settings tab.":::
 
 ## Save and run or schedule the pipeline
 
-This example will simply wait the specified period and terminate, although in a real-world setting, you would normally add other activities after or before the Wait activity to achieve a more productive purpose. When your pipeline is finished, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings. This simple pipeline will execute the child activity of the Until activity exactly 1 time, changing the pipeline variable value from 0 to 1, after which the Until expression evaluates to true and terminate.
+This example will simply wait the specified period and terminate, although in a real-world setting, you would normally add other activities after or before the Wait activity to achieve a more productive purpose. When your pipeline is finished, switch to the **Home** tab at the top of the pipeline editor, and select the save button to save your pipeline. Select **Run** to run it directly, or **Schedule** to schedule it. You can also view the run history here or configure other settings.
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 

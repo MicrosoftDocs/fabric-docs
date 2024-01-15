@@ -27,13 +27,13 @@ You can delete individual reports, pipelines, warehouses, and other items or rem
 
    :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-item.png" alt-text="Screenshot of the left navigation menu, showing where to select your workspace.":::
 
-1. Select the *...* option under the workspace name and select **Workspace settings**.
+1. Select **Workspace settings**.
 
-   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-settings.png" alt-text="Screenshot of the workspace item view, showing where to select Workspace settings." lightbox="media\tutorial-lakehouse-clean-up\select-workspace-settings.png":::
+   :::image type="content" source="media\tutorial-lakehouse-clean-up\select-workspace-settings-inline.png" alt-text="Screenshot of the workspace item view, showing where to select Workspace settings." lightbox="media\tutorial-lakehouse-clean-up\select-workspace-settings.png":::
 
 1. Select **Other** and **Remove this workspace**.
 
-   :::image type="content" source="media\tutorial-lakehouse-clean-up\remove-this-workspace.png" alt-text="Screenshot of the Workspace settings pane, showing where to select Other and Remove this workspace." lightbox="media\tutorial-lakehouse-clean-up\remove-this-workspace.png":::
+   :::image type="content" source="media\tutorial-lakehouse-clean-up\remove-this-workspace-inline.png" alt-text="Screenshot of the Workspace settings pane, showing where to select Other and Remove this workspace." lightbox="media\tutorial-lakehouse-clean-up\remove-this-workspace.png":::
 
 1. When the warning pops up, select **Delete**.
 
