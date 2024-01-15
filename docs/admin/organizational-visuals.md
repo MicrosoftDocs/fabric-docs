@@ -124,7 +124,18 @@ When this setting is enabled, visuals can store data on the user's local machine
 
 :::image type="content" source="./media/organizational-visuals/local-storage-setting.png" alt-text="Screenshot of the local storage settings admin switch.":::
 
-You can put exceptions in the exceptions check box
+To enable the local storage setting, follow these steps:
+
+1. Expand the **Local storage** settings.
+
+2. Select **Enabled**.
+
+3. Choose who can render this API:
+
+   * Select **The entire organization** option to allow visuals to store data on the local machine for every user in your organization.
+   * Select the **Specific security groups** option to limit this privilege to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option. Only a user listed in the permitted security group can render the API.
+
+4. Select **Apply**.
 
 ### Obtain Microsoft Entra access token
 
