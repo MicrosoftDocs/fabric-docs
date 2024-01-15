@@ -32,9 +32,9 @@ To associate your KQL queryset with a database:
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. Select **Select database**, and then select a database from the data hub that appears.
+1. Select a database from the **OneLake data hub** window that appears.
 
-    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the KQL queryset database selection pane. The option titled Select  database is highlighted.":::
+    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the Onelake data hub window showing a selected KQL database.":::
 
     A list of tables associated with this database will appear below the database name.
 
@@ -63,7 +63,7 @@ Within a KQL queryset, you can create multiple tabs. Each tab can be associated 
 
 ## Copy query
 
-You might want to copy or share the queries you create. 
+You might want to copy or share the queries you create.
 
 1. At the top of the query window, select the **Home** tab.
 1. Select **Copy query**.
@@ -74,7 +74,7 @@ You might want to copy or share the queries you create.
 
     > [!IMPORTANT]
     > The user who is receiving the query link must have viewing permissions to the underlying data to execute the query and view results.
-    
+
     |Action|Description|
     |--|--|
     |Copy query | Copy the query text.
