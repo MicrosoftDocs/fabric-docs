@@ -69,7 +69,7 @@ In this section, you add a new KQL database to an existing Eventhouse.
 [Guaranteed availability](eventhouse.md#guaranteed-availability) sets a minimum available capacity unit (CU) size for your Eventhouse.
 
 1. Select the Eventhouse from your list of items in the workspace.
-1. Select **Eventhouse settings** > **Guaranteed availability**
+1. In the top righthand side of the Eventhouse details page, select **Eventhouse settings** > **Guaranteed availability**
 1. From the dropdown, select the size corresponding to the [minimium available CU](eventhouse.md#guaranteed-availability) size you want to apply to this Eventhouse.
 
     :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct guaranteed availability in Real-Time Analytics Eventhouse.":::
