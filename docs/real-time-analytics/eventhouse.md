@@ -18,9 +18,9 @@ While Eventhouse is in preview, you can create a standalone [KQL database](creat
 
 ## Guaranteed availability
 
-In general, an autoscale mechanism is used to determine the size of each KQL database. This mechanism ensures cost and performance optimization based on your usage pattern. You can, however, set a minimum available CU size by enabling **Guaranteed availability** on the Eventhouse level. This compute is available to all the databases within the specified Eventhouse. 
+In general, an autoscale mechanism is used to determine the size of each KQL database. This mechanism ensures cost and performance optimization based on your usage pattern. You can, however, set a minimum available capacity unit (CU) size by enabling **Guaranteed availability** on the Eventhouse level. This compute is available to all the databases within the specified Eventhouse. 
 
-When you enable **Guaranteed availability**, you also select the size that corresponds to the minimum [capacity units (CUs)](../admin/service-admin-portal-capacity-settings.md) allotted to this Eventhouse. The following table maps the size to the minimum CUs:
+When you enable **Guaranteed availability**, you also select the size that corresponds to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to this Eventhouse. The following table maps the size to the minimum CUs:
 
 | Name        | Minimum CUs|
 |-------------|------------|
@@ -32,7 +32,6 @@ When you enable **Guaranteed availability**, you also select the size that corre
 | 2X Large    | 56         |
 
 For instructions on how to enable guaranteed availability, see [Enable guaranteed availability](create-eventhouse.md#enable-guaranteed-availability).
-
 
 ## Next step
 
