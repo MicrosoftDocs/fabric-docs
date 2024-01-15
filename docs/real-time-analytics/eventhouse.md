@@ -31,6 +31,8 @@ When you enable **Guaranteed availability**, you also select the size that corre
 | Extra Large | 34         |
 | 2X Large    | 56         |
 
+For instructions on how to enable guaranteed availability, see [Enable guaranteed availability](create-eventhouse.md#enable-guaranteed-availability).
+
 
 ## Next step
 

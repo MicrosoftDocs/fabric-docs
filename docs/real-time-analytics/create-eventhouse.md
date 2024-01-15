@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 12/24/2023
 ms.search.form: Eventhouse
 ---
-# Create an Eventhouse (Preview)
+# Create and manage an Eventhouse (Preview)
 
 An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (Preview)](eventhouse.md)
 
@@ -39,7 +39,7 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
 ## View all databases in an Eventhouse
 
-1. From the Eventhouse pane, select **Browse all databases**.
+1. From the Eventhouse pane, select **Browse all databases**. Alternatively, select the Eventhouse item from your list of items in the workspace.
 
     :::image type="content" source="media/eventhouse/browse-databases.png" alt-text="Screenshot of Eventhouse pane with Browse all databases highlighted in a red box.":::'
 
@@ -47,17 +47,33 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
     :::image type="content" source="media/eventhouse/browse-all-databases.png" alt-text="Screenshot of database view in Eventhouse in Real-Time Analytics.":::
 
-1. To explore a specific database, select the name of this database from the list. 
+1. Toggle between list and tile view using the buttons on the top right of the page.
 
-## Add a KQL database in the Eventhouse
+    :::image type="content" source="media/eventhouse/list-tile-view.png" alt-text="Screenshot showing the Eventhouse details page with the tile and list view buttons surrounded by a red box.":::
+
+1. To explore a specific database, select the name of this database from the list.
+
+## Add a KQL database to an existing Eventhouse
 
 In this section, you add a new KQL database to an existing Eventhouse.
 
-1. From the Eventhouse pane, select **+ New**.
+1. Select the Eventhouse from your list of items in the workspace.
+1. Select **New database +**.
 
-    :::image type="content" source="media/eventhouse/databases-in-eventhouse.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
+    :::image type="content" source="media/eventhouse/new-database.png" alt-text="Screenshot showing the databases summary in Eventhouse.":::
 
 1. Enter a database name, and select **Create**.
+
+## Enable guaranteed availability
+
+[Guaranteed availability](eventhouse.md#guaranteed-availability) sets a minimum available capacity unit (CU) size for your Eventhouse.
+
+1. Select the Eventhouse from your list of items in the workspace.
+1. Select **Eventhouse settings** > **Guaranteed availability**
+1. From the dropdown, select the size corresponding to the [minimium available CU](eventhouse.md#guaranteed-availability) size you want to apply to this Eventhouse.
+
+    :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct guaranteed availability in Real-Time Analytics Eventhouse.":::
+
 
 ## Delete an Eventhouse
 
