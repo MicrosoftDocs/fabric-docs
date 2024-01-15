@@ -41,9 +41,9 @@ For more information on the `.create materialized-view` command, see [.create ma
 
     :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Explore your data window showing an example of a materialized view command." lightbox="media/materialized-view/mv-example.png":::
 
-    Materialized views appear under **Materialized views** in the **Data tree**.
+    Materialized views appear under **Materialized views** in the **Explorer** pane.
 
-    :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Data tree showing the database entities in Real-Time Analytics. The dropdown list of materialized views is highlighted.":::
+    :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Explorer pane showing the database entities in Real-Time Analytics. The dropdown list of materialized views is highlighted.":::
 
 ## Related content
 
