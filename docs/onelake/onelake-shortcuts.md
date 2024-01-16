@@ -80,9 +80,6 @@ external_table('MyShortcut')
 | take 100
 ```
 
-> [!NOTE]
-> KQL databases don't currently support data in the Delta format. Tables in a KQL database only export to OneLake as Parquet files. Shortcuts in KQL databases that contain Delta-formatted data in the target aren't recognized as tables.
-
 ### Analysis Services
 
 You can create semantic models for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the semantic model runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.

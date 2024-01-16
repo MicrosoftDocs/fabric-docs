@@ -81,6 +81,8 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Service principal support
+      href: service-principals.md
     - name: Access database
       items:
       - name: Overview
