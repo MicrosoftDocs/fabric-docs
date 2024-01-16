@@ -29,7 +29,7 @@ The high-level steps in the dataflow are as follows:
 ## Get data from a Lakehouse table
 
 1. From the sidebar, select **Create**, and then **Dataflow Gen2** to create a new dataflow gen2.
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/create-new-dataflow-inline.png" alt-text="Screenshot showing the Fabric Create page with the Dataflow Gen2 button highlighted." lightbox="media/tutorial-end-to-end-dataflow/create-new-dataflow.png":::
 
 1. From the new dataflow menu, select **Get data**, and then **More...**.
 
@@ -41,11 +41,11 @@ The high-level steps in the dataflow are as follows:
 
 1. The **Connect to data source** dialog appears, and a new connection is automatically created for you based on the currently signed in user. Select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/lakehouse-settings.png" alt-text="Screenshot showing the configuration of the data source settings for your new Lakehouse with your current signed in user, and the Next button selected.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/lakehouse-settings-inline.png" alt-text="Screenshot showing the configuration of the data source settings for your new Lakehouse with your current signed in user, and the Next button selected." lightbox="media/tutorial-end-to-end-dataflow/lakehouse-settings.png":::
 
 1. The **Choose data** dialog is displayed. Use the navigation pane to find the Lakehouse you created for the destination in the prior module, and select the **Tutorial_Lakehouse** data table.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table-inline.png" alt-text="Screenshot showing the Lakehouse browser with the workspace, lakehouse, and table created with the Copy activity in module 1." lightbox="media/tutorial-end-to-end-dataflow/browse-and-choose-tutorial-lakehouse-table.png":::
 
 1. _(Optional)_ Once your canvas is populated with the data, you can set **column profile** information, as this is useful for data profiling. You can apply the right transformation and target the right data values based on it.
 
@@ -81,9 +81,9 @@ The high-level steps in the dataflow are as follows:
 
    :::image type="content" source="media/tutorial-end-to-end-dataflow/filter-values.png" alt-text="Screenshot showing the values filter with only 'Y' selected.":::
 
-1. Select the **Ipep_Pickup_Datetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
+1. Select the **IpepPickupDatetime** column sort and filter dropdown menu, then select **Date filters**, and choose the **Between...** filter provided for Date and Date/Time types.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/date-filters-inline.png" alt-text="Screenshot showing the selection of the Date filters option in the column sort and format dropdown." lightbox="media/tutorial-end-to-end-dataflow/date-filters.png":::
 
 1. In the **Filter rows** dialog, select dates between January 1, 2015, and January 31, 2015, then select **OK**.
 
@@ -99,16 +99,16 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 1. On the **Connect to data source** dialog, provide the following details:
 
-   - **File path or URL** - https://raw.githubusercontent.com/ekote/azure-architect/master/Generated-NYC-Taxi-Green-Discounts.csv
+   - **File path or URL** - `https://raw.githubusercontent.com/ekote/azure-architect/master/Generated-NYC-Taxi-Green-Discounts.csv`
    - **Authentication kind** - Anonymous
    
    Then select **Next**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/text-csv-settings.png" alt-text="Screenshot showing the Text/CSV settings for the connection.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/text-csv-settings-inline.png" alt-text="Screenshot showing the Text/CSV settings for the connection." lightbox="media/tutorial-end-to-end-dataflow/text-csv-settings.png":::
 
 1. On the **Preview file data** dialog, select **Create**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/preview-file-data.png" alt-text="Screenshot showing the Preview file data dialog with the Create button highlighted.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/preview-file-data-inline.png" alt-text="Screenshot showing the Preview file data dialog with the Create button highlighted." lightbox="media/tutorial-end-to-end-dataflow/preview-file-data.png":::
 
 ## Transform the discount data
 
@@ -133,7 +133,7 @@ Now, with the data from the trips in place, we want to load the data that contai
 
 1. Select the **Discount** column and then select the **Transform** tab on the menu. Select **Number column**, and then select **Standard** numeric transformations from the submenu, and choose **Divide**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/divide-column-values-inline.png" alt-text="Screenshot showing the selection of the Divide option to transform data in the Discount column." lightbox="media/tutorial-end-to-end-dataflow/divide-column-values.png":::
 
 1. On the **Divide** dialog, enter the value 100.
 
@@ -145,15 +145,15 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. First, toggle the **Diagram view** button so you can see both of your queries.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/toggle-diagram-view.png" alt-text="Screenshot showing the Diagram view toggle button with both queries created in this tutorial displayed.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/toggle-diagram-view-inline.png" alt-text="Screenshot showing the Diagram view toggle button with both queries created in this tutorial displayed." lightbox="media/tutorial-end-to-end-dataflow/toggle-diagram-view.png":::
 
 1. Select the **nyc_taxi** query, and on the **Home** tab, Select the **Combine** menu and choose **Merge queries**, then **Merge queries as new**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-queries-as-new-inline.png" alt-text="Screenshot showing the Merge queries as new selection for the nyc_taxi query." lightbox="media/tutorial-end-to-end-dataflow/merge-queries-as-new.png":::
 
 1. On the **Merge** dialog, select **Generated-NYC-Taxi-Green-Discounts** from the **Right table for merge** drop down, and then select the "light bulb" icon on the top right of the dialog to see the suggested mapping of columns between the two tables.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-dialog-inline.png" alt-text="Screenshot showing the configuration of the Merge dialog with suggested column mappings displayed." lightbox="media/tutorial-end-to-end-dataflow/merge-dialog.png":::
 
    Choose each of the two suggested column mappings, one at a time, mapping the VendorID and date columns from both tables. When both mappings are added, the matched column headers are highlighted in each table.
 
@@ -167,7 +167,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Notice how a new query was created in Diagram view showing the relationship of the new Merge query with the two queries you previously created. Looking at the table pane of the editor, scroll to the right of the Merge query column list to see a new column with table values is present. This is the "Generated NYC Taxi-Green-Discounts" column, and its type is **[Table]**. In the column header there's an icon with two arrows going in opposite directions, allowing you to select columns from the table. Deselect all of the columns except **Discount**, and then select **OK**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" lightbox="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showing the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/merge-query-column-selections-inline.png" lightbox="media/tutorial-end-to-end-dataflow/merge-query-column-selections.png" alt-text="Screenshot showing the merged query with the column selection menu displayed for the newly generated column Generated-NYC-Taxi-Green-Discounts.":::
 
 1. With the discount value now at the row level, we can create a new column to calculate the total amount after discount. To do so, select the **Add column** tab at the top of the editor, and choose **Custom column** from the **General** group.
 
@@ -183,7 +183,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Select the newly create **TotalAfterDiscount** column and then select the **Transform** tab at the top of the editor window. On the **Number column** group, select the **Rounding** drop down and then choose **Round...**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/round-column-inline.png" alt-text="Screenshot showing the Round... option on the Transform tab of the editor window." lightbox="media/tutorial-end-to-end-dataflow/round-column.png":::
 
 1. On the **Round dialog**, enter 2 for the number of decimal places and then select **OK**.
    
@@ -195,7 +195,7 @@ The next step is to combine both tables into a single table that has the discoun
 
 1. Finally, expand the **Query settings** pane from the right side of the editor if it isn't already expanded, and rename the query from **Merge** to **Output**.
 
-   :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-query.png" lightbox="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
+   :::image type="content" source="media/tutorial-end-to-end-dataflow/rename-query-inline.png" lightbox="media/create-first-dataflow-gen2/rename-query.png" alt-text="Screenshot showing the renaming of the query from Merge to Output.":::
 
 ## Load the output query to a table in the Lakehouse
 
