@@ -38,19 +38,18 @@ To get started, you must complete the following prerequisites:
 
    :::image type="content" source="media/copy-data-activity/new-pipeline.png" alt-text="Screenshot showing the name of creating a new pipeline.":::
 
-
 ## Copy data using data pipeline
 
 In this session, you start to build your data pipeline by following below steps about copying data from Azure SQL Database to Lakehouse.
 
-### 1. Add a copy activity
+### Add a copy activity
 
 1. Open an existing data pipeline or create a new data pipeline.
 1. Add a copy activity either by selecting **Add pipeline activity** > **Copy activity** or by selecting **Copy data** > **Add to canvas** under the **Activities** tab.
 
    :::image type="content" source="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png" alt-text="Screenshot showing two ways to add a copy activity." lightbox="media/copy-data-activity/add-copy-activity-to-pipeline-canvas.png":::
 
-### 2. Configure your source under the source tab
+### Configure your source under the source tab
 
 1. Select **+ New** beside the **Connection** to create a connection to your data source.
 
@@ -76,7 +75,7 @@ In this session, you start to build your data pipeline by following below steps 
 
    :::image type="content" source="media/copy-data-activity/advanced-details-in-pipeline.png" alt-text="Screenshot of advanced settings." lightbox="media/copy-data-activity/advanced-details-in-pipeline.png":::
 
-### 3. Configure your destination under the destination tab
+### Configure your destination under the destination tab
 
 1. Choose your destination type. It could be either your internal first class data store from your workspace, such as Lakehouse, or your external data stores. You'll use Lakehouse as an example.
 
