@@ -54,7 +54,7 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 When accessing data using OneLake shortcuts, the transaction usage counts against the capacity tied to the workspace where the shortcut is created. The capacity where the data is ultimately stored (that the shortcut points to) will be billed for the data stored.
 
 ## Paused Capacity
-When a capacity is paused, the data stored will continue to be billed to the capacity. You can delete the entire workspace while capacity is paused, however, to delete any Fabric items, capacity needs to be resumed. Transactions are rejected when capacity is paused, so there won't be transaction billing when capacity is paused.
+When a capacity is paused, the data stored will continue to be billed using the pay-as-you-go rate per GB. All transactions are rejected when a capacity is paused, so no Fabric CUs are consumed due to OneLake transactions. To access your data or delete a Fabric item, the capacity needs to be resumed. You can delete the workspace while a capacity is paused.
 
 ## Disaster recovery
 
