@@ -5,7 +5,7 @@ author: ptyx507x
 ms.author: miescobar
 ms.reviewer: dougklo
 ms.topic: conceptual
-ms.date: 1/12/2024
+ms.date: 1/16/2024
 ---
 
 # Service principal support in Data Factory
@@ -60,7 +60,7 @@ In this example, you can use service principal to connect to Azure Data Lake Sto
 
    :::image type="content" source="media/service-principals/azure-tenant-id.png" alt-text="Screenshot emphasizing where to find the tenant ID in Azure." lightbox="media/service-principals/azure-tenant-id.png":::
 
-7. Fill in the **Service principal client ID in the connection settings. You can find the client ID in Azure where the SPN was created.
+7. Fill in the **Service principal client ID** in the connection settings. You can find the client ID in Azure where the SPN was created.
 
    :::image type="content" source="media/service-principals/azure-client-id.png" alt-text="Screenshot emphasizing where to find the client ID in Azure." lightbox="media/service-principals/azure-client-id.png":::
 
