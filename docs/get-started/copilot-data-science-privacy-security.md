@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 01/16/2024
 ---
 
 # Privacy, security, and responsible use of Copilot for Data Science (preview)
@@ -18,6 +18,14 @@ With Copilot for Data Science in Microsoft Fabric and other generative AI featur
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
 The article [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Data Science.
+
+> [!NOTE]
+>
+> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
+> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+> - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
+> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+> - See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md) for more information.
 
 ## Capabilities, intended uses, and limitations of Copilot for Data Science
 
