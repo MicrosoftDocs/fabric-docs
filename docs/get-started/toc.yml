@@ -121,6 +121,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Relationships in the default semantic model get dropped
+      href: known-issues/known-issue-592-relationships-default-semantic-model-dropped.md
     - name: Reflex item creation fails due to a token creation failure
       href: known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md
     - name: Product switcher and creation process inadvertently show Fabric experiences

@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/19/2023
+ms.date: 01/11/2024
 ---
 # One logical copy (Preview)
 
@@ -42,9 +42,9 @@ The following table describes the behavior of your KQL database and tables when 
 You can enable data availability either on a KQL database or table level.
 
 1. To enable data availability, browse to the details page of your KQL database or table.
-1. Next to **OneLake folder** in the **Database details** pane, select the **Edit** (pencil) icon.
+1. Next to **OneLake availability** in the **Database details** pane, select the **Edit** (pencil) icon.
 
-    :::image type="content" source="media/one-logical-copy/onelake-folder.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake folder option highlighted.":::
+    :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
 1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few minutes for the data to be available in OneLake.
 
