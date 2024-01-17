@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/09/2024
+ms.date: 01/17/2024
 ---
 
 # Understand the metrics app compute page
@@ -36,7 +36,7 @@ Displays usage and throttling for the selected capacity. Use the tabs at the top
 
 ### Utilization  
 
-Displays CU usage over time. 
+Displays CU usage over time.
 
 :::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
 
@@ -49,7 +49,7 @@ Use the tabs at the top right corner of the visual to toggle how the visual is d
 The utilization chart displays the following elements:
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30-second period. This column refers to billable operations.
-    
+
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that aren't directly triggered by users, such as data refreshes.
 
 * **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30-second period. This column refers to billable operations.
@@ -63,6 +63,12 @@ The utilization chart displays the following elements:
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
+
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+
+* *No filters applied* - Columns display the peak timepoint every six minutes.
+
+* *Filters are applied* - The visuals displays every 30-second timepoint.
 
 ### Throttling
 
@@ -97,6 +103,12 @@ The throttling chart displays the following elements:
 
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+
+* *No filters applied* - Columns display the peak timepoint every six minutes.
+
+* *Filters are applied* - The visuals displays every 30-second timepoint.
+
 ### Overages
   
 Displays the *add*, *burndown*, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
@@ -115,7 +127,10 @@ Once you select a column in the chart, you can use the *Explore* button to drill
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
-* *No filters applied* - Columns display the peak timepoint per hour.
+* *No filters applied* - Columns display the peak timepoint every 20 minutes. Each column has three peaks:
+    * Add percentage
+    * burndown percentage
+    * Cumulative percentage
 
 * *Filters are applied* - The visuals displays every 30-second timepoint.
 
