@@ -18,11 +18,11 @@ Copilot for Data Factory is an AI-enhanced toolset that supports both citizen an
 
 > [!NOTE]
 >
-> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
-> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](/admin/service-admin-portal-copilot.md) for details. 
+> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](/admin/region-availability.md).
 > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
 > Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-> - See the article [Overview of Copilot in Fabric and Power BI](../admin/copilot-fabric-overview.md) for more information.
+> - See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md) for more information.
 
 ## Supported capabilities
 
