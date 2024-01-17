@@ -31,7 +31,7 @@ Many organizations have a global presence and require services in multiple [Azur
 
 The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, remains stored at rest in the tenant's home geography.
 
-Fabric ensures that your data is secure across regions when you're working with multiple tenants that have multiple capacities across multiple geographies.
+Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
