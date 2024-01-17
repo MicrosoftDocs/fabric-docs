@@ -18,7 +18,7 @@ The [system events](metrics-app-compute-page.md#system-events) table lists all t
 
 ## Why is my capacity spiking?
 
-To allow your capacity to perform at the highest level, its usage is [smoothed](throttling.md#balance-between-performance-and-reliability) over time. When you pause your capacity, the remaining smoothed operations are executed. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual.
+To allow your capacity to perform at the highest level, its usage is [smoothed](throttling.md#balance-between-performance-and-reliability) over time. When you pause your capacity, the remaining cumulative overages and smoothed operations are executed. As a result, a spike appears in the [Utilization](metrics-app-compute-page.md#utilization) visual.
 
 The spike provides an indication that your capacity was paused. You can hover over the spike to view and see the state of the capacity in the tooltip.
 
