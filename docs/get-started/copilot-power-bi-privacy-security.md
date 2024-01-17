@@ -1,5 +1,5 @@
 ---
-title: "Privacy, security, and responsible use for Copilot for Power BI (preview)"
+title: "Privacy, security, and responsible use for Copilot in Power BI (preview)"
 description: Learn about privacy, security, and responsible use for Copilot for Power BI in Microsoft Fabric.
 author: maggiesMSFT
 ms.author: maggies
@@ -11,21 +11,15 @@ ms.topic: conceptual
 ms.date: 01/16/2024
 ---
 
-# Privacy, security, and responsible use for Copilot for Power BI (preview)
+# Privacy, security, and responsible use for Copilot in Power BI (preview)
 
-With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
+With Copilot and other generative AI features in preview, Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Power BI and the other workloads.
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
 The article [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Power BI.
 
-> [!NOTE]
->
-> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
-> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-> - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-> - See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md) for more information.
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Capabilities and intended uses of Copilot for Power BI
 

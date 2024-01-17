@@ -17,13 +17,7 @@ ms.date: 01/16/2024
 
 Copilot for Data Science and Data Engineering notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
-> [!NOTE]
->
-> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
-> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-> - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-> - See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md) for more information.
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Azure OpenAI enablement
 

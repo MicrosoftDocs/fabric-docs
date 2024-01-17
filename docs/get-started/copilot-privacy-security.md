@@ -11,21 +11,15 @@ ms.topic: conceptual
 ms.date: 01/16/2024
 ---
 
-# Privacy, security, and responsible use for Copilot Microsoft Fabric (preview)
+# Privacy, security, and responsible use for Copilot in Microsoft Fabric (preview)
 
 With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 
 Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
-This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric.
+This article provides answers to common questions related to business data security and privacy to help your organization get started with Copilot in Fabric. The article [Privacy, security, and responsible use for Copilot in Power BI (preview)](copilot-power-bi-privacy-security.md) provides an overview of Copilot in Power BI. Read on for details about Copilot for Fabric.
 
-> [!NOTE]
->
-> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
-> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-> - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-> - See the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md) for more information.
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Overview
 

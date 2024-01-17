@@ -1,5 +1,5 @@
 ---
-title: Overview of Copilot in Fabric and Power BI(preview)
+title: Overview of Copilot in Fabric and Power BI (preview)
 description: Learn about Copilot in Fabric and Power BI, which brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 author: maggiesMSFT
 ms.author: maggies
@@ -13,7 +13,7 @@ ms.date: 01/16/2024
 
 # Overview of Copilot in Fabric and Power BI (preview)
 
-With Copilot and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
+With Copilot and other generative AI features in preview, Microsoft Fabric and Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
 
 We're enabling Copilot in stages. Everyone will have access by March 2024.
 
@@ -23,6 +23,7 @@ Before your business can start using Copilot capabilities in Microsoft Fabric:
 
 - Your administrator needs to enable the tenant switch before you start using Copilot. Administrators can read the article [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) for details. 
 - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+- If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](/fabric/admin/service-admin-portal-copilot) tenant setting in the Fabric Admin portal.
 - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
 
 The preview of Copilot in Microsoft Fabric is rolling out in stages with the goal that all customers with a paid Fabric capacity (F64 or higher) or Power BI Premium capacity (P1 or higher) have access to the Copilot preview. It becomes available to you automatically as a new setting in the Fabric admin portal when it's rolled out to your tenant. When charging begins for the Copilot in Fabric experiences, you can count Copilot usage against your existing Fabric or Power BI Premium capacity.
