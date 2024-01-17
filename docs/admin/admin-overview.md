@@ -29,13 +29,13 @@ Fabric admins can [buy licenses](../enterprise/buy-subscription.md) and control 
 
 Fabric admins can assign and manage [Fabric admin roles](../admin/roles.md). Admin roles allow users to buy licenses, and control organizational settings. For example, as an admin you can access the [admin center](../admin/admin-center.md) and manage your organization's [tenant settings](../admin/about-tenant-settings.md).
 
-### Handle environment
+### Customize a Fabric tenant
 
 Fabric is composed of tenants, capacities, and workspaces. Your organization might have one or more tenants, each with at least one capacity. Workspaces reside in capacities, and are where data is created, transformed, and consumed. Each organization can organize its tenants, capacities, and workspaces in accordance with their organizational structure. For example, in an organization with one tenant, capacities can be organized according to the organizational functions, and workspaces can be created according to each function's divisions.
 
 Fabric admins can control these processes throughout the organization. For example, being an admin allows you to create and delete workspaces, and to control [workspace settings](../get-started/workspaces.md#workspace-settings) such as [Azure connections](../data-factory/dataflow-support.md), [Git integration](../cicd/git-integration/intro-to-git-integration.md) and [OneLake](../onelake/onelake-overview.md).
 
-To distribute admin management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint  the right admins at the right level. You no longer need global admins with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free global admins to concentrate on organizational processes, and allow experts to directly manage data in their fields.
+To distribute management across the organization, you can also use [domains](../governance/domains.md). With a domain, you create a logical grouping of workspaces. For example, your organization can create domains according to functions such as sales and marketing. Designated users can become admins and oversee Fabric functions related to the data in each domain. Using domains allows your organization to appoint  the right admins at the right level. You no longer need global admins with lots of permissions and responsibilities to manage every single area in your organization. Using domains, you can allocate some admin rights to users who are closer to the domain's subject matter. By doing that, you free Fabric admins to concentrate on organizational processes, and allow experts to directly manage data in their fields.
 
 ### Add and remove users
 
@@ -57,7 +57,7 @@ An admin has control over Fabric settings and permissions across the platform. Y
 
 ### Delegate admin rights
 
-To avoid becoming a bottleneck for every single setting in your organization, you can delegate many of the controls to capacity, workspace, and domain admins. Delegating settings allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have a three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
+To avoid becoming a bottleneck for every single setting in your organization, a Fabric admin can delegate many of the controls to capacity, workspace, and domain admins. Delegating settings allows your organization to have several admins with different levels of admin rights in multiple logical locations within your organization. For example, you can have a three admins with access to all the settings in your organization, and another admin for each team in your organization. The team admin can control settings and permissions relevant for the team, at the capacity, workspace, or domain level, depending on the way your organization is set up. You can also have multiple levels of admins in your organization, depending on your organization's needs.
 
 ### Enable Fabric settings
 
@@ -67,7 +67,7 @@ Capacity and workspace settings allow you to be more specific when you control y
 
 ### Grant permissions
 
-In Fabric, [workspace roles](../get-started/roles-workspaces.md) let you manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
+In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace admins manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
 
 ## Monitor
 
@@ -81,13 +81,13 @@ To view the usage of Fabric features in your organization, use the [feature usag
 
 The [monitoring hub](../admin/monitoring-hub.md) lets you review Fabric activities per experience. Using the hub, you can spot failed activities and see who submitted the activity and how long it lasted. The hub can expose many other details regarding each activity, and you can also filter and search it as needed.
 
-### View logs
+### View audit logs
 
 Audit logs allow you to [track user activities in Fabric](../admin/track-user-activities.md). You can search the logs and see which [operations](../admin/operation-list.md) were performed in your organization. Reviewing the logs can have many uses in your organization, such as making sure policies are followed and debugging unexpected system behavior.
 
 ### Understand consumption
 
-Consumption in Fabric is measured using capacity units (CUs). Using the [Capacity Metrics app](../enterprise/metrics-app.md) admins can view consumption in their organization. This report enables you to make informed decisions regarding the use of your organizational resources. You can then take action by [scaling](../enterprise/scale-capacity.md) a capacity up or down, [pausing](../enterprise/pause-resume.md) a capacity operation, or buying another capacity if needed. Understanding consumption makes your organization's Fabric operations run smoother, and might save your organization money.
+Consumption in Fabric is measured using capacity units (CUs). Using the [Capacity Metrics app](../enterprise/metrics-app.md) admins can view consumption in their organization. This report enables you to make informed decisions regarding the use of your organizational resources. You can then take action by [scaling](../enterprise/scale-capacity.md) a capacity up or down, [pausing](../enterprise/pause-resume.md) a capacity operation, optimizing query efficiency, or buying another capacity if needed. Understanding consumption makes your organization's Fabric operations run smoother, and might save your organization money.
 
 ### Reviewing bills
 

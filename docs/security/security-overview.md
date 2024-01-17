@@ -25,15 +25,21 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Support multi tenancy
+## Support multiple geographies
 
-Big organizations can use Fabric in multiple tenants, with multiple capacities across multiple geographies. Fabric ensures that your data is secure across regions.
+Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a business can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
+
+The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, remains stored at rest in the tenant's home geography.
+
+Fabric ensures that your data is secure across regions when you're working with multiple tenants that have multiple capacities across multiple geographies.
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
 * **Data resiliency** - Data availability in case of a disaster.
 
 * **Disaster recovery** - [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric) includes [cross-region disaster recovery and business continuity](/azure/reliability/reliability-fabric).
+
+To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
 ## Authenticate
 
