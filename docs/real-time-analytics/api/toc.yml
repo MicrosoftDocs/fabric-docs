@@ -10,7 +10,7 @@ items:
   - name: Query HTTP response
     href: /azure/data-explorer/kusto/api/rest/response?context=/fabric/context/context-rta&pivots=fabric
   - name: Query v2 HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response2?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/response-v2?context=/fabric/context/context-rta&pivots=fabric
   - name: Request properties
     href: /azure/data-explorer/kusto/api/rest/request-properties?context=/fabric/context/context-rta&pivots=fabric
     displayName: CRPs, clientrequestproperties

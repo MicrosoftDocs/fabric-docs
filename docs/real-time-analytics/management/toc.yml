@@ -81,9 +81,9 @@ items:
     - name: Azure Storage external tables
       items:
       - name: Create or alter Azure Blob Storage/ADLS external table
-        href: /azure/data-explorer/kusto/management/external-tables-azurestorage-azuredatalake?context=/fabric/context/context-rta&pivots=fabric
+        href: /azure/data-explorer/kusto/management/external-tables-azure-storage?context=/fabric/context/context-rta&pivots=fabric
       - name: Create or alter delta external table
-        href: /azure/data-explorer/kusto/management/external-tables-azurestorage-deltalake?context=/fabric/context/context-rta&pivots=fabric
+        href: /azure/data-explorer/kusto/management/external-tables-delta-lake?context=/fabric/context/context-rta&pivots=fabric
       - name: Manage external table mappings
         items:
         - name: .alter external table mapping command
@@ -192,10 +192,11 @@ items:
     - name: .alter-merge table column-docstrings command
       displayName: .alter-merge column-docstrings
       href: /azure/data-explorer/kusto/management/alter-merge-table-column?context=/fabric/context/context-rta&pivots=fabric
-  - name: Data mappings
+  - name: Ingestion mappings
     items:
-    - name: Data mappings overview
+    - name: Ingestion mappings overview
       href: /azure/data-explorer/kusto/management/mappings?context=/fabric/context/context-rta&pivots=fabric
+      displayName: schema mappings, data mappings
     - name: CSV mapping
       href: /azure/data-explorer/kusto/management/csv-mapping?context=/fabric/context/context-rta&pivots=fabric
     - name: JSON mapping
@@ -249,7 +250,7 @@ items:
   - name: Caching
     items:
     - name: Caching policy (hot and cold cache)
-      href: /azure/data-explorer/kusto/management/cachepolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/cache-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: cache policy
     - name: .alter cluster caching policy command
       href: /azure/data-explorer/kusto/management/alter-cluster-cache-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -312,15 +313,23 @@ items:
   - name: Ingestion batching
     items:
     - name: Ingestion batching policy
-      href: /azure/data-explorer/kusto/management/batchingpolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/batching-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: ingestionbatching policy
     - name: .alter database policy ingestionbatching command
       href: /azure/data-explorer/kusto/management/alter-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter database ingestion batching policy, .alter database ingestionbatching
         policy
+    - name: .alter-merge database policy ingestionbatching command
+      href: /azure/data-explorer/kusto/management/alter-merge-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
+      displayName: .alter-merge database ingestion batching policy, .alter-merge database
+        ingestionbatching policy
     - name: .alter table policy ingestionbatching command
       href: /azure/data-explorer/kusto/management/alter-table-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter table ingestion batching policy, .alter tables policy ingestionbatching
+    - name: .alter-merge table policy ingestionbatching command
+      href: /azure/data-explorer/kusto/management/alter-merge-table-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
+      displayName: .alter-merge table ingestion batching policy, .alter-merge tables
+        policy ingestionbatching
     - name: .delete database policy ingestionbatching command
       href: /azure/data-explorer/kusto/management/delete-database-ingestion-batching-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: .delete database ingestion batching policy, .delete database ingestionbatching
@@ -340,7 +349,7 @@ items:
   - name: Ingestion time
     items:
     - name: Ingestion time policy
-      href: /azure/data-explorer/kusto/management/ingestiontimepolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/ingestion-time-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: ingestiontime policy
     - name: .alter table policy ingestiontime command
       href: /azure/data-explorer/kusto/management/alter-ingestion-time-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -372,7 +381,7 @@ items:
   - name: Merge
     items:
     - name: Merge policy
-      href: /azure/data-explorer/kusto/management/mergepolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/merge-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter database policy merge command
       href: /azure/data-explorer/kusto/management/alter-database-merge-policy-command?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter database merge policy
@@ -406,7 +415,7 @@ items:
   - name: Partitioning
     items:
     - name: Partitioning policy
-      href: /azure/data-explorer/kusto/management/partitioningpolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/partitioning-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter materialized-view policy partitioning command
       href: /azure/data-explorer/kusto/management/alter-materialized-view-partitioning-policy-command?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter materialized-view partitioning policy
@@ -437,7 +446,7 @@ items:
   - name: Restricted view access
     items:
     - name: Restricted view access policy
-      href: /azure/data-explorer/kusto/management/restrictedviewaccesspolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/restricted-view-access-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: restricted_view_access policy
     - name: .alter table policy restricted_view_access command
       href: /azure/data-explorer/kusto/management/alter-table-restricted-view-access-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -454,7 +463,7 @@ items:
   - name: Retention
     items:
     - name: Retention policy
-      href: /azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/retention-policy?context=/fabric/context/context-rta&pivots=fabric
     - name: .alter database policy retention command
       href: /azure/data-explorer/kusto/management/alter-database-retention-policy-command?context=/fabric/context/context-rta&pivots=fabric
       displayName: .alter database retention policy
@@ -497,7 +506,7 @@ items:
   - name: Row level security
     items:
     - name: Row level security policy
-      href: /azure/data-explorer/kusto/management/rowlevelsecuritypolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/row-level-security-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: row_level_security policy
     - name: .alter materialized-view policy row_level_security command
       href: /azure/data-explorer/kusto/management/alter-materialized-view-row-level-security-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -523,7 +532,7 @@ items:
   - name: Row order
     items:
     - name: Row order policy command
-      href: /azure/data-explorer/kusto/management/roworderpolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/row-order-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: roworder policy
     - name: .alter table policy roworder command
       href: /azure/data-explorer/kusto/management/alter-table-row-order-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -540,7 +549,7 @@ items:
   - name: Update
     items:
     - name: Update policy
-      href: /azure/data-explorer/kusto/management/updatepolicy?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/update-policy?context=/fabric/context/context-rta&pivots=fabric
       displayName: SQL triggers
     - name: .alter table policy update command
       href: /azure/data-explorer/kusto/management/alter-table-update-policy-command?context=/fabric/context/context-rta&pivots=fabric
@@ -580,9 +589,9 @@ items:
   - name: Manage function roles
     href: /azure/data-explorer/kusto/management/manage-function-security-roles?context=/fabric/context/context-rta&pivots=fabric
     displayName: .show principal, principal access, security roles, roles, rbac
-  - name: Referencing security principals
+  - name: Reference security principals
     displayName: Security group, Identity providers, IdPs, SG, Azure AD tenants
-    href: /azure/data-explorer/kusto/management/referencing-security-principals?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/management/reference-security-principals?context=/fabric/context/context-rta&pivots=fabric
 - name: Data ingestion
   items:
   - name: Ingest from storage
@@ -611,10 +620,10 @@ items:
     displayName: duplicate, failure, ingestion, troubleshoot
     href: /azure/data-explorer/kusto/management/dup-next-failed-ingest?context=/fabric/context/context-rta&pivots=fabric
   - name: .show ingestion failures command
-    href: /azure/data-explorer/kusto/management/ingestionfailures?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/management/ingestion-failures?context=/fabric/context/context-rta&pivots=fabric
   - name: .show streamingingestion failures command
     displayName: .show streaming ingestion failures
-    href: /azure/data-explorer/kusto/management/streamingingestionfailures?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/management/streaming-ingestion-failures?context=/fabric/context/context-rta&pivots=fabric
 - name: Data export
   href: /azure/data-explorer/kusto/management/data-export/index?context=/fabric/context/context-rta&pivots=fabric
   items:
@@ -652,7 +661,7 @@ items:
     displayName: clear query results cache, .clear database query_results cache
     href: /azure/data-explorer/kusto/management/clear-query-results-cache-command?context=/fabric/context/context-rta&pivots=fabric
 - name: System information
-  href: /azure/data-explorer/kusto/management/systeminfo?context=/fabric/context/context-rta&pivots=fabric
+  href: /azure/data-explorer/kusto/management/system-info?context=/fabric/context/context-rta&pivots=fabric
   items:
   - name: Estimate table size
     href: /azure/data-explorer/kusto/management/estimate-table-size?context=/fabric/context/context-rta&pivots=fabric
@@ -680,6 +689,6 @@ items:
     items:
     - name: .show streamingingestion statistics
       displayName: .show streaming ingestion statistics
-      href: /azure/data-explorer/kusto/management/streamingingestionstatistics?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/management/streaming-ingestion-statistics?context=/fabric/context/context-rta&pivots=fabric
     - name: .show table data statistics
       href: /azure/data-explorer/kusto/management/show-table-data-statistics?context=/fabric/context/context-rta&pivots=fabric
