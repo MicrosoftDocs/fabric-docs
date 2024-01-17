@@ -67,7 +67,7 @@ Capacity and workspace settings allow you to be more specific when you control y
 
 ### Grant permissions
 
-In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace admins manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
+In Fabric, [workspace roles](../get-started/roles-workspaces.md) allow workspace admins to manage who can access data. Some of the things workspace roles determine, are which users can view, create, share, and delete Fabric items. As an admin, you can grant and revoke workspace roles, using them to control access to data in your organization. You can also create security groups and use them to control workspace access.
 
 ## Monitor
 
