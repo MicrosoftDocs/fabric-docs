@@ -12,6 +12,7 @@ ms.custom:
   - ignite-2023-fabric
 ms.search.form: Default semantic model overview # This article's title should not change. If so, contact engineering.
 ---
+
 # Default Power BI semantic models in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
@@ -55,9 +56,15 @@ When you create a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehou
 
 The default semantic model is queried via the [!INCLUDE [fabric-se](includes/fabric-se.md)] and updated via changes to the Lakehouse or Warehouse. You can also query the default semantic model via [cross-database queries](query-warehouse.md#write-a-cross-database-query) from a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse).
 
+### Automatically update semantic model objects
+
 By default, all tables and views in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] are automatically added to the default Power BI semantic model. Users can also manually select tables or views from the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] they want included in the model for more flexibility. Objects that are in the default Power BI semantic model are created as a layout in the model view.
 
 The background sync that includes objects (tables and views) waits for the downstream semantic model to not be in use, honoring bounded staleness. Users can always go and manually pick tables they want or no want in the semantic model.
+
+In case you are not using the default Power BI semantic model for reporting purposes, manually toggle the **Automatically update semantic model objects** setting to avoid adding objects automatically. The setting update will ensure that background sync will not get triggered. Furthermore, this will reduce [Onelake costs](/fabric/onelake/onelake-consumption?branch=main&branchFallbackFrom=release-ignite-2023-release).
+
+![Default](media/semantic-models/default.png)
 
 ### Manually update the default Power BI semantic model
 
