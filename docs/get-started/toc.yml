@@ -51,8 +51,6 @@ items:
   items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
-  - name: Enable Copilot in Fabric
-    href: copilot-fabric-enable.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric

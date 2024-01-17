@@ -7,7 +7,7 @@ ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/14/2023
+ms.date: 01/16/2024
 
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
 ---
@@ -18,7 +18,12 @@ ms.date: 11/14/2023
 The Chat-magics Python library enhances your data science and engineering workflow in Microsoft Fabric notebooks. It seamlessly integrates with the Fabric environment, and allows execution of specialized IPython magic commands in a notebook cell, to provide real-time outputs. IPython magic commands and more background on usage can be found here: https://ipython.readthedocs.io/en/stable/interactive/magics.html#. 
 
 > [!NOTE]
+>
+> - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
+> - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+> - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
 > Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+> - See the article [Overview of Copilot in Fabric and Power BI](../admin/copilot-fabric-overview.md) for more information.
 
 ## Capabilities of Chat-magics
 
