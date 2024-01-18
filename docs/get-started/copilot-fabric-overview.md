@@ -13,7 +13,7 @@ ms.date: 01/16/2024
 
 # Overview of Copilot in Fabric and Power BI (preview)
 
-With Copilot and other generative AI features in preview, Microsoft Fabric and Power BI brings a new way to transform and analyze data, generate insights, and create visualizations and reports.
+Copilot and other generative AI features in preview bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI.
 
 We're enabling Copilot in stages. Everyone will have access by March 2024.
 
