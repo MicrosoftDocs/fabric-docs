@@ -229,6 +229,6 @@ To override the tenant-level certification settings, expand the certification se
 
 For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
 
-## Next steps
+## Related content
 
 * [Admin role in workspaces](../get-started/roles-workspaces.md)

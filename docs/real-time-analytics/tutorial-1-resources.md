@@ -46,7 +46,7 @@ For more information about tasks performed in this tutorial, see:
 * [Create a database](create-database.md)
 * [Enable availability in OneLake](one-logical-copy.md#enable-availability-in-onelake)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)

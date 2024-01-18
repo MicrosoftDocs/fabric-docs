@@ -78,7 +78,7 @@ For more information about tasks performed in this tutorial, see:
 
 * [Syntax conventions](/azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context&pivots=fabric)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)
