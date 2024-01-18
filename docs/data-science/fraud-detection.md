@@ -92,7 +92,7 @@ The following table shows a preview of the *creditcard.csv* data:
 
 ### Download the dataset and upload to the lakehouse
 
-Define the following parameters if you want to use this notebook with different datasets:
+Define the following parameters so that you can use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually

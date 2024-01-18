@@ -77,7 +77,7 @@ The following examples assume that you run the code from cells in a notebook. Fo
 
 ### Configure the notebook
 
-Define the following parameters if you want to apply this notebook on different datasets:
+Define the following parameters so that you can apply this notebook on different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually

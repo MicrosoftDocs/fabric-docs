@@ -96,7 +96,7 @@ Out of the 10,000 customers, only 2,037 customers (around 20%) left the bank. Be
 
 ### Download the dataset and upload to the lakehouse
 
-Define the following parameters if you want to use this notebook with different datasets:
+Define the following parameters so that you can use this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If TRUE, the dataset has to be uploaded manually

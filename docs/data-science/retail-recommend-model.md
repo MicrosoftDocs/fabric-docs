@@ -83,7 +83,7 @@ The book recommendation dataset in this scenario consists of three separate data
   | 1 | "nyc new york usa" |  |
   | 2 | "stockton california usa" | 18.0 |
 
-Define the following parameters if you want to apply the code in this tutorial to different datasets:
+Define the following parameters so that you can apply the code in this tutorial to different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually

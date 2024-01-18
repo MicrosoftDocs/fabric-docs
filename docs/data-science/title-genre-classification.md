@@ -76,7 +76,7 @@ The dataset consists of metadata about books from the British Library that were 
 |014602826|Monograph|Yearsley, Ann|1753-1806|person||More, Hannah, 1745-1833 [person]; Yearsley, Ann, 1753-1806 [person]|Poems on several occasions [With a prefatory letter by Hannah More.]||||England|London||1786|Fourth edition MANUSCRIPT note|||Digital Store 11644.d.32|||English||003996603||||||||||||||||||||||False|
 |014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
-Define the following parameters if you want to apply this notebook on different datasets:
+Define the following parameters so that you can apply this notebook on different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually
