@@ -23,7 +23,7 @@ A new Lakehouse linked service connector and two new Datasets are now available 
 
 ### Azure Data Factory linked service
 
-The Microsoft Fabric Lakehouse connector requires a service principal (SPN)/app registration for authentication. To get started, you must create a new SPN or use an existing one. Microsoft Fabric allows for SPN access to either specific security groups or for the entire organization. If a specific security group is the option your organization uses, then the SPN used in the Lakehouse connector must belong to a security group that is added to the allow list.
+The Microsoft Fabric Lakehouse connector requires a service principal (SPN)/app registration for authentication. To get started, you must create a new SPN or use an existing one. Microsoft Fabric allows for SPN access to either specific security groups or for the entire organization. If a specific security group is the option your organization uses, then the SPN used in the Lakehouse connector must belong to a security group that is added to the allowlist.
 
 > [!NOTE]
 > Power BI API permissions (Delegated) are not needed
@@ -47,7 +47,7 @@ For a complete guide, refer to [Embed Power BI content in an embedded analytics 
 
 Once the Security Group is added, the Security Group or the service principal must also be added to each Workspace as [Member, Contributor, or Admin](../get-started/roles-workspaces.md#-workspace-roles). Refer to [Give users access to workspaces](../get-started/give-access-workspaces.md) for more details.
 
-## Demo: Setting up authentication
+## Demo: Set up authentication
 
 ### App registration service principal
 
@@ -93,7 +93,7 @@ Create a Dataset that references the Microsoft Fabric Lakehouse linked service.
 
 :::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/dataset-properties.png" alt-text="Screenshot showing the dataset Set properties dialog with the Import schema option set to None.":::
 
-## Demo: Writing to a Fabric Lakehouse table with an ADF pipeline
+## Demo: Write to a Fabric Lakehouse table with an ADF pipeline
 
 ### Source
 
@@ -113,7 +113,7 @@ Run the pipeline to move the .csv data into the Fabric Lakehouse table.
 
 :::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/run-pipeline.png" alt-text="Screenshot showing the result of running the pipeline.":::
 
-## Demo: Reading from a Fabric Lakehouse table with an ADF pipeline
+## Demo: Read from a Fabric Lakehouse table with an ADF pipeline
 
 In the above section, we demonstrated how to use ADF to write to a Fabric Lakehouse Table. Now, let's read from a Fabric Lakehouse Table and write to a Parquet file in Azure Data Lake Storage (ADLS) Gen2 with a similar pipeline.
 
@@ -135,7 +135,7 @@ Run the pipeline to move the data from the Fabric Lakehouse table into the Parqu
 
 :::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/run-pipeline-2.png" alt-text="Screenshot showing the result of running the pipeline to import data into ADLS Gen2 from a Fabric Lakehouse.":::
 
-### Inspecting the Parquet file in ADLS Gen2
+### Inspect the Parquet file in ADLS Gen2
 
 The data from the Fabric Lakehouse table is now available in ADLS Gen2 as a Parquet file.
 
