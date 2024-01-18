@@ -420,7 +420,7 @@ Actual.columns = ['Date','Forecasted_Sales']
 y_truth = y['2023-02-01':]
 Actual['Actual_Sales'] = y_truth.values
 final_data = pd.concat([Actual,Future])
-# Calculate the mean absolute percentage error between 'Actual_Sales' and 'Forecasted_Sales' 
+# Calculate the mean absolute percentage error (MAPE) between 'Actual_Sales' and 'Forecasted_Sales' 
 final_data['MAPE'] = mean_absolute_percentage_error(Actual['Actual_Sales'], Actual['Forecasted_Sales']) * 100
 final_data['Category'] = "Furniture"
 final_data[final_data['Actual_Sales'].isnull()]

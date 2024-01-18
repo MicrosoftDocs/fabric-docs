@@ -144,7 +144,7 @@ avocado2 %>%
   annotate("rect", xmin = "LosAngeles", xmax = "PhoenixTucson", ymin = -Inf, ymax = Inf, alpha = 0.2) +
   geom_text(x = "WestTexNewMexico", y = 2.5, label = "My top 5 cities!", hjust = 0.5) +
   stat_summary(fun = "mean") +
-  labs(x = "US city",
+  labs(x = "US City",
        y = "Avocado prices", 
        title = "Figure 1. Violin plot of nonorganic avocado prices",
        subtitle = "Visual aids: \n(1) Black dots are average prices of individual avocados by city \n     between January 2015 and March 2018. \n(2) The plot is ordered descendingly.\n(3) The body of the violin becomes fatter when data points increase.") +

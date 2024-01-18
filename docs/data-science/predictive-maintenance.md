@@ -31,7 +31,7 @@ The main steps in this tutorial are:
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-- If you don't have a lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md). If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 

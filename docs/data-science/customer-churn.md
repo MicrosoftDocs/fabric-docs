@@ -333,7 +333,7 @@ print(f"Spark DataFrame saved to delta table: {table_name}")
 
 With your data in place, you can now define the model. You'll apply random forest and LightGBM models in this notebook.
 
-Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. Also use MLflow and Fabric autologging to track the experiments.
+Use scikit-learn and LightGBM to implement the models within a few lines of code. Also use MLflow and Fabric autologging to track the experiments.
 
 First, load the delta table from the lakehouse. You can use other delta tables that consider the lakehouse as the source.
 

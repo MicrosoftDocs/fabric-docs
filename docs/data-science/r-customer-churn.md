@@ -419,7 +419,7 @@ The problem with imbalanced classification is that there are too few examples of
 
 Apply SMOTE to only the training dataset. Leave the testing dataset in its original imbalanced distribution, so you can get a valid approximation of how the model will perform on the original data. This experiment represents the situation in production.
 
-Start by showing the distribution of classes in the dataset to find out which class is the minority class. The ratio of minority class to majority class is defined as `imbalanceRatio` in the `imbalance` library.
+Start by showing the distribution of classes in the dataset to find out which class is the minority class. The ratio of minority class to majority class is defined as `imbalance Ratio` in the `imbalance` library.
 
 ```r
 original_ratio <- imbalance::imbalanceRatio(train_df, classAttr = "y_train")
