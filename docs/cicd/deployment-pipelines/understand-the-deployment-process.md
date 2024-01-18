@@ -9,7 +9,7 @@ ms.custom:
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 12/17/2023
+ms.date: 01/18/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -20,6 +20,10 @@ The deployment process lets you clone content from one stage in the deployment p
 During deployment, Microsoft Fabric copies the content from the current stage, into the target one. The connections between the copied items are kept during the copy process. Fabric also applies the configured deployment rules to the updated content in the target stage. Deploying content might take a while, depending on the number of items being deployed. During this time, you can navigate to other pages in the portal, but you can't use the content in the target stage.
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). You can learn more about this process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
+
+## Pipeline structure
+
+Each stage of the pipeline is connected to a workspace that contains Fabric items.
 
 ## Deploy content to an empty stage
 
