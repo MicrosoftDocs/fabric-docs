@@ -15,7 +15,7 @@ The Microsoft Fabric [Git integration](intro-to-git-integration.md) tool enables
 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
 
-## Deployment pipelines API functions
+## Git integration API functions
 
 You can use the [Git integration REST APIs](/rest/api/fabric/core/git) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
