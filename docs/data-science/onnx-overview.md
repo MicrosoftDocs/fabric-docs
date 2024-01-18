@@ -172,7 +172,7 @@ The output should look similar to the following table, though the values and num
 | 1 | `"{"type":1,"values":[0.105...` | 0 | `"{"0":0.835...` |
 | 2 | `"{"type":1,"values":[0.814...` | 0 | `"{"0":0.658...` |
 
-## Next steps
+## Related content
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
