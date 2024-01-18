@@ -30,6 +30,6 @@ Expected Response { "settingName": "AllowServicePrincipalsUseReadAdminAPIs", "ti
 
 There's no viable workaround. So, we recommend waiting for the bug to be fixed before using this API.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

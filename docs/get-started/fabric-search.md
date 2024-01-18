@@ -53,6 +53,7 @@ Another way to locate content quickly is to use the content list **Filter**. Dis
 
 :::image type="content" source="./media/fabric-search/power-bi-sort-filters-new.png" alt-text="Screenshot of the filter on a Recent content list.":::
 
-## Next steps
+## Related content
+
 - [Find Fabric items from Home](fabric-home.md)
 - [Start a Fabric trial](fabric-trial.md)

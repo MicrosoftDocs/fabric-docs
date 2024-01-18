@@ -57,7 +57,7 @@ Here are the current limitations of Copilot for Data Factory:
 
 Additional information for future releases or feature updates will appear here.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)

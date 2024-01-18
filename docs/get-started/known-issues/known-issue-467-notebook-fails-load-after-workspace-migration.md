@@ -27,6 +27,6 @@ To mitigate the issue, you can either:
 - Migrate your workspace back to its original capacity
 - Or delete the Reflex or Kusto item and then migrate your workspace
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)
