@@ -4,7 +4,7 @@ description: A known issue is posted where the **Git integration** tab disappear
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 12/15/2023
+ms.date: 01/11/2024
 ms.custom: known-issue-580
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-580
 
 In a Fabric workspace, you go to **Workspace settings**. You normally expect to see the **Git integration** tab on the left side of the screen, but the tab isn't available.
 
-**Status:** Open
+**Status:** Fixed: January 11, 2024
 
 **Product Experience:** Administration & Management
 

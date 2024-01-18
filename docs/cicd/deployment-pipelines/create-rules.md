@@ -14,7 +14,7 @@ ms.search.form: Deployment rules
 
 # Create deployment rules
 
-When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
+When you're working in a deployment pipeline, different stages might have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
 When you deploy content between pipeline stages, you can configure deployment rules to change the content while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database instead of one in the test stage, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
@@ -39,7 +39,7 @@ To create a deployment rule, follow the steps in this section. After you create 
 
     :::image type="content" source="media/create-rules/deployment-settings-screenshot.png" alt-text="A screenshot of the deployment rules button, located in the deployment rules.":::
 
-1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
+1. A list of items you can set rules for appear in the window. Not all items in the pipeline are listed. Only items of a type that you can create rules for are listed (dataflows, semantic model, datamarts, notebooks, and paginated reports). To find the item you want to set a rule for, use the search or filter functionalities.
 
     :::image type="content" source="media/create-rules/deployment-rules.png" alt-text="A screenshot of the deployment rules pane, showing that you can set rules for dataflows, datasets, datamarts, and paginated reports.":::
 
@@ -67,7 +67,7 @@ To create a deployment rule, follow the steps in this section. After you create 
          Select a parameter from the list of parameters; the current value is shown. Edit the value to the value you want to take effect after each deployment.
 
     * **Default lakehouse rules**
-         This rule only applies to notebooks. Select a lakehouse that will be connected to the notebook in the target stage and set it as its default. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
+         This rule only applies to notebooks. Select a lakehouse to connect to the notebook in the target stage and set it as its default. For more information, see [Notebook in deployment pipelines](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines).
 
 ## Supported data sources for dataflow and semantic model rules
 
@@ -107,17 +107,19 @@ This section lists the limitations for the deployment rules.
 
 * When you unassign and reassign a workspace to [reestablish connections](../troubleshoot-cicd.md#lost-connections-after-deployment), rules for that workspace are lost. To use these rules again, reconfigure them.
 
-* Rules for dataflows that have other dataflows as sources, aren't supported.
+* Data source rules for dataflows that have other dataflows as sources, aren't supported.
 
 * Data source rules for common data model (CDM) folders in a dataflow, aren't supported.
 
-* Rules for semantic models that use dataflows as their source, aren't supported.
+* Data source rules for semantic models that use dataflows as their source, aren't supported.
 
-* If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule won't be valid anymore, and deployment will fail.
+* If the data source or parameter defined in a rule is changed or removed from the item it points to in the source stage, the rule isn't valid anymore, and deployment fails.
 
 * After you deploy a paginated report with a data source rule, you can't open the report using [Power BI Report Builder](/power-bi/paginated-reports/report-builder-power-bi).
 
-* Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they haven't taken effect yet.
+* Deployment rules only take effect the next time you deploy to that stage. However, if you create rules and then compare the stages before you deploy, the comparison is done based on the rules that were created even though they didn't take effect yet.
+
+* Creating data source rules on a semantic model that uses Native query and DirectQuery together is not supported.
 
 >[!NOTE]
 >Parameter rules aren't supported for paginated reports.

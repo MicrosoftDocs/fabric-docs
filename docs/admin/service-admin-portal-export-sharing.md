@@ -20,7 +20,7 @@ The export and sharing settings allow the Fabric administrator the flexibility t
 
 Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-<a name='allow-azure-active-directory-guest-users-to-access-microsoft-fabric'></a>
+<a name='allow-microsoft-entra-guest-users-to-access-microsoft-fabric'></a>
 
 ## Allow Microsoft Entra guest users to access Microsoft Fabric
 
@@ -39,7 +39,7 @@ To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure
 > [!IMPORTANT]
 > This setting was previously called **Share content with external users**.
 
-<a name='allow-azure-active-directory-guest-users-to-edit-and-manage-content-in-the-organization'></a>
+<a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
 
 ## Allow Microsoft Entra guest users to edit and manage content in the organization
 
@@ -47,7 +47,7 @@ This setting allows Microsoft Entra B2B guest users to have full access to the b
 
 To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-<a name='show-azure-active-directory-guests-in-lists-of-suggested-people'></a>
+<a name='show-microsoft-entra-guests-in-lists-of-suggested-people'></a>
 
 ## Show Microsoft Entra guests in lists of suggested people
 

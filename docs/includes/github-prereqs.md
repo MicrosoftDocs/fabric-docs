@@ -23,4 +23,4 @@ To access the Git integration feature, you need one of the following:
 
 In addition, your organization’s administrator has to [enable the **Users can create Fabric items** tenant switch](/fabric/admin/about-tenant-settings#how-to-get-to-the-tenant-settings) from the Admin portal.
 
-:::image type="content" source="./media/github-prereqs/fabric-switch.png" alt-text="Screenshot of Fabric switch enabled.":::
+:::image type="content" source="/fabric/includes/media/github-prereqs/fabric-switch.png" alt-text="Screenshot of Fabric switch enabled.":::

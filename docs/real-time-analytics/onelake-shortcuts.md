@@ -56,9 +56,9 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 ---
 
-The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
+The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane.
 
-:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the Explorer pane showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 

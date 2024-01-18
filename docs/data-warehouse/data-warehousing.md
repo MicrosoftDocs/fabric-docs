@@ -4,7 +4,7 @@ description: Learn more about the data warehousing experience.
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 01/04/2024
 ms.topic: overview
 ms.custom:
   - build-2023
@@ -84,7 +84,7 @@ To get started with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], see [Crea
 
 This section describes the differences between the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-:::image type="content" source="media\data-warehousing\synapse-overview-diagram.png" alt-text="Diagram of a SQL analytics endpoint and a Warehouse in Microsoft Fabric." lightbox="media\data-warehousing\synapse-overview-diagram.png" :::
+:::image type="content" source="media\data-warehousing\fabric-workspace.svg" alt-text="Diagram of the Fabric workspace for data warehousing, including the SQL analytics endpoint and Warehouse.":::
 
 The **[!INCLUDE [fabricse](includes/fabric-se.md)]** is a *read-only* warehouse that is automatically generated upon creation from a [Lakehouse](../data-engineering/lakehouse-overview.md) in [!INCLUDE [product-name](../includes/product-name.md)]. Delta tables that are created through Spark in a Lakehouse are automatically discoverable in the [!INCLUDE [fabricse](includes/fabric-se.md)] as tables. The [!INCLUDE [fabricse](includes/fabric-se.md)] enables data engineers to build a relational layer on top of physical data in the Lakehouse and expose it to analysis and reporting tools using the SQL connection string. Data analysts can then use T-SQL to access Lakehouse data using the warehouse experience. Use [!INCLUDE [fabricse](includes/fabric-se.md)] to design your warehouse for BI needs and serving data.
 

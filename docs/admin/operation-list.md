@@ -333,7 +333,6 @@ The following operations are available in the audit logs.
 | Load Spark App Log | LoadSparkAppLog |  |
 | Manage Relationships | ManageRelationships |  |
 | Map Upn | MapUpn |  |
-| Mapped user principal names for tenant |
 | Migrated dataflow storage location | MigratedDataflowStorageLocation | Not currently used |
 | Migrated workspace to a capacity | MigrateWorkspaceIntoCapacity |  |
 | Modify Workspace Capacity | ModifyWorkspaceCapacity | Modify Workspace Capacity is a capacity activity which is generated on assigning a Power BI workspace to a capacity using an API call or the UI. |
