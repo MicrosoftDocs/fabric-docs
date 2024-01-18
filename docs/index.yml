@@ -291,7 +291,7 @@ productDirectory:
           text: Copilot privacy, security, and responsible use
         - url: get-started/copilot-notebooks-overview.md
           text: Copilot for notebooks
-        - url: get-started/copilot-privacy-security.md
+        - url: get-started/copilot-fabric-overview.md
           text: See more
 
     # Card
