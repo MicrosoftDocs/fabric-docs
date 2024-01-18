@@ -30,19 +30,6 @@ landingContent:
           - text: Real-Time Analytics Tutorial
             url: tutorial-introduction.md
 
-# Card 
-  - title: Store data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Create a KQL database
-            url: create-database.md
-          - text: Create an empty table
-            url: create-empty-table.md
-          - text: Manage a KQL database
-            url: data-management.md
-          - text: Create a shortcut to access data in OneLake
-            url: onelake-shortcut.md
 
 
   # Card 
@@ -77,6 +64,21 @@ landingContent:
         - text: Get data from Azure Event Hubs
           url: get-data-event-hub.md
 
+# Card 
+  - title: Store data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Create a KQL database
+            url: create-database.md
+          - text: Create an empty table
+            url: create-empty-table.md
+          - text: Manage a KQL database
+            url: data-management.md
+          - text: Create a shortcut to access data in OneLake
+            url: onelake-shortcut.md
+
+
   # Card 
   - title: Analyze and model data
     linkLists:
@@ -96,6 +98,16 @@ landingContent:
             url: spark-connector.md
 
 
+    # Card 
+  - title: Visualize data
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Visualize data in a Power BI report
+            url: create-powerbi-report.md
+
+
+
   # Card 
   - title: Use KQL
     linkLists:
@@ -111,15 +123,6 @@ landingContent:
             url: /training/modules/gain-insights-data-kusto-query-language/
           - text: "Training module: Multi-table queries using Kusto Query Language"
             url: /training/modules/multi-table-queries-with-kusto-query-language/
-
-
-    # Card 
-  - title: Visualize data
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: Visualize data in a Power BI report
-            url: create-powerbi-report.md
 
 
                    
