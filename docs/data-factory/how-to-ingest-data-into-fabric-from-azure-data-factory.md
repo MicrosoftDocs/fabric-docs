@@ -37,14 +37,10 @@ For a complete guide, refer to [Embed Power BI content in an embedded analytics 
 > [!NOTE]
 > When assigning the Security Group to the Workspace, there might be a delay for the service principal to be granted access to the Workspace due to permissions caching in Azure. If you require immediate access, you can use PowerShell to force a refresh of the user’s permissions. To do so, Open PowerShell as Administrator, then run the following commands:
 >
-> ``Install-Module -Name MicrosoftPowerBIMgmt``
->
-> ``Connect-PowerBIServiceAccount -Tenant '<TENANT ID>' -ServicePrincipal -Credential (Get-Credential)``
->
-> ``Get-PowerBIWorkspace``
->
-> ``Invoke-PowerBIRestMethod -URL 'https://api.powerbi.com/v1.0/myorg/RefreshUserPermissions' -Method Post -Body ''``
->
+> ``Install-Module -Name MicrosoftPowerBIMgmt``\
+> ``Connect-PowerBIServiceAccount -Tenant '<TENANT ID>' -ServicePrincipal -Credential (Get-Credential)``\
+> ``Get-PowerBIWorkspace``\
+> ``Invoke-PowerBIRestMethod -URL 'https://api.powerbi.com/v1.0/myorg/RefreshUserPermissions' -Method Post -Body ''``\
 > ``Get-PowerBIWorkspace``
 
 ### Workspace access
