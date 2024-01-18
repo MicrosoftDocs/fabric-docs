@@ -71,12 +71,20 @@ For the classification model, you use the wordcloud library to represent the fre
 
 The dataset consists of metadata about books from the British Library that were digitized through a collaboration between the library and Microsoft. The metadata is classification information that people created to indicate whether a book is fiction or nonfiction. With this dataset, the goal is to train a classification model that determines a book's genre solely based on its title.
 
+<<<<<<< HEAD
 |Library record ID|Type of resource|Name|Dates associated with the name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|Library shelfmark|Topics|Genre|Languages|Notes|Library record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
+=======
+|BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
+>>>>>>> f5a305b805e40b4e8c5d11cfc941c9547eb624e6
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |014602826|Monograph|Yearsley, Ann|1753-1806|person||More, Hannah, 1745-1833 [person]; Yearsley, Ann, 1753-1806 [person]|Poems on several occasions [With a prefatory letter by Hannah More.]||||England|London||1786|Fourth edition MANUSCRIPT note|||Digital Store 11644.d.32|||English||003996603||||||||||||||||||||||False|
 |014602830|Monograph|A, T.||person||Oldham, John, 1653-1683 [person]; A, T. [person]|A Satyr against Vertue. (A poem: supposed to be spoken by a Town-Hector [By John Oldham. The preface signed: T. A.])||||England|London||1679||15 pages (4°)||Digital Store 11602.ee.10. (2.)|||English||000001143||||||||||||||||||||||False|
 
+<<<<<<< HEAD
 Define the following parameters if you want to apply this notebook on different datasets:
+=======
+Define the following parameters so that you can apply this notebook on different datasets:
+>>>>>>> f5a305b805e40b4e8c5d11cfc941c9547eb624e6
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually
@@ -176,7 +184,11 @@ ts = time.time()
 
 ### Set up MLflow experiment tracking
 
+<<<<<<< HEAD
 Autologging extends the MLflow autologging capabilities. Autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as you're training it. You then log this information to the workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+=======
+Autologging extends the MLflow logging capabilities. Autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as you're training it. You then log this information to the workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+>>>>>>> f5a305b805e40b4e8c5d11cfc941c9547eb624e6
 
 ```python
 # Set up Mlflow for experiment tracking
