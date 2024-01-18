@@ -47,7 +47,7 @@ Here are some pricing examples for Dataflow Gen2:
 - [Load on-premises 2 GB CSV file to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md)
 - [Load 2 GB Parquet to a Lakehouse table](pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md)
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)
