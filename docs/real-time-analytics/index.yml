@@ -105,7 +105,7 @@ landingContent:
 
 
   # Card 
-  - title: Use KQL
+  - title: Use Kusto Query Language (KQL)
     linkLists:
       - linkListType: overview
         links:          
