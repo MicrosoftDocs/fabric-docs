@@ -26,7 +26,9 @@ Requests to OneLake, such as reading or writing data, consume Fabric Capacity Un
 OneLake uses the same mappings as ADLS to classify the operation to the category as [here](/azure/storage/blobs/map-rest-apis-transaction-categories).
 
 > [!NOTE]
-> There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake transaction usage is not consuming CUs and not counting against your capacity limits. OneLake will provide notice before correcting the issue. You can start monitoring your OneLake usage in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) and compare it to your capacity limit. For customers using a Warehouse or SQL Analytics endpoint, we recommend that you review [this](../data-warehouse/semantic-models.md#automatically-update-semantic-model-objects) setting to further optimize Onelake transaction costs.
+> There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake transaction usage is not consuming CUs and not counting against your capacity limits. OneLake will provide notice before correcting the issue. Meanwhile,
+>* Start monitoring your OneLake usage in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) and compare it to your capacity limit.
+>* If you use a Warehouse or SQL Analytics endpoint, we recommend that you review [this](../data-warehouse/semantic-models.md#automatically-update-semantic-model-objects) setting to further optimize Onelake transaction costs.
 
 ### Operation types
 
