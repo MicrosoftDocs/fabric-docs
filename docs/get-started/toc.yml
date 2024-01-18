@@ -83,7 +83,7 @@ items:
         href: /power-bi/create-reports/copilot-create-report
       - name: Write prompts for Copilot report pages
         href: /power-bi/create-reports/copilot-prompts-report-pages
-      - name: Create a narrative visual of a page
+      - name: Create a narrative visual with Copilot
         href: /power-bi/create-reports/copilot-create-narrative
       - name: Write prompts for Copilot narratives
         href: /power-bi/create-reports/copilot-prompts-narratives
