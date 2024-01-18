@@ -55,14 +55,10 @@ landingContent:
           url: get-data-onelake.md
         - text: Get data from Azure storage
           url: get-data-azure-storage.md
-        - text: Get data from a local file 
-          url: get-data-local-file.md
         - text: Get data from Eventstream 
           url: get-data-eventstream.md
         - text: Get data from Amazon S3
           url: get-data-amazon-s3.md
-        - text: Get data from Azure Event Hubs
-          url: get-data-event-hub.md
 
 # Card 
   - title: Store data
