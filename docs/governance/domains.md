@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/06/2023
+ms.date: 01/18/2023
 ---
 
 # Fabric domains
@@ -131,6 +131,9 @@ To assign workspaces to a domain or subdomain in the admin portal, you must be a
     * If some of the workspaces are already associated with another domain, a warning message will pop up, but you'll be able to continue and override the previous association.
      * This action excludes "My workspaces".
     * This action affects existing workspaces only. It won't affect workspaces that are assigned to the specified capacities after the action has been performed.
+
+> [!NOTE]
+> Workspace domain assignments by Fabric and domain admins will override existing assignments only if the **Allow tenant and domain admins to override workspace assignments (preview)** tenant setting is enabled. For more information, see [Allow tenant and domain admins to override workspace assignments (preview)](../admin/service-admin-portal-domain-management-settings.md#allow-tenant-and-domain-admins-to-override-workspace-assignments-preview).
 
 To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list. You can select several checkboxes to unassign more than one workspace at a time.
 
