@@ -55,12 +55,12 @@ Once the Security Group is added, the Security Group or the service principal mu
 
 ### App registration service principal
 
-Create or use an existing app registration service principal (SPN). Follow the steps in [Register an application with Microsoft Entra ID and create a service principal](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal). 
+Create or use an existing app registration service principal (SPN). Follow the steps in [Register an application with Microsoft Entra ID and create a service principal](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 
 > [!NOTE]
 > You do not need to assign a Redirect URI.
 
-:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/choose-existing-service-principal.png" alt-text="":::
+:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/choose-existing-service-principal.png" alt-text="Screenshot showing the details of a new service principal.":::
 
 ### Security group
 
@@ -84,7 +84,7 @@ From [Azure Data Factory](https://adf.azure.com), create a new **Microsoft Fabri
 
 > [!NOTE]
 > To find the workspace and Lakehouse IDs, navigate to your Fabric Lakehouse and identify it from the URL. For example:
-> https://.../groups/**<Workspace ID>**/lakehouses/**<Lakehouse ID>**
+> https://.../groups/**&lt;Workspace ID&gt;>**/lakehouses/**&lt;Lakehouse ID&gt;**
 
 ### Azure Data Factory: Dataset
 
@@ -103,7 +103,7 @@ Create a Dataset that references the Microsoft Fabric Lakehouse linked service.
 
 Create a new pipeline and add a Copy activity to the pipeline canvas. From the **Source** tab of the Copy activity, select a source dataset that you want to move into a Lakehouse table. In this example, we're referencing a .csv file from an Azure Data Lake Storage (ADLS) Gen2 account.
 
-:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/copy-activity-source.png" lightbox=="media/how-to-ingest-data-into-fabric-from-azure-data-factory/copy-activity-source.png" alt-text="Screenshot showing the configuration of a Copy activity's Source settings tab with a .csv selected for the source dataset.":::
+:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/copy-activity-source.png" lightbox="media/how-to-ingest-data-into-fabric-from-azure-data-factory/copy-activity-source.png" alt-text="Screenshot showing the configuration of a Copy activity's Source settings tab with a .csv selected for the source dataset.":::
 
 ### Sink
 
