@@ -27,7 +27,7 @@ All customers with a paid Fabric capacity (F64 or higher) or Power BI Premium ca
 
 See the article [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) for details.
 
-## Related content
+## Next steps
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric and Power BI: FAQ](copilot-faq-fabric.yml)
