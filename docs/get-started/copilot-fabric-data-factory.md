@@ -5,7 +5,7 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: alpowers
 ms.topic: conceptual
-ms.date: 12/11/2023
+ms.date: 01/16/2024
 ms.custom: 
 ---
 # Copilot for Data Factory overview
@@ -14,10 +14,11 @@ ms.custom:
 
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
+Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Microsoft Fabric](copilot-fabric-overview.md#enable-copilot).
+
 Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent [Mashup](/powerquery-m/m-spec-introduction) code generation to transform data using natural language input and generates code explanations to help you better understand earlier generated complex queries and tasks.
 
-> [!NOTE]
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Supported capabilities
 

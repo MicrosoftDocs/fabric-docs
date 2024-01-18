@@ -1,5 +1,5 @@
 ---
-title: Create, evaluate, and score a machine fault detection model
+title: 'Tutorial: Create, evaluate, and score a machine fault detection model'
 description: This tutorial shows the data engineering and data science workflow for building a system that predicts mechanical failures.
 ms.reviewer: lagayhar
 ms.author: amjafari
@@ -9,20 +9,23 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.date: 08/23/2023
+#customer intent: As a data scientist, I want to build a machine fault detection model so I can predict mechanical failures.
 ---
 
 # Create, evaluate, and score a machine fault detection model
 
-In this tutorial, you learn the data science workflow with an end-to-end example. The scenario is to use machine learning to have a more systematic approach to fault diagnosis in order to proactively identify issues and take actions before a machine's actual failure. In this scenario, the aim is to predict whether a machine would experience a failure based on features such as process temperature, rotational speed, etc.
+In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to use machine learning to have a more systematic approach to fault diagnosis so that you can proactively identify issues and take actions before a machine's failure. In this scenario, the aim is to predict whether a machine will experience a failure based on process temperature, rotational speed, or other features.
 
-The summary of main steps you take in this notebook are:
+The main steps in this tutorial are:
 
-1. Install custom libraries
-2. Load and process the data
-3. Understand the data through exploratory data analysis
-4. Train machine learning models using Scikit-Learn, LightGBM, MLflow, and track experiments using Fabric Autologging feature
-5. Score the trained model using Fabric PREDICT feature, save the best model, and load it for predictions
-6. Demonstrate the model performance via visualizations in Power BI
+> [!div class="checklist"]
+>
+> - Install custom libraries.
+> - Load and process the data.
+> - Understand the data through exploratory data analysis.
+> - Train machine learning models by using scikit-learn, LightGBM, and MLflow, and track experiments by using the Fabric autologging feature.
+> - Score the trained models by using the Fabric PREDICT feature, save the best model, and load it for predictions.
+> - Demonstrate the model's performance via visualizations in Power BI.
 
 ## Prerequisites
 
@@ -30,20 +33,20 @@ The summary of main steps you take in this notebook are:
 
 - If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
-## Follow along in notebook
+## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can follow along in a notebook in one of two ways:
 
-- Open and run the built-in notebook in the Data Science experience.
-- Upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience.
+- Upload your notebook from GitHub to the Synapse Data Science experience.
 
-#### Open built-in notebook
+### Open the built-in notebook
 
 **Machine failure** is the sample notebook that accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import notebook from GitHub
+### Import the notebook from GitHub
 
 [AISample - Predictive Maintenance](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Predictive%20Maintenance.ipynb) is the notebook that accompanies this tutorial.
 
@@ -51,14 +54,14 @@ You can follow along in a notebook one of two ways:
 
 ## Step 1: Install custom libraries
 
-When developing a machine learning model or doing ad-hoc data analysis, you may need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
+When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You can install libraries in one of two ways:
 
-- Use the in-line installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
-- Install libraries directly in your workspace, so that the libraries are available for use by all notebooks in your workspace.
+- Use the inline installation capabilities (such as `%pip` or `%conda`) of your notebook to install libraries in your current notebook only.
+- Install libraries directly in your workspace, so that all notebooks in your workspace can use them.
 
 For more information on installing libraries, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 
-For this tutorial, you install the `imblearn` library in your notebook, using `%pip install`. When you run `%pip install`, the PySpark kernel restarts; therefore, you should install the library before you run any other cells in the notebook.
+For this tutorial, you install the `imblearn` library in your notebook by using `%pip install`. When you run `%pip install`, the PySpark kernel restarts. So you should install the library before you run any other cells in the notebook.
 
 ```python
 # Use pip to install imblearn
@@ -69,36 +72,36 @@ For this tutorial, you install the `imblearn` library in your notebook, using `%
 
 The dataset simulates logging of a manufacturing machine's parameters as a function of time, which is common in industrial settings. It consists of 10,000 data points stored as rows with features as columns. The features include:
 
-1. A Unique Identifier (UID) ranging from 1 to 10000.
-2. Product ID, consisting of a letter L, M, or H, indicating the product quality variant, and a variant-specific serial number. Low, medium, and high-quality variants make up 60%, 30%, and 10% of all products, respectively.
-3. Air temperature in Kelvin.
-4. Process Temperature in Kelvin.
-5. Rotational Speed in rpm.
-6. Torque in Nm.
-7. Tool Wear in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of tool wear to the used tool in the process, respectively.
-8. Machine Failure Label, indicating whether the machine has failed in this particular data point for any of the following five independent failure modes:
+- A unique identifier (UID) that ranges from 1 to 10000.
+- A product ID that consists of a letter L, M, or H. The letter indicates the product quality variant and a variant-specific serial number. Low-quality, medium-quality, and high-quality variants make up 60%, 30%, and 10% of all products, respectively.
+- Air temperature in kelvin (K).
+- Process temperature in kelvin.
+- Rotational speed in revolutions per minute (RPM).
+- Torque in Newton meters (Nm).
+- Tool wear in minutes. The quality variants H, M, and L add 5, 3, and 2 minutes of wear to the tool in the process, respectively.
+- A machine failure label, which indicates whether the machine failed in this data point for any of the following independent failure modes:
 
-    - Tool Wear Failure (TWF): the tool is replaced or fails at a randomly selected tool wear time between 200 and 240 minutes.
-    - Heat Dissipation Failure (HDF): heat dissipation causes a process failure if the difference between air and process temperature is below 8.6 K and the tool's rotational speed is below 1380 rpm.
-    - Power Failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. The process fails if this power is below 3500 W or above 9000 W.
-    - OverStrain Failure (OSF): if the product of tool wear and torque exceeds 11,000 min Nm for the L product variant (12,000 M, 13,000 H), the process fails due to overstrain.
-    - Random Failures (RNF): each process has a chance of 0.1% to fail regardless of its process parameters.
+  - Tool wear failure (TWF). The tool is replaced or fails at a randomly selected tool wear time from 200 through 240 minutes.
+  - Heat dissipation failure (HDF). Heat dissipation causes a process failure if the difference between air and process temperature is below 8.6 K and the tool's rotational speed is below 1,380 RPM.
+  - Power failure (PWF). The product of torque and rotational speed (in radians per second or rad/s) equals the power required for the process. The process fails if this power is below 3,500 watts or above 9,000 watts.
+  - Overstrain failure (OSF). If the product of tool wear and torque exceeds 11,000 Nm for the L product variant (12,000 M, 13,000 H), the process fails due to overstrain.
+  - Random failure (RNF). Each process has a chance of 0.1% to fail regardless of its process parameters.
 
 > [!NOTE]
-> If at least one of the above failure modes is true, the process fails, and the "machine failure" label is set to 1. It's therefore not transparent to the machine learning method, which of the failure modes has caused the process to fail.
+> If at least one of the preceding failure modes is true, the process fails, and the machine failure label is set to 1. The machine learning method can't determine which failure mode caused the process to fail.
 
-### Download dataset and upload to lakehouse
+### Download the dataset and upload to the lakehouse
 
-Connect to Azure Open Datasets Container and load the Predictive Maintenance dataset. The following code downloads a publicly available version of the dataset and then stores it in a Fabric Lakehouse.
+Connect to the Azure Open Datasets container and load the Predictive Maintenance dataset. The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> Add a lakehouse to the notebook before running it. Failure to do so results in an error. For information on adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
+> Add a lakehouse to the notebook before you run it. If you don't, you'll get an error. For information on adding a lakehouse, see [Connect lakehouses and notebooks](https://aka.ms/fabric/addlakehouse).
 
 ```python
-# Download demo data files into lakehouse if not exist
+# Download demo data files into the lakehouse if they don't exist
 import os, requests
-DATA_FOLDER = "Files/predictive_maintenance/"  # folder containing the dataset
-DATA_FILE = "predictive_maintenance.csv"  # data file name
+DATA_FOLDER = "Files/predictive_maintenance/"  # Folder that contains the dataset
+DATA_FILE = "predictive_maintenance.csv"  # Data file name
 remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/MachineFaultDetection"
 file_list = ["predictive_maintenance.csv"]
 download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
@@ -116,8 +119,7 @@ for fname in file_list:
 print("Downloaded demo data files into lakehouse.")
 ```
 
-Once the dataset is downloaded into the lakehouse, you can load it as a Spark DataFrame. 
-
+After you download the dataset into the lakehouse, you can load it as a Spark DataFrame:
 
 ```python
 df = (
@@ -131,7 +133,7 @@ df.show(5)
 
 The following table shows a preview of the data:
 
-|"UDI"|"Product ID"|"Type"|"Air temperature [K]"|"Process temperature [K]"|"Rotational speed [rpm]"|"Torque [Nm]"|"Tool wear [min]"|"Target"|"Failure Type"|
+|UDI|Product ID|Type|Air temperature [K]|Process temperature [K]|Rotational speed [rpm]|Torque [Nm]|Tool wear [min]|Target|Failure Type|
 |---|----------|----|-------------------|-----------------------|----------------------|-----------|---------------|------|------------|
 |  1|    M14860|   M|              298.1|                  308.6|                  1551|       42.8|              0|     0|  No Failure|
 |  2|    L47181|   L|              298.2|                  308.7|                  1408|       46.3|              3|     0|  No Failure|
@@ -139,12 +141,12 @@ The following table shows a preview of the data:
 |  4|    L47183|   L|              298.2|                  308.6|                  1433|       39.5|              7|     0|  No Failure|
 |  5|    L47184|   L|              298.2|                  308.7|                  1408|       40.0|              9|     0|  No Failure|
 
-### Write Spark dataframe to lakehouse delta table
+### Write a Spark DataFrame to a lakehouse delta table
 
-Format the data (for example, replace space with underscore) to facilitate spark operations in subsequent steps.
+Format the data (for example, replace the space with an underscore) to facilitate Spark operations in subsequent steps:
 
 ```python
-# replace space in column name with underscore to avoid invalid character while saving 
+# Replace the space in the column name with an underscore to avoid an invalid character while saving 
 df = df.toDF(*(c.replace(' ', '_') for c in df.columns))
 table_name = "predictive_maintenance_data"
 df.show(5)
@@ -152,7 +154,7 @@ df.show(5)
 
 The following table shows a preview of the data with processed column names:
 
-|"UDI"|"Product_ID"|"Type"|"Air_temperature_[K]"|"Process_temperature_[K]"|"Rotational_speed_[rpm]"|"Torque_[Nm]"|"Tool_wear_[min]"|"Target"|"Failure_Type"|
+|UDI|Product_ID|Type|Air_temperature_[K]|Process_temperature_[K]|Rotational_speed_[rpm]|Torque_[Nm]|Tool_wear_[min]|Target|Failure_Type|
 |---|----------|----|-------------------|-----------------------|----------------------|-----------|---------------|------|------------|
 |  1|    M14860|   M|              298.1|                  308.6|                  1551|       42.8|              0|     0|  No Failure|
 |  2|    L47181|   L|              298.2|                  308.7|                  1408|       46.3|              3|     0|  No Failure|
@@ -161,17 +163,17 @@ The following table shows a preview of the data with processed column names:
 |  5|    L47184|   L|              298.2|                  308.7|                  1408|       40.0|              9|     0|  No Failure|
 
 ```python
-# save data with processed columns to the lakehouse 
+# Save data with processed columns to the lakehouse 
 df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-## Step 3: Preprocess data and perform exploratory data analysis 
+## Step 3: Preprocess data and perform exploratory data analysis
 
-Convert spark dataframe to pandas dataframe to use pandas compatible popular plotting libraries.
+Convert the Spark DataFrame to a pandas DataFrame so you can use pandas-compatible popular plotting libraries.
 
 > [!TIP]
-> For large datasets, you may need to load a portion of the dataset. 
+> For a large dataset, you might need to load a portion of it.
 
 ```python
 data = spark.read.format("delta").load("Tables/predictive_maintenance_data")
@@ -183,7 +185,7 @@ df = df.rename(columns = {'Target': "IsFail"})
 df.info()
 ```
 
-Convert specific columns of the dataset to floats and integer types and map strings such as ['L', 'M', 'H'] to numerical values [0, 1, 2].
+Convert specific columns of the dataset to floats and integer types, and map strings (`'L'`, `'M'`, `'H'`) to numerical values (`0`, `1`, `2`):
 
 ```python
 # Convert temperature, rotational speed, torque, and tool wear columns to float
@@ -193,7 +195,7 @@ df['Rotational_speed_[rpm]'] = df['Rotational_speed_[rpm]'].astype(float)
 df['Torque_[Nm]'] = df['Torque_[Nm]'].astype(float)
 df['Tool_wear_[min]'] = df['Tool_wear_[min]'].astype(float)
 
-# Convert the 'Target' column to integer 
+# Convert the 'Target' column to an integer 
 df['IsFail'] = df['IsFail'].astype(int)
 # Map 'L', 'M', 'H' to numerical values 
 df['Type'] = df['Type'].map({'L': 0, 'M': 1, 'H': 2})
@@ -235,16 +237,16 @@ fig.subplots_adjust(hspace=0.2)
 fig.delaxes(axes[1,2])
 ```
 
-:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="A graph plot of the features.":::
+:::image type="content" source="media/predictive-maintenance/sparse-plot.png" alt-text="Graph plot of the features.":::
 
-As can be seen from the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse and appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to new dataset.    
+As shown in the plotted graphs, the `Air_temperature`, `Process_temperature`, `Rotational_speed`, `Torque`, and `Tool_wear` variables aren't sparse. They appear to have good continuity in the feature space. These plots confirm that training a machine learning model on this dataset is likely to produce results that are reliable and can be generalized to a new dataset.
 
-### Inspect the target variable for class imbalance 
+### Inspect the target variable for class imbalance
 
-Count the number of samples for failed and unfailed machines and inspect the data balance for each class (IsFail=0, IsFail=1). 
+Count the number of samples for failed and unfailed machines, and inspect the data balance for each class (`IsFail=0`, `IsFail=1`):
 
 ```python
-# Plot the counts for no-failure and each failure types
+# Plot the counts for no failure and each failure type
 plt.figure(figsize=(12, 2))
 ax = sns.countplot(x='Failure_Type', data=df)
 for p in ax.patches:
@@ -252,7 +254,7 @@ for p in ax.patches:
 
 plt.show()
 
-# Plot the counts for no failure versus sum of all failure types
+# Plot the counts for no failure versus the sum of all failure types
 plt.figure(figsize=(4, 2))
 ax = sns.countplot(x='IsFail', data=df)
 for p in ax.patches:
@@ -262,24 +264,23 @@ plt.show()
 
 ```
 
-:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Plot showing that samples are imbalanced.":::
+:::image type="content" source="media/predictive-maintenance/imbalance-plot.png" alt-text="Plot that shows that samples are imbalanced.":::
 
-The plots indicate that the no failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a more balanced training dataset.
-
+The plots indicate that the no-failure class (shown as `IsFail=0` in the second plot) constitutes most of the samples. Use an oversampling technique to create a training dataset that's more balanced:
 
 ```python
 # Separate features and target
 features = df[['Type', 'Air_temperature_[K]', 'Process_temperature_[K]', 'Rotational_speed_[rpm]', 'Torque_[Nm]', 'Tool_wear_[min]']]
 labels = df['IsFail']
 
-# Split the dataset into the train and test sets
+# Split the dataset into the training and testing sets
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.2, random_state=42)
 
 # Ignore warnings
 import warnings
 warnings.filterwarnings('ignore')
-# Save test data to lakehouse for use in future sections
+# Save test data to the lakehouse for use in future sections
 table_name = "predictive_maintenance_test_data"
 df_test_X = spark.createDataFrame(X_test)
 df_test_X.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
@@ -290,10 +291,10 @@ print(f"Spark dataframe saved to delta table: {table_name}")
 
 The previous analysis showed that the dataset is highly imbalanced. The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary.
 
-Use [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html), which is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the distances between data points using Euclidean distance. This method is different from random oversampling as it creates new examples that aren't just duplicates of the minority class, making it a more effective technique for imbalanced datasets.
+Use [SMOTE](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html), which is a widely used oversampling technique that generates synthetic examples. It generates examples for the minority class based on the distances between data points by using Euclidean distance. This method is different from random oversampling. It creates new examples that aren't just duplicates of the minority class, so it's a more effective technique for imbalanced datasets.
 
 ```python
-# disable mlflow autologging as we don't want to track SMOTE fitting
+# Disable MLflow autologging because you don't want to track SMOTE fitting
 import mlflow
 
 mlflow.autolog(disable=True)
@@ -311,20 +312,19 @@ for p in ax.patches:
 plt.show()
 ```
 
-:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Plot showing samples are balanced.":::
+:::image type="content" source="media/predictive-maintenance/balanced-plot.png" alt-text="Plot that shows that samples are balanced.":::
 
-You have successfully balanced the dataset and can move to model training.
+You successfully balanced the dataset and can move to model training.
 
-## Step 4: Train and evaluate the model
+## Step 4: Train and evaluate the models
 
-[MLflow](https://aka.ms/fabric-autologging) is used to register models, train and compare various models, and pick the best model for prediction purpose. For model training, you use the following 3 models:
+Use [MLflow](https://aka.ms/fabric-autologging) to register models, train and compare models, and choose the best model for your prediction purpose. For model training, you use the following three models:
 
-1. Random forest classifier
-2. Logistic regression classifier 
-3. XGBoost classifier 
+- Random forest classifier
+- Logistic regression classifier
+- XGBoost classifier
 
 ### Train a random forest classifier
-
 
 ```python
 import numpy as np 
@@ -333,7 +333,7 @@ from mlflow.models.signature import infer_signature
 from sklearn.metrics import f1_score, accuracy_score, recall_score
 
 mlflow.set_experiment("Machine_Failure_Classification")
-mlflow.autolog(exclusive=False) # this is needed to override the pre-configured autologging behavior
+mlflow.autolog(exclusive=False) # This is needed to override the preconfigured autologging behavior
 
 with mlflow.start_run() as run:
     rfc_id = run.info.run_id
@@ -382,10 +382,9 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-From the output, both train and test dataset yield F1 score, accuracy and recall of approximately 0.9 using Random Forest classifier. 
+From the output, the training and testing datasets both yield an F1 score, accuracy, and recall of approximately 0.9 when you use the random forest classifier.
 
 ### Train a logistic regression classifier
-
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -405,7 +404,7 @@ with mlflow.start_run() as run:
     ) 
 
     y_pred_train = lr.predict(X_train)
-    # Calculate the classification metrics for train data
+    # Calculate the classification metrics for training data
     f1_train = f1_score(y_train, y_pred_train, average='weighted')
     accuracy_train = accuracy_score(y_train, y_pred_train)
     recall_train = recall_score(y_train, y_pred_train, average='weighted')
@@ -435,7 +434,6 @@ with mlflow.start_run() as run:
 
 ### Train an XGBoost classifier
 
-
 ```python
 from xgboost import XGBClassifier
 
@@ -454,7 +452,7 @@ with mlflow.start_run() as run:
     ) 
 
     y_pred_train = xgb.predict(X_train)
-    # Calculate the classification metrics for train data
+    # Calculate the classification metrics for training data
     f1_train = f1_score(y_train, y_pred_train, average='weighted')
     accuracy_train = accuracy_score(y_train, y_pred_train)
     recall_train = recall_score(y_train, y_pred_train, average='weighted')
@@ -481,22 +479,22 @@ with mlflow.start_run() as run:
     mlflow.log_metric("recall_test", recall_test)
 ```
 
-## Step 5: Select model and predict outputs
+## Step 5: Select the best model and predict outputs
 
-In the previous section, you trained three different classifiers: Random Forest, Logistic Regression, and XGBoost. You have the choice to either programatically access the results or use the user interface (UI).
+In the previous section, you trained three classifiers: random forest, logistic regression, and XGBoost. You have the choice to either programmatically access the results or use the user interface (UI).
 
-To use the UI path, navigate to your workspace and filter the models.
+To use the UI path, go to your workspace and filter the models.
 
-:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="A screenshot of the filter, with models selected.":::
+:::image type="content" source="media/predictive-maintenance/filter-models.png" alt-text="Screenshot of the filter, with models selected.":::
 
- Then select individual models for details of the model performance.
+Then select individual models for details of their performance.
 
-:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="A screenshot of the model performance.":::
+:::image type="content" source="media/predictive-maintenance/model-metrics.png" alt-text="Screenshot of performance details for models.":::
 
-The following example shows how to programatically access the models through MLflow.
+The following example shows how to programmatically access the models through MLflow:
 
 ```python
-runs = {'random forest classifer':   rfc_id,
+runs = {'random forest classifier':   rfc_id,
         'logistic regression classifier': lr_id,
         'xgboost classifier': xgb_id}
 
@@ -513,9 +511,9 @@ for run_name, run_id in runs.items():
 print(df_metrics)
 ```
 
-Although XGBoost yielded the best results on the training set, it does perform poorly on the test data set, which indicates overfitting. Logistic Regression classifier performs poorly on both training and test datasets. Overall, Random Forest strikes a good balance between training performance and avoiding overfitting.
-In the following section, choose the registered Random Forest model and perform prediction using the [PREDICT](https://aka.ms/fabric-predict) feature.
+Although XGBoost yields the best results on the training dataset, it performs poorly on the testing dataset, which indicates overfitting. The logistic regression classifier performs poorly on both the training and testing datasets. Overall, random forest strikes a good balance between training performance and avoiding overfitting.
 
+In the following section, choose the registered random forest model and perform prediction by using the [PREDICT](https://aka.ms/fabric-predict) feature:
 
 ```python
 from synapse.ml.predict import MLFlowTransformer
@@ -528,8 +526,7 @@ model = MLFlowTransformer(
 )
 ```
 
-Now that you've created an MLFlowTransformer object to load the model for inferencing, use the Transformer API to score the model on the test dataset.
-
+Now that you've created an `MLFlowTransformer` object to load the model for inferencing, use the Transformer API to score the model on the testing dataset:
 
 ```python
 predictions = model.transform(spark.createDataFrame(X_test))
@@ -538,7 +535,7 @@ predictions.show()
 
 The following table shows the output:
 
-|"Type"|"Air_temperature_[K]"|"Process_temperature_[K]"|"Rotational_speed_[rpm]"|"Torque_[Nm]"|"Tool_wear_[min]|predictions"|
+|Type|Air_temperature_[K]|Process_temperature_[K]|Rotational_speed_[rpm]|Torque_[Nm]|Tool_wear_[min]|predictions|
 |----|-------------------|-----------------------|----------------------|-----------|---------------|-----------|
 |   0|              300.6|                  309.7|                1639.0|       30.4|          121.0|          0|
 |   0|              303.9|                  313.0|                1551.0|       36.8|          140.0|          0|
@@ -561,26 +558,26 @@ The following table shows the output:
 |   0|              300.2|                  309.2|                1431.0|       51.3|           57.0|          0|
 |   0|              299.6|                  310.2|                1468.0|       48.0|            9.0|          0|
 
-Save the data into the lakehouse, which, allows you to access the data for future use such as creating a Power BI dashboard.
+Save the data into the lakehouse so that you can access the data for future use, such as creating a Power BI dashboard:
 
 ```python
-# save test data to lakehouse for use in future sections. 
+# Save test data to the lakehouse for use in the next section. 
 table_name = "predictive_maintenance_test_with_predictions"
 predictions.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
 print(f"Spark dataframe saved to delta table: {table_name}")
 ```
 
-## Step 6: Business Intelligence via Visualizations in Power BI
+## Step 6: View business intelligence via visualizations in Power BI
 
-You can demonstrate the results in an offline format using a Power BI dashboard. 
+You can demonstrate the results in an offline format by using a Power BI dashboard.
 
-:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="A screenshot of the data displayed as a Power BI dashboard.":::
+:::image type="content" source="media/predictive-maintenance/predictive-maintenance-power-bi.png" alt-text="Screenshot of the data displayed as a Power BI dashboard.":::
 
-The dashboard shows that the Tool_wear and Torque create a noticeable boundary between failed and unfailed cases as was expected from the earlier correlation analysis in Step 2.
+The dashboard shows that `Tool_wear` and `Torque` create a noticeable boundary between failed and unfailed cases, as you expected from the earlier correlation analysis in step 2.
 
-## Next steps
+## Related content
 
-- [Training and evaluating a text classification model](title-genre-classification.md)
+- [Train and evaluate a text classification model](title-genre-classification.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)
 - [Train machine learning models](model-training-overview.md)
 - [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
