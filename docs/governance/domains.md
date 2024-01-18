@@ -232,6 +232,12 @@ To override the tenant-level certification settings, expand the certification se
 
 For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
 
-## Next steps
+## Microsoft Fabric REST Admin APIs for domains
 
+Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains)
+
+## Related content
+
+* [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
+* [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)
