@@ -64,15 +64,17 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\query-settings-add-destination.png" alt-text="Screenshot of the query settings pane, showing where to enter the name and select the data destination." lightbox="media\tutorial-build-lakehouse\query-settings-add-destination.png":::
 
-1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse, from the menu items, select **Add data destination** and select **Lakehouse**. If needed, from the **Connect to data destination** screen, sign into your account. Select **Next**.
+1. In this tutorial, you have already associated the customer data to a lakehouse. In case you have other data items that you want to associate with the lakehouse can add them with the following steps:
 
-1. Navigate to the **wwilakehouse** in your workspace.
+   * From the menu items, select **Add data destination** and select **Lakehouse**. From the **Connect to data destination** screen, sign into your account if required and select **Next**.
 
-1. If the **dimension_customer** table doesn't exist, select the **New table** setting and enter the table name **dimension_customer**. If the table already exists, select the **Existing table** setting and choose **dimension_customer** from the list of tables in the object explorer. Select **Next**.
+   * Navigate to the **wwilakehouse** in your workspace.
 
-   :::image type="content" source="media\tutorial-build-lakehouse\choose-destination-table.png" alt-text="Screenshot showing how to choose the destination table.":::
+   * If the **dimension_customer** table doesn't exist, select the **New table** setting and enter the table name **dimension_customer**. If the table already exists, select the **Existing table** setting and choose **dimension_customer** from the list of tables in the object explorer. Select **Next**.
 
-1. On the **Choose destination settings** pane, select **Replace** as **Update method**. Select **Save settings** to return to the dataflow canvas.
+      :::image type="content" source="media\tutorial-build-lakehouse\choose-destination-table.png" alt-text="Screenshot showing how to choose the destination table.":::
+
+   * On the **Choose destination settings** pane, select **Replace** as **Update method**. Select **Save settings** to return to the dataflow canvas.
 
 1. From the dataflow canvas, you can easily transform the data based on your business requirements. For simplicity, we aren't making any changes in this tutorial. To proceed, select **Publish** at the bottom right of the screen.
 
@@ -84,7 +86,11 @@ In this tutorial, you build a lakehouse, ingest sample data into the delta table
 
    :::image type="content" source="media\tutorial-build-lakehouse\dataflow-refresh-now.png" alt-text="Screenshot showing where to find the Refresh now icon.":::
 
-1. Once the dataflow is refreshed, select your new lakehouse in the left navigation panel to view the **dimension_customer** delta table. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
+1. Once the dataflow is refreshed, select your new lakehouse in the left navigation panel to view the **dimension_customer** delta table.
+
+   :::image type="content" source="media\tutorial-build-lakehouse\open-lakehouse.png" alt-text="Screenshot of navigation panel from which the lakehouse is opened.":::
+
+1. Select the table to preview its data. You can also use the SQL analytics endpoint of the lakehouse to query the data with SQL statements. Select **SQL analytics endpoint** from the **Lakehouse** drop-down menu at the top right of the screen.
 
    :::image type="content" source="media\tutorial-build-lakehouse\lakehouse-delta-table.png" alt-text="Screenshot of the delta table, showing where to select SQL analytics endpoint." lightbox="media\tutorial-build-lakehouse\lakehouse-delta-table.png":::
 
