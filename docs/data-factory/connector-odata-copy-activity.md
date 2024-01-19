@@ -77,6 +77,6 @@ The following table contains more information about the copy activity in OData.
 |**Request timeout** |Timeout for the HTTP request to get a response. Format is in timespan. This value is the timeout to get a response, not the timeout to read response data. The default value is 00:05:00.| timespan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|- Name<br>- Value|No |additionalColumns:<br>- name<br>- value|
 
-## Next steps
+## Related content
 
 - [Set up your OData connection](connector-odata.md)

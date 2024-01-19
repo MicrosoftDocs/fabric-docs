@@ -209,6 +209,6 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
 |**Metadata** |The custom metadata set when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Lakehouse connector overview](connector-lakehouse-overview.md)
