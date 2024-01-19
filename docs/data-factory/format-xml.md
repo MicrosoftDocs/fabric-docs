@@ -110,6 +110,6 @@ The following properties are supported in the copy activity **Source** section w
 | **Namespace prefix pairs** | Namespace URI to prefix mapping, which is used to name fields when parsing the XML file.<br>If an XML file has namespace and namespace is enabled, by default, the field name is the same as it is in the XML document.<br>If there is an item defined for the namespace URI in this map, the field name is `prefix:fieldName`. | < url >:< prefix > | No | namespacePrefixes:<br>< url >:< prefix > | 
 | **Detect data type** | Whether to detect integer, double, and Boolean data types. | Selected  (default) or unselected | No | detectDataType:<br>true (default)  or false | 
 
-## Next steps
+## Related content
 
-[Connectors overview](connector-overview.md)
+- [Connectors overview](connector-overview.md)

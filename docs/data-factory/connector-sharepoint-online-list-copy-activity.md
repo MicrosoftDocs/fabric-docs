@@ -110,6 +110,6 @@ The following table contains more information about a copy activity in SharePoin
 |**Request timeout** |The wait time to get a response from SharePoint Online. Default value is 5 minutes (00:05:00).| timespan |No |requestTimeout|
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [Set up your SharePoint Online List connection](connector-sharepoint-online-list.md)
