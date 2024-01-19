@@ -1,15 +1,15 @@
 ---
-title: Outlier and Anomaly Detection
+title: Multivariate Anomaly Detection with Isolation Forest
 description: Use SynapseML on Apache Spark for multivariate anomaly detection with Isolation Forest model.
 ms.topic: overview
 ms.custom: build-2023
 ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 05/08/2023
+ms.date: 01/18/2024
 ---
-# Recipe: Multivariate Anomaly Detection with Isolation Forest
-This recipe shows how you can use SynapseML on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train an Isolation Forest model for multivariate anomaly detection, and we then use to the trained model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
+# Multivariate Anomaly Detection with Isolation Forest
+This article shows how you can use SynapseML on Apache Spark for multivariate anomaly detection. Multivariate anomaly detection allows for the detection of anomalies among many variables or timeseries, taking into account all the inter-correlations and dependencies between the different variables. In this scenario, we use SynapseML to train an Isolation Forest model for multivariate anomaly detection, and we then use to the trained model to infer multivariate anomalies within a dataset containing synthetic measurements from three IoT sensors.
 
 To learn more about the Isolation Forest model, refer to the original paper by [Liu _et al._](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest).
 
