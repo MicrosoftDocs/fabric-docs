@@ -14,7 +14,7 @@ ms.search.form: Lakehouse Explorer
 
 # Navigate the Fabric Lakehouse explorer
 
-The Lakehouse Explorer page serves as the central hub for all your interactions within the Lakehouse environment. It's your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse Explorer, the Main View, and the Ribbon.
+The Lakehouse Explorer page serves as the central hub for all your interactions within the Lakehouse environment. It's built into the Fabric portal. It's your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse Explorer, the Main View, and the Ribbon.
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
