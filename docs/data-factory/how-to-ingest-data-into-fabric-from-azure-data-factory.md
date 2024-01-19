@@ -62,7 +62,7 @@ Create or use an existing app registration service principal (SPN). Follow the s
 
 Create a new Microsoft Entra Security Group or use an existing one then add the SPN to it. Follow the steps in [Create a basic group and add members](/entra/fundamentals/how-to-manage-groups#create-a-basic-group-and-add-members) to create a Microsoft Entra Security Group.
 
-s:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/security-group.png" alt-text="Screenshot showing where to add members to a security group.":::
+:::image type="content" source="media/how-to-ingest-data-into-fabric-from-azure-data-factory/security-group.png" alt-text="Screenshot showing where to add members to a security group.":::
 
 ### Power BI admin portal
 
