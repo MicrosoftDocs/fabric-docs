@@ -51,7 +51,7 @@ On the lower ribbon of your KQL database, either:
     | Workspace| The workspace in which your eventstream is located. Select a workspace from the dropdown.|
     | Eventstream Name| The name of your eventstream. Select an eventstream from the dropdown.|
     | Data connection name| The name used to reference and manage your data connection in your workspace. The data connection name is automatically filled. Optionally, you can enter a new name. The name can only contain alphanumeric, dash, and dot characters, and be up to 40 characters in length.|
-    | Process event before ingestion in Eventstream | This option allows you to configure data processing before it's ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
+    | Process event before ingestion in Eventstream | This option allows you to configure data processing before data is ingested into the destination table. If selected, you continue the data ingestion process in Eventstream. For more information, see [Process event before ingestion in Eventstream](#process-event-before-ingestion-in-eventstream).|
     | **Advanced filters**| |
     | Compression| Data compression of the events, as coming from the event hub. Options are None (default), or Gzip compression.|
     | Event system properties| If there are multiple records per event message, the system properties are added to the first one. For more information, see [Event system properties](get-data-event-hub.md#event-system-properties).|
