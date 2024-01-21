@@ -37,7 +37,7 @@ The following information about each database is displayed in tile mode:
 
 ## Guaranteed availability
 
-Your Eventhouse is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can’t tolerate this latency, use **Guaranteed availability**.  When activated, the service is always available at the selected minimum lavel, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse.
+Your Eventhouse is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can’t tolerate this latency, use **Guaranteed availability**.  When activated, the service is always available at the selected minimum level, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse.
 
 For instructions on how to enable guaranteed availability, see [Enable guaranteed availability](create-eventhouse.md#enable-guaranteed-availability).
 
