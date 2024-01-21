@@ -12,7 +12,7 @@ ms.search.form: Eventhouse
 
 Eventhouses are the storage solution for streaming data in Fabric, and for semistructured and free text analysis. An Eventhouse is a workspace of databases, which might be shared across a certain project. An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
 
-Eventhouses are specifically tailored to time-based, streaming events with structured, semistructured, and unstructured data. You can get data from multiple sources, in multiple pipelines (Eventstream, SDKs, Kafak, Logstash, data flows, and more) and multiple data formats.This data is automatically indexed and partitioned based on ingestion time.
+Eventhouses are specifically tailored to time-based, streaming events with structured, semistructured, and unstructured data. You can get data from multiple sources, in multiple pipelines (For example, Eventstream, SDKs, Kafak, Logstash, data flows, and more) and multiple data formats. This data is automatically indexed and partitioned based on ingestion time.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
