@@ -72,7 +72,7 @@ To process event before ingestion in Eventstream:
     > [!IMPORTANT]
     > Selecting **Continue in Eventstream** ends the get data process in Real-Time Analytics and continues in Eventstream with the destination table and data source details automatically populated.
 
-    :::image type="content" source="media/get-data-eventstream/process-event-before-ingestion.png" alt-text="Screenshot of the Process events in Eventstream dialog box." lightbox="media/get-data-eventstream/process-event-before-ingestion.png":::
+    :::image type="content" source="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png" alt-text="Screenshot of the Process events in Eventstream dialog box." lightbox="media/get-data-eventstream/configure-tab-process-event-in-eventstream.png":::
 
 1. In Eventstream, select the **KQL Database** destination node, and in the **KQL Database** pane, verify that **Event processing before ingestion** is selected and that the destination details are correct.
 
