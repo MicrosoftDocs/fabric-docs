@@ -26,7 +26,7 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
     :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Analytics.":::
 
-1. Enter a name for the Eventhouse. Both an Eventhouse and its default child KQL database are created with the same name.
+1. Enter a name for the Eventhouse. Both an Eventhouse and its default child KQL database are created with the same name. The database name, like all items in Fabric, can be renamed at any time.
 
     > [!NOTE]
     > The Eventhouse name can contain alphanumeric characters, underscores, periods, and hyphens. Special characters aren't supported.
