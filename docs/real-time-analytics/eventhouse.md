@@ -24,9 +24,9 @@ While Eventhouse is in preview, you can create a standalone [KQL database](creat
 
 ## What information do I see in an Eventhouse?
 
-The details page of an Eventhouse shows you database information either in list or tile mode.
+The details page of an Eventhouse shows you database information either in list or tile view.
 
-The following information about each database is displayed in tile mode:
+The following information about each database is displayed in tile view:
 
 * Database name
 * A graph of queries run over the past week
