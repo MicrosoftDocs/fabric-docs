@@ -82,7 +82,8 @@ To process event before ingestion in Eventstream:
 1. Back in the **KQL Database** pane, select **Add** to complete the **KQL Database** destination node set up.
 1. Verify data is ingested into the destination table.
 
-The process event before ingestion in Eventstream process is complete and the remaining steps in this article aren't required.
+> [!NOTE]
+> The process event before ingestion in Eventstream process is complete and the remaining steps in this article aren't required.
 
 ## Inspect
 
