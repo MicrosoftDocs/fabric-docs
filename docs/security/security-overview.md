@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 12/15/2023
+ms.date: 01/18/2024
 ---
 
 # Security in Microsoft Fabric
@@ -25,7 +25,13 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Support multiple geographies
+## Support tenets and multiple geographies
+
+Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same Microsoft Entra tenant. Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric tenant relies on your organization's Microsoft Entra ID for identity and access management. See more here: Power BI implementation planning: Tenant setup - Power BI | Microsoft Learn
+
+Many organizations have a global presence and require services in multiple Azure geographies. For example, a business can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called multi-geo.
+
+Add an explanation about tenants from Kasper's email...
 
 Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a business can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
 
@@ -35,11 +41,12 @@ Fabric ensures that your data is secure across regions when you're working with 
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
+Move bullets 2 and 3 to a new section at the bottom 
 * **Data resiliency** - Data availability in case of a disaster.
 
 * **Disaster recovery** - [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric) includes [cross-region disaster recovery and business continuity](/azure/reliability/reliability-fabric).
 
-To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
+* **Dat soverty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
 ## Authenticate
 
@@ -65,21 +72,22 @@ In this section, you learn how to import data into Fabric, how it's kept secure,
 
 Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes.
 
-#### Service tags
+Bullets
+#### Service tags(3)- specific to Azure
 
 Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
 
-#### IP allowlist
+#### IP allowlist(4) - specific to non-Azure
 
 You can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
 
 You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
-#### On-premises data gateway
+#### On-premises data gateway (1)
 
 With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
 
-#### Existing service
+#### Existing service(2)
 
 You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
 
@@ -95,10 +103,10 @@ Fabric controls data access using [workspaces](../get-started/workspaces.md). In
 
 Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md)
 
-| Role  | Workspace access  | OneLake access  |
-|---------|---------|---------|
-| Admin, member, and contributor | Can use all the items in the workspace | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/no-icon.svg" border="false":::         |
-| Viewer     |Can see all the items in the workspace | :::image type="icon" source="../media/no-icon.svg" border="false":::       |
+| Role                           | Workspace access                       | OneLake access                                                        |
+|--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
+| Admin, member, and contributor | Can use all the items in the workspace | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
+| Viewer                         | Can see all the items in the workspace | :::image type="icon" source="../media/no-icon.svg" border="false":::  |
 
 #### Share items
 
