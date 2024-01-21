@@ -10,26 +10,34 @@ ms.search.form: Eventhouse
 ---
 # Eventhouse overview (Preview)
 
-In Real-Time Analytics, you interact with your data in the context of Eventhouses, databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables. An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
+Eventhouses are the storage solution for streaming data in Fabric, and for semistructured and free text analysis. An Eventhouse is a workspace of databases, which might be shared across a certain project. An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
+
+Eventhouses are specifically tailored to time-based, streaming events with structured, semistructured, and unstructured data. You can get data from multiple sources, in multiple pipelines (Eventstream, SDKs, Kafak, Logstash, data flows, and more) and multiple data formats.This data is automatically indexed and partitioned based on ingestion time.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
-While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is still enabled on a database or table level.
+## When do I create an Eventhouse?
+
+Use an Eventhouse for any scenario that includes event-based data, for example system and human logs, IoT events, or financial transactions.
+
+While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is enabled on a database or table level.
+
+## What information do I see in an Eventhouse?
+
+The details page of an Eventhouse shows you database information either in list or tile mode.
+
+The following information about each database is displayed in tile mode:
+
+* Database name
+* A graph of queries run over the past week
+* Data size
+* Caching policy
+* Retention policy
+* Last ingestion date
 
 ## Guaranteed availability
 
-In general, an autoscale mechanism is used to determine the size of each KQL database. This mechanism ensures cost and performance optimization based on your usage pattern. You can, however, set a minimum available capacity unit (CU) size by enabling **Guaranteed availability** on the Eventhouse level. This compute is available to all the databases within the specified Eventhouse. 
-
-When you enable **Guaranteed availability**, you also select the size that corresponds to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to this Eventhouse. The following table maps the size to the minimum CUs:
-
-| Name        | Minimum CUs|
-|-------------|------------|
-| Extra Small | 8.5        |
-| Small       | 13         |
-| Medium      | 18         |
-| Large       | 26         |
-| Extra Large | 34         |
-| 2X Large    | 56         |
+Your Eventhouse is designed to optimize cost by suspending the service when not in use. To reactivate the service, you might encounter a latency of a few seconds. If you have highly time-sensitive systems that can’t tolerate this latency, use **Guaranteed availability**.  When activated, the service is always available at the selected minimum lavel, and you pay at least the minimum compute selected (or actual use) while no longer paying for premium storage. The specified compute is available to all the databases within the Eventhouse.
 
 For instructions on how to enable guaranteed availability, see [Enable guaranteed availability](create-eventhouse.md#enable-guaranteed-availability).
 
