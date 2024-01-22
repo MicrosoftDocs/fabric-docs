@@ -113,6 +113,6 @@ The following table contains the supported authentication type properties.
 |- Service Principal ID|The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)

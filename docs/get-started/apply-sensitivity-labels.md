@@ -39,6 +39,6 @@ There are two common ways of applying a sensitivity label to an item: from the f
 
     :::image type="content" source="./media/apply-sensitivity-labels/apply-sensitivity-label-side-pane.png" alt-text="Screenshot of the sensitivity label side pane for items in Fabric.":::
 
-## Next steps
+## Related content
 
 * [Sensitivity label overview](/power-bi/enterprise/service-security-sensitivity-label-overview)

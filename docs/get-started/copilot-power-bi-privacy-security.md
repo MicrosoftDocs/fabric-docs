@@ -52,7 +52,7 @@ Review [FAQ for Copilot for Power BI](copilot-faq-fabric.yml) for tips and sugge
 
 Additional information for future releases or feature updates will appear here.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric and Power BI: FAQ](copilot-faq-fabric.yml)

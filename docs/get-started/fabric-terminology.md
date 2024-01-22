@@ -78,7 +78,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-## Next steps
+## Related content
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [Discover data items in the OneLake data hub](onelake-data-hub.md)

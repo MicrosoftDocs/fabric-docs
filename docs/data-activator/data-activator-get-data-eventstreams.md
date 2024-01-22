@@ -47,7 +47,7 @@ To connect your Eventstream item to data activator:
     :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of trigger created.":::
 
 
-### Next steps
+## Related content
 
 Once you have connected your Eventstream item to data activator, the next step is to assign your data to some objects. To do this, follow the steps described in the [Assign data to objects in Data Activator](data-activator-assign-data-objects.md) article.
 

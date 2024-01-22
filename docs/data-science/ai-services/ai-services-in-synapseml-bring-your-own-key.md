@@ -82,7 +82,7 @@ ms.date: 11/15/2023
 - [Bing Image search](https://www.microsoft.com/bing/apis/bing-image-search-api) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/bing/BingImageSearch.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.bing.html#module-synapse.ml.cognitive.bing.BingImageSearch))
 - [Azure Cognitive Search](/azure/search/search-what-is-azure-search) ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/search/AzureSearchWriter$.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.search.html#module-synapse.ml.cognitive.search.AzureSearchWriter))
 
-## Next steps
+## Related content
 
 - [Use Azure AI services with SynapseML in Microsoft Fabric](../how-to-use-ai-services-with-synapseml.md)
 - [Use Azure AI services with SynapseML for multivariate anomaly detection](../multivariate-anomaly-detection.md)

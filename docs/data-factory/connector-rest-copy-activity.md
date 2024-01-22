@@ -134,6 +134,6 @@ The following tables contain more information about the copy activity in REST.
 |**Http Compression type** |HTTP compression type to use while sending data with Optimal Compression Level. Allowed values are **None** and **GZip**.| • **None**<br> • **GZip**|No |httpCompressionType|
 |**Additional headers** |Additional HTTP request headers.| \<your additional headers\>|No |additionalHeaders|
 
-## Next steps
+## Related content
 
 - [How to create a REST connection](connector-rest.md)

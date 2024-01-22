@@ -230,7 +230,7 @@ With the output query now fully prepared and with data ready to output, we can d
 
 1. Check your Lakehouse to view the new table loaded there.
 
-## Next steps
+## Related content
 
 In this second module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 

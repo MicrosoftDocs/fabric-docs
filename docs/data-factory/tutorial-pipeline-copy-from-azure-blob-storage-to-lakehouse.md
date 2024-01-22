@@ -120,7 +120,7 @@ In this session, you'll start to build a data pipeline by using the following st
 
    :::image type="content" source="media/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse/scheduled-run.png" alt-text="Screenshot showing a pipeline with a configured schedule to run every 15 minutes.":::
 
-## Next steps
+## Related content
 
 The pipeline in this sample shows you how to copy data from Azure Blob Storage to Lakehouse.  You learned how to:
 

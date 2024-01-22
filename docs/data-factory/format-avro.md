@@ -91,6 +91,6 @@ The following properties are supported in the copy activity **Destination** sect
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.|< your file name prefix > |No| fileNamePrefix|
 
 
-## Next steps
+## Related content
 
 - [Connectors overview](connector-overview.md)

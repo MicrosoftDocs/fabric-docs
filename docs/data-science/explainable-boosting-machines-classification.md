@@ -273,7 +273,7 @@ print('Features are', first['features'])
 print('Feature scores are', first['featurescores'])
 ```
 
-## Next steps
+## Related content
 
 - [InterpretML explainable boosting machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
 - [Track models with MLflow](mlflow-autologging.md)
