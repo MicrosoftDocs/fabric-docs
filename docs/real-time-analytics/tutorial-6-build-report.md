@@ -84,7 +84,7 @@ For more information about tasks performed in this tutorial, see:
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 7: Clean up resources](tutorial-7-clean-up-resources.md)

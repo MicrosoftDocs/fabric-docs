@@ -130,6 +130,6 @@ The following tables contain more information about the copy activity in Google 
 |**Delete files after completion** |Indicates whether the binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll note some files have already been copied to the destination and deleted from the source, while others are still remaining on the source store. This property is only valid in binary files copy scenario.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
-## Next steps
+## Related content
 
 - [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md)

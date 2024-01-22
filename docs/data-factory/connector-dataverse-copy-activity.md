@@ -136,6 +136,6 @@ See the following table for the summary and more information for the Dataverse c
 |**Write batch size**|The row count of data written to Dataverse in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 
-## Next steps
+## Related content
 
-[Dataverse connector overview](connector-dataverse-overview.md)
+- [Dataverse connector overview](connector-dataverse-overview.md)

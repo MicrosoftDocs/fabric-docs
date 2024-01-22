@@ -130,6 +130,6 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
   
 * **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
 
-## Next steps
+## Related content
 
-[Understand the metrics app compute page?](metrics-app-compute-page.md)
+* [Understand the metrics app compute page?](metrics-app-compute-page.md)

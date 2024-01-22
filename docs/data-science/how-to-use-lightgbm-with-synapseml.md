@@ -254,7 +254,7 @@ In this section, you'll use LightGBM to build a ranking model.
     predictions.limit(10).toPandas()
     ```
 
-## Next steps
+## Related content
 
 - [What is Azure AI services in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

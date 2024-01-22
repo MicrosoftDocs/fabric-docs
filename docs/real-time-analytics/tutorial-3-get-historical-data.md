@@ -67,7 +67,7 @@ For more information about tasks performed in this tutorial, see:
 
 * [Get data from file](get-data-local-file.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)

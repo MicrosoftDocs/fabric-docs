@@ -224,7 +224,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
 ![Graph of model result.](./media/r-use-tidyverse/model-out.png)
 
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

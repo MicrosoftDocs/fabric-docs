@@ -30,6 +30,6 @@ The data that a customer sees when querying the Delta table by using either a sh
  4. Drop the existing shortcut
  5. Re-create the shortcut to Lakehouse
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

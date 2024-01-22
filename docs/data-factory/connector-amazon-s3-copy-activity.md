@@ -152,6 +152,6 @@ The following tables contain more information about the copy activity in Amazon 
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
-[Set up your Amazon S3 connection](connector-amazon-s3.md)
+- [Set up your Amazon S3 connection](connector-amazon-s3.md)

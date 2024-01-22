@@ -58,6 +58,6 @@ In order to perform impact analysis on an item, you must have write permissions 
 
 Even if you don't have access to some workspaces, your notify contacts messages will still reach the contact lists of those workspaces.
 
-## Next steps
+## Related content
 
 * [Lineage](lineage.md)

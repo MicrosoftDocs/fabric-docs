@@ -240,6 +240,6 @@ See the following table for the summary and more information for the SQL server 
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
 
 
-## Next steps
+## Related content
 
 - [SQL server overview](connector-azure-sql-database-overview.md)

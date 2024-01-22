@@ -1,39 +1,37 @@
 ---
 title: 'Tutorial: Use R to predict flight delay'
 description: This tutorial shows how to predict flight delay by using tidymodels packages and build a Power BI report on the results.
-ms.reviewer: sgilley
+ms.reviewer: fsolomon
 author: ruixinxu
 ms.author: ruxu
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 04/24/2023
+ms.date: 01/22/2024
 ms.search.form: R Language
 #customer intent: As a data scientist, I want to build a machine learning model by using R so I can predict delays.
 ---
 
 # Tutorial: Use R to predict flight delay
 
-In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. You use the [nycflights13](https://github.com/hadley/nycflights13) data and R to predict whether a plane will arrive more than 30 minutes late. You then use the prediction results to build an interactive Power BI dashboard.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. It uses the [nycflights13](https://github.com/hadley/nycflights13) data, and R, to predict whether or not a plane arrives more than 30 minutes late. It then uses the prediction results to build an interactive Power BI dashboard.
 
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
->
-> - Use [tidymodels](https://www.tidymodels.org/) packages, such as [recipes](https://recipes.tidymodels.org/), [parsnip](https://parsnip.tidymodels.org/), [rsample](https://rsample.tidymodels.org/), and [workflows](https://workflows.tidymodels.org/), to process data and train a machine learning model.
-> - Write the output data to a lakehouse as a delta table.
-> - Build a Power BI visual report to directly access data in your lakehouse.
+> - Use [tidymodels](https://www.tidymodels.org/) packages ([recipes](https://recipes.tidymodels.org/), [parsnip](https://parsnip.tidymodels.org/), [rsample](https://rsample.tidymodels.org/), [workflows](https://workflows.tidymodels.org/)) to process data and train a machine learning model
+> - Write the output data to a lakehouse as a delta table
+> - Build a Power BI visual report to directly access data in that lakehouse
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
-
 [!INCLUDE [r-prerequisites](./includes/r-notebook-prerequisites.md)]
 
 ## Install packages
 
-To use code in this article, install the `nycflights13` package:
+Install the nycflights13 package to use the code in this tutorial.
 
 ```r
 install.packages("nycflights13")
@@ -47,7 +45,7 @@ library(nycflights13)    # For flight data
 
 ## Explore the data
 
-The `nycflights13` data contains information on 325,819 flights that arrived near New York City in 2013. First, view the distribution of flight delays. The following graph shows that the distribution of the arrival delays is right skewed. It has a long tail in the high values.
+The `nycflights13` data has information about 325,819 flights that arrived near New York City in 2013. First, view the distribution of flight delays. This graph shows that the distribution of the arrival delays is right skewed. It has a long tail in the high values.
 
 ```r
 ggplot(flights, aes(arr_delay)) + geom_histogram(color="blue", bins = 300)
@@ -55,7 +53,7 @@ ggplot(flights, aes(arr_delay)) + geom_histogram(color="blue", bins = 300)
 
 :::image type="content" source="media/r-flight-delay/flight-delay.png" alt-text="Screenshot that shows a graph of flight delays.":::
 
-Load the data and make a few changes to the variables:
+Load the data, and make a few changes to the variables:
 
 ```r
 set.seed(123)
@@ -81,9 +79,9 @@ flight_data <-
   mutate_if(is.character, as.factor)
 ```
 
-Before you start building up your model, consider a few specific variables that are important for both preprocessing and modeling.
+Before we build the model, consider a few specific variables that are important for both preprocessing and modeling.
 
-Notice that the variable called `arr_delay` is a factor variable. It's important that your outcome variable for training a logistic regression model is a factor.
+Variable `arr_delay` is a factor variable. For logistic regression model training, it's important that the outcome variable is a factor variable.
 
 ```r
 glimpse(flight_data)
@@ -97,7 +95,7 @@ flight_data %>%
   mutate(prop = n/sum(n))
 ```
 
-There are 104 flight destinations contained in `dest`.
+The `dest` feature has 104 flight destinations.
 
 ```r
 unique(flight_data$dest)
@@ -111,9 +109,9 @@ unique(flight_data$carrier)
 
 ## Split the data
 
-Split the single dataset into two: a *training* set and a *testing* set. Keep most of the rows in the original dataset (subset chosen randomly) in the training dataset. You use the training dataset to fit the model, and you using the testing dataset to measure model performance.
+Split the single dataset into two sets: a *training* set and a *testing* set. Keep most of the rows in the original dataset (as a randomly chosen subset) in the training dataset. Use the training dataset to fit the model, and use the testing dataset to measure model performance.
 
-Use the `rsample` package to create an object that contains information on how to split the data. Then use two more `rsample` functions to create DataFrames for the training and testing sets:
+Use the `rsample` package to create an object that contains information about how to split the data. Then, use two more `rsample` functions to create DataFrames for the training and testing sets:
 
 ```r
 set.seed(123)
@@ -127,9 +125,9 @@ test_data  <- testing(data_split)
 
 ## Create a recipe and roles
 
-Create a recipe for a simple logistic regression model. Before you train the model, use a recipe to create a few new predictors and conduct some preprocessing that the model requires.
+Create a recipe for a simple logistic regression model. Before training the model, use a recipe to create new predictors, and conduct the preprocessing that the model requires.
 
-Use the `update_role()` function to let recipes know that `flight` and `time_hour` are variables with a custom role called `ID`. (A role can have any character value.) The formula includes all variables in the training set other than `arr_delay` as predictors. The recipe keeps these two ID variables but doesn't use them as either outcomes or predictors.
+Use the `update_role()` function so that the recipes know that `flight` and `time_hour` are variables, with a custom role called `ID`. A role can have any character value. The formula includes all variables in the training set, other than `arr_delay`, as predictors. The recipe keeps these two ID variables but doesn't use them as either outcomes or predictors.
 
 ```r
 flights_rec <- 
@@ -145,7 +143,7 @@ summary(flights_rec)
 
 ## Create features
 
-Do some feature engineering to improve your model. Perhaps it's reasonable for the date of the flight to have an effect on the likelihood of a late arrival:
+Do some feature engineering to improve your model. The flight date might have a reasonable effect on the likelihood of a late arrival.
 
 ```r
 flight_data %>% 
@@ -153,13 +151,13 @@ flight_data %>%
   mutate(numeric_date = as.numeric(date)) 
 ```
 
-It might be better to add model terms derived from the date that have a better potential to be important to the model. Derive the following meaningful features from the single date variable:
+It might help to add model terms derived from the date that potentially have importance to the model. Derive the following meaningful features from the single date variable:
 
 - Day of the week
 - Month
 - Whether or not the date corresponds to a holiday
 
-Do all three by adding steps to your recipe:
+Add the three steps to your recipe:
 
 ```r
 flights_rec <- 
@@ -175,7 +173,7 @@ flights_rec <-
 
 ## Fit a model with a recipe
 
-Use logistic regression to model the flight data. Start by building a model specification by using the `parsnip` package:
+Use logistic regression to model the flight data. First, build a model specification with the `parsnip` package:
 
 ```r
 lr_mod <- 
@@ -183,7 +181,7 @@ lr_mod <-
   set_engine("glm")
 ```
 
-Then use the `workflows` package to bundle your `parsnip` model (`lr_mod`) with your recipe (`flights_rec`):
+Use the `workflows` package to bundle your `parsnip` model (`lr_mod`) with your recipe (`flights_rec`):
 
 ```r
 flights_wflow <- 
@@ -196,7 +194,7 @@ flights_wflow
 
 ## Train the model
 
-Here's a single function that you can use to prepare the recipe and train the model from the resulting predictors:
+This function can prepare the recipe, and train the model from the resulting predictors:
 
 ```r
 flights_fit <- 
@@ -204,7 +202,7 @@ flights_fit <-
   fit(data = train_data)
 ```
 
-Use the helper functions `xtract_fit_parsnip()` and `extract_recipe()` to extract the model or recipe objects from the workflow. For example, here you pull the fitted model object and then use the `broom::tidy()` function to get a tidy tibble of model coefficients:
+Use the helper functions `xtract_fit_parsnip()` and `extract_recipe()` to extract the model or recipe objects from the workflow. In this example, pull the fitted model object, then use the `broom::tidy()` function to get a tidy tibble of model coefficients:
 
 ```r
 flights_fit %>% 
@@ -214,20 +212,20 @@ flights_fit %>%
 
 ## Predict results
 
-Use the trained workflow (`flights_fit`) to predict with the unseen test data, by using a single call to `predict()`. The `predict()` method applies the recipe to the new data and then passes them to the fitted model.
+A single call to `predict()` uses the trained workflow (`flights_fit`) to make predictions with the unseen test data. The `predict()` method applies the recipe to the new data, then passes the results to the fitted model.
 
 ```r
 predict(flights_fit, test_data)
 ```
 
-Get the output from `predict()` to return the predicted class: `late` versus `on_time`. If you want the predicted class probabilities for each flight instead, use `augment()` with the model plus test data to save them together:
+Get the output from `predict()` to return the predicted class: `late` versus `on_time`. However, for the predicted class probabilities for each flight, use `augment()` with the model, combined with test data, to save them together:
 
 ```r
 flights_aug <- 
   augment(flights_fit, test_data)
 ```
 
-The data looks like this example:
+Review the data:
 
 ```r
 glimpse(flights_aug)
@@ -235,11 +233,11 @@ glimpse(flights_aug)
 
 ## Evaluate the model
 
-Now you have a tibble with your predicted class probabilities. From these first few rows, you see that your model predicted five on-time flights correctly (values of `.pred_on_time` are `p > 0.50`). But you also know that you have 81,455 rows total to predict.
+We now have a tibble with the predicted class probabilities. In the first few rows, the model correctly predicted five on-time flights (values of `.pred_on_time` are `p > 0.50`). However, we have 81,455 rows total to predict.
 
-You want a metric that tells how well your model predicted late arrivals, compared to the true status of your outcome variable, `arr_delay`.
+We need a metric that tells how well the model predicted late arrivals, compared to the true status of your outcome variable, `arr_delay`.
 
-Use the Area Under the Curve Receiver Operating Characteristic (AUC-ROC) as your metric. Compute it by using `roc_curve()` and `roc_auc()` from the `yardstick` package:
+Use the Area Under the Curve Receiver Operating Characteristic (AUC-ROC) as the metric. Compute it with `roc_curve()` and `roc_auc()`, from the `yardstick` package:
 
 ```r
 flights_aug %>% 
@@ -249,11 +247,11 @@ flights_aug %>%
 
 ## Build a Power BI report
 
-The model result is fairly good. Use the results of flight delay prediction to build an interactive Power BI dashboard. Show the number of flights by carrier and the number of flights by destination. The dashboard can also filter by the results of delay prediction.
+The model result looks good. Use the flight delay prediction results to build an interactive Power BI dashboard. The dashboard shows the number of flights by carrier, and the number of flights by destination. The dashboard can filter by the delay prediction results.
 
 :::image type="content" source="media/r-flight-delay/power-bi-report.png" alt-text="Screenshot that shows bar charts for number of flights by carrier and number of flights by destination in a Power BI report.":::
 
-First include the carrier name and airport name in the prediction result dataset:
+Include the carrier name and airport name in the prediction result dataset:
 
 ```r
   flights_clean <- flights_aug %>% 
@@ -270,7 +268,7 @@ First include the carrier name and airport name in the prediction result dataset
   select(flight, origin, origin_name, dest,dest_name, air_time,distance, carrier, carrier_name, date, arr_delay, time_hour, .pred_class, .pred_late, .pred_on_time)
 ```
 
-The data looks like this example:
+Review the data:
 
 ```R
 glimpse(flights_clean)
@@ -291,35 +289,35 @@ temp_delta<-"Tables/nycflight13"
 write.df(sparkdf, temp_delta ,source="delta", mode = "overwrite", header = "true")
 ```
 
-You can now use the delta table to create a semantic model:
+Use the delta table to create a semantic model.
 
-1. On the left, select **OneLake data hub**.
-1. Select the lakehouse that you attached to your notebook.
-1. Select **Open**.
+1. On the left, select **OneLake data hub**
+1. Select the lakehouse that you attached to your notebook
+1. Select **Open**
 
     :::image type="content" source="media/r-flight-delay/open-lakehouse.png" alt-text="Screenshot that shows the button to open a lakehouse.":::
 
-1. Select **New semantic model**.
-1. Select **nycflight13** for your new semantic model, and then select **Confirm**.
-1. Your semantic model is created. Select **New report**.
-1. Select or drag fields from the **Data** and **Visualizations** panes onto the report canvas to build your report.
+1. Select **New semantic model**
+1. Select **nycflight13** for your new semantic model, then select **Confirm**
+1. Your semantic model is created. Select **New report**
+1. Select or drag fields from the **Data** and **Visualizations** panes onto the report canvas to build your report
 
     :::image type="content" source="media/r-flight-delay/power-bi-data.png" alt-text="Screenshot that shows data and visualization details for a report.":::
 
-   To create the report shown at the beginning of this section, use the following visualizations and data:
+To create the report shown at the beginning of this section, use these visualizations and data:
 
-   1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked bar chart with:
-      - Y-axis: **carrier_name**.
-      - X-axis: **flight**. Select **Count** for the aggregation.
-      - Legend: **origin_name**.
-   1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false"::: Stacked bar chart with:
-      - Y-axis: **dest_name**.
-      - X-axis: **flight**. Select **Count** for the aggregation.
-      - Legend: **origin_name**.
-   1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false"::: Slicer with:
-      - Field: **_pred_class**.
-   1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false"::: Slicer with:
-      - Field: **_pred_late**.
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon"::: Stacked bar chart with:
+    1. Y-axis: **carrier_name**
+    1. X-axis: **flight**. Select **Count** for the aggregation
+    1. Legend: **origin_name**
+1. :::image type="icon" source="media/r-flight-delay/stacked-bar.png" border="false" alt-text="Screenshot showing a stacked barchart icon"::: Stacked bar chart with:
+    1. Y-axis: **dest_name**
+    1. X-axis: **flight**. Select **Count** for the aggregation
+    1. Legend: **origin_name**
+1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon"::: Slicer with:
+    1. Field: **_pred_class**
+1. :::image type="icon" source="media/r-flight-delay/slicer.png" border="false" alt-text="Screenshot showing a slicer icon"::: Slicer with:
+    1. Field: **_pred_late**
 
 ## Related content
 

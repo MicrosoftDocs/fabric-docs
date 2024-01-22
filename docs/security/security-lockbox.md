@@ -116,7 +116,7 @@ Access to data varies according to the Microsoft Fabric experience your request 
     * Event logs
     * Executor logs
 
-## Next steps
+## Related content
 
 * [Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
 
