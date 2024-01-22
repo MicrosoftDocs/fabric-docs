@@ -10,7 +10,7 @@ ms.search.form: Eventhouse
 ---
 # Eventhouse overview (Preview)
 
-Eventhouses are the storage solution for streaming data in Fabric, and for semistructured and free text analysis. An Eventhouse is a workspace of databases, which might be shared across a certain project. An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
+Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They are designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. These aspect makes Eventhouses particularly useful for scenarios where timely insights are crucial. Eventhouses provide a scalable infrastructure that allows organizations to handle growing volumes of data, ensuring optimal performance and resource use. Eventhouses are the storage solution for streaming data in Fabric, and for semistructured and free text analysis. An Eventhouse is a workspace of databases, which might be shared across a certain project. An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database.
 
 Eventhouses are specifically tailored to time-based, streaming events with structured, semistructured, and unstructured data. You can get data from multiple sources, in multiple pipelines (For example, Eventstream, SDKs, Kafka, Logstash, data flows, and more) and multiple data formats. This data is automatically indexed and partitioned based on ingestion time.
 
@@ -18,7 +18,7 @@ Eventhouses are specifically tailored to time-based, streaming events with struc
 
 ## When do I create an Eventhouse?
 
-Use an Eventhouse for any scenario that includes event-based data, for example system and human logs, IoT events, or financial transactions.
+Use an Eventhouse for any scenario that includes event-based data, for example, telemetry and log data, time series and IoT data, security and compliance logs, or financial records.
 
 While Eventhouse is in preview, you can create a standalone [KQL database](create-database.md), or a KQL database within an Eventhouse. The KQL database can either be a standard database, or a [database shortcut](database-shortcut.md). [Data availability in OneLake](one-logical-copy.md) is enabled on a database or table level.
 
