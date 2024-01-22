@@ -4,7 +4,7 @@ description: Learn how to use transactions and how to insert and modify data in 
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 12/13/2023
+ms.date: 01/22/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -13,7 +13,7 @@ ms.search.form: Warehouse design and development # This article's title should n
 ---
 # Transactions in Warehouse tables in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Similar to their behavior in SQL Server, transactions allow you to control the commit or rollback of read and write queries. 
 
@@ -75,5 +75,5 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 
 ## Related content
 
-- [Query the Warehouse](query-warehouse.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](tables.md)

@@ -13,7 +13,7 @@ ms.search.form: Query editor # This article's title should not change. If so, co
 ---
 # Query using the visual query editor
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article describes how to use the visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal to quickly and efficiently write queries. You can use the visual query editor for a no-code experience to create your queries.
 
@@ -29,7 +29,7 @@ Once you've loaded data into your warehouse, you can use the visual query editor
 
 In the ribbon, create a new query using the **New visual query** button, as shown in the following image.
 
-:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view.":::
+:::image type="content" source="media\visual-query-editor\new-visual-query.png" alt-text="Screenshot showing where to find the New query menu in the Data preview view." lightbox="media\visual-query-editor\new-visual-query.png":::
 
 To create a query, drag and drop tables from the **Object explorer** on the left onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
@@ -76,6 +76,6 @@ For more information on cross-warehouse querying, see [Cross-warehouse querying]
 
 ## Related content
 
-- [How-to: Query the Warehouse](query-warehouse.md)
-- [Query using the SQL Query editor](sql-query-editor.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
+- [Query using the SQL query editor](sql-query-editor.md)
 - [Query insights in Fabric data warehousing](query-insights.md)
