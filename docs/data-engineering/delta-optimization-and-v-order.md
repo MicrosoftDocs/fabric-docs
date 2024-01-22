@@ -151,7 +151,7 @@ CREATE TABLE person (id INT, name STRING, age INT) USING parquet TBLPROPERTIES("
 ```
 
 > [!IMPORTANT]
-> When the table property is set to true; INSERT, UPDATE and MERGE commands will behave as expected and perform. If the V-Order session configuration is set to true or the spark.write enables it, then the writes will be V-Order even if the TBLPROPERTIES is set to false.
+> When the table property is set to true, INSERT, UPDATE and MERGE commands will behave as expected and perform the write-time optimization. If the V-Order session configuration is set to true or the spark.write enables it, then the writes will be V-Order even if the TBLPROPERTIES is set to false.
 
 Enable or disable V-Order by altering the table property:
 
