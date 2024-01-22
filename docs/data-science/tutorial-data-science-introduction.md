@@ -68,7 +68,7 @@ In this tutorial series, we showcase a simplified end-to-end data science scenar
 
 **Expose analysis and insights** - Data from a lakehouse can be consumed by Power BI, industry leading business intelligence tool, for reporting and visualization. Data persisted in the lakehouse can also be visualized in notebooks using Spark or Python native visualization libraries like `matplotlib`, `seaborn`, `plotly`, and more. Data can also be visualized using the SemPy library that supports built-in rich, task-specific visualizations for the semantic data model, for dependencies and their violations, and for classification and regression use cases.
 
-## Next steps
+## Related content
 
 > [!div class="nextstepaction"]
 > [Prepare your system for the data science tutorial](tutorial-data-science-prepare-system.md)

@@ -235,6 +235,6 @@ See the following table for the summary and more information for the Azure SQL D
 |**Write batch size**|The number of rows to insert into the SQL table per batch. By default, the service dynamically determines the appropriate batch size based on the row size.|< number of rows ><br>(integer) |No |writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
 
-## Next steps
+## Related content
 
 - [Azure SQL Database Managed Instance overview](connector-azure-sql-database-managed-instance-overview.md)

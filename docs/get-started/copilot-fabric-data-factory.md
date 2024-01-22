@@ -79,6 +79,6 @@ With Dataflow Gen2, you can:
 
     :::image type="content" source="media/copilot-fabric-data-factory/copilot-create-new-query.png" alt-text="Screenshot showing a new query being created." lightbox="media/copilot-fabric-data-factory/copilot-create-new-query.png":::
 
-## Next steps
+## Related content
 
 

@@ -105,7 +105,7 @@ If you're an ISV interested in integrating your solutions with Microsoft Fabric,
 
 For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
-## Next steps
+## Related content
 
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [Create a workspace](create-workspaces.md)

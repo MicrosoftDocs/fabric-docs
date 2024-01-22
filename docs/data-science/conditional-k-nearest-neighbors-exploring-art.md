@@ -243,7 +243,7 @@ The following cell performs batched queries given desired image IDs and a filena
 # sample query
 result_df = test_all(small_df, medium_cknn, culture_cknn, selected_ids, root=".")
 ```
-## Next steps
+## Related content
 
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)

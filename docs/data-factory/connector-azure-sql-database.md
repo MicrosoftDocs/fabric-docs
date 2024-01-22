@@ -159,6 +159,6 @@ The following properties in the table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)
