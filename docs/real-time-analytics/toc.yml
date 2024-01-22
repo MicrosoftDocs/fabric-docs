@@ -74,7 +74,7 @@ items:
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
-    - name: Get data from Event streams
+    - name: Get data from Eventstream
       href: get-data-eventstream.md
     - name: Connectors
       items:
