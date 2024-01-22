@@ -108,6 +108,14 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 1. Now, it's time to test if the adapter is working or not. First run `dbt seed` to insert sample data into the warehouse.
 
     :::image type="content" source="media/tutorial-setup-dbt\dbt-seed.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt\dbt-seed.png":::
+  
+1. Run `dbt run` to validate data against some tests.
+
+    ```powershell
+    dbt run
+    ```
+
+    :::image type="content" source="media/tutorial-setup-dbt\dbt-run.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
 
 1. Run `dbt test` to run the models defined in the demo dbt project.
    
@@ -116,14 +124,6 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     ```
      
     :::image type="content" source="media/tutorial-setup-dbt\dbt-test.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt\dbt-test.png":::
-    
-1. Run `dbt run` to validate data against some tests.
-
-    ```powershell
-    dbt run
-    ```
-
-    :::image type="content" source="media/tutorial-setup-dbt\dbt-run.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
 
 That's it! You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
 
