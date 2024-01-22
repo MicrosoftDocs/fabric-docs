@@ -1,30 +1,29 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a text classification model'
 description: This tutorial demonstrates training and evaluating a text classification model by using a sample dataset of metadata for digitized books.
-ms.reviewer: sgilley
+ms.reviewer: franksolomon
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/15/2023
+ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a text classification model so I can predict a category based on a single attribute.
 ---
 
 # Tutorial: Create, evaluate, and score a text classification model
 
-In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model by using [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to use word2vec and logistic regression on Spark to determine a book's genre from the British Library book dataset solely based on the book's title.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow for a text classification model, in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario uses word2vec and logistic regression, on Spark, to determine the genre of a book from the British Library book dataset, solely based on the book's title.
 
-The main steps in this tutorial are:
+This tutorial covers these steps:
 
 > [!div class="checklist"]
->
-> - Install custom libraries.
-> - Load the data.
-> - Understand and process the data by using exploratory data analysis.
-> - Train a machine learning model by using word2vec and logistic regression, and track experiments by using MLflow and the Fabric autologging feature.
-> - Load the machine learning model for scoring and make predictions.
+> * Install custom libraries
+> * Load the data
+> * Understand and process the data with exploratory data analysis
+> * Train a machine learning model with word2vec and logistic regression, and track experiments by with MLflow and the Fabric autologging feature
+> * Load the machine learning model for scoring and predictions
 
 ## Prerequisites
 
@@ -34,14 +33,14 @@ The main steps in this tutorial are:
 
 ## Follow along in a notebook
 
-You can follow along in a notebook in one of two ways:
+You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience
+- Upload your notebook from GitHub to the Synapse Data Science experience
 
 ### Open the built-in notebook
 
-**Title genre classification** is the sample notebook that accompanies this tutorial.
+The sample **Title genre classification** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
@@ -55,12 +54,12 @@ You can follow along in a notebook in one of two ways:
 
 ## Step 1: Install custom libraries
 
-When you're developing a machine learning model or doing ad hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. To do so, use `%pip install` or `%conda install`. Alternatively, you can install the required libraries in the workspace by browsing to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also install the required libraries into the workspace. Navigate to **Library management** in the workspace settings.
 
-For the classification model, you use the wordcloud library to represent the frequency of words in text, where the size of a word represents its frequency. Here, you use `%pip install` to install wordcloud.
+For the classification model, use the wordcloud library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install wordcloud.
 
 > [!NOTE]
-> The PySpark kernel restarts after you use `%pip install`. Install libraries before you run any other cells.
+> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
 
 ```python
 # Install wordcloud for text visualization by using pip
@@ -69,7 +68,7 @@ For the classification model, you use the wordcloud library to represent the fre
 
 ## Step 2: Load the data
 
-The dataset consists of metadata about books from the British Library that were digitized through a collaboration between the library and Microsoft. The metadata is classification information that people created to indicate whether a book is fiction or nonfiction. With this dataset, the goal is to train a classification model that determines a book's genre solely based on its title.
+The dataset has metadata about books from the British Library that a collaboration between the library and Microsoft digitized. The metadata is classification information to indicate whether a book is fiction or nonfiction. With this dataset, the goal is to train a classification model that determines the genre of a book, only based on its title.
 
 |BL record ID|Type of resource|Name|Dates associated with name|Type of name|Role|All names|Title|Variant titles|Series title|Number within series|Country of publication|Place of publication|Publisher|Date of publication|Edition|Physical description|Dewey classification|BL shelfmark|Topics|Genre|Languages|Notes|BL record ID for physical resource|classification_id|user_id|created_at|subject_ids|annotator_date_pub|annotator_normalised_date_pub|annotator_edition_statement|annotator_genre|annotator_FAST_genre_terms|annotator_FAST_subject_terms|annotator_comments|annotator_main_language|annotator_other_languages_summaries|annotator_summaries_language|annotator_translation|annotator_original_language|annotator_publisher|annotator_place_pub|annotator_country|annotator_title|Link to digitized book|annotated|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -79,7 +78,7 @@ The dataset consists of metadata about books from the British Library that were 
 Define the following parameters so that you can apply this notebook on different datasets:
 
 ```python
-IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually
+IS_CUSTOM_DATA = False  # If True, the user must manually upload the dataset
 DATA_FOLDER = "Files/title-genre-classification"
 DATA_FILE = "blbooksgenre.csv"
 
@@ -93,14 +92,14 @@ EXPERIMENT_NAME = "sample-aisample-textclassification"  # MLflow experiment name
 
 ### Download the dataset and upload to the lakehouse
 
-The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
+This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse.
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. If you don't, you'll get an error.
+> [Add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before you run it. Failure to do so will result in an error.
 
 ```python
 if not IS_CUSTOM_DATA:
-    # Download demo data files into the lakehouse if they don't exist
+    # Download demo data files into the lakehouse, if they don't exist
     import os, requests
 
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Title_Genre_Classification"
@@ -108,7 +107,7 @@ if not IS_CUSTOM_DATA:
     download_path = f"/lakehouse/default/{DATA_FOLDER}/raw"
 
     if not os.path.exists("/lakehouse/default"):
-        # Add a lakehouse if no default lakehouse was added to the notebook
+        # Add a lakehouse, if no default lakehouse was added to the notebook
         # A new notebook won't link to any lakehouse by default
         raise FileNotFoundError(
             "Default lakehouse not found, please add a lakehouse and restart the session."
@@ -123,7 +122,7 @@ if not IS_CUSTOM_DATA:
 
 ### Import required libraries
 
-Before any processing, you need to import required libraries, including those for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
+Before any processing, you need to import required libraries, including the libraries for [Spark](https://spark.apache.org/) and [SynapseML](https://aka.ms/AboutSynapseML):
 
 ```python
 import numpy as np
@@ -165,7 +164,7 @@ max_iter = 10  # The maximum number of training iterations
 k_folds = 3  # The number of folds for cross-validation
 ```
 
-Start recording the time that it takes to run this notebook:
+Start recording the time needed to run this notebook:
 
 ```python
 # Record the notebook running time
@@ -176,7 +175,7 @@ ts = time.time()
 
 ### Set up MLflow experiment tracking
 
-Autologging extends the MLflow logging capabilities. Autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as you're training it. You then log this information to the workspace, where you can access and visualize it by using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+Autologging extends the MLflow logging capabilities. Autologging automatically captures the input parameter values and output metrics of a machine learning model as you train it. You then log this information to the workspace. In the workspace, you can access and visualize the information with the MLflow APIs, or the corresponding experiment, in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
 ```python
 # Set up Mlflow for experiment tracking
@@ -185,7 +184,7 @@ mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.autolog(disable=True)  # Disable Mlflow autologging
 ```
 
-If you want to disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`.
+To disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
 
 ### Read raw date data from the lakehouse
 
@@ -195,7 +194,7 @@ raw_df = spark.read.csv(f"{DATA_FOLDER}/raw/{DATA_FILE}", header=True, inferSche
 
 ## Step 3: Perform exploratory data analysis
 
-Explore the dataset by using the `display` command to view high-level statistics for the dataset and show the chart views:
+Explore the dataset with the `display` command, to view high-level statistics for the dataset and to show the chart views:
 
 ```python
 display(raw_df.limit(20))
@@ -203,7 +202,7 @@ display(raw_df.limit(20))
 
 ### Prepare the data
 
-Start cleaning the data by removing the duplicates:
+Remove the duplicates to clean the data:
 
 ```python
 df = (
@@ -219,17 +218,17 @@ display(df.limit(20))
 Apply class balancing to address any bias:
 
 ```python
-# Create an instance of ClassBalancer and set the input column to LABEL_COL
+# Create a ClassBalancer instance, and set the input column to LABEL_COL
 cb = ClassBalancer().setInputCol(LABEL_COL)
 
-# Fit the ClassBalancer instance to the input DataFrame and transform the DataFrame
+# Fit the ClassBalancer instance to the input DataFrame, and transform the DataFrame
 df = cb.fit(df).transform(df)
 
 # Display the first 20 rows of the transformed DataFrame
 display(df.limit(20))
 ```
 
-Tokenize the dataset by splitting the paragraphs and sentences into smaller units that can be more easily assigned meaning. Then remove the stopwords to improve the performance. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications, where the idea is to remove words that occur commonly across all the documents in the corpus.
+Split the paragraphs and sentences into smaller units, to tokenize the dataset. This way, it becomes easier to assign meaning. Then, remove the stopwords to improve the performance. Stopword removal involves removal of words that commonly occur across all documents in the corpus. Stopword removal is one of the most commonly used preprocessing steps in natural language processing (NLP) applications.
 
 ```python
 # Text transformer
@@ -244,7 +243,7 @@ token_df = pipeline.fit(df).transform(df)
 display(token_df.limit(20))
 ```
 
-Display the wordcloud library for each class. A wordcloud library is a visually prominent presentation of keywords that appear frequently in text data. The wordcloud library is effective because the rendering of keywords forms a cloudlike color picture to better capture the main text data at a glance. [Learn more about wordcloud](https://github.com/amueller/word_cloud).
+Display the wordcloud library for each class. A wordcloud library is a visually prominent presentation of keywords that appear frequently in text data. The wordcloud library is effective because the rendering of keywords forms a cloudlike color picture, to better capture the main text data at a glance. [Learn more about wordcloud](https://github.com/amueller/word_cloud).
 
 ```python
 # WordCloud
@@ -273,7 +272,7 @@ for label in LABELS:
     plt.imshow(wordcloud, interpolation="bilinear")
 ```
 
-Finally, use word2vec to vectorize the text. The word2vec technique creates a vector representation of each word in your text. Words that are used in similar contexts or that have semantic relationships are captured effectively through their closeness in the vector space. This closeness indicates that similar words have similar word vectors.
+Finally, use word2vec to vectorize the text. The word2vec technique creates a vector representation of each word in the text. Words used in similar contexts, or that have semantic relationships, are captured effectively through their closeness in the vector space. This closeness indicates that similar words have similar word vectors.
 
 ```python
 # Label transformer
@@ -298,7 +297,7 @@ display(vec_df.limit(20))
 
 ## Step 4: Train and evaluate the model
 
-With your data in place, define the model. In this section, you train a logistic regression model to classify the vectorized text.
+With the data in place, define the model. In this section, you train a logistic regression model to classify the vectorized text.
 
 ### Prepare training and testing datasets
 
@@ -311,7 +310,7 @@ With your data in place, define the model. In this section, you train a logistic
 
 A machine learning experiment is the primary unit of organization and control for all related machine learning runs. A run corresponds to a single execution of model code.
 
-When you track machine learning experiments, you manage all the experiments and their components, such as parameters, metrics, models, and other artifacts. Tracking enables you to organize all the required components of a specific machine learning experiment and to easily reproduce past results by using saved experiments. [Learn more about machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
+Machine learning experiment tracking manages all the experiments and their components, for example parameters, metrics, models, and other artifacts. Tracking enables organization of all the required components of a specific machine learning experiment. It also enables the easy reproduction of past results with saved experiments. [Learn more about machine learning experiments in Microsoft Fabric](https://aka.ms/synapse-experiment).
 
 ```python
 # Build the logistic regression classifier
@@ -326,10 +325,10 @@ lr = (
 
 ### Tune hyperparameters
 
-Construct a grid of parameters to search over the hyperparameters and a cross-evaluator estimator to produce a `CrossValidator` model:
+Build a grid of parameters to search over the hyperparameters. Then build a cross-evaluator estimator, to produce a `CrossValidator` model:
 
 ```python
-# Construct a grid search to select the best values for the training parameters
+# Build a grid search to select the best values for the training parameters
 param_grid = (
     ParamGridBuilder()
     .addGrid(lr.regParam, [0.03, 0.1])
@@ -345,7 +344,7 @@ else:
     evaluator_metrics = ["areaUnderROC", "areaUnderPR"]
 evaluator = evaluator_cls(labelCol="labelIdx", weightCol="weight")
 
-# Construct a cross-evaluator estimator
+# Build a cross-evaluator estimator
 crossval = CrossValidator(
     estimator=lr,
     estimatorParamMaps=param_grid,
@@ -357,7 +356,7 @@ crossval = CrossValidator(
 
 ### Evaluate the model
 
-You now have models to compare by evaluating them on the testing dataset. If a model is well trained, it should demonstrate high performance on the relevant metrics on the validation and testing datasets.
+We can evaluate the models on the testing dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and testing datasets.
 
 ```python
 def evaluate(model, df):
@@ -372,7 +371,7 @@ def evaluate(model, df):
 
 ### Track experiments by using MLflow
 
-Start the training and evaluation. Use MLflow to track all experiments and log parameters, metrics, and models. All this information is logged under the experiment name in the workspace.
+Start the training and evaluation process. Use MLflow to track all experiments, and log parameters, metrics, and models. All this information is logged under the experiment name in the workspace.
 
 ```python
 with mlflow.start_run(run_name="lr"):
@@ -433,18 +432,18 @@ with mlflow.start_run(run_name="lr"):
 
 To view your experiments:
 
-1. On the left, select your workspace.
-1. Find and select the experiment name. In this case, it's **sample_aisample-textclassification**.
+1. Select your workspace in the left nav
+1. Find and select the experiment name - in this case, **sample_aisample-textclassification**
 
 :::image type="content" source="./media/title-genre-classification/text-classification-experiment.png" alt-text="Screenshot of an experiment." lightbox="media/title-genre-classification/text-classification-experiment.png":::
 
 ## Step 5: Score and save prediction results
 
-Microsoft Fabric offers a scalable function called PREDICT that supports batch scoring in any compute engine and helps customers to operationalize machine learning models. You can create batch predictions straight from a notebook or the item page for a particular model. To learn more about PREDICT and how to use it in Fabric, see [Machine learning model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
+Microsoft Fabric allows users to operationalize machine learning models with the `PREDICT` scalable function. This function supports batch scoring (or batch inferencing) in any compute engine. You can create batch predictions straight from a notebook or the item page for a particular model. To learn more about PREDICT and how to use it in Fabric, see [Machine learning model scoring with PREDICT in Microsoft Fabric](https://aka.ms/fabric-predict).
 
-From the preceding evaluation results, model 1 has the largest Area Under the Precision-Recall Curve (AUPRC) and Area Under the Curve Receiver Operating Characteristic (AUC-ROC) metrics. Thus you should use model 1 for prediction.
+From the preceding evaluation results, model 1 has the largest metrics for both Area Under the Precision-Recall Curve (AUPRC) and for Area Under the Curve Receiver Operating Characteristic (AUC-ROC). Therefore, you should use model 1 for prediction.
 
-The AUC-ROC measure is widely used to assess the performance of binary classifiers. But it's sometimes more appropriate to evaluate the classifier based on measuring AUPRC. AUC-ROC is a chart that visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). AUPRC is a curve that combines precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization.
+The AUC-ROC measure is widely used to measure binary classifiers performance. However, it sometimes becomes more appropriate to evaluate the classifier based on AUPRC measurements. The AUC-ROC chart visualizes the trade-off between true positive rate (TPR) and false positive rate (FPR). The AUPRC curve combines precision (positive predictive value or PPV) and recall (true positive rate or TPR) in a single visualization.
 
 ```python
 # Load the best model
