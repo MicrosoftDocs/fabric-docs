@@ -4,7 +4,7 @@ description: Learn how to use the visual query editor for a no-code experience t
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 01/22/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -33,13 +33,20 @@ In the ribbon, create a new query using the **New visual query** button, as show
 
 To create a query, drag and drop tables from the **Object explorer** on the left onto the canvas. Once you drag one or more tables onto the canvas, you can use the visual experience to design your queries. The warehouse editor uses the Power Query diagram view experience to enable you to easily query and analyze your data. Learn more about [Power Query diagram view](/power-query/diagram-view).
 
-As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved. All workspace users can save their queries in My queries folder. However, users in viewer role of the workspace or shared recipients of the warehouse are restricted from moving queries to Shared queries folder.
+As you work on your visual query, the queries are automatically saved every few seconds. A "saving indicator" appears in your query tab to indicate that your query is being saved. All workspace users can save their queries in **My queries** folder. However, users in viewer role of the workspace or shared recipients of the warehouse are restricted from moving queries to **Shared queries** folder.
 
-The following animated gif shows the merging of two tables using a no-code visual query editor. First, the `DimCity` then `FactSale` are dragged from the **Explorer** into the visual query editor. Then, the **Merge** Power Query operator is used to join them on a common key.
+The following animated gif shows the merging of two tables using a no-code visual query editor. 
 
 :::image type="content" source="media\visual-query-editor\visual-query-editor.gif" alt-text="Animation of the results of a sample query to merge two tables using the visual query editor." lightbox="media\visual-query-editor\visual-query-editor.gif":::
 
-When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results.
+The steps shown in the gif are:
+
+1. First, the table `DimCity` is dragged from the **Explorer** into the blank new visual query editor.
+1. Then, the table `FactSale` is dragged from the **Explorer** into the visual query editor. 
+1. In the visual query editor, in the content menu of `DimCity`, the **Merge queries as new** Power Query operator is used to join them on a common key.
+1. In the new **Merge** page, the `CityKey` column in each table is selected to be the common key. The **Join kind** is **Inner**.
+1. The new **Merge** operator is added to the visual query editor.
+1. When you see results, you can use **Download Excel file** to view results in Excel or **Visualize results** to create report on results.
 
 #### Save as view
 
