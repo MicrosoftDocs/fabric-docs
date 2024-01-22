@@ -32,7 +32,7 @@ Transactions can also be used for sequential SELECT statements to ensure the tab
 
 ## Cross-database query transaction support
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL analytics endpoint and each workspace can have more than one lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one read-only SQL analytics endpoint. Each workspace can have more than one lakehouse.
 
 ## DDL support within transactions
 
