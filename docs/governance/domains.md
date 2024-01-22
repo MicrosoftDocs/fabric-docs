@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/18/2023
+ms.date: 01/22/2023
 ---
 
 # Fabric domains

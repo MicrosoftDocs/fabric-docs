@@ -7,7 +7,7 @@ ms.reviewer: ''
 ms.custom:
   - tenant-setting
 ms.topic: how-to
-ms.date: 01/18/2024
+ms.date: 01/22/2024
 ---
 
 # Domain management tenant settings
