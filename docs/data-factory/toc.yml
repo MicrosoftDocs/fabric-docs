@@ -701,12 +701,5 @@
       - name: Dataflow Gen2 limitations
         href: dataflow-gen2-limitations.md
     - name: Data Factory known issues
-      items:
-      - name: Active known issues for Data Factory
-        href: data-factory-known-issues.md
-      - name: Lineage view edit button
-        href: known-issue-lineage-view-edit.md
-      - name: Staging items
-        href: known-issue-staging-item.md
-      - name: Gateway refreshes longer than an hour fail
-        href: known-issue-gateway-refreshes.md
+      href: data-factory-known-issues.md
+
