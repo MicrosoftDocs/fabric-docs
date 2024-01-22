@@ -83,7 +83,7 @@ Similar to Dataflow Gen1, Dataflow Gen2 also features an enhanced compute engine
 
 ## Licensing Dataflow Gen1 vs Gen2
 
-Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. To understand better how licening works for dataflows you can read the following article: [Microsoft Fabric concepts and licenses](/fabric/enterprise/licenses)
+Dataflow Gen2 is the new generation of dataflows that resides alongside the Power BI dataflow (Gen1) and brings new features and improved experiences. It requires a Fabric capacity or a Fabric trial capacity. To understand better how licening works for dataflows you can read the following article: [Microsoft Fabric concepts and licenses](/fabric/enterprise/licenses)
 
 ## Try out Dataflow Gen2 by reusing your queries from Dataflow Gen1
 
