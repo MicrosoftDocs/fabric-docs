@@ -177,7 +177,7 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 
-## Next steps
+## Related content
 
 * [What is the Microsoft Fabric Capacity Metrics app?](metrics-app.md)
 
