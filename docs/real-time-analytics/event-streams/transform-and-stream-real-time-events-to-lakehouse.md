@@ -187,7 +187,7 @@ To verify the event data in your new lakehouse, open the **citypwrdata** lakehou
 
    :::image type="content" source="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" alt-text="Screenshot showing the final edited report." lightbox="./media/transform-and-stream-real-time-events-to-lakehouse/final-report.png" :::
 
-## Next steps
+## Related content
 
 In this tutorial, you learned how to ingest, filter, and transform real-time events and send them from your Azure event hub to a lakehouse in Delta Lake format. You also learned how to use the lakehouse to build Power BI reports to visualize the business insights in your events data. If you're interested in discovering more advanced features for working with the Fabric event streams feature, you may find the following resources helpful.
 
