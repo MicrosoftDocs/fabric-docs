@@ -40,11 +40,13 @@ The following table provides a description of the properties available when usin
 
 In Power BI, a semantic model is always required before any reports can be built, so the default Power BI semantic model enables quick reporting capabilities on top of the warehouse. Within the warehouse, a user can add warehouse objects - tables or views to their default Power BI semantic model. They can also add other semantic modeling properties, such as hierarchies and descriptions. These properties are then used to create the Power BI semantic model's tables. Users can also remove objects from the default Power BI semantic model.
 
+1. Open a warehouse in your Fabric workspace.
+1. Navigate to **Model view** by selecting the **Model view** icon at the bottom left of the window, as shown in the following image.
+
 To add objects such as tables or views to the default Power BI semantic model, you have options:
 
-1. Automatically add objects to the semantic model, which happens by default with no user intervention needed.
-
-1. Manually add objects to the semantic model.
+- Automatically add objects to the semantic model, which happens by default with no user intervention needed.
+- Manually add objects to the semantic model.
 
 The auto detect experience determines any tables or views and opportunistically adds them.
 
@@ -65,7 +67,7 @@ To remove objects, a user can use the manually select button in the ribbon and:
 
 ## Create a measure
 
-A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in warehouse presents a rich editor complete with autocomplete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations. 
+A [measure](/power-bi/transform-model/desktop-measures) is a collection of standardized metrics. Similar to Power BI Desktop, the DAX editing experience in warehouse presents a rich editor complete with autocomplete for formulas (IntelliSense). The DAX editor enables you to easily develop measures right in warehouse, making it a more effective single source for business logic, semantics, and business critical calculations.
 
 1. To create a measure, select the **New Measure** button in the ribbon, as shown in the following image.
 
