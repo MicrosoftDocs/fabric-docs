@@ -24,6 +24,6 @@ After moving the workspace to a different region, you can't create a new Fabric 
 
 To work around the issue, you can create a new workspace in the capacity in the different region and create Fabric items there. Alternatively, you can move the workspace back to the original capacity in the original region.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

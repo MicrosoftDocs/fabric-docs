@@ -98,7 +98,7 @@ For more information about tasks performed in this tutorial, see:
 * [Add a sample data as a source](event-streams/add-manage-eventstream-sources.md#add-a-sample-data-as-a-source)
 * [Add a KQL database as a destination](event-streams/add-manage-eventstream-destinations.md#add-a-kql-database-as-a-destination)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 3: Get historical data](tutorial-3-get-historical-data.md)

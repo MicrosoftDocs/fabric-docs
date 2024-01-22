@@ -26,6 +26,6 @@ Users may notice that data from their user tables can't be inserted into a Temp 
 
 Use regular user tables instead of Temp tables.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -97,7 +97,7 @@ You probably have many Dataflow Gen1 queries and you're wondering how you can tr
 
   If you have a dataflow in Power BI or Power Apps, you can copy your queries and paste them in the editor of your Dataflow Gen2. This functionality allows you to migrate your dataflow to Gen2 without having to rewrite your queries. For more information, go to [Copy and paste existing Dataflow Gen1 queries](move-dataflow-gen1-to-dataflow-gen2.md#copy-and-paste-existing-dataflow-gen1-queries).
 
-## Next steps
+## Related content
 
 - [Dataflows refresh history and monitoring](dataflows-gen2-monitor.md)
 - [Dataflows save as draft](dataflows-gen2-save-draft.md)

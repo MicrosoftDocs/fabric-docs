@@ -92,7 +92,7 @@ hchart(mtcars, "scatter", hcaes(wt, mpg, z = drat, color = hp)) %>%
   hc_title(text = "Scatter chart with size and color")
 ```
 
-## Next steps
+## Related content
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

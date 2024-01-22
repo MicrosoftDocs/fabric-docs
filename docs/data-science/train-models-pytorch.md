@@ -188,7 +188,7 @@ for batch_idx, (x, target) in enumerate(test_loader):
         )
 ```
 
-## Next steps
+## Related content
 
 - Learn about [machine learning models](machine-learning-model.md).
 - Learn about [machine learning experiments](machine-learning-experiment.md).

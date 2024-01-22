@@ -168,6 +168,6 @@ The following table contains more information about the copy activity in Azure D
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch.|integer<br>(the default is 1,000,000)|No|writeBatchSize|
 
-## Next steps
+## Related content
 
 - [Azure Database for PostgreSQL connector overview](connector-azure-database-for-postgresql-overview.md)

@@ -101,7 +101,7 @@ In this session, you start to build your first pipeline by following below steps
 
    :::image type="content" source="media/create-first-pipeline-with-sample-data/schedule-run.png" lightbox="media/create-first-pipeline-with-sample-data/schedule-run.png" alt-text="Screenshot showing the schedule dialog for the pipeline with a 15-minute recurring schedule.":::
 
-## Next steps
+## Related content
 The pipeline in this sample shows you how to copy sample data to Lakehouse.  You learned how to:
 
 > [!div class="checklist"]

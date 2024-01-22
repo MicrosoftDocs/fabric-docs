@@ -191,7 +191,7 @@ display(df_test_pred)
 - Find anomalies: generates a model using an entire series and finds anomalies in the series ([Scala](https://mmlspark.blob.core.windows.net/docs/0.11.1/scala/com/microsoft/azure/synapse/ml/cognitive/anomaly/DetectAnomalies.html), [Python](https://mmlspark.blob.core.windows.net/docs/0.11.1/pyspark/synapse.ml.cognitive.anomaly.html#module-synapse.ml.cognitive.anomaly.DetectAnomalies))
 
 
-## Next steps
+## Related content
 
 - [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
 - [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)

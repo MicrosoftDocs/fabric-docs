@@ -101,6 +101,6 @@ The following table contains the supported authentication type properties.
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [How to configure Microsoft 365 in a copy activity](connector-microsoft-365-copy-activity.md)

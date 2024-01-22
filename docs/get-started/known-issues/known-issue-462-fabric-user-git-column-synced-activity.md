@@ -24,6 +24,6 @@ Fabric users see workspace git status column display Synced for unsupported item
 
 NA
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

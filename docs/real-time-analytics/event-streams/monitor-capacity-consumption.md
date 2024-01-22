@@ -34,7 +34,7 @@ Here are a few important points to consider:
 ## Changes to Microsoft Fabric workload consumption rate 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, you can use the cancellation options available for the chosen payment method. 
 
-## Next steps 
+## Related content 
 
 - [Install the Premium metrics app](/power-bi/enterprise/service-premium-install-app)
 - [Use the Premium metrics app](/power-bi/enterprise/service-premium-metrics-app)
