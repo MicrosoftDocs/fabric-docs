@@ -301,10 +301,12 @@ productDirectory:
       links:
         - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
           text: What is Retail data solutions?
+        - url: /industry/sustainability/sustainability-data-solutions-overview
+          text: What is Sustainability data solutions? 
         - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
           text: Deploy Retail data solutions
-        - url: /industry/retail/retail-data-solutions/troubleshoot-retail-data-solutions
-          text: Troubleshoot Retail data solutions
+        - url: /industry/sustainability/sustainability-data-solutions-deploy
+          text: Deploy Sustainability data solutions
         - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
           text: See more
 
