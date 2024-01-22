@@ -60,7 +60,7 @@ The article [Privacy, security, and responsible use for Copilot (preview)](copil
 
 Additional information for future releases or feature updates will appear here.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)

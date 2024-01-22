@@ -96,6 +96,6 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 1. Use `%pin DataFrameName` to help the AI focus on specific dataframes.
 2. To clear the AI to focus on a new task in your notebook, type %new_task followed by a task that you are about to undertake. This clears the execution history that copilot knows about to this point and can make future responses more relevant.
 
-## Next steps
+## Related content
 
 - [How to use Copilot Pane](./copilot-notebooks-chat-pane.md)

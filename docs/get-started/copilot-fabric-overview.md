@@ -60,7 +60,7 @@ Before you use Copilot, your admin needs to enable Copilot in Fabric. See the ar
 
 For the list of Azure regions where prebuilt AI services in Fabric are now available, see the [Available regions](../data-science/ai-services/ai-services-overview.md#available-regions) section of the article "AI services in Fabric (preview)."
 
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
