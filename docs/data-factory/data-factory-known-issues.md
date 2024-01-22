@@ -12,7 +12,7 @@ ms.date: 01/22/2024
 > [!IMPORTANT]
 > For important considerations when using the output destination feature in Dataflow Gen2 with an on-premises data gateway, check the article on [gateway considerations for output destination](gateway-considerations-output-destinations.md).
 
-Data Factory known issues are now included in the overall [Fabric known issues](../get-started/fabric-known-issues.md) in the get started section of the Fabric documentation.
+Data Factory known issues are now included in the overall Fabric known issues. To get information about Data Factory known issues, go to [Active known issues for Fabric](../get-started/fabric-known-issues.md).
 
 Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Issues are removed from the list of fixed known issues after being fixed for more that 46 days.
 
