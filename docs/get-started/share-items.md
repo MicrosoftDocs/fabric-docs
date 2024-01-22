@@ -156,6 +156,6 @@ Depending on the item being shared, you may find a different set of permissions 
 
     :::image type="content" source="./media/share-items/shared-with-me.png" alt-text="Screenshot of Shared with me option in Browse pane.":::
 
-## Next steps
+## Related content
 
-[Workspace roles](./roles-workspaces.md)
+- [Workspace roles](./roles-workspaces.md)

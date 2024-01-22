@@ -92,7 +92,7 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 
 
 
-## Next steps
+## Related content
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)

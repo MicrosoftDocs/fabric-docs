@@ -26,6 +26,6 @@ To work around this issue, you can install any library (from PyPi, Conda, or cus
 
 If you aren't using any library in your workspace, adding a library from PyPi or Conda to work around this issue might slow your session start time slightly. Instead, you can install a small custom library to have faster session start times. You can download a simple JAR file from [Fabric Samples/SampleCustomJar](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/SampleCustomJAR) and install.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

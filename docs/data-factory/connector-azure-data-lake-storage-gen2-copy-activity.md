@@ -190,6 +190,6 @@ The following tables contain more information about the copy activity in Azure D
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)

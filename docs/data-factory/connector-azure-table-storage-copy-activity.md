@@ -145,6 +145,6 @@ The following table contains more information about the copy activity in Azure T
 |**Write batch timeout**|Inserts data into Azure Table when the write batch timeout is hit | timespan |No|writeBatchTimeout|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< your max concurrent connections >|No| maxConcurrentConnections |
 
-## Next steps
+## Related content
 
 - [Azure Table Storage connector overview](connector-azure-table-storage-overview.md)

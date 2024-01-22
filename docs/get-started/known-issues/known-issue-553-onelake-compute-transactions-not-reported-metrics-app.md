@@ -26,6 +26,6 @@ No workarounds at this time. This article will be updated when the fix is releas
 
 For updates and information about how to monitor your usage, check [OneLake consumption](/fabric/onelake/onelake-consumption).
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -26,6 +26,6 @@ In the admin monitoring workspace, you receive refresh failures. Although the se
 
 To fix the semantic model refresh, reinitialize the admin monitoring workspace.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

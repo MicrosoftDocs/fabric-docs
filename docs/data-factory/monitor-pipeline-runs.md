@@ -61,7 +61,7 @@ The length of the bar relates to the duration of the pipeline. You can select th
 
 :::image type="content" source="media/monitor-pipeline-runs/gantt-view-bar-details.png" alt-text="Screenshot of pipeline run details from Gantt view.":::
 
-## Next steps
+## Related content
 
 - [Quickstart: Create your first data pipeline to copy data](create-first-pipeline-with-sample-data.md)
 - [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md)
