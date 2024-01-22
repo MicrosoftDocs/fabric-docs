@@ -64,7 +64,7 @@ Daisy is business analyst experienced with using Power BI to analyze supply chai
 
 Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
-## Next steps
+## Related content
 
 - [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)

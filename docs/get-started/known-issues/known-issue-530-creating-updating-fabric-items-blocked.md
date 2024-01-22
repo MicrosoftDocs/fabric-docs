@@ -24,6 +24,6 @@ You can't load a page, create an item, or update anything in Fabric.
 
 In the future, we'll improve the notifications for the known issue to improve your experience.  In the meantime, wait a while and retry your request to see if capacity is available.  For further information on capacity usage, reach out to your capacity admin.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

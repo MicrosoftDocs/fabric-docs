@@ -741,7 +741,7 @@ display(result.select("textAndTranslation", "examples"))
 ---
 
 
-## Next steps
+## Related content
 
 - [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)

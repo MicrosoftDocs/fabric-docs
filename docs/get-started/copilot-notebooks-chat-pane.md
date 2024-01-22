@@ -80,6 +80,6 @@ Copilot for Data Science and Data Engineering notebooks is an AI assistant that 
 - Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
 - Transparency: Read our Transparency Note for details on data and algorithm use.
 
-## Next steps
+## Related content
 
 - [How to use Chat-magics](./copilot-notebooks-chat-magics.md)

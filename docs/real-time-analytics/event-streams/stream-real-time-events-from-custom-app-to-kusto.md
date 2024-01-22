@@ -253,7 +253,7 @@ After the data is ingested into your KQL database, you can analyze it according 
 
    :::image type="content" source="./media/stream-real-time-events-from-custom-app-to-kusto/power-bi-report-auto-refresh.png" alt-text="Screenshot that shows how to enable automatic refreshes." lightbox="./media/stream-real-time-events-from-custom-app-to-kusto/power-bi-report-auto-refresh.png" :::
 
-## Next steps
+## Related content
 
 In this tutorial, you learned how to stream real-time events from your own application to a KQL database. Then you used the KQL query semantic model to create a near-real-time Power BI report, which enables you to visualize business insights from your event data.
 

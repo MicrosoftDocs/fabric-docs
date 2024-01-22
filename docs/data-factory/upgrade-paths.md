@@ -57,7 +57,7 @@ We have a few options for customers to recreate your Gen1 dataflows as Dataflow 
 
 Also refer to the following article for further considerations: [Differences between Dataflow Gen1 and Gen2](dataflows-gen2-overview.md)
 
-## Next steps
+## Related content
 
 - [Pipeline activities supported in Microsoft Fabric](activity-overview.md)
 - [Guide to Dataflow Gen2 for ADF mapping dataflow users](guide-to-dataflows-for-mapping-data-flow-users.md)

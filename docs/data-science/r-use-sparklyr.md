@@ -202,7 +202,7 @@ spark_disconnect(sc)
 ```
 
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 

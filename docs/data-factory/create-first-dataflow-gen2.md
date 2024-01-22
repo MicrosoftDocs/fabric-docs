@@ -182,7 +182,7 @@ If you're not going to continue to use this dataflow, delete the dataflow using 
 
    :::image type="content" source="media/create-first-dataflow-gen2/confirm-delete.png" alt-text="Screenshot of the Delete dataflow window, with the Delete button emphasized.":::
 
-## Next steps
+## Related content
 
 The dataflow in this sample shows you how to load and transform data in Dataflow Gen2.  You learned how to:
 
