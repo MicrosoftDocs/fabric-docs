@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Create, train, and evaluate an uplift model'
-description: Review this notebook to learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
+description: This tutorial describes creation, training, and evaluation of uplift models and application of uplift modeling techniques.
 ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
@@ -8,64 +8,65 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/15/2023
+ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build an uplift model so I can estimate causal impact.
 ---
 
 # Tutorial: Create, train, and evaluate an uplift model
 
-In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. You learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow, in [!INCLUDE [product-name](../includes/product-name.md)]. You learn how to create, train, and evaluate uplift models and apply uplift modeling techniques.
 
-Uplift modeling is a family of causal inference technology that uses machine learning models to estimate the causal effect of a treatment on an individual's behavior. This type of modeling classifies individuals into these categories:
+Uplift modeling is a family of causal inference technology that uses machine learning models to estimate the causal effect of a treatment, on the behavior of an individual. This modeling classifies individuals into these categories:
 
-- *Persuadables* only respond positively to the treatment.
-- *Sleeping dogs* have a strong negative response to the treatment.
-- *Lost causes* never reach the outcome, even with the treatment.
-- *Sure things* always reach the outcome with or without the treatment.
+- *Persuadables* only respond positively to the treatment
+- *Sleeping dogs* have a strong negative response to the treatment
+- *Lost causes* never reach the outcome, even with the treatment
+- *Sure things* always reach the outcome with or without the treatment
 
-The goal is to identify the *persuadables*, avoid wasted effort on *sure things* and *lost causes*, and avoid bothering *sleeping dogs*.
+We need to identify the *persuadables*, avoid wasted effort on *sure things* and *lost causes*, and avoid bothering *sleeping dogs*.
 
 Uplift modeling has these components:
 
-- **Meta learner**: An algorithm that predicts the difference in an individual's behavior between when the individual does and doesn't undergo a treatment.
-- **Uplift tree**: A tree-based algorithm that combines both treatment/control group assignment information and response information directly into decisions about splitting criteria for a node.
-- **NN-based model**：A neural network model that usually works with observational data. It uses deep learning to help determine the distribution of a latent variable. The latent variable represents the cofounder in the uplift modeling.
+- **Meta learner**: An algorithm that predicts the difference in an individual's behavior between when the individual undergoes and doesn't undergo a treatment
+- **Uplift tree**: A tree-based algorithm that combines both treatment/control group assignment information and response information directly into decisions about splitting criteria for a node
+- **NN-based model**：A neural network model that usually works with observational data. It uses deep learning to help determine the distribution of a latent variable. The latent variable represents the cofounder in the uplift modeling
 
 Uplift modeling can work in these areas:
 
-- In marketing, it can help identify persuadables who can potentially be swayed to try the treatment. The outreach to identify persuadables might involve a coupon or an online advertisement, for example.
-- In medicine, it can help measure how a particular treatment can affect distinct groups. This measurement allows for optimized target selection, to maximize the impact.
+- For marketing, it can help identify the potentially swayable persuadables who might try the treatment. The outreach to identify persuadables could involve a coupon or an online advertisement, for example.
+- For medicine, it can help measure how a specific treatment can impact distinct groups. This measurement allows for optimized target selection, to maximize the impact.
 
-The main steps in this tutorial are:
+This tutorial covers these steps:
 
 > [!div class="checklist"]
->
-> - Upload the data into a lakehouse.
-> - Perform exploratory analysis on the data.
-> - Train a model.
-> - Log and load the model by using MLflow.
+> * Upload the data into a lakehouse
+> * Perform exploratory analysis on the data
+> * Train a model
+> * Log and load the model with MLflow
 
 ## Prerequisites
 
-- Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
-- A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook)
+* A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Follow along in a notebook
 
-You can follow along in a notebook in one of two ways:
+You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience
+- Upload your notebook from GitHub to the Synapse Data Science experience
 
 ### Open the built-in notebook
 
-**Uplift modeling** is the sample notebook that accompanies this tutorial.
+The sample **Uplift modeling** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
 ### Import the notebook from GitHub
 
-[AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) is the notebook that accompanies this tutorial.
+The [AIsample - Uplift Modeling.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Uplift%20Modelling.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
@@ -77,14 +78,10 @@ The following examples assume that you run the code from cells in a notebook. Fo
 
 ### Configure the notebook
 
-<<<<<<< HEAD
-Define the following parameters if you want to apply this notebook on different datasets:
-=======
 Define the following parameters so that you can apply this notebook on different datasets:
->>>>>>> f5a305b805e40b4e8c5d11cfc941c9547eb624e6
 
 ```python
-IS_CUSTOM_DATA = False  # If True, the user has to upload the dataset manually
+IS_CUSTOM_DATA = False  # If True, the user must upload the dataset manually
 DATA_FOLDER = "Files/uplift-modelling"
 DATA_FILE = "criteo-research-uplift-v2.1.csv"
 
@@ -128,16 +125,16 @@ import mlflow
 ### Download the dataset and upload to the lakehouse
 
 > [!IMPORTANT]
-> Be sure to [add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before you run it.
+> Be sure to [add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before you run it. Otherwise, you'll get an error.
 
-This tutorial uses the [Criteo Uplift Prediction Dataset](https://ailab.criteo.com/criteo-uplift-prediction-dataset/) from Criteo AI Lab. The dataset has 13 million rows. Each row represents a user with 12 features, a treatment indicator, and two binary labels (conversions and visits). Here are the details:
+This tutorial uses the [Criteo Uplift Prediction Dataset](https://ailab.criteo.com/criteo-uplift-prediction-dataset/) from Criteo AI Lab. The dataset has 13 million rows. Each row represents a user with 12 features. Each row also includes a treatment indicator, and two binary labels (conversions and visits). Here are the details:
 
 - `f0`, `f1`, `f2`, `f3`, `f4`, `f5`, `f6`, `f7`, `f8`, `f9`, `f10`, `f11`: feature values (`dense`, `float`)
-- `treatment`: treatment group (`1` = treated, `0` = control), which indicates if advertising randomly targeted a customer
-- `conversion`: whether a conversion occurred for this user (`binary`, `label`)
-- `visit`: whether a visit occurred for this user (`binary`, `label`)
+- `treatment`: treatment group (`1` = treated, `0` = control), to indicate if advertising randomly targeted a customer
+- `conversion`: whether or not a conversion occurred for this user (`binary`, `label`)
+- `visit`: whether or not a visit occurred for this user (`binary`, `label`)
 
-Here's a citation for the dataset:
+As an example, a dataset citation looks like this:
 
 ```
 @inproceedings{Diemert2018,
@@ -151,7 +148,7 @@ year = {2018}
 
 ```python
 if not IS_CUSTOM_DATA:
-    # Download demo data files into the lakehouse if they don't exist
+    # Download the demo data files into the lakehouse, if they don't exist
     import os, requests
 
     remote_url = "http://go.criteo.net/criteo-research-uplift-v2.1.csv.gz"
@@ -187,7 +184,7 @@ display(raw_df.limit(20))
 
 ### Explore the data
 
-Use this code for the overall rate of users who visit and convert:
+This code returns the overall rate of users who visit and convert:
 
 ```python
 raw_df.select(
@@ -197,7 +194,7 @@ raw_df.select(
 ).show()
 ```
 
-Use this code for the overall average treatment effect on visits:
+This code returns the overall average treatment effect on visits:
 
 ```python
 raw_df.groupby("treatment").agg(
@@ -207,7 +204,7 @@ raw_df.groupby("treatment").agg(
 ).show()
 ```
 
-Use this code for the overall average treatment effect on conversion:
+This code returns the overall average treatment effect on conversion:
 
 ```python
 raw_df.groupby("treatment").agg(
@@ -287,7 +284,7 @@ display(test_pred_df.limit(20))
 
 Because you can't observe uplift for each individual, measure the uplift over a group of customers. An *uplift curve* plots the real cumulative uplift across the population.
 
-First, rank the test DataFrame order by the predicted uplift:
+First, rank the test DataFrame order, by the predicted uplift:
 
 ```python
 test_ranked_df = test_pred_df.withColumn(
@@ -325,7 +322,7 @@ test_ranked_df = (
 display(test_ranked_df.limit(20))
 ```
 
-Calculate the group's uplift at each percentage:
+Calculate the uplift of the group, at each percentage:
 
 ```python
 test_ranked_df = test_ranked_df.withColumn(
@@ -335,7 +332,7 @@ test_ranked_df = test_ranked_df.withColumn(
 display(test_ranked_df.limit(20))
 ```
 
-Now, plot the uplift curve on the prediction of the testing dataset. You must convert the PySpark DataFrame to a pandas DataFrame before plotting.
+Plot the uplift curve on the prediction of the testing dataset. Before plotting, you must convert the PySpark DataFrame to a pandas DataFrame.
 
 ```python
 def uplift_plot(uplift_df):
@@ -371,9 +368,9 @@ test_ranked_pd_df = test_ranked_df.select(
 uplift_plot(test_ranked_pd_df)
 ```
 
-:::image type="content" source="media\uplift-modeling\criteo-uplift-curve.png" alt-text="Chart that shows a normalized uplift model curve versus random treatment." lightbox="media\uplift-modeling\criteo-uplift-curve.png":::
+:::image type="content" source="media\uplift-modeling\criteo-uplift-curve.png" alt-text="Screenshot of a chart that shows a normalized uplift model curve versus random treatment." lightbox="media\uplift-modeling\criteo-uplift-curve.png":::
 
-From the uplift curve in this example, the top 20% population, ranked by your prediction, has a large gain with the treatment. This means they're the *persuadables*. You can print the cutoff score at 20% to identify the target customers:
+From the uplift curve in this example, the top 20% population, as ranked by your prediction, has a large gain with the treatment. We can define them as the *persuadables*. You can print the cutoff score at 20%, to identify the target customers:
 
 ```python
 cutoff_percentage = 0.2
@@ -386,7 +383,7 @@ print("Uplift score higher than {:.4f} are Persuadables".format(cutoff_score))
 
 ## Step 4: Log and load the model by using MLflow
 
-Now that you have a trained model, save it for later use. In this example, MLflow logs metrics and models. You can also use this API to load models for prediction.
+Save that trained model for later use. In this example, MLflow logs both metrics and models. You can also use this API to load models for prediction.
 
 ```python
 # Set up MLflow
@@ -418,7 +415,7 @@ with mlflow.start_run() as run:
 ```
 
 ```python
-# Load the model back
+# Reload the model
 loaded_treatmentmodel = mlflow.spark.load_model(
     f"{model_uri}-treatmentmodel", dfs_tmpdir="Files/spark"
 )
