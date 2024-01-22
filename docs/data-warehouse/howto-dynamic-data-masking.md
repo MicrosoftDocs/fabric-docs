@@ -106,7 +106,7 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 
     ```sql
     ALTER TABLE dbo.EmployeeData
-    ALTER COLUMN [email] varchar(256) MASKED WITH (FUNCTION = 'email()');
+    ALTER COLUMN [email] ADD MASKED WITH (FUNCTION = 'email()');
     GO
     ```
 
