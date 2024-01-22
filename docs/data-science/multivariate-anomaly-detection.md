@@ -315,7 +315,7 @@ The plots show the raw data from the sensors (inside the inference window) in or
 The second plot shows the severity score of all the detected anomalies, with the `minSeverity` threshold shown in the dotted red line.
 
 Finally, the last plot shows the contribution of the data from each sensor to the detected anomalies. It helps us diagnose and understand the most likely cause of each anomaly.
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

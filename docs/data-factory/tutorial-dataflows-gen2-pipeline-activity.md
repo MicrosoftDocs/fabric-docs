@@ -159,7 +159,7 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 
 You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
 
-## Next steps
+## Related content
 
 This sample shows you how to use a dataflow in a pipeline with Data Factory in Microsoft Fabric.  You learned how to:
 

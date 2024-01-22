@@ -101,7 +101,7 @@ Predict future sales for categories of products at a superstore. Accomplish this
 
 Follow along in the [tutorial for sales forecasting](sales-forecasting.md).
 
-## Next steps
+## Related content
 
 - [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
 - [Machine learning model in Microsoft Fabric](machine-learning-model.md)

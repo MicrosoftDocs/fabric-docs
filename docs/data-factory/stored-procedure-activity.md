@@ -55,5 +55,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

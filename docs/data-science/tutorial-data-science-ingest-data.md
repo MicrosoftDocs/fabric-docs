@@ -117,7 +117,7 @@ if not IS_CUSTOM_DATA:
 <!-- nbend -->
 
 
-## Next steps
+## Related content
 
 You'll use the data you just ingested in:
  

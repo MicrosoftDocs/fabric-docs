@@ -58,7 +58,7 @@ The following table can be used as a template to compute estimated costs using F
 
 **Total cost**: (X + Y CU-hour) * (Fabric capacity per unit price)
 
-## Next steps
+## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
 - [Pricing Dataflow Gen2](pricing-dataflows-gen2.md)
