@@ -6,7 +6,7 @@ ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
 ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
+ms.date: 01/23/2024
 ms.search.form: Event streams
 ---
 
