@@ -80,17 +80,17 @@ items:
       items:
       - name: Data connectors overview
         href: data-connectors/data-connectors.md
-      - name: Ingest data from Apache Flink
+      - name: Get data from Apache Flink
         href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Apache Kafka
+      - name: Get data from Apache Kafka
         href: /azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data with the Apache Log4J 2 connector
+      - name: Get data with the Apache Log4J 2 connector
         href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Apache Spark connector
         href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Connect to an Azure Synapse workspace
         href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
-      - name: Ingest data from Azure Cosmos DB (Preview
+      - name: Get data from Azure Cosmos DB (Preview
         href: /azure/data-explorer/ingest-data-cosmos-db-connection?context=/fabric/context/context-rta&pivots=fabric
       - name: Copy data to your database by using Azure Data Factory
         href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rta&pivots=fabric
@@ -98,27 +98,27 @@ items:
         href: /azure/data-explorer/ingest-data-event-grid-overview?context=/fabric/context/context-rta&pivots=fabric
       - name: Azure Event Hubs data connection
         href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rta&pivots=fabric
-      - name: Integrating Azure Functions using input and output bindings (preview
+      - name: Integrating Azure Functions using input and output bindings
         href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rta&pivots=fabric
       - name: IoT Hub data connection
         href: /azure/data-explorer/ingest-data-iot-hub-overview?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Azure Stream Analytics
+      - name: Get data from Azure Stream Analytics
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Logstash
+      - name: Get data from Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data with the NLog sink
+      - name: Get data with the NLog sink
         href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from OpenTelemetry
+      - name: Get data from OpenTelemetry
         href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Microsoft Power Automate connector
         href: /azure/data-explorer/flow?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data with the Serilog sink
+      - name: Get data with the Serilog sink
         href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Splunk
+      - name: Get data from Splunk
         href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Splunk Universal Forwarder to Azure Data Explorer
+      - name: Get data from Splunk Universal Forwarder to Azure Data Explorer
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric
-      - name: Ingest data from Telegraf
+      - name: Get data from Telegraf
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
       - name: Configure KQL Database in a data pipeline
         href: ../data-factory/connector-kql-database-copy-activity.md

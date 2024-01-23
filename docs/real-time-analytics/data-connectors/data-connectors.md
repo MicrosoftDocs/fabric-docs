@@ -48,7 +48,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Telemetry
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/flink-connector-kusto/
-* **Documentation:** [Ingest data from Apache Flink](/azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Apache Flink](/azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric)
 
 ### Apache Kafka
 
@@ -59,7 +59,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs, Telemetry, Time series
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/kafka-sink-azure-kusto/
-* **Documentation:** [Ingest data from Apache Kafka](/azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Apache Kafka](/azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Kafka ingestion into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/kafka-ingestion-into-azure-data-explorer-part-1/ba-p/1452439)
 
 ### Apache Log4J 2
@@ -71,7 +71,7 @@ The following table summarizes the available connectors and their capabilities:
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-log4j
-* **Documentation:** [Ingest data with the Apache Log4J 2 connector](/azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data with the Apache Log4J 2 connector](/azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Getting started with Apache Log4J and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-apache-log4j-and-azure-data-explorer/ba-p/3705242)
 
 ### Apache Spark
@@ -103,7 +103,7 @@ The [Azure Cosmos DB](/azure/cosmos-db/) change feed data connection is an inges
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Change feed
-* **Documentation:** [Ingest data from Azure Cosmos DB (Preview)](/azure/data-explorer/ingest-data-cosmos-db-connection?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Azure Cosmos DB (Preview)](/azure/data-explorer/ingest-data-cosmos-db-connection?context=/fabric/context/context-rta&pivots=fabric)
 
 ### Azure Data Factory
 
@@ -157,7 +157,7 @@ Event Grid ingestion is a pipeline that listens to Azure storage, and updates yo
 * **Functionality:** Ingestion
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Event processing
-* **Documentation:** [Ingest data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Azure Stream Analytics](/azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric)
 
 ### Logstash
 
@@ -168,7 +168,7 @@ Event Grid ingestion is a pipeline that listens to Azure storage, and updates yo
 * **Use cases:** Logs
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
-* **Documentation:** [Ingest data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
 
 ### NLog
@@ -181,7 +181,7 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-nlog-sink
-* **Documentation:** [Ingest data with the NLog sink](/azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data with the NLog sink](/azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Getting started with NLog sink and Azure Data Explorer](https://aka.ms/adx-docs-nlog-blog)
 
 ### Open Telemetry
@@ -193,7 +193,7 @@ NLog is a flexible and free logging platform for various .NET platforms, includi
 * **Use cases:** Traces, Metrics, Logs
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Open Telemetry - https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter
-* **Documentation:** [Ingest data from OpenTelemetry](/azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from OpenTelemetry](/azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Getting started with Open Telemetry and Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-open-telemetry-and-azure-data-explorer/ba-p/3675708)
 
 ### Power Automate
@@ -214,7 +214,7 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Use cases:** Logs
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/serilog-sinks-azuredataexplorer
-* **Documentation:** [Ingest data with the Serilog sink](/azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data with the Serilog sink](/azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Getting started with Serilog sink and Azure Data Explorer](https://go.microsoft.com/fwlink/p/?linkid=2227749)
 
 ### Splunk
@@ -226,7 +226,7 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Use cases:** Logs
 * **Underlying SDK:** [Python](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon
-* **Documentation:** [Ingest data from Splunk](/azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Splunk](/azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric)
 * **Splunk Base:** [Microsoft Azure Data Explorer Add-On for Splunk](https://splunkbase.splunk.com/app/6979)
 * **Community Blog:** [Getting started with Microsoft Azure Data Explorer Add-On for Splunk](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-microsoft-azure-data-explorer-add-on-for/ba-p/3917176)
 
@@ -236,8 +236,8 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Ingestion type supported:** Batching
 * **Use cases:** Logs
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-splunk
-* **Documentation:** [Ingest data from Splunk Universal Forwarder to Azure Data Explorer](/azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric)
-* **Community Blog:** [Ingest data using Splunk Universal forwarder into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/ingest-data-using-splunk-universal-forwarder-into-azure-data/ba-p/3964043)
+* **Documentation:** [Get data from Splunk Universal Forwarder to Azure Data Explorer](/azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric)
+* **Community Blog:** [Get data using Splunk Universal forwarder into Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/ingest-data-using-splunk-universal-forwarder-into-azure-data/ba-p/3964043)
 
 ### Telegraf
 
@@ -248,5 +248,5 @@ Telegraf is an open source, lightweight, minimal memory foot print agent for col
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [Go](/azure/data-explorer/kusto/api/golang/kusto-golang-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** InfluxData - https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer
-* **Documentation:** [Ingest data from Telegraf](/azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Get data from Telegraf](/azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:**  [New Azure Data Explorer output plugin for Telegraf enables SQL monitoring at huge scale](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/new-azure-data-explorer-output-plugin-for-telegraf-enables-sql/ba-p/2829444)
