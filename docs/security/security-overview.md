@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/18/2024
+ms.date: 01/23/2024
 ---
 
 # Security in Microsoft Fabric
@@ -25,7 +25,7 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Manage tenets in multiple geographies
+## Understand tenets in multiple geographies
 
 Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
 
@@ -75,7 +75,7 @@ Your organization might store data in other locations that aren't part of the Fa
 
 ### Secure Data
 
-In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice.
+In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
 ### Access data
 
