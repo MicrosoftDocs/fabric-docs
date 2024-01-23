@@ -1,35 +1,36 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a recommendation system'
-description: This demonstration shows the data engineering and data science workflow for building a system that provides online book recommendations.
-ms.reviewer: lagayhar
+description: This tutorial shows the data engineering and data science workflow for building a system that provides online book recommendations.
+ms.reviewer: fsolomon
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 08/23/2023
+ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a recommendation model so I can create personalized recommendations.
 ---
 
 # Tutorial: Create, evaluate, and score a recommendation system
 
-In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a model for online book recommendations. The main steps in this tutorial are:
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a model for online book recommendations.
+
+This tutorial covers these steps:
 
 > [!div class="checklist"]
->
-> - Upload the data into a lakehouse.
-> - Perform exploratory analysis on the data.
-> - Train a model and log it by using MLflow.
-> - Load the model and make predictions.
+> * Upload the data into a lakehouse
+> * Perform exploratory analysis on the data
+> * Train a model, and log it with MLflow
+> * Load the model and make predictions
 
-There are various types of recommendation algorithms. This tutorial uses a model-based collaborative filtering algorithm named Alternating Least Squares (ALS) matrix factorization.
+We have many types of recommendation algorithms available. This tutorial uses the Alternating Least Squares (ALS) matrix factorization algorithm. ALS is a model-based collaborative filtering algorithm.
 
-:::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Chart that shows types of recommendation algorithms." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
+:::image type="content" source="media/retail-recommend-model/recommenders-matrix-factorisation.png" alt-text="Screenshot showing a chart of recommendation algorithms types." lightbox="media/retail-recommend-model/recommenders-matrix-factorisation.png":::
 
-ALS tries to estimate the ratings matrix R as the product of two lower-rank matrices, U and V, where U * Vt = R. Typically, these approximations are called *factor* matrices.
+ALS tries to estimate the ratings matrix R as the product of two lower-rank matrices, U and V. Here, R = U * Vt. Typically, these approximations are called *factor* matrices.
 
-The general approach is iterative. During each iteration, one of the factor matrices is held constant, while you solve the other for using least squares. The newly solved factor matrix is then held constant while you solve the other factor matrix.
+The ALS algorithm is iterative. Each iteration holds one of the factor matrices constant, while it solves the other using the method of least squares. It then holds that newly solved factor matrix constant while it solves the other factor matrix.
 
 :::image type="content" source="media/retail-recommend-model/factor-matrices.png" alt-text="Screenshot of two side-by-side factor matrices." lightbox="media/retail-recommend-model/factor-matrices.png":::
 
@@ -37,24 +38,24 @@ The general approach is iterative. During each iteration, one of the factor matr
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-- If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+* If necessary, create a Microsoft Fabric lakehouse as described in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
 ## Follow along in a notebook
 
-You can follow along in a notebook in one of two ways:
+You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience
+- Upload your notebook from GitHub to the Synapse Data Science experience
 
 ### Open the built-in notebook
 
-**Book recommendation** is the sample notebook that accompanies this tutorial.
+The sample **Book recommendation** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
 ### Import the notebook from GitHub
 
-[AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Book%20Recommendation.ipynb) is the notebook that accompanies this tutorial.
+The [AIsample - Book Recommendation.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Book%20Recommendation.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
@@ -62,28 +63,28 @@ You can follow along in a notebook in one of two ways:
 
 The book recommendation dataset in this scenario consists of three separate datasets:
 
-- *Books.csv*: Each book is identified with an International Standard Book Number (ISBN), with invalid dates already removed. The data set includes additional information, such as the title, author, and publisher. If a book has multiple authors, only the first is listed. URLs point to Amazon for cover images in three sizes.
+- *Books.csv*: An International Standard Book Number (ISBN) identifies each book, with invalid dates already removed. The data set also includes the title, author, and publisher. For a book with multiple authors, the **Books.csv** file lists only the first author. URLs point to Amazon website resources for the cover images, in three sizes.
 
   | ISBN | Book-Title | Book-Author | Year-Of-Publication | Publisher | Image-URL-S | Image-URL-M | Image-URL-l |
   |---|---|---|---|---|---|---|---|
   | 0195153448 | Classical Mythology | Mark P. O. Morford | 2002 | Oxford University Press | [http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0195153448.01.LZZZZZZZ.jpg) |
   | 0002005018 | Clara Callan | Richard Bruce Wright | 2001 | HarperFlamingo Canada | [http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.THUMBZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.MZZZZZZZ.jpg) | [http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg](http://images.amazon.com/images/P/0002005018.01.LZZZZZZZ.jpg) |
 
-- *Ratings.csv*: Ratings for each book are either explicit (provided by users on a scale of 1 to 10) or implicit (observed without user input, and indicated by 0).
+- *Ratings.csv*: Ratings for each book are either explicit (provided by users, on a scale of 1 to 10) or implicit (observed without user input, and indicated by 0).
 
   | User-ID | ISBN | Book-Rating |
   |---|---|---|
   | 276725 | 034545104X | 0 |
   | 276726 | 0155061224 | 5 |
 
-- *Users.csv*: User IDs are anonymized and mapped to integers. Demographic data, such as location and age, are provided if available. If this data is unavailable, the value is `null`.
+- *Users.csv*: User IDs are anonymized and mapped to integers. Demographic data - for example, location and age - are provided, if available. If this data is unavailable, these values are `null`.
 
   | User-ID | Location | Age |
   |---|---|---|
   | 1 | "nyc new york usa" |  |
   | 2 | "stockton california usa" | 18.0 |
 
-Define the following parameters so that you can apply the code in this tutorial to different datasets:
+Define these parameters, so that you can this notebook with different datasets:
 
 ```python
 IS_CUSTOM_DATA = False  # If True, the dataset has to be uploaded manually
@@ -107,12 +108,12 @@ RATINGS_FILE = "Ratings.csv"  # File that contains the rating information
 EXPERIMENT_NAME = "aisample-recommendation"  # MLflow experiment name
 ```
 
-### Download data and store it in a lakehouse
+### Download and store the data in a lakehouse
 
-The following code downloads the dataset and then stores it in the lakehouse.
+This code downloads the dataset, and then stores it in the lakehouse.
 
 > [!IMPORTANT]
-> [Add a lakehouse to the notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) before you run this code.
+> Be sure to [add a lakehouse](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) to the notebook before you run it. Otherwise, you'll get an error.
 
 ```python
 if not IS_CUSTOM_DATA:
@@ -138,7 +139,7 @@ if not IS_CUSTOM_DATA:
 
 ### Set up the MLflow experiment tracking
 
-Use the following code to set up the MLflow experiment tracking. Autologging is disabled for this example. For more information, see the [Autologging in Microsoft Fabric](/fabric/data-science/mlflow-autologging) article.
+Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](/fabric/data-science/mlflow-autologging) article.
 
 ```python
 # Set up MLflow for experiment tracking
@@ -150,7 +151,7 @@ mlflow.autolog(disable=True)  # Disable MLflow autologging
 
 ### Read data from the lakehouse
 
-After the right data is in the lakehouse, you can read the three datasets into separate Spark DataFrames in the notebook. The file paths in the following code use the parameters that you defined earlier.
+After the correct data is placed in the lakehouse, read the three datasets into separate Spark DataFrames in the notebook. The file paths in this code use the parameters defined earlier.
 
 ```python
 df_items = (
@@ -179,7 +180,7 @@ df_users = (
 
 ### Display raw data
 
-You can explore each of the DataFrames by using the `display` command. This command allows you to view high-level statistics of the DataFrames and understand how different columns in the datasets are related to each other. Before you explore the datasets, use the following code to import the required libraries:
+Explore the DataFrames with the `display` command. With this command, you can view high-level DataFrame statistics, and understand how different dataset columns relate to each other. Before you explore the datasets, use this code to import the required libraries:
 
 ```python
 import pyspark.sql.functions as F
@@ -190,13 +191,13 @@ color = sns.color_palette()  # Adjusting plotting style
 import pandas as pd  # DataFrames
 ```
 
-Use the following code to look at the DataFrame that contains the book data:
+Use this code to look at the DataFrame that contains the book data:
 
 ```python
 display(df_items, summary=True)
 ```
 
-Add an `_item_id` column for later use. The `_item_id` value must be an integer for recommendation models. The following code uses `StringIndexer` to transform `ITEM_ID_COL` to indices.
+Add an `_item_id` column for later use. The `_item_id` value must be an integer for recommendation models. This code uses `StringIndexer` to transform `ITEM_ID_COL` to indices:
 
 ```python
 df_items = (
@@ -208,13 +209,13 @@ df_items = (
 )
 ```
 
-Display the DataFrame and check whether the `_item_id` value increases monotonically and successively as expected:
+Display the DataFrame, and check whether the `_item_id` value increases monotonically and successively, as expected:
 
 ```python
 display(df_items.sort(F.col("_item_id").desc()))
 ```
 
-Use the following code to plot the top 10 authors with the maximum number of books. Agatha Christie is the leading author with more than 600 books, followed by William Shakespeare.
+Use this code to plot the top 10 authors, by number of books written, in descending order. Agatha Christie is the leading author with more than 600 books, followed by William Shakespeare.
 
 ```python
 df_books = df_items.toPandas() # Create a pandas DataFrame from the Spark DataFrame for visualization
@@ -223,7 +224,7 @@ sns.countplot(y="Book-Author",palette = 'Paired', data=df_books,order=df_books['
 plt.title("Top 10 authors with maximum number of books")
 ```
 
-:::image type="content" source="./media/retail-recommend-model/top-authors.png" alt-text="Graph of the top 10 authors with the maximum number of books.":::
+:::image type="content" source="./media/retail-recommend-model/top-authors.png" alt-text="Screenshot showing a graph of the top 10 authors who wrote the highest number of books.":::
 
 Next, display the DataFrame that contains the user data:
 
@@ -231,16 +232,16 @@ Next, display the DataFrame that contains the user data:
 display(df_users, summary=True)
 ```
 
-If there's a missing value in `User-ID`, drop the row with the missing value. It doesn't matter if a customized dataset doesn't have a missing value.
+If a row has a missing `User-ID` value, drop that row. Missing values in a customized dataset don't cause problems.
 
 ```python
 df_users = df_users.dropna(subset=(USER_ID_COL))
 display(df_users, summary=True)
 ```
 
-Add a `_user_id` column for later use. The `_user_id` value must be an integer for recommendation models. In the following code, you use `StringIndexer` to transform `USER_ID_COL` to indices.
+Add a `_user_id` column for later use. For recommendation models, the `_user_id` value must be an integer. The following code sample uses `StringIndexer` to transform `USER_ID_COL` to indices.
 
-The book dataset already contains a `User-ID` column, which is an integer. However, adding a `_user_id` column for compatibility with different datasets makes this example more robust. To add the `_user_id` column, use the following code:
+The book dataset already has an integer `User-ID` column. However, adding a `_user_id` column for compatibility with different datasets makes this example more robust. Use this code to add the `_user_id` column:
 
 ```python
 df_users = (
@@ -256,20 +257,20 @@ df_users = (
 display(df_users.sort(F.col("_user_id").desc()))
 ```
 
-To view the rating data, use the following code:
+Use this code to view the rating data:
 
 ```python
 display(df_ratings, summary=True)
 ```
 
-Get the distinct ratings and save them to a list named `ratings` for later use:
+Obtain the distinct ratings, and save them for later use in a list named `ratings`:
 
 ```python
 ratings = [i[0] for i in df_ratings.select(RATING_COL).distinct().collect()]
 print(ratings)
 ```
 
-To display the top 10 books with the highest ratings, use the following code:
+Use this code to show the top 10 books with the highest ratings:
 
 ```python
 plt.figure(figsize=(8,5))
@@ -277,9 +278,9 @@ sns.countplot(y="Book-Title",palette = 'Paired',data= df_books, order=df_books['
 plt.title("Top 10 books per number of ratings")
 ```
 
-*Selected Poems* is most favorable among users, according to ratings. The books *Adventures of Huckleberry Finn*, *The Secret Garden*, and *Dracula* have the same rating.
+According to the ratings, *Selected Poems* is the most popular book. *Adventures of Huckleberry Finn*, *The Secret Garden*, and *Dracula* have the same rating.
 
-:::image type="content" source="./media/retail-recommend-model/top-books.png" alt-text="Graph of the top-rated books.":::
+:::image type="content" source="./media/retail-recommend-model/top-books.png" alt-text="Screenshot showing a graph of the top-rated books.":::
 
 ### Merge data
 
@@ -303,7 +304,7 @@ df_all = (
 display(df_all)
 ```
 
-To display a count of the total distinct users, books, and interactions, use the following code:
+Use this code to display a count of the distinct users, books, and interactions:
 
 ```python
 print(f"Total Users: {df_users.select('_user_id').distinct().count()}")
@@ -313,7 +314,7 @@ print(f"Total User-Item Interactions: {df_all.count()}")
 
 ### Compute and plot the most popular items
 
-To compute the most popular books, use the following code. It displays the top 10 most popular books.
+Use this code to compute and display the top 10 most popular books:
 
 ```python
 # Compute top popular products
@@ -331,7 +332,7 @@ pd_top_items.head(10)
 ```
 
 > [!TIP]
-> You can use the `<topn>` value for **Popular** or **Top purchased** recommendation sections.
+> Use the `<topn>` value for **Popular** or **Top purchased** recommendation sections.
 
 ```python
 # Plot top <topn> items
@@ -343,15 +344,15 @@ plt.xlabel("Number of Ratings for the Item")
 plt.show()
 ```
 
-:::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Graph of the most popular books." lightbox="./media/retail-recommend-model/most-popular-books.png":::
+:::image type="content" source="./media/retail-recommend-model/most-popular-books.png" alt-text="Screenshot of a graph of the most popular books." lightbox="./media/retail-recommend-model/most-popular-books.png":::
 
 ### Prepare training and testing datasets
 
-Before training, you need to perform some data preparation steps for the ALS matrix. Use the following code to prepare the data. The code performs the following actions:
+The ALS matrix requires some data preparation before training. Use this code sample to prepare the data. The code performs these actions:
 
-- Casts the rating column into the correct type
-- Samples the training data with user ratings
-- Splits the data into training and testing datasets
+- Cast the rating column to the correct type
+- Sample the training data with user ratings
+- Split the data into training and testing datasets
 
 ```python
 if IS_SAMPLE:
@@ -382,7 +383,7 @@ test = df_all.join(train, on="id", how="leftanti").sampleBy(
 )
 ```
 
-To gain a better understanding of the data and the current problem, use the following code to compute the sparsity of the dataset. Sparsity refers to the situation in which feedback data is sparse and not sufficient to identify similarities in users' interests.
+ Sparsity refers to sparse feedback data, which can't identify similarities in users' interests. For a better understanding of both the data and the current problem, use this code to compute the dataset sparsity:
 
 ```python
 # Compute the sparsity of the dataset
@@ -399,7 +400,7 @@ def get_mat_sparsity(ratings):
 
     # Calculate the sparsity by dividing the numerator by the denominator
     sparsity = (1.0 - (count_nonzero * 1.0) / total_elements) * 100
-    print("The ratings dataframe is ", "%.4f" % sparsity + "% sparse.")
+    print("The ratings DataFrame is ", "%.4f" % sparsity + "% sparse.")
 
 get_mat_sparsity(df_all)
 ```
@@ -413,13 +414,13 @@ print(f"max user_id: {df_all.agg({'_item_id': 'max'}).collect()[0][0]}")
 
 ## Step 3: Develop and train the model
 
-You explored the dataset, added unique IDs to users and items, and plotted top items. Next, train an ALS model to give users personalized recommendations.
+Train an ALS model to give users personalized recommendations.
 
 ### Define the model
 
-Spark ML provides a convenient API for building the ALS model. However, the model isn't good enough at handling problems like data sparsity and cold start (making recommendations when the users or items are new). To improve the performance of the model, you can combine cross-validation and automatic hyperparameter tuning.
+Spark ML provides a convenient API for building the ALS model. However, the model doesn't reliably handle problems like data sparsity and cold start (making recommendations when the users or items are new). To improve model performance, combine cross-validation and automatic hyperparameter tuning.
 
-To import libraries required for training and evaluating the model, use the following code:
+Use this code to import the libraries required for model training and evaluation:
 
 ```python
 # Import Spark required libraries
@@ -447,7 +448,7 @@ als = ALS(
 
 ### Tune model hyperparameters
 
-To search over the hyperparameters, use the following code to construct a grid of parameters. The code also creates a regression evaluator that uses the root-mean-square error (RMSE) as the evaluation metric.
+The next code sample constructs a parameter grid, to help search over the hyperparameters. The code also creates a regression evaluator that uses the root-mean-square error (RMSE) as the evaluation metric:
 
 ```python
 #  Construct a grid search to select the best values for the training parameters
@@ -466,7 +467,7 @@ evaluator = RegressionEvaluator(
 )
 ```
 
-Use the following code to initiate different model tuning methods based on the preconfigured parameters. For more information on model tuning, see [ML Tuning: model selection and hyperparameter tuning](https://spark.apache.org/docs/latest/ml-tuning.html) on the Apache Spark website.
+The next code sample initiates different model tuning methods based on the preconfigured parameters. For more information about model tuning, see [ML Tuning: model selection and hyperparameter tuning](https://spark.apache.org/docs/latest/ml-tuning.html) at the Apache Spark website.
 
 ```python
 # Build cross-validation by using CrossValidator and TrainValidationSplit
@@ -493,14 +494,14 @@ else:
 
 ### Evaluate the model
 
-Modules should be evaluated against the test data. If a model is well trained, it should have high metrics on the dataset.
+You should evaluate modules against the test data. A well-trained model should have high metrics on the dataset.
 
-If the model is overfitted, you might need to increase the size of the training data or reduce some of the redundant features. You might also need to change the model's architecture or fine-tune its hyperparameters.
-
-To define an evaluation function, use the following code.
+An overfitted model might need an increase in the size of the training data, or a reduction of some of the redundant features. The model architecture might need to change, or its parameters might need some fine tuning.
 
 > [!NOTE]
-> If the R-squared metric value is negative, it indicates that the trained model performs worse than a horizontal straight line. This finding suggests that the trained model doesn't explain the data.
+> A negative R-squared metric value indicates that the trained model performs worse than a horizontal straight line. This finding suggests that the trained model doesn't explain the data.
+
+To define an evaluation function, use this code:
 
 ```python
 def evaluate(model, data, verbose=0):
@@ -538,7 +539,7 @@ def evaluate(model, data, verbose=0):
 
 ### Track the experiment by using MLflow
 
-Use MLflow to track all the experiments and to log parameters, metrics, and models. To start training and evaluating models, use the following code:
+Use MLflow to track all the experiments and to log parameters, metrics, and models. To start model training and evaluation, use this code:
 
 ```python
 from mlflow.models.signature import infer_signature
@@ -612,13 +613,13 @@ with mlflow.start_run(run_name="als"):
     )
 ```
 
-To view the logged information for the training run, select the experiment named `aisample-recommendation` from your workspace. If you changed the experiment name, select the experiment that has the name you specified. The logged information is similar to the following image:
+Select the experiment named `aisample-recommendation` from your workspace to view the logged information for the training run. If you changed the experiment name, select the experiment that has the new name. The logged information resembles this image:
 
 :::image type="content" source="./media/retail-recommend-model/experiment-logs.png" alt-text="Screenshot of the experiment logs." lightbox="./media/retail-recommend-model/experiment-logs.png":::
 
 ## Step 4: Load the final model for scoring and make predictions
 
-After you finish training and select the best model, load the model for scoring (sometimes called inferencing). The following code loads the model and uses predictions to recommend the top 10 books for each user:
+After you finish the model training, and then select the best model, load the model for scoring (sometimes called inferencing). This code loads the model and uses predictions to recommend the top 10 books for each user:
 
 ```python
 # Load the best model
@@ -638,7 +639,7 @@ userRecs = (
 userRecs.limit(10).show()
 ```
 
-The output is similar to the following table:
+The output resembles this table:
 
 |_item_id|_user_id|   rating|          Book-Title|
 |--------|--------|---------|--------------------|
@@ -655,7 +656,7 @@ The output is similar to the following table:
 
 ### Save the predictions to the lakehouse
 
-To write the recommendations back to the lakehouse, use the following code:
+Use this code to write the recommendations back to the lakehouse:
 
 ```python
 # Code to save userRecs into the lakehouse
