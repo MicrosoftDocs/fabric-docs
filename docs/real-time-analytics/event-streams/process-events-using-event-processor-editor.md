@@ -179,7 +179,7 @@ You can also add a new field with the built-in functions to aggregate the data f
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
 
-The following table shows the results of changing the data type using manage fields.The columns represents the original data type, and the rows represents the target data type.
+The following table shows the results of changing the data type using manage fields. The columns represents the original data type, and the rows represents the target data type.
 
 - If there is a ✔️ in the cell, it means that it can be converted directly and the target data type option is shown in the dropdown list.
 - If there is a ❌ in the cell, it means that it cannot be converted and the target data type option is not shown in the dropdown list.
