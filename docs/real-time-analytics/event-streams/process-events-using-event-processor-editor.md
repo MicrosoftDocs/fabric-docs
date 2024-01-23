@@ -96,6 +96,42 @@ The screen layout is like the main editor. It consists of three sections, shown 
 
 1. **Bottom pane with data preview and authoring error tabs**: In this pane, preview the data in a selected node with **Data preview** tab. The **Authoring errors** tab lists any incomplete or incorrect configuration in the operation nodes.
 
+### Authoring errors
+
+**Authoring errors** refers to the errors that occur in the **Event processor editor** due to incomplete or incorrect configuration of the operation nodes, helping you find and fix potential problems in your event processor.
+
+You can view **Authoring errors** in the bottom panel of the **Event processor editor**. The bottom panel lists all the authoring errors, each authoring error has four columns:
+
+- **Node ID**: Indicates the ID of the operation node where the Authoring error occurred.
+- **Node type**: Indicates the type of the operation node where the Authoring error occurred.
+- **Level**: Indicates the severity of the Authoring error, there are two levels, **Fatal** and **Information**. Fatal level authoring error means that your event processor has serious problems and can't be saved or run. Information level authoring error means that your event processor has some tips or suggestions that can help you optimize or improve your event processor.
+- **Error**: Indicates the specific information of the authoring error, briefly describing the cause and impact of the authoring error. You can select the **Show details** tab to see details.
+
+Since Eventstream and KQL Database support different data types, the process of data type conversion may generate authoring errors.
+
+The following table shows the results of data type conversion from Eventstream to KQL Database. The columns represent the data types supported by Eventstream, and the rows represent the data types supported by KQL Database. The cells indicate the conversion results, which can be one of the following three:
+
+✔️ Indicates successful conversion, no errors or warnings are generated.
+
+❌ Indicates impossible conversion, fatal authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not match the expected type "{2}" in the selected KQL table. and cannot be auto-converted.
+
+⚠️ Indicates possible but inaccurate conversion, information authoring error is generated. The error message is similar to: The data type "{1}" for the column "{0}" does not exactly match the expected type "{2}" in the selected KQL table. It will be auto-converted to "{2}".
+
+| | string | bool | datetime | dynamic | guid | int | long | real | timespan | decimal |
+|:--------:|:------:|:----:|:--------:|:-------:|:----:|:---:|:----:|:----:|:--------:|:-------:|
+| **Int64**      |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ⚠️  |  ✔️   |  ⚠️   |    ❌     |    ✔️    |
+| **Double**    |   ❌    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ⚠️   |    ❌     |   ⚠️    |
+| **String**   |   ✔️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Datetime** |   ⚠️    |  ❌   |    ✔️     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Record**   |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+| **Array**    |   ⚠️    |  ❌   |    ❌     |    ✔️    |  ❌   |  ❌   |  ❌   |  ❌   |    ❌     |    ❌    |
+
+As you can see from the table, some data type conversions are successful, such as string to string. These conversions do not generate any authoring errors, and do not affect the operation of your event processor.
+
+Some data type conversions are impossible, such as int to string. These conversions generate fatal level authoring errors, causing your event processor to fail to save. You need to change your data type either in your Eventstream or in KQL table to avoid these errors.
+
+Some data type conversions are possible, but not precise, such as int to real. These conversions generate information level authoring errors, indicating the mismatch between data types, and the automatic conversion results. These conversions may cause your data to lose precision or structure. You can choose whether to ignore these errors, or modify your data type either in your Eventstream or in KQL table to optimize your event processor.
+
 ## Transformation operators
 
 The event processor provides six operators, which you can use to transform your event data according to your business needs.
@@ -135,11 +171,26 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 ### Manage fields
 
-The **Manage fields** transformation allows you to add, remove, or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.
+The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.  
 
 You can also add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
+
+The following table shows the results of changing the data type using manage fields. The columns represents the original data type, and the rows represents the target data type.
+
+- If there is a ✔️ in the cell, it means that it can be converted directly and the target data type option is shown in the dropdown list.
+- If there is a ❌ in the cell, it means that it cannot be converted and the target data type option is not shown in the dropdown list.
+- If there is a ⚠️ in the cell, it means that it can be converted, but it needs to meet certain conditions, such as the string format must conform to the requirements of the target data type. For example, when converting from string to int, the string needs to be a valid integer form, such as “123”, not “abc”.
+
+|      | Int64                      | Double                     | String                      | Datetime                    | Record | Array |
+|:------:|:-------------------------:|:-------------------------:|:---------------------------:|:---------------------------:|:------:|:-----:|
+| **Int64**     | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **Double**  | ✔️                         | ✔️                         | ✔️                           | ❌                           | ❌      | ❌     |
+| **String** | ⚠️ | ⚠️ | ✔️                           | ⚠️ | ❌      | ❌     |
+| **Datetime** | ❌                         | ❌                         | ✔️                           | ✔️                           | ❌      | ❌     |
+| **Record** | ❌                         | ❌                         | ✔️                           | ❌                           | ✔️      | ❌     |
+| **Array**  | ❌                         | ❌                         | ✔️                           | ❌                           | ❌      | ✔️     |
 
 ### Union
 
