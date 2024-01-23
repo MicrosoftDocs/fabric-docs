@@ -53,7 +53,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
    > [!NOTE]
    > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized delta lake files. V-order often improves compression by three to four times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
-   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimized-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
+   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
 
