@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Microsoft Fabric governance and compliance?
+  - name: Governance and compliance in Microsoft Fabric
     href: governance-compliance-overview.md
   - name: Security overview
     href: ../security/security-overview.md
