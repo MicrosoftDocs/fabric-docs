@@ -1,5 +1,5 @@
 ---
-title: What is Microsoft Fabric governance and compliance?
+title: Governance and compliance in Microsoft Fabric
 description: This article provides an overview of the governance and compliance in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -14,7 +14,7 @@ Microsoft Fabric governance and compliance is a set of capabilities that help yo
 
 Fabric governance and compliance is tightly integrated with Microsoft Purview Information Protection and Data Loss Prevention. In addition, your Fabric data estate is automatically attached to Purview and can be investigated with Purview capabilities such as Data catalog and Microsoft Purview Audit.  
 
-This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information. Fabric governance and compliance capabilities work together with capabilities of [Fabric security](https://review.learn.microsoft.com/en-us/fabric/security/security-overview?branch=pr-en-us-2884) and [Fabric administration](https://review.learn.microsoft.com/en-us/fabric/admin/admin-overview?branch=pr-en-us-2884) to keep your organization’s data secure.
+This article briefly describes the basic building blocks of Fabric governance and compliance and provides links for more information. Fabric governance and compliance capabilities work together with capabilities of [Fabric security](../security/security-overview.md) and [Fabric administration](../admin/admin-overview.md) to keep your organization’s data secure.
 
 ## Information protection
 
@@ -60,5 +60,5 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 
 ## Related content
 
-* [Fabric security overview](https://review.learn.microsoft.com/en-us/fabric/security/security-overview?branch=pr-en-us-2884)
-* [Fabric administration overview](https://review.learn.microsoft.com/en-us/fabric/admin/admin-overview?branch=pr-en-us-2884)
+* [Fabric security overview](../security/security-overview.md)
+* [Fabric administration overview](../admin/admin-overview.md)
