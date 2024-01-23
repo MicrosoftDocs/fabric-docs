@@ -90,7 +90,7 @@ For more information about tasks performed in this tutorial, see:
 * [Write a query](kusto-query-set.md#write-a-query)
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md)

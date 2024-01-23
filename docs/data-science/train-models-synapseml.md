@@ -80,7 +80,7 @@ package. For help on SynapseML classes and methods, you can use Python's `help()
 help(synapse.ml.train.TrainClassifier)
 ```
 
-## Next steps
+## Related content
 
 - [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
 - [Track models with MLflow](mlflow-autologging.md)

@@ -53,7 +53,7 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 
 <sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
 
-## Next steps
+## Related content
 
 - [Roles in workspaces in Power BI](/power-bi/collaborate-share/service-new-workspaces)
 - [Create workspaces](create-workspaces.md)

@@ -203,6 +203,7 @@ The following tables contain more information about the copy activity in Amazon 
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
 
-## Next steps
+## Related content
+
 
 - [Amazon S3 Compatible overview](connector-amazon-s3-compatible-overview.md)

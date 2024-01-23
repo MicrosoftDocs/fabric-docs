@@ -61,7 +61,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover deleted items.
 
-## Next steps
+## Related content
 
 * [Data management](data-management.md)
 * [Customize results in the KQL Queryset results grid](customize-results.md)

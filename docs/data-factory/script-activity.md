@@ -59,5 +59,6 @@ To get started, you must complete the following prerequisites:
 
 5. The Script activity is successfully created and you can run it directly.
 
-## Next steps
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

@@ -41,6 +41,6 @@ Add a configuration-driven copy activity together with your low-code dataflow re
 
 :::image type="content" source="media/data-factory-overview/data-pipelines.png" alt-text="Screenshot of the user interface showing copy activity." lightbox="media/data-factory-overview/data-pipelines.png":::
 
-## Next steps
+## Related content
 
 To get started with [!INCLUDE [product-name](../includes/product-name.md)], go to [Quickstart: Create your first Dataflow Gen2 to get and transform data](create-first-dataflow-gen2.md).

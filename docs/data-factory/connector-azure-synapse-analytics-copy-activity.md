@@ -221,6 +221,6 @@ The following tables contain more information about the copy activity in Azure S
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.| select or unselect (default) |No |disableMetricsCollection：<br> true or false (default)|
 
-## Next steps
+## Related content
 
-[Azure Synapse Analytics connector overview](connector-azure-synapse-analytics-overview.md)
+- [Azure Synapse Analytics connector overview](connector-azure-synapse-analytics-overview.md)

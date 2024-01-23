@@ -111,7 +111,7 @@ To do this:
 
    :::image type="content" source="./media/machine-learning-experiment/autologging-setting-2.png" alt-text="Screenshot of the Data science Workspace setting for autologging." lightbox="./media/machine-learning-experiment/autologging-setting-2.png":::
 
-## Next steps
+## Related content
 
 - Train a Spark MLlib model with autologging: [Train with Spark MLlib](fabric-sparkml-tutorial.md)
 - Learn about machine learning experiments in [!INCLUDE [product-name](../includes/product-name.md)]: [Experiments](./machine-learning-experiment.md)
