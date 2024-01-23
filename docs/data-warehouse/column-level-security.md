@@ -36,7 +36,7 @@ Only Microsoft Entra authentication is supported.
 This example will create a table and will limit the columns that `charlie@contoso.com` can see in the `customers` table.
 
 ```sql
-CREATE TABLE dbo.customers
+CREATE TABLE dbo.Customers
   (CustomerID int,
    FirstName varchar(100) NULL,
    CreditCard char(16) NOT NULL,
@@ -55,7 +55,7 @@ GRANT SELECT ON Customers(CustomerID, FirstName, LastName, Phone, Email) TO [Cha
 Queries executed as `charlie@contoso.com` will fail if they include the `CreditCard` column:
 
 ```sql
-SELECT * FROM Membership;
+SELECT * FROM Customers;
 ```
 
 ```output
