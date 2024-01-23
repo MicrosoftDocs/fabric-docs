@@ -121,18 +121,18 @@ A data pipeline is a workflow that can be used to automate data processing. In t
 
    :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/select-dataflow.png" alt-text="Screenshot of the dataflow dropdown list.":::
 
-1. Add an **Email notification** activity.
+1. Add an **Office 365 Outlook** activity.
 
-   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/add-office365-activity.png" alt-text="Screenshot emphasizing how to select an Email notification activity.":::
+   :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/add-office365-activity.png" alt-text="Screenshot emphasizing how to select an Office 365 Outlook activity.":::
 
-1. Configure the **Email notification** activity.
+1. Configure the **Office 365 Outlook** activity to send email notification.
 
     1. Authenticate with your Office 365 account.
     1. Select the **Email address** that you want to send the notification to.
     1. Enter a **Subject** for the email.
     1. Enter a **Body** for the email.
 
-       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png" alt-text="Screenshot showing the Email notification activity settings." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png":::
+       :::image type="content" source="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png" alt-text="Screenshot showing the Office 365 Outlook activity settings." lightbox="media/tutorial-dataflows-gen2-pipeline-activity/settings-email-activity.png":::
 
 ## Run and schedule the data pipeline
 
@@ -159,7 +159,7 @@ In this section, you run and schedule the data pipeline. This schedule allows yo
 
 You've now created a data pipeline that runs on a schedule, refreshes the data in the lakehouse, and sends you an email notification. You can check the status of the data pipeline by going to the **Monitor Hub**. You can also check the status of the data pipeline by going to **Data Pipeline** and selecting the **Run history** tab in the dropdown menu.
 
-## Next steps
+## Related content
 
 This sample shows you how to use a dataflow in a pipeline with Data Factory in Microsoft Fabric.  You learned how to:
 

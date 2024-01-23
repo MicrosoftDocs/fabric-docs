@@ -132,7 +132,7 @@ import pandas as pd
 df.to_json("/LAKEHOUSE_PATH/Files/FILENAME.json") 
 ```
 
-## Next steps
+## Related content
 
 - Use Data Wrangler to [clean and prepare your data](data-wrangler.md)
 - Start [training ML models](model-training-overview.md)

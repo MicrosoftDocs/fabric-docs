@@ -88,6 +88,6 @@ Quickly access your favorite workspaces by pinning them to the top of the worksp
 
     ![Screenshot of unpin workspace.](media/create-workspaces/unpin-workspace.png)
 
-## Next steps
+## Related content
 
 * Read about [workspaces](workspaces.md)

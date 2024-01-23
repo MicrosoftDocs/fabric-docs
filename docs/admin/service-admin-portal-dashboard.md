@@ -20,12 +20,12 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Web content on dashboard tiles
 
-Users in the organization can add and view web content tiles on Power BI dashboards. 
+If this setting is enabled, users in the organization can add and view web content tiles on Power BI dashboards. 
 
 To learn more, see [Add images, videos, and more to your dashboard](/power-bi/create-reports/service-dashboard-add-widget#add-web-content).
 
 > [!NOTE]
-> This could expose your organization to security risks via malicious web content.
+> Enabling this feature could expose your organization to security risks via malicious web content. Due to these security risks, the setting is disabled by default.
 
 ## Related content
 

@@ -64,7 +64,7 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 
 :::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
-## Next steps
+## Related content
 
 > [!div class="nextstepaction"]
 > [Part 1: Ingest data into Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md)

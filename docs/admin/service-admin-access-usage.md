@@ -53,7 +53,7 @@ To view sign-in activity, follow these steps:
 
 ## Export the data
 
-You can [download a sign-in report](/azure/active-directory/reports-monitoring/quickstart-download-sign-in-report) in either of two formats: a CSV file, or a JSON file. Use the following steps to download your report:
+You can [download a sign-in report](/entra/identity/monitoring-health/howto-download-logs) in either of two formats: a CSV file, or a JSON file. Use the following steps to download your report:
 
 1. From the command bar for the **Sign-in logs** report, select **Download** and then select one of the following options:
 

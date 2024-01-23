@@ -91,6 +91,10 @@ To display the options menu, select **More options (...)** on one of the items s
 > [!NOTE]
 >The Explorer pane may list workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the data items list.
 
+## Considerations and limitations
+
+Streaming semantic models are not shown in the OneLake data hub.
+
 ## Related content
 
 * [Navigate to your items from Microsoft Fabric Home](./fabric-home.md)

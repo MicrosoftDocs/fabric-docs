@@ -50,7 +50,7 @@ This article provides suggestions to troubleshoot common problems with the XML f
 
 - **Recommendation**:  Correct the XML file to make it well formed.
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 

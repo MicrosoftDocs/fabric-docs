@@ -53,7 +53,7 @@ Triggers define the conditions you want to detect on your objects, and the actio
 
 Properties are useful when you want to reuse logic across multiple triggers. You might define a property on a Freezer object that smooths out the temperature readings over a one-hour period. You could then use that smoothed value in many triggers.
 
-## Next steps
+## Related content
 
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)

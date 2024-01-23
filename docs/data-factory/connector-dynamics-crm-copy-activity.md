@@ -14,7 +14,7 @@ This article outlines how to use the copy activity in a data pipeline to copy da
 
 ## Prerequisites
 
-To use this connector with Azure AD service-principal authentication, you must set up server-to-server (S2S) authentication in Dynamics CRM. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal). 
+To use this connector with Azure AD service-principal authentication, you must set up server-to-server (S2S) authentication in Dynamics CRM. First register the application user (Service Principal) in Microsoft Entra. For more information, see [Create a Microsoft Entra application and service principal that can access resources](/entra/identity-platform/howto-create-service-principal-portal). 
 
 During application registration you will need to create that user in Dynamics CRM and grant permissions. Those permissions can either be granted directly or indirectly by adding the application user to a team which has been granted permissions in Dynamics CRM. For more information on how to set up an application user to authenticate with Dynamics CRM, see [Use single-tenant server-to-server authentication](/powerapps/developer/data-platform/use-single-tenant-server-server-authentication).
 
@@ -133,6 +133,6 @@ See the following table for the summary and more information for the Dynamics CR
 |**Write batch size**|The row count of data written to Dynamics CRM in each batch.|< your write batch size > <br>The default value is 10|No|writeBatchSize|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|< max concurrent connections >|No|maxConcurrentConnections|
 
-## Next steps
+## Related content
 
-[Dynamics CRM connector overview](connector-dynamics-crm-overview.md)
+- [Dynamics CRM connector overview](connector-dynamics-crm-overview.md)

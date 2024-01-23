@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 01/09/2024
 ---
 
 # Understand the metrics app compute page
@@ -127,11 +127,23 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 >[!NOTE]
 >Non billable usage does not drain capacity or lead to throttling or auto scale.
 
+## System Events
+
+Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md).
+
+The system events table displays the following elements:
+
+  * **Time** - The time the capacity was paused or resumed.
+  
+  * **State** - The state of the capacity. *Suspended* indicates that the capacity was paused. *Active* indicates that the capacity was resumed.
+  
+  * **State Change Reason** - Displays the event trigger.
+
 ## Matrix by item and operation
 
-A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the following parameters. The colors in the table represent your *performance delta*.
+A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed in this section. The colors in the table represent your *performance delta*.
 
-User can hover over any value in the visual to see operation level data. User can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
+You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
 * **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
 

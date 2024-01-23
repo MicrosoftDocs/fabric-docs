@@ -101,6 +101,6 @@ The following properties in the table are the supported authentication types.
 |- Username|ID of the secret access key. To find the access key and secret, go to [Prerequisites](connector-google-cloud-storage-copy-activity.md#prerequisites).|Yes |||
 |- Password|The secret access key itself.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Google Cloud Storage in copy activity](connector-google-cloud-storage-copy-activity.md)

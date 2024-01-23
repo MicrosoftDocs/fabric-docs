@@ -558,7 +558,7 @@ display(result)
 
 ---
 
-## Next steps
+## Related content
 
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric with REST API](how-to-use-text-translator.md)

@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 06/08/2023
+ms.date: 01/07/2024
 ---
 
 # Customer Lockbox for Microsoft Fabric
@@ -111,7 +111,12 @@ Access to data varies according to the Microsoft Fabric experience your request 
 
 * **Real-Time Analytics** - The Real-Time Analytics engineer will have access to the data in the KQL database that's linked to your request.
 
-## Next steps
+* **Data Engineering** - The Data Engineering engineer will have access to the following Spark logs linked to your request:
+    * Driver logs
+    * Event logs
+    * Executor logs
+
+## Related content
 
 * [Microsoft Purview Customer Lockbox](/microsoft-365/compliance/customer-lockbox-requests)
 
