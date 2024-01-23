@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/18/2024
+ms.date: 01/23/2024
 ---
 
 # Security in Microsoft Fabric
@@ -25,28 +25,19 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Support tenets and multiple geographies
+## Understand tenets in multiple geographies
 
-Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same Microsoft Entra tenant. Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric tenant relies on your organization's Microsoft Entra ID for identity and access management. See more here: Power BI implementation planning: Tenant setup - Power BI | Microsoft Learn
+Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
 
-Many organizations have a global presence and require services in multiple Azure geographies. For example, a business can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called multi-geo.
+The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, is stored at rest in the tenant's home geography.
 
-Add an explanation about tenants from Kasper's email...
-
-Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a business can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
-
-The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, remains stored at rest in the tenant's home geography.
+Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-a-microsoft-entra-tenant). Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric [tenant](../enterprise/licenses.md#tenant) relies on your organization's Microsoft Entra ID for identity and access management.
 
 Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
-Move bullets 2 and 3 to a new section at the bottom 
-* **Data resiliency** - Data availability in case of a disaster.
-
-* **Disaster recovery** - [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric) includes [cross-region disaster recovery and business continuity](/azure/reliability/reliability-fabric).
-
-* **Dat soverty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
+* **Dat sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
 ## Authenticate
 
@@ -72,28 +63,19 @@ In this section, you learn how to import data into Fabric, how it's kept secure,
 
 Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes.
 
-Bullets
-#### Service tags(3)- specific to Azure
+* **On-premises data gateway** - With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
 
-Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
+* **Connect to an existing service** - You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
 
-#### IP allowlist(4) - specific to non-Azure
+* **Azure service tags** - Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
 
-You can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
+* **IP allowlist** - If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
 
-You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
-
-#### On-premises data gateway (1)
-
-With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
-
-#### Existing service(2)
-
-You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
+    You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
 ### Secure Data
 
-In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice.
+In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
 ### Access data
 
@@ -119,6 +101,10 @@ You can limit viewer access to data using [Row-level security (RLS)](/power-bi/e
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
 To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.  
+
+## Recover data
+
+Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case ofa disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
 ## Capabilities
 
