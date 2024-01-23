@@ -64,7 +64,6 @@ During the session, users can create multiple tabs in the model view to depict m
 
 Currently, the model view layouts are only persisted in session. However the database changes are persisted. Users can use the auto-layout whenever a new tab is created to visually inspect the database design and understand the modeling.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)
+- [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)

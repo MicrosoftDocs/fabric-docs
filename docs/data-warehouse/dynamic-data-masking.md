@@ -80,8 +80,4 @@ It's important to properly manage object-level security with [SQL granular permi
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Row-level security in Fabric data warehousing](row-level-security.md)
 - [Security for data warehousing in Microsoft Fabric](security.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [How to implement dynamic data masking in Synapse Data Warehouse](howto-dynamic-data-masking.md)
+- [How to implement dynamic data masking in Synapse Data Warehouse](howto-dynamic-data-masking.md)

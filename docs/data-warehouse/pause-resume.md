@@ -67,8 +67,4 @@ Learn more about billing implications here: [Understand your Fabric capacity Azu
 
 - [Scale your capacity](../enterprise/scale-capacity.md)
 - [Workload management](workload-management.md)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Pause and resume your capacity](../enterprise/pause-resume.md)
+- [Pause and resume your capacity](../enterprise/pause-resume.md)
