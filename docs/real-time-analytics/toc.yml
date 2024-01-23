@@ -83,7 +83,7 @@ items:
       - name: Connect to KQL Database in dataflows
         href: ../data-factory/connector-kusto-dataflows.md
       - name: Data connectors overview
-        href: /connectors/data/integrate-data-overview.md
+        href: connectors/data/integrate-data-overview.md
 - name: Store data
   items:
   - name: Resource consumption
