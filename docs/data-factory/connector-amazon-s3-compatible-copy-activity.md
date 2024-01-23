@@ -4,7 +4,7 @@ description: This article explains how to copy data using Amazon S3 Compatible.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/24/2023
+ms.date: 01/23/2024
 ms.custom:
   - template-how-to
   - build-2023
