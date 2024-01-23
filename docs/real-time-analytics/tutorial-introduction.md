@@ -41,7 +41,7 @@ Specifically, in this tutorial, you learn how to:
 
 To successfully complete this tutorial, you need a [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity).
 
-## Next steps
+## Related content
 
 > [!div class="nextstepaction"]
 > [Tutorial part 1: Set up resources](tutorial-1-resources.md)

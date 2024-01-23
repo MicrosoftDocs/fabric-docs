@@ -326,7 +326,7 @@ model <- spark.glm(carsDF, mpg ~ wt + cyl, family = "gaussian")
 summary(model)
 ```
 
-## Next steps
+## Related content
 
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

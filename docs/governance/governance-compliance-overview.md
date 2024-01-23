@@ -44,6 +44,6 @@ Microsoft Purview hub is a centralized page in Fabric that helps Fabric administ
 >[!NOTE]
 >The Microsoft Purview hub is currently available to administrators only.
 
-## Next steps
+## Related content
 
 * [What is Microsoft Fabric](../get-started/microsoft-fabric-overview.md)

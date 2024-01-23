@@ -99,6 +99,6 @@ To view the runtime logs for Azure event hub source, lakehouse destination and K
 
 :::image type="content" source="./media/monitor/source-destination-runtime-logs.png" alt-text="Screenshot showing the source and destination runtime logs." lightbox="./media/monitor/source-destination-runtime-logs.png" :::
 
-## Next steps
+## Related content
 
 - [Preview data in an eventstream](./preview-data.md)

@@ -162,7 +162,7 @@ You can customize the function by specifying how to handle missing keys, by sett
 
 By using the `list_relationship_violations` function with pandas DataFrames, you can ensure that your data is consistent and accurate, allowing you to build more reliable machine learning models and gain deeper insights into your data.
 
-## Next steps
+## Related content
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [Tutorial: Discover relationships in a semantic model using semantic link (preview)](tutorial-power-bi-relationships.md)

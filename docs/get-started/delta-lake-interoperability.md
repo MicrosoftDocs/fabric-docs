@@ -59,7 +59,7 @@ Currently, Fabric doesn't support these Delta Lake features:
 * Identity columns writing (proprietary Databricks feature)
 * Delta Live Tables (proprietary Databricks feature)
 
-## Next steps
+## Related content
 
 * [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 * Learn more about [Delta Lake tables](../data-engineering/lakehouse-and-delta-tables.md) in Fabric Lakehouse and Synapse Spark.

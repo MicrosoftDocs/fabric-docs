@@ -65,7 +65,7 @@ You have now created a Dataflow Gen2 to load data from an on-premises data sourc
 
 Fabric pipelines can leverage on-premises data gateway for on-premises data access and data movement. Although Fabric pipeline currently does not offer support for on-premises data sources directly, you can implement a workaround by initially transferring the data to cloud storage using a Dataflow Gen2 as described in this article, and then accessing the cloud storage from the pipeline to work with the data.
 
-## Next steps
+## Related content
 
 - [On-premises data gateway considerations for output destinations](gateway-considerations-output-destinations.md)
 - [Known issues with the on-premises data gateway](known-issue-gateway.md)

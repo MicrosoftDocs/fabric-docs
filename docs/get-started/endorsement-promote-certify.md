@@ -73,7 +73,7 @@ If you would like to certify your item but aren't authorized to do so, follow th
     >[!NOTE]
     >If you clicked the link above but got redirected back to this note, it means that your Fabric admin has not made any information available. In this case, contact the Fabric admin directly.
 
-## Next steps
+## Related content
 
 * [Read more about endorsement](../governance/endorsement-overview.md)
 * [Enable content certification](../admin/endorsement-setup.md) (Fabric admins)

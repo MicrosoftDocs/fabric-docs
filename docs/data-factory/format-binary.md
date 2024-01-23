@@ -109,7 +109,7 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**|The compression codec used to write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
-## Next steps
+## Related content
 
 - [Connectors overview](connector-overview.md)
 - [Connect to Binary format in dataflows](connector-binary-dataflows.md)
