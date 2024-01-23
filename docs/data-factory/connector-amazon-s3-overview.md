@@ -25,7 +25,7 @@ The Amazon S3 connector supports the following capabilities in Data pipeline:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
+| **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |

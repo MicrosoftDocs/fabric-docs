@@ -25,7 +25,7 @@ The Amazon S3 Compatible connector supports the following capabilities in data p
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Access Key |
+| **Copy activity (source/destination)** | None | Access Key |
 | **Lookup activity** | None | Access Key |
 | **GetMetadata activity** | None | Access Key |
 | **Delete activity** | None | Access Key |
