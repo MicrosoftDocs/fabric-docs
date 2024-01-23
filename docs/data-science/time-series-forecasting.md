@@ -1,6 +1,6 @@
 ---
 title: 'Tutorial: Train and evaluate a time series forecasting model'
-description: This demonstration shows how to develop a model to forecast time series data that has seasonal cycles.
+description: This tutorial shows how to develop a model to forecast time series data that has seasonal cycles.
 ms.reviewer: franksolomon
 ms.author: narsam
 author: narmeens
@@ -8,44 +8,45 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/15/2023
+ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a time series model with trend and seasonality information to forecast future cycles.
 ---
 
 # Train and evaluate a time series forecasting model
 
-In this tutorial, you walk through an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario is to build a program to forecast time series data that has seasonal cycles. You use the [NYC property sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates that range from 2003 through 2015. This dataset is published by the New York City Department of Finance on the [NYC Open Data portal](https://opendata.cityofnewyork.us/).
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a program to forecast time series data that involves seasonal cycles. The scenario uses the [NYC property sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates that range from 2003 through 2015. The New York City Department of Finance publishes this dataset on the [NYC Open Data portal](https://opendata.cityofnewyork.us/).
 
-The main steps in this tutorial are:
+This tutorial covers these steps:
 
 > [!div class="checklist"]
->
-> - Upload the data into a lakehouse.
-> - Perform exploratory analysis on the data.
-> - Train a model.
-> - Log and load the model by using MLflow.
+> * Upload the data into a lakehouse
+> * Perform exploratory analysis on the data
+> * Train a model
+> * Log and load the model with MLflow
 
 ## Prerequisites
 
-- Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
-- A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+[!INCLUDE [prerequisites](./includes/prerequisites.md)]
+
+* Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook)
+* A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Follow along in a notebook
 
-You can follow along in a notebook in one of two ways:
+You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Synapse Data Science experience.
-- Upload your notebook from GitHub to the Synapse Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience
+- Upload your notebook from GitHub to the Synapse Data Science experience
 
 ### Open the built-in notebook
 
-**Time series** is the sample notebook that accompanies this tutorial.
+The sample **Time series** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
 ### Import the notebook from GitHub
 
-[AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) is the notebook that accompanies this tutorial.
+The [AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
@@ -53,22 +54,24 @@ You can follow along in a notebook in one of two ways:
 
 ## About the dataset
 
-The dataset is a record of every building sold in the New York City property market during a 13-year period. For definitions of columns in the spreadsheet, refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) on the NYC Department of Finance website. The dataset looks like the following table:
+The dataset has records of every building sale in the New York City property market during a 13-year period. For definitions of columns in the dataset, refer to [Glossary of Terms for Property Sales Files](https://www1.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf) on the NYC Department of Finance website. This table shows a preview of the dataset:
 
 | borough | neighborhood | building_class_category | tax_class | block | lot | easement | building_class_at_present | address | apartment_number | zip_code | residential_units | commercial_units | total_units | land_square_feet | gross_square_feet | year_built | tax_class_at_time_of_sale | building_class_at_time_of_sale | sale_price | sale_date |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | Manhattan | ALPHABET CITY | 07  RENTALS - WALKUP APARTMENTS | 0.0 | 384.0 | 17.0 |  | C4 | 225 EAST 2ND   STREET |  | 10009.0 | 10.0 | 0.0 | 10.0 | 2145.0 | 6670.0 | 1900.0 | 2.0 | C4 | 275000.0 | 2007-06-19 |
 | Manhattan | ALPHABET CITY | 07  RENTALS - WALKUP APARTMENTS | 2.0 | 405.0 | 12.0 |  | C7 | 508 EAST 12TH   STREET |  | 10009.0 | 28.0 | 2.0 | 30.0 | 3872.0 | 15428.0 | 1930.0 | 2.0 | C7 | 7794005.0 | 2007-05-21 |
 
-You'll build a model to forecast the monthly volume of property trades based on history data. The forecast uses [Facebook Prophet](https://facebook.github.io/prophet/), which provides a fast and automated forecast procedure. It also handles seasonality well.
+The model forecasts the monthly volume of property trades, based on historical data. The forecast uses the [Facebook Prophet](https://facebook.github.io/prophet/) library, which provides a fast and automated forecast procedure. Prophet also handles seasonality well.
 
 ## Install Prophet
 
-First, install [Facebook Prophet](https://facebook.github.io/prophet/). Facebook developed the Prophet open-source time series forecasting library. It uses a decomposable time series model that has three main components: trend, seasonality, and holiday.
+First, install the [Facebook Prophet](https://facebook.github.io/prophet/). Facebook developed the Prophet open-source time series forecasting library. It uses a decomposable time series model that has three main components: trend, seasonality, and holiday.
 
 For the trend component, Prophet assumes a piece-wise constant rate of growth, with automatic selection of change points.
 
-For the seasonality component, Prophet models weekly and yearly seasonality by using Fourier series. Because this tutorial uses monthly data, you'll avoid weekly seasonality, and you'll avoid holidays.
+For the seasonality component, Prophet models weekly and yearly seasonality by using Fourier series.
+
+Because this tutorial uses monthly data, it avoids both weekly seasonality and holidays.
 
 ```shell
 !pip install prophet
@@ -78,7 +81,7 @@ For the seasonality component, Prophet models weekly and yearly seasonality by u
 
 ### Download the dataset and upload to a data lakehouse
 
-A data lakehouse is a data architecture that provides a central repository for data. There are 15 .csv files that contain property sales records from five boroughs in New York from 2003 through 2015. For convenience, these files are compressed in the *nyc_property_sales.tar* file. This file is available in a public blob storage resource.
+A data lakehouse is a data architecture that provides a central repository for data. Fifteen .CSV files contain property sales records from five New York City boroughs, from 2003 through 2015. For convenience, these files are compressed in the *nyc_property_sales.tar* file. A public blob storage resource hosts this file.
 
 ```python
 URL = "https://synapseaisolutionsa.blob.core.windows.net/public/NYC_Property_Sales_Dataset/"
@@ -109,7 +112,7 @@ else:
 
 ### Create a DataFrame from the lakehouse
 
-The `display` function prints the DataFrame and automatically gives chart views.
+The `display` function prints the DataFrame, and automatically provides chart views.
 
 ```python
 df = (
@@ -126,11 +129,11 @@ display(df)
 
 For type conversion and filtering:
 
-- Cast the sale prices to integers.
-- Exclude irregular sales data. For example, a $0 sale indicates an ownership transfer without cash consideration.
-- Include only class A (residential) buildings, and exclude all other building types.
+- Cast the sale prices to integers
+- Exclude irregular sales data. For example, a $0 sale indicates an ownership transfer without cash consideration
+- Include only class A (residential) buildings, and exclude all other building types
 
-This analysis uses only class A buildings because the seasonality effect becomes an ineligible coefficient for class A buildings. This model outperforms many others because it includes seasonality, which is important data for time series analysis.
+This analysis uses only class A buildings because the seasonality effect becomes an ineligible coefficient for class A buildings. This model outperforms many other models because it includes seasonality, which becomes important data for time series analysis.
 
 ```python
 # Import libraries
@@ -178,7 +181,7 @@ display(summary_df)
 
 ### Visualization
 
-Examine the trend of property trades in NYC. The yearly seasonality is clear for the class A type of buildings. The peak buying seasons are usually spring and fall.
+Examine the NYC property trade trend. The yearly seasonality is clear for the class A type of buildings. Spring and fall are usually the peak buying seasons.
 
 ```python
 df_pandas = summary_df.toPandas()
@@ -212,7 +215,7 @@ plt.show()
 
 ### Model fitting
 
-Rename the time axis to `ds` and the value axis to `y`:
+Rename the time axis to `ds`, and the value axis to `y`:
 
 ```python
 import pandas as pd
@@ -221,7 +224,7 @@ df_pandas["ds"] = pd.to_datetime(df_pandas["month"])
 df_pandas["y"] = df_pandas["total_sales"]
 ```
 
-Now, fit the model. Choose `multiplicative` seasonality, to reflect the fact that seasonality is no longer a constant additive factor like the default that Prophet assumes. As shown in a previous cell, you printed the data for total property sales per month, and the vibration amplitude isn't consistent. This means that simple additive seasonality won't fit the data well.
+Now, fit the model. Choose `multiplicative` seasonality, to reflect the fact that seasonality is no longer a constant additive factor. This approach differs from the default that Prophet assumes. As shown in a previous cell, you printed the data for total property sales per month, and the vibration amplitude isn't consistent. This means that simple additive seasonality doesn't fit the data well.
 
 Use Markov Chain Monte Carlo (MCMC) methods to calculate the posterior mean distribution. By default, Prophet uses the Stan L-BFGS method to fit the model, which finds a maximum *a posteriori* probability (MAP) estimate.
 
@@ -235,7 +238,7 @@ m = Prophet(
 m.fit(df_pandas)
 ```
 
-The built-in functions in Prophet can show the results of model fitting. The black dots are data points for training the model. The blue line is the prediction, and the light blue area shows uncertainty intervals.
+The built-in Prophet functions can show the model fitting results. The black dots are model training data points. The blue line is the prediction, and the light blue area shows uncertainty intervals.
 
 ```python
 future = m.make_future_dataframe(periods=12, freq="M")
@@ -258,7 +261,7 @@ fig2 = m.plot_components(forecast)
 
 ### Cross-validation
 
-You can use the Prophet built-in cross-validation functionality to measure the forecast error on historical data. The following parameters indicate that you should start with 11 years of training data and then make predictions every 30 days, within a one-year horizon.
+The Prophet built-in cross-validation functionality measures the historical data forecast error. These parameters indicate that you should start with 11 years of training data, and then make predictions every 30 days, within a one-year horizon:
 
 ```python
 from prophet.diagnostics import cross_validation

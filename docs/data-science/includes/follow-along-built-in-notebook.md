@@ -4,7 +4,7 @@ description: Steps to access built-in sample notebooks for tutorials.
 author: msakande
 ms.author: smopeakande
 ms.topic: include
-ms.date: 11/13/2023
+ms.date: 01/22/2024
 ---
 
 To open the tutorial's built-in sample notebook in the Synapse Data Science experience:
