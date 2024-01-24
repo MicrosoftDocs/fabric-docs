@@ -12,13 +12,15 @@ ms.date: 01/18/2024
 
 The Microsoft Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
+The [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) let you automate Fabric procedures and processes so your organization can complete tasks more quickly and with fewer errors. This efficiency leads to cost savings and improved productivity.
+
 <!--- 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
 --->
 
 ## Git integration API functions
 
-You can use the [Git integration REST APIs](/rest/api/fabric/core/git) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
+The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve the continuous integration and continuous delivery (CI/CD) of your content. Here are a few examples of what can be done by using the APIs:
 
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
@@ -39,9 +41,9 @@ Before you use the Git integration APIs:
 * Install [PowerShell](/powershell/scripting/install/installing-powershell)
 * Install [Azure PowerShell Az module](/powershell/azure/install-azure-powershell)
 
-## Integrate your pipeline with Azure DevOps
+## Integrate your workspace with Azure DevOps
 
-Automate the deployment processes from within your [release pipeline in Azure DevOps](/azure/devops/pipelines), using **PowerShell**.
+Automate the integration process from within your [release pipeline in Azure DevOps](/azure/devops/pipelines), using **PowerShell**.
 
 You can also use other [Fabric REST API](/rest/api/fabric/articles) calls, to complete related operations such as creating a workspace.
 
@@ -109,7 +111,6 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 1. Get the Long Running OperationId for polling the status of the operation.
 
-
     ```powershell
     $operationId = $commitToGitResponse.Headers['x-ms-operation-id']
     $retryAfter = $commitToGitResponse.Headers['Retry-After']   
@@ -154,5 +155,5 @@ Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit 
 ## Related content
 
 * [Get started with Git integration](git-get-started.md)
-* [Deployment pipelines best practices](../best-practices-cicd.md)
-* [Troubleshooting deployment pipelines](../troubleshoot-cicd.md)
+* [Fabric APIs](/rest/api/fabric/articles/using-fabric-apis)
+* [Git best practices](../best-practices-cicd.md)
