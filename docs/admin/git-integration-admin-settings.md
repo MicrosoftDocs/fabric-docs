@@ -11,7 +11,7 @@ ms.date: 01/24/2024
 # Git integration tenant settings
 
 The git integration tenant admin settings are configured in the tenant settings section of the admin portal.  
-The tenant admin can choose to delegate control of these switches to the workspace admin or capacity admin.
+The tenant admin can choose to delegate control of these switches to the workspace admin or capacity admin. If the tenant admin enables delegation, the capacity admin can override the tenant admin's decision to enable or disable the switch. The workspace admin can override the tenant and the capacity settings.
 
 For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
