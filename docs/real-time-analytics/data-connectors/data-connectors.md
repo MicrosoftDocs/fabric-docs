@@ -12,7 +12,7 @@ ms.date: 01/23/2024
 
 Data ingestion is the process used to load data from one or more sources into a Real-Time Analytics KQL database in Microsoft Fabric. Once ingested, the data becomes available for [query](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). Real-Time Analytics provides several connectors for data ingestion.
 
-The following tables summarizes the available data connectors, tools, and integrations.
+The following table summarizes the available data connectors, tools, and integrations.
 
 | Name | Functionality | Supports streaming? | Type | Use cases |
 |--|--|:-:|--|--|
