@@ -70,7 +70,7 @@ To access the lineage view:
 
    :::image type="content" source="media/lineage/artifact-lineage-view-data-science.png" alt-text="Image showing workspace lineage view in Fabric for a given item." lightbox="media/lineage/artifact-lineage-view-data-science.png":::
 
-## Next steps
+## Related content
 
 - Learn about machine learning models: [Machine learning models](./machine-learning-model.md)
 - Learn about machine learning experiments: [Machine learning experiments](./machine-learning-experiment.md)

@@ -40,7 +40,7 @@ The [!INCLUDE [product-name](../includes/product-name.md)] runtime for Apache Sp
 
 SynapseML provides a layer on top of SparkML's low-level APIs when building scalable ML models, such as indexing strings, coercing data into a layout expected by machine learning algorithms, and assembling feature vectors. The SynapseML library simplifies these and other common tasks for building models in PySpark.
 
-## Next steps
+## Related content
 
 This article provides an overview of the various options to train machine learning models within Apache Spark in [!INCLUDE [product-name](../includes/product-name.md)]. You can learn more about model training by following the tutorial below:
 

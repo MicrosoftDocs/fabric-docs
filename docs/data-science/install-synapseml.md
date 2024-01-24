@@ -51,7 +51,7 @@ import synapse.ml.lightgbm
 print(f"SynapseML lightgbm version: {synapse.ml.lightgbm.__version__}")
 ```
 
-## Next steps
+## Related content
 
 - [How to use LightGBM with SynapseML](lightgbm-overview.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

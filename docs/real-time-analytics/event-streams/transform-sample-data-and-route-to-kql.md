@@ -102,7 +102,7 @@ Congratulations!
 
 You successfully completed the tutorial on exploring and transforming bike-sharing data using Eventstream. Keep exploring Eventstream's capabilities and continue your journey with real-time data processing.
 
-## Next steps
+## Related content
 
 If you want to learn more about ingesting and processing data streams using Eventstream, check out the following resources:
 

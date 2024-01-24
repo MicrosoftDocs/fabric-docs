@@ -24,6 +24,6 @@ The option to select the **Git integration** tab in **Workspace settings** isn't
 
 As a workaround, you can append `&displayProjectTridentUIEnabled=1` to the browser URL, and reload the page.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -630,7 +630,7 @@ response = requests.post(url=openai_url, headers=post_headers, json=post_body)
 printresult(openai_url=openai_url, response_code=response.status_code, prompt=input_words, result=response.content)
 ```
 
-## Next steps
+## Related content
 
 - [Use prebuilt Text Analytics in Fabric with REST API](how-to-use-text-analytics.md)
 - [Use prebuilt Text Analytics in Fabric with SynapseML](how-to-use-text-analytics.md)
