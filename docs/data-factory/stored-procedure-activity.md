@@ -45,7 +45,7 @@ To get started, you must complete the following prerequisites:
 
 ## Step 3: Choose a stored procedure and configure parameters
 
-Select a stored procedure, and optionally import its parameters or manually add parameters.
+Select a stored procedure, and optionally import its parameters or manually add parameters. Select the **Import** button to import the parameters from the stored procedure, or add them manually by selecting the **+ New** button for each parameter, then providing the name, type, value, and nullability settings as you require. 
 
 :::image type="content" source="media/stored-procedure-activity/select-procedure.png" alt-text="Screenshot showing where to select the stored procedure to execute and optionally configure its parameters.":::
 
