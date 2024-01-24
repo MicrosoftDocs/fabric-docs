@@ -19,16 +19,16 @@ The following tables summarizes the available data connectors, tools, and integr
 | [Apache Flink](#apache-flink) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/Azure/flink-connector-kusto/) | Telemetry |
 | [Apache Kafka](#apache-kafka) | **Ingestion** | :heavy_check_mark: | | First party, [Open source](https://github.com/Azure/kafka-sink-azure-kusto/) | Logs, Telemetry, Time series |
 | [Apache Log4J 2](#apache-log4j-2) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-log4j) | Logs |
-| [Apache Spark](#apache-spark) | **Export**<br /><br />**Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-spark/) | Telemetry |
-| [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br /><br />**Ingestion** | | | First party | Telemetry |
-| [Azure Data Factory](#azure-data-factory) | **Export**<br /><br />**Ingestion** | | | First party | Data orchestration |
+| [Apache Spark](#apache-spark) | **Export**<br />**Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-spark/) | Telemetry |
+| [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br />**Ingestion** | | | First party | Telemetry |
+| [Azure Data Factory](#azure-data-factory) | **Export**<br />**Ingestion** | | | First party | Data orchestration |
 | [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | | First party | Messaging |
-| [Azure Functions](#azure-functions) | **Export**<br /><br />**Ingestion** | | | First party | Workflow integrations |
+| [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** | | | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | | First party | Event processing |
 | [Logstash](#logstash) | **Ingestion** | | | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
-| [Power Automate](#power-automate) | **Export**<br /><br />**Ingestion** | | | First party | Data orchestration |
+| [Power Automate](#power-automate) | **Export**<br />**Ingestion** | | | First party | Data orchestration |
 | [Serilog](#serilog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer) | Logs |
 | [Splunk](#splunk) | **Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon) | Logs |
 | [Splunk Universal Forwarder](#splunk-universal-forwarder)| **Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-splunk) | Logs |
