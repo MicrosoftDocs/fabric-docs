@@ -17,7 +17,7 @@ As you bring your data to the cloud and use it with various analytic experiences
 
 Fabric security is:
 
-* Continues - Fabric security is always on. Because it's embedded in the cloud, it doesn't rely on a team of experts to keep it running.
+* Continuous - Fabric security is always on. Because it's embedded in the cloud, it doesn't rely on a team of experts to keep it running.
 
 * Configurable - You can configure Fabric security in accordance with your solution and organizational policies.
 
@@ -37,19 +37,19 @@ Fabric ensures that your data is secure across regions when you're working with 
 
 * **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
 
-* **Dat sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
+* **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
 ## Authenticate
 
-Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using [Entra ID](/entra/verified-id/decentralized-identifier-overview).
+Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview).
 
-With Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face continues security breach threat. To combat this on-going threat, Fabric enforces the use of Entra ID authentication. Users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
+With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face continues security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. Users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
 
-Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
+Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
 
 * Define a list of IPs for inbound connectivity to Fabric.
 
-* Use Multi-Factor Authentication (MFA).
+* Use Multifactor Authentication (MFA).
 
 * Restrict traffic based on parameters such as country of origin or device type. 
 
@@ -104,7 +104,7 @@ To expose reports using a DirectLake dataset with RLS without a DirectQuery fall
 
 ## Recover data
 
-Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case ofa disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
+Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case of a disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
 ## Capabilities
 
