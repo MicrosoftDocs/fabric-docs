@@ -113,7 +113,7 @@ Through the use of SemPy, organizations can expect to see:
 
 For more information on semantic link, see [What is semantic link (preview)?](semantic-link-overview.md).
 
-## Next steps
+## Related content
 
 - Get started with end-to-end data science samples, see [Data Science Tutorials](tutorial-data-science-introduction.md)
 - Learn more about data preparation and cleansing with Data Wrangler, see [Data Wrangler](data-wrangler.md)

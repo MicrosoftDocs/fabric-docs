@@ -77,7 +77,7 @@ Copilot responds with the relevant information if you added the lakehouse to the
 - When Copilot first launches, it offers a set of helpful prompts that can help you get started. They can help kickstart your conversation with Copilot. To refer to prompts later, you can use the sparkle button at the bottom of the chat panel.
 - You can "drag" the sidebar of the copilot chat to expand the chat panel, to view code more clearly or for readability of the outputs on your screen.
 
-## Next steps
+## Related content
 
 - [How to use Chat-magics](./copilot-notebooks-chat-magics.md)
 - [How to use the Copilot Chat Pane](./copilot-notebooks-chat-pane.md)

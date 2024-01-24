@@ -26,6 +26,6 @@ Within OneLake file explorer, moving a folder (cut and paste or drag and drop) f
 
 The fix is available in [OneLake file explorer v1.0.9.0](https://www.microsoft.com/download/details.aspx?id=105222) and later versions.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

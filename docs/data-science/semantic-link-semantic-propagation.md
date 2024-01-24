@@ -53,7 +53,7 @@ The semantic link Spark native connector hydrates (or populates) the [metadata](
 Currently, support for semantic propagation is limited and subject to Spark's internal implementation of how schema information is propagated.
 For example, column aggregation strips the metadata.
 
-## Next steps
+## Related content
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link)
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
