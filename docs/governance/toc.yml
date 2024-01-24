@@ -15,9 +15,9 @@ items:
     href: microsoft-purview-fabric.md
     items:
       - name: Connect in the same tenant
-        href: /purview/register-scan-fabric-tenant?context=/fabric/context/context
+        href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
       - name: Connect cross-tenant
-        href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/context/context
+        href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
 - name: Information protection
