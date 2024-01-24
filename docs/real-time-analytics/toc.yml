@@ -76,54 +76,48 @@ items:
       href: get-data-onelake.md
     - name: Get data from Eventstream
       href: get-data-eventstream.md
+    - name: Configure KQL Database in a data pipeline
+      href: ../data-factory/connector-kql-database-copy-activity.md
+    - name: Connect to KQL Database in dataflows
+      href: ../data-factory/connector-kusto-dataflows.md
     - name: Connectors
       items:
       - name: Data connectors overview
         href: data-connectors/data-connectors.md
-      - name: Get data from Apache Flink
+      - name: Apache Flink
         href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Apache Kafka
+      - name: Apache Kafka
         href: /azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data with the Apache Log4J 2 connector
+      - name: Apache Log4J 2
         href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
-      - name: Apache Spark connector
+      - name: Apache Spark
         href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
-      - name: Connect to an Azure Synapse workspace
+      - name: Azure Synapse workspace
         href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
-      - name: Get data from Azure Cosmos DB (Preview
-        href: /azure/data-explorer/ingest-data-cosmos-db-connection?context=/fabric/context/context-rta&pivots=fabric
-      - name: Copy data to your database by using Azure Data Factory
+      - name: Azure Data Factory
         href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rta&pivots=fabric
-      - name: Event Grid data connection
-        href: /azure/data-explorer/ingest-data-event-grid-overview?context=/fabric/context/context-rta&pivots=fabric
-      - name: Azure Event Hubs data connection
+      - name: Azure Event Hubs
         href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rta&pivots=fabric
-      - name: Integrating Azure Functions using input and output bindings
+      - name: Azure Functions
         href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rta&pivots=fabric
-      - name: IoT Hub data connection
-        href: /azure/data-explorer/ingest-data-iot-hub-overview?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Azure Stream Analytics
+      - name: Azure Stream Analytics
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Logstash
+      - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data with the NLog sink
+      - name: NLog sink
         href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from OpenTelemetry
+      - name: OpenTelemetry
         href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric
-      - name: Microsoft Power Automate connector
+      - name: Microsoft Power Automate
         href: /azure/data-explorer/flow?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data with the Serilog sink
+      - name: Serilog sink
         href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Splunk
+      - name: Splunk
         href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Splunk Universal Forwarder to Azure Data Explorer
+      - name: Splunk Universal Forwarder
         href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric
-      - name: Get data from Telegraf
+      - name: Telegraf
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
-      - name: Configure KQL Database in a data pipeline
-        href: ../data-factory/connector-kql-database-copy-activity.md
-      - name: Connect to KQL Database in dataflows
-        href: ../data-factory/connector-kusto-dataflows.md
 - name: Store data
   items:
   - name: Resource consumption

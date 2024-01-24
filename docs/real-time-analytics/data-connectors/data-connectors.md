@@ -21,12 +21,9 @@ The following tables summarizes the available data connectors, tools, and integr
 | [Apache Log4J 2](#apache-log4j-2) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-log4j) | Logs |
 | [Apache Spark](#apache-spark) | **Export**<br /><br />**Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-spark/) | Telemetry |
 | [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br /><br />**Ingestion** | | | First party | Telemetry |
-| [Azure Cosmos DB](#azure-cosmos-db) | **Ingestion** | :heavy_check_mark: | | First party | Change feed |
 | [Azure Data Factory](#azure-data-factory) | **Export**<br /><br />**Ingestion** | | | First party | Data orchestration |
-| [Azure Event Grid](#azure-event-grid) | **Ingestion** | :heavy_check_mark: | | First party | Event processing |
 | [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | | First party | Messaging |
 | [Azure Functions](#azure-functions) | **Export**<br /><br />**Ingestion** | | | First party | Workflow integrations |
-| [Azure IoT Hubs](#azure-iot-hubs) | **Ingestion** | :heavy_check_mark: | | First party | IoT data |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | | First party | Event processing |
 | [Logstash](#logstash) | **Ingestion** | | | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
@@ -96,15 +93,6 @@ The following table summarizes the available connectors and their capabilities:
 * **Underlying SDK:** [Java](/azure/data-explorer/kusto/api/java/kusto-java-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Documentation:** [Connect to an Azure Synapse workspace](/azure/synapse-analytics/quickstart-connect-azure-data-explorer)
 
-### Azure Cosmos DB
-
-The [Azure Cosmos DB](/azure/cosmos-db/) change feed data connection is an ingestion pipeline that listens to your Cosmos DB change feed and ingests the data into your database.
-
-* **Functionality:** Ingestion
-* **Ingestion type supported:** Batching, Streaming
-* **Use cases:** Change feed
-* **Documentation:** [Get data from Azure Cosmos DB (Preview)](/azure/data-explorer/ingest-data-cosmos-db-connection?context=/fabric/context/context-rta&pivots=fabric)
-
 ### Azure Data Factory
 
 [Azure Data Factory](/azure/data-factory) (ADF) is a cloud-based data integration service that allows you to integrate different data stores and perform activities on the data.
@@ -113,15 +101,6 @@ The [Azure Cosmos DB](/azure/cosmos-db/) change feed data connection is an inges
 * **Ingestion type supported:** Batching
 * **Use cases:** Data orchestration
 * **Documentation:** [Copy data to your database by using Azure Data Factory](/azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rta&pivots=fabric)
-
-### Azure Event Grid
-
-Event Grid ingestion is a pipeline that listens to Azure storage, and updates your database to pull information when subscribed events occur. You can configure continuous ingestion from Azure Storage (Blob storage and ADLSv2) with an [Azure Event Grid](/azure/event-grid/overview) subscription for blob created or blob renamed notifications and streaming the notifications via Azure Event Hubs.
-
-* **Functionality:** Ingestion
-* **Ingestion type supported:** Batching, Streaming
-* **Use cases:** Event processing
-* **Documentation:** [Event Grid data connection](/azure/data-explorer/ingest-data-event-grid-overview?context=/fabric/context/context-rta&pivots=fabric)
 
 ### Azure Event Hubs
 
@@ -140,15 +119,6 @@ Event Grid ingestion is a pipeline that listens to Azure storage, and updates yo
 * **Use cases:** Workflow integrations
 * **Documentation:** [Integrating Azure Functions using input and output bindings (preview)](/azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [Azure Data Explorer (Kusto) Bindings for Azure Functions](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/azure-data-explorer-kusto-bindings-for-azure-functions-public/ba-p/3828472)
-
-### Azure IoT Hubs
-
-[Azure IoT Hub](/azure/iot-hub/about-iot-hub) is a managed service, hosted in the cloud, that acts as a central message hub for bi-directional communication between your IoT application and the devices it manages. You can configure continuous ingestion from customer-managed IoT Hubs, using its [Event Hubs compatible built in endpoint of device-to-cloud messages](/azure/iot-hub/iot-hub-devguide-messages-d2c#routing-endpoints).
-
-* **Functionality:** Ingestion
-* **Ingestion type supported:** Batching, Streaming
-* **Use cases:**  IoT data
-* **Documentation:** [IoT Hub data connection](/azure/data-explorer/ingest-data-iot-hub-overview?context=/fabric/context/context-rta&pivots=fabric)
 
 ### Azure Stream Analytics
 
@@ -227,7 +197,7 @@ Serilog is a popular logging framework for .NET applications. Serilog allows dev
 * **Underlying SDK:** [Python](/azure/data-explorer/kusto/api/python/kusto-python-client-library?context=/fabric/context/context-rta&pivots=fabric)
 * **Repository:** Microsoft Azure - https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon
 * **Documentation:** [Get data from Splunk](/azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric)
-* **Splunk Base:** [Microsoft Azure Data Explorer Add-On for Splunk](https://splunkbase.splunk.com/app/6979)
+* **Splunk Base:** [Microsoft Fabric Add-On for Splunk](https://classic.splunkbase.splunk.com/app/7069/)
 * **Community Blog:** [Getting started with Microsoft Azure Data Explorer Add-On for Splunk](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/getting-started-with-microsoft-azure-data-explorer-add-on-for/ba-p/3917176)
 
 ### Splunk Universal Forwarder
