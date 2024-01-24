@@ -17,21 +17,22 @@ The following tables summarizes the available data connectors, tools, and integr
 | Name | Functionality | Supports streaming? | Supports free cluster? | Type | Use cases |
 |--|--|:-:|--|--|--|
 | [Apache Flink](#apache-flink) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/Azure/flink-connector-kusto/) | Telemetry |
-| [Apache Kafka](#apache-kafka) | **Ingestion** | :heavy_check_mark: | | First party, [Open source](https://github.com/Azure/kafka-sink-azure-kusto/) | Logs, Telemetry, Time series |
-| [Apache Log4J 2](#apache-log4j-2) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-log4j) | Logs |
+| [Apache Kafka](#apache-kafka) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/Azure/kafka-sink-azure-kusto/) | Logs, Telemetry, Time series |
+| [Apache Log4J 2](#apache-log4j-2) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-log4j) | Logs |
 | [Apache Spark](#apache-spark) | **Export**<br />**Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-spark/) | Telemetry |
 | [Apache Spark for Azure Synapse Analytics](#apache-spark-for-azure-synapse-analytics) | **Export**<br />**Ingestion** | | | First party | Telemetry |
 | [Azure Data Factory](#azure-data-factory) | **Export**<br />**Ingestion** | | | First party | Data orchestration |
-| [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | | First party | Messaging |
+| [Azure Event Hubs](#azure-event-hubs) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party | Messaging |
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** | | | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | | First party | Event processing |
 | [Logstash](#logstash) | **Ingestion** | | | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
-| [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
+| [Matlab](#matlab) | | | | | :heavy_check_mark: |
+| [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
 | [Power Automate](#power-automate) | **Export**<br />**Ingestion** | | | First party | Data orchestration |
-| [Serilog](#serilog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | First party, [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer) | Logs |
+| [Serilog](#serilog) | **Ingestion** | :heavy_check_mark: | :heavy_check_mark: | [Open source](https://github.com/Azure/serilog-sinks-azuredataexplorer) | Logs |
 | [Splunk](#splunk) | **Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-splunk/tree/main/splunk-adx-alert-addon) | Logs |
-| [Splunk Universal Forwarder](#splunk-universal-forwarder)| **Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-splunk) | Logs |
+| [Splunk Universal Forwarder](#splunk-universal-forwarder) | **Ingestion** | | | [Open source](https://github.com/Azure/azure-kusto-splunk) | Logs |
 | [Telegraf](#telegraf) | **Ingestion** | :heavy_check_mark: | | [Open source](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/azure_data_explorer) | Metrics, Logs |
 
 The following table summarizes the available connectors and their capabilities:
@@ -141,12 +142,18 @@ The following table summarizes the available connectors and their capabilities:
 * **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
 
+### Matlab
+
+MATLAB is a programming and numeric computing platform used to analyze data, develop algorithms, and create models. You can get an authorization token in MATLAB for querying your data in Azure Data Explorer.
+
+* **Functionality:** Query
+* **Documentation:** [Query data using MATLAB](/azure/data-explorer/query-matlab?context=/fabric/context/context-rta&pivots=fabric)
+
 ### NLog
 
 NLog is a flexible and free logging platform for various .NET platforms, including .NET standard. NLog allows you to write to several targets, such as a database, file, or console. With NLog you can change the logging configuration on-the-fly. The NLog sink is a target for NLog that allows you to send your log messages to your database. The plugin provides an efficient way to sink your logs to your cluster.
 
 * **Functionality:** Ingestion
-
 * **Ingestion type supported:** Batching, Streaming
 * **Use cases:** Telemetry, Logs, Metrics
 * **Underlying SDK:** [.NET](/azure/data-explorer/kusto/api/netfx/about-the-sdk?context=/fabric/context/context-rta&pivots=fabric)
