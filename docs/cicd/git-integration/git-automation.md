@@ -47,25 +47,17 @@ Automate the integration process from within your [release pipeline in Azure Dev
 
 You can also use other [Fabric REST API](/rest/api/fabric/articles) calls, to complete related operations such as creating a workspace.
 
-### Access the PowerShell samples
+### Examples
 
 You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
 
 You can also download the entire [`Fabric-Samples`](https://github.com/microsoft/fabric-samples) GitHub repo.
 
-* [Commit all changes to Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-CommitSelective.ps1)
-
-* [Commit select changes to Git](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/DeploymentPipelines-SelectiveDeploy.ps1)
-
-* [Connect and update from Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-ConnectAndUpdateFromGit.ps1)
-
-* [Update workspace from Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-UpdateFromGit.ps1)
-
-* [Poll a long running operation](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/LongRunningOperation-Polling.ps1)
-
-### Examples
+#### Commit all
 
 This section gives an examples of how to programmatically commit all changes from the workspace to Git.
+
+[Commit all changes to Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-CommitSelective.ps1)
 
 1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
@@ -118,25 +110,29 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
 
 #### Connect and Sync
 
+* [Connect and sync with Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-ConnectAndUpdateFromGit.ps1)
+
 1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
 1. Based on the response from the Initialize Connection API, call either the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) or [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the sync, or do nothing if no action required.
 
-#### Commit All
-
-Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit all uncommitted changes from the workspace to the connected remote branch.
-
 #### Selective Commit
+
+[Commit select changes to Git](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/DeploymentPipelines-SelectiveDeploy.ps1)
 
 1. Select the specific items that were changed and need to be committed.
 1. Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
 
 #### Update from Git
 
+[Update workspace from Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-UpdateFromGit.ps1)
+
 1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from git request body.
 1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
 
 #### Monitor the progress of long running operations
+
+[Poll a long running operation](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/LongRunningOperation-Polling.ps1)
 
 1. Retrieve the operationId from [Update From Git](/rest/api/fabric/core/git/update-from-git) or [Commit To Git](/rest/api/fabric/core/git/commit-to-git) scripts
 1. Call the [Get LRO Status](/rest/api/fabric/core/git/get-status) API every x seconds and print the status.
