@@ -32,7 +32,7 @@ To learn more, see [Datasets - Execute Queries](/rest/api/power-bi/datasets/exec
 
 ## Use ArcGIS Maps for Power BI
 
-When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri. 
+When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.
 
 To learn more, see [Create ArcGIS maps in Power BI](/power-bi/visuals/power-bi-visualizations-arcgis).
 
@@ -63,13 +63,13 @@ When enabled, users in the organization can use map and filled map visualization
 
 Users in the organization can create Fabric reports directly from SharePoint and Microsoft Lists. Then they can build Fabric reports on the data in those lists and publish them back to the lists, to be visible to others who can access the list.
 
-This setting is enabled by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users can still see **Power BI** > **Visualize the list**, and any existing reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin has disabled the feature.
+This setting is enabled by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users can still see **Power BI** > **Visualize the list**, and any existing reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin disabled the feature.
 
 Learn more about [creating reports from SharePoint and Microsoft Lists](/power-bi/create-reports/service-quick-create-sharepoint-list).
 
 ## Dremio SSO
 
-Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.
+Enable SSO capability for Dremio. By enabling, user access token information, including name and email, is sent to Dremio for authentication.
 
 To learn more, see [Microsoft Entra ID-based Single Sign-On for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
 
@@ -81,19 +81,19 @@ To learn more, see [Connect to Snowflake in the Power BI Service](/power-bi/conn
 
 ## Redshift SSO
 
-Enable SSO capability for Redshift. By enabling, user access token information, including name and email, will be sent to Redshift for authentication.
+Enable SSO capability for Redshift. By enabling, user access token information, including name and email, is sent to Redshift for authentication.
 
 To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
 
 ## Google BigQuery SSO
 
-Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.
+Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, is sent to Google BigQuery for authentication.
 
 To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-bigquery-aad).
 
 ## Oracle SSO
 
-Enable SSO capability for Oracle. By enabling, user access token information, including name and email, will be sent to Oracle for authentication.
+Enable SSO capability for Oracle. By enabling, user access token information, including name and email, is sent to Oracle for authentication.
 
 To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
 
@@ -115,7 +115,7 @@ To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-
 
 This setting enables the Power BI/Power Platform Solutions integration from the Power BI side. Admin settings also have to be turned on in Power Platform.
 
-When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and semantic model that are being to create the component. 
+When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and semantic model that are being to create the component.
 
 To learn more, see [Power BI content management in Power Apps solutions](/power-apps/maker/model-driven-apps/power-bi-content-management-power-apps-solutions) and [About Power BI in Power Apps Solutions](/power-bi/collaborate-share/service-power-bi-powerapps-integration-about).
 
@@ -133,10 +133,10 @@ Users can share links to Power BI Desktop files (.pbix) saved to OneDrive and Sh
 
 :::image type="content" source="media/service-admin-portal-integration/admin-integration-desktop-sharing.png" alt-text="Screenshot of admin setting called  Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop.":::
 
-During public preview, if a user has enabled share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
+During public preview, if a user enables share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
 
 Learn more about [sharing links through Power BI Desktop](/power-bi/create-reports/desktop-sharepoint-save-share).
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+* [About tenant settings](about-tenant-settings.md)
