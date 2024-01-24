@@ -105,7 +105,7 @@ You can also add the dataflow you created in [Module 2: Create a dataflow in Dat
 
    :::image type="content" source="media/tutorial-end-to-end-integration/choose-dataflow-settings.png" alt-text="Screenshot showing the Settings tab of the Dataflow activity.":::
 
-## Next steps
+## Related content
 
 In this third module to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned how to:
 

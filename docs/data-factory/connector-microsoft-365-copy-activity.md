@@ -106,6 +106,6 @@ The following tables contain more information about the copy activity in Microso
 |**Start time (UTC)**|Start DateTime value to filter on.|\<start time>|Yes if `dateFilterColumn` is specified|startTime|
 |**End time (UTC)**|End DateTime value to filter on.|\<end time>|Yes if `dateFilterColumn` is specified|endTime|
 
-## Next steps
+## Related content
 
 - [How to create a Microsoft 365 connection](connector-microsoft-365.md)

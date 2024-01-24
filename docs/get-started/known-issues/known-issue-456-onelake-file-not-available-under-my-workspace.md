@@ -23,8 +23,6 @@ OneLake file explorer for the Windows Desktop application doesn't contain items 
 
 None
 
-## Next steps
-
-None
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues) 

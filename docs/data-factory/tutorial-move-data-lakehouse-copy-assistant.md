@@ -103,7 +103,7 @@ Follow these steps to set up your copy activity.
    > Browsing or Previewing from Lakehouse Table isn't supported yet.
    > Data that gets loaded into the same table will be appended. Delete or Update to tables isn't supported yet.
 
-## Next steps
+## Related content
 
 This sample shows you how to move data from Azure SQL DB into Lakehouse with the Copy Assistant in Data Factory for Microsoft Fabric.  You learned how to:
 

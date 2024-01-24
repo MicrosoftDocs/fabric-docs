@@ -63,6 +63,8 @@
       href: upgrade-paths.md
     - name: Move queries from Dataflow Gen1 to Gen2
       href: move-dataflow-gen1-to-dataflow-gen2.md      
+    - name: How to ingest data from ADF to Fabric
+      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
@@ -81,6 +83,8 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Service principal support
+      href: service-principals.md
     - name: Access database
       items:
       - name: Overview
@@ -626,7 +630,9 @@
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
-        href: tutorial-move-data-lakehouse-copy-assistant.md        
+        href: tutorial-move-data-lakehouse-copy-assistant.md
+      - name: Move data from Azure SQL DB to Lakehouse via pipeline 
+        href: tutorial-move-data-lakehouse-pipeline.md         
       - name: Load sample data to Data Warehouse
         href: tutorial-load-sample-data-to-data-warehouse.md
       - name: Incrementally load data from Data Warehouse to Lakehouse

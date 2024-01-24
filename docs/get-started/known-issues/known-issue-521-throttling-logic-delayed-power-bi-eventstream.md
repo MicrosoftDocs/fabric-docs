@@ -24,6 +24,6 @@ Power BI and eventstream users don't currently see the benefits of the new throt
 
 No workarounds at this time. Power BI and eventstream will move to the new throttling logic on October 13.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

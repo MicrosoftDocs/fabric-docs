@@ -85,7 +85,7 @@ DirectLake mode now eliminates this import requirement by loading the data files
 1. Add a Card:
    1. On the **Data** pane, expand **fact_sale** and check the box next to **Profit**. This selection creates a column chart and adds the field to the Y-axis.
 
-   1. With the bar chart selected, select the **Card** visual in the visualization pane. This selection converts the visual to a card.
+   1. With the chart selected, select the **Card** visual in the visualization pane. This selection converts the visual to a card.
 
    1. Place the card under the title.
 
