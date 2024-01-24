@@ -149,4 +149,8 @@ GO
 - [Share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
 - [Column-level security in Fabric data warehousing](column-level-security.md)
 - [Dynamic data masking in Fabric data warehousing](dynamic-data-masking.md)
-- [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Implement row-level security in Fabric Data Warehousing](tutorial-row-level-security.md)

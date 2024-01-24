@@ -115,4 +115,8 @@ Consider the following usage reporting nuances:
 - [Understand your Azure bill on a Fabric capacity](../enterprise/azure-billing.md)
 - [Understand the metrics app compute page](../enterprise/metrics-app-compute-page.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
-- [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)

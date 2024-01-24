@@ -119,4 +119,8 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
 - [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true)
 - [Query the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric](query-warehouse.md)
-- [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md)

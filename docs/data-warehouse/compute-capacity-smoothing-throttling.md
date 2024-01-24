@@ -108,4 +108,8 @@ The **Overages** tab provides a visual history of any overutilization of capacit
 - [Smoothing and throttling in Fabric Data Warehousing](compute-capacity-smoothing-throttling.md)
 - [Burstable capacity in Fabric data warehousing](burstable-capacity.md)
 - [Pause and resume in Fabric data warehousing](pause-resume.md)
-- [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [How to: Observe Synapse Data Warehouse utilization trends](how-to-observe-utilization.md)
