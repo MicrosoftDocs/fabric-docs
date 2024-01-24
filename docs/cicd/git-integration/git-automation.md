@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - ignite-2023
 ms.date: 01/18/2024
 ---
 
@@ -21,15 +20,15 @@ To achieve continuous integration and continuous delivery (CI/CD) of content, ma
 
 You can use the [Git integration REST APIs](/rest/api/fabric/core/git) to integrate Fabric into your organization's automation process. Here are a few examples of what can be done by using the APIs:
 
-* [**Commit**](/rest/api/fabric/core/git/commit-to-git) the changes made in the workspace to the connected remote branch.
+* [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
 * [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the git repository and branch it's connected to.
 
-* [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
+* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that has been connected to git.
 
 * See which items have incoming changes and which items have changes that weren't yet committed to git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
 
-* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that has been connected to git.
+* [**Commit**](/rest/api/fabric/core/git/commit-to-git) the changes made in the workspace to the connected remote branch.
 
 * [**Update the workspace**](/rest/api/fabric/core/git/update-from-git) with commits pushed to the connected branch.
 
