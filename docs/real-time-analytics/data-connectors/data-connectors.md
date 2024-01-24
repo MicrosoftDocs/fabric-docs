@@ -10,7 +10,7 @@ ms.date: 01/23/2024
 ---
 # Data integrations overview
 
-Data ingestion is the process used to load data from one or more sources into Azure Data Explorer. Once ingested, the data becomes available for [query](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). Azure Data Explorer provides several connectors for data ingestion.
+Data ingestion is the process used to load data from one or more sources into a Real-Time Analytics KQL database in Microsoft Fabric. Once ingested, the data becomes available for [query](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). Real-Time Analytics provides several connectors for data ingestion.
 
 The following tables summarizes the available data connectors, tools, and integrations.
 
