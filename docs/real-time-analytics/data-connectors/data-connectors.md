@@ -26,7 +26,7 @@ The following tables summarizes the available data connectors, tools, and integr
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** |  | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | First party | Event processing |
 | [Logstash](#logstash) | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
-| [Matlab](#matlab) |  |  |  | :heavy_check_mark: |
+| [Matlab](#matlab) | **Ingestion** |  |  | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
 | [Power Automate](#power-automate) | **Export**<br />**Ingestion** |  | First party | Data orchestration |
@@ -147,7 +147,7 @@ The following table summarizes the available connectors and their capabilities:
 MATLAB is a programming and numeric computing platform used to analyze data, develop algorithms, and create models. You can get an authorization token in MATLAB for querying your data in Azure Data Explorer.
 
 * **Functionality:** Query
-* **Documentation:** [Query data using MATLAB](/azure/data-explorer/query-matlab?context=/fabric/context/context-rta&pivots=fabric)
+* **Documentation:** [Query data using Matlab](/azure/data-explorer/query-matlab?context=/fabric/context/context-rta&pivots=fabric)
 
 ### NLog
 

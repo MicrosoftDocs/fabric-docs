@@ -104,7 +104,7 @@ items:
         href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Logstash
         href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric
-      - name: MATLAB
+      - name: Matlab
         href: /azure/data-explorer/query-matlab?context=/fabric/context/context-rta&pivots=fabric
       - name: NLog sink
         href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric
