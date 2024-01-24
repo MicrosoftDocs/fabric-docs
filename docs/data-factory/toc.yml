@@ -63,6 +63,8 @@
       href: upgrade-paths.md
     - name: Move queries from Dataflow Gen1 to Gen2
       href: move-dataflow-gen1-to-dataflow-gen2.md      
+    - name: How to ingest data from ADF to Fabric
+      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial

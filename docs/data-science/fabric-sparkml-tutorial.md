@@ -216,7 +216,7 @@ plt.show()
 
 ![Graph that shows the ROC curve for logistic regression in the tip model.](media/model-training/sparkml-tutorial-results.png)
 
-## Next steps
+## Related content
 
 - Use AI samples to build machine learning models: [Use AI samples](use-ai-samples.md)
 - Track machine learning runs using Experiments: [Machine learning experiments](machine-learning-experiment.md)

@@ -26,6 +26,6 @@ The following list describes the current limitations of pipelines in Data Factor
 - Pipelines can't use a managed VNet.
 - Web activity does not support service principal based authentication.
 
-## Next steps
+## Related content
 
 For information about the resource limitations for data pipelines, see [Data pipeline resource limits](pipeline-resource-limits.md).

@@ -135,6 +135,6 @@ To install the app in a government cloud environment, use one of these links. Yo
 
 OneLake isn't supported in Government Community Cloud (GCC).
 
-## Next steps
+## Related content
 
-[Understand the metrics app compute page](metrics-app-compute-page.md)
+* [Understand the metrics app compute page](metrics-app-compute-page.md)

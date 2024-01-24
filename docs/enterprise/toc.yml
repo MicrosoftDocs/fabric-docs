@@ -32,4 +32,6 @@ items:
     - name: Understand the metrics app storage page
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md             
+      href: metrics-app-timepoint-page.md    
+    - name: Monitor a paused capacity
+      href: monitor-paused-capacity.md                 

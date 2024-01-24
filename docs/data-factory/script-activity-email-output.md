@@ -93,8 +93,6 @@ After the pipeline runs successfully, check the account(s) you specified in the 
 
 :::image type="content" source="media/script-activity-email-output/pipeline-succeeded.png" alt-text="Screenshot showing successful execution of the pipeline." lightbox="media/script-activity-email-output/pipeline-succeeded.png":::
 
+## Related content
 
-
-## Next steps
-
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

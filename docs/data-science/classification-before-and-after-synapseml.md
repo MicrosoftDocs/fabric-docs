@@ -228,7 +228,7 @@ print(
     + "{0:.2f}%".format(metrics.first()["AUC"] * 100)
 )
 ```
-## Next steps
+## Related content
 
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)
 - [How to use ONNX with SynapseML - Deep Learning](onnx-overview.md)

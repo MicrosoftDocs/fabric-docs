@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 01/16/2024
+ms.date: 01/17/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -12,12 +12,12 @@ ms.custom:
 
 # What's new in Microsoft Fabric?
 
-This page is continuously updated with a recent review of what's new in [Microsoft Fabric](microsoft-fabric-overview.md). To follow the latest in Fabric news and features, see the [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/). Also follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
+This page is continuously updated with a recent review of what's new in [Microsoft Fabric](microsoft-fabric-overview.md).
 
-For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md).
-
-> [!IMPORTANT]
-> [Microsoft Fabric has been announced!](https://azure.microsoft.com/blog/introducing-microsoft-fabric-data-analytics-for-the-era-of-ai/)
+- To follow the latest in Fabric news and features, see the [Microsoft Fabric Updates Blog](https://blog.fabric.microsoft.com/).
+- For community, marketing, case studies, and industry news, see the [Microsoft Fabric Blog](https://www.microsoft.com/microsoft-fabric/blog/).
+- Follow the latest in Power BI at [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
+- For older news updates, review [previous updates in Microsoft Fabric](whats-new-archive.md).
 
 ## New to Microsoft Fabric?
 
@@ -89,6 +89,7 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 - Are you a student? Learn more about the [Microsoft Learn Student Ambassadors program](https://mvp.microsoft.com/studentambassadors).
 - Vote and contribute to [Microsoft Fabric Ideas](https://ideas.fabric.microsoft.com/).
 - Visit the [Microsoft Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_careerhubblog_clp) for everything you need on your certification journey, including a 50% discount on exams.
+- Watch and subscribe to [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured).
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
@@ -130,7 +131,7 @@ With Copilot and other generative AI features in preview, Microsoft Fabric bring
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
-|January 2024|**How to enable Copilot in Fabric for Everyone**|Follow this [guide to get Copilot in Fabric (preview) enabled](https://blog.fabric.microsoft.com/blog/how-to-enable-copilot-in-fabric-for-everyone-2?ft=All) for everyone in your organization. For more information, see [Enable Copilot for Microsoft Fabric (preview)](copilot-fabric-enable.md).|
+|January 2024|**How to enable Copilot in Fabric for Everyone**|Follow this [guide to get Copilot in Fabric (preview) enabled](https://blog.fabric.microsoft.com/blog/how-to-enable-copilot-in-fabric-for-everyone-2?ft=All) for everyone in your organization. For more information, see [Overview of Copilot for Microsoft Fabric (preview)](copilot-fabric-overview.md).|
 |January 2024|**Copilot in Fabric (preview) is available worldwide**|[Copilot in Fabric (preview) is now available](https://blog.fabric.microsoft.com/blog/copilot-in-fabric-preview-is-available-worldwide?ft=All) to all customers, including [Copilot for Power BI](/power-bi/create-reports/copilot-introduction), [Data Factory](copilot-fabric-data-factory.md), and [Data Science & Data Engineering](copilot-notebooks-overview.md). Read more in our [Overview on Copilot in Fabric](copilot-fabric-overview.md).|
 |November 2023|**Empower Power BI users with Microsoft Fabric and Copilot**|[We are thrilled to announce the general availability of Microsoft Fabric and the preview of Copilot in Microsoft Fabric, including the experience for Power BI.](https://powerbi.microsoft.com/blog/empower-power-bi-users-with-microsoft-fabric-and-copilot/).|
 |November 2023|**Copilot for Power BI in Microsoft Fabric preview**|[We are thrilled to announce the preview of Copilot in Microsoft Fabric](https://blog.fabric.microsoft.com/blog/microsoft-fabric-november-2023-update/#post-25278-_Toc150852524), including the experience for Power BI, which helps users quickly get started by helping them create reports in the Power BI web experience. For more information, see [Copilot for Power BI](https://aka.ms/Copilot-PBI-Docs). |
@@ -485,6 +486,7 @@ For older updates, review [previous updates in Microsoft Fabric](whats-new-archi
 - [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/)
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
+- [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured)
 
 ## Next step
 

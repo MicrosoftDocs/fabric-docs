@@ -113,7 +113,7 @@ To do this:
     %pip install /lakehouse/default/Files/wheel_file_name.whl             
     ```
 
-## Next steps
+## Related content
 
 - Manage workspace settings: [Apache Spark workspace administration settings](../../data-engineering/workspace-admin-settings.md)
 - Manage libraries in Fabric: [Manage libraries in Fabric documentation](../../data-engineering/library-management.md)

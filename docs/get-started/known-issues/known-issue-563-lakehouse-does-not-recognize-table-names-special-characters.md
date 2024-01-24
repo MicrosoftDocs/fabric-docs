@@ -24,6 +24,6 @@ In the Lakehouse Explorer user interface, you see tables whose names contains sp
 
 To correctly see the table, you can use the SQL Analytics Endpoint on the Lakehouse. You can also query the tables using Spark notebooks. When using a Spark notebook, you must use the backtick notation and directly reference the table in disk in Spark commands.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

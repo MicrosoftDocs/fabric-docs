@@ -115,7 +115,7 @@ ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
 > [!NOTE]
-> Access to storage account endpoint should not be blocked by storage firewall or VNET as storage firewalls are currently not supported.
+> Access to storage account endpoint can't be blocked by storage firewall or VNET because storage firewalls are currently not supported.
 
 #### Authorization
 

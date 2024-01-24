@@ -76,7 +76,7 @@ Data Activator imposes the following limits on the number of trigger actions tha
 |PA        |Flow executions/trigger/hour      |10000      |
 
 
-## Next steps
+## Related content
 
 * [Get started with Data Activator](data-activator-get-started.md)
 * [Get data for Data Activator from Power BI](data-activator-get-data-power-bi.md)
