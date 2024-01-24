@@ -30,4 +30,4 @@ By default, the **Tenant settings** for Fabric OpenAI are disabled. Ask your ten
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+- [About tenant settings](about-tenant-settings.md)
