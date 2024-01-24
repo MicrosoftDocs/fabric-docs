@@ -26,7 +26,6 @@ The following tables summarizes the available data connectors, tools, and integr
 | [Azure Functions](#azure-functions) | **Export**<br />**Ingestion** |  | First party | Workflow integrations |
 | [Azure Stream Analytics](#azure-stream-analytics) | **Ingestion** | :heavy_check_mark: | First party | Event processing |
 | [Logstash](#logstash) | **Ingestion** |  | [Open source](https://github.com/Azure/logstash-output-kusto/) | Logs |
-| [Matlab](#matlab) | **Ingestion** |  |  | Logs |
 | [NLog](#nlog) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/Azure/azure-kusto-nlog-sink) | Telemetry, Logs, Metrics |
 | [Open Telemetry](#open-telemetry) | **Ingestion** | :heavy_check_mark: | [Open source](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/exporter/azuredataexplorerexporter) | Traces, Metrics, Logs |
 | [Power Automate](#power-automate) | **Export**<br />**Ingestion** |  | First party | Data orchestration |
@@ -141,13 +140,6 @@ The following table summarizes the available connectors and their capabilities:
 * **Repository:** Microsoft Azure - https://github.com/Azure/logstash-output-kusto/
 * **Documentation:** [Get data from Logstash](/azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric)
 * **Community Blog:** [How to migrate from Elasticsearch to Azure Data Explorer](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/how-to-migrate-from-elasticsearch-to-azure-data-explorer/ba-p/1621539/)
-
-### Matlab
-
-MATLAB is a programming and numeric computing platform used to analyze data, develop algorithms, and create models. You can get an authorization token in MATLAB for querying your data in Azure Data Explorer.
-
-* **Functionality:** Query
-* **Documentation:** [Query data using Matlab](/azure/data-explorer/query-matlab?context=/fabric/context/context-rta&pivots=fabric)
 
 ### NLog
 
