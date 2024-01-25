@@ -20,13 +20,13 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Capacity:** Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different items consume different capacity at a certain time. Fabric offers capacity through the Fabric SKU and Trials. For more information, see [What is capacity?](../enterprise/licenses.md#capacity)
 
-- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory and Power BI.
+- **Experience:** A collection of capabilities targeted to a specific functionality. The Fabric experiences include Synapse Data Warehouse, Synapse Data Engineering, Synapse Data Science, Synapse Real-Time Analytics, Data Factory, and Power BI.
 
 - **Item:** An item a set of capabilities within an experience. Users can create, edit, and delete them. Each item type provides different capabilities. For example, the Data Engineering experience includes the lakehouse, notebook, and Spark job definition items.
 
 - **Tenant:** A tenant is a single instance of Fabric for an organization and is aligned with a Microsoft Entra ID.
 
-- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that leverages capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
+- **Workspace:** A workspace is a collection of items that brings together different functionality in a single environment designed for collaboration. It acts as a container that uses capacity for the work that is executed, and provides controls for who can access the items in it. For example, in a workspace, users create reports, notebooks, semantic models, etc. For more information, see [Workspaces](workspaces.md) article.
 
 ## Synapse Data Engineering
 
@@ -64,11 +64,11 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **SQL analytics endpoint:** Each Lakehouse has a SQL analytics endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
-- **Synapse Data Warehouse:** The Synapse Data Warehouse functionality is a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
+- **Synapse Data Warehouse:** The Synapse Data Warehouse functions as a traditional data warehouse and supports the full transactional T-SQL capabilities you would expect from an enterprise data warehouse. For more information, see [Synapse Data Warehouse](../data-warehouse/data-warehousing.md#synapse-data-warehouse).
 
 ## Synapse Real-Time Analytics
 
-- **KQL database:** The KQL database is the representation of a database holding data in a format to execute a KQL query against it. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
+- **KQL database:** The KQL database holds data in a format that you can execute KQL queries against. For more information, see [Query a KQL database](../real-time-analytics/create-database.md).
 
 - **KQL Queryset:** The KQL Queryset is the item used to run queries, view results, and manipulate query results on data from your Data Explorer database. The queryset includes the databases and tables, the queries, and the results. The KQL Queryset allows you to save queries for future use, or export and share queries with others. For more information, see [Query data in the KQL Queryset](../real-time-analytics/kusto-query-set.md)
 
@@ -78,7 +78,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Shortcut:** Shortcuts are embedded references within OneLake that point to other file store locations. They provide a way to connect to existing data without having to directly copy it. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
-## Next steps
+## Related content
 
 - [Navigate to your items from Microsoft Fabric Home page](fabric-home.md)
 - [Discover data items in the OneLake data hub](onelake-data-hub.md)

@@ -24,6 +24,6 @@ You see the Data Engineering or Data Science experience in the product switcher 
 
 Environments, a specialized type for storing Spark settings such as Spark runtime, differ from Spark notebooks or other Data Engineering items that involve customer data. Environments don't consume capacity, even if created by users. Don't take any further action until Microsoft implements a gating mechanism through a tenant setting.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

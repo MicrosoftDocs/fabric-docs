@@ -24,6 +24,6 @@ After a user drops a table in the Data Warehouse using a TSQL query, the corresp
 
 None
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

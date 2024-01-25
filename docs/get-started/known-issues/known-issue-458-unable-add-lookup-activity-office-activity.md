@@ -24,6 +24,6 @@ Office 365 activity hangs indefinitely when output of Lookup activity is added a
 
 Wrap the output of the lookup activity in a string, for example @string(activity('Lookup 1').output.firstRow).
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

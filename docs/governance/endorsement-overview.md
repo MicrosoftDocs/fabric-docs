@@ -41,7 +41,7 @@ The following image illustrates how endorsed, promoted, and certified semantic m
 
 All Fabric items can be endorsed except for Power BI dashboards.
 
-## Next steps
+## Related content
 
 * [Promote or certify Fabric content](../get-started/endorsement-promote-certify.md)
 * [Enable certification for your organization](../admin/endorsement-setup.md) (Fabric admins)

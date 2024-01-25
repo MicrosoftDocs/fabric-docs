@@ -130,7 +130,7 @@ Limitations to be aware of:
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 
-## Next steps
+## Related content
 
 * [Create workspaces](create-workspaces.md)
 * [Give users access to workspaces](give-access-workspaces.md)

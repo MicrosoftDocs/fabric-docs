@@ -26,6 +26,6 @@ Your data warehouse or SQL analytics endpoint fails to load in the portal with t
 
 If you're impacted, use a client tool such as SQL Server Management Studio or Azure Data studio to query the data warehouse.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

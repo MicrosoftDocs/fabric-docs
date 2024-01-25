@@ -195,7 +195,7 @@ The `add_measure` operation performs these steps:
 - **Computes one or more measures** at the group by level.
 - **Filters** the result by the existing rows in the FabricDataFrame.
 
-## Next steps
+## Related content
 
 - [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)

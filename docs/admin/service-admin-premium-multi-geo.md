@@ -1,5 +1,5 @@
 ---
-title: Multi-Geo support for Fabric Premium
+title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: KesemSharabi
 ms.author: kesharab
@@ -13,9 +13,9 @@ ms.date: 11/23/2023
 LocalizationGroup: Premium
 ---
 
-# Configure Multi-Geo support for Fabric Premium
+# Configure Multi-Geo support for Fabric
 
-Multi-Geo is a Fabric Premium feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric Premium customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
+Multi-Geo is a Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 Sovereign clouds support Multi-Geo across regions within that cloud.
 
