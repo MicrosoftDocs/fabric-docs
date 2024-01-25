@@ -195,7 +195,7 @@ The following tables contain more information about the copy activity in Amazon 
 | **Data store type** |Your data store type.| **External**|Yes|/|
 | **Connection** |Your connection to the destination data store.|\<your Amazon S3 connection> |Yes|connection|
 | **Connection type** |Select a type for your connection.|**Amazon S3**|Yes|/|
-| **File path** | The folder/file path to the destination file. | < file path> | Yes |/ |
+| **File path** | The folder/file path to the destination file. | <folder/file path> | Yes |/ |
 | **Bucket** | The S3 bucket name. | \<your bucket name> |Yes|bucketName|
 | **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
 | **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
