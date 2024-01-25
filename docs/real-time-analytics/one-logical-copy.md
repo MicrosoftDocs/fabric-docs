@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/11/2024
+ms.date: 01/21/2024
 ---
 # One logical copy (Preview)
 
@@ -46,11 +46,42 @@ You can enable data availability either on a KQL database or table level.
 
     :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
 
-1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few minutes for the data to be available in OneLake.
+1. Enable the feature by toggling the button to **Active**, then select **Done**. The database refreshes automatically. It might take up to a few  minutes for the data to be available in OneLake.
 
     :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
 You've enabled data availability in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+
+### View files
+
+When you turn on OneLake availability on a table level, a delta log folder and parquet files are created. You can view the files that were made available in OneLake without changing experiences.
+
+To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
+
+:::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table. The option titled View files is highlighted.":::
+
+#### Delta log folder
+
+Select the table **_delta_log** to view the JSON files that were made available in OneLake.
+
+Select the JSON file to view the metadata of the table.
+
+To view the properties of the Delta folder, hover over the folder and then select the **More menu [...]** > **Properties**. Select the copy icon to copy the file URL or the Relative path. 
+
+#### Parquet
+
+the parquet file (but when I tried I couldn't see the parquet file) and the delta_log folder. You can also select **Properties** to view the parquet file properties, you can also copy the OneLake URL, the relative path, and the date it was last modified.
+
+If you open the delta log folder:
+
+You can view the JSON files inside it. Every time you ingest data, a new JSON file is created in the delta log folder on the tables that have OneLake availability enabled on them.
+You also have the option to view the properties of the json file. 
+You can also open the json file to view it. You can see the schema for example.
+
+> [!IMPORTANT]
+> It might take up to a few hours for the parquet file to appear in the list if you recently enabled availability in OneLake.
+
+If OneLake availability isn't enabled, it shows: Empty state with a button that says **Activate now**, which is a one-click experience for activating OneLake availability of the selected table.
 
 ## Related content
 
