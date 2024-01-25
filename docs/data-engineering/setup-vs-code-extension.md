@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 01/24/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -22,9 +22,9 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
-- [Conda](https://docs.conda.io/en/latest/miniconda.html)
-- [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- Install Java Runtime Environment from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.
+- Install [Conda](https://docs.conda.io/en/latest/miniconda.html)
+- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 After you have installed the required software, you must update the operating system properties.
 
