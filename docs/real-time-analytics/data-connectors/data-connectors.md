@@ -1,5 +1,5 @@
 ---
-title: Overview of data integrations
+title: Overview of data connectors
 description: Learn about the available data integrations.
 ms.reviewer: aksdi
 ms.author: shsagir
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 01/23/2024
 # CustomerIntent: As a data ingestor, I want to know what data connectors and tools are available, so that I can choose the right one for my use case.
 ---
-# Data integrations overview
+# Data connectors overview
 
 Data ingestion is the process used to load data from one or more sources into a Real-Time Analytics KQL database in Microsoft Fabric. Once ingested, the data becomes available for [query](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric). Real-Time Analytics provides several connectors for data ingestion.
 
