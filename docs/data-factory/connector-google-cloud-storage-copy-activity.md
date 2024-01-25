@@ -4,7 +4,7 @@ description: This article explains how to copy data using Google Cloud Storage i
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 01/24/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -20,7 +20,7 @@ This article outlines how to use the copy activity in data pipeline to copy data
 The following setup is required on your Google Cloud Storage account:
 
 1. Enable interoperability for your Google Cloud Storage account.
-2. Set the default project that contains the data you want to copy from the target GCS bucket.
+2. Set the default project that contains the data you want to copy from the target Google Cloud Storage bucket.
 3. Create a service account and define the right levels of permissions by using Cloud IAM on GCP.
 4. Generate the access keys for this service account.
 
@@ -71,7 +71,7 @@ The following properties are **required**:
 - **Data store type**: Select **External**.
 - **Connection**:  Select a **Google Cloud Storage** connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
 - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
-- **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to [Supported format](#supported-format) for detailed information.
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -79,25 +79,30 @@ Under **Advanced**, you can specify the following fields:
 
     - **File path**: If you choose this type, the data can be copied from the given bucket or folder/file path specified in **File path**.
 
-    - **Prefix**: Prefix for the GCS key name under the given bucket configured to filter source GCS files. GCS keys whose names start with `given_bucket/this_prefix` are selected. It utilizes GCS's service-side filter, which provides better performance than a wildcard filter.
+    - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
+    - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
+    - **Prefix**: Prefix for the Google Cloud Storage key name under the specified bucket to filter source Google Cloud Storage files. Google Cloud Storage keys whose names start with `given_bucket/this_prefix` are selected. It utilizes Google Cloud Storage's service-side filter, which provides better performance than a wildcard filter.
 
-       :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix." lightbox="./media/connector-google-cloud/prefix.png":::
+        :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix.":::
 
-    - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
+    - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
+        - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
+        - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
+    
+          Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-      Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
+          :::image type="content" source="./media/connector-google-cloud/wildcard-paths.png" alt-text="Screenshot showing wildcard file path.":::
 
-        - Wildcard folder path: Specify the folder path with wildcard characters under the given bucket to filter source folders.
+            - *Wildcard folder path*: Specify the folder path with wildcard characters under the given bucket to filter source folders.
+    
+            - *Wildcard file name*: Specify the file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
 
-           :::image type="content" source="./media/connector-google-cloud/wildcard-folder-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-google-cloud/wildcard-folder-path.png":::
+    - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
 
-        - Wildcard file name: Specify the file name with wildcard characters under the given bucket and folder path (or wildcard folder path) to filter source files.
+       :::image type="content" source="./media/connector-google-cloud/list-of-files.png" alt-text="Screenshot showing list of files.":::
 
-    - **List of files**: Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured in **File path**.
-
-       When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
-
-       :::image type="content" source="./media/connector-google-cloud/path-to-file-list.png" alt-text="Screenshot showing list of files." lightbox="./media/connector-google-cloud/path-to-file-list.png":::
+    - **Folder path**: Specify the path to the folder under given bucket. It is required.
+    - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
 
 - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when this checkbox is selected, and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination.
 
@@ -105,6 +110,29 @@ Under **Advanced**, you can specify the following fields:
 This property is only valid in the binary files copy scenario.
 
 - **Max concurrent connection**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
+
+### Destination
+
+The following properties are supported for Google Cloud Storage under the **Destination** tab of a copy activity.
+
+:::image type="content" source="./media/connector-google-cloud/destination.png" alt-text="Screenshot showing destination tab and the list of properties.":::
+
+The following properties are **required**:
+
+- **Data store type**: Select **External**.
+- **Connection**: Select an Google Cloud Storage connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
+- **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
+
+Under **Advanced**, you can specify the following fields:
+
+- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose a behavior from the drop-down list.
+
+  - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
+  - **Merge files**: Merges all files from the source folder to one file. If the file name is specified, the merged file name is the specified name. Otherwise, it's an auto-generated file name.
+  - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of source file to source folder is identical to the relative path of target file to target folder.
+
+- **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
 ### Mapping
 
@@ -123,13 +151,42 @@ The following tables contain more information about the copy activity in Google 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
 |**Data store type**|Your data store type.|**External**|Yes|/|
-|**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**File path** | If you choose this type, the data can be copied from the given bucket or folder/file path specified in **File path**.|Yes |container <br> fileName|
-|**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path<br>•List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• path to file list|
+|**Connection** |Your connection to the source data store.|\<your Google Cloud Storage connection> |Yes|connection|
+| **File path type** | The file path type used to get source data. | • **File path**<br>• **Prefix**<br>• **Wildcard file path**<br>• **List of files**| Yes |/ |
+|*For **File path*** |||||
+| **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
+| **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
+| **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
+|*For **Prefix*** |||||
+| **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
+| **Prefix** | The prefix for the Google Cloud Storage key name under the given bucket to filter source Google Cloud Storage files. | \<your prefix> |No|prefix|
+|*For **Wildcard file path*** |||||
+| **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
+| **Wildcard Folder Path** | The folder path with wildcard characters under the specified bucket to filter source folders. | \<your folder path with wildcard characters> |No|wildcardFolderPath |
+| **Wildcard Filename** | The file name with wildcard characters under the specified bucket and folder path (or wildcard folder path) to filter source files. | \<your file name with wildcard characters> |Yes|wildcardFileName |
+|*For **List of files*** |||||
+| **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
+| **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
+| **Path to file list** | Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line. | < file list path > | No | fileListPath |
+||||||
+| **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when this checkbox is selected, and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination.| Selected or unselect |No |recursive|
 |**Delete files after completion** |Indicates whether the binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll note some files have already been copied to the destination and deleted from the source, while others are still remaining on the source store. This property is only valid in binary files copy scenario.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
-## Related content
+### Destination information
+
+|Name |Description |Value|Required |JSON script property |
+|:---|:---|:---|:---|:---|
+| **Data store type** |Your data store type.| **External**|Yes|/|
+| **Connection** |Your connection to the destination data store.|\<your Google Cloud Storage connection> |Yes|connection|
+| **File path** | The folder/file path to the destination file. | < file path> | Yes |/ |
+| **Bucket** | The Google Cloud Storage bucket name. | \<your bucket name> |Yes|bucketName|
+| **Directory** |The path to the folder under the specified bucket. | \<your folder name> |No|folderpath|
+| **File name** |The file name under the specified bucket and folder path. | \<your file name> |No|fileName|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
+
+## Next steps
 
 - [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md)
