@@ -142,7 +142,7 @@ In this section, we use a Script activity to run the stored procedure created in
 
    :::image type="content" source="media/tutorial-pre-process-data-with-stored-procedure-load-into-lakehouse/view-lakehouse-table.png" alt-text="Screenshot showing the results in the SynapseNamesTable in Lakehouse.":::
 
-## Next steps
+## Related content
 
 This sample shows you how to preprocess data with a stored procedure before loading the results into Lakehouse.  You learned how to:
 

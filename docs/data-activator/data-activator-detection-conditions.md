@@ -84,7 +84,7 @@ The condition timer indicates how long, or how many times, the condition must be
 
 
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

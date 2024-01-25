@@ -140,7 +140,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
 Congratulations! You've successfully learned how to build a report by using Eventstream to ingest and monitor your IoTHub data stream. Additionally, Eventstream offers the capability to process your data before it's sent to your database.
 
-## Next steps
+## Related content
 
 If you want to learn more about ingesting and processing real-time using Eventstream, check out the following resources:
 

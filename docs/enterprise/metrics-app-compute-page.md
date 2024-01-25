@@ -127,6 +127,18 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 >[!NOTE]
 >Non billable usage does not drain capacity or lead to throttling or auto scale.
 
+## System Events
+
+Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md).
+
+The system events table displays the following elements:
+
+  * **Time** - The time the capacity was paused or resumed.
+  
+  * **State** - The state of the capacity. *Suspended* indicates that the capacity was paused. *Active* indicates that the capacity was resumed.
+  
+  * **State Change Reason** - Displays the event trigger.
+
 ## Matrix by item and operation
 
 A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed in this section. The colors in the table represent your *performance delta*.
