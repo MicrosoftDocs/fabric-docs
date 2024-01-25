@@ -70,21 +70,16 @@ The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select a **Google Cloud Storage** connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
-- **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
-- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
-
-Under **Advanced**, you can specify the following fields:
-
 - **File path type**: You can choose **File path**, **Prefix**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
 
     - **File path**: If you choose this type, the data can be copied from the given bucket or folder/file path specified in **File path**.
 
     - **Prefix**: If you choose this type, specify the **Bucket** and **Prefix**.
-    - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
-    - **Prefix**: Prefix for the Google Cloud Storage key name under the specified bucket to filter source Google Cloud Storage files. Google Cloud Storage keys whose names start with `given_bucket/this_prefix` are selected. It utilizes Google Cloud Storage's service-side filter, which provides better performance than a wildcard filter.
-
-        :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix.":::
-
+        - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
+        - **Prefix**: Prefix for the Google Cloud Storage key name under the specified bucket to filter source Google Cloud Storage files. Google Cloud Storage keys whose names start with `given_bucket/this_prefix` are selected. It utilizes Google Cloud Storage's service-side filter, which provides better performance than a wildcard filter.
+    
+            :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix.":::
+    
     - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
         - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
         - **Wildcard paths**: Specify the folder or file path with wildcard characters under your given bucket to filter your source folders or files.
@@ -101,13 +96,35 @@ Under **Advanced**, you can specify the following fields:
 
        :::image type="content" source="./media/connector-google-cloud/list-of-files.png" alt-text="Screenshot showing list of files.":::
 
-    - **Folder path**: Specify the path to the folder under given bucket. It is required.
-    - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
+        - **Folder path**: Specify the path to the folder under given bucket. It is required.
+        - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
 
 - **Recursively**: Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when this checkbox is selected, and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination.
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
-- **Delete files after completion**：Indicates whether the binary files are deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when a copy activity fails, you'll note that some files have already been copied to the destination and deleted from the source, while others are still remaining on source store.
-This property is only valid in the binary files copy scenario.
+Under **Advanced**, you can specify the following fields:
+
+- **Filter by last modified**: Files are filtered based on the last modified dates that you specified. This property doesn't apply when you configure your file path type as **List of files**.
+  - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
+  - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
+
+  When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
+
+- **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
+
+  - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
+
+    If it is not specified, by default,
+    - When you use file path or list of files on source, partition root path is the path that you configured.
+    - When you use wildcard folder filter, partition root path is the sub-path before the first wildcard.
+    - When you use prefix, partition root path is sub-path before the last "/".
+
+    For example, assuming you configure the path as `root/folder/year=2020/month=08/day=27`:
+
+    - If you specify partition root path as `root/folder/year=2020`, copy activity will generate two more columns month and day with value "08" and "27" respectively, in addition to the columns inside the files.
+    - If partition root path is not specified, no extra column will be generated.
+
+    :::image type="content" source="./media/connector-google-cloud/enable-partition-discovery.png" alt-text="Screenshot showing Enable partition discovery.":::
 
 - **Max concurrent connection**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
@@ -171,7 +188,9 @@ The following tables contain more information about the copy activity in Google 
 ||||||
 | **File format** | The file format for your source data. For the information of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.  | / | Yes | / |
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when this checkbox is selected, and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination.| Selected or unselect |No |recursive|
-|**Delete files after completion** |Indicates whether the binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll note some files have already been copied to the destination and deleted from the source, while others are still remaining on the source store. This property is only valid in binary files copy scenario.|Selected or unselect|No |deleteFilesAfterCompletion|
+| **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
+| **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
+| **Partition root path** | When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
 |**Max concurrent connection** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 
 ### Destination information
