@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
-ms.date: 12/12/2023
+ms.date: 01/25/2024
 ms.custom:
   - build-2023
   - ignite-2023-fabric
@@ -46,6 +46,7 @@ The list has three tabs to narrow down the list of data items.
 | **All**                  | Data items that you're allowed to find.  |
 | **My data**              | Data items that you own.      |
 | **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Favorites** | Data items that you've marked as a favorite. |
 
 The columns of the list are described below.
 
