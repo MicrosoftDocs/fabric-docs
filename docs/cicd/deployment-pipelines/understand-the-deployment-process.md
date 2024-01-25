@@ -9,7 +9,7 @@ ms.custom:
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 01/18/2024
+ms.date: 12/17/2023
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -146,14 +146,15 @@ When you deploy content from one pipeline stage to another, the copied content c
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Paginated reports
 * Reports
+* Semantic models (except for Direct Lake semantic models)
 * [Warehouse](../../data-warehouse/data-warehousing.md)
-* Semantic models
 
 ### Unsupported items
 
 Deployment pipelines doesn't support the following items:
 
 * Datasets that don't originate from a *.pbix*
+* Direct Lake semantic model
 * PUSH datasets
 * Streaming dataflows
 * Reports based on unsupported semantic models

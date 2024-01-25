@@ -23,6 +23,9 @@ When you run a Data Pipeline with Data Factory in Microsoft Fabric, Fabric Capac
 - Pipeline services for orchestration of _activity runs_: Your charge is based on the number of activity runs that are orchestrated.
 - Data Movement service for Copy activity runs. You are charged based on the Capacity Units consumed during the Copy activity execution duration.
 
+> [!NOTE]
+> We are currently experiencing an issue in Fabric Data Factory capacity unit emissions resulting in very low billing for data pipelines. We expected to have this issue corrected shortly. In the interim, you can expect to see much lower than expected CUs and billing for your data pipelines in Fabric Data Factory.
+
 ## Pricing model
 
 The following table shows a breakdown of the pricing model for data pipelines within Data Factory in Microsoft Fabric:
@@ -55,7 +58,7 @@ The following table can be used as a template to compute estimated costs using F
 
 **Total cost**: (X + Y CU-hour) * (Fabric capacity per unit price)
 
-## Next steps
+## Related content
 
 - [Pricing example scenarios](pricing-overview.md#pricing-examples)
 - [Pricing Dataflow Gen2](pricing-dataflows-gen2.md)

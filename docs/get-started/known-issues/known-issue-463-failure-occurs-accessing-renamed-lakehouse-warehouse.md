@@ -26,6 +26,6 @@ You'll see an HTTP status code 500 failure after renaming your Lakehouse or Ware
 
 There's no workaround at this time. We are aware of the issue and are working on a fix. We apologize for the inconvenience caused and encourage you not to rename the Lakehouse or Warehouse items.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

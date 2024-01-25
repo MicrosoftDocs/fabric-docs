@@ -239,7 +239,7 @@ Parameters can be used to control the behavior of a pipeline and its activities.
     :::image type="content" source="./media/copy-data-activity/select-parameter.png" alt-text="Screenshot showing selecting parameter.":::
 
 
-## Next steps
+## Related content
 
 - [Connector overview](connector-overview.md)
 - [How to monitor pipeline runs](monitor-pipeline-runs.md)

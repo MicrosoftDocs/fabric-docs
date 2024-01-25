@@ -296,7 +296,7 @@ qa_df = spark.createDataFrame(
 
 display(completion.transform(qa_df))
 ```
-## Next steps
+## Related content
 
 - [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
 - [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)

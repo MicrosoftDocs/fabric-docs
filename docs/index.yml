@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 12/19/2023
+  ms.date: 01/16/2024
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -286,12 +286,12 @@ productDirectory:
       imageSrc: ./media/copilot-icon.svg
       links:
         - url: get-started/copilot-fabric-overview.md
-          text: Introduction to copilot in Fabric
-        - url: get-started/copilot-fabric-enable.md
-          text: Enable copilot
+          text: Introduction to Copilot in Fabric
+        - url: get-started/copilot-privacy-security.md
+          text: Copilot privacy, security, and responsible use
         - url: get-started/copilot-notebooks-overview.md
           text: Copilot for notebooks
-        - url: get-started/copilot-privacy-security.md
+        - url: get-started/copilot-fabric-overview.md
           text: See more
 
     # Card
@@ -301,11 +301,13 @@ productDirectory:
       links:
         - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
           text: What is Retail data solutions?
+        - url: /industry/sustainability/sustainability-data-solutions-overview
+          text: What is Sustainability data solutions? 
         - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
           text: Deploy Retail data solutions
-        - url: /industry/retail/retail-data-solutions/troubleshoot-retail-data-solutions
-          text: Troubleshoot Retail data solutions
-        - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
+        - url: /industry/sustainability/sustainability-data-solutions-deploy
+          text: Deploy Sustainability data solutions
+        - url: /industry/industry-data-solutions-fabric
           text: See more
 
 

@@ -83,7 +83,7 @@ Save as in Fabric pipeline provides a convenient way for you to duplicate an exi
 
 :::image type="content" source="./media/connector-differences/save-as-button.png" alt-text="Screenshot showing save as in Fabric pipeline.":::
 
-## Next steps
+## Related content
 
 - [Differences between Dataflow Gen1 Gen2](dataflows-gen2-overview.md)
 - [Build your first data integration](transform-data.md)

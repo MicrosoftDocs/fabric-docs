@@ -24,6 +24,6 @@ Selecting the **View account** link in Account manager doesn't show your account
 
 You can see this information via the Office 365 portal or [directly access your account information](https://portal.office.com/account#subscriptions).
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

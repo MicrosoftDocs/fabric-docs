@@ -61,6 +61,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/get-started/copilot-fabric-enable.md",
+          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
           "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
           "redirect_document_id": false
@@ -249,6 +254,11 @@
           "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
           "redirect_url": "/fabric/real-time-analytics/notebooks",
           "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
+          "redirect_document_id": true
         }
     ]
 }

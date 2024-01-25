@@ -426,7 +426,7 @@ display(
     )
 )
 ```
-## Next steps
+## Related content
 
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

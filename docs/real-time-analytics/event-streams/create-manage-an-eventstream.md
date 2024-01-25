@@ -76,7 +76,7 @@ The following screenshot shows an eventstream with its source and destination co
 4. **Configuration and modification pane**: This pane allows you to configure or modify a specific source or destination.
 5. **Bottom pane for information, data preview, data insights, and runtime logs**: For each tile (node), the data preview shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain sources or destinations. It also provides metrics for you to monitor the data insights for certain sources or destinations, such as input events, output events, incoming messages, outgoing messages, etc.
 
-## Next steps
+## Related content
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

@@ -3,6 +3,12 @@ items:
   href: index.yml
 - name: Overview
   items:
+  - name: Administration overview
+    href: admin-overview.md  
+  - name: Security overview
+    href: ../security/security-overview.md
+  - name: Governance and compliance overview
+    href: ../governance/governance-compliance-overview.md          
   - name: What is Microsoft Fabric admin?
     href: microsoft-fabric-admin.md
   - name: What is the admin portal?
@@ -28,14 +34,10 @@ items:
       href: monitoring-workspace.md
     - name: Feature usage and adoption report
       href: feature-usage-adoption.md
-  - name: Logs
-    items:    
-    - name: Track user activities in Microsoft Fabric
-      href: track-user-activities.md
-    - name: Operation list
-      href: operation-list.md           
   - name: Use the Monitoring hub
     href: monitoring-hub.md 
+  - name: Track user activities
+    href: track-user-activities.md
   - name: Find users who have signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
@@ -97,6 +99,8 @@ items:
       href: fabric-switch.md
     - name: Help and support settings
       href: service-admin-portal-help-support.md
+    - name: Domain management settings
+      href: service-admin-portal-domain-management-settings.md
     - name: Workspace settings
       href: portal-workspace.md
     - name: Information protection
