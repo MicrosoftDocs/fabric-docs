@@ -39,11 +39,11 @@ The data items list displays all the data items you have access to. To shorten t
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
-The list has three tabs to narrow down the list of data items.
+The list has four tabs to narrow down the list of data items.
 
 |Tab  |Description  |
 |:-------------------------|:----------------------------------------------------|
-| **All**                  | Data items that you're allowed to find.  |
+| **All data**                  | Data items that you're allowed to find.  |
 | **My data**              | Data items that you own.      |
 | **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
 | **Favorites** | Data items that you've marked as favorites. |
