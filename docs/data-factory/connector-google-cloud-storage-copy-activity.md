@@ -24,7 +24,7 @@ The following setup is required on your Google Cloud Storage account:
 3. Create a service account and define the right levels of permissions by using Cloud IAM on GCP.
 4. Generate the access keys for this service account.
 
-   :::image type="content" source="media/connector-google-cloud/google-storage-cloud-settings.png" alt-text="Screenshot showing the access key for Google Cloud Storage." lightbox="media/connector-google-cloud/google-storage-cloud-settings.png":::
+   :::image type="content" source="media/connector-google-cloud/google-storage-cloud-settings.png" alt-text="Screenshot showing the access key for Google Cloud Storage.":::
 
 ## Required permissions
 
@@ -64,7 +64,7 @@ For **General** tab configuration, go to [General](activity-overview.md#general-
 
 The following properties are supported for Google Cloud Storage under the **Source** tab of a copy activity.
 
-:::image type="content" source="./media/connector-google-cloud/source.png" alt-text="Screenshot showing source tab and the list of properties." lightbox="./media/connector-google-cloud/source.png":::
+:::image type="content" source="./media/connector-google-cloud/source.png" alt-text="Screenshot showing source tab and the list of properties.":::
 
 The following properties are **required**:
 
