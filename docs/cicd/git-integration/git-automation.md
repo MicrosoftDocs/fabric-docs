@@ -12,7 +12,9 @@ ms.date: 01/18/2024
 
 The Microsoft Fabric [Git integration](intro-to-git-integration.md) tool enables teams to work together using source control to build an efficient and reusable release process for their Fabric content.
 
-The [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) let you automate Fabric procedures and processes so your organization can complete tasks more quickly and with fewer errors. This efficiency leads to cost savings and improved productivity.
+With [Microsoft Fabric REST APIs](/rest/api/fabric/articles/using-fabric-apis) you can automate Fabric procedures and processes to complete tasks faster and with fewer errors. This efficiency leads to cost savings and improved productivity.
+
+This article describes how to use the [Git integration REST APIs](/rest/api/fabric/core/git) to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool.
 
 <!--- 
 To achieve continuous integration and continuous delivery (CI/CD) of content, many organizations use automation tools, including [Azure DevOps](/azure/devops/user-guide/what-is-azure-devops). Organizations that use Azure DevOps, can use the [Power BI automation tools](#use-the-power-bi-automation-tools-extension) extension, which supports many of the Git integration API operations.
@@ -36,28 +38,22 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 ## Before you begin
 
-Before you use the Git integration APIs:
+To use the Git integration APIs you need a Fabric license. If you don't have a license, you can [sign up for a free trial](https://powerbi.microsoft.com/fabric/).
+
+You can use the REST APIs without PowerShell, but the scrips in this article use [PowerShell](/powershell/scripting/overview). To run the scripts, you need to install the following:
 
 * Install [PowerShell](/powershell/scripting/install/installing-powershell)
 * Install [Azure PowerShell Az module](/powershell/azure/install-azure-powershell)
 
-## Integrate your workspace with Azure DevOps
-
-Automate the integration process from within your [release pipeline in Azure DevOps](/azure/devops/pipelines), using **PowerShell**.
-
-You can also use other [Fabric REST API](/rest/api/fabric/articles) calls, to complete related operations such as creating a workspace.
-
 ### Examples
 
-You can use the following PowerShell scripts to understand how to perform several automation processes. To view or copy the text in a PowerShell sample, use the links in this section.
-
-You can also download the entire [`Fabric-Samples`](https://github.com/microsoft/fabric-samples) GitHub repo.
+Use the following PowerShell scripts to understand how to perform several common automation processes. To view or copy the text in a PowerShell sample, use the links in this section. You can also see all the examples in the [`Fabric end to end Git integration samples`](https://github.com/PierreCardo/fabric-samples/tree/AddGitIntegrationPowerShellSamples/e2e-samples) GitHub repo.
 
 #### Commit all
 
-This section gives an examples of how to programmatically commit all changes from the workspace to Git.
+This section gives a step by step description of how to programmatically commit all changes from the workspace to Git.
 
-[Commit all changes to Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-CommitSelective.ps1)
+The script is available at [Commit all changes to Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-GitIntegration-CommitAll.ps1)
 
 1. **Sign in and get access token** - Sign in to Fabric as a *user* (not a service principal). Use the [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) command to sign in.
 To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accounts/get-azaccesstoken) command.
@@ -84,7 +80,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     }
     ```
 
-1. **Describe the request body** - In this part of the script you specify which items (such as reports and dashboards) you're deploying.
+1. **Describe the request body** - In this part of the script you specify which items (such as reports and dashboards) to deploy.
 
     ```powershell
     $commitToGitBody = @{ 		
@@ -108,27 +104,39 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     $retryAfter = $commitToGitResponse.Headers['Retry-After']   
     ```
 
-#### Connect and Sync
-
-* [Connect and sync with Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-ConnectAndUpdateFromGit.ps1)
-
-1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
-1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
-1. Based on the response from the Initialize Connection API, call either the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) or [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the sync, or do nothing if no action required.
-
 #### Selective Commit
 
-[Commit select changes to Git](https://github.com/microsoft/PowerBI-Developer-Samples/blob/master/PowerShell%20Scripts/DeploymentPipelines-SelectiveDeploy.ps1)
+In this section we describe the steps involved in committing only specific changes from the workspace to Git.
 
-1. Select the specific items that were changed and need to be committed.
+You can find the complete script in [Commit select changes to Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-CommitSelective.ps1)
+
+1. Log into Azure and get authentication.
+1. Connect to workspace.
+1. Call the [Get status](/rest/api/fabric/core/git/ge-status) API to see which items workspace were changed.
+1. Select the specific items to commit.
 1. Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
 
 #### Update from Git
 
+In this section we describe the steps involved in connecting and updating a workspace with the changes from Git. In this script update the workspace items with changes from Git, but we leave the Git repository unchanged.
+
 [Update workspace from Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-UpdateFromGit.ps1)
 
+1. Log into Azure and get authentication.
+1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
 1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from git request body.
 1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
+
+#### Connect and Sync
+
+In this section we describe the steps involved in connecting and syncing a workspace with Git. This script works in both directions. We commit changes from the workspace to Git *and* update workspace items with changes from Git.
+
+You can find the complete script in [Connect and sync with Git](https://github.com/PierreCardo/fabric-samples/blob/AddGitIntegrationPowerShellSamples/e2e-samples/GitIntegration-ConnectAndUpdateFromGit.ps1)
+
+1. Log into Azure and get authentication.
+1. Call the [Connect](/rest/api/fabric/core/git/connect) API to connect the workspace to a Git repository and branch.
+1. Call the [Initialize Connection](/rest/api/fabric/core/git/initialize-connection) API to initialize the connection between the workspace and the Git repository/branch.
+1. Based on the response from the Initialize Connection API, call either the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) or [Update From Git](/rest/api/fabric/core/git/update-from-git) API to complete the sync, or do nothing if no action required.
 
 #### Monitor the progress of long running operations
 
