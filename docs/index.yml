@@ -34,7 +34,7 @@ highlightedContent:
       url: admin/fabric-switch.md
     # Card
     - title: Fabric community conference
-      itemType: concept
+      itemType: whats-new
       url: https://fabricconf.com/#!/
     # Card
     - title: Develop with end-to-end tutorials
