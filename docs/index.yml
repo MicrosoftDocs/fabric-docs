@@ -33,13 +33,13 @@ highlightedContent:
       itemType: quickstart
       url: admin/fabric-switch.md
     # Card
+    - title: Fabric community conference
+      itemType: concept
+      url: https://fabricconf.com/#!/
+    # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
-    # Card
-    - title: Microsoft Fabric licenses
-      itemType: concept
-      url: enterprise/licenses.md 
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
