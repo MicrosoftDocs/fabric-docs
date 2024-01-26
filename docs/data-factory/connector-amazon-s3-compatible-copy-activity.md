@@ -43,6 +43,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
@@ -130,7 +131,7 @@ The following properties are supported for Amazon S3 Compatible under the **Dest
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Amazon S3 Compatible connection from the connection list. If no connection exists, then create a new Amazon connection by selecting **New**.
+- **Connection**: Select an Amazon S3 Compatible connection from the connection list. If no connection exists, then create a new Amazon S3 Compatible connection by selecting **New**.
 - **Connection type**: Select **Amazon S3 Compatible** for your connection type.
 - **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.

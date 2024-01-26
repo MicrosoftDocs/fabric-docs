@@ -42,6 +42,7 @@ For the configuration of each tab under copy activity, go to the following secti
 
 - [General](#general)  
 - [Source](#source)
+- [Destination](#destination)
 - [Mapping](#mapping)
 - [Settings](#settings)
 
