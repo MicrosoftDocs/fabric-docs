@@ -113,6 +113,9 @@ conceptualContent:
             - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
               itemType: training
               text: Skill up with the cloud skills challenge
+            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
+              itemType: training
+              text: Explore role-based learning paths
             - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
               itemType: training
               text: Explore end-to-end tutorials
