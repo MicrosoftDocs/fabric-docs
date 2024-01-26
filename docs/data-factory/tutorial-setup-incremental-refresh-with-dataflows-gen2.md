@@ -99,6 +99,9 @@ You have now created a dataflow to load data from an OData source into a lakehou
 
 This section adds a query to the dataflow to filter the data based on the data in the destination lakehouse. The query gets the maximum `OrderID` in the lakehouse at the beginning of the dataflow refresh and uses the maximum OrderId to only get the orders with a higher OrderId from to source to append to your data destination. This assumes that orders are added to the source in ascending order of `OrderID`. If this isn't the case, you can use a different column to filter the data. For example, you can use the `OrderDate` column to filter the data.
 
+>[!NOTE]
+> OData filters are applied within Fabric after the data is recieved from the data source, however, for database sources like SQL Server, the filter is applied in the query submitted to the back end data source, and only filtered rows are returned to the service.
+
 1. After the dataflow refreshes, reopen the dataflow you created in the previous section.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/open-dataflow.png" alt-text="Screenshot showing the open dataflow dialog.":::
