@@ -116,9 +116,9 @@ conceptualContent:
             - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
               text: Explore role-based learning paths
-            - url: get-started/end-to-end-tutorials
+            - url: get-started/end-to-end-tutorials.md
               itemType: training
-              text: Explore end-to-end tutorials
+              text: Explore Fabric's capabilities
           footerLink:
               url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               text: See more
