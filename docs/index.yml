@@ -116,7 +116,7 @@ conceptualContent:
             - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
               text: Explore role-based learning paths
-            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+            - url: get-started/end-to-end-tutorials
               itemType: training
               text: Explore end-to-end tutorials
           footerLink:
