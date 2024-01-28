@@ -3,9 +3,10 @@ title: Automate Git integration by using APIs and Azure DevOps
 description: Learn how to automate Git integration in the Microsoft Fabric Application lifecycle management (ALM) tool, by using APIs and Azure DevOps.
 author: mberdugo
 ms.author: monaberdugo
+ms.reviewer: Pierre, Nimrod
 ms.topic: conceptual
 ms.custom:
-ms.date: 01/18/2024
+ms.date: 01/28/2024
 ---
 
 # Automate Git integration by using APIs and Azure DevOps
