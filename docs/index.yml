@@ -33,13 +33,13 @@ highlightedContent:
       itemType: quickstart
       url: admin/fabric-switch.md
     # Card
+    - title: Join the Fabric community conference
+      itemType: whats-new
+      url: https://fabricconf.com/#!/
+    # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
-    # Card
-    - title: Microsoft Fabric licenses
-      itemType: concept
-      url: enterprise/licenses.md 
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
@@ -113,9 +113,12 @@ conceptualContent:
             - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
               itemType: training
               text: Skill up with the cloud skills challenge
-            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
-              text: Explore end-to-end tutorials
+              text: Explore role-based learning paths
+            - url: get-started/end-to-end-tutorials.md
+              itemType: training
+              text: Explore Fabric's capabilities
           footerLink:
               url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               text: See more

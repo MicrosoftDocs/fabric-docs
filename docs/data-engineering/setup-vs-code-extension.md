@@ -8,7 +8,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 01/24/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -22,17 +22,17 @@ Visual Studio (VS) Code is a one of the most popular lightweight source code edi
 
 Prerequisites for the Synapse VS Code extension:
 
-- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
-- [Conda](https://docs.conda.io/en/latest/miniconda.html)
-- [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- Install Java Runtime Environment from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.
+- Install [Conda](https://docs.conda.io/en/latest/miniconda.html).
+- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 After you have installed the required software, you must update the operating system properties.
 
 ### Windows
 
-1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed.
+1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JRE at this path `C:\Program Files\Eclipse Adoptium\jre-8.0.402.6-hotspot`, set the *JAVA_HOME* variable value to that path.
 
-2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory.
+2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory. The *condabin* folder could be in the folder where you installed and in this format `\miniconda3\condsbin`. Open the environment variables and add **%JAVA_HOME%/bin** and **condabin** paths to the **Path** variable.
 
 ### macOS
 

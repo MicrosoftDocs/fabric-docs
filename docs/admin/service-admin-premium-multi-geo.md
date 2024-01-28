@@ -9,7 +9,7 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/23/2023
+ms.date: 01/28/2024
 LocalizationGroup: Premium
 ---
 
@@ -60,7 +60,6 @@ The following items are stored in the Premium region when Multi-Geo is enabled:
 These items remain in the home region for the tenant:
 
 - Push datasets
-- Excel workbooks
 - Dashboard/report metadata: tile names, tile queries, and any other data
 - Service buses for gateway queries or scheduled refresh jobs
 - Permissions
