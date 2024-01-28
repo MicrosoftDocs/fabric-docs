@@ -32,7 +32,8 @@ To associate your KQL queryset with a database:
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 
-1. Select a database from the **OneLake data hub** window that appears.
+1. Under **Database**, select **V** to expand the database connections.
+1. Select **OneLake data hub** and then select a database to connect to.
 
     :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the Onelake data hub window showing a selected KQL database.":::
 

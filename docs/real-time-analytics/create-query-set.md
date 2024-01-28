@@ -34,7 +34,7 @@ The KQL Queryset exists within the context of a workspace. A new KQL queryset is
     > You can create multiple KQL Querysets in a single workspace.
 
 1. Select **Create**.
-1. In the **OneLake data hub** window that appears, select a KQL database with which to associate your KQL queryset.
+1. In the **OneLake data hub** window that appears, select a KQL database to connect to your KQL queryset.
 1. Select **Select**.
 
 :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a list of KQL databases.":::
