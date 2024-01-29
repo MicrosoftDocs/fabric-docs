@@ -140,8 +140,6 @@ The following properties are supported in the copy activity **Source** section w
 |**Quote character**|The single character to quote column values if it contains column delimiter. When **Quote character** is defined as empty string, it means there is no quote char and column value is not quoted, and escape character is used to escape the column delimiter and itself. |< your selected quote character > <br> **double quotes** `"` (by default) |No| quoteChar|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 |**Null value**|Specifies the string representation of null value. The default value is empty string.|< the string representation of null value > <br> empty string (by default) |No| nullValue|
-|**Skip line count**|Indicates the number of non-empty rows to skip when reading data from input files. If both **Skip line count** and **First row as header** are specified, the lines are skipped first and then the header information is read from the input file.|< your skip line count > |No|skipLineCount|
-
 
 ### Delimited text as destination
 
