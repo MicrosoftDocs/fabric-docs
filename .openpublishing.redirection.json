@@ -257,7 +257,7 @@
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
-          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-some-tables-that-failed",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
           "redirect_document_id": false
         },
         {
