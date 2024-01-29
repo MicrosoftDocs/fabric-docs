@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/17/2024
+ms.date: 01/29/2024
 ---
 
 # Understand the metrics app compute page
@@ -68,7 +68,7 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
 
-* *Filters are applied* - The visuals displays every 30-second timepoint.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 ### Throttling
 
@@ -107,7 +107,7 @@ Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-rib
 
 * *No filters applied* - Columns display the peak timepoint every six minutes.
 
-* *Filters are applied* - The visuals displays every 30-second timepoint.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 ### Overages
   
@@ -127,12 +127,9 @@ Once you select a column in the chart, you can use the *Explore* button to drill
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
-* *No filters applied* - Columns display the peak timepoint every 20 minutes. Each column has three peaks:
-    * Add percentage
-    * burndown percentage
-    * Cumulative percentage
+* *No filters applied* - Columns display the peak timepoint every 20 minutes. Each column has three colors that represent the overages elements.
 
-* *Filters are applied* - The visuals displays every 30-second timepoint.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
