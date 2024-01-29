@@ -23,23 +23,24 @@ It is recommended that you become familiar with the [Microsoft identity platform
 
 ### 1. From workload FE to workload BE
 
-An example of such communication is any data plane API- this will be done with a Subject token (Delegated token). 
-To be able to acquire a token in the workload FE, please read Authentication API md file, also please make sure you go over token validation in beauth md file.
+An example of such communication is any data plane API. This is be done with a Subject token (Delegated token).
+
+To be able to acquire a token in the workload FE, please read [Authentication API](./authentication-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](./backend-authentication.md).
 
 ### 2. From Fabric BE to workload BE
 
-An example of such communication is Create workload item.
-This will be done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see beauthdoc.md to learn more about this token).  
-For this communication to work, the user using this communication must give consent to the AAD application.
+An example of such communication is Create workload item. This is done with a SubjectAndApp token, which is a special token that includes an app token and a subject token combined (see [Backend authentication and authorization overview](./backend-authentication.md) to learn more about this token).
 
-### 3. From workload BE to Fabric BE 
+For this communication to work, the user using this communication must give consent to the Entra application.
 
-This will be done with a SubjectAndApp for workload control apis, for example ResolveItemPermissions, or with a Subject token for other Fabric APIs.
+### 3. From workload BE to Fabric BE
 
-### 4. From workload BE to external services 
+This is done with a SubjectAndApp for workload control APIs (for example, ResolveItemPermissions), or with a Subject token (for other Fabric APIs).
 
-An example of such communication is writing to a lakehouse file.
-This will be done with Subject token or an App token depending on the API.
-If you plan on communicating with services using a Subject token, make sure you are familiar with [On behalf of flows](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
+### 4. From workload BE to external services
 
-Please refer to setup.md to setup your environment to work with authentication.
+An example of such communication is writing to a lakehouse file. This is done with Subject token or an App token, depending on the API.
+
+If you plan on communicating with services using a Subject token, make sure you are familiar with [On behalf of flows](/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
+
+Please refer to [Authentication setup](./authentication-setup.md) to setup your environment to work with authentication.
