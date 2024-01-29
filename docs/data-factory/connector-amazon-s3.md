@@ -92,6 +92,6 @@ The following table contains properties for the supported authentication type.
 |- Username|The user name to use to access the Amazon S3 endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)

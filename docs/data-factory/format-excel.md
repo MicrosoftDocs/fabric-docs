@@ -91,6 +91,6 @@ The following properties are supported in the copy activity **Source** section w
 |**Null value**|The string representation of null value.| \<your null value\> <br> empty string (by default) |No | nullValue|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 
-## Next steps
+## Related content
 
-[Connectors overview](connector-overview.md)
+- [Connectors overview](connector-overview.md)

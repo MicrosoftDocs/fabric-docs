@@ -1,6 +1,6 @@
 ---
-title: Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
-description: This article provides instruction on how to build a real-time dashboard by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric.
+title: Build a report by streaming events from Azure IoT Hub to Microsoft Fabric
+description: This article provides instruction on how to build a report by streaming data from Azure IoT Hub to Eventstream in Microsoft Fabric.
 ms.reviewer: spelluru
 ms.author: zhenxilin
 author: alexlzx
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 01/18/2024
 ms.search.form: Event Streams Tutorials
-#CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a real-time dashboard to monitor the health my devices.
+#CustomerIntent: As a developer, I want to stream real-time events from Azure IoT Hub to Microsoft Fabric and build a report to monitor the health my devices.
 ---
 
-# Build a real-time dashboard by streaming events from Azure IoT Hub to Microsoft Fabric
+# Build a Power BI report by streaming events from Azure IoT Hub to Microsoft Fabric
 
-If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI dashboard to monitor the health of your IoT devices in real time.
+If you have IoT devices that are connected to your Azure IoT Hub, you can ingest and transform your IoT data using Eventstream in Microsoft Fabric. In this tutorial, we walk you through the process of setting up an eventstream to ingest real-time data from Azure IoT Hub to Kusto database. You learn to build a Power BI report to monitor the health of your IoT devices in real time.
 
 ## Prerequisites
 
@@ -111,7 +111,7 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
    :::image type="content" source="./media/add-iot-hub-source/successfully-added-kusto.png" alt-text="Screenshot that shows where the Kusto database is added successfully.":::
 
-## Build a Power BI dashboard
+## Build a Power BI report
 
 1. In the Eventstream editor, select the **KQL Database** you've added, then choose **Open item**. This action directs you to the Kusto database within Fabric.
 
@@ -123,11 +123,11 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
    :::image type="content" source="./media/add-iot-hub-source/open-kusto-query-editor.png" alt-text="Screenshot that shows where to open the query editor in the Kusto database.":::
 
-   Select **Build Power BI report** in the top right corner of the editor to start building a dashboard for your IoTHub data stream.
+   Select **Build Power BI report** in the top right corner of the editor to start building a report for your IoTHub data stream.
 
-3. Select the **Line chart** for your dashboard and drag the schema of the IoTHub table onto the X and Y axes. In this example, the dashboard shows the temperature data of IoT devices. Any anomalies detected in the dashboard enable you to make timely decisions.
+3. Select the **Line chart** for your report and drag the schema of the IoTHub table onto the X and Y axes. In this example, the report shows the temperature data of IoT devices. Any anomalies detected in the report enable you to make timely decisions.
 
-   :::image type="content" source="./media/add-iot-hub-source/setup-powerbi-dashboard.png" alt-text="Screenshot that shows where to set up a Power BI dashboard.":::
+   :::image type="content" source="./media/add-iot-hub-source/setup-powerbi-dashboard.png" alt-text="Screenshot that shows where to set up a Power BI report.":::
 
 4. To enable data refreshes for real-time monitoring, select **Format page**, and turn-on **Page refresh**. Change the refresh interval to 1 second. With these settings in place, you're able to monitor the temperature of your IoT device in real-time.
 
@@ -138,9 +138,9 @@ Follow these steps to create a KQL database and an eventstream in your workspace
 
    After you finish building the report, select **File > Save** to save this report to your workspace.
 
-Congratulations! You've successfully learned how to build a real-time dashboard by using Eventstream to ingest and monitor your IoTHub data stream. Additionally, Eventstream offers the capability to process your data before it's sent to your database.
+Congratulations! You've successfully learned how to build a report by using Eventstream to ingest and monitor your IoTHub data stream. Additionally, Eventstream offers the capability to process your data before it's sent to your database.
 
-## Next steps
+## Related content
 
 If you want to learn more about ingesting and processing real-time using Eventstream, check out the following resources:
 

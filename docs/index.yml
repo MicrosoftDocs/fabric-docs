@@ -14,7 +14,7 @@ metadata:
   ms.collection: collection
   author: SnehaGunda
   ms.author: sngun
-  ms.date: 12/19/2023
+  ms.date: 01/16/2024
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
@@ -33,13 +33,13 @@ highlightedContent:
       itemType: quickstart
       url: admin/fabric-switch.md
     # Card
+    - title: Join the Fabric community conference
+      itemType: whats-new
+      url: https://fabricconf.com/#!/
+    # Card
     - title: Develop with end-to-end tutorials
       itemType: tutorial
       url: get-started/end-to-end-tutorials.md
-    # Card
-    - title: Microsoft Fabric licenses
-      itemType: concept
-      url: enterprise/licenses.md 
     # Card
     - title: Copilot in Microsoft Fabric
       itemType: concept
@@ -113,9 +113,12 @@ conceptualContent:
             - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
               itemType: training
               text: Skill up with the cloud skills challenge
-            - url: /training/modules/introduction-end-analytics-use-microsoft-fabric/
+            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
               itemType: training
-              text: Explore end-to-end tutorials
+              text: Explore role-based learning paths
+            - url: get-started/end-to-end-tutorials.md
+              itemType: training
+              text: Explore Fabric's capabilities
           footerLink:
               url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
               text: See more
@@ -286,12 +289,12 @@ productDirectory:
       imageSrc: ./media/copilot-icon.svg
       links:
         - url: get-started/copilot-fabric-overview.md
-          text: Introduction to copilot in Fabric
-        - url: get-started/copilot-fabric-enable.md
-          text: Enable copilot
+          text: Introduction to Copilot in Fabric
+        - url: get-started/copilot-privacy-security.md
+          text: Copilot privacy, security, and responsible use
         - url: get-started/copilot-notebooks-overview.md
           text: Copilot for notebooks
-        - url: get-started/copilot-privacy-security.md
+        - url: get-started/copilot-fabric-overview.md
           text: See more
 
     # Card
@@ -301,11 +304,13 @@ productDirectory:
       links:
         - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
           text: What is Retail data solutions?
+        - url: /industry/sustainability/sustainability-data-solutions-overview
+          text: What is Sustainability data solutions? 
         - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
           text: Deploy Retail data solutions
-        - url: /industry/retail/retail-data-solutions/troubleshoot-retail-data-solutions
-          text: Troubleshoot Retail data solutions
-        - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
+        - url: /industry/sustainability/sustainability-data-solutions-deploy
+          text: Deploy Sustainability data solutions
+        - url: /industry/industry-data-solutions-fabric
           text: See more
 
 

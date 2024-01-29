@@ -139,6 +139,7 @@ When you create a new item, it's saved in your **My workspace** unless you've se
 
 The **Recommended** area might include getting started content as well as items and workspaces that you use frequently.
 
-## Next steps
+## Related content
+
 - [Power BI Home](/power-bi/consumer/end-user-home)
 - [Start a Fabric trial](fabric-trial.md)

@@ -117,6 +117,6 @@ The properties in the following table are the supported authentication type.
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure OData in a copy activity](connector-odata-copy-activity.md)

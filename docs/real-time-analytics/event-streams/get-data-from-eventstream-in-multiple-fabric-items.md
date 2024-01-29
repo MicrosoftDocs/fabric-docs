@@ -67,6 +67,6 @@ Following the guide in these teaching bubbles, you'll be able to get the data fr
 
    :::image type="content" source="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-lakehouse-new-guide.png" alt-text="Screenshot showing the teaching bubbles in lakehouse." lightbox="./media/get-data-from-eventstream-in-multiple-fabric-items/get-data-to-lakehouse-new-guide.png" :::
 
-## Next steps
+## Related content
 
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)

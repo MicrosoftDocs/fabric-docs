@@ -40,7 +40,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
-## Next steps
+## Related content
 
 * [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 * [Enable service principal authentication for read-only admin APIs](../admin/metadata-scanning-enable-read-only-apis.md).

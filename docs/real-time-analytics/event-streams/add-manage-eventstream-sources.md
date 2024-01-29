@@ -182,7 +182,7 @@ If you want to connect your own application with an eventstream, you can add a c
 
    :::image type="content" source="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" alt-text="Screenshot showing how to regenerate a key." lightbox="./media/add-manage-eventstream-sources/regenerate-key-in-custom-app.png" :::
 
-## Next steps
+## Related content
 
 - [Create and manage an eventstream](./create-manage-an-eventstream.md)
 - [Add and manage a destination in an eventstream](./add-manage-eventstream-destinations.md)

@@ -194,7 +194,7 @@ When you select **Edit**, the edit pane opens in the right side of the main edit
 
 :::image type="content" source="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" alt-text="Screenshot showing where to select the modify and delete options for destinations on the canvas." lightbox="./media/add-manage-eventstream-destinations/eventstream-destination-edit-deletion.png" :::
 
-## Next steps
+## Related content
 
 - [Create and manage an eventstream](./create-manage-an-eventstream.md)
 - [Add and manage a source in an eventstream](./add-manage-eventstream-sources.md)
