@@ -9,5 +9,7 @@ items:
   href: extensibility-backend.md
 - name: Authentication overview
   href: authentication-overview.md
+- name: Authentication setup
+  href: authentication-setup.md
 - name: Authentication API
   href: authentication-api.md
