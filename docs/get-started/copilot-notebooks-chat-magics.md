@@ -27,7 +27,7 @@ The `%%chat` command allows you to ask questions about the state of your noteboo
 
 ### Dataframe descriptions
 
-The `%%describe` command provides summaries and descriptions of loaded dataframes. This simplifies the data exploration phase.
+The `%describe` command provides summaries and descriptions of loaded dataframes. This simplifies the data exploration phase.
 
 ### Commenting and debugging
 
@@ -78,8 +78,8 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 
 ## Advanced commands for data operations
 
-### %%describe, %%add_comments, and %%fix_errors
-1. Use **%%describe DataFrameName** in a new cell to obtain an overview of a specific dataframe.
+### %describe, %%add_comments, and %%fix_errors
+1. Use **%describe DataFrameName** in a new cell to obtain an overview of a specific dataframe.
 1. To add comments to a code cell for better readability, type %%add_comments to the top of the cell you want to annotate and then execute. Be sure to validate the code is correct
 1. For code error fixing, type %%fix_errors at the top of the cell that contained an error and execute it.
 
