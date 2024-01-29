@@ -11,7 +11,7 @@ ms.date: 12/27/2023
 
 # Fabric extensibility backend boilerplate
 
-This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-developer-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide will help you set up the environment and configure the necessary components to get started. The key components and their roles in the architecture are outlined below:
+This [Microsoft Fabric developer sample repository](https://github.com/microsoft/Microsoft-Fabric-developer-sample) serves as a starting point for building applications that require integration with various services, including Workload and Lakehouse. This guide helps you set up the environment and configure the necessary components to get started. This article outlines the key components and their roles in the architecture are outlined below.
 
 ## Frontend (FE)
 
@@ -40,7 +40,7 @@ This overview provides a glimpse into our architecture. For more information on 
 The frontend (FE) establishes communication with the Fabric FE portal via an IFrame. The portal, in turn, interacts with the Fabric backend (BE) by making calls to its exposed public APIs.
 
 For interactions between the BE development box and the Fabric BE, the Azure Relay serve as a conduit. Additionally, the BE development box seamlessly integrates with Lakehouse, performing operations such as saving, reading, and fetching data from this resource.
-The communication is facilitated through the use of Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
+The communication is facilitated by using Azure Relay and the Fabric Software Development Kit (SDK) installed on the BE development box.
 
 The authentication for all communication within these components is ensured through Azure Active Directory (AAD), providing a secure and authenticated environment for the interactions between the frontend, backend, Azure Relay, Fabric SDK, and Lakehouse.
 
@@ -48,7 +48,7 @@ The authentication for all communication within these components is ensured thro
 
 ## Project Configuration Guidelines
 
-Our project operates on the .NET 7 framework, necessitating the installation of the .NET 7.0 SDK, available for download from the [official .NET website](https://dotnet.microsoft.com/). As our project harnesses the capabilities of .NET 7, you need to use Visual Studio 2022. NET 6.0 or higher in Visual Studio 2019 is not supported.
+Our project operates on the .NET 7 framework, necessitating the installation of the .NET 7.0 SDK, available for download from the [official .NET website](https://dotnet.microsoft.com/). As our project harnesses the capabilities of .NET 7, you need to use Visual Studio 2022. NET 6.0 or higher in Visual Studio 2019 isn't supported.
 
 Ensure that the NuGet Package Manager is integrated into your Visual Studio installation. This tool is required for streamlined management of external libraries and packages essential for our project.
 
@@ -56,7 +56,7 @@ Ensure that the NuGet Package Manager is integrated into your Visual Studio inst
 
 * `<NuspecFile>Packages\manifest\ManifestPackage.nuspec</NuspecFile>`: This property specifies the path to the NuSpec file used for creating the NuGet package. The NuSpec file contains metadata about the package, such as its ID, version, dependencies, and other relevant information.
 
-* `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This is particularly useful to ensure that the package is always up-to-date with the latest changes in the project.
+* `<GeneratePackageOnBuild>true</GeneratePackageOnBuild>`: When set to true, this property instructs the build process to automatically generate a NuGet package during each build. This is useful to ensure that the package is always up-to-date with the latest changes in the project.
 
 * `<IsPackable>true</IsPackable>`: When set to true, this property indicates that the project is packable, meaning it can be packaged into a NuGet package. It is an essential property for projects intended to produce NuGet packages during the build process.
 
