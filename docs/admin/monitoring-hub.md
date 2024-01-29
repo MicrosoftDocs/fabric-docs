@@ -1,55 +1,87 @@
 ---
 title: Use the Monitoring hub
 description: Understand the Microsoft Fabric Monitoring hub and the information it provides.
-author: davidiseminger
-ms.author: davidi
+author: KesemSharabi
+ms.author: kesharab
 ms.topic: overview
-ms.custom:
-  - build-2023
-  - ignite-2023
-  - ignite-2023-fabric
-ms.date: 11/02/2023
+ms.date: 01/29/2024
 ---
 
 # Use the Monitoring hub
 
-*Monitoring hub* enables users to monitor various Microsoft Fabric activities, such as semantic model refresh and Spark Job runs and many others, from a central location. You can access *Monitoring hub* by selecting its icon from the left pane.
+The Microsoft Fabric *Monitoring hub* enables users to monitor Microsoft Fabric activities from a central location. Any Fabric user can use the monitoring hub, however, the monitoring hub displays activities only for Fabric items you have permission to view.
 
-:::image type="content" source="media/monitoring-hub/admin-monitoring-hub-01.png" alt-text="Screen shot of Monitoring hub in left pane.":::
+The monitoring hub displays activities for these Fabric items:
 
-*Monitoring hub* is available for Power BI, Data Factory, Data Engineering and Data Science.
+* Data pipelines
 
-## Prerequisites
+* Dataflows
 
-Verify that the [new workspace experience](portal-workspace.md#create-workspaces-new-workspace-experience) is enabled.
+* Datamarts
 
-## Permissions required
+* Lakehouses
 
-All items for which a user has read permissions [semantic model permissions](/power-bi/connect-data/service-datasets-permissions#what-are-the-dataset-permissions) will appear in the Monitoring Hub.
+* Notebooks
 
-## Using the Monitoring hub
+* Semantic models
 
-*Monitoring hub* shows activities based on which service is being used when Monitoring hub is selected. For example, if you're using Data Factory when you select Monitoring hub, a list of Data Factory activities is displayed. If you're using Power BI and then select Monitoring hub from the left pane, a list of Power BI related activities is displayed. 
+* Spark job definitions
 
-:::image type="content" source="media/monitoring-hub/admin-monitoring-hub-02.png" alt-text="Screen shot of Monitoring hub in context with Power BI.":::
+## View the monitoring hub display
 
-Because there might be many records in Monitoring hub, filters are applied by default to limit the number of items initially displayed. For example, the following image shows Monitoring hub for Power BI, where filters are applied to only show *semantic model*, *Dataflow Gen2*, and *Datamart* items.
+To open the Monitoring hub, Select **Monitoring hub** from the navigation pane. The monitoring hub displays information in a table form. Fabric activities are displayed according to their start time, with the newest activities at the top of the table. Each Fabric item displays a maximum of 100 activities. History is kept for 30 days and can be viewed using the *Historical view* option.
 
-You can dismiss filters by selecting the *x* beside the filter button, and you can select different filters by using the filter drop-down in the upper right corner of the window. You can also filter by keyword. 
+## Interact with the monitoring hub
 
-:::image type="content" source="media/monitoring-hub/admin-monitoring-hub-03.png" alt-text="Screen shot of filters applied to Monitoring hub for Power BI.":::
+You can use the monitoring hub display options to find the activities you're interested in. This section describes the monitoring hub controls.
 
-The first seven columns in the list of items are shared across all Monitoring hub views. The columns after the first seven are specific to the viewing context, such as Power BI. 
+### Change the display order
 
-## Getting detailed item information
+You can change the order of the table's display by selecting each column title. The table is sorted according to your selection and the arrow next to the coumn header indicates the sorting order.
 
-When you select an item from the list, Monitoring hub displays detailed information about that item. 
+### Configure table columns
 
-When you hover over an item's name, any available quick actions for the item type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the item itself when you hover, for example, *View run history* for semantic models that are in Monitoring hub, to display their refresh activities. 
+Use the **Column options** button to add, remove and rearrange the columns displayed in the table.
+
+* **Add** - Select a column from the *Column options* list.
+
+* **Remove** - Remove the selection indicator from a column in the *Column options* list.
+
+* **Rearrange** - In the *Column options* list, drag columns to your selected position.
+
+### Filter
+
+Use the **Filter** button to filter the monitoring hub table results. You can use a combination of any of the options listed below. Once you selected the options you want to filter for, select **Apply**. The monitoring hub remembers your filter selection. If you leave the monitoring hub, you'll see your selection when you next go to the hub.
+
+* **Status** - Select the type of status you want the table to display. When no status is selected, item activities for all statuses are displayed.
+
+    >[!NOTE]
+    >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
+
+* **Item type** - Select the Fabric item types you want to table to display. When no item type is selected, item activities for all the item types are displayed.
+
+* **Submitted by** - Select the owner of the Fabric item that the table displays activities for. When no owner is selected, activities for all item owners are displayed.
+
+* **Location** - Select which workspaces to view item activities from. When no workspace is selected, item activities from all workspaces are displayed.
+
+### Take action
+
+Providing you have the right permissions for the Fabric item displayed in the monitoring hub table, you might be able to perform certain actions. The actions you can take depend on the type of item you're reviewing. To take action, select *More options* (**...**) next to the activity name, and from the menu, select the action you want to take.
+
+### View details
+
+To view the details of an activity, hover over it's activity name and select the *View detail* symbol (**i**).
+
+## Limitation
+
+Dataflow Gen1 is not supported and isn't displayed in the table.
 
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
+
 * [Browse the Apache Spark applications in the Fabric monitoring hub](../data-engineering/browse-spark-applications-monitoring-hub.md)
+
 * [View refresh history and monitor your dataflows](../data-factory/dataflows-gen2-monitor.md)
+
 * [Feature usage and adoption report](feature-usage-adoption.md)
