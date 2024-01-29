@@ -22,6 +22,7 @@ This project may contain trademarks or logos for projects, products, or services
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.
 
+<!---
 ## Table of contents
 
 - [Introduction](#introduction)
@@ -40,6 +41,7 @@ Any use of third-party trademarks or logos are subject to those third-party's po
   - [Backend Guide](#workload-be-guide)
   - [Resources](#resources)
 - [Publication Process (TBD)](#publication)
+--->
 
 ## Introduction
 
@@ -108,7 +110,7 @@ The following diagram is a high-level overview of how workloads function within 
 * The workload Frontend (FE) offers a user interface for job creation, authoring, management, and execution.
 * User interactions via the FE initiates request to the BE, either directly or indirectly via the Fabric Backend (Fabric BE).
 
-For more detailed diagrams depicting the communication and authentication of the various components see the [BE Authentication and Security](Backend/README.md#authentication-and-security) and the [Authentication Overview](Authentication/overview.md#authentication-overview) diagrams.
+For more detailed diagrams depicting the communication and authentication of the various components see the [BE Authentication and Security](#authentication-and-security) and the [Authentication Overview](./authentication-overview.md) diagrams.
 
 :::image type="content" source="./media/extensibility-overview/architecture-flow-overview.png" alt-text="Diagram of ISV end to end architecture flow.":::
 
@@ -130,9 +132,9 @@ Our architecture is designed to integrate flawlessly with Lakehouse, enabling op
 
 We employ Entra ID (formerly AAD) for robust and secure authentication, ensuring that all interactions within the architecture are authorized and secure. For a complete introduction to the workload authentication as displayed in the diagram above, please refer to the authentication documents.:
 
-1. [Workload Authentication - Setup Guide](Authentication/Setup.md)
-1. [Workload Authentication - Architecture Overview](Authentication/overview.md)
-1. [Workload Authentication - Implementation Guide](BACKENDAUTH.md)
+1. [Workload Authentication - Setup Guide](./authentication-setup.md)
+1. [Workload Authentication - Architecture Overview](./authentication-overview.md)
+1. [Workload Authentication - Implementation Guide](./backend-authentication.md)
 
 ## Getting started with Frontend only
 
@@ -140,30 +142,30 @@ We employ Entra ID (formerly AAD) for robust and secure authentication, ensuring
 
 There are a few prerequisites that you need to have installed on your system. These tools are used throughout the guide, so it’s important to ensure that you have them set up correctly.
 
-- [Git](https://github.com/join) - A distributed version control system that we’ll use to manage and track changes to our project.
+* [Git](https://github.com/join) - A distributed version control system that we’ll use to manage and track changes to our project.
 
-- [NPM (Node Package Manager)](https://www.npmjs.com/) - This is the default package manager for Node.js and it’s used to manage and share the packages that you use in your project.
+* [NPM (Node Package Manager)](https://www.npmjs.com/) - This is the default package manager for Node.js and it’s used to manage and share the packages that you use in your project.
 
-- [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We’ll use this to run our server-side JavaScript code.
+* [Node.js](https://nodejs.org/en/download/) - An open-source, cross-platform, JavaScript runtime environment that executes JavaScript code outside a web browser. We’ll use this to run our server-side JavaScript code.
 
-- [Webpack](https://webpack.js.org/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
+* [Webpack](https://webpack.js.org/) - A static module bundler for modern JavaScript applications. It helps to bundle JavaScript files for usage in a browser.
 
-- [Webpack CLI](https://webpack.js.org/api/cli/) - The command line interface for Webpack. This allows us to use Webpack from the command line.
+* [Webpack CLI](https://webpack.js.org/api/cli/) - The command line interface for Webpack. This allows us to use Webpack from the command line.
 This guide outlines the setup for development workload sample in Fabric tenant. It involves enabling the workload feature and Developer mode in the designated tenant. It assumes you have Node.js and npm installed, and walks you through the entire process of running a locally hosted workload frontend.
 
 When executing the workload SDK sample and building a workload, industry best practice is to use a dedicated development tenant. This practice ensures an isolated environment, minimizing the risk of inadvertent disruptions or modifications to production systems. It also provides an additional layer of security, safeguarding production data from potential exposure or compromise. 
 
 ### Frontend Guides
 
--[FE Quick Setup guide](./extensibility-frontend.md#installation-and-usage): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
+* [FE Quick Setup guide](./extensibility-frontend.md#installation-and-usage): A fast and straightforward way to add and test the sample Frontend (FE) workload to your Fabric capacity. It’s perfect for those who want to quickly see the workload in action.
 
-- [FE Deep Dive guide](./extensibility-frontend.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. It’s ideal if you want to tailor the workload to your specific needs.
+* [FE Deep Dive guide](./extensibility-frontend.md#package-structure): A comprehensive guide walks you through the process of customizing the sample workload. It’s ideal if you want to tailor the workload to your specific needs.
 The UX workload frontend, a standard web app, uses an extension client SDK to operate within the Fabric portal, providing workload-Specific UI experiences. This SDK can be installed in Angular or React applications, with React recommended for compatibility with the Fluent UI library. The package also includes a UX workload Sample implementation built on Fluent UI, designed for React. Alongside the web app, workloads must provide a UX workload Frontend Manifest, a JSON resource containing essential information about the workload. This combination allows workloads to integrate their web applications within the Fabric portal, ensuring a consistent user experience.
 
 > [!NOTE]
 >
-> - Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](./extensibility-frontend.md).
-> - Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](Authentication/Setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
+> * Both the FE Quick Setup and the FE Deep Dive guides can be found in the [FE Readme](./extensibility-frontend.md).
+> * Before customizing the sample workload, implement the Frontend (FE) authentication token as outlined in the [Authentication Guide](Authentication/Setup.md#configuring-your-workload-local-manifest-and-acquiring-a-token-for-your-application-frontend).
 
 ## Getting Started with the Workload Backend
 
@@ -173,32 +175,32 @@ This section walks you through how to set up and configure the workload BE. Fabr
 
 Before proceeding with the project setup, ensure the following tools and packages are installed and configured:
 
-- [.NET 7.0 SDK](https://dotnet.microsoft.com/download/visual-studio-sdks)
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - Note that .NET 6.0 or higher in Visual Studio 2019 is not supported.
-- [NuGet Package Manager](https://www.nuget.org/)
-- The workload BE has dependencies on the following Azure SDK packages:
+* [.NET 7.0 SDK](https://dotnet.microsoft.com/download/visual-studio-sdks)
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) - Note that .NET 6.0 or higher in Visual Studio 2019 is not supported.
+* [NuGet Package Manager](https://www.nuget.org/)
+* The workload BE has dependencies on the following Azure SDK packages:
 
-  - Azure.Core
-  - Azure.Identity
-  - Azure.Storage.Files.DataLake
-  - Microsoft Identity package
+  * Azure.Core
+  * Azure.Identity
+  * Azure.Storage.Files.DataLake
+  * Microsoft Identity package
 
 #### Workload BE Guide
 
-With the prerequisites in place, you can proceed with the project configuration. The rest of your guide can follow from here. This includes cloning the project, setting up the workload configuration, and generating a manifest package file. Remember to update the necessary fields in the configuration files to match your setup. To get started with a step-by-step guide, please refer to our [Backend Workload Configuration Guide](Backend/README.md).
+With the prerequisites in place, you can proceed with the project configuration. The rest of your guide can follow from here. This includes cloning the project, setting up the workload configuration, and generating a manifest package file. Remember to update the necessary fields in the configuration files to match your setup. To get started with a step-by-step guide, please refer to our [Backend Workload Configuration Guide](./backend-authentication.md).
 
 ## Resources
 
 Here are all the resources included and referenced. These documents provide additional information and can serve as a reference:
 
-- [Authentication Overview](Authentication/overview.md)
-- [Authentication Setup Guide](Authentication/Setup.md)
-- [Authentication JavaScript API](Authentication/authJSAPI.md)
-- [Backend Configuration Guide].(./extensibility-backend.md))
-- [Frontend Configuration Guide](./extensibility-frontend.md)
-- [Frontend Manifest](Frontend/frontendManifest.md)
-- [Backend API Requests Authentication Overview](BACKENDAUTH.md)
-- [Monitoring Hub Configuration Guide](MonitoringHub.md)
+* [Authentication Overview](./authentication-overview.md)
+* [Authentication Setup Guide](./authentication-setup.md)
+* [Authentication JavaScript API](./authentication-api.md)
+* [Backend Configuration Guide](./extensibility-backend.md))
+* [Frontend Configuration Guide](./extensibility-frontend.md)
+* [Frontend Manifest](./frontend-manifest.md)
+* [Backend API Requests Authentication Overview](./backend-authentication.md)
+* [Monitoring Hub Configuration Guide](./monitoring-hub.md)
 
 ## Publication
 
@@ -206,9 +208,9 @@ Please note that the publication process is currently unavailable. We understand
 
 ## Considerations and Limitations
 
-See [Release Notes](./ReleaseNotes.md)
+See [Release Notes](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/ReleaseNotes.md)
 
 ## Related content
 
-- [Fabric extensibility frontend](extensibility-frontend.md)
-- [Fabric extensibility backend](extensibility-backend.md)
+* [Fabric extensibility frontend](extensibility-frontend.md)
+* [Fabric extensibility backend](extensibility-backend.md)

@@ -63,7 +63,7 @@ To get started with the Sample Project, follow these simple steps:
    git clone https://github.com/microsoft/Microsoft-Fabric-developer-sample.git
    ```
 
-   Under the repository folder, go to `Frontend` and run **npm install** 
+   Under the repository folder, go to `Frontend` and run **npm install**  
 
    ```console
    <repository folder>\Frontend> npm install
@@ -139,7 +139,7 @@ This is the package directory layout, with a description of the essential compon
   * **components** - location of the actual UI code - the Editor view, and other views that are used by the sample (Ribbon, Authentication page, Panel, etc...)
   * **controller** - the Controller that is calling the SDK APIs
   * **models** - the contracts and models in use by the UI itself and for communication with the boilerplate's Backend
-  * **tools** - 
+  * **tools** -  
     * `webpack.config.js` - configuration of the local Node.js server
     * `manifest.reader.js` - reading the Manifest file
 
@@ -210,7 +210,7 @@ The invocation and handling of action can be described by this diagram:
 The `initialize()` function renders the React DOM where the `App` function is embedded. We pass the `extensionClient` SDK handle which is used throughout the code to invoke the API calls.
 The `FluentProvider` class is for style consistency across the various FluentUI controls in use.
 
- ```
+ ```react
  ReactDOM.render(
         <FluentProvider theme={fabricLightTheme}>
             <App
@@ -233,9 +233,11 @@ The `FluentProvider` class is for style consistency across the various FluentUI 
 An example with `notification.open()` API:
 
 * state:
+
    ```const [apiNotificationTitle, setNotificationTitle] = useState<string>('');
       const [apiNotificationMessage, setNotificationMessage] = useState<string>('');
    ```
+
 * UI:
   * Title:
   
@@ -262,7 +264,7 @@ An example with `notification.open()` API:
 
 * Controller:
 
-     ```
+     ```javascript
        export async function callNotificationOpen(
          title: string,
          message: string,
@@ -295,7 +297,7 @@ These operations are exposed via `ArtifactCrudAPI` inside of `ExtensionClientAPI
 
 A sample call to `create`, as implemented when saving the workload item for the first time:
 
-```
+```javascript
  const params: CreateArtifactParams = {
         workspaceObjectId,
         payload: { artifactType, displayName, description, workloadPayload: JSON.stringify(workloadPayload), payloadContentType: "InlineJson", }

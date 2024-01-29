@@ -6,7 +6,7 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 12/27/2023
+ms.date: 01/29/2024
 ---
 
 # Authentication Javascript API
@@ -69,7 +69,7 @@ AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net
 
 1. Acquiring a token to call the BE Workload: when you want to acquire a token to call your BE workload, simply call acquireAccessToken without providing any additionalScopesToConsent.
     * If the user is in the home tenant of the application, the workload will be able to acquire a token without granting any consent.
-    * If the user is in another tenant, he will need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can recieve a token.
+    * If the user is in another tenant, he will need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
 
 2. Crud/Jobs JS API fail: if these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent, this will trigger a consent for the dependencies of the application (the configured API Permissions in our APP (see [Setup](./Setup.md) for more info).
 
