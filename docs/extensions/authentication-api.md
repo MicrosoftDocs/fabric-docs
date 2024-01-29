@@ -11,7 +11,7 @@ ms.date: 01/29/2024
 
 # Authentication Javascript API
 
-Fabric frontend offers a Javascript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with authentication JS API, make sure you go over the [Setup](./Setup.md) documentation.
+Fabric frontend offers a Javascript API for Fabric workloads to acquire a token for their application in Microsoft Entra ID. Before working with authentication JS API, make sure you go over the [authentication setup](./authentication-setup.md) documentation.
 
 ## API
 
@@ -47,9 +47,9 @@ Typically the redirect URI is in the same domain as the page that requested the 
   
 In our case, it's not in the same domain since Fabric is requesting the token and the redirect URI of the workload is not in the Fabric domain. So when the consent dialog opens, it needs to be closed manually after redirect. We don't use the code returned in the redirectUri, hence we just auto-close it (when Microsoft Entra ID redirects the popup to the redirect URI it simply closes).
   
-You can see the code/configuration of the redirect Uri in the [index.ts](../Frontend//src//index.ts) file.
+You can see the code/configuration of the redirect Uri in the [index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Frontend/src/index.ts) file.
 
-Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [Setup](./Setup.md):
+Here's an example of a consent popup for our app "my workload app" and its dependencies (storage and Power BI) that we configured when going over [authentication setup](./authentication-setup.md):
 
 :::image type="content" source="./media/authentication-api/permissions-requested-dialog.png" alt-text="Screenshot of Permissions required dialog.":::
 
@@ -84,7 +84,7 @@ AdditionalScopesToConsent | null | ['.default'] | ['https://analysis.windows.net
 
     * If the user is in another tenant, they'll need to grant consent (or have the admin of the tenant grant consent to the app) before the workload can receive a token.
 
-2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [Setup](./Setup.md).
+2. Crud/Jobs JS API fail: If these operations fail, the workload must ask for a token with ['.default'] as additionalScopesToConsent. This trigger's a consent for the dependencies of the application (the configured API Permissions in our app). For more information, see [authentication setup](./authentication-setup.md).
 
 3. OBO flow for a specific scope fails with consent required error:
 
@@ -98,4 +98,4 @@ This parameter is used when facing OBO failures in the workload BE because of so
 
 OBO failures because of conditional access policies return a string called "claims". This string should be sent to the workload FE where the FE should ask for a token and pass the claim as claimsForConditionalAccessPolicy. For more information, see [Handling multi-factor auth (MFA), conditional access and incremental consent](/entra/msal/dotnet/acquiring-tokens/web-apps-apis/on-behalf-of-flow#handling-multi-factor-auth-mfa-c).
 
-Refer to [AuthenticationService](../Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
+Refer to [AuthenticationService](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/staging/Backend/src/Services/AuthenticationService.cs) AddBearerClaimToResponse usage in the BE sample to see examples of responses when OBO operations fail due to consent missing or conditional access policies.
