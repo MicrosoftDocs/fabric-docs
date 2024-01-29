@@ -1,25 +1,25 @@
 ---
 title: Overview of Fabric extensibility authentication
-description: Learn how to authenticate for customized Fabric workload.
+description: Learn how to authenticate for a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 12/27/2023
+ms.date: 01/29/2024
 ---
 
 # Authentication overview
 
-Fabric workloads rely on integration with [Microsoft Entra Id](https://learn.microsoft.com/en-us/entra/fundamentals/whatis) for Authentication and Authorization.  
-All interactions between workloads and other Fabric or Azure components must be accompanied with proper authentication support for requests received or sent - tokens sent out must be generated properly and tokens recieved must be validated properly as well.  
-It is recommended that you get familiar with [Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/) before starting to work with Fabric workloads.  
-Also, it is recommended to go over [Microsoft identity platform best practices and recommendations](https://learn.microsoft.com/en-us/entra/identity-platform/identity-platform-integration-checklist)
+Fabric workloads rely on integration with [Microsoft Entra ID](/entra/fundamentals/whatis) for authentication and authorization.
+
+All interactions between workloads and other Fabric or Azure components must be accompanied by proper authentication support for requests received or sent. Tokens sent out must be generated properly, and tokens recieved must be validated properly as well.  
+
+It is recommended that you become familiar with the [Microsoft identity platform](/entra/identity-platform/) before starting to work with Fabric workloads. It is also recommended to go over [Microsoft identity platform best practices and recommendations](/entra/identity-platform/identity-platform-integration-checklist)
 
 ## Flows
 
-The blue arrows in the diagram below indicate that the specific communication needs configuring your own AAD app to be done.
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/18ef3094-0403-4071-b9be-749f3efb90cf)
+:::image type="content" source="./media/authentication-overview/authentication-diagram.png" alt-text="Screenshot showing the extensibility authentication flow.":::
 
 ### 1. From workload FE to workload BE
 
@@ -41,7 +41,5 @@ This will be done with a SubjectAndApp for workload control apis, for example Re
 An example of such communication is writing to a lakehouse file.
 This will be done with Subject token or an App token depending on the API.
 If you plan on communicating with services using a Subject token, make sure you are familiar with [On behalf of flows](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow).
-
-
 
 Please refer to setup.md to setup your environment to work with authentication.
