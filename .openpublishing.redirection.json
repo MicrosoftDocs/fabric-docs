@@ -257,17 +257,17 @@
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
-          "redirect_url": "/fabric/get-started/known-issue-596-refresh-history-reports-in-progress-for-some-tables-that-failed",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-some-tables-that-failed",
           "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
-          "redirect_url": "/fabric/get-started/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
           "redirect_document_id": false
         },
         {
           "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
-          "redirect_url": "/fabric/get-started/known-issue-598-failed-to-publish-dataflow-gen2",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
           "redirect_document_id": false
         },
         {
