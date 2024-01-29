@@ -1,12 +1,12 @@
 ---
 title: Fabric extensibility authentication setup
-description: Learn how to set up the authorization for customized Fabric workload.
+description: Learn how to set up the authorization for a customized Fabric workload.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 12/27/2023
+ms.date: 01/29/2024
 ---
 
 # Authentication
