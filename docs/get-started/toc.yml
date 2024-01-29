@@ -174,7 +174,7 @@ items:
     - name: Selecting view account link in account manager shows wrong page
       href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
     - name: Refresh history reports in progress for some tables that failed
-      href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-some-tables-that-failed.md  
+      href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
     - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region
