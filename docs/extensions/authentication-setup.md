@@ -85,85 +85,98 @@ For example, if the publisher's tenant ID is *853d9f4f-c71b-4420-b6ec-60e5034589
     * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a`
     * Any ID URI that doesn't start with `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
 
-### Add a scope for CRUD/Jobs:
+### Add a scope for CRUD/Jobs
 
-To be able to work with Create, Read, Update and Delete APIs for workload items, and other operations with jobs - 
-you will need to [add a scope](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope) and add Fabric service application to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric, to do so:
+To be able to work with Create, Read, Update and Delete APIs for workload items, and other operations with jobs, you need to [add a scope](/entra/identity-platform/quickstart-configure-app-expose-web-apis#add-a-scope) and add Fabric service application to the preauthorized applications for that scope to indicate that your API (the scope you created) trusts Fabric. To do this:
 
-1. Under Expose an API, click on "Add a scope", name the scope "FabricWorkloadControl" and provide needed details for it (this scope is needed for communication between Fabric BE and the workload BE and will be validated in the workload BE).
-2. Under Authorized client applications, click on Add a client application and add "00000009-0000-0000-c000-000000000000" (Fabric service application) and select your scope.
+1. Under **Expose an API**, select **Add a scope**, name the scope "FabricWorkloadControl" and provide the necessary details for it (this scope is needed for communication between the Fabric BE and the workload BE and will be validated in the workload BE).
 
-### Add scopes for data plane API:
+1. Under **Authorized client applications**, select **Add a client application** and add `00000009-0000-0000-c000-000000000000` (Fabric service application) and select your scope.
 
-Additional scopes need to be registered to represent groups of operations, exposed by data plane API.
-In the BE sample we provide four as an example (you can see them in [Backend/src/Constants/scopes.cs](../Backend/src/Constants/Scopes.cs) - the scopes are:
+### Add scopes for data plane API
 
-1. "Item1.Read.All" - used for reading workload items.
-2. "Item1.ReadWrite.All" - used for reading/writing workload items.
-3. "FabricLakehouse.Read.All"" - used for reading lakehouse files.
-4. "FabricLakehouse.ReadWrite.All" - used for reading/writing from/to lakehouse files.  
+Additional scopes need to be registered to represent groups of operations, exposed by the data plane API.
+In the BE sample, we provide four as an example (you can see them in [Backend/src/Constants/scopes.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Constants/Scopes.cs). The scopes are:
 
-You will need to preauthorize "871c010f-5e61-4fb1-83ac-98610a7e9110" (Fabric client application) for these scopes.  
-You can find the mentioned application ids above [here](https://learn.microsoft.com/en-us/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications) under "Microsoft Power BI" and "Power BI Service".  
+* `Item1.Read.All`: Used for reading workload items
+* `Item1.ReadWrite.All`: Used for reading/writing workload items
+* `FabricLakehouse.Read.All`: Used for reading lakehouse files
+* `FabricLakehouse.ReadWrite.All`: Used for reading/writing from/to lakehouse files  
 
-Here's how your 'Expose an API' section should look like in your application (in this example the ID URI is "api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample":
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/73bb4f32-94da-47cd-b3ad-e305a3c6017b)
+You need to preauthorize `871c010f-5e61-4fb1-83ac-98610a7e9110` (the Fabric client application) for these scopes. You can find the application IDs mentioned above [here](/troubleshoot/azure/active-directory/verify-first-party-apps-sign-in#application-ids-of-commonly-used-microsoft-applications), under "Microsoft Power BI" and "Power BI Service".  
+
+Here's how your "Expose an API" section should look like in your application (in this example, the ID URI is `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`):
+
+:::image type="content" source="./media/authentication-setup/expose-api-section.png" alt-text="Screenshot showing how your Expose an API section should look." lightbox="./media/authentication-setup/expose-api-section.png":::
 
 ### Generate a secret for your applicaiton
 
-Under Certificates & secrets, click on Secrets tab and add a secret, call it whatever you want and save it aside, we will use this secret when configuring our BE sample.
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/181d7cc2-83e7-4d53-bea1-f4325dc765f1)
+Under **Certificates & secrets**, click on Secrets tab and add a secret. Call it whatever you want and save it aside. We will use this secret when configuring our BE sample.
+
+:::image type="content" source="./media/authentication-setup/generate-secrets-dialog.png" alt-text="Screenshot of generate secrets dialog.":::
 
 ### Add optional claim 'idtyp'
 
-Under Token configuration, click on add optional claim, choose Access token and add idtyp.
+Under **Token configuration**, select **Add optional claim**, choose **Access token** and add idtyp.
+
 ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/8a098482-e1b2-4346-9929-6352fb89846d)
+
+:::image type="content" source="./media/authentication-setup/add-claim-idtyp.png" alt-text="Screenshot showing adding claim idtyp." lightbox="./media/authentication-setup/add-claim-idtyp.png":::
 
 ### Add API permissions
 
-Under API permissions, add the desired permissions for your application, for the backend sample you will need to add Storage user_impersonation (for onelake APIs) and Power BI Workspace.Read.all (for workload control APIs): 
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/e0951cd4-bb74-4af5-bc09-6f981b0d5134)
+Under ***API permissions**, add the desired permissions for your application. For the backend sample, you need to add Storage user_impersonation (for OneLake APIs) and Power BI Workspace.Read.all (for workload control APIs):
+
+:::image type="content" source="./media/authentication-setup/add-api-permissions.png" alt-text="Screenshot showing adding API permissions." lightbox="./media/authentication-setup/add-api-permissions.png":::
 
 ### Make sure your application is set to work with auth token v1
 
-Under Manifest, make sure accessTokenAcceptedVersion is set to either null or "1".
+Under **Manifest**, make sure accessTokenAcceptedVersion is set to either null or "1".
 
 ## Configuring your workload (Backend)
 
-In the Backend sample, go to [src/appsettings.json](../Backend/src/appsettings.json) and configure the following:  
-PublisherTenantId - the tenant Id of the publisher.  
-ClientId - your application Id (you can find it in AAD under overview).  
-ClientSecret - the secret we created earlier when configuring our AAD app.  
-Audience - the ID URI we configured earlier in our AAD app.  
+In the Backend sample, go to [src/appsettings.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/appsettings.json) and configure the following:
+ 
+* `PublisherTenantId`: The tenant ID of the publisher  
+* `ClientId`: Your application ID (you can find it in Entra ID under overview).  
+* `ClientSecret`: The secret we created earlier when configuring our Entra app.  
+* `Audience`: The ID URI we configured earlier in our Entra app.  
 
-Next, you will need to configure your workloadManifest.xml, go to [src/Packages/manifest/files/WorkloadManifest.xml](../Backend/src/Packages/manifest/files/WorkloadManifest.xml) and configure your AppId, redirectUri and ResourceId (ID URI) under "AADApps":
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/6223464e-05a7-4c7e-97e8-2fd86cc10a2b)
+Next, you need to configure your workloadManifest.xml. Go to [src/Packages/manifest/files/WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/WorkloadManifest.xml) and configure your `AppId`, `redirectUri` and `ResourceId` (ID URI) under **AADApps**.
+
+:::image type="content" source="./media/authentication-setup/configure-workload-manifest-xml.png" alt-text="Screenshot showing configuration of workload manifest xml file.":::
 
 ## Configuring your workload local manifest and acquiring a token for your application (FrontEnd)
 
-After configuring your application, you will need to add the following configurations to your [local workload manifest](../Frontend/README.md#extension-section): 
+After configuring your application, you need to add the following configurations to your [local workload manifest](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/Manifests/localWorkloadManifest.json).
  
-Under "extension", add "devAADAppConfig": {  
+Under "extension", add
+
+```json
+"devAADAppConfig": {  
 			  "audience": "", // The ID URI configured in your application for developer scenario  
 			  "redirectUri": "http://localhost:60006/close", // or the path you configured in index.ts  
-			  "appId": "" // your app Id  
-		  }
+			  "appId": "" // your app ID  
+}
+```
 
-   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/9fe741c5-f0d5-4d28-bb9d-906c44af8795)
-
+:::image type="content" source="./media/authentication-setup/configure-local-workload-manifest-xml.png" alt-text="Screenshot showing configuration of local workload manifest xml file.":::
 
 ## Ask for a token and consent the application
 
-**Note: This is needed for CRUD/Jobs to work.**  
-Run the frontend sample and create a sample item, scroll down until you see Navigate to authentication page button and click on it to go to the authentication section which looks like this:
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/bbd546e7-6008-44c2-85d6-8823b80cbcb3)
+> [!NOTE]
+> This step is necessary in order for CRUD/Jobs to work.
+  
+Run the frontend sample and create a sample item. Scroll down until you see the Navigate to authentication page button and select it to go to the authentication section, which looks like this:
 
-Check "Request initial consent" and click on get access token button - this should trigger a consent for your application:
-(Additional information on how to handle consents will be updated soon).
+:::image type="content" source="./media/authentication-setup/configured-authentication-section.png" alt-text="Screenshot showing the configured authentication section." lightbox="./media/authentication-setup/configured-authentication-section.png":::
 
-![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/361f6bdf-a86a-4930-83a6-4f328e6aac24)
+Check **Request initial consent** and select the get access token button. This should trigger a consent for your application:
 
-Note that this consent includes the dependencies you added earlier in "Add API Permissions".
+:::image type="content" source="./media/authentication-setup/initial-consent.png" alt-text="Screenshot showing permissions request dialog for initial consent.":::
 
-After finishing setting up you should be able to work with CRUD/Jobs operations, you also should be able to get an access token to your application in the client side.
-You can use the authentication page in the frontend sample as a playground to call your workload APIs (you can see what kind of APIs the backend sample offers in Backend/src/controllers).
+Note that this consent includes the dependencies you added earlier under [Add API Permissions](#add-api-permissions).
+
+After finishing setting up, you should be able to work with CRUD/Jobs operations. You should also be able to get an access token for your application on the client side.
+
+You can use the authentication page in the frontend sample as a playground to call your workload APIs. You can see what kind of APIs the backend sample offers in [Backend/src/controllers](https://github.com/microsoft/Microsoft-Fabric-developer-sample/tree/main/Backend/src/Controllers).
