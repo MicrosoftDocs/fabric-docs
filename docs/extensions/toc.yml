@@ -13,3 +13,5 @@ items:
   href: authentication-setup.md
 - name: Authentication API
   href: authentication-api.md
+- name: Backend authentication and authorization
+  href: backend-authentication.md
