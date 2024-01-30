@@ -24,7 +24,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Primary developer persona** | Data warehouse developer, SQL engineer | Data engineer, data scientist | Citizen developer | Citizen Data scientist, Data engineer, Data scientist, SQL engineer |
 | **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | No code, KQL, SQL |
 | **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
-| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
+| **Read operations** | T-SQL, Spark (supports reading from tables using shortcuts, doesn't yet support accessing views, stored procedures, fuctions etc.) | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
 | **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
