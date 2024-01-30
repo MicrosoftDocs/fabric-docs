@@ -39,7 +39,7 @@ ms.search.form: Get started
     Taxi** from the dropdown of **Sample data**.
 1. Select **Add**.
 1. In the Eventstream authoring area, select **New destination** > **KQL Database**.
-1. Under "Data ingestion mode," choose **Direct ingestion**.
+1. Under **Data ingestion mode**, select **Direct ingestion**.
 1. In the **KQL Database** pane, fill out the fields as follows:
 
     |Field  | Suggested value  |
