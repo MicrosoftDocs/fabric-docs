@@ -9,31 +9,31 @@ ms.custom:
 ms.date: 01/29/2024
 ---
 
-# Authentication
+# Authentication setup
 
-## Setting up
+In order to be able to work with authentication, you need to go through three setups:
 
-In order to be able to work with authentication, you will need to go through 3 setups:
+1. Microsoft Entra ID Application (formerly Azure AD App)
+1. FE sample
+1. BE sample
 
-1. Microsoft Entra Id Application (AAD App).
-2. FE sample.
-3. BE sample.  
-
-Please follow this guide carefuly to be able to work with authentication in Fabric.
+Follow this guide carefuly to be able to work with authentication in Fabric.
 
 ## Azure Storage service provisioning
 
-This sample demonstrates storing and reading data from/to lakehouses, this requires generating tokens for Azure Storage service in OBO flows - to be able to do that, users need to consent for the application to use Azure Storage, and for that Azure Storage needs to be provisioned in the tenant.
+This sample demonstrates storing and reading data from/to lakehouses. This requires generating tokens for the Azure Storage service in OBO flows. To be able to do this, users need to consent to the application using Azure Storage, and for ththis, Azure Storage needs to be provisioned in the tenant.
+
 To make sure Azure Storage is provisioned in the tenant:
 
 1. Log into https://portal.azure.com
-2. Go to Microsoft Entra Id -> Enterprise applications
-3. In the filters, choose application type = all aplications, and application id starts with e406a681-f3d4-42a8-90b6-c2b029497af1
+1. Go to **Microsoft Entra ID** > **Enterprise applications**
+1. In the filters, choose **application type = all aplications**. The application ID starts with e406a681-f3d4-42a8-90b6-c2b029497af1
 
-   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/de5b7ae6-6c38-411f-ba4a-462d54f9263c)
+    :::image type="content" source="./media/authentication-setup/azure-storage-provisioning.png" alt-text="Screenshot showing Azure Storage provisioning." lightbox="./media/authentication-setup/azure-storage-provisioning.png":::
 
-If you see Azure storage application then you're set! if not, a tenant admin will need to provision it, to do so, ask your tenant admin to perform the following:  
-Open windows powershell as administrator and run the following:  
+If you see the Azure Storage application, you're set! If not, a tenant admin needs to provision it. To do so, ask your tenant admin to perform the following:
+  
+Open Windows PowerShell as administrator and run the following:  
 
 ```console
 Install-Module az  
@@ -42,25 +42,26 @@ Connect-AzureAD
 New-AzureADServicePrincipal -AppId e406a681-f3d4-42a8-90b6-c2b029497af1
 ```
 
-## Configuring your application in Microsoft Entra Id
+## Configuring your application in Microsoft Entra ID
 
-To work with authentication, you will need to have an application registered in Microsoft Entra Id, if you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
+To work with authentication, you need to have an application registered in Microsoft Entra ID. If you don't have an application registered, follow [this guide](/entra/identity-platform/quickstart-register-app#register-an-application) to create a new application.
 
-You will need to apply the following configurations to your application:
+You need to apply the following configurations to your application:
 
-* Application should be a multi tenant app.
-* For Dev applications, the redirect URI should be configured as `http://localhost:60006/close` with SPA platform.
-  This is required for our consent support - you may also add other redirect URIs as desired.
+* The application should be a multi-tenant app.
+* For dev applications, the redirect URI should be configured as `http://localhost:60006/close` with SPA platform. This is required for our consent support. You can also add other redirect URIs as desired.
   
-Please note that the redirect URI should be a URI that simply closes the page when navigating to it, `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](../Frontend/src/index.ts) (If you change it, make sure it matches the one configured on your application). 
+> [!NOTE]
+> The redirect URI should be a URI that simply closes the page when navigating to it. The URI `http://localhost:60006/close` is already configured in the frontend sample and you can change it in [Frontend/src/index.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Frontend/src/index.ts) (If you change it, make sure it matches the one configured for your application).
 
-  ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/97835845/bdd63045-e63d-4a76-a407-61064458eaa6)
+:::image type="content" source="./media/authentication-setup/register-application.png" alt-text="Screenshot of application registration UI." lightbox="./media/authentication-setup/register-application.png":::
 
-  **Note:** you can configure the redirect URI after creating the application under Manage -> Authentication.
+> [!NOTE]
+> You can configure the redirect URI after creating the application under **Manage** > **Authentication**.
 
-Next, you will need to change the Application Id URI for your application, to do so, go to Manage -> Expose an API, and edit the Application ID URI for your app:
+Next, you need to change the Application ID URI for your application. To do so, go to **Manage** > **Expose an API**, and edit the Application ID URI for your app:
 
-  * For development scenario, the Application ID URI should start with: "api://localdevinstance/[Workload's publisher's [tenant id](/entra/fundamentals/how-to-find-tenant) in lower case (tenant id of user used in fabric to run the sample)]/[Name of your workload]" and an optional sub-path at the end that starts with "/" (see examples).
+For the development scenario, the Application ID URI should start with: `api://localdevinstance/<Workload publisher's tenant ID in lower case (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional sub-path at the end that starts with `/` (see examples).
 
     1. Workloadname name must be exactly how it's specified in the manifest.
     2. ID URI should not end with a slash.
