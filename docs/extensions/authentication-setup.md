@@ -63,17 +63,27 @@ Next, you need to change the Application ID URI for your application. To do so, 
 
 For the development scenario, the Application ID URI should start with: `api://localdevinstance/<Workload publisher's tenant ID in lower case (the tenant ID of the user used in Fabric to run the sample)>/<Name of your workload>` and an optional sub-path at the end that starts with `/` (see examples).
 
-    1. Workloadname name must be exactly how it's specified in the manifest.
-    2. ID URI should not end with a slash.
-    3. At the end of the ID URI there's an optional sub-path: a string consisting of English lower or upper case letters, numbers and dashes, up to 36 characters.
-    
-    For example, if the publisher's tenant id is 853d9f4f-c71b-4420-b6ec-60e503458946, and the workload's name is "Fabric.WorkloadSample" then:
+Where:
 
-      * api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample is valid.
-      * api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/abc is valid.
-      * api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/ is not valid.
-      * api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a is not valid.
-      * any ID URI that does not start with api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample is not valid.
+* The workload name name must be exactly as it's specified in the manifest.
+* The ID URI should not end with a slash.
+* At the end of the ID URI there can be an optional sub-path: a string consisting of English lower or upper case letters, numbers, and dashes, up to 36 characters.
+
+> [!NOTE]
+> For help finding the tenant ID, see [How to find your Microsoft Entra tenant ID](/entra/fundamentals/how-to-find-tenant).
+
+For example, if the publisher's tenant ID is *853d9f4f-c71b-4420-b6ec-60e503458946*, and the workload's name is *Fabric.WorkloadSample* then:
+
+    The following URIs **are** valid
+
+    * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
+    * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/abc`
+
+    The following URIs **are not** valid
+
+    * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/`
+    * `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample/af/a`
+    * Any ID URI that **does not** start with `api://localdevinstance/853d9f4f-c71b-4420-b6ec-60e503458946/Fabric.WorkloadSample`
 
 ### Add a scope for CRUD/Jobs:
 
