@@ -69,7 +69,7 @@ The delta log folder contains a list of JSON files that were made available in O
 1. To view the JSON files, select the **_delta_log** folder.
 1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
 
-#### Parquet
+### Parquet
 
 The parquet file represents the data in your table that was made available in OneLake in Delta Lake format.
 
