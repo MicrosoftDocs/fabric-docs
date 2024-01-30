@@ -24,6 +24,6 @@ The SQL analytics endpoint and semantic model (dataset) associated with an inter
 
 As a workaround, move both shortcuts to the same Lakehouse. If not possible, there are no other workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

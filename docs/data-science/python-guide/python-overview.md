@@ -65,7 +65,7 @@ The Python ecosystem offers multiple graphing libraries that come packed with ma
 
 Learn more about how to create Python visualizations by visiting [Python visualization](../python-guide/python-visualizations.md).
 
-## Next steps
+## Related content
 
 - Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
 - Manage Python libraries: [Python library management](./python-library-management.md)
