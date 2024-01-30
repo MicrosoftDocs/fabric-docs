@@ -54,7 +54,7 @@ You've turned on data availability in your KQL database. You can now access all 
 
 ## View files
 
-When you turn on OneLake availability on a table, a delta log folder and parquet files are created. You can view the files that were made available in OneLake without changing experiences.
+When you turn on OneLake availability on a table, a delta log folder and a parquet file are created. You can view the files that were made available in OneLake without changing experiences.
 
 To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
@@ -64,9 +64,9 @@ The table file view opens with a [Delta log folder](#delta-log) and a [Parquet](
 
 ### Delta log
 
-The delta log folder contains a list of JSON files that were made available in OneLake. Every time you ingest new data into a table with OneLake availability enabled, a new JSON file is created in the delta log.
+The delta log folder contains a list of JSON files that were made available in OneLake. When you ingest new data into a table that has OneLake availability enabled, a new JSON file is created in the delta log.
 
-1. To view the JSON files, select **_delta_log**.
+1. To view the JSON files, select the **_delta_log** folder.
 1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
 
 #### Parquet
@@ -82,9 +82,9 @@ You can view the properties of the delta log folder, the individual JSON files, 
 
 1. To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
-  :::image type="content" source="media/one-logical-copy/more-options.png" alt-text="Screenshot of the table file view showing the delta log folder and the parquet file. The More menu option is highlighted.":::
+    :::image type="content" source="media/one-logical-copy/more-options.png" alt-text="Screenshot of the table file view showing the delta log folder and the parquet file. The More menu option is highlighted.":::
 
-1. Select the copy icon to copy the resource's URL or relative path for later use.
+1. Copy the desired URI type and paste it somewhere, like a notepad, to use in a later step.
 
 ## Related content
 
