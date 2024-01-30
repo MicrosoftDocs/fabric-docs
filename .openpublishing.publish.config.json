@@ -17,7 +17,8 @@
   ],
   "notification_subscribers": [
     "sngun@microsoft.com",
-    "cl-github-maintainer@microsoft.com"
+    "cl-github-maintainer@microsoft.com",
+    " kfollis@microsoft.com"
   ],
   "sync_notification_subscribers": [
     "sngun@microsoft.com",
