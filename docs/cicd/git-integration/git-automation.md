@@ -27,11 +27,11 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Get connection**](/rest/api/fabric/core/git/get-connection) details for the specified workspace.
 
-* [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the git repository and branch it's connected to.
+* [**Connect**](/rest/api/fabric/core/git/connect) and [**disconnect**](/rest/api/fabric/core/git/disconnect) a specific workspace from the Git repository and branch it's connected to.
 
-* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that has been connected to git.
+* [**Initialize a connection**](/rest/api/fabric/core/git/initialize-connection) for a workspace that has been connected to Git.
 
-* See which items have incoming changes and which items have changes that weren't yet committed to git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
+* See which items have incoming changes and which items have changes that weren't yet committed to Git with the [**Git status**](/rest/api/fabric/core/git/get-status) API.
 
 * [**Commit**](/rest/api/fabric/core/git/commit-to-git) the changes made in the workspace to the connected remote branch.
 
@@ -85,7 +85,7 @@ To get an access token, use the [Get-AzAccessToken](/powershell/module/az.accoun
     }
     ```
 
-1. **Describe the request body** - In this part of the script you specify which items (such as reports and dashboards) to deploy.
+1. **Describe the request body** - In this part of the script you specify which items (such as reports and notebooks) to commit.
 
     ```powershell
     $commitToGitBody = @{ 		
@@ -123,12 +123,12 @@ You can find the complete script in [Commit select changes to Git](https://githu
 
 #### Update from Git
 
-In this section we describe the steps involved in updating a workspace with the changes from Git. In this script update the workspace items with changes from Git, but we leave the Git repository unchanged.
+In this section we describe the steps involved in updating a workspace with the changes from Git. In this script we update the workspace items with changes from Git, but we leave the Git repository unchanged.
 
 [Update workspace from Git](https://github.com/microsoft/fabric-samples/blob/main/e2e-samples/GitIntegration-UpdateFromGit.ps1)
 
 1. Log into Azure and get authentication.
-1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from git request body.
+1. Call the [Get Status](/rest/api/fabric/core/git/get-status) API to build the update from Git request body.
 1. Call the [Update From Git](/rest/api/fabric/core/git/update-from-git) API to update the workspace with commits pushed to the connected branch.
 
 #### Connect and Sync
@@ -151,7 +151,7 @@ You can find the complete script in [Connect and sync with Git](https://github.c
 
 ## Considerations and limitations
 
-* Git integration with using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
+* Git integration using APIs is subject to the same [limitations](./git-integration-process.md#considerations-and-limitations) as the Git integration user interface.
 * Service principal is not supported.
 
 ## Related content
