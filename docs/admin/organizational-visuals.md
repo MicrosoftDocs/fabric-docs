@@ -120,7 +120,7 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 ### Local storage
 
-This setting enables visuals to store data on the browser's local storage which helps improve performance. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. The setting is enabled by default and applies to all visuals, including those managed by your organizational store, Desktop, and web.
+This setting enables visuals to [store data on the browser's local storage](/power-bi/developer/visuals/local-storage) which helps improve performance. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. The setting is enabled by default and applies to all visuals, including those managed by your organizational store, Desktop, and web.
 
 :::image type="content" source="./media/organizational-visuals/local-storage-setting.png" alt-text="Screenshot of the local storage settings admin switch.":::
 
