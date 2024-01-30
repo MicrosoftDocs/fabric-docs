@@ -44,7 +44,7 @@ ms.search.form: Get started
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable availability in OneLake](one-logical-copy.md#enable-availability-in-onelake)
+* [Enable availability in OneLake](one-logical-copy.md#turn-on-availability-in-onelake)
 
 ## Next step
 
