@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 01/30/2024
 ---
 
 # Scale your capacity
@@ -38,7 +38,7 @@ To scale your capacity, you need:
 
 ## Considerations and limitations
 
-Scaling up a capacity that’s smaller than F64 to a size that is 64 CUs or higher will be almost instantaneous, however the capacity license state might take up to three hours to update. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+Scaling up a capacity that’s smaller than F64 to a larger capacity happens almost immediately. However the capacity license might take up to three hours to update. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
 
 ## Related content
 
