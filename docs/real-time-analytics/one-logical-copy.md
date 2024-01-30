@@ -52,7 +52,7 @@ You can turn on data availability either on a KQL database or table level.
 
 You've turned on data availability in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
-### View files
+## View files
 
 When you turn on OneLake availability on a table, a delta log folder and parquet files are created. You can view the files that were made available in OneLake without changing experiences.
 
@@ -62,7 +62,7 @@ To view the files, hover over a table in the **Explorer** pane and then select t
 
 The table file view opens with a [Delta log folder](#delta-log) and a [Parquet](#parquet) file.
 
-#### Delta log
+### Delta log
 
 The delta log folder contains a list of JSON files that were made available in OneLake. Every time you ingest new data into a table with OneLake availability enabled, a new JSON file is created in the delta log.
 
@@ -76,7 +76,7 @@ The parquet file represents the data in your table that was made available in On
 > [!IMPORTANT]
 > It might take up to a few hours for the parquet file to appear after turning on OneLake availability.
 
-#### Properties
+### Properties
 
 You can view the properties of the delta log folder, the individual JSON files, or the parquet file. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
 
