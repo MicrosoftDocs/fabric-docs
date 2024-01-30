@@ -22,11 +22,11 @@ ms.search.form: Get started
 
     :::image type="icon" source="media/realtime-analytics-tutorial/home-icon.png" border="false":::
 
-2. Under **New**, select **Eventstream**.
+1. Under **New**, select **Eventstream**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Analytics in Microsoft Fabric.":::
 
-3. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
+1. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
 
     When provisioning is complete, the Eventstream landing page is shown.
 
