@@ -127,7 +127,7 @@ Once you select a column in the chart, you can use the *Explore* button to drill
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
-* *No filters applied* - Columns display the peak timepoint every 20 minutes. Each column has three colors that represent the overages elements.
+* *No filters applied* - Columns display the peak timepoint every 20 minutes.
 
 * *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
