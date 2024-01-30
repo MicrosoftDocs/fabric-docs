@@ -1,14 +1,14 @@
 ---
-title: Classification - before and after SynapseML
+title: Classification tasks using SynapseML
 description: Perform the same classification task with and without SynapseML.
 ms.topic: how-to
 ms.custom: build-2023
 ms.reviewer: jessiwang
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 06/13/2023
+ms.date: 12/28/2023
 ---
-# Classification - before and after SynapseML
+# Classification tasks using SynapseML
 
 In this article, you perform the same classification task in two
 different ways: once using plain **`pyspark`** and once using the
@@ -22,7 +22,7 @@ hyperparameters and choosing the best model.
 
 ## Prerequisites
 
-* Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
+Attach your notebook to a lakehouse. On the left side, select **Add** to add an existing lakehouse or create a lakehouse.
 
 ## Setup
 
