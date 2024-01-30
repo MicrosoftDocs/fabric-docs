@@ -38,7 +38,7 @@ To scale your capacity, you need:
 
 ## Considerations and limitations
 
-Scaling up a capacity that’s smaller than F64, might take up to three hours. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
+Scaling up a capacity that’s smaller than F64 to a size that is 64 CUs or higher will be almost instantaneous, however the capacity license state might take up to three hours to update. During this time, Fabric Free users might see a request to upgrade to a Power BI Pro license when they try to access a Power BI report.
 
 ## Related content
 
