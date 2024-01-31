@@ -77,7 +77,6 @@ The rules for mapping original Delta types to the SQL types in [!INCLUDE [fabric
 
 The columns that have the types that aren't listed in the table aren't represented as the table columns in the [!INCLUDE [fabric-se](includes/fabric-se.md)].
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
+- [T-SQL Surface Area in Microsoft Fabric](tsql-surface-area.md)
