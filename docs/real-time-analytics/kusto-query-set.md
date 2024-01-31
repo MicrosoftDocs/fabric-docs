@@ -26,17 +26,39 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 
 ## Select a database
 
-Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor.
+Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with a KQL database or a database that sits in an Azure Data Explorer cluster.
 
-To associate your KQL queryset with a database:
+Select the tab that corresponds with your desired database type.
+
+## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. Under **Database**, select **V** to expand the database connections.
+1. Under **Connect source**, select **OneLake data hub**.
+1. In the **OneLake data hub** window that appears, select a KQL database, and then select **Select**.
 
-1. Select a database from the **OneLake data hub** window that appears.
-
-    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the Onelake data hub window showing a selected KQL database.":::
+    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a selected KQL database.":::
 
     A list of tables associated with this database will appear below the database name.
+
+## [ADX cluster](#tab/adx-cluster)
+
+### Prerequisites
+
+* An Azure Data Explorer cluster and database. [Create a cluster and database](/azure/data-explorer/create-cluster-and-database).
+* You must have at least contributor permissions on the Azure Data Explorer cluster.
+
+1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. Under **Database**, select **V** to expand the database connections.
+1. Under **Connect source**, select **Azure Data Explorer**.
+1. Under **Connection URI**, enter your cluster URI, and then select the connect icon.
+
+    :::image type="content" source="media/kusto-query-set/connect-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
+
+1. Under **Database**, select **V** to expand the list of databases in your cluster, and then select a database.
+1. Select **Connect**.
+
+----
 
 ## Write a query
 
