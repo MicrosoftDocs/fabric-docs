@@ -68,7 +68,6 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visit [Microsoft Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Get Started with Warehouse](create-warehouse.md)
+- [Get Started with Warehouse](create-warehouse.md)

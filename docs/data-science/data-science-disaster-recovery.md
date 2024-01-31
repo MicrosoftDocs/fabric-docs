@@ -27,6 +27,6 @@ Then, export and copy your Fabric notebooks into your secondary workspace and re
 
 If a regional outage occurs, you can then access your machine learning items in the different region where the items were copied.
 
-## Next step
+## Related content
 
 - [OneLake Disaster Recovery](../onelake/onelake-disaster-recovery.md)
