@@ -487,8 +487,4 @@ For older updates, review [previous updates in Microsoft Fabric](whats-new-archi
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
 - [Microsoft Fabric videos on YouTube](https://www.youtube.com/@MicrosoftFabric/featured)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [Microsoft Fabric community](https://community.fabric.microsoft.com/)
+- [Microsoft Fabric community](https://community.fabric.microsoft.com/)

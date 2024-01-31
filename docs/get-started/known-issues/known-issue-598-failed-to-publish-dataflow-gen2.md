@@ -4,8 +4,8 @@ description: A known issue is posted where a customer tries to publish a Dataflo
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting  
-ms.date: 01/12/2024
-ms.custom: 
+ms.date: 01/16/2024
+ms.custom: known-issue-598
 ---
 
 # Known issue - Dataflow Gen2 failed to publish
@@ -16,7 +16,7 @@ Users get the following error message when they try to publish a Dataflow Gen2: 
 
 **Status:** Fixed: January 12, 2024
 
-**Problem area:** Data Factory
+**Product experience:** Data Factory
 
 ## Symptoms
 
@@ -25,3 +25,7 @@ When a user tries to publish a Dataflow Gen2, they get the following error messa
 ## Solutions and workarounds
 
 If you encounter this issue, try the following: Refresh the Dataflow Gen2 and try to publish again.
+
+## Next steps
+
+- [About known issues](https://support.fabric.microsoft.com/known-issues)
