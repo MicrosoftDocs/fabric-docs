@@ -87,7 +87,7 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 1. Open a [Rel-Time Dashboard](real-time-dashboard.md#create-a-new-dashboard).
 1. In the top menu, select **Add text** to open a text tile.
 
-    :::image type="content" source="media/dashboard-customize-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
+    :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
 
 1. In the query pane, paste the [image URL](#copy-image-url) that you copied in a previous step using the following syntax:
 
@@ -97,7 +97,7 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 
     The image renders in the tile's preview.
 
-    :::image type="content" source="media/dashboard-customize-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
+    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
 
 1. In the top menu, select **Apply changes** to save the tile.
 
