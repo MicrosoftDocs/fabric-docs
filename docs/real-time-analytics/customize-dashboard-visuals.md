@@ -71,7 +71,7 @@ The following table describes the available customization properties, categorize
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 
-## embed images
+## Embed images
 
 You can embed images in your dashboard tiles using Markdown text.
 
