@@ -57,7 +57,7 @@ Select the tab that corresponds with your desired database type.
 1. Under **Connect source**, select **Azure Data Explorer**.
 1. Under **Connection URI**, enter your cluster URI, and then select the connect icon.
 
-    :::image type="content" source="media/kusto-query-set/connect-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
+    :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
 
 1. Under **Database**, select **V** to expand the list of databases in your cluster, and then select a database.
 1. Select **Connect**.
