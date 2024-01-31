@@ -71,9 +71,9 @@ The following table describes the available customization properties, categorize
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 
-## Imbed images
+## embed images
 
-You can imbed images in your dashboard tiles using Markdown text.
+You can embed images in your dashboard tiles using Markdown text.
 
 For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
@@ -82,12 +82,12 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 1. Open your desired image in your browser of choice.
 1. Copy the image URL and paste it somewhere, like a notepad, to use in a later step.
 
-### Imbed image in dashboard
+### Embed image in dashboard
 
-1. Open a [dashboard](azure-data-explorer-dashboards.md#create-a-new-dashboard).
-1. In the top menu, select **+Add** > **Add text** to open a text tile.
+1. Open a [dashboard](real-time-dashboard.md#create-a-new-dashboard).
+1. In the top menu, select **Add text** to open a text tile.
 
-    :::image type="content" source="media/dashboard-customize-visuals/add-tile.png" alt-text="Screenshot of dashboard ribbon showing the drop-down menu of the Add button.":::
+    :::image type="content" source="media/dashboard-customize-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
 
 1. In the query pane, paste the [image URL](#copy-image-url) that you copied in a previous step using the following syntax:
 
@@ -97,7 +97,7 @@ For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown 
 
     The image renders in the tile's preview.
 
-    :::image type="content" source="media/dashboard-customize-visuals/imbed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
+    :::image type="content" source="media/dashboard-customize-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
 
 1. In the top menu, select **Apply changes** to save the tile.
 
