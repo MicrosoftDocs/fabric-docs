@@ -22,7 +22,7 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions and data
+* A [KQL database](create-database.md) with editing permissions and data, or an Azure Data Explorer [cluster and database](/azure/data-explorer/create-cluster-and-database) with at least contributor permissions on the cluster.
 
 ## Select a database
 
@@ -43,11 +43,6 @@ Select the tab that corresponds with your desired database type.
     :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a selected KQL database.":::
 
 ## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
-
-### Prerequisites
-
-* An Azure Data Explorer cluster and database. [Create a cluster and database](/azure/data-explorer/create-cluster-and-database).
-* You must have at least contributor permissions on the Azure Data Explorer cluster.
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
 1. Under **Database**, select **V** to expand the database connections menu.
