@@ -39,7 +39,7 @@ ms.date: 11/15/2023
    If you selected the **OAuth2** authentication method:
 
    - Any query that runs longer than the OAuth token expiration policy might fail.
-   - Cross-tenant Azure Active Directory (Azure AD) accounts aren't supported.
+   - Cross-tenant Microsoft Entra accounts aren't supported.
 
 6. Under **General** > **Privacy level**, optionally configure a [privacy level](https://support.office.com/article/Privacy-levels-Power-Query-CC3EDE4D-359E-4B28-BC72-9BEE7900B540) for your data source. This setting doesn't apply to [DirectQuery](/power-bi/connect-data/desktop-directquery-about).
 
@@ -87,6 +87,6 @@ Remember that you need to add users to each data source that you want to grant a
 
 On the **Manage Users** tab for the data source, you can remove users and security groups that use this data source.
 
-## Next steps
+## Related content
 
-[Connectors overview](connector-overview.md)
+- [Connectors overview](connector-overview.md)

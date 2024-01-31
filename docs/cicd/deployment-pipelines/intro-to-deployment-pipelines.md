@@ -63,7 +63,7 @@ You can learn more about [which items are copied to the next stage](understand-t
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-## Next steps
+## Related content
 
 * [Understand the deployment pipelines process](understand-the-deployment-process.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

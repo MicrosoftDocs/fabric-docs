@@ -4,7 +4,7 @@ description: Learn about tables in Microsoft Fabric.
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/13/2023
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -44,7 +44,7 @@ To show the organization of the tables, you could use `fact`, `dim`, or `int` as
 | Order | Fact | `wwi.FactOrder` |
 
 - Table names are case sensitive. 
-- Table names can't contain `/` or `\`.
+- Table names can't contain `/` or `\` or end with a `.`.
 
 ## Create a table
 
@@ -64,6 +64,9 @@ CREATE TABLE MyTable (col1 int, col2 int );
 ### Schema names
 
 [!INCLUDE [fabric-dw](includes/fabric-dw.md)] supports the creation of custom schemas. Like in SQL Server, schemas are a good way to group together objects that are used in a similar fashion. The following code creates a [user-defined schema](/sql/t-sql/statements/create-schema-transact-sql?view=fabric&preserve-view=true) called `wwi`.
+
+- Schema names are case sensitive. 
+- Schema names can't contain `/` or `\` or end with a `.`.
 
 ```sql
 CREATE SCHEMA wwi;

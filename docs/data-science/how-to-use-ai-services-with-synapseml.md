@@ -6,12 +6,14 @@ ms.custom: build-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
-ms.date: 09/06/2023
+ms.date: 12/12/2023
 ---
 
 # Use Azure AI services with SynapseML in Microsoft Fabric
 
 [Azure AI services](https://azure.microsoft.com/products/ai-services/) help developers and organizations rapidly create intelligent, cutting-edge, market-ready, and responsible applications with out-of-the-box and pre-built and customizable APIs and models. In this article, you'll use the various services available in Azure AI services to perform tasks that include: text analytics, translation, document intelligence, vision, image search, speech to text and text to speech conversion, anomaly detection, and data extraction from web APIs.
+
+The goal of Azure AI services is to help developers create applications that can see, hear, speak, understand, and even begin to reason. The catalog of services within Azure AI services can be categorized into five main pillars: [Vision](https://azure.microsoft.com/products/ai-services/ai-vision/), [Speech](https://azure.microsoft.com/products/ai-services/ai-speech/), [Language](https://azure.microsoft.com/products/ai-services/text-analytics/), [Web search](https://www.microsoft.com/bing/apis/bing-image-search-api), and [Decision](https://azure.microsoft.com//products/ai-services/ai-anomaly-detector).
 
 ## Prerequisites
 
@@ -424,7 +426,7 @@ display(
     )
 )
 ```
-## Next steps
+## Related content
 
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

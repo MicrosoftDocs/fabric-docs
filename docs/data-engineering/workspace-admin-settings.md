@@ -23,14 +23,14 @@ To manage the Spark settings for the pool associated with your workspace:
 
 1. Go to the **Workspace settings** in your workspace and choose the **Data Engineering/Science** option to expand the menu:
 
-   :::image type="content" source="media\workspace-admin-settings\data-engineering-menu.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu.":::
+   :::image type="content" source="media/workspace-admin-settings/data-engineering-menu-inline.png" alt-text="Screenshot showing where to select Data Engineering in the Workspace settings menu." lightbox="media/workspace-admin-settings/data-engineering-menu.png" :::
 
 2. You see the **Spark Compute** option in your left-hand menu:
 
-:::image type="content" source="media\workspace-admin-settings\workspace-settings.gif" alt-text="Gif showing different sections of the spark compute in workspace settings.":::
+   :::image type="content" source="media/workspace-admin-settings/workspace-settings.gif" alt-text="Gif showing different sections of the spark compute in workspace settings.":::
 
-> [!NOTE]
-> If you change the default pool from Starter Pool to a Custom Spark pool you may see longer session start (~3 minutes).
+   > [!NOTE]
+   > If you change the default pool from Starter Pool to a Custom Spark pool you may see longer session start (~3 minutes).
 
 ## Pool
 
@@ -46,19 +46,19 @@ To learn more, see [Spark Compute Settings for Fabric Capacities](capacity-setti
 
 Admins can create custom Spark pools based on their compute requirements by selecting the **New Pool** option.
 
-:::image type="content" source="media\workspace-admin-settings\custom-pool-creation.png" alt-text="Screenshot showing custom pool creation options.":::
+:::image type="content" source="media/workspace-admin-settings/custom-pool-creation-inline.png" alt-text="Screenshot showing custom pool creation options." lightbox="media/workspace-admin-settings/custom-pool-creation.png":::
 
 Microsoft Fabric Spark supports single node clusters, which allows users to select a minimum node configuration of 1 in which case the driver and executor run in a single node. These single node clusters offer restorable high-availability in case of node failures and better job reliability for workloads with smaller compute requirements. You can also enable or disable autoscaling option for your custom Spark pools. When enabled with autoscale, the pool would acquire new nodes within the max node limit specified by the user and retire them after the job execution for better performance.
 
 You can also select the option to dynamically allocate executors to pool automatically optimal number of executors within the max bound specified based on the data volume for better performance.
 
-:::image type="content" source="media\workspace-admin-settings\custom-pool-auto-scale.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation.":::
+:::image type="content" source="media/workspace-admin-settings/custom-pool-auto-scale-inline.png" alt-text="Screenshot showing custom pool creation options for autoscaling and dynamic allocation." lightbox="media/workspace-admin-settings/custom-pool-auto-scale.png":::
 
 Learn more about [Spark Compute for Fabric](spark-compute.md).
 
 * **Customize compute configuration for items**: As a workspace admin, you can allow users to adjust compute configurations (session level properties which include Driver/Executor Core, Driver/Executor Memory) for individual items such as notebooks, spark job definitions using Environment.
 
-:::image type="content" source="media\workspace-admin-settings\customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
+:::image type="content" source="media/workspace-admin-settings/customize-compute-items.png" alt-text="Screenshot showing switch to customize compute for items.":::
 
 If the setting is turned off by the workspace admin, the Default pool and its compute configurations will be used for all environments in the workspace.
 
@@ -71,11 +71,12 @@ In the environment tab, you have the option to set the default environment. You 
 As a Fabric workspace admin, you can select an Environment as workspace default Environment.
 
 You can also create a new one through the **Environment** dropdown.
-    :::image type="content" source="media\workspace-admin-settings\env-dropdown-ws.png" alt-text="Environment creation through attachment dropdown in WS setting":::
+
+:::image type="content" source="media/workspace-admin-settings/env-dropdown-ws-inline.png" alt-text="Environment creation through attachment dropdown in WS setting" lightbox="media/workspace-admin-settings/env-dropdown-ws.png":::
 
 If you disable the option to have a default environment, you have the option to select the Fabric runtime version from the available runtime versions listed in the dropdown selection. 
 
-:::image type="content" source="media\workspace-admin-settings\select-runtime-from-list.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\workspace-admin-settings\select-runtime-from-list.png":::
+:::image type="content" source="media/workspace-admin-settings/select-runtime-from-list-inline.png" alt-text="Screenshot showing where to select runtime version." lightbox="media/workspace-admin-settings/select-runtime-from-list.png":::
 
 Learn more about [Spark runtimes](runtime.md)
 
@@ -83,18 +84,19 @@ Learn more about [Spark runtimes](runtime.md)
 
 High concurrency mode allows users to share the same Spark sessions in Fabric Spark for data engineering and data science workloads. An item like a notebook uses a Spark session for its execution and when enabled allows users to share a single spark session across multiple notebooks. 
 
-:::image type="content" source="media\workspace-admin-settings\high-concurrency-workspace-setting-new.png" alt-text="Screenshot showing high concurrency settings page." lightbox="media\workspace-admin-settings\high-concurrency-workspace-setting-new.png":::
+:::image type="content" source="media/workspace-admin-settings/high-concurrency-workspace-setting-new-inline.png" alt-text="Screenshot showing high concurrency settings page." lightbox="media/workspace-admin-settings/high-concurrency-workspace-setting-new.png":::
 
 Learn more about [High Concurrency in Fabric Spark](high-concurrency-overview.md)
 
 ## Automatic logging for Machine Learning models and experiments
 
 Admins can now enable autologging for their machine learning models and experiments. This option automatically captures the values of input parameters, output metrics, and output items of a machine learning model as it is being trained.
-[Learn more about autologging](https://mlflow.org/docs/latest/tracking.html)
-:::image type="content" source="media\workspace-admin-settings\automatic-log-settings.png" alt-text="Screenshot showing autolog settings page.":::
+[Learn more about autologging](https://mlflow.org/docs/latest/tracking.html).
 
+:::image type="content" source="media/workspace-admin-settings/automatic-log-settings-inline.png" alt-text="Screenshot showing autolog settings page." lightbox="media/workspace-admin-settings/automatic-log-settings.png":::
 
-## Next steps
-- Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
+## Related content
+
+* Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Find answers to frequently asked questions: [Apache Spark workspace administration settings FAQ](spark-admin-settings-faq.yml).

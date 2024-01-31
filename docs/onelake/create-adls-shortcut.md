@@ -36,7 +36,7 @@ The lakehouse automatically refreshes. The shortcut appears under **Files** in t
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
-## Next steps
+## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
 - [Create an Amazon S3 shortcut](create-s3-shortcut.md)

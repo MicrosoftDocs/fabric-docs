@@ -237,7 +237,7 @@ df.write.format('delta').mode("overwrite").save(
 )  
 ```
 
-## Next steps
+## Related content
 
 - [End-to-end prediction example using a fraud detection model](fraud-detection.md)
 - [How to train ML models with scikit-learn in Microsoft Fabric](train-models-scikit-learn.md)

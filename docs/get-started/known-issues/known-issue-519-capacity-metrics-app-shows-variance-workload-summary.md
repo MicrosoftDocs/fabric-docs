@@ -4,7 +4,7 @@ description: A known issue is posted where the Capacity Metrics app shows varian
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 10/13/2023
+ms.date: 12/14/2023
 ms.custom: known-issue-519
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-519
 
 Fabric capacities support a breakdown of the capacity usage by workload meter. The meter usage is derived from the workload summary usage, which contains smoothed data over multiple time periods. Due to a rounding issue with this summary usage, it appears lower than the usage from the workload operations in the Capacity Metrics app. Until this issue is fixed, you can't correlate your operation level usage to your Azure bill breakdown. While the difference doesn't change the total Fabric capacity bill, the usage attributed to Fabric workloads might be under-reported.
 
-**Status:** Open
+**Status:** Fixed: December 13, 2023
 
 **Product Experience:** Administration & Management
 
@@ -24,6 +24,6 @@ A customer can uses the Capacity Metrics app to look at their workload usage for
 
 No workarounds at this time. This article will be updated when the fix is released.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

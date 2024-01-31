@@ -15,6 +15,10 @@ ms.date: 05/08/2023
 
 The [LightGBM](https://github.com/Microsoft/LightGBM) framework specializes in creating high-quality and GPU-enabled decision tree algorithms for ranking, classification, and many other machine learning tasks. In this article, you'll use LightGBM to build classification, regression, and ranking models.
 
+LightGBM is an open-source, distributed, high-performance gradient boosting (GBDT, GBRT, GBM, or
+MART) framework. LightGBM is part of Microsoft's
+[DMTK](https://github.com/microsoft/dmtk) project. You can use LightGBM by using LightGBMClassifier, LightGBMRegressor, and LightGBMRanker. LightGBM comes with the advantages of being incorporated into existing SparkML pipelines and used for batch, streaming, and serving workloads. It also offers a wide array of tunable parameters, that one can use to customize their decision tree system. LightGBM on Spark also supports new types of problems such as quantile regression.
+
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
@@ -250,7 +254,7 @@ In this section, you'll use LightGBM to build a ranking model.
     predictions.limit(10).toPandas()
     ```
 
-## Next steps
+## Related content
 
 - [What is Azure AI services in Azure Synapse Analytics?](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)

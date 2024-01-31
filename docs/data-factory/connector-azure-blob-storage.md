@@ -112,7 +112,7 @@ You need to specify the tenant ID, service principal client ID and service princ
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Authorize access to blobs using Azure Active Directory](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
 
    * Tenant ID
    * Application ID

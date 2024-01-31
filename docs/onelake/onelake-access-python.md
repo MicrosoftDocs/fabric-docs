@@ -24,7 +24,7 @@ Before starting your project, make sure you have the following prerequisites:
 
 ## Set up your project
 
-From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries. OneLake supports the same SDKs as Azure Data Lake Storage (ADLS) Gen2 and supports Microsoft Entra ID authentication, which is provided by the azure-identity package.  
+From your project directory, install packages for the Azure Data Lake Storage and Azure Identity client libraries. OneLake supports the same SDKs as Azure Data Lake Storage (ADLS) Gen2 and supports Microsoft Entra authentication, which is provided by the azure-identity package.  
 
 ```console
 pip install azure-storage-file-datalake azure-identity
@@ -138,7 +138,7 @@ To run this sample, save the preceding code into a file `listOneLakeDirectory.py
 python listOneLakeDirectory.py
 ```
 
-## Learn more
+## Related content
 
 - [Use Python to manage ADLS Gen2](/azure/storage/blobs/data-lake-storage-directory-file-acl-python)
 - [OneLake parity and integration](onelake-api-parity.md)

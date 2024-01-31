@@ -84,6 +84,6 @@ Connections between items are only established when you assign a workspace to a 
 
 * You can't assign a [template app](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace) workspace.
 
-## Next steps
+## Related content
 
 [Compare content in different stages](compare-pipeline-content.md)

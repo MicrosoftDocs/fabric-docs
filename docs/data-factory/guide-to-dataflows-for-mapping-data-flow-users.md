@@ -46,6 +46,8 @@ When authoring Dataflow Gen2 using the Power Query Online interface, you can use
 | :---- | :---- |
 | **Derived Column** | **Custom column** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/derived-column.svg" alt-text="Screenshot of the Derived Column transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/custom-column-options.png" alt-text="Screenshot of the Custom Column options transformation icons."::: <br><br> **Navigation:** <br>Add column > Custom column<br><br>**Important:**<br>Column from examples - Use examples to create a new column in this table. (Ctrl + E)<br>Custom column - Create a new column based on other columns, or a custom expression.<br>Invoke custom function - Invoke a custom function for each row of this table.<br>Conditional column - Create a new column that conditionally adds the values in the currently selected column. |
+||**Replace values** |
+| | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/replace-values.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 | **Select** | **Choose columns** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/select.svg" alt-text="Screenshot of the Select transformation icon.":::<br>**Note:** Includes the ability to select, drop and rename (Name as) columns and whether to drop or pass on duplicate columns | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/choose-columns.png" alt-text="Screenshot of the Choose columns transformation icon."::: <br><br> **Navigation:**<br>Home > Choose columns |
 | **(Remove Mapping)** | **Remove columns** |
@@ -90,8 +92,6 @@ When authoring Dataflow Gen2 using the Power Query Online interface, you can use
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter.svg" alt-text="Screenshot of the Filter transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/filter-rows.png" alt-text="Screenshot of the Filter rows transformation icon."::: <br><br> **Navigation:**<br>Home > Filter rows |
 | **Sort** | **Sort** |
 | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.svg" alt-text="Screenshot of the Sort transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/sort.png" alt-text="Screenshot of the Power Query Sort transformation icon."::: <br><br> **Navigation:**<br>Home > Sort |
-| **Alter row** | **Replace values** |
-| :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/alter-row.svg" alt-text="Screenshot of the Alter Row transformation icon."::: | :::image type="content" source="media/guide-to-dataflows-for-mapping-data-flow-users/replace-values.png" alt-text="Screenshot of the Replace values transformation icon."::: <br><br> **Navigation:**<br>Transform > Replace values |
 
 #### Flowlets
 | Mapping Data Flow | Dataflow Gen2 |
@@ -109,5 +109,6 @@ When authoring Dataflow Gen2 using the Power Query Online interface, you can use
 The following mapping data flow transformations are not supported in Dataflow Gen2. To vote for support of these operations, please visit [Fabric ideas](https://aka.ms/fabricideas).
 
 - Assert
+- Alter Row
 - Stringify
 - Window

@@ -38,8 +38,8 @@ landingContent:
     linkLists:
       - linkListType: concept
         links:
-          - text: Resiliency in Microsoft Fabric
-            url: az-resiliency.md
+          - text: Reliability in Microsoft Fabric
+            url: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
       - linkListType: how-to-guide
         links:
           - text: Customer Lockbox for Microsoft Fabric

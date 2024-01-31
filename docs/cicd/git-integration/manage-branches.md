@@ -78,7 +78,7 @@ To switch between branches, follow these steps:
 
     :::image type="content" source="media/manage-branches/switch-branch-confirm.png" alt-text="Screenshot of workspace settings screen asking if you're sure you want to switch branches.":::
 
-## Next steps
+## Related content
 
 - [Resolve errors and conflicts](./conflict-resolution.md)
 - [Git integration best practices](../best-practices-cicd.md)

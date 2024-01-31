@@ -104,7 +104,7 @@ Step 2 is when notebooks are imported from intermediate storage into the Fabric 
 * **2.1) Validate the configurations** in step 1.2 to ensure the right Fabric workspace and prefix values are indicated to import the notebooks.
 * **2.2) Run the third cell** of the export/import notebook to import all notebooks from intermediate location.
 
-## Next steps
+## Related content
 
 - [Migrate Spark pools](migrate-synapse-spark-pools.md)
 - [Migrate Spark job definition](migrate-synapse-spark-job-definition.md)

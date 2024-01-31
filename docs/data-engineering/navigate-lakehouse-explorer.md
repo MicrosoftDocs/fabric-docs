@@ -14,7 +14,7 @@ ms.search.form: Lakehouse Explorer
 
 # Navigate the Fabric Lakehouse explorer
 
-The Lakehouse Explorer page serves as the central hub for all your interactions within the Lakehouse environment. It's your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse Explorer, the Main View, and the Ribbon.
+The Lakehouse Explorer page serves as the central hub for all your interactions within the Lakehouse environment. The Lakehouse Explorer is built into the Fabric portal. It's your gateway to seamlessly load data into your Lakehouse, navigate through your data, preview content, and perform various data-related tasks. This page is divided into three main sections: the Lakehouse Explorer, the Main View, and the Ribbon.
 
 :::image type="content" source="media\lakehouse-overview\lakehouse-overview.gif" alt-text="Gif of overall lakehouse experience." lightbox="media\lakehouse-overview\lakehouse-overview.gif":::
 
@@ -75,7 +75,7 @@ Discover different use cases to understand the best way to [load data in your la
 
 The [SQL analytics endpoint](lakehouse-sql-analytics-endpoint.md) can be accessed directly from the Lakehouse experience by using the dropdown in top-right area of the ribbon. Using this quick access method, you immediately land in the t-sql mode, which will allow you to work directly on top of your Delta tables in the lake to help you prepare them for reporting.
 
-## Next steps
+## Related content
 
 We hope this guide helps you make the most of the Lakehouse Explorer and its diverse functionalities. Feel free to explore, experiment, and make your data management tasks more efficient.
 

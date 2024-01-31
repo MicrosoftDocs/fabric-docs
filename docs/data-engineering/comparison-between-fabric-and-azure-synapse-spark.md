@@ -60,7 +60,7 @@ The following table compares Azure Synapse Spark and Fabric Spark pools.
 | -- | -- | -- |
 | Live pool (pre-warm instances) | - | Yes, Starter pools |
 | Custom pool| Yes | Yes |
-| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3 | 3.3, 3.4 |
+| Spark versions (runtime) | 2.4, 3.1, 3.2, 3.3, 3.4 | 3.3, 3.4 |
 | Autoscale | Yes | Yes |
 | Dynamic allocation of executors | Yes, up to 200 | Yes, based on capacity |
 | Adjustable node sizes | Yes, 3-200 | Yes, 1-based on capacity |
@@ -154,8 +154,6 @@ Considerations:
 | Import/export | Yes | Yes |
 | API/SDK support | Yes | No |
 
-- **Inline**: The ```%%configure``` magic command is still [not fully supported on Fabric at this moment](library-management.md). Don't use it to bring .jar file to your notebook session.
-
 - **Other considerations**:
   - **Built-in libraries**: Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users might need compilation, the addition of custom libraries, and adjusting syntax. See built-in Fabric Spark runtime libraries [here](runtime.md).
 
@@ -244,7 +242,7 @@ Hive MetaStore (HMS) differences and considerations:
 > [!NOTE]
 > Learn how to [migrate Azure Synapse Spark catalog HMS metadata to Fabric](migrate-synapse-hms-metadata.md).
 
-## Next steps
+## Related content
 
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md), and [Spark job definitions](migrate-synapse-spark-job-definition.md)
 - [Migrate data and pipelines](migrate-synapse-data-pipelines.md)

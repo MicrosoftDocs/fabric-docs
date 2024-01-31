@@ -107,7 +107,7 @@ def unique(list_input):
         print(x)    
 ```
 
-## Next steps
+## Related content
 
 For more information about Fabric notebooks, see the following articles.
 

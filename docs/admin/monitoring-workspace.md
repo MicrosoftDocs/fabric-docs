@@ -64,7 +64,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
 
-* If the workspace creator uses [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
+* If the workspace creator uses [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
 ## Considerations and limitations
 

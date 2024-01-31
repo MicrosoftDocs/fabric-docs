@@ -51,7 +51,7 @@ In this section, you create a dataflow to load data from an OData source into a 
 
 1. Select the Orders table and select **Next**.
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/select-orders-table.png" alt-text="Screenshot showing the select orders table dialog.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/select-orders-table-inline.png" alt-text="Screenshot showing the select orders table dialog." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/select-orders-table.png" :::
 
 1. Select the following columns to keep:
     - `OrderID`
@@ -87,7 +87,7 @@ In this section, you create a dataflow to load data from an OData source into a 
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-orders-table.png" alt-text="Screenshot showing the data destination lakehouse order table.":::
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace.png" alt-text="Screenshot showing the data destination lakehouse settings replace.":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace-inline.png" alt-text="Screenshot showing the data destination lakehouse settings replace." lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/output-destination-lakehouse-settings-replace.png":::
 
 1. select **Next** and publish the dataflow.
 
@@ -98,6 +98,9 @@ You have now created a dataflow to load data from an OData source into a lakehou
 ## Add a query to the dataflow to filter the data based on the data destination
 
 This section adds a query to the dataflow to filter the data based on the data in the destination lakehouse. The query gets the maximum `OrderID` in the lakehouse at the beginning of the dataflow refresh and uses the maximum OrderId to only get the orders with a higher OrderId from to source to append to your data destination. This assumes that orders are added to the source in ascending order of `OrderID`. If this isn't the case, you can use a different column to filter the data. For example, you can use the `OrderDate` column to filter the data.
+
+>[!NOTE]
+> OData filters are applied within Fabric after the data is recieved from the data source, however, for database sources like SQL Server, the filter is applied in the query submitted to the back end data source, and only filtered rows are returned to the service.
 
 1. After the dataflow refreshes, reopen the dataflow you created in the previous section.
 
@@ -119,7 +122,7 @@ This section adds a query to the dataflow to filter the data based on the data i
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/disable-staging.png" alt-text="Screenshot showing the disable staging function.":::
 
-1. In the data preview, right-click on the `OrderID` column and select **Drill Down**.
+1. In the data preview, right-click on the `OrderID` column and select **Drill down**.
 
     :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/drill-down.png" alt-text="Screenshot showing the drill down function.":::
 
@@ -140,7 +143,7 @@ You now have a query that returns the maximum OrderID in the lakehouse. This que
 
 1. Allow combining the data from the OData source and the lakehouse by confirming the following dialog:
 
-    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png" alt-text="Screenshot showing the allow combining data dialog."  lightbox="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png":::
+    :::image type="content" source="media/tutorial-setup-incremental-refresh-with-dataflows-gen2/combine-datasources-confirmation.png" alt-text="Screenshot showing the allow combining data dialog.":::
 
 1. Update the data destination to use the following settings:
     - Update method: `Append`

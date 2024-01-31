@@ -89,7 +89,7 @@ Dynamic allocation allows the Spark application to request more executors if the
 
 When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)

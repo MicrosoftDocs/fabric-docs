@@ -51,11 +51,11 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
 1. In the **Query** pane,
     1. Select the data source from the drop-down menu.
-    1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see Use parameters in your query.
+    1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboards-parameters.md#use-parameters-in-your-query).
 
     1. Select **+ Add visual**.
 
-:::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Analytics in Microsoft Fabric.":::
 
 1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual.
 1. Select **Apply changes** to pin the visual to the dashboard.
@@ -65,13 +65,27 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
     :::image type="content" source="media/real-time-dashboard/save-dashboard.png" alt-text="Screenshot of dashboard tile with save highlighted in a red box.":::
 
+## Add page
+
+Pages are optional containers for tiles. You can use pages to organize tiles into logical groups, such as by data source or by subject area. You can also use pages to create a dashboard with multiple views, such as a dashboard with a drillthrough from a summary page to a details page.
+
+1. On the **Pages** pane, select **+ Add page**.
+
+    :::image type="content" source="media/real-time-dashboard/new-page.png" alt-text="Screenshot of adding a page to a Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
+
+1. To name the page, select the vertical **More menu [...]** > **Rename page**.
+
+    :::image type="content" source="media/real-time-dashboard/new-page-rename.png" alt-text="Screenshot of renaming a page in Real-Time Dashboards.":::
+
+1. [Add tiles](#add-tile) to the page.
+
 ## Enable auto refresh
 
 Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
 
-The default auto refresh rate can be set by a database editor. Both editors and viewers can change the actual rate of auto refresh while viewing a dashboard. 
+The default auto refresh rate can be set by a database editor. Both editors and viewers can change the actual rate of auto refresh while viewing a dashboard.
 
-However, database editors may want to limit the minimum refresh rate that any viewer can set so as to reduce the cluster load. When the minimum refresh rate is set, database users can't set a refresh rate lower than the minimum.
+However, database editors can limit the minimum refresh rate that any viewer can set so as to reduce the cluster load. When the minimum refresh rate is set, database users can't set a refresh rate lower than the minimum.
 
 1. Select the **Manage** tab > **Auto refresh**.
 1. Toggle the option so auto refresh is **Enabled**.
@@ -82,12 +96,11 @@ However, database editors may want to limit the minimum refresh rate that any vi
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tile(s).  For more information about how to set up and use different kinds of parameters, see Use parameters in Real-Time Dashboards.
-
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboards-parameters.md).
 
 ### Share the dashboard
 
-1. To share the dashboard link: 
+To share the dashboard link:
     1. Select **Share** and then select **Copy link**
     1. In the **Dashboard permissions** window, select **Copy link**.
 

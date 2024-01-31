@@ -78,6 +78,6 @@ A column chart that shows cumulative billable storage by date and hour. Cumulati
 
 User can export the report's data by selecting Export Data. Selecting Export Data takes you to a page with a matrix visual that displays billable storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
 
-## Next steps
+## Related content
 
-[Understand the metrics app compute page](metrics-app-compute-page.md)
+- [Understand the metrics app compute page](metrics-app-compute-page.md)

@@ -1,5 +1,5 @@
 ---
-title: Multi-Geo support for Fabric Premium
+title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,13 +9,13 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 01/28/2024
 LocalizationGroup: Premium
 ---
 
-# Configure Multi-Geo support for Fabric Premium
+# Configure Multi-Geo support for Fabric
 
-Multi-Geo is a Fabric Premium feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric Premium customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
+Multi-Geo is a Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 Sovereign clouds support Multi-Geo across regions within that cloud.
 
@@ -60,7 +60,6 @@ The following items are stored in the Premium region when Multi-Geo is enabled:
 These items remain in the home region for the tenant:
 
 - Push datasets
-- Excel workbooks
 - Dashboard/report metadata: tile names, tile queries, and any other data
 - Service buses for gateway queries or scheduled refresh jobs
 - Permissions
@@ -100,7 +99,7 @@ Large-storage format semantic models shouldn't be moved from the region where th
 - The detailed semantic model metadata that is cached as part of [enhanced metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning) is always stored in the home region, even if the scanned semantic model is located in a remote region.
 - The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo at this time.
 - It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
-- Multi-Geo doesn't support Metrics.
+- Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
 ## Related content
 

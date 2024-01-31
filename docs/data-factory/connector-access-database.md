@@ -27,7 +27,7 @@ The Access database connector supports the following authentication types for co
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an Access database. The following links provide the specific Power Query connector information you need to connect to an Access database in Dataflow Gen2:
 
-- To get started using the Access database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Access database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Access database prerequisites](/power-query/connectors/access-database#prerequisites) before connecting to the Access database connector.
 - To connect to the Access database connector from Power Query, go to [Connect to Access database from Power Query Online](/power-query/connectors/access-database#connect-to-an-access-database-from-power-query-online).
 

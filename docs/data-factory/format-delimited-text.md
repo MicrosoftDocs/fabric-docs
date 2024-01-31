@@ -23,14 +23,14 @@ Delimited text format is supported for the following activities and connectors a
 |---|---|
 | **Supported connector** |[Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | Azure Data Lake Storage Gen1 |
+|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) | 
 |  | [HTTP](connector-http-copy-activity.md)| 
 | **Supported activity** | [Copy activity](copy-data-activity.md) |
 |  | [Lookup activity](lookup-activity.md) |
-|  | GetMetadata activity |
-|  | Delete activity | 
+|  | [GetMetadata activity](get-metadata-activity.md) |
+|  | [Delete activity](delete-data-activity.md) | 
 
 ## Delimited text format in copy activity
 
@@ -140,8 +140,6 @@ The following properties are supported in the copy activity **Source** section w
 |**Quote character**|The single character to quote column values if it contains column delimiter. When **Quote character** is defined as empty string, it means there is no quote char and column value is not quoted, and escape character is used to escape the column delimiter and itself. |< your selected quote character > <br> **double quotes** `"` (by default) |No| quoteChar|
 |**First row as header**|Specifies whether to treat the first row in the given worksheet/range as a header line with names of columns.| Selected or unselected |No| firstRowAsHeader: <br> true or false (default)|
 |**Null value**|Specifies the string representation of null value. The default value is empty string.|< the string representation of null value > <br> empty string (by default) |No| nullValue|
-|**Skip line count**|Indicates the number of non-empty rows to skip when reading data from input files. If both **Skip line count** and **First row as header** are specified, the lines are skipped first and then the header information is read from the input file.|< your skip line count > |No|skipLineCount|
-
 
 ### Delimited text as destination
 
@@ -165,6 +163,6 @@ The following properties are supported in the copy activity **Destination** sect
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the max rows per file. |< your max rows per file > | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, file name prefix will be auto generated. This property does not apply when source is file based store or partition option enabled data store.|< your file name prefix > |No| fileNamePrefix|
 
-## Next steps
+## Related content
 
-[Connectors overview](connector-overview.md)
+- [Connectors overview](connector-overview.md)

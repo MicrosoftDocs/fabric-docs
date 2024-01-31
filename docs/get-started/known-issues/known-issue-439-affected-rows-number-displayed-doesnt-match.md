@@ -24,6 +24,6 @@ Incorrect row count is reported when using the COPY command to ingest data from 
 
 To get an accurate number of rows ingested using the COPY statement, use the query editor in Microsoft Fabric.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues) 

@@ -20,7 +20,7 @@ In particular, we'll analyze the [New York City (NYC) Taxi](https://azure.micros
   
 ## Prerequisites
 
-[!INCLUDE [prerequisites](../../includes/preview-note.md)]
+[!INCLUDE [prerequisites](../includes/prerequisites.md)]
 
 ## Download and prepare the data
 
@@ -165,7 +165,7 @@ In addition to the built-in notebook charting options, you can use popular open-
 
    ![Screenshot of scatter plot of tip amount.](../media/python-visualization/scatter.png)
 
-## Next steps
+## Related content
 
 - Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
 - Manage Python libraries: [Python library management](./python-library-management.md)

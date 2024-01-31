@@ -24,7 +24,7 @@ The Microsoft Fabric Rest API provides a service endpoint for CRUD operations of
 
 ## Prerequisites
 
-1. An Entra token is required to access the Fabric Rest API. The MSAL library is recommended to get the token. For more information, see [Authentication flow support in MSAL](/entra/identity-platform/msal-authentication-flows).
+1. A Microsoft Entra token is required to access the Fabric Rest API. The MSAL library is recommended to get the token. For more information, see [Authentication flow support in MSAL](/entra/identity-platform/msal-authentication-flows).
 1. A storage token is required to access the OneLake API. For more information, see [MSAL for Python](/entra/msal/python/).
 
 ## Create a Spark Job Definition item with the initial state
@@ -285,3 +285,7 @@ else:
 ```
 
 To recap the whole process, both Fabric REST API and OneLake API are needed to create and update a Spark Job Definition item. The Fabric REST API is used to create and update the Spark Job Definition item, the OneLake API is used to upload the main definition file and other lib files. The main definition file and other lib files are uploaded to OneLake first. Then the URL properties of the main definition file and other lib files are set in the Spark Job Definition item.
+
+## Related content
+
+- [Schedule and run an Apache Spark job definition](run-spark-job-definition.md)

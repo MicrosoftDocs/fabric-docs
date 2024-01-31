@@ -134,36 +134,36 @@
                 "real-time-analytics/**/*.yml": "https://community.fabric.microsoft.com/synapse",
                 "security/**/*.md": "https://community.fabric.microsoft.com/powerbi",
                 "security/**/*.yml": "https://community.fabric.microsoft.com/powerbi"
+            },
+            "search.app": {
+                "get-started/**/*.md": [ 
+                    "fabric-powerbi-docs"
+                ],
+                "admin/**/*.md": [
+                    "fabric-powerbi-docs",
+                    "capaedac-PowerBI",
+                    "powerbi",
+                    "Powerbi-docs"
+                ],
+                "data-warehouse/**/*.md": [
+                    "fabric-datawarehouse-docs"
+                ],
+                "data-engineering/**/*.md": [
+                    "fabric-dataengineering-docs"
+                ],
+                "data-factory/**/*.md": [
+                    "fabric-datafactory-docs"
+                ],
+                "real-time-analytics/**/*.md": [
+                    "fabric-realtimeanalytics-docs"
+                ],
+                "data-science/**/*.md": [
+                    "fabric-datascience-docs"
+                ],
+                "data-activator/**/*.md": [
+                    "fabric-dataactivator-docs"
+                ]
             }
-        },
-        "search.app": {
-            "**.*": [ 
-                "fabric-powerbi-docs"
-            ],
-            "admin/**.*": [
-                "fabric-powerbi-docs",
-                "capaedac-PowerBI",
-                "powerbi",
-                "Power-bi-docs"
-            ],
-            "data-warehouse/**.*": [
-                "fabric-datawarehouse-docs"
-            ],
-            "data-engineering/**.*": [
-                "fabric-dataengineering-docs"
-            ],
-            "data-factory/**.*": [
-                "fabric-datafactory-docs"
-            ],
-            "real-time-analytics/**.*": [
-                "fabric-realtimeanalytics-docs"
-            ],
-            "data-science/**.*": [
-                "fabric-datascience-docs"
-            ],
-            "data-activator/**.*": [
-                "fabric-dataactivator-docs"
-            ]
         },
         "template": [],
         "dest": "fabric-docs"

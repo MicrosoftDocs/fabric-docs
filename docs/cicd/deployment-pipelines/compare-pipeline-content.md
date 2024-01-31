@@ -98,7 +98,7 @@ In both comparison displays, whether inline or side-by-side, the differences are
 
 The two versions of the content shown in the change review window are modified in the following ways to make the comparison easier:
 
-- Datasource and parameter rules are applied to the source item so that the datasource you see is the one that will be deployed.
+- Data source and parameter rules are applied to the source item so that the data source you see is the one that will be deployed.
 - Some fields that don't indicate differences (for example, timestamps and role membership) are removed from both items.
 - System managed tables, like auto aggregate, are removed.
 - Items are sorted so that fields and tables appear in the same order.
@@ -116,6 +116,6 @@ Close the window when you finish examining the differences and deploy to the nex
 
 - The content in the change review window may look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
 
-## Next steps
+## Related content
 
 [Deploy content to the next stage](deploy-content.md)

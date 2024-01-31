@@ -92,6 +92,6 @@ Before you start, you must have:
 
    :::image type="content" source="media\onelake-shortcuts-adb-quickstart\pbi-report.png" alt-text="Screenshot showing data being queried through Power BI report.":::
 
-## Next steps
+## Related content
 
 - [Ingest data into OneLake and analyze with Azure Databricks](onelake-open-access-quickstart.md)

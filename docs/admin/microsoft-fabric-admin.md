@@ -78,7 +78,7 @@ Microsoft Fabric admins work mostly in the Microsoft Fabric [admin portal](admin
   * Data loss prevention policies
   * Microsoft Purview Data Lifecycle Management
 
-* **[Azure Active Directory in the Azure portal](https://aad.portal.azure.com)**
+* **[Microsoft Entra ID in the Azure portal](https://entra.microsoft.com/#view/Microsoft_AAD_IAM/TenantOverview.ReactView)**
   * Configure conditional access to Microsoft Fabric resources
 
 * **[PowerShell cmdlets](/powershell/power-bi/overview)**

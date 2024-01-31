@@ -27,7 +27,7 @@ The Common Data Service (Legacy) connector supports the following authentication
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Common Data Service (Legacy). The following links provide the specific Power Query connector information you need to connect to Common Data Service (Legacy) in Dataflow Gen2:
 
-- To get started using the Common Data Service (Legacy) connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Common Data Service (Legacy) connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Common Data Service (Legacy) prerequisites](/power-query/connectors/common-data-service-legacy#prerequisites) before connecting to the Common Data Service (Legacy) connector.
 - To connect to the Common Data Service (Legacy) connector from Power Query, go to [Connect to Common Data Service (Legacy) from Power Query Online](/power-query/connectors/common-data-service-legacy#connect-to-common-data-service-legacy-from-power-query-online).
 

@@ -319,7 +319,7 @@ df_forecast.to_lakehouse_table("ForecastTable")
 
 By using Power BI, the *ForecastTable* table can be added to a composite semantic model using the Lakehouse semantic model.
 
-## Next steps
+## Related content
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)

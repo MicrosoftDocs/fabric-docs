@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 09/27/2023
+ms.date: 12/22/2023
 ---
 
 # OneLake shortcuts
@@ -80,9 +80,6 @@ external_table('MyShortcut')
 | take 100
 ```
 
-> [!NOTE]
-> KQL databases don't currently support data in the Delta format. Tables in a KQL database only export to OneLake as Parquet files. Shortcuts in KQL databases that contain Delta-formatted data in the target aren't recognized as tables.
-
 ### Analysis Services
 
 You can create semantic models for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the semantic model runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.
@@ -118,7 +115,7 @@ ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VNET.
+> Access to storage account endpoint can't be blocked by storage firewall or VNET because storage firewalls are currently not supported.
 
 #### Authorization
 
@@ -243,6 +240,6 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 - Additional shortcuts can't be created inside ADLS or S3 shortcuts.
 - Lineage for shortcuts to Data Warehouses and Semantic Models is not currently available.
 
-## Next steps
+## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)

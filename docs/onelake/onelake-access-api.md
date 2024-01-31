@@ -82,7 +82,7 @@ Create file
 | **Headers** | `Authorization: Bearer <userAADToken>` |
 | **Response** | **ResponseCode:** `201 Created`<br>**Headers:**<br>`x-ms-version : 2021-06-08`<br>`x-ms-request-id : 272526c7-0995-4cc4-b04a-8ea3477bc67b`<br>`x-ms-content-crc64 : OAJ6r0dQWP0=`<br>`x-ms-request-server-encrypted : true`<br>`ETag : 0x8DA58EE365`<br>**Body:** |
 
-## Next steps
+## Related content
 
 - [OneLake parity and integration](onelake-api-parity.md)
 - [Connect to OneLake with Python](onelake-access-python.md)

@@ -403,7 +403,6 @@ You can personalize your Spark session with the magic command **%%configure**. F
 %%configure
 {
     // You can get a list of valid parameters to config the session from  https://github.com/cloudera/livy#request-body.
-    // Detailed document for %%configure can be found at  https://go.microsoft.com/fwlink/?linkid=2250064.
     "driverMemory": "28g", // Recommended values: ["28g", "56g", "112g", "224g", "400g", "472g"]
     "driverCores": 4, // Recommended values: [4, 8, 16, 32, 64, 80]
     "executorMemory": "28g",
@@ -575,7 +574,7 @@ Using the following keystroke shortcuts, you can easily navigate and run code in
 
 To find all shortcut keys, select **View** on the notebook ribbon, and then select **Keybindings**.
 
-## Next steps
+## Related content
 
 - [Notebook visualization](notebook-visualization.md)
 - [Introduction of Fabric MSSparkUtils](microsoft-spark-utilities.md)
