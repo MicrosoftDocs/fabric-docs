@@ -256,6 +256,36 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway-refreshes.md",
+          "redirect_url": "/fabric/data-factory/gateway-considerations-output-destinations#evaluation-time-outs",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-lineage-view-edit.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
           "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
           "redirect_document_id": true
