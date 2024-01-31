@@ -33,15 +33,16 @@ Select the tab that corresponds with your desired database type.
 ## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections.
+1. Under **Database**, select **V** to expand the database connections menu.
+
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
+
 1. Under **Connect source**, select **OneLake data hub**.
 1. In the **OneLake data hub** window that appears, select a KQL database, and then select **Select**.
 
     :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a selected KQL database.":::
 
-    A list of tables associated with this database will appear below the database name.
-
-## [ADX cluster](#tab/adx-cluster)
+## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
 
 ### Prerequisites
 
@@ -49,7 +50,10 @@ Select the tab that corresponds with your desired database type.
 * You must have at least contributor permissions on the Azure Data Explorer cluster.
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
-1. Under **Database**, select **V** to expand the database connections.
+1. Under **Database**, select **V** to expand the database connections menu.
+
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
+
 1. Under **Connect source**, select **Azure Data Explorer**.
 1. Under **Connection URI**, enter your cluster URI, and then select the connect icon.
 
@@ -59,6 +63,8 @@ Select the tab that corresponds with your desired database type.
 1. Select **Connect**.
 
 ----
+
+ A list of tables associated with this database will appear below the database name.
 
 ## Write a query
 
