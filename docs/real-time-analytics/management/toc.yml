@@ -361,23 +361,6 @@ items:
     - name: .show table policy ingestiontime command
       href: /azure/data-explorer/kusto/management/show-table-ingestion-time-policy-command?context=/fabric/context/context-rta&pivots=fabric
       displayName: .show table ingestion time policy, .show table ingestiontime policy
-  - name: Managed Identity
-    items:
-    - name: Managed Identity policy
-      href: /azure/data-explorer/kusto/management/managed-identity-policy?context=/fabric/context/context-rta&pivots=fabric
-      displayName: managed_identity policy, managedidentity policy
-    - name: .alter policy managed_identity command
-      href: /azure/data-explorer/kusto/management/alter-managed-identity-policy-command?context=/fabric/context/context-rta&pivots=fabric
-      displayName: .alter managed identity policy
-    - name: .alter-merge policy managed_identity command
-      href: /azure/data-explorer/kusto/management/alter-merge-managed-identity-policy-command?context=/fabric/context/context-rta&pivots=fabric
-      displayName: .alter-merge managed identity policy
-    - name: .delete policy managed_identity command
-      href: /azure/data-explorer/kusto/management/delete-managed-identity-policy-command?context=/fabric/context/context-rta&pivots=fabric
-      displayName: .delete managed identity policy
-    - name: .show policy managed_identity command
-      href: /azure/data-explorer/kusto/management/show-managed-identity-policy-command?context=/fabric/context/context-rta&pivots=fabric
-      displayName: .show managed identity policy
   - name: Merge
     items:
     - name: Merge policy
