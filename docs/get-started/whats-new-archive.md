@@ -200,8 +200,4 @@ This section summarizes archived announcements about governance and compliance c
 - [Microsoft Fabric Blog](https://blog.fabric.microsoft.com/)
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [What's new in Power BI?](/power-bi/fundamentals/desktop-latest-update?tabs=powerbi-service)
-
-## Next step
-
-> [!div class="nextstepaction"]
-> [What's new in Microsoft Fabric?](whats-new.md)
+- [What's new in Microsoft Fabric?](whats-new.md)
