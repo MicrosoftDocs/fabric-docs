@@ -100,7 +100,11 @@ You can limit viewer access to data using [Row-level security (RLS)](/power-bi/e
 
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
-To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.  
+To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+
+### Protect data
+
+Fabric fully supports sensitivity labels from Microsoft Purview Information Protection. These are the same labels (for example, General, Confidential, Highlighly Confidential) that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivty information. In Fabric You can classify items that contain sensitive data these same sensitivity labels. The sensitivity labels follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file.
 
 ## Recover data
 
