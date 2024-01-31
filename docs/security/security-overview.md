@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/23/2024
+ms.date: 01/31/2024
 ---
 
 # Security in Microsoft Fabric
@@ -13,7 +13,7 @@ ms.date: 01/23/2024
 
 As a SaaS service, Fabric offers a complete security package for the entire platform. Fabric removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage and control your security settings, in line with your changing needs and demands.
 
-As you bring your data to the cloud and use it with various analytic experiences such as Power BI, Data Factory, and the next generation of Synapse, Microsoft ensures that built-in security and reliability features secure your data at rest and transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
+As you bring your data to the cloud and use it with various analytic experiences such as Power BI, Data Factory, and the next generation of Synapse, Microsoft ensures that built-in security and reliability features secure your data at rest and in transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
 
 Fabric security is:
 
@@ -25,25 +25,11 @@ Fabric security is:
 
 * Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
 
-## Understand tenants in multiple geographies
-
-Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
-
-The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, is stored at rest in the tenant's home geography.
-
-Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-a-microsoft-entra-tenant). Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric [tenant](../enterprise/licenses.md#tenant) relies on your organization's Microsoft Entra ID for identity and access management.
-
-Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
-
-* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
-
-* **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
-
 ## Authenticate
 
-Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview).
+[Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) provides Fabric with a robust network inbound security. Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using Entra ID.
 
-With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face continues security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. Users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
+With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
 
 Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
 
@@ -51,7 +37,9 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 
 * Use Multifactor Authentication (MFA).
 
-* Restrict traffic based on parameters such as country of origin or device type. 
+* Restrict traffic based on parameters such as country of origin or device type.
+
+To understand more about authentication in Fabric, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
 ## Manage data
 
@@ -61,7 +49,7 @@ In this section, you learn how to import data into Fabric, how it's kept secure,
 
 ### Import data from a secure network
 
-Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes.
+Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes. To make sure that your data is secure, Fabric encrypts data at rest and in transit.
 
 * **On-premises data gateway** - With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
 
@@ -76,6 +64,20 @@ Your organization might store data in other locations that aren't part of the Fa
 ### Secure Data
 
 In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
+
+## Understand tenants in multiple geographies
+
+Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
+
+The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, is stored at rest in the tenant's home geography.
+
+Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-a-microsoft-entra-tenant). Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric [tenant](../enterprise/licenses.md#tenant) relies on your organization's Microsoft Entra ID for identity and access management.
+
+Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
+
+* **Data logical separation** - The [Fabric platform](security-fundamentals.md#fabric-platform) provide logical isolation between tenants to protect your data.
+
+* **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
 ### Access data
 
@@ -100,11 +102,21 @@ You can limit viewer access to data using [Row-level security (RLS)](/power-bi/e
 
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
-To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.  
+To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
-## Recover data
+### Protect data
+
+Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highlighly Confidential*, that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivity information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md). 
+
+### Recover data
 
 Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case of a disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
+
+## Administer Fabric
+
+As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
+
+Using a variety of tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption. You can also [view audit logs](../admin/track-user-activities.md) to monitor user activities and investigate unexpected incidents if needed.
 
 ## Capabilities
 
