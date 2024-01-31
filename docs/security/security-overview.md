@@ -104,7 +104,7 @@ To expose reports using a DirectLake dataset with RLS without a DirectQuery fall
 
 ### Protect data
 
-Fabric fully supports sensitivity labels from Microsoft Purview Information Protection. These are the same labels (for example, General, Confidential, Highlighly Confidential) that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivty information. In Fabric You can classify items that contain sensitive data these same sensitivity labels. The sensitivity labels follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file.
+Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, *Highlighly Confidential* that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivity information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file.
 
 ## Recover data
 
