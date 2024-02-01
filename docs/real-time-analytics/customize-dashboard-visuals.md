@@ -5,7 +5,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 10/15/2023
+ms.date: 02/01/2024
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -70,6 +70,31 @@ The following table describes the available customization properties, categorize
 |  | **Maximum value** | Defines the maximum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Minimum value** | Defines the minimum value on the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
 |  | **Reference lines** | Marks a value on the chart as a reference line for visual guidance. | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Time chart |
+
+## Embed images
+
+You can embed images in your dashboard tiles using Markdown text.
+
+For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
+
+1. Open a [Real-Time Dashboard](real-time-dashboard.md#create-a-new-dashboard).
+1. In the top menu, select **Add text** to open a text tile.
+
+    :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
+
+1. In the query pane, paste the URL of an image located in an image hosting service using the following syntax:
+
+    ```md
+    ![](URL)
+    ```
+
+    The image renders in the tile's preview.
+
+    :::image type="content" source="media/customize-dashboard-visuals/embed-image.png" alt-text="Screenshot of dashboard query pane showing image syntax in markdown text. ":::
+
+1. In the top menu, select **Apply changes** to save the tile.
+
+For more information on image syntax in GitHub Flavored Markdown, see [Images](https://github.github.com/gfm/#images).
 
 ## Related content
 
