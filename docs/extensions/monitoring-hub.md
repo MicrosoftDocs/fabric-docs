@@ -6,42 +6,40 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 12/25/2023
+ms.date: 02/01/2024
 ---
 
-# Onboarding to Fabric Monitoring Hub
+# Onboarding to Fabric monitoring hub
 
-The Monitoring Hub is the centralized monitoring center designed for fabric users to track artifact background jobs. For additional information about the Monitoring Hub, refer to the [official documentation](https://learn.microsoft.com/en-us/fabric/admin/monitoring-hub).
+The monitoring hub is the centralized monitoring center designed for fabric users to track artifact background jobs. For additional information about the monitoring hub, refer to the [official documentation](../admin/monitoring-hub.md).
 
 ## Backend
 
-### Step 1 - Define the 'JobScheduler' Property Inside the Artifact Manifest
+### Step 1 - Define the 'JobScheduler' property Inside the artifact manifest
 
-To enable job support, the artifact must specify the types of jobs it supports. This is accomplished by adding the 'JobScheduler' property to the artifact manifest. Below is an overview of the supported 'JobScheduler' definition properties:
+To enable job support, the artifact must specify the types of jobs it supports. This is accomplished by adding the `JobScheduler` property to the artifact manifest. Below is an overview of the supported `JobScheduler` definition properties:
 
-- **JobScheduler**: Enables Trident-managed jobs for your artifacts.
-  - *Enabled*: true/false to enable/disable the job scheduler.
-  - *JobHistoryCount*: Sets the maximum job records count per artifact. Once the limit is reached, old job instances will be deleted.
-  - *JobDeadletterHours*: A job will be marked as a Dead Letter by the fabric platform if it hasn't started executing for N hours.
-  - *OnDemandJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
-    1. *None*: Do not deduplicate the job.
-    2. *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
-    3. *PerUser*: Ensure there is only one active job run for the same user and artifact.
+* **JobScheduler**: Enables Trident-managed jobs for your artifacts.
+    * *Enabled*: true/false to enable/disable the job scheduler.
+    * *JobHistoryCount*: Sets the maximum job records count per artifact. Once the limit is reached, old job instances will be deleted.
+    * *JobDeadletterHours*: A job will be marked as a Dead Letter by the fabric platform if it hasn't started executing for N hours.
+    * *OnDemandJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
+        * *None*: Do not deduplicate the job.
+        * *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
+        * *PerUser*: Ensure there is only one active job run for the same user and artifact.
 
-  - *ScheduledJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
-    1. *None*: Do not deduplicate the job.
-    2. *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
-    3. *PerUser*: Ensure there is only one active job run for the same user and artifact.
+    * *ScheduledJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
+        * *None*: Do not deduplicate the job.
+        * *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
+        * *PerUser*: Ensure there is only one active job run for the same user and artifact.
 
-  - *JobStatusPullingInterval*: If specified, Fabric will pull the job status and properties from the workload at the specified interval in minutes. This value should be greater than 0 and less than 6. If not specified, the time interval will change with the job runs.
-    
-  - *ArtifactJobTypes*: A list of job types with the following properties:
-    - *Name*: The name of the job type, which is fully customizable by the ISV.
-    - *EnabledForUser*: true/false to enable/disable the job type.
-    - *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
+    * *JobStatusPullingInterval*: If specified, Fabric will pull the job status and properties from the workload at the specified interval in minutes. This value should be greater than 0 and less than 6. If not specified, the time interval will change with the job runs.
+        * *ArtifactJobTypes*: A list of job types with the following properties:
+        * *Name*: The name of the job type, which is fully customizable by the ISV.
+        * *EnabledForUser*: true/false to enable/disable the job type.
+        * *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
 
-
-For an example of how the 'JobScheduler' property is defined in our sample artifact definition, refer to [WorkloadManifest.xml](Backend/src/Packages/manifest/files/WorkloadManifest.xml).
+For an example of how the `JobScheduler` property is defined in our sample artifact definition, refer to [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml).
 
 ### Step 2: Implement 'IFabricItemsJobsHandler'
 
