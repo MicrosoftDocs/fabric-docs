@@ -26,7 +26,7 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 
 ## Select a database
 
-Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with a KQL database or a database that sits in an Azure Data Explorer cluster.
+Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with a KQL database or a database from an Azure Data Explorer cluster.
 
 Select the tab that corresponds with your desired database type.
 
@@ -50,7 +50,9 @@ Select the tab that corresponds with your desired database type.
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
 1. Under **Connect source**, select **Azure Data Explorer**.
-1. Under **Connection URI**, enter your cluster URI, and then select the connect icon.
+1. Under **Connection URI**, enter the cluster URI, and then select the connect icon.
+
+    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
 
     :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
 
