@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: how-to
 ms.custom:
-  - contperf-fy21q1
   - intro-get-started
   - build-2023
   - ignite-2023
