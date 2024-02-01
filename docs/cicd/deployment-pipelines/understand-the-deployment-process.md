@@ -136,19 +136,21 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Dataflows
+* Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Paginated reports
-* Reports
+* Reports (based on supported semantic models)
 * Semantic models (except for Direct Lake semantic models)
-* [Warehouse](../../data-warehouse/data-warehousing.md)
+* [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 
 Deployment pipelines doesn't support the following items:
 
+* Dataflows Gen2
+* Data pipelines
 * Datasets that don't originate from a *.pbix*
 * Direct Lake semantic model
 * PUSH datasets
