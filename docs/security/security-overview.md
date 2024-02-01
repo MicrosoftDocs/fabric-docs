@@ -27,9 +27,21 @@ Fabric security is:
 
 ## Authenticate
 
+Microsoft Fabric is a software as a service (SaaS) platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity service. Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
+
+## Utilize built-in network security
+
+Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes. To make sure that your data is secure, Fabric encrypts data at rest and in transit.
+
+### Inbound network security
+
+Fabric allows different people in your organization to consume data when and where they need it. For example, an executive might look at a Power BI report on her mobile in a convention that's taking place in a foreign country. Another example is a data engineer connecting to a remote server from home.
+
+#### Entra ID
+
 [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) provides Fabric with a robust network inbound security. Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using Entra ID.
 
-With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
+With Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
 
 Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
 
@@ -41,15 +53,9 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 
 To understand more about authentication in Fabric, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
-## Manage data
-
-Fabric allows different people in your organization to consume data when and where they need it. For example, an executive might look at a Power BI report on her mobile in a convention that's taking place in a foreign country. Another example is a data engineer connecting to a remote server from home.
+#### Import data from a secure network
 
 In this section, you learn how to import data into Fabric, how it's kept secure, and how you can make sure that data is only consumed by the right people in your organization. For more information about data in Fabric, review [Microsoft Fabric security fundamentals](security-fundamentals.md).
-
-### Import data from a secure network
-
-Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes. To make sure that your data is secure, Fabric encrypts data at rest and in transit.
 
 * **On-premises data gateway** - With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
 
@@ -61,11 +67,15 @@ Your organization might store data in other locations that aren't part of the Fa
 
     You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
-### Secure Data
+### Outbound network security
+
+???
+
+## Secure Data
 
 In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
-#### Understand tenants in multiple geographies
+### Understand tenants in multiple geographies
 
 Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
 
@@ -79,11 +89,11 @@ Fabric ensures that your data is secure across regions when you're working with 
 
 * **Data sovereignty** - To start working with multi-geo, see [Configure Multi-Geo support for Fabric](../admin/service-admin-premium-multi-geo.md).
 
-### Access data
+## Access data
 
 Fabric controls data access using [workspaces](../get-started/workspaces.md). In workspaces, data appears in the form of Fabric items, and users can't view or use items (data) unless you give them access to the workspace.
 
-#### Workspace roles
+### Workspace roles
 
 Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md)
 
@@ -92,11 +102,11 @@ Workspace access is listed in the table below. It includes [workspace roles](../
 | Admin, member, and contributor | Can use all the items in the workspace | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 | Viewer                         | Can see all the items in the workspace | :::image type="icon" source="../media/no-icon.svg" border="false":::  |
 
-#### Share items
+### Share items
 
 You can [share Fabric items](../get-started/share-items.md) with users in your organization that don't have any workspace role. Sharing items gives restricted access, allowing users to only access the shared item in the workspace.
 
-#### Limit access
+### Limit access
 
 You can limit viewer access to data using [Row-level security (RLS)](/power-bi/enterprise/service-admin-rls), [Column level security (CLS)](../data-warehouse/column-level-security.md) and [Object level security (OLS)](/power-bi/enterprise/service-admin-ols). With RLS, CLS and OLS, you can create user identities that have access to certain portions of your data, and limit SQL results returning only what the user's identity can access.
 
@@ -104,11 +114,11 @@ You can also add RLS to a DirectLake dataset. If you define security for both SQ
 
 To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
-### Protect data
+## Protect data
 
 Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highlighly Confidential*, that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivity information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
 
-### Recover data
+## Recover data
 
 Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case of a disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
