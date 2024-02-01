@@ -60,7 +60,7 @@ To collect the required Fabric workspace ID and Lakehouse object ID in Microsoft
 
 1. Once the Lakehouse experience opens in the browser, copy the browser URL. It has the following format:
 
-   https://xxxxxx.powerbi.com/groups/**&lt;workspace ID&gt;**/lakehouses/**&lt;lakehouse ID&gt;**
+   ``https://xxxxxx.powerbi.com/groups/``**&lt;workspace ID&gt;**``/lakehouses/``**&lt;lakehouse ID&gt;**
 
    Copy the **&lt;workspace ID&gt;** and **&lt;lakehouse ID&gt;** from the URL.
 
