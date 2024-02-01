@@ -38,7 +38,7 @@ The rationale behind using a dual-token header is threefold:
 
 The main authentication checks performed for the SubjectAndAppToken are:
 
-* **Validation and parsing of the authorization header value**: This is done in the [FetchSubjectAndAppTokenTokenFromHeader](Backend/src/Services/AuthenticationService.cs#L102) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
+* **Validation and parsing of the authorization header value**: This is done in the [FetchSubjectAndAppTokenTokenFromHeader](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
 
 * **AAD token properties validation**: Both `subjectToken` and `appToken` are validated for common AAD token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
 
