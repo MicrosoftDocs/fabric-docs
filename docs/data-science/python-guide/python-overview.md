@@ -68,5 +68,5 @@ Learn more about how to create Python visualizations by visiting [Python visuali
 ## Related content
 
 - Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
-- - [Manage Apache Spark libraries in Microsoft Fabric](../../data-engineering/library-management.md)
+- [Manage Apache Spark libraries in Microsoft Fabric](../../data-engineering/library-management.md)
 - Visualize data in Python: [Visualize data in Python](./python-visualizations.md)

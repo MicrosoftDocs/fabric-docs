@@ -33,14 +33,12 @@ Use the [Python inline installation capabilities](../data-engineering/library-ma
 %conda install <library name>
 ```
 
-### Admin sets default libraries for the workspace
+### Set default libraries for the workspace
 
-To make your libraries available for use in any notebooks in the workspace, your workspace admin can create a Fabric environment, install the library in it, and then attach the environment as the workspace default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace).
+To make your libraries available for use in any notebooks in the workspace, your __workspace admin__ can create a Fabric environment, install the library in it, and then attach the environment as the workspace default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace).
 
 > [!IMPORTANT]
 > Library management at the workspace setting is no longer supported. You can follow ["Migrate workspace libraries and Spark properties to a default environment"](../data-engineering/environment-workspace-migration.md) to migrate existing workspace libraries to an environment and attach it as the workspace default.
-
-For more information about workspace library installation, see [Python inline installation capabilities](../data-engineering/library-management.md#python-in-line-installation).
 
 ## Follow tutorials to create machine learning models
 
