@@ -233,8 +233,6 @@ items:
   items:
   - name: Python overview
     href: ./python-guide/python-overview.md
-  - name: Python library management
-    href: ./python-guide/python-library-management.md
   - name: Python visualizations
     href: ./python-guide/python-visualizations.md
 - name: Use R
