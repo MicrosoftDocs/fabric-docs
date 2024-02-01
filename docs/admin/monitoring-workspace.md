@@ -74,7 +74,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions.
 
-* [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) isn't supported.
+* [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
 
 ## Related content
 
