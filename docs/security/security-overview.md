@@ -53,23 +53,27 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 
 To understand more about authentication in Fabric, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
-#### Import data from a secure network
-
-In this section, you learn how to import data into Fabric, how it's kept secure, and how you can make sure that data is only consumed by the right people in your organization. For more information about data in Fabric, review [Microsoft Fabric security fundamentals](security-fundamentals.md).
-
-* **On-premises data gateway** - With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
-
-* **Connect to an existing service** - You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
-
-* **Azure service tags** - Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
-
-* **IP allowlist** - If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
-
-    You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
-
 ### Outbound network security
 
-???
+Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way.This section lists different ways to import data from a secure network into fabric. For more information about data in Fabric, review [Microsoft Fabric security fundamentals](security-fundamentals.md).
+
+#### On-premises data gateway
+
+With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
+
+#### Connect to an existing service
+
+You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
+
+#### Azure service tags
+
+Use [service Tags](security-service-tags.md) to ingest data without the use of data gateways, from data sources deployed in an Azure virtual network, such as Azure SQL Virtual Machines (VMs), Azure SQL Managed Instance (MI) and EST APIs. You can also use service tags to get traffic from a virtual network or an Azure firewall. For example, service tags can allow outbound traffic to Fabric so that a user on a VM can connect to Fabric SQL endpoints from SSMS, while blocked from accessing other public internet resources.
+
+#### IP allowlists
+
+If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
+
+    You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
 ## Secure Data
 
@@ -116,7 +120,9 @@ To expose reports using a DirectLake dataset with RLS without a DirectQuery fall
 
 ## Protect data
 
-Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highlighly Confidential*, that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect senstivity information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
+Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highly Confidential*, that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect sensitive information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
+
+To help you govern, protect, and manage your data, you can use [Microsoft Purview](../governance/microsoft-purview-fabric.md). Microsoft Purview and Fabric work together letting you store, analyze, and govern your data from a single location, the [Microsoft Purview hub](../governance/use-microsoft-purview-hub.md).
 
 ## Recover data
 
