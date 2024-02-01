@@ -168,4 +168,4 @@ In addition to the built-in notebook charting options, you can use popular open-
 ## Related content
 
 - Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
-- Manage Python libraries: [Python library management](./python-library-management.md)
+- [Python inline installation capabilities](../data-engineering/library-management.md#python-in-line-installation)
