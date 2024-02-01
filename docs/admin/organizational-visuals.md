@@ -25,14 +25,12 @@ To manage the tenant settings for Power BI visuals from the admin portal, go to 
 
 The UI tenant settings only affect the Power BI service. If you want these settings to take effect in Power BI Desktop, use group policies. A table at the end of each section provides details for enabling the setting in Power BI Desktop.
 
->[!NOTE]
->Changes to tenant settings don't affect Power BI visuals listed in the [organizational visuals](#organizational-visuals) tab.
-
 These settings allow you to control the following actions for Power BI visuals in your organization:
 
 * [Allow visuals created using the Power BI SDK](#visuals-from-appsource-or-a-file)
 * [Allow access to certified Power BI visuals only](#certified-power-bi-visuals)
 * [Allow downloads from custom visuals onto your storage device](#export-data-to-file)
+* [Allow custom visuals to store data on the user's local machine](#local-storage)
 * [Obtain Microsoft Entra access token](#obtain-microsoft-entra-access-token)
 
 ### Visuals from AppSource or a file
@@ -42,6 +40,8 @@ Manage organizational access for the following type of Power BI visuals:
 * Custom visuals developers create by using the Power BI SDK and saved as a *.pbiviz* file.
 
 * Visuals downloaded from AppSource.
+
+This setting is disabled by default and doesn't affect visuals in the [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
 Use the following instructions to enable users in your organization to upload *.pbiviz* files, and add visuals from AppSource to their reports and dashboards:
 
@@ -67,7 +67,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 [Certified Power BI visuals](/power-bi/developer/visuals/power-bi-custom-visuals-certified) are visuals that meet the Microsoft Power BI team [code requirements](/power-bi/developer/visuals/power-bi-custom-visuals-certified#certification-requirements). They're tested to verify that they don't access external services or resources and that they follow secure coding patterns and guidelines.
 
-When this setting is enabled, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message.
+When this setting is enabled, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message. This setting is disabled by default and doesn't apply to visuals in your [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
 1. From the admin portal, select **Add and use certified visuals only**.
 
@@ -83,7 +83,7 @@ UI changes to tenant settings apply only to the Power BI service. To manage the 
 
 ### Export data to file
 
-When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings.
+When this setting is enabled, users can download data from a custom visual into a file on their storage device. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. This setting is disabled by default and applies to all visuals including those managed by your organizational store, Desktop, and web.
 
 >[!NOTE]
 >When this setting is enabled, a custom visual can export to files of the following types:
@@ -117,6 +117,25 @@ When `AllowCVToExportDataToFile` is set to *1*, the custom visual can export dat
 
 * The feature switch in the admin portal is enabled.
 * The user is logged on.
+
+### Local storage
+
+This setting enables visuals to [store data on the browser's local storage](/power-bi/developer/visuals/local-storage) which helps improve performance. This setting is separate from and not affected by download restrictions applied in your organization's [export and sharing](service-admin-portal-export-sharing.md) tenant settings. The setting is enabled by default and applies to all visuals, including those managed by your organizational store, Desktop, and web.
+
+:::image type="content" source="./media/organizational-visuals/local-storage-setting.png" alt-text="Screenshot of the local storage settings admin switch." lightbox="./media/organizational-visuals/local-storage-setting.png" :::
+
+To enable the local storage setting, follow these steps:
+
+1. Expand the **Local storage** settings.
+
+2. Select **Enabled**.
+
+3. Choose who can render this API:
+
+   * Select **The entire organization** option to allow visuals to store data on the local machine for every user in your organization.
+   * Select the **Specific security groups** option to limit this privilege to specific security groups. Enter the security groups you want in the *Enter security groups* text bar. The security groups you specify are included by default. If you want to exclude these security groups and include everyone else in the organization, select the **Except specific security groups** option. Only a user listed in the permitted security group can render the API.
+
+4. Select **Apply**.
 
 ### Obtain Microsoft Entra access token
 

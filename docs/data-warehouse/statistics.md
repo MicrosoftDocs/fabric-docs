@@ -157,7 +157,6 @@ In [!INCLUDE [product-name](../includes/product-name.md)], there are multiple ty
 - Multi-column statistics creation is not supported.
 - Other statistics objects might appear in [sys.stats](/sql/relational-databases/system-catalog-views/sys-stats-transact-sql?view=fabric&preserve-view=true), aside from manually created statistics and automatically created statistics. These objects are not used for query optimization.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)
+- [Monitoring connections, sessions, and requests using DMVs](monitor-using-dmv.md)

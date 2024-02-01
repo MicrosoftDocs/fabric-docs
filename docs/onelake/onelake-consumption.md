@@ -8,7 +8,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/15/2023
+ms.date: 01/25/2024
 ---
 
 # OneLake compute and storage consumption
@@ -28,7 +28,7 @@ OneLake uses the same mappings as ADLS to classify the operation to the category
 > [!NOTE]
 > There is a [known issue](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md) where OneLake transaction usage is not consuming CUs and not counting against your capacity limits. Beginning February 19, 2024, we'll have corrected this issue and OneLake will resume consuming CUs and counting against capacity limits.  Meanwhile,
 >* Start monitoring your OneLake usage in the [Fabric Capacity Metrics app](../enterprise/metrics-app.md) and compare it to your capacity limit. You will see OneLake usage labeled as background non-billable. After February 19, OneLake usage will change to background billable, meaning it counts against capacity limits.
->* If you use a Warehouse or SQL Analytics endpoint, we recommend that you review [this](../data-warehouse/semantic-models.md#automatically-update-semantic-model-objects) setting to further optimize Onelake transaction costs.
+>* If you use a warehouse or SQL analytics endpoint, we recommend that you review [the Sync the default Power BI semantic model setting](../data-warehouse/semantic-models.md#sync-the-default-power-bi-semantic-model) to further optimize OneLake transaction costs.
 
 ### Operation types
 
@@ -94,7 +94,7 @@ This table defines CU consumption when OneLake data is accessed using applicatio
 
 ## Changes to Microsoft Fabric workload consumption rate
 
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
+Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft's Release Notes or Microsoft Fabric Blog. If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers may use the cancellation options available for the chosen payment method.
 
 ## Related content
 
