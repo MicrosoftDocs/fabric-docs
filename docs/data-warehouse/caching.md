@@ -57,7 +57,6 @@ Full cache transactional consistency ensures that any modifications to the data 
 
 When the cache reaches its capacity threshold and fresh data is being read for the first time, objects that have remained unused for the longest duration will be removed from the cache. This process is enacted to create space for the influx of new data and maintain an optimal cache utilization strategy.
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
+- [Synapse Data Warehouse in Microsoft Fabric performance guidelines](guidelines-warehouse-performance.md)
