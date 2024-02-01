@@ -5,7 +5,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 01/31/2024
+ms.date: 02/01/2024
 ---
 
 # Customize Real-Time Dashboard visuals
@@ -77,19 +77,12 @@ You can embed images in your dashboard tiles using Markdown text.
 
 For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
-### Copy image URL
-
-1. Open your desired image in your browser of choice.
-1. Copy the image URL and paste it somewhere, like a notepad, to use in a later step.
-
-### Embed image in dashboard
-
 1. Open a [Real-Time Dashboard](real-time-dashboard.md#create-a-new-dashboard).
 1. In the top menu, select **Add text** to open a text tile.
 
     :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
 
-1. In the query pane, paste the [image URL](#copy-image-url) that you copied in a previous step using the following syntax:
+1. In the query pane, paste the URL of an image located in an image hosting service using the following syntax:
 
     ```md
     ![](URL)
