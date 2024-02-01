@@ -54,7 +54,7 @@ The sample **Title genre classification** notebook accompanies this tutorial.
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also install the required libraries into the workspace. Navigate to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also have your workspace admin [Set default libraries for the workspace](use-ai-samples.md#set-default-libraries-for-the-workspace).
 
 For the classification model, use the wordcloud library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install wordcloud.
 

@@ -57,8 +57,8 @@ The [AIsample - Fraud Detection.ipynb](https://github.com/microsoft/fabric-sampl
 
 For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install a library.
 
-* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only
-* Install a library directly in your workspace, so that all notebooks in your workspace can use that library
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Have your workspace admin create a Fabric environment, install the library in it, and then attach the environment as the workspace default environment. This option allows notebooks in your workspace to access and use the library.
 
 For more information about library installation, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
 

@@ -54,7 +54,7 @@ The [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-s
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also install the required libraries into the workspace. Navigate to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also have your workspace admin [Set default libraries for the workspace](use-ai-samples.md#set-default-libraries-for-the-workspace).
 
 In this tutorial, you use `%pip install` to install `imblearn`.
 
