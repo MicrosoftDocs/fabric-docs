@@ -25,7 +25,7 @@ It is recommended that you become familiar with the [Microsoft identity platform
 
 An example of such communication is any data plane API. This is be done with a Subject token (Delegated token).
 
-To be able to acquire a token in the workload FE, please read [Authentication API](./authentication-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](./backend-authentication.md).
+To be able to acquire a token in the workload FE, please read [Authentication API](./authentication-javascript-api.md). In addition, make sure you go over token validation in the [Backend authentication and authorization overview](./backend-authentication.md).
 
 ### 2. From Fabric BE to workload BE
 
