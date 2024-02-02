@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 01/22/2024
+ms.date: 02/02/2024
 ms.custom:
   - build-2023
   - ignite-2023
