@@ -85,7 +85,6 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Considerations and limitations
 
-* During Fabric public preview, some relationships between Fabric items might not be represented, or not represented correctly.
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
 * Correct display of the lineage between semantic models and dataflows is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of the lineage between semantic models and dataflows isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
