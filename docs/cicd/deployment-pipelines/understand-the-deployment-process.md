@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - intro-deployment
   - build-2023
   - ignite-2023
