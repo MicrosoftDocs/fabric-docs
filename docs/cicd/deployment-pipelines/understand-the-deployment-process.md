@@ -127,7 +127,10 @@ In many cases, when you have a small change such as adding or removing a table, 
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
 
-## Folders in deployment pipelines
+## Folders in deployment pipelines (preview)
+
+> [!NOTE]
+> This section only applies if you have the folder feature enabled in your workspace. To enable the feature, attach `&subfolderInWorkspace=1` to the URL in your browser address bar. For more information, see [Enable folders](./manage-workspace-content.md#enable-folders).
 
 When you deploy content from a workspace that has folders, the folder hierarchy is automatically applied to the deployed items in the target stage. Learn more on [Deployment pipelines](get-started-with-deployment-pipelines.md).
 
