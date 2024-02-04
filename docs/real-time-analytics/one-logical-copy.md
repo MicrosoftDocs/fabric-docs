@@ -61,11 +61,14 @@ When you turn on **OneLake availability** on a table, a delta log folder and a p
 
 :::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table.":::
 
-The table file view opens with a [Delta log folder](#delta-log-folder) and a [Parquet](#parquet) file.
+The table file view opens with a [Delta log folder](#delta-log-folder) and one or more [Parquet](#parquet) files.
+
+> [!IMPORTANT]
+> It might take up to a few hours for the parquet and JSON files to appear after turning on **OneLake availability**.
 
 ### Delta log folder
 
-The delta log folder contains JSON files that were made available in OneLake. When you ingest new data into a table that has OneLake availability enabled, a new JSON file is created in the delta log.
+The delta log folder includes JSON files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new JSON file is created in the delta log folder. New JSON files in the delta log folder don't necessarily correspond with new parquet files. A single JSON file can correspond with one or more parquet files at a time.
 
 1. To view the JSON files, select the **_delta_log** folder.
 1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
@@ -74,12 +77,9 @@ The delta log folder contains JSON files that were made available in OneLake. Wh
 
 The parquet file represents the data in your table that was made available in OneLake in Delta Lake format.
 
-> [!IMPORTANT]
-> It might take up to a few hours for the parquet file to appear after turning on OneLake availability.
-
 ### Properties
 
-You can view the properties of the delta log folder, the individual JSON files, or the parquet file. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
+You can view the properties of the delta log folder, individual JSON files, or parquet files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
 
 1. To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
