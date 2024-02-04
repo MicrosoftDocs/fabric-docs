@@ -32,19 +32,13 @@ After the deployment is complete, refresh the semantic models so that you can us
 
 The first time you deploy content, deployment pipelines checks if you have permissions.  
 
-If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new  workspace for that stage is created on the capacity.
+If you have permissions, the content of the workspace is copied to the stage you're deploying to, and a new workspace for that stage is created on the capacity.
 
 If you don't have permissions, the workspace is created but the content isn’t copied. You can ask a capacity admin to add your workspace to a capacity, or ask for assignment permissions for the capacity. Later, when the workspace is assigned to a capacity, you can deploy content to this workspace.
 
 If you're using [Premium Per User (PPU)](/power-bi/enterprise/service-premium-per-user-faq), your workspace is automatically associated with your PPU. In such cases, permissions aren't required. However, if you create a workspace with a PPU, only other PPU users can access it. In addition, only PPU users can consume content created in such workspaces.
 
-### Workspace and content ownership
-
 The deploying user automatically becomes the owner of the cloned semantic models, and the only admin of the new workspace.
-
-## Folders
-
-If you have the folder experience turned on, you can organize the items in your workspace in folders. 
 
 ## Deploy content to an existing workspace
 
@@ -132,6 +126,21 @@ In many cases, when you have a small change such as adding or removing a table, 
 ### Requirements for deploying to a stage with an existing workspace
 
 Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a member of both the target and source deployment workspaces, can deploy content that resides on a [capacity](../../enterprise/licenses.md#capacity-license) to a stage with an existing workspace. For more information, review the [permissions](#permissions) section.
+
+## Manage your workspace content
+
+If you have the [folder experience](./manage-workspace-content.md) turned on, you can organize the items in your workspace in folders.
+For more information on how to use folders in deployment pipelines, see [Manage your workspace](./manage-workspace-content.md).
+
+### Create a folder
+
+### Move items into a folder
+
+### Create an item in a folder
+
+### Rename a folder
+
+### Workspace and content ownership
 
 ## Supported items
 

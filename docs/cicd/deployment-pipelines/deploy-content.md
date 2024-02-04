@@ -30,11 +30,9 @@ Once the deployment is complete, refresh the semantic model. For more informatio
 
 Deployment pipelines offer three options when it comes to deploying your Fabric content:
 
-* [Deploy all content](#deploy-all-content) - Deploy all your content to the target stage.
+* [Deploy all content](#deploy-all-content) - Deploy all your content to an adjacent stage.
 
-* [Selective deployment](#selective-deployment) - Select which content to deploy to the target stage.
-
-* [Backwards deployment](#backwards-deployment) - Deploy your content to a previous stage in the pipeline.
+* [Selective deployment](#selective-deployment) - Select which content to deploy to an adjacent stage.
 
 After you choose how to deploy your content, you can [Review your deployment and leave a note](#review-your-deployment-and-leave-a-note).
 
@@ -57,17 +55,9 @@ Since dashboards, reports, semantic models, and dataflows are related and have d
 > * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a semantic model will fail, unless the semantic model already exists in the target stage.
 > * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a semantic model or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
 
-#### Backwards deployment
-
-You may sometimes want to deploy content to a previous stage. For example, if you assign an existing workspace to a production stage and then deploy it backwards, first to the test stage, and then to the development stage.
-
-Deploying to a previous stage works only if the previous stage is empty. When deploying to a previous stage, you can't select specific items. All content in the stage is deployed.
-
-:::image type="content" source="media/deploy-content/deploy-back.png" alt-text="A screenshot showing the deploy to previous stage button, available from the test or production stage menus." lightbox="media/deploy-content/deploy-back.png":::
-
 ### Review your deployment and leave a note
 
-After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
+After selecting which content to deploy, a pop-up window lists all the items you're about to deploy. You can review the list and add a note, or comment, to the deployment. Adding a note is optional, but it's highly recommended as the notes are added to the [deployment history](deployment-history.md). With a note for each deployment, reviewing the history of your pipelines becomes more meaningful.
 
 To leave a note, expand the **Add a note** option and write your note in the text box. When you're ready to deploy, select **Deploy**.
 
