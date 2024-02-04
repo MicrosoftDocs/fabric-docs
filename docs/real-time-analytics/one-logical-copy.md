@@ -79,7 +79,7 @@ Parquet files represent the data in your table that was made available in OneLak
 
 ### Properties
 
-You can view the properties of the delta log folder or individual files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
+You can view the properties of the delta log folder or the individual files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
 
 To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
