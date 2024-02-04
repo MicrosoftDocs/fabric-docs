@@ -12,7 +12,7 @@ ms.date: 02/04/2024
 ---
 # One logical copy (Preview)
 
-You can create a one logical copy of KQL Database data by enabling data availability in OneLake. Enabling data availability of your KQL database in OneLake means that you can query data with high performance and low latency in your KQL database, and query the same data in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
+You can create a one logical copy of KQL Database data by turning on **OneLake availability**. Turning on **OneLake availability** means that you can query the data in your KQL database in Delta Lake format via other Fabric engines such as Direct Lake mode in Power BI, Warehouse, Lakehouse, Notebooks, and more.
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
@@ -22,7 +22,7 @@ In this article, you learn how to turn on availability of KQL Database data in O
 
 ## How it works
 
-The following table describes the behavior of your KQL database and tables when you  turn on or turn off data availability.
+The following table describes the behavior of your KQL database and tables when you  turn on or turn off **OneLake availability**.
 
 | | Turned on|Turned off|
 |------|---------|--------|
@@ -68,10 +68,10 @@ The table file view opens with a [Delta log folder](#delta-log-folder) and one o
 
 ### Delta log folder
 
-The delta log folder (**_delta_log**) includes JSON files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, the history of changes, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new JSON file is created in the delta log folder.
+The delta log folder (**_delta_log**) includes files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, the history of changes, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new file is created in the delta log folder.
 
-1. To view the JSON files, select the **_delta_log** folder.
-1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
+1. To view the files, select the **_delta_log** folder.
+1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
 ### Parquet files
 
@@ -79,7 +79,7 @@ Parquet files represent the data in your table that was made available in OneLak
 
 ### Properties
 
-You can view the properties of the delta log folder, individual JSON files, or parquet files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
+You can view the properties of the delta log folder or individual files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
 
 To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
