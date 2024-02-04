@@ -54,9 +54,9 @@ You've turned on data availability in your KQL database. You can now access all 
 
 ## View files
 
-When you turn on **OneLake availability** on a table, a delta log folder and a parquet file are created. You can view the files that were made available in OneLake without changing experiences.
+When you turn on **OneLake availability** on a table, a delta log folder and a parquet file are created. You can view the files that were made available in OneLake without changing experiences in Microsoft Fabric.
 
-1. To view the files, ensure that you [Turned on OneLake availability](#turn-on-onelake-availability).
+1. To view the files, ensure that you [Turn on OneLake availability](#turn-on-onelake-availability).
 1. Hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
 :::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table.":::
@@ -68,7 +68,7 @@ The table file view opens with a [Delta log folder](#delta-log-folder) and one o
 
 ### Delta log folder
 
-The delta log folder includes JSON files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new JSON file is created in the delta log folder. New JSON files in the delta log folder don't necessarily correspond with new parquet files. A single JSON file can correspond with one or more parquet files at a time.
+The delta log folder (**_delta_log_**) includes JSON files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, history changes, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new JSON file is created in the delta log folder. New JSON files in the delta log folder don't necessarily correspond with new parquet files. A single JSON file can correspond with one or more parquet files at a time.
 
 1. To view the JSON files, select the **_delta_log** folder.
 1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
@@ -81,11 +81,11 @@ The parquet file represents the data in your table that was made available in On
 
 You can view the properties of the delta log folder, individual JSON files, or parquet files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
 
-1. To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
+To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
     :::image type="content" source="media/one-logical-copy/more-options.png" alt-text="Screenshot of the table file view showing the delta log folder and the parquet file. The More menu option is highlighted.":::
 
-1. Copy the desired URI type and paste it somewhere, like a notepad, to use in a later step.
+You can also copy the desired URL and paste it somewhere, like a notepad, to use in a later step.
 
 ## Related content
 
