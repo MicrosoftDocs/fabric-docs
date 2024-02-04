@@ -268,7 +268,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 * Enable incremental refresh in a semantic model that's already in a *development* workspace.  
 
-* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
+* Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
 * Publish a semantic model that uses incremental refresh to a workspace that's part of an existing pipeline.
 
