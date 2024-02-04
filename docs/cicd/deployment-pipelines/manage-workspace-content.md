@@ -27,8 +27,8 @@ Since this feature is still in preview stage, we recommend you use it in test en
 
 ## Disable folders
 
-To disable the folder experience, remove the suffix `&subfolderInWorkspace=1` from the URL in your browser address bar.  
-To no longer have the Power BI Desktop Folder experience, uninstall the Folder build and reinstall Power BI Desktop from the Microsoft Store.
+To disable the Folder experience, remove the suffix `&subfolderInWorkspace=1` from the URL in your browser address bar.  
+To remove the Power BI Desktop Folder experience, uninstall the *Folder* build and reinstall Power BI Desktop from the Microsoft Store.
 
 ## Folder permission model
 
@@ -45,7 +45,7 @@ Currently folders inherit the permissions of the workspace they are in. The perm
 
 ## Manage your workspace content using folders
 
-When you deployment content from a workspace that has folders, the folder hierarchy is automatically applied to the deployed items in the target stage. Learn more on Deployment pipelines.
+When you deploy content from a workspace that has folders, the folder hierarchy is automatically applied to the deployed items in the target stage. Learn more on Deployment pipelines.
 
 ### Create a folder in your workspace
 
@@ -84,11 +84,11 @@ Alternatively, you can move one item at a time to a folder by selecting the item
 
 ### Create an item in a folder
 
-To create an new item inside a folder, select **+New**, and then select the type of item you want to create. The item is created in the current folder.
+To create a new item inside a folder, select **+New**, and then select the type of item you want to create. The item is created in the current folder.
 
 :::image type="content" source="./media/manage-workspace-content/create-new-item.png" alt-text="Screenshot showing how to create a new item from inside a folder.":::
 
-Currently, the following items cannot be created in a folder:
+Currently, the following items can't be created in a folder:
 
 * Dataflow gen2
 * Lakehouse
@@ -98,7 +98,7 @@ Currently, the following items cannot be created in a folder:
 * Streaming semantic model
 * Streaming dataflow
 
-### Rename, delete or move a folder
+### Rename, delete, or move a folder
 
 Select the contextual menu of any folder for other actions you can do to the folder, including renaming or deleting the folder.
 
@@ -116,15 +116,15 @@ When you publish a report to a workspace, you can select the folder in which to 
 
     :::image type="content" source="./media/manage-workspace-content/upload-report.png" alt-text="{alt-text}":::
 
-1. You can now see the published report and semantic model, as well as the breadcrumb trail indicating the Folder you have published to.
+1. You can now see the published report, semantic model, and the breadcrumb trail indicating the Folder you published to.
 
 #### From Power BI Desktop
 
 1. Open the report you want to publish in Power BI Desktop.
 1. Select **Publish**.
-1. Follow the publish flow to select the exact Folder you want to publish the report to.
+1. Follow the procedure for publishing and select the exact Folder you want to publish the report to.
 1. Publish the report.
-1. Select the link in the Power BI service to view the report.
+1. to view the report, select the link in the Power BI service.
 
 ### Workspace and content ownership
 
@@ -132,13 +132,14 @@ When you publish a report to a workspace, you can select the folder in which to 
 
 ## Considerations and limitations
 
-* Individual folders cannot be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
+* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
 
-* When pairing deployed items to adjacent pipelines, item pairing now looks at the item's full path (on top of the item name) in case of a conflict. During assignment, if there is still a conflict after considering the items’ full path, the assignment fails. For example, a report under folder A in the *Development* stage can be paired with two reports having the same name under folder A in a workspace being assigned to the *Test* stage.
+* When pairing deployed items to adjacent pipelines, item pairing now looks at the item's full path (on top of the item name) if there's a conflict. During assignment, if there's still a conflict after considering the items’ full path, the assignment fails. For example, a report under folder A in the *Development* stage can be paired with two reports having the same name under folder A in a workspace being assigned to the *Test* stage.
 
-* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items is not updated yet.
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
-* Since a folder is deployed only if one of its items is deployed, an empty folder cannot be deployed.
+* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
-* Changes to a folders only (not the items in it), such as moving their locations, delete, add, etc. are treated as if renaming its items. Therefore, when comparing pipelines the items are labeled as *Different*.
-NOTE: Deployment of one item out of several in a folder, updates the structure also to the items which are not deployed on the target stage while the items themselves won’t be deployed.
+* Changes to a folder only (not the items in it), such as moving their locations, delete, add, etc. are treated as if renaming its items. Therefore, when comparing pipelines the items are labeled as *Different*.
+
+* Deploying one item out of several in a folder also updates the structure of the items which aren't deployed in the target stage even though the items themselves aren't be deployed.
