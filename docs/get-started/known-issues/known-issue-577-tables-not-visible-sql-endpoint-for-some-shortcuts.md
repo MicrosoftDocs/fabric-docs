@@ -4,7 +4,7 @@ description: A known issue is posted where tables aren't visible to the SQL anal
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 12/14/2023
+ms.date: 02/02/2023
 ms.custom: known-issue-577
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-577
 
 If you have an internal shortcut that points to an external shortcut across artifacts, the tables in that shortcut don't show up in the Lakehouse SQL analytics endpoint. For example, you have a Lakehouse named **LH1** that contains an external shortcut named **accounts**. You also have a second Lakehouse named **LH2** that contains an internal (OneLake) shortcut named **accounts_int** pointing to **LH1**'s **accounts** shortcut. The table associated with **LH2**'s **accounts_int** shortcut doesn't appear and isn't discovered in **LH2**'s SQL analytics endpoint.
 
-**Status:** Open
+**Status:** Fixed: February 2, 2024
 
 **Product Experience:** OneLake
 
