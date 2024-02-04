@@ -30,7 +30,7 @@ The following table describes the behavior of your KQL database and tables when 
 |**A table in KQL Database**| - New data is made available in OneLake. <br/> - Existing data isn't backfilled. <br/> - Data can't be deleted, truncated, or purged. <br/> - Table schema can't be altered and the table can't be renamed. | - New data isn't made available in OneLake. <br/> - Data can be deleted, truncated, or purged. <br/> - Table schema can be altered and the table can be renamed. <br/> - Data is soft deleted from OneLake.|
 
 > [!IMPORTANT]
-> There's no additional storage cost to turn on data availability, you're charged only once for the data storage.
+> There's no additional storage cost to turn on **OneLake availability**, you're charged only once for the data storage.
 
 ## Prerequisites
 
@@ -50,7 +50,7 @@ You can turn on **OneLake availability** either on a KQL database or table level
 
     :::image type="content" source="media/one-logical-copy/enable-data-copy.png" alt-text="Screenshot of the OneLake folder details window in Real-Time Analytics in Microsoft Fabric. The option to expose data to OneLake is turned on.":::
 
-You've turned on data availability in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
+You've turned on **OneLake availability** in your KQL database. You can now access all the new data added to your database at the given OneLake path in Delta Lake format. You can also choose to create a OneLake shortcut from a Lakehouse, Data Warehouse, or query the data directly via Power BI Direct Lake mode.
 
 ## View files
 
