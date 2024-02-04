@@ -126,10 +126,6 @@ When you publish a report to a workspace, you can select the folder in which to 
 1. Publish the report.
 1. to view the report, select the link in the Power BI service.
 
-### Workspace and content ownership
-
-## Supported items
-
 ## Considerations and limitations
 
 * Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
