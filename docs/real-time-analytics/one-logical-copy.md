@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/29/2024
+ms.date: 02/04/2024
 ---
 # One logical copy (Preview)
 
@@ -37,11 +37,11 @@ The following table describes the behavior of your KQL database and tables when 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
 * A [KQL database](create-database.md) with editing permissions and data
 
-## Turn on availability in OneLake
+## Turn on OneLake availability
 
-You can turn on data availability either on a KQL database or table level.
+You can turn on **OneLake availability** either on a KQL database or table level.
 
-1. To turn on data availability, browse to the details page of your KQL database or table.
+1. To turn on **OneLake availability**, browse to the details page of your KQL database or table.
 1. Next to **OneLake availability** in the **Database details** pane, select the **Edit** (pencil) icon.
 
     :::image type="content" source="media/one-logical-copy/onelake-availability.png" alt-text="Screenshot of the Database details pane in Real-Time Analytics showing an overview of the database with the edit OneLake availability option highlighted." lightbox="media/one-logical-copy/onelake-availability.png":::
@@ -54,17 +54,18 @@ You've turned on data availability in your KQL database. You can now access all 
 
 ## View files
 
-When you turn on OneLake availability on a table, a delta log folder and a parquet file are created. You can view the files that were made available in OneLake without changing experiences.
+When you turn on **OneLake availability** on a table, a delta log folder and a parquet file are created. You can view the files that were made available in OneLake without changing experiences.
 
-To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
+1. To view the files, ensure that you [Turned on OneLake availability](#turn-on-onelake-availability).
+1. Hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
 :::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table.":::
 
-The table file view opens with a [Delta log folder](#delta-log) and a [Parquet](#parquet) file.
+The table file view opens with a [Delta log folder](#delta-log-folder) and a [Parquet](#parquet) file.
 
-### Delta log
+### Delta log folder
 
-The delta log folder contains a list of JSON files that were made available in OneLake. When you ingest new data into a table that has OneLake availability enabled, a new JSON file is created in the delta log.
+The delta log folder contains JSON files that were made available in OneLake. When you ingest new data into a table that has OneLake availability enabled, a new JSON file is created in the delta log.
 
 1. To view the JSON files, select the **_delta_log** folder.
 1. Select a JSON file to view the table metadata and schema. The editor that opens is in read-only format.
