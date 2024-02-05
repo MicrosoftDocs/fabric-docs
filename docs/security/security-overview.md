@@ -11,7 +11,7 @@ ms.date: 01/31/2024
 
 [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) is a software as a service (SaaS) platform that lets users get, create, share, and visualize data.
 
-As a SaaS service, Fabric offers a complete security package for the entire platform. Fabric removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage and control your security settings, in line with your changing needs and demands.
+As a SaaS service, Fabric offers a complete security package for the entire platform. Fabric removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage, control and audit your security settings, in line with your changing needs and demands.
 
 As you bring your data to the cloud and use it with various analytic experiences such as Power BI, Data Factory, and the next generation of Synapse, Microsoft ensures that built-in security and reliability features secure your data at rest and in transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
 
@@ -19,23 +19,23 @@ Fabric security is:
 
 * Continuous - Fabric security is always on. Because it's embedded in the cloud, it doesn't rely on a team of experts to keep it running.
 
-* Configurable - You can configure Fabric security in accordance with your solution and organizational policies.
+* Configurable - You can configure Fabric security in accordance with your organizational policies.
 
 * Automated - Many of the Fabric security features are automated. Once configured, these features continue to work in the background.
 
-* Evolving - Microsoft is constantly improving its Fabric security, by adding new features and controls.
+* Evolving - Microsoft is constantly improving Fabric security, by adding new features and controls.
 
 ## Authenticate
 
-Microsoft Fabric is a software as a service (SaaS) platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity service. Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
+Microsoft Fabric is a SaaS platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity provider. Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
 
-## Utilize built-in network security
+## Configure network security
 
-Your organization might store data in other locations that aren't part of the Fabric platform. Fabric allows several ways to securely connect to data, for import and export purposes. To make sure that your data is secure, Fabric encrypts data at rest and in transit.
+Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default.
 
 ### Inbound network security
 
-Fabric allows different people in your organization to consume data when and where they need it. For example, an executive might look at a Power BI report on her mobile in a convention that's taking place in a foreign country. Another example is a data engineer connecting to a remote server from home.
+Your organization might want to restrict and secure the network traffic coming into Fabric based on your organization's requirements.
 
 #### Entra ID
 
@@ -55,7 +55,7 @@ To understand more about authentication in Fabric, see [Microsoft Fabric securit
 
 ### Outbound network security
 
-Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way.This section lists different ways to import data from a secure network into fabric. For more information about data in Fabric, review [Microsoft Fabric security fundamentals](security-fundamentals.md).
+Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
 
 #### On-premises data gateway
 
@@ -71,21 +71,21 @@ Use [service Tags](security-service-tags.md) to ingest data without the use of d
 
 #### IP allowlists
 
-If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. If you have an ADLS Gen2 account that's protected by a firewall or a virtual network, you can use an IP allowlist to create shortcuts in Fabric. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
+If you have data that doesn't reside in Azure, you can enable an IP allowlist on your organization's network to allow traffic to and from Fabric. An IP allowlist is useful if you need to get data from data sources that don't support service tags, such as Azure Data Lake Storage (ADLS) and on-premises data sources. With these shortcuts, you can get data without copying it into OneLake using a [Lakehouse SQL endpoint](../data-engineering/lakehouse-sql-analytics-endpoint.md) or [Direct Lake](/power-bi/enterprise/directlake-overview).
 
 You can get the list of Fabric IPs from [Service tags on-premises](/azure/virtual-network/service-tags-overview#service-tags-on-premises). The list is available as a JSON file, or programmatically with REST APIs, PowerShell, and Azure Command-Line Interface (CLI).
 
 ## Secure Data
 
-In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
+In Fabric, all data that is stored in OneLake is encrypted at rest. All data at rest is stored in your home region, or in one of your capacities at a remote region of your choice so that you can meet data at rest sovereignty regulations. For more information, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
 ### Understand tenants in multiple geographies
 
 Many organizations have a global presence and require services in multiple [Azure geographies](/azure/reliability/availability-zones-service-support). For example, a company can have its headquarters in the United States, while doing business in other geographical areas, such as Australia. To comply with local regulations, businesses with a global presence need to ensure that data remains stored at rest in several regions. In Fabric, this is called *multi-geo*.
 
-The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, data movement, and processing, is stored at rest in the tenant's home geography.
+The query execution layer, query caches, and item data assigned to a multi-geo workspace remain in the Azure geography of their creation. However, some metadata, and processing, is stored at rest in the tenant's home geography.
 
-Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-a-microsoft-entra-tenant). Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services, your Fabric [tenant](../enterprise/licenses.md#tenant) relies on your organization's Microsoft Entra ID for identity and access management.
+Fabric is part of a larger Microsoft ecosystem. If your organization is already using other cloud subscription services, such as Azure, Microsoft 365, or Dynamics 365, then Fabric operates within the same [Microsoft Entra tenant](/microsoft-365/education/deploy/intro-azure-active-directory#what-is-a-microsoft-entra-tenant). Your organizational domain (for example, contoso.com) is associated with Microsoft Entra ID. Like all Microsoft cloud services.
 
 Fabric ensures that your data is secure across regions when you're working with several tenants that have multiple capacities across a number of geographies.
 
@@ -116,7 +116,7 @@ You can limit viewer access to data using [Row-level security (RLS)](/power-bi/e
 
 You can also add RLS to a DirectLake dataset. If you define security for both SQL and DAX, DirectLake falls back to DirectQuery for tables that have RLS in SQL. In such cases, DAX, or MDX results are limited to the user's identity.
 
-To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
+To expose reports using a DirectLake dataset with RLS without a DirectQuery fallback, use direct dataset sharing or [apps in Power BI](/power-bi/consumer/end-user-apps). With apps in Power BI you can give access to reports without viewer access. This kind of access means that the users can't use SQL. To enable DirectLake to read the data, you need to [switch the data source credential](/power-bi/enterprise/directlake-fixed-identity) from Single Sign On (SSO) to a fixed identity that has access to the files in the lake.
 
 ## Protect data
 
