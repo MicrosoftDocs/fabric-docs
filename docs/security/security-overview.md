@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 01/31/2024
+ms.date: 02/05/2024
 ---
 
 # Security in Microsoft Fabric
