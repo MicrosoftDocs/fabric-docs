@@ -27,7 +27,7 @@ Fabric security is:
 
 ## Authenticate
 
-Microsoft Fabric is a SaaS platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity provider. Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
+Microsoft Fabric is a SaaS platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity provider. Microsoft Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Microsoft Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
 
 ## Configure network security
 
@@ -37,11 +37,11 @@ Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve 
 
 Your organization might want to restrict and secure the network traffic coming into Fabric based on your organization's requirements.
 
-#### Entra ID
+#### Microsoft Entra ID
 
-[Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) provides Fabric with a robust network inbound security. Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using Entra ID.
+[Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) provides Fabric with a robust network inbound security. Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using Microsoft Entra ID.
 
-With Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
+With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Microsoft Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
 
 Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
 
