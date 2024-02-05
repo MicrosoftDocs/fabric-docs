@@ -22,11 +22,11 @@ ms.search.form: Get started
 
     :::image type="icon" source="media/realtime-analytics-tutorial/home-icon.png" border="false":::
 
-2. Under **New**, select **Eventstream**.
+1. Under **New**, select **Eventstream**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/new-eventstream.png" alt-text="Screenshot of new eventstream button in Real-Time Analytics in Microsoft Fabric.":::
 
-3. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
+1. Enter *NyTaxiTripsEventstream* as the eventstream name and select  **Create**.
 
     When provisioning is complete, the Eventstream landing page is shown.
 
@@ -39,7 +39,7 @@ ms.search.form: Get started
     Taxi** from the dropdown of **Sample data**.
 1. Select **Add**.
 1. In the Eventstream authoring area, select **New destination** > **KQL Database**.
-1. Under "Data ingestion mode," choose **Direct ingestion**.
+1. Under **Data ingestion mode**, select **Direct ingestion**.
 1. In the **KQL Database** pane, fill out the fields as follows:
 
     |Field  | Suggested value  |
