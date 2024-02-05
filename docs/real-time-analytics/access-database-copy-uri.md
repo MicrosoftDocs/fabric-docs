@@ -47,7 +47,7 @@ The following table lists the two types of URIs that you can copy from the **Dat
 |Ingestion URI |URI that can be used to get data.|
 
 1. Access an [existing KQL database](#access-an-existing-kql-database).
-1. Copy the desired URI type from the **Database details** card in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+1. Copy the desired URI type from the **Database details** card in the database dashboard.
 
 ## Related content
 
