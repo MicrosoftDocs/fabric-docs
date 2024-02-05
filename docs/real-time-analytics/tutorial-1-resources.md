@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/11/2024
+ms.date: 02/04/2024
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
@@ -29,7 +29,7 @@ ms.search.form: Get started
 
     When provisioning is complete, the KQL database details page is shown.
 
-## Enable availability in OneLake
+## Turn on OneLake availability
 
 1. In the **Database details** card, select the **pencil** icon.
 
@@ -44,7 +44,7 @@ ms.search.form: Get started
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable availability in OneLake](one-logical-copy.md#enable-availability-in-onelake)
+* [Turn on OneLake availability](one-logical-copy.md#turn-on-onelake-availability)
 
 ## Next step
 
