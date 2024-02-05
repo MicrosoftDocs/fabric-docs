@@ -18,9 +18,9 @@ This scenario shows how to synchronize Unity Catalog Delta tables to OneLake usi
 
 Before you connect, you must have:
 
-•	A [Fabric workspace](../get-started/create-workspaces.md).
-•	If you don’t have one already, create a [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
-•	Unity Catalog schemas and tables created within your Azure Databricks workspace. 
+- A [Fabric workspace](../get-started/create-workspaces.md).
+- If you don’t have one already, create a [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
+- Unity Catalog schemas and tables created within your Azure Databricks workspace. 
 
 
 ## Set up your Cloud Storage connection
@@ -29,7 +29,7 @@ Check if your Unity Catalog tables using Azure Data Lake Storage Gen2 (ADLS Gen2
 
 1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2-overview.md).
 
-1. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
+2. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
 
 ## Sync Unity Catalog Delta tables to OneLake
 
@@ -37,8 +37,7 @@ Once the Cloud connection ID is obtained, sync Unity Catalog tables to Fabric la
 
 1. **Import sync notebook** to Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. Databricks API is used to export tables.
 
-
-1. **Configure the parameters** in the first cell to export Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
+2. **Configure the parameters** in the first cell to export Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
 ```python
 # Databricks
@@ -58,7 +57,7 @@ shortcut_connection_id = "<connection_id>"
 skip_if_shortcut_exists = False
 ```
 
-1. **Run all cells** of the sync notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the Lakehouse explorer, SQL endpoint and semantic model.
+3. **Run all cells** of the sync notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the Lakehouse explorer, SQL endpoint and semantic model.
 
 :::image type="content" source="media\onelake-unity-catalog\notebook-output.png" alt-text="Screenshot showing notebook output.":::
 
