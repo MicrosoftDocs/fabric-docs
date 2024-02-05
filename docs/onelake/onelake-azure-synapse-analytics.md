@@ -1,63 +1,107 @@
 ---
 title: Integrate OneLake with Azure Synapse Analytics
-description: Learn about Microsoft Fabric integration with Azure Synapse Analytics. Specifically how to read and write data into Fabric using Azure Synapse Spark pool.
+description: Learn about Microsoft Fabric integration with Azure Synapse Analytics, including how to read and write data into Fabric using Azure Synapse Spark pool.
 ms.reviewer: eloldag
 ms.author: mahi
 author: matt1883
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 09/27/2023
 ---
 
 # Integrate OneLake with Azure Synapse Analytics
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+Azure Synapse is a limitless analytics service that brings together enterprise data warehousing and Big Data analytics. This tutorial shows how to connect to OneLake using [Azure Synapse Analytics](/azure/synapse-analytics/).
 
-This tutorial shows how to integrate OneLake with Azure Synapse Analytics. We encourage you to test any tools, programs, or services that you currently use today to interface with Azure Data Lake Storage (ADLS) Gen2.
+## Write data from Synapse using Apache Spark
 
-## Using Azure Synapse Analytics
+Follow these steps to use Apache Spark to write sample data to OneLake from Azure Synapse Analytics.
 
-1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-portal) with your preferred parameters.
+1. Open your Synapse workspace and [create an Apache Spark pool](/azure/synapse-analytics/quickstart-create-apache-spark-pool-studio) with your preferred parameters.
 
-   :::image type="content" source="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png" alt-text="Screenshot showing where to select New in the Apache Spark pool screen." lightbox="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png":::
+   :::image type="content" source="media\onelake-azure-synapse-analytics\new-apache-spark-pool.png" alt-text="Screenshot showing where to select New in the Apache Spark pool screen.":::
 
 1. Create a new Apache Spark notebook.
 
-1. Open the Spark notebook, set the language to **PySpark (Python)**, and connect it to your newly created Spark pool.
+1. Open the notebook, set the language to **PySpark (Python)**, and connect it to your newly created Spark pool.
 
-1. In a separate tab, navigate to your Microsoft Fabric Lakehouse and find the GUIDs associated with your workspace and lakehouse. (You can find these values in the URL of your lakehouse or in the **Properties** pane for any file in your lakehouse.)
+1. In a separate tab, navigate to your Microsoft Fabric lakehouse and find the top-level **Tables** folder.
 
-1. Copy the workspace and lakehouse GUIDs into your Spark notebook, and build your OneLake URL for your lakehouse. This location is what you'll write your data into. The following example is for East US 2:
+1. Right-click on the **Tables** folder and select **Properties**.
 
-   ```python
-   oneLakePath = https://' + workspaceGUID + '@onelake.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'oneLakePath = https://' + workspaceGUID + '@onelake.dfs.fabric.microsoft.com/' + lakehouseGUID + '/Files/'
-   ```
+   :::image type="content" source="media\onelake-azure-synapse-analytics\properties-context-menu.png" alt-text="Screenshot showing where to open the Properties pane lakehouse explorer.":::
 
-1. Load data from an Azure open dataset into a dataframe. This file is the one you’ll load into your lakehouse. (You can also read a file from elsewhere in Fabric or choose a file from another ADLS Gen 2 account you already own.)
+1. Copy the **ABFS path** from the properties pane.
 
-   ```python
-   yellowTaxiDF = spark.read.load('abfss://users@contosolake.dfs.core.windows.net/NYCTripSmall.parquet', format='parquet')display(yellowTaxiDF.limit(10))yellowTaxiDF = spark.read.load('abfss://users@contosolake.dfs.core.windows.net/NYCTripSmall.parquet', format='parquet')display(yellowTaxiDF.limit(10))
-   ```
+   :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path.":::
 
-1. Filter, transform, or prep your data. For this scenario, you can trim down your dataset for faster loading, join with other datasets, or filter down to specific results.
+1. Back in the Azure Synapse notebook, in the first new code cell, provide the lakehouse path. This lakehouse is where your data is written later. Run the cell.
 
    ```python
-   filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.TripDistanceMiles>2).where(yellowTaxiDF.PassengerCount==1)display(filteredTaxiDF)filteredTaxiDF = yellowTaxiDF.where(yellowTaxiDF.TripDistanceMiles>2).where(yellowTaxiDF.PassengerCount==1)display(filteredTaxiDF)`
+   # Replace the path below with the ABFS path to your lakehouse Tables folder. 
+   oneLakePath = 'abfss://WorkspaceName@onelake.dfs.fabric.microsoft.com/LakehouseName.lakehouse/Tables'
    ```
 
-1. Write your filtered dataframe to your Fabric Lakehouse using your OneLake path.
+1. In a new code cell, load data from an Azure open dataset into a dataframe. This dataset is the one you load into your lakehouse. Run the cell.
 
    ```python
-   filteredTaxiDF.write.format("csv").mode("overwrite").option("header", "true").csv(oneLakePath + 'taxi.csv')filteredTaxiDF.write.format("csv").mode("overwrite").option("header", "true").csv(oneLakePath + 'taxi.csv')`
+   yellowTaxiDf = spark.read.parquet('wasbs://nyctlc@azureopendatastorage.blob.core.windows.net/yellow/puYear=2018/puMonth=2/*.parquet')
+   display(yellowTaxiDf.limit(10))
    ```
 
-1. Test that your data was successfully written by reading your newly loaded file.
+1. In a new code cell, filter, transform, or prep your data. For this scenario, you can trim down your dataset for faster loading, join with other datasets, or filter down to specific results. Run the cell.
 
    ```python
-   lakehouseRead = spark.read.format('csv').option("header", "true").load(oneLakePath + 'taxi.csv')display(lakehouseRead.limit(10))lakehouseRead = spark.read.format('csv').option("header", "true").load(oneLakePath + 'taxi.csv')display(lakehouseRead.limit(10))
+   filteredTaxiDf = yellowTaxiDf.where(yellowTaxiDf.tripDistance>2).where(yellowTaxiDf.passengerCount==1)
+   display(filteredTaxiDf.limit(10))
    ```
 
-Congratulations! You can now read and write data in Fabric using Azure Synapse Spark. You can use this same code to read and write to an ADLS Gen 2 folder; just change the URL.
+1. In a new code cell, using your OneLake path, write your filtered dataframe to a new Delta-Parquet table in your Fabric lakehouse. Run the cell.
 
-## Next steps
+   ```python
+   filteredTaxiDf.write.format("delta").mode("overwrite").save(oneLakePath + '/Taxi/')
+   ```
+
+1. Finally, in a new code cell, test that your data was successfully written by reading your newly loaded file from OneLake. Run the cell.
+
+   ```python
+   lakehouseRead = spark.read.format('delta').load(oneLakePath + '/Taxi/')
+   display(lakehouseRead.limit(10))
+   ```
+
+Congratulations. You can now read and write data in OneLake using Apache Spark in Azure Synapse Analytics.
+
+## Read data from Synapse using SQL
+
+Follow these steps to use SQL serverless to read data from OneLake from Azure Synapse Analytics.
+
+1. Open a Fabric lakehouse and identify a table that you'd like to query from Synapse.
+
+1. Right-click on the table and select **Properties**.
+
+1. Copy the **ABFS path** for the table.
+
+   :::image type="content" source="media\onelake-azure-synapse-analytics\abfs-path.png" alt-text="Screenshot showing where to copy the ABFS path.":::
+
+1. Open your Synapse workspace in [Synapse Studio](https://web.azuresynapse.net/workspaces).
+
+1. Create a new SQL script.
+
+1. In the SQL query editor, enter the following query, replacing `ABFS_PATH_HERE` with the path you copied earlier.
+
+   ```sql
+   SELECT TOP 10 *
+   FROM OPENROWSET(
+   BULK 'ABFS_PATH_HERE',
+   FORMAT = 'delta') as rows;
+   ```
+
+1. Run the query to view the top 10 rows of your table.
+
+Congratulations. You can now read data from OneLake using SQL serverless in Azure Synapse Analytics.
+
+## Related content
 
 - [Integrate OneLake with Azure Storage Explorer](onelake-azure-storage-explorer.md)

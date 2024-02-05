@@ -1,18 +1,20 @@
 ### YamlMime:Landing
 
-title: Data Engineering in Microsoft Fabric documentation # < 60 chars
-summary: summary # < 160 chars
+title: Data Engineering documentation in Microsoft Fabric
+summary: Data engineering in Microsoft Fabric enables users to design, build, and maintain infrastructures and systems that enable their organizations to collect, store, process, and analyze large volumes of data. # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-  ms.topic: landing-page # Required
+  title: Data Engineering in Microsoft Fabric documentation
+  description: Data engineering in Microsoft Fabric enables users to design, build, and maintain systems that enable their organizations to collect, store, process, and analyze large volumes of data. # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-engineering
+  ms.custom:
+    - ignite-2023
+  ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
-
+  author: SnehaGunda
+  ms.author: sngun
+  ms.date: 05/23/2023
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -23,45 +25,140 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Data engineering?
+            url: data-engineering-overview.md
+          - text: What is a lakehouse?
+            url: lakehouse-overview.md
+          - text: Workspace roles and permissions
+            url: workspace-roles-lakehouse.md
 
   # Card 
-  - title: Get started
+  - title: Get started with lakehouse
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: Create a lakehouse
+            url: create-lakehouse.md
+          - text: Navigate the lakehouse explorer
+            url: navigate-lakehouse-explorer.md
+      - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Get data into lakehouse using notebook
+            url: lakehouse-notebook-load-data.md
 
   # Card 
-  - title: how-to-guide
+  - title: Get started with notebooks
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Fabric notebooks
+            url: how-to-use-notebook.md
+      - linkListType: how-to-guide
+        links:
+          - text: Build and manage notebooks
+            url: author-execute-notebook.md
+          - text: Explore lakehouse data with a notebook
+            url: lakehouse-notebook-explore.md
+          - text: Visualize notebooks
+            url: notebook-visualization.md
+          - text: Notebooks source control and deployment
+            url: notebook-source-control-deployment.md
+          - text: Use MSSparkUtils in notebook
+            url: microsoft-spark-utilities.md
+  # Card 
+  - title: Delta Lake
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse and Delta tables
+            url: lakehouse-and-delta-tables.md
+      - linkListType: how-to-guide
+        links:
+          - text: Delta optimization and V-Order
+            url: delta-optimization-and-v-order.md
+          - text: Load to tables
+            url: load-to-tables.md
+
+  # Card 
+  - title: Lakehouse end-to-end tutorial
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Lakehouse scenario overview
+            url: tutorial-lakehouse-introduction.md
+      - linkListType: tutorial
+        links:
+          - text: Step 1 - Create a workspace
+            url: tutorial-lakehouse-get-started.md
+          - text: Step 2 - Create a lakehouse
+            url: tutorial-build-lakehouse.md
+          - text: Step 3 - Ingest data into lakehouse
+            url: tutorial-lakehouse-data-ingestion.md
+          - text: Step 4 - Transform data into delta tables
+            url: tutorial-lakehouse-data-preparation.md
+          - text: Step 5 - Build a report
+            url: tutorial-lakehouse-build-report.md
+          - text: Step 6 - Clean up resources
+            url: tutorial-lakehouse-clean-up.md
+
+  # Card 
+  - title: Apache Spark
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Apache Spark job definition
+            url: spark-job-definition.md
+          - text: Spark monitoring overview
+            url: spark-monitoring-overview.md
+          - text: Apache Spark advisor
+            url: spark-advisor-introduction.md
+      - linkListType: get-started
+        links:
+          - text: Create a Spark job definition
+            url: create-spark-job-definition.md
+          - text: Create a Spark job definition with a Fabric API
+            url: spark-job-definition-api.md
+      - linkListType: how-to-guide
+        links:
+          - text: Schedule and run a Spark job definition
+            url: run-spark-job-definition.md
+          - text: Monitor a Spark application
+            url: spark-detail-monitoring.md
+          - text: Manage Apache Spark libraries
+            url: library-management.md
+          - text: How to use Fabric MSSparkUtils
+            url: microsoft-spark-utilities.md
+          - text: Configure capacity settings
+            url: capacity-settings-management.md
+
+  # Card 
+  - title: VS Code integration
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Use notebooks from VS Code
+            url: author-notebook-with-vs-code.md
+          - text: Use notebooks from VS Code with resource
+            url: author-notebook-resource-with-vs-code.md
+          - text: Use Spark job definitions from VS Code
+            url: author-sjd-with-vs-code.md
+          - text: Explore lakehouse from VS Code
+            url: explore-lakehouse-with-vs-code.md
+          - text: Develop notebook from VS Code web experience
+            url: author-notebook-with-vs-code-web.md
+
+  # Card 
+  - title: Get started with environment
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Microsoft Fabric environments
+            url: create-and-use-environment.md
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Manage Spark compute in environments
+            url: environment-manage-compute.md
+          - text: Manage libraries in environments
+            url: environment-manage-library.md
+          - text: Migrate the existing workspace libraries and Spark properties to an environment
+            url: environment-workspace-migration.md

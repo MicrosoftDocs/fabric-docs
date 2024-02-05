@@ -4,19 +4,24 @@ description: This article explains the overview of using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/20/2022
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Google Cloud Storage connector Overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+This Google Cloud Storage connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This Google Cloud Storage connector is supported in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
+## Support in Dataflow Gen2
 
-## Supported capabilities
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Google Cloud Storage in Dataflow Gen2.
+
+## Support in data pipelines
+
+The Google Cloud Storage connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
@@ -25,8 +30,6 @@ This Google Cloud Storage connector is supported in [!INCLUDE [product-name](../
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |
 
-## Next Steps
+To learn about how to connect to Google Cloud Storage data in data pipelines, go to [Set up your Google Cloud Storage connection](connector-google-cloud-storage.md#set-up-your-connection-in-a-data-pipeline).
 
-[How to create Google Cloud Storage connection](connector-google-cloud-storage.md)
-
-[How to configure Google Cloud Storage in copy activity](connector-google-cloud-storage-copy-activity.md)
+To learn about the copy activity configuration for Google Cloud Storage in data pipelines, go to [Configure Google Cloud Storage in a copy activity](connector-google-cloud-storage-copy-activity.md).

@@ -1,311 +1,346 @@
 ### YamlMime:Hub
 
 title: Microsoft Fabric documentation # < 60 chars
-summary: Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more. With Microsoft Fabric documentation, you get expert information and answers to address your needs. # < 160 chars
-# brand: aspnet | azure | dotnet | dynamics | m365 | ms-graph | office | power-platform | sql | sql-server | vs | visual-studio | windows | xamarin
-brand: power-bi
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it. # < 160 chars
+brand: fabric
 
 metadata:
-  title: Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description:  Microsoft Fabric is an end to end analytics SaaS platform. It unifies the capabilities of Power BI, Data warehouse, Data engineering, Data Factory, Data science, Real-time analytics, Business Intelligence, and many more.
-  services: service
-  ms.service: powerbi #Required; service per approved list. service slug assigned to your service by ACOM.
-  ms.subservice: powerbi-service
-  ms.topic: hub-page # Required
+  title: Microsoft Fabric documentation
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the capabilities Fabric has to offer, understand how it works, and how to use it.
+  ms.service: fabric
+  ms.custom:
+    - ignite-2023
+  ms.topic: hub-page
   ms.collection: collection
-  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
-  ms.author: sngun #Required; microsoft alias of author; optional team alias.
-  ms.date: 03/07/2023
-
+  author: SnehaGunda
+  ms.author: sngun
+  ms.date: 01/16/2024
 # highlightedContent section (optional)
 # Maximum of 8 items 
 highlightedContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
   items:
     # Card
-    - title: What is Microsoft Fabric ?
+    - title: What is Microsoft Fabric?
       itemType: overview
-      url: placeholder.md
-    # Card
-    - title: Understand Microsoft Fabric architecture
-      itemType: concept
-      url: placeholder.md
+      url: get-started/microsoft-fabric-overview.md
     # Card
     - title: Try Microsoft Fabric for free
       itemType: get-started
-      url: placeholder.md
+      url: get-started/fabric-trial.md
     # Card
-    - title: Get started with creating resources
+    - title: Enable Fabric for your organization
+      itemType: quickstart
+      url: admin/fabric-switch.md
+    # Card
+    - title: Join the Fabric Community Conference
+      itemType: whats-new
+      url: https://fabricconf.com/#!/
+    # Card
+    - title: Develop with end-to-end tutorials
       itemType: tutorial
-      url: placeholder.md
+      url: get-started/end-to-end-tutorials.md
     # Card
-    - title: End-to-end tutorials
-      itemType: tutorial
-      url: placeholder.md
-    # Card
-    - title: Choose a workload for your scenario
+    - title: Copilot in Microsoft Fabric
       itemType: concept
-      url: placeholder.md
-    # Card
-    - title: Join the Microsoft Fabric Community
-      itemType: reference
-      url: https://fabric.microsoft.com
+      url: get-started/copilot-fabric-overview.md          
 
 # conceptualContent section (optional)
 conceptualContent:
 # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
-  items:
-    # Card
-    - title: "Get started with Microsoft Fabric"
-      links:
-        - url: placeholder.md
-          itemType: overview
-          text: What is Microsoft Fabric?
-        - url: placeholder.md
-          itemType: get-started
-          text: Fabric workloads and items
-        - url: placeholder.md
-          itemType: tutorial
-          text: Get started with creating resources
-        - url: placeholder.md
-          itemType: concept
-          text: Understand the billing and consumption model
-      # footerLink (optional)
-      footerLink:
-        url: get-started/index.yml
-        text: See more
-    # Card
-    - title: Unify your data storage with OneLake
-      links:
-        - url: onelake/onelake-overview.md
-          itemType: concept
-          text: What is OneLake?
-        - url: onelake/onelake-shortcuts.md
-          itemType: concept
-          text: What are shortcuts?
-        - url: onelake/create-lakehouse-onelake.md
-          itemType: get-started
-          text: Create a lakehouse with OneLake
-      # footerLink (optional)
-      footerLink:
-        url: onelake/index.yml
-        text: See more
-    # Card
-    - title: Power BI and Microsoft Fabric integration 
-      links:
-        - url: /power-bi/fundamentals/power-bi-overview
-          itemType: concept
-          text: What is Power BI?
-        - url: placeholder.md
-          itemType: concept
-          text: Enable Microsoft Fabric from Power BI tenant
-        - url: placeholder.md
-          itemType: get-started
-          text: Get data into Power BI with DirectLake
-        - url: /power-bi/transform-model/datamarts/datamarts-get-started
-          itemType: get-started
-          text: Get started with Datamarts
-      # footerLink (optional)
-      footerLink:
-        url: get-started/index.yml
-        text: See more
-    # Card
-    - title: "Integrate and transform data with Data Factory"
-      links:
-        - url: data-factory/data-factory-overview.md
-          itemType: concept
-          text: What is Data Factory?
-        - url: data-factory/create-first-pipeline-with-sample-data.md
-          itemType: get-started
-          text: Create your first pipeline
-        - url: data-factory/create-first-dataflow-gen2.md
-          itemType: get-started
-          text: Create your first dataflow?
-      # footerLink (optional)
-      footerLink:
-        url: data-factory/index.yml
-        text: See more
-    # Card
-    - title: "Build machine learning models with Synapse Data Science"
-      links:
-        - url: data-science/data-science-overview.md
-          itemType: concept
-          text: What is Data science?
-        - url: data-science/machine-learning-experiment.md
-          itemType: concept
-          text: Machine learning experiment
-        - url: data-science/read-write-pandas.md
-          itemType: how-to-guide
-          text: Read and write data with Pandas
-        - url: data-science/read-write-pandas.md
-          itemType: how-to-guide
-          text: Use SemPy library for faster analytics
-      # footerLink (optional)
-      footerLink:
-        url: data-science/index.yml
-        text: See more
-    # Card
-    - title: "Create a Lakehouse and run Spark jobs with Synapse Data Engineering"
-      links:
-        - url: data-engineering/data-engineering-overview.md
-          itemType: overview
-          text: What is Data Engineering?
-        - url: data-engineering/create-lakehouse.md
-          itemType: get-started
-          text: Create a Lakehouse
-        - url: data-engineering/create-spark-job-definition.md
-          itemType: get-started
-          text: Create a Spark job definition
-      # footerLink (optional)
-      footerLink:
-        url: data-engineering/index.yml
-        text: See more
-    # Card
-    - title: "Build a relational layer with Synapse Data Warehouse"
-      links:
-        - url: data-warehouse/data-warehousing.md
-          itemType: overview
-          text: What is Data Warehouse?
-        - url: data-warehouse/create-warehouse.md
-          itemType: get-started
-          text: Create a Warehouse
-        - url: data-warehouse/sql-query-editor.md
-          itemType: how-to-guide
-          text: Query using SQL query editor
-      # footerLink (optional)
-      footerLink:
-        url: data-warehouse/index.yml
-        text: See more
-    # Card
-    - title: "Perform data analysis with Synapse Real-time Analytics"
-      links:
-        - url: real-time-analytics/overview.md
-          itemType: overview
-          text: What is Real-time Analytics?
-        - url: placeholder.md
-          itemType: overview
-          text: What is Event stream?
-        - url: real-time-analytics/create-database.md
-          itemType: get-started
-          text: Create a database
-        - url: real-time-analytics/get-data-blob.md
-          itemType: how-to-guide
-          text: Get data from a blob container
-      # footerLink (optional)
-      footerLink:
-        url: real-time-analytics/index.yml
-        text: See more
-    # Card
-    - title: Administer your resources
-      links:
-        - url: admin/admin-overview.md
-          itemType: overview
-          text: What is administration?
-        - url: admin/admin-roles.md
-          itemType: concept
-          text: Understand administration roles
-        - url: admin/admin-delegate.md
-          itemType: how-to-guide
-          text: Delegate settings
-      # footerLink (optional)
-      footerLink:
-        url: admin/index.yml
-        text: See more
-    # Card
-    - title: Secure your resources
-      links:
-        - url: security/security-overview.md
-          itemType: overview
-          text: What is security?
-        - url: security/security-byok.md
-          itemType: concept
-          text: Bring your own encryption keys
-        - url: security/security-b2b.md
-          itemType: how-to-guide
-          text: How does B2B work?
-      # footerLink (optional)
-      footerLink:
-        url: security/index.yml
-        text: See more
-    # Card
-    - title: Protect your data with Governance and compliance
-      links:
-        - url: placeholder.md
-          itemType: overview
-          text: What is information protection?
-        - url: placeholder.md
-          itemType: overview
-          text: Working with Purview
-        - url: placeholder.md
-          itemType: how-to-guide
-          text: Set up certifications
-      # footerLink (optional)
-      footerLink:
-        url: governance/index.yml
-        text: See more
-    # Card
-    - title: Enterprise
-      links:
-        - url: enterprise/capacity-and-skus.md
-          itemType: overview
-          text: Capacity and SKUs
-        - url: enterprise/autoscale.md
-          itemType: how-to-guide
-          text: Scale your SKU size
-        - url: enterprise/billing-reports.md
-          itemType: how-to-guide
-          text: Create billing reports
-      # footerLink (optional)
-      footerLink:
-        url: enterprise/index.yml
-        text: See more
-    # Card
-    - title: Continuous Integration / Continuous Delivery (CI/CD)
-      links:
-        - url: cicd/deployment-pipelines/deployment-pipelines-overview.md
-          itemType: overview
-          text: What are deployment pipelines?
-        - url: cicd/deployment-pipelines/deployment-pipelines-create-rules.md
-          itemType: get-started
-          text: Create deployment rules
-        - url: cicd/deployment-pipelines/deployment-pipelines-automation.md
-          itemType: how-to-guide
-          text: Automate deployment pipelines
-      # footerLink (optional)
-      footerLink:
-        url: cicd/index.yml
-        text: See more
-    # Card
-    - title: "Monitor changing data with Reflex"
-      links:
-        - url: placeholder.md
-          itemType: overview
-          text: What is Reflex?
-        - url: placeholder.md
-          itemType: get-started
-          text: Use Reflex from Power BI
-        - url: placeholder.md
-          itemType: tutorial
-          text: End-to-end scenario for the reflex simulator
-      # footerLink (optional)
-      footerLink:
-        url: reflex/index.yml
-        text: See more
-
-# additionalContent section (optional)
-# Card with summary style
-additionalContent:
-  # Supports up to 3 sections
   sections:
-    - title: Related products # < 60 chars (optional)
+    - title: Microsoft Fabric shared platform experiences # < 60 chars (Optional; Remove if not applicable.)
+      summary: Use Microsoft Fabric software services, apps, and connectors to turn your unrelated sources of data into coherent, visually immersive, and interactive insights. # < 160 chars (Optional; Remove if not applicable.)
       items:
         # Card
-        - title: Power BI
-          summary: Power BI amplifies your insights and the value of your data. 
-          url: /power-bi/
-        - title: Azure Synapse analytics
-          summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
-          url: /azure/synapse-analytics/
-        - title: Azure Data Factory
-          summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
-          url: /azure/data-factory/
+        - title: "Microsoft Fabric: Get started"
+          links:
+          - url: get-started/fabric-home.md
+            itemType: how-to-guide
+            text: Navigate the Fabric portal          
+          - url: get-started/workspaces.md
+            itemType: concept
+            text: Fabric workspaces and settings
+          - url: get-started/whats-new.md
+            itemType: tutorial
+            text: What's new in Microsoft Fabric?
+          - url: enterprise/buy-subscription.md
+            itemType: concept
+            text: Buy a Microsoft Fabric subscription
+          # footerLink (optional)
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+        # Card
+        - title: Platform admin and governance
+          links:
+          - url: admin/microsoft-fabric-admin.md
+            itemType: how-to-guide
+            text: Fabric administration
+          - url: governance/governance-compliance-overview.md
+            itemType: how-to-guide
+            text: Data governance and compliance
+          - url: admin/monitoring-workspace.md
+            itemType: concept
+            text: Admin monitoring workspace
+          - url: security/security-overview.md
+            itemType: how-to-guide
+            text: Security
+          footerLink:
+            url: admin/index.yml
+            text: See more
+        # Card
+        - title: Developer
+          links:
+            - url: /rest/api/fabric/
+              itemType: reference
+              text: REST APIs
+            - url: cicd/deployment-pipelines/intro-to-deployment-pipelines.md
+              itemType: concept
+              text: Deployment pipelines
+            - url: cicd/git-integration/intro-to-git-integration.md
+              itemType: concept
+              text: Git integration
+          footerLink:
+              url: cicd/index.yml
+              text: See more
+        # Card
+        - title: Learning
+          links:
+            - url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
+              itemType: training
+              text: Jumpstart your career with the Career Hub
+            - url: https://developer.microsoft.com/offers/30-days-to-learn-it?challenge_option=bfb9f08c-b763-4f60-b5d7-360debaf4f8f&ocid=fabric24_30DTLI_fabricdocs_card_clp
+              itemType: training
+              text: Skill up with the cloud skills challenge
+            - url: /training/fabric/?WT.mc_id=fabric_landingpage-docs-link
+              itemType: training
+              text: Explore role-based learning paths
+            - url: get-started/end-to-end-tutorials.md
+              itemType: training
+              text: Explore Fabric's capabilities
+          footerLink:
+              url: https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabricdocs_card_clp
+              text: See more
+        # Card
+        - title: Community
+          links:
+            - url: https://community.fabric.microsoft.com/
+              itemType: concept
+              text: Ask questions in our forums 
+            - url: https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups
+              itemType: concept
+              text: Join a user group
+            - url: https://ideas.fabric.microsoft.com/
+              itemType: concept
+              text: Vote and contribute product ideas 
+            - url: https://blog.fabric.microsoft.com/blog/
+              itemType: concept
+              text: Fabric updates blog
+        # Card
+        - title: Troubleshooting 
+          links:
+          - url: /power-bi/support/service-support-options
+            itemType: concept
+            text: Create a support ticket
+          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
+            itemType: concept
+            text: Known issues
+          - url: /power-bi/troubleshoot/
+            itemType: concept
+            text: Troubleshoot issues
+          footerLink:
+            url: get-started/index.yml
+            text: See more
+
+productDirectory:
+  title: Explore Microsoft Fabric experiences
+  summary: Learn about Microsoft Fabric, evaluate its features, analyze your data and run reports.
+  items:
+    # Card
+    - title: Power BI
+
+      imageSrc: ./media/power-bi-icon.png
+      links:
+        - url: /power-bi/fundamentals/power-bi-overview
+          text: What is Power BI?
+        - url: /power-bi/transform-model/datamarts/datamarts-overview
+          text: What is a datamart?
+        - url: /power-bi/paginated-reports/report-builder-shared-datasets
+          text: Create a paginated report
+        - url: /power-bi/connect-data/service-azure-and-power-bi
+          text: Azure and Power BI integration
+        - url: /power-bi/
+          text: See more
+
+    # Card
+    - title: OneLake
+
+      imageSrc: ./media/onelake-icon.png
+      links:
+        - url: onelake/onelake-overview.md
+          text: What is OneLake?
+        - url: onelake/onelake-shortcuts.md
+          text: What are shortcuts?
+        - url: onelake/create-lakehouse-onelake.md
+          text: Create a lakehouse with OneLake
+        - url: onelake/onelake-azure-synapse-analytics.md
+          text: Integration with Azure Synapse Analytics
+        - url: onelake/index.yml
+          text: See more
+
+    # Card
+    - title: Data Factory
+
+      imageSrc: ./media/data-factory-icon.png
+      links:
+        - url: data-factory/data-factory-overview.md
+          text: What is Data Factory?
+        - url: data-factory/create-first-pipeline-with-sample-data.md
+          text: Create your first pipeline
+        - url: data-factory/create-first-dataflow-gen2.md
+          text: Create your first dataflow
+        - url: data-factory/connector-overview.md
+          text: Explore connectors
+        - url: data-factory/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Engineering
+
+      imageSrc: ./media/synapse-data-engineering-icon.png
+      links:
+        - url: data-engineering/data-engineering-overview.md
+          text: What is Data Engineering?
+        - url: data-engineering/create-lakehouse.md
+          text: Create a Lakehouse
+        - url: data-engineering/create-spark-job-definition.md
+          text: Configure and use an environment
+        - url: data-engineering/migrate-synapse-overview.md
+          text: Migrate data into lakehouse
+        - url: data-engineering/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Science
+
+      imageSrc: ./media/synapse-data-science-icon.png
+      links:
+        - url: data-science/data-science-overview.md
+          text: What is Data science?
+        - url: data-science/machine-learning-experiment.md
+          text: Machine learning experiment
+        - url: data-science/use-ai-samples.md
+          text: Use end-to-end AI samples
+        - url: data-science/semantic-link-overview.md
+          text: Use semantic link to connect with Power BI
+        - url: data-science/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Data Warehouse
+
+      imageSrc: ./media/synapse-data-warehouse-icon.png
+      links:
+        - url: data-warehouse/data-warehousing.md
+          text: What is Data Warehousing?
+        - url: data-warehouse/create-warehouse.md
+          text: Create a Warehouse
+        - url: data-warehouse/sql-query-editor.md
+          text: Query using SQL query editor
+        - url: data-warehouse/migration-synapse-dedicated-sql-pool-warehouse.md
+          text: Migrate data into warehouse
+        - url: data-warehouse/index.yml
+          text: See more
+
+    # Card
+    - title: Synapse Real-Time Analytics
+
+      imageSrc: ./media/synapse-real-time-analytics-icon.png
+      links:
+        - url: real-time-analytics/overview.md
+          text: What is Real-Time Analytics?
+        - url: real-time-analytics/event-streams/overview.md
+          text: What is Event streams?
+        - url: real-time-analytics/create-database.md
+          text: Create a database
+        - url: real-time-analytics/query-table.md
+          text: Query with KQL
+        - url: real-time-analytics/index.yml
+          text: See more
+
+    # Card
+    - title: Data Activator
+
+      imageSrc: ./media/data-activator-icon.png
+      links:
+        - url: data-activator/data-activator-introduction.md
+          text: What is Data Activator?
+        - url: data-activator/data-activator-get-data-eventstreams.md
+          text: Get data from Eventstreams
+        - url: data-activator/data-activator-tutorial.md
+          text: Create objects and triggers - Tutorial 
+        - url: data-activator/index.yml
+          text: See more
+
+    # Card
+    - title: Copilot in Fabric
+
+      imageSrc: ./media/copilot-icon.svg
+      links:
+        - url: get-started/copilot-fabric-overview.md
+          text: Introduction to Copilot in Fabric
+        - url: get-started/copilot-privacy-security.md
+          text: Copilot privacy, security, and responsible use
+        - url: get-started/copilot-notebooks-overview.md
+          text: Copilot for notebooks
+        - url: get-started/copilot-fabric-overview.md
+          text: See more
+
+    # Card
+    - title: Industry Solutions in Fabric
+
+      imageSrc: ./media/industry-solutions-icon.svg
+      links:
+        - url: /industry/retail/retail-data-solutions/overview-retail-data-solutions
+          text: What is Retail data solutions?
+        - url: /industry/sustainability/sustainability-data-solutions-overview
+          text: What is Sustainability data solutions? 
+        - url: /industry/retail/retail-data-solutions/deploy-retail-data-solutions
+          text: Deploy Retail data solutions
+        - url: /industry/sustainability/sustainability-data-solutions-deploy
+          text: Deploy Sustainability data solutions
+        - url: /industry/industry-data-solutions-fabric
+          text: See more
+
+
+additionalContent:
+# additionalContent section (optional)
+# Card with summary style
+# Supports up to 3 sections
+  sections:
+  - title: Related products # < 60 chars (optional)
+    items:
+    # Card
+    - title: Power Platform
+      summary: Power Platform is a low-code platform that allows users to easily create and automate business solutions using Power Apps, Power Automate, and Power BI.
+      links:
+      - text: Power Apps documentation
+        url: /power-apps/
+      - text: Power Automate documentation
+        url: /power-automate/
+    - title: Azure Synapse Analytics
+      summary: Azure Synapse is a limitless analytics service that brings together enterprise data warehouse and Big Data analytics.
+      links:
+      - text: Azure Synapse Analytics documentation
+        url: /azure/synapse-analytics/
+      - text: Get started with Azure Synapse Analytics
+        url: /azure/synapse-analytics/get-started
+    - title: Azure Data Factory
+      summary: Azure Data Factory is Azure's cloud ETL service for scale-out serverless data integration and data transformation.
+      url: /azure/data-factory/
+      links:
+      - text: Azure Data Factory documentation
+        url: /azure/data-factory/
+      - text: Get started with Azure Data Factory
+        url: /azure/data-factory/quickstart-get-started

@@ -5,12 +5,12 @@ metadata:
   author: santhoshravindran7
   ms.author: saravi
   ms.topic: faq
-  ms.date: 02/24/2023
+  ms.custom:
+    - ignite-2023
+  ms.date: 05/23/2023
 title: Apache Spark workspace administration settings FAQ
 summary: |
   This article lists answers to frequently asked questions about Apache Spark workspace administration settings.
-
-  > [!INCLUDE [preview-note](../includes/preview-note.md)]
 
 sections:
   - name: Workspace administration settings
@@ -22,16 +22,16 @@ sections:
         answer: When you make a configuration change at the workspace level, it's not applied to active Spark sessions. This includes batch or notebook based sessions. You must start a new notebook or a batch session after saving the new configuration settings for the settings to take effect.
 
       - question: Can I configure the node family, Spark runtime, and Spark properties at a capacity level?
-        answer: Currently, the Spark administration settings are only available at the workspace level.
+        answer: Yes, you can change the runtime, or manage the spark properties using the Data Engineering/Science settings as part of the capacity admin settings page. You need have the capacity admin access to view and change these capacity settings.
 
       - question: Can I choose different node families for different notebooks and Spark job definitions in my workspace?
-        answer: Currently, you can only select either a Memory Optimized (Default) or a Hardware Accelerated GPU based node family for the entire workspace. You can't select Hardware Accelerated GPU based pools for specific notebooks in a workspace. You must create a new workspace or modify node family settings for the workspace to “Hardware Accelerated GPU” based pools for compute intensive workloads.
+        answer: Currently, you can only select Memory Optimized based node family for the entire workspace. 
 
       - question: What versions of Spark are supported?
-        answer: Currently, Spark version 3.2 is the only supported version. Additional versions will be available in the upcoming release.
+        answer: Currently, Spark version 3.3 is the only supported version. Additional versions will be available in the upcoming release.
 
       - question: Can I configure these settings at a notebook level?
-        answer: Currently, the Spark administration settings are only available at the workspace level.
+        answer: Currently, the Spark administration settings are only available at the workspace and capacity level
 
       - question: Can I configure the minimum and maximum number of nodes for the selected node family?
         answer: Currently, node limit configuration isn't available. This capability will be enabled in future releases.

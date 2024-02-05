@@ -1,24 +1,32 @@
 ---
-title: How to configure Azure Blob Storage in copy activity
+title: Configure Azure Blob Storage in a copy activity
 description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/27/2022
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Blob Storage in copy activity
+# Configure Azure Blob Storage in a copy activity
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
+This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
 
 ## Supported format
 
-Azure Blob Storage supports the following file formats.
+Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
+
+- [Avro format](format-avro.md)
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
+- [Parquet format](format-parquet.md)
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -27,6 +35,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [General](#general)  
 - [Source](#source)
 - [Destination](#destination)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -54,7 +63,7 @@ Under **Advanced**, you can specify the following fields:
 
   - **Prefix**: Prefix for the blob name under the given container configured to filter source blobs. Blobs whose names start with `container/this_prefix` are selected. It utilizes the service-side filter for blob storage.
 
-    When you use **Prefix** and choose to copy to a file-based sink with preserving hierarchy, the sub-path after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
+    When you use **Prefix** and choose to copy to a file-based destination with preserving hierarchy, the subpath after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
     :::image type="content" source="./media/connector-azure-blob-storage/prefix.png" alt-text="Screenshot showing prefix file path type.":::
 
@@ -78,7 +87,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Delete files after completion**: If this checkbox is selected, the binary files are deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll notice that some files have already been copied to the destination and deleted from the source, while others are still remaining in the source store.
 
-    >[!Note]
+    > [!NOTE]
     >This property is only valid in a binary files copy scenario.
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
@@ -100,7 +109,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add dynamic content**, **None**, **FlattenHierarchy**, or **Preserve hierarchy** from the drop-down list.
 
-  - **Add dynamic content**: To specify an expression for a property value, select **Add dynamic content**. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
+  - **Add dynamic content**: To specify an expression for a property value, select **Add dynamic content**. This selection opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
   - **None**: Choose this selection to not use any copy behavior.
   - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
   - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of source file to source folder is identical to the relative path of target file to target folder.
@@ -121,9 +130,13 @@ Under **Advanced**, you can specify the following fields:
 
     :::image type="content" source="./media/connector-azure-blob-storage/metadata.png" alt-text="Screenshot showing metadata.":::
 
+### Mapping
+
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping won't be supported.
+
 ### Settings
 
-For **Settings** tab configuration, see Settings.
+For **Settings** tab configuration, see [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
@@ -138,7 +151,7 @@ The following tables contain more information about the copy activity in Azure B
 |**File path** | The file path of your source data.|\<file path of your source>|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.|Selected or unselect|No |recursive|
-|**Delete files after completion** |The files in the source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when a copy activity fails, you'll notice that some files have already been copied to the destination and deleted from source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
+|**Delete files after completion** |The files in the source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when a copy activity fails, you can tell that some files have already been copied to the destination and deleted from source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
 
 ### Destination information
@@ -151,8 +164,8 @@ The following tables contain more information about the copy activity in Azure B
 |**Copy behavior** |Defines the behavior when copying files from one file system, like storage, to the other (for example, from one blob storage to another).|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set the custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Metadata**|Set the custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
-[How to create Azure Blob connection](connector-azure-blob-storage.md)
+- [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)

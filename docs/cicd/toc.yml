@@ -1,39 +1,60 @@
 items:
-- name: CI/CD documentation
+- name: Lifecycle management documentation
   href: index.yml
-- name: What is CI/CD? 
+- name: What is lifecycle management? 
   href: cicd-overview.md
+- name: "Tutorial: End to end lifecycle management"
+  href: cicd-tutorial.md
 - name: Deployment pipelines
   items:
   - name: Introduction to deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-overview.md
+    href: deployment-pipelines/intro-to-deployment-pipelines.md
   - name: Understand the deployment process
-    href: deployment-pipelines/deployment-pipelines-process.md
+    href: deployment-pipelines/understand-the-deployment-process.md
   - name: Get started with deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-get-started.md
-  - name: Assigning a workspace
-    href: deployment-pipelines/deployment-pipelines-assign.md
+    href: deployment-pipelines/get-started-with-deployment-pipelines.md
+  - name: Assign a workspace
+    href: deployment-pipelines/assign-pipeline.md
   - name: Compare content in different stages
-    href: deployment-pipelines/deployment-pipelines-compare.md  
+    href: deployment-pipelines/compare-pipeline-content.md  
   - name: Deploy content to the next stage
-    href: deployment-pipelines/deployment-pipelines-deploy.md
+    href: deployment-pipelines/deploy-content.md
   - name: Deployment history
-    href: deployment-pipelines/deployment-pipelines-history.md
+    href: deployment-pipelines/deployment-history.md
   - name: Create deployment rules
-    href: deployment-pipelines/deployment-pipelines-create-rules.md
+    href: deployment-pipelines/create-rules.md
   - name: Automate deployment pipelines
-    href: deployment-pipelines/deployment-pipelines-automation.md
-  - name: Best practices
-    href: deployment-pipelines/deployment-pipelines-best-practices.md
-  - name: Troubleshooting
-    href: deployment-pipelines/deployment-pipelines-troubleshooting.yml
+    href: deployment-pipelines/pipeline-automation.md
 - name: Git integration
   items:
   - name: Introduction to Git integration
-    href: git-integration/git-integration-overview.md
+    href: git-integration/intro-to-git-integration.md
+  - name: Get started with Git integration
+    href: git-integration/git-get-started.md
   - name: "Git integration process"
     href: git-integration/git-integration-process.md
-  - name: Get started with git integration
-    href: git-integration/git-get-started.md
-  - name: Manage git branches
-    href: git-integration/git-branches.md
+  - name: Manage Git branches
+    href: git-integration/manage-branches.md
+  - name: Handle errors and conflicts
+    items:
+    - name: Resolve conflicts
+      href: git-integration/conflict-resolution.md
+    - name: Manually fix a failed update
+      href: git-integration/partial-update.md
+    - name: Resolve dependency errors
+      href: git-integration/dependency-errors.md
+    - name: Expired licenses
+      href: git-integration/license-change.md
+  - name: Git integration source code format
+    href: git-integration/source-code-format.md
+- name: Lifecycle management best practices
+  href: best-practices-cicd.md
+- name: Frequently asked questions
+  href: faq.md
+- name: Troubleshooting
+  href: troubleshoot-cicd.md
+- name: Partner solutions
+  items:
+  - name: ISV partner ecosystem
+    href: partners/partner-integration.md
+

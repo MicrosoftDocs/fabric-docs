@@ -1,68 +1,46 @@
 ### YamlMime:Landing
 
-title: Security documentation # < 60 chars
-summary: summary # < 160 chars
+title: Microsoft Fabric security
+summary: Learn about the Microsoft Fabric security features.
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
-  ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  title: Microsoft Fabric security
+  description: Understand what security features are available for Microsoft Fabric and how to use them.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: security
+  ms.topic: landing-page
+  author: KesemSharabi
+  ms.author: kesharab
+  ms.date: 05/23/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
-# Cards and links should be based on top customer tasks or top subjects
-# Start card title with a verb
+
   # Card 
-  - title: About Security
+  - title: Security in Microsoft Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
+          - text: Security in Microsoft Fabric
+            url: security-overview.md
+      - linkListType: concept
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: Get started
-    linkLists:
-      - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: how-to-guide
-    linkLists:
+          - text: Conditional access in Fabric
+            url: security-conditional-access.md        
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Service tags
+            url: security-service-tags.md
+
+  # Card 
+  - title: Supportability
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Reliability in Microsoft Fabric
+            url: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Customer Lockbox for Microsoft Fabric
+            url: security-lockbox.md

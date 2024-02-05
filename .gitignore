@@ -6,3 +6,7 @@ _themes*/
 _repo.*/
 
 .openpublishing.buildcore.ps1
+.DS_Store
+docs/data-engineering/.DS_Store
+media/.DS_Store
+.idea/

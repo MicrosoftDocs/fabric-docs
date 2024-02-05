@@ -2,82 +2,208 @@ items:
 - name: Data Warehousing documentation
   href: index.yml
 - name: Overview
-  items: 
-  - name: Data warehousing
-    href: data-warehousing.md
-  - name: SQL Endpoint
-    href: sql-endpoint.md
-  - name: Synapse Data Warehouse
-    href: warehouse.md
-- name: Get started 
-  items: 
-  - name: SQL Endpoint on the Lakehouse
-    href: get-started-sql-endpoint.md
-  - name: Synapse Data Warehouse
-    items:
-    - name: Get started with a Synapse Data Warehouse
-      href: get-started-data-warehouse.md  
-    - name: Create a warehouse
-      href: create-warehouse.md
-    - name: Create a table
-      href: create-table.md
-    - name: Ingest data 
-      href: ingest-data.md
-    - name: Query the warehouse
-      href: query-warehouse.md
-    - name: Create reports
-      href: create-reports.md
-    - name: Create reports in the Power BI service
-      href: reports-power-bi-service.md
-- name: Security
+  href: data-warehousing.md
+- name: Get started with Warehouse
+  expanded: true
   items:
-  - name: Data warehousing security
-    href: security.md
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-warehouse/toc.json&bc=/fabric/data-warehouse/toc.json
+  - name: 1. Create a warehouse
+    href: create-warehouse.md
+  - name: 2. Create a table
+    href: create-table.md
+  - name: 3. Ingest data 
+    href: ingest-data-pipelines.md
+  - name: 4. Query the warehouse
+    href: query-warehouse.md
+  - name: 5. Create reports
+    href: create-reports.md
+- name: Tutorials
+  items:
+  - name: Data warehouse tutorial introduction
+    href: tutorial-introduction.md
+  - name: 1. Create a workspace
+    href: tutorial-create-workspace.md
+  - name: 2. Create a warehouse
+    href: tutorial-create-warehouse.md
+  - name: 3. Ingest data into a warehouse
+    href: tutorial-ingest-data.md
+  - name: 4. Create tables
+    href: tutorial-create-tables.md
+  - name: 5. Load data using T-SQL
+    href: tutorial-load-data.md
+  - name: 6. Clone a table using T-SQL
+    href: tutorial-clone-table.md
+  - name: 7. Transform data using stored procedure
+    href: tutorial-transform-data.md
+  - name: 8. Create queries with visual query builder
+    href: tutorial-visual-query.md
+  - name: 9. Analyze data with a notebook
+    href: tutorial-analyze-data-notebook.md
+  - name: 10. Create queries with the SQL query editor
+    href: tutorial-sql-cross-warehouse-query-editor.md
+  - name: 11. Create Power BI reports
+    href: tutorial-power-bi-report.md
+  - name: 12. Build a report from the OneLake data hub
+    href: tutorial-build-report-onelake-data-hub.md
+  - name: 13. Clean up resources
+    href: tutorial-clean-up.md        
+- name: Connect to the warehouse
+  items: 
   - name: Connectivity
-    href: connectivity.md    
-  - name: Workspace roles
-    href: workspace-roles.md
-  - name: Manage user access
-    href: manage-user-access.md    
-- name: Datasets
+    href: connectivity.md
+- name: Design and Develop
   items:
-  - name: Datasets
-    href: datasets.md
-  - name: Data modeling and defining relationships
-    href: data-modeling-defining-relationships.md
-  - name: Create a measure
-    href: create-measure.md
-  - name: Hide elements from downstream reporting
-    href: hide-elements-downstream-reporting.md
-  - name: Get Workspace and OneLake path
-    href: get-workspace-onelake-path.md
-- name: Load data into the Synapse Data Warehouse
+  - name: Better together - the lakehouse and warehouse
+    href: get-started-lakehouse-sql-analytics-endpoint.md
+  - name: Create a sample warehouse 
+    href: create-warehouse-sample.md
+  - name: Performance guidelines
+    href: guidelines-warehouse-performance.md
+  - name: Tables
+    href: tables.md
+  - name: Data types
+    href: data-types.md
+  - name: T-SQL surface area
+    href: tsql-surface-area.md
+  - name: Primary, foreign, and unique keys
+    href: table-constraints.md
+  - name: Generate unique identifiers
+    href: generate-unique-identifiers.md
+  - name: Transactions
+    href: transactions.md 
+  - name: Warehouse settings and context menus
+    href: settings-context-menus.md
+- name: Load data into the warehouse
   items:
   - name: Ingesting data into the warehouse
     href: ingest-data.md
-  - name: Ingest data with COPY command
-    href: ingest-data-copy-command.md
-  - name: Ingest data with Data pipelines
+  - name: Ingest data with data pipelines
     href: ingest-data-pipelines.md
-- name: Query
+  - name: Ingest data with the COPY statement
+    href: ingest-data-copy.md
+  - name: Ingest data with TSQL
+    href: ingest-data-tsql.md
+  - name: Use dbt with data warehouse
+    href: tutorial-setup-dbt.md          
+- name: Create models and build Power BI reports
+  items:
+  - name: Semantic models
+    href: semantic-models.md
+  - name: Model data in the default Power BI semantic model
+    href: default-power-bi-semantic-model.md          
+  - name: Define relationships in data models
+    href: data-modeling-defining-relationships.md
+  - name: Create reports in the Power BI service
+    href: reports-power-bi-service.md    
+- name: Collaborate, share, and manage security
+  items:
+  - name: Data warehousing security
+    href: security.md
+  - name: Workspace roles
+    href: workspace-roles.md
+  - name: Manage SQL granular permissions
+    href: sql-granular-permissions.md
+  - name: Share your Warehouse
+    href: share-warehouse-manage-permissions.md    
+  - name: Column-level security
+    href: column-level-security.md
+  - name: Row-level security
+    href: row-level-security.md
+  - name: User audit logs
+    href: user-audit-logs.md
+  - name: Dynamic data masking
+    href: dynamic-data-masking.md
+  - name: How to
+    items: 
+    - name: Implement column-level security
+      href: tutorial-column-level-security.md    
+    - name: Implement row-level security
+      href: tutorial-row-level-security.md
+    - name: Implement dynamic data masking
+      href: howto-dynamic-data-masking.md
+- name: Query the warehouse
   items:
   - name: Query using Visual Query editor
     href: visual-query-editor.md
   - name: Query using SQL Query editor
     href: sql-query-editor.md    
+  - name: View data in the Data preview
+    href: data-preview.md
+  - name: Query Delta Lake logs
+    href: query-delta-lake-logs.md
+- name: Data recovery
+  items:
+  - name: Restore in-place
+    href: restore-in-place.md
+  - name: Clone tables
+    href: clone-table.md
+  - name: Clone tables in the Fabric portal
+    href: tutorial-clone-table-portal.md
+- name: Manage performance
+  items:
   - name: Statistics
     href: statistics.md
-- name: Develop
+  - name: Caching
+    href: caching.md
+- name: Monitor the warehouse
   items:
-  - name: Tables
-    href: tables.md
-  - name: Primary, foreign, and unique keys
-    href: table-constraints.md
-  - name: Transactions
-    href: transactions.md
-  - name: Warehouse settings and context menus
-    href: settings-context-menus.md
-- name: Monitor
-  items:
+  - name: Monitor using Capacity Metrics app
+    href: usage-reporting.md
+    displayName: Billing, usage reporting
   - name: Monitor using DMVs
     href: monitor-using-dmv.md
+  - name: Query insights
+    href: query-insights.md
+  - name: How to
+    items:    
+      - name: Observe utilization trends
+        href: how-to-observe-utilization.md
+- name: Warehouse capacity
+  items:
+  - name: Burstable capacity
+    href: burstable-capacity.md
+  - name: Capacity pause and resume
+    href: pause-resume.md
+    displayName: pause, warehouse
+  - name: Smoothing and throttling
+    href: compute-capacity-smoothing-throttling.md
+    displayName: Smoothing, throttling
+  - name: Workload Management
+    href: workload-management.md
+- name: Migrate
+  items:
+  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+    href: migration-synapse-dedicated-sql-pool-warehouse.md
+- name: Troubleshoot
+  items:
+  - name: Troubleshooting your Warehouse
+    href: troubleshoot-synapse-data-warehouse.md
+  - name: Limitations
+    href: limitations.md      
+- name: Reference
+  items: 
+  - name: T-SQL Reference for Fabric
+    href: /sql/t-sql/language-reference?view=fabric&preserve-view=true
+- name: Resources
+  items: 
+  - name: Contribute to Fabric docs
+    href: /contribute/
+  - name: Help
+    items:
+    - name: Microsoft Q & A >>
+      href: /answers/
+    - name: Submit feedback >>
+      href: https://feedback.azure.com/    
+  - name: Ideas
+    href: https://ideas.fabric.microsoft.com/
+  - name: Community
+    href: https://community.fabric.microsoft.com/
+  - name: Service updates
+    href: https://azure.microsoft.com/updates/    
+  - name: Azure Status
+    href: https://azure.status.microsoft/
+  - name: Learn
+    items:
+    - name: Microsoft Learn training >>
+      href: /training/

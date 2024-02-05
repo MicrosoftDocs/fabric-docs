@@ -1,0 +1,7 @@
+items:
+- name: Microsoft Fabric
+  tocHref: /fabric/
+  topicHref: /fabric/index 
+- name: Microsoft Fabric
+  tocHref: /purview/
+  topicHref: /fabric/index

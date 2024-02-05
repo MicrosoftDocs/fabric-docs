@@ -3,23 +3,54 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Governance?
-    href: ../placeholder.md
+  - name: Governance and compliance in Microsoft Fabric
+    href: governance-compliance-overview.md
+  - name: Security overview
+    href: ../security/security-overview.md
+  - name: Admin overview
+    href: ../admin/microsoft-fabric-admin.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+  - name: Set up item certification
+    href: ../admin/endorsement-setup.md?toc=/fabric/governance/TOC.json&bc=/fabric/governance/breadcrumb/toc.json
+- name: Microsoft Purview
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+  - name: Microsoft Purview and Fabric
+    href: microsoft-purview-fabric.md
+    items:
+      - name: Connect in the same tenant
+        href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
+      - name: Connect cross-tenant
+        href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
+  - name: Microsoft Purview Hub
+    href: use-microsoft-purview-hub.md
+- name: Information protection
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Information protection in Microsoft Fabric
+    href: information-protection.md
+  - name: Sensitivity labels
+    items:
+    - name: Default label policy
+      href: service-security-sensitivity-label-default-label-policy.md
+    - name: Mandatory label policy
+      href: service-security-sensitivity-label-mandatory-label-policy.md
+    - name: Programmatic labeling
+      href: service-security-sensitivity-label-inheritance-set-remove-api.md
+    - name: Downstream inheritance
+      href: service-security-sensitivity-label-downstream-inheritance.md
+    - name: Inheritance from data sources
+      href: service-security-sensitivity-label-inheritance-from-data-sources.md
+- name: Endorsement
+  href: endorsement-overview.md
+- name: Lineage
+  href: lineage.md
+- name: Impact analysis
+  href: impact-analysis.md
+- name: Domains
+  href: domains.md
+- name: Metadata scanning
+  items:
+  - name: Metadata scanning overview
+    href: metadata-scanning-overview.md
+  - name: Run metadata scanning
+    href: metadata-scanning-run.md

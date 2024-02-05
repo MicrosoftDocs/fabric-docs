@@ -5,17 +5,21 @@ items:
   items:
   - name: Security overview
     href: security-overview.md
+  - name: Security fundamentals
+    href: security-fundamentals.md    
 - name: Security features
   items:
-  - name: Business to business
-    href: security-b2b.md  
-  - name: Recovery
-    href: security-recovery.md
-  - name: Private links
-    href: security-private-links.md
-  - name: Customer lockbox
+  - name: Guest user sharing
+    href: security-b2b.md
+  - name: Conditional access
+    href: security-conditional-access.md
+  - name: Customer Lockbox
     href: security-lockbox.md
-  - name: Bring your own encryption keys
-    href: security-byok.md
   - name: Service tags
-    href: security-service-tags.md                
+    href: security-service-tags.md
+- name: Reliability
+  items:
+  - name: Reliability in Microsoft Fabric
+    href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
+  - name: Disaster recovery guides by experience
+    href: experience-specific-guidance.md

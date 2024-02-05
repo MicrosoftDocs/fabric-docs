@@ -1,42 +1,38 @@
 ---
-title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric 
+title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric
 description: An overview of the CI/CD continuous integration, continuous deployment as part of the ALM cycle process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
-ms.service: powerbi
+ms.reviewer: NimrodShalit
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.topic: conceptual
-ms.date: 01/05/2023
+ms.date: 08/10/2023
 ---
 
-# What is CI/CD in Microsoft Fabric?
+# What is lifecycle management in Microsoft Fabric?
 
-Continuous integration (CI) and continuous delivery (CD) are integral parts of the application lifecycle management (ALM) in Microsoft Fabric. ALM tools provide a standardized system for communication and collaboration between software development teams and related departments, such as test and operations. CI/CD facilitates an effective process for releasing products quickly by continuously delivering updated code into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method.
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
-## Continuous integration
+Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two main components of lifecycle management in Fabric:
 
-With Microsoft Fabric's [Git integration](./git-integration/git-integration-overview.md) process, incremental code changes can be made frequently and reliably by multiple developers. Build-and-test steps triggered by CI ensure that the code changes merged into the repository are reliable. The CD process can then deliver the code quickly and seamlessly.
+## Git integration
 
-## Continuous delivery
+:::image type="content" source="./media/cicd-overview/git-flow.png" alt-text="Flowchart showing the connection between the remote Git branch and the live workspace.":::
 
-Microsoft Fabric's [deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md) [automates the delivery](./deployment-pipelines/deployment-pipelines-automation.md) of completed code to environments like testing and production. It allows teams to produce software in short cycles with high speed, frequency, and reliability. Software can be released at any time with a simple, repeatable deployment process.
+With Fabric's [Git integration](./git-integration/intro-to-git-integration.md) process, incremental workspace updates can be made frequently and reliably by multiple developers. By leveraging Git advantages and best practices, developers can collaborate and ensure that content changes get to the workspace quickly and reliably. When ready, the delivery process can then deliver the content to deployment pipelines for testing and distribution.
 
-For the most seamless CI/CD experience in Fabric, connect your developer workspace to git, and deploy from there using deployment pipelines.
+## Delivery through deployment pipelines
 
-## Sample CI/CD workflow
+:::image type="content" source="./media/cicd-overview/pipeline-flow.png" alt-text="Illustration showing the flow of data in a deployment pipeline from data to app." lightbox="media/cicd-overview/pipeline-flow.png":::
 
-A typical application of ALM might look something like this:
+Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md) [automates the delivery](./deployment-pipelines/pipeline-automation.md) of modified content to environments like testing and production. It allows teams to produce updates in short cycles with high speed, frequency, and reliability. Content can be released at any time with a simple, repeatable deployment process.
 
-1. Create a new git branch for developing your app and share it with other developers
-1. Each developer pushes their own code changes in git
-1. Automated build and test
-1. Merge new code updates
-1. Upload updated version to pipeline
-1. Test new version
-1. Deploy new version of the app
+For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from there using deployment pipelines.
 
-This cycle, or parts of it, repeat over again for the lifetime of the app.
+## Related content
 
-## Next steps
-
-* [Deployment pipelines](./deployment-pipelines/deployment-pipelines-overview.md)
-* [Git integration](./git-integration/git-integration-overview.md)
+* [End to end lifecycle management tutorial](./cicd-tutorial.md)
+* [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)
+* [Git integration](./git-integration/intro-to-git-integration.md)

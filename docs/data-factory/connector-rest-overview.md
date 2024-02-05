@@ -4,27 +4,29 @@ description: This article explains the overview of using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/07/2022
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # REST connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+The REST connector is supported in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This REST connector is supported in Trident Project - Data Factory with the following capabilities.
+## Support in Dataflow Gen2
 
-## Supported capabilities
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the REST connector in Dataflow Gen2. To get REST data in Dataflow Gen2, use the [Web API](/power-query/connectors/web/web) connector instead.
+
+## Support in data pipelines
+
+The REST connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/destination)** | None | Anonymous<br/> Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
+| **Copy activity (source/destination)** | None | Anonymous|
 
-## Next steps
+To learn about how to connect to REST data in data pipelines, go to [Set up your REST connection](connector-rest.md#set-up-your-connection-in-a-data-pipeline).
 
-[How to create REST connection](connector-rest.md)
-
-[How to configure REST in copy activity](connector-rest-copy-activity.md)
+To learn about the copy activity configuration for REST in data pipelines, go to [Configure REST in a copy activity](connector-rest-copy-activity.md).

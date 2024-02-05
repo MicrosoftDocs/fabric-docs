@@ -1,0 +1,11 @@
+items:
+    - name: Microsoft Fabric
+      tocHref: /fabric/
+      topicHref: /fabric/index
+      items:
+      - name: Data Warehouse
+        tocHref: /fabric/data-warehouse
+        topicHref: /fabric/data-warehouse/index
+      - name: Data Warehouse
+        tocHref: /fabric/get-started
+        topicHref: /fabric/data-warehouse/index

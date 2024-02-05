@@ -1,112 +1,118 @@
 ---
 title: Get data from OneLake
-description: Learn how to get data from OneLake.
+description: Learn how to get data from OneLake into a KQL database in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/01/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 09/28/2023
+ms.search.form: Get data in a KQL Database
 ---
 
 # Get data from OneLake
 
-In this article, you'll learn how to get data from OneLake into an existing KQL Database.
+In this article, you learn how to get data from OneLake into either a new or existing table.
 
 ## Prerequisites
 
-* Power BI Premium subscription. For more information, see [How to purchase Power BI Premium](/power-bi/enterprise/service-admin-premium-purchase).
-* A workspace.
-* A Lakehouse. <!-- To create a Lakehouse, see [TODO]()-->
-* [Kusto database](create-database.md).
+* A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+* A [Lakehouse](../data-engineering/create-lakehouse.md)
+* A [KQL database](create-database.md) with editing permissions
 
-## Copy folder path from Lakehouse
+## Copy file path from Lakehouse
 
-1. In your workspace, select the Lakehouse environment containing the source you want to use as the basis for your schema mapping.
-    :::image type="content" source="media/get-data-onelake/lakehouse-files.png" alt-text="Screenshot of Lakehouse workspace showing the uploaded files.":::
+1. In the experience switcher, choose **Data Engineering**.
+1. Select the Lakehouse environment containing the data source you want to use.
 
 1. Place your cursor over the desired file and select the **More** menu, then select **Properties**.
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted.":::
+
+    > [!IMPORTANT]
+    >
+    > * Folder paths aren't supported.
+    > * Wildcards (*) aren't supported.
+
+    :::image type="content" source="media/get-data-onelake/lakehouse-file-menu.png" alt-text="Screenshot of a Lakehouse file's dropdown menu. The option titled Properties is highlighted."  lightbox="media/get-data-onelake/lakehouse-file-menu.png":::
 
 1. Under **URL**, select the **Copy to clipboard** icon and save it somewhere to retrieve in a later step.
-    :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted.":::
 
-1. Return to your workspace and select a KQL Database.
+    :::image type="content" source="media/get-data-onelake/lakehouse-file-properties.png" alt-text="Screenshot of a Lakehouse file's Properties pane. The copy icon to the right of the file's URL is highlighted." lightbox="media/get-data-onelake/lakehouse-file-properties.png":::
 
-## Get data
+1. Return to your workspace and select a KQL database.
 
-1. Select **Get Data** > **OneLake**.
+## Source
 
-    :::image type="content" source="media/get-data-onelake/get-data-onelake.png" alt-text="Screenshot of Home ribbon showing the dropdown menu of Get data. The option titled Onelake is highlighted.":::
+1. On the lower ribbon of your KQL database, select **Get Data**.
 
-1. In **Table**, enter a name for your table.
+    In the **Get data** window, the **Source** tab is selected.
 
-     :::image type="content" source="media/get-data-onelake/onelake-table-name.png" alt-text="Screenshot of Destination window showing the database and table name. The table name field is highlighted.":::
+1. Select the data source from the available list. In this example, you're ingesting data from **OneLake**.
 
-      > [!TIP]
-      > Table names can be up to 1024 characters including alphanumeric, hyphens, and underscores. Special characters aren't supported.
+    :::image type="content" source="media/get-data-onelake/select-data-source.png" alt-text="Screenshot of get data window with source tab selected." lightbox="media/get-data-onelake/select-data-source.png":::
 
-1. Select **Next: Source**.
+## Configure
 
-### Source
+1. Select a target table. If you want to ingest data into a new table, select **+New table** and enter a table name.
 
-1. In **Link to source**, paste the folder path of the Lakehouse you copied in [Copy folder path from Lakehouse](#copy-folder-path-from-lakehouse).
+    > [!NOTE]
+    > Table names can be up to 1024 characters including spaces, alphanumeric, hyphens, and underscores. Special characters aren't supported.
 
-    The OneLake path you add will be the basis for the schema tab. <!-- TODO- You can add up to 10 items of up to 1-GB uncompressed size each. If you upload more than one item, you can change the schema-defining file by selecting the star icon on the right side of the source link field. -->
+1. In **OneLake file**, paste the file path of the Lakehouse you copied in [Copy file path from Lakehouse](#copy-file-path-from-lakehouse).
 
-    <!-- :::image type="content" source="media/get-data-onelake/onelake-source.png" alt-text="Screenshot of Source window showing the folder path. The Link to source field is highlighted."::: -->
+    > [!NOTE]
+    > You can add up to 10 items of up to 1-GB uncompressed size each.
 
-1. Select **Next: Schema** to view and edit your table column configuration.
+    :::image type="content" source="media/get-data-onelake/configure-tab.png" alt-text="Screenshot of configure tab with new table entered and a OneLake file path added." lightbox="media/get-data-onelake/configure-tab.png":::
 
-### Schema
+1. Select **Next**.
 
-Your data format and compression are automatically identified in the left-hand pane. If incorrectly identified, use the **Data format** dropdown menu to select the correct format.
+## Inspect
 
-* If your data format is JSON, you must also select JSON levels, from 1 to 10. The levels determine the table column data division.
-* If your data format is CSV, select the check box **Ignore the first record** to ignore the heading row of the file.
+The **Inspect** tab opens with a preview of the data.
 
-For more information on data formats, see <!-- [TODO- Data formats supported by Azure Data Explorer for ingestion](ingestion-supported-formats.md).-->
+To complete the ingestion process, select **Finish**.
 
-1. The **Mapping name** field is automatically filled. Optionally, you can enter a new name. You can use alphanumeric characters and underscores. Spaces, special characters, and hyphens aren't supported.
+:::image type="content" source="media/get-data-onelake/inspect-data.png" alt-text="Screenshot of the inspect tab." lightbox="media/get-data-onelake/inspect-data.png":::
 
-    :::image type="content" source="media/get-data-onelake/onelake-schema.png" alt-text="Screenshot of Schema window showing the data configuration. ":::
+Optionally:
 
-    >[!NOTE]
-    >
-    > The tool automatically infers the schema based on your data. If you want to change the schema to add and edit columns, you can do so under [Partial data preview](#partial-data-preview).
-    >
-    > You can optionally use the [Command viewer](#command-viewer) to view and copy the automatic commands generated from your inputs.
+* Select **Command viewer** to view and copy the automatic commands generated from your inputs.
+* Use the **Schema definition file** dropdown to change the file that the schema is inferred from.
+* Change the automatically inferred data format by selecting the desired format from the dropdown. For more information, see [Data formats supported by Real-Time Analytics](ingestion-supported-formats.md).
+* [Edit columns](#edit-columns).
+* Explore [Advanced options based on data type](#advanced-options-based-on-data-type).
 
-1. Select **Next: Summary**. To skip to the summary pane explanation, select [Complete data ingestion](#complete-data-ingestion).
+[!INCLUDE [get-data-edit-columns](../includes/real-time-analytics/get-data-edit-columns.md)]
 
-#### Command viewer
+:::image type="content" source="media/get-data-onelake/edit-columns.png" alt-text="Screenshot of columns open for editing." lightbox="media/get-data-onelake/edit-columns.png":::
 
-The command viewer shows the commands for creating tables, mapping, and ingesting data in tables.
+[!INCLUDE [mapping-transformations](../includes/real-time-analytics/mapping-transformations.md)]
 
-To open the command viewer, select the **v** button on the right side of the command viewer. In the command viewer, you can view and copy the automatic commands generated from your inputs.
+### Advanced options based on data type
 
-:::image type="content" source="media/get-data-onelake/onelake-command-viewer.png" alt-text="Screenshot of Command viewer pane showing mapping commands.":::
+**Tabular (CSV, TSV, PSV)**:
 
-#### Partial data preview
+* If you're ingesting tabular formats in an *existing table*, you can select **Advanced** > **Keep table schema**. Tabular data doesn't necessarily include the column names that are used to map source data to the existing columns. When this option is checked, mapping is done by-order, and the table schema remains the same. If this option is unchecked, new columns are created for incoming data, regardless of data structure.
+* To use the first row as column names, select  **Advanced** > **First row is column header**.
 
-The partial data preview is automatically inferred based on your data. You can change the data preview by editing existing columns and adding new columns.
+    :::image type="content" source="media/get-data-onelake/advanced-csv.png" alt-text="Screenshot of advanced CSV options.":::
 
-1. To add a new column, select the **+** button on the right-hand column under **Partial data preview**.
+**JSON**:
 
-    :::image type="content" source="media/get-data-onelake/onelake-partial-preview.png" alt-text="Screenshot of Partial data preview pane.":::
+* To determine column division of JSON data, select **Advanced** > **Nested levels**, from 1 to 100.
+* If you select **Advanced** > **Skip JSON lines with errors**, the data is ingested in JSON format. If you leave this check box unselected, the data is ingested in multijson format.
 
-    * The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
-    * The default column type is `string` but can be altered in the drop-down menu of the Column type field.
-    * Source: for table formats (CSV, TSV, etc.), each column can be linked to only one source column. For other formats (such as JSON, Parquet, etc.), multiple columns can use the same source.
+    :::image type="content" source="media/get-data-onelake/advanced-json.png" alt-text="Screenshot of advanced JSON options.":::
 
-1. Select **Next: Summary** to create a table and mapping and to begin data ingestion.
+## Summary
 
-### Complete data ingestion
+In the **Data preparation** window, all three steps are marked with green check marks when data ingestion finishes successfully. You can select a card to query, drop the ingested data, or see a dashboard of your ingestion summary.
 
-In the **Data ingestion completed** window, all three steps will be marked with green check marks when data ingestion finishes successfully.
+:::image type="content" source="media/get-data-onelake/summary.png" alt-text="Screenshot of summary page with successful ingestion completed." lightbox="media/get-data-onelake/summary.png":::
 
-:::image type="content" source="media/get-data-onelake/onelake-summary.png" alt-text="Screenshot of the Summary pane showing the successful completion of data ingestion.":::
+## Related content
 
-## Next steps
-
-[Query data in the KQL Queryset](kusto-query-set.md)
+* [Query data in a KQL queryset](kusto-query-set.md)
+* [Visualize data in a Power BI report](create-powerbi-report.md)

@@ -1,18 +1,20 @@
 ### YamlMime:Landing
 
-title: Data Science in Microsoft Fabric documentation # < 60 chars
-summary: summary # < 160 chars
+title: Data Science documentation in Microsoft Fabric # < 60 chars
+summary: Learn more about the Data Science experience in Microsoft Fabric  # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
+  title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-science
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
-
+  author: s-polly #Required; your GitHub user alias, with correct capitalization.
+  ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
+  ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -23,45 +25,135 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: What is Data Science?
+            url: data-science-overview.md 
 
   # Card 
   - title: Get started
     linkLists:
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: Introduction to Data science tutorials
+            url: tutorial-data-science-introduction.md
+          - text: Data science roles and permissions
+            url: models-experiments-rbac.md
+          - text: Machine learning models
+            url: machine-learning-model.md 
+
+# Card 
+  - title: Tutorials
+    linkLists:
+      - linkListType: tutorial
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: How to use end-to-end AI samples
+            url: use-ai-samples.md 
+          - text: Retail recommendation
+            url: retail-recommend-model.md 
+          - text: Fraud detection
+            url: fraud-detection.md 
+          - text: Forecasting
+            url: time-series-forecasting.md 
+          - text: Discover relationships in a semantic model, using semantic link (preview)
+            url: tutorial-power-bi-relationships.md 
+          - text: Analyze functional dependencies in a semantic model, using semantic link (preview)
+            url: tutorial-power-bi-dependencies.md   
 
   # Card 
-  - title: how-to-guide
+  - title: Preparing Data
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: How to accelerate data prep with Data Wrangler
+            url: data-wrangler.md 
+          - text: How to read and write data with Pandas
+            url: read-write-pandas.md 
+
+  # Card 
+  - title: Training Models
+    linkLists:
+      - linkListType: overview
+        links:  
+        - text: Training Overview
+          url: model-training-overview.md 
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Train with Spark MLlib
+            url: fabric-sparkml-tutorial.md 
+          - text: Train models with Scikit-learn
+            url: train-models-scikit-learn.md 
+          - text: Train models with PyTorch
+            url: train-models-pytorch.md 
+
+# Card 
+  - title: Tracking models and experiments
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Machine learning experiments
+            url: machine-learning-experiment.md
+          - text: Fabric autologging
+            url: mlflow-autologging.md 
+
+# Card 
+  - title: Using SynapseML
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Your First SynapseML Model
+            url: synapseml-first-model.md
+          - text: Install another version of SynapseML
+            url: install-synapseml.md
+      - linkListType: how-to-guide
+        links:
+          - text: Use OpenAI for big data with SynapseML
+            url: open-ai.md
+          - text: Use Cognitive Services with SynapseML
+            url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
+          - text: Deep learning with ONNX and SynapseML
+            url: onnx-overview.md
+          - text: Perform multivariate anomaly detection with SynapseML
+            url: isolation-forest-multivariate-anomaly-detection.md
+          - text: Tune hyperperameters with SynapseML
+            url: hyperparameter-tuning-fighting-breast-cancer.md
+
+# Card 
+  - title: Using R
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: R overview
+            url: r-overview.md 
+      - linkListType: how-to-guide
+        links:
+          - text: How to use SparkR
+            url: r-use-sparkr.md 
+          - text: How to use sparklyr
+            url: r-use-sparklyr.md 
+          - text: R library management
+            url: r-library-management.md 
+          - text: R visualization
+            url: r-visualization.md 
+
+# Card
+  - title: Reference docs     
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: SemPy Python SDK
+          url: /python/api/semantic-link/overview-semantic-link
+
+# Card 
+  - title: Using semantic link (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is semantic link (preview)?
+            url: semantic-link-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Read from Power BI and write data consumable by Power BI
+            url: read-write-power-bi.md
+          - text: Detect, explore, and validate functional dependencies in your data
+            url: semantic-link-validate-data.md
+          - text: Explore and validate relationships in semantic models
+            url: semantic-link-validate-relationship.md

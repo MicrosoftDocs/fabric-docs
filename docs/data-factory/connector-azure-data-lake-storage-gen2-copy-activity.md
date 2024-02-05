@@ -1,18 +1,17 @@
 ---
-title: How to configure Azure Data Lake Storage Gen2 in copy activity
+title: Configure Azure Data Lake Storage Gen2 in a copy activity
 description: This article explains how to copy data using Azure Data Lake Storage Gen2.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 12/27/2022
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Data Lake Storage Gen2 in copy activity
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+# Configure Azure Data Lake Storage Gen2 in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen2.
 
@@ -20,14 +19,14 @@ This article outlines how to use the copy activity in data pipeline to copy data
 
 Azure Data Lake Storage Gen2 supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
-- Binary format
-- Delimited text format
-- Excel format
-- JSON format
-- ORC format
-- Parquet format
-- XML format
+- [Avro format](format-avro.md)
+- [Binary format](format-binary.md)
+- [Delimited text format](format-delimited-text.md)
+- [Excel format](format-excel.md)
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
+- [Parquet format](format-parquet.md)
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -36,6 +35,7 @@ For the configuration of each tab under copy activity, go to the following secti
 - [General](#general)  
 - [Source](#source)
 - [Destination](#destination)
+- [Mapping](#mapping)
 - [Settings](#settings)
 
 ### General
@@ -51,40 +51,64 @@ The following properties are supported for Azure Data Lake Storage Gen2 under th
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**:  Select an Azure Data Lake Storage Gen2 connection from the connection list.
-- **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
-- **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to [Supported format](#supported-format) for detailed information.
+- **Connection**:  Select an Azure Data Lake Storage Gen2 connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen2 connection by selecting **New**.
+- **Connection type**: Select **Azure Data Lake Storage Gen2**.
+- **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
+
+  - **File path**: If you choose this type, the data can be copied from the specified file system or folder/file path specified previously.
+  - **Wildcard file path**: If you choose this type, specify the File system and Wildcard paths.
+  
+    - **File system**: The Azure Data Lake Storage Gen2 file system name.
+  
+    - **Wildcard paths**: Specify the folder or file path with wildcard characters under the specified file system to filter source folders or files.
+
+        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-azure-data-lake-storage#folder-and-file-filter-examples).
+    
+        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path.":::  
+    
+        - *Wildcard folder path*: Specify the folder path with wildcard characters under your specified file system to filter source folders.
+    
+        - *Wildcard file name*: Specify the file name with wildcard characters under your specified file system + folder path (or wildcard folder path) to filter source files.
+
+  - **List of files**: Indicates you want to copy a given file set. Specify **Folder path** and **Path to file list** to point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path. For more examples, go to [File list examples](/azure/data-factory/connector-azure-data-lake-storage#file-list-examples).
+
+    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
+    - **Folder path**: Specify the path to a folder under the specified file system. It is required.
+
+    - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
+
+- **Recursively**: Specify whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property is selected by default and doesn't apply when you configure **Path to file list**.
+
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
-- **File path type**: You can choose **File path**, **Wildcard file path**, or **List of files** as your file path type. The configuration of each of these settings is：
+- **Filter by last modified**: Files are filtered based on the last modified dates. This property doesn't apply when you configure your file path type as List of files.
 
-    - **File path**: If you choose this type, the data can be copied from the given container or folder/file path specified previously.
+  - **Start time (UTC)**: The files are selected if their last modified time is greater than or equal to the configured time.
+  
+  - **End time (UTC)**: The files are selected if their last modified time is less than the configured time.
 
-    - **Wildcard file path**: Specify the folder or file path with wildcard characters under your given blob container to filter your source folders or files.
+  When **Start time (UTC)** has datetime value but **End time (UTC)** is NULL, it means the files whose last modified attribute is greater than or equal with the datetime value will be selected. When **End time (UTC)** has datetime value but **Start time (UTC)** is NULL, it means the files whose last modified attribute is less than the datetime value will be selected. The properties can be NULL, which means no file attribute filter will be applied to the data.
 
-        Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, got to [Folder and file filter examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#folder-and-file-filter-examples).
+- **Enable partition discovery**: Specify whether to parse the partitions from the file path and add them as additional source columns. It is unselected by default and not supported when you use binary file format.
 
-        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png" alt-text="Screenshot showing wildcard file path." lightbox="./media/connector-azure-data-lake-storage-gen2/wildcard-file-path.png":::
+  - **Partition root path**: When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns.
 
-        *Wildcard folder path*: Specify the folder path with wildcard characters under your given container to filter source folders.
+    If it is not specified, by default,
+    - When you use file path or list of files on source, partition root path is the path that you configured.
+    - When you use wildcard folder filter, partition root path is the sub-path before the first wildcard.
 
-        *Wildcard file name*: Specify the file name with wildcard characters under your given container and folder path (or wildcard folder path) to filter source files.
+    For example, assuming you configure the path as `root/folder/year=2020/month=08/day=27`:
 
-    - **List of files**: Indicates you want to copy a given file set. In **Path to file list**, point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path.
+    - If you specify partition root path as `root/folder/year=2020`, copy activity will generate two more columns month and day with value "08" and "27" respectively, in addition to the columns inside the files.
+    - If partition root path is not specified, no extra column will be generated.
 
-       When you're using this option, don't specify a file name. For more examples, go to [File list examples](/azure/data-factory/connector-azure-blob-storage?tabs=data-factory#file-list-examples).
-
-        :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/path-to-file-list.png" alt-text="Screenshot showing path to file list.":::
-        
-- **Recursively**:  If this checkbox is selected, all files in the input folder and its subfolders will be processed recursively. If you unselect the checkbox, just the ones in the selected folder will be processed. This setting is disabled when a single file is selected.
-
-- **Delete files after completion**:  If this checkbox is selected, binary files will be deleted from the source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll see some files have already been copied to the destination and deleted from source, while others are still remaining in the source store.
-
-    > [!NOTE]
-    > This property is only valid in a binary files copy scenario.
+  :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/partition-discovery.png" alt-text="Screenshot showing partition discovery.":::
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
+
+- **Additional columns**: Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.
 
 ## Destination
 
@@ -95,67 +119,77 @@ The following properties are supported for Azure Data Lake Storage Gen2 under th
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Azure Data Lake Storage Gen2 connection from the connection list.
+- **Connection**: Select an Azure Data Lake Storage Gen2 connection from the connection list. If no connection exists, then create a new Azure Data Lake Storage Gen2 connection by selecting **New**.
+- **Connection type**: Select **Azure Data Lake Storage Gen2**.
 - **File path**: Select **Browse** to choose the file that you want to copy or fill in the path manually.
-- **File settings**: Select **File settings** to configure the file format. For settings of different file formats, refer to [Supported format](#supported-format) for detailed information.
+- **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
 Under **Advanced**, you can specify the following fields:
 
-- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose **Add dynamic content**, **None**, **Flatten hierarchy**, or **Preserve hierarchy** from the drop-down list.
+- **Copy behavior**: Defines the copy behavior when the source is files from a file-based data store. You can choose a behavior from the drop-down list.
 
-    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
+  :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/copy-behavior.png" alt-text="Screenshot showing copy behavior.":::
 
-    - **Add dynamic content**: Open the **Add dynamic content** pane. This opens the expression builder where you can build expressions from supported system variables, activity output, functions, and user-specified variables or parameters. For information about the expression language, go to [Expressions and functions](/azure/data-factory/control-flow-expression-language-functions).
-    - **None**: Choose this option to not use any copy behavior.
-    - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
-    - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of source file to source folder is identical to the relative path of target file to target folder.
+  - **Flatten hierarchy**: All files from the source folder are in the first level of the destination folder. The destination files have autogenerated names.
+  - **Merge files**: Merges all files from the source folder to one file. If the file name is specified, the merged file name is the specified name. Otherwise, it's an auto-generated file name.
+  - **Preserve hierarchy**: Preserves the file hierarchy in the target folder. The relative path of source file to source folder is identical to the relative path of target file to target folder.
 
 - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-- **Block size (MB)**: Specify the block size, in megabytes, used to write data to block blobs. More information: [Block Blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs)
+- **Block size (MB)**: Specify the block size in MB used to write data to Azure Data Lake Storage Gen2. For more information, see [Block Blobs](/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs#about-block-blobs). Allowed value is between 4 MB and 100 MB.
+
+    By default, the block size is automatically determined based on your source store type and data. For non-binary copy into Azure Data Lake Storage Gen2, the default block size is 100 MB so as to fit in at most approximately 4.75-TB data. It may be not optimal when your data is not large. You can explicitly specify a block size, while ensure **Block size (MB)**\*50000 is big enough to store the data, otherwise copy activity run will fail.
 
 - **Metadata**: Set custom metadata when copying to a destination. Each object under the `metadata` array represents an extra column. The `name` defines the metadata key name, and the `value` indicates the data value of that key. If the [preserve attributes feature](/azure/data-factory/copy-activity-preserve-metadata#preserve-metadata) is used, the specified metadata will union/overwrite with the source file metadata.
 
-    Allowed data values are:
-    
-    * `$$LASTMODIFIED`: A reserved variable indicates to store the source files' last modified time. Apply to a file-based source with a binary format only.
-    * **Expression**
-    * **Static value**
+  Allowed data values are:
 
-    :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/metadata.png" alt-text="Screenshot showing metadata." lightbox="./media/connector-azure-blob-storage/metadata.png":::
+  - `$$LASTMODIFIED`: A reserved variable indicates to store the source files' last modified time. Apply to a file-based source with a binary format only.
+  - **Expression**
+  - **Static value**
+
+  :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/metadata.png" alt-text="Screenshot showing metadata." lightbox="./media/connector-azure-blob-storage/metadata.png":::
+
+### Mapping
+
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping isn't supported.
 
 ### Settings
 
-For the **Settings** tab configuration, go to Settings.
+For the **Settings** tab configuration, go to [Configure your other settings under settings tab](copy-data-activity.md#configure-your-other-settings-under-settings-tab).
 
 ## Table summary
 
 The following tables contain more information about the copy activity in Azure Data Lake Storage Gen2.
 
-### Source
+### Source information
 
 |Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|type|
-|**Connection** |Your connection to the source data store.|\<your connection> |Yes|connection|
-|**File path** | The file path of your source data.|\<file path of your source >|Yes |container <br> fileName|
-|**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>•List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
-|**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.|Selected or unselect|No |recursive|
-|**Delete files after completion** |The files on source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when copy activity fails, you'll see some files have already been copied to the destination and deleted from the source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
+|**Data store type**|Your data store type.| **External** |Yes|/|
+|**Connection** |Your connection to the source data store.|\<your Azure Data Lake Storage Gen2 connection> |Yes|connection|
+|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen2**.|**Azure Data Lake Storage Gen2**|Yes |/|
+|**File path type** |The file path type that you want to use.|• File path<br>• Wildcard folder path, Wildcard file name<br>•List of files|Yes |• folderPath, fileName, fileSystem<br>• wildcardFolderPath, wildcardFileName, fileSystem<br>• folderPath, fileName, fileListPath|
+|**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|selected (default) or unselect|No |recursive|
+| **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
+| **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
+| **Partition root path** | When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
+| **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-### Destination
+### Destination information
 
-|Name |Description |Value|Required |JSON script property |
+|Name |Description |Value|Required |JSON script property |
 |:---|:---|:---|:---|:---|
-|**Data store type**|Your data store type.| **External** |Yes|type|
-|**Connection** |Your connection to the destination data store.|\<your connection>|Yes|connection|
-|**File path**|The file path of your destination data.|File path of source |Yes |container <br> fileName|
-|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• None<br>• Add dynamic content<br>• Flatten hierarchy<br>• Preserve hierarchy|No |copyBehavior|
-|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections\>|No |maxConcurrentConnections|
-|**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
-|**Metadata**|Set custom metadata when copy to sink.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
+|**Data store type**|Your data store type.| **External** |Yes|/|
+|**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen2 connection>|Yes|connection|
+|**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen2**.|**Azure Data Lake Storage Gen2**|Yes |/|
+|**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName, fileSystem|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
+|**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
+|**Metadata**|Set custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
-[How to create Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
+- [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)
