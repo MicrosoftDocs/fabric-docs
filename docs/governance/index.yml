@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Microsoft Fabric governance documentation
-summary: Understand how Microsoft Fabric governance works.
+summary: Govern, manage, and protect all your data in Fabric. [xxx](governance-compliance-overview.md)
 
 metadata:
   title: Microsoft Fabric governance
@@ -11,44 +11,68 @@ metadata:
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
-  ms.date: 05/23/2023
+  ms.date: 02/05/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 
-  # Card 
-  - title: About Governance
+  # Card 1
+  - title: Manage your data estate
     linkLists:
-      - linkListType: overview
+      - #linkListType: concept
         links:
-          - text: What is Microsoft Fabric governance and compliance?
-            url: governance-compliance-overview.md         
-      - linkListType: concept
-        links:
-          - text: Information protection in Microsoft Fabric
-            url: information-protection.md
-          - text: Endorsement
-            url: endorsement-overview.md               
+          - text: Tenant settings and control
+            url: ../admin/tenant-settings-index.md           
+          - text: Optimize business on domains
+            url:  ./governance/domains.md
+          - text: Workspace management
+            url: ../admin/portal-workspaces.md
+          - text: Govern capacity resources
+            url:  /power-bi/enterprise/service-admin-premium-manage 
+          - text: Tenant multi-cloud abilities
+            url: ../admin/service-admin-premium-multi-geo.md                                                          
 
-  # Card 
-  - title: Get started
-    linkLists:
-      - linkListType: get-started
+  # Card 2
+  - title: Secure, protect and comply
+      - #linkListType: concept
         links:
-          - text: The Microsoft Purview Hub in Microsoft Fabric
-            url: use-microsoft-purview-hub.md
-          - text: Domains
-            url: domains.md
+          - text: Platform Security
+            url: ../security/security-overview.md
+          - text: Manage access
+            url:  ..//get-started/roles-workspaces.md
+          - text: Audit
+            url:  ../admin/track-user-activities.md     
+          - text: Information protection 
+            url:  ./governance/information-protection.md
+          - text: Data loss prevention in Power BI
+            url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview              
 
-  # Card 
-  - title: Metadata scanning
-    linkLists:
-      - linkListType: overview
+  # Card 3
+  - title: Discover, trust and reuse
+      - #linkListType: concept
         links:
-          - text: Metadata scanning overview
-            url: metadata-scanning-overview.md
-      - linkListType: how-to-guide
+          - text: Discover
+            url: ../get-started/onelake-data-hub.md
+          - text: Endorse and trust 
+            url:  ./governance/endorsement-overview.md
+          - text: Curate 
+            url:  ./governance/metadata-scanning-overview.md 
+          - text: Track lineage 
+            url:  ./governance/lineage.md
+          - text: Analyze impact 
+            url:  ./governance/impact-analysis.md                           
+
+  # Card 4
+  - title: Observe and act
+      - #linkListType: concept
         links:
-          - text: Run metadata scanning
-            url: metadata-scanning-run.md
+          - text: Monitor
+            url: ../admin/monitoring-workspace.md
+          - text: Data insights for admins
+            url:  ./governance/use-microsoft-purview-hub.md?tabs=admin-view
+          - text: Data insights for creators
+            url:  ./governance/use-microsoft-purview-hub.md?tabs=data-owner-view
+          - text: Automate 
+            url: ../data-activator/data-activator-introduction.md 
+    
