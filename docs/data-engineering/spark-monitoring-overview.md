@@ -1,17 +1,20 @@
 ---
 title: Apache Spark monitoring overview
-description: Learn about the components of Apache Spark monitoring.
+description: Spark monitoring helps you monitor the status of applications in progress, browse past Spark activities, analyze and optimizing performance, and troubleshoot.
 ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: overview
-ms.date: 02/24/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 05/23/2023
 ms.search.form: spark_job_definition
 ---
 
 # Apache Spark monitoring overview
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] Spark monitoring is designed to offer a web-UI based experience with built-in rich capabilities for monitoring the progress and status of Spark applications in progress, browsing past Spark activities, analyzing and optimizing performance, and facilitating troubleshooting of failures. Multiple entry points are available for browsing, monitoring, and viewing Spark application details.
 
@@ -35,9 +38,13 @@ The Spark job definition Inline Monitoring feature allows you to view Spark job 
 
 For Pipeline Spark Activity Inline Monitoring, deep links have been built into the Notebook and Spark job definition activities within the Pipeline. You can view Spark application execution details, the respective Notebook and Spark job definition snapshot, and access Spark logs for troubleshooting. If the Spark activities fail, the inline error message is also available within Pipeline Spark activities.
 
-## Next steps
+## Related content
 
-- [Workspace item recent runs](spark-artifact-recent-runs.md)
-- [Notebook contextual monitoring and debugging](spark-monitor-debug.md)
-- [Run an Apache Spark job definition](run-spark-job-definition.md)
+- [Apache Spark advisor for real-time advice on notebooks](spark-advisor-introduction.md)
+- [Browse the Apache Spark applications in the Fabric monitoring hub](browse-spark-applications-monitoring-hub.md)
+- [Browse item's recent runs](spark-item-recent-runs.md)
+- [Monitor Spark jobs within a notebook](spark-monitor-debug.md)
+- [Monitor your Apache Spark job definition](monitor-spark-job-definitions.md)
 - [Apache Spark application detail monitoring](spark-detail-monitoring.md)
+- [Use extended Apache Spark history server to debug and diagnose Apache Spark applications](apache-spark-history-server.md)
+- [Monitor Spark capacity consumption](../data-engineering/monitor-spark-capacity-consumption.md)

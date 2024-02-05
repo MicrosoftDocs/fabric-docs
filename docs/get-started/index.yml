@@ -1,18 +1,18 @@
 ### YamlMime:Landing
 
-title: Get started documentation # < 60 chars
-summary: summary # < 160 chars
+title: Microsoft Fabric get started documentation # < 60 chars
+summary: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  title: Get started documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
+  description: Microsoft Fabric is a unified platform that can meet your organization's data and analytics needs. Discover the Fabric shared and platform documentation from this page. # Required; article description that is displayed in search results. < 160 chars.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: get-started
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  author: SnehaGunda #Required; your GitHub user alias, with correct capitalization.
+  ms.author: sngun #Required; microsoft alias of author; optional team alias.
+  ms.date: 07/05/2023
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -20,49 +20,55 @@ landingContent:
 # Cards and links should be based on top customer tasks or top subjects
 # Start card title with a verb
   # Card 
-  - title: About Get started
+  - title: About Microsoft Fabric
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: Get started
-    linkLists:
+          - text: What is Fabric?
+            url: microsoft-fabric-overview.md 
+          - text: Fabric terminology
+            url: fabric-terminology.md
+          - text: What's New
+            url: whats-new.md
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Start a Fabric trial 
+            url: fabric-trial.md
+          - text: Fabric home navigation
+            url: fabric-home.md
+          - text: End-to-end tutorials
+            url: end-to-end-tutorials.md
+          - text: Context sensitive Help pane
+            url: fabric-help-pane.md
 
   # Card 
-  - title: how-to-guide
+  - title: Get started with Fabric items
     linkLists:
+      - linkListType: concept
+        links:
+          - text: Find items in OneLake data hub
+            url: onelake-data-hub.md 
+          - text: Promote and certify items
+            url: endorsement-promote-certify.md 
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Apply sensitivity labels
+            url: apply-sensitivity-labels.md 
+
+  # Card 
+  - title: Workspaces
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Fabric workspace
+            url: workspaces.md
+          - text: Workspace roles
+            url: roles-workspaces.md
+      - linkListType: get-started
+        links:
+          - text: Create a workspace
+            url: create-workspaces.md
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Workspace access control
+            url: give-access-workspaces.md

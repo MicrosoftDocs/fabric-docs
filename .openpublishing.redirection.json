@@ -1,0 +1,294 @@
+{
+    "redirections": [
+      {
+        "source_path_from_root": "/docs/data-science/tutorial-data-science-data-cleanse.md",
+        "redirect_url": "/fabric/data-science/tutorial-data-science-explore-notebook",
+        "redirect_document_id": false
+      },
+      {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+       "redirect_document_id": false
+      },
+      {
+      "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
+      "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
+      "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/cognitive-services-create-a-multilingual-search-engine-from-forms.md",
+        "redirect_url": "/fabric/data-science/create-a-multilingual-search-engine-from-forms",
+        "redirect_document_id": true
+      },
+      {
+        "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
+        },
+        {
+        "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
+        "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
+        "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-copy-from-azure-blob-storage-to-lakehouse.md",
+            "redirect_url": "/fabric/data-factory/tutorial-pipeline-copy-from-azure-blob-storage-to-lakehouse",
+            "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/move-data-lakehouse-copy-assistant.md",
+          "redirect_url": "/fabric/data-factory/tutorial-move-data-lakehouse-copy-assistant",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/get-workspace-onelake-path.md",
+          "redirect_url": "/fabric/data-warehouse/access-data-warehouse-files-in-one-lake",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-447-temp-tables-in-dw-and-sql-endpoint.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/copilot-fabric-enable.md",
+          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/bring-events-to-fabric-from-event-hub.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-and-stream-real-time-events-to-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/admin/admin-switch.md",
+          "redirect_url": "/fabric/admin/fabric-switch",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
+          "redirect_url": "/fabric/admin/service-admin-portal-app",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-shortcut.md",
+          "redirect_url": "/fabric/real-time-analytics/onelake-shortcuts",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issues.md",
+          "redirect_url": "/fabric/data-factory/data-factory-limitations",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/item-permissions.md",
+          "redirect_url": "/fabric/data-warehouse/share-warehouse-manage-permissions",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/decision-guide-warehouse-lakehouse.md",
+          "redirect_url": "/fabric/get-started/decision-guide-data-store",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-artifact.md",
+          "redirect_url": "/fabric/data-factory/known-issue-staging-item",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/get-data-blob-container.md",
+          "redirect_url": "/fabric/real-time-analytics/get-data-azure-storage",
+          "redirect_document_id": true
+        },
+        { 
+          "source_path_from_root": "/docs/data-factory/connector-azure-blob-storage-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-blob-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-amazon-s3-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-amazon-s3",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/datasets.md",
+          "redirect_url": "/fabric/data-warehouse/semantic-models",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/model-default-power-bi-dataset.md",
+          "redirect_url": "/fabric/data-warehouse/default-power-bi-semantic-model",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/enterprise/metrics-app-onelake-page.md",
+          "redirect_url": "/fabric/data-factory/metrics-app-storage-page.md",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/enterprise/metrics-app-overview-page.md",
+          "redirect_url": "/fabric/data-factory/metrics-app-compute-page.md",
+          "redirect_document_id": false
+        },
+        {                  
+          "source_path_from_root": "/docs/data-factory/connector-azure-cosmosdb-for-nosql-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-cosmosdb-for-nosql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-data-lake-storage-gen2-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-lake-storage-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
+          "redirect_url": "/fabric/real-time-analytics/data-policies",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-google-cloud-storage-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-google-cloud-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-http",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
+          "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/security/az-resiliency.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
+          "redirect_url": "/fabric/real-time-analytics/notebooks",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway-refreshes.md",
+          "redirect_url": "/fabric/data-factory/gateway-considerations-output-destinations#evaluation-time-outs",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-lineage-view-edit.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
+          "redirect_document_id": true
+        }
+    ]
+}

@@ -3,39 +3,35 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is capacity?
-    href: what-is-capacity.md
+  - name: Microsoft Fabric licenses
+    href: licenses.md
 - name: Get started
   items:
-  - name: Capacities and SKUs
-    href: capacity-and-skus.md
-  - name: Licenses
-    href: licenses.md
+  - name: Buy a Microsoft Fabric subscription
+    href: buy-subscription.md
+  - name: Service interruption notifications
+    href: service-interruption-notifications.md
 - name: Capacity operations
   items:
+  - name: Understand your Azure bill
+    href: azure-billing.md
   - name: Pause and resume your capacity
     href: pause-resume.md
-  - name: How does throttling work?
+  - name: Scale your capacity
+    href: scale-capacity.md
+  - name: Throttling
     href: throttling.md
-  - name: How does autoscale work?
-    href: autoscale.md
-  - name: How does pay go work?
-    href: pay-go.md
-  - name: What is smoothing?
-    href: smoothing.md
-  - name: Identify items that consume a lot of CPU
-    href: bad-actor.md   
-  - name: Create billing reports
-    href: billing-reports.md
-  - name: Charge back
-    href: charge-back.md 
   - name: Metrics app
     items:
-    - name: What is the utilization and metrics app?
+    - name: What is the Microsoft Fabric Capacity Metrics app?
       href: metrics-app.md
-    - name: Install the utilization and metrics app
+    - name: Install the Microsoft Fabric Capacity Metrics app
       href: metrics-app-install.md
-    - name: Understand the metrics app overview page
-      href: metrics-app-overview-page.md
+    - name: Understand the Microsoft Fabric Capacity Metrics app compute page
+      href: metrics-app-compute-page.md
+    - name: Understand the metrics app storage page
+      href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md                  
+      href: metrics-app-timepoint-page.md    
+    - name: Monitor a paused capacity
+      href: monitor-paused-capacity.md                 

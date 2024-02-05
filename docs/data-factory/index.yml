@@ -1,17 +1,19 @@
 ### YamlMime:Landing
 
-title: Data Factory in Microsoft Fabric documentation
+title: Data Factory documentation in Microsoft Fabric
 summary: Data factory in Microsoft Fabric provides cloud-scale data movement and data transformation services that allow you to solve the most complex data factory and ETL scenarios. It's intended to make your data factory experience easy to use, powerful, and truly enterprise-grade. # < 160 chars
 
 metadata:
   title: Data Factory  in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Factory in Microsoft Fabric documentation # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: data-factory
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   author: DougKlopfenstein #Required; your GitHub user alias, with correct capitalization.
   ms.author: dougklo #Required; microsoft alias of author; optional team alias.
-  ms.date: 1/10/2023 #Required; mm/dd/yyyy format.
-
+  ms.date: 11/15/2023 #Required; mm/dd/yyyy format.
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -26,18 +28,32 @@ landingContent:
             url: data-factory-overview.md
           - text: Connector overview
             url: connector-overview.md
+          - text: What's new in Data Factory?
+            url: whats-new.md
 
   # Card 
-  - title: Get started
+  - title: Using Data Factory
     linkLists:
       - linkListType: get-started
         links:
-          - text: Create your first gen2 dataflow
+          - text: Create your first dataflow
             url: create-first-dataflow-gen2.md
           - text: Create your first data pipeline
             url: create-first-pipeline-with-sample-data.md
           - text: Move and transform data
             url: transform-data.md
+          - text: Migrate to Data Factory
+            url: upgrade-paths.md
+          - text: Pricing in Data Factory
+            url: pricing-overview.md
+      - linkListType: tutorial
+        links:
+          - text: Create an end-to-end data integration scenario
+            url: tutorial-end-to-end-introduction.md
+      - linkListType: learn
+        links:
+          - text: Data Factory training
+            url: /training/paths/get-started-fabric
   
   # Card 
   - title: Working with data pipelines
@@ -53,7 +69,7 @@ landingContent:
           - text: Activity Overview
             url: activity-overview.md
           - text: Move data with copy assistant
-            url: move-data-lakehouse-copy-assistant.md
+            url: tutorial-move-data-lakehouse-copy-assistant.md
 
   # Card 
   - title: Working with dataflows
@@ -62,4 +78,15 @@ landingContent:
         links:
           - text: Data source management
             url: data-source-management.md
+          - text: Monitor your dataflows
+            url: dataflows-gen2-monitor.md
+          - text: Save a draft of your dataflow
+            url: dataflows-gen2-save-draft.md
 
+  # Card
+  - title: FAQs
+    linkLists:
+      - linkListType: get-started
+        links:
+        - text: Frequently asked questions
+          url: frequently-asked-questions.yml

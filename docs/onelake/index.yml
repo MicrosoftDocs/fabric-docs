@@ -1,19 +1,20 @@
 ### YamlMime:Landing
 
-title: OneLake documentation # < 60 chars
-summary: summary # < 160 chars
+title: OneLake in Microsoft Fabric documentation
+summary: OneLake is a single, unified, logical data lake for the whole organization. OneLake comes automatically with every Microsoft Fabric tenant with no infrastructure to manage. # < 160 chars
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
-  ms.topic: landing-page # Required
+  title: OneLake in Microsoft Fabric documentation
+  description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Find resources.
+  ms.service: fabric  #Required; use either service or product per approved list.
+  ms.subservice: onelake
+  ms.custom:
+    - ignite-2023
+  ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
-
+  author: eloldag
+  ms.author: eloldag
+  ms.date: 11/06/2023
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -24,45 +25,49 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: overview
+          - text: What is OneLake?
+            url: onelake-overview.md
+          - text: OneLake security
+            url: onelake-security.md
+          - text: OneLake access and APIs
+            url: onelake-access-api.md
+      - linkListType: deploy
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Implement medallion lakehouse architecture
+            url: onelake-medallion-lakehouse-architecture.md
+      - linkListType: get-started
+        links:
+          - text: Create a lakehouse with OneLake
+            url: create-lakehouse-onelake.md
+          - text: OneLake file explorer
+            url: onelake-file-explorer.md
 
   # Card 
-  - title: Get started
+  - title: OneLake shortcuts
     linkLists:
+      - linkListType: concept
+        links:
+          - text: What are shortcuts?
+            url: onelake-shortcuts.md
       - linkListType: get-started
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
+          - text: Create a shortcut
+            url: create-onelake-shortcut.md
+      - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Access shortcuts
+            url: access-onelake-shortcuts.md
 
   # Card 
-  - title: how-to-guide
+  - title: OneLake and Azure integration
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Integrate OneLake with Azure Databricks
+            url: onelake-azure-databricks.md
+          - text: Integrate OneLake with Azure HDInsight
+            url: onelake-azure-hdinsight.md
+          - text: Integrate OneLake with Azure Storage Explorer
+            url: onelake-azure-storage-explorer.md
+          - text: Integrate OneLake with Azure Synapse Analytics
+            url: onelake-azure-synapse-analytics.md

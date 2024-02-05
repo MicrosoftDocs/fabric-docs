@@ -1,0 +1,64 @@
+### YamlMime:Landing
+
+title: Data Activator documentation
+summary: Learn about Data Activator, and how to create events and triggers for your data.
+
+metadata:
+  title: Data Activator documentation
+  description: Browse the Data Activator documentation.
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: enterprise
+  ms.topic: landing-page
+  author: davidiseminger
+  ms.author: davidi
+  ms.date: 10/03/2023
+
+# linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
+
+landingContent:
+
+  - title: Introduction
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Data Activator?
+            url: data-activator-introduction.md
+      - linkListType: get-started
+        links:
+          - text: Get started with Data Activator
+            url: data-activator-get-started.md
+
+  - title: Get Data
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Get data from Power BI
+            url: data-activator-get-data-power-bi.md
+      - linkListType: get-started
+        links:
+          - text: Get data from Eventstreams
+            url: data-activator-get-data-eventstreams.md
+
+  - title: Create objects and triggers
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Assign data to objects in Data Mode
+            url: data-activator-assign-data-objects.md
+          - text: Create triggers in Design Mode
+            url: data-activator-create-triggers-design-mode.md
+          - text: Detection conditions in Data Activator
+            url: data-activator-detection-conditions.md
+          - text: Use custom actions to trigger Power Automate flows
+            url: data-activator-trigger-power-automate-flows.md           
+          - text: Data Activator limitations
+            url: data-activator-limitations.md
+          - text: Troubleshoot errors
+            url: data-activator-troubleshooting.md                   
+            
+  - title: Tutorial
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Data Activator tutorial using sample data
+            url: data-activator-tutorial.md

@@ -4,15 +4,14 @@ description: Learn how to use Script activity.
 ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
-ms.topic: how-to 
-ms.date: 01/27/2023
+ms.topic: how-to
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to use Script activity
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
 
 In this article, you learn how to add a new Script activity, add a new connection, and configure script content.
 
@@ -59,3 +58,7 @@ To get started, you must complete the following prerequisites:
    :::image type="content" source="media/script-activity/new-sql-connection-details.png" alt-text="Screenshot showing where to add script parameters." lightbox="media/script-activity/new-sql-connection-details.png":::
 
 5. The Script activity is successfully created and you can run it directly.
+
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

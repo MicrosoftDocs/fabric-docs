@@ -3,23 +3,213 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: Get started with Microsoft Fabric
-    href: ../placeholder.md
+  - name: What is Microsoft Fabric?
+    href: microsoft-fabric-overview.md
+  - name: Start a Fabric trial
+    href: fabric-trial.md
+  - name: Microsoft Fabric preview information
+    href: preview.md    
+  - name: Fabric terminology
+    href: fabric-terminology.md
+  - name: What's New
+    href: whats-new.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 1
+  - name: End-to-end tutorials
+    href: end-to-end-tutorials.md
+- name: Decision guides
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
-- name: Feature 2
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: decision-guide-pipeline-dataflow-spark.md
+  - name: Decision guide - choose a data store
+    href: decision-guide-data-store.md
+- name: Find your way around Fabric
   items:
-  - name: linktext2
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Find your items from Fabric Home
+    href: fabric-home.md
+  - name: Context sensitive Help pane
+    href: fabric-help-pane.md
+  - name: Search, sort, and filter
+    href: fabric-search.md
+  - name: Fabric settings
+    href: fabric-settings.md 
+- name: Workspaces
+  items:
+  - name: Workspaces
+    href: workspaces.md
+  - name: Create a workspace
+    href: create-workspaces.md
+  - name: Roles in workspaces
+    href: roles-workspaces.md
+  - name: Give users access to workspaces
+    href: give-access-workspaces.md
+  - name: Manage a workspace with Git
+    href: ../cicd/git-integration/git-get-started.md
+- name: Discover data in the OneLake data hub
+  href: onelake-data-hub.md
+- name: Copilot in Fabric
+  items:
+  - name: Copilot in Fabric overview
+    href: copilot-fabric-overview.md
+  - name: Copilot in Fabric FAQ
+    href: copilot-faq-fabric.yml
+  - name: Privacy, security, and responsible use for Copilot in Fabric
+    items:
+    - name: Privacy, security, and responsible use
+      href: copilot-privacy-security.md
+    - name: Responsible use in Data Factory
+      href: copilot-data-factory-privacy-security.md
+    - name: Responsible use in Data Science
+      href: copilot-data-science-privacy-security.md
+    - name: Responsible use in Power BI
+      href: copilot-power-bi-privacy-security.md
+  - name: Copilot for Data Factory
+    href: copilot-fabric-data-factory.md
+  - name: Copilot for Data Science and Data Engineering
+    items:
+    - name: Copilot for Data Science and Data Engineering
+      href: copilot-notebooks-overview.md
+    - name: Overview of Chat-magics in Notebooks
+      href: copilot-notebooks-chat-magics.md
+    - name: Use the Copilot chat panel
+      href: copilot-notebooks-chat-pane.md
+  - name: Copilot for Power BI
+    items:
+      - name: Intro to Copilot for Power BI
+        href: /power-bi/create-reports/copilot-introduction
+      - name: Update a data model to work with Copilot
+        href: /power-bi/create-reports/copilot-evaluate-data
+      - name: Create report pages with Copilot
+        href: /power-bi/create-reports/copilot-create-report
+      - name: Write prompts for Copilot report pages
+        href: /power-bi/create-reports/copilot-prompts-report-pages
+      - name: Create a narrative visual with Copilot
+        href: /power-bi/create-reports/copilot-create-narrative
+      - name: Write prompts for Copilot narratives
+        href: /power-bi/create-reports/copilot-prompts-narratives
+      - name: Enhance Q&A with Copilot
+        href: /power-bi/natural-language/q-and-a-copilot-enhancements
+- name: Promote or certify items
+  href: endorsement-promote-certify.md
+- name: Share items
+  href: share-items.md
+- name: Apply sensitivity labels
+  href: apply-sensitivity-labels.md
+- name: Delta Lake interoperability
+  href: delta-lake-interoperability.md
+- name: Fabric adoption roadmap
+  items: 
+  - name: Introduction
+    href: /power-bi/guidance/fabric-adoption-roadmap?context=/fabric/context/context&bc=/fabric/breadcrumb/toc.json
+  - name: Maturity levels
+    href: /power-bi/guidance/fabric-adoption-roadmap-maturity-levels?context=/fabric/context/context
+  - name: Data culture
+    href: /power-bi/guidance/fabric-adoption-roadmap-data-culture?context=/fabric/context/context
+  - name: Executive sponsorship
+    href: /power-bi/guidance/fabric-adoption-roadmap-executive-sponsorship?context=/fabric/context/context
+  - name: Business alignment
+    href: /power-bi/guidance/fabric-adoption-roadmap-business-alignment?context=/fabric/context/context
+  - name: Content ownership
+    href: /power-bi/guidance/fabric-adoption-roadmap-content-ownership-and-management?context=/fabric/context/context
+  - name: Content delivery scope
+    href: /power-bi/guidance/fabric-adoption-roadmap-content-delivery-scope?context=/fabric/context/context
+  - name: Center of Excellence
+    href: /power-bi/guidance/fabric-adoption-roadmap-center-of-excellence?context=/fabric/context/context
+  - name: Governance
+    href: /power-bi/guidance/fabric-adoption-roadmap-governance?context=/fabric/context/context
+  - name: Mentoring and user enablement
+    href: /power-bi/guidance/fabric-adoption-roadmap-mentoring-and-user-enablement?context=/fabric/context/context
+  - name: Community of practice
+    href: /power-bi/guidance/fabric-adoption-roadmap-community-of-practice?context=/fabric/context/context
+  - name: User support
+    href: /power-bi/guidance/fabric-adoption-roadmap-user-support?context=/fabric/context/context
+  - name: System oversight
+    href: /power-bi/guidance/fabric-adoption-roadmap-system-oversight?context=/fabric/context/context
+  - name: Change management
+    href: /power-bi/guidance/fabric-adoption-roadmap-change-management?context=/fabric/context/context
+  - name: Conclusion
+    href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
+- name: Known issues
+  items:
+    - name: Active known issues for Fabric - chart
+      href: fabric-known-issues.md
+    - name: Active known issues for Fabric and Power BI - interactive report
+      href: https://support.fabric.microsoft.com/known-issues
+    - name: OneLake storage isn't billed for paused capacities
+      href: known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md
+    - name: Relationships in the default semantic model get dropped
+      href: known-issues/known-issue-592-relationships-default-semantic-model-dropped.md
+    - name: Reflex item creation fails due to a token creation failure
+      href: known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md
+    - name: Product switcher and creation process inadvertently show Fabric experiences
+      href: known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md      
+    - name: Git integration tab disappears in Workspace settings
+      href: known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md
+    - name: Tables aren't visible to the SQL analytics endpoint for some shortcuts
+      href: known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md
+    - name: Lakehouse doesn't recognize table names with special characters
+      href: known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md
+    - name: OneLake compute transactions not reported in Metrics app
+      href: known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md
+    - name: Making model changes to a semantic model might not work
+      href: known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md
+    - name: Failed to publish Dataflow Gen2
+      href: known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md
+    - name: Feature Usage and Adoption report activity missing
+      href: known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md
+    - name: Dataflow Gen1 admin switch affects Dataflow Gen2
+      href: known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md
+    - name: Creating or updating Fabric items is blocked
+      href: known-issues/known-issue-530-creating-updating-fabric-items-blocked.md
+    - name: Data warehouse with more than 20,000 tables fails to load
+      href: known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md
+    - name: Capacity Metrics app shows variance between workload summary and operations
+      href: known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md
+    - name: New throttling logic delayed for Power BI and eventstream
+      href: known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md
+    - name: User column incorrectly shows as System in Fabric capacity metrics app
+      href: known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
+    - name: InProgress status shows in Fabric capacity metrics app for completed queries
+      href: known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
+    - name: Unable to start new Spark session after deleting all libraries
+      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
+    - name: Selecting view account link in account manager shows wrong page
+      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
+    - name: Refresh history reports in progress for some tables that failed
+      href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
+    - name: Admin monitoring semantic model refresh fails and credentials expire
+      href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
+    - name: Fabric items can't be created in a workspace moved to a capacity in a different region
+      href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
+    - name: Notebook fails to load after workspace migration
+      href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
+    - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
+      href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
+    - name: Fabric user sees workspace git status column display synced for unsupported items
+      href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
+    - name: Not able to add lookup activity output to body of Office 365 activity
+      href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 
+    - name: OneLake file explorer does not contain items under my workspace
+      href: known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md  
+    - name: Warehouse's object explorer doesn't support case-sensitive object names
+      href: known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
+    - name: Data Warehouse only publishes Delta Lake Logs for Inserts
+      href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
+    - name: Pipeline isn't loading if user deployed with update app via public API
+      href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
+    - name: Temp tables in Warehouse and SQL analytics endpoint
+      href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
+    - name: OneLake table folder not removed when table dropped in data warehouse
+      href: known-issues/known-issue-446-onelake-table-folder-isnt-removed.md  
+    - name: Affected rows number displayed doesn't match the real row number
+      href: known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md
+    - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files
+      href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
+    - name: Get Tenant Settings API returns default values instead of user configured values
+      href: known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md
+- name: Resources
+  items:
+    - name: Icons
+      href: icons.md
+    - name: What's new? archive
+      href: whats-new-archive.md

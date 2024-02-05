@@ -1,27 +1,31 @@
 ---
-title: Monitoring connections, sessions, and requests using DMVs
+title: Monitor connections, sessions, and requests using DMVs
 description: Learn about monitoring with the available Dynamic Management Views.
-ms.reviewer: wiassaf
-ms.author: jacindaeng
 author: jacindaeng
+ms.author: jacindaeng
+ms.reviewer: wiassaf
+ms.date: 11/15/2023
 ms.topic: conceptual
-ms.date: 03/23/2023
-ms.search.form: Monitoring
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
-
-# Monitoring connections, sessions, and requests using DMVs
+# Monitor connections, sessions, and requests using DMVs
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+You can use existing dynamic management views (DMVs) to monitor connection, session, and request status in [!INCLUDE [product-name](../includes/product-name.md)]. For more information about the tools and methods of executing T-SQL queries, see [Query the Warehouse](query-warehouse.md).
 
-For the current version, there are three Dynamic Management Views (DMVs) provided for you to receive live SQL query lifecycle insights.
+## How to monitor connections, sessions, and requests using query lifecycle DMVs
 
-- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+For the current version, there are three dynamic management views (DMVs) provided for you to receive live SQL query lifecycle insights.
+
+- [sys.dm_exec_connections](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each connection established between the warehouse and the engine.
-- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_sessions](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-sessions-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each session authenticated between the item and engine.
-- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-connections-transact-sql)
+- [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql?view=fabric&preserve-view=true)
     - Returns information about each active request in a session.
 
 These three DMVs provide detailed insight on the following scenarios:
@@ -31,8 +35,6 @@ These three DMVs provide detailed insight on the following scenarios:
 - What's the ID of the connection to the data [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and the session that is running the request?
 - How many queries are actively running?
 - Which queries are long running?
-
-## How to monitor connections, sessions, and requests using Query Lifecycle DMVs
 
 In this tutorial, learn how to monitor your running SQL queries using dynamic management views (DMVs).
 
@@ -44,6 +46,7 @@ The following example queries `sys.dm_exec_sessions` to find all sessions that a
 SELECT * 
 FROM sys.dm_exec_sessions;
 ```
+:::image type="content" source="media\monitor-using-dmv\exec-sessions-results.png" alt-text="Screenshot showing the results of sys.dm_exec_sessions." lightbox="media\monitor-using-dmv\exec-sessions-results.png":::
 
 ### Find the relationship between connections and sessions
 
@@ -74,21 +77,29 @@ This second query shows which user ran the session that has the long-running que
 ```sql
 SELECT login_name
 FROM sys.dm_exec_sessions
-WHERE 'session_id' = '[SESSION_ID WITH LONG-RUNNING QUERY]';
+WHERE 'session_id' = 'SESSION_ID WITH LONG-RUNNING QUERY';
 ```
 
 This third query shows how to use the KILL command on the `session_id` with the long-running query.
 
 ```sql
-KILL '[SESSION_ID WITH LONG-RUNNING QUERY]'
+KILL 'SESSION_ID WITH LONG-RUNNING QUERY'
 ```
 
 For example
 
 ```sql
-KILL 101
+KILL '101'
 ```
 
-## Next steps
+## Permissions
 
-- [Create a table with SSMS](create-table.md)
+- An Admin has permissions to execute all three DMVs (`sys.dm_exec_connections`, `sys.dm_exec_sessions`, `sys.dm_exec_requests`) to see their own and others' information within a workspace.
+- A Member, Contributor, and Viewer can execute `sys.dm_exec_sessions` and `sys.dm_exec_requests` and see their own results within the warehouse, but does not have permission to execute `sys.dm_exec_connections`. 
+- Only an Admin has permission to run the `KILL` command.
+
+## Related content
+
+- [Query using the SQL Query editor](sql-query-editor.md)
+- [Query the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-warehouse.md)
+- [Query insights in the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] in Microsoft Fabric](query-insights.md)

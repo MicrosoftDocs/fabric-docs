@@ -5,26 +5,92 @@ items:
   items:
   - name: What is Data Engineering?
     href: data-engineering-overview.md
+  - name: Fabric vs. Azure Synapse Spark
+    href: comparison-between-fabric-and-azure-synapse-spark.md
 - name: Get started
   items:
-  - name: linktext1
-    href: ../placeholder.md
-  - name: linktext2
-    href: ../placeholder.md
+  - name: Decision guide - copy activity, dataflow, or Spark
+    href: ../get-started/decision-guide-pipeline-dataflow-spark.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Decision guide - choose a data store
+    href: ../get-started/decision-guide-data-store.md?toc=/fabric/data-engineering/toc.json&bc=/fabric/data-engineering/toc.json
+  - name: Upload CSV to delta tables
+    href: get-started-csv-upload.md
+  - name: Get streaming data into lakehouse
+    href: get-started-streaming.md
+  - name: Reference external data for data science
+    href: get-started-shortcuts.md
+- name: Tutorials
+  items:
+  - name: 1 Lakehouse tutorial introduction
+    href: tutorial-lakehouse-introduction.md
+  - name: 2 Get started
+    href: tutorial-lakehouse-get-started.md
+  - name: 3 Build a lakehouse 
+    href: tutorial-build-lakehouse.md
+  - name: 4 Ingest data
+    href: tutorial-lakehouse-data-ingestion.md
+  - name: 5 Prepare data
+    href: tutorial-lakehouse-data-preparation.md
+  - name: 6 Build a report
+    href: tutorial-lakehouse-build-report.md
+  - name: 7 Clean up resources
+    href: tutorial-lakehouse-clean-up.md
 - name: Lakehouse
   items:
-  - name: What is a Lakehouse?
+  - name: What is a lakehouse?
     href: lakehouse-overview.md
-  - name: Get data into a Lakehouse
-    href: load-data-lakehouse.md
-  - name: Navigate the Lakehouse explorer
-    href: navigate-lakehouse-explorer.md
-  - name: Create a Lakehouse
+  - name: Create a lakehouse
     href: create-lakehouse.md
+  - name: Navigate the lakehouse explorer
+    href: navigate-lakehouse-explorer.md
+  - name: Lakehouse SQL analytics endpoint
+    href: lakehouse-sql-analytics-endpoint.md
+  - name: Direct lake mode and PBI reporting
+    href: lakehouse-pbi-reporting.md
+  - name: Git and deployment pipelines
+    href: lakehouse-git-deployment-pipelines.md
+  - name: Lakehouse REST API
+    href: lakehouse-api.md
+- name: Get data into lakehouse
+  items:
+  - name: Get data into a lakehouse
+    href: load-data-lakehouse.md
+  - name: Shortcut data in a lakehouse
+    href: lakehouse-shortcuts.md
+  - name: Stream data to a lakehouse
+    href: lakehouse-streaming-data.md
+- name: Lakehouse collaboration
+  items:
+  - name: Workspace roles and permissions
+    href: workspace-roles-lakehouse.md
+  - name: Sharing and permissions management
+    href: lakehouse-sharing.md
 - name: Apache Spark
   items:
-  - name: Autotune Spark configuration
-    href: autotune.md
+  - name: Spark compute
+    items:
+    - name: Overview
+      href: spark-compute.md
+    - name: Configure starter pools
+      href: configure-starter-pools.md
+    - name: Billing and utilization
+      href: billing-capacity-management-for-spark.md
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: runtime.md
+        - name: Runtime 1.2 (Spark 3.4)
+          href: runtime-1-2.md
+        - name: Runtime 1.1 (Spark 3.3)
+          href: runtime-1-1.md
+    - name: Create custom pools
+      href: create-custom-spark-pools.md
+    - name: High Concurrency mode
+      href: high-concurrency-overview.md
+    - name: Autotune Spark configuration
+      href: autotune.md
+    - name: Spark concurrency limits and queueing
+      href: spark-job-concurrency-and-queueing.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
@@ -33,41 +99,117 @@ items:
       href: create-spark-job-definition.md
     - name: Run a Spark job definition
       href: run-spark-job-definition.md
-  - name: Spark utilities
-    href: microsoft-spark-utilities.md
-  - name: Library management
-    href: library-management.md
+    - name: Spark job definition API tutorial
+      href: spark-job-definition-api.md
+  - name: Spark development
+    items:
+    - name: Spark utilities
+      href: microsoft-spark-utilities.md
+    - name: Library management
+      href: library-management.md
   - name: Spark administration settings
     items:
-    - name: Workspace settings
-      href: spark-workspace-admin-settings.md
-    - name: FAQ
+    - name: Capacity settings overview
+      href: capacity-settings-overview.md
+    - name: Configure capacity Settings
+      href: capacity-settings-management.md
+    - name: Spark workspace settings 
+      href: workspace-admin-settings.md
+    - name: Spark admin settings - FAQ
       href: spark-admin-settings-faq.yml 
   - name: Spark monitoring
     items:
-    - name: Spark monitoring overview
+    - name: Apache Spark monitoring overview
       href: spark-monitoring-overview.md
     - name: Apache Spark Advisor
       href: spark-advisor-introduction.md
     - name: Monitoring hub - Browse Spark applications
       href: browse-spark-applications-monitoring-hub.md
-    - name: Browse artifact's recent runs
-      href: spark-artifact-recent-runs.md
+    - name: Browse item's recent runs
+      href: spark-item-recent-runs.md
     - name: Monitor Spark jobs in a notebook 
       href: spark-monitor-debug.md
     - name: Monitor Spark job definitions
       href: monitor-spark-job-definitions.md
     - name: Monitor Spark application
       href: spark-detail-monitoring.md
+    - name: Navigate the Apache Spark history server
+      href: apache-spark-history-server.md  
+    - name: Monitor Spark capacity consumption
+      href: monitor-spark-capacity-consumption.md
+  - name: Intelligent cache
+    href: intelligent-cache.md
+- name: Delta Lake
+  items:
+    - name: Lakehouse and Delta tables
+      href: lakehouse-and-delta-tables.md
+    - name: Load to tables
+      href: load-to-tables.md
+    - name: Lakehouse table maintenance
+      href: lakehouse-table-maintenance.md
+    - name: Delta optimization and V-Order
+      href: delta-optimization-and-v-order.md
 - name: Notebooks
   items:
   - name: Create and use notebooks
     href: how-to-use-notebook.md
   - name: Develop and run notebooks
-    href: author-execute-notebook.md
+    href: author-execute-notebook.md  
+  - name: Format code in notebooks
+    href: author-notebook-format-code.md
+  - name: Run notebooks in High Concurrency mode
+    href: configure-high-concurrency-session-notebooks.md
   - name: Notebook visualization
     href: notebook-visualization.md
-  - name: Explore data in Lakehouse
+  - name: Explore data in lakehouse
     href: lakehouse-notebook-explore.md
-  - name: Load data in Lakehouse
+  - name: Load data in lakehouse
     href: lakehouse-notebook-load-data.md
+  - name: Notebook source control and deployment
+    href: notebook-source-control-deployment.md
+  - name: Use Notebook public APIs
+    href: notebook-public-api.md
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: create-and-use-environment.md
+  - name: Manage Spark compute in environments
+    href: environment-manage-compute.md
+  - name: Manage libraries in environments
+    href: environment-manage-library.md
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: environment-workspace-migration.md
+- name: VS Code integration 
+  items:
+  - name: Overview
+    href: setup-vs-code-extension.md
+  - name: Notebook with VS Code extension
+    href: author-notebook-with-vs-code.md
+  - name: Notebook resource with VS Code extension
+    href: author-notebook-resource-with-vs-code.md
+  - name: Spark job definition with VS Code extension
+    href: author-sjd-with-vs-code.md
+  - name: Explore lakehouse with VS Code extension
+    href: explore-lakehouse-with-vs-code.md
+  - name: Develop notebook with VS Code web experience
+    href: author-notebook-with-vs-code-web.md
+- name: Migrate to Fabric
+  items:
+  - name: From Azure Synapse
+    items:
+    - name: Overview
+      href: migrate-synapse-overview.md
+    - name: Migrate Spark pools
+      href: migrate-synapse-spark-pools.md
+    - name: Migrate Spark configurations
+      href: migrate-synapse-spark-configurations.md
+    - name: Migrate Spark libraries
+      href: migrate-synapse-spark-libraries.md
+    - name: Migrate notebooks
+      href: migrate-synapse-notebooks.md
+    - name: Migrate Spark job definition
+      href: migrate-synapse-spark-job-definition.md
+    - name: Migrate data and pipelines
+      href: migrate-synapse-data-pipelines.md
+    - name: Migrate Hive Metastore metadata
+      href: migrate-synapse-hms-metadata.md

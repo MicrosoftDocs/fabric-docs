@@ -3,42 +3,37 @@ items:
   tocHref: /fabric/
   topicHref: /fabric/index
   items:
-  - name: Admin
-    tocHref: /fabric/admin
-    topicHref: /fabric/admin/index
-  - name: CICD
-    tocHref: /fabric/cicd
-    topicHref: /fabric/cicd/index
   - name: Data Engineering
-    tocHref: /fabric/data-engineering
+    tocHref: /fabric/data-engineering/
     topicHref: /fabric/data-engineering/index
   - name: Data Factory
-    tocHref: /fabric/data-factory
+    tocHref: /fabric/data-factory/
     topicHref: /fabric/data-factory/index
   - name: Data Science
-    tocHref: /fabric/data-science
+    tocHref: /fabric/data-science/
     topicHref: /fabric/data-science/index
   - name: Data Warehouse
-    tocHref: /fabric/data-warehouse
+    tocHref: /fabric/data-warehouse/
     topicHref: /fabric/data-warehouse/index
-  - name: Enterprise
-    tocHref: /fabric/enterprise
-    topicHref: /fabric/enterprise/index
-  - name: Get started
-    tocHref: /fabric/get-started
-    topicHref: /fabric/get-started/index
-  - name: Governance
-    tocHref: /fabric/governance
-    topicHref: /fabric/governance/index
   - name: OneLake
-    tocHref: /fabric/onelake
+    tocHref: /fabric/onelake/
     topicHref: /fabric/onelake/index
-  - name: Real-time Analytics
-    tocHref: /fabric/real-time-analytics
+  - name: Real-Time Analytics
+    tocHref: /fabric/real-time-analytics/
     topicHref: /fabric/real-time-analytics/index
-  - name: Reflex
-    tocHref: /fabric/reflex
-    topicHref: /fabric/reflex/index
   - name: Security
-    tocHref: /fabric/security
+    tocHref: /fabric/security/
+    topicHref: /fabric/security/index
+  - name: Get started
+    tocHref: /fabric/get-started/
+    topicHref: /fabric/get-started/index
+- name: Microsoft Fabric
+  tocHref: /azure/
+  topicHref: /fabric/index
+  items:
+  - name: Real-Time Analytics
+    tocHref: /azure/data-explorer/
+    topicHref: /fabric/real-time-analytics/index
+  - name: Microsoft Fabric Security
+    tocHref: /azure/reliability
     topicHref: /fabric/security/index

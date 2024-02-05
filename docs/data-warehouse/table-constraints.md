@@ -1,38 +1,48 @@
 ---
 title: Primary, foreign, and unique keys
-description: Table constraints support using Synapse Data Warehouse in Microsoft Fabric
-ms.reviewer: wiassaf
-ms.author: kecona
+description: Learn more about table constraints support using Warehouse in Microsoft Fabric.
 author: KevinConanMSFT
+ms.author: kecona
+ms.reviewer: wiassaf
+ms.date: 12/13/2023
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
+# Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
 
-# Primary keys, foreign keys, and unique keys in Synapse Data Warehouse in Microsoft Fabric
+**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including primary key, foreign key, and unique key.
+Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
-To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
+> To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
 
 ## Table constraints
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports these table constraints: 
+[!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
-- UNIQUE constraint is only supported when NOT ENFORCED is used.
+- UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
 - FOREIGN KEY is only supported when NOT ENFORCED is used.
 
-For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric#DataTypes&preserve-view=true) and [CREATE TABLE](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=fabric#DataTypes&preserve-view=true). 
+For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
+
+- [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
+- For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 ## Remarks
 
-Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
+Having primary key, foreign key and/or unique key allows [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
+
+ALTER TABLE cannot be part of an explicit transaction.
 
 > [!IMPORTANT]  
-After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique.  A violation of that may cause the query to return inaccurate result.  This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabricse](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], make sure all values in those columns are unique. A violation of that can cause the query to return inaccurate result. Foreign keys are not enforced.
 
-This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+This example shows how a query might return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
 ```sql
  -- Create table t1
@@ -60,7 +70,7 @@ a1          total
 */
 
 -- Add unique constraint
-ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique (a1) NOT ENFORCED
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED
 
 -- Re-run this query.  5 rows returned.  Incorrect result.
 SELECT a1, count(*) AS total FROM t1 GROUP BY a1
@@ -117,7 +127,7 @@ a1          b1
 */
 
 -- Add unique constraint
-ALTER TABLE t1 add CONSTRAINT unique_t1_a1 UNIQUE (a1) NOT ENFORCED  
+ALTER TABLE t1 ADD CONSTRAINT unique_t1_a1 unique NONCLUSTERED (a1) NOT ENFORCED  
 
 -- Re-run this query.  5 rows returned.  Correct result.
 SELECT a1, COUNT(*) as total FROM t1 GROUP BY a1
@@ -187,13 +197,12 @@ CREATE TABLE ForeignKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1) REFERENCES ForeignKeyReferenceTable (c1) NOT ENFORCED;
 ```
 
-## Next steps
+## Related content
 
-- [Design tables in Synapse Data Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
+- [Design tables in Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
+- [Data types in Microsoft Fabric](data-types.md)
 - [What is data warehousing in [!INCLUDE [product-name](../includes/product-name.md)]?](data-warehousing.md)
 - [What is data engineering in [!INCLUDE [product-name](../includes/product-name.md)]?](../data-engineering/data-engineering-overview.md)
-- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](warehouse.md)
+- [[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]](data-warehousing.md#synapse-data-warehouse)
 - [Create a [!INCLUDE [fabric-dw](includes/fabric-dw.md)]](create-warehouse.md)
 - [Query a warehouse](query-warehouse.md)
-- [OneLake overview](../onelake/onelake-overview.md)
-- [Getting Workspace and OneLake path](get-workspace-onelake-path.md)

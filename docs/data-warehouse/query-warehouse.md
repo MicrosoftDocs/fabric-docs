@@ -1,48 +1,75 @@
 ---
-title: Query a Synapse Data Warehouse in Microsoft Fabric
-description: Learn more about options to query a Synapse Data Warehouse in Microsoft Fabric.
+title: Query the SQL analytics endpoint or Warehouse
+description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
+author: prlangad
+ms.author: prlangad
 ms.reviewer: wiassaf, kecona
-ms.author: salilkanade
-author: salilkanade
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.date: 03/31/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the Synapse Data Warehouse
+# Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To get started with this tutorial, check the following prerequisites:
 
-- You should have access to a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] within a premium per capacity workspace with contributor or above permissions.
-- Connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
-- Choose your querying tool. This article provides examples in SQL Server Management Studio (SSMS).
+- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
+- Choose your querying tool.
+    - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
+    - Use the [Visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](visual-query-editor.md).
+
+- Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
     - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
-    - Use the [SQL query editor in the Fabric portal](sql-query-editor.md).
-    - Use the [Query using the Visual Query editor](visual-query-editor.md).
 
 > [!NOTE]
-> Review the [T-SQL surface area](warehouse.md#t-sql-surface-area) for [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
+> Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Run a new query on a Synapse Data Warehouse connection in SSMS
+## Run a new query in SQL query editor
 
-1. Open a **New Query** window. For example, in SSMS **Object Explorer**.
+1. Open a **New SQL query** window. 
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\context-menu-new-query.png" alt-text="Screenshot showing where to select New Query in the context menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-new-query.png":::
+   :::image type="content" source="media\query-warehouse\new-sql-query.png" alt-text="Screenshot showing where to select New SQL query in the ribbon." lightbox="media\query-warehouse\new-sql-query.png":::
 
 1. A new tab appears for you to write a SQL query.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\new-query-tab.png" alt-text="Screenshot of a new query tab." lightbox="media\query-warehouse-sql-server-management-studio\new-query-tab.png":::
+   :::image type="content" source="media\query-warehouse\sql-query-tab.png" alt-text="Screenshot of a new query tab in the SQL query editor the Fabric portal." lightbox="media\query-warehouse\sql-query-tab.png":::
 
-## Write a cross-database SQL Query
+1. Write a SQL query and run it.
 
-Currently, you can write cross database queries to databases in the same workspaces in [!INCLUDE [product-name](../includes/product-name.md)].
+   :::image type="content" source="media\query-warehouse\write-sql-query.png" alt-text="Screenshot of a writing a SQL query." lightbox="media\query-warehouse\write-sql-query.png":::
 
-There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore three examples.
+## Run a new query in Visual query editor
 
-1. Select the database. Using the `USE [database name]` statement, you can reference the table directly within your database and query another's database using three-part naming. In the following example, you are in the context of the database with the Affiliation table.
+1. Open a **New visual query** window.
+
+   :::image type="content" source="media\query-warehouse\new-visual-query.png" alt-text="Screenshot showing where to select New visual query in the ribbon." lightbox="media\query-warehouse\new-visual-query.png":::
+
+1. A new tab appears for you to create a visual query.
+
+   :::image type="content" source="media\query-warehouse\visual-query-tab.png" alt-text="Screenshot of a new query tab in the visual query editor of the Fabric portal." lightbox="media\query-warehouse\visual-query-tab.png":::
+
+1. Drag and drop tables from the object **Explorer** to **Visual query editor** window to create a query.
+
+   :::image type="content" source="media\query-warehouse\drag-drop-visual-query.png" alt-text="Screenshot of a creating a new visual query." lightbox="media\query-warehouse\drag-drop-visual-query.png":::
+
+## Write a cross-database query
+
+You can write cross database queries to databases in the current active workspace in [!INCLUDE [product-name](../includes/product-name.md)].
+
+There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore examples. You can join tables or views to run cross-warehouse queries within current active workspace.  
+
+1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from your current active workspace to object **Explorer** using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from the dialog, it gets added into the object **Explorer** for referencing when writing a SQL query or creating Visual query.
+
+   :::image type="content" source="media\query-warehouse\add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer." lightbox="media\query-warehouse\add-warehouses.png":::
+
+1. You can reference the table from added databases using three-part naming. In the following example, use the three-part name to refer to `ContosoSalesTable` in the added database `ContosoLakehouse`.
 
    ```sql
    SELECT * 
@@ -77,31 +104,26 @@ There are several ways you can write cross-database queries within the same [!IN
    FROM My_Lakehouse.dbo.Affiliation;
    ```
 
-## SELECT Top 1000 Rows from Object Explorer in SSMS
+1. You can drag and drop tables from added databases to **Visual query editor** to create a cross-database query.
 
-1. After successfully connecting to SSMS via your T-SQL end-point, expand your database and tables folder in the **Object Explorer** to see all tables listed.
+   :::image type="content" source="media\query-warehouse\cross-warehouse-query-visual-query-editor.png" alt-text="Screenshot of a cross-database query in visual query editor." lightbox="media\query-warehouse\cross-warehouse-query-visual-query-editor.png":::
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png" alt-text="Screenshot of where the Connect option appears on the Object Explorer ribbon." lightbox="media\query-warehouse-sql-server-management-studio\object-explorer-connect.png":::
+## SELECT Top 100 Rows from the Explorer
 
-1. Right-click on the table that you would like to query and select **SELECT Top 1000 Rows**.
+1. After opening your warehouse from the workspace, expand your database, schema and tables folder in the object **Explorer** to see all tables listed.
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png" alt-text="Screenshot showing where to select the Select Top 1000 Rows option in the right-click menu." lightbox="media\query-warehouse-sql-server-management-studio\context-menu-select-top.png":::
+1. Right-click on the table that you would like to query and select **Select TOP 100 rows**.
 
-1. Once the script is automatically generated, select the **Execute** button to run the script and see the results.
+   :::image type="content" source="media\query-warehouse\select-top-100-rows.png" alt-text="Screenshot showing where to select the Select Top 100 Rows option in the right-click menu." lightbox="media\query-warehouse\select-top-100-rows.png":::
 
-   :::image type="content" source="media\query-warehouse-sql-server-management-studio\execute-button.png" alt-text="Screenshot showing where to find the Execute button." lightbox="media\query-warehouse-sql-server-management-studio\execute-button.png":::
+1. Once the script is automatically generated, select the **Run** button to run the script and see the results.
 
-## Known limitations
+   :::image type="content" source="media\query-warehouse\select-top-run.png" alt-text="Screenshot showing results of select top 100 rows." lightbox="media\query-warehouse\select-top-run.png":::
 
-- Currently, we have not fully optimized warehouse performance to support large amounts of data. When running queries in the current version, limit the size of total data to be queried to 1 TB uncompressed.
+> [!NOTE]
+> At this time, there's limited T-SQL functionality. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 
-   > [!NOTE]
-   > Uncompressed data size should be calculated from a CSV representation of the data. Source data stored in parquet (or delta) format is already compressed anywhere from 2x to 10x (or more).
+## Next step
 
-- At this time, there's limited T-SQL functionality in the warehouse. See [T-SQL surface area](warehouse.md#t-sql-surface-area) for a list of T-SQL commands that are currently not available.
-
-## Next steps
-
-- [SQL query editor in the Fabric portal](sql-query-editor.md)
-- [Query using the Visual Query editor](visual-query-editor.md)
-- [Transactions in Synapse Data Warehouse tables](transactions.md)
+> [!div class="nextstepaction"]
+> [Create reports on data warehousing in Microsoft Fabric](create-reports.md)

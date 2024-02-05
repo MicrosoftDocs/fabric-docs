@@ -1,68 +1,95 @@
 ### YamlMime:Landing
 
-title: Governance documentation # < 60 chars
-summary: summary # < 160 chars
+title: Microsoft Fabric governance documentation
+summary: Govern, manage, and protect all your data in Fabric.
 
 metadata:
-  title: title # Required; page title displayed in search results. Include the brand. < 60 chars.
-  description: description # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: azure #Required; use either service or product per approved list. 
-#   ms.subservice: subservice or ms.technology: technology # Optional; Remove if not applicable.
+  title: Microsoft Fabric governance
+  description: A landing page for Microsoft Fabric governance documentation
+  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.subservice: governance
   ms.topic: landing-page # Required
-  ms.collection: collection # Optional; Remove if no collection is used.
-  author: githubauthor #Required; your GitHub user alias, with correct capitalization.
-  ms.author: msauthor #Required; microsoft alias of author; optional team alias.
-  ms.date: 01/27/2020 #Required; mm/dd/yyyy format.
+  author: paulinbar
+  ms.author: painbar
+  ms.date: 02/05/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
-# Cards and links should be based on top customer tasks or top subjects
-# Start card title with a verb
-  # Card 
-  - title: About Governance
+
+  # Card 1
+  - title: Secure, protect and comply
     linkLists:
       - linkListType: overview
         links:
-          - text: What is [service]?
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Governance and compliance in Fabric
+            url: governance-compliance-overview.md        
+          - text: Platform Security
+            url: ../security/security-overview.md
+      - linkListType: how-to-guide
+        links:             
+          - text: Manage access
+            url:  ..//get-started/roles-workspaces.md
+          - text: Audit
+            url:  ../admin/track-user-activities.md  
+      - linkListType: deploy
+        links:                 
+          - text: Information protection 
+            url:  information-protection.md
+          - text: Data loss prevention in Power BI
+            url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview 
+
+  # Card 2
+  - title: Manage your data estate
+    linkLists:
+      - linkListType: reference
+        links:        
+          - text: Tenant settings and control
+            url: ../admin/tenant-settings-index.md  
+      - linkListType: concept
+        links:                      
+          - text: Optimize business on domains
+            url:  domains.md
+      - linkListType: how-to-guide
+        links:             
+          - text: Workspace management
+            url: ../admin/portal-workspaces.md
+          - text: Govern capacity resources
+            url:  /power-bi/enterprise/service-admin-premium-manage 
+          - text: Tenant multi-cloud abilities
+            url: ../admin/service-admin-premium-multi-geo.md                                                                       
+
+  # Card 3
+  - title: Discover, trust and reuse
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Discover
+            url: ../get-started/onelake-data-hub.md
+          - text: Track lineage 
+            url:  lineage.md   
+          - text: Analyze impact 
+            url:  impact-analysis.md                      
       - linkListType: overview
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+        links:            
+          - text: Endorse and trust           
+            url:  endorsement-overview.md
+          - text: Curate 
+            url:  metadata-scanning-overview.md                           
 
-  # Card 
-  - title: Get started
+  # Card 4
+  - title: Observe and act
     linkLists:
-      - linkListType: get-started
+      - linkListType: concept
         links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: get-started
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-
-  # Card 
-  - title: how-to-guide
-    linkLists:
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-      - linkListType: how-to-guide
-        links:
-          - text: linktext1
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
-          - text: linktext2
-            url: ../placeholder.md # Placeholder file. Replace with the actual file name.
+          - text: Monitor
+            url: ../admin/monitoring-workspace.md
+          - text: Data insights for admins
+            url:  use-microsoft-purview-hub.md?tabs=admin-view
+          - text: Data insights for creators
+            url:  use-microsoft-purview-hub.md?tabs=data-owner-view
+      - linkListType: overview
+        links:            
+          - text: Automate 
+            url: ../data-activator/data-activator-introduction.md 
+    

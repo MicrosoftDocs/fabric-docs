@@ -4,59 +4,50 @@ description: Learn about data connectors.
 ms.reviewer: DougKlopfenstein
 ms.author: jianleishen
 author: jianleishen
-ms.topic: overview 
-ms.date: 03/09/2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
+ms.search.form: product-data-factory
 ---
 
 # Connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
 
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory offers a rich set of connectors that allow you to connect to different types of data stores. You can take advantage of those connectors to transform data in dataflows or move a PB-level of dataset with high-scale in a data pipeline.
+## Prerequisites
+
+Before you can set up a connection in Dataflow Gen2 or a data pipeline, the following prerequisites are required:
+
+- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+
+- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
 
 ## Supported data connectors in dataflows
 
-Dataflows provide data ingestion and transformation capabilities over a wide range of data sources. These data sources include various types of files, databases, online, cloud, and on-premises data sources. There are greater than 135 different data connectors, which are accessible from the dataflows authoring experience within the get data experience.
+Dataflow Gen2 provide data ingestion and transformation capabilities over a wide range of data sources. These data sources include various types of files, databases, online, cloud, and on-premises data sources. There are greater than 145 different data connectors, which are accessible from the dataflows authoring experience within the get data experience.
 
 :::image type="content" source="media/connector-overview/choose-data-source.png" alt-text="Screenshot of the Choose data source screen." lightbox="media/connector-overview/choose-data-source.png":::
 
-You can find a comprehensive list of all connectors supported through our [public Power Query connectors reference](/power-query/connectors/). Supported connectors match the ones marked as supported in the "Power BI (Dataflows)" column in this reference table.
+For a comprehensive list of all currently supported data connectors, go to [Dataflow Gen2 connectors in Microsoft Fabric](dataflow-support.md).
+
+The following connectors are currently available for output destinations in Dataflow Gen2:
+
+- Azure Data Explorer
+- Azure SQL
+- Data Warehouse
+- Lakehouse
 
 ## Supported data stores in data pipeline
 
-[!INCLUDE [product-name](../includes/product-name.md)] Project - Data Factory supports the following data stores in a data pipeline via Copy, Lookup, Get Metadata, and Delete Data activities. Go to each data store to learn the supported capabilities and the corresponding configurations in detail.
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] supports data stores in a data pipeline through the Copy, Lookup, Get Metadata, Delete, Script, and Stored Procedure activities. For a list of all currently supported data connectors, go to [Data pipeline connectors in Microsoft Fabric](pipeline-support.md).
 
-| **Category** | **Data store** | **Copy activity (source/destination)** | **Lookup activity** | **Get Metadata activity** | **Delete activity** | **Script activity** | **Stored Procedure activity** |
-|---|---|---|---|---|---|---|---|
-| **Workspace** | Lakehouse | ✓/✓ | - | - | ✓ | - | - |
-|  | Data Warehouse | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-| **Azure** | Azure Blob Storage | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure Cosmos DB (SQL API) | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure Data Lake Storage Gen1 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure Data Lake Storage Gen2 | ✓/✓ | ✓ | ✓ | ✓ | - | - |
-|  | Azure SQL Database | ✓/✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-|  | Azure SQL Managed Instance | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-|  | Azure SQL Explorer | ✓/✓ | ✓ | - | - | - | - |
-|  | Azure Database for PostgreSQL  | ✓/✓ | ✓ | - | - | - | - |
-|  | Azure Synapse Analytics | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-|  | Azure Table Storage | ✓/✓ | ✓ | - | - | - | - |
-| **Database** | Amazon Redshift | ✓/-  | ✓ | - | - | - | - |
-|  | Apache Impala | ✓/-  | ✓ | - | - | - | - |
-|  | Hive  | ✓/-  | ✓ | - | - | - | - |
-|  | PostgreSQL | ✓/-  | ✓ | - | - | - | - |
-|  | Spark | ✓/-  | ✓ | - | - | - | - |
-|  | SQL Server | ✓/✓ | ✓ | ✓ | - | ✓ | ✓ |
-| **File** | Amazon S3 | ✓/-  | ✓ | ✓ | ✓ | - | - |
-|  | Google Cloud Storage | ✓/-  | ✓ | ✓ | ✓ | - | - |
-|  | HTTP | ✓/-  | ✓ | - | - | - | - |
-| **Generic** | OData | ✓/-  | ✓ | - | - | - | - |
-|  | REST | ✓/✓ | - | - | - | - | - |
-| **Services and apps** | Snowflake | ✓/✓ | ✓ | - | - | ✓ | - |
-|  | Dataverse | ✓/✓ | ✓ | - | - | - | - |
+> [!NOTE]
+> Currently, a pipeline on managed VNet and on-premises data access with a gateway aren't supported in Data Factory for Microsoft Fabric.
 
-## Next steps
+## Related content
 
 - [How to copy data using copy activity](copy-data-activity.md)
 - [Data source management](data-source-management.md)

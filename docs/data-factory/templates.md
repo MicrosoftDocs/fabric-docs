@@ -1,20 +1,18 @@
 ---
 title: Templates
-description: Learn about templates in [!INCLUDE [product-name](../includes/product-name.md)].
+description: Learn about templates for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.topic: conceptual 
-ms.date: 01/27/2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
+ms.search.form: Pipeline Template
 ---
 
 # Templates for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
-
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Templates are pre-defined pipelines that allow you to get started quickly with Data Factory. These templates help to reduce development time by providing an easy way to create pipelines for common data integration scenarios.  
 
@@ -57,6 +55,6 @@ Templates are pre-defined pipelines that allow you to get started quickly with D
 
    :::image type="content" source="media/templates/run-with-parameters.png" lightbox="media/templates/run-with-parameters.png" alt-text="Screenshot showing the Pipeline run dialog with parameters specified.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs in [!INCLUDE [product-name](../includes/product-name.md)]](monitor-pipeline-runs.md)

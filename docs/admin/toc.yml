@@ -1,43 +1,159 @@
 items:
-- name: What is Microsoft Fabric administration?
+- name: Microsoft Fabric administration
   href: index.yml
 - name: Overview
   items:
-  - name: What is Microsoft Fabric administration?
-    href: admin-overview.md
+  - name: Administration overview
+    href: admin-overview.md  
+  - name: Security overview
+    href: ../security/security-overview.md
+  - name: Governance and compliance overview
+    href: ../governance/governance-compliance-overview.md          
+  - name: What is Microsoft Fabric admin?
+    href: microsoft-fabric-admin.md
+  - name: What is the admin portal?
+    href: admin-center.md
 - name: Get started
   items:
-  - name: Enable Microsoft Fabric for your organization
-    href: admin-switch.md  
-  - name: Understand Microsoft Fabric roles
-    href: admin-roles.md
-  - name: What is the admin center?
-    href: admin-center.md       
-  - name: Compliance feature switch
-    href: admin-compliance.md    
-- name: Admin features in Microsoft Fabric
+  - name: Enable Fabric for your organization
+    href: fabric-switch.md
+  - name: Enable Data Activator for your organization
+    href: data-activator-switch.md    
+  - name: Region availability
+    href: region-availability.md
+  - name: Find your Fabric home region
+    href: find-fabric-home-region.md
+  - name: Understand Fabric admin roles
+    href: roles.md
+- name: Monitor and manage Fabric
+  expanded: false
   items:
-  - name: Delegate admin rights
-    href: admin-delegate.md
-- name: Power BI admin center
+  - name: Admin monitoring workspace
+    items:    
+    - name: What is the admin monitoring workspace?
+      href: monitoring-workspace.md
+    - name: Feature usage and adoption report
+      href: feature-usage-adoption.md
+  - name: Use the Monitoring hub
+    href: monitoring-hub.md 
+  - name: Track user activities
+    href: track-user-activities.md
+  - name: Find users who have signed in
+    href: service-admin-access-usage.md
+  - name: Customize Fabric branding
+    href: service-admin-custom-branding.md
+  - name: Manage Azure connections
+    href: service-admin-portal-azure-connections.md
+  - name: Manage capacity settings
+    href: service-admin-portal-capacity-settings.md
+  - name: Manage embed codes
+    href: service-admin-portal-embed-codes.md
+  - name: Manage featured content
+    href: service-admin-portal-featured-content.md
+  - name: Manage organizational visuals
+    href: service-admin-portal-organizational-visuals.md
+  - name: Manage Power BI visuals admin settings
+    href: organizational-visuals.md 
+  - name: Manage Premium Per User
+    href: service-admin-portal-premium-per-user.md
+  - name: Manage users
+    href: service-admin-portal-users.md
+  - name: View audit logs
+    href: service-admin-portal-audit-logs.md
+  - name: View information protection metrics
+    href: service-admin-portal-protection-metrics.md
+  - name: View refresh summary
+    href: service-admin-portal-refresh-summary.md
+  - name: View usage metrics
+    href: service-admin-portal-usage-metrics.md
+- name: Workspace administration
   items:
-  - name: Power BI admin center
-    href: admin-power-bi.md
-- name: Spark
+  - name: Manage workspaces
+    href: portal-workspaces.md  
+  - name: Workspace tenant settings
+    href: portal-workspace.md
+- name: Feature set up
   items:
-  - name: Spark
-    href: admin-spark.md
-- name: Monitoring workspace
+  - name: Set up item certification
+    href: endorsement-setup.md
+  - name: Configure notifications
+    href: service-admin-premium-capacity-notifications.md
+  - name: Set up metadata scanning
+    href: metadata-scanning-setup.md
+  - name: Enable content certification
+    href: service-admin-setup-certification.md
+  - name: Enable service principal authentication
+    href: metadata-scanning-enable-read-only-apis.md
+  - name: Configure Multi-Geo support
+    href: service-admin-premium-multi-geo.md
+- name: Fabric tenant settings
   items:
-  - name: What is the monitoring workspace?
-    href: admin-monitoring.md  
-  - name: Audit log report
-    href: admin-audit-log.md
-  - name: Activity log report
-    href: admin-activity-log.md 
-- name: Considerations and limitations
-  items:
-  - name: Admin troubleshooting
-    href: admin-troubleshoot.yml  
-  - name: Admin limitations in Microsoft Fabric
-    href: admin-limitations.md       
+  - name: About tenant settings
+    href: about-tenant-settings.md
+  - name: Tenant settings index
+    href: tenant-settings-index.md
+  - name: Tenant settings sections
+    expanded: false
+    items:
+    - name: Microsoft Fabric
+      href: fabric-switch.md
+    - name: Help and support settings
+      href: service-admin-portal-help-support.md
+    - name: Domain management settings
+      href: service-admin-portal-domain-management-settings.md
+    - name: Workspace settings
+      href: portal-workspace.md
+    - name: Information protection
+      href: service-admin-portal-information-protection.md
+    - name: Export and sharing settings
+      href: service-admin-portal-export-sharing.md
+    - name: Discovery settings
+      href: service-admin-portal-discovery.md
+    - name: App settings
+      href: service-admin-portal-app.md
+    - name: Copilot settings
+      href: service-admin-portal-copilot.md
+    - name: Integration settings
+      href: service-admin-portal-integration.md
+    - name: Power BI visuals
+      href: service-admin-portal-power-bi-visuals.md
+    - name: R and Python visuals settings
+      href: service-admin-portal-r-python-visuals.md
+    - name: Audit and usage settings
+      href: service-admin-portal-audit-usage.md
+    - name: Dashboard settings
+      href: service-admin-portal-dashboard.md
+    - name: Git integration settings
+      href: git-integration-admin-settings.md
+    - name: Developer settings
+      href: service-admin-portal-developer.md
+    - name: Admin API settings
+      href: service-admin-portal-admin-api-settings.md
+    - name: Dataflow settings
+      href: service-admin-portal-dataflow.md
+    - name: Template app settings
+      href: service-admin-portal-template-app.md
+    - name: Q&A settings
+      href: service-admin-portal-qa.md
+    - name: Semantic model security
+      href: service-admin-portal-dataset-security.md
+    - name: Advanced networking 
+      href: service-admin-portal-advanced-networking.md
+    - name: Metrics settings
+      href: service-admin-portal-goals-settings.md
+    - name: User experience experiments
+      href: service-admin-portal-user-experience-experiments.md
+    - name: Share data with your Microsoft 365 services
+      href: admin-share-power-bi-metadata-microsoft-365-services.md#how-to-turn-sharing-with-microsoft-365-services-on-and-off
+    - name: Insights settings
+      href: service-admin-portal-insights.md
+    - name: Datamart settings
+      href: service-admin-portal-datamart.md
+    - name: Data model settings
+      href: service-admin-portal-data-model.md
+    - name: Quick measure suggestions settings
+      href: service-admin-portal-quick-measure-suggestions-settings.md
+    - name: Scale-out settings
+      href: service-admin-portal-scale-out.md
+    - name: OneLake settings
+      href: service-admin-portal-onelake.md

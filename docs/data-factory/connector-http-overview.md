@@ -1,31 +1,33 @@
 ---
 title: HTTP connector overview
-description: This article explains the overview of using HTTP.
+description: This article provides the overview of connecting to and using HTTP data in Data Factory.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 02/08/2022
-ms.custom: template-how-to 
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # HTTP connector overview
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW.
-> This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here. Refer to [Azure Data Factory documentation](/azure/data-factory/) for the service in Azure.
+The HTTP connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-This HTTP connector is supported in Trident Project  - Data Factory with the following capabilities.
+## Support in Dataflow Gen2
 
-## Supported capabilities
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support the HTTP connector in Dataflow Gen2.
+
+## Support in data pipelines
+
+The Google Cloud Storage connector supports the following capabilities in data pipelines:
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
 | **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
-| **Dataflow Gen2 (source/destination)** |  |  |
 
-## Next steps
+To learn about how to connect to HTTP data in data pipelines, go to [Set up your HTTP connection](connector-http.md#set-up-your-connection-in-a-data-pipeline).
 
-[How to create HTTP connection](connector-http.md)
-
-[How to configure HTTP in copy activity](connector-http-copy-activity.md)
+To learn about the copy activity configuration for HTTP in data pipelines, go to [Configure HTTP in a copy activity](connector-http-copy-activity.md).

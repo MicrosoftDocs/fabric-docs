@@ -5,33 +5,31 @@ ms.reviewer: eloldag
 ms.author: harmeetgill
 author: gillharmeet
 ms.topic: how-to
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 09/27/2023
 ---
 
 # Integrate OneLake with Azure HDInsight
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-This tutorial shows how to connect to OneLake with a Jupyter notebook from an Azure HDInsight cluster.
+[Azure HDInsight](/azure/hdinsight/hdinsight-overview) is a managed cloud-based service for big data analytics that helps organizations process large amounts data. This tutorial shows how to connect to OneLake with a Jupyter notebook from an Azure HDInsight cluster.
 
 ## Using Azure HDInsight
 
 To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
-1. Create an HDI Spark cluster. Follow these instructions: [Set up clusters in HDInsight](/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
-   1. Enter cluster information. Remember your cluster username and password, as you need them later to access the cluster.
-
-      :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster.png" alt-text="Screenshot of the full Create HDInsight cluster screen in Microsoft Azure." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster.png":::
-
+1. Create an HDInsight (HDI) Spark cluster. Follow these instructions: [Set up clusters in HDInsight](/azure/hdinsight/hdinsight-hadoop-provision-linux-clusters).
+   1. While providing cluster information, remember your Cluster login Username and Password, as you need them to access the cluster later.
    1. Create a user assigned managed identity (UAMI): [Create for Azure HDInsight - UAMI](/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2-portal) and choose it as the identity in the **Storage** screen.
 
       :::image type="content" source="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png" alt-text="Screenshot showing where to enter the user assigned managed identity in the Storage screen." lightbox="media\onelake-azure-hdinsight\create-hdinsight-cluster-storage.png":::
 
-1. Give this UAMI access to the Fabric workspace that contains your artifacts.
+1. Give this UAMI access to the Fabric workspace that contains your items. For help deciding what role is best, see [Workspace roles](..\get-started\roles-workspaces.md).
 
-   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an artifact in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
+   :::image type="content" source="media\onelake-azure-hdinsight\manage-access-panel.jpg" alt-text="Screenshot showing where to select an item in the Manage access panel." lightbox="media\onelake-azure-hdinsight\manage-access-panel.jpg":::
 
-1. Navigate to your Lakehouse and find the GUID for your workspace and Lakehouse. You can find them in the URL of your Lakehouse or the **Properties** pane for a file.
+1. Navigate to your lakehouse and find the name for your workspace and lakehouse. You can find them in the URL of your lakehouse or the **Properties** pane for a file.
 
 1. In the Azure portal, look for your cluster and select the notebook.
 
@@ -41,20 +39,26 @@ To connect to OneLake with a Jupyter notebook from an HDInsight cluster:
 
    :::image type="content" source="media\onelake-azure-hdinsight\enter-credentials.jpg" alt-text="Screenshot showing where to enter your credential information." lightbox="media\onelake-azure-hdinsight\enter-credentials.jpg":::
 
-1. Create a new Spark Notebook.
+1. Create a new Spark notebook.
 
-1. Copy the workspace and Lakehouse GUIDs into your notebook and build your OneLake URL for your Lakehouse. Now you can read any file from this file path.
+1. Copy the workspace and lakehouse names into your notebook and build the OneLake URL for your lakehouse. Now you can read any file from this file path.
 
-   :::image type="content" source="media\onelake-azure-hdinsight\notebook-screen.jpg" alt-text="Screenshot of an example notebook." lightbox="media\onelake-azure-hdinsight\notebook-screen.jpg":::
+   ```python
+   fp = 'abfss://' + 'Workspace Name' + '@onelake.dfs.fabric.microsoft.com/' + 'Lakehouse Name' + '/Files/' 
+   df = spark.read.format("csv").option("header", "true").load(fp + "test1.csv") 
+   df.show()
+   ```
 
-1. Try writing some data into the Lakehouse.
+1. Try writing some data into the lakehouse.
 
-   :::image type="content" source="media\onelake-azure-hdinsight\write-data-example.jpg" alt-text="Screenshot of a line of code to write data into a lakehouse." lightbox="media\onelake-azure-hdinsight\write-data-example.jpg":::
+   ```python
+   writecsvdf = df.write.format("csv").save(fp + "out.csv") 
+   ```
 
-1. Test that your data was successfully written by checking in your Lakehouse or by reading your newly loaded file. Try different formats like Parquet, Delta, etc.
+1. Test that your data was successfully written by checking your lakehouse or by reading your newly loaded file.
 
 You can now read and write data in OneLake using your Jupyter notebook in an HDI Spark cluster.
 
-## Next steps
+## Related content
 
 - [OneLake security](onelake-security.md)
