@@ -20,6 +20,8 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Create and use Metrics
 
+Metrics in Power BI let customers curate their metrics and track them against key business objectives, in a single pane. This feature enhances data culture by promoting accountability, alignment, and visibility for teams and initiatives within organizations.
+
 Users in the organization can create and use metrics in Power BI.
 
 To learn more, see [Get started with metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
