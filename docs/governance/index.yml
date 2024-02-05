@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Microsoft Fabric governance documentation
-summary: Govern, manage, and protect all your data in Fabric. [xxx](governance-compliance-overview.md)
+summary: Govern, manage, and protect all your data in Fabric.
 
 metadata:
   title: Microsoft Fabric governance
@@ -18,52 +18,64 @@ metadata:
 landingContent:
 
   # Card 1
+  - title: Secure, protect and comply
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Governance and compliance in Fabric
+            url: governance-compliance-overview.md        
+          - text: Platform Security
+            url: ../security/security-overview.md
+      - linkListType: how-to-guide
+        links:             
+          - text: Manage access
+            url:  ..//get-started/roles-workspaces.md
+          - text: Audit
+            url:  ../admin/track-user-activities.md  
+      - linkListType: deploy
+        links:                 
+          - text: Information protection 
+            url:  information-protection.md
+          - text: Data loss prevention in Power BI
+            url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview 
+
+  # Card 2
   - title: Manage your data estate
     linkLists:
-      - #linkListType: concept
-        links:
+      - linkListType: reference
+        links:        
           - text: Tenant settings and control
-            url: ../admin/tenant-settings-index.md           
+            url: ../admin/tenant-settings-index.md  
+      - linkListType: concept
+        links:                      
           - text: Optimize business on domains
             url:  domains.md
+      - linkListType: how-to-guide
+        links:             
           - text: Workspace management
             url: ../admin/portal-workspaces.md
           - text: Govern capacity resources
             url:  /power-bi/enterprise/service-admin-premium-manage 
           - text: Tenant multi-cloud abilities
-            url: ../admin/service-admin-premium-multi-geo.md                                                          
-
-  # Card 2
-  - title: Secure, protect and comply
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Platform Security
-            url: ../security/security-overview.md
-          - text: Manage access
-            url:  ..//get-started/roles-workspaces.md
-          - text: Audit
-            url:  ../admin/track-user-activities.md     
-          - text: Information protection 
-            url:  information-protection.md
-          - text: Data loss prevention in Power BI
-            url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview              
+            url: ../admin/service-admin-premium-multi-geo.md                                                                       
 
   # Card 3
   - title: Discover, trust and reuse
     linkLists:
-      - linkListType: concept
+      - linkListType: how-to-guide
         links:
           - text: Discover
             url: ../get-started/onelake-data-hub.md
-          - text: Endorse and trust 
+          - text: Track lineage 
+            url:  lineage.md   
+          - text: Analyze impact 
+            url:  impact-analysis.md                      
+      - linkListType: overview
+        links:            
+          - text: Endorse and trust           
             url:  endorsement-overview.md
           - text: Curate 
-            url:  metadata-scanning-overview.md 
-          - text: Track lineage 
-            url:  lineage.md
-          - text: Analyze impact 
-            url:  impact-analysis.md                           
+            url:  metadata-scanning-overview.md                           
 
   # Card 4
   - title: Observe and act
@@ -76,6 +88,8 @@ landingContent:
             url:  use-microsoft-purview-hub.md?tabs=admin-view
           - text: Data insights for creators
             url:  use-microsoft-purview-hub.md?tabs=data-owner-view
+      - linkListType: overview
+        links:            
           - text: Automate 
             url: ../data-activator/data-activator-introduction.md 
     
