@@ -54,36 +54,21 @@ You've turned on **OneLake availability** in your KQL database. You can now acce
 
 ## View files
 
-When you turn on **OneLake availability** on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake while remaining within Real-Time Analytics.
-
-1. To view the files, ensure that you [Turn on OneLake availability](#turn-on-onelake-availability) on the table you want to view.
-1. Hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
-
-:::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table.":::
-
-The table file view opens with a [Delta log folder](#delta-log-folder) and one or more [Parquet files](#parquet-files).
+When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Analytics.
 
 > [!IMPORTANT]
 > It might take up to a few hours for the parquet and JSON files to appear after turning on **OneLake availability**.
 
-### Delta log folder
+* To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 
-The delta log folder (**_delta_log**) includes files that contain the table's metadata. The table's metadata includes its schema, which parquet files are a part of the table, the history of changes, and the delta table configuration. When you ingest new data into a table that has **OneLake availability** enabled, or when you make changes to existing data in that table, a new file is created in the delta log folder.
+    :::image type="content" source="media/one-logical-copy/view-files.png" alt-text="Screenshot of the Explorer pane showing the More menu dropdown of a table.":::
 
-1. To view the files, select the **_delta_log** folder.
-1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
+* To view the properties of the delta log folder or the individual files, hover over the folder or file and then select the **More menu [...]** > **Properties**.
 
-### Parquet files
+* To view the files in the delta log folder:
 
-Parquet files represent the data in your table that was made available in OneLake in Delta Lake format.
-
-### Properties
-
-You can view the properties of the delta log folder or the individual files. The properties include the resource name, the resource type, the URL, relative path, and the datetime the resource was last modified.
-
-To view the resource's properties, hover over the folder or file and then select the **More menu [...]** > **Properties**.
-
-:::image type="content" source="media/one-logical-copy/more-options.png" alt-text="Screenshot of the table file view showing the delta log folder and the parquet file. The More menu option is highlighted.":::
+    1. Select the **_delta_log** folder.
+    1. Select a file to view the table metadata and schema. The editor that opens is in read-only format.
 
 ## Related content
 
