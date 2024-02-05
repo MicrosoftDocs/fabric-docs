@@ -20,12 +20,12 @@ landingContent:
   # Card 1
   - title: Manage your data estate
     linkLists:
-      - linkListType: concept
+      - #linkListType: concept
         links:
           - text: Tenant settings and control
             url: ../admin/tenant-settings-index.md           
           - text: Optimize business on domains
-            url:  ./governance/domains.md
+            url:  domains.md
           - text: Workspace management
             url: ../admin/portal-workspaces.md
           - text: Govern capacity resources
@@ -45,7 +45,7 @@ landingContent:
           - text: Audit
             url:  ../admin/track-user-activities.md     
           - text: Information protection 
-            url:  ./governance/information-protection.md
+            url:  information-protection.md
           - text: Data loss prevention in Power BI
             url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview              
 
@@ -57,13 +57,13 @@ landingContent:
           - text: Discover
             url: ../get-started/onelake-data-hub.md
           - text: Endorse and trust 
-            url:  ./governance/endorsement-overview.md
+            url:  endorsement-overview.md
           - text: Curate 
-            url:  ./governance/metadata-scanning-overview.md 
+            url:  metadata-scanning-overview.md 
           - text: Track lineage 
-            url:  ./governance/lineage.md
+            url:  lineage.md
           - text: Analyze impact 
-            url:  ./governance/impact-analysis.md                           
+            url:  impact-analysis.md                           
 
   # Card 4
   - title: Observe and act
@@ -73,9 +73,9 @@ landingContent:
           - text: Monitor
             url: ../admin/monitoring-workspace.md
           - text: Data insights for admins
-            url:  ./governance/use-microsoft-purview-hub.md?tabs=admin-view
+            url:  use-microsoft-purview-hub.md?tabs=admin-view
           - text: Data insights for creators
-            url:  ./governance/use-microsoft-purview-hub.md?tabs=data-owner-view
+            url:  use-microsoft-purview-hub.md?tabs=data-owner-view
           - text: Automate 
             url: ../data-activator/data-activator-introduction.md 
     
