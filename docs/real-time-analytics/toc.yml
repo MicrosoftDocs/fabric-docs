@@ -136,7 +136,8 @@ items:
       href: create-empty-table.md
     - name: Data management
       items:
-      - name: Data management overview  
+      - name: Data management overview 
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
         href: data-management.md
       - name: Change data policies
         href: data-policies.md
