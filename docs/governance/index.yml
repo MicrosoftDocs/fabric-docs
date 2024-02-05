@@ -20,7 +20,7 @@ landingContent:
   # Card 1
   - title: Manage your data estate
     linkLists:
-      - #linkListType: concept
+      - linkListType: concept
         links:
           - text: Tenant settings and control
             url: ../admin/tenant-settings-index.md           
@@ -35,7 +35,8 @@ landingContent:
 
   # Card 2
   - title: Secure, protect and comply
-      - #linkListType: concept
+    linkLists:
+      - linkListType: concept
         links:
           - text: Platform Security
             url: ../security/security-overview.md
@@ -50,7 +51,8 @@ landingContent:
 
   # Card 3
   - title: Discover, trust and reuse
-      - #linkListType: concept
+    linkLists:
+      - linkListType: concept
         links:
           - text: Discover
             url: ../get-started/onelake-data-hub.md
@@ -65,7 +67,8 @@ landingContent:
 
   # Card 4
   - title: Observe and act
-      - #linkListType: concept
+    linkLists:
+      - linkListType: concept
         links:
           - text: Monitor
             url: ../admin/monitoring-workspace.md
