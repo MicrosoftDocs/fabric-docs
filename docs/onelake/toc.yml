@@ -65,5 +65,9 @@ items:
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
-- name: OneLake compute and storage consumption
-  href: onelake-consumption.md
+- name: Billing and Consumption
+  items:
+  - name: OneLake compute and storage consumption
+    href: onelake-consumption.md
+  - name: OneLake capacity consumption
+    href: OneLake-capacity-consumption
