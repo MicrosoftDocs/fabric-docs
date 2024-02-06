@@ -6,32 +6,32 @@ ms.author: painbar
 ms.reviewer: muliwienrib
 ms.topic: how-to
 ms.custom:
-ms.date: 02/01/2024
+ms.date: 02/06/2024
 ---
 
 # Onboarding to Fabric monitoring hub
 
-The monitoring hub is the centralized monitoring center designed for fabric users to track artifact background jobs. For additional information about the monitoring hub, refer to the [official documentation](../admin/monitoring-hub.md).
+The monitoring hub is the centralized monitoring center designed for Fabric users to track item background jobs. For additional information about the monitoring hub, refer to the [official documentation](../admin/monitoring-hub.md).
 
 ## Backend
 
-### Step 1 - Define the 'JobScheduler' property Inside the artifact manifest
+### Step 1 - Define the 'JobScheduler' property Inside the item manifest
 
-To enable job support, the artifact must specify the types of jobs it supports. This is accomplished by adding the `JobScheduler` property to the artifact manifest. Below is an overview of the supported `JobScheduler` definition properties:
+To enable job support, the item must specify the types of jobs it supports. This is accomplished by adding the `JobScheduler` property to the item manifest. Below is an overview of the supported `JobScheduler` definition properties:
 
-* **JobScheduler**: Enables Trident-managed jobs for your artifacts.
+* **JobScheduler**: Enables Fabric-managed jobs for your items.
     * *Enabled*: true/false to enable/disable the job scheduler.
-    * *JobHistoryCount*: Sets the maximum job records count per artifact. Once the limit is reached, old job instances will be deleted.
-    * *JobDeadletterHours*: A job will be marked as a Dead Letter by the fabric platform if it hasn't started executing for N hours.
-    * *OnDemandJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
+    * *JobHistoryCount*: Sets the maximum job records count per item. Once the limit is reached, old job instances will be deleted.
+    * *JobDeadletterHours*: A job will be marked as a dead letter by the Fabric platform if it hasn't started executing for N hours.
+    * *OnDemandJobDeduplicateOptions*: Sets the deduplication option for on-demand item jobs. Possible values:
         * *None*: Do not deduplicate the job.
-        * *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
-        * *PerUser*: Ensure there is only one active job run for the same user and artifact.
+        * *PerArtifact*: Ensure there is only one active job run for the same item and job type.
+        * *PerUser*: Ensure there is only one active job run for the same user and item.
 
-    * *ScheduledJobDeduplicateOptions*: Sets the deduplication option for on-demand artifact jobs. Possible values:
+    * *ScheduledJobDeduplicateOptions*: Sets the deduplication option for on-demand item jobs. Possible values:
         * *None*: Do not deduplicate the job.
-        * *PerArtifact*: Ensure there is only one active job run for the same artifact and job type.
-        * *PerUser*: Ensure there is only one active job run for the same user and artifact.
+        * *PerArtifact*: Ensure there is only one active job run for the same item and job type.
+        * *PerUser*: Ensure there is only one active job run for the same user and item.
 
     * *JobStatusPullingInterval*: If specified, Fabric will pull the job status and properties from the workload at the specified interval in minutes. This value should be greater than 0 and less than 6. If not specified, the time interval will change with the job runs.
         * *ArtifactJobTypes*: A list of job types with the following properties:
@@ -39,27 +39,27 @@ To enable job support, the artifact must specify the types of jobs it supports. 
         * *EnabledForUser*: true/false to enable/disable the job type.
         * *MaxConsecutiveFailuresCount* (optional): Disable scheduled jobs if there are N consecutive failed scheduled jobs.
 
-For an example of how the `JobScheduler` property is defined in our sample artifact definition, refer to [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml).
+For an example of how the `JobScheduler` property is defined in our sample item definition, refer to [WorkloadManifest.xml](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Packages/manifest/files/WorkloadManifest.xml).
 
 ### Step 2: Implement 'IFabricItemsJobsHandler'
 
 Our SDK provides an abstract class that your workloads need to implement in order to support jobs. Currently, this class has three methods you need to implement:
 
-1. **OnRunFabricItemJobAsync**
+* **OnRunFabricItemJobAsync**
 
-   This method is called whenever a job should be executed. The workload will receive all the necessary information to start running the job, including operation context (Tenant, Capacity, Workspace, and item IDs), item and job type, job instance ID (a unique identifier for the current job), and job properties which include a payload sent from the UI.
+   This method is called whenever a job should be executed. The workload will receive all the necessary information to start running the job, including operation context (tenant, capacity, workspace, and item IDs), item and job type, job instance ID (a unique identifier for the current job), and job properties that include a payload sent from the UI.
 
-2. **OnCancelFabricItemJobInstanceAsync**
+* ***OnCancelFabricItemJobInstanceAsync**
 
    This method is called whenever a job should be canceled. The workload will receive the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
 
-3. **OnGetFabricItemJobInstanceStatusAsync**
+* **OnGetFabricItemJobInstanceStatusAsync**
 
-   Fabric uses a polling mechanism to sync job status in our platform. The polling intervals are defined in the artifact definition as shown in Step 1. This method is invoked every N minutes while the job is still in progress to check its status. When the job is done, either successfully or with an error, Fabric will stop polling its status. The workload will receive the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
+   Fabric uses a polling mechanism to sync job status in our platform. The polling intervals are defined in the item definition as shown in [Step 1](#step-1---define-the-jobscheduler-property-inside-the-item-manifest). This method is invoked every N minutes while the job is still in progress to check its status. When the job is done, either successfully or with an error, Fabric will stop polling its status. The workload will receive the same properties as OnRunFabricItemJobAsync, except for the jobProperties, which are irrelevant in this case.
 
 All job handlers return a `FabricItemJobResult`, with the most important property being `JobInstanceStatus`.
 
-Currently, we support the following job statuses:
+Currently, the following job statuses are supported:
 
 ```csharp
 [DataContract]
@@ -74,39 +74,42 @@ public enum FabricItemJobStatus
 }
 ```
 
-Once your workload implements IFabricItemsJobsHandler, register this class in program.cs, e.g. services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();.
+Once your workload implements IFabricItemsJobsHandler, register this class in program.cs, e.g. `services.AddSingleton<IFabricItemsJobsHandler, FabricItemsJobsHandler>();`.
 
-For an example of how to implment this class  refer to [FabricItemsJobsHandler.cs](Backend/src/FabricItemsJobsHandler.cs).
-
-
+For an example of how to implment this class  refer to [FabricItemsJobsHandler.cs](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Backend/src/FabricItemsJobsHandler.cs).
 
 ## Frontend
 
-### How to Run a Job in fabric UI.
+### How to Run a Job in the Fabric UI.
 
-After integrating jobs into your artifacts in the backend, users can start running jobs. Currently, there are two ways to run jobs in Fabric:
+After integrating jobs into your items in the backend, users can start running jobs. Currently, there are two ways to run jobs in Fabric:
 
-1. **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric Scheduler Experience. 
-2. **On Demand using Workload UI with Extension Client SDK:** 
+* **Unattended Scheduled Job:** Defined by the user to run at regular intervals using shared Fabric scheduler experience. 
 
-#### Fabric Scheduler Experience from the UI
-- Entry Points:
-1. Context menu -> Schedule
-   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/d954b0fa-b801-4b1b-bdb1-f36a47237a33)
+* **On Demand using Workload UI with Extension Client SDK:** 
 
-2. Using extensionClient.artifactSettings.open where the selected settings Id is 'Schedule'
+#### Fabric scheduler experience from the UI
 
+* Entry Points:
+    1. Context menu -> Schedule
+   
+        :::image type="content" source="./media/monitoring-hub/fabric-scheduler-menu.png" alt-text="Screenshot showing the Schedule option in the Fabric scheduler menu.":::
 
-- Layout
-   ![image](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/35b8e385-ce3f-4b39-b728-a1e8a0be947c)
-1. Last success refresh time and next refresh time
-2. Refresh button
-3. Artifact schedule settings
+    2. Using `extensionClient.artifactSettings.open`, where the selected settings ID is 'Schedule'.
+
+* Layout
+
+    :::image type="content" source="./media/monitoring-hub/fabric-scheduler-set.png" alt-text="Screenshot showing Fabric scheduler settings.":::
+
+    1. Last success refresh time and next refresh time
+    1. Refresh button
+    1. Artifact schedule settings
 
 **Onboarding**
 
-**Step 1: Add Schedule Context Menu Item**
-In order to show the schedule button in the artifact context menu, you will need to add a new entry into the 'contextMenuItems' property in the artifact frontend manifest like this:
+**Step 1: Add schedule context menu item**
+
+In order to show the schedule button in the item context menu, you will need to add a new entry into the 'contextMenuItems' property in the item frontend manifest, like this:
 
 ```json
 {
@@ -114,9 +117,9 @@ In order to show the schedule button in the artifact context menu, you will need
 }
 ```
 
-**Step 2: Add Artifact Schedule Settings**
+**Step 2: Add artifact schedule settings**
 
-Add a new 'schedule' entry to artifact settings property in the frontend manifest.
+Add a new 'schedule' entry to the artifact settings property in the frontend manifest.
 
 ```json
 "schedule": {
@@ -125,30 +128,29 @@ Add a new 'schedule' entry to artifact settings property in the frontend manifes
 }
 ```
 
-- `artifactJobType`: Artifact job type defined in artifact job definition XML file.
-- `refreshType`: Specifies the display of the refresh button. There are three types: using "Refresh" and "Run" to enable refresh button and display name, setting "None" to disable refresh button.
+* `artifactJobType`: Artifact job type defined in artifact job definition XML file.
+* `refreshType`: Specifies the display of the refresh button. There are three types: use "Refresh" and "Run" to enable refresh button and display name, set "None" to disable the refresh button.
 
-For an example of this frontend manifest properties, refer to [localWorkloadManifest.json](Frontend/Manifests/localWorkloadManifest.json).
+For an example of these frontend manifest properties, refer to [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json).
 
 #### Jobs Javascript APIs
 
 In addition to unattended scheduled jobs, a workload can run a job on demand or even start a scheduled job on demand. We provide a set of APIs as part of our extension client:
 
-**Scheduled Jobs APIs:**
-- `getArtifactScheduledJobs(objectId: string): Promise<ArtifactSchedule>`
-- `createArtifactScheduledJobs(createArtifactScheduledJobs: CreateArtifactScheduleParams): Promise<ArtifactSchedule>`
-- `updateArtifactScheduledJobs(updateArtifactScheduleParams: UpdateArtifactScheduleParams): Promise<ArtifactSchedule>`
+* **Scheduled Jobs APIs:**
 
-**Specific Job Instance APIs:**
-- `runArtifactJob(jobParams: RunArtifactJobParams): Promise<ArtifactJobInstance>`
-- `cancelArtifactJob(jobParams: CancelArtifactJobParams): Promise<CancelArtifactJobResult>`
-- `getArtifactJobHistory(getHistoryParams: GetArtifactJobHistoryParams): Promise<ArtifactJobHistory>`
+    * `getArtifactScheduledJobs(objectId: string): Promise<ArtifactSchedule>`
+    * `createArtifactScheduledJobs(createArtifactScheduledJobs: CreateArtifactScheduleParams): Promise<ArtifactSchedule>`
+    * `updateArtifactScheduledJobs(updateArtifactScheduleParams: UpdateArtifactScheduleParams): Promise<ArtifactSchedule>`
 
-**Note:** 'getArtifactJobHistory' returns the job with the status currently stored in Fabric. 
-As we currently rely solely on polling, please be aware that the status might not be the most up-to-date. 
-In the future, we may introduce support for the workload side to push status updates directly to Fabric. 
-However, for now, if you require your UI to reflect the most accurate status as soon as possible, we recommend obtaining the status directly from your backend.
+* **Specific Job Instance APIs:**
 
+    * `runArtifactJob(jobParams: RunArtifactJobParams): Promise<ArtifactJobInstance>`
+    * `cancelArtifactJob(jobParams: CancelArtifactJobParams): Promise<CancelArtifactJobResult>`
+    * `getArtifactJobHistory(getHistoryParams: GetArtifactJobHistoryParams): Promise<ArtifactJobHistory>`
+
+> [!NOTE]
+> 'getArtifactJobHistory' returns the job with the status currently stored in Fabric. As we currently rely solely on polling,  be aware that the status might not be the most up-to-date. If you require your UI to reflect the most accurate status as soon as possible, we recommend obtaining the status directly from your backend.
 
 ### Integration with monitoring hub
 Once the data is ready, the artifact jobs will automatically show up in the monitoring hub. 
