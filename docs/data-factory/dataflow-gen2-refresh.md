@@ -12,7 +12,7 @@ ms.date: 2/1/2024
 
 Dataflows enable you to connect to, transform, combine, and load data to storage for downstream consumption. A key element in dataflows is the refresh process, which applies the transformation steps defined during authoring to extract, transform, and load data to the target storage.
 
-:::image type="content" source="media/concept-dataflow-refresh/simple-dataflow.png" alt-text="Screenshot showing a sample dataflow.":::
+:::image type="content" source="media/concept-dataflow-refresh/Simple-Dataflow.png" alt-text="Screenshot showing a sample dataflow.":::
 
 A dataflow refresh can be triggered in one of two ways, either on-demand or by setting up a refresh schedule. A scheduled refresh is run based on the specific days and times you specify.
 
@@ -28,13 +28,17 @@ To refresh a dataflow on-demand, select **Refresh** icon found in workspace list
 
 :::image type="content" source="media/concept-dataflow-refresh/refresh-dataflow-now.png" alt-text="Screenshot showing where to select refresh in the workspace list view.":::
 
-There are other ways an on-demand dataflow refresh can be triggered. When authoring and publishing a dataflow, an on-demand refresh is started if the dataflow publish operation was successful. Another on-demand refreshes can be triggered is via [a pipeline that contains a dataflow activity](dataflow-activity.md).
+There are other ways an on-demand dataflow refresh can be triggered. When publishing a dataflow, an on-demand refresh is started if the dataflow publish operation is successful. On-demand refresh can also be triggered via [a pipeline that contains a dataflow activity](dataflow-activity.md).
 
 ## Scheduled refresh
 
-To automatically refresh a dataflow on a schedule, select **Scheduled Refresh** icon found in workspace list view. The refresh section is where you define the frequency and time slots to refresh a dataflow, up to 48 time slots per day. The following screenshot shows a daily refresh schedule on a twelve-hour interval.
+To automatically refresh a dataflow on a schedule, select **Scheduled Refresh** icon found in workspace list view:
 
-:::image type="content" source="media/concept-dataflow-refresh/schedule-dataflow-refresh.png" alt-text="Screenshot showing where to select refresh in the workspace list view.":::
+:::image type="content" source="media/concept-dataflow-refresh/schedule-dataflow-refresh.png" alt-text="Screenshot showing where to select scheduled refresh in the workspace list view.":::
+
+The refresh section is where you can define the frequency and time slots to refresh a dataflow, up to 48 times per day. The following screenshot shows a daily refresh schedule on a 12 hour interval.
+
+:::image type="content" source="media/concept-dataflow-refresh/Configure-Dataflow-Refresh-Schedule.png" alt-text="Screenshot showing where to select scheduled refresh in the workspace list view.":::
 
 ## Cancel refresh
 
@@ -42,10 +46,21 @@ Canceling a dataflow refresh is useful when you want to stop a refresh during pe
 
 To cancel a dataflow refresh, select **Cancel** icon found in workspace list or lineage views for a dataflow with in-progress refresh.
 
-:::image type="content" source="media/concept-dataflow-refresh/cancel-dataflow-refresh.png" alt-text="Screenshot showing where to select refresh in the workspace list view.":::
+:::image type="content" source="media/concept-dataflow-refresh/cancel-dataflow-refresh.png" alt-text="Screenshot showing where to configure dataflow refresh schedule in the dataflow settings page.":::
+
+Once a dataflow refresh is canceled, the dataflow's refresh history status is updated to reflect cancelation status: 
+
+:::image type="content" source="media/concept-dataflow-refresh/Canceled-Dataflow-Refresh-History.png" alt-text="Screenshot showing the dataflows refresh history view for a canceled dataflow refresh.":::
+
+### Refresh cancelation implications to output data
+
+When a dataflow refresh is stopped, either by an explicit cancel request or due to a failure in one of the queries being processed, different outcomes can be observed depending on the type of destination and when refresh was canceled. Here are the possible outcomes, for the two types of data destination for a query:
+
+1. Staging storage: Data from the last successful refresh is available.
+2. Destination storage: Data written up to the point of cancelation is available.
+
+Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 
 ## Related content
-
-TODO: Add your next step link(s)
 
 - [View refresh history and monitor your dataflows](dataflows-gen2-monitor.md)
