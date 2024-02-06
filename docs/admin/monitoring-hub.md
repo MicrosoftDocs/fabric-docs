@@ -58,6 +58,8 @@ Use the **Filter** button to filter the monitoring hub table results. You can us
     >[!NOTE]
     >Each Fabric item has a unique set of operations and statuses. To display consistent results, the monitoring hub might show a simplified version of an item's status. The exact status of an item, can be found in the [details panel](#view-details).
 
+* **Start time** - Select the time period for the table to display. You can select a predetermined period, or use *Customize* to personalize the time period.
+
 * **Item type** - Select the Fabric item types you want to table to display. When no item type is selected, item activities for all the item types are displayed.
 
 * **Submitted by** - Select the owner of the Fabric item that the table displays activities for. When no owner is selected, activities for all item owners are displayed.
@@ -67,6 +69,14 @@ Use the **Filter** button to filter the monitoring hub table results. You can us
 ### Take action
 
 Providing you have the right permissions for the Fabric item displayed in the monitoring hub table, you might be able to perform certain actions. The actions you can take depend on the type of item you're reviewing. To take action, select *More options* (**...**) next to the activity name, and from the menu, select the action you want to take.
+
+#### Historical runs
+
+You can view the history of a single Fabric item using the *Historical runs* option.
+
+Select *More options* (**...**) next to the activity name of the item you're interested in, and from the menu, select *Historical runs*. The tables displays up to 30 days of historical information for that item.
+
+To return to the main display, select *Back to main view*.
 
 ### View details
 
