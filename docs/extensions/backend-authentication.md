@@ -40,9 +40,9 @@ The main authentication checks performed for the SubjectAndAppToken are:
 
 * **Validation and parsing of the authorization header value**: This is done in the [FetchSubjectAndAppTokenTokenFromHeader](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. The token must start with the "SubjectAndAppToken1.0" prefix and include two tokens - `subjectToken` and `appToken`.
 
-* **AAD token properties validation**: Both `subjectToken` and `appToken` are validated for common AAD token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
+* **Entra token properties validation**: Both `subjectToken` and `appToken` are validated for common AAD token properties in the [ValidateAadTokenCommon](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthenticationService.cs#L102) method. These properties include token signature, token lifetime, token audience (workload app audience), and token version (1.0) and issuer.
 
-* **appToken properties validation**: The `appToken` should not have an `scp` claim but should have an `idtyp` claim with 'app' as the value. We also check that `tid` claim in the workload publisher tenant ID.
+* **appToken properties validation**: The `appToken` should not have an `scp` claim but should have an `idtyp` claim with *app* as the value. We also check that `tid` claim in the workload publisher tenant ID.
 
     Sample appToken claims:
 
@@ -112,15 +112,15 @@ Once it's been confirmed that the request originates from the Fabric service (vi
 
 ### Workload control requests
 
-Workload control APIs are special Fabric APIs that support workloads with their Fabric items lifecycle management. These APIs use the same SubjectAndAppToken1.0 authorization header format.
+Workload control APIs are special Fabric APIs that support workloads with their Fabric item lifecycle management. These APIs use the same SubjectAndAppToken1.0 authorization header format.
 
 `SubjectAndAppToken1.0 subjectToken="delegated token", appToken="S2S token"`
 
 When coming from the workload, the included tokens are:
 
-* `subjectToken`: This is a user delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric will verify that the user has the required permissions to perform the needed action.
+* `subjectToken`: This is a user-delegated token (obtained through the OBO flow) representing the user on whose behalf the operation is being performed. Fabric will verify that the user has the required permissions to perform the needed action.
 
-* `appToken`: This is a token specific to the workload application. Fabric will check that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher tenant.
+* `appToken`: This is a token specific to the workload application. Fabric will check that this is token is from the Entra app of the workload that the relevant Fabric item belongs to and that is on the workload publisher's tenant.
 
 See the `ValidatePermissions` method in [AuthorizationHandler](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/main/Backend/src/Services/AuthorizationHandler.cs).
 
