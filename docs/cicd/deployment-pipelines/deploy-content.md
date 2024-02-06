@@ -83,14 +83,6 @@ When reviewing the test and production stage cards, you can see the last deploym
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
 
-## Considerations and limitations
-
-* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
-
-* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
-
-* If you have a semantic model with configured deployment rules that hasn't been deployed, it's marked as *Different* since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
-
 ## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
