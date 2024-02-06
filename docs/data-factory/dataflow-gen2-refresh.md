@@ -38,7 +38,7 @@ To automatically refresh a dataflow on a schedule, select **Scheduled Refresh** 
 
 The refresh section is where you can define the frequency and time slots to refresh a dataflow, up to 48 times per day. The following screenshot shows a daily refresh schedule on a 12 hour interval.
 
-:::image type="content" source="media/concept-dataflow-refresh/Configure-Dataflow-Refresh-Schedule.png" alt-text="Screenshot showing where to select scheduled refresh in the workspace list view.":::
+:::image type="content" source="media/concept-dataflow-refresh/Configure-Dataflow-Refresh-Schedule.png" alt-text="Screenshot showing example of a 12 hour daily schedule refresh setting.":::
 
 ## Cancel refresh
 
