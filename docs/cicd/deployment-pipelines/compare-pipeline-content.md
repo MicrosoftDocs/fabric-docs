@@ -33,7 +33,7 @@ When two sequential stages are different, a **Compare** link appears underneath 
 
 :::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
 
-In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names.
+In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
 
 Items that aren't paired or that were changed get one of the following labels:
 
@@ -43,10 +43,10 @@ Items that aren't paired or that were changed get one of the following labels:
 
     Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
 
-- **Missing from** – This item appears in the target stage, but not in the source stage.
+- **Missing from** – This item appears in the target stage, but not in the source stage. These items are not impacted by the deployment.
 
-    >[!NOTE]
-    >Deployment will not impact *missing from* items.
+> [!NOTE]
+> If you make changes to a folder but not the items in it, such as moving its location or renaming it, the items treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
 
 ## Review changes to paired items
 

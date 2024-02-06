@@ -20,7 +20,7 @@ You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelin
 
 If you already have a workspace that you'd like to use with a specific stage, instead of deploying you can [assign](assign-pipeline.md) that workspace to the appropriate stage.
 
-When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace.
+When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace. The folder structure is also kept. If you have items in a folder in the source stage, a folder is created in the target stage. Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
 
 Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
 
@@ -46,12 +46,22 @@ If you don't want to deploy everything from that stage, you can select specific 
 
 Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
+Individual folders can't be deployed manually. Their deployment is triggered automatically when at least one of their items is deployed.
+
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
 >[!NOTE]
 >
 > * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a semantic model will fail, unless the semantic model already exists in the target stage.
 > * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a semantic model or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
+
+When deploying workspaces that contain folders, the following rules apply:
+
+* Items of the same name and type are paired. If there are two items with the same name and type in a workspace, then the items are paired to items in the target stage only if the path is the same (they're in the same folder).
+* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
+* Individual folders can't be deployed manually in deployment. Their deployment is triggered automatically when at least one of their items is deployed.
+* Deploying one item out of several in a folder also updates the structure of the items which aren't deployed in the target stage even though the items themselves aren't be deployed.
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
 ### Review your deployment and leave a note
 
@@ -72,6 +82,14 @@ To deploy content to the next stage in the deployment pipeline, select the deplo
 When reviewing the test and production stage cards, you can see the last deployment time. This time indicates the last time content was deployed to the stage.
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
+
+## Considerations and limitations
+
+* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
+
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
+
+* If you have a semantic model with configured deployment rules that hasn't been deployed, it's marked as *Different* since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
 
 ## Related content
 

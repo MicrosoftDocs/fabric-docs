@@ -145,6 +145,14 @@ Since folders are considered part of the item’s name, items moved into a diffe
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
 
+* Individual folders can't be deployed manually in deployment pipelines. Their deployment is triggered automatically when at least one of their items is deployed.
+
+* The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
+
+* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
+
+* Deploying one item out of several in a folder also updates the structure of the items which aren't deployed in the target stage even though the items themselves aren't be deployed.
+
 ## Supported items
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
