@@ -135,6 +135,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: OneLake storage isn't billed for paused capacities
+      href: known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md
     - name: Relationships in the default semantic model get dropped
       href: known-issues/known-issue-592-relationships-default-semantic-model-dropped.md
     - name: Reflex item creation fails due to a token creation failure
@@ -151,8 +153,12 @@ items:
       href: known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md
     - name: Making model changes to a semantic model might not work
       href: known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md
+    - name: Failed to publish Dataflow Gen2
+      href: known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md
     - name: Feature Usage and Adoption report activity missing
       href: known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md
+    - name: Dataflow Gen1 admin switch affects Dataflow Gen2
+      href: known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md
     - name: Creating or updating Fabric items is blocked
       href: known-issues/known-issue-530-creating-updating-fabric-items-blocked.md
     - name: Data warehouse with more than 20,000 tables fails to load
@@ -169,6 +175,8 @@ items:
       href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
     - name: Selecting view account link in account manager shows wrong page
       href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
+    - name: Refresh history reports in progress for some tables that failed
+      href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
     - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
     - name: Fabric items can't be created in a workspace moved to a capacity in a different region

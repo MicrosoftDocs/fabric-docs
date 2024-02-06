@@ -54,7 +54,7 @@ Learn how to create and save several types of Power BI reports.
 
 1. Build a **Maps** visual:
 
-   1. On the **Visualizations** pane, select the **ArcGIS Maps for Power BI** visual.
+   1. On the **Visualizations** pane, select the **Azure Map** visual.
 
       :::image type="content" source="media\tutorial-power-bi-report\visualizations-pane-arcgis-maps.png" alt-text="Screenshot of the Visualizations pane showing where to select the ArcGIS Maps for Power BI option.":::
 

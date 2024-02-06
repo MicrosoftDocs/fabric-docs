@@ -12,7 +12,7 @@ ms.date: 12/31/2023
 
 # Install the Microsoft Fabric capacity metrics app
 
-The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Power BI Premium capacities. Use this guide to install the app.
+The *Microsoft Fabric Capacity Metrics* app, also known as the *metrics app*, is designed to provide monitoring capabilities for Fabric and Power BI Premium capacities. Use this guide to install the app.
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ To install the metrics app, you need to be a capacity admin.
 
 Follow the steps according to the type of installation you need. If you're installing the app in a government cloud environment, use the links in [government clouds](#government-clouds).
 
-To avoid throttling due to capacity overutilization, install the app in a workspace with [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license).
+To avoid throttling due to capacity overutilization, install the app in a workspace with a [Pro license](/power-bi/fundamentals/service-features-license-type#pro-license).
 
 # [First time installation](#tab/1st)
 
@@ -72,11 +72,17 @@ To upgrade a previous installation of the *Microsoft Fabric Capacity Metrics* ap
 
 2. In the **Update app** window, select one of the following:
 
-    * **Update the workspace and the app** - Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It will remove the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
+    * **Update the workspace and the app**
 
-    * **Update only workspace content without updating the app** - Updates the workspace but doesn't update the app. Select this option to update the app's workspace without upgrading the app.
+    Updates your current app and the workspace it resides in. This is the default option for upgrading the app. It will remove the current version and its workspace and replace them with the new version of the app and a corresponding workspace.
 
-    * **Install another copy of the app into a new workspace** - Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you'll need to provide a name for the new workspace.
+    * **Update only workspace content without updating the app**
+
+    Updates the workspace but doesn't update the app. Select this option to update the app's workspace without upgrading the app.
+
+    * **Install another copy of the app into a new workspace**
+
+    Creates a new workspace and installs the new version of the app in this workspace. Select this option if you want to keep the old version of the app with the new one. This option creates another workspace for the new app version and installs the app in the newly created workspace. If you select this option, you'll need to provide a name for the new workspace.
 
 3. Select **Install**.
 
