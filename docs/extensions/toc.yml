@@ -1,13 +1,20 @@
 items:
 - name: Extensions documentation
-  href: index.yml
 - name: Overview
   href: extensibility-overview.md
-- name: Frontend
+- name: Frontend configuration guide
   href: extensibility-frontend.md
-- name: Backend
+- name: Backend configuration guide
   href: extensibility-backend.md
 - name: Authentication overview
   href: authentication-overview.md
-- name: Authentication API
-  href: authentication-api.md
+- name: Authentication setup guide
+  href: authentication-setup.md
+- name: Authentication JavaScript API
+  href: authentication-javascript-api.md
+- name: Backend authentication and authorization
+  href: backend-authentication.md
+- name: Frontend manifest
+  href: frontend-manifest.md
+- name: Onboarding to the Fabric monitoring hub
+  href: monitoring-hub.md
