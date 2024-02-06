@@ -15,7 +15,7 @@ ms.search.form: Deployment pipelines operations
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
 
-Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. The item name includes the path, so items in different folders are not paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item will override its paired item metadata, including its name, if it was changed.
+Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there are two items with the same name and type in a workspace, then the items are paired to items in the target stage only if the path is the same (they're in the same folder). The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item will override its paired item metadata, including its name, if it was changed.
 
 ## Compare stages
 
