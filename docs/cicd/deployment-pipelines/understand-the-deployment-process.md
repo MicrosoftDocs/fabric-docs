@@ -129,9 +129,6 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 ## Folders in deployment pipelines (preview)
 
-> [!NOTE]
-> This section only applies if you have the folder feature enabled in your workspace. To enable the feature, attach `&subfolderInWorkspace=1` to the URL in your browser address bar. For more information, see [Enable folders](./manage-workspace-content.md#enable-folders).
-
 When you deploy content from a workspace that has folders, the folder hierarchy is automatically applied to the deployed items in the target stage. Learn more on [Deployment pipelines](get-started-with-deployment-pipelines.md).
 
 ### Folder representation
