@@ -153,22 +153,26 @@ In addition to unattended scheduled jobs, a workload can run a job on demand or 
 > 'getArtifactJobHistory' returns the job with the status currently stored in Fabric. As we currently rely solely on polling,  be aware that the status might not be the most up-to-date. If you require your UI to reflect the most accurate status as soon as possible, we recommend obtaining the status directly from your backend.
 
 ### Integration with monitoring hub
-Once the data is ready, the artifact jobs will automatically show up in the monitoring hub. 
-The next step would be to add your artifact type to the filter pane and config and implement available actions that user can take against the jobs.
+
+Once the data is ready, the artifact jobs will automatically show up in the monitoring hub. The next step is to add your artifact type to the filter pane and config and implement available actions that a user can take against the jobs.
 
 #### Enable your artifact in monitoring hub filter pane.
-To add your artifact into the filter pane, you just need to define a new property in the artifact Frontend manifest: '"supportedInMonitoringHub": true'
 
-#### Integrate with Job quick actions.
-![actopms](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/bc2f63e8-57df-4394-8c43-3e8ea95d9829)
+To add your artifact to the filter pane, you just need to define a new property in the artifact Frontend manifest: '"supportedInMonitoringHub": true'.
 
-There is a set of operations that user can execute against a job, like cancel, retry, and get details.  
-The workload team will decide which one they want to enable by setting 'artifactJobConfig' property in the artifact Frontend manifest. If not set, the icons will not be visible. 
+#### Integrate with Job quick actions
 
-For example, below is the config we added to our sample artifact that supports all job actions.   
-When a user clicks on cancel icon of sample artifact job, we will call the provided action “artifact.job.cancel” with the job related context to the extension “Fabric.WorkloadSample” which is implemented by workload to actually cancel the job.
+:::image type="content" source="./media/monitoring-hub/monitoring-hub-quick-actions.png" alt-text="Screenshot showing jobs quick actions buttons in the monitoring hub.":::
 
-Fabric platform is also expecting a response from this action to notify the user with results.
+There is a set of operations that user can execute against a job, such as cancel, retry, and get details.
+ 
+The workload team will decide which one they want to enable by setting the 'artifactJobConfig' property in the artifact Frontend manifest. If not set, the icons will not be visible.
+
+For example, the config we added to our sample artifact that supports all job actions is shown below.
+
+When a user selects the cancel icon of the sample artifact job, we will call the provided action “artifact.job.cancel” with the job related context to the extension "Fabric.WorkloadSample" which is implemented by the workload to actually cancel the job.
+
+The Fabric platform also expects a response from this action to notify the user with the results.
 
 ```json
 "artifactJobActionConfig": {
@@ -190,29 +194,34 @@ Fabric platform is also expecting a response from this action to notify the user
 ```
 
 #### Job Details pane
-![Details](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/d5bd9595-e636-4326-8a73-ab67caa88958)
 
-When the workload team registers the action for detailed information, Fabric is expecting the workload action to return the data in certain format so that Fabric will display that in the side panel. 
-Currently, key value pairs in plain text or hyperlink is supported. In the future, more options will be available.
+:::image type="content" source="./media/monitoring-hub/monitoring-hub-job-details-pane.png" alt-text="Screenshot showing the job details pane in the monitoring hub.":::
 
-For an example of this frontend manifest properties, refer to [localWorkloadManifest.json](Frontend/Manifests/localWorkloadManifest.json).
+When the workload team registers the action for detailed information, Fabric expects the workload action to return the data in a certain format so that Fabric can display that information in the side panel.
 
-For an example of handling the job actions, refer to [index.worker.ts](Frontend/src/index.worker.ts). and search for actions starting with 'artifact.job'
+Currently, key value pairs in plain text or hyperlink is supported.
+
+For an example of this frontend manifest properties, refer to [localWorkloadManifest.json](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/Manifests/localWorkloadManifest.json
+
+For an example of handling the job actions, refer to [index.worker.ts](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/index.worker.ts). and search for actions starting with 'artifact.job'.
 
 ### Recent runs
+
 In addition to viewing jobs in the monitoring hub, Fabric also offers a shared user experience to display the recent runs of a specific artifact.
 
-- Entry Points:
-1. Context menu -> Recent runs
-<img width="387" alt="recent-runs-list" src="https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/a8c78afd-d2d3-4120-9ff1-27849d81d290">
+Entry Points:
 
+* **Context menu** > **Recent runs**
 
-2. Using extensionClient.artifactRecentRuns.open.
+    :::image type="content" source="./media/monitoring-hub/monitoring-hub-recent-runs.png" alt-text="{alt-text}":::
+
+* Using `extensionClient.artifactRecentRuns.open`.
 
 **Onboarding**
 
 **Step 1: Add recentRuns Context Menu Item**
-In order to show the recent runs button in the artifact menu, you will need to add a new entry into the 'contextMenuItems' property in the artifact frontend manifest like this:
+
+In order to show the recent runs button in the artifact menu, add a new entry into the 'contextMenuItems' property in the artifact frontend manifest, like this:
 
 ```json
 {
@@ -220,8 +229,9 @@ In order to show the recent runs button in the artifact menu, you will need to a
 }
 ```
 
-**Step 2: Add Artifact recentRun Settings**
-Add a new 'recentRun' entry to artifact settings property in the frontend manifest.
+**Step 2: Add artifact recentRun settings**
+
+Add a new 'recentRun' entry to the artifact settings property in the frontend manifest.
 
 ```json
 "recentRun": {
@@ -229,10 +239,12 @@ Add a new 'recentRun' entry to artifact settings property in the frontend manife
 }
 ```
 
-
 ### Jobs integration in the sample artifact ribbon.
-As part of our UI workload sample, we added a section in the artifact ribbon specifically dedicated to jobs. 
+
+As part of our UI workload sample, we added a section in the artifact ribbon specifically dedicated to jobs.
+
+:::image type="content" source="./media/monitoring-hub/artifact-tab.png" alt-text="Screenshot showing the artifact tab in the Fabric UI.":::
+
 ![artiafctTab](https://github.com/microsoft/Microsoft-Fabric-developer-sample/assets/26460388/751b6b86-7cd3-46ad-97d9-42d83e27d79d)
 
-
-For an example of how this ribbon was implemeted, refer to [ArtifactTabToolbar.tsx](Frontend/src/components/SampleWorkloadRibbon/ArtifactTabToolbar.tsx).
+For an example of how this ribbon was implemeted, refer to [ArtifactTabToolbar.tsx](https://github.com/microsoft/Microsoft-Fabric-developer-sample/blob/f51c6d6faf178e37e8b0d5b8fc6063eec481b07d/Frontend/src/components/SampleWorkloadRibbon/ArtifactTabToolbar.tsx).
