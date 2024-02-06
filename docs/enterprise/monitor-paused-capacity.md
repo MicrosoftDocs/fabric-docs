@@ -5,12 +5,12 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: how-to
 ms.custom:
-ms.date: 01/22/2024
+ms.date: 02/06/2024
 ---
 
 # Monitor a paused capacity
 
-To monitor [paused capacities](pause-resume.md), use the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
+To monitor [paused capacities](pause-resume.md), use the latest version of the [Microsoft Fabric Capacity Metrics app](metrics-app.md).
 
 ## View the paused capacity events
 
