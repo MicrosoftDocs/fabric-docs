@@ -7,6 +7,7 @@ author: YaelSchuster
 ms.topic: how-to
 ms.date: 02/06/2024
 ---
+# Get data from Kafka
 
 [!INCLUDE [ingest-data-kafka](~/../kusto-repo/data-explorer/includes/cross-repo/ingest-data-kafka.md)]
 
