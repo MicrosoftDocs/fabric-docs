@@ -54,7 +54,10 @@ The [AIsample - R Fraud Detection.ipynb](https://github.com/microsoft/fabric-sam
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use inline installation resources, for example `install.packages` and `devtools::install_version`, for that installation. You can also install the required libraries in the workspace. Navigate to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
+
+* Use inline installation resources, for example `install.packages` and `devtools::install_version`, to install in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 In this tutorial, use `install.packages()` to install the imbalanced-learn library (imported as `imbalance`). Set `quiet` to `TRUE` to make output more concise:
 
