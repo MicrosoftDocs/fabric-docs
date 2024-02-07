@@ -55,12 +55,14 @@ The [AISample - Predictive Maintenance](https://github.com/microsoft/fabric-samp
 
 For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install libraries, in your current notebook only
-* Install libraries directly in your workspace, so that all notebooks in your workspace can use those libraries
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
-For more information about library installation, see [Install Python libraries](use-ai-samples.md#install-python-libraries).
+For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
-For this tutorial, you use `%pip install` to install the `imblearn` library in your notebook. The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other notebook cells.
+> [!NOTE]
+> The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
+
 
 ```python
 # Use pip to install imblearn
@@ -380,7 +382,7 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-From the output, both the training and testing datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
+From the output, both the training and test datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
 
 ### Train a logistic regression classifier
 
@@ -508,7 +510,7 @@ for run_name, run_id in runs.items():
 print(df_metrics)
 ```
 
-Although XGBoost yields the best results on the training set, it performs poorly on the testing data set. That poor performance indicates over-fitting. The logistic regression classifier performs poorly on both training and test datasets. Overall, random forest strikes a good balance between training performance and avoidance of overfitting.
+Although XGBoost yields the best results on the training set, it performs poorly on the test data set. That poor performance indicates over-fitting. The logistic regression classifier performs poorly on both training and test datasets. Overall, random forest strikes a good balance between training performance and avoidance of overfitting.
 
 In the next section, choose the registered random forest model, and perform a prediction with the [PREDICT](https://aka.ms/fabric-predict) feature:
 
@@ -523,7 +525,7 @@ model = MLFlowTransformer(
 )
 ```
 
-With the `MLFlowTransformer` object you created to load the model for inferencing, use the Transformer API to score the model on the testing dataset:
+With the `MLFlowTransformer` object you created to load the model for inferencing, use the Transformer API to score the model on the test dataset:
 
 ```python
 predictions = model.transform(spark.createDataFrame(X_test))

@@ -54,9 +54,12 @@ The [AIsample - Bank Customer Churn.ipynb](https://github.com/microsoft/fabric-s
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also install the required libraries into the workspace. Navigate to **Library management** in the workspace settings.
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-In this tutorial, you use `%pip install` to install `imblearn`.
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+
+For this tutorial, use `%pip install` to install the `imblearn` library in your notebook. 
 
 > [!NOTE]
 > The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
@@ -386,7 +389,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, confusion_matrix, recall_score, roc_auc_score, classification_report
 ```
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
 ```python
 y = df_clean["Exited"]
@@ -495,7 +498,7 @@ load_model_rfc2_sm = mlflow.sklearn.load_model(f"runs:/{rfc2_sm_run_id}/model")
 load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/model")
 ```
 
-### Assess the performance of the saved models on the testing dataset
+### Assess the performance of the saved models on the test dataset
 
 ```python
 ypred_rfc1_sm = load_model_rfc1_sm.predict(X_test) # Random forest with maximum depth of 4 and 4 features
