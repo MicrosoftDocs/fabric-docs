@@ -54,9 +54,12 @@ The sample **Title genre classification** notebook accompanies this tutorial.
 
 ## Step 1: Install custom libraries
 
-For machine learning model development or ad-hoc data analysis, you might need to install a custom library for your Apache Spark session. Use `%pip install` or `%conda install` for that installation. You can also have your workspace admin [Set default libraries for the workspace](use-ai-samples.md#set-default-libraries-for-the-workspace).
+For machine learning model development or ad-hoc data analysis, you might need to quickly install a custom library for your Apache Spark session. You have two options to install libraries.
 
-For the classification model, use the wordcloud library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install wordcloud.
+* Use the inline installation capabilities (`%pip` or `%conda`) of your notebook to install a library, in your current notebook only.
+* Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+
+For the classification model, use the `wordcloud` library to represent the word frequency in text, where the size of a word represents its frequency. For this tutorial, use `%pip install` to install `wordcloud` in your notebook.
 
 > [!NOTE]
 > The PySpark kernel restarts after `%pip install` runs. Install the needed libraries before you run any other cells.
