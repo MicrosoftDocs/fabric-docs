@@ -398,7 +398,7 @@ library(randomForest)
 library(lightgbm)
 ```
 
-Prepare the training and testing datasets:
+Prepare the training and test datasets:
 
 ```r
 set.seed(SEED)
@@ -507,7 +507,7 @@ print(paste0("The auc is ", roc_auc_lgbm_sm))
 
 ## Step 5: Evaluate and save the final machine learning model
 
-Assess the performance of the saved models on the testing dataset:
+Assess the performance of the saved models on the test dataset:
 
 ```r
 ypred_rfc1_sm <- predict(rfc1_sm, X_test, type = "response")

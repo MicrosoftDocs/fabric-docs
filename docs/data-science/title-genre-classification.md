@@ -299,7 +299,7 @@ display(vec_df.limit(20))
 
 With the data in place, define the model. In this section, you train a logistic regression model to classify the vectorized text.
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
 ```python
 # Split the dataset into training and testing
@@ -356,7 +356,7 @@ crossval = CrossValidator(
 
 ### Evaluate the model
 
-We can evaluate the models on the testing dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and testing datasets.
+We can evaluate the models on the test dataset, to compare them. A well trained model should demonstrate high performance, on the relevant metrics, when run against the validation and test datasets.
 
 ```python
 def evaluate(model, df):
@@ -380,7 +380,7 @@ with mlflow.start_run(run_name="lr"):
     best_index = 0
     for idx, model in enumerate(models.subModels[0]):
         with mlflow.start_run(nested=True, run_name=f"lr_{idx}") as run:
-            print("\nEvaluating on testing data:")
+            print("\nEvaluating on test data:")
             print(f"subModel No. {idx + 1}")
             prediction, log_metric = evaluate(model, test_df)
 

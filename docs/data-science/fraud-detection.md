@@ -244,9 +244,9 @@ In this section, you first explore the raw data and high-level statistics. Then,
 
 Here, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
-Before training, split the data into the training and testing datasets:
+Before training, split the data into the training and test datasets:
 
 ```python
 # Split the dataset into training and testing sets
@@ -260,7 +260,7 @@ feature_cols = [c for c in df_pd.columns.tolist() if c not in [TARGET_COL]]
 
 The `imblearn` library uses the Synthetic Minority Oversampling Technique (SMOTE) approach to address the problem of imbalanced classification. Imbalanced classification happens when too few examples of the minority class are available, for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class.
 
-Apply SMOTE only to the training dataset, instead of the testing dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
+Apply SMOTE only to the training dataset, instead of the test dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
 
 ```python
 # Apply SMOTE to the training data

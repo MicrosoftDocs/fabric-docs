@@ -380,7 +380,7 @@ with mlflow.start_run() as run:
     print("Recall_test:", recall_test)
 ```
 
-From the output, both the training and testing datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
+From the output, both the training and test datasets yield an F1 score, accuracy and recall of about 0.9 when using the random forest classifier.
 
 ### Train a logistic regression classifier
 
@@ -508,7 +508,7 @@ for run_name, run_id in runs.items():
 print(df_metrics)
 ```
 
-Although XGBoost yields the best results on the training set, it performs poorly on the testing data set. That poor performance indicates over-fitting. The logistic regression classifier performs poorly on both training and test datasets. Overall, random forest strikes a good balance between training performance and avoidance of overfitting.
+Although XGBoost yields the best results on the training set, it performs poorly on the test data set. That poor performance indicates over-fitting. The logistic regression classifier performs poorly on both training and test datasets. Overall, random forest strikes a good balance between training performance and avoidance of overfitting.
 
 In the next section, choose the registered random forest model, and perform a prediction with the [PREDICT](https://aka.ms/fabric-predict) feature:
 
@@ -523,7 +523,7 @@ model = MLFlowTransformer(
 )
 ```
 
-With the `MLFlowTransformer` object you created to load the model for inferencing, use the Transformer API to score the model on the testing dataset:
+With the `MLFlowTransformer` object you created to load the model for inferencing, use the Transformer API to score the model on the test dataset:
 
 ```python
 predictions = model.transform(spark.createDataFrame(X_test))
