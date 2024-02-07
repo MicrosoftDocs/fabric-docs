@@ -129,7 +129,7 @@ To examine the differences between the two pipelines before you deploy, see [com
 
 When you're working in a deployment pipeline, different stages may have different configurations. For example, each stage can have different databases or different query parameters. The development stage might query sample data from the database, while the test and production stages query the entire database.
 
-When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content, while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, content deployed from test to production, will inherit the value as defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
+When you deploy content between pipeline stages, configuring deployment rules enables you to allow changes to content, while keeping some settings intact. For example, if you want a semantic model in a production stage to point to a production database, you can define a rule for this. The rule is defined in the production stage, under the appropriate semantic model. Once the rule is defined, redeploy teh content. The deployed content will inherit the value defined in the deployment rule, and will always apply as long as the rule is unchanged and valid.
 
 [Read about how to define deployment rules.](create-rules.md)
 
