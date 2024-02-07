@@ -15,7 +15,7 @@ ms.search.form: Deployment pipelines operations
 
 Before you deploy content to a different stage, it can be helpful to see the differences between the two stages. The deployment pipeline home page compares consecutive deployment stages and indicates if there are any differences between them. Use the **Compare** and **Change review** buttons to display the content of each pipeline and see exactly which items are different and where those differences are.
 
-Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there are two items with the same name and type in a workspace, then the items are paired to items in the target stage only if the path is the same (they're in the same folder). The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item will override its paired item metadata, including its name, if it was changed.
+Deployment pipelines pairs items of two neighboring stages by combining item type and item name, to know which items to compare and to override. Items of the same name and type are paired. If there's more than one item with the same name and type in a workspace, then the items are paired if their paths are the same. If the path isn't the same, the items aren't paired. The pairing is created only once, during the first deployment of one stage to another, or during assignment of a workspace. On subsequent deployments, each deployed item overrides its paired item metadata, including its name, if it was changed.
 
 ## Compare stages
 
@@ -33,7 +33,7 @@ When two sequential stages are different, a **Compare** link appears underneath 
 
 :::image type="content" source="media/compare-pipeline-content/compare.png" alt-text="A screenshot showing the compare option, which expands the compare view and allows comparing items between deployment pipeline stages." lightbox="media/compare-pipeline-content/compare.png":::
 
-In the comparison display, items are arranged alphabetically by item type. Paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
+In the comparison display, paired items are next to each other, even if they have different names. All items in the workspace are listed in a flat list, regardless of their folder structure. Hover over an item to see its path and name.
 
 Items that aren't paired or that were changed get one of the following labels:
 
@@ -43,10 +43,10 @@ Items that aren't paired or that were changed get one of the following labels:
 
     Semantic models with configured deployment rules that haven't been deployed, are also marked as *different*, since deployment rules aren't applied until the semantic models are deployed from the source stage to the target stage.
 
-- **Missing from** – This item appears in the target stage, but not in the source stage. These items are not impacted by the deployment.
+- **Missing from** – This item appears in the target stage, but not in the source stage. Deployment doesn't affect these items.
 
 > [!NOTE]
-> If you make changes to a folder but not the items in it, such as moving its location or renaming it, the items treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
+> If you make changes to a folder, such as moving its location or renaming it, even if you didn't change the items in it, the items are still treated as if you renamed them. Therefore, when comparing pipelines the items are labeled as *Different*.
 
 ## Review changes to paired items
 
@@ -100,7 +100,7 @@ In both comparison displays, whether inline or side-by-side, the differences are
 
 The two versions of the content shown in the change review window are modified in the following ways to make the comparison easier:
 
-- Data source and parameter rules are applied to the source item so that the data source you see is the one that will be deployed.
+- Data source and parameter rules are applied to the source item so that the data source you see is the one that's deployed.
 - Some fields that don't indicate differences (for example, timestamps and role membership) are removed from both items.
 - System managed tables, like auto aggregate, are removed.
 - Items are sorted so that fields and tables appear in the same order.
@@ -116,7 +116,7 @@ Close the window when you finish examining the differences and deploy to the nex
   - Item type isn't yet supported.
   - Item has an unknown status because the comparison process wasn't completed.
 
-- The content in the change review window may look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
+- The content in the change review window might look a bit different than the original version since it was [modified before running the comparison](#file-modifications-before-comparison).
 
 ## Related content
 

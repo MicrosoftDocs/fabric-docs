@@ -129,19 +129,19 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 ## Folders in deployment pipelines (preview)
 
-When you deploy content from a workspace that has folders, the folder hierarchy is automatically applied to the deployed items in the target stage. Learn more on [Deployment pipelines](get-started-with-deployment-pipelines.md).
+[Folders]() in a workspace enable users to efficiently organize and manage workspace items in a familiar way.
+When you deploy content that contains folders to a different stage, the folder hierarchy of the applied items is automatically applied.
 
-### Folder representation
+### Folders representation
 
-Since a deployment is of items only, workspace content is shown as a flat list of its items (only the supported ones), and an item’s full path is shown when hovering over its name on the list.
-Folders can be seen and managed only on the workspace page.
-In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, and its path is changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item in the next stage - the paired item will be moved as well to folder B. If folder B does not exist in the target stage, it will be created in its workspace first.
+Since a deployment is of items only, workspace content is shown in Deployment pipelines as a flat list of items. An item’s full path is shown when hovering over its name on the list.
+In Deployment pipelines, folders are considered part of an item’s name (an item name includes its full path). When an item is deployed, after its path was changed (moved from folder A to folder B, for example), then Deployment pipelines applies this change to its paired item during deployment - the paired item will be moved as well to folder B. If folder B doesn't exist in the stage we're deploying to, it will be created in its workspace first. Folders can be seen and managed only on the workspace page.
 
 :::image type="content" source="media/understand-the-deployment-process/folder-path.png" alt-text="Screenshot showing the ful pathname of an item inside a folder. The name includes the name of the folder.":::
 
-### Identify moved items
+### Identify items that were moved to different folders
 
-Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, the option next to the label to open a *Change review* window which presents the schema changes, is disabled, and hovering over it shows a note saying the change is a *settings* change (like *rename*). That is because compared to their paired items on the next stage, the change is yet to be deployed.
+Since folders are considered part of the item’s name, items moved into a different folder in the workspace, are identified on Deployment pipelines page as *Different* in *Compare* mode. Moreover, unless there is also a schema change, the option next to the label to open a *Change review* window which presents the schema changes, is disabled. Hovering over it shows a note saying the change is a *settings* change (like *rename*). This is because compared to their paired items on the source stage, the change is not yet deployed.
 
 :::image type="content" source="media/understand-the-deployment-process/moved-folder-item.png" alt-text="Screenshot showing the compare changes screen of with an item in one stage that was moved to a different folder.":::
 

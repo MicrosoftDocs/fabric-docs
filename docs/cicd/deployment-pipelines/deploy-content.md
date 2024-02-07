@@ -46,8 +46,6 @@ If you don't want to deploy everything from that stage, you can select specific 
 
 Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
-Individual folders can't be deployed manually. Their deployment is triggered automatically when at least one of their items is deployed.
-
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
 >[!NOTE]
@@ -58,9 +56,9 @@ Individual folders can't be deployed manually. Their deployment is triggered aut
 When deploying workspaces that contain folders, the following rules apply:
 
 * Items of the same name and type are paired. If there are two items with the same name and type in a workspace, then the items are paired to items in the target stage only if the path is the same (they're in the same folder).
-* Since a folder is deployed only if one of its items is deployed, an empty folder can't be deployed.
-* Individual folders can't be deployed manually in deployment. Their deployment is triggered automatically when at least one of their items is deployed.
-* Deploying one item out of several in a folder also updates the structure of the items which aren't deployed in the target stage even though the items themselves aren't be deployed.
+* Since a folder is deployed only if one or more of its items is deployed, an empty folder can't be deployed.
+* Individual folders can't be deployed manually in deployment. Their deployment is triggered automatically when one or more of their items is deployed.
+* Deploying only some items in a folder updates the *structure* of all items in the folder in the stage being deployed to, even though the items themselves aren't deployed.
 * The folder hierarchy of paired items is updated only during deployment. During assignment, after the pairing process, the hierarchy of paired items isn't updated yet.
 
 ### Review your deployment and leave a note
