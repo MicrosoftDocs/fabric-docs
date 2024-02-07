@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a recommendation system'
 description: This tutorial shows the data engineering and data science workflow for building a system that provides online book recommendations.
-ms.reviewer: fsolomon
+ms.reviewer: lagayhar
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
