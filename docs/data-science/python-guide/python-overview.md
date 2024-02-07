@@ -35,7 +35,7 @@ To learn more about notebooks within [!INCLUDE [product-name](../../includes/pro
 
 Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library in-line into your notebook session or your workspace admin can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
 
-To learn more about how to manage Python libraries, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
+To learn more about library management in Microsoft Fabric, see [manage Apache Spark libraries](../../data-engineering/library-management.md).
 
 ## Notebook utilities
 
