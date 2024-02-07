@@ -10,7 +10,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 02/07/2024
 LocalizationGroup: Administration
 ---
 
@@ -22,15 +22,15 @@ Sharing settings are also managed through these settings. You can determine how 
 
 <a name='allow-microsoft-entra-guest-users-to-access-microsoft-fabric'></a>
 
-## Allow Microsoft Entra guest users to access Microsoft Fabric
+## Guest users can access Microsoft Fabric
 
-When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Power BI. If you turn off this setting, B2B guest users receive an error when trying to access Power BI. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Power BI.
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
 
 To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-## Invite external users to your organization
+## Users can invite guest users to collaborate through item sharing and permissions
 
-This setting helps organizations choose whether new external users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+This setting helps organizations choose whether new guest users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
 
 To invite external users to your organization, the user must also have the Microsoft Entra Guest Inviter role. Once invited, external users become Microsoft Entra B2B guest users. This setting only controls the ability to invite through Fabric.
 
@@ -41,9 +41,9 @@ To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure
 
 <a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
 
-## Allow Microsoft Entra guest users to edit and manage content in the organization
+## Users can see guest users in lists of suggested people
 
-This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled. 
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
 To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
