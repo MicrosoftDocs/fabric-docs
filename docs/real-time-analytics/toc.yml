@@ -87,7 +87,7 @@ items:
       - name: Apache Flink
         href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
       - name: Apache Kafka
-        href: /azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-kafka.md
       - name: Apache Log4J 2
         href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Apache Spark
