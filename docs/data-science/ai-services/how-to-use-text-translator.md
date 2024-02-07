@@ -218,69 +218,6 @@ response = requests.get(service_url, headers=post_headers)
 printresponse(response)
 ```
 
-## Language Detection
-
-# [Rest API](#tab/rest)
-
-
-You can utilize the language detection operation if you require translation but are unsure about the text language.
-
-``` python
-service_url = prebuilt_AI_base_host + "detect?api-version=3.0"
-post_body = [
-    {"Text":"こんにちは"},
-    {"Text":"さようなら"}
-]
-
-post_headers["x-ms-workload-resource-moniker"] = str(uuid.uuid1())
-response = requests.post(service_url, json=post_body, headers=post_headers)
-
-# Output all information of the request process
-printresponse(response)
-```
-
-```
-
-    HTTP 200
-    [
-      {
-        "language": "ja",
-        "score": 1.0,
-        "isTranslationSupported": true,
-        "isTransliterationSupported": true
-      },
-      {
-        "language": "ja",
-        "score": 1.0,
-        "isTranslationSupported": true,
-        "isTransliterationSupported": true
-      }
-    ]
-
-```
-
-# [SynapseML](#tab/synapseml)
-
-
-You can utilize the language detection operation if you require translation but are unsure about the text language.
-
-``` Python
-detectDf =  spark.createDataFrame([
-  (["Hello, what is your name?"],)
-], ["text",])
-
-detect = (Detect()
-    .setTextCol("text")
-    .setOutputCol("result"))
-
-result = detect.transform(detectDf)\
-        .withColumn("language", col("result.language"))
-
-display(result.select("text", "language"))
-```
-
----
-
 
 ## Related content
 
