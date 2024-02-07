@@ -41,6 +41,12 @@ To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure
 
 <a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
 
+## Guest users can browse and access Fabric content
+
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
+
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+
 ## Users can see guest users in lists of suggested people
 
 This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
