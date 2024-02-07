@@ -120,9 +120,6 @@ The following properties are **required**:
             - **Partition column name**: Select from the destination columns in schemas mapping. Supported data types are string, integer, boolean, and datetime. Format respects type conversion settings under the **Mapping** tab.
       - **Max concurrent connections**: The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
 
-    >[!Note]
-    > Data is written to Lakehouse Table in V-Order by default. For more information, go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order).
-
   - If you select **Files**:
     - **File path**: Select **Browse** to choose the file that you want to copy, or fill in the path manually.
 
