@@ -202,12 +202,12 @@ For highly imbalanced data, box plots might not show accurate insights. However,
 
 Here, you train a LightGBM model to classify the fraud transactions. You train a LightGBM model on both the imbalanced dataset and the balanced dataset. Then, you compare the performance of both models.
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
-Before training, split the data to the training and testing datasets:
+Before training, split the data to the training and test datasets:
 
 ```r
-# Split the dataset into training and testing datasets
+# Split the dataset into training and test datasets
 set.seed(42)
 train_sample_ids <- base::sample(seq_len(nrow(data_df)), size = floor(0.85 * nrow(data_df)))
 
@@ -219,7 +219,7 @@ test_df <- data_df[-train_sample_ids, ]
 
 Imbalanced classification has a problem. It has too few minority class examples for a model to effectively learn the decision boundary. Synthetic Minority Oversampling Technique (SMOTE) can handle this problem. SMOTE is the most widely used approach to synthesize new samples for the minority class. You can access SMOTE by using the `imbalance` library that you installed in Step 1.
 
-Apply SMOTE only to the training dataset, instead of the testing dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
+Apply SMOTE only to the training dataset, instead of the test dataset. When you score the model with the test data, you need an approximation of the model performance on unseen data in production. For a valid approximation, your test data relies on the original imbalanced distribution to represent production data as closely as possible.
 
 ```r
 # Apply SMOTE to the training dataset
@@ -263,7 +263,7 @@ library(lightgbm)
 # Get the ID of the label column
 label_col <- which(names(train_df) == "Class")
 
-# Convert the testing dataset for the model
+# Convert the test dataset for the model
 test_mtx <- as.matrix(test_df)
 test_x <- test_mtx[, -label_col]
 test_y <- test_mtx[, label_col]

@@ -386,7 +386,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, f1_score, precision_score, confusion_matrix, recall_score, roc_auc_score, classification_report
 ```
 
-### Prepare training and testing datasets
+### Prepare training and test datasets
 
 ```python
 y = df_clean["Exited"]
@@ -495,7 +495,7 @@ load_model_rfc2_sm = mlflow.sklearn.load_model(f"runs:/{rfc2_sm_run_id}/model")
 load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/model")
 ```
 
-### Assess the performance of the saved models on the testing dataset
+### Assess the performance of the saved models on the test dataset
 
 ```python
 ypred_rfc1_sm = load_model_rfc1_sm.predict(X_test) # Random forest with maximum depth of 4 and 4 features

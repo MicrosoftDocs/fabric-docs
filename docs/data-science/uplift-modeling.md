@@ -214,7 +214,7 @@ raw_df.groupby("treatment").agg(
 ).show()
 ```
 
-### Split the training and testing datasets
+### Split the training and test datasets
 
 ```python
 transformer = (
@@ -258,7 +258,7 @@ treatment_model = classifier.fit(treatment_train_df)
 control_model = classifier.fit(control_train_df)
 ```
 
-### Predict on the testing dataset
+### Predict on the test dataset
 
 ```python
 getPred = F.udf(lambda v: float(v[1]), FloatType())
@@ -332,7 +332,7 @@ test_ranked_df = test_ranked_df.withColumn(
 display(test_ranked_df.limit(20))
 ```
 
-Plot the uplift curve on the prediction of the testing dataset. Before plotting, you must convert the PySpark DataFrame to a pandas DataFrame.
+Plot the uplift curve on the prediction of the test dataset. Before plotting, you must convert the PySpark DataFrame to a pandas DataFrame.
 
 ```python
 def uplift_plot(uplift_df):
