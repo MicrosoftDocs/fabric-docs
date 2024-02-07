@@ -12,7 +12,7 @@ ms.date: 02/15/2024
 
 # Integrate Unity Catalog with OneLake
 
-This scenario shows how to synchronize Unity Catalog Delta tables to OneLake using shortcuts. After completing this tutorial, you’ll be able to automatically sync your Unity Catalog Delta tables to a Microsoft Fabric lakehouse.
+This scenario shows how to integrate Unity Catalog Delta tables to OneLake using shortcuts. After completing this tutorial, you’ll be able to automatically sync your Unity Catalog Delta tables to a Microsoft Fabric lakehouse.
 
 ## Prerequisites
 
@@ -25,9 +25,9 @@ Before you connect, you must have:
 
 ## Set up your Cloud Storage connection
 
-Check if your Unity Catalog tables using Azure Data Lake Storage Gen2 (ADLS Gen2), Amazon S3 or Google Cloud Storage. This Cloud storage connection is used by OneLake shortcuts. To create a Cloud connection to the appropriate Unity Catalog storage location:
+First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen2) your Unity Catalog tables are using. This Cloud storage connection is used by OneLake shortcuts. To create a Cloud connection to the appropriate Unity Catalog storage location:
 
-1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2-overview.md).
+1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2-overview.md).
 
 2. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
 
@@ -35,7 +35,7 @@ Check if your Unity Catalog tables using Azure Data Lake Storage Gen2 (ADLS Gen2
 
 Once the Cloud connection ID is obtained, sync Unity Catalog tables to Fabric lakehouse as follows:
 
-1. **Import sync notebook** to Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. Databricks API is used to export tables.
+1. **Import sync notebook** to Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. The Databricks API, authenticated through PAT, is utilized for exporting tables.
 
 2. **Configure the parameters** in the first cell to export Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
@@ -63,7 +63,7 @@ skip_if_shortcut_exists = False
 
 ### Notes
 
-- The sync notebook works with both managed and external Delta tables. If you’re using different Cloud storage locations for your Unity Catalog tables, the recommendation is to run the sync notebook separately by each Cloud connection.
+- The sync notebook works with both managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables (i.e. more than one ADLS Gen2), the recommendation is to run the sync notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
 - Access policies (grants) defined in Unity Catalog aren't inherited into Fabric. Only tables are synced.
 
