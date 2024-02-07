@@ -174,7 +174,7 @@ Shortcut caching can be used to reduces egress costs associated with cross-cloud
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
 
-:::image type="content" source=docs\onelake\media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="docs\onelake\media\onelake-shortcuts\shortcut-cache-settings.png":::
+:::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
 
 
 ## How shortcuts utilize cloud connections
