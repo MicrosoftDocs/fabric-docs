@@ -33,9 +33,9 @@ landingContent:
             url: region-availability.md
           - text: Find your Fabric home region
             url: find-fabric-home-region.md
-          - text: Governance in Fabric
+          - text: Governance documentation
             url: ../governance/index.yml      
-          - text: Security in Fabric
+          - text: Security documentation
             url: ../security/index.yml              
       - linkListType: how-to-guide
         links:            
@@ -65,15 +65,6 @@ landingContent:
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
 
-  - title: Workspace administration
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Manage workspaces
-            url: portal-workspaces.md
-          - text: Workspace tenant settings
-            url: portal-workspace.md
-
   - title: Monitoring and management
     linkLists:
       - linkListType: overview
@@ -84,3 +75,12 @@ landingContent:
             url: feature-usage-adoption.md
           - text: Use the Monitoring hub
             url: monitoring-hub.md
+            
+  - title: Workspace administration
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Manage workspaces
+            url: portal-workspaces.md
+          - text: Workspace tenant settings
+            url: portal-workspace.md

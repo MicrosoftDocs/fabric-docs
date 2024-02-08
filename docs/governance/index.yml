@@ -24,7 +24,7 @@ landingContent:
         links:
           - text: Governance and compliance in Fabric
             url: governance-compliance-overview.md        
-          - text: Platform Security
+          - text: Security overview
             url: ../security/security-overview.md
           - text: Security documentation
             url: ../security/index.yml            
