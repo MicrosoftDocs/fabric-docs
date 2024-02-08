@@ -35,7 +35,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Allow tenant and domain admins to override workspace assignments (preview)](./service-admin-portal-domain-management-settings#allow-tenant-and-domain-admins-to-override-workspace-assignments-preview)|Tenant and domain admins can reassign workspaces that were previously assigned to one domain to another domain.|
+|[Allow tenant and domain admins to override workspace assignments (preview)](./service-admin-portal-domain-management-settings.md#allow-tenant-and-domain-admins-to-override-workspace-assignments-preview)|Tenant and domain admins can reassign workspaces that were previously assigned to one domain to another domain.|
 
 ## [Workspace settings](portal-workspace.md)
 
