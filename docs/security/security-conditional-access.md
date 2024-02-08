@@ -31,6 +31,7 @@ To ensure that conditional access for Fabric works as intended and expected, it'
     **Product**
     * Power BI Service
     * Azure Data Explorer
+    * Azure Data Factory
     * Azure SQL Database
     * Azure Storage
 
