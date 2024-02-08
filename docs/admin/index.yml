@@ -24,7 +24,7 @@ landingContent:
           - text: What is Microsoft Fabric admin?
             url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
-            url: admin-center.md
+            url: admin-center.md                
       - linkListType: get-started
         links:
           - text: Enable Fabric for your organization
@@ -32,15 +32,17 @@ landingContent:
           - text: Region availability
             url: region-availability.md
           - text: Find your Fabric home region
-            url: find-fabric-home-region.md
-          - text: Governance documentation
-            url: ../governance/index.yml      
-          - text: Security documentation
-            url: ../security/index.yml              
+            url: find-fabric-home-region.md             
       - linkListType: how-to-guide
         links:            
           - text: Understand Fabric admin roles
             url: roles.md
+      - linkListType: reference
+        links:   
+          - text: Governance documentation
+            url: ../governance/index.yml      
+          - text: Security documentation
+            url: ../security/index.yml             
 
   - title: Tools and settings
     linkLists:
@@ -71,16 +73,22 @@ landingContent:
         links:
           - text: What is the admin monitoring workspace?
             url: monitoring-workspace.md
+      - linkListType: concept
+        links:                
           - text: Feature usage and adoption report
             url: feature-usage-adoption.md
+      - linkListType: how-to-guide
+        links:            
           - text: Use the Monitoring hub
             url: monitoring-hub.md
-            
+
   - title: Workspace administration
     linkLists:
-      - linkListType: overview
+      - linkListType: concept
         links:
           - text: Manage workspaces
             url: portal-workspaces.md
+      - linkListType: how-to-guide
+        links:            
           - text: Workspace tenant settings
             url: portal-workspace.md

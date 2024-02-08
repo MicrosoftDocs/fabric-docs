@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Microsoft Fabric security
-summary: Microsoft Fabric is a software as a service (SaaS) platform that lets users get, create, share, and visualize data. As a SaaS service, Fabric offers a complete security package for the entire platform. Fabric removes the cost and responsibility of maintaining your security solution, and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations. Fabric also allows you to manage, control and audit your security settings, in line with your changing needs and demands. As you bring your data to the cloud and use it with various analytic experiences such as Power BI, Data Factory, and the next generation of Synapse, Microsoft ensures that built-in security and reliability features secure your data at rest and in transit. Microsoft also makes sure that your data is recoverable in cases of infrastructure failures or disasters.
+summary: Microsoft Fabric is a software as a service (SaaS) platform that offers a complete security package. Fabric removes the cost and responsibility of maintaining your security solution and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations.
 
 metadata:
   title: Microsoft Fabric security

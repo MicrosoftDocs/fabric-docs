@@ -26,8 +26,12 @@ landingContent:
             url: governance-compliance-overview.md        
           - text: Security overview
             url: ../security/security-overview.md
+      - linkListType: reference
+        links:            
           - text: Security documentation
-            url: ../security/index.yml            
+            url: ../security/index.yml
+          - text: Admin documentation
+            url: ../admin/index.yml                         
       - linkListType: how-to-guide
         links:             
           - text: Manage access

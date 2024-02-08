@@ -5,9 +5,9 @@ items:
   items:
   - name: Governance and compliance in Microsoft Fabric
     href: governance-compliance-overview.md
-  - name: Security
+  - name: Security documentation
     href: ../security/index.yml
-  - name: Admin
+  - name: Admin documentation
     href: ../admin/index.yml
 - name: Get started
   items:
