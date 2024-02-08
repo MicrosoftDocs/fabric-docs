@@ -55,11 +55,11 @@ landingContent:
           - text: On-premises data gateway with Dataflow Gen 2
             url: ../data-factory/dataflows-gen2-overview.md
           - text: Integration runtime in Azure Data Factory
-            url: /data-factory/concepts-integration-runtime
+            url: /azure/data-factory/concepts-integration-runtime
           - text: Integration runtime in Azure Data Factory
-            url: /data-factory/concepts-integration-runtime  
+            url: /azure/data-factory/concepts-integration-runtime  
           - text: Azure Data Factory managed virtual network
-            url: /data-factory/managed-virtual-network-private-endpoint
+            url: /azure/data-factory/managed-virtual-network-private-endpoint
           - text: Lakehouse SQL endpoints
             url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
           - text: Direct lake
