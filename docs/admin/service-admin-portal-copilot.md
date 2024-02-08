@@ -10,7 +10,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 12/18/2023
+ms.date: 02/07/2024
 LocalizationGroup: Administration
 ---
 
@@ -30,4 +30,6 @@ By default, the **Tenant settings** for Fabric OpenAI are disabled. Ask your ten
 
 ## Related content
 
+- [Copilot in Fabric and Power BI overview](/fabric/get-started/copilot-fabric-overview.md)
 - [About tenant settings](about-tenant-settings.md)
+
