@@ -32,6 +32,7 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
 ## Create an Eventhouse
 
+1. Browse to your workspace homepage in Real-Time Analytics.
 1. Select **New** > **Eventhouse**.
 
     :::image type="content" source="media/eventhouse/new-eventhouse.png" alt-text="Screenshot of creating new Eventhouse item in Real-Time Analytics.":::
