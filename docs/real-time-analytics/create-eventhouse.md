@@ -30,6 +30,8 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 1. Toggle the button for **Create Eventhouse (preview)** to **Enabled**.
 1. Select **Apply**. 
 
+    :::image type="content" source="media/eventhouse/enable-admin-settings.png" alt-text="Screenshot of section of admin settings relating to enabling Eventhouse.":::
+
 ## Create an Eventhouse
 
 1. Browse to your workspace homepage in Real-Time Analytics.
