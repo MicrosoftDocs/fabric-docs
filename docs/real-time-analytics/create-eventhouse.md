@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 01/21/2024
+ms.date: 02/08/2024
 ms.search.form: Eventhouse
 ---
 # Create and manage an Eventhouse (Preview)
@@ -19,6 +19,16 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
+
+## Enable tenant settings in the admin portal
+
+> [!IMPORTANT]
+> This step must be completed by the tenant admin.
+
+1. Browse to the [admin portal](../admin/admin-center.md).
+1. In the **Tenant settings** tab, search for *Eventhouse*. For more information, see [About tenant settings](../admin/about-tenant-settings.md).
+1. Toggle the button for **Create Eventhouse (preview)** to **Enabled**.
+1. Select **Apply**. 
 
 ## Create an Eventhouse
 

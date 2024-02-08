@@ -21,6 +21,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |Users can create Fabric environments to save and apply Spark settings (preview)|In Synapse Data Engineering and Data Science, users can select specific Spark runtimes, configure compute resources, and install libraries, and then save their choices as an environment. Environments can be attached to workspaces, notebooks, and Spark job definitions.|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
 |Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://aka.ms/Retail_data_solutions)|
+| Create [Eventhouse (preview)](../real-time-analytics/eventhouse.md) | Eventhouses provide a solution for handling and analyzing large volumes of data, particularly in scenarios requiring real-time analytics and exploration. They are designed to handle real-time data streams efficiently, which lets organizations ingest, process, and analyze data in near real-time. Turn on this setting to allow users to create Eventhouses.
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
