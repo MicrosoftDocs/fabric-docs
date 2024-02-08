@@ -150,6 +150,6 @@ See the following table for the summary and more information for the Amazon RDS 
 | **Partition lower bound** |The minimum value of the partition column for partition range splitting. This value is used to decide the partition stride, not for filtering the rows in table. All rows in the table or query result will be partitioned and copied. If not specified, copy activity auto detect the value. | < your partition lower bound > | No | partitionLowerBound | 
 |**Additional columns** |Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No |additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [Amazon RDS for SQL Server overview](connector-amazon-rds-for-sql-server-overview.md)

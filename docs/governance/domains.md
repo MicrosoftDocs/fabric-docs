@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/06/2023
+ms.date: 01/22/2023
 ---
 
 # Fabric domains
@@ -132,6 +132,9 @@ To assign workspaces to a domain or subdomain in the admin portal, you must be a
      * This action excludes "My workspaces".
     * This action affects existing workspaces only. It won't affect workspaces that are assigned to the specified capacities after the action has been performed.
 
+> [!NOTE]
+> Workspace domain assignments by Fabric and domain admins will override existing assignments only if the **Allow tenant and domain admins to override workspace assignments (preview)** tenant setting is enabled. For more information, see [Allow tenant and domain admins to override workspace assignments (preview)](../admin/service-admin-portal-domain-management-settings.md#allow-tenant-and-domain-admins-to-override-workspace-assignments-preview).
+
 To unassign a workspace from a domain or subdomain, select the checkbox next to the workspace name and then select the **Unassign** button above the list. You can select several checkboxes to unassign more than one workspace at a time.
 
 :::image type="content" source="./media/domains/domain-unassign-workspace.png" alt-text="Screenshot showing how to unassign workspaces.":::
@@ -229,6 +232,12 @@ To override the tenant-level certification settings, expand the certification se
 
 For descriptions of the things you need to set, see [Set up certification](../admin/endorsement-setup.md#set-up-certification).
 
-## Next steps
+## Microsoft Fabric REST Admin APIs for domains
 
+Most of the actions available from the UI are available through the Fabric REST Admin APIs for domains. For more information, see [Domains API reference](/rest/api/fabric/admin/domains)
+
+## Related content
+
+* [Domain management tenant settings](../admin/service-admin-portal-domain-management-settings.md)
+* [Microsoft Fabric REST Admin APIs for domains](/rest/api/fabric/admin/domains)
 * [Admin role in workspaces](../get-started/roles-workspaces.md)

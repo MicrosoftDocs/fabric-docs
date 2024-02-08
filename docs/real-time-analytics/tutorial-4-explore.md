@@ -26,15 +26,15 @@ The first step in data analysis is often to take a look at a subset of the data 
 > The query editor comes with syntax highlighting and IntelliSense, so you can quickly ramp-up your knowledge of the Kusto Query Language.
 
 1. Browse to your KQL database named *NycTaxiDB*.
-1. In the **Data tree**, select the **More menu** [...] on the **nyctaxitrips** table. Then select **Query table** > **Show any 100 records**.
+1. In the **Explorer** pane, select the **More menu** [...] on the **nyctaxitrips** table. Then select **Query table** > **Show any 100 records**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Data tree showing the More menu of a table. The option titled Query table is highlighted." lightbox="media/realtime-analytics-tutorial/kql-sample-queries.png":::
+    :::image type="content" source="media/realtime-analytics-tutorial/kql-sample-queries.png" alt-text="Screenshot of Explorer pane showing the More menu of a table. The option titled Query table is highlighted." lightbox="media/realtime-analytics-tutorial/kql-sample-queries.png":::
 
     The example opens in the **Explore your data** pane with the table context already populated. This first query uses the [take operator](/azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context&pivots=fabric) to return a sample number of records, and is useful to get a first look at the data structure and possible values. The autopopulated example queries are automatically run. You can see the query results in the results pane.
 
     :::image type="content" source="media/realtime-analytics-tutorial/take-100.png" alt-text="Screenshot of first example query result in Synapse Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/take-100.png":::
 
-1. Return to the data tree to select the next query, which uses the [where operator](/azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric) and [between operator](/azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric) to return records ingested in the last 24 hours.
+1. Return to the Explorer pane to select the next query, which uses the [where operator](/azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context&pivots=fabric) and [between operator](/azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context&pivots=fabric) to return records ingested in the last 24 hours.
 
     :::image type="content" source="media/realtime-analytics-tutorial/sample-last-24-h.png" alt-text="Screenshot of example query to return records ingested in the last 24 hours." lightbox="media/realtime-analytics-tutorial/sample-last-24-h.png":::
 
@@ -60,7 +60,7 @@ The first step in data analysis is often to take a look at a subset of the data 
 
 The query editor supports the use of T-SQL in addition to its primary query language, Kusto query language (KQL). While KQL is the recommended query language, T-SQL can be useful for tools that are unable to use KQL. For more information, see [Query data using T-SQL](/azure/data-explorer/t-sql)
 
-1. In the **Data tree**, select the **More menu** [**...**] on the **nyctaxitrips** table. Select **Query table** > **SQL** > **Show any 100 records**.
+1. In the **Explorer** pane, select the **More menu** [**...**] on the **nyctaxitrips** table. Select **Query table** > **SQL** > **Show any 100 records**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/sql-queries.png" alt-text="Screenshot of example SQL queries." lightbox="media/realtime-analytics-tutorial/sql-queries.png":::
 
@@ -78,7 +78,7 @@ For more information about tasks performed in this tutorial, see:
 
 * [Syntax conventions](/azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context&pivots=fabric)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 5: Use advanced KQL queries](tutorial-5-advanced-kql-query.md)

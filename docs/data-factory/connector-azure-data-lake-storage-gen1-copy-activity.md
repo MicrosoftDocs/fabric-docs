@@ -178,10 +178,10 @@ The following tables contain more information about the copy activity in Azure D
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen1 connection>|Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
 |**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName|
-|**Copy behavior** |Defines the copy behavior when the destination is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Expiry datetime (UTC)** |The expiry time of the written files. The time is applied to the UTC time in the format of "2020-03-01T08:00:00Z". By default it's NULL, which means the written files are never expired.|< your expiry datetime >|No |expiryDatetime|
 
-## Next steps
+## Related content
 
 - [Azure Data Lake Storage Gen1 overview](connector-azure-data-lake-storage-gen1-overview.md)

@@ -79,6 +79,6 @@ See the following table for the summary and more information of the Amazon Redsh
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [Amazon Redshift connector overview](connector-amazon-redshift-overview.md)

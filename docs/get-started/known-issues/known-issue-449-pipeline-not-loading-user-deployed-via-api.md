@@ -24,6 +24,6 @@ The pipeline page gets stuck on loading.
 
 The user can update the pipeline via public APIs: /rest/api/power-bi/pipelines.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

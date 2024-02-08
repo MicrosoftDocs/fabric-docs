@@ -294,7 +294,7 @@ Go to your Lakehouse, you find the new copied data file is under the folder that
 
 :::image type="content" source="media/tutorial-incremental-copy-data-warehouse-lakehouse/lakehouse-data-preview-2.png" alt-text="Screenshot showing lakehouse data preview for the second pipeline run.":::
 
-## Next steps
+## Related content
 Next, advance to learn more about copy from Azure Blob Storage to Lakehouse.
 
 > [!div class="nextstepaction"]

@@ -185,11 +185,11 @@ The following tables contain more information about the copy activity in Azure D
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen2 connection>|Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen2**.|**Azure Data Lake Storage Gen2**|Yes |/|
 |**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName, fileSystem|
-|**Copy behavior** |Defines the copy behavior when the destination is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Data Lake Storage Gen2. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Set up your Azure Data Lake Storage Gen2 connection](connector-azure-data-lake-storage-gen2.md)

@@ -3365,6 +3365,6 @@ And returns this result: `"Paris"`
 > [!NOTE]
 > One can add comments to data flow expressions, but not in pipeline expressions.
 
-## Next steps
+## Related content
 
 For instructions on general parameter usage, refer to [Parameters for Data Factory in Fabric](parameters.md)

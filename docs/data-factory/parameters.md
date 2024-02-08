@@ -235,6 +235,6 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [ticks](expression-language.md#ticks) | Return the `ticks` property value for a specified timestamp. |
 | [utcNow](expression-language.md#utcNow) | Return the current timestamp as a string. |
 
-## Next steps
+## Related content
 
-[Expression language](expression-language.md)
+- [Expression language](expression-language.md)

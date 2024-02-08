@@ -7,7 +7,7 @@ ms.topic: how-to
 ms:custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/14/2023
+ms.date: 01/16/2024
 
 #CustomerIntent: As a Data Scientist, or Data engineer, I want to use Copilot for Data Science and Data Engineering to increase my productivity and help answer questions I have about my data to use with notebooks.
 ---
@@ -17,15 +17,7 @@ ms.date: 11/14/2023
 
 Copilot for Data Science and Data Engineering notebooks is an AI assistant that helps you analyze and visualize data. It works with lakehouse tables, Power BI Datasets, and pandas/spark dataframes, providing answers and code snippets directly in the notebook. The most effective way of using Copilot is to load your data as a dataframe. You can use the chat panel to ask your questions, and the AI provides responses or code to copy into your notebook. It understands your data's schema and metadata, and if data is loaded into a dataframe, it has awareness of the data inside of the data frame as well. You can ask Copilot to provide insights on data, create code for visualizations, or provide code for data transformations, and it recognizes file names for easy reference. Copilot streamlines data analysis by eliminating complex coding.
 
-## Prerequisites
-
-> [!NOTE]
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
-
-To use Copilot in Data Science:
-
-- Your Fabric admin must enable it in the administration portal.
-- The workspace you use must have the F64 and above license SKU.
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Azure OpenAI enablement
 
@@ -88,6 +80,6 @@ To use Copilot in Data Science:
 - Configure the Copilot privacy settings with the %configure_privacy_settings command, or the %set_sharing_level command in the chat magics library.
 - Transparency: Read our Transparency Note for details on data and algorithm use.
 
-## Next steps
+## Related content
 
 - [How to use Chat-magics](./copilot-notebooks-chat-magics.md)

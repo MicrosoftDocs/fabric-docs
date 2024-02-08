@@ -45,7 +45,7 @@ To get started, you must complete the following prerequisites:
 
 ## Step 3: Choose a stored procedure and configure parameters
 
-Select a stored procedure, and optionally import its parameters or manually add parameters.
+Select a stored procedure, and optionally import its parameters or manually add parameters. Select the **Import** button to import the parameters from the stored procedure, or add them manually by selecting the **+ New** button for each parameter, then providing the name, type, value, and nullability settings as you require. 
 
 :::image type="content" source="media/stored-procedure-activity/select-procedure.png" alt-text="Screenshot showing where to select the stored procedure to execute and optionally configure its parameters.":::
 
@@ -55,5 +55,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
-[Monitor pipeline runs](monitor-pipeline-runs.md)
+## Related content
+
+- [Monitor pipeline runs](monitor-pipeline-runs.md)

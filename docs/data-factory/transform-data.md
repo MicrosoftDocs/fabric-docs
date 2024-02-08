@@ -41,35 +41,35 @@ Follow these steps to set up your dataflow.
 
 1. The dataflow editor window appears.  Select the **Import from SQL Server** card.
 
-   :::image type="content" source="media/transform-data/start-creating-dataflow.png" alt-text="Screenshot showing the dataflow editor window." lightbox="media/transform-data/start-creating-dataflow.png":::
+   :::image type="content" source="media/transform-data/start-creating-dataflow-inline.png" alt-text="Screenshot showing the dataflow editor window." lightbox="media/transform-data/start-creating-dataflow.png":::
 
 ### Step 2: Get data
 
 1. On the **Connect to data source** dialog presented next, enter the details to connect to your Azure SQL database, then select **Next**. For this example, you use the **AdventureWorksLT** sample database configured when you set up the Azure SQL database in the prerequisites.
 
-   :::image type="content" source="media/transform-data/select-azure-sql.png" alt-text="Screenshot showing how to connect to an Azure SQL database." lightbox="media/transform-data/select-azure-sql.png":::
+   :::image type="content" source="media/transform-data/select-azure-sql-inline.png" alt-text="Screenshot showing how to connect to an Azure SQL database." lightbox="media/transform-data/select-azure-sql.png":::
 
 1. Select the data you’d like to transform and then select **Create**. For this quickstart, select **SalesLT.Customer** from the **AdventureWorksLT** sample data provided for Azure SQL DB, and then the **Select related tables** button to automatically include two other related tables.
 
-   :::image type="content" source="media/transform-data/data-to-transform.png" alt-text="Screenshot showing where to choose from the available data." :::
+   :::image type="content" source="media/transform-data/data-to-transform-inline.png" alt-text="Screenshot showing where to choose from the available data." lightbox="media/transform-data/data-to-transform.png":::
 
 ### Step 3: Transform your data
 
 1. If it isn't selected, select the **Diagram view** button along the status bar at the bottom of the page, or select **Diagram view** under the **View** menu at the top of the Power Query editor. Either of these options can toggle the diagram view.
 
-   :::image type="content" source="media/transform-data/select-diagram-view.png" alt-text="Screenshot showing where to select diagram view.":::
+   :::image type="content" source="media/transform-data/select-diagram-view-inline.png" alt-text="Screenshot showing where to select diagram view." lightbox="media/transform-data/select-diagram-view.png":::
 
 1. Right-click your **SalesLT Customer** query, or select the vertical ellipsis on the right of the query, then select **Merge queries**.  
 
    :::image type="content" source="media/transform-data/select-merge-query.png" alt-text="Screenshot showing where to find the Merge queries option.":::
 
-1. Configure the merge by selecting the **SalesOrderHeader** table as the right table for the merge, the **CustomerID** column from each table as the join column, and **Left outer** as the join kind. Then select **Ok** when to add the merge query.  
+1. Configure the merge by selecting the **SalesLTOrderHeader** table as the right table for the merge, the **CustomerID** column from each table as the join column, and **Left outer** as the join kind. Then select **OK** to add the merge query.  
 
    :::image type="content" source="media/transform-data/select-join-keys-kind.png" alt-text="Screenshot of the Merge configuration screen.":::
 
 1. Select the **Add data destination** button, which looks like a database symbol with an arrow above it, from the new merge query you just created. Then select **Azure SQL database** as the destination type.
 
-   :::image type="content" source="media/transform-data/select-data-destination.png" alt-text="Screenshot highlighting the Add data destination button on the newly created merge query.":::
+   :::image type="content" source="media/transform-data/select-data-destination-inline.png" alt-text="Screenshot highlighting the Add data destination button on the newly created merge query." lightbox="media/transform-data/select-data-destination.png":::
 
 1. Provide the details for your Azure SQL database connection where the merge query is to be published. In this example, you can use the **AdventureWorksLT** database we used as the data source for the destination too.
 
@@ -85,7 +85,7 @@ Follow these steps to set up your dataflow.
 
 1. Select **Publish** back on the dataflow editor page, to publish the dataflow.
 
-   :::image type="content" source="media/transform-data/publish-dataflow-gen2.png" alt-text="Screenshot highlighting the Publish button on the dataflow gen2 editor.":::
+   :::image type="content" source="media/transform-data/publish-dataflow-gen2-inline.png" alt-text="Screenshot highlighting the Publish button on the dataflow gen2 editor." lightbox="media/transform-data/publish-dataflow-gen2.png":::
 
 ## Move data with data pipelines
 
@@ -120,7 +120,7 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 1. Select **Copy data** on the canvas to open the **Copy Assistant** tool to get started. Or select **Use copy assistant** from the **Copy data** drop down list under the **Activities** tab on the ribbon.
 
    :::image type="content" source="media/transform-data/open-copy-assistant.png" alt-text="Screenshot showing the two ways to access the copy assistant.":::
-1. Choose your data source by selecting a data source type. In this tutorial, you use the Azure SQL Database used previously when you created the dataflow to generate a new merge query. Scroll down below the sample data offerings and select the **Azure** tab under **Data sources**, then **Azure SQL Database**. Then select **Next** to continue.
+1. Choose your data source by selecting a data source type. In this tutorial, you use the Azure SQL Database used previously when you created the dataflow to generate a new merge query. Scroll down below the sample data offerings and select the **Azure** tab, then **Azure SQL Database**. Then select **Next** to continue.
 
    :::image type="content" source="media/transform-data/choose-data-source.png" alt-text="Screenshot showing where to choose a data source.":::
 
@@ -148,7 +148,7 @@ Now that you created a Dataflow Gen2, you can operate on it in a pipeline. In th
 
    :::image type="content" source="media/transform-data/choose-file-configuration-options.png" alt-text="Screenshot showing the configuration options for the file in Azure Blob Storage.":::
 
-1. Finalize your settings. Then, review and select **OK** to finish the process.  
+1. Finalize your settings. Then, review and select **Save + Run** to finish the process.  
 
    :::image type="content" source="media/transform-data/finalize-and-review.png" alt-text="Screenshot showing how to review copy data settings.":::
 
@@ -168,13 +168,13 @@ Once you finish developing and testing your pipeline, you can schedule it to exe
 
 1. On the **Home** tab of the pipeline editor window, select **Schedule**.
 
-   :::image type="content" source="media/tutorial-end-to-end-integration/schedule-button.png" alt-text="A screenshot of the Schedule button on the menu of the Home tab in the pipeline editor.":::
+   :::image type="content" source="media/transform-data/schedule-button.png" alt-text="A screenshot of the Schedule button on the menu of the Home tab in the pipeline editor.":::
 
 1. Configure the schedule as required. The example here schedules the pipeline to execute daily at 8:00 PM until the end of the year.
 
-   :::image type="content" source="media/tutorial-end-to-end-integration/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration for a pipeline to run daily at 8:00 PM until the end of the year.":::
+   :::image type="content" source="media/transform-data/schedule-configuration.png" alt-text="Screenshot showing the schedule configuration for a pipeline to run daily at 8:00 PM until the end of the year.":::
 
-## Next steps
+## Related content
 
 This sample shows you how to create and configure a Dataflow Gen2 to create a merge query and store it in an Azure SQL database, then copy data from the database into a text file in Azure Blob Storage.  You learned how to:
 

@@ -52,8 +52,8 @@ items:
         href: event-streams/transform-and-stream-real-time-events-to-lakehouse.md
       - name: Stream real-time events from custom application to Microsoft Fabric KQL Database
         href: event-streams/stream-real-time-events-from-custom-app-to-kusto.md
-      - name: Build a real-time dashboard by streaming data from Azure IoT Hub
-        href: event-streams/build-real-time-dashboard-from-iot-hub.md
+      - name: Build a Power BI report by streaming data from Azure IoT Hub
+        href: event-streams/build-report-from-iot-hub.md
       - name: Explore and transform bike-sharing data for KQL database integration
         href: event-streams/transform-sample-data-and-route-to-kql.md
     - name: Integrate with other Fabric items
@@ -74,16 +74,50 @@ items:
       href: get-data-event-hub.md
     - name: Get data from OneLake
       href: get-data-onelake.md
-    - name: Get data from Event streams to KQL database
+    - name: Get data from Eventstream
       href: get-data-eventstream.md
+    - name: Configure KQL Database in a data pipeline
+      href: ../data-factory/connector-kql-database-copy-activity.md
+    - name: Connect to KQL Database in dataflows
+      href: ../data-factory/connector-kusto-dataflows.md
     - name: Connectors
       items:
-      - name: Configure KQL Database in a data pipeline
-        href: ../data-factory/connector-kql-database-copy-activity.md
-      - name: Connect to KQL Database in dataflows
-        href: ../data-factory/connector-kusto-dataflows.md
-      - name: Data connectors
-        href: /azure/data-explorer/connector-overview?context=/fabric/context/context-rta&pivots=fabric
+      - name: Data connectors overview
+        href: data-connectors/data-connectors.md
+      - name: Apache Flink
+        href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
+      - name: Apache Kafka
+        href: get-data-kafka.md
+      - name: Apache Log4J 2
+        href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Apache Spark
+        href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Synapse workspace
+        href: /azure/synapse-analytics/quickstart-connect-azure-data-explorer
+      - name: Azure Data Factory
+        href: /azure/data-explorer/data-factory-load-data?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Event Hubs
+        href: /azure/data-explorer/ingest-data-event-hub-overview?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Functions
+        href: /azure/data-explorer/integrate-azure-functions?context=/fabric/context/context-rta&pivots=fabric
+      - name: Azure Stream Analytics
+        href: /azure/data-explorer/stream-analytics-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Logstash
+        href: /azure/data-explorer/ingest-data-logstash?context=/fabric/context/context-rta&pivots=fabric
+      - name: NLog sink
+        href: /azure/data-explorer/nlog-sink?context=/fabric/context/context-rta&pivots=fabric
+      - name: OpenTelemetry
+        href: /azure/data-explorer/open-telemetry-connector?context=/fabric/context/context-rta&pivots=fabric
+      - name: Microsoft Power Automate
+        href: /azure/data-explorer/flow?context=/fabric/context/context-rta&pivots=fabric
+      - name: Serilog sink
+        href: /azure/data-explorer/serilog-sink?context=/fabric/context/context-rta&pivots=fabric
+      - name: Splunk
+        href: /azure/data-explorer/ingest-data-splunk?context=/fabric/context/context-rta&pivots=fabric
+      - name: Splunk Universal Forwarder
+        href: /azure/data-explorer/ingest-data-splunk-uf?context=/fabric/context/context-rta&pivots=fabric
+      - name: Telegraf
+        href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
 - name: Store data
   items:
   - name: Eventhouse (Preview)
@@ -105,10 +139,11 @@ items:
       href: create-empty-table.md
     - name: Data management
       items:
-      - name: Data management overview  
+      - name: Data management overview 
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
         href: data-management.md
-      - name: Change the data retention policy
-        href: data-retention-policy.md
+      - name: Change data policies
+        href: data-policies.md
       - name: Create a table update policy
         href: table-update-policy.md
       - name: Create materialized views

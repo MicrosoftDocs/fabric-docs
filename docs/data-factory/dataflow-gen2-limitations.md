@@ -6,7 +6,7 @@ ms.author: susabat
 ms.topic: troubleshooting
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 1/8/2024
 ---
 
 # Data Factory Dataflow Gen2 limitations
@@ -28,12 +28,13 @@ The following table indicates the supported data types in specific storage locat
 |-------------------------------------------------|--------------------------|-----------------------|----------------------------|------------------------------|------------------------------|
 | Action                                          | No                       | No                    | No                         | No                           | No                           |
 | Any                                             | No                       | No                    | No                         | No                           | No                           |
-| Binary                                          | No                       | No                    | No                         | No                           | No                            |
+| Binary                                          | No                       | No                    | No                         | No                           | No                           |
+| Currency                                        | Yes                      | Yes                   | Yes                        | Yes                          | No                           |
 | DateTimeZone                                    | Yes                      | Yes                   | Yes                        | No                           | No                           |
 | Duration                                        | No                       | No                    | Yes                        | No                           | No                           |
 | Function                                        | No                       | No                    | No                         | No                           | No                           |
 | None                                            | No                       | No                    | No                         | No                           | No                           |
 | Null                                            | No                       | No                    | No                         | No                           | No                           |
-| Time                                            | Yes                      | Yes                   | No                         | No                           | No                           |
+| Time                                            | Yes                      | Yes                   | No                         | Yes                          | Yes                          |
 | Type                                            | No                       | No                    | No                         | No                           | No                           |
 | Structured (List, Record, Table)                | No                       | No                    | No                         | No                           | No                           |

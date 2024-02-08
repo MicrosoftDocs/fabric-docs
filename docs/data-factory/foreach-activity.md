@@ -62,6 +62,6 @@ Select one of the child activities in the ForEach **Activities** pane, and switc
 
 :::image type="content" source="media/foreach-activity/foreach-child-activity-configuration.png" alt-text="Screenshot showing a stored procedure child activity with a parameter using the current @item() from the ForEach items list for its value.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

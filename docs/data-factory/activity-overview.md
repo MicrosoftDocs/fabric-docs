@@ -104,6 +104,6 @@ The general settings will always include **Name** and **Description** fields for
 > [!NOTE]
 > There is a default limit of maximum 40 activities per pipeline, which includes inner activities for containers.
 
-## Next steps
+## Related content
 
-[Create your first pipeline](create-first-pipeline-with-sample-data.md)
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md)

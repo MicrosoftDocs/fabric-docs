@@ -102,6 +102,6 @@ The following the following table contains the properties for supported authenti
 |:---|:---|:---|:---|:---|
 |**Anonymous**||||✓|
 
-## Next steps
+## Related content
 
 - [How to configure REST in copy activity](connector-rest-copy-activity.md)

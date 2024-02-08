@@ -74,7 +74,7 @@ You'll then get a card for your custom action, containing the input fields for y
 
 When your trigger activates, it calls your flow, sending it the values of the input fields that you defined.
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

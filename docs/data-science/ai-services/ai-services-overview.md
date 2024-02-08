@@ -65,7 +65,14 @@ Fabric provides two options for utilizing Azure AI services:
 
 ## Available regions
 
-Prebuilt AI services in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
+### Available regions for Azure OpenAI Service
+
+To access the prebuilt [Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/), including the [Copilot in Fabric](../../get-started/copilot-fabric-overview.md), you must have a paid SKU (F64 or higher, or P1 or higher) with capacity available in the following [Fabric regions](../../admin/region-availability.md). The Azure OpenAI Service isn't available on trial SKUs.
+
+[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
+
+### Available regions for Text Analytics and Azure AI Translator 
+Prebuilt [Text Analytics](https://azure.microsoft.com/products/ai-services/text-analytics/), [Azure AI Translator](https://azure.microsoft.com/products/ai-services/translator/)  in Fabric are now available for public preview in the Azure regions listed in this article. If your Microsoft Fabric home region isn't listed, you can still create a Microsoft Fabric capacity in a region that is supported. For more information, see [Buy a Microsoft Fabric subscription](../../enterprise/buy-subscription.md).
 To find out what your Fabric home region is, see [Find your Fabric home region](../../admin/find-fabric-home-region.md).
 
 
@@ -83,11 +90,9 @@ To find out what your Fabric home region is, see [Find your Fabric home region](
 |   |  | West US 3 |  |
 
 
-## Available regions for Azure OpenAI Service
 
-[Azure OpenAI Service](https://azure.microsoft.com/products/ai-services/openai-service/) is powered by large language models that are currently only deployed to US datacenters (East US, East US2, South Central US, and West US) and France datacenter (France Central). If your data is outside the US or France, the feature is disabled by default unless your tenant admin enables **Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance** tenant setting. To learn how to get to the tenant settings, see [About tenant settings](../../admin/tenant-settings-index.md).
 
-## Next steps
+## Related content
 - [Use prebuilt Azure OpenAI in Fabric](how-to-use-openai-sdk-synapse.md)
 - [Use prebuilt Text Analytics in Fabric](how-to-use-text-analytics.md)
 - [Use prebuilt Azure AI Translator in Fabric](how-to-use-text-translator.md)
