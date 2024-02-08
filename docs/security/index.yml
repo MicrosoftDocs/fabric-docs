@@ -55,19 +55,19 @@ landingContent:
           - text: On-premises data gateway with Dataflow Gen 2
             url: ../data-factory/dataflows-gen2-overview.md
           - text: Integration runtime in Azure Data Factory
-            url: ../data-factory/concepts-integration-runtime.md
+            url: /data-factory/concepts-integration-runtime
           - text: Integration runtime in Azure Data Factory
-            url: ../data-factory/concepts-integration-runtime.md  
+            url: /data-factory/concepts-integration-runtime  
           - text: Azure Data Factory managed virtual network
-            url: ../data-factory/managed-virtual-network-private-endpoint.md
+            url: /data-factory/managed-virtual-network-private-endpoint
           - text: Lakehouse SQL endpoints
             url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
           - text: Direct lake
-            url: ../power-bi/enterprise/directlake-overview                        
+            url: /power-bi/enterprise/directlake-overview                        
       - linkListType: reference
         links:            
           - text: Azure service tags
-            url: security-service-tags
+            url: security-service-tags.md
           - text: Service tags on-premises
             url: /azure/virtual-network/service-tags-overview#service-tags-on-premises     
 
@@ -86,6 +86,6 @@ landingContent:
       - linkListType: concept
         links:
           - text: Microsoft Purview
-            url: microsoft-purview-fabric.md
+            url: ../governance/microsoft-purview-fabric.md
           - text: Microsoft Purview hub
-            url: use-microsoft-purview-hub.md            
+            url: ../governance/use-microsoft-purview-hub.md            
