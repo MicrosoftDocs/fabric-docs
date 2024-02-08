@@ -3,8 +3,12 @@ items:
   href: index.yml
 - name: Overview
   items:
-  - name: What is Microsoft Fabric governance and compliance?
+  - name: Governance and compliance in Microsoft Fabric
     href: governance-compliance-overview.md
+  - name: Security documentation
+    href: ../security/index.yml
+  - name: Admin documentation
+    href: ../admin/index.yml
 - name: Get started
   items:
   - name: Set up item certification
@@ -13,10 +17,29 @@ items:
   items:
   - name: Microsoft Purview and Fabric
     href: microsoft-purview-fabric.md
+    items:
+      - name: Connect in the same tenant
+        href: /purview/register-scan-fabric-tenant?context=/fabric/governance/context/context-purview
+      - name: Connect cross-tenant
+        href: /purview/register-scan-fabric-tenant-cross-tenant?context=/fabric/governance/context/context-purview
   - name: Microsoft Purview Hub
     href: use-microsoft-purview-hub.md
 - name: Information protection
-  href: information-protection.md
+  items:
+  - name: Information protection in Microsoft Fabric
+    href: information-protection.md
+  - name: Sensitivity labels
+    items:
+    - name: Default label policy
+      href: service-security-sensitivity-label-default-label-policy.md
+    - name: Mandatory label policy
+      href: service-security-sensitivity-label-mandatory-label-policy.md
+    - name: Programmatic labeling
+      href: service-security-sensitivity-label-inheritance-set-remove-api.md
+    - name: Downstream inheritance
+      href: service-security-sensitivity-label-downstream-inheritance.md
+    - name: Inheritance from data sources
+      href: service-security-sensitivity-label-inheritance-from-data-sources.md
 - name: Endorsement
   href: endorsement-overview.md
 - name: Lineage

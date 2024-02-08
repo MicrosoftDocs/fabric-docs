@@ -1,20 +1,22 @@
 ---
 title: Microsoft Fabric event streams overview
-description: The Microsoft Fabric event streams feature provides a centralized place to capture, transform, and route real-time events to various destinations. Learn more.
+description: Learn about event streams and its capability of capturing, transforming, and routing real-time events to various destinations in Microsoft Fabric.
 ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 12/05/2023
+ms.search.form: Event Streams Overview
 ---
 
 # Microsoft Fabric event streams - overview
 
-The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-time analytics** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It's part of the **Real-Time Analytics** experience. The **eventstream** item you create in the portal is an instance of Fabric event streams. When you create an eventstream, you add event data sources, routing destinations, and the event processor when you need the transformation.
 
 ## Centralized place for event data
 
@@ -22,7 +24,7 @@ Everything in Fabric event streams focuses on event data. Capturing, transformin
 
 ## Various source connectors
 
-The event streams feature provides you with various source connectors to fetch event data from diverse sources, such as **Sample data** and **Azure Event Hubs**. It also offers **Custom App**, the connection endpoint that enables you to develop your own applications to push event data into your eventstreams.
+The event streams feature provides you with various source connectors to fetch event data from diverse sources, such as **Sample data**, **Azure Event Hubs** and **Azure IoT Hub**. It also offers **Custom App**, a connection endpoint that enables you to develop your own applications to push event data into your eventstreams with multiple protocols.
 
 ## No-code experience
 
@@ -30,10 +32,13 @@ The drag and drop experience gives you an intuitive and easy way to create your 
 
 ## Multiple destinations
 
-The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL database**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
+The Fabric event streams feature supports sending data to diverse destinations, such as **Lakehouse**, **KQL Database**, **Reflex**, and **Custom App**. You can attach multiple destinations in an eventstream to simultaneously receive data from your eventstreams without interfering with each other.
 
 :::image type="content" source="./media/overview/eventstream-overview.png" alt-text="Screenshot showing an Eventstream item overview." lightbox="./media/overview/eventstream-overview.png" :::
 
-## Next steps
+> [!NOTE]
+> We recommend that you use the Microsoft Fabric event streams feature with at least 4 capacity units ([SKU](/fabric/enterprise/licenses#capacity-license): F4)
 
-See [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)
+## Related content
+
+- [Create and manage an eventstream in Microsoft Fabric](./create-manage-an-eventstream.md)

@@ -3,7 +3,7 @@ items:
   href: index.yml
 - name: What is lifecycle management? 
   href: cicd-overview.md
-- name: End to end lifecycle management tutorial
+- name: "Tutorial: End to end lifecycle management"
   href: cicd-tutorial.md
 - name: Deployment pipelines
   items:
@@ -13,7 +13,7 @@ items:
     href: deployment-pipelines/understand-the-deployment-process.md
   - name: Get started with deployment pipelines
     href: deployment-pipelines/get-started-with-deployment-pipelines.md
-  - name: Assigning a workspace
+  - name: Assign a workspace
     href: deployment-pipelines/assign-pipeline.md
   - name: Compare content in different stages
     href: deployment-pipelines/compare-pipeline-content.md  
@@ -29,11 +29,11 @@ items:
   items:
   - name: Introduction to Git integration
     href: git-integration/intro-to-git-integration.md
-  - name: Get started with git integration
+  - name: Get started with Git integration
     href: git-integration/git-get-started.md
   - name: "Git integration process"
     href: git-integration/git-integration-process.md
-  - name: Manage git branches
+  - name: Manage Git branches
     href: git-integration/manage-branches.md
   - name: Handle errors and conflicts
     items:
@@ -41,6 +41,10 @@ items:
       href: git-integration/conflict-resolution.md
     - name: Manually fix a failed update
       href: git-integration/partial-update.md
+    - name: Resolve dependency errors
+      href: git-integration/dependency-errors.md
+    - name: Expired licenses
+      href: git-integration/license-change.md
   - name: Git integration source code format
     href: git-integration/source-code-format.md
 - name: Lifecycle management best practices
@@ -49,4 +53,8 @@ items:
   href: faq.md
 - name: Troubleshooting
   href: troubleshoot-cicd.md
+- name: Partner solutions
+  items:
+  - name: ISV partner ecosystem
+    href: partners/partner-integration.md
 

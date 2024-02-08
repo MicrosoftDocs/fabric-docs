@@ -5,7 +5,9 @@ ms.reviewer: ssalgado
 ms.author: negust
 author: nelgson
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Train models with PyTorch
 ---
@@ -14,7 +16,7 @@ ms.search.form: Train models with PyTorch
 
 [PyTorch](https://pytorch.org/) is a machine learning framework based on the Torch library. It's frequently used for applications such as computer vision and natural language processing. In this article, we go through an example of how you train and track the iterations of your PyTorch model.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Install PyTorch
 
@@ -186,7 +188,7 @@ for batch_idx, (x, target) in enumerate(test_loader):
         )
 ```
 
-## Next steps
+## Related content
 
 - Learn about [machine learning models](machine-learning-model.md).
 - Learn about [machine learning experiments](machine-learning-experiment.md).

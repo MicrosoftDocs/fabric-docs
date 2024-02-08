@@ -176,8 +176,8 @@ fig.update_layout(height=400 * rows, title_text="SHAP explanations")
 fig.show()
 ```
 
-## Next steps
+## Related content
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
-- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
+- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)

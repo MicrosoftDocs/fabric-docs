@@ -5,21 +5,21 @@ ms.reviewer: jessiwang
 ms.author: jessiwang
 author: JessicaXYWang
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 04/10/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 12/22/2023
 ---
-# How to train models with SynapseML
 
-> [!IMPORTANT]
-> [!INCLUDE [product-name](../includes/product-name.md)] is currently in PREVIEW. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
+# How to train models with SynapseML
 
 [SynapseML](https://microsoft.github.io/SynapseML/) is an ecosystem of tools aimed towards expanding the distributed computing framework Apache Spark in several new directions. SynapseML adds many deep learning and data science tools to the Spark ecosystem, including seamless integration of Spark Machine Learning pipelines with Microsoft Cognitive Toolkit (CNTK), LightGBM and OpenCV. These tools enable powerful and highly scalable predictive and analytical models for many types of datasources.
 
-In this section, we'll go through an example of how you can train your SynapseML model.
+In this section, we go through an example of how you can train your SynapseML model.
 
-## Importing Packages
+## Prerequisites
 
-Start by importing numpy and pandas as they'll be used in the sample.
+Import numpy and pandas.
 
 ```python
 import numpy as np
@@ -28,7 +28,7 @@ import pandas as pd
 
 ## Reading in Data
 
-In a typical Spark application, you'll likely work with huge datasets stored on a distributed file system, such as HDFS. However, to keep this tutorial simple and quick, we'll copy over a small dataset from a URL. We then read this data into memory using Pandas CSV reader, and distribute the data as a Spark DataFrame. Finally, we show the first 5 rows of the dataset.
+In a typical Spark application, you'll likely work with huge datasets stored on a distributed file system, such as HDFS. However, to keep this tutorial simple and quick, we copy over a small dataset from a URL. We then read this data into memory using Pandas CSV reader, and distribute the data as a Spark DataFrame. Finally, we show the first five rows of the dataset.
 
 ```python
 dataFile = "AdultCensusIncome.csv"
@@ -73,9 +73,14 @@ metrics = ComputeModelStatistics().transform(prediction)
 metrics.select('accuracy').show()
 ```
 
-And that's it! you've build your first machine learning model using the SynapseML
-package. For help on SynapseML classes and methods, you can use Python's help() function.
+And that's it! You've built your first machine learning model using the SynapseML
+package. For help on SynapseML classes and methods, you can use Python's `help()` function.
 
 ```python
 help(synapse.ml.train.TrainClassifier)
 ```
+
+## Related content
+
+- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [Track models with MLflow](mlflow-autologging.md)

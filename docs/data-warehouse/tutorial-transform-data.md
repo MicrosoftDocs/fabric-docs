@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Transform data using a stored procedure
@@ -14,8 +16,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save a new stored procedure to transform data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Transform data
 
@@ -74,9 +74,9 @@ Learn how to create and save a new stored procedure to transform data.
    END
    ```
 
-1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
+1. To save this query for reference later, right-click on the query tab, and select **Rename**.
 
-   :::image type="content" source="media\tutorial-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs above the editor screen, showing where to right-click on the query and select Rename.":::
+   :::image type="content" source="media\tutorial-transform-data\query-tab-select-rename.png" alt-text="Screenshot of the tabs in the editor screen, showing where to right-click on the query and select Rename.":::
 
 1. Type **Create Aggregate Procedure** to change the name of the query.
 
@@ -101,7 +101,7 @@ Learn how to create and save a new stored procedure to transform data.
    EXEC [dbo].[populate_aggregate_sale_by_city];
    ```
 
-1. To save this query for reference later, right-click on the query tab just above the editor and select **Rename**.
+1. To save this query for reference later, right-click on the query tab, and select **Rename**.
 
 1. Type **Run Create Aggregate Procedure** to change the name of the query.
 
@@ -115,7 +115,7 @@ Learn how to create and save a new stored procedure to transform data.
 
    :::image type="content" source="media\tutorial-transform-data\validate-loaded-data.png" alt-text="Screenshot of the Explorer pane next to a Data preview screen that lists the data loaded into the selected table.":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create a query with the visual query builder](tutorial-visual-query.md)

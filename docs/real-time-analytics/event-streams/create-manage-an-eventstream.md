@@ -5,16 +5,18 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 11/15/2023
+ms.search.form: Event Streams Overview
 ---
 
 # Create and manage an eventstream in Microsoft Fabric
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -24,11 +26,11 @@ Before you start, you must complete the following prerequisite:
 
 ## Create an eventstream
 
-You can create an eventstream on the **Workspace** page, the **Real-time Analytics experience Homepage**, or the **Create hub** page. Here are the steps:
+You can create an eventstream on the **Workspace** page, the **Real-Time Analytics experience Homepage**, or the **Create hub** page. Here are the steps:
 
-1. Change your Fabric experience to **Real-time Analytics** and select **Eventstream** to create a new eventstream in workspace or homepage or create hub.
+1. Change your Fabric experience to **Real-Time Analytics** and select **Eventstream** to create a new eventstream in workspace or homepage or create hub.
 
-   - On the **Real-time Analytics** homepage, select the **Eventstream** tile:
+   - On the **Real-Time Analytics** homepage, select the **Eventstream** tile:
 
        :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-homepage.png" alt-text="Screenshot showing the Eventstream tile on the homepage.":::
 
@@ -74,7 +76,7 @@ The following screenshot shows an eventstream with its source and destination co
 4. **Configuration and modification pane**: This pane allows you to configure or modify a specific source or destination.
 5. **Bottom pane for information, data preview, data insights, and runtime logs**: For each tile (node), the data preview shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain sources or destinations. It also provides metrics for you to monitor the data insights for certain sources or destinations, such as input events, output events, incoming messages, outgoing messages, etc.
 
-## Next steps
+## Related content
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

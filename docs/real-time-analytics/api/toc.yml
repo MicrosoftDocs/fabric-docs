@@ -1,6 +1,4 @@
 items:
-- name: Client libraries
-  href: /azure/data-explorer/kusto/api/client-libraries?context=/fabric/context/context-rta&pivots=fabric
 - name: REST API
   items:
   - name: REST API overview
@@ -12,7 +10,10 @@ items:
   - name: Query HTTP response
     href: /azure/data-explorer/kusto/api/rest/response?context=/fabric/context/context-rta&pivots=fabric
   - name: Query v2 HTTP response
-    href: /azure/data-explorer/kusto/api/rest/response2?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/api/rest/response-v2?context=/fabric/context/context-rta&pivots=fabric
+  - name: Request properties
+    href: /azure/data-explorer/kusto/api/rest/request-properties?context=/fabric/context/context-rta&pivots=fabric
+    displayName: CRPs, clientrequestproperties
   - name: UI (Deep Links)
     href: /azure/data-explorer/kusto/api/rest/deeplink?context=/fabric/context/context-rta&pivots=fabric
   - name: Streaming ingest
@@ -33,19 +34,10 @@ items:
     href: /azure/data-explorer/kusto/api/netfx/controlling-tracing?context=/fabric/context/context-rta&pivots=fabric
   - name: Kusto.Data
     items:
-    - name: Kusto.Data overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-data?context=/fabric/context/context-rta&pivots=fabric
-    - name: Request properties, ClientRequestProperties
-      href: /azure/data-explorer/kusto/api/netfx/request-properties?context=/fabric/context/context-rta&pivots=fabric
-    - name: Kusto.Data errors and exceptions
+    - name: Errors and exceptions
       href: /azure/data-explorer/kusto/api/netfx/kusto-data-client-errors?context=/fabric/context/context-rta&pivots=fabric
   - name: Kusto.Ingest
     items:
-    - name: Kusto.Ingest overview
-      href: /azure/data-explorer/kusto/api/netfx/about-kusto-ingest?context=/fabric/context/context-rta&pivots=fabric
-    - name: Permissions
-      displayName: Kusto.Ingest
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-permissions?context=/fabric/context/context-rta&pivots=fabric
     - name: Client reference
       displayName: Kusto.Ingest
       href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-reference?context=/fabric/context/context-rta&pivots=fabric
@@ -55,8 +47,6 @@ items:
     - name: Operation status
       displayName: Kusto.Ingest
       href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-status?context=/fabric/context/context-rta&pivots=fabric
-    - name: Kusto.Ingest best practices
-      href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-best-practices?context=/fabric/context/context-rta&pivots=fabric
     - name: Code samples
       displayName: Kusto.Ingest
       href: /azure/data-explorer/kusto/api/netfx/kusto-ingest-client-examples?context=/fabric/context/context-rta&pivots=fabric

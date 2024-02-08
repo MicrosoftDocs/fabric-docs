@@ -1,18 +1,19 @@
 ---
-title: How to create an OData connection
+title: Set up your OData connection
 description: This article provides information about how to create an OData connection from a data pipeline in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an OData connection
+# Set up your OData connection
 
-This article outlines the steps to create an OData connection in a data pipeline.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines the steps to create an OData connection.
 
 ## Supported authentication types
 
@@ -20,22 +21,22 @@ This OData connector supports the following authentication types for copy and Da
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Anonymous| √| √|
-|Basic| √| √|
-|Organizational account| | √|
+|Anonymous| √ | √ |
+|Basic| √ | √ |
+|Organizational account| n/a | √ |
 
->[!Note]
->For information about the OData connection in Dataflow Gen2, go to [Connect to OData in dataflows](./connector-odata-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to OData. The following links provide the specific Power Query connector information you need to connect to OData in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+- To get started using the OData connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
+- To load data from the OData connector from Power Query, go to [Load data from an OData Feed in Power Query Online](/power-query/connectors/odata-feed#load-data-from-an-odata-feed-in-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon.](./media/connector-common/settings.png) > **Manage connections and gateways**.
 
@@ -116,7 +117,6 @@ The properties in the following table are the supported authentication type.
 |- Username|The user name to use to access the OData endpoint.|Yes |||
 |- Password|The password for the specified username.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure OData in copy activity](connector-odata-copy-activity.md)
-- [Connect to OData in dataflows](connector-odata-dataflows.md)
+- [Configure OData in a copy activity](connector-odata-copy-activity.md)

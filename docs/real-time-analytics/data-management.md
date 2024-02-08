@@ -1,34 +1,44 @@
 ---
-title: Data management in Real-Time Analytics
-description: Learn how to manage your data in Real-Time Analytics in Microsoft Fabric.
+title: Data management
+description: Learn how to manage your data in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 01/31/2024
+ms.search.form: Manage data in a KQL Database
 ---
 
 # Data management
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
 
+[!INCLUDE [managed-identity](../includes/real-time-analytics/managed-identity.md)]
+
 ## Data retention policy
 
-To change the data retention policy, browse to your KQL database and select the **Manage** tab. Then, select **Data retention policy**. Enter a time period and select **Done**. By default, your data is stored for 36,500 days.
+The retention policy controls the mechanism that automatically removes data from tables or [materialized views](/azure/data-explorer/kusto/management/materialized-views/materialized-view-overview?context=/fabric/context/context&pivots=fabric).
 
-For more information, see [Retention policy](/azure/data-explorer/kusto/management/retentionpolicy?context=/fabric/context/context).
+For more information, see [Data retention policy](data-policies.md#data-retention-policy).
+
+## Caching policy
+
+The caching policy allows to you to choose which data should be cached and kept in local SSD storage.
+
+For more information, see [Caching policy](data-policies.md#caching-policy).
 
 ## One logical copy
 
-To expose the data in your KQL database to all of [!INCLUDE [product-name](../includes/product-name.md)] experiences, create a OneLake shortcut.
+To expose the data in your KQL database to all Microsoft Fabric experiences, create a OneLake shortcut.
 
-For more information, see [One logical copy](onelake-mirroring.md).
+For more information, see [One logical copy](one-logical-copy.md).
 
 ## Table update policy
 
@@ -48,8 +58,8 @@ This feature allows you to create or alter an existing function using the `.crea
 
 For more information, see [Create stored functions](create-functions.md)
 
-## Next steps
+## Related content
 
 * [Create a database](create-database.md)
-* [Get data from a blob](get-data-blob.md)
-* [Query data in the KQL Queryset](kusto-query-set.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
+* [Query data in a KQL queryset](kusto-query-set.md)

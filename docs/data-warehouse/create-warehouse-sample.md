@@ -4,9 +4,13 @@ description: Learn how to create a sample Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Create a warehouse
 ---
 # Create a sample Warehouse in Microsoft Fabric
@@ -14,8 +18,6 @@ ms.search.form: Create a warehouse
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article describes how to get started with sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including creation and consumption of the warehouse.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a warehouse sample
 
@@ -31,7 +33,7 @@ In this section, we walk you through two distinct experiences available for crea
 
    :::image type="content" source="media\create-warehouse-sample\home-hub-provide-sample-name.png" alt-text="Screenshot showing the Warehouse creation experience in the Home hub." lightbox="media\create-warehouse-sample\home-hub-provide-sample-name.png":::
 
-3. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few minutes to complete.
+3. The create action creates a new [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and start loading sample data into it. The data loading takes few seconds to complete.
 
    :::image type="content" source="media\create-warehouse-sample\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into Warehouse." lightbox="media\create-warehouse-sample\loading-sample-data.png":::
 
@@ -47,7 +49,7 @@ For more information on how to create a warehouse, see [Create a Warehouse](crea
 
    :::image type="content" source="media\create-warehouse-sample\use-sample-database.png" alt-text="Screenshot showing where to select the Warehouse card in the Create hub." lightbox="media\create-warehouse-sample\use-sample-database.png":::
 
-2. The data loading takes few minutes to complete.
+2. The data loading takes few seconds to complete.
 
    :::image type="content" source="media\create-warehouse-sample\loading-sample-data.png" alt-text="Screenshot showing the loading sample data into warehouse." lightbox="media\create-warehouse-sample\loading-sample-data.png":::
 
@@ -112,7 +114,7 @@ ORDER BY
     ti.HourlyBucket
 ```
 
-## Next steps
+## Related content
 
 - [Query warehouse](query-warehouse.md)
 - [Warehouse settings and context menus](settings-context-menus.md)

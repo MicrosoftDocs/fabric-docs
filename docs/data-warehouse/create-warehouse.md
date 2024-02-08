@@ -4,9 +4,13 @@ description: Learn how to create a Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Create a warehouse # This article's title should not change. If so, contact engineering.
 ---
 # Create a Warehouse in Microsoft Fabric
@@ -16,9 +20,7 @@ ms.search.form: Create a warehouse # This article's title should not change. If 
 This article describes how to get started with [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in Microsoft Fabric using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including discovering creation and consumption of the warehouse. You learn how to create your warehouse from scratch and sample along with other helpful information to get you acquainted and proficient with warehouse capabilities offered through the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 
 > [!NOTE]
-> It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](https://aka.ms/ssms) or [Azure Data Studio (ADS)](https://aka.ms/azuredatastudio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query a warehouse](query-warehouse.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+> It is important to note that much of the functionality described in this section is also available to users via a TDS end-point connection and tools such as [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) (for users who prefer to use T-SQL for the majority of their data processing needs). For more information, see [Connectivity](connectivity.md) or [Query a warehouse](query-warehouse.md).
 
 > [!TIP]
 > You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
@@ -29,7 +31,7 @@ In this section, we walk you through three distinct experiences available for cr
 
 ### Create a warehouse using the Home hub
 
-The first hub in the left navigation menus is the **Home** hub. You can start creating your warehouse from the **Home** hub by selecting the **Warehouse** card under the **New** section. An empty warehouse is created for you to start creating objects in the warehouse. You can use either a [sample data set](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
+The first hub in the left navigation menus is the **Home** hub. You can start creating your warehouse from the **Home** hub by selecting the **Warehouse** card under the **New** section. An empty warehouse is created for you to start creating objects in the warehouse. You can use either [sample data](/azure/open-datasets/dataset-catalog) to get a jump start or load your own test data if you prefer.
 
 :::image type="content" source="media\create-warehouse\warehouse-home-hub.png" alt-text="Screenshot showing the Warehouse card in the Home hub." lightbox="media\create-warehouse\warehouse-home-hub.png":::
 
@@ -149,7 +151,7 @@ ORDER BY
 > [!TIP]
 > You can proceed with either a blank Warehouse or a sample Warehouse to continue this series of Get Started steps.
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Create tables in Warehouse](create-table.md)

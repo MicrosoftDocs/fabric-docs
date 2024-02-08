@@ -5,15 +5,15 @@ ms.reviewer: snehagunda
 ms.author: qixwang
 author: qixwang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ---
 
 # Use a notebook to load data into your Lakehouse
 
 In this tutorial, learn how to read/write data into your lakehouse with a notebook.Spark API and Pandas API are supported to achieve this goal.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Load data with an Apache Spark API
 
@@ -75,6 +75,6 @@ The quickest way to have the code to work with Spark API or Pandas API is to use
 
 :::image type="content" source="media\lakehouse-notebook-explore\load-data-menu.png" alt-text="Screenshot showing where to select load data option." lightbox="media\lakehouse-notebook-explore\load-data-menu.png":::
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)

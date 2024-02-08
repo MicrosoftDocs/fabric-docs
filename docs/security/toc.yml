@@ -5,6 +5,12 @@ items:
   items:
   - name: Security overview
     href: security-overview.md
+  - name: Security fundamentals
+    href: security-fundamentals.md   
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml  
+  - name: Admin documentation
+    href: ../admin/index.yml          
 - name: Security features
   items:
   - name: Guest user sharing
@@ -15,7 +21,9 @@ items:
     href: security-lockbox.md
   - name: Service tags
     href: security-service-tags.md
-- name: Resiliency
+- name: Reliability
   items:
-  - name: Resiliency in Fabric
-    href: az-resiliency.md        
+  - name: Reliability in Microsoft Fabric
+    href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
+  - name: Disaster recovery guides by experience
+    href: experience-specific-guidance.md

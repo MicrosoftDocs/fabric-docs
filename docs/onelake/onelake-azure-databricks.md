@@ -5,30 +5,31 @@ ms.reviewer: eloldag
 ms.author: mabasile
 author: mabasile-MSFT
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 09/27/2023
 ---
 
 # Integrate OneLake with Azure Databricks
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-This scenario shows how to connect to OneLake via Azure Databricks. After completing this tutorial, you'll be able to read and write to a Microsoft Fabric Lakehouse from your Azure Databricks workspace.
+This scenario shows how to connect to OneLake via Azure Databricks. After completing this tutorial, you'll be able to read and write to a Microsoft Fabric lakehouse from your Azure Databricks workspace.
 
 ## Prerequisites
 
-Before you connect, complete these steps:
+Before you connect, you must have:
 
 - A Fabric workspace and lakehouse.
-- A premium Azure Databricks workspace.  Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough, which is required for this scenario.
+- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Entra credential passthrough, which you need for this scenario.
 
 ## Set up your Databricks workspace
 
 1. Open your Azure Databricks workspace and select **Create** > **Cluster**.
 
-1. To authenticate to OneLake with your Azure AD identity, you must enable Azure Data Lake Storage credential passthrough on your cluster in the Advanced Options.
+1. To authenticate to OneLake with your Microsoft Entra identity, you must enable Azure Data Lake Storage (ADLS) credential passthrough on your cluster in the Advanced Options.
 
-   :::image type="content" source="media\onelake-azure-databricks\advanced-options-create-cluster.png" alt-text="Screenshot showing where to select Create cluster in the Advanced options screen." lightbox="media\onelake-azure-databricks\advanced-options-create-cluster.png":::
+   :::image type="content" source="media\onelake-azure-databricks\advanced-options-create-cluster.png" alt-text="Screenshot showing where to select Create cluster in the Advanced options screen.":::
 
    > [!NOTE]
    > You can also connect Databricks to OneLake using a service principal. For more information about authenticating Azure Databricks using a service principal, see [Service principals for Azure Databricks automation](/azure/databricks/dev-tools/service-principals).
@@ -39,11 +40,12 @@ Before you connect, complete these steps:
 
 ## Author your notebook
 
-1. Navigate to your Fabric lakehouse and copy the ABFS path to your lakehouse. You can find it in the **Properties** pane.
-   > [!NOTE]
-   > Azure Databricks only supports the Azure Blob Filesystem (ABFS) driver when reading and writing to Azure Data Lake Storage (ADLS) Gen2 and OneLake: *abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/*
+1. Navigate to your Fabric lakehouse and copy the Azure Blob Filesystem (ABFS) path to your lakehouse. You can find it in the **Properties** pane.
 
-1. Save the path to your lakehouse in your Databricks notebook. This lakehouse is where you'll write your processed data later:
+   > [!NOTE]
+   > Azure Databricks only supports the Azure Blob Filesystem (ABFS) driver when reading and writing to ADLS Gen2 and OneLake: `abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/`.
+
+1. Save the path to your lakehouse in your Databricks notebook. This lakehouse is where you write your processed data later:
 
    ```python
    oneLakePath = 'abfss://myWorkspace@onelake.dfs.fabric.microsoft.com/myLakehouse.lakehouse/Files/'
@@ -62,7 +64,7 @@ Before you connect, complete these steps:
    display(filteredTaxiDF)
    ```
 
-1. Write your filtered dataframe to your Fabric Lakehouse using your OneLake path.
+1. Write your filtered dataframe to your Fabric lakehouse using your OneLake path.
 
    ```python
    filteredTaxiDF.write.format("csv").option("header", "true").mode("overwrite").csv(oneLakePath)
@@ -75,8 +77,8 @@ Before you connect, complete these steps:
    display(lakehouseRead.limit(10))
    ```
 
-Congratulations! You can now read and write data in Fabric using Azure Databricks.
+Congratulations. You can now read and write data in Fabric using Azure Databricks.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure HDInsight](onelake-azure-hdinsight.md)

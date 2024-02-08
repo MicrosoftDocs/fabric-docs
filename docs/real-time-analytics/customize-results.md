@@ -1,25 +1,25 @@
 ---
-title: Customize results in the KQL Queryset results grid in Real-Time Analytics
-description: Learn how to customize results in the KQL Queryset results grid
+title: Customize results in the KQL Queryset results grid
+description: Learn how to customize results in the KQL Queryset results grid in Real-Time Analytics.
 ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 09/28/2023
+ms.search.form: KQL Queryset
 ---
 # Customize results in the KQL Queryset results grid
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Use the results grid in the KQL Queryset to customize results and perform further analysis on your data. This article describes actions that can be done in the results grid after a query has been run.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* [KQL Database](create-database.md) with data
-* [KQL Queryset](kusto-query-set.md)
+* A [KQL Database](create-database.md) with editing permissions and data
+* A [KQL Queryset](kusto-query-set.md)
 
 ## Expand a cell
 
@@ -156,7 +156,7 @@ You can look for a specific expression within a result table.
 
     :::image type="content" source="media/kusto-query-set/search-results.png" alt-text="Screenshot of a table containing highlighted expressions from search results."  lightbox="media/kusto-query-set/search-results.png":::
 
-## Next steps
+## Related content
 
 * [Visualize data in a Power BI report](create-powerbi-report.md)
 * [Kusto Query Language overview](/azure/data-explorer/kusto/query/index?context=/fabric/context/context)

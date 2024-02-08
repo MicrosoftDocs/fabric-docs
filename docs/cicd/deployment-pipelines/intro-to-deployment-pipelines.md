@@ -1,22 +1,22 @@
 ---
-title: Overview of Fabric deployment pipelines 
+title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 09/28/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
 
 # Introduction to deployment pipelines
 
 > [!NOTE]
-> This articles in this section describe how to deploy content to your app. For version control, see the [git integration](../git-integration/intro-to-git-integration.md) documentation.
+> This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
-In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides BI creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. Supported content types include reports, paginated reports, dashboards, datasets, and dataflows.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#supported-items) that you can deploy.
 
 ## Learn to use deployment pipelines
 
@@ -28,15 +28,15 @@ You can learn how to use the deployment pipelines tool by following these links.
 
 ## Pipeline structure
 
-Deployment pipelines is designed as a pipeline with three stages:
+You can decide how many stages you want in your deployment pipeline. There can be anywhere between two and ten stages. When you create a pipeline, the default three typical stages are given as a starting point, but you can add, delete, or rename the stages to suit your needs. Regardless of how many stages there are, the general concepts are the same.:
 
 * **<a name="development"></a>Development**
 
-    This stage is used to design, build, and upload new content with  fellow creators. This is the first stage in deployment pipelines.
+    The first stage in deployment pipelines where you upload new content with your fellow creators. You can design build, and develop here, or in a different stage.
 
 * **<a name="test"></a>Test**
 
-    You're ready to enter the test stage after you've made all the needed changes to your content. You upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
+    After you've made all the needed changes to your content, you're ready to enter the test stage. Upload the modified content so it can be moved to this test stage. Here are three examples of what can be done in the test environment:
 
   * Share content with testers and reviewers
 
@@ -56,13 +56,13 @@ When you deploy content from the source stage to a target stage, the source cont
 
 :::image type="content" source="media/intro-to-deployment-pipelines/replaced-content.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
-You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#deployed-items), and [which items are not copied](understand-the-deployment-process.md#unsupported-items), in [Understand the deployment process](understand-the-deployment-process.md).
+You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#supported-items), and [which items are not copied](understand-the-deployment-process.md#unsupported-items), in [Understand the deployment process](understand-the-deployment-process.md).
 
 ## Automation
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-## Next steps
+## Related content
 
 * [Understand the deployment pipelines process](understand-the-deployment-process.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

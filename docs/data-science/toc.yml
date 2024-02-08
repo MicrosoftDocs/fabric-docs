@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
+  - name: What is SynapseML?
+    href: synapse-overview.md
 - name: Get started
   items:
   - name: Data science tutorial introduction
@@ -13,15 +15,13 @@ items:
     href: tutorial-data-science-prepare-system.md
   - name: 1 Ingest data into a Fabric lakehouse
     href: tutorial-data-science-ingest-data.md
-  - name: 2 Explore and visualize data using notebooks
+  - name: 2 Explore and clean data using notebooks
     href: tutorial-data-science-explore-notebook.md
-  - name: 3 Perform data cleansing and preparation
-    href: tutorial-data-science-data-cleanse.md
-  - name: 4 Train and register machine learning models
+  - name: 3 Train and register machine learning models
     href: tutorial-data-science-train-models.md
-  - name: 5 Perform batch scoring and save predictions
+  - name: 4 Perform batch scoring and save predictions
     href: tutorial-data-science-batch-scoring.md
-  - name: 6 Create a Power BI report
+  - name: 5 Create a Power BI report
     href: tutorial-data-science-create-report.md
 - name: Notebooks
   items:
@@ -29,50 +29,94 @@ items:
     href: ../data-engineering/how-to-use-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Develop and run notebooks
     href: ../data-engineering/author-execute-notebook.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Format code in notebooks
+    href: ../data-engineering/author-notebook-format-code.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Run notebooks in high concurrency mode
+    href: ../data-engineering/configure-high-concurrency-session-notebooks.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Notebook visualization
     href: ../data-engineering/notebook-visualization.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Explore data in lakehouse
     href: ../data-engineering/lakehouse-notebook-explore.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Load data in lakehouse
     href: ../data-engineering/lakehouse-notebook-load-data.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Notebook source control and deployment
+    href: ../data-engineering/notebook-source-control-deployment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Use Notebook public APIs
+    href: ../data-engineering/notebook-public-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: ../data-engineering/create-and-use-environment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Manage Spark compute in environments
+    href: ../data-engineering/environment-manage-compute.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Manage libraries in environments
+    href: ../data-engineering/environment-manage-library.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: ../data-engineering/environment-workspace-migration.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
-  - name: How to use end-to-end AI samples
-    href: use-ai-samples.md
-  - name: Retail recommendation
-    href: retail-recommend-model.md
-  - name: Fraud detection
-    href: fraud-detection.md
-  - name: Forecasting
-    href: time-series-forecasting.md
-  - name: Text classification
-    href: title-genre-classification.md
-  - name: Uplift modeling
-    href: uplift-modeling.md
+  - name: Python tutorials
+    items:
+    - name: How to use end-to-end AI samples
+      href: use-ai-samples.md
+    - name: Customer churn prediction
+      href: customer-churn.md
+    - name: Book recommendation
+      href: retail-recommend-model.md
+    - name: Fraud detection
+      href: fraud-detection.md
+    - name: Time series forecasting
+      href: time-series-forecasting.md
+    - name: Text (title genre) classification
+      href: title-genre-classification.md
+    - name: Uplift modeling
+      href: uplift-modeling.md
+    - name: Machine failure prediction
+      href: predictive-maintenance.md
+    - name: Sales forecasting
+      href: sales-forecasting.md
+  - name: R tutorials
+    items:
+    - name: Customer churn
+      href: r-customer-churn.md
+    - name: Fraud detection
+      href: r-fraud-detection.md
+    - name: Avocado price prediction
+      href: r-avocado.md
+    - name: Flight delay prediction
+      href: r-flight-delay.md
 - name: Governance
   items:
-  - name: Roles and permissions
-    href: models-experiments-rbac.md
   - name: Lineage for models and experiments
     href: data-science-lineage.md
 - name: Preparing data 
   items:
-  - name: How to read and write data with Pandas
+  - name: Read and write data with Pandas
     href: read-write-pandas.md
-  - name: How to accelerate data prep with Data Wrangler
+  - name: Accelerate data prep with Data Wrangler
     href: data-wrangler.md
+  - name: Explore and transform Spark data with Data Wrangler (Preview)
+    href: data-wrangler-spark.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: Train machine learning models
   items:
   - name: Training Overview
     href: ./model-training/model-training-overview.md
-  - name: How-to guides
-    items:
-      - name: Train with Spark MLlib
-        href: ./model-training/fabric-sparkml-tutorial.md
-      - name: Train models with Scikit-learn
-        href: train-models-scikit-learn.md
-      - name: Train models with SynapseML
-        href: train-models-synapseml.md  
+  - name: Train with Spark MLlib
+    href: ./model-training/fabric-sparkml-tutorial.md
+  - name: Train models with Scikit-learn
+    href: train-models-scikit-learn.md
+  - name: Train models with SynapseML
+    href: train-models-synapseml.md  
+  - name: Train interpretable models for classification
+    href: explainable-boosting-machines-classification.md
+  - name: Train interpretable models for regression
+    href: explainable-boosting-machines-regression.md
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
@@ -81,26 +125,42 @@ items:
     href: machine-learning-model.md
   - name: Fabric autologging
     href: mlflow-autologging.md
-  - name: How-to guides
-    items:
-    - name: Train models with PyTorch
-      href: train-models-pytorch.md
+  - name: Train models with PyTorch
+    href: train-models-pytorch.md
 - name: Model scoring
   items:   
     - name: Direct lake mode and PBI reporting
       href: ../data-engineering/lakehouse-pbi-reporting.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Score models with PREDICT
       href: model-scoring-predict.md
+- name: Secure and manage ML items
+  items:
+    - name: Disaster recovery for ML items
+      href: data-science-disaster-recovery.md
+    - name: Roles and permissions
+      href: models-experiments-rbac.md
 - name: Apache Spark
   items:
   - name: Spark compute
     items:
     - name: Overview
       href: ../data-engineering/spark-compute.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
-    - name: Runtime
-      href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Configure starter pools
+      href: ../data-engineering/configure-starter-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Billing and utilization
+      href: ../data-engineering/billing-capacity-management-for-spark.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Apache Spark Runtimes
+      items:
+        - name: Runtimes overview
+          href: ../data-engineering/runtime.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+        - name: Runtime 1.2 (Spark 3.4)
+          href: ../data-engineering/runtime-1-2.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+        - name: Runtime 1.1 (Spark 3.3)
+          href: ../data-engineering/runtime-1-1.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Create custom pools
       href: ../data-engineering/create-custom-spark-pools.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: High Concurrency mode
+      href: ../data-engineering/high-concurrency-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Autotune Spark configuration
       href: ../data-engineering/autotune.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Spark concurrency limits and queueing
@@ -113,6 +173,8 @@ items:
       href: ../data-engineering/create-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Run a Spark job definition
       href: ../data-engineering/run-spark-job-definition.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Spark job definition API tutorial
+      href: ../data-engineering/spark-job-definition-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Spark development
     items:
     - name: Spark utilities
@@ -128,10 +190,10 @@ items:
     - name: Spark workspace settings 
       href: ../data-engineering/workspace-admin-settings.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Spark admin settings - FAQ
-      href: ../data-engineering/spark-admin-settings-faq.yml?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+      href: ../data-engineering/spark-admin-settings-faq.yml?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json 
   - name: Spark monitoring
     items:
-    - name: Spark monitoring overview
+    - name: Apache Spark monitoring overview
       href: ../data-engineering/spark-monitoring-overview.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Apache Spark Advisor
       href: ../data-engineering/spark-advisor-introduction.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
@@ -145,46 +207,88 @@ items:
       href: ../data-engineering/monitor-spark-job-definitions.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
     - name: Monitor Spark application
       href: ../data-engineering/spark-detail-monitoring.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+    - name: Navigate the Apache Spark history server
+      href: ../data-engineering/apache-spark-history-server.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json  
+    - name: Monitor Spark capacity consumption
+      href: ../data-engineering/monitor-spark-capacity-consumption.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Intelligent cache
+    href: ../data-engineering/intelligent-cache.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: AI services
+  items:
+  - name: Overview of AI services in Fabric
+    href: ./ai-services/ai-services-overview.md
+  - name: How-to guides
+    items:
+    - name: Use prebuilt Azure openAI
+      items:
+        - name: with REST API
+          href: ./ai-services/how-to-use-openai-via-rest-api.md
+        - name: with SynapseML or OpenAI Python SDK
+          href: ./ai-services/how-to-use-openai-sdk-synapse.md
+    - name: Use prebuilt text analytics with REST API or SynapseML
+      href: ./ai-services/how-to-use-text-analytics.md
+    - name: Use prebuilt Azure AI translator with REST API or SynapseML 
+      href: ./ai-services/how-to-use-text-translator.md
 - name: Use Python
   items:
   - name: Python overview
     href: ./python-guide/python-overview.md
-  - name: How-to guides
-    items:
-    - name: Python library management
-      href: ./python-guide/python-library-management.md
-    - name: Python visualizations
-      href: ./python-guide/python-visualizations.md
+  - name: Python visualizations
+    href: ./python-guide/python-visualizations.md
 - name: Use R
   items:
   - name: R overview
     href: r-overview.md
+  - name: R library management
+    href: r-library-management.md
+  - name: How to use SparkR 
+    href: r-use-sparkr.md
+  - name: How to use sparklyr
+    href: r-use-sparklyr.md
+  - name: How to use Tidyverse
+    href: r-use-tidyverse.md
+  - name: R visualization
+    href: r-visualization.md
+- name: Semantic link
+  items:
+  - name: Overview
+    items:
+    - name: What is semantic link?
+      href: semantic-link-overview.md
   - name: Tutorials
     items:
-    - name: Avocado price prediction
-      href: r-avocado.md
-    - name: Flight delay prediction
-      href: r-flight-delay.md
-  - name: How-to guides
-    items:
-    - name: R library management
-      href: r-library-management.md
-    - name: How to use SparkR 
-      href: r-use-sparkr.md
-    - name: How to use sparklyr
-      href: r-use-sparklyr.md
-    - name: How to use Tidyverse
-      href: r-use-tidyverse.md
-    - name: R visualization
-      href: r-visualization.md
+    - name: Clean data with functional dependencies
+      href: tutorial-data-cleaning-functional-dependencies.md
+    - name: Analyze functional dependencies in a sample semantic model
+      href: tutorial-power-bi-dependencies.md
+    - name: Extract and calculate Power BI measures from a notebook
+      href: tutorial-power-bi-measures.md
+    - name: Discover relationships in a semantic model, using semantic link
+      href: tutorial-power-bi-relationships.md
+    - name: Discover relationships in the Synthea dataset, using semantic link
+      href: tutorial-relationships-detection.md
+    - name: Validate data with Great Expectations (GX)
+      href: tutorial-great-expectations.md
+  - name: Power BI connectivity
+    href: semantic-link-power-bi.md
+  - name: Semantic propagation
+    href: semantic-link-semantic-propagation.md
+  - name: Semantic functions
+    href: semantic-link-semantic-functions.md
+  - name: Read from Power BI and write data usable by Power BI
+    href: read-write-power-bi.md
+  - name: Explore and validate functional dependencies in your data
+    href: semantic-link-validate-data.md
+  - name: Explore and validate relationships in datasets
+    href: semantic-link-validate-relationship.md
 - name: SynapseML
   items:
   - name: Overview
     items:
     - name: What is LightGBM in SynapseML?
       href: lightgbm-overview.md
-    - name: What is Cognitive Services in SynapseML?
-      href: overview-cognitive-services.md
+    - name: Azure AI services in SynapseML with bring your own key
+      href: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
   - name: Get started
     items:
     - name: Build your first SynapseML model
@@ -197,8 +301,8 @@ items:
       href: open-ai.md
     - name: Use LightGBM with SynapseML
       href: how-to-use-lightgbm-with-synapseml.md
-    - name: Use Cognitive Services with SynapseML
-      href: how-to-use-cognitive-services-with-synapseml.md
+    - name: Use Azure AI services with SynapseML
+      href: how-to-use-ai-services-with-synapseml.md
     - name: Perform classification with and without SynapseML
       href: classification-before-and-after-synapseml.md
     - name: Use k-nearest neighbors with SynapseML
@@ -210,9 +314,12 @@ items:
     - name: Perform multivariate anomaly detection with SynapseML
       href: isolation-forest-multivariate-anomaly-detection.md 
     - name: Build a Search engine with SynapseML
-      href: cognitive-services-create-a-multilingual-search-engine-from-forms.md
-    - name: Use SynapseML and Cognitive Services for multivariate anomaly detection
-      href: cognitive-services-multivariate-anomaly-detection.md
+      href: create-a-multilingual-search-engine-from-forms.md
+    - name: Use SynapseML and Azure AI services for multivariate anomaly detection
+      href: multivariate-anomaly-detection.md
     - name: Tune hyperparameters using SynapseML
       href: hyperparameter-tuning-fighting-breast-cancer.md
-
+- name: Reference
+  items:
+    - name: SemPy Python SDK
+      href: /python/api/semantic-link/overview-semantic-link

@@ -4,9 +4,11 @@ description: Follow steps to ingest data into a Warehouse table using Transact-S
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Ingesting data
 ---
 
@@ -15,8 +17,6 @@ ms.search.form: Ingesting data
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 The Transact-SQL language offers options you can use to load data at scale from existing tables in your lakehouse and warehouse into new tables in your warehouse. These options are convenient if you need to create new versions of a table with aggregated data, versions of tables with a subset of the rows, or to create a table as a result of a complex query. Let's explore some examples.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Creating a new table with the result of a query by using CREATE TABLE AS SELECT (CTAS)
 
@@ -44,7 +44,7 @@ SELECT DATEPART(YEAR,[updated]) [year], DATEPART(MONTH,[updated]) [month], DATEP
 FROM [dbo].[bing_covid-19_data];
 ```
 
-As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality may affect spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
+As another example, you can create a new table that summarizes the number of cases observed in each month, regardless of the year, to evaluate how seasonality affects spread in a given country/region. It uses the table created in the previous example with the new `month` column as a source: 
 
 ```sql
 CREATE TABLE [dbo].[infections_by_month]
@@ -99,7 +99,7 @@ ON cases.[iso3] = reference.[countrycode];
 
 To learn more about cross-warehouse queries, see [Write a cross-database SQL Query](query-warehouse.md#write-a-cross-database-query).
 
-## Next steps
+## Related content
 
 - [Ingesting data into the Warehouse](ingest-data.md)
 - [Ingest data using the COPY statement](ingest-data-copy.md)

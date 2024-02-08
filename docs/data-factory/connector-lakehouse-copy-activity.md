@@ -1,18 +1,19 @@
 ---
-title: How to configure Lakehouse in a copy activity
+title: Configure Lakehouse in a copy activity
 description: This article explains how to copy data using Lakehouse.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 02/02/2024
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Lakehouse in a copy activity
+# Configure Lakehouse in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to use the copy activity in a data pipeline to copy data from and to the Fabric Lakehouse. By default, data is written to Lakehouse Table in V-Order, and you can go to [Delta Lake table optimization and V-Order](../data-engineering/delta-optimization-and-v-order.md#what-is-v-order) for more information.
 
 ## Supported format
 
@@ -22,10 +23,10 @@ Lakehouse supports the following file formats. Refer to each article for format-
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
-- Parquet format
-- XML format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
+- [Parquet format](format-parquet.md)
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -51,7 +52,10 @@ The following properties are **required**:
 
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
-- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**.
+- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**. If you use **Add dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+
+    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
   - If you select **Tables**:
     - **Table name**: Choose an existing table from the table list or specify a table name as the source.
@@ -97,7 +101,10 @@ The following properties are **required**:
 
 - **Data store type**: Select **Workspace**.
 - **Workspace data store type**: Select **Lakehouse** from the data store type list.
-- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**.
+- **Lakehouse**: Select an existing Lakehouse from the workspace. If none exists, then create a new Lakehouse by selecting **New**. If you use **Add dynamic content** to specify your Lakehouse, add a parameter and specify the Lakehouse object ID as the parameter value. To get your Lakehouse object ID, open your Lakehouse in your workspace, and the ID is after `/lakehouses/`in your URL.
+
+    :::image type="content" source="./media/connector-lakehouse/lakehouse-object-id.png" alt-text="Screenshot showing the Lakehouse object ID.":::
+
 - **Root folder**: Select **Tables** or **Files**, which indicates the virtual view of the managed or unmanaged area in your lake. For more information, refer to [Lakehouse introduction](../data-engineering/lakehouse-overview.md).
   - If you select **Tables**:
     - **Table name**: Choose an existing table from the table list or specify a table name as the destination.
@@ -139,7 +146,18 @@ The following properties are **required**:
 
 ### Mapping
 
-For the **Mapping** tab configuration, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping isn't supported.
+For the **Mapping** tab configuration, if you don't apply Lakehouse table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab). 
+
+If you apply Lakehouse table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+
+For example, the type for *PersonID* column in source is int, and you can change it to string type when mapping to destination column.
+
+   :::image type="content" source="media/connector-lakehouse/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
+
+> [!NOTE]
+> Editing the destination type currently is not supported when your source is decimal type.
+
+If you choose Binary as your file format, mapping isn't supported.
 
 ### Settings
 
@@ -168,7 +186,7 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Path to file list** |Indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. Apply when choosing **List of files** in **File path type**.|\<path to file list> |No| fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.| select or unselect |No | recursive:<br>true or false|
 |**File format**|The format of the file that you use.|\<file format>|Yes|type (under `formatSettings`):<br>DelimitedTextReadSettings|
-|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time will be applied to UTC time zone in the format of 'yyyy-mm-ddThh:mm:ss.fffZ'.<br><br>This property can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
+|**Filter by last modified**|The files with last modified time in the range [Start time, End time) will be filtered for further processing.<br><br> The time is applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`.<br><br>This property can be skipped which means no file attribute filter is applied. This property doesn't apply when you configure your file path type as **List of files**.|* **Start time**<br>* **End time** |No |modifiedDatetimeStart<br>modifiedDatetimeEnd|
 |**Enable partition discovery**|Whether to parse the partitions from the file path and add them as extra source columns.| Selected or unselected |No| enablePartitionDiscovery: <br> true or false (default)|
 |**Partition root path**|The absolute partition root path to read partitioned folders as data columns.| \<your partition root path\> |No| partitionRootPath|
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. A value is needed only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
@@ -191,6 +209,6 @@ The following tables contain more information about a copy activity in Lakehouse
 |**Block size (MB)** |The block size in MB used to write data to Lakehouse. Allowed value is between 4 MB and 100 MB.|\<block size\>|No|blockSizeInMB|
 |**Metadata** |The custom metadata set when copying to a destination.|* `$$LASTMODIFIED`<br>* Expression<br>* Static value|No |metadata|
 
-## Next steps
+## Related content
 
 - [Lakehouse connector overview](connector-lakehouse-overview.md)

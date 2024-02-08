@@ -1,29 +1,32 @@
 ---
-title: How to configure Microsoft 365 in a copy activity
+title: Configure Microsoft 365 in a copy activity
 description: This article explains how to copy data using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Microsoft 365 in a copy activity
+# Configure Microsoft 365 in a copy activity
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can only ingest data from Microsoft 365 into **Azure Blob Storage**, **Azure Data Lake Storage Gen1**, and **Azure Data Lake Storage Gen2**.
+Microsoft Fabric Data pipelines integrate with [Microsoft Graph data connect](/graph/data-connect-concept-overview), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
 
 ## Prerequisites
 
-To copy and transform data from Microsoft 365 into Azure, you need to complete the following prerequisite steps:
+To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
 - Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
-- Create and configure an Azure AD web application in Azure Active Directory. For instructions, go to [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal).
+- Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 - Make note of the following values, which you use to define the connection for Microsoft 365:
-Tenant ID. For instructions, go to [Get tenant ID](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
-- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
-Add the user identity who will be making the data access request as the owner of the Azure AD web application (from the Azure AD web application > **Settings** > **Owners** > **Add owner**).
+Tenant ID. For instructions, go to [Get tenant ID](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
+- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
+Add the user identity who will be making the data access request as the owner of the Microsoft Entra web application (from the Microsoft Entra web application > **Settings** > **Owners** > **Add owner**).
 - The user identity must be in the Microsoft 365 organization you're getting data from and must not be a Guest user.
 
 ## Approving new data access requests
@@ -31,12 +34,6 @@ Add the user identity who will be making the data access request as the owner of
 If you're requesting data for this context for the first time (a combination of which data table is being accessed, which destination account is the data being loaded into, and which user identity is making the data access request), the copy activity status is displayed as **In Progress**. Only when you select the [**Details** link under **Actions**](/azure/data-factory/copy-activity-overview#monitoring) will the status be displayed as **RequestingConsent**. A member of the data access approver group needs to approve the request in the Privileged Access Management before the data extraction can proceed.
 
 Refer to the [frequently asked questions](/graph/data-connect-faq#how-can-i-approve-pam-requests-via-the-microsoft-365-admin-center) on how the approver can approve the data access request. Refer to the [data connect integration with PAM](/graph/data-connect-pam) article for an explanation of the overall integration with Privileged Access Management, including how to set up the data access approver group.
-
-## Supported format
-
-Microsoft 365 supports the following file formats. Refer to each article for format-based settings.
-
-- [Binary format](format-binary.md)
 
 ## Supported configuration
 
@@ -61,7 +58,7 @@ The following properties are **required**:
 
 - **Data store type**: Select **External**.
 - **Connection**:  Select a **Microsoft 365** connection from the connection list. If no connection exists, then create a new Microsoft 365 connection by selecting **New**.
-- **Table**: Name of the table to extract from **Microsoft 365**.
+- **Table**: Name of the table to extract from **Microsoft 365**. You can preview the sample data by selecting **Preview sample data**.
 
 Under **Advanced**, you can specify the following fields:
 
@@ -82,10 +79,6 @@ Under **Advanced**, you can specify the following fields:
   Specify the **Start time (UTC)** and **End time (UTC)** to filter on when you select a DateTime filter column.
 
   :::image type="content" source="./media/connector-microsoft-365/data-filter.png" alt-text="Screenshot showing data filter." lightbox="./media/connector-microsoft-365/data-filter.png":::
-
-- **Output columns**: Array of the columns to copy to the destination.
-
-    :::image type="content" source="./media/connector-microsoft-365/output-columns.png" alt-text="Screenshot showing output columns." lightbox="./media/connector-microsoft-365/output-columns.png":::
 
 ### Mapping
 
@@ -112,8 +105,7 @@ The following tables contain more information about the copy activity in Microso
 |**Date filter<br>(Column name)**|Name of the DateTime filter column. Use this property to limit the time range for which Microsoft 365 data is extracted.|\<your DateTime filter column>|Yes if data has one or more DateTime columns.|dateFilterColumn|
 |**Start time (UTC)**|Start DateTime value to filter on.|\<start time>|Yes if `dateFilterColumn` is specified|startTime|
 |**End time (UTC)**|End DateTime value to filter on.|\<end time>|Yes if `dateFilterColumn` is specified|endTime|
-|**Output columns**|Array of the columns to copy to destination.|\<output columns>|No|outputColumns|
 
-## Next steps
+## Related content
 
 - [How to create a Microsoft 365 connection](connector-microsoft-365.md)

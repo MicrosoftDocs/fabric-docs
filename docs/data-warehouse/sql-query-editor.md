@@ -3,10 +3,12 @@ title: Query using the SQL query editor
 description: Learn how to use the SQL query editor.
 author: prlangad
 ms.author: prlangad
-ms.reviewer: wiassaf
-ms.date: 06/06/2023
+ms.reviewer: wiassaf, jacindaeng
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
 # Query using the SQL query editor
@@ -20,8 +22,6 @@ This article describes how to use the SQL query editor in the [!INCLUDE [product
 - You can quickly [view data in the Data preview](data-preview.md).
 
 The SQL query editor provides support for IntelliSense, code completion, syntax highlighting, client-side parsing, and validation. You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## SQL query editor in the Fabric portal
 
@@ -43,31 +43,53 @@ The **Results** preview is displayed in the **Results** section. If number of ro
 
 The status bar indicates the query status, duration of the run and number of rows and columns returned in results.
 
-- When you run multiple queries and those return multiple results, you can select results drop down to see individual results.
-
-   :::image type="content" source="media\sql-query-editor\sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media\sql-query-editor\sql-query-editor-overview.png":::
-
-- To enable **Save as view**, **Save as table**, **Download Excel file**, and **Visualize results** menus, select the SQL statement containing SELECT statement in the SQL query editor.
+To enable **Save as view**, **Save as table**, **Download Excel file**, and **Visualize results** menus, highlight the SQL statement containing `SELECT` statement in the SQL query editor.
 
    :::image type="content" source="media\sql-query-editor\editor-commands.png" alt-text="Screenshot of the query editor window. Command buttons are boxed in red." lightbox="media\sql-query-editor\editor-commands.png":::
 
-- You can select the query and save your query as a view using the **Save as view** button. Select the schema name, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
+#### Save as view
 
-   :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu" lightbox="media\sql-query-editor\save-as-view.png":::
+You can select the query and save your query as a view using the **Save as view** button. Select the schema name that you have access to create views, provide name of view and verify the SQL statement before confirming creating view. When view is successfully created, it appears in the **Explorer**.
 
-- You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
+   :::image type="content" source="media\sql-query-editor\save-as-view.png" alt-text="Screenshot showing how to use Save as view menu." lightbox="media\sql-query-editor\save-as-view.png":::
 
-   :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu" lightbox="media\sql-query-editor\save-as-table.png":::
+#### Save as table
 
-- The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to view the results in Excel.
+You can use **Save as table** to save your query results into a table. Select the warehouse in which you would like to save results, select schema that you have access to create tables and provide table name to load results into the table using [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?view=fabric&preserve-view=true) statement. When table is successfully created, it appears in the **Explorer**.
 
-   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu" lightbox="media\sql-query-editor\download-excel-file-query.png":::
+   :::image type="content" source="media\sql-query-editor\save-as-table.png" alt-text="Screenshot showing how to use Save as table menu." lightbox="media\sql-query-editor\save-as-table.png":::
 
-- **Visualize results** allows you to create reports from your query results within the SQL query editor.
+#### Download Excel file
+
+The **Download Excel file** button opens the corresponding T-SQL Query to Excel and executes the query, enabling you to work with the results in Microsoft Excel on your local computer.
+
+   :::image type="content" source="media\sql-query-editor\download-excel-file-query.png" alt-text="Screenshot showing how to use Download Excel file menu." lightbox="media\sql-query-editor\download-excel-file-query.png":::
+
+Follow these steps to work with the Excel file locally:
+
+1. After you select the **Continue** button, locate the downloaded Excel file in your Windows File Explorer, for example, in the **Downloads** folder of your browser.
+1. To see the data, select the **Enable Editing** button in the **Protected View** ribbon followed by the **Enable Content** button in the **Security Warning** ribbon. Once both are enabled, you are presented with the following dialog to approve running the query listed.
+   :::image type="content" source="media\sql-query-editor\native-database-query.png" alt-text="Screenshot from Microsoft Excel showing the Native Database Query dialog." lightbox="media\sql-query-editor\native-database-query.png":::
+
+1. Select **Run**.
+1. Select one of the following methods (Windows, Database, or Microsoft account) to authenticate your account. Select **Connect**.
+   :::image type="content" source="media\sql-query-editor\sql-server-database-authentication.png" alt-text="Screenshot from Microsoft Excel showing the SQL Server database dialog." lightbox="media\sql-query-editor\sql-server-database-authentication.png":::
+
+Once you have successfully signed in, you'll see the data presented in the spreadsheet.
+
+#### Visualize results
+
+**Visualize results** allows you to create reports from your query results within the SQL query editor.
 
    :::image type="content" source="media\sql-query-editor\visualize-results-query.png" alt-text="Screenshot showing how to use Visualize results menu" lightbox="media\sql-query-editor\visualize-results-query.png":::
 
-   As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
+As you work on your SQL query, the queries are automatically saved every few seconds. A "saving" indicator appears in your query tab at the bottom to indicate that your query is being saved.
+
+#### Multiple result sets
+
+When you run multiple queries and those return multiple results, you can select results drop down list to see individual results.
+
+   :::image type="content" source="media\sql-query-editor\sql-query-editor-overview.png" alt-text="Screenshot of the query editor window with results." lightbox="media\sql-query-editor\sql-query-editor-overview.png":::
 
 ## Cross-warehouse querying
 
@@ -77,21 +99,21 @@ You can write a T-SQL query with three-part naming convention to refer to object
 
 ```sql
 SELECT 
-    emp.Employee
-    ,SUM(Profit) AS TotalProfit
-    ,SUM(Quantity) AS TotalQuantitySold
+   emp.Employee
+   ,SUM(Profit) AS TotalProfit
+   ,SUM(Quantity) AS TotalQuantitySold
 FROM
-    [SampleWarehouse].[dbo].[DimEmployee] as emp
+   [SampleWarehouse].[dbo].[DimEmployee] as emp
 JOIN
-    [WWI_Sample].[dbo].[FactSale] as sale
+   [WWI_Sample].[dbo].[FactSale] as sale
 ON
-    emp.EmployeeKey = sale.SalespersonKey
+   emp.EmployeeKey = sale.SalespersonKey
 WHERE  
-    emp.IsSalesperson = 'TRUE'
+   emp.IsSalesperson = 'TRUE'
 GROUP BY
-    emp.Employee
+   emp.Employee
 ORDER BY
-    TotalProfit DESC;
+   TotalProfit DESC;
 ```
 
 ## Keyboard shortcuts
@@ -122,7 +144,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - In SQL query editor, every time you run the query, it opens a separate session and closes it at the end of the execution. This means if you set up session context for multiple query runs, the context is not maintained for independent execution of queries.
 
-- You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements, but there are limitations for Transaction Control Language (TCL) statements. In the SQL query editor, when you select the **Run** button, you are submitting an independent batch request to execute. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window will run in a different batch and session.
+- You can run Data Definition Language (DDL), Data Manipulation Language (DML) and Data Control Language (DCL) statements, but there are limitations for Transaction Control Language (TCL) statements. In the SQL query editor, when you select the **Run** button, you're submitting an independent batch request to execute. Each **Run** action in the SQL query editor is a batch request, and a session only exists per batch. Each execution of code in the same query window runs in a different batch and session.
 
    - For example, when independently executing transaction statements, session context is not retained. In the following screenshot, `BEGIN TRAN` was executed in the first request, but since the second request was executed in a different session, there is no transaction to commit, resulting into the failure of commit/rollback operation. If the SQL batch submitted does not include a COMMIT TRAN, the changes applied after `BEGIN TRAN` will not commit.
 
@@ -136,7 +158,7 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
 
 - Visualize Results currently does not support SQL queries with an ORDER BY clause. 
 
-- The following table summarizes the expected behavior will not match with SQL Server Management Studio/Azure Data Studio:
+- The following table summarizes the expected behavior will not match with [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms)/[Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio):
 
    | **Scenario** | **Supported in SSMS/ADS** | **Supported in SQL query editor in Fabric portal** |
    |---|---|---|
@@ -144,7 +166,12 @@ Keyboard shortcuts provide a quick way to navigate and allow users to work more 
    |Using [sp_set_session_context (Transact-SQL)](/sql/relational-databases/system-stored-procedures/sp-set-session-context-transact-sql?view=fabric&preserve-view=true) for multiple batch statements runs |Yes|No|
    |[Transactions (Transact-SQL)](/sql/t-sql/language-elements/transactions-sql-data-warehouse?view=fabric&preserve-view=true) (unless executed as a single batch request) |Yes|No|
 
-## Next steps
+## Related content
 
-- [How-to: Query the Warehouse](query-warehouse.md)
 - [Query using the Visual Query editor](visual-query-editor.md)
+- [Tutorial: Create cross-warehouse queries with the SQL query editor](tutorial-sql-cross-warehouse-query-editor.md)
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [How-to: Query the Warehouse](query-warehouse.md)

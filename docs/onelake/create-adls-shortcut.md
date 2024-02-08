@@ -1,78 +1,42 @@
 ---
-title: Create an ADLS shortcut
+title: Create an Azure Data Lake Storage Gen2 shortcut
 description: Learn how to create ADLS shortcuts.
 ms.reviewer: eloldag
 ms.author: trolson
 author: TrevorLOlson
 ms.search.form: Shortcuts
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
-# How-to: Create an ADLS Gen2 shortcut
+# Create an Azure Data Lake Storage Gen2 shortcut
 
-In this how-to guide, you'll learn how to create an ADLS shortcut inside a Fabric Lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+In this article, you learn how to create an Azure Data Lake Storage (ADLS) Gen2 shortcut inside a Microsoft Fabric lakehouse. For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 ## Prerequisite
 
-Create a lakehouse by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
+If you don't have a lakehouse, create one by following these steps: [Create a lakehouse with OneLake](create-lakehouse-onelake.md).
 
-## Create an ADLS shortcut
-
-To create an Azure Data Lake Storage (ADLS) shortcut:
+## Create a shortcut
 
 1. Open a lakehouse.
 
-1. Right click on a directory within the **Lake view** of the lakehouse.
+1. Right-click on a directory within the **Lake view** of the lakehouse.
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
+   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="The same screenshot displayed earlier showing where to select New shortcut from the Lake view.":::
 
-1. Select the **ADLS Gen 2** tile.
+[!INCLUDE [adls-gen2-shortcut](../includes/adls-gen2-shortcut.md)]
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-tile-options-v2.png" alt-text="The same screenshot shown previously of the tile options in the New shortcut screen." lightbox="media\create-onelake-shortcut\new-shortcut-tile-options.png":::
+The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
 
-1. Specify the connection details this shortcut will use.
+   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
-   1. Provide the endpoint for your ADLS account (URL).
+## Related content
 
-      > [!NOTE]
-      > This must be the DFS endpoint for the storage account.
-
-   1. If you have already defined a connection for this storage location, it automatically appears in the connection drop-down. Otherwise, you can choose **Create new connection**.
-
-   1. Enter a **Connection name**.
-
-   1. Select the **Authentication kind** you want to use for the connection.
-
-   1. If you chose **Organizational account**, select the **Sign** **in** button.
-
-   1. Select **Next**.
-
-   :::image type="content" source="media\create-onelake-shortcut\connection-details.png" alt-text="Screenshot showing where to enter the Connection settings for a new shortcut." lightbox="media\create-onelake-shortcut\connection-details.png":::
-
-1. Specify the shortcut details.
-
-   1. Provide a name for the shortcut.
-
-   1. Provide a path for the shortcut (**Sub Path**). Enter a relative path that starts with a container for the storage account.
-
-      > [!NOTE]
-      > Shortcut paths are case sensitive.
-
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-details.png" alt-text="Screenshot showing where to enter new shortcut details." lightbox="media\create-onelake-shortcut\new-shortcut-details.png":::
-
-1. Select **Create**.
-
-1. See the folder icon with shortcut symbol in the explorer.
-
-   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol." lightbox="media\create-onelake-shortcut\folder-shortcut-symbol.png":::
-
-## Next steps
-
-- [How-to: Create a OneLake shortcut](create-onelake-shortcut.md)
-- [How-to: Create an Amazon S3 shortcut](create-s3-shortcut.md)
+- [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Create an Amazon S3 shortcut](create-s3-shortcut.md)

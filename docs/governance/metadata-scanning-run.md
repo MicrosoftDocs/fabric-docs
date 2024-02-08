@@ -4,7 +4,9 @@ description: Learn how to run metadata scanning on your organization's workspace
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/15/2023
 ---
 
@@ -41,7 +43,7 @@ Call [workspaces/getInfo](/rest/api/power-bi/admin/workspace-info-post-workspace
 
 Use the URI from the location header you received from calling *workspaces/getInfo* and poll on [workspaces/scanStatus/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-status) until the status returned is "Succeeded". This status means the scan result is ready. It's recommended to use a polling interval of 30-60 seconds. In the location header, you also receive the URI to call in the next step. Use it only after the status is "Succeeded".
 
-Use the URI from the location header you received from calling *workspaces/scanStatus/{scan-id}* and read the data using [workspaces/scanResult/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-result). The data contains the list of workspaces, artifact info, and other metadata based on the parameters passed in the *workspaces/getInfo* call.
+Use the URI from the location header you received from calling *workspaces/scanStatus/{scan-id}* and read the data using [workspaces/scanResult/{scan_id}](/rest/api/power-bi/admin/workspace-info-get-scan-result). The data contains the list of workspaces, item info, and other metadata based on the parameters passed in the *workspaces/getInfo* call.
 
 ## Step 2: Perform an incremental scan
 
@@ -53,16 +55,16 @@ Divide this list into chunks of up to 100 workspaces, and get the data for these
 
 ## Considerations and limitations
 
-* Datasets that haven't been refreshed or republished will be returned in API responses but without their subartifact information and expressions. For example, dataset name and lineage are included in the response, but not the dataset's table and column names.
-* Datasets containing only **DirectQuery** tables will return subartifact metadata only if some sort of action has been taken on the dataset, such as someone building a report on top of it, someone viewing a report based on it, etc.
-* [Real-time datasets](/power-bi/connect-data/service-real-time-streaming), datasets with [object-level security](https://powerbi.microsoft.com/blog/object-level-security-ols-is-now-generally-available-in-power-bi-premium-and-pro/), datasets with a live connection to *AS-Azure* and *AS on-premises*, and Excel full fidelity datasets aren't supported for subartifact metadata. For unsupported datasets, the response returns the reason for not getting the subartifact metadata from the dataset. It's found in a field named **schemaRetrievalError**, for example, **schemaRetrievalError: Unsupported request. RealTime dataset are not supported**.
-* The API doesn't return subartifact metadata for datasets that are larger than 1 GB in shared workspaces. In Premium workspaces, there's no size limitation on datasets. [DO WE NEED THIS CONSIDERATION FOR FABRIC?]
+* semantic models that haven't been refreshed or republished will be returned in API responses but without their subartifact information and expressions. For example, semantic model name and lineage are included in the response, but not the semantic model's table and column names.
+* semantic models containing only **DirectQuery** tables will return subartifact metadata only if some sort of action has been taken on the semantic model, such as someone building a report on top of it, someone viewing a report based on it, etc.
+* [Real-time datasets](/power-bi/connect-data/service-real-time-streaming), semantic models with [object-level security](https://powerbi.microsoft.com/blog/object-level-security-ols-is-now-generally-available-in-power-bi-premium-and-pro/), semantic models with a live connection to *AS-Azure* and *AS on-premises*, and Excel full fidelity datasets aren't supported for subartifact metadata. For unsupported datasets, the response returns the reason for not getting the subartifact metadata from the dataset. It's found in a field named **schemaRetrievalError**, for example, **schemaRetrievalError: Unsupported request. RealTime dataset are not supported**.
+* The API doesn't return subartifact metadata for semantic models that are larger than 1 GB in shared workspaces. In Premium workspaces, there's no size limitation on semantic models. [DO WE NEED THIS CONSIDERATION FOR FABRIC?]
 
 ## Licensing
 
-Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of artifacts located in non-Premium workspaces.
+Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
-## Next steps
+## Related content
 
 * [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Set up metadata scanning](../admin/metadata-scanning-setup.md).

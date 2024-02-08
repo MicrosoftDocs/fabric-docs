@@ -4,9 +4,11 @@ description: Learn about the features that allow you to ingest data into your wa
 author: periclesrocha
 ms.author: procha
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Ingesting data # This article's title should not change. If so, contact engineering.
 ---
 # Ingest data into the Warehouse
@@ -15,8 +17,6 @@ ms.search.form: Ingesting data # This article's title should not change. If so, 
 
  [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] offers built-in data ingestion tools that allow users to ingest data into warehouses at scale using code-free or code-rich experiences.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Data ingestion options
 
 You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using one of the following options:
@@ -24,7 +24,7 @@ You can ingest data into a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using o
 - **COPY (Transact-SQL)**: the COPY statement offers flexible, high-throughput data ingestion from an external Azure storage account. You can use the COPY statement as part of your existing ETL/ELT logic in Transact-SQL code. 
 - **Data pipelines**: pipelines offer a code-free or low-code experience for data ingestion. Using pipelines, you can orchestrate robust workflows for a full Extract, Transform, Load (ETL) experience that includes activities to help prepare the destination environment, run custom Transact-SQL statements, perform lookups, or copy data from a source to a destination. 
 - **Dataflows**: an alternative to pipelines, dataflows enable easy data preparation, cleaning, and transformation using a code-free experience. 
-- **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This scenario may be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace.
+- **Cross-warehouse ingestion**: data ingestion from workspace sources is also possible. This scenario might be required when there's the need to create a new table with a subset of a different table, or as a result of joining different tables in the warehouse and in the lakehouse. For cross-warehouse ingestion, in addition to the options mentioned, Transact-SQL features such as **INSERT...SELECT**, **SELECT INTO**, or **CREATE TABLE AS SELECT (CTAS)** work cross-warehouse within the same workspace.
 
 ### Decide which data ingestion tool to use
 
@@ -76,9 +76,12 @@ SELECT * FROM MyLakehouse.dbo.MyLakehouseTable;
 - Azure Data Lake Storage (ADLS) Gen2 offers better performance than Azure Blob Storage (legacy). Consider using an ADLS Gen2 account whenever possible. 
 - For pipelines that run frequently, consider isolating your Azure storage account from other services that could access the same files at the same time.
 - Explicit transactions allow you to group multiple data changes together so that they're only visible when reading one or more tables when the transaction is fully committed. You also have the ability to roll back the transaction if any of the changes fail.
-- If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) may be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, you may want to [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
+- If a SELECT is within a transaction, and was preceded by data insertions, the [automatically generated statistics](statistics.md) can be inaccurate after a rollback. Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
-## Next steps
+> [!NOTE]
+> Regardless of how you ingest data into warehouses, the parquet files produced by the data ingestion task will be optimized using V-Order write optimization. V-Order optimizes parquet files to enable lightning-fast reads under the Microsoft Fabric compute engines such as Power BI, SQL, Spark and others. Warehouse queries in general benefit from faster read times for queries with this optimization, still ensuring the parquet files are 100% compliant to its open-source specification. [Unlike in Fabric Data Engineering](../data-engineering/delta-optimization-and-v-order.md), V-Order is a global setting in Synapse Data Warehouse that cannot be disabled.
+
+## Related content
 
 - [Ingest data using Data pipelines](ingest-data-pipelines.md)
 - [Ingest data using the COPY statement](ingest-data-copy.md)

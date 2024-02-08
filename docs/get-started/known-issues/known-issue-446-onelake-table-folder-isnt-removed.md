@@ -4,7 +4,7 @@ description: A known issue is posted where oneLake Table folder not removed when
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/05/2023
+ms.date: 11/15/2023
 ms.custom: known-issue-446
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-446
 
 When you drop a table in the Data Warehouse, it isn't removed from the folder in OneLake.
 
-**Status:** Open
+**Status:** Fixed: November 15, 2023
 
 **Product Experience:** Data Warehouse
 
@@ -24,6 +24,6 @@ After a user drops a table in the Data Warehouse using a TSQL query, the corresp
 
 None
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

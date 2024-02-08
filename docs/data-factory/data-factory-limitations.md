@@ -1,11 +1,12 @@
 ---
 title: Data Factory limitations overview
-description: Identifies limitations that affect Data Factory in Microsoft Fabric features. 
+description: Identifies limitations that affect Data Factory in Microsoft Fabric features.
 author: ssabat
 ms.author: susabat
-ms.topic: troubleshooting    
-ms.date: 6/23/2023
-ms.custom:  
+ms.topic: troubleshooting
+ms.date: 11/15/2023
+ms.custom:
+  - ignite-2023
 ---
 
 # Data Factory limitations overview
@@ -22,7 +23,7 @@ The following links go to articles that discuss known limitations for Data Facto
 - [Pipeline resource limits](pipeline-resource-limits.md)
 - [Dataflow Gen2 limitations](dataflow-gen2-limitations.md)
 
-## Next steps
+## Related content
 
 - [Service level outages](https://support.fabric.microsoft.com)
 - [Get your questions answered by the Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)

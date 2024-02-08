@@ -1,60 +1,50 @@
 ---
-title: How to create an Amazon S3 connection
+title: Set up your Amazon S3 connection
 description: This article provides information about how to create an Amazon S3 connection in Microsoft Fabric.
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an Amazon S3 connection
+# Set up your Amazon S3 connection
 
 This article outlines the steps to create an Amazon S3 connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
-
 ## Supported authentication types
 
-The Amazon S3 connector supports the following authentication types for copy activity.  
+The Amazon S3 connector supports the following authentication types for copy and Dataflow Gen2 respectively.  
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
 |Basic| √| n/a|
 
-## Prerequisites
+## Set up your connection in Dataflow Gen2
 
-The following prerequisites are required before you start:
+The Amazon S3 connector isn't currently supported in Dataflow Gen2.
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+## Set up your connection in a data pipeline
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+Browse to the **New connection page** for the Data Factory pipeline to configure the connection details and create the connection.
 
-## Create a connection
+:::image type="content" source="./media/connector-amazon-s3/new-connection-page.png" alt-text="Screenshot showing the new connection page." lightbox="./media/connector-amazon-s3/new-connection-page.png":::
 
-1. From the page header in the Data Factory service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**.
+You have two ways to browse to this page:
 
-   :::image type="content" source="media/connector-common/manage-connections-gateways.png" alt-text="Screenshot showing how to open manage gateway.":::
-
-2. Select **New** at the top of the ribbon to add a new data source.
-
-    :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the '+ new' page.":::
-
-    The **New connection** pane is then displayed on the left side of the page.
-
-    :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the 'New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
-
-## Set up the connection
+- In copy assistant, browse to this page after selecting the connector.
+- In pipeline, browse to this page after selecting + New in Connection section and selecting the connector.
 
 ### Step 1: Specify the new connection name, type, data source path
 
    :::image type="content" source="media/connector-amazon-s3/connection-details.png" alt-text="Screenshot showing how to set new connection.":::
 
-In the **New connection** pane, choose **Cloud**, and then specify the following fields:
+In the **New connection** pane, specify the following field:
 
-- **Connection name**: Specify a name for your connection.
-- **Connection type**: Select **Amazon S3** for your connection type.
-- **Data source path**: Enter your account endpoint URL of your Amazon S3 data.
+- **Url**: Specify the account endpoint URL of your Amazon S3 data.
 
 ### Step 2:  Select and set your authentication
 
@@ -86,7 +76,7 @@ Select **Create**. Your creation is successfully tested and saved if all the cre
 The following table contains connector properties that are supported in pipeline copy.
 
 |Name|Description|Required|Property|Copy|
-|:---|:---|:---|:---|:---|
+|:---|:---|:---:|:---|:---:|
 |**Connection name**|A name for your connection.|Yes||✓|
 |**Connection type**|Select **Amazon S3** for your connection type.|Yes||✓|
 |**Data source path**|Enter your account endpoint URL of your Amazon S3.|Yes||✓|
@@ -97,11 +87,11 @@ The following table contains connector properties that are supported in pipeline
 The following table contains properties for the supported authentication type.
 
 |Name|Description|Required|Property|Copy|
-|:---|:---|:---|:---|:---|
+|:---|:---|:---:|:---|:---:|
 |**Basic**||||✓|
 |- Username|The user name to use to access the Amazon S3 endpoint.|Yes |||
 |- Password|The password for specified username.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure Amazon S3 in a copy activity](connector-amazon-s3-copy-activity.md)
+- [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)

@@ -5,8 +5,10 @@ author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 06/01/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 12/06/2023
 ms.search.form: Warehouse connectivity # This article's title should not change. If so, contact engineering.
 ---
 # Connectivity to data warehousing in Microsoft Fabric
@@ -17,18 +19,16 @@ In Microsoft [!INCLUDE [product-name](../includes/product-name.md)], a Lakehouse
 
 This article provides a how-to on connecting to your [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 To get started, you must complete the following prerequisites:
 
-- You need access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) or a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](../data-warehouse/data-warehousing.md) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or above permissions.
+- You need access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](../data-engineering/lakehouse-overview.md) or a [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](../data-warehouse/data-warehousing.md) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
 
 ## Authentication to warehouses in Fabric
 
 In [!INCLUDE [product-name](../includes/product-name.md)], two types of authenticated users are supported through the SQL connection string:
 
-- Azure Active Directory (Azure AD) user principals, or user identities
-- Azure Active Directory (Azure AD) service principals
+- Microsoft Entra ID (formerly Azure Active Directory) user principals, or user identities
+- Microsoft Entra ID (formerly Azure Active Directory) service principals
 
 The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the standard SQL Server port number. The SQL connection string also respects the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] security model for data access. Data can be obtained for all objects to which a user has access.
 
@@ -37,19 +37,22 @@ The SQL connection string requires TCP port 1433 to be open. TCP 1433 is the sta
 To retrieve the connection string, follow these steps:
 
 1. Navigate to your workspace, select the [!INCLUDE [fabric-dw](includes/fabric-dw.md)], and select **More options**. 
+
+   :::image type="content" source="media/connectivity/workspace-warehouse-more-options.png" alt-text="Screenshot of a workspace item for a warehouse. The More options button is boxed.":::
+
 1. Select **Copy SQL connection string** to copy the connection string to your clipboard.
 
    :::image type="content" source="media\connectivity\warehouse-copy-sql-connection-string.png" alt-text="Screenshot of the workspace screen with the context menu open." lightbox="media\connectivity\warehouse-copy-sql-connection-string.png":::
 
 ## Get started with SQL Server Management Studio (SSMS)
 
-The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to [SQL Server Management Studio (SSMS)](https://aka.ms/ssms).
+The following steps detail how to start at the [!INCLUDE [product-name](../includes/product-name.md)] workspace and connect a warehouse to [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
 
 1. When you open SSMS, the **Connect to Server** window appears. If already open, you can connect manually by selecting **Object Explorer** > **Connect** > **Database Engine**.
 
    :::image type="content" source="media\connectivity\object-explorer-connect-menu.png" alt-text="Screenshot showing where to select Database Engine on the Connect menu." lightbox="media\connectivity\object-explorer-connect-menu.png":::
 
-1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only **Azure Active Directory - MFA** authentication is supported.
+1. Once the **Connect to Server** window is open, paste the connection string copied from the previous section of this article into the **Server name** box. Select **Connect** and proceed with the appropriate credentials for authentication. Remember that only Microsoft Entra multifactor authentication (MFA) is supported.
 
    :::image type="content" source="media\connectivity\connect-server-window.png" alt-text="Screenshot showing the Connect to server window." lightbox="media\connectivity\connect-server-window.png":::
 
@@ -75,7 +78,7 @@ We support connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or 
 
 ## Connect using ODBC
 
-Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Azure Active Directory (Azure AD) authentication.
+Microsoft [!INCLUDE [product-name](../includes/product-name.md)] supports connectivity to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] using ODBC. Make sure you're running the [latest ODBC Driver for SQL Server](/sql/connect/odbc/download-odbc-driver-for-sql-server). Use Microsoft Entra ID (formerly Azure Active Directory) authentication.
 
 ## Connect using JDBC
 
@@ -124,7 +127,7 @@ The `dbt` adapter is a data transformation framework that uses software engineer
 
 The `dbt` data platform-specific adapter plugins allow users to connect to the data store of choice. To connect to Synapse Data Warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)] from `dbt` use `dbt-fabric` adapter. Similarly, the Azure Synapse Analytics dedicated SQL pool data source has its own adapter, `dbt-synapse`.
 
-Both adapters support Azure Active Directory (Azure AD) authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
+Both adapters support Microsoft Entra ID (formerly Azure Active Directory) authentication and allow developers to use `az cli authentication`. However, SQL authentication is not supported for `dbt-fabric`
 
 The DBT Fabric DW Adapter uses the `pyodbc` library to establish connectivity with the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. The `pyodbc` library is an ODBC implementation in Python language that uses [Python Database API Specification v2.0](https://peps.python.org/pep-0249/).  The `pyodbc` library directly passes connection string to the database driver through SQLDriverConnect in the `msodbc` connection structure to [!INCLUDE [product-name](../includes/product-name.md)] using a TDS (Tabular Data Streaming) proxy service.
 
@@ -132,19 +135,20 @@ For more information, see the [Microsoft Fabric Synapse Data Warehouse dbt adapt
 
 ## Connectivity by other means
 
-Any third-party tool can use the SQL Connection string via ODBC or OLE DB drivers to connect to a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Azure AD authentication.
+Any third-party tool can use the SQL Connection string via ODBC or OLE DB drivers to connect to a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], using Microsoft Entra ID (formerly Azure Active Directory) authentication.
 
 ### Custom applications
 
-In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] provide a SQL connection string. Data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using Azure AD. For more information, see [Connection libraries for Microsoft SQL Database](/sql/connect/sql-connection-libraries#drivers-for-relational-access).
+In [!INCLUDE [product-name](../includes/product-name.md)], a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and a Lakehouse [!INCLUDE [fabric-se](includes/fabric-se.md)] provide a SQL connection string. Data is accessible from a vast ecosystem of SQL tooling, provided they can authenticate using Microsoft Entra ID (formerly Azure Active Directory). For more information, see [Connection libraries for Microsoft SQL Database](/sql/connect/sql-connection-libraries#drivers-for-relational-access).
 
 ## Considerations and limitations
 
 - SQL Authentication is not supported.
 - Multiple Active Result Sets (MARS) is unsupported for [!INCLUDE [product-name](../includes/product-name.md)] [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. MARS is disabled by default, however if `MultipleActiveResultSets` is included in the connection string, it should be removed or set to false.
-- On connection to a warehouse, you may receive an error that "The token size exceeded the maximum allowed payload size". This may be due to having a large number of warehouses within the workspace or being a member of a large number of Azure AD groups. For most users, the error typically would not occur until approaching beyond 80 warehouses in the workspace. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- On connection to a warehouse, you might receive an error that "The token size exceeded the maximum allowed payload size". This is due to having a large number of warehouses within the workspace or being a member of a large number of Microsoft Entra groups. In event of this error, work with the Workspace admin to clean up unused Warehouses and retry the connection, or contact support if the problem persists.
+- Linked server connections from SQL Server are not supported.
 
-## Next steps
+## Related content
 
 - [Create a warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](create-warehouse.md)
-- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-endpoint.md)
+- [Better together: the lakehouse and warehouse in Microsoft [!INCLUDE [product-name](../includes/product-name.md)]](get-started-lakehouse-sql-analytics-endpoint.md)

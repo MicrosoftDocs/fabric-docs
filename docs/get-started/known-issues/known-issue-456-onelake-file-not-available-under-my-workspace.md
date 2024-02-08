@@ -4,14 +4,14 @@ description: A known issue is posted where OneLake file explorer doesn't contain
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/26/2023
+ms.date: 08/24/2023
 ms.custom: known-issue-456
 ---
 
 # Known issue - OneLake file explorer doesn't contain items under "My workspace"
 OneLake file explorer for the Windows Desktop application doesn't contain items under the "My workspace" folder.
 
-**Status:** Open
+**Status:** Fixed: August 24, 2023
 
 **Product Experience:** OneLake
 
@@ -23,8 +23,6 @@ OneLake file explorer for the Windows Desktop application doesn't contain items 
 
 None
 
-## Next steps
-
-None
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues) 

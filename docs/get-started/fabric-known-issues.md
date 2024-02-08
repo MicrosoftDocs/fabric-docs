@@ -1,15 +1,17 @@
 ---
-title: Fabric (Preview) trial known issues
-description: Identify issues that are affecting your Fabric trial. 
+title: Fabric known issues
+description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 08/03/2023
-ms.custom: build-2023
+ms.date: 02/02/2024
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
-# Fabric (Preview) trial known issues
+# Fabric known issues
 
-This page lists known issues for the Fabric trial features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive Power BI report](https://support.fabric.microsoft.com/known-issues/).
+This page lists known issues for Fabric features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive Power BI report](https://support.fabric.microsoft.com/known-issues/).
 
 For service level outages or degradation notifications, check [https://support.fabric.microsoft.com/](https://support.fabric.microsoft.com/).  
 
@@ -18,29 +20,36 @@ For service level outages or degradation notifications, check [https://support.f
 Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
-|-----------|-------------------------|----------------------------------|---------------------|
-|  467  | Data Engineering            | [Notebook fails to load after workspace migration](known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md)    |  August 3, 2023  |
-|  463  | Data Warehouse              | [Failure occurs when accessing a renamed Lakehouse or Warehouse](known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md)    |  August 3, 2023  |
-|  462  | Administration & Management | [Fabric users see the workspace git status column display synced for unsupported artifacts](known-issues/known-issue-462-fabric-user-git-column-synced-activity.md)    |  July 26, 2023  |
-|  458  | Data Factory                | [Not able to add Lookup activity output to body object of Office 365](known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md)    |  July 26, 2023  |
-|  456  | OneLake                     | [OneLake file explorer doesn't contain items under My workspace](known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md)    |  July 26, 2023  |
+|-----------|-------------------------|----------------------------------|----------------------|
+|  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 |
+|  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
+|  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 |
+|  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
+|  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
+|  549  | Data Warehouse | [Making model changes to a semantic model might not work](known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md)  | November 15, 2023 |
+|  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
+|  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |
+|  529  | Data Warehouse | [Data warehouse with more than 20,000 tables fails to load](known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md)  | October 23, 2023 |
+|  508  | Data Warehouse | [User column incorrectly shows as System in Fabric capacity metrics app](known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md)  | October 5, 2023 |
+|  506  | Data Warehouse | [InProgress status shows in Fabric capacity metrics app for completed queries](known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md)  | October 5, 2023 |
+|  596  | Data Factory   | [Refresh history reports in progress for some tables that failed](known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md)  | August 24, 2023 |
 |  454  | Data Warehouse              | [Warehouse's object explorer doesn't support case-sensitive object names](known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md)    |  July 10, 2023  |
-|  453  | Data Warehouse              | [Data Warehouse only publishes Delta Lake Logs for Inserts](known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md)    |  July 10, 2023  |
-|  449  | Administration & Management | [Pipeline isn't loading if user deployed with update app via public API](known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md)    |  July 5, 2023  |
-|  447  | Data Warehouse              | [Temp tables in Data Warehouse and SQL Endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
-|  446  | Data Warehouse              | [OneLake table folder not removed when table dropped in data warehouse](known-issues/known-issue-446-onelake-table-folder-isnt-removed.md)    |  July 5, 2023  |
+|  447  | Data Warehouse              | [Temp tables in Data Warehouse and SQL analytics endpoint](known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md)    |  July 5, 2023  |
 
 ## Recently closed known issues
 
 Select the **Title** to view more information about that specific known issue. Fixed issues are removed after 46 days.
 
 |  Issue ID |  Product experience     |  Title                            |  Issues publish date |  Status  |
-|-----------|-------------------------|-----------------------------------|---------------------|----------|
-|  420  | Administration & Management | [Moving files from outside of OneLake to OneLake with file explorer doesn't sync files](known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md)    |  June 8, 2023  | Fixed: July 31, 2023 |
-|  439  | Data Warehouse              | ['Affected rows' number displayed doesn't match the real row number](known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md)    |  June 26, 2023  | Fixed: July 19, 2023
-|  421  | Administration & Management | ['Get Tenant Settings' API returns default values instead of user configured values](known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md)    |  June 8, 2023  |  Fixed: June 28, 2023  
+|-----------|-------------------------|-----------------------------------|----------------------|----------|
+|  577  | OneLake | [Tables aren't visible to the SQL analytics endpoint for some shortcuts](known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md)  | December 13, 2023 | Fixed: February 2, 2024 |
+|  553  | Administration & Management | [OneLake compute transactions don't count against capacity limits](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023 | Fixed: January 19, 2024 |
+|  553  | OneLake | [OneLake compute transactions don't count against capacity limits](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023 | Fixed: January 19, 2024 |
+|  598  | Data Factory                | [Failed to publish Dataflow Gen2](known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md) | November 11, 2023 | Fixed: January 12, 2024 |
+|  483  | Administration & Management | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md)  | August 24, 2023 | Fixed: January 12, 2024 |
+|  580  | Administration & Management | [**Git integration** tab disappears in **Workspace settings**](known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md)  | December 15, 2023 | Fixed: January 11, 2024 |
 
-## Next steps
+## Related content
 
 - [Go to the Power BI report version of this page](https://support.fabric.microsoft.com/known-issues/)
 - [Service level outages](https://support.fabric.microsoft.com/)

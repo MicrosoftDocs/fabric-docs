@@ -28,19 +28,19 @@ landingContent:
           - text: Buy a Microsoft Fabric subscription
             url: buy-subscription.md
 
-  - title: Utilization and metrics app
+  - title: Microsoft Fabric Capacity Metrics app
     linkLists:
       - linkListType: overview
         links:
-          - text: What is the utilization and metrics app?
+          - text: What is the Microsoft Fabric Capacity Metrics app?
             url: metrics-app.md
       - linkListType: how-to-guide
         links:
-          - text: Install the utilization and metrics app
+          - text: Install the Microsoft Fabric Capacity Metrics app
             url: metrics-app-install.md
-          - text: Understand the metrics app overview page
-            url: metrics-app-overview-page.md
-          - text: Understand the metrics app timepoint page
+          - text: Understand the Microsoft Fabric Capacity Metrics app compute page
+            url: metrics-app-compute-page.md
+          - text: Understand the Microsoft Fabric Capacity Metrics app timepoint page
             url: metrics-app-timepoint-page.md
 
   - title: Capacity operation

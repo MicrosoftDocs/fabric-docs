@@ -1,31 +1,32 @@
 ---
-title: How to configure Azure Blob Storage in copy activity
+title: Configure Azure Blob Storage in a copy activity
 description: This article explains how to copy data using Azure Blob Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Blob Storage in copy activity
+# Configure Azure Blob Storage in a copy activity
 
-This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Blob Storage.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to use the copy activity in a data pipeline to copy data from and to Azure Blob Storage.
 
 ## Supported format
 
 Azure Blob Storage supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -62,7 +63,7 @@ Under **Advanced**, you can specify the following fields:
 
   - **Prefix**: Prefix for the blob name under the given container configured to filter source blobs. Blobs whose names start with `container/this_prefix` are selected. It utilizes the service-side filter for blob storage.
 
-    When you use **Prefix** and choose to copy to a file-based destination with preserving hierarchy, the sub-path after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
+    When you use **Prefix** and choose to copy to a file-based destination with preserving hierarchy, the subpath after the last "/" in the prefix is preserved. For example, you have a source `container/folder/subfolder/file.txt`, and configure the prefix as `folder/sub`, then the preserved file path is `subfolder/file.txt`.
 
     :::image type="content" source="./media/connector-azure-blob-storage/prefix.png" alt-text="Screenshot showing prefix file path type.":::
 
@@ -86,7 +87,7 @@ Under **Advanced**, you can specify the following fields:
 
 - **Delete files after completion**: If this checkbox is selected, the binary files are deleted from source store after successfully moving to the destination store. The file deletion is per file, so when copy activity fails, you'll notice that some files have already been copied to the destination and deleted from the source, while others are still remaining in the source store.
 
-    >[!Note]
+    > [!NOTE]
     >This property is only valid in a binary files copy scenario.
 
 - **Max concurrent connections**: This property indicates the upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.
@@ -131,7 +132,7 @@ Under **Advanced**, you can specify the following fields:
 
 ### Mapping
 
-For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping will not be supported.
+For **Mapping** tab configuration, go to [Configure your mappings under mapping tab](copy-data-activity.md#configure-your-mappings-under-mapping-tab). If you choose Binary as your file format, mapping won't be supported.
 
 ### Settings
 
@@ -150,7 +151,7 @@ The following tables contain more information about the copy activity in Azure B
 |**File path** | The file path of your source data.|\<file path of your source>|Yes |container <br> fileName|
 |**File path type** |The file path type that you want to use.|• File path <br>• Prefix<br>• Wildcard folder path, Wildcard file name<br>• List of files|No |<br>• prefix<br>• wildcardFolderPath, wildcardFileName<br>• fileListPath|
 |**Recursively** |Process all files in the input folder and its subfolders recursively or just the ones in the selected folder. This setting is disabled when a single file is selected.|Selected or unselect|No |recursive|
-|**Delete files after completion** |The files in the source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when a copy activity fails, you'll notice that some files have already been copied to the destination and deleted from source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
+|**Delete files after completion** |The files in the source data store will be deleted right after being moved to the destination store. The file deletion is per file, so when a copy activity fails, you can tell that some files have already been copied to the destination and deleted from source, while others are still in the source store.|Selected or unselect|No |deleteFilesAfterCompletion|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
 
 ### Destination information
@@ -165,7 +166,6 @@ The following tables contain more information about the copy activity in Azure B
 |**Block size (MB)** |Specify the block size in MB when writing data to Azure Blob Storage. Allowed value is between 4 MB and 100 MB.|\<block size\>|No |blockSizeInMB|
 |**Metadata**|Set the custom metadata when copy to destination.| • `$$LASTMODIFIED`<br>• Expression<br>• Static value|No |metadata|
 
-## Next steps
+## Related content
 
-- [How to create Azure Blob connection](connector-azure-blob-storage.md)
-- [Connect to Azure Blob Storage in dataflows](connector-azure-blob-storage-dataflows.md)]
+- [Set up your Azure Blob Storage connection](connector-azure-blob-storage.md)

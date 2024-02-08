@@ -4,15 +4,15 @@ description: A known issue is posted where a notebook fails to load after worksp
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 08/03/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-467
 ---
 
 # Known issue - Notebook fails to load after workspace migration
 
-If you migrate your workspace that contains Reflex or Kusto items to another capacity, may see issues loading a notebook within that workspace.
+If you migrate your workspace that contains Reflex or Real-Time Analytics items to another capacity, may see issues loading a notebook within that workspace.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Data Engineering
 
@@ -25,8 +25,8 @@ When you try to open your notebook, you see an error message similar to "Loading
 To mitigate the issue, you can either:
 
 - Migrate your workspace back to its original capacity
-- Or delete the Reflex or Kusto item and then migrate your workspace
+- Or delete the Reflex or Real-Time Analytics item and then migrate your workspace
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

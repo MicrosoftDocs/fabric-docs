@@ -1,18 +1,19 @@
 ---
-title: How to configure REST in a copy activity
+title: Configure REST in a copy activity
 description: This article explains how to copy data using REST.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure REST in a copy activity
+# Configure REST in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to a REST endpoint.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 Specifically, this generic REST connector supports:
 
@@ -133,6 +134,6 @@ The following tables contain more information about the copy activity in REST.
 |**Http Compression type** |HTTP compression type to use while sending data with Optimal Compression Level. Allowed values are **None** and **GZip**.| • **None**<br> • **GZip**|No |httpCompressionType|
 |**Additional headers** |Additional HTTP request headers.| \<your additional headers\>|No |additionalHeaders|
 
-## Next steps
+## Related content
 
 - [How to create a REST connection](connector-rest.md)

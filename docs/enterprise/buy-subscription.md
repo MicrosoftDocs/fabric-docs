@@ -3,14 +3,14 @@ title: Buy a Microsoft Fabric subscription
 description: Learn how to buy a Microsoft Fabric subscription.
 author: KesemSharabi
 ms.author: kesharab
-ms.topic: concept
-ms.custom: build-2023
-ms.date: 06/01/2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 12/18/2023
 ---
 
 # Buy a Microsoft Fabric subscription
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article describes the differences between the [Microsoft Fabric](../get-started/microsoft-fabric-overview.md) capacities, and shows you how to buy an Azure SKU for your organization. The article is aimed at admins who want to buy Microsoft Fabric for their organization.
 
@@ -18,7 +18,7 @@ After you buy a capacity, you can learn how to [manage your capacity](/power-bi/
 
 ## SKU types
 
-Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-and-skus) table to see how many CUs each SKU provides.
+Microsoft Fabric has an array of capacities that you can buy. The capacities are split into Stock Keeping Units (SKU). Each SKU provides a different amount of computing power, measured by its Capacity Unit (CU) value. Refer to the [Capacity and SKUs](licenses.md#capacity-license) table to see how many CUs each SKU provides.
 
 Microsoft Fabric operates on two types of SKUs:
 
@@ -46,7 +46,7 @@ Azure capacities offer the following improvements over the Microsoft 365 SKUs.
 
 To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subscription](/azure/role-based-access-control/overview).
 
-1. Select the **Microsoft Fabric (preview)** service. You can search for *Microsoft Fabric (preview)* using the search menu.
+1. Select the **Microsoft Fabric** service. You can search for *Microsoft Fabric* using the search menu.
 
 2. Select **Create Fabric Capacity**.
 
@@ -60,7 +60,7 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
     * *Region* - Select the region you want your capacity to be part of.
 
-    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-and-skus).
+    * *Size* - Select your capacity size. Capacities come in different stock keeping units (SKUs) and we measure them by capacity units (CUs). You can view a detailed list of Microsoft Fabric capacities in [Capacities and SKUs](licenses.md#capacity-license).
 
     * *Fabric capacity administrator* - Select the [admin](../admin/microsoft-fabric-admin.md#capacity-admin-roles) for this capacity.
 
@@ -70,8 +70,8 @@ To buy an Azure SKU, you need to be an owner or a contributor of an [Azure subsc
 
 ## Microsoft 365 SKUs
 
-Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. EM SKUs don't support Microsoft Fabric.
+Microsoft 365 SKUs, also known as P SKUs, are Power BI SKUs that also support Fabric when it's [enabled](../admin/fabric-switch.md) on top of your Power BI subscription. Power BI EM SKUs don't support Microsoft Fabric.
 
-## Next steps
+## Related content
 
 [Microsoft Fabric licenses](licenses.md)

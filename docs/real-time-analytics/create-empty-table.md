@@ -1,17 +1,17 @@
 ---
-title: Create an empty table in Real-Time Analytics
+title: Create an empty table
 description: Learn how to create an empty table in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/06/2023
+ms.search.form: Create a table
 ---
 # Create an empty table
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Tables are named entities that hold data. A table has an ordered set of columns, and zero or more rows of data. Each row holds one data value for each of the columns of the table. The order of rows in the table is unknown, and doesn't in general affect queries, except for some tabular operators (such as the top operator) that are inherently undetermined.
 
@@ -20,7 +20,7 @@ You can create an empty table without a data source to use as a testing environm
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Create an empty table in your KQL database
 
@@ -67,7 +67,7 @@ To add a new column, select **Add new column** under **Partial data preview**.
 
 ##### Edit columns
 
-1. Enter a column name. The column name should start with a letter, and may contain numbers, periods, hyphens, or underscores.
+1. Enter a column name. The column name should start with a letter, and can contain numbers, periods, hyphens, or underscores.
 1. Select a data type for your column. The default column type is `string` but can be altered in the dropdown menu of the **Column type** field.
 1. Select **Add column** to add more columns.
 
@@ -90,7 +90,9 @@ In the **Create table completed** window, the empty table is marked with a green
 
 :::image type="content" source="media/empty-table/table-summary.png" alt-text="Screenshot of the Summary tab that shows that the table was created successfully in Real-Time Analytics.":::
 
-## Next steps
+## Related content
 
-* [Get data from a blob](get-data-blob.md)
+* [Get data from Azure storage](get-data-azure-storage.md)
+* [Get data from Amazon S3](get-data-amazon-s3.md)
 * [Get data from Azure Event Hubs](get-data-event-hub.md)
+* [Get data from OneLake](get-data-onelake.md)

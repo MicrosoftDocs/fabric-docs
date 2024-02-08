@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
@@ -15,7 +17,7 @@ ms.search.form: R Language
 
 Libraries provide reusable code that you might want to include in your programs or projects for [!INCLUDE [product-name](../includes/product-name.md)] Spark.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [!INCLUDE [product-name](../includes/product-name.md)] supports an R runtime with many popular open-source R packages, including TidyVerse, preinstalled. When a Spark instance starts, these libraries are included automatically and available to be used immediately in notebooks or Spark job definitions. 
 
@@ -229,7 +231,7 @@ sdf_len(sc, 5) %>%
   spark_apply(apply_cases, packages=FALSE)
 ```
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 

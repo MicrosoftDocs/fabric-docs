@@ -4,17 +4,18 @@ description: Learn how to view and understand info about workspaces and manage w
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
-ms.custom: admin-portal, build-2023
+ms.custom:
+  - admin-portal
+  - build-2023
+  - ignite-2023
 ms.topic: how-to
-ms.date: 05/23/2023
+ms.date: 11/06/2023
 LocalizationGroup: Administration
 ---
 
 # Manage workspaces
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-As a [!INCLUDE [product-name](../includes/product-name.md)] administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](/power-bi/admin/service-admin-portal).
+As a Fabric administrator, you can govern the workspaces that exist in your organization on the **Workspaces** tab in the Admin portal. For information about how to get to and use the Admin portal, see [About the Admin portal](tenant-settings-index.md).
 
 On the **Workspaces** tab, you see a list of all the workspaces in your tenant. Above the list, a ribbon provides options to help you govern the workspaces. These options also appear in the **More options (...)** menu of the selected workspace. The list of options varies depending on workspace type and status. All the options are described under [workspace options](#workspace-options).
 
@@ -42,8 +43,8 @@ The possible workspace states are described below.
 |---------|---------|
 | **Active** | A normal workspace. It doesn't indicate anything about usage or what's inside, only that the workspace itself is "normal". |
 | **Orphaned** | A workspace with no admin user. You need to assign an admin. |
-| **Deleted** | A deleted workspace. A microsoft Fabric administrator can restore the workspace up to 30 days after it was deleted. When the 30 days pass, the workspace enters the *Removing* state.<br>If you delete a *MyWorkspace* workspace, it moves to the *Removing* state immediately, without the 30 day grace period. |
-| **Removing** | After you delete a workspace, and once the 30 day grace period passes, the workspace moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
+| **Deleted** | A deleted workspace. When a workspace is deleted, it enters a retention period. During the retention period, a Microsoft Fabric administrator can restore the workspace. See [Workspace retention](#workspace-retention) for detail. When the retention period ends, the workspace enters the *Removing* state.|
+| **Removing** | At the end of a deleted workspace's retention period, it moves into the *Removing* state. During this state, the workspace is permanently removed. Permanently removing a workspace takes a short while, and depends on the service and folder content. |
 | **Not found** | If the customer's API request includes a workspace ID for a workspace that doesn't belong to the customer's tenant, "Not found" is returned as the status for that ID. |
 
 ## Workspace options
@@ -60,20 +61,67 @@ The ribbon at the top of the list and the More options (...) menus of the indivi
 | **Get access** |Grants you temporary access to another user's MyWorkspace. See [Gain access to any user's My workspace](#gain-access-to-any-users-my-workspace) for detail.|
 | **Capacity** |Enables you to assign the workspace to Premium capacity or to remove it from Premium capacity. |
 | **Recover** |Enables you to restore an orphaned workspace. |
-| **Restore** |Enables you to restore the MyWorkspace of a user that has left the organization. See [Restore a deleted My workspace as an app workspace](#restore-a-deleted-my-workspace-as-an-app-workspace) for detail. |
+| **Restore** |Enables you to restore the MyWorkspace of a user that has left the organization, or a deleted collaborative workspace. For MyWorkspaces, see [Restore a deleted My workspace as an app workspace](#restore-a-deleted-my-workspace-as-an-app-workspace). For collaborative workspaces, see [Restore a deleted collaborative workspace](#restore-a-deleted-collaborative-workspace) |
+| **Permanently delete** |Enables you to permanently delete a deleted collaborative workspace before the end of its retention period. See [Permanently delete a deleted collaborative workspace during the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period). |
 
 >[!NOTE]
 > Admins can also manage and recover workspaces using PowerShell cmdlets.
 >
 > Admins can also control users' ability to create new workspace experience workspaces and classic workspaces. See [Workspace settings](./portal-workspace.md) in this article for details.
 
+## Workspace retention
+
+By default, when a workspace is deleted, it isn't permanently and irrevocably deleted immediately. Instead, it enters a retention period during which it's possible to restore it. At the end of the retention period, it's removed permanently, and it will no longer be possible to recover it or its contents.
+
+The retention period for personal workspaces (*My workspaces*) is 30 days.
+
+The retention period for collaborative workspaces is configurable. The default retention period is seven days. However, Fabric administrators can change the length of the retention period by turning on the **Define workspace retention period**
+setting in the admin portal and specifying the desired retention period (from 7 to 90 days).
+
+During the retention period, Fabric administrators can [restore the workspace](#restore-a-deleted-collaborative-workspace).
+
+At the end of the retention period, the workspace is deleted permanently and it and its contents are irretrievably lost.
+
+While a workspace is in the retention period, Fabric administrators can [permanently delete it before the end of the retention period](#permanently-delete-a-deleted-collaborative-workspace-during-the-retention-period).
+
+### Configure the retention period for deleted collaborative workspaces
+
+By default, deleted collaborative workspaces are retained for seven days. Fabric administrators can change the length of the retention period (from 7 to 90 days) using the **Define workspace retention period** tenant setting.
+
+1. In the Fabric admin portal, go to **Workspace settings** > **Define workspace retention period**.
+1. Turn on the setting and enter the number of days for desired retention period. You can choose anywhere from 7 to 90 days.
+1. When done, select **Apply**.
+
+> [!NOTE]
+> When the **Define workspace rentention period** setting is off, deleted collaborative workspaces automatically have a retention period of 7 days.
+>
+> This setting does not affect the retention period of *My workspaces*. *My workspaces* always have a 30-day retention period.
+
+### Restore a deleted collaborative workspace
+
+While a deleted collaborative workspace is in a retention period, Fabric administrators can restore it and its contents.
+
+1. In the Fabric admin portal, open the Workspaces page and find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type *Workspace*. A workspace that is in a retention period has the status *Deleted*.
+1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
+1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
+1. When done, select **Restore**.
+
+### Permanently delete a deleted collaborative workspace during the retention period
+
+While a deleted collaborative workspace is in a retention period, Fabric administrators permanently delete it before the end of its retention period.
+
+1. In the Fabric admin portal, open the Workspaces page and find the deleted collaborative workspace you want to restore. Collaborative workspaces are of type *Workspace*. A workspace that is in a retention period has the status *Deleted*.
+1. Select the workspace and then choose **Permanently delete** from the ribbon, or select **More options (...)** and choose **Permanently delete**.
+
+You're asked to confirm the permanent deletion. After you confirm, the workspace and its contents are no longer recoverable.
+
 ## Govern My workspaces
 
-Every [!INCLUDE [product-name](../includes/product-name.md)] user has a personal workspace called My workspace where they can work with their own content. While generally only My workspace owners have access to their My workspaces, [!INCLUDE [product-name](../includes/product-name.md)] admins can use a set of features to help them govern these workspaces. With these features, [!INCLUDE [product-name](../includes/product-name.md)] admins can:
+Every Fabric user has a personal workspace called My workspace where they can work with their own content. While generally only My workspace owners have access to their My workspaces, Fabric admins can use a set of features to help them govern these workspaces. With these features, Fabric admins can:
 
 * [Gain access to the contents of any user's My workspace](#gain-access-to-any-users-my-workspace)
 * [Designate a default capacity for all existing and new My workspaces](#designate-a-default-capacity-for-my-workspaces)
-* [Prevent users from moving My workspaces to a different capacity that may reside in non-compliant regions](#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity)
+* [Prevent users from moving My workspaces to a different capacity that might reside in noncompliant regions](#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity)
 * [Restore deleted My workspaces as app workspaces](#restore-a-deleted-my-workspace-as-an-app-workspace)
 
 These features are described in the following sections.
@@ -82,7 +130,7 @@ These features are described in the following sections.
 
 To gain access to a particular My workspace
 
-1. In the [!INCLUDE [product-name](../includes/product-name.md)] Admin portal, open the Workspaces page and find the personal workspace you want to get access to.
+1. In the Fabric Admin portal, open the Workspaces page and find the personal workspace you want to get access to.
 1. Select the workspace and then choose **Get Access** from the ribbon, or select **More options (...)** and choose **Get Access**.
 
 > [!NOTE]
@@ -90,25 +138,25 @@ To gain access to a particular My workspace
 
 Once you have access, the My workspace will show up in the list of workspaces accessible from the navigation pane. The icon ![Screenshot of personal workspace icon in the list of workspaces table explanation.](./media/portal-workspaces/personal-workspace-icon.png) indicates that it's a My workspace.
 
-Once you go inside the My workspace, you’ll be able to perform any actions as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
+Once you go inside the My workspace, you can perform any actions as if it's your own My workspace. You can view and make any changes to the contents, including sharing or unsharing. But you can't grant anyone else access to the My workspace.  
 
 ### Designate a default capacity for My workspaces
 
-A [!INCLUDE [product-name](../includes/product-name.md)] admin or capacity admin can designate a capacity as the default capacity for My workspaces. For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
+A Fabric admin or capacity admin can designate a capacity as the default capacity for My workspaces. For details, see [Designate a default capacity for My workspaces](/power-bi/enterprise/service-admin-premium-manage#designate-a-default-capacity-for-my-workspaces)
 
 ### Prevent My workspace owners from reassigning their My workspaces to a different capacity
 
-[!INCLUDE [product-name](../includes/product-name.md)] admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner the workspace can still move it back to Pro, which is in Shared capacity. Moving a workspace from Premium capacity to Shared capacity might cause the content contained in the workspace to be become non-compliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the [!INCLUDE [product-name](../includes/product-name.md)] admin can block My workspace owners from moving their My workspace to a different capacity by turning off the **Users can reassign personal workspaces** tenant admin setting. See [Workspace settings](./portal-workspace.md) for detail.
+Fabric admins can designate a default capacity for My workspaces. However, even if a My workspace has been assigned to Premium capacity, the owner the workspace can still move it back to Pro, which is in Shared capacity. Moving a workspace from Premium capacity to Shared capacity might cause the content contained in the workspace to be become noncompliant with respect to data-residency requirements, since it might move to a different region. To prevent this situation, the Fabric admin can block My workspace owners from moving their My workspace to a different capacity by turning off the **Users can reassign personal workspaces** tenant admin setting. See [Workspace settings](./portal-workspace.md) for detail.
 
 ### Restore a deleted My workspace as an app workspace
 
-When users are deleted from the company's Active Directory, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
+When users are deleted from the company's Active Directory, their My workspaces show up as Deleted in the State column on the Workspaces page in the Admin portal. Fabric admins can restore deleted My workspaces as app workspaces that other users can collaborate in.
 
-During this restoration process, the [!INCLUDE [product-name](../includes/product-name.md)] admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it will show up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
+During this restoration process, the Fabric admin needs to assign at least one Workspace admin in the new app workspace, as well as give the new workspace a name. After the workspace has been restored, it will show up as *Workspace* in the Type column on the Workspaces page in the Admin portal.
 
 To restore a deleted My workspace as an app workspace
 
-1. In the [!INCLUDE [product-name](../includes/product-name.md)] Admin portal, open the Workspaces page and find the deleted personal workspace you want to restore.
+1. In the Fabric Admin portal, open the Workspaces page and find the deleted personal workspace you want to restore.
 1. Select the workspace and then choose **Restore** from the ribbon, or select **More options (...)** and choose **Restore**.
 1. In the Restore workspaces panel that appears, give a new name to the workspace and assign at least one user the Admin role in the workspace.
 1. When done, select **Restore**.
@@ -129,16 +177,16 @@ This means the following:
 
 * **Moving a workspace from one capacity to another within the same region**
 
-    If the workspace has non Power BI Fabric items, you can only move it from one Premium capacity to another Premium capacity. If you want to move the workspace from Premium to shared capacity, you won’t be able to do so unless you delete all non-Power BI Fabric items first.
+    If the workspace has non Power BI Fabric items, you can only move it from one Premium capacity to another Premium capacity. If you want to move the workspace from Premium to shared capacity, you won't be able to do so unless you delete all non-Power BI Fabric items first.
 
     If the workspace has no non Power BI Fabric items (that is, it has only Power BI items) moving the workspace from Premium to shared is supported.  
 
 * **Moving a workspace from one capacity to a capacity in a different region**
 
-    If the workspace has non Power BI Fabric items, you won't be able to move it unless you delete all non-Power BI Fabric items first.
+    You won't be able to move a workspace if it has non-Power BI Fabric items in it.  If the workspace once had non-PowerBI Fabric items, but all items have since been deleted, you also won't be able to move the workspace to a capacity in a different region.
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
-## Next steps
+## Related content
 
-[About the Admin portal](/power-bi/admin/service-admin-portal)
+- [About the admin portal](admin-center.md)

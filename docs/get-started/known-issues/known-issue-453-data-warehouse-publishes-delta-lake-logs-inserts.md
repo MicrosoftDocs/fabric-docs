@@ -4,7 +4,7 @@ description: A known issue is posted where Data Warehouse only publishes Delta L
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/10/2023
+ms.date: 11/15/2023
 ms.custom: known-issue-453
 ---
 
@@ -13,7 +13,7 @@ ms.custom: known-issue-453
 Delta tables referencing Lakehouse shortcuts that are created using Data Warehouse tables, don't update when there's an 'update' or 'delete' operation performed on the Data Warehouse table.
 The limitation is listed in our public documentation: (/fabric/data-warehouse/query-delta-lake-logs#limitations)
 
-**Status:** Open
+**Status:** Fixed: November 15, 2023
 
 **Product Experience:** Data Warehouse
 
@@ -30,6 +30,6 @@ The data that a customer sees when querying the Delta table by using either a sh
  4. Drop the existing shortcut
  5. Re-create the shortcut to Lakehouse
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -1,20 +1,20 @@
 ---
 title: Get started with streaming data in lakehouse
-description: Learn how to stream data into lakehouse and serve it through SQL endpoint.
+description: Learn how to stream data into lakehouse and serve it through SQL analytics endpoint.
 ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Get Started Lakehouse Streaming SQL Endpoint
 ---
 
-# Get streaming data into lakehouse and access with SQL endpoint
+# Get streaming data into lakehouse and access with SQL analytics endpoint
 
-This quickstart explains how to create a Spark Job Definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through a SQL endpoint. After completing this quickstart, you'll have a Spark Job Definition that runs continuously and the SQL endpoint can view the incoming data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+This quickstart explains how to create a Spark Job Definition that contains Python code with Spark Structured Streaming to land data in a lakehouse and then serve it through a SQL analytics endpoint. After completing this quickstart, you'll have a Spark Job Definition that runs continuously and the SQL analytics endpoint can view the incoming data.
 
 ## Create a Python script
 
@@ -26,7 +26,6 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
    
    if __name__ == "__main__":
        spark = SparkSession.builder.appName("MyApp").getOrCreate()
-       spark.sparkContext.setLogLevel("DEBUG")
    
        tableName = "streamingtable"
        deltaTablePath = "Tables/" + tableName
@@ -34,6 +33,7 @@ This quickstart explains how to create a Spark Job Definition that contains Pyth
        df = spark.readStream.format("rate").option("rowsPerSecond", 1).load()
 
        query = df.writeStream.outputMode("append").format("delta").option("path", deltaTablePath).option("checkpointLocation", deltaTablePath + "/checkpoint").start()
+       query.awaitTermination()
    ```
 
 1. Save your script as Python file (.py) in your local computer.
@@ -84,6 +84,9 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. Specify time between each retry attempt and select **Apply**.
 
+> [!NOTE]
+> There is a lifetime limit of 90 days for the retry policy setup. Once the retry policy is enabled, the job will be restarted according to the policy within 90 days. After this period, the retry policy will automatically cease to function, and the job will be terminated. Users will then need to manually restart the job, which will, in turn, re-enable the retry policy.
+
 ## Execute and monitor the Spark Job Definition
 
 1. From the top menu, select the **Run** icon.
@@ -92,15 +95,15 @@ Use the following steps to set the retry policy for your Spark job definition:
 
 1. Verify if the **Spark Job definition** was submitted successfully and running.
 
-## View data using a SQL endpoint
+## View data using a SQL analytics endpoint
 
 1. In workspace view, select your Lakehouse.
 
-1. From the right corner, select **Lakehouse** and select **SQL endpoint**.
+1. From the right corner, select **Lakehouse** and select **SQL analytics endpoint**.
 
-1. In the SQL endpoint view under **Tables**, select the table that your script uses to land data. You can then preview your data from the SQL endpoint.
+1. In the SQL analytics endpoint view under **Tables**, select the table that your script uses to land data. You can then preview your data from the SQL analytics endpoint.
 
-## Next steps
+## Related content
 
 - [Spark Job Definition](spark-job-definition.md)
-- [What is SQL Endpoint for a lakehouse?](lakehouse-sql-endpoint.md)
+- [What is the SQL analytics endpoint for a lakehouse?](lakehouse-sql-analytics-endpoint.md)

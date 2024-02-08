@@ -4,25 +4,25 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 12/13/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Warehouse design and development # This article's title should not change. If so, contact engineering.
 ---
 # Primary keys, foreign keys, and unique keys in Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
-Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
+Learn about table constraints in [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], including the primary key, foreign keys, and unique keys.
 
 > [!IMPORTANT]  
 > To add or remove primary key, foreign key, or unique constraints, use ALTER TABLE.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Table constraints
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports these table constraints: 
+[!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabricdw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] support these table constraints: 
 
 - PRIMARY KEY is only supported when NONCLUSTERED and NOT ENFORCED are both used.
 - UNIQUE constraint is only supported when NONCLUSTERED and NOT ENFORCED is used.
@@ -30,17 +30,19 @@ Learn about table constraints in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] i
 
 For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?view=fabric&preserve-view=true).
 
-- [!INCLUDE [fabric-dw](includes/fabric-dw.md)] doesn't support default constraints at this time. 
+- [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] don't support default constraints at this time. 
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 ## Remarks
 
-Having primary key, foreign key and/or unique key allows [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
+Having primary key, foreign key and/or unique key allows [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
+
+ALTER TABLE cannot be part of an explicit transaction.
 
 > [!IMPORTANT]  
-> After creating a table with primary key or unique constraint in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], users need to make sure all values in those columns are unique. A violation of that may cause the query to return inaccurate result. Foreign keys are not enforced.
+> After creating a table with primary key or unique constraint in [!INCLUDE [fabricse](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], make sure all values in those columns are unique. A violation of that can cause the query to return inaccurate result. Foreign keys are not enforced.
 
-This example shows how a query may return inaccurate result if the primary key or unique constraint column includes duplicate values.  
+This example shows how a query might return inaccurate result if the primary key or unique constraint column includes duplicate values.  
 
 ```sql
  -- Create table t1
@@ -195,7 +197,7 @@ CREATE TABLE ForeignKeyTable (c1 INT NOT NULL, c2 INT);
 ALTER TABLE ForeignKeyTable ADD CONSTRAINT FK_ForeignKeyTablec1 FOREIGN KEY (c1) REFERENCES ForeignKeyReferenceTable (c1) NOT ENFORCED;
 ```
 
-## Next steps
+## Related content
 
 - [Design tables in Warehouse in [!INCLUDE [product-name](../includes/product-name.md)]](tables.md)
 - [Data types in Microsoft Fabric](data-types.md)

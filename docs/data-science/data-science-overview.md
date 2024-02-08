@@ -5,16 +5,22 @@ author: nelgson
 ms.author: negust
 ms.reviewer: franksolomon
 ms.topic: overview
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 03/24/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 11/15/2023
 
 ms.search.form: Data Science Overview
 ---
 
 # What is Data Science in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-[!INCLUDE [product-name](../includes/product-name.md)] offers  Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
+
+
+[!INCLUDE [product-name](../includes/product-name.md)] offers Data Science experiences to empower users to complete end-to-end data science workflows for the purpose of data enrichment and business insights. You can complete a wide range of activities across the entire data science process, all the way from data exploration, preparation and cleansing to experimentation, modeling, model scoring and serving of predictive insights to BI reports.
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can access a Data Science Home page. From there, they can discover and access various relevant resources. For example, they can create machine learning Experiments, Models and Notebooks. They can also import existing Notebooks on the Data Science Home page.
 
@@ -24,7 +30,7 @@ You might know how a typical data science process works. As a well-known process
 
 At a high level, the process involves these steps:
 
-- Problem formulation and ideation  
+- Problem formulation and ideation
 - Data discovery and pre-processing
 - Experimentation and modeling
 - Enrich and operationalize
@@ -36,15 +42,15 @@ This article describes the [!INCLUDE [product-name](../includes/product-name.md)
 
 ## Problem formulation and ideation
 
-Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier. 
+Data Science users in [!INCLUDE [product-name](../includes/product-name.md)] work on the same platform as business users and analysts. Data sharing and collaboration becomes more seamless across different roles as a result. Analysts can easily share Power BI reports and datasets with data science practitioners. The ease of collaboration across roles in [!INCLUDE [product-name](../includes/product-name.md)] makes hand-offs during the problem formulation phase much easier.
 
-## Data Discovery and pre-processing 
+## Data discovery and pre-processing
 
 [!INCLUDE [product-name](../includes/product-name.md)] users can interact with data in OneLake using the Lakehouse item. Lakehouse easily attaches to a Notebook to browse and interact with data.
 
 Users can easily read data from a Lakehouse directly into a Pandas dataframe. For exploration, this makes seamless data reads from OneLake possible.
 
-There's a powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume.
+A powerful set of tools is available for data ingestion and data orchestration pipelines with data integration pipelines - a natively integrated part of [!INCLUDE [product-name](../includes/product-name.md)]. Easy-to-build data pipelines can access and transform the data into a format that machine learning can consume.
 
 ### Data exploration
 
@@ -54,7 +60,7 @@ Depending on the data storage location, [!INCLUDE [product-name](../includes/pro
 
 ### Apache Spark and Python for data preparation
 
-[!INCLUDE [product-name](../includes/product-name.md)] offers capabilities to transform, prepare, and explore your data at scale. With Spark, users can leverage PySpark/Python, Scala, and SparkR/SparklyR tools for data pre-processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data. 
+[!INCLUDE [product-name](../includes/product-name.md)] offers capabilities to transform, prepare, and explore your data at scale. With Spark, users can leverage PySpark/Python, Scala, and SparkR/SparklyR tools for data pre-processing at scale. Powerful open-source visualization libraries can enhance the data exploration experience to help better understand the data.
 
 ### Data Wrangler for seamless data cleansing
 
@@ -66,17 +72,17 @@ With tools like PySpark/Python, SparklyR/R, notebooks can handle machine learnin
 
 ML algorithms and libraries can help train machine learning models. Library management tools can install these libraries and algorithms. Users have therefore the option to leverage a large variety of popular machine learning libraries to complete their ML model training in [!INCLUDE [product-name](../includes/product-name.md)].
 
-Additionally, popular libraries like Scikit Learn can also develop models.  
+Additionally, popular libraries like Scikit Learn can also develop models.
 
-MLflow experiments and runs can track the ML model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a built-in MlFlow experience with which users can interact, to log experiments and models. Learn more about how to use MLflow to track experiments and manage models in [!INCLUDE [product-name](../includes/product-name.md)].
+MLflow experiments and runs can track the ML model training. [!INCLUDE [product-name](../includes/product-name.md)] offers a built-in MLflow experience with which users can interact, to log experiments and models. Learn more about how to use MLflow to track experiments and manage models in [!INCLUDE [product-name](../includes/product-name.md)].
 
 ### SynapseML
- 
-The SynapseML (previously known as MMLSpark) open-source library, that Microsoft owns and maintains, simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for development of predictive models, as well as leveraging pre-trained AI models from Azure Cognitive Services. Learn more about [SynapseML](https://aka.ms/spark).
 
+The SynapseML (previously known as MMLSpark) open-source library, that Microsoft owns and maintains, simplifies massively scalable machine learning pipeline creation. As a tool ecosystem, it expands the Apache Spark framework in several new directions. SynapseML unifies several existing machine learning frameworks and new Microsoft algorithms into a single, scalable API. The open-source SynapseML library includes a rich ecosystem of ML tools for development of predictive models, as well as leveraging pre-trained AI models from Azure AI services. Learn more about [SynapseML](https://aka.ms/spark).
 
 ## Enrich and operationalize
-Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Spark Predict function, which supports mlflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.
+
+Notebooks can handle machine learning model batch scoring with open-source libraries for prediction, or the [!INCLUDE [product-name](../includes/product-name.md)] scalable universal Spark Predict function, which supports MLflow packaged models in the [!INCLUDE [product-name](../includes/product-name.md)] model registry.
 
 ### Gain insights
 
@@ -84,11 +90,34 @@ In [!INCLUDE [product-name](../includes/product-name.md)], Predicted values can 
 
 Notebooks that contain batch scoring can be scheduled to run using the Notebook scheduling capabilities. Batch scoring can also be scheduled as part of data pipeline activities or Spark jobs. Power BI automatically gets the latest predictions without need for loading or refresh of the data, thanks to the Direct lake mode in [!INCLUDE [product-name](../includes/product-name.md)].
 
-## Next steps
+## Data exploration with semantic link (preview)
+
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
+
+Data scientists and business analysts spend lots of time trying to understand, clean, and transform data before they can start any meaningful analysis. Business analysts typically work with semantic models and encode their domain knowledge and business logic into Power BI measures. On the other hand, data scientists can work with the same data, but typically in a different code environment or language.
+
+
+Semantic link (preview) allows data scientists to establish a connection between Power BI semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience via the [SemPy Python library](/python/api/semantic-link-sempy). SemPy simplifies data analytics by capturing and leveraging data semantics as users perform various transformations on the semantic models.
+By leveraging semantic link, data scientists can:
+
+- avoid the need to re-implement business logic and domain knowledge in their code
+- easily access and use Power BI measures in their code
+- use semantics to power new experiences, such as semantic functions
+- explore and validate functional dependencies and relationships between data
+
+Through the use of SemPy, organizations can expect to see:
+
+- increased productivity and faster collaboration across teams that operate on the same datasets
+- increased cross-collaboration across business intelligence and AI teams
+- reduced ambiguity and an easier learning curve when onboarding onto a new model or dataset
+
+For more information on semantic link, see [What is semantic link (preview)?](semantic-link-overview.md).
+
+## Related content
 
 - Get started with end-to-end data science samples, see [Data Science Tutorials](tutorial-data-science-introduction.md)
 - Learn more about data preparation and cleansing with Data Wrangler, see [Data Wrangler](data-wrangler.md)
 - Learn more about tracking experiments, see [Machine learning experiment](machine-learning-experiment.md)
 - Learn more about managing models, see [Machine learning model](machine-learning-model.md)
 - Learn more about batch scoring with Predict, see [Score models with PREDICT](model-scoring-predict.md)
-- Serve predictions from Lakehouse to Power BI with [Direct lake Mode ](../data-engineering/lakehouse-pbi-reporting.md)
+- Serve predictions from Lakehouse to Power BI with [Direct lake Mode](../data-engineering/lakehouse-pbi-reporting.md)

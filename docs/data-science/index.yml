@@ -6,14 +6,15 @@ summary: Learn more about the Data Science experience in Microsoft Fabric  # < 1
 metadata:
   title: Data Science in Microsoft Fabric documentation # Required; page title displayed in search results. Include the brand. < 60 chars.
   description: Summary of the Data Science documentation in Microsoft Fabric # Required; article description that is displayed in search results. < 160 chars.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: data-science
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page # Required
   ms.collection: collection # Optional; Remove if no collection is used.
   author: s-polly #Required; your GitHub user alias, with correct capitalization.
   ms.author: scottpolly #Required; microsoft alias of author; optional team alias.
   ms.date: 04/25/2023 #Required; mm/dd/yyyy format.
-
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -52,10 +53,10 @@ landingContent:
             url: fraud-detection.md 
           - text: Forecasting
             url: time-series-forecasting.md 
-          - text: Text classification
-            url: title-genre-classification.md 
-          - text: Uplift modeling
-            url: uplift-modeling.md          
+          - text: Discover relationships in a semantic model, using semantic link (preview)
+            url: tutorial-power-bi-relationships.md 
+          - text: Analyze functional dependencies in a semantic model, using semantic link (preview)
+            url: tutorial-power-bi-dependencies.md   
 
   # Card 
   - title: Preparing Data
@@ -73,11 +74,11 @@ landingContent:
       - linkListType: overview
         links:  
         - text: Training Overview
-          url: ./model-training/model-training-overview.md 
+          url: model-training-overview.md 
       - linkListType: how-to-guide
         links:
           - text: Train with Spark MLlib
-            url: ./model-training/fabric-sparkml-tutorial.md 
+            url: fabric-sparkml-tutorial.md 
           - text: Train models with Scikit-learn
             url: train-models-scikit-learn.md 
           - text: Train models with PyTorch
@@ -106,8 +107,8 @@ landingContent:
         links:
           - text: Use OpenAI for big data with SynapseML
             url: open-ai.md
-          - text: Use Congnitive Services with SynapseML
-            url: overview-cognitive-services.md
+          - text: Use Cognitive Services with SynapseML
+            url: ./ai-services/ai-services-in-synapseml-bring-your-own-key.md
           - text: Deep learning with ONNX and SynapseML
             url: onnx-overview.md
           - text: Perform multivariate anomaly detection with SynapseML
@@ -132,3 +133,27 @@ landingContent:
             url: r-library-management.md 
           - text: R visualization
             url: r-visualization.md 
+
+# Card
+  - title: Reference docs     
+    linkLists:
+      - linkListType: reference
+        links:
+        - text: SemPy Python SDK
+          url: /python/api/semantic-link/overview-semantic-link
+
+# Card 
+  - title: Using semantic link (preview)
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is semantic link (preview)?
+            url: semantic-link-overview.md
+      - linkListType: how-to-guide
+        links:
+          - text: Read from Power BI and write data consumable by Power BI
+            url: read-write-power-bi.md
+          - text: Detect, explore, and validate functional dependencies in your data
+            url: semantic-link-validate-data.md
+          - text: Explore and validate relationships in semantic models
+            url: semantic-link-validate-relationship.md

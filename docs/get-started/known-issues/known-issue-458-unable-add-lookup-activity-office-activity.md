@@ -4,7 +4,7 @@ description: A known issue is posted where a user isn't able to add Lookup activ
 author: mihart
 ms.author: anirmale
 ms.topic: troubleshooting 
-ms.date: 07/26/2023
+ms.date: 10/13/2023
 ms.custom: known-issue-458
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-458
 
 Currently there's a bug when the user tries to add the output of a Lookup activity as a dynamic content to the body object of Office 365. Office 365 activity hangs indefinitely.
 
-**Status:** Open
+**Status:** Fixed: October 13, 2023
 
 **Product Experience:** Data Factory
 
@@ -24,6 +24,6 @@ Office 365 activity hangs indefinitely when output of Lookup activity is added a
 
 Wrap the output of the lookup activity in a string, for example @string(activity('Lookup 1').output.firstRow).
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

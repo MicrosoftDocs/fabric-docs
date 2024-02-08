@@ -5,8 +5,9 @@ ms.reviewer: snehagunda
 ms.author: dacoelho
 author: DaniBunny
 ms.topic: conceptual
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: lakehouse delta lake tables
 ---
 
@@ -16,13 +17,11 @@ ms.search.form: lakehouse delta lake tables
 
 Saving data in the Lakehouse using capabilities such as [Load to Tables](load-to-tables.md) or methods described in [Options to get data into the Fabric Lakehouse](load-data-lakehouse.md), all data is saved in Delta format.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 For a more comprehensive introduction to the Delta Lake table format, follow links in the Next steps section.
 
 ## Big data, Apache Spark and legacy table formats
 
-[!INCLUDE [product-name](../includes/product-name.md)] Runtime for Apache Spark uses the same foundation as Azure Synapse Analytics Runtime for Apache Spark, but contain key differences to provide a more streamlined behavior across all engines in the [!INCLUDE [product-name](../includes/product-name.md)] service. In [!INCLUDE [product-name](../includes/product-name.md)], key performance features are turned on by default. Advanced Apache Spark users may revert configurations to previous values to better align with specific scenarios.
+[!INCLUDE [product-name](../includes/product-name.md)] [Runtime for Apache Spark](./runtime.md) uses the same foundation as Azure Synapse Analytics Runtime for Apache Spark, but contain key differences to provide a more streamlined behavior across all engines in the [!INCLUDE [product-name](../includes/product-name.md)] service. In [!INCLUDE [product-name](../includes/product-name.md)], key performance features are turned on by default. Advanced Apache Spark users may revert configurations to previous values to better align with specific scenarios.
 
 [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse and the Apache Spark engine support all table types, both managed and unmanaged; this includes views and regular non-Delta Hive table formats. Tables defined using PARQUET, CSV, AVRO, JSON, and any Apache Hive compatible file format work as expected.
 
@@ -55,13 +54,13 @@ The Lakehouse explorer provides a tree-like view of the objects in the [!INCLUDE
 
 ## Load to Tables
 
-[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Tables feature allows a visual experiences to load common file formats to Delta to boost analytical productivity to all personas. To learn more about the Load to Tables feature in details, read the [Lakehouse Load to Tables](load-to-tables.md) reference documentation.
+[!INCLUDE [product-name](../includes/product-name.md)] Lakehouse provides a convenient and productive user interface to streamline loading data into Delta tables. The Load to Tables feature allows a visual experiences to load common file formats to Delta to boost analytical productivity to all personas. To learn more about the Load to Tables feature in details, read the [Lakehouse Load to Tables](load-to-tables.md) reference documentation.
 
 ## Delta Lake table optimization
 
 Keeping tables in shape for the broad scope of analytics scenarios is no minor feat. [!INCLUDE [product-name](../includes/product-name.md)] Lakehouse pro-actively enables the important parameters to minimize common problems associated with big data tables, such as compaction and small file sizes, and to maximize query performance. Still, there are many scenarios where those parameters need changes. The [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md) article covers some key scenarios and provides an in-depth guide on how to efficiently maintain Delta tables for maximum performance.
 
-## Next steps
+## Related content
 
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)
 - [Delta Lake overview](/azure/synapse-analytics/spark/apache-spark-delta-lake-overview?pivots=programming-language-python)

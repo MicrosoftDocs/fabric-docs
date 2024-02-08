@@ -1,283 +1,341 @@
 ---
-title: Data science tutorial - train and register machine learning models
-description: In this fourth part of the tutorial series, learn how to train machine learning models to predict the total ride duration of taxi trips, and then register the trained models.
+title: "Tutorial: Train and register machine learning models"
+description: In this third part of the tutorial series, learn how to train machine learning models to predict whether bank customers would stop doing business with the bank or not, and then register the trained models.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/4/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 10/16/2023
 ---
 
-# Part 4: Train and register machine learning models in Microsoft Fabric
+# Tutorial Part 3: Train and register a machine learning model
 
-Learn to train machine learning models to predict the total ride duration (tripDuration) of yellow taxi trips in New York City based on various factors, such as pickup and drop-off locations, distance, date, time, number of passengers, and rate code. Once a model is trained, you register the trained models, and log hyperparameters used and evaluation metrics using Fabric's native integration with the MLflow framework.
+In this tutorial, you'll learn to train multiple machine learning models to select the best one in order to predict which bank customers are likely to leave.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
-> [!TIP]
-> MLflow is an open-source platform for managing the end-to-end machine learning lifecycle with features for tracking experiments, packaging ML models and items, and model registry. For more information, see [MLflow](https://mlflow.org/docs/latest/index.html).
 
-In this tutorial, you'll load cleansed and prepared data from lakehouse delta table and use it to train a regression model to predict ***tripDuration*** variable. You'll also use the Fabric MLflow integration to create and track experiments and register the trained model, model hyperparameters and metrics.
+In this tutorial, you'll:
+
+> [!div class="checklist"]
+>
+> * Train Random Forrest and LightGBM models.
+> * Use Microsoft Fabric's native integration with the MLflow framework to log the trained machine learning models, the used hyperaparameters, and evaluation metrics.
+> * Register the trained machine learning model.
+> * Assess the performances of the trained machine learning models on the validation dataset.
+
+
+[MLflow](https://mlflow.org/docs/latest/index.html) is an open source platform for managing the machine learning lifecycle with features like Tracking, Models, and Model Registry. MLflow is natively integrated with the Fabric Data Science experience.
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* Complete [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+This is part 3 of 5 in the tutorial series. To complete this tutorial, first complete:
 
-* Optionally, complete [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
-
-* Complete [Part 3: Perform data cleansing and preparation using Apache Spark](tutorial-data-science-data-cleanse.md).
+* [Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark](tutorial-data-science-ingest-data.md).  
+* [Part 2: Explore and visualize data using Microsoft Fabric notebooks](tutorial-data-science-explore-notebook.md) to learn more about the data.
 
 ## Follow along in notebook
 
-[04-train-and-track-machine-learning-models.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/04-train-and-track-machine-learning-models.ipynb) is the notebook that accompanies this tutorial.
+[3-train-evaluate.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/3-train-evaluate.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
-## Train and register models
+> [!IMPORTANT]
+> Attach the same lakehouse you used in part 1 and part 2.
 
-1. In the first step, we import the MLflow library and create an experiment named ***nyctaxi_tripduration*** to log the runs and models produced as part of the training process.
+<!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/3-train-evaluate.ipynb -->
 
-   ```python
-   # Create Experiment to Track and register model with mlflow
-   import mlflow
-   print(f"mlflow lbrary version: {mlflow.__version__}")
-   EXPERIMENT_NAME = "nyctaxi_tripduration"
-   mlflow.set_experiment(EXPERIMENT_NAME)
-   ```
+## Install custom libraries
 
-1. Read cleansed and prepared data from the lakehouse delta table ***nyctaxi_prep***, and create a fractional random sample from the data (to reduce computation time in this tutorial).
+For this notebook, you'll install imbalanced-learn (imported as `imblearn`) using `%pip install`. Imbalanced-learn is a library for Synthetic Minority Oversampling Technique (SMOTE) which is used when dealing with imbalanced datasets. The PySpark kernel will be restarted after `%pip install`, so you'll need to install the library before you run any other cells. 
 
-   ```python
-   SEED = 1234
-   # note: From the perspective of the tutorial, we are sampling training data to speed up the execution.
-   training_df = spark.read.format("delta").load("Tables/nyctaxi_prep").sample(fraction = 0.5, seed = SEED)
-   ```
+You'll access SMOTE using the `imblearn` library. Install it now using the in-line installation capabilities (e.g., `%pip`, `%conda`).
 
-   > [!TIP]
-   > A seed in machine learning is a value that determines the initial state of a pseudo-random number generator. A seed is used to ensure that the results of machine learning experiments are reproducible. By using the same seed, you can get the same sequence of numbers and thus the same outcomes for data splitting, model training, and other tasks that involve randomness.
+```python
+# Install imblearn for SMOTE using pip
+%pip install imblearn
+```
 
-1. Perform a random split to get train and test datasets and define categorical and numeric features by executing the following set of commands. We also cache the train and test dataframes to improve the speed of downstream processes.
+When you install a library in a notebook, it's only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again.
 
-   ```python
-   TRAIN_TEST_SPLIT = [0.75, 0.25]
-   train_df, test_df = training_df.randomSplit(TRAIN_TEST_SPLIT, seed=SEED)
+If you have a library you often use, and you want to make it available to all notebooks in your workspace, you can use a [Fabric environment](https://aka.ms/fabric/create-environment) for that purpose. You can create an environment, install the library in it, and then your __workspace admin__ can attach the environment to the workspace as its default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace). 
 
-   # Cache the dataframes to improve the speed of repeatable reads
-   train_df.cache()
-   test_df.cache()
+For information on migrating existing workspace libraries and Spark properties to an environment, see [Migrate workspace libraries and Spark properties to a default environment](../data-engineering/environment-workspace-migration.md).
 
-   print(f"train set count:{train_df.count()}")
-   print(f"test set count:{test_df.count()}")
+## Load the data
 
-   categorical_features = ["storeAndFwdFlag","timeBins","vendorID","weekDayName","pickupHour","rateCodeId","paymentType"]
-   numeric_features = ['passengerCount', "tripDistance"]
-   ```
+Prior to training any machine learning model, you need to load the delta table from the lakehouse in order to read the cleaned data you created in the previous notebook.
 
-   > [!TIP]
-   > Apache Spark caching is a feature that allows you to store intermediate data in memory or disk and reuse it for multiple queries or operations. Caching can improve the performance and efficiency of your Spark applications by avoiding reprocessing of data that is frequently accessed. You can use different methods and storage levels to cache your data, depending on your needs and resources. Caching is especially useful for iterative algorithms or interactive analysis that require repeated access to the same data.
+```python
+import pandas as pd
+SEED = 12345
+df_clean = spark.read.format("delta").load("Tables/df_clean").toPandas()
+```
 
-1. In this step, we define the steps to perform more feature engineering and train the model using [Spark ML](https://spark.apache.org/docs/latest/ml-pipeline.html) pipelines and Microsoft [SynapseML](https://microsoft.github.io/SynapseML/docs/about/) library. The algorithm we use for this tutorial, LightGBM, is a fast, distributed, high performance gradient-boosting framework based on decision-tree algorithms. It's an open-source project developed by Microsoft and supports regression, classification, and many other machine learning scenarios. Its main advantages are faster training speed, lower memory usage, better accuracy, and support for distributed learning.
+### Generate experiment for tracking and logging the model using MLflow
 
-   ```python
-   from pyspark.ml.feature import OneHotEncoder, VectorAssembler, StringIndexer
-   from pyspark.ml import Pipeline
-   from synapse.ml.core.platform import *
-   from synapse.ml.lightgbm import LightGBMRegressor
+This section demonstrates how to generate an experiment, specify the machine learning model and training parameters as well as scoring metrics, train the machine learning models, log them, and save the trained models for later use.
 
-   # Define a pipeline steps for training a LightGBMRegressor regressor model
-   def lgbm_pipeline(categorical_features,numeric_features, hyperparameters):
-      # String indexer
-      stri = StringIndexer(inputCols=categorical_features, 
-                           outputCols=[f"{feat}Idx" for feat in categorical_features]).setHandleInvalid("keep")
-      # encode categorical/indexed columns
-      ohe = OneHotEncoder(inputCols= stri.getOutputCols(),  
-                           outputCols=[f"{feat}Enc" for feat in categorical_features])
-      
-      # convert all feature columns into a vector
-      featurizer = VectorAssembler(inputCols=ohe.getOutputCols() + numeric_features, outputCol="features")
+```python
+import mlflow
+# Setup experiment name
+EXPERIMENT_NAME = "bank-churn-experiment"  # MLflow experiment name
+```
 
-      # Define the LightGBM regressor
-      lgr = LightGBMRegressor(
-         objective = hyperparameters["objective"],
-         alpha = hyperparameters["alpha"],
-         learningRate = hyperparameters["learning_rate"],
-         numLeaves = hyperparameters["num_leaves"],
-         labelCol="tripDuration",
-         numIterations = hyperparameters["iterations"],
-      )
-      # Define the steps and sequence of the SPark ML pipeline
-      ml_pipeline = Pipeline(stages=[stri, ohe, featurizer, lgr])
-      return ml_pipeline
-   ```
+Extending the MLflow autologging capabilities, autologging works by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to your workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in your workspace. 
 
-1. Define training Hyperparameters as a python dictionary for the initial run of the lightgbm model by executing the below cell.
+All the experiments with their respective names are logged and you'll be able to track their parameters and performance metrics. To learn more about autologging, see  [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
-   ```python
-   # Default hyperparameters for LightGBM Model
-   LGBM_PARAMS = {"objective":"regression",
-      "alpha":0.9,
-      "learning_rate":0.1,
-      "num_leaves":31,
-      "iterations":100}
-   ```
 
-   > [!TIP]
-   > Hyperparameters are the parameters that you can change to control how a machine learning model is trained. Hyperparameters can affect the speed, quality and accuracy of the model. Some common methods to find the best hyperparameters are by testing different values, using a grid or random search, or using a more advanced optimization technique. The hyperparameters for the LightGBM model in this tutorial have been pre-tuned using a distributed grid search (not covered as part of this tutorial) run using the [hyperopt](https://github.com/hyperopt/hyperopt) library.
+### Set experiment and autologging specifications
 
-1. Next, we create a new run in the defined experiment using MLflow and fit the defined pipeline on the training dataframe. We then generate predictions on the test dataset, using the following set of commands.
+```python
+mlflow.set_experiment(EXPERIMENT_NAME)
+mlflow.autolog(exclusive=False)
+```
 
-   ```python
-   if mlflow.active_run() is None:
-      mlflow.start_run()
-   run = mlflow.active_run()
-   print(f"Active experiment run_id: {run.info.run_id}")
-   lg_pipeline = lgbm_pipeline(categorical_features,numeric_features,LGBM_PARAMS)
-   lg_model = lg_pipeline.fit(train_df)
+## Import scikit-learn and LightGBM
 
-   # Get Predictions
-   lg_predictions = lg_model.transform(test_df)
-   ## Caching predictions to run model evaluation faster
-   lg_predictions.cache()
-   print(f"Prediction run for {lg_predictions.count()} samples")
-   ```
+With your data in place, you can now define the machine learning models. You'll apply Random Forrest and LightGBM models in this notebook. Use `scikit-learn` and `lightgbm` to implement the models within a few lines of code. 
 
-1. Once a model is trained and predictions generated on the test set, we can compute model statistics for evaluating performance of the trained LightGBMRegressor model by using SynapseML library utility ***ComputeModelStatistics***, which helps evaluate various types of models based on the algorithm. Once the metrics are generated, we also convert them into a python dictionary object for logging purposes. The metrics on which a regression model is evaluated are MSE(Mean Square Error), RMSE(Root Mean Square Error), R^2 and MAE(Mean Absolute Error).
 
-   ```python
-   from synapse.ml.train import ComputeModelStatistics
-   lg_metrics = ComputeModelStatistics(
-      evaluationMetric="regression", labelCol="tripDuration", scoresCol="prediction"
-   ).transform(lg_predictions) 
-   display(lg_metrics)
-   ```
+```python
+# Import the required libraries for model training
+from sklearn.model_selection import train_test_split
+from lightgbm import LGBMClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, f1_score, precision_score, confusion_matrix, recall_score, roc_auc_score, classification_report
+```
 
-   The output values are similar to the following table:
+## Prepare training, validation and test datasets
 
-   | mean_squared_error | root_mean_squared_error | r2 | mean_absolute_error |
-   | ----- | ----- | ----- | ----- |
-   | 25.721591239516997 | 5.071645811718026 | 0.7613537489434428 | 3.25946u0228763087 |
+Use the `train_test_split` function from `scikit-learn` to split the data into training, validation, and test sets.
 
-1. Next, we define a general function to register the trained LightGBMRegressor model with default hyperparameters under the created experiment using MLflow. We also log associated hyperparameters used and metrics for model evaluation in the experiment run and terminate the run in the MLflow experiment in the end.
+```python
+y = df_clean["Exited"]
+X = df_clean.drop("Exited",axis=1)
+# Split the dataset to 60%, 20%, 20% for training, validation, and test datasets
+# Train-Test Separation
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=SEED)
+# Train-Validation Separation
+X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.25, random_state=SEED)
 
-   ```python
-   from mlflow.models.signature import ModelSignature 
-   from mlflow.types.utils import _infer_schema 
+```
 
-   # Define a function to register a spark model
-   def register_spark_model(run, model, model_name,signature,metrics, hyperparameters):
-         # log the model, parameters and metrics
-         mlflow.spark.log_model(model, artifact_path = model_name, signature=signature, registered_model_name = model_name, dfs_tmpdir="Files/tmp/mlflow") 
-         mlflow.log_params(hyperparameters) 
-         mlflow.log_metrics(metrics) 
-         model_uri = f"runs:/{run.info.run_id}/{model_name}" 
-         print(f"Model saved in run{run.info.run_id}") 
-         print(f"Model URI: {model_uri}")
-         return model_uri
+### Save test data to a delta table
 
-   # Define Signature object 
-   sig = ModelSignature(inputs=_infer_schema(train_df.select(categorical_features + numeric_features)), 
-                        outputs=_infer_schema(train_df.select("tripDuration"))) 
+Save the test data to the delta table for use in the next notebook.
 
-   ALGORITHM = "lightgbm" 
-   model_name = f"{EXPERIMENT_NAME}_{ALGORITHM}"
+```python
+table_name = "df_test"
+# Create PySpark DataFrame from Pandas
+df_test=spark.createDataFrame(X_test)
+df_test.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
+print(f"Spark test DataFrame saved to delta table: {table_name}")
+```
 
-   # Create a 'dict' object that contains values of metrics
-   lg_metrics_dict = json.loads(lg_metrics.toJSON().first())
+### Apply SMOTE to the training data to synthesize new samples for the minority class
 
-   # Call model register function
-   model_uri = register_spark_model(run = run,
-                                 model = lg_model, 
-                                 model_name = model_name, 
-                                 signature = sig, 
-                                 metrics = lg_metrics_dict, 
-                                 hyperparameters = LGBM_PARAMS)
-   mlflow.end_run()
-   ```
+The data exploration in part 2 showed that out of the 10,000 data points corresponding to 10,000 customers, only 2,037 customers (around 20%) have left the bank. This indicates that the dataset is highly imbalanced. The problem with imbalanced classification is that there are too few examples of the minority class for a model to effectively learn the decision boundary. SMOTE is the most widely used approach to synthesize new samples for the minority class. Learn more about SMOTE [here](https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTE.html#) and [here](https://imbalanced-learn.org/stable/over_sampling.html#smote-adasyn).
 
-1. Once the default model is trained and registered, we define tuned hyperparameters (tuning hyperparameters not covered in this tutorial) and remove the *paymentType* categorical feature. Because *paymentType* is usually selected at the end of a trip, we hypothesize that it shouldn't be useful to predict trip duration.
+> [!TIP]
+>
+> Note that SMOTE should only be applied to the training dataset. You must leave the test dataset in its original imbalanced distribution in order to get a valid approximation of how the machine learning model will perform on the original data, which is representing the situation in production.
 
-   ```python
-   # Tuned hyperparameters for LightGBM Model
-   TUNED_LGBM_PARAMS = {"objective":"regression",
-      "alpha":0.08373361416254149,
-      "learning_rate":0.0801709918703746,
-      "num_leaves":92,
-      "iterations":200}
 
-   # Remove paymentType
-   categorical_features.remove("paymentType") 
-   ```
+```python
+from collections import Counter
+from imblearn.over_sampling import SMOTE
 
-1. After defining new hyperparameters and updating feature list, we fit the LightGBM pipeline with tuned hyperparameters on the training dataframe and generate predictions on the test dataset.
+sm = SMOTE(random_state=SEED)
+X_res, y_res = sm.fit_resample(X_train, y_train)
+new_train = pd.concat([X_res, y_res], axis=1)
+```
 
-   ```python
-   if mlflow.active_run() is None:
-      mlflow.start_run()
-   run = mlflow.active_run()
-   print(f"Active experiment run_id: {run.info.run_id}")
-   lg_pipeline_tn = lgbm_pipeline(categorical_features,numeric_features,TUNED_LGBM_PARAMS)
-   lg_model_tn = lg_pipeline_tn.fit(train_df)
+### Model training
 
-   # Get Predictions
-   lg_predictions_tn = lg_model_tn.transform(test_df)
-   ## Caching predictions to run model evaluation faster
-   lg_predictions_tn.cache()
-   print(f"Prediction run for {lg_predictions_tn.count()} samples")
-   ```
+* Train the model using Random Forest with maximum depth of 4 and 4 features
 
-1. Generate model evaluation metrics for the new LightGBM regression model with optimized hyperparameters and updated features.
 
-   ```python
-   lg_metrics_tn = ComputeModelStatistics(
-      evaluationMetric="regression", labelCol="tripDuration", scoresCol="prediction"
-   ).transform(lg_predictions_tn)
-   display(lg_metrics_tn)
-   ```
+```python
+mlflow.sklearn.autolog(registered_model_name='rfc1_sm') # Register the trained model with autologging
+rfc1_sm = RandomForestClassifier(max_depth=4, max_features=4, min_samples_split=3, random_state=1) # Pass hyperparameters
+with mlflow.start_run(run_name="rfc1_sm") as run:
+    rfc1_sm_run_id = run.info.run_id # Capture run_id for model prediction later
+    print("run_id: {}; status: {}".format(rfc1_sm_run_id, run.info.status))
+    # rfc1.fit(X_train,y_train) # Imbalanaced training data
+    rfc1_sm.fit(X_res, y_res.ravel()) # Balanced training data
+    rfc1_sm.score(X_val, y_val)
+    y_pred = rfc1_sm.predict(X_val)
+    cr_rfc1_sm = classification_report(y_val, y_pred)
+    cm_rfc1_sm = confusion_matrix(y_val, y_pred)
+    roc_auc_rfc1_sm = roc_auc_score(y_res, rfc1_sm.predict_proba(X_res)[:, 1])
+```
 
-1. In the final step, we register the second LightGBM regression model, and log the metrics and hyperparameters to the MLflow experiment and end the run.
+* Train the model using Random Forest with maximum depth of 8 and 6 features
 
-   ```python
-   # Define Signature object 
-   sig_tn = ModelSignature(inputs=_infer_schema(train_df.select(categorical_features + numeric_features)), 
-                        outputs=_infer_schema(train_df.select("tripDuration")))
 
-   # Create a 'dict' object that contains values of metrics
-   lg_metricstn_dict = json.loads(lg_metrics_tn.toJSON().first())
+```python
+mlflow.sklearn.autolog(registered_model_name='rfc2_sm') # Register the trained model with autologging
+rfc2_sm = RandomForestClassifier(max_depth=8, max_features=6, min_samples_split=3, random_state=1) # Pass hyperparameters
+with mlflow.start_run(run_name="rfc2_sm") as run:
+    rfc2_sm_run_id = run.info.run_id # Capture run_id for model prediction later
+    print("run_id: {}; status: {}".format(rfc2_sm_run_id, run.info.status))
+    # rfc2.fit(X_train,y_train) # Imbalanced training data
+    rfc2_sm.fit(X_res, y_res.ravel()) # Balanced training data
+    rfc2_sm.score(X_val, y_val)
+    y_pred = rfc2_sm.predict(X_val)
+    cr_rfc2_sm = classification_report(y_val, y_pred)
+    cm_rfc2_sm = confusion_matrix(y_val, y_pred)
+    roc_auc_rfc2_sm = roc_auc_score(y_res, rfc2_sm.predict_proba(X_res)[:, 1])
+```
 
-   model_uri = register_spark_model(run = run,
-                                 model = lg_model_tn, 
-                                 model_name = model_name, 
-                                 signature = sig_tn, 
-                                 metrics = lg_metricstn_dict, 
-                                 hyperparameters = TUNED_LGBM_PARAMS)
-   mlflow.end_run()
-   ```
+* Train the model using LightGBM
 
-   The output values are similar to the following table:
 
-   | mean_squared_error | root_mean_squared_error | r2 | mean_absolute_error |
-   | ----- | ----- | ----- | ----- |
-   | 25.444472646953216 | 5.0442514456511 | 0.7637293020097541 | 3.241663446115354 |
+```python
+# lgbm_model
+mlflow.lightgbm.autolog(registered_model_name='lgbm_sm') # Register the trained model with autologging
+lgbm_sm_model = LGBMClassifier(learning_rate = 0.07, 
+                        max_delta_step = 2, 
+                        n_estimators = 100,
+                        max_depth = 10, 
+                        eval_metric = "logloss", 
+                        objective='binary', 
+                        random_state=42)
 
-At the end of the tutorial, we have two runs of the lightgbm regression model trained and registered in the MLflow model registry, and the model is also available in the workspace as a Fabric model item.
+with mlflow.start_run(run_name="lgbm_sm") as run:
+    lgbm1_sm_run_id = run.info.run_id # Capture run_id for model prediction later
+    # lgbm_sm_model.fit(X_train,y_train) # Imbalanced training data
+    lgbm_sm_model.fit(X_res, y_res.ravel()) # Balanced training data
+    y_pred = lgbm_sm_model.predict(X_val)
+    accuracy = accuracy_score(y_val, y_pred)
+    cr_lgbm_sm = classification_report(y_val, y_pred)
+    cm_lgbm_sm = confusion_matrix(y_val, y_pred)
+    roc_auc_lgbm_sm = roc_auc_score(y_res, lgbm_sm_model.predict_proba(X_res)[:, 1])
+```
 
-In order to view the model in the UI:
+## Experiments artifact for tracking model performance
 
-- Navigate to your currently active Fabric workspace.
-- Select the model item named ***nyctaxi_tripduration_lightgbm*** to open the model UI.
+The experiment runs are automatically saved in the experiment artifact that can be found from the workspace. They're named based on the name used for setting the experiment. All of the trained machine learning models, their runs, performance metrics, and model parameters are logged. 
 
-   > [!NOTE]
-   > If you do not see your model item in the list, refresh your browser.
+To view your experiments:
+1. On the left panel, select your workspace.
+1. Find and select the experiment name, in this case _bank-churn-experiment_. If you don't see the experiment in your workspace, refresh your browser.
 
-- On the model UI, you can view the properties and metrics of a given run, compare performance of various runs, and download various file items associated with the trained model.
+:::image type="content" source="media/tutorial-data-science-train-models/experiment-runs.png" alt-text="Screenshot shows the experiment page for the bank-churn-experiment." lightbox="media/tutorial-data-science-train-models/experiment-runs.png" :::
 
-  The following image shows the layout of the various features within the model UI in a Fabric workspace.
+## Assess the performances of the trained models on the validation dataset
 
-:::image type="content" source="media\tutorial-data-science-train-models\feature-layout-in-model.png" alt-text="Screenshot of a Fabric workspace, showing the layout of the features within the model UI." lightbox="media\tutorial-data-science-train-models\feature-layout-in-model.png":::
+Once done with machine learning model training, you can assess the performance of trained models in two ways.
 
-## Next steps
+- Open the saved experiment from the workspace, load the machine learning models, and then assess the performance of the loaded models on the validation dataset.
 
-- [Part 5: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)
+    ```python
+    # Define run_uri to fetch the model
+    # mlflow client: mlflow.model.url, list model
+    load_model_rfc1_sm = mlflow.sklearn.load_model(f"runs:/{rfc1_sm_run_id}/model")
+    load_model_rfc2_sm = mlflow.sklearn.load_model(f"runs:/{rfc2_sm_run_id}/model")
+    load_model_lgbm1_sm = mlflow.lightgbm.load_model(f"runs:/{lgbm1_sm_run_id}/model")
+    # Assess the performance of the loaded model on validation dataset
+    ypred_rfc1_sm_v1 = load_model_rfc1_sm.predict(X_val) # Random Forest with max depth of 4 and 4 features
+    ypred_rfc2_sm_v1 = load_model_rfc2_sm.predict(X_val) # Random Forest with max depth of 8 and 6 features
+    ypred_lgbm1_sm_v1 = load_model_lgbm1_sm.predict(X_val) # LightGBM
+    ```
+
+- Directly assess the performance of the trained machine learning models on the validation dataset.
+
+    ```python
+    ypred_rfc1_sm_v2 = rfc1_sm.predict(X_val) # Random Forest with max depth of 4 and 4 features
+    ypred_rfc2_sm_v2 = rfc2_sm.predict(X_val) # Random Forest with max depth of 8 and 6 features
+    ypred_lgbm1_sm_v2 = lgbm_sm_model.predict(X_val) # LightGBM
+    ```
+
+Depending on your preference, either approach is fine and should offer identical performances. In this notebook, you'll choose the first approach in order to better demonstrate the MLflow autologging capabilities in Microsoft Fabric.
+
+ ### Show True/False Positives/Negatives using the Confusion Matrix
+
+Next, you'll develop a script to plot the confusion matrix in order to evaluate the accuracy of the classification using the validation dataset. The confusion matrix can be plotted using SynapseML tools as well, which is shown in Fraud Detection sample that is available [here](https://aka.ms/samples/frauddectection).
+
+```python
+import seaborn as sns
+sns.set_theme(style="whitegrid", palette="tab10", rc = {'figure.figsize':(9,6)})
+import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
+from matplotlib import rc, rcParams
+import numpy as np
+import itertools
+
+def plot_confusion_matrix(cm, classes,
+                          normalize=False,
+                          title='Confusion matrix',
+                          cmap=plt.cm.Blues):
+    print(cm)
+    plt.figure(figsize=(4,4))
+    plt.rcParams.update({'font.size': 10})
+    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    plt.title(title)
+    plt.colorbar()
+    tick_marks = np.arange(len(classes))
+    plt.xticks(tick_marks, classes, rotation=45, color="blue")
+    plt.yticks(tick_marks, classes, color="blue")
+
+    fmt = '.2f' if normalize else 'd'
+    thresh = cm.max() / 2.
+    for i, j in itertools.product(range(cm.shape[0]), range(cm.shape[1])):
+        plt.text(j, i, format(cm[i, j], fmt),
+                 horizontalalignment="center",
+                 color="red" if cm[i, j] > thresh else "black")
+
+    plt.tight_layout()
+    plt.ylabel('True label')
+    plt.xlabel('Predicted label')
+```
+
+* Confusion Matrix for Random Forest Classifier with maximum depth of 4 and 4 features
+
+
+```python
+cfm = confusion_matrix(y_val, y_pred=ypred_rfc1_sm_v1)
+plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
+                      title='Random Forest with max depth of 4')
+tn, fp, fn, tp = cfm.ravel()
+```
+
+:::image type="content" source="media/tutorial-data-science-train-models/random-forest-4.jpg" alt-text="Graph shows confusion matrix for Random Forest with maximum depth of 4.":::
+
+* Confusion Matrix for Random Forest Classifier with maximum depth of 8 and 6 features
+
+
+```python
+cfm = confusion_matrix(y_val, y_pred=ypred_rfc2_sm_v1)
+plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
+                      title='Random Forest with max depth of 8')
+tn, fp, fn, tp = cfm.ravel()
+```
+
+:::image type="content" source="media/tutorial-data-science-train-models/random-forest-8.jpg" alt-text="Graph shows confusion matrix for Random Forest with maximum depth of 8.":::
+
+
+* Confusion Matrix for LightGBM
+
+
+```python
+cfm = confusion_matrix(y_val, y_pred=ypred_lgbm1_sm_v1)
+plot_confusion_matrix(cfm, classes=['Non Churn','Churn'],
+                      title='LightGBM')
+tn, fp, fn, tp = cfm.ravel()
+```
+
+:::image type="content" source="media/tutorial-data-science-train-models/lightgbm.jpg" alt-text="Graph shows confusion matrix for LightGBM.":::
+
+<!-- nbend -->
+
+## Next step
+
+> [!div class="nextstepaction"]
+> [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md)

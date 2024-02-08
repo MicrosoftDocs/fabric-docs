@@ -5,9 +5,11 @@ author: maggiesMSFT
 ms.author: maggies
 ms.reviewer: yicw, mesrivas,liud
 ms.topic: conceptual
-ms.custom: build-2023
-ms.search.form: product-trident
-ms.date: 06/14/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.search.form: product-trident, Manage your workspace
+ms.date: 12/04/2023
 ---
 
 # Workspaces
@@ -52,7 +54,7 @@ You can also open it from the workspace page.
 
 The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
 
-:::image type="content" source="media/workspaces/contact-list-in-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
+:::image type="content" source="media/workspaces/contact-list-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
 ### Microsoft 365 and OneDrive
 
@@ -71,7 +73,7 @@ You can configure OneDrive in workspace settings by typing in the name of the Mi
 
 By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
 
-:::image type="content" source="media/workspaces/license-mode-in-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
+:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
 
 ### Azure connections configuration
 
@@ -85,11 +87,11 @@ After the connection with Azure Log Analytics (LA), activity log data is sent co
 
 ### System storage
 
-System storage is the place to manage your dataset storage in your individual or workspace account so you can keep publishing reports and datasets. Your own datasets, Excel reports, and those items that someone has shared with you, are included in your system storage.
+System storage is the place to manage your semantic model storage in your individual or workspace account so you can keep publishing reports and semantic models. Your own semantic models, Excel reports, and those items that someone has shared with you, are included in your system storage.
 
 In the system storage, you can view how much storage you  have used and free up the storage by deleting the items in it.
 
-Keep in mind that you or someone else may have reports and dashboards based on a dataset. If you delete the dataset, those reports and dashboards don't work anymore.
+Keep in mind that you or someone else may have reports and dashboards based on a semantic model. If you delete the semantic model, those reports and dashboards don't work anymore.
 
 :::image type="content" source="media/workspaces/system-storage.png" alt-text="Screenshot showing Manage your storage." lightbox="media/workspaces/system-storage.png":::
 
@@ -103,7 +105,7 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 ## Administering and auditing workspaces
 
-Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces) in the "Workspace settings" article.
+Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.
 
 Admins can also see the state of all the workspaces in their organization. They can manage, recover, and even delete workspaces. Read about [managing the workspaces themselves](../admin/portal-workspaces.md) in the "Admin portal" article.
 
@@ -124,11 +126,11 @@ Read more about [[!INCLUDE [product-name](../includes/product-name.md)] auditing
 
 Limitations to be aware of:
 
-- Workspaces can contain a maximum of 1,000 datasets, or 1,000 reports per dataset.
+- Workspaces can contain a maximum of 1,000 semantic models, or 1,000 reports per semantic model.
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 
-## Next steps
+## Related content
 
 * [Create workspaces](create-workspaces.md)
 * [Give users access to workspaces](give-access-workspaces.md)

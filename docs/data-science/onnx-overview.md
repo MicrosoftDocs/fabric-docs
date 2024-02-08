@@ -10,7 +10,7 @@ ms.date: 06/28/2023
 ---
 # ONNX Inference on Spark
 
-In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some testing data on Spark.
+In this example, you train a LightGBM model and convert the model to [ONNX](https://onnx.ai/) format. Once converted, you use the model to infer some test data on Spark.
 
 This example uses the following Python packages and versions:
 
@@ -139,7 +139,7 @@ onnx_ml = (
 
 ## Use the model for inference
 
-To perform inference with the model, the following code creates testing data and transforms the data through the ONNX model.
+To perform inference with the model, the following code creates test data and transforms the data through the ONNX model.
 
 ```python
 from pyspark.ml.feature import VectorAssembler
@@ -172,8 +172,8 @@ The output should look similar to the following table, though the values and num
 | 1 | `"{"type":1,"values":[0.105...` | 0 | `"{"0":0.835...` |
 | 2 | `"{"type":1,"values":[0.814...` | 0 | `"{"0":0.658...` |
 
-## Next steps
+## Related content
 
 - [How to use Kernel SHAP to explain a tabular classification model](tabular-shap-explainer.md)
 - [How to use SynapseML for multivariate anomaly detection](isolation-forest-multivariate-anomaly-detection.md)
-- [How to Build a Search Engine with SynapseML](cognitive-services-create-a-multilingual-search-engine-from-forms.md)
+- [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)

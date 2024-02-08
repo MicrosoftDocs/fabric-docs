@@ -1,18 +1,19 @@
 ---
-title: How to create an Azure Data Lake Storage Gen2 connection
-description: This article provides information about how to do create an Azure Data Lake Storage Gen2 connection
+title: Set up your Azure Data Lake Storage Gen2 connection
+description: This article provides information about how to set up an Azure Data Lake Storage Gen2 connection
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to create an Azure Data Lake Storage Gen2 connection
+# Set up your Azure Data Lake Storage Gen2 connection
 
 This article outlines the steps to create an Azure Date Lake Storage Gen2 connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -25,18 +26,19 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 |Service Principal|√||
 |Shared Access Signature (SAS)| √| √|
 
->[!Note]
->For information about an Azure Data Lake Storage Gen2 connection in Dataflow Gen2, go to [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md).
+## Set up your connection in Dataflow Gen2
 
-## Prerequisites
+Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Data Lake Storage Gen2. The following links provide the specific Power Query connector information you need to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2:
 
-The following prerequisites are required before you start:
+- To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- Be sure to install or set up any [Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites) before connecting to the Azure Data Lake Storage Gen2 connector.
+- To connect to the Azure Data Lake Storage Gen2 connector from Power Query, go to [Connect to Azure Data Lake Storage Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
 
-- A Microsoft Fabric tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
+In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.
 
-- A Microsoft Fabric enabled Workspace. [Create a workspace](../get-started/create-workspaces.md).
+## Set up your connection in a data pipeline
 
-## Go to Manage gateways to create connection
+To create a connection in a data pipeline:
 
 1. From the page header in Data Integration service, select **Settings** ![Settings gear icon](./media/connector-common/settings.png) > **Manage connections and gateways**
 
@@ -46,7 +48,7 @@ The following prerequisites are required before you start:
 
     :::image type="content" source="./media/connector-common/add-new-connection.png" alt-text="Screenshot showing the new page." lightbox="./media/connector-common/add-new-connection.png":::
 
-    The **New connection** pane will show up on the left side of the page.
+    The **New connection** pane shows up on the left side of the page.
 
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
 
@@ -106,7 +108,7 @@ For more information about shared access signatures, go to [Shared access signat
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Register your application with a Microsoft Entra tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
    - Tenant ID
    - Application ID
    - Application key
@@ -127,7 +129,7 @@ In the **General** tab, select the privacy level that you want apply in the **Pr
 
 ### Step 4: Create your connection
 
-Select **Create**. Your creation will be successfully tested and saved if all the credentials are correct. If not correct, the creation will fail with errors.
+Select **Create**. Your creation is successfully tested and saved if all the credentials are correct. If not correct, the creation fails with errors.
 
 :::image type="content" source="./media/connector-azure-data-lake-storage-gen2/connection.png" alt-text="Screenshot showing connection page." lightbox="./media/connector-azure-data-lake-storage-gen2/connection.png":::
 
@@ -159,7 +161,6 @@ The properties in the following table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
-- [How to configure Azure Data Lake Storage Gen2 in copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
-- [Connect to Azure Data Lake Storage Gen2 in dataflows](connector-azure-data-lake-storage-gen2-dataflows.md)
+- [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)

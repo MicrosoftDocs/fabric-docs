@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Data warehouse tutorial introduction
@@ -15,11 +17,9 @@ ms.date: 5/23/2023
 
 [[!INCLUDE [product-name](../includes/product-name.md)]](../get-started/microsoft-fabric-overview.md) provides a one-stop shop for all the analytical needs for every enterprise. It covers the complete spectrum of services including data movement, data lake, data engineering, data integration and data science, real time analytics, and business intelligence. With [!INCLUDE [product-name](../includes/product-name.md)], there's no need to stitch together different services from multiple vendors. Instead, the customer enjoys an end-to-end, highly integrated, single comprehensive product that is easy to understand, onboard, create and operate. No other product on the market offers the breadth, depth, and level of integration that [!INCLUDE [product-name](../includes/product-name.md)] offers. Additionally, [Microsoft Purview](../governance/microsoft-purview-fabric.md) is included by default in every tenant to meet compliance and governance needs.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Purpose of this tutorial
 
-While many concepts in [!INCLUDE [product-name](../includes/product-name.md)] may be familiar to data and analytics professionals, it can be challenging to apply those concepts in a new environment. This tutorial has been designed to walk step-by-step through an end-to-end scenario from data acquisition to data consumption to build a basic understanding of the [!INCLUDE [product-name](../includes/product-name.md)] user experience, the various experiences and their integration points, and the [!INCLUDE [product-name](../includes/product-name.md)] professional and citizen developer experiences.
+While many concepts in [!INCLUDE [product-name](../includes/product-name.md)] might be familiar to data and analytics professionals, it can be challenging to apply those concepts in a new environment. This tutorial has been designed to walk step-by-step through an end-to-end scenario from data acquisition to data consumption to build a basic understanding of the [!INCLUDE [product-name](../includes/product-name.md)] user experience, the various experiences and their integration points, and the [!INCLUDE [product-name](../includes/product-name.md)] professional and citizen developer experiences.
 
 The tutorials aren't intended to be a reference architecture, an exhaustive list of features and functionality, or a recommendation of specific best practices.
 
@@ -53,9 +53,9 @@ In this tutorial, you take on the role of a [!INCLUDE [fabric-dw](includes/fabri
 
 **Ingestion** - With 200+ native connectors as part of the [!INCLUDE [product-name](../includes/product-name.md)] pipeline and with drag and drop data transformation with dataflow, you can quickly build insights for your organization. Shortcut is a new feature in [!INCLUDE [product-name](../includes/product-name.md)] that provides a way to connect to existing data without having to copy or move it. You can find more details about the Shortcut feature later in this tutorial.
 
-**Transform and store** - [!INCLUDE [product-name](../includes/product-name.md)] standardizes on Delta Lake format, which means all the engines of [!INCLUDE [product-name](../includes/product-name.md)] can read and work on the same dataset stored in OneLake - no need for data duplicity. This storage allows you to build a data warehouse or data mesh based on your organizational need. For transformation, you can choose either low-code or no-code experience with pipelines/dataflows or use T-SQL for a code first experience.
+**Transform and store** - [!INCLUDE [product-name](../includes/product-name.md)] standardizes on Delta Lake format, which means all the engines of [!INCLUDE [product-name](../includes/product-name.md)] can read and work on the same data stored in OneLake - no need for data duplicity. This storage allows you to build a data warehouse or data mesh based on your organizational need. For transformation, you can choose either low-code or no-code experience with pipelines/dataflows or use T-SQL for a code first experience.
 
-**Consume** - Data from the data warehouse can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each data warehouse comes with a built-in TDS/SQL endpoint for easily connecting to and querying data from other reporting tools, when needed. When a data warehouse is created, a secondary item, called a default dataset, is generated at the same time with the same name. You can use the default dataset to start visualizing data with just a couple of steps.
+**Consume** - Data from the warehouse can be consumed by Power BI, the industry leading business intelligence tool, for reporting and visualization. Each warehouse comes with a built-in TDS endpoint for easily connecting to and querying data from other reporting tools, when needed. When a warehouse is created, a secondary item, called a default semantic model, is generated at the same time with the same name. You can use the default semantic model to start visualizing data with just a couple of steps.
 
 ## Sample data
 
@@ -71,7 +71,7 @@ While the WWI dimensional model contains multiple fact tables, for this tutorial
 
 :::image type="content" source="media\tutorial-introduction\data-warehouse-data-model.png" alt-text="Diagram that shows the data model you use in this tutorial, which includes the Sale Fact table and its related dimensions." lightbox="media\tutorial-introduction\data-warehouse-data-model.png":::
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial: Create a Microsoft [!INCLUDE [product-name](../includes/product-name.md)] workspace](tutorial-create-workspace.md)

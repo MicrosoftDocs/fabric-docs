@@ -1,88 +1,125 @@
 ---
-title: Data science tutorial - ingest data into a lakehouse
-description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format and how to preview the data you ingested.
+title: "Tutorial: Ingest data into a lakehouse"
+description: In this first part of the tutorial series, learn how to ingest a dataset into a Fabric lakehouse in delta lake format.
 ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/4/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 10/16/2023
 ---
 
-# Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
+# Tutorial Part 1: Ingest data into a Microsoft Fabric lakehouse using Apache Spark
 
-In this tutorial, we ingest the [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow) to demonstrate data ingestion into Fabric lakehouses in delta lake format.
+In this tutorial, you'll ingest data into Fabric lakehouses in delta lake format. Some important terms to understand:
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+* **Lakehouse** - A lakehouse is a collection of files/folders/tables that represent a database over a data lake used by the Spark engine and SQL engine for big data processing and that includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables.
 
-**Lakehouse**: A lakehouse is a collection of files, folders, and tables that represents a database over a data lake used by the Spark engine and SQL engine for big data processing, and that includes enhanced capabilities for ACID transactions when using the open-source Delta formatted tables.
+* **Delta Lake**  - Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
 
-**Delta Lake**: Delta Lake is an open-source storage layer that brings ACID transactions, scalable metadata management, and batch and streaming data processing to Apache Spark. A Delta Lake table is a data table format that extends Parquet data files with a file-based transaction log for ACID transactions and scalable metadata management.
+* [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
 
-In the following steps, you use the Apache spark to read data from Azure Open Datasets containers and write data into a Fabric lakehouse delta table. [Azure Open Datasets](/azure/open-datasets/overview-what-are-open-datasets) are curated public datasets that you can use to add scenario-specific features to machine learning solutions for more accurate models. Open Datasets are in the cloud on Microsoft Azure Storage and can be accessed by various methods including Apache Spark, REST API, Data factory, and other tools.
+In this tutorial, you use the Apache Spark to:
+
+> [!div class="checklist"]
+>
+> * Read data from Azure Open Datasets containers.
+> * Write data into a Fabric lakehouse delta table.
+
+
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
+-  [Add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to this notebook. You'll be downloading data from a public blob, then storing the data in the lakehouse.
 
 ## Follow along in notebook
 
- [01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/01-ingest-data-into-fabric-lakehouse-using-apache-spark.ipynb) is the notebook that accompanies this tutorial.
+ [1-ingest-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
-## Ingest the data
+<!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb -->
 
-1. In the first step of this part, we read data from "azureopendatastorage" storage container using anonymous since the container has public access. We load [yellow cab data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) by specifying the directory and filter the data by year (puYear) and month (puMonth). In this tutorial, we try to minimize the amount of data ingested and processed to speed up the execution. To learn more about the data, see [NYC Taxi & Limousine Commission - yellow taxi trip dataset](/azure/open-datasets/dataset-taxi-yellow).
 
-   ```python
-   # Azure storage access info for open datasets yellow cab
-   storage_account = "azureopendatastorage"
-   container = "nyctlc"
+## Bank churn data
 
-   sas_token = r"" # Blank since container is Anonymous access
+The dataset contains churn status of 10,000 customers. It also includes attributes that could impact churn such as:
 
-   # Set Spark config to access  blob storage
-   spark.conf.set("fs.azure.sas.%s.%s.blob.core.windows.net" % (container, storage_account),sas_token)
+* Credit score
+* Geographical location (Germany, France, Spain)
+* Gender (male, female)
+* Age
+* Tenure (years of being bank's customer)
+* Account balance
+* Estimated salary
+* Number of products that a customer has purchased through the bank
+* Credit card status (whether a customer has a credit card or not)
+* Active member status (whether an active bank's customer or not)
 
-   dir = "yellow"
-   year = 2016
-   months = "1,2,3,4"
-   wasbs_path = f"wasbs://{container}@{storage_account}.blob.core.windows.net/{dir}"
-   df = spark.read.parquet(wasbs_path)
+The dataset also includes columns such as row number, customer ID, and customer surname that should have no impact on customer's decision to leave the bank. 
 
-   # Filter data by year and months
-   filtered_df = df.filter(f"puYear = {year} AND puMonth IN ({months})")
-   ```
+The event that defines the customer's churn is the closing of the customer's bank account. The column `exited` in the dataset refers to customer's abandonment. There isn't much context available about these attributes so you have to proceed without having background information about the dataset. The aim is to understand how these attributes contribute to the `exited` status.
 
-1. Next, we set spark configurations to enable VOrder engine and Optimize delta writes.
 
-   - **VOrder** - Fabric includes Microsoft's VOrder engine. VOrder writer optimizes the Delta Lake parquet files resulting in 3x-4x compression improvement and up to 10x performance acceleration over Delta Lake files not optimized using VOrder while still maintaining full Delta Lake and PARQUET format compliance.
-   - **Optimize write** - Spark in Microsoft Fabric includes an Optimize write feature that reduces the number of files written and targets to increase individual file size of the written data. It dynamically optimizes files during write operations generating files with a default 128-MB size. The target file size may be changed per workload requirements using configurations.
+Example rows from the dataset:
 
-      These configs can be applied at a session level (as spark.conf.set in a notebook cell) as demonstrated in the following code cell, or at workspace level, which is applied automatically to all spark sessions created in the workspace. In this tutorial, we set these configurations using the code cell.
+|"CustomerID"|"Surname"|"CreditScore"|"Geography"|"Gender"|"Age"|"Tenure"|"Balance"|"NumOfProducts"|"HasCrCard"|"IsActiveMember"|"EstimatedSalary"|"Exited"|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|15634602|Hargrave|619|France|Female|42|2|0.00|1|1|1|101348.88|1|
+|15647311|Hill|608|Spain|Female|41|1|83807.86|1|0|1|112542.58|0|
 
-      ```python
-      spark.conf.set("sprk.sql.parquet.vorder.enabled", "true") # Enable VOrder write
-      spark.conf.set("spark.microsoft.delta.optimizeWrite.enabled", "true") # Enable automatic delta optimized write
-      ```
+### Download dataset and upload to lakehouse
 
-      > [!TIP]
-      > The workspace level Apache Spark configurations can be set at: **Workspace settings**, **Data Engineering/Science**, **Spark Compute**, **Spark Properties**, **Add**.
+> [!TIP]
+> By defining the following parameters, you can use this notebook with different datasets easily.
 
-1. In the next step, perform a spark dataframe write operation to save data into a lakehouse table named *nyctaxi_raw*.
 
-   ```python
-   table_name = "nyctaxi_raw"
-   filtered_df.write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
-   print(f"Spark dataframe saved to delta table: {table_name}")
-   ```
 
-   Once the dataframe has been saved, you can navigate to the attached lakehouse item in your workspace and open the lakehouse UI to preview data in the **nyctaxi_raw** table created in the previous steps.
+```python
+IS_CUSTOM_DATA = False  # if TRUE, dataset has to be uploaded manually
 
-   :::image type="content" source="media\tutorial-data-science-ingest-data\preview-data-new-table.png" alt-text="Screenshot showing where to preview a list of data in a table in the lakehouse view." lightbox="media\tutorial-data-science-ingest-data\preview-data-new-table.png":::
+DATA_ROOT = "/lakehouse/default"
+DATA_FOLDER = "Files/churn"  # folder with data files
+DATA_FILE = "churn.csv"  # data file name
+```
 
-## Next steps
+This code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
 
-- [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)
+> [!IMPORTANT]
+> **Make sure you [add a lakehouse](./tutorial-data-science-prepare-system.md#attach-a-lakehouse-to-the-notebooks) to the notebook before running it. Failure to do so will result in an error.**
+
+
+```python
+import os, requests
+if not IS_CUSTOM_DATA:
+# Download demo data files into lakehouse if not exist
+    remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/bankcustomerchurn"
+    file_list = [DATA_FILE]
+    download_path = f"{DATA_ROOT}/{DATA_FOLDER}/raw"
+
+    if not os.path.exists("/lakehouse/default"):
+        raise FileNotFoundError(
+            "Default lakehouse not found, please add a lakehouse and restart the session."
+        )
+    os.makedirs(download_path, exist_ok=True)
+    for fname in file_list:
+        if not os.path.exists(f"{download_path}/{fname}"):
+            r = requests.get(f"{remote_url}/{fname}", timeout=30)
+            with open(f"{download_path}/{fname}", "wb") as f:
+                f.write(r.content)
+    print("Downloaded demo data files into lakehouse.")
+```
+
+<!-- nbend -->
+
+
+## Related content
+
+You'll use the data you just ingested in:
+ 
+> [!div class="nextstepaction"]
+> [Part 2: Explore and visualize data using notebooks](tutorial-data-science-explore-notebook.md)

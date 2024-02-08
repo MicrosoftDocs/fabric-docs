@@ -1,17 +1,17 @@
 ---
-title: Create materialized views in Real-Time Analytics
+title: Create materialized views
 description: Learn how to run an aggregation query over a source table using materialized views in Real-Time Analytics.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.search.form: Data management
 ---
 # Create materialized views
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A materialized view is an aggregation query over a source table, or over another materialized view. It represents a single `summarize` statement. There are two types of materialized views:
 
@@ -27,7 +27,7 @@ For more information on the `.create materialized-view` command, see [.create ma
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md)
+* A [KQL database](create-database.md) with editing permissions
 
 ## Materialized view
 
@@ -41,11 +41,11 @@ For more information on the `.create materialized-view` command, see [.create ma
 
     :::image type="content" source="media/materialized-view/mv-example.png" alt-text="Screenshot of Explore your data window showing an example of a materialized view command." lightbox="media/materialized-view/mv-example.png":::
 
-    Materialized views appear under **Materialized views** in the **Data tree**.
+    Materialized views appear under **Materialized views** in the **Explorer** pane.
 
-    :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Data tree showing the database entities in Real-Time Analytics. The dropdown list of materialized views is highlighted.":::
+    :::image type="content" source="media/materialized-view/mv-object-tree.png" alt-text="Screenshot of Explorer pane showing the database entities in Real-Time Analytics. The dropdown list of materialized views is highlighted.":::
 
-## Next steps
+## Related content
 
 * [Materialized views limitations](/azure/data-explorer/kusto/management/materialized-views/materialized-views-limitations?context=/fabric/context/context)
 * [Query data in a KQL queryset](kusto-query-set.md)

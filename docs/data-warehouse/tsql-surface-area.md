@@ -1,21 +1,21 @@
 ---
 title: T-SQL surface area
-description: T-SQL surface area of the SQL Endpoint and Warehouse in Microsoft Fabric.
+description: T-SQL surface area of the SQL analytics endpoint and Warehouse in Microsoft Fabric.
 author: cynotebo
 ms.author: cynotebo
 ms.reviewer: wiassaf
-ms.date: 07/12/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023
-ms.search.form: SQL Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.search.form: SQL Analytics Endpoint overview, Warehouse overview # This article's title should not change. If so, contact engineering.
 ---
 # T-SQL surface area in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 This article covers the T-SQL language syntax capabilities of [!INCLUDE [product-name](../includes/product-name.md)], when querying the [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## T-SQL surface area
 
@@ -26,18 +26,15 @@ This article covers the T-SQL language syntax capabilities of [!INCLUDE [product
 
 ### Limitations
 
-At this time, the following list of commands is NOT currently supported. Don't try to use these commands because even though they may appear to succeed, they could cause issues to your warehouse. 
+At this time, the following list of commands is NOT currently supported. Don't try to use these commands. Even though they might appear to succeed, they could cause issues to your warehouse.
 
 - ALTER TABLE ADD/ALTER/DROP COLUMN
 - BULK LOAD
 - CREATE ROLE
-- CREATE SECURITY POLICY - Row Level Security (RLS)
 - CREATE USER
-- GRANT/DENY/REVOKE
 - Hints
 - Identity Columns
 - Manually created multi-column stats
-- MASK and UNMASK (Dynamic Data Masking)
 - MATERIALIZED VIEWS
 - MERGE
 - OPENROWSET
@@ -46,16 +43,17 @@ At this time, the following list of commands is NOT currently supported. Don't t
 - Recursive queries
 - Result Set Caching
 - Schema and Table names can't contain / or \
-- SELECT - FOR (except JSON)
+- SELECT - FOR
 - SET ROWCOUNT
 - SET TRANSACTION ISOLATION LEVEL
 - `sp_showspaceused`
-- `sp_rename`
 - Temp Tables
 - Triggers
 - TRUNCATE
 
-## Next steps
+## Related content
 
+- [Query insights in Fabric data warehousing](query-insights.md)
+- [What is data warehousing in Microsoft Fabric?](data-warehousing.md)
 - [Data types in Microsoft Fabric](data-types.md)
 - [Limitations in Microsoft Fabric](limitations.md)

@@ -5,16 +5,16 @@ ms.reviewer: jonburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: product-data-factory
 ---
 
 # Data Factory end-to-end scenario: introduction and architecture
 
 This tutorial helps you accelerate the evaluation process for Data Factory in Microsoft Fabric by providing a step-by-step guidance for a full data integration scenario within one hour. By the end of this tutorial, you understand the value and key capabilities of Data Factory and know how to complete a common end-to-end data integration scenario.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Overview: Why Data Factory in Microsoft Fabric?
 
@@ -28,10 +28,10 @@ Microsoft Fabric provides a one-stop shop for all the analytical needs for every
 
 Data Factory in Fabric combines the ease-of-use of [Power Query](/power-query) with the scale and power of [Azure Data Factory](/azure/data-factory/introduction). It brings the best of both products together into a unified experience. The goal is to make sure Data Integration in Factory works well for both citizen and professional data developers. It provides low-code, AI-enabled data preparation and transformation experiences, petabyte-scale transformation, hundreds of connectors with hybrid, multicloud connectivity. Purview provides governance, and the service features enterprise scale Data/Op commitments, CI/CD, application lifecycle management, and monitoring.
 
-## Introduction - Understand three key components of Data Factory
+## Introduction - Understand three key features of Data Factory
 
 - Data ingestion: The Copy activity in pipelines lets you move petabyte-scale data from hundreds of data sources into your data Lakehouse for further processing.
-- Data transformation and preparation: Dataflows gen2 provide a low-code interface for transforming your data using 300+ data transformations, with the ability to load the transformed results into multiple destinations such as Azure SQL databases, Lakehouse, and more.
+- Data transformation and preparation: Dataflow Gen2 provides a low-code interface for transforming your data using 300+ data transformations, with the ability to load the transformed results into multiple destinations such as Azure SQL databases, Lakehouse, and more.
 - End-to-end integration flow automation: Pipelines provide orchestration of activities that include [Copy, Dataflow, and Notebook activities, and more](activity-overview.md). This lets you manage activities all in one place. Activities in a pipeline can be chained together to operate sequentially, or they can operate independently in parallel.
 
 In this end-to-end data integration use case, you learn:
@@ -54,14 +54,14 @@ The scenario is divided into three modules:
 
 You use the sample dataset **NYC-Taxi** as the data source for the tutorial. After you finish, you'll be able to gain insight into daily discounts on taxi fares for a specific period of time using Data Factory in Microsoft Fabric.
 
-## Next steps
+## Related content
 
 In this introduction to our end-to-end tutorial for your first data integration using Data Factory in Microsoft Fabric, you learned:
 
 > [!div class="checklist"]
 > - The value and role of Microsoft Fabric
 > - The value and role of Data Factory in Fabric
-> - Key components of Data Factory
+> - Key features of Data Factory
 > - What you will learn in this tutorial
 
 Continue to the next section now to create your data pipeline.

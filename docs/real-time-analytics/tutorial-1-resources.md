@@ -1,17 +1,17 @@
 ---
-title: "Real-Time Analytics tutorial part 1: Create resources"
-description: Part 1 of the Real-Time Analytics tutorial in Microsoft Fabric.
+title: Real-Time Analytics tutorial part 1- Create resources
+description: Learn how to create a KQL database and enable data availability in Microsoft Fabric.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 05/23/2023
-ms.search.form: product-kusto
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 02/04/2024
+ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Introduction to the Real-Time Analytics tutorial](tutorial-introduction.md).
@@ -29,24 +29,24 @@ ms.search.form: product-kusto
 
     When provisioning is complete, the KQL database details page is shown.
 
-## Enable availability in OneLake
+## Turn on OneLake availability
 
 1. In the **Database details** card, select the **pencil** icon.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-availability.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-availability.png":::
 
 1. Toggle the button to **Active** and select **Done**.
 
     :::image type="content" source="media/realtime-analytics-tutorial/enable-copy-one-lake.png" alt-text="Screenshot of enabling data copy to OneLake in Real-Time Analytics in Microsoft Fabric." :::
 
-## See also
+## Related content
 
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable availability in OneLake](onelake-mirroring.md#enable-availability-in-onelake)
+* [Turn on OneLake availability](one-logical-copy.md#turn-on-onelake-availability)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)

@@ -1,11 +1,12 @@
 ---
 title: Data Factory data pipeline resource limits
-description: Identifies resource limits for Data Factory in Microsoft Fabric pipeline features. 
+description: Identifies resource limits for Data Factory in Microsoft Fabric pipeline features.
 author: ssabat
 ms.author: susabat
-ms.topic: troubleshooting    
-ms.date: 6/23/2023
-ms.custom:  
+ms.topic: troubleshooting
+ms.date: 11/15/2023
+ms.custom:
+  - ignite-2023
 ---
 
 # Data pipeline resource limits

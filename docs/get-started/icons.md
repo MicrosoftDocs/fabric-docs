@@ -19,18 +19,18 @@ This article provides information about the official collection of icons for Mic
 
 ## Don'ts
 
-* Don’t crop, flip or rotate icons.
-* Don’t distort or change icon shape in any way.
-* Don’t use Microsoft product icons to represent your product or service.
+* Don't crop, flip or rotate icons.
+* Don't distort or change icon shape in any way.
+* Don't use Microsoft product icons to represent your product or service.
 
 ## Terms
 
 Microsoft permits the use of these icons in architectural diagrams, training materials, or documentation. You may copy, distribute, and display the icons only for the permitted use unless granted explicit permission by Microsoft. Microsoft reserves all other rights.
 
 > [!div class="button"]
-> [Download icons](https://download.microsoft.com/download/6/0/c/60cda387-bf3f-4fb3-a8d0-d210690d4ee0/Icons.zip)
+> [Download icons from GitHub](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/Icons.zip)
 
-### See also
+### Related content
 
 * [Microsoft Power Platform icons](/power-platform/guidance/icons)
 * [Azure icons](/azure/architecture/icons)
