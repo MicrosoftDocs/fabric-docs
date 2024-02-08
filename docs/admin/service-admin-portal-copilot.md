@@ -30,6 +30,6 @@ By default, the **Tenant settings** for Fabric OpenAI are disabled. Ask your ten
 
 ## Related content
 
-- [Copilot in Fabric and Power BI overview](/fabric/get-started/copilot-fabric-overview.md)
+- [Copilot in Fabric and Power BI overview](get-started/copilot-fabric-overview.md)
 - [About tenant settings](about-tenant-settings.md)
 
