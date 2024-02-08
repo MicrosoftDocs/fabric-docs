@@ -79,7 +79,7 @@ The following properties are **required**:
         - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
         - **Prefix**: Prefix for the Google Cloud Storage key name under the specified bucket to filter source Google Cloud Storage files. Google Cloud Storage keys whose names start with `given_bucket/this_prefix` are selected. It utilizes Google Cloud Storage's service-side filter, which provides better performance than a wildcard filter.
     
-            :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing prefix.":::
+            :::image type="content" source="./media/connector-google-cloud/prefix.png" alt-text="Screenshot showing how to configure Prefix file path type.":::
     
     - **Wildcard file path**: If you choose this type, specify the **Bucket** and **Wildcard paths**.
         - **Bucket**: Specify the Google Cloud Storage bucket name. It is required.
@@ -87,7 +87,7 @@ The following properties are **required**:
     
           Allowed wildcards are: `*` (matches zero or more characters) and `?` (matches zero or single character). Use `^` to escape if your folder name has wildcard or this escape character inside. For more examples, go to [Folder and file filter examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#folder-and-file-filter-examples).
 
-          :::image type="content" source="./media/connector-google-cloud/wildcard-paths.png" alt-text="Screenshot showing wildcard file path.":::
+          :::image type="content" source="./media/connector-google-cloud/wildcard-paths.png" alt-text="Screenshot showing how to configure wildcard file path.":::
 
             - *Wildcard folder path*: Specify the folder path with wildcard characters under the given bucket to filter source folders.
     
@@ -95,7 +95,7 @@ The following properties are **required**:
 
     - **List of files**: If you choose this type, specify the **Folder path** and **Path to file list** to indicates to copy a given file set. Point to a text file that includes a list of files you want to copy, one file per line, which is the relative path to the path configured. For more examples, go to [File list examples](/azure/data-factory/connector-google-cloud-storage?tabs=data-factory#file-list-examples).
 
-       :::image type="content" source="./media/connector-google-cloud/list-of-files.png" alt-text="Screenshot showing list of files.":::
+       :::image type="content" source="./media/connector-google-cloud/list-of-files.png" alt-text="Screenshot showing how to configure List of files.":::
 
         - **Folder path**: Specify the path to the folder under given bucket. It is required.
         - **Path to file list**: Specify the path of the text file that includes a list of files you want to copy.
@@ -140,7 +140,7 @@ The following properties are supported for Google Cloud Storage under the **Dest
 The following properties are **required**:
 
 - **Data store type**: Select **External**.
-- **Connection**: Select an Google Cloud Storage connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
+- **Connection**: Select a Google Cloud Storage connection from the connection list. If no connection exists, then create a new Google Cloud Storage connection by selecting **New**.
 - **File path**: The data can be copied to the given bucket or the given bucket and folder path specified.
 - **File format**: Select the file format applied from the drop-down list. Select **Settings** to configure the file format. For settings of different file formats, refer to articles in [Supported format](#supported-format) for detailed information.
 
