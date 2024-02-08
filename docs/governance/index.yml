@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
-  ms.date: 02/05/2024
+  ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -24,12 +24,12 @@ landingContent:
         links:
           - text: Governance and compliance in Fabric
             url: governance-compliance-overview.md        
-          - text: Platform Security
-            url: ../security/security-overview.md
+          - text: Security overview
+            url: ../security/security-overview.md                      
       - linkListType: how-to-guide
         links:             
           - text: Manage access
-            url:  ..//get-started/roles-workspaces.md
+            url:  ../get-started/roles-workspaces.md
           - text: Audit
             url:  ../admin/track-user-activities.md  
       - linkListType: deploy
@@ -38,6 +38,12 @@ landingContent:
             url:  information-protection.md
           - text: Data loss prevention in Power BI
             url:  /power-bi/enterprise/service-security-dlp-policies-for-power-bi-overview 
+      - linkListType: reference
+        links:            
+          - text: Security documentation
+            url: ../security/index.yml
+          - text: Admin documentation
+            url: ../admin/index.yml               
 
   # Card 2
   - title: Manage your data estate
@@ -60,7 +66,7 @@ landingContent:
             url: ../admin/service-admin-premium-multi-geo.md                                                                       
 
   # Card 3
-  - title: Discover, trust and reuse
+  - title: Encourage data discovery and use
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -78,7 +84,7 @@ landingContent:
             url:  metadata-scanning-overview.md                           
 
   # Card 4
-  - title: Observe and act
+  - title: Uncover insights and Act
     linkLists:
       - linkListType: concept
         links:
