@@ -120,11 +120,11 @@ items:
         href: /azure/data-explorer/ingest-data-telegraf?context=/fabric/context/context-rta&pivots=fabric
 - name: Store data
   items:
-  - name: Eventhouse (Preview)
+  - name: Eventhouse (preview)
     items:
-    - name: Eventhouse overview (Preview)
+    - name: Eventhouse overview (preview)
       href: eventhouse.md
-    - name: Create an Eventhouse (Preview)
+    - name: Create an Eventhouse (preview)
       href: create-eventhouse.md 
   - name: KQL Database
     items:
