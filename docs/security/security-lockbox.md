@@ -116,7 +116,7 @@ Access to data varies according to the Microsoft Fabric experience your request 
     * Event logs
     * Executor logs
  
-* **Data Factory** - The Data Factory engineer will have access to pipeline definitions linked to your request, only if permission is granted.
+* **Data Factory** - The Data Factory engineer will have access to data pipeline definitions linked to your request, if permission is granted.
 
 ## Related content
 
