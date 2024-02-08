@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
-  ms.date: 10/18/2023
+  ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -36,7 +36,7 @@ landingContent:
           - text: Governance in Fabric
             url: ../governance/index.yml      
           - text: Security in Fabric
-            url: ../security/security-overview.md              
+            url: ../security/index.yml              
       - linkListType: how-to-guide
         links:            
           - text: Understand Fabric admin roles

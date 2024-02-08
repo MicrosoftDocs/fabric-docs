@@ -5,14 +5,14 @@ items:
   items:
   - name: Administration overview
     href: admin-overview.md  
-  - name: Security overview
-    href: ../security/security-overview.md
-  - name: Governance and compliance overview
-    href: ../governance/governance-compliance-overview.md          
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml          
   - name: What is Microsoft Fabric admin?
     href: microsoft-fabric-admin.md
   - name: What is the admin portal?
     href: admin-center.md
+  - name: Security documentation
+    href: ../security/index.yml    
 - name: Get started
   items:
   - name: Enable Fabric for your organization
