@@ -65,4 +65,4 @@ For the list of Azure regions where prebuilt AI services in Fabric are now avail
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
-- [Copilot tenant settings](/admin/service-admin-portal-copilot.md)
+- [Copilot tenant settings](../admin/service-admin-portal-copilot.md)
