@@ -10,7 +10,7 @@ ms.search.form: Eventhouse
 ---
 # Create and manage an Eventhouse (preview)
 
-An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (Preview)](eventhouse.md).
+An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (preview)](eventhouse.md).
 
 [!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
