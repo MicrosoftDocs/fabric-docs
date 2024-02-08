@@ -1,5 +1,5 @@
 ---
-title: Create an Eventhouse (Preview)
+title: Create an Eventhouse (preview)
 description: Learn about how to create an Eventhouse for data storage in Real-Time Analytics.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.date: 02/08/2024
 ms.search.form: Eventhouse
 ---
-# Create and manage an Eventhouse (Preview)
+# Create and manage an Eventhouse (preview)
 
 An Eventhouse allows you to manage multiple databases at once, sharing capacity and resources to optimize performance and cost. It provides unified monitoring and management across all databases and per database. For more information, see [Eventhouse overview (Preview)](eventhouse.md).
 
