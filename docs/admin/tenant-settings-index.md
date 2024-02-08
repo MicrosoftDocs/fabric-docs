@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/05/2024
+ms.date: 02/08/2024
 ---
 
 # Tenant settings index
@@ -30,6 +30,12 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Receive email notifications for service outages or incidents](../enterprise/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents)|Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident.|
 |[Users can try Microsoft Fabric paid features](service-admin-portal-help-support.md#users-can-try-microsoft-fabric-paid-features)|When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227896)|
 |[Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports)|When people attempt to publish a report, they'll see a custom message before it gets published.|
+
+## Domain management settings
+
+| Setting name | Description |
+|------|-------|
+|[Allow tenant and domain admins to override workspace assignments (preview)](./service-admin-portal-domain-management-settings#allow-tenant-and-domain-admins-to-override-workspace-assignments-preview)|Tenant and domain admins can reassign workspaces that were previously assigned to one domain to another domain.|
 
 ## [Workspace settings](portal-workspace.md)
 
