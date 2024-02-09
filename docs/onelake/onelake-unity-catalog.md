@@ -40,21 +40,25 @@ Once the Cloud connection ID is obtained, sync Unity Catalog tables to Fabric la
 2. **Configure the parameters** in the first cell to export Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
 ```python
-# Databricks
-dbx_workspace = "<databricks_workspace_url>"
-dbx_token = "<pat_token>"
+databricks_config = {
+    # Databricks workspace
+    'dbx_workspace': "<databricks_workspace_url>",
+    'dbx_token': "<pat_token>",
+    # Unity Catalog
+    'dbx_uc_catalog': "catalog1",
+    'dbx_uc_schemas': ["schema1", "schema2"]
+}
 
-# Unity Catalog
-dbx_uc_catalog = "catalog3"
-dbx_uc_schemas = ["schema1", "schema2"]
-
-# Fabric config
-workspace_id = "<workspace_id>"
-lakehouse_id = "<lakehouse_id>" 
-shortcut_connection_id = "<connection_id>"
-
-# If False, the operation will generate a new unique name for the new shortcut. If True, shortcut creation will be skipped.
-skip_if_shortcut_exists = False
+fabric_config = {
+    # Fabric
+    'workspace_id': "<workspace_id>",
+    'lakehouse_id': "<lakehouse_id>",
+    'shortcut_connection_id': "<connection_id>",
+    # If False, the operation will generate a new unique name for the new shortcut. If True, shortcut creation will be skipped. 
+    'skip_if_shortcut_exists': False,
+    # Use {catalog}, {schema} or {table} if you want to use UC names
+    'shortcut_name': "uc_{schema}_{table}"
+}
 ```
 
 3. **Run all cells** of the sync notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the Lakehouse explorer, SQL endpoint and semantic model.
