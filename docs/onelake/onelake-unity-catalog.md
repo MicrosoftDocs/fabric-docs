@@ -35,7 +35,7 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 Once the Cloud connection ID is obtained, sync Unity Catalog tables to Fabric lakehouse as follows:
 
-1. **Import sync notebook** to Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. The Databricks API, authenticated through PAT, is utilized for exporting tables.
+1. **Import sync notebook** to Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. The Databricks API, authenticated through PAT token, is utilized for exporting tables.
 
 2. **Configure the parameters** in the first cell to export Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
