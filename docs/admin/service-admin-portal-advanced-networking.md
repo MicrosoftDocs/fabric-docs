@@ -30,6 +30,6 @@ For extra security, block access to your Power BI tenant via the public internet
 
 To learn more, see [Private endpoints for secure access to Power BI](/power-bi/enterprise/service-security-private-links).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

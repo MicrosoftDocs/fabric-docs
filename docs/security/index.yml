@@ -1,7 +1,7 @@
 ### YamlMime:Landing
 
 title: Microsoft Fabric security
-summary: Learn about the Microsoft Fabric security features.
+summary: Microsoft Fabric is a software as a service (SaaS) platform that offers a complete security package. Fabric removes the cost and responsibility of maintaining your security solution and transfers it to the cloud. With Fabric, you can use the expertise and resources of Microsoft to keep your data secure, patch vulnerabilities, monitor threats, and comply with regulations.
 
 metadata:
   title: Microsoft Fabric security
@@ -11,36 +11,81 @@ metadata:
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
-  ms.date: 05/23/2023
+  ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
 
-  # Card 
-  - title: Security in Microsoft Fabric
+  # Card 1
+  - title: Fabric security fundamentals
     linkLists:
       - linkListType: overview
         links:
           - text: Security in Microsoft Fabric
             url: security-overview.md
-      - linkListType: concept
-        links:
-          - text: Conditional access in Fabric
-            url: security-conditional-access.md        
+          - text: Microsoft Fabric security fundamentals
+            url: security-fundamentals.md            
       - linkListType: how-to-guide
         links:
-          - text: Service tags
-            url: security-service-tags.md
+          - text: Configure Multi-Geo support for Fabric
+            url: ../admin/service-admin-premium-multi-geo.md                                      
 
-  # Card 
-  - title: Supportability
+  # Card 2
+  - title: Inbound network security
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft Entra ID
+            url: /entra/verified-id/decentralized-identifier-overview
+          - text: Zero Trust
+            url: /security/zero-trust/zero-trust-overview
+          - text: Conditional Access
+            url: /entra/identity/conditional-access/overview
+      - linkListType: how-to-guide
+        links:
+          - text: Conditional access in Fabric
+            url: security-conditional-access.md                                           
+
+  # Card 3
+  - title: Outbound network security
     linkLists:
       - linkListType: concept
         links:
-          - text: Resiliency in Microsoft Fabric
-            url: az-resiliency.md
-      - linkListType: how-to-guide
+          - text: On-premises data gateway with Dataflow Gen 2
+            url: ../data-factory/dataflows-gen2-overview.md
+          - text: Integration runtime in Azure Data Factory
+            url: /azure/data-factory/concepts-integration-runtime
+          - text: Integration runtime in Azure Data Factory
+            url: /azure/data-factory/concepts-integration-runtime  
+          - text: Azure Data Factory managed virtual network
+            url: /azure/data-factory/managed-virtual-network-private-endpoint
+          - text: Lakehouse SQL endpoints
+            url: ../data-engineering/lakehouse-sql-analytics-endpoint.md
+          - text: Direct lake
+            url: /power-bi/enterprise/directlake-overview                        
+      - linkListType: reference
+        links:            
+          - text: Azure service tags
+            url: security-service-tags.md
+          - text: Service tags on-premises
+            url: /azure/virtual-network/service-tags-overview#service-tags-on-premises     
+
+
+  # Card 4
+  - title: Governance and compliance
+    linkLists:
+      - linkListType: get-started
         links:
-          - text: Customer Lockbox for Microsoft Fabric
-            url: security-lockbox.md
+          - text: Governance and compliance documentation
+            url: ../governance/index.yml
+      - linkListType: overview
+        links:
+          - text: Governance and compliance in Microsoft Fabric
+            url: ../governance/governance-compliance-overview.md        
+      - linkListType: concept
+        links:
+          - text: Microsoft Purview
+            url: ../governance/microsoft-purview-fabric.md
+          - text: Microsoft Purview hub
+            url: ../governance/use-microsoft-purview-hub.md            

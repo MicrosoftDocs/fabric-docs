@@ -7,6 +7,8 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
+  - has-azure-ad-ps-ref
+  - azure-ad-ref-level-one-done
 ms.date: 11/02/2023
 ---
 
@@ -40,21 +42,22 @@ To assign users to an admin role in the Microsoft 365 admin portal, follow these
 
 ## Assign users to the admin role with PowerShell
 
-You can also assign users to roles by using PowerShell. Users are managed in Azure Active Directory (Azure AD). If you don't already have the Azure AD PowerShell module, [download and install the latest version](https://www.powershellgallery.com/packages/AzureAD/).
+You can also assign users to roles by using PowerShell. Users are managed in Microsoft Graph PowerShell. If you don't already have the Microsoft Graph PowerShell SDK, [download and install the latest version](/powershell/microsoftgraph/installation).
 
-1. Connect to Azure AD:
+1. Connect to your tenant:
+
    ```powershell
-   Connect-AzureAD
+   Connect-MgGraph -Scopes "RoleManagement.Read.Directory","User.Read.All","RoleManagement.ReadWrite.Directory"
    ```
 
-1. Get the **ObjectId** for the **Fabric administrator** role. You can run [Get-AzureADDirectoryRole](/powershell/module/azuread/get-azureaddirectoryrole) to get the **ObjectId**.
+1. Get the **Id** for the **Fabric administrator** role. You can run [Get-MgDirectoryRole](/powershell/module/microsoft.graph.identity.directorymanagement/get-mgdirectoryrole) to get the **Id**.
 
     ```powershell
-    Get-AzureADDirectoryRole
+    Get-MgDirectoryRole
     ```
-    
+
     ```output
-    ObjectId                             DisplayName                                Description
+    Id                                   DisplayName                                Description
     --------                             -----------                                -----------
     6ebd1a24-c502-446f-94e5-fa2997fd26c3 Fabric Administrator                       Manages all aspects of Microsoft Fabric.
     70fd9723-a627-48ef-8b2c-82c22b65211e SharePoint Administrator                   Can manage all aspects of the SharePoint service.
@@ -66,34 +69,32 @@ You can also assign users to roles by using PowerShell. Users are managed in Azu
     831d152c-42b8-4dc9-826e-42f8419afc9c Partner Tier2 Support                      Do not use - not intended for general use.
     ```
 
-    In this case, the role's **ObjectId** is 6ebd1a24-c502-446f-94e5-fa2997fd26c3.
+    In this case, the role's **Id** is 6ebd1a24-c502-446f-94e5-fa2997fd26c3.
 
-1. Next, get the user's **ObjectId**. You can find that by running [Get-AzureADUser](/powershell/module/azuread/get-azureaduser).
+1. Next, get the user's **Id**. You can find that by running [Get-MgUser](/powershell/module/microsoft.graph.users/get-mguser).
 
     ```powershell
-    Get-AzureADUser -ObjectId 'tim@contoso.com'
+    Get-MgUser -ConsistencyLevel eventual -Search '"UserPrincipalName:Casey@contoso.com"'
     ```
-    
+
     ```output
-    ObjectId                             DisplayName UserPrincipalName      UserType
-    --------                             ----------- -----------------      --------
-    6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c Tim         tim@contoso.com        Member
+    DisplayName   Id                                   Mail              UserPrincipalName
+    -----------   --                                   ----              -----------------
+    Casey Jensen  6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c Casey@contoso.com Casey@contoso.com
     ```
 
-1. To add the member to the role, run [Add-AzureADDirectoryRoleMember](/powershell/module/azuread/add-azureaddirectoryrolemember).
-
-    | Parameter | Description |
-    | --- | --- |
-    | ObjectId |The Role ObjectId. |
-    | RefObjectId |The members ObjectId. |
+1. To add the member to the role, run [New-MgDirectoryRoleMemberByRef](/powershell/module/microsoft.graph.identity.directorymanagement/new-mgdirectoryrolememberbyref).
 
     ```powershell
-    Add-AzureADDirectoryRoleMember -ObjectId 6ebd1a24-c502-446f-94e5-fa2997fd26c3 -RefObjectId 6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c
+    $DirectoryRoleId = "6ebd1a24-c502-446f-94e5-fa2997fd26c3"
+    $UserId = "6a2bfca2-98ba-413a-be61-6e4bbb8b8a4c"
+    New-MgDirectoryRoleMemberByRef -DirectoryRoleId $DirectoryRoleId `
+       -OdataId "https://graph.microsoft.com/v1.0/directoryObjects/$UserId"
     ```
-To learn more about using PowerShell to assign admin roles, see [AzureAD Directory Roles](/powershell/module/azuread/#directory-roles).
 
-## Next steps
+To learn more about using PowerShell to assign admin roles, see [Microsoft.Graph.Identity.DirectoryManagement](/powershell/module/microsoft.graph.identity.directorymanagement/).
+
+## Related content
 
 * [What is the admin portal?](admin-center.md)
-
 * [What is the admin monitoring workspace?](monitoring-workspace.md)

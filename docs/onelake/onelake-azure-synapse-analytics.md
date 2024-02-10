@@ -102,6 +102,6 @@ Follow these steps to use SQL serverless to read data from OneLake from Azure Sy
 
 Congratulations. You can now read data from OneLake using SQL serverless in Azure Synapse Analytics.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure Storage Explorer](onelake-azure-storage-explorer.md)

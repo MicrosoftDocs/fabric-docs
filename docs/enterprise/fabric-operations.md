@@ -51,18 +51,25 @@ When more details regarding the consumption rate are available, a link to the do
 
 This section is divided into Fabric experience. Each experience had a table that lists its operations.
 
+>[!IMPORTANT]
+>Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
+
 ### Data Factory
 
 The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-gen2) and [Pipelines](#pipelines).
 
 #### Dataflows Gen2
 
+You can find the consumption rates for Dataflows Gen2 in [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-dataflows-gen2.md).
+
 | Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
 | ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
-| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute  | Background |
-| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute | Background |
+| Dataflow Gen2 Refresh                            | Compute cost associated with dataflow Gen2 refresh operation       | Dataflow Gen2 | Dataflows Standard Compute Capacity Usage CU | Background |
+| High Scale Dataflow Compute - SQL Endpoint Query | Usage related to the dataflow Gen2 staging warehouse SQL endpoint  | Warehouse     | High Scale Dataflow Compute Capacity Usage CU | Background |
 
 #### Pipelines
+
+You can find the consumption rates for Pipelines in [Data pipelines pricing for Data Factory in Microsoft Fabric](../data-factory/pricing-pipelines.md).
 
 | Operation    | Description                                                                                                              | Item     | Azure billing meter | Type       |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------ | -------- | ------------------- | ---------- |
@@ -79,6 +86,8 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | SQL Endpoint Query | Compute charge for all user generated and system generated T-SQL statements within a SQL Endpoint  | Warehouse | Data Warehouse Capacity Usage CU     | Background |
 
 ### OneLake
+
+One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
 
 | Operation                                  | Description                                | Item       | Azure Billing Meter                             | Type       |
 | ------------------------------------------ | ------------------------------------------ | ---------- | ----------------------------------------------- | ---------- |
@@ -102,8 +111,6 @@ One Synapse Data Warehouse core (unit of compute for Data Warehouse) is equivale
 | OneLake BCDR Iterative Write via Redirect  | OneLake BCDR Iterative Write via Redirect   | (Multiple) | OneLake BCDR Iterative Write Operations Capacity Usage CU    | Background |
 | OneLake BCDR Other Operations              | OneLake BCDR Other Operations               | (Multiple) | OneLake BCDR Other Operations Capacity Usage CU       | Background |
 | OneLake BCDR Other Operations Via Redirect | OneLake BCDR Other Operations Via Redirect  | (Multiple) | OneLake BCDR Other Operations via API Capacity Usage CU    | Background |
-
-One Lake compute operations represent the transactions performed on One Lake items. The consumption rate for each operation varies depending on its type. For more details, refer to [One Lake consumption](../onelake/onelake-consumption.md).
 
 ### Power BI
 
@@ -136,6 +143,8 @@ The Real-Time analytics experience contains operations for [Event streams](#even
 
 #### Event streams
 
+You can find the consumption rates for Event streams in [Monitor capacity consumption for Microsoft Fabric event streams](../real-time-analytics/event-streams/monitor-capacity-consumption.md).
+
 | Operation                       | Description                               | Item         | Azure billing meter        | Type       |
 | ------------------------------- | ----------------------------------------- | ------------ | -------------------------- | ---------- |
 | Eventstream Per Hour            | Ingestion or processing for Event Stream  | Event Stream | eventstream Capacity Usage CU               | Background |
@@ -143,6 +152,8 @@ The Real-Time analytics experience contains operations for [Event streams](#even
 | Eventstream Processor Per Hour  | ASA Processing                            | Event Stream | eventstreams Processor Capacity Usage CU    | Background |
 
 #### KQL Database and KQL Queryset
+
+You can find the consumption rates for KQL Database in [KQL Database consumption](../real-time-analytics/kql-database-consumption.md).
 
 | Operation   | Description                                          | Item                         | Azure billing meter | Type        |
 | ----------- | ---------------------------------------------------- | ---------------------------- | ------------------- | ----------- |
@@ -166,11 +177,7 @@ Two Spark VCores (a unit of computing power for Spark) equals one capacity unit 
 | Spark job pipeline run  | Synapse batch job runs triggered by pipeline                    | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 | Spark job VS Code run   | Synapse Spark job definition submitted from VS Code             | Spark Job Definition | Spark Memory Optimized Capacity Usage CU          | Background |
 
-## Changes to Fabric consumption rates
-
-Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
-
-## Next steps
+## Related content
 
 * [What is the Microsoft Fabric Capacity Metrics app?](metrics-app.md)
 

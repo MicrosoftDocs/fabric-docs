@@ -10,7 +10,7 @@ ms.custom:
   - admin-portal
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 02/06/2024
 LocalizationGroup: Administration
 ---
 
@@ -49,6 +49,15 @@ For more information about Power BI Embedded, see:
 
 * Pause and start a capacity Azure - [Pause and start your Power BI Embedded capacity in the Azure portal](/power-bi/developer/embedded/azure-pbie-pause-start)
 
-## Next steps
+## Fabric capacity deletion
+
+To delete a Fabric capacity, go to the Fabric Admin portal and choose **Capacity settings** > **Fabric capacities**. Select the gear icon in the **Actions** column of the capacity you want to delete. In the settings side pane for the capacity that opens, select **Manage Fabric capacities in Azure**.  Then, on the Azure portal page that opens, click into the capacity you want to delete and select **Delete**.
+
+When you delete a Fabric capacity, Fabric items in workspaces assigned to the capacity are soft-deleted and become unusable. These Fabric items will still appear in the Onelake data hub and in the workspace list, but any attempt to open or use them will result in an error. They become usable again if, within seven days of deleting the capacity, the workspace is associated with a Fabric or Premium capacity in the same region as original deleted capacity.
+
+> [!NOTE]
+> This seven-day period is not related to the workspace retention period that is configurable by admins.
+
+## Related content
 
 - [What is the admin portal?](admin-center.md)

@@ -27,7 +27,7 @@ With the flexibility offered by Fabric, you can implement either lakehouse or da
 
 This tutorial explains how a developer at the fictional Wide World Importers company from the retail domain completes the following steps:
 
-1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com) and then you can start the Fabric (Preview) trial.
+1. Sign in to your Power BI account and sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). If you don't have a Power BI license, [sign up for a Power BI free license](https://app.fabric.microsoft.com) and then you can start the Fabric trial.
 
 1. Build and implement an end-to-end lakehouse for your organization:
 
@@ -87,8 +87,7 @@ The following image shows the source, destination and data transformation:
 
 * **Consume**: To demonstrate data consumption, you see how you can use the DirectLake feature of Power BI to create reports, dashboards and directly query data from the lakehouse. Additionally, we demonstrate how you can make your data available to third party reporting tools by using the TDS/SQL analytics endpoint. This endpoint allows you to connect to the warehouse and run SQL queries for analytics.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn how to
 > [!div class="nextstepaction"]
 > [Create a lakehouse](tutorial-lakehouse-get-started.md)

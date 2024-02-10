@@ -23,7 +23,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a Teams activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Teams activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
@@ -42,7 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Select the **Settings** tab, then select **Sign in** to sign in to your Teams account.
 
-   :::image type="content" source="media/teams-activity/sign-in-to-teams.png" alt-text="Screenshot showing the Teams activity Settings tab, highlighting the tab, and where to choose a new connection.":::
+   :::image type="content" source="media/teams-activity/sign-in-to-teams.png" alt-text="Screenshot showing the Teams activity Settings tab, highlighting the tab, and where to sign in.":::
 
 1. An authentication dialog appears for you to provide credentials for the account you want to use in Teams. After that, a confirmation appears for you to allow access to Teams from your pipeline. Select **Allow access** on the confirmation dialog to connect your Teams activity to your account.
 
@@ -66,6 +66,6 @@ The Teams activity is typically used with other activities, often as a status no
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

@@ -29,7 +29,7 @@ The Dataverse connector supports the following authentication types for copy and
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Dataverse. The following links provide the specific Power Query connector information you need to connect to Dataverse in Dataflow Gen2:
 
-- To get started using the Dataverse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Dataverse connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Dataverse prerequisites](/power-query/connectors/dataverse#prerequisites) before connecting to the Dataverse connector.
 - To connect to the Dataverse connector from Power Query, go to [Connect to Dataverse from Power Query Online](/power-query/connectors/dataverse#connect-to-dataverse-from-power-query-online).
 

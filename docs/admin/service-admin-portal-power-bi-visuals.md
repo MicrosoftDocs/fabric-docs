@@ -10,7 +10,7 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 12/20/2023
 LocalizationGroup: Administration
 ---
 
@@ -20,9 +20,14 @@ These settings are configured in the tenant settings section of the Admin portal
 
 All the Power BI visuals admin settings, including Power BI visuals tenant settings, are described in [Manage Power BI visuals admin settings](organizational-visuals.md).
 
+* [Allow visuals created using the Power BI SDK](#allow-visuals-created-using-the-power-bi-sdk)
+* [Add and use certified visuals only (block uncertified)](#add-and-use-certified-visuals-only-block-uncertified)
+* [Allow downloads from custom visuals](#allow-downloads-from-custom-visuals)
+* [Allow custom visuals to get user Microsoft Entra ID access tokens](#allow-custom-visuals-to-get-user-microsoft-entra-id-access-tokens)
+
 ## Allow visuals created using the Power BI SDK
 
-Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting. 
+Users in the organization can add, view, share, and interact with visuals imported from AppSource or from a file. Visuals allowed in the *Organizational visuals* page aren't affected by this setting.
 
 To learn more, see [Visuals from AppSource or a file](organizational-visuals.md#visuals-from-appsource-or-a-file).
 
@@ -38,6 +43,12 @@ Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi
 
 To learn more, see [Export data to file](organizational-visuals.md#export-data-to-file).
 
-## Next steps
+## Allow custom visuals to get user Microsoft Entra ID access tokens
+
+Enabling this setting lets [custom visuals](/power-bi/developer/visuals/power-bi-custom-visuals) obtain Microsoft Entra ID (formerly known as Azure AD) access tokens for signed-in users, facilitating single sign-on authentication.
+
+To learn more, see [Obtain Microsoft Entra access token](organizational-visuals.md#obtain-microsoft-entra-access-token).
+
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

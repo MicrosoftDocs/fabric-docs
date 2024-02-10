@@ -5,13 +5,13 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
-ms.date: 08/03/2023
+ms.date: 12/17/2023
 ms.custom:
   - build-2023
   - ignite-2023
 ---
 
-# Manage a workspace with Git
+# Manage a workspace with Git (preview)
 
 This article walks you through the following basic tasks in Microsoft Fabric’s Git integration tool:
 
@@ -42,7 +42,7 @@ Only a workspace admin can connect a workspace to an [Azure Repo](/azure/devops/
     > If you don't see the Workspace settings icon, select the ellipsis (three dots) then workspace settings.
     > :::image type="content" source="./media/git-get-started/workspace-settings-link.png" alt-text="Screenshot of workspace with workspace settings link displayed from ellipsis.":::
 
-1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Azure AD user signed into Fabric.
+1. Select **Git integration**. You’re automatically signed into the Azure Repos account registered to the Microsoft Entra user signed into Fabric.
 
     :::image type="content" source="./media/git-get-started/workspace-settings.png" alt-text="Screenshot of workspace settings window with Git integration selected.":::
 
@@ -165,7 +165,7 @@ The actions you can take on a workspace depend on the permissions you have in bo
 
 - If you're having trouble with these actions, make sure you understand the [limitations](./git-integration-process.md#considerations-and-limitations) of the Git integration feature.
 
-## Next steps
+## Related content
 
 - [Understand the Git integration process](./git-integration-process.md)
 - [Manage Git branches](./manage-branches.md)

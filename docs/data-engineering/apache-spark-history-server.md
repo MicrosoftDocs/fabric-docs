@@ -176,7 +176,7 @@ The Executor Usage Graph visualizes the Spark job executor's allocation and runn
 
    :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png" alt-text="Screenshot showing spark ui diagnoses select chart." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png":::
 
-## Next steps
+## Related content
 
 * [Apache Spark monitoring overview](spark-monitoring-overview.md)
 * [Browse item recent runs](spark-item-recent-runs.md)

@@ -19,7 +19,7 @@ Before metadata scanning can be run over an organization's Microsoft Fabric work
 
 ## Enable service principal authentication for read-only admin APIs
 
-Service principal is an authentication method that can be used to let an Azure AD application access Power BI APIs. With this authentication method, you don’t have to maintain a service account with an admin role. Rather, to allow your app to use the Admin APIs, you just have to give your approval once as part of the tenant settings configuration.
+Service principal is an authentication method that can be used to let a Microsoft Entra application access Power BI APIs. With this authentication method, you don't have to maintain a service account with an admin role. Rather, to allow your app to use the Admin APIs, you just have to give your approval once as part of the tenant settings configuration.
 
 To see how to enable service principal access to read-only Admin APIs, see [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md).
 
@@ -34,7 +34,7 @@ Two tenant settings control metadata scanning:
 
 To enable these settings, go to **Admin portal > Tenant settings > Admin API settings**.
 
-## Next steps
+## Related content
 
 * [Metadata scanning overview](../governance/metadata-scanning-overview.md)
 * [Enable service principal authentication for read-only admin APIs](./metadata-scanning-enable-read-only-apis.md)

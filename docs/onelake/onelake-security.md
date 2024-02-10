@@ -12,7 +12,7 @@ ms.date: 09/27/2023
 
 # OneLake security
 
-OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Azure Active Directory (Azure AD) authentication and is compatible with user identities, service principals, and managed identities. Using Azure AD and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
+OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Microsoft Entra authentication and is compatible with user identities, service principals, and managed identities. Using Microsoft Entra ID and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
 
 :::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
 
@@ -52,12 +52,18 @@ Shortcuts in Microsoft Fabric allow for simplified data management, but have som
 
 ## Authentication
 
-OneLake uses Azure Active Directory (Azure AD) for authentication; you can use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools, which use Azure AD authentication and map it to the permissions you set in the Fabric portal.
+OneLake uses Microsoft Entra ID for authentication; you can use it to give permissions to user identities and service principals. OneLake automatically extracts the user identity from tools, which use Microsoft Entra authentication and map it to the permissions you set in the Fabric portal.
 
 > [!NOTE]
 > To use service principals in a Fabric tenant, a tenant administrator must enable Service Principal Names (SPNs) for the entire tenant or specific security groups.
 
 :::image type="content" source="media\onelake-security\admin-portal-tenant-settings.png" alt-text="Screenshot showing the Developer settings options on the Tenant setting screen." lightbox="media\onelake-security\admin-portal-tenant-settings.png":::
+
+## Encryption
+
+Data stored in OneLake is encrypted at rest by default using Microsoft-managed key. Microsoft-managed keys are rotated appropriately per compliance requirements. Data in OneLake is encrypted and decrypted transparently using 256-bit AES encryption, one of the strongest block ciphers available, and it is FIPS 140-2 compliant.
+
+Encryption at rest using customer-managed key is currently not supported. You can submit request for this feature on [Microsoft Fabric Ideas](https://ideas.fabric.microsoft.com/).
 
 ## Private links
 
@@ -68,7 +74,7 @@ Fabric doesn’t currently support private link access to OneLake data via non-F
 OneLake allows you to restrict access to data from applications running outside of Fabric environments. Admins can find the setting in the tenant admin portal.
 When you turn this switch ON, users can access data via all sources. When you turn the switch OFF, users can't access data via applications running outside of Fabric environments. For example, users can access data via applications like Azure Databricks, custom applications using Azure Data Lake Storage (ADLS) APIs, or OneLake file explorer.
 
-## Next steps
+## Related content
 
 - [OneLake file explorer](onelake-file-explorer.md)
 - [Workspace roles](../get-started/roles-workspaces.md)

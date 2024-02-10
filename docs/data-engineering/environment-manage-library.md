@@ -69,7 +69,7 @@ The trash option for each library appears when you hover the corresponding row. 
 
 If clicked, custom libraries download one by one to your local default download directory.
 
-## Next steps
+## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md)
 - [Manage Apache Spark libraries in Microsoft Fabric](library-management.md)

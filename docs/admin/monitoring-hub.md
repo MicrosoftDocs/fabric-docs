@@ -17,7 +17,7 @@ ms.date: 11/02/2023
 
 :::image type="content" source="media/monitoring-hub/admin-monitoring-hub-01.png" alt-text="Screen shot of Monitoring hub in left pane.":::
 
-*Monitoring hub* is available for Power BI, Data Factory, Data Engineering and Data Science during the Microsoft Fabric public preview. 
+*Monitoring hub* is available for Power BI, Data Factory, Data Engineering and Data Science.
 
 ## Prerequisites
 
@@ -47,8 +47,7 @@ When you select an item from the list, Monitoring hub displays detailed informat
 
 When you hover over an item's name, any available quick actions for the item type are displayed, such as stop, start, re-run, or other quick actions. You can also open a detail pane for the item itself when you hover, for example, *View run history* for semantic models that are in Monitoring hub, to display their refresh activities. 
 
-
-## Next steps
+## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
 * [Browse the Apache Spark applications in the Fabric monitoring hub](../data-engineering/browse-spark-applications-monitoring-hub.md)

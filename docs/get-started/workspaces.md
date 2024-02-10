@@ -9,7 +9,7 @@ ms.custom:
   - build-2023
   - ignite-2023
 ms.search.form: product-trident, Manage your workspace
-ms.date: 06/14/2023
+ms.date: 12/04/2023
 ---
 
 # Workspaces
@@ -54,7 +54,7 @@ You can also open it from the workspace page.
 
 The Contact list feature allows you to specify which users receive notification about issues occurring in the workspace. By default, the one who created the workspace is in the contact list. You can add others to that list while [creating workspace](create-workspaces.md#contact-list) or in workspace settings after creation. Users or groups in the contact list are also listed in the user interface (UI) of the workspace settings, so workspace users know whom to contact.
 
-:::image type="content" source="media/workspaces/contact-list-in-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
+:::image type="content" source="media/workspaces/contact-list-workspace-settings.png" alt-text="Screenshot of contact list setting options.":::
 
 ### Microsoft 365 and OneDrive
 
@@ -73,7 +73,7 @@ You can configure OneDrive in workspace settings by typing in the name of the Mi
 
 By default, workspaces are created in your organization's shared capacity. When your organization has other capacities, workspaces including My Workspaces can be assigned to any capacity in your organization. You can configure it while creating a workspace or in **Workspace settings -> Premium**. Read more about [licenses](../enterprise/licenses.md).
 
-:::image type="content" source="media/workspaces/license-mode-in-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
+:::image type="content" source="media/workspaces/license-mode-workspace-settings.png" alt-text="Screenshot of license mode in workspace settings.":::
 
 ### Azure connections configuration
 
@@ -130,7 +130,7 @@ Limitations to be aware of:
 - Certain special characters aren't supported in workspace names when using an XMLA endpoint. As a workaround, use URL encoding of special characters, for example, for a forward slash **/**, use **%2F**.
 - A user or a [service principal](/power-bi/enterprise/service-premium-service-principal) can be a member of up to 1,000 workspaces.
 
-## Next steps
+## Related content
 
 * [Create workspaces](create-workspaces.md)
 * [Give users access to workspaces](give-access-workspaces.md)

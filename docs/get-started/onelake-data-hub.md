@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
-ms.date: 04/30/2023
+ms.date: 01/25/2024
 ms.custom:
   - build-2023
   - ignite-2023-fabric
@@ -33,22 +33,20 @@ To open the data hub, select the OneLake data hub icon in the navigation pane.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-open.png" alt-text="Screenshot showing how to open the OneLake data hub.":::
 
-> [!Note]
-> The OneLake data hub icon and label you see may differ slightly from that shown above, and may also differ slightly from that seen by other users. The data hub functionality is the same, however, no matter which icon/label appears. For more information, see [Considerations and limitations](#considerations-and-limitations).
-
 ## Find items in the data items list
 
 The data items list displays all the data items you have access to. To shorten the list, you can filter by keyword or data-item type using the filters at the top of the list. If you select the name of an item, you'll get to the item's details page. If you hover over an item, you'll see three dots that open the [options menu](#open-an-items-options-menu) when you select them.
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
-The list has three tabs to narrow down the list of data items.
+The list has four tabs to narrow down the list of data items.
 
 |Tab  |Description  |
 |:-------------------------|:----------------------------------------------------|
-| **All**                  | Data items that you're allowed to find.  |
+| **All data**                  | Data items that you're allowed to find.  |
 | **My data**              | Data items that you own.      |
 | **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Favorites** | Data items that you've marked as favorites. |
 
 The columns of the list are described below.
 
@@ -96,11 +94,9 @@ To display the options menu, select **More options (...)** on one of the items s
 
 ## Considerations and limitations
 
-The OneLake data hub's icon and label is currently undergoing evaluation, and its appearance may vary slightly for different users. However, data hub functionality is not affected and is the same no matter which icon/label variation appears. The icon/label variations you might encounter are shown in the following images.
+Streaming semantic models are not shown in the OneLake data hub.
 
-:::image type="content" source="./media/onelake-data-hub/onelake-datahub-icons-abtesting.png" alt-text="Screenshot of data hub icon alternates." border="false":::
-
-## Next steps
+## Related content
 
 * [Navigate to your items from Microsoft Fabric Home](./fabric-home.md)
 * [Endorsement](../governance/endorsement-overview.md)

@@ -132,7 +132,7 @@ After uploading, you can use the following command to install the custom library
 Fabric supports *install.packages()*, *remove.packages()* and *devtools::* commands to manage R libraries.
 
 > [!TIP]
-> Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html), [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html), and [devtools commands](https://www.r-project.org/nosvn/pandoc/devtools.html).
+> Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html) and [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html).
 
 ### Manage R public libraries through in-line installation
 
@@ -161,6 +161,6 @@ To install an R feed library:
    spark.lapply(c("hello world", "good morning", "good evening"), hello)
    ```
 
-## Next steps
+## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).

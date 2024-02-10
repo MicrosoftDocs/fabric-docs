@@ -5,7 +5,6 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - build-2023
   - ignite-2023
 ms.date: 05/23/2023
@@ -68,7 +67,7 @@ The following section lists the deployment history limitations.
 
 * Deployment history displays the name of the item during deployment. When you change an item's name, deployment history treats it as a new item. In such cases, the item with the changed name will appear in the log for the first time, after it's deployed.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Create deployment rules](create-rules.md)

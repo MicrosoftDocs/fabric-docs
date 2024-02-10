@@ -71,7 +71,7 @@ Lakehouse deployment pipelines integration capabilities:
 
 * Updates to Lakehouse name can be synchronized across workspaces in a deployment pipeline context.
 
-## Next steps
+## Related content
 
 - [What is lifecycle management in Microsoft Fabric?](../cicd/cicd-overview.md)
 - [Tutorial: Lifecycle management in Fabric](../cicd/cicd-tutorial.md)

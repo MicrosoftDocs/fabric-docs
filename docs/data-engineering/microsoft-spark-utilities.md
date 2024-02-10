@@ -167,6 +167,9 @@ exit(value: String): void -> This method lets you exit a notebook with a value.
 run(path: String, timeoutSeconds: int, arguments: Map): String -> This method runs a notebook and returns its exit value.
 ```
 
+> [!NOTE]
+> Notebook utilities aren't applicable for Apache Spark job definitions (SJD).
+
 ### Reference a notebook
 
 This method references a notebook and returns its exit value. You can run nesting function calls in a notebook interactively or in a pipeline. The notebook being referenced runs on the Spark pool of the notebook that calls this function.
@@ -521,6 +524,6 @@ mssparkutils.fs.unmount("/test")
 
 - Mounting an ADLS Gen1 storage account isn't supported.
 
-## Next steps
+## Related content
 
 - [Library management](library-management.md)

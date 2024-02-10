@@ -10,42 +10,54 @@ ms.custom:
   - tenant-setting
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 02/07/2024
 LocalizationGroup: Administration
 ---
 
 # Export and sharing tenant settings
 
-The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization’s security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
+The export and sharing settings allow the Fabric administrator the flexibility to determine and allow Power BI content to export to formats within their organization's security and compliance guidelines. These settings also allow you to keep unauthorized export formats from being exported by users.
 
 Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-## Allow Azure Active Directory guest users to access Microsoft Fabric
+<a name='allow-microsoft-entra-guest-users-to-access-microsoft-fabric'></a>
 
-When you turn on this setting, Azure Active Directory Business-to-Business (Azure AD B2B) guest users can access Power BI. If you turn off this setting, B2B guest users receive an error when trying to access Power BI. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Power BI.
+## Guest users can access Microsoft Fabric
 
-To learn more, see [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
 
-## Invite external users to your organization
+To learn more, see [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-This setting helps organizations choose whether new external users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+## Users can invite guest users to collaborate through item sharing and permissions
 
-To invite external users to your organization, the user must also have the Azure AD Guest Inviter role. Once invited, external users become Azure AD B2B guest users. This setting only controls the ability to invite through Fabric.
+This setting helps organizations choose whether new guest users can be invited to the organization through Fabric sharing, permissions, and subscription experiences.
+
+To invite external users to your organization, the user must also have the Microsoft Entra Guest Inviter role. Once invited, external users become Microsoft Entra B2B guest users. This setting only controls the ability to invite through Fabric.
 
 To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure-ad-b2b#invite-guest-users).
 
 > [!IMPORTANT]
 > This setting was previously called **Share content with external users**.
 
-## Allow Azure Active Directory guest users to edit and manage content in the organization
+<a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
 
-This setting allows Azure AD B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled. 
+## Guest users can browse and access Fabric content
 
-To learn more about sending Fabric content to Azure AD B2B guest users, read [Distribute Power BI content to external guest users with Azure AD B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
-## Show Azure Active Directory guests in lists of suggested people
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
-This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Azure AD guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
+## Users can see guest users in lists of suggested people
+
+This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
+
+To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
+
+<a name='show-microsoft-entra-guests-in-lists-of-suggested-people'></a>
+
+## Show Microsoft Entra guests in lists of suggested people
+
+This setting helps organizations limit visibility of external users in sharing experiences. When disabled, Microsoft Entra guest users aren't shown in people picker suggested users lists. This helps prevent accidental sharing to external users and seeing which external users have been added to your organization through Power BI sharing UIs.
 
 > [!IMPORTANT]
 > When the setting is set to disabled, you can still give permission to a guest user by providing their full email address in people pickers.
@@ -84,12 +96,14 @@ To learn more, see [Export the data that was used to create a visualization](/po
 
 ## Export to .csv
 
-Users in the organization can export data from a tile, visualization, or paginated report to a .csv file.
+Users in the organization can export data from a tile, visualization, or paginated report to a *.csv* file.
 
-To learn more, see [Export Power BI paginated report to a CSV file](/power-bi/paginated-reports/report-builder/export-csv-file-report-builder).
+To turn this setting on or off:
 
-> [!NOTE]
-> Fabric automatically [applies a sensitivity label](/power-bi/enterprise/service-security-sensitivity-label-overview#sensitivity-labels-and-protection-on-exported-data) on the exported file and protects it according to the label's file encryption settings.
+1. Still in the **Export and sharing settings** section of the **Tenant Settings**, find the setting called **Export to .csv**.
+1. Turn the switch on or off.
+1. Under **Apply to**, select the scope of users that the setting will affect.
+1. Select **Apply** to save your changes.
 
 ## Download reports
 
@@ -164,7 +178,7 @@ If this setting is off, only users in your organization can create and receive e
 
 This setting helps organizations choose whether external users can be included as recipients of email subscriptions.
 
-External users are users outside of the organization that haven't been added as Azure AD B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
+External users are users outside of the organization that haven't been added as Microsoft Entra B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
 
 ## Featured content
 
@@ -240,7 +254,7 @@ To learn more about composite models, see [Use composite models in Power BI Desk
 
 ## Guest users can work with shared semantic models in their own tenants
 
-When this setting is turned on, Azure AD B2B guest users of semantic models shared with them by users in your organization can access and build on those semantic models in their own tenant.
+When this setting is turned on, Microsoft Entra B2B guest users of semantic models shared with them by users in your organization can access and build on those semantic models in their own tenant.
 
 This setting is off by default for customers. If this setting is disabled, a guest user can still access the semantic model in the provider tenant but not in their own tenant.
 
@@ -250,6 +264,6 @@ As a Fabric admin, you can specify which users or user groups in your organizati
 
 Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

@@ -85,7 +85,7 @@ Use the following steps to complete your notebook deployment using the deploymen
 
 1. Monitor the deployment status from **Deployment history**.
 
-## Next steps
+## Related content
 
 - [Manage and execute Fabric notebooks with public APIs](notebook-public-api.md)
 - [Introduction to Git integration](../cicd/git-integration/intro-to-git-integration.md)

@@ -22,6 +22,6 @@ You manage Power BI users, groups, and admins in the [Microsoft 365 admin center
 
 ![Screenshot of the Microsoft 365 admin center link.](media/service-admin-portal-users/powerbi-admin-manage-users.png)
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)

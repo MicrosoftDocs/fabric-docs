@@ -1,6 +1,6 @@
 ### YamlMime:FAQ
 metadata:
-  title: "Copilot for Microsoft Fabric: FAQ"
+  title: "Copilot for Microsoft Fabric and Power BI: FAQ"
   description: This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
   author: maggiesMSFT
   ms.author: maggies
@@ -11,10 +11,19 @@ metadata:
     - ignite-2023
     - ignite-2023-fabric
   ms.topic: faq
-  ms.date: 11/10/2023
-title: "Copilot for Microsoft Fabric: FAQ"
+  ms.date: 01/16/2024
+title: "Copilot for Microsoft Fabric and Power BI: FAQ"
 summary: |
   This article answers frequently asked questions about Copilot for Microsoft Fabric and Power BI.
+
+  > [!NOTE]
+  >
+  > - Your administrator needs to enable the tenant switch before you start using Copilot. See the article [Copilot tenant settings](../admin/service-admin-portal-copilot.md) for details. 
+  > - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
+  > - If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](/fabric/admin/service-admin-portal-copilot) tenant setting in the Fabric Admin portal.
+  > - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
+  > - Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+  > - For more information, see the article [Overview of Copilot in Fabric and Power BI](copilot-fabric-overview.md).
 
 sections:
   - name: Power BI
@@ -22,7 +31,7 @@ sections:
       - question: |
           I loaded my semantic model, but it doesn't meet all the criteria listed in the data evaluation. What should I do?  
         answer: |
-          The criteria listed in *Evaluate your data for use with Copilot for Power BI* (copilot-evaluate-data.md) is important because it helps you get a better quality report. As long as you meet seven of the eight points, including Consistency, the quality of the reports generated should be good.  
+          The criteria listed in [Update your data model to work well with Copilot for Power BI](/power-bi/create-reports/copilot-evaluate-data) is important because it helps you get a better quality report. As long as you meet seven of the eight points, including Consistency, the quality of the reports generated should be good.  
 
           If your data doesn't meet that criteria, we recommend spending the time to bring it into compliance.  
       - question: |
@@ -30,13 +39,13 @@ sections:
         answer: |
           First, check with your admin to see if they have enabled Copilot.
 
-          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the *Create a report with Copilot for the Power BI service* (copilot-create-report.md) article.
+          Next, when you select a Copilot-enabled URL, you have to initially load the semantic model. When you've completed loading the semantic model, then you see the Copilot button. See the [Create a report with Copilot for the Power BI service](/power-bi/create-reports/copilot-create-report) article.
 
           If you load a semantic model and still can't see the Copilot button, file a bug here: Copilot Bug Template.
       - question: |
           I selected the Copilot button, and it's stuck on Analyzing your semantic model  
         answer: |
-          Depending upon the size of the semantic model, Copilot might take a while to analyze it. If you've waited longer than 15 minutes and you haven't received any errors, chances are that there is an internal server error. 
+          Depending upon the size of the semantic model, Copilot might take a while to analyze it. If you've waited longer than 15 minutes and you haven't received any errors, chances are that there's an internal server error. 
 
           Try restarting Copilot by closing the pane and selecting the Copilot button again.
       - question: |
@@ -52,7 +61,7 @@ sections:
         answer: |
           We're continuously working to improve the accuracy of the narrative visual results. The Power BI team already has plans to improve the accuracy over the coming months. As a public preview, there might be mistakes. Know that we're working toward making the tool as accurate as possible. In the meantime, we recommend using the custom prompts as an additional tool to try to tweak the summary to meet your needs.
       - question: |
-          I want to disable Copilot immediately as I'm concerned with the data storage as you mention previously
+          I want to disable Copilot immediately as I'm concerned with the data storage you mentioned
         answer: |
           Contact your help desk to get support from your IT admin.
       - question: |

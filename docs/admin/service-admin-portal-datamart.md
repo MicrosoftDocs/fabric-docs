@@ -24,7 +24,7 @@ When this setting is on, specified users in the organization can create datamart
 
 For more information, see [Administration of datamarts](/power-bi/transform-model/datamarts/datamarts-administration).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)
 * [Administration of datamarts](/power-bi/transform-model/datamarts/datamarts-administration)

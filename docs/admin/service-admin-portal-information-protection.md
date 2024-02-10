@@ -61,6 +61,6 @@ Sensitivity labels with protection settings include encryption or content markin
 
 To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

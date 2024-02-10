@@ -38,7 +38,7 @@ To activate this feature, go to **Admin portal > Azure connections > Connect to 
 
   :::image type="content" source="media/service-admin-portal-azure-connections/connect-own-storage-account-switch.png" alt-text="Screenshot of the Azure connections settings page showing the Allow workspace admins to connect their own Log Analytics workspace checkbox.":::
 
-## Next steps
+## Related content
 
 - [What is the admin portal?](admin-center.md)
 - [Configuring dataflow storage to use Azure Data Lake Gen 2](/power-bi/transform-model/dataflows/dataflows-azure-data-lake-storage-integration)

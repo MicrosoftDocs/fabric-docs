@@ -33,6 +33,6 @@ To learn about synonyms, see [Field synonyms](/power-bi/natural-language/q-and-a
 > [!NOTE]
 > If you disable this setting and apply the changes, and then later re-enable synonym sharing, it might take a few weeks to reshare all the synonyms within your organization.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

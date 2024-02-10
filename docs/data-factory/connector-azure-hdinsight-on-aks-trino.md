@@ -27,7 +27,7 @@ The Access database connector supports the following authentication types for co
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure HDInsight on AKS Trino. The following links provide the specific Power Query connector information you need to connect to Azure HDInsight on AKS Trino in Dataflow Gen2:
 
-- To get started using the Azure HDInsight on AKS Trino connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Azure HDInsight on AKS Trino connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Azure HDInsight on AKS Trino prerequisites](/power-query/connectors/azure-hdinsight-on-aks-trino#prerequisites) before connecting to the Azure HDInsight on AKS Trino connector.
 - To connect to the Azure HDInsight on AKS Trino connector from Power Query, go to [Connect to Azure HDInsight on AKS Trino from Power Query Online](/power-query/connectors/azure-hdinsight-on-aks-trino#connect-to-azure-hdinsight-on-aks-trino-from-power-query-online).
 

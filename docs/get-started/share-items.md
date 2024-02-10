@@ -41,7 +41,7 @@ This document describes how to share an item and manage its permissions.
 
     * **People with existing access** This type of link generates a URL to the item, but it doesn't grant any access to the item. Use this link type if you just want to send a link to somebody who already has access.
 
-    * **Specific people** This type of link allows specific people or groups to access the report. If you select this option, enter the names or email addresses of the people you wish to share with. This link type also lets you share to guest users in your organization's Azure Active Directory (Azure AD). You can't share to external users who aren't guests in your organization.
+    * **Specific people** This type of link allows specific people or groups to access the report. If you select this option, enter the names or email addresses of the people you wish to share with. This link type also lets you share to guest users in your organization's Microsoft Entra ID. You can't share to external users who aren't guests in your organization.
 
     > [!NOTE]
     > If your admin has disabled shareable links to **People in your organization**, you can only copy and share links using the **People with existing access** and **Specific people** options.
@@ -156,6 +156,6 @@ Depending on the item being shared, you may find a different set of permissions 
 
     :::image type="content" source="./media/share-items/shared-with-me.png" alt-text="Screenshot of Shared with me option in Browse pane.":::
 
-## Next steps
+## Related content
 
-[Workspace roles](./roles-workspaces.md)
+- [Workspace roles](./roles-workspaces.md)

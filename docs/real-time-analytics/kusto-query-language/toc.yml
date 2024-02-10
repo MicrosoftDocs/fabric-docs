@@ -1,8 +1,10 @@
 items:
-- name: Kusto query overview
+- name: Kusto Query Language overview
   href: /azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric
 - name: Syntax conventions
   href: /azure/data-explorer/kusto/query/syntax-conventions?context=/fabric/context/context-rta&pivots=fabric
+- name: Kusto Query Language learning resources
+  href: /azure/data-explorer/kusto/../kql-learning-resources?context=/fabric/context/context-rta&pivots=fabric
 - name: Add a comment in KQL
   href: /azure/data-explorer/kusto/query/comment?context=/fabric/context/context-rta&pivots=fabric
 - name: Get started with KQL
@@ -37,9 +39,9 @@ items:
     - name: 'Learning path: Create queries for Microsoft Sentinel using Kusto Query
         Language'
       href: /training/paths/sc-200-utilize-kql-for-azure-sentinel/?context=/fabric/context/context-rta&pivots=fabric
-- name: Query best practices
+- name: Best practices for KQL queries
   items:
-  - name: Best practices
+  - name: Best practices for KQL queries
     href: /azure/data-explorer/kusto/query/best-practices?context=/fabric/context/context-rta&pivots=fabric
   - name: Optimize queries that use named expressions
     displayName: let statement, user defined functions, as operator, calculated
@@ -68,7 +70,7 @@ items:
   - name: Views
     href: /azure/data-explorer/kusto/query/schema-entities/views?context=/fabric/context/context-rta&pivots=fabric
   - name: External tables
-    href: /azure/data-explorer/kusto/query/schema-entities/externaltables?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/schema-entities/external-tables?context=/fabric/context/context-rta&pivots=fabric
   - name: Fact and dimension tables
     href: /azure/data-explorer/kusto/concepts/fact-and-dimension-tables?context=/fabric/context/context-rta&pivots=fabric
 - name: Data types
@@ -77,28 +79,31 @@ items:
     href: /azure/data-explorer/kusto/query/scalar-data-types/index?context=/fabric/context/context-rta&pivots=fabric
   - name: bool
     href: /azure/data-explorer/kusto/query/scalar-data-types/bool?context=/fabric/context/context-rta&pivots=fabric
+    displayName: boolean
   - name: datetime
     href: /azure/data-explorer/kusto/query/scalar-data-types/datetime?context=/fabric/context/context-rta&pivots=fabric
+    displayName: date
   - name: decimal
     href: /azure/data-explorer/kusto/query/scalar-data-types/decimal?context=/fabric/context/context-rta&pivots=fabric
   - name: dynamic
     href: /azure/data-explorer/kusto/query/scalar-data-types/dynamic?context=/fabric/context/context-rta&pivots=fabric
   - name: guid
     href: /azure/data-explorer/kusto/query/scalar-data-types/guid?context=/fabric/context/context-rta&pivots=fabric
+    displayName: uuid, uniqueid
   - name: int
     href: /azure/data-explorer/kusto/query/scalar-data-types/int?context=/fabric/context/context-rta&pivots=fabric
   - name: long
     href: /azure/data-explorer/kusto/query/scalar-data-types/long?context=/fabric/context/context-rta&pivots=fabric
   - name: real
     href: /azure/data-explorer/kusto/query/scalar-data-types/real?context=/fabric/context/context-rta&pivots=fabric
+    displayName: double
   - name: string
     href: /azure/data-explorer/kusto/query/scalar-data-types/string?context=/fabric/context/context-rta&pivots=fabric
   - name: timespan
     href: /azure/data-explorer/kusto/query/scalar-data-types/timespan?context=/fabric/context/context-rta&pivots=fabric
+    displayName: time
   - name: Null values
     href: /azure/data-explorer/kusto/query/scalar-data-types/null-values?context=/fabric/context/context-rta&pivots=fabric
-  - name: Unsupported scalar data types
-    href: /azure/data-explorer/kusto/query/scalar-data-types/unsupported-data-types?context=/fabric/context/context-rta&pivots=fabric
 - name: Functions
   items:
   - name: Function types
@@ -111,20 +116,20 @@ items:
   - name: Query statement types
     href: /azure/data-explorer/kusto/query/statements?context=/fabric/context/context-rta&pivots=fabric
   - name: Alias statement
-    href: /azure/data-explorer/kusto/query/aliasstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/alias-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Let statement
-    href: /azure/data-explorer/kusto/query/letstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/let-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Pattern statement
-    href: /azure/data-explorer/kusto/query/patternstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pattern-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Query parameters statement
-    href: /azure/data-explorer/kusto/query/queryparametersstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/query-parameters-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Restrict statement
-    href: /azure/data-explorer/kusto/query/restrictstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/restrict-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Set statement
-    href: /azure/data-explorer/kusto/query/setstatement?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/set-statement?context=/fabric/context/context-rta&pivots=fabric
   - name: Tabular expression statements
     displayName: views
-    href: /azure/data-explorer/kusto/query/tabularexpressionstatements?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tabular-expression-statements?context=/fabric/context/context-rta&pivots=fabric
   - name: Batches
     href: /azure/data-explorer/kusto/query/batches?context=/fabric/context/context-rta&pivots=fabric
 - name: Tabular operators
@@ -132,35 +137,35 @@ items:
   - name: Query operators
     href: /azure/data-explorer/kusto/query/queries?context=/fabric/context/context-rta&pivots=fabric
   - name: as operator
-    href: /azure/data-explorer/kusto/query/asoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/as-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: consume operator
-    href: /azure/data-explorer/kusto/query/consumeoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/consume-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: count operator
-    href: /azure/data-explorer/kusto/query/countoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: datatable operator
-    href: /azure/data-explorer/kusto/query/datatableoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datatable-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: distinct operator
-    href: /azure/data-explorer/kusto/query/distinctoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/distinct-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: evaluate operator
-    href: /azure/data-explorer/kusto/query/evaluateoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/evaluate-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: extend operator
-    href: /azure/data-explorer/kusto/query/extendoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extend-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: externaldata operator
     href: /azure/data-explorer/kusto/query/externaldata-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: facet operator
-    href: /azure/data-explorer/kusto/query/facetoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/facet-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: find operator
-    href: /azure/data-explorer/kusto/query/findoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/find-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: fork operator
-    href: /azure/data-explorer/kusto/query/forkoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/fork-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: getschema operator
-    href: /azure/data-explorer/kusto/query/getschemaoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/getschema-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: invoke operator
-    href: /azure/data-explorer/kusto/query/invokeoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/invoke-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: join operator
     items:
     - name: join operator
-      href: /azure/data-explorer/kusto/query/joinoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/join-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: join flavors
       items:
       - name: innerunique
@@ -184,57 +189,57 @@ items:
       - name: rightanti
         href: /azure/data-explorer/kusto/query/join-rightanti?context=/fabric/context/context-rta&pivots=fabric
     - name: Cross-cluster join
-      href: /azure/data-explorer/kusto/query/joincrosscluster?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/join-cross-cluster?context=/fabric/context/context-rta&pivots=fabric
       displayName: cross cluster
     - name: Broadcast join
-      href: /azure/data-explorer/kusto/query/broadcastjoin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/broadcast-join?context=/fabric/context/context-rta&pivots=fabric
     - name: Time window join
-      href: /azure/data-explorer/kusto/query/join-timewindow?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/join-time-window?context=/fabric/context/context-rta&pivots=fabric
   - name: lookup operator
-    href: /azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/lookup-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: mv-apply operator
-    href: /azure/data-explorer/kusto/query/mv-applyoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/mv-apply-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: mv apply mv_apply
   - name: mv-expand operator
-    href: /azure/data-explorer/kusto/query/mvexpandoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/mv-expand-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: mv expand mv_expand
   - name: sort operator
     displayName: order operator
     href: /azure/data-explorer/kusto/query/sort-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: project operator
-    href: /azure/data-explorer/kusto/query/projectoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/project-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: project-away operator
-    href: /azure/data-explorer/kusto/query/projectawayoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/project-away-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: project away project_away
   - name: project-keep operator
     href: /azure/data-explorer/kusto/query/project-keep-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: project keep project_keep
   - name: project-rename operator
-    href: /azure/data-explorer/kusto/query/projectrenameoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/project-rename-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: project rename project_rename
   - name: project-reorder operator
-    href: /azure/data-explorer/kusto/query/projectreorderoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/project-reorder-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: project reorder project_reorder
   - name: parse operator
-    href: /azure/data-explorer/kusto/query/parseoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: parse-where operator
-    href: /azure/data-explorer/kusto/query/parsewhereoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-where-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: parse where parse_where
   - name: parse-kv operator
     href: /azure/data-explorer/kusto/query/parse-kv-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: parse kv parse_kv
   - name: partition operator
-    href: /azure/data-explorer/kusto/query/partitionoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/partition-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: print operator
-    href: /azure/data-explorer/kusto/query/printoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/print-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: range operator
-    href: /azure/data-explorer/kusto/query/rangeoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/range-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: reduce operator
-    href: /azure/data-explorer/kusto/query/reduceoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/reduce-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: render operator
     items:
     - name: render operator
-      href: /azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/render-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: visualizations
       items:
       - name: anomalychart
@@ -263,6 +268,8 @@ items:
       - name: pivotchart
         displayName: pivot chart
         href: /azure/data-explorer/kusto/query/visualization-pivotchart?context=/fabric/context/context-rta&pivots=fabric
+      - name: Plotly
+        href: /azure/data-explorer/kusto/query/visualization-plotly?context=/fabric/context/context-rta&pivots=fabric
       - name: scatterchart
         displayName: scatter chart
         href: /azure/data-explorer/kusto/query/visualization-scatterchart?context=/fabric/context/context-rta&pivots=fabric
@@ -280,73 +287,73 @@ items:
       - name: treemap
         href: /azure/data-explorer/kusto/query/visualization-treemap?context=/fabric/context/context-rta&pivots=fabric
   - name: sample operator
-    href: /azure/data-explorer/kusto/query/sampleoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sample-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: sample-distinct operator
-    href: /azure/data-explorer/kusto/query/sampledistinctoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sample-distinct-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: sample distinct sample_distinct
   - name: scan operator
     href: /azure/data-explorer/kusto/query/scan-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: search operator
-    href: /azure/data-explorer/kusto/query/searchoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/search-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: serialize operator
-    href: /azure/data-explorer/kusto/query/serializeoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/serialize-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: shuffle query
     displayName: hint.shufflekey, hint.strategy, shufflekey, hint, strategy
-    href: /azure/data-explorer/kusto/query/shufflequery?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/shuffle-query?context=/fabric/context/context-rta&pivots=fabric
   - name: summarize operator
     items:
     - name: summarize operator overview
-      href: /azure/data-explorer/kusto/query/summarizeoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/summarize-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: Using hll() and tdigest()
-      href: /azure/data-explorer/kusto/query/usinghlltdigest?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/using-hll-tdigest?context=/fabric/context/context-rta&pivots=fabric
   - name: take operator
     displayName: limit operator
-    href: /azure/data-explorer/kusto/query/takeoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/take-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: top operator
-    href: /azure/data-explorer/kusto/query/topoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/top-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: top-nested operator
-    href: /azure/data-explorer/kusto/query/topnestedoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/top-nested-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: top nested top_nested
   - name: top-hitters operator
-    href: /azure/data-explorer/kusto/query/tophittersoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/top-hitters-operator?context=/fabric/context/context-rta&pivots=fabric
     displayName: top hitters top_hitters
   - name: union operator
-    href: /azure/data-explorer/kusto/query/unionoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/union-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: where operator
     displayName: filter operator
-    href: /azure/data-explorer/kusto/query/whereoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/where-operator?context=/fabric/context/context-rta&pivots=fabric
 - name: Special functions
   items:
   - name: cluster()
-    href: /azure/data-explorer/kusto/query/clusterfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cluster-function?context=/fabric/context/context-rta&pivots=fabric
   - name: database()
-    href: /azure/data-explorer/kusto/query/databasefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/database-function?context=/fabric/context/context-rta&pivots=fabric
   - name: external_table()
-    href: /azure/data-explorer/kusto/query/externaltablefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/external-table-function?context=/fabric/context/context-rta&pivots=fabric
     displayName: external table external-table
   - name: materialize()
-    href: /azure/data-explorer/kusto/query/materializefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/materialize-function?context=/fabric/context/context-rta&pivots=fabric
   - name: materialized_view()
     href: /azure/data-explorer/kusto/query/materialized-view-function?context=/fabric/context/context-rta&pivots=fabric
     displayName: materialized view materialized-view
   - name: Query results cache
     href: /azure/data-explorer/kusto/query/query-results-cache?context=/fabric/context/context-rta&pivots=fabric
   - name: table()
-    href: /azure/data-explorer/kusto/query/tablefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/table-function?context=/fabric/context/context-rta&pivots=fabric
   - name: toscalar()
-    href: /azure/data-explorer/kusto/query/toscalarfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toscalar-function?context=/fabric/context/context-rta&pivots=fabric
     displayName: to_scalar to-scalar
 - name: Scalar operators
   items:
   - name: between operators
     items:
     - name: between operator
-      href: /azure/data-explorer/kusto/query/betweenoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/between-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: '!between operator'
       displayName: not between operator
-      href: /azure/data-explorer/kusto/query/notbetweenoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/not-between-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: Bitwise binary operators
-    href: /azure/data-explorer/kusto/query/binoperators?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bin-operators?context=/fabric/context/context-rta&pivots=fabric
   - name: Datetime/timespan arithmetic
     href: /azure/data-explorer/kusto/query/datetime-timespan-arithmetic?context=/fabric/context/context-rta&pivots=fabric
   - name: in operators
@@ -355,7 +362,7 @@ items:
       displayName: in operator case sensitive
       href: /azure/data-explorer/kusto/query/in-cs-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: in~ operator
-      href: /azure/data-explorer/kusto/query/inoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/in-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: '!in operator'
       displayName: not in operator case sensitive
       href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/fabric/context/context-rta&pivots=fabric
@@ -363,9 +370,9 @@ items:
       displayName: not in operator
       href: /azure/data-explorer/kusto/query/not-in-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: Logical or binary operators
-    href: /azure/data-explorer/kusto/query/logicaloperators?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/logical-operators?context=/fabric/context/context-rta&pivots=fabric
   - name: Numerical operators
-    href: /azure/data-explorer/kusto/query/numoperators?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/numerical-operators?context=/fabric/context/context-rta&pivots=fabric
   - name: String operators
     items:
     - name: String operators overview
@@ -440,12 +447,12 @@ items:
       href: /azure/data-explorer/kusto/query/has-all-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: has_any operator
       displayName: has any operator
-      href: /azure/data-explorer/kusto/query/has-anyoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/has-any-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: in operator
       displayName: in operator case sensitive
       href: /azure/data-explorer/kusto/query/in-cs-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: in~ operator
-      href: /azure/data-explorer/kusto/query/inoperator?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/in-operator?context=/fabric/context/context-rta&pivots=fabric
     - name: '!in operator'
       displayName: not in operator case sensitive
       href: /azure/data-explorer/kusto/query/not-in-cs-operator?context=/fabric/context/context-rta&pivots=fabric
@@ -471,77 +478,77 @@ items:
   items:
   - name: Scalar function types
     displayName: stored procedures
-    href: /azure/data-explorer/kusto/query/scalarfunctions?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/scalar-functions?context=/fabric/context/context-rta&pivots=fabric
   - name: abs()
     href: /azure/data-explorer/kusto/query/abs-function?context=/fabric/context/context-rta&pivots=fabric
   - name: acos()
-    href: /azure/data-explorer/kusto/query/acosfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/acos-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ago()
-    href: /azure/data-explorer/kusto/query/agofunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ago-function?context=/fabric/context/context-rta&pivots=fabric
   - name: around()
     href: /azure/data-explorer/kusto/query/around-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_concat()
-    href: /azure/data-explorer/kusto/query/arrayconcatfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-concat-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_iff()
     displayName: array_iif() array iif
-    href: /azure/data-explorer/kusto/query/arrayifffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-iff-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_index_of()
     displayName: array index of
-    href: /azure/data-explorer/kusto/query/arrayindexoffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-index-of-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_length()
     displayName: arraylength() array length
-    href: /azure/data-explorer/kusto/query/arraylengthfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-length-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_reverse()
     displayName: array reverse
     href: /azure/data-explorer/kusto/query/array-reverse-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_rotate_left()
     displayName: array rotate left
-    href: /azure/data-explorer/kusto/query/array_rotate_leftfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-rotate-left-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_rotate_right()
     displayName: array rotate right
-    href: /azure/data-explorer/kusto/query/array_rotate_rightfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-rotate-right-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_shift_left()
     displayName: array shift left
-    href: /azure/data-explorer/kusto/query/array_shift_leftfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-shift-left-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_shift_right()
     displayName: array shift right
-    href: /azure/data-explorer/kusto/query/array_shift_rightfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-shift-right-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_slice()
     displayName: array slice
-    href: /azure/data-explorer/kusto/query/arrayslicefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-slice-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_sort_asc()
     displayName: array sort asc
-    href: /azure/data-explorer/kusto/query/arraysortascfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-sort-asc-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_sort_desc()
     displayName: array sort desc
-    href: /azure/data-explorer/kusto/query/arraysortdescfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-sort-desc-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_split()
     displayName: array split
-    href: /azure/data-explorer/kusto/query/arraysplitfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/array-split-function?context=/fabric/context/context-rta&pivots=fabric
   - name: array_sum()
     displayName: array sum
     href: /azure/data-explorer/kusto/query/array-sum-function?context=/fabric/context/context-rta&pivots=fabric
   - name: asin()
     displayName: asin function
-    href: /azure/data-explorer/kusto/query/asinfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/asin-function?context=/fabric/context/context-rta&pivots=fabric
   - name: assert()
     href: /azure/data-explorer/kusto/query/assert-function?context=/fabric/context/context-rta&pivots=fabric
   - name: atan()
-    href: /azure/data-explorer/kusto/query/atanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/atan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: atan2()
-    href: /azure/data-explorer/kusto/query/atan2function?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/atan2-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bag_has_key()
     displayName: bag has key
     href: /azure/data-explorer/kusto/query/bag-has-key-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bag_keys()
     displayName: bag keys
-    href: /azure/data-explorer/kusto/query/bagkeysfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bag-keys-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bag_merge()
     displayName: bag merge
     href: /azure/data-explorer/kusto/query/bag-merge-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bag_pack()
     displayName: pack(), pack_dictionary(), bag pack
-    href: /azure/data-explorer/kusto/query/packfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pack-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bag_pack_columns()
     displayName: bag pack columns, dynamic object, property bag
     href: /azure/data-explorer/kusto/query/bag-pack-columns-function?context=/fabric/context/context-rta&pivots=fabric
@@ -556,71 +563,71 @@ items:
     href: /azure/data-explorer/kusto/query/bag-zip?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_decode_toarray()
     displayName: base64_decode_toarray()
-    href: /azure/data-explorer/kusto/query/base64_decode_toarrayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-decode-toarray-function?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_decode_tostring()
     displayName: base64_decodestring() vase64 decode string
-    href: /azure/data-explorer/kusto/query/base64_decode_tostringfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-decode-tostring-function?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_decode_toguid()
     displayName: base64_decode_toguid() base64 decode to guid
     href: /azure/data-explorer/kusto/query/base64-decode-toguid-function?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_encode_fromarray()
     displayName: base64 encode from array
-    href: /azure/data-explorer/kusto/query/base64_encode_fromarrayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-encode-fromarray-function?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_encode_tostring()
     displayName: base64_encodestring() base 64 encode string
-    href: /azure/data-explorer/kusto/query/base64_encode_tostringfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/base64-encode-tostring-function?context=/fabric/context/context-rta&pivots=fabric
   - name: base64_encode_fromguid()
     displayName: base64_encode_fromguid() base64 encode from guid
     href: /azure/data-explorer/kusto/query/base64-encode-fromguid-function?context=/fabric/context/context-rta&pivots=fabric
   - name: beta_cdf()
     displayName: beta_cdf() beta cdf
-    href: /azure/data-explorer/kusto/query/beta-cdffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-cdf-function?context=/fabric/context/context-rta&pivots=fabric
   - name: beta_inv()
     displayName: beta_inv() beta inv
-    href: /azure/data-explorer/kusto/query/beta-invfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-inv-function?context=/fabric/context/context-rta&pivots=fabric
   - name: beta_pdf()
     displayName: beta_pdf() beta pdf
-    href: /azure/data-explorer/kusto/query/beta-pdffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/beta-pdf-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bin()
     displayName: floor()
-    href: /azure/data-explorer/kusto/query/binfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bin-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bin_at()
     displayName: bin_at() bin at
-    href: /azure/data-explorer/kusto/query/binatfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bin-at-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bin_auto()
     displayName: bin_auto() bin auto
-    href: /azure/data-explorer/kusto/query/bin-autofunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bin-auto-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_and()
     displayName: binary_and() binary and
-    href: /azure/data-explorer/kusto/query/binary-andfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-and-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_not()
     displayName: binary_not() binary not
-    href: /azure/data-explorer/kusto/query/binary-notfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-not-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_or()
     displayName: binary_or() binary or
-    href: /azure/data-explorer/kusto/query/binary-orfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-or-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_shift_left()
     displayName: binary_shift_left() binary shift left
-    href: /azure/data-explorer/kusto/query/binary-shift-leftfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-shift-left-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_shift_right()
     displayName: binary_shift_right() binary shift right
-    href: /azure/data-explorer/kusto/query/binary-shift-rightfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-shift-right-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_xor()
     displayName: binary_xor() binary xor
-    href: /azure/data-explorer/kusto/query/binary-xorfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-xor-function?context=/fabric/context/context-rta&pivots=fabric
   - name: bitset_count_ones()
     displayName: bitset_count_ones() bitset count ones
-    href: /azure/data-explorer/kusto/query/bitset-count-onesfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/bitset-count-ones-function?context=/fabric/context/context-rta&pivots=fabric
   - name: case()
-    href: /azure/data-explorer/kusto/query/casefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/case-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ceiling()
-    href: /azure/data-explorer/kusto/query/ceilingfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ceiling-function?context=/fabric/context/context-rta&pivots=fabric
     displayName: ceiling() ceiling function
   - name: coalesce()
-    href: /azure/data-explorer/kusto/query/coalescefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/coalesce-function?context=/fabric/context/context-rta&pivots=fabric
   - name: column_ifexists()
     displayName: columnifexists() column if exists
-    href: /azure/data-explorer/kusto/query/columnifexists?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/column-ifexists-function?context=/fabric/context/context-rta&pivots=fabric
   - name: convert_angle()
     displayName: convert_angle() convert angle
     href: /azure/data-explorer/kusto/query/convert-angle-function?context=/fabric/context/context-rta&pivots=fabric
@@ -646,12 +653,12 @@ items:
     displayName: convert_volume() convert volume
     href: /azure/data-explorer/kusto/query/convert-volume-function?context=/fabric/context/context-rta&pivots=fabric
   - name: cos()
-    href: /azure/data-explorer/kusto/query/cosfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cos-function?context=/fabric/context/context-rta&pivots=fabric
   - name: cot()
-    href: /azure/data-explorer/kusto/query/cotfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cot-function?context=/fabric/context/context-rta&pivots=fabric
   - name: countof()
     displayName: countof() count of
-    href: /azure/data-explorer/kusto/query/countoffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/countof-function?context=/fabric/context/context-rta&pivots=fabric
   - name: current_cluster_endpoint()
     displayName: current_cluster_endpoint() current cluster endpoint
     href: /azure/data-explorer/kusto/query/current-cluster-endpoint-function?context=/fabric/context/context-rta&pivots=fabric
@@ -660,68 +667,74 @@ items:
     href: /azure/data-explorer/kusto/query/current-database-function?context=/fabric/context/context-rta&pivots=fabric
   - name: current_principal()
     displayName: current_principal() current principal
-    href: /azure/data-explorer/kusto/query/current-principalfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principal-function?context=/fabric/context/context-rta&pivots=fabric
   - name: current_principal_details()
     displayName: current_principal_details() current principal details
-    href: /azure/data-explorer/kusto/query/current-principal-detailsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principal-details-function?context=/fabric/context/context-rta&pivots=fabric
   - name: current_principal_is_member_of()
     displayName: current_principal_is_member_of() current principal is member of
-    href: /azure/data-explorer/kusto/query/current-principal-ismemberoffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/current-principal-is-member-of-function?context=/fabric/context/context-rta&pivots=fabric
   - name: cursor_after()
     displayName: cursor_after() cursor after
-    href: /azure/data-explorer/kusto/query/cursorafterfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursor-after-function?context=/fabric/context/context-rta&pivots=fabric
   - name: cursor_before_or_at()
     displayName: cursor_before_or_at() cursor before or at
-    href: /azure/data-explorer/kusto/query/cursorbeforeoratfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursor-before-or-at-function?context=/fabric/context/context-rta&pivots=fabric
   - name: cursor_current()
     displayName: current_cursor() cursor current
-    href: /azure/data-explorer/kusto/query/cursorcurrent?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/cursor-current?context=/fabric/context/context-rta&pivots=fabric
   - name: datetime_add()
     displayName: datetime_add() datetime add
-    href: /azure/data-explorer/kusto/query/datetime-addfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-add-function?context=/fabric/context/context-rta&pivots=fabric
   - name: datetime_diff()
     displayName: datetime_diff() datetime diff
-    href: /azure/data-explorer/kusto/query/datetime-difffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-diff-function?context=/fabric/context/context-rta&pivots=fabric
   - name: datetime_local_to_utc()
     href: /azure/data-explorer/kusto/query/datetime-local-to-utc-function?context=/fabric/context/context-rta&pivots=fabric
   - name: datetime_part()
     displayName: datepart()
-    href: /azure/data-explorer/kusto/query/datetime-partfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/datetime-part-function?context=/fabric/context/context-rta&pivots=fabric
   - name: datetime_utc_to_local()
     displayName: datetime_utc_to_local() datetime utc to local
     href: /azure/data-explorer/kusto/query/datetime-utc-to-local-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dayofmonth()
     displayName: dayofmonth() day of month
-    href: /azure/data-explorer/kusto/query/dayofmonthfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/day-of-month-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dayofweek()
     displayName: dayofweek() day of week
-    href: /azure/data-explorer/kusto/query/dayofweekfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/day-of-week-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dayofyear()
     displayName: day of year
-    href: /azure/data-explorer/kusto/query/dayofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/day-of-year-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dcount_hll()
     displayName: dcount hll
-    href: /azure/data-explorer/kusto/query/dcount-hllfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dcount-hll-function?context=/fabric/context/context-rta&pivots=fabric
   - name: degrees()
-    href: /azure/data-explorer/kusto/query/degreesfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/degrees-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dynamic_to_json()
     displayName: dynamic_to_json() dynamic to json
     href: /azure/data-explorer/kusto/query/dynamic-to-json-function?context=/fabric/context/context-rta&pivots=fabric
   - name: endofday()
     displayName: endofday() end of day
-    href: /azure/data-explorer/kusto/query/endofdayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofday-function?context=/fabric/context/context-rta&pivots=fabric
   - name: endofmonth()
     displayName: endofmonth() end of month
-    href: /azure/data-explorer/kusto/query/endofmonthfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofmonth-function?context=/fabric/context/context-rta&pivots=fabric
   - name: endofweek()
     displayName: endofweek() end of week
-    href: /azure/data-explorer/kusto/query/endofweekfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofweek-function?context=/fabric/context/context-rta&pivots=fabric
   - name: endofyear()
     displayName: endofyear() end of year
-    href: /azure/data-explorer/kusto/query/endofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/endofyear-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: erf()
+    displayName: Gaussian, error function, statistics, distribution
+    href: /azure/data-explorer/kusto/query/erf-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: erfc()
+    displayName: complementary error function, statistics, distribution
+    href: /azure/data-explorer/kusto/query/erfc-function?context=/fabric/context/context-rta&pivots=fabric
   - name: estimate_data_size()
     displayName: estimate_data_size() estimate data size
-    href: /azure/data-explorer/kusto/query/estimate-data-sizefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/estimate-data-size-function?context=/fabric/context/context-rta&pivots=fabric
   - name: exp()
     href: /azure/data-explorer/kusto/query/exp-function?context=/fabric/context/context-rta&pivots=fabric
   - name: exp10()
@@ -730,24 +743,24 @@ items:
     href: /azure/data-explorer/kusto/query/exp2-function?context=/fabric/context/context-rta&pivots=fabric
   - name: extent_id()
     displayName: extentid() extent id
-    href: /azure/data-explorer/kusto/query/extentidfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extent-id-function?context=/fabric/context/context-rta&pivots=fabric
   - name: extent_tags()
     displayName: extenttags() extent tags
-    href: /azure/data-explorer/kusto/query/extenttagsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extent-tags-function?context=/fabric/context/context-rta&pivots=fabric
   - name: extract()
-    href: /azure/data-explorer/kusto/query/extractfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extract-function?context=/fabric/context/context-rta&pivots=fabric
   - name: extract_all()
     displayName: extractall() extract all
-    href: /azure/data-explorer/kusto/query/extractallfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extract-all-function?context=/fabric/context/context-rta&pivots=fabric
   - name: extract_json()
     displayName: extractjson() extract json
-    href: /azure/data-explorer/kusto/query/extractjsonfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/extract-json-function?context=/fabric/context/context-rta&pivots=fabric
   - name: format_bytes()
     displayName: format bytes
-    href: /azure/data-explorer/kusto/query/format-bytesfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-bytes-function?context=/fabric/context/context-rta&pivots=fabric
   - name: format_datetime()
     displayName: format datetime
-    href: /azure/data-explorer/kusto/query/format-datetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-datetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: format_ipv4()
     displayName: format ipv4
     href: /azure/data-explorer/kusto/query/format-ipv4-function?context=/fabric/context/context-rta&pivots=fabric
@@ -756,18 +769,18 @@ items:
     href: /azure/data-explorer/kusto/query/format-ipv4-mask-function?context=/fabric/context/context-rta&pivots=fabric
   - name: format_timespan()
     displayName: format timespan
-    href: /azure/data-explorer/kusto/query/format-timespanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/format-timespan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: gamma()
-    href: /azure/data-explorer/kusto/query/gammafunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gamma-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_info_from_ip_address()
     displayName: geo info from ip address
     href: /azure/data-explorer/kusto/query/geo-info-from-ip-address-function?context=/fabric/context/context-rta&pivots=fabric
   - name: gettype()
     displayName: get type
-    href: /azure/data-explorer/kusto/query/gettypefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/gettype-function?context=/fabric/context/context-rta&pivots=fabric
   - name: getyear()
     displayName: get year
-    href: /azure/data-explorer/kusto/query/getyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/getyear-function?context=/fabric/context/context-rta&pivots=fabric
   - name: gzip_compress_to_base64_string()
     displayName: gzip compress to base64 string
     href: /azure/data-explorer/kusto/query/gzip-base64-compress?context=/fabric/context/context-rta&pivots=fabric
@@ -790,46 +803,46 @@ items:
     displayName: has ipv4 prefix
     href: /azure/data-explorer/kusto/query/has-ipv4-prefix-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash()
-    href: /azure/data-explorer/kusto/query/hashfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_combine()
     displayName: hash combine
-    href: /azure/data-explorer/kusto/query/hash_combinefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-combine-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_many()
     displayName: hash many
-    href: /azure/data-explorer/kusto/query/hash_manyfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-many-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_md5()
     displayName: hash md5
-    href: /azure/data-explorer/kusto/query/md5hashfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-md5-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_sha1()
     displayName: hash sha1
-    href: /azure/data-explorer/kusto/query/sha1-hash-function?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-sha1-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_sha256()
     displayName: hash sha256
-    href: /azure/data-explorer/kusto/query/sha256hashfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hash-sha256-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hash_xxhash64()
     displayName: hash xxhash64
     href: /azure/data-explorer/kusto/query/hash-xxhash64-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hll_merge()
     displayName: hll merge
-    href: /azure/data-explorer/kusto/query/hllmergefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-merge-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hourofday()
     displayName: hourofday() hour of day
-    href: /azure/data-explorer/kusto/query/hourofdayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hour-of-day-function?context=/fabric/context/context-rta&pivots=fabric
   - name: iff()
     displayName: iif()
-    href: /azure/data-explorer/kusto/query/ifffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/iff-function?context=/fabric/context/context-rta&pivots=fabric
   - name: indexof()
     displayName: index of
-    href: /azure/data-explorer/kusto/query/indexoffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/indexof-function?context=/fabric/context/context-rta&pivots=fabric
   - name: indexof_regex()
     displayName: index of regex
-    href: /azure/data-explorer/kusto/query/indexofregexfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/indexof-regex-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ingestion_time()
     displayName: ingestion time
-    href: /azure/data-explorer/kusto/query/ingestiontimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ingestion-time-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv4_compare()
     displayName: ipv4 compare
-    href: /azure/data-explorer/kusto/query/ipv4-comparefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-compare-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv4_is_in_range()
     displayName: ipv4 is in range
     href: /azure/data-explorer/kusto/query/ipv4-is-in-range-function?context=/fabric/context/context-rta&pivots=fabric
@@ -838,10 +851,10 @@ items:
     href: /azure/data-explorer/kusto/query/ipv4-is-in-any-range-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv4_is_match()
     displayName: ipv4 is match
-    href: /azure/data-explorer/kusto/query/ipv4-is-matchfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-match-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv4_is_private()
     displayName: ipv4 is private
-    href: /azure/data-explorer/kusto/query/ipv4-is-privatefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv4-is-private-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv4_range_to_cidr_list()
     displayName: ipv4 range to cidr list
     href: /azure/data-explorer/kusto/query/ipv4-range-to-cidr-list-function?context=/fabric/context/context-rta&pivots=fabric
@@ -850,7 +863,7 @@ items:
     href: /azure/data-explorer/kusto/query/ipv4-netmask-suffix-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv6_compare()
     displayName: ipv6 compare
-    href: /azure/data-explorer/kusto/query/ipv6-comparefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-compare-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv6_is_in_range()
     displayName: ipv6 is in range
     href: /azure/data-explorer/kusto/query/ipv6-is-in-range-function?context=/fabric/context/context-rta&pivots=fabric
@@ -859,33 +872,33 @@ items:
     href: /azure/data-explorer/kusto/query/ipv6-is-in-any-range-function?context=/fabric/context/context-rta&pivots=fabric
   - name: ipv6_is_match()
     displayName: ipv6 is match
-    href: /azure/data-explorer/kusto/query/ipv6-is-matchfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/ipv6-is-match-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isascii()
     href: /azure/data-explorer/kusto/query/isascii?context=/fabric/context/context-rta&pivots=fabric
   - name: isempty()
     displayName: is empty
-    href: /azure/data-explorer/kusto/query/isemptyfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isempty-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isfinite()
     displayName: is finite
-    href: /azure/data-explorer/kusto/query/isfinitefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isfinite-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isinf()
     displayName: is inf
-    href: /azure/data-explorer/kusto/query/isinffunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isinf-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isnan()
     displayName: is nan
-    href: /azure/data-explorer/kusto/query/isnanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isnotempty()
     displayName: is not empty notempty()
-    href: /azure/data-explorer/kusto/query/isnotemptyfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnotempty-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isnotnull()
     displayName: is not null notnull()
-    href: /azure/data-explorer/kusto/query/isnotnullfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnotnull-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isnull()
     displayName: is null
-    href: /azure/data-explorer/kusto/query/isnullfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isnull-function?context=/fabric/context/context-rta&pivots=fabric
   - name: isutf8()
     displayName: is utf8
-    href: /azure/data-explorer/kusto/query/isutf8?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/isutf8-function?context=/fabric/context/context-rta&pivots=fabric
   - name: jaccard_index()
     displayName: jaccard index
     href: /azure/data-explorer/kusto/query/jaccard-index-function?context=/fabric/context/context-rta&pivots=fabric
@@ -897,116 +910,116 @@ items:
     href: /azure/data-explorer/kusto/query/log2-function?context=/fabric/context/context-rta&pivots=fabric
   - name: loggamma()
     displayName: log gamma
-    href: /azure/data-explorer/kusto/query/loggammafunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/loggamma-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_datetime()
     displayName: make datetime
-    href: /azure/data-explorer/kusto/query/make-datetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-datetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_timespan()
     displayName: make timespan
-    href: /azure/data-explorer/kusto/query/make-timespanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-timespan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: max_of()
     displayName: max of
-    href: /azure/data-explorer/kusto/query/max-offunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/max-of-function?context=/fabric/context/context-rta&pivots=fabric
   - name: merge_tdigest()
     displayName: merge tdigest tdigest_merge()
     href: /azure/data-explorer/kusto/query/merge-tdigest-function?context=/fabric/context/context-rta&pivots=fabric
   - name: min_of()
     displayName: min of
-    href: /azure/data-explorer/kusto/query/min-offunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/min-of-function?context=/fabric/context/context-rta&pivots=fabric
   - name: monthofyear()
     displayName: getmonth() month of year
-    href: /azure/data-explorer/kusto/query/monthofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/monthofyear-function?context=/fabric/context/context-rta&pivots=fabric
   - name: new_guid()
     displayName: new guid
-    href: /azure/data-explorer/kusto/query/newguidfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/new-guid-function?context=/fabric/context/context-rta&pivots=fabric
   - name: not()
-    href: /azure/data-explorer/kusto/query/notfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/not-function?context=/fabric/context/context-rta&pivots=fabric
   - name: now()
-    href: /azure/data-explorer/kusto/query/nowfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/now-function?context=/fabric/context/context-rta&pivots=fabric
   - name: pack_all()
     displayName: pack all
-    href: /azure/data-explorer/kusto/query/packallfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pack-all-function?context=/fabric/context/context-rta&pivots=fabric
   - name: pack_array()
     displayName: pack array
-    href: /azure/data-explorer/kusto/query/packarrayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pack-array-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_command_line()
     displayName: parse command line
-    href: /azure/data-explorer/kusto/query/parse-command-line?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-command-line-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_csv()
     displayName: parse csv
-    href: /azure/data-explorer/kusto/query/parsecsvfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-csv-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_ipv4()
     displayName: parse ipv4
-    href: /azure/data-explorer/kusto/query/parse-ipv4function?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv4-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_ipv4_mask()
     displayName: parse ipv4 mask
-    href: /azure/data-explorer/kusto/query/parse-ipv4-maskfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv4-mask-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_ipv6()
     displayName: parse ipv6
-    href: /azure/data-explorer/kusto/query/parse-ipv6function?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv6-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_ipv6_mask()
     displayName: parse ipv6 mask
-    href: /azure/data-explorer/kusto/query/parse-ipv6-maskfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-ipv6-mask-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_json()
     displayName: parse json toobject(), parsejson(), todynamic()
-    href: /azure/data-explorer/kusto/query/parsejsonfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-json-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_path()
     displayName: parse path
-    href: /azure/data-explorer/kusto/query/parsepathfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-path-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_url()
     displayName: parse url parseurl()
-    href: /azure/data-explorer/kusto/query/parseurlfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-url-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_urlquery()
     displayName: parse url query parseurlquery()
-    href: /azure/data-explorer/kusto/query/parseurlqueryfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-url-query-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_user_agent()
     displayName: parse user agent
-    href: /azure/data-explorer/kusto/query/parse-useragentfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-user-agent-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_version()
     displayName: parse version
-    href: /azure/data-explorer/kusto/query/parse-versionfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-version-function?context=/fabric/context/context-rta&pivots=fabric
   - name: parse_xml()
     displayName: parse xml
-    href: /azure/data-explorer/kusto/query/parse-xmlfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/parse-xml-function?context=/fabric/context/context-rta&pivots=fabric
   - name: percentile_tdigest()
     displayName: percentile tdigest()
-    href: /azure/data-explorer/kusto/query/percentile-tdigestfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentile-tdigest-function?context=/fabric/context/context-rta&pivots=fabric
   - name: percentile_array_tdigest()
     displayName: percentile array tdigest()
-    href: /azure/data-explorer/kusto/query/percentile-array-tdigestfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentile-array-tdigest-function?context=/fabric/context/context-rta&pivots=fabric
   - name: percentrank_tdigest()
     displayName: percentrank tdigest()
-    href: /azure/data-explorer/kusto/query/percentrank-tdigestfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentrank-tdigest-function?context=/fabric/context/context-rta&pivots=fabric
   - name: pi()
-    href: /azure/data-explorer/kusto/query/pifunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pi-function?context=/fabric/context/context-rta&pivots=fabric
   - name: pow()
-    href: /azure/data-explorer/kusto/query/powfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/pow-function?context=/fabric/context/context-rta&pivots=fabric
   - name: punycode_from_string()
     displayName: punycode from string
-    href: /azure/data-explorer/kusto/query/punycode-from-string?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-from-string-function?context=/fabric/context/context-rta&pivots=fabric
   - name: punycode_to_string()
     displayName: punycode to string
-    href: /azure/data-explorer/kusto/query/punycode-to-string?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-to-string-function?context=/fabric/context/context-rta&pivots=fabric
   - name: punycode_domain_from_string()
     displayName: punycode domain from string
-    href: /azure/data-explorer/kusto/query/punycode-domain-from-string?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-domain-from-string-function?context=/fabric/context/context-rta&pivots=fabric
   - name: punycode_domain_to_string()
     displayName: punycode domain to string
-    href: /azure/data-explorer/kusto/query/punycode-domain-to-string?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/punycode-domain-to-string-function?context=/fabric/context/context-rta&pivots=fabric
   - name: radians()
-    href: /azure/data-explorer/kusto/query/radiansfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/radians-function?context=/fabric/context/context-rta&pivots=fabric
   - name: rand()
-    href: /azure/data-explorer/kusto/query/randfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rand-function?context=/fabric/context/context-rta&pivots=fabric
   - name: range()
-    href: /azure/data-explorer/kusto/query/rangefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/range-function?context=/fabric/context/context-rta&pivots=fabric
   - name: rank_tdigest()
     displayName: rank tdigest()
-    href: /azure/data-explorer/kusto/query/rank-tdigest?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/rank-tdigest-function?context=/fabric/context/context-rta&pivots=fabric
   - name: regex_quote()
     displayName: regex quote
-    href: /azure/data-explorer/kusto/query/regexquotefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/regex-quote-function?context=/fabric/context/context-rta&pivots=fabric
   - name: repeat()
-    href: /azure/data-explorer/kusto/query/repeatfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/repeat-function?context=/fabric/context/context-rta&pivots=fabric
   - name: replace_regex()
     displayName: replace regex
     href: /azure/data-explorer/kusto/query/replace-regex-function?context=/fabric/context/context-rta&pivots=fabric
@@ -1017,115 +1030,115 @@ items:
     displayName: replace strings
     href: /azure/data-explorer/kusto/query/replace-strings-function?context=/fabric/context/context-rta&pivots=fabric
   - name: reverse()
-    href: /azure/data-explorer/kusto/query/reversefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/reverse-function?context=/fabric/context/context-rta&pivots=fabric
   - name: round()
-    href: /azure/data-explorer/kusto/query/roundfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/round-function?context=/fabric/context/context-rta&pivots=fabric
   - name: set_difference()
     displayName: set difference
-    href: /azure/data-explorer/kusto/query/setdifferencefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/set-difference-function?context=/fabric/context/context-rta&pivots=fabric
   - name: set_has_element()
     displayName: set has element
-    href: /azure/data-explorer/kusto/query/sethaselementfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/set-has-element-function?context=/fabric/context/context-rta&pivots=fabric
   - name: set_intersect()
     displayName: set intersect
-    href: /azure/data-explorer/kusto/query/setintersectfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/set-intersect-function?context=/fabric/context/context-rta&pivots=fabric
   - name: set_union()
     displayName: set union
-    href: /azure/data-explorer/kusto/query/setunionfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/set-union-function?context=/fabric/context/context-rta&pivots=fabric
   - name: sign()
-    href: /azure/data-explorer/kusto/query/signfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sign-function?context=/fabric/context/context-rta&pivots=fabric
   - name: sin()
-    href: /azure/data-explorer/kusto/query/sinfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sin-function?context=/fabric/context/context-rta&pivots=fabric
   - name: split()
-    href: /azure/data-explorer/kusto/query/splitfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/split-function?context=/fabric/context/context-rta&pivots=fabric
   - name: sqrt()
-    href: /azure/data-explorer/kusto/query/sqrtfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sqrt-function?context=/fabric/context/context-rta&pivots=fabric
   - name: startofday()
     displayName: start of day
-    href: /azure/data-explorer/kusto/query/startofdayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofday-function?context=/fabric/context/context-rta&pivots=fabric
   - name: startofmonth()
     displayName: start of month
-    href: /azure/data-explorer/kusto/query/startofmonthfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofmonth-function?context=/fabric/context/context-rta&pivots=fabric
   - name: startofweek()
     displayName: start of week
-    href: /azure/data-explorer/kusto/query/startofweekfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofweek-function?context=/fabric/context/context-rta&pivots=fabric
   - name: startofyear()
     displayName: start of year
-    href: /azure/data-explorer/kusto/query/startofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/startofyear-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strcat()
     displayName: string concat
-    href: /azure/data-explorer/kusto/query/strcatfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcat-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strcat_array()
     displayName: string concat array
-    href: /azure/data-explorer/kusto/query/strcat-arrayfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcat-array-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strcat_delim()
     displayName: string concat delim
-    href: /azure/data-explorer/kusto/query/strcat-delimfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcat-delim-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strcmp()
     displayName: string compare
-    href: /azure/data-explorer/kusto/query/strcmpfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strcmp-function?context=/fabric/context/context-rta&pivots=fabric
   - name: string_size()
     displayName: string size
-    href: /azure/data-explorer/kusto/query/stringsizefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/string-size-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strlen()
     displayName: string length
-    href: /azure/data-explorer/kusto/query/strlenfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strlen-function?context=/fabric/context/context-rta&pivots=fabric
   - name: strrep()
     displayName: string replace
-    href: /azure/data-explorer/kusto/query/strrepfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/strrep-function?context=/fabric/context/context-rta&pivots=fabric
   - name: substring()
     displayName: string substring
-    href: /azure/data-explorer/kusto/query/substringfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/substring-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tan()
-    href: /azure/data-explorer/kusto/query/tanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tobool()
     displayName: to boolean toboolean
-    href: /azure/data-explorer/kusto/query/toboolfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tobool-function?context=/fabric/context/context-rta&pivots=fabric
   - name: todatetime()
     displayName: to datetime todatetime
-    href: /azure/data-explorer/kusto/query/todatetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/todatetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: todecimal()
     displayName: to decimal todecimal
-    href: /azure/data-explorer/kusto/query/todecimalfunction?context=/fabric/context/context-rta&pivots=fabric
-  - name: todouble()
-    displayName: to double todouble toreal()
-    href: /azure/data-explorer/kusto/query/todoublefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/todecimal-function?context=/fabric/context/context-rta&pivots=fabric
   - name: toguid()
     displayName: to guid toguid
-    href: /azure/data-explorer/kusto/query/toguidfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toguid-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tohex()
     displayName: to hex tohex
-    href: /azure/data-explorer/kusto/query/tohexfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tohex-function?context=/fabric/context/context-rta&pivots=fabric
   - name: toint()
     displayName: to int toint integer
-    href: /azure/data-explorer/kusto/query/tointfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toint-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tolong()
     displayName: to long tolong
-    href: /azure/data-explorer/kusto/query/tolongfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tolong-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tolower()
     displayName: to lower tolower
-    href: /azure/data-explorer/kusto/query/tolowerfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tolower-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: toreal()
+    displayName: to real toreal todouble double todouble()
+    href: /azure/data-explorer/kusto/query/toreal-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tostring()
     displayName: to string tostring
-    href: /azure/data-explorer/kusto/query/tostringfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tostring-function?context=/fabric/context/context-rta&pivots=fabric
   - name: totimespan()
     displayName: to timespan totime()
-    href: /azure/data-explorer/kusto/query/totimespanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/totimespan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: toupper()
     displayName: to upper toupper
-    href: /azure/data-explorer/kusto/query/toupperfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/toupper-function?context=/fabric/context/context-rta&pivots=fabric
   - name: translate()
-    href: /azure/data-explorer/kusto/query/translatefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/translate-function?context=/fabric/context/context-rta&pivots=fabric
   - name: treepath()
-    href: /azure/data-explorer/kusto/query/treepathfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/treepath-function?context=/fabric/context/context-rta&pivots=fabric
   - name: trim()
-    href: /azure/data-explorer/kusto/query/trimfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trim-function?context=/fabric/context/context-rta&pivots=fabric
   - name: trim_end()
     displayName: trim end
-    href: /azure/data-explorer/kusto/query/trimendfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trim-end-function?context=/fabric/context/context-rta&pivots=fabric
   - name: trim_start()
     displayName: trim start
-    href: /azure/data-explorer/kusto/query/trimstartfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/trim-start-function?context=/fabric/context/context-rta&pivots=fabric
   - name: unicode_codepoints_from_string()
     displayName: to_utf8() unicode codepoints from string
     href: /azure/data-explorer/kusto/query/unicode-codepoints-from-string-function?context=/fabric/context/context-rta&pivots=fabric
@@ -1134,39 +1147,39 @@ items:
     href: /azure/data-explorer/kusto/query/unicode-codepoints-to-string-function?context=/fabric/context/context-rta&pivots=fabric
   - name: unixtime_microseconds_todatetime()
     displayName: unixtime microseconds to datetime
-    href: /azure/data-explorer/kusto/query/unixtime-microseconds-todatetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-microseconds-todatetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: unixtime_milliseconds_todatetime()
     displayName: unixtime milliseconds to datetime
-    href: /azure/data-explorer/kusto/query/unixtime-milliseconds-todatetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-milliseconds-todatetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: unixtime_nanoseconds_todatetime()
     displayName: unixtime nanoseconds to datetime
-    href: /azure/data-explorer/kusto/query/unixtime-nanoseconds-todatetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-nanoseconds-todatetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: unixtime_seconds_todatetime()
     displayName: unixtime seconds to datetime
-    href: /azure/data-explorer/kusto/query/unixtime-seconds-todatetimefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/unixtime-seconds-todatetime-function?context=/fabric/context/context-rta&pivots=fabric
   - name: url_decode()
     displayName: url decode
-    href: /azure/data-explorer/kusto/query/urldecodefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/url-decode-function?context=/fabric/context/context-rta&pivots=fabric
   - name: url_encode()
     displayName: url encode
-    href: /azure/data-explorer/kusto/query/urlencodefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/url-encode-function?context=/fabric/context/context-rta&pivots=fabric
   - name: url_encode_component()
     displayName: url encode component
-    href: /azure/data-explorer/kusto/query/urlencodecomponentfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/url-encode-component-function?context=/fabric/context/context-rta&pivots=fabric
   - name: week_of_year()
     displayName: week of year weekofyear()
-    href: /azure/data-explorer/kusto/query/weekofyearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/week-of-year-function?context=/fabric/context/context-rta&pivots=fabric
   - name: welch_test()
     displayName: welch test
-    href: /azure/data-explorer/kusto/query/welch-testfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/welch-test-function?context=/fabric/context/context-rta&pivots=fabric
   - name: zip()
-    href: /azure/data-explorer/kusto/query/zipfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zip-function?context=/fabric/context/context-rta&pivots=fabric
   - name: zlib_compress_to_base64_string()
     displayName: zlib compress to base64 string
-    href: /azure/data-explorer/kusto/query/zlib-base64-compress?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zlib-base64-compress-function?context=/fabric/context/context-rta&pivots=fabric
   - name: zlib_decompress_from_base64_string()
     displayName: zlib decompress from base64 string
-    href: /azure/data-explorer/kusto/query/zlib-base64-decompress?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/zlib-base64-decompress-function?context=/fabric/context/context-rta&pivots=fabric
 - name: Aggregation functions
   displayName: aggregation
   items:
@@ -1174,98 +1187,110 @@ items:
     href: /azure/data-explorer/kusto/query/aggregation-functions?context=/fabric/context/context-rta&pivots=fabric
   - name: arg_max()
     displayName: argmax()
-    href: /azure/data-explorer/kusto/query/arg-max-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arg-max-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: arg_min()
     displayName: argmin()
-    href: /azure/data-explorer/kusto/query/arg-min-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/arg-min-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: avg()
-    href: /azure/data-explorer/kusto/query/avg-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/avg-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: avgif()
-    href: /azure/data-explorer/kusto/query/avgif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/avgif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_all_and
-    href: /azure/data-explorer/kusto/query/binary-all-and-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-and-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_all_or
-    href: /azure/data-explorer/kusto/query/binary-all-or-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-or-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: binary_all_xor
-    href: /azure/data-explorer/kusto/query/binary-all-xor-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/binary-all-xor-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: buildschema()
-    href: /azure/data-explorer/kusto/query/buildschema-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/buildschema-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: count()
     displayName: cnt()
-    href: /azure/data-explorer/kusto/query/count-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: count_distinct()
-    href: /azure/data-explorer/kusto/query/count-distinct-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-distinct-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: count_distinctif()
-    href: /azure/data-explorer/kusto/query/count-distinctif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/count-distinctif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: countif()
     displayName: count(predicate)
-    href: /azure/data-explorer/kusto/query/countif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/countif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: dcount()
     href: /azure/data-explorer/kusto/query/dcount-aggfunction?context=/fabric/context/context-rta&pivots=fabric
   - name: dcountif()
-    href: /azure/data-explorer/kusto/query/dcountif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/dcountif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hll()
-    href: /azure/data-explorer/kusto/query/hll-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hll_if()
     href: /azure/data-explorer/kusto/query/hll-if-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: hll_merge()
-    href: /azure/data-explorer/kusto/query/hll-merge-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/hll-merge-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_bag()
-    href: /azure/data-explorer/kusto/query/make-bag-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-bag-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_bag_if()
-    href: /azure/data-explorer/kusto/query/make-bag-if-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-bag-if-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_list()
     displayName: makelist()
-    href: /azure/data-explorer/kusto/query/makelist-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-list-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_list_if()
-    href: /azure/data-explorer/kusto/query/makelistif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-list-if-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_list_with_nulls()
-    href: /azure/data-explorer/kusto/query/make-list-with-nulls-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-list-with-nulls-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_set()
     displayName: makeset()
-    href: /azure/data-explorer/kusto/query/makeset-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-set-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: make_set_if()
-    href: /azure/data-explorer/kusto/query/makesetif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-set-if-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: max()
-    href: /azure/data-explorer/kusto/query/max-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/max-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: maxif()
-    href: /azure/data-explorer/kusto/query/maxif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/maxif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: min()
-    href: /azure/data-explorer/kusto/query/min-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/min-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: minif()
-    href: /azure/data-explorer/kusto/query/minif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/minif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: percentile(), percentiles()
     displayName: percentiles_array()
-    href: /azure/data-explorer/kusto/query/percentiles-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentiles-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: percentilew(), percentilesw()
     displayName: percentilesw_array(), weighted percentiles
-    href: /azure/data-explorer/kusto/query/percentilesw-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/percentilesw-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: stdev()
-    href: /azure/data-explorer/kusto/query/stdev-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdev-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: stdevif()
-    href: /azure/data-explorer/kusto/query/stdevif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdevif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: stdevp()
-    href: /azure/data-explorer/kusto/query/stdevp-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/stdevp-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: sum()
-    href: /azure/data-explorer/kusto/query/sum-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sum-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: sumif()
-    href: /azure/data-explorer/kusto/query/sumif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sumif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: take_any()
     displayName: any()
-    href: /azure/data-explorer/kusto/query/take-any-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/take-any-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: take_anyif()
     displayName: anyif()
-    href: /azure/data-explorer/kusto/query/take-anyif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/take-anyif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tdigest()
-    href: /azure/data-explorer/kusto/query/tdigest-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tdigest-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: tdigest_merge(), merge_tdigest()
-    href: /azure/data-explorer/kusto/query/tdigest-merge-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/tdigest-merge-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: variance()
-    href: /azure/data-explorer/kusto/query/variance-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/variance-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: varianceif()
-    href: /azure/data-explorer/kusto/query/varianceif-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/varianceif-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: variancep()
-    href: /azure/data-explorer/kusto/query/variancep-aggfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/variancep-aggregation-function?context=/fabric/context/context-rta&pivots=fabric
+- name: Graph operators
+  items:
+  - name: Graph operators overview
+    href: /azure/data-explorer/kusto/query/graph-operators?context=/fabric/context/context-rta&pivots=fabric
+  - name: make-graph
+    href: /azure/data-explorer/kusto/query/make-graph-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-match
+    href: /azure/data-explorer/kusto/query/graph-match-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-merge
+    href: /azure/data-explorer/kusto/query/graph-merge-operator?context=/fabric/context/context-rta&pivots=fabric
+  - name: graph-to-table
+    href: /azure/data-explorer/kusto/query/graph-to-table-operator?context=/fabric/context/context-rta&pivots=fabric
 - name: Geospatial
   items:
   - name: Geospatial clustering overview
@@ -1273,6 +1298,10 @@ items:
     href: /azure/data-explorer/kusto/query/geospatial-grid-systems?context=/fabric/context/context-rta&pivots=fabric
   - name: Geospatial visualizations
     href: /azure/data-explorer/kusto/query/geospatial-visualizations?context=/fabric/context/context-rta&pivots=fabric
+  - name: geo_angle()
+    href: /azure/data-explorer/kusto/query/geo-angle-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: geo_azimuth()
+    href: /azure/data-explorer/kusto/query/geo-azimuth-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_distance_2points()
     href: /azure/data-explorer/kusto/query/geo-distance-2points-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_distance_point_to_line()
@@ -1317,6 +1346,8 @@ items:
     href: /azure/data-explorer/kusto/query/geo-polygon-simplify-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_polygon_to_s2cells()
     href: /azure/data-explorer/kusto/query/geo-polygon-to-s2cells-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: geo_polygon_to_h3cells()
+    href: /azure/data-explorer/kusto/query/geo-polygon-to-h3cells-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_point_buffer()
     href: /azure/data-explorer/kusto/query/geo-point-buffer-function?context=/fabric/context/context-rta&pivots=fabric
   - name: geo_point_in_circle()
@@ -1372,79 +1403,82 @@ items:
     - name: Machine learning
       href: /azure/data-explorer/kusto/query/machine-learning-clustering?context=/fabric/context/context-rta&pivots=fabric
   - name: make-series operator
-    href: /azure/data-explorer/kusto/query/make-seriesoperator?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/make-series-operator?context=/fabric/context/context-rta&pivots=fabric
   - name: series_abs()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-absfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-abs-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_acos()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-acosfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-acos-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_add()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-addfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-add-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_asin()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-asinfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-asin-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_atan()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-atanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-atan-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_ceiling()
     displayName: element-wise, elementwise
     href: /azure/data-explorer/kusto/query/series-ceiling-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_cos()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-cosfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-cos-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: series_cosine_similarity()
+    displayName: element-wise, elementwise, embedding, vector, cosine, similarity
+    href: /azure/data-explorer/kusto/query/series-cosine-similarity-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_decompose()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decomposefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decompose-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_decompose_anomalies()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decompose-anomalies-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_decompose_forecast()
     displayName: seasonal, trend, baseline
-    href: /azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-decompose-forecast-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_divide()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-dividefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-divide-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_dot_product()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-dot-productfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-dot-product-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-equalsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-equals-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_exp()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-expfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-exp-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fft()
     displayName: spectral, frequency, seasonality, transform, Fourier
     href: /azure/data-explorer/kusto/query/series-fft-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fill_backward()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-backwardfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-backward-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fill_const()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-constfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-const-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fill_forward()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-forwardfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-forward-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fill_linear()
     displayName: missing values
-    href: /azure/data-explorer/kusto/query/series-fill-linearfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fill-linear-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fir()
     displayName: filter, finite impulse response
-    href: /azure/data-explorer/kusto/query/series-firfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fir-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fit_2lines()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-2linesfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-2lines-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fit_2lines_dynamic()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-2lines-dynamicfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-2lines-dynamic-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fit_line()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-linefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-line-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fit_line_dynamic()
     displayName: regression
-    href: /azure/data-explorer/kusto/query/series-fit-line-dynamicfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-fit-line-dynamic-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_fit_poly()
     displayName: regression, polynomial
     href: /azure/data-explorer/kusto/query/series-fit-poly-function?context=/fabric/context/context-rta&pivots=fabric
@@ -1453,66 +1487,72 @@ items:
     href: /azure/data-explorer/kusto/query/series-floor-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_greater()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-greaterfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-greater-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_greater_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-greater-equalsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-greater-equals-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_ifft()
     displayName: spectral, frequency, seasonality, transform, Fourier
     href: /azure/data-explorer/kusto/query/series-ifft-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_iir()
     displayName: filter, infinite impulse response
-    href: /azure/data-explorer/kusto/query/series-iirfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-iir-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_less()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-lessfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-less-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_less_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-less-equalsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-less-equals-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_log()
     displayName: element-wise, elementwise
     href: /azure/data-explorer/kusto/query/series-log-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: series_magnitude()
+    displayName: element-wise, elementwise, vector
+    href: /azure/data-explorer/kusto/query/series-magnitude-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_multiply()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-multiplyfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-multiply-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_not_equals()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-not-equalsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-not-equals-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_outliers()
     displayName: anomaly detection, Tukey
-    href: /azure/data-explorer/kusto/query/series-outliersfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-outliers-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_pearson_correlation()
-    href: /azure/data-explorer/kusto/query/series-pearson-correlationfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-pearson-correlation-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_periods_detect()
     displayName: spectral, fft, frequency, seasonality
-    href: /azure/data-explorer/kusto/query/series-periods-detectfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-periods-detect-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_periods_validate()
     displayName: spectral, fft, frequency, seasonality
-    href: /azure/data-explorer/kusto/query/series-periods-validatefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-periods-validate-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_pow()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-powfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-pow-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_seasonal()
     displayName: periods
-    href: /azure/data-explorer/kusto/query/series-seasonalfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-seasonal-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_sign()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-signfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-sign-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_sin()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-sinfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-sin-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_stats()
     displayName: statistics, average, standard deviation, variance
-    href: /azure/data-explorer/kusto/query/series-statsfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-stats-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_stats_dynamic()
     displayName: statistics, average, standard deviation, variance
-    href: /azure/data-explorer/kusto/query/series-stats-dynamicfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-stats-dynamic-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_subtract()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-subtractfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-subtract-function?context=/fabric/context/context-rta&pivots=fabric
+  - name: series_sum()
+    displayName: element-wise, elementwise
+    href: /azure/data-explorer/kusto/query/series-sum-function?context=/fabric/context/context-rta&pivots=fabric
   - name: series_tan()
     displayName: element-wise, elementwise
-    href: /azure/data-explorer/kusto/query/series-tanfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/series-tan-function?context=/fabric/context/context-rta&pivots=fabric
 - name: Plugins
   items:
   - name: General plugins
@@ -1520,41 +1560,41 @@ items:
     - name: dcount_intersect plugin
       href: /azure/data-explorer/kusto/query/dcount-intersect-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: infer_storage_schema plugin
-      href: /azure/data-explorer/kusto/query/inferstorageschemaplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/infer-storage-schema-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: ipv4_lookup plugin
       href: /azure/data-explorer/kusto/query/ipv4-lookup-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: preview plugin
-      href: /azure/data-explorer/kusto/query/previewplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/preview-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: schema_merge plugin
-      href: /azure/data-explorer/kusto/query/schemamergeplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/schema-merge-plugin?context=/fabric/context/context-rta&pivots=fabric
   - name: Data reshaping plugins
     items:
     - name: bag_unpack plugin
-      href: /azure/data-explorer/kusto/query/bag-unpackplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/bag-unpack-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: narrow plugin
-      href: /azure/data-explorer/kusto/query/narrowplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/narrow-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: pivot plugin
-      href: /azure/data-explorer/kusto/query/pivotplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/pivot-plugin?context=/fabric/context/context-rta&pivots=fabric
   - name: Language plugins
     items:
     - name: Python plugin
-      href: /azure/data-explorer/kusto/query/pythonplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/python-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: R plugin
-      href: /azure/data-explorer/kusto/query/rplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/r-plugin?context=/fabric/context/context-rta&pivots=fabric
   - name: Machine learning plugins
     items:
     - name: autocluster plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/autoclusterplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/autocluster-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: basket plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/basketplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/basket-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: diffpatterns plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/diffpatternsplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/diffpatterns-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: diffpatterns_text plugin
       displayName: clustering, diagnostics, RCA, root cause
-      href: /azure/data-explorer/kusto/query/diffpatterns-textplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/diffpatterns-text-plugin?context=/fabric/context/context-rta&pivots=fabric
   - name: Query connectivity plugins
     items:
     - name: azure_digital_twins_query_request plugin
@@ -1566,15 +1606,15 @@ items:
     - name: http_request_post plugin
       href: /azure/data-explorer/kusto/query/http-request-post-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: mysql_request plugin
-      href: /azure/data-explorer/kusto/query/mysqlrequest-plugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/mysql-request-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: postgresql_request plugin
       href: /azure/data-explorer/kusto/query/postgresql-request-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: sql_request plugin
-      href: /azure/data-explorer/kusto/query/sqlrequestplugin?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/sql-request-plugin?context=/fabric/context/context-rta&pivots=fabric
   - name: User and sequence analytics plugins
     items:
     - name: User analytics plugins overview
-      href: /azure/data-explorer/kusto/query/useranalytics?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/query/user-analytics?context=/fabric/context/context-rta&pivots=fabric
     - name: active_users_count plugin
       href: /azure/data-explorer/kusto/query/active-users-count-plugin?context=/fabric/context/context-rta&pivots=fabric
     - name: activity_counts_metrics plugin
@@ -1602,19 +1642,19 @@ items:
 - name: Window functions
   items:
   - name: Window functions overview
-    href: /azure/data-explorer/kusto/query/windowsfunctions?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/window-functions?context=/fabric/context/context-rta&pivots=fabric
   - name: next()
-    href: /azure/data-explorer/kusto/query/nextfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/next-function?context=/fabric/context/context-rta&pivots=fabric
   - name: prev()
-    href: /azure/data-explorer/kusto/query/prevfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/prev-function?context=/fabric/context/context-rta&pivots=fabric
   - name: row_cumsum()
-    href: /azure/data-explorer/kusto/query/rowcumsumfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/row-cumsum-function?context=/fabric/context/context-rta&pivots=fabric
   - name: row_number()
-    href: /azure/data-explorer/kusto/query/rownumberfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/row-number-function?context=/fabric/context/context-rta&pivots=fabric
   - name: row_rank_dense()
-    href: /azure/data-explorer/kusto/query/rowrankdensefunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/row-rank-dense-function?context=/fabric/context/context-rta&pivots=fabric
   - name: row_rank_min()
-    href: /azure/data-explorer/kusto/query/rowrankminfunction?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/row-rank-min-function?context=/fabric/context/context-rta&pivots=fabric
   - name: row_window_session()
     href: /azure/data-explorer/kusto/query/row-window-session-function?context=/fabric/context/context-rta&pivots=fabric
 - name: Limits and Errors
@@ -1622,14 +1662,14 @@ items:
   - name: Query consistency
     href: /azure/data-explorer/kusto/concepts/queryconsistency?context=/fabric/context/context-rta&pivots=fabric
   - name: Query limits
-    href: /azure/data-explorer/kusto/concepts/querylimits?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/query-limits?context=/fabric/context/context-rta&pivots=fabric
   - name: Partial query failures
-    href: /azure/data-explorer/kusto/concepts/partialqueryfailures?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/concepts/partial-query-failures?context=/fabric/context/context-rta&pivots=fabric
     items:
     - name: Result truncation
-      href: /azure/data-explorer/kusto/concepts/resulttruncation?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/concepts/result-truncation?context=/fabric/context/context-rta&pivots=fabric
     - name: Runaway queries
-      href: /azure/data-explorer/kusto/concepts/runawayqueries?context=/fabric/context/context-rta&pivots=fabric
+      href: /azure/data-explorer/kusto/concepts/runaway-queries?context=/fabric/context/context-rta&pivots=fabric
     - name: Overflows
       href: /azure/data-explorer/kusto/concepts/overflow?context=/fabric/context/context-rta&pivots=fabric
 - name: Reference material for Kusto Query Language
@@ -1641,7 +1681,7 @@ items:
     href: /azure/data-explorer/kusto/query/jsonpath?context=/fabric/context/context-rta&pivots=fabric
   - name: SQL to Kusto cheat sheet
     displayName: Kusto
-    href: /azure/data-explorer/kusto/query/sqlcheatsheet?context=/fabric/context/context-rta&pivots=fabric
+    href: /azure/data-explorer/kusto/query/sql-cheat-sheet?context=/fabric/context/context-rta&pivots=fabric
   - name: Splunk to Kusto cheat sheet
     href: /azure/data-explorer/kusto/query/splunk-cheat-sheet?context=/fabric/context/context-rta&pivots=fabric
   - name: Timezones

@@ -99,7 +99,7 @@ batch_predictions = model.transform(test_spark)
 batch_predictions.show()
 ```
 
-## Next steps
+## Related content
 
 - Learn about [machine learning models](machine-learning-model.md).
 - Learn about [machine learning experiments](machine-learning-experiment.md).

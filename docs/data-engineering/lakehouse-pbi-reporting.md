@@ -30,6 +30,6 @@ The default semantic model is retrieving data from a lakehouse on demand. To mak
 
 One option is to give the user *Viewer* role in the workspace and grant necessary permissions to data using SQL security. Alternatively, the user can be given *Admin, Member, or Contributor* role to have full access to the data.
 
-## Next steps
+## Related content
 
 - [Default Power BI semantic models in Microsoft Fabric](../data-warehouse/semantic-models.md)

@@ -34,6 +34,6 @@ To learn about AppSource, see [What is Microsoft AppSource?](/marketplace/appsou
 
 Control which users in the organization can download and install template apps **not** listed on Microsoft AppSource.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

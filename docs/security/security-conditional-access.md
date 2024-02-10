@@ -52,6 +52,6 @@ The following steps show how to configure a conditional access policy for Micros
 1. Under **Access controls**, put your cursor in the **Grant** field. In the **Grant** side pane that appears, configure the policy you want to apply, and then click **Select**.
 1. Set the **Enable policy** toggle to **On**, then select **Create**.
 
-## Next steps
+## Related content
 
 * [Microsoft Entra Conditional Access documentation](/entra/identity/conditional-access/)

@@ -42,6 +42,6 @@ For example: You select a custom pool with node size of large, which is 16 Spark
 
 For more information about Spark compute sizes and their cores or memory options, see [What is Spark compute in Microsoft Fabric?](spark-compute.md).
 
-## Next steps
+## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).

@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 10/23/2023
+ms.date: 01/31/2024
 ms.search.form: Manage data in a KQL Database
 ---
 
@@ -19,6 +19,8 @@ ms.search.form: Manage data in a KQL Database
 Synapse Real-Time Analytics offers a range of options for managing your data, both on a database and table level. You can manage your data either through the UI of your KQL database or by using management commands. Management commands, also known as control commands, are requests to the service to retrieve information that isn't necessarily data in the database tables, or requests to modify the service state.
 
 For more information, see [Management commands](/azure/data-explorer/kusto/management/index?context=/fabric/context/context&pivots=fabric)
+
+[!INCLUDE [managed-identity](../includes/real-time-analytics/managed-identity.md)]
 
 ## Data retention policy
 
@@ -36,7 +38,7 @@ For more information, see [Caching policy](data-policies.md#caching-policy).
 
 To expose the data in your KQL database to all Microsoft Fabric experiences, create a OneLake shortcut.
 
-For more information, see [One logical copy](onelake-mirroring.md).
+For more information, see [One logical copy](one-logical-copy.md).
 
 ## Table update policy
 

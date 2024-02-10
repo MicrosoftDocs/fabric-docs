@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/05/2023
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -118,6 +118,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
   - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
+  - Currently, sharing a warehouse directly with a SPN is not supported. 
 
 ## Data protection features
 

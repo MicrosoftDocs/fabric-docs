@@ -36,6 +36,6 @@ Power BI integration with [Azure Log Analytics](/power-bi/transform-model/log-an
 
 When the switch is on, administrators and Premium workspace owners can [configure **Azure Log Analytics for Power BI**](/power-bi/transform-model/log-analytics/desktop-log-analytics-configure).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

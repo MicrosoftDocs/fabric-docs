@@ -5,11 +5,10 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 01/21/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -103,7 +102,7 @@ Here's an example with illustrations that to help demonstrate how autobinding ac
 
 #### Avoid using auto-binding
 
-In some cases, you might not want to use auto-binding. For example, if you have one pipeline for developing organizational semantic models, and another for creating reports. In this case, you might want all the reports to always be connected to datasets in the production stage of the pipeline they belong to. To accomplish this, avoid using the auto-binding feature.
+In some cases, you might not want to use auto-binding. For example, if you have one pipeline for developing organizational semantic models, and another for creating reports. In this case, you might want all the reports to always be connected to semantic models in the production stage of the pipeline they belong to. To accomplish this, avoid using the auto-binding feature.
 
 :::image type="content" source="media/understand-the-deployment-process/no-auto-binding.png" alt-text="A diagram showing two pipelines. Pipeline A has a semantic model in every stage and pipeline B has a report in every stage. All the reports from pipeline B are connected to the semantic model in the production stage of pipeline A.":::
 
@@ -136,23 +135,26 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Dataflows
+* Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
-* [Notebooks](../../data-engineering/how-to-use-notebook.md)
+* [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Paginated reports
-* Reports
-* [Warehouse](../../data-warehouse/data-warehousing.md)
-* Semantic models
+* Reports (based on supported semantic models)
+* Semantic models (except for Direct Lake semantic models)
+* [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 
 Deployment pipelines doesn't support the following items:
 
+* Dataflows Gen2
+* Data pipelines
 * Datasets that don't originate from a *.pbix*
+* Direct Lake semantic model
 * PUSH datasets
 * Streaming dataflows
-* Reports based on unsupported datasets
+* Reports based on unsupported semantic models
 * [Template app workspaces](/power-bi/connect-data/service-template-apps-create#create-the-template-workspace)
 * Workbooks
 * Metrics
@@ -254,7 +256,7 @@ The following are a few examples of how you may integrate incremental refresh wi
 
 * Create a pipeline from a production workspace that has a semantic model that uses incremental refresh. This is done by using [backwards deployment](./deploy-content.md#backwards-deployment). For example, assign the workspace to a new pipeline's *production* stage, and use backwards deployment to deploy to the *test* stage, and then to the *development* stage.
 
-* Publish a dataset that uses incremental refresh to a workspace that's part of an existing pipeline.
+* Publish a semantic model that uses incremental refresh to a workspace that's part of an existing pipeline.
 
 #### Incremental refresh limitations
 
@@ -274,15 +276,15 @@ Other changes such as adding a column, removing a column, and renaming a calcula
 
 Using [composite models](/power-bi/transform-model/desktop-composite-models) you can set up a report with multiple data connections.
 
-You can use the composite models functionality to connect a Fabric semantic model to an external dataset such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
+You can use the composite models functionality to connect a Fabric semantic model to an external semantic models such as Azure Analysis Services. For more information, see [Using DirectQuery for Fabric semantic models and Azure Analysis Services](/power-bi/connect-data/desktop-directquery-datasets-azure-analysis-services).
 
-In a deployment pipeline, you can use composite models to connect a dataset to another Fabric semantic model external to the pipeline.
+In a deployment pipeline, you can use composite models to connect a semantic model to another Fabric semantic model external to the pipeline.
 
 ### Automatic aggregations
 
-[Automatic aggregations](/power-bi/enterprise/aggregations-auto) are built on top of user defined aggregations and use machine learning to continuously optimize DirectQuery datasets for maximum report query performance.
+[Automatic aggregations](/power-bi/enterprise/aggregations-auto) are built on top of user defined aggregations and use machine learning to continuously optimize DirectQuery semantic models for maximum report query performance.
 
-Each dataset keeps its automatic aggregations after deployment. Deployment pipelines doesn't change a dataset's automatic aggregation. This means that if you deploy a semantic model with an automatic aggregation, the automatic aggregation in the target stage remains as is, and isn't overwritten by the automatic aggregation deployed from the source stage.
+Each semantic model keeps its automatic aggregations after deployment. Deployment pipelines doesn't change a semantic model's automatic aggregation. This means that if you deploy a semantic model with an automatic aggregation, the automatic aggregation in the target stage remains as is, and isn't overwritten by the automatic aggregation deployed from the source stage.
 
 To enable automatic aggregations, follow the instructions in [configure the automatic aggregation](/power-bi/enterprise/aggregations-auto-configure).
 
@@ -381,19 +383,21 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
-### Dataset limitations
+* The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
+
+### Semantic model limitations
 
 * Datasets that use real-time data connectivity can't be deployed.
 
-* A dataset with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.md#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode-that-uses-variation-or-auto-datetime-tables).
+* A semantic model with DirectQuery or Composite connectivity mode that uses variation or [auto date/time](/power-bi/transform-model/desktop-auto-date-time) tables, isn’t supported. For more information, see [What can I do if I have a dataset with DirectQuery or Composite connectivity mode, that uses variation or calendar tables?](../faq.md#what-can-i-do-if-i-have-a-dataset-with-directquery-or-composite-connectivity-mode-that-uses-variation-or-auto-datetime-tables).
 
-* During deployment, if the target dataset is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets), the source dataset must use this connection mode too.
+* During deployment, if the target semantic model is using a [live connection](/power-bi/connect-data/desktop-report-lifecycle-datasets), the source semantic model must use this connection mode too.
 
-* After deployment, downloading a dataset (from the stage it's been deployed to) isn't supported.
+* After deployment, downloading a semantic model (from the stage it's been deployed to) isn't supported.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Dataset deployment might fail if there are both native query and proxy models as data sources.
+* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
 
@@ -415,6 +419,6 @@ This section lists most of the limitations in deployment pipelines.
 
 * To deploy a datamart, you need to be the datamart owner.
 
-## Next steps
+## Related content
 
 [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

@@ -57,6 +57,7 @@ Control activity | Description
 [Azure Databricks activity](azure-databricks-activity.md) | Runs an Azure Databricks job (Notebook, Jar, Python).
 [Azure Machine Learning activity](azure-machine-learning-activity.md) | Runs an Azure Machine Learning job.
 [Deactivate activity](deactivate-activity.md) | Deactivates another activity.
+[Fail](fail-activity.md) | Cause pipeline execution to fail with a customized error message and error code.
 [Filter](filter-activity.md) | Apply a filter expression to an input array.
 [ForEach](foreach-activity.md) | ForEach Activity defines a repeating control flow in your pipeline. This activity is used to iterate over a collection and executes specified activities in a loop. The loop implementation of this activity is similar to the Foreach looping structure in programming languages.
 [Functions activity](functions-activity.md) | Executes an Azure Function.
@@ -100,6 +101,9 @@ The general settings will always include **Name** and **Description** fields for
 |(Advanced properties) Secure output |When checked, output from the activity isn't captured in logging. |
 |(Advanced properties) Secure input |The number of seconds between each retry attempt. |
 
-## Next steps
+> [!NOTE]
+> There is a default limit of maximum 40 activities per pipeline, which includes inner activities for containers.
 
-[Create your first pipeline](create-first-pipeline-with-sample-data.md)
+## Related content
+
+- [Create your first pipeline](create-first-pipeline-with-sample-data.md)

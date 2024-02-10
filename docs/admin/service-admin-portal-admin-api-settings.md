@@ -20,7 +20,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Allow service principals to use read-only admin APIs
 
-Web apps registered in Azure Active Directory (Azure AD) use an assigned service principal to access read-only admin APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group. By including the service principal in the allowed security group, you're giving the service principal read-only access to all the information available through admin APIs (current and future). For example, user names and emails, semantic model, and report detailed metadata.
+Web apps registered in Microsoft Entra ID use an assigned service principal to access read-only admin APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group. By including the service principal in the allowed security group, you're giving the service principal read-only access to all the information available through admin APIs (current and future). For example, user names and emails, semantic model, and report detailed metadata.
 
 :::image type="content" source="media/tenant-settings/allow-service-principals-tenant-setting.png" alt-text="Screenshot of allow service principals tenant setting.":::
 
@@ -48,6 +48,6 @@ To learn more, see [Metadata scanning](/power-bi/enterprise/service-admin-metada
 > [!NOTE]
 > For this setting to apply to service principals, make sure the tenant setting **Allow service principals to use read-only admin APIs** is enabled. To learn more, see [Set up metadata scanning](metadata-scanning-setup.md).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

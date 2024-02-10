@@ -44,7 +44,7 @@ Learn more on adding Spark libraries to an [Environment](environment-manage-libr
 > [!NOTE]
 > Note that library installation may take some time.
 
-## Next steps
+## Related content
 
 - [Migrate Spark configurations](migrate-synapse-spark-configurations.md)
 - [Migrate Spark notebooks](migrate-synapse-notebooks.md)

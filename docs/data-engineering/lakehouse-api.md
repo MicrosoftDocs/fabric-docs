@@ -331,7 +331,7 @@ Possible operation status for table maintenance:
 * Canceled - Job canceled
 * Deduped - An instance of the same job type is already running and this job instance is skipped
 
-## Next steps
+## Related content
 
 - [Load to Tables](load-to-tables.md) Lakehouse feature.
 - [Use table maintenance feature to manage delta tables in Fabric](lakehouse-table-maintenance.md).
