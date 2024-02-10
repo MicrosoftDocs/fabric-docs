@@ -41,7 +41,7 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 To work with Fabric APIs you need the following:
 
-* A Fabric license. If you don't have a license, you can [sign up for a free trial](https://powerbi.microsoft.com/fabric/).
+* A Fabric license. If you don't have a license, you can [sign up for a free trial](https://www.microsoft.com/microsoft-fabric).
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
@@ -117,7 +117,7 @@ You can find the complete script in [Commit select changes to Git](https://githu
 
 1. Log into Azure and get authentication.
 1. Connect to workspace.
-1. Call the [Get status](/rest/api/fabric/core/git/ge-status) API to see which items workspace were changed.
+1. Call the [Get status](/rest/api/fabric/core/git/get-status) API to see which items workspace were changed.
 1. Select the specific items to commit.
 1. Call the [Commit To Git](/rest/api/fabric/core/git/commit-to-git) API to commit the selected changes from the workspace to the connected remote branch.
 
