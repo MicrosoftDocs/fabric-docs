@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Pierre, Nimrod
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/05/2024
+ms.date: 02/10/2024
 ---
 
 # Automate Git integration by using APIs and Azure DevOps
