@@ -289,6 +289,11 @@
           "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
           "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
           "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
+          "redirect_url": "/fabric/data-engineering/library-management",
+          "redirect_document_id": true
         }
     ]
 }
