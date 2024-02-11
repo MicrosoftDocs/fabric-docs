@@ -48,7 +48,7 @@ In this article, you learn how to create an Eventhouse, add new databases to an 
 
 1. The [database details](create-database.md#database-details) page opens for the default database in the newly created Eventhouse. To view all the databases in this Eventhouse or create new databases, select the **Eventhouse** menu item.
 
-    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page" lightbox="media/eventhouse/choose-eventhouse.png":::
+    :::image type="content" source="media/eventhouse/choose-eventhouse.png" alt-text="Screenshot of choosing Eventhouse from database details page." lightbox="media/eventhouse/choose-eventhouse.png":::
 
 ## View all databases in an Eventhouse
 
