@@ -62,7 +62,7 @@ landingContent:
             url: ../admin/portal-workspaces.md
           - text: Govern capacity resources
             url:  /power-bi/enterprise/service-admin-premium-manage 
-          - text: Tenant multi-cloud abilities
+          - text: Tenant multicloud abilities
             url: ../admin/service-admin-premium-multi-geo.md                                                                       
 
   # Card 3
