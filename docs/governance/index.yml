@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page # Required
   author: paulinbar
   ms.author: painbar
-  ms.date: 02/08/2024
+  ms.date: 02/11/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -62,11 +62,11 @@ landingContent:
             url: ../admin/portal-workspaces.md
           - text: Govern capacity resources
             url:  /power-bi/enterprise/service-admin-premium-manage 
-          - text: Tenant multi-cloud abilities
+          - text: Tenant multicloud abilities
             url: ../admin/service-admin-premium-multi-geo.md                                                                       
 
   # Card 3
-  - title: Encourage data discovery and use
+  - title: Encourage data discovery, trust, and use
     linkLists:
       - linkListType: how-to-guide
         links:
@@ -84,7 +84,7 @@ landingContent:
             url:  metadata-scanning-overview.md                           
 
   # Card 4
-  - title: Uncover insights and Act
+  - title: Monitor, uncover insights and act
     linkLists:
       - linkListType: concept
         links:
