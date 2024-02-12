@@ -52,9 +52,27 @@ items:
 - name: Secure and manage data
   items:
   - name: Secure data
-    href: onelake-security.md
-  - name: Get started with securing data in OneLake
-    href: get-started-security.md
+    href: ./security/onelake-security.md
+  - name: OneLake Data Access Control Model
+  - href: ./security/data-access-control-model.md
+  - name: Get started with data access roles
+    href: ./security/get-started-data-access-roles.md
+  - name: Best Practices with securing data in OneLake
+  - href: ./security/best-practices-securing-data-in-onelake.md
+  - name: How To Secure Data in OneLake
+    items:
+    - name: For Data Science
+    - href: ./security/how-to-secure-data-in-onelake-for-data-science.md
+    - name: For Data Warehousing
+    - href: ./security/how-to-secure-data-in-onelake-for-data-warehousing.md
+    - name: For Semantic Modeling
+    - href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling.md
+    - name: For data access via OneLake API
+    - href: ./security/how-to-secure-data-in-onelake-for-onelake-api.md
+    - name: For data access via Databricks
+    - href: ./security/how-to-secure-data-for-databricks.md
+    - name: For AI modeling
+    - href: ./security/how-to-secure-data-for-ai-modeling.md
   - name: Plan for disaster recovery
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
