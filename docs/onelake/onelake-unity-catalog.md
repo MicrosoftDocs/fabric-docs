@@ -50,7 +50,6 @@ databricks_config = {
 }
 
 fabric_config = {
-    # Fabric
     'workspace_id': "<workspace_id>",
     'lakehouse_id': "<lakehouse_id>",
     'shortcut_connection_id': "<connection_id>",
@@ -67,7 +66,7 @@ fabric_config = {
 
 ### Notes
 
-- The sync notebook works with both managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables (i.e. more than one ADLS Gen2), the recommendation is to run the sync notebook separately by each Cloud connection.
+- The sync notebook works with both managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables (i.e. more than one ADLS Gen2), the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
 - Access policies (grants) defined in Unity Catalog aren't inherited into Fabric. Only tables are synced.
 
