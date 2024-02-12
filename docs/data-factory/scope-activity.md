@@ -42,7 +42,7 @@ Select the **ADLA Account** tab of the Scope activity. Select an existing accoun
 
 :::image type="content" source="media/scope-activity/scope-activity-azure-data-lake-analytics-account-settings-tab.png" alt-text="Screenshot showing the ADLA Account settings tab of the Scope activity.":::
 
-### Script settings
+### Script Settings
 
 Select the **Script** tab of the Scope activity and select an existing or create a new script connection, as well as a script path for the activity. Optionally provide any script parameters, and advanced settings for the script.
 
