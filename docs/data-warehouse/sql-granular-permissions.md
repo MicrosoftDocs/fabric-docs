@@ -7,7 +7,7 @@ ms.reviewer: wiassaf, stwynant
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 02/12/2024
 ms.search.form: Warehouse roles and permissions # This article's title should not change. If so, contact engineering.
 ---
 
@@ -19,14 +19,13 @@ When the default permissions provided by assignment to workspace roles or grante
 
 For [!INCLUDE [fabric-se](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)]:
 
-- Object-level-security can be managed using GRANT, REVOKE, and DENY syntax.
-    - For more information, see T-SQL syntax for [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true).
+- Object-level-security can be managed using [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) T-SQL syntax.
 - Users can be assigned to SQL roles, both custom and built-in database roles.
 
 ## User granular permissions
 
-- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the item **Read** permission.  Without **Read** permission at a minimum, the connection fails.
-- If you'd like to set up a user's granular permissions prior to allowing them to connect to the warehouse, permissions can first be set up within SQL. Then, they can be given access by assigning them to a Workspace role or granting item permissions.
+- In order for a user to connect to the database, the user must be assigned to a Workspace role or assigned the item **Read** permission. Without **Read** permission at a minimum, the connection fails.
+- If you'd like to set up a user's granular permissions before allowing them to connect to the warehouse, permissions can first be set up within SQL. Then, they can be given access by assigning them to a Workspace role or granting item permissions.
 
 ### Limitations
 
@@ -58,7 +57,7 @@ FROM sys.fn_my_permissions('<schema-name>.<object-name>', 'Object');
 
 ## View permissions granted explicitly to users
 
-When connected via the SQL connection string, a user with elevated permissions can query the permissions that have been granted by using system views. This doesn't show the users or user permissions that are given to users by being assigned to workspace roles or assigned item permissions.
+When connected via the SQL connection string, a user with elevated permissions can query granted permissions by using system views. This doesn't show the users or user permissions that are given to users by being assigned to workspace roles or assigned item permissions.
 
 ```sql
 SELECT DISTINCT pr.principal_id, pr.name, pr.type_desc, 
@@ -81,4 +80,3 @@ You can secure column filters and predicate-based row filters on tables in [!INC
 - [Security for data warehousing in Microsoft Fabric](security.md)
 - [GRANT](/sql/t-sql/statements/grant-transact-sql?view=fabric&preserve-view=true), [REVOKE](/sql/t-sql/statements/revoke-transact-sql?view=fabric&preserve-view=true), and [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true)
 - [How to share your warehouse and manage permissions](share-warehouse-manage-permissions.md)
-
