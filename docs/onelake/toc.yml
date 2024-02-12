@@ -70,4 +70,4 @@ items:
   - name: OneLake compute and storage consumption
     href: onelake-consumption.md
   - name: OneLake capacity consumption
-    href: OneLake-capacity-consumption
+    href: OneLake-capacity-consumption.md

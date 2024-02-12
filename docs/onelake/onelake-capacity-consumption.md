@@ -1,3 +1,12 @@
+---
+title: OneLake Capacity Consumption
+description: Information on how OneLake uses Fabric capacity and how storage is billed.
+ms.author: nishas
+author: nishas
+ms.topic: how-to
+ms.date: 02/12/2024
+---
+
 # Fabric Capacity and OneLake consumption
 
 You only need one capacity to drive all your Microsoft Fabric experiences, including Microsoft OneLake.  Keep reading if you want a detailed example of how OneLake consumes storage and compute.
@@ -21,13 +30,13 @@ Refer to the [OneLake consumption page](../onelake/onelake-consumption.md) to le
  
  :::image type="content" source="media\onelake-capacity-consumption\onelakecompute.png" alt-text="Diagram showing how OneLake compute is viewed in Fabric Metrics app" lightbox="media\onelake-capacity-consumption\onelakecompute.png":::
 
-Notice in the screenshot that the "Billing Type" for OneLake transactions is marked as "non-billable." This is because OneLake transactions are currently not consuming Fabric CU seconds (see “[Known issues](https://learn.microsoft.com/en-us/fabric/get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app?wt.mc_id=fabric_inproduct_knownissues)"). This is a temporary situation.  Check [OneLake consumption](../onelake/onelake-consumption.md) for updates on when OneLake transactions will change to “billable” and count against your capacity limits.
+Notice in the screenshot that the "Billing Type" for OneLake transactions is marked as "non-billable." This is because OneLake transactions are currently not consuming Fabric CU seconds (see “[Known issues](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)"). This is a temporary situation.  Check [OneLake consumption](../onelake/onelake-consumption.md) for updates on when OneLake transactions will change to “billable” and count against your capacity limits.
 
 To understand more about the various terminology on the metrics app, refer to [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
 
 You may be wondering, how do shortcuts impact my OneLake usage? In the above scenario, both storage and compute are billed to Capacity1. Now, let’s say you have a second capacity Capacity2, that contains Workspace2. You create a lakehouse and create a shortcut to the parquet file you uploaded in workspace1. You create a notebook to query the parquet file. As the data is being accessed by Capacity2, the compute or transaction cost for this read operation will consume CU from Capacity2. The storage will continue to be billed to Capacity1. 
  
-:::image type="content" source="media\onelake-capacity-consumption\shortcutbilling.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app" lightbox="media\onelake-capacity-consumption\shortcutbilling.png":::
+:::image type="content" source="media\onelake-capacity-consumption\shortcutbilling.png" alt-text="Diagram showing how shortcut billing is done per capacity" lightbox="media\onelake-capacity-consumption\shortcutbilling.png":::
 
 What if you pause the capacity? Let’s say Capacity2 is paused and Capacity1 is not paused. When Capacity2 is paused, you can’t read the data using the shortcut from Workspace2 in Capacity2, however, you can access the data directly in Workspace1. Now, if Capacity1 is paused and Capacity2 is resumed, you will not be able to read the data using Capacity1/Workspace1, however, you will be able to read data using the shortcut that was already created in Capacity2/Workspace2. In both these cases, as the data is still stored in Capacity1, the data stored is billed to Capacity1.
 
