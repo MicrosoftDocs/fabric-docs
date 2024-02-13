@@ -29,7 +29,7 @@ landingContent:
       - linkListType: concept
         links:
           - text: OneLake security
-            url: ../onelake/onelake/onelake-security.md                           
+            url: ../onelake/onelake-security.md                           
       - linkListType: how-to-guide
         links:
           - text: Configure Multi-Geo support for Fabric
