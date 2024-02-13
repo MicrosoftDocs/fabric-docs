@@ -1,5 +1,5 @@
 ---
-title: Known issue - Power BI Desktop sign-in prompt shows unsupported personal Microsoft accounts
+title: Known issue - Power BI Desktop sign-in prompt shows unsupported personal Microsoft accounts.
 description: A known issue is posted where Power BI Desktop sign-in prompt shows unsupported personal Microsoft accounts
 author: mihart
 ms.author: jessicamo
@@ -22,7 +22,7 @@ Power BI requires users to sign in with an organizational account, which are mar
 
 ## Symptoms
 
-When you try to sign in to Power BI Desktop, you may see personal accounts listed in the authentication UI that are different than the email address you originally typed to sign in. Trying to sign in with a **Microsoft account** results in an error like "Unable to sign in. We couldn't authenticate your sign-in request. To resolve this, retry again without Web Account Manager" or "You can't sign in here with a personal account. Use your work or school account instead."
+When you try to sign in to Power BI Desktop, you may see personal accounts listed in the authentication UI that are different than the email address you originally typed to sign in. Trying to sign in with a **Microsoft account** results in an error like "Unable to sign in. We couldn't authenticate your sign-in request. To resolve this error, retry again without Web Account Manager" or "You can't sign in here with a personal account. Use your work or school account instead."
 
 ## Solutions and workarounds
 

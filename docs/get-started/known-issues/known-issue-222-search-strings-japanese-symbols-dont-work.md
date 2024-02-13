@@ -27,7 +27,7 @@ When using the global search box in the header of the Power BI service, you may 
 
 ## Solutions and workarounds
 
-No workarounds at this time. When the fix is released, this article will be updated.
+No workarounds at this time. When the fix is released, this article is updated.
 
 ## Related content
 

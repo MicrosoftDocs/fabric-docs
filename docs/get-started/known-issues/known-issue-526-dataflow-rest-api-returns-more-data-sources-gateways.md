@@ -26,7 +26,7 @@ In the API response, you see other data sources and gateways available, not only
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+No workarounds at this time. This article is updated when the fix is released.
 
 ## Related content
 
