@@ -193,8 +193,6 @@ items:
       href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
-    - name: Affected rows number displayed doesn't match the real row number
-      href: known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md
     - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files
       href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
     - name: Get Tenant Settings API returns default values instead of user configured values
