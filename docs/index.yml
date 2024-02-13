@@ -146,12 +146,12 @@ conceptualContent:
           - url: /power-bi/troubleshoot/
             itemType: concept
             text: Troubleshoot issues
-          footerLink:
-            url: get-started/index.yml
-            text: See more
           - url: /power-bi/support/service-support-options
             itemType: concept
             text: Create a support ticket
+          footerLink:
+            url: get-started/index.yml
+            text: See more
 
 productDirectory:
   title: Explore Microsoft Fabric experiences
