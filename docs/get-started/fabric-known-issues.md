@@ -6,9 +6,8 @@ ms.author: jessicamo
 ms.topic: troubleshooting    
 ms.date: 02/13/2024
 ms.custom:
-  - build-2023
-  - ignite-2023
 ---
+
 # Fabric known issues
 
 This page lists known issues for Fabric features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive embedded Power BI report](https://support.fabric.microsoft.com/known-issues/).
