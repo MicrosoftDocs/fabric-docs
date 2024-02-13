@@ -84,7 +84,7 @@ In addition to the item definition files, each item directory contains one or tw
 ```json
 { 
     "type": "report", 
-    "displayName": "All visual ypes vv31333",
+    "displayName": "All visual types",
     "description": "This is a report"
 } 
 ```
@@ -127,8 +127,8 @@ In version 2, instead of having two source files in each item directory, the *Pl
         "logicalId": "e553e3b0-0260-4141-a42a-70a24872f88d"
     },
     "metadata": {
-        "type": "report",
-        "displayName": "All visual ypes vv31333",
+        "type": "Report",
+        "displayName": "All visual types",
         "description": "This is a report"
     }
 }
@@ -145,7 +145,9 @@ The PlatformProperties.json file contains the following attributes:
 ---
 
 > [!NOTE]
-> Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
+>
+> - The `type` field is case-sensitive. Don't change the way it's automatically generated or it might fail.
+> - Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
 
 ## Related content
 
