@@ -165,38 +165,14 @@ items:
       href: known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
     - name: InProgress status shows in Fabric capacity metrics app for completed queries
       href: known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
-    - name: Unable to start new Spark session after deleting all libraries
-      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
-    - name: Selecting view account link in account manager shows wrong page
-      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
     - name: Refresh history reports in progress for some tables that failed
       href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
     - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
-    - name: Fabric items can't be created in a workspace moved to a capacity in a different region
-      href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
-    - name: Notebook fails to load after workspace migration
-      href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
-    - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
-      href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
-    - name: Fabric user sees workspace git status column display synced for unsupported items
-      href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
-    - name: Not able to add lookup activity output to body of Office 365 activity
-      href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 
-    - name: OneLake file explorer does not contain items under my workspace
-      href: known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md  
     - name: Warehouse's object explorer doesn't support case-sensitive object names
       href: known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
-    - name: Data Warehouse only publishes Delta Lake Logs for Inserts
-      href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
-    - name: Pipeline isn't loading if user deployed with update app via public API
-      href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
-    - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files
-      href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
-    - name: Get Tenant Settings API returns default values instead of user configured values
-      href: known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md
     - name: Contributor can't update organizational app
       href: known-issues/known-issue-571-contributor-can-not-update-organizational-app.md
     - name: Version 17 of the Fabric Capacity Metrics app doesn't work
