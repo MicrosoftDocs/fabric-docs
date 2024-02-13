@@ -146,7 +146,7 @@ The PlatformProperties.json file contains the following attributes:
 
 > [!NOTE]
 >
-> - The `type` field is case-sensitive. Don't change the way it's automatically generated or it might fail.
+> - The *type* field is case-sensitive. Don't change the way it's automatically generated or it might fail.
 > - Though you should not generally change the *logicalId* or *display name* of an item, one exception might be if you're creating a new item by copying an existing item directory. In that case, you do need to change the *logicalId* and the *display name* to something unique in the repository.
 
 ## Related content
