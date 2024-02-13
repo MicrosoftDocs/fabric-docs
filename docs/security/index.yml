@@ -25,7 +25,11 @@ landingContent:
           - text: Security in Microsoft Fabric
             url: security-overview.md
           - text: Microsoft Fabric security fundamentals
-            url: security-fundamentals.md            
+            url: security-fundamentals.md 
+      - linkListType: concept
+        links:
+          - text: OneLake security
+            url: ../onelake/onelake/onelake-security.md                           
       - linkListType: how-to-guide
         links:
           - text: Configure Multi-Geo support for Fabric
