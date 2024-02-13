@@ -45,6 +45,8 @@ Select the **Title** to view more information about that specific known issue.
 ## Recently closed known issues
 Select the **Title** to view more information about that specific known issue. Known issues are organized in descending order by date. Fixed issues are removed after 46 days.
 
+|  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date  | 
+|-----------|-------------------------|----------------------------------|----------------------|------------------|
 |  577   | OneLake  | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md)  | December 13, 2023  | Fixed: February 2, 2024  |
 |  553   | OneLake, Administration & Management  | [OneLake compute transactions don't count against capacity limits](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023  | Fixed: January 19, 2024  |
 |  598   | Data Factory  | [Failed to publish Dataflow Gen2](known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md)  | November 11, 2023      | Fixed: January 12, 2024  |
