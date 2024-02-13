@@ -10,7 +10,7 @@ ms.custom:
 
 # Fabric known issues
 
-This page lists known issues for Fabric features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive embedded Power BI report](https://support.fabric.microsoft.com/known-issues/).
+This page lists known issues for Fabric and Power BI features. Before submitting a Support request, review this list to see if the issue that you're experiencing is already known and being addressed. Known issues are also available as an [interactive embedded Power BI report](https://support.fabric.microsoft.com/known-issues/).
 
 For service level outages or degradation notifications, check [https://support.fabric.microsoft.com/](https://support.fabric.microsoft.com/).  
 
@@ -25,9 +25,9 @@ Select the **Title** to view more information about that specific known issue.
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
 |  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 |
 |  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
-|  570  | Power BI |[Version 17 of the Fabric Capacity Metrics app doesn't work](known issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md)    | November 30, 2023 |
+|  570  | Power BI |  [Version 17 of the Fabric Capacity Metrics app doesn't work](known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md)    | November 30, 2023 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
-|  552  | Power BI  |  [Autoscale not triggered by carry forward accumulated usage](known issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md)    | November 22, 2023  |
+|  552  | Power BI  |  [Autoscale not triggered by carry forward accumulated usage](known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md)   | November 22, 2023  |
 |  549  | Data Warehouse | [Making model changes to a semantic model might not work](known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md)  | November 15, 2023 |
 |  532 | Power BI | [Sign in fails for securely embedded reports using Chrome or Microsoft Edge browser](known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md)    | October 18, 2023 |
 |  530  | Administration & Management | [Creating or updating Fabric items is blocked](known-issues/known-issue-530-creating-updating-fabric-items-blocked.md)  | October 23, 2023 |
