@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/29/2024
+ms.date: 02/13/2024
 ---
 
 # Understand the metrics app compute page
@@ -30,9 +30,15 @@ The multi metric column ribbon displays the following four values. You'll see th
 
 * **Users** - The number of users that performed operations.
 
-## Capacity utilization and throttling
+## Consumption analysis
 
-Displays usage and throttling for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
+Use the consumption analysis visual to analyze your capacity's load. The visual displays [usage](#utilization), [throttling](#throttling) and [overages](#overages) for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
+
+You can’t compare the information in the interactive delay and interactive rejection visuals, with the information in the background rejection visual. 100% overload in the interactive delay and interactive rejection visuals, doesn’t necessarily equate to $1 \over 6$ of an hour in the throttling visuals.
+
+* **Background rejection** - High percent throttling numbers indicate you’ve overused your daily capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection will stop once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you’ve used 2.5 the amount of your daily capacity resources. To reduce your future consumption to less than a day (under 100%), you’ll need to wait for 1.5 days or 36 hours.
+
+* **Interactive delay and interactive rejection** - These visuals don’t include future capacity smoothing. When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. For example, a 250% interactive delay means that Fabric is attempting to fit 25 minutes of consumption into the next 10 minutes. However, you might have background smoothed consumption in future timepoints.
 
 ### Utilization  
 
