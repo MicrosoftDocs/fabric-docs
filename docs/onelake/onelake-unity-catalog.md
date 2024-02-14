@@ -52,7 +52,9 @@ databricks_config = {
 fabric_config = {
     'workspace_id': "<workspace_id>",
     'lakehouse_id': "<lakehouse_id>",
-    'shortcut_connection_id': "<connection_id>"
+    'shortcut_connection_id': "<connection_id>",
+    # If True, UC table renames and deletes will be considered
+    "consider_dbx_uc_table_changes": True
 }
 ```
 
@@ -60,12 +62,13 @@ fabric_config = {
 
 :::image type="content" source="media\onelake-unity-catalog\notebook-output.png" alt-text="Screenshot showing notebook output.":::
 
-### Notes
+### Things to consider
 
 - The notebook works with both Unity Catalog managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
 - Security and governance metadata need to be redefined within Fabric explicitly as they are in Unity Catalog.
-- Change to Unity Catalog table schemas like add / delete columns are reflected when shortcuts are created. However, some updates like table rename and deletion require a notebook resync / rerun. 
+- Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically. However, some updates like table rename and deletion require a notebook resync / rerun. 
+- For production scenarios, we recommend using Databricks OAuth for authentication and Azure Key Vault to manage secrets. You can use the MSSparkUtils Credentials Utilities for the latter.
 
 
 ## Related content
