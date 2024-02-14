@@ -36,7 +36,7 @@ To understand more about the various terminologies on the metrics app, refer to 
 
 You may be wondering, how do shortcuts impact my OneLake usage? In the above scenario, both storage and compute are billed to Capacity1. Now, let’s say you have a second capacity Capacity2, that contains Workspace2. You create a lakehouse and create a shortcut to the parquet file you uploaded in workspace1. You create a notebook to query the parquet file. As Capacity2 accesses the data, the compute or transaction cost for this read operation consumes CU from Capacity2. The storage continues to be billed to Capacity1. 
  
-:::image type="content" source="media\onelake-capacity-consumption\shortcutbilling.png" alt-text="Diagram showing how shortcut billing is done per capacity" lightbox="media\onelake-capacity-consumption\shortcutbilling.png":::
+:::image type="content" source="media\onelake-capacity-consumption\shortcutbillingdiagram.jpg" alt-text="Diagram showing how shortcut billing is done per capacity" lightbox="media\onelake-capacity-consumption\shortcutbillingdiagram.jpg":::
 
 What if you pause the capacity? Let’s say Capacity2 is paused and Capacity1 isn't paused. When Capacity2 is paused, you can’t read the data using the shortcut from Workspace2 in Capacity2, however, you can access the data directly in Workspace1. Now, if Capacity1 is paused and Capacity2 is resumed, you can't read the data using Workspace1 in Capacity1. However, you're able to read data using the shortcut that was already created in Workspace2 in Capacity2. In both these cases, as the data is still stored in Capacity1, the data stored is billed to Capacity1.
 
