@@ -63,10 +63,7 @@ To learn more about protection settings for sensitivity labels, see [Restrict ac
 
 ## Increase the number of users who can edit and republish encrypted PBIX files (preview)
 
-When enabled, users with [restrictive sensitivity permissions in the Microsoft Purview compliance portal](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions).
-
-> [!NOTE]
-> The [Enable Less Elevated User feature switch in Power BI Desktop](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label.
+When enabled, users with [restrictive sensitivity permissions](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions)(provided that the appropriate [preview feature switch](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) in Power BI Desktop is on).
 
 ### Restrictive sensitivity permissions
 
