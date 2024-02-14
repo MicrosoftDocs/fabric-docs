@@ -29,6 +29,10 @@ To create a new shortcut, use the [Create shortcut operation](/rest/api/fabric/c
 
 ### OneLake shortcuts
 
+Here's how to create a new internal OneLake shortcut programmatically using the [OneLake shortcuts REST API](/rest/api/fabric/core/onelake-shortcuts/create-shortcut). To create these shortcuts with the UI, [follow this guide](create-onelake-shortcut.md).
+
+Perform the following REST API operation.
+
 #### Request
 
 ```http
@@ -73,7 +77,11 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/caa1a599-df36-4f94-83b4
 
 ### Azure Data Lake Storage (ADLS) Gen2
 
+Here's how to create a new ADLS Gen2 shortcut programmatically using the [OneLake shortcuts REST API](/rest/api/fabric/core/onelake-shortcuts/create-shortcut). To create these shortcuts with the UI, [follow this guide](create-adls-shortcut.md).
+
 First [create a cloud connection](../data-factory/data-source-management.md#add-a-data-source) to be used by the shortcut when connecting to the ADLS Gen2 data location. Open the cloud connection's Settings view and copy the connection ID; this is a GUID.
+
+Perform the following REST API operation.
 
 #### Request
 
@@ -119,7 +127,11 @@ Location: https://api.fabric.microsoft.com/v1/workspaces/caa1a599-df36-4f94-83b4
 
 ### Amazon S3
 
+Here's how to create a new Amazon S3 shortcut programmatically using the [OneLake shortcuts REST API](/rest/api/fabric/core/onelake-shortcuts/create-shortcut). To create these shortcuts with the UI, [follow this guide](create-s3-shortcut.md).
+
 First [create a cloud connection](../data-factory/data-source-management.md#add-a-data-source) to be used by the shortcut when connecting to the Amazon S3 data location. Open the cloud connection's Settings view and copy the connection ID; this is a GUID.
+
+Perform the following REST API operation.
 
 #### Request
 
