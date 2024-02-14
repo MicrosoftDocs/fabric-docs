@@ -147,6 +147,6 @@ The following users can't access the Purview hub:
 * Free users (a Pro license is required)
 * Guest users
 
-## Next steps
+## Related content
 
 * [Use Microsoft Purview to govern Microsoft Fabric](./microsoft-purview-fabric.md)

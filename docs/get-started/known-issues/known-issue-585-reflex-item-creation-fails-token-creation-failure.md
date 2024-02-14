@@ -27,6 +27,6 @@ Follow these steps to work around the issue:
 1. Remove `&clientSideAuth=0` from the URL in address bar of your browser, and reload your Power BI report.
 1. Proceed as normal to create your reflex trigger.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

@@ -42,7 +42,7 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 - **LightGBMRanker**: used for building ranking models. For example, to predict the relevance of website search results, we could build a ranking model with `LightGBMRanker`.
 
 
-## Next steps
+## Related content
 
 - [How to use LightGBM models with SynapseML in Microsoft Fabric](how-to-use-lightgbm-with-synapseml.md)
 - [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)

@@ -68,7 +68,7 @@ The following permissions are required to create a table clone:
 
 Due to its autonomous existence, both the original source and the clones can be deleted without any constraints. Once a clone is created, it remains in existence until deleted by the user.
 
-- Users with Admin, Member, or Contributor [workspace roles] (workspace-roles.md) can delete the table clone within the workspace.
+- Users with Admin, Member, or Contributor [workspace roles](workspace-roles.md) can delete the table clone within the workspace.
 - Users who have [ALTER SCHEMA](/sql/t-sql/statements/alter-schema-transact-sql?view=fabric&preserve-view=true) permissions on the schema in which the table clone resides can delete the table clone.
 
 ### Table clone inheritance

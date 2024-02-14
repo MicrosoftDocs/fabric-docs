@@ -61,7 +61,7 @@ FabricDataFrame is the primary data structure that semantic link uses to propaga
 FabricDataFrame supports all pandas operations and more.
 It exposes semantic functions and the [add-measure](semantic-link-power-bi.md#data-augmentation-with-power-bi-measures) method that enable you to use Power BI measures in your data science work.
 
-## Next steps
+## Related content
 
 - [Deepen your expertise of SemPy through the SemPy reference documentation](/python/api/semantic-link/overview-semantic-link/)
 - [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)

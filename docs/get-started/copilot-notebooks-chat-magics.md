@@ -7,7 +7,7 @@ ms.topic: how-to #Required; leave this attribute/value as-is
 ms.custom:
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 11/14/2023
+ms.date: 01/16/2024
 
 #CustomerIntent: As a data scientist, data engineer, or business analyst using notebooks in Microsoft Fabric, I want to understand the capabilities of the Chat-magics library to enhance my notebook interactions.
 ---
@@ -17,8 +17,7 @@ ms.date: 11/14/2023
 
 The Chat-magics Python library enhances your data science and engineering workflow in Microsoft Fabric notebooks. It seamlessly integrates with the Fabric environment, and allows execution of specialized IPython magic commands in a notebook cell, to provide real-time outputs. IPython magic commands and more background on usage can be found here: https://ipython.readthedocs.io/en/stable/interactive/magics.html#. 
 
-> [!NOTE]
-> Copilot in Fabric is currently rolling out in public preview and is expected to be available for all customers by end of March 2024. 
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Capabilities of Chat-magics
 
@@ -28,7 +27,7 @@ The `%%chat` command allows you to ask questions about the state of your noteboo
 
 ### Dataframe descriptions
 
-The `%%describe` command provides summaries and descriptions of loaded dataframes. This simplifies the data exploration phase.
+The `%describe` command provides summaries and descriptions of loaded dataframes. This simplifies the data exploration phase.
 
 ### Commenting and debugging
 
@@ -79,8 +78,8 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 
 ## Advanced commands for data operations
 
-### %%describe, %%add_comments, and %%fix_errors
-1. Use **%%describe DataFrameName** in a new cell to obtain an overview of a specific dataframe.
+### %describe, %%add_comments, and %%fix_errors
+1. Use **%describe DataFrameName** in a new cell to obtain an overview of a specific dataframe.
 1. To add comments to a code cell for better readability, type %%add_comments to the top of the cell you want to annotate and then execute. Be sure to validate the code is correct
 1. For code error fixing, type %%fix_errors at the top of the cell that contained an error and execute it.
 
@@ -97,6 +96,6 @@ Chat-magics enhances your productivity and workflow in Microsoft Fabric notebook
 1. Use `%pin DataFrameName` to help the AI focus on specific dataframes.
 2. To clear the AI to focus on a new task in your notebook, type %new_task followed by a task that you are about to undertake. This clears the execution history that copilot knows about to this point and can make future responses more relevant.
 
-## Next steps
+## Related content
 
 - [How to use Copilot Pane](./copilot-notebooks-chat-pane.md)

@@ -1,5 +1,5 @@
 ---
-title: Multi-Geo support for Fabric Premium
+title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: KesemSharabi
 ms.author: kesharab
@@ -9,13 +9,13 @@ ms.subservice: powerbi-premium
 ms.custom:
   - ignite-2023
 ms.topic: how-to
-ms.date: 11/23/2023
+ms.date: 01/28/2024
 LocalizationGroup: Premium
 ---
 
-# Configure Multi-Geo support for Fabric Premium
+# Configure Multi-Geo support for Fabric
 
-Multi-Geo is a Fabric Premium feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric Premium customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
+Multi-Geo is a Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 Sovereign clouds support Multi-Geo across regions within that cloud.
 
@@ -60,7 +60,6 @@ The following items are stored in the Premium region when Multi-Geo is enabled:
 These items remain in the home region for the tenant:
 
 - Push datasets
-- Excel workbooks
 - Dashboard/report metadata: tile names, tile queries, and any other data
 - Service buses for gateway queries or scheduled refresh jobs
 - Permissions

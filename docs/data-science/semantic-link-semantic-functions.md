@@ -115,7 +115,7 @@ The following points provide a breakdown of the code snippet:
 - Calling the function also supplies standard data types such as `str`, `int`, `float`, and `datetime` to define required input columns.
 - The type annotation of the first parameter (`df`) shows that the function is applicable to a FabricDataFrame, rather than a FabricSeries.
 
-## Next steps
+## Related content
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
 - [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)

@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 12/18/2023
+ms.date: 01/29/2024
 ---
 
 # Understand the metrics app compute page
@@ -36,7 +36,7 @@ Displays usage and throttling for the selected capacity. Use the tabs at the top
 
 ### Utilization  
 
-Displays CU usage over time. 
+Displays CU usage over time.
 
 :::image type="content" source="media/fabric-cross-filter.gif" alt-text="Animation that shows cross-filtered data in the multi metric ribbon chart." lightbox="media/fabric-cross-filter.gif":::
 
@@ -49,7 +49,7 @@ Use the tabs at the top right corner of the visual to toggle how the visual is d
 The utilization chart displays the following elements:
 
 * **Background %** - Blue columns represent the percent of CU consumption used during background operations in a 30-second period. This column refers to billable operations.
-    
+
     [*Background*](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) operations cover backend processes that aren't directly triggered by users, such as data refreshes.
 
 * **Interactive %** - Red columns represent the percent of CU consumption used during interactive operations in a 30-second period. This column refers to billable operations.
@@ -63,6 +63,12 @@ The utilization chart displays the following elements:
 * **Autoscale CU % Limit** - An orange dotted line that shows the percent of CU consumption for autoscaled capacities. The line represents timepoints where the capacity is overloaded.
 
 * **CU % Limit** - A grey dotted line that shows the threshold of the allowed percent of CU consumption for the selected capacity. Columns that stretch above this line, represent timepoints where the capacity is overloaded.
+
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+
+* *No filters applied* - Columns display the peak timepoint every six minutes.
+
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 ### Throttling
 
@@ -97,6 +103,12 @@ The throttling chart displays the following elements:
 
   * **Background rejection** - Background operations get rejected when *24 hours Background %* smoothing crosses the *Background rejection* threshold.
 
+Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
+
+* *No filters applied* - Columns display the peak timepoint every six minutes.
+
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
+
 ### Overages
   
 Displays the *add*, *burndown*, and *cumulative* carryforward over time. Carryforward only takes into account billable operations.
@@ -115,9 +127,9 @@ Once you select a column in the chart, you can use the *Explore* button to drill
 
 Filters applied to the page in the [Multi metric ribbon chart](#multi-metric-ribbon-chart), affect this chart's display as follows:
 
-* *No filters applied* - Columns display the peak timepoint per hour.
+* *No filters applied* - Columns display the peak timepoint every 20 minutes.
 
-* *Filters are applied* - The visuals displays every 30-second timepoint.
+* *Filters are applied* - The visuals displays every 30-second timepoint. To view granular data, select a date from the multi metric ribbon chart's x-axis.
 
 >[!NOTE]
 >Peak is calculated as the highest number of seconds from both [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations.
@@ -127,11 +139,23 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 >[!NOTE]
 >Non billable usage does not drain capacity or lead to throttling or auto scale.
 
+## System Events
+
+Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md).
+
+The system events table displays the following elements:
+
+  * **Time** - The time the capacity was paused or resumed.
+  
+  * **State** - The state of the capacity. *Suspended* indicates that the capacity was paused. *Active* indicates that the capacity was resumed.
+  
+  * **State Change Reason** - Displays the event trigger.
+
 ## Matrix by item and operation
 
-A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the following parameters. The colors in the table represent your *performance delta*.
+A matrix table that displays metrics for each item on the capacity. To gain a better understanding of your capacity's performance, you can sort this table according to the parameters listed in this section. The colors in the table represent your *performance delta*.
 
-User can hover over any value in the visual to see operation level data. User can also filter the visual with item kind slicer and add or remove columns using optional columns slicer.
+You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
 * **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
 

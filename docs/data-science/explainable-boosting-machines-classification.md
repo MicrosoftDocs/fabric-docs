@@ -187,7 +187,7 @@ These data preparation steps are crucial for aligning the data format with the r
 Now divide the dataset into training and testing sets using a straightforward split. 70% of the data is allocated for training and 30% for testing the model:
 
 ```python
-# Decide on the split between training and testing data from the dataframe 
+# Decide on the split between training and test data from the dataframe 
 trainingFraction = 0.7
 testingFraction = (1-trainingFraction)
 seed = 1234
@@ -273,7 +273,7 @@ print('Features are', first['features'])
 print('Feature scores are', first['featurescores'])
 ```
 
-## Next steps
+## Related content
 
 - [InterpretML explainable boosting machine: How it Works](https://interpret.ml/docs/ebm.html#how-it-works)
 - [Track models with MLflow](mlflow-autologging.md)

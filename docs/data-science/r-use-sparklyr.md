@@ -183,7 +183,7 @@ summary(fit)
 
 ### Use the model
 
-You can apply the model on the testing dataset by calling `ml_predict()`.
+You can apply the model on the test dataset by calling `ml_predict()`.
 
 ```R
 pred <- ml_predict(fit, partitions$test)
@@ -202,7 +202,7 @@ spark_disconnect(sc)
 ```
 
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 
