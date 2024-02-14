@@ -216,3 +216,7 @@ DELETE https://api.fabric.microsoft.com/v1/workspaces/{workspaceId}/items/{itemI
 #### Response
 
 Status code: `200`
+
+## Related content
+
+- [OneLake Shortcuts](onelake-shortcuts.md)

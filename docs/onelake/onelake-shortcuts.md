@@ -245,3 +245,4 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
