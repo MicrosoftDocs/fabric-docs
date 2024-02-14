@@ -64,7 +64,7 @@ fabric_config = {
 
 ### Schedule the notebook
 
-If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) within a data pipeline.
+If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a data pipeline within Fabric Data Factory.
 
 For the latter scenario, if you intend to pass parameters from the pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md).
 
@@ -73,8 +73,8 @@ For the latter scenario, if you intend to pass parameters from the pipeline, des
 - The notebook works with both Unity Catalog managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
 - Security and governance metadata need to be redefined within Fabric explicitly as they are in Unity Catalog.
-- Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically in the shortcuts. However, some updates like table rename and deletion require a notebook resync / rerun. 
-- For production scenarios, we recommend using Databricks OAuth for authentication and Azure Key Vault to manage secrets. You can use the MSSparkUtils Credentials Utilities for the latter.
+- Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. 
+- For production scenarios, we recommend using Databricks OAuth for authentication and Azure Key Vault to manage secrets. You can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 
 
 ## Related content
