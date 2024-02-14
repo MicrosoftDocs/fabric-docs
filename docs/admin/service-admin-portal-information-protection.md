@@ -92,7 +92,7 @@ For more information, see [Sensitivity label change enforcement](/power-bi/enter
 
 ### Desktop preview feature switch for editing by users with restrictive sensitivity permissions
 
-The **Less Elevated User** feature switch in Power BI Desktop must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. Desktop users can check to make sure the switch is selected by opening Power BI Desktop and navigating to **File** > **Options and settings** > **Options** > **Preview features**. The **Less Elevated User feature** switch is selected by default, but if for some reason it isn't selected, the user should select it.
+The **Less elevated user support** feature switch in Power BI Desktop must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. Desktop users can check to make sure the switch is selected by opening Power BI Desktop and navigating to **File** > **Options and settings** > **Options** > **Preview features**. The **Less elevated user support** switch is selected by default, but if for some reason it isn't selected, the user should select it.
 
 ## Related content
 
