@@ -88,7 +88,7 @@ The following are the restrictions that apply to users with restrictive sensitiv
 
 These restrictions ensure that protection is preserved and control of protection settings remains with users that have higher permission levels.
 
-For more information, see [Sensitivity label change enforcement](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement).
+For more information, see [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md).
 
 ### Desktop preview feature switch for editing by users with restrictive sensitivity permissions
 
