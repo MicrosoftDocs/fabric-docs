@@ -80,4 +80,4 @@ For the latter scenario, if you intend to pass parameters from the pipeline, des
 ## Related content
 
 - [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)
-- [Migrate Hive Metastore metadata](../data-engineering/migrate-synapse-hms-metadata.md)
+- [OneLake shortcuts](onelake-shortcuts.md)
