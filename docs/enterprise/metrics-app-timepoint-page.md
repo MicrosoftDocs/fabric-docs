@@ -7,12 +7,15 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/09/2024
+ms.date: 02/14/2024
 ---
 
 # Understand the metrics app timepoint page
 
 All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity's usage.
+
+>[!NOTE]
+>The storage page table only shows results for Fabric items in the selected capacity. Fabric items in other capacities are not displayed in the table.
 
 Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurred. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID.
 
