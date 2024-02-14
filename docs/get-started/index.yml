@@ -72,3 +72,16 @@ landingContent:
         links:
           - text: Workspace access control
             url: give-access-workspaces.md
+            
+  # Card 
+  - title: Get Help
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Use the integrated Help pane
+            url: fabric-help-pane.md
+          - text: Check for known issues
+            url: fabric-known-issues.md
+          - text: Contact Support
+            url: /power-bi/support/service-support-options
+   
