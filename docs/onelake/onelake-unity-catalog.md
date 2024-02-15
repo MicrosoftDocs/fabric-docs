@@ -29,7 +29,7 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2.md).
 
-2. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
+2. Once you create the connection, obtain the connection ID by selecting **Settings** ![Settings gear icon](../data-factory/media/connector-common/settings.png) > **Manage connections and gateways** > **Connections** > **Settings**.
 
 :::image type="content" source="media\onelake-unity-catalog\adlsgen2-conn.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
 
@@ -37,9 +37,11 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabric lakehouse as follows:
 
-1. **Import sync notebook** to Fabric your workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables.
+:::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
-2. **Configure the parameters** in the first cell to integrate Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
+1. **Import sync notebook** to your Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. 
+
+2. **Configure the parameters** in the first cell to integrate Unity Catalog tables. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
 ```python
 databricks_config = {
