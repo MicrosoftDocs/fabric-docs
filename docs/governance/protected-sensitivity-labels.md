@@ -31,7 +31,9 @@ To prevent this situation and enable more users to work with protected PBIX file
 
 * They can't export to formats that don't support sensitivity labels, such as CSV files.
 * They can't change the label on the PBIX file.
-* They can only republish the PBIX file to the original workspace the file came from. (Note: The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.)
+* They can only republish the PBIX file to the original workspace the file came from. 
+   >[!NOTE]
+   >The file must have been published at least once for other users to be able to publish it back to that specific workspace. If the file hasn't yet been published, then the latest label issuer (the one who most recently set the protected label) or a user with sufficient usage rights must publish it and then share the file with the other editors.)
 
 These restrictions ensure that the security of the content remains under the control of those who have high enough permissions to set the label.
 
