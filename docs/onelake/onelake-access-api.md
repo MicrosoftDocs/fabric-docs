@@ -59,7 +59,7 @@ For quick, ad-hoc testing of OneLake using direct API calls, here's a simple exa
 
   ```powershell
   az login --allow-no-subscriptions
-  $bearerToken = Get-AzAccessToken -ResourceTypeName Storage
+  $testToken = Get-AzAccessToken -ResourceTypeName Storage
   $testToken.Token | Set-Clipboard
   ```
 
