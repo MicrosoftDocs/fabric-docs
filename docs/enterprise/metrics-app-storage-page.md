@@ -78,6 +78,16 @@ A column chart that shows cumulative billable storage by date and hour. Cumulati
 
 User can export the report's data by selecting Export Data. Selecting Export Data takes you to a page with a matrix visual that displays billable storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
 
+## Considerations and limitations
+
+The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're saved in OneLake:
+
+| Experience          | Fabric item |
+|---------------------|-------------|
+| Data Activator      | Reflex      |
+| Lakehouse           | Lakehouse   |
+| Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+
 ## Related content
 
 - [Understand the metrics app compute page](metrics-app-compute-page.md)
