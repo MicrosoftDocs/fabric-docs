@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/14/2024
+ms.date: 02/15/2024
 ---
 # Protected sensitivity labels in Fabric and Power BI
 
@@ -25,7 +25,7 @@ If the label on the item was set via an automated process, such as inheritance f
 
 In Power BI Desktop, protected labels control not only the ability to change or remove the protected label, but also access to content (viewing, editing, exporting, etc.). As a result, collaboration scenarios with protected PBIX files might be blocked, since it's unlikely that most users will have sufficient usage rights under the label to open and edit the file. 
 
-For example, imagine that you create a report in Power BI Desktop, apply a protected label to it, and then share the PBIX file with another user. It is quite likely that the user won't have sufficient permissions to open the file.
+For example, imagine that you create a report in Power BI Desktop, apply a protected label to it, and then share the PBIX file with another user. It's quite likely that the user won't have sufficient permissions to open the file.
 
 To prevent this situation and enable more users to work with protected PBIX files, the Fabric administrator should enable the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** tenant setting. When this setting is enabled, more users (see note) will able to open, edit, and publish/republish protected PBIX files, with the following restrictions:
 
@@ -44,7 +44,7 @@ These restrictions ensure that the security of the content remains under the con
 > * Copy and extract content (EXTRACT)
 > * Allow Macros (OBJMODEL)
 
-These usage rights are a subset of the Co-Author permissions preset in the Microsoft Purview Microsoft Purview compliance portal.
+These usage rights are a subset of the Co-Author permissions preset in the Microsoft Purview compliance portal.
 
 In addition, the **Less elevated user support** preview feature switch in Power BI Desktop must be selected. See [Desktop preview feature switch for editing by users with restrictive sensitivity permissions](../admin/service-admin-portal-information-protection.md#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) for detail.
 
