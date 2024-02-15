@@ -577,8 +577,6 @@
         href: notebook-activity.md
       - name: Office 365 Outlook activity
         href: outlook-activity.md
-      - name: Scope activity
-        href: scope-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Set Variable Activity
