@@ -85,7 +85,7 @@ items:
       - name: Data connectors overview
         href: data-connectors/data-connectors.md
       - name: Apache Flink
-        href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-flink.md
       - name: Apache Kafka
         href: get-data-kafka.md
       - name: Apache Log4J 2
