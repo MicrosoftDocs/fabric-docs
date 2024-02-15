@@ -49,7 +49,7 @@ dbx_workspace = "<databricks_workspace_url>"
 dbx_token = "<pat_token>"
 # Unity Catalog
 dbx_uc_catalog = "catalog1"
-dbx_uc_schemas = ["schema1", "schema2"]
+dbx_uc_schemas = '["schema1", "schema2"]'
 
 # Fabric
 fab_workspace_id = "<workspace_id>"
@@ -69,12 +69,14 @@ If you want to execute the notebook at regular intervals to integrate Unity Cata
 
 In the latter scenario, if you intend to pass parameters from the data pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
 
+:::image type="content" source="media\onelake-unity-catalog\pipeline-params.png" alt-text="Screenshot showing notebook activity parameters.":::
+
 ### Other considerations
 
+- For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. For instance, you can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 - The notebook works with both Unity Catalog managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
 - Changes to Unity Catalog table schemas like add / delete columns are reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. This is considered by `fab_consider_dbx_uc_table_changes ` parameter.
-- For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. For instance, you can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 
 
 ## Related content
