@@ -32,7 +32,7 @@ Connect to OneLake from PowerShell by following these steps:
     ```
 
 1. Create the storage account context.
-   - Storage account name is **one lake**.
+   - Storage account name is **onelake**.
    - Set `-UseConnectedAccount` to passthrough your Azure credentials.
    - Set `-endpoint` as `fabric.microsoft.com`.
 

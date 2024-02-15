@@ -6,7 +6,7 @@ ms.author: jessicamo
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
 ms.topic: troubleshooting
-ms.date: 08/10/2023
+ms.date: 02/24/2024
 ms.custom: known-issue-482
 ---
 
@@ -16,7 +16,7 @@ Power BI requires users to sign in with an organizational account, which are mar
 
 **APPLIES TO:** ✔️ Power BI Desktop
 
-**Status:** Open
+**Status:** Fixed: February 14, 2024
 
 **Problem area:** Account & License
 
