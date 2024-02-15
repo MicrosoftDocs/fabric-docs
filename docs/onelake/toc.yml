@@ -45,7 +45,7 @@ items:
     href: onelake-azure-storage-explorer.md
   - name: Azure Databricks
     href: onelake-azure-databricks.md
-  - name: Unity Catalog
+  - name: Databricks Unity Catalog
     href: onelake-unity-catalog.md
   - name: Azure HDInsight
     href: onelake-azure-hdinsight.md

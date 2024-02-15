@@ -1,6 +1,6 @@
 ---
-title: Integrate Unity Catalog with OneLake
-description: Learn how to sync Unity Catalog Delta tables to OneLake using shortcuts.
+title: Integrate Databricks Unity Catalog with OneLake
+description: Learn how to sync Databricks Unity Catalog Delta tables to OneLake using shortcuts.
 ms.reviewer: snehagunda
 ms.author: aimurg
 author: murggu
@@ -27,7 +27,7 @@ Before you connect, you must have:
 
 First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen2) your Unity Catalog tables are using. This Cloud storage connection is used by OneLake shortcuts. To create a Cloud connection to the appropriate Unity Catalog storage location:
 
-1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2-overview.md).
+1. Create a Cloud storage connection used by your Unity Catalog tables. See how to set up a [ADLS Gen2 connection](../data-factory/connector-azure-data-lake-storage-gen2.md).
 
 2. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
 
