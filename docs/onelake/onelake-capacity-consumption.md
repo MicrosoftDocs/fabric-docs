@@ -21,14 +21,14 @@ To illustrate, let’s walk through an example. Let’s say you purchase an F2 S
 Since OneLake storage operates on a pay-as-you-go model, a separate charge for "OneLake Storage" appears in your bill corresponding to the 450 MB of data stored.
 If you're a capacity admin, you can view your storage consumption in the [Fabric Capacity Metrics app](../enterprise/metrics-app-storage-page.md). Open the Storage tab and choose Experience as "lake" to see the cost of OneLake storage. If you have multiple workspaces in the capacity, you can see the storage per workspace.
  
- :::image type="content" source="media\onelake-capacity-consumption\onelakestorage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app" lightbox="media\onelake-capacity-consumption\onelakestorage.png":::
+ :::image type="content" source="media\onelake-capacity-consumption\onelake-storage.png" alt-text="Diagram showing how OneLake storage is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-storage.png":::
 
  ## OneLake Compute
 Requests to OneLake, such as reading, writing, or listing, consumes your Fabric capacity. OneLake follows similar [mapping](/azure/storage/blobs/map-rest-apis-transaction-categories) of APIs to operations like ADLS. The CU consumption per each type of operation can be viewed in the Fabric Capacity Metrics app. In our example, the file upload resulted in a write transaction that consumed 127.46 CU Seconds of Fabric Capacity. This consumption is reported as "OneLake Write via Proxy" in the operation name in Capacity Metrics App.
 Now let’s read this data using a Fabric notebook. You consume 1.39 CU Seconds of read transactions. This consumption is reported as "OneLake Read via Redirect" in the Metrics app.
 Refer to the [OneLake consumption page](../onelake/onelake-consumption.md) to learn more about how each type of operation consumes capacity units.
  
- :::image type="content" source="media\onelake-capacity-consumption\onelakecompute.png" alt-text="Diagram showing how OneLake compute is viewed in Fabric Metrics app" lightbox="media\onelake-capacity-consumption\onelakecompute.png":::
+ :::image type="content" source="media\onelake-capacity-consumption\onelake-compute.png" alt-text="Diagram showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::
 
 Notice in the screenshot that the "Billing Type" for OneLake transactions is marked as "non-billable." This classification is because OneLake transactions are currently not consuming Fabric CU seconds (see “[Known issues](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)"). Reporting as "non-billable" is a temporary situation. Check [OneLake consumption](../onelake/onelake-consumption.md) for updates on when OneLake transactions change to "billable" and count against your capacity limits.
 
@@ -36,7 +36,7 @@ To understand more about the various terminologies on the metrics app, refer to 
 
 You may be wondering, how do shortcuts impact my OneLake usage? In the above scenario, both storage and compute are billed to Capacity1. Now, let’s say you have a second capacity Capacity2, that contains Workspace2. You create a lakehouse and create a shortcut to the parquet file you uploaded in workspace1. You create a notebook to query the parquet file. As Capacity2 accesses the data, the compute or transaction cost for this read operation consumes CU from Capacity2. The storage continues to be billed to Capacity1. 
  
-:::image type="content" source="media\onelake-capacity-consumption\shortcut-billing.jpg" alt-text="Diagram showing how shortcut billing is done per capacity" lightbox="media\onelake-capacity-consumption\shortcut-billing.jpg":::
+:::image type="content" source="media\onelake-capacity-consumption\shortcut-billing.jpg" alt-text="Diagram showing how shortcut billing is done per capacity." lightbox="media\onelake-capacity-consumption\shortcut-billing.jpg":::
 
 What if you pause the capacity? Let’s say Capacity2 is paused and Capacity1 isn't paused. When Capacity2 is paused, you can’t read the data using the shortcut from Workspace2 in Capacity2, however, you can access the data directly in Workspace1. Now, if Capacity1 is paused and Capacity2 is resumed, you can't read the data using Workspace1 in Capacity1. However, you're able to read data using the shortcut that was already created in Workspace2 in Capacity2. In both these cases, as the data is still stored in Capacity1, the data stored is billed to Capacity1.
 
