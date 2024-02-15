@@ -39,7 +39,7 @@ Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabr
 
 :::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
-1. **Import sync notebook** to your Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your Unity Catalog. 
+1. **Import sync notebook** to your Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your metastore. 
 
 2. **Configure the parameters** in the first cell of the notebook to integrate Unity Catalog tables. The Databricks API, authenticated through PAT token, is utilized for exporting Unity Catalog tables. The following snippet is used to configure the source (Unity Catalog) and destination (OneLake) parameters. Ensure to replace them with your own values.
 
@@ -67,14 +67,14 @@ fab_consider_dbx_uc_table_changes = True
 
 If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a data pipeline within Fabric Data Factory.
 
-In the latter scenario, if you intend to pass parameters from the pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters.
+In the latter scenario, if you intend to pass parameters from the data pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters in the pipeline.
 
 ### Other considerations
 
 - The notebook works with both Unity Catalog managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
-- Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. 
-- For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. You can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
+- Changes to Unity Catalog table schemas like add / delete columns are reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. This is considered by `fab_consider_dbx_uc_table_changes ` parameter.
+- For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. For instance, you can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 
 
 ## Related content
