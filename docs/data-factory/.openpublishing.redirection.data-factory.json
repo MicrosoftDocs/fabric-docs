@@ -18,12 +18,12 @@
         {
             "source_path_from_root": "/docs/data-factory/pipeline-limitations.md",
             "redirect_url": "/fabric/data-factory/data-factory-limitations",
-            "redirect_document_id": true
+            "redirect_document_id": false
         },
         {
             "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
             "redirect_url": "/fabric/data-factory/data-factory-limitations",
-            "redirect_document_id": true
+            "redirect_document_id": false
         }
     ]
 }
