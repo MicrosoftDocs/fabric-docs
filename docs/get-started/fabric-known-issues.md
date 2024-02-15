@@ -22,7 +22,7 @@ Select the **Title** to view more information about that specific known issue.
 |-----------|-------------------------|----------------------------------|----------------------|
 |  624  | Administration & Management | [Tighter throttling limit for GetDatasourcesAsAdmin Admin API](known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md) | February 14, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
-|  616  | OneLake | [Under billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 |
+|  616  | OneLake | [Under-billing of OneLake storage for January 26 2024](known-issues/known-issue-616-under-billing-onelake-storage.md) | February 14, 2024 |
 |  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
