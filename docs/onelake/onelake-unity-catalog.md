@@ -22,7 +22,6 @@ Before you connect, you must have:
 - A [Fabric lakehouse](../data-engineering/tutorial-build-lakehouse.md) in your workspace.
 - Unity Catalog schemas and tables created within your Azure Databricks workspace. 
 
-:::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
 ## Set up your Cloud storage connection
 
@@ -37,6 +36,8 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 ## Run the notebook
 
 Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabric lakehouse as follows:
+
+:::image type="content" source="media\onelake-unity-catalog\uc-fabric-flow.png" alt-text="Screenshot showing Unity Catalog to Fabric shortcuts flow.":::
 
 1. **Import sync notebook** to your Fabric workspace.  [This notebook](./onelake-unity-catalog.md) exports all Unity Catalog tables metadata from a given catalog and schemas in your metastore. 
 
