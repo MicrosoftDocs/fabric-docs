@@ -6,11 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - build-2023
   - ignite-2023
 ms.date: 12/17/2023
-ms.search.form:
 ---
 
 # Introduction to Git integration (preview)

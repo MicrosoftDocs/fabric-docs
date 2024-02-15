@@ -6,7 +6,11 @@ items:
   - name: Security overview
     href: security-overview.md
   - name: Security fundamentals
-    href: security-fundamentals.md    
+    href: security-fundamentals.md   
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml  
+  - name: Admin documentation
+    href: ../admin/index.yml          
 - name: Security features
   items:
   - name: Guest user sharing
