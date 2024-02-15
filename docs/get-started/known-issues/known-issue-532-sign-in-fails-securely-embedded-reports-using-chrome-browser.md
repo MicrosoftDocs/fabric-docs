@@ -6,7 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 11/6/2023
+ms.date: 02/14/2024
 ms.custom: known-issue-532
 ---
 
@@ -16,7 +16,7 @@ You might not be able to sign in using the Chrome or Microsoft Edge browser to a
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: February 14, 2024
 
 **Problem area:** Publish Content
 

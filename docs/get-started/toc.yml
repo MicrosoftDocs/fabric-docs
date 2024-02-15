@@ -135,6 +135,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Tighter throttling limit for GetDatasourcesAsAdmin Admin API
+      href: known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md
+    - name: Using an inactive SQL analytics endpoint can show old data
+      href: known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md
+    - name: Under-billing of OneLake storage for January 26 2024
+      href: known-issues/known-issue-616-under-billing-onelake-storage.md
     - name: OneLake storage isn't billed for paused capacities
       href: known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md
     - name: Relationships in the default semantic model get dropped
