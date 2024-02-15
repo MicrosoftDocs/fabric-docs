@@ -62,7 +62,7 @@ fabric_config = {
 }
 ```
 
-3. **Run all cells** of the sync notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the Lakehouse explorer, SQL endpoint, and semantic model.
+3. **Run all cells** of the notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the lakehouse, SQL endpoint, and semantic model.
 
 :::image type="content" source="media\onelake-unity-catalog\notebook-output.png" alt-text="Screenshot showing notebook output.":::
 
@@ -70,7 +70,7 @@ fabric_config = {
 
 If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a data pipeline within Fabric Data Factory.
 
-For the latter scenario, if you intend to pass parameters from the pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md).
+In the latter scenario, if you intend to pass parameters from the pipeline, designate the first cell of the notebook as a [toggle parameter cell](../data-engineering/author-execute-notebook.md) and provide the appropriate parameters.
 
 ### Other considerations
 
