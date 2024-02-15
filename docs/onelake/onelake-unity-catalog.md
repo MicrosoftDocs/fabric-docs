@@ -74,7 +74,7 @@ For the latter scenario, if you intend to pass parameters from the pipeline, des
 - Views and non-Delta tables are skipped.
 - Security and governance metadata need to be redefined within Fabric explicitly as they are in Unity Catalog.
 - Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. 
-- For production scenarios, we recommend using Databricks OAuth for authentication and Azure Key Vault to manage secrets. You can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
+- For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. You can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 
 
 ## Related content
