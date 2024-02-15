@@ -7,15 +7,12 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/14/2024
+ms.date: 02/15/2024
 ---
 
 # Understand the metrics app timepoint page
 
 All the operations in your capacity are ranked according to their compute impact. The compute impact of all your capacity operations is what we call capacity usage, and it's measured using capacity units (CUs). Use this page to understand which [*interactive* and *background*](/power-bi/enterprise/service-premium-interactive-background-operations) operations contributed the most to your capacity's usage.
-
->[!NOTE]
->The storage page table only shows results for Fabric items in the selected capacity. Fabric items in other capacities are not displayed in the table.
 
 Scheduled and manual refresh workflows can trigger multiple internal operations in the backend service. For example, refreshes sometimes perform automatic retries if a temporary error occurred. These operations might be recorded in the app using different activity IDs. Each activity ID is represented as a row in the table. When reviewing the table, take into consideration that several rows may indicate a single action that triggers multiple operations, each with its own activity ID.
 
@@ -132,6 +129,16 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
 * **Burndown %** - The blue columns represent the percentage of carryforward burned down within the specified timepoint window.
   
 * **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
+
+## Considerations and limitations
+
+The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're saved in OneLake:
+
+| Experience          | Fabric item |
+|---------------------|-------------|
+| Data Activator      | Reflex      |
+| Lakehouse           | Lakehouse   |
+| Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 
 ## Related content
 
