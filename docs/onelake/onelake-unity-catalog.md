@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 02/15/2024
 ---
 
-# Integrate Unity Catalog with OneLake
+# Integrate Databricks Unity Catalog with OneLake
 
 This scenario shows how to integrate Unity Catalog Delta tables to OneLake using shortcuts. After completing this tutorial, you’ll be able to automatically sync your Unity Catalog Delta tables to a Microsoft Fabric lakehouse.
 
