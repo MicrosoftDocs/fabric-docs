@@ -689,17 +689,8 @@
         href: connector-troubleshoot-rest.md        
       - name: Sharepoint Online list
         href: connector-troubleshoot-sharepoint-online-list.md
-
     - name: Data Factory limitations
-      items:
-      - name: Data Factory limitations overview
-        href: data-factory-limitations.md
-      - name: Pipeline limitations
-        href: pipeline-limitations.md
-      - name: Pipeline resource limits
-        href: pipeline-resource-limits.md
-      - name: Dataflow Gen2 limitations
-        href: dataflow-gen2-limitations.md
+      href: data-factory-limitations.md
     - name: Data Factory known issues
       href: data-factory-known-issues.md
 
