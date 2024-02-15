@@ -31,6 +31,8 @@ First, examine which storage locations in Azure Data Lake Storage Gen2 (ADLS Gen
 
 2. Once you create the connection, obtain the connection ID by selecting  **Manage connections and gateways** > **Connections** > **Settings**.
 
+:::image type="content" source="media\onelake-unity-catalog\adlsgen2-conn.png" alt-text="Screenshot showing ADLS Gen2 connection ID.":::
+
 ## Run the notebook
 
 Once the Cloud connection ID is obtained, integrate Unity Catalog tables to Fabric lakehouse as follows:
@@ -72,7 +74,6 @@ For the latter scenario, if you intend to pass parameters from the pipeline, des
 
 - The notebook works with both Unity Catalog managed and external Delta tables. If you’re using multiple Cloud storage locations for your Unity Catalog tables, i.e. more than one ADLS Gen2, the recommendation is to run the notebook separately by each Cloud connection.
 - Views and non-Delta tables are skipped.
-- Security and governance metadata need to be redefined within Fabric explicitly as they are in Unity Catalog.
 - Changes to Unity Catalog table schemas like add / delete columns will be reflected automatically in the shortcuts. However, some updates like Unity Catalog table rename and deletion require a notebook resync / rerun. 
 - For production scenarios, we recommend using [Databricks OAuth](https://learn.microsoft.com/azure/databricks/dev-tools/auth/oauth-m2m) for authentication and Azure Key Vault to manage secrets. You can use the [MSSparkUtils](../data-engineering/microsoft-spark-utilities.md) credentials utilities to access Key Vault secrets.
 
