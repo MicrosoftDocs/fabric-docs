@@ -27,6 +27,8 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 
 You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse.
 
+You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
+
 ### Lakehouse
 
 When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse, while the **Files** folder is the unmanaged portion of the lakehouse.
@@ -243,3 +245,4 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)
