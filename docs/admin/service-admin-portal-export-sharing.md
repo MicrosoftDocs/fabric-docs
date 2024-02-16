@@ -174,11 +174,9 @@ If this setting is off, only users in your organization can create and receive e
 > [!IMPORTANT]
 > The **Allow email subscriptions to be sent to external users users** switch will be automatically turned off if the **B2B guest users can set up and be subscribed to email subscriptions** switch is turned off. This is because B2B users are external users that have been granted elevated permissions to get content. Since B2B guest users have higher permissions than other external users, if they can't get the email subscription neither can the other external users.
 
-## Users can send email subscriptions to external users
+## Users can send email subscriptions to guest users
 
-This setting helps organizations choose whether external users can be included as recipients of email subscriptions.
-
-External users are users outside of the organization that haven't been added as Microsoft Entra B2B guest users. If this setting is turned off, an external user who isn't already a guest user in the organization can't be included as a recipient of an email subscription.
+Users can send email subscriptions to guest users. With this setting off, users in your organization can't subscribe guest users to subscription emails.
 
 ## Featured content
 
