@@ -1,5 +1,5 @@
 ---
-title: OneLake Capacity Consumption
+title: OneLake Capacity Consumption Example
 description: Information on how OneLake uses Fabric capacity and how storage is billed.
 ms.author: nishas
 author: nishas
