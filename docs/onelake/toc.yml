@@ -51,8 +51,8 @@ items:
     href: onelake-powershell.md
 - name: Secure and manage data
   items:
-  - name: Secure data
-    href: ./security/onelake-security.md
+  - name: Fabric and OneLake data security
+    href: ./security/fabric-and-onelake-security.md
   - name: OneLake Data Access Control Model
   - href: ./security/data-access-control-model.md
   - name: Get started with data access roles
