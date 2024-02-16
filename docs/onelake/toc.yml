@@ -57,10 +57,14 @@ items:
     href: ./security/fabric-and-onelake-security.md
   - name: OneLake Data Access Control Model
   - href: ./security/data-access-control-model.md
-  - name: Get started with data access roles
-    href: ./security/get-started-data-access-roles.md
-  - name: Best Practices with securing data in OneLake
-  - href: ./security/best-practices-securing-data-in-onelake.md
+  - name: Get started with securing your data in OneLake
+    items:
+    - name: Overview
+      href: ./security/get-started-security.md
+    - name: Get started with data access roles
+      href: ./security/get-started-data-access-roles.md
+    - name: Best Practices
+    - href: ./security/best-practices-securing-data-in-onelake.md
   - name: How To Secure Data in OneLake
     items:
     - name: For Data Science
@@ -69,6 +73,10 @@ items:
     - href: ./security/how-to-secure-data-in-onelake-for-data-warehousing.md
     - name: For Semantic Modeling
     - href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling.md
+    - name: For Data Factory
+    - href: ./security/how-to-secure-data-in-onelake-for-data-factory.md
+    - name: For Real-Time Analytics
+    - href: ./security/how-to-secure-data-in-onelake-for-real-time-analytics.md
     - name: For data access via OneLake API
     - href: ./security/how-to-secure-data-in-onelake-for-onelake-api.md
     - name: For data access via Databricks
