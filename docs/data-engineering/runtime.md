@@ -101,7 +101,7 @@ Additionally, users should verify that all current and future production workloa
 
 ## Delta 2.2 vs Delta 2.4 changes
 
-In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuratios details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
+In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuration details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
 
 All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant. 
 
