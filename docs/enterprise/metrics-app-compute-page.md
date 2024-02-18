@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/15/2024
+ms.date: 02/18/2024
 ---
 
 # Understand the metrics app compute page
@@ -162,6 +162,20 @@ You can hover over any value in the visual to see operation level data. You can 
 * **Item kind** - The item type.
 
 * **Item name** - The item name.
+
+* **Rejected count** - The total number of rejected operations for an item.
+
+* **Failed count** - The total number of failed operations for an item.
+
+* **Invalid count** - The total number of invalid operations for an item.
+
+* **InProgress count** - The total number of operations that are in progress for an item.
+
+* **Successful count** - The total number of successful operations for an item.
+
+* **Virtualized item** - Displays *true* if the item is consumed by copilot, and *false* of it isn't.
+
+* **Virtualized workspace** - Displays *true* if the item is using a virtual network, and *false* if it isn't.
 
 * **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
 
