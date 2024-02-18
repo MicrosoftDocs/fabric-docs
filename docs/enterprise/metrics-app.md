@@ -17,7 +17,7 @@ ms.date: 02/18/2024
 
 Fabric resides on a capacity which is a pool of resources allocated to your platform. Each capacity has its own number of [Capacity Units (CU)](licenses.md). CUs are used to measure the compute power available for your capacity.
 
-The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
+The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.
 
