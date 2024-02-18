@@ -130,16 +130,6 @@ You can change the overages visual scale to display 10 minutes, 60 minutes and 2
   
 * **Cumulative %** - The red line represents the cumulative carryforward within the specified timepoint window. Cumulative percent is displayed on the secondary axis located on the right side of the visual.
 
-## Considerations and limitations
-
-The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're saved in OneLake:
-
-| Experience          | Fabric item |
-|---------------------|-------------|
-| Data Activator      | Reflex      |
-| Lakehouse           | Lakehouse   |
-| Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
-
 ## Related content
 
 * [Understand the metrics app compute page?](metrics-app-compute-page.md)
