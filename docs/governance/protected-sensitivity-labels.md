@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/15/2024
+ms.date: 02/18/2024
 ---
 # Protected sensitivity labels in Fabric and Power BI
 
@@ -27,7 +27,7 @@ In Power BI Desktop, protected labels control not only the ability to change or 
 
 For example, imagine that you create a report in Power BI Desktop, apply a protected label to it, and then share the PBIX file with another user. It's quite likely that the user won't have sufficient permissions to open the file.
 
-To prevent this situation and enable more users to work with protected PBIX files, the Fabric administrator should enable the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** tenant setting. When this setting is enabled, more users (see note) will able to open, edit, and publish/republish protected PBIX files, with the following restrictions:
+To prevent this situation and enable more users to work with protected PBIX files, the Fabric administrator should enable the **Users with co-author permissions can edit encrypted PBIX files (preview)** tenant setting. When this setting is enabled, more users (see note) will able to open, edit, and publish/republish protected PBIX files, with the following restrictions:
 
 * They can't export to formats that don't support sensitivity labels, such as CSV files.
 * They can't change the label on the PBIX file.

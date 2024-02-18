@@ -61,7 +61,7 @@ Sensitivity labels with protection settings include encryption or content markin
 
 To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
-## Increase the number of users who can edit and republish encrypted PBIX files (preview)
+## Users with co-author permissions can edit encrypted PBIX files (preview)
 
 When enabled, users with [restrictive sensitivity permissions](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions) (provided that the appropriate [preview feature switch](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) in Power BI Desktop is on).
 
