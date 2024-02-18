@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/19/2023
+ms.date: 02/18/2024
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -15,7 +15,9 @@ ms.date: 11/19/2023
 >[!NOTE]
 >The Microsoft Fabric Capacity Metrics app has been updated to include support for both EM/A and P SKUs.
 
-The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Monitoring your capacities is essential for making informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
+Fabric resides on a capacity which is a pool of resources allocated to your platform. Each capacity has its own number of [Capacity Units (CU)](licenses.md). CUs are used to measure the compute power available for your capacity.
+
+The Microsoft Fabric Capacity Metrics app is designed to provide monitoring capabilities for Microsoft Fabric capacities. Use the app to monitor your capacity consumption and make informed decisions on how to best use your capacity resources. For example, the app can help identify when to scale up your capacity or when to turn on [autoscale](/power-bi/enterprise/service-premium-auto-scale).
 
 The app is updated often with new features and functionalities and provides the most in-depth information into how your capacities are performing.
 
