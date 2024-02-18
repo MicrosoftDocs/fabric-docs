@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/11/2024
+ms.date: 02/18/2024
 ---
 
 # Tenant settings index
@@ -41,7 +41,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Create workspaces (new workspace experience)](portal-workspace.md#create-workspaces-new-workspace-experience)|Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, an upgraded workspace will be created when a template app is installed.|
+|[Create workspaces](portal-workspace.md#create-workspaces-new-workspace-experience)|Users in the organization can create app workspaces to collaborate on dashboards, reports, and other content. Even if this setting is disabled, a workspace will be created when a template app is installed.|
 |[Use semantic models across workspaces](portal-workspace.md#use-semantic-models-across-workspaces)|Users in the organization can use semantic models across workspaces if they have the required Build permission.|
 |[Block users from reassigning personal workspaces (My Workspace)](portal-workspace.md#block-users-from-reassigning-personal-workspaces-my-workspace)|Turn on this setting to prevent users from reassigning their personal workspaces (My Workspace) from Premium capacities to shared capacities.  [Learn More](https://aka.ms/RestrictMyFolderCapacity)|
 |[Define workspace retention period](portal-workspaces.md#workspace-retention)|Turn on this setting to define a retention period during which you can restore a deleted workspace and recover items in it. At the end of the retention period, the workspace is permanently deleted. By default, workspaces are always retained for a minimum of 7 days before they're permanently deleted.<br><br>Turn off this setting to accept the minimum retention period of 7 days. After 7 days the workspace and items in it will be permanently deleted.<br><br>Enter the number of days to retain a workspace before it's permanently deleted. My Workspace workspaces will be retained for 30 days automatically. Other workspaces can be retained for up to 90 days.|
@@ -55,6 +55,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Automatically apply sensitivity labels to downstream content](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)|With this setting enabled, whenever a sensitivity label is changed or applied to Fabric content, the label will also be applied to its eligible downstream content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153971)|
 |[Allow workspace admins to override automatically applied sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement#relaxations-to-accommodate-automatic-labeling-scenarios)|With this setting enabled, workspace admins can change or remove sensitivity labels that were applied automatically by Fabric, for example, as a result of label inheritance.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2154646)|
 |[Restrict content with protected labels from being shared via link with everyone in your organization](service-admin-portal-information-protection.md#restrict-content-with-protected-labels-from-being-shared-via-link-with-everyone-in-your-organization)|This setting will prevent content with protection settings in the sensitivity label from being shared via link with everyone in your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2160554)|
+|[Users with co-author permissions can edit encrypted PBIX files (preview)](./service-admin-portal-information-protection.md#increase-the-number-of-users-who-can-edit-and-republish-encrypted-pbix-files-preview)|Users who are granted co-author permissions in the Microsoft Purview compliance portal can open and edit protected PBIX files from Power BI Desktop. Some limitations apply. [Learn More](https://go.microsoft.com/fwlink/?linkid=2247658)|
 
 ## [Export and sharing settings](service-admin-portal-export-sharing.md)
 
