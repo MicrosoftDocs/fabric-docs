@@ -80,7 +80,7 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're saved in OneLake:
+The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
 
 | Experience          | Fabric item |
 |---------------------|-------------|
