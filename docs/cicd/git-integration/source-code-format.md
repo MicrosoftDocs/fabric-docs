@@ -5,7 +5,7 @@ author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual 
-ms.date: 11/15/2023
+ms.date: 02/15/2024
 ms.custom: ignite-2023
 ---
 
@@ -21,7 +21,7 @@ Inside each item directory are the [item definition files](#item-definition-file
 
 ## Item definition files
 
-Each item's directory has specific [mandatory files that define that item](/power-bi/developer/projects/projects-overview).
+Each item's directory has specific mandatory files that define that item.
 
 The following items are currently supported in Microsoft Fabric:
 
@@ -61,9 +61,7 @@ For more information about report folders and a complete list of their contents,
 Semantic model folders contain the following files:
 
 - definition.pbidataset
-- model.bim
-
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+- model.bim file (TMSL format) OR \definition folder (TMDL format)
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project dataset folder](/power-bi/developer/projects/projects-dataset).
 
