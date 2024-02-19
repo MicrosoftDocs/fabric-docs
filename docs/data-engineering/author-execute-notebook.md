@@ -281,7 +281,7 @@ To prevent credentials being accidentally leaked when running notebooks, Fabric 
 You can use familiar Ipython magic commands in Fabric notebooks. Review the following list of currently available magic commands.
 
 > [!NOTE]
-> These are the only magic commands supported in Fabric pipeline: %%pyspark, %%spark, %%csharp, %%sql.
+> These are the only magic commands supported in Fabric pipeline: %%pyspark, %%spark, %%csharp, %%sql, [%%configure](#spark-session-configuration-magic-command).
 
 Available line magic commands:
 [%lsmagic](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-lsmagic), [%time](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-time), [%timeit](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-timeit), [%history](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-history), [%run](#notebook-reference-run), [%load](https://ipython.readthedocs.io/en/stable/interactive/magics.html#magic-load), %alias, %alias_magic, %autoawait, %autocall, %automagic, %bookmark, %cd, %colors, %dhist, %dirs, %doctest_mode, %killbgscripts, %load_ext, %logoff, %logon, %logstart, %logstate, %logstop, %magic, %matplotlib, %page, %pastebin, %pdef, %pfile, %pinfo, %pinfo2, %popd, %pprint, %precision, %prun, %psearch, %psource, %pushd, %pwd, %pycat, %quickref, %rehashx, %reload_ext, %reset, %reset_selective, %sx, %system, %tb, %unalias, %unload_ext, %who, %who_ls, %whos, %xdel, %xmode.
