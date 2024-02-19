@@ -88,11 +88,13 @@ The following are the restrictions that apply to users with restrictive sensitiv
 
 These restrictions ensure that protection is preserved and control of protection settings remains with users that have higher permission levels.
 
+If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Users with co-author permissions can edit encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
+
 For more information, see [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md).
 
 ### Desktop preview feature switch for editing by users with restrictive sensitivity permissions
 
-The **Less elevated user support** feature switch in Power BI Desktop must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. Desktop users can check to make sure the switch is selected by opening Power BI Desktop and navigating to **File** > **Options and settings** > **Options** > **Preview features**. The **Less elevated user support** switch is selected by default, but if for some reason it isn't selected, the user should select it.
+The **Less elevated user support** feature switch in Power BI Desktop must be selected in order for a user with restrictive sensitivity permissions to be able to open, edit, and publish/republish a PBIX file protected by an encrypted sensitivity label. Desktop users can select/unselect the switch by opening Power BI Desktop and navigating to **File** > **Options and settings** > **Options** > **Preview features**, finding the **Less elevated user support** preview feature, and selecting or unselecting the feature as desired.
 
 ## Related content
 
