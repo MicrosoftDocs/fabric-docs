@@ -13,7 +13,7 @@ ms.date: 02/01/2024
 This page contains information on how the Fabric Copilot usage is billed and reported. The usage of [Copilot in Fabric (preview)](./copilot-fabric-overview.md) is measured by the number of tokens processed. Tokens can be thought of as pieces of words. Approximately 1,000 tokens are about 750 words. Prices are calculated per 1,000 tokens, and input and output tokens are consumed at different rates.
 
 > [!NOTE]
-> The Copilot for Fabric billing will become effective on March 1st, 2024.
+> The Copilot for Fabric billing will become effective on March 1st, 2024, as part of your existing Power BI Premium or Fabric Capacity.
 
 
 ## Consumption rate
@@ -25,7 +25,7 @@ Requests to Copilot consume Fabric Capacity Units. This table defines how many c
 |Copilot in Fabric |The output completion |Per 1,000 Tokens|1,200 CU seconds|
 
 
-## Monitoring the usage  
+## Monitor the usage  
 The [Fabric Capacity Metrics app](../enterprise/metrics-app-compute-page.md) displays the total capacity usage for Copilot operations under the name "Copilot in Fabric." Additionally, Copilot users are able to view a summary of their billing charges for Copilot usage under the invoicing item "Copilot in Fabric."
 
 ![Screenshot of Fabric Capacity Metrics.](./media/copilot-consumption/capactiy-metrics-app.png)
@@ -43,7 +43,7 @@ Copilot is a background job, each Copilot request (~24 CU minute job) consume on
 
 ## Region mapping 
 
-Fabric Copilot is powered by Azure Open AI large language models that are currently deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). However, customers can [enable cross-geo process tenant settings](../admin/service-admin-portal-copilot.md) to use Copilots by sending their data to Azure Open AI in a region where the service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. While performing region mapping, we prioritize data residency as the foremost consideration and attempt to map to a region within the same geographic area whenever feasible. 
+Fabric Copilot is powered by Azure Open AI large language models that are currently deployed to [limited data centers](../data-science/ai-services/ai-services-overview.md#available-regions). However, customers can [enable cross-geo process tenant settings](../admin/service-admin-portal-copilot.md) to use Copilots by procesing their data in another region where the Azure Open AI service is available. This region could be outside of the user's geographic region, compliance boundary, or national cloud instance. While performing region mapping, we prioritize data residency as the foremost consideration and attempt to map to a region within the same geographic area whenever feasible. 
 
 The cost of Fabric Capacity Units can vary depending on the region. Regardless of the consumption region where GPU capacity is utilized, customers are billed based on the Fabric Capacity Units pricing in their billing region. For example, if a customer's requests are mapped from `region 1` to `region 2`, with `region 1` being the billing region and `region 2` being the consumption region, the customer is charged based on the pricing in `region 1`.
 
@@ -51,7 +51,7 @@ The cost of Fabric Capacity Units can vary depending on the region. Regardless o
 
 Consumption rates are subject to change at any time. Microsoft uses reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s Release Notes or Microsoft Fabric Blog. If any change to a Copilot in Fabric Consumption Rate materially increases the Capacity Units (CU) required to use Copilot in Fabric, customers can use the cancellation options available for the chosen payment method.
 
-## Next Steps
+## Next steps
 
 - [Overview of Copilot in Fabric (preview)](./copilot-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
