@@ -27,7 +27,7 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 
 Managed virtual networks are provisioned for a Fabric workspace when
 
-1. Managed private endpoints are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace.
+* Managed private endpoints are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace.
 
     You can create managed private endpoint in a Fabric workspace
     
@@ -43,14 +43,14 @@ Managed virtual networks are provisioned for a Fabric workspace when
 
     ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image2.gif)
 
-1. Enabling Private Link and running a Spark Job in a Fabric Workspace
+* Enabling Private Link and running a Spark job in a Fabric Workspace. Tenant Admins can enable the Private Link setting in the Admin portal of their Microsoft Fabric tenant.
 
-Learn more about configuring Private Links for Microsoft Fabric
+    Learn more about configuring Private Links for Microsoft Fabric
 
-Once you have enabled the Private Link setting, running the first Spark job (Notebook or Spark Job Definition) or performing a Lakehouse operation (Load to Table, Table Maintenance operation like Optimize or Vacuum) will result in creation of a Managed Virtual Network for the workspace. 
+    Once you have enabled the Private Link setting, running the first Spark job (Notebook or Spark job definition) or performing a Lakehouse operation (for example, Load to Table, or a table maintenance operation such as Optimize or Vacuum) will result in the creation of a managed virtual network for the workspace. 
 
-> [!NOTE]
-> The Managed Virtual Network is provisioned automatically as part of the job submission step for the first Spark Job in the workspace. Once the Managed Virtual Network has been provisioned, the Starter Pools (Default Compute Option) for Spark are disabled as these are pre-warmed clusters hosted in a Shared Virtual Network. Spark jobs will be running on Custom Pools which will be created on-demand during the time of job submission, within the dedicated managed virtual network of the workspace. 
+    > [!NOTE]
+    > The managed virtual network is provisioned automatically as part of the job submission step for the first Spark Job in the workspace. Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are pre-warmed clusters hosted in a shared virtual network. Spark jobs will run on custom pools created on-demand at the time of job submission within the dedicated managed virtual network of the workspace.
 
 ### Known Limitations
 
