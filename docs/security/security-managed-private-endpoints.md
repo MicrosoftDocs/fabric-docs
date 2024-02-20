@@ -10,40 +10,40 @@ ms.date: 02/20/2024
 
 # What are Managed Virtual Networks?
 
-Managed Virtual Networks are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed Virtual Networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network. 
+Managed virtual networks are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
 
-Managed Virtual Networks also enable network security features such as managed private endpoints, and private links support for Data Engineering and Science items in Microsoft Fabric which use Apache Spark. 
+Managed virtual networks also enable network security features such as managed private endpoints, and private link support for Data Engineering and Data Science items in Microsoft Fabric that use Apache Spark.
 
-![A picture containing text, screenshot, diagram, design](media/image1.gif)
+The following image illustrates ......
 
-Fabric workspaces which are provisioned with a dedicated Virtual Network provides you value in four ways:
+![A picture containing text, screenshot, diagram, design](media/security-managed-private-endpoints/image1.gif)
 
-With a Managed Virtual Network you get complete network isolation for the Spark clusters running your Spark Jobs (which allow users to run arbitrary user code) while offloading the burden of managing the Virtual Network to Microsoft Fabric.
+Fabric workspaces that are provisioned with a dedicated virtual network provide you value in four ways:
+* With a managed virtual network you get complete network isolation for the Spark clusters running your Spark Jobs (which allow users to run arbitrary user code) while offloading the burden of managing the virtual network to Microsoft Fabric.
+* You don't need to create a subnet for the Spark clusters based on peak load, as this is managed for you by Microsoft Fabric.
+* A managed virtual network for your workspace, along with managed private endpoints, allows you to access data sources that are behind firewalls or otherwise blocked from public access.
 
-You don't need to create a subnet for the Spark clusters based on peak load as its managed for you by Microsoft Fabric
+## How to enable managed virtual networks for a Fabric workspace
 
-Managed Virtual Network for your workspace along with Managed private endpoints allows you to access data sources behind firewalls or that are blocked from public access. 
+Managed virtual networks are provisioned for a Fabric workspace when
 
-How to enable Managed Virtual Network for a Fabric Workspace: 
+1. Managed private endpoints are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace.
 
-Managed Virtual Networks are provisioned for a Fabric workspace when
+    You can create managed private endpoint in a Fabric workspace
+    
+    1. By navigating to the **Workspace settings**
+    1. Select the **Network Security tab**
+    1. Click on the “**Create**” option in the Managed Private Endpoints section 
+    1. Specify the **Private Endpoint Name**, Add the **Resource Identifier** for the Azure resource that you are trying to connect to
+    1. Select the **Target Sub Resource** from the list of options 
+    1. Specify the business justification for the Data Source administrator to approve to your Private endpoint request as part of the **Request Message**
+    1. Click Submit
 
-1. Managed Private Endpoints are added to a Workspace : <br>Workspace admins can Create, and Delete Managed Private Endpoint connections from the workspace settings of a Fabric Workspace. 
+    Learn more about Managed Private Endpoints for Microsoft Fabric
 
-You can create managed private endpoint in a Fabric workspace
+    ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image2.gif)
 
-a. By navigating to the **Workspace settings**
-a. Select the **Network Security tab**
-a. Click on the “**Create**” option in the Managed Private Endpoints section 
-a. Specify the **Private Endpoint Name**, Add the **Resource Identifier** for the Azure resource that you are trying to connect to
-a. Select the **Target Sub Resource** from the list of options 
-a. Specify the business justification for the Data Source administrator to approve to your Private endpoint request as part of the **Request Message**
-a. Click Submit
-
-Learn more about Managed Private Endpoints for Microsoft Fabric
-
-* ![A screenshot of a computer  Description automatically generated](media/image2.gif)
-* Enabling Private Link and running a Spark Job in a Fabric Workspace
+1. Enabling Private Link and running a Spark Job in a Fabric Workspace
 
 Learn more about configuring Private Links for Microsoft Fabric
 
@@ -82,7 +82,7 @@ A feature that allows secure and private access to data sources from Fabric Spar
 * Managed Private Endpoints are created and managed by Microsoft Fabric, and the user only needs to specify the resource id of the data source, target sub-resource and the reason they would want to gain access to
 * Managed Private Endpoints support various data sources, such as Azure Storage, Azure SQL Database, Azure Synapse Analytics, Azure Cosmos DB, Application gateway, Azure Keyvault and many more. 
 
-  ![A screenshot of a computer  Description automatically generated](media/image2.gif)
+  ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image2.gif)
 
 # How to Create Managed Private Endpoints?
 
@@ -95,7 +95,7 @@ Create a Fabric Workspace
 
 Navigate to the Workspace Settings  
 
-![A close-up of a flag  Description automatically generated](media/image4.png)
+![A close-up of a flag  Description automatically generated](media/security-managed-private-endpoints/image4.png)
 
  
 
@@ -103,13 +103,13 @@ Navigate to the “Network Security” tab
 
  
 
-![A close-up of a computer screen  Description automatically generated](media/image5.png)
+![A close-up of a computer screen  Description automatically generated](media/security-managed-private-endpoints/image5.png)
 
  
 
 Click on Create  option in the Managed Private Endpoint section 
 
-![A screenshot of a computer screen  Description automatically generated](media/image6.png)
+![A screenshot of a computer screen  Description automatically generated](media/security-managed-private-endpoints/image6.png)
 
 Specify the name for the private endpoint , and copy the resource identifier for the Azure resource. (This can be found in the properties tab on the Azure Portal Page) 
 
@@ -117,7 +117,7 @@ Click on create
 
 Once the Managed Private Endpoint has been provisioned, the Activation status will be changing to a Succeeded state 
 
-![A screenshot of a computer  Description automatically generated](media/image7.png)
+![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image7.png)
 
  
 
@@ -126,21 +126,21 @@ Once the Managed Private Endpoint has been provisioned, the Activation status wi
 1. If we take the example of SQL server, users could navigate to the Azure Portal -> Search for the “SQL Server” resource. 
 1. On the Resource page -> Select the Networking menu -> Select Private Access 
 
-   ![A screenshot of a computer  Description automatically generated](media/image8.png)
+   ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image8.png)
 
    Data source administrators should be able to view the active private endpoint connections and new connection requests. 
 
-   ![A screenshot of a computer  Description automatically generated](media/image9.png)
+   ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image9.png)
 
 1. Admins can either “Approve” or “Reject” by providing a business justification. 
 
-   ![A screenshot of a computer  Description automatically generated](media/image10.png)
+   ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image10.png)
 
    
 
 18. Once the request has been “Approved” or “Rejected” by the data source administrator, the status is updated in the Fabric workspace settings page on refresh. 
 
-    ![A screenshot of a computer  Description automatically generated](media/image11.png)
+    ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image11.png)
 
 1. Once the status has been approved, the end point could be used in the Notebook or Spark Job Definitions to access the data stored in the data source from Fabric workspace.
 
@@ -160,7 +160,7 @@ Microsoft Fabric notebooks support seamless interaction with Data sources behind
 
 1. In the Microsoft Fabric workspace, Use the experience switcher on the left side of your home page to switch to the Synapse Data Engineering experience
 
-   ![A screenshot of a computer  Description automatically generated](media/image12.png)
+   ![A screenshot of a computer  Description automatically generated](media/security-managed-private-endpoints/image12.png)
 
 1. Click on create and create a new Notebook 
 1. Now in the notebook, by specifying the name of the SQL database , and its connection properties you could connect through the managed private endpoint connection that’s been setup to read the tables in the database and write them to your Lakehouse in Microsoft Fabric.
