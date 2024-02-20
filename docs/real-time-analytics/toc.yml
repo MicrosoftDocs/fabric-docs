@@ -89,7 +89,7 @@ items:
       - name: Apache Kafka
         href: get-data-kafka.md
       - name: Apache Log4J 2
-        href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-log4j2.md
       - name: Apache Spark
         href: /azure/data-explorer/spark-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Azure Synapse workspace
