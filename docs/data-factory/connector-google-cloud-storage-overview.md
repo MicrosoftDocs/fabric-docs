@@ -4,7 +4,7 @@ description: This article explains the overview of using Google Cloud Storage.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 01/26/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -25,7 +25,7 @@ The Google Cloud Storage connector supports the following capabilities in data p
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Basic |
+| **Copy activity (source/destination)** | None | Basic |
 | **Lookup activity** | None | Basic |
 | **GetMetadata activity** | None | Basic |
 | **Delete activity** | None | Basic |

@@ -85,9 +85,9 @@ items:
       - name: Data connectors overview
         href: data-connectors/data-connectors.md
       - name: Apache Flink
-        href: /azure/data-explorer/ingest-data-flink?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-flink.md
       - name: Apache Kafka
-        href: /azure/data-explorer/ingest-data-kafka?context=/fabric/context/context-rta&pivots=fabric
+        href: get-data-kafka.md
       - name: Apache Log4J 2
         href: /azure/data-explorer/apache-log4j2-connector?context=/fabric/context/context-rta&pivots=fabric
       - name: Apache Spark
@@ -136,7 +136,8 @@ items:
       href: create-empty-table.md
     - name: Data management
       items:
-      - name: Data management overview  
+      - name: Data management overview 
+        displayName: managed identity, data policies, table update policy, materialized view, stored function, python plugin 
         href: data-management.md
       - name: Change data policies
         href: data-policies.md
