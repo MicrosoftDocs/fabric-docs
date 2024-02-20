@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 12/11/2023
+ms.date: 02/20/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -50,7 +50,7 @@ Select the tab that corresponds with your desired database type.
     :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
 1. Under **Connect source**, select **Azure Data Explorer**.
-1. Under **Connection URI**, enter the cluster URI, and then select the connect icon.
+1. Under **Connection URI**, enter the cluster URI.
 
     To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
 
