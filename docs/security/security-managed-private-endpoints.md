@@ -29,15 +29,15 @@ Managed virtual networks are provisioned for a Fabric workspace when
 
 * Managed private endpoints are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace.
 
-    You can create managed private endpoint in a Fabric workspace
+    To create managed private endpoint in a Fabric workspace
     
-    1. By navigating to the **Workspace settings**
-    1. Select the **Network Security tab**
-    1. Click on the “**Create**” option in the Managed Private Endpoints section 
-    1. Specify the **Private Endpoint Name**, Add the **Resource Identifier** for the Azure resource that you are trying to connect to
-    1. Select the **Target Sub Resource** from the list of options 
-    1. Specify the business justification for the Data Source administrator to approve to your Private endpoint request as part of the **Request Message**
-    1. Click Submit
+    1. Open the **Workspace settings**.
+    1. Select the **Network Security tab**.
+    1. Select the “**Create**” option in the Managed Private Endpoints section.
+    1. Specify the **Private Endpoint Name**, Add the **Resource Identifier** for the Azure resource that you are trying to connect to.
+    1. Select the **Target Sub Resource** from the list of options.
+    1. Specify the business justification for the Data Source administrator to approve to your Private endpoint request as part of the **Request Message**.
+    1. Select **Submit**.
 
     Learn more about Managed Private Endpoints for Microsoft Fabric
 
