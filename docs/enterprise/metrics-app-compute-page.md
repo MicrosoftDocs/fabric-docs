@@ -141,7 +141,7 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 ## System Events
 
-Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md).
+Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md). When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
 
 The system events table displays the following elements:
 
@@ -203,8 +203,8 @@ The table in this section lists the optional fields that you can add to the matr
 |Invalid count    |The total number of invalid operations for an item              |
 |InProgress count |The total number of operations that are in progress for an item |
 |Successful count |The total number of successful operations for an item           |
-|Virtualized item      |Displays one of the following values:<li>*True* - Non Fabric items that consume CUs, for example Copilot items</li><li>*Fasle* - Fabric items</li> |
-|Virtualized workspace |Displays one of the following values:<li>*True* - non Fabric workspaces that consume CUs, for example virtual network workspaces</li><li>*Fasle* - Fabric workspaces</li>         |
+|Virtualized item      |Displays one of the following values:<li>*True* - Virtual items that consume CUs, for example virtual items used by Copilot</li><li>*False* - Items that aren't virtual</li> |
+|Virtualized workspace |Displays one of the following values:<li>*True* - Virtual workspaces that consume CUs, for example a virtual workspace used by a virtual network</li><li>*False* - Workspaces that aren't virtual</li> |
 |Item Size (GB) |The amount of memory an item needs measured in gigabytes (GB) |
 |Overloaded minutes |Displays a sum of 30 seconds increments where overloading occurred at least once. Sort to view the items that were affected the most due to overload penalty |
 |Performance delta |Displays the performance effect on the items. The number represents the percent of change from seven days ago. For example, 20 suggests that there's a 20% improvement today, compared with the same metric taken a week ago |

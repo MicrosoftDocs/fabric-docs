@@ -63,7 +63,11 @@ A table showing every [interactive operation](/power-bi/enterprise/service-premi
 
 Start and end times may occur before or after the displayed time period, due to [background](/power-bi/enterprise/service-premium-interactive-background-operations#background-operations) [smoothing](/power-bi/enterprise/service-premium-smoothing) operations.
 
-* **Items** - The name of the item, its type, and its workspace details.
+* **Workspace** - The workspace the item belongs to.
+
+* **Item kind** - The type of the item.
+
+* **Item name** - The name of the item.
 
 * **Operation** - The type of interactive operation.
 
@@ -99,6 +103,14 @@ Start and end times may occur before or after the displayed time period, due to 
 * **Smoothing start** - The time smoothing started for the operation.
 
 * **Smoothing end** - The time smoothing ended for the operation.
+
+* **Virtualized item** - Displays one of the following values:
+    * *True* - Virtual items that consume CUs, for example virtual items used by Copilot.
+    * *False* - Items that aren't virtual.
+
+* **Virtualized workspace** - Displays one of the following values:
+    * *True* - Virtual workspaces that consume CUs, for example a virtual workspace used by a virtual network.
+    * *False* - Workspaces that aren't virtual.
 
 ## Background operations for timerange
 
