@@ -4,7 +4,7 @@ description: Learn more about how burstable capacity is used and limited with SK
 author: realAngryAnalytics
 ms.author: stevehow
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 02/14/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -66,7 +66,7 @@ The burstable scale factor can be achieved independently for ingestion at the sa
 
 ## Considerations
 
-- Typically, a complex query running in a workspace assigned to a small capacity SKU size should run to completion. However, if the data retrieval or intermediate data processing physically can't run within the burstable scale factor, it results in the following error message: `This query was rejected due to current capacity constraints.` This message indicates that the capacity SKU size is too small to perform the query processing activity. To increase the SKU size, contact your capacity administrator.
+- Typically, a complex query running in a workspace assigned to a small capacity SKU size should run to completion. However, if the data retrieval or intermediate data processing physically can't run within the burstable scale factor, it results in the following error message: `This query was rejected due to current capacity constraints.` Review the [performance guidelines](guidelines-warehouse-performance.md) to ensure data and query optimization prior to increasing SKU size. To increase the SKU size, contact your capacity administrator.
 
 - After the [capacity is resized](../enterprise/scale-capacity.md), new guardrails will be applied when the next query is run. Performance should stabilize to the new capacity SKU size within a few seconds of the first query submission.
 
