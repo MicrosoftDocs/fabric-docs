@@ -12,9 +12,9 @@ ms.date: 09/27/2023
 
 # OneLake security
 
-OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Security is derived from Microsoft Entra authentication and is compatible with user identities, service principals, and managed identities. Using Microsoft Entra ID and Fabric components, you can build out robust security mechanisms across OneLake, ensuring that you keep your data safe while also reducing copies and minimizing complexity.
+OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Access to OneLake data can be controlled at each level in the Fabric hierarchy, while folder level access can be managed using OneLake data access roles (preview). Security is derived from Microsoft Entra authentication and is compatible with user identities, service principals, and managed identities. 
 
-:::image type="content" source="media\onelake-security\onelake-structure.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
+:::image type="content" source="media\onelake-security\onelake-structure-new.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
 
 ## Workspace security
 
@@ -24,7 +24,7 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 
 | **Capability** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
-| View files in OneLake | Yes | Yes | Yes | No |
+| View files in OneLake | Yes | Yes | Yes | No, can be given access through OneLake data access roles (preview) |
 | Write files in OneLake | Yes | Yes | Yes | No |
 
 ## Item security
@@ -33,22 +33,34 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 | **Permission Name** | **Sharing text** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
 |----------|----------|----------|----------|--------------|
-| Read | *No share boxes selected* | No | No | No |
-| ReadData | Read all SQL endpoint data | No | No | Yes |
-| ReadAll | Read all Apache Spark | Yes | No | No |
+| Read | *No share boxes selected* | No, can be given access through OneLake data access roles (preview)<sup>1</sup> | No | No, can be given access through SQL security<sup>2</sup> |
+| ReadData | Read all SQL endpoint data | No, can be given access through OneLake data access roles (preview)<sup>1</sup> | No | Yes |
+| ReadAll | Read all Apache Spark | No, can be given access through OneLake data access roles (preview)<sup>1</sup> | No | No, can be given access through SQL security<sup>2</sup> |
 | Write | *N/A, only available through workspace roles* | Yes | Yes | Yes |
+*1 - See the "OneLake data access roles (preview) section for more details*
+*2 - See the "Compute-specific security" section for more details*
+
 
 ## Compute-specific security
 
-Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine, but those conditions may not apply to users in certain Fabric roles when they access OneLake directly. For more information on what types of compute security you can define, see the documentation for Warehouse, Real-time analytics, and Power BI semantic models.
+Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine, but those conditions may not apply to users when they access OneLake directly. Compute security allows for users to define fine-grained access control such as table and row level security. For more information on what types of compute security you can define, see the documentation for Warehouse, Real-time analytics, and Power BI semantic models.
 
-As a rule, users in the Viewer role can only access data through select compute engines and any security rules defined in those engines apply. All other roles have direct OneLake access, allowing them to query data through Spark, APIs, or a OneLake File Explorer. However, compute-specific security still applies to those users when accessing data through that compute engine.
+Because compute-specific security only applies when accessing data through that query engine, it is important to give users access to only the compute where the security is defined using the item permissions discussed above. This means not granting access to the underlying OneLake data through data access roles (preview) or the ReadAll permission.
 
-**Example:** Martha is an administrator for a Fabric workspace and Pradeep is a viewer. Martha wants to restrict access to certain tables in **LakehouseA**. She connects to SQL and defines object level security using GRANT and DENY statements. When Pradeep accesses the data through SQL, he's only able to see the tables from **LakehouseA** that he was granted access to.
+## OneLake Data access roles (preview)
+OneLake data access roles is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
+
+Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.  
+
+Learn more about the security model for access roles [here.](/security/data-access-control-model.md) 
 
 ## Shortcut security
 
 Shortcuts in Microsoft Fabric allow for simplified data management, but have some security considerations to note. For information on managing shortcut security see this [document](onelake-shortcuts.md#types-of-shortcuts).
+
+For OneLake data access roles (preview), shortcuts receive special treatment depending on the shortcut type. The access to a OneLake shortcut is always controlled by the access roles on the target of the shortcut. This means that for a shortcut from LakehouseA to LakehouseB, the security of LakehouseB takes effect. Data access roles in LakehouseA cannot grant or edit the security of the shortcut to LakehouseB.
+
+For external shortcuts to Amazon S3 or ADLS Gen2, the security is configured through data access roles in the lakehouse itself. A shortcut from LakehouseA to an S3 bucket can have data access roles configured in LakehouseA. It is important to note that only the root level of the shortcut can have security applied. Assigning access to sub-folders of the shortcut will result in role creation errors.
 
 ## Authentication
 
@@ -79,3 +91,4 @@ When you turn this switch ON, users can access data via all sources. When you tu
 - [OneLake file explorer](onelake-file-explorer.md)
 - [Workspace roles](../get-started/roles-workspaces.md)
 - [Share items](../get-started/share-items.md)
+- [OneLake data access security model](/security/data-access-control-model.md)

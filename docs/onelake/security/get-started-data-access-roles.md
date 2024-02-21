@@ -1,4 +1,15 @@
-# What are OneLake data access roles? 
+---
+title: Get started with OneLake data access roles (preview)
+description: Learn about OneLake data access roles and how to get started using them.
+ms.reviewer: yuturchi
+ms.author: aamerril
+author: aamerril
+ms.topic: conceptual
+ms.custom:
+ms.date: 02/21/2024
+---
+
+# Get started with OneLake data access roles (preview)
 
 ## Overview 
 
@@ -22,25 +33,7 @@ To ensure a smooth opt-in experience, all users that had read permission to the 
 
 ## What types of data can be secured? 
 
-OneLake data access roles can be used to manage OneLake access to folders in a lakehouse. Any folder in a lakehouse can be secured. The security set by data access roles applies exclusively to access against OneLake or lake-specific APIs. This applies across a wide range of apps and services, including: 
-
-- Fabric pipelines 
-- Ingesting data into real-time analytics databases 
-- Fabric lakehouse UX 
-- OneLake file explorer 
-- OneLake API calls 
-
-In addition, security configured in other locations in Fabric does not synchronize with the OneLake data access roles. They each operate as their own security model for users that access through that method. For example, if the data access roles grant access to table1, and in the SQL Analytics endpoint a user is granted access to table2, the user would see only table1 in the lakehouse UX but would only see table2 in the SQL endpoint. To avoid mismatches in access, it is recommended to only grant users access to a single access method, or ensure the security definitions in both places are kept in sync manually. See the “best practices with OneLake data access roles” for more details. 
-
-## Known issues 
-
-The external data sharing preview feature (link) is not compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares may stop working.
-
-# Create, edit, and delete OneLake folder security roles 
-
-## Overview 
-
-Using OneLake data access roles, you can manage granular access to OneLake folders. In this article, we will look at how to create, edit, delete, and assign members to OneLake data access roles. 
+OneLake data access roles can be used to manage OneLake access to folders in a lakehouse. Any folder in a lakehouse can be secured. The security set by data access roles applies exclusively to access against OneLake or lake-specific APIs. For more details, see the [data access control model.](/security/data-access-control-model.md)
 
 ## Prerequisites 
 
@@ -52,7 +45,6 @@ Note: OneLake data access roles are only supported for lakehouse items.
 
 1. Open the lakehouse where you want to define security. 
 1. In the upper left corner of the lakehouse homepage, click on Manage OneLake data access (preview).
-<IMage>
 1. On the top left of the page, select New Role and type the role name you want.
     1. The role name has certain restrictions: 
     1. The role name can only contain alphanumeric characters. 
@@ -146,6 +138,11 @@ To add virtual members, use the Automatically add users with these permissions b
 The following screenshot shows the list of available permissions that can be used for virtualizing memberships. 
 
 Once a permission has been selected, any virtualized members will show in the Assigned people and groups list. The users will have text beside their name indicating that they were assigned by the workspace permissions. These users cannot be manually removed from the role assignment. Instead, remove the corresponding permissions from the virtualization control or remove the Fabric permission. 
+
+
+## Known issues 
+
+The external data sharing preview feature (link) is not compatible with the data access roles preview. When you enable the data access roles preview on a lakehouse, any existing external data shares may stop working.
 
 # Related content 
 
