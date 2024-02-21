@@ -194,6 +194,8 @@ items:
     href: dashboards-conditional-formatting.md
   - name: Use parameters in Real-Time Dashboards
     href: dashboards-parameters.md
+  - name: Dashboard-specific visuals
+    href: dashboard-visuals.md
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
