@@ -28,7 +28,7 @@ Access control for the workspace identity is also managed in Fabric. The workspa
 
 When the workspace identity has been created, the tab displays the workspace identity details.
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details.":::
+:::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details." lightbox="./media/workspace-identity/workspace-identity-details.png":::
 
 
 DESCRIBE PROCESS
