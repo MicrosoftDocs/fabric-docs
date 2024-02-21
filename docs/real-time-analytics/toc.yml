@@ -186,7 +186,7 @@ items:
   items:
   - name: Real-Time Dashboard
     items:
-  - name: Visualize data with Real-Time Dashboards
+  - name: Create a Real-Time Dashboard
     href: dashboard-real-time.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
