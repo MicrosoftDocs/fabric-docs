@@ -22,6 +22,15 @@ Access control for the workspace identity is also managed in Fabric. The workspa
 
 ## How to create the workspace identity.
 
+1. Navigate to the workspace and open the workspace settings.
+1. Select the **Workspace identity** tab.
+1. Select the **+ Workspace identity** button.
+
+When the workspace identity has been created, the tab displays the workspace identity details.
+
+:::image type="content" source="./media/workspace-identity/workspace-identity-details.png" alt-text="Screenshot showing workspace identity details.":::
+
+
 DESCRIBE PROCESS
 
 ## How to use workspace identity
