@@ -53,6 +53,9 @@ While in editing mode, you can view and make changes to the underlying query.
 
 1. Select **Apply changes** to save your changes.
 
+> [!NOTE]
+> All saved edits will be reflected in the original Real-Time Dashboard tile.
+
 ---
 
 ## Related content
