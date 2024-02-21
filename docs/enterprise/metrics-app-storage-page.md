@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/19/2023
+ms.date: 02/21/2024
 ---
 
 # Understand the metrics app storage page
@@ -82,11 +82,11 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
 
-| Experience          | Fabric item |
-|---------------------|-------------|
-| Data Activator      | Reflex      |
-| Lakehouse           | Lakehouse   |
-| Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+  | Experience          | Fabric item |
+  |---------------------|-------------|
+  | Data Activator      | Reflex      |
+  | Lakehouse           | Lakehouse   |
+  | Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 
 ## Related content
 
