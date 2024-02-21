@@ -30,6 +30,8 @@ items:
     href: information-protection.md
   - name: Sensitivity labels
     items:
+    - name: Protected sensitivity labels
+      href: protected-sensitivity-labels.md
     - name: Default label policy
       href: service-security-sensitivity-label-default-label-policy.md
     - name: Mandatory label policy
