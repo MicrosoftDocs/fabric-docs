@@ -5,7 +5,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 02/21/2023
 ---
 
 # Use parameters in Real-Time Dashboards

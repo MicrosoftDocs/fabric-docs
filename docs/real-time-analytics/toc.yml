@@ -190,13 +190,13 @@ items:
     href: dashboard-real-time.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
-  - name: Apply conditional formatting
+  - name: Apply conditional formatting in Real-Time Dashboards
     href: dashboard-conditional-formatting.md
   - name: Use parameters in Real-Time Dashboards
     href: dashboard-parameters.md
   - name: View queries in Real-Time Dashboards
     href: dashboard-view-query.md
-  - name: Dashboard-specific visuals
+  - name: Real-Time Dashboard-specific visuals
     href: dashboard-visuals.md
   - name: Power BI
     items:
