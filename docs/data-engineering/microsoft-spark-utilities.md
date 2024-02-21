@@ -341,7 +341,7 @@ mssparkutils.credentials.help()
 
 ```console
 getToken(audience, name): returns AAD token for a given audience, name (optional)
-getSecret(akvName, secret): returns AKV secret for a given akvName, secret key
+getSecret(keyvault_endpoint, secret_name): returns secret for a given Key Vault and secret name
 ```
 
 ### Get token
@@ -361,10 +361,10 @@ mssparkutils.credentials.getToken('audience Key')
 
 ### Get secret using user credentials
 
-getSecret returns an Azure Key Vault secret for a given Azure Key Vault name, secret name, and linked service name using user credentials.
+getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
 
 ```python
-mssparkutils.credentials.getSecret('azure key vault name','secret name')
+mssparkutils.credentials.getSecret('https://your-key-vault-name.vault.azure.net/', 'secret name')
 ```
 
 ## File mount and unmount
