@@ -10,7 +10,7 @@ ms.custom:
   - build-2023-dataai
   - build-2023-fabric
   - ignite-2023
-ms.date: 12/11/2023
+ms.date: 02/20/2024
 ms.search.form: KQL Queryset
 ---
 # Query data in a KQL queryset
@@ -22,21 +22,46 @@ The KQL Queryset uses the Kusto Query Language for creating queries, and also su
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* A [KQL database](create-database.md) with editing permissions and data
+* A [KQL database](create-database.md) with editing permissions and data, or an Azure Data Explorer [cluster and database](/azure/data-explorer/create-cluster-and-database) with [AllDatabaseAdmin](/azure/data-explorer/manage-cluster-permissions#cluster-level-permissions) permissions.
 
 ## Select a database
 
-Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor.
+Queries run in the context of a database. You can change the associated database at any point, and retain the queries saved in the query editor. You can associate your KQL queryset with a KQL database or a database from an Azure Data Explorer cluster.
 
-To associate your KQL queryset with a database:
+Select the tab that corresponds with your desired database type.
+
+## [KQL Database](#tab/kql-database)
 
 1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. Under **Database**, select **V** to expand the database connections menu.
 
-1. Select a database from the **OneLake data hub** window that appears.
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
 
-    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the Onelake data hub window showing a selected KQL database.":::
+1. Under **Connect source**, select **OneLake data hub**.
+1. In the **OneLake data hub** window that appears, select a KQL database, and then select **Select**.
 
-    A list of tables associated with this database will appear below the database name.
+    :::image type="content" source="media/kusto-query-set/select-database.png" alt-text="Screenshot of the OneLake data hub window showing a selected KQL database.":::
+
+## [Azure Data Explorer cluster](#tab/azure-data-explorer-cluster)
+
+1. [Open your KQL queryset](create-query-set.md#open-an-existing-kql-queryset).
+1. Under **Database**, select **V** to expand the database connections menu.
+
+    :::image type="content" source="media/kusto-query-set/expand-database-menu.png" alt-text="Screenshot of the database menu showing a list of connected databases.":::
+
+1. Under **Connect source**, select **Azure Data Explorer**.
+1. Under **Connection URI**, enter the cluster URI.
+
+    To find the connection URI, go to your cluster resource in the [Azure portal](https://portal.azure.com/#home). The connection URI is the URI found in the Overview. To add a free sample cluster, specify "help" as the **Connection URI**.
+
+    :::image type="content" source="media/kusto-query-set/connect-to-cluster.png" alt-text="Screenshot of the connection window showing an Azure Data Explorer cluster URI. The Connect cluster button is highlighted.":::
+
+1. Under **Database**, select the dropdown menu to expand the list of databases in your cluster, and then select a database.
+1. Select **Connect**.
+
+----
+
+ A list of tables associated with this database will appear below the database name.
 
 ## Write a query
 
