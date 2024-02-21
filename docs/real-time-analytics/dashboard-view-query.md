@@ -48,6 +48,9 @@ While in editing mode, you can view and make changes to the underlying query.
     :::image type="content" source="media/dashboard-view-query/edit-query.png" alt-text="Screenshot of Real-Time Dashboard tile with edit pencil icon highlighted in red box in Real-Time Analytics in Microsoft Fabric.":::
 
 1. Edit and modify the query as needed.
+
+    :::image type="content" source="media/dashboard-view-query/edit-query-tile.png" alt-text="Screenshot of editing a query tile in Real-Time Dashboards in Real-Time Analytics in Microsoft Fabric.":::
+
 1. Select **Apply changes** to save your changes.
 
 ---
