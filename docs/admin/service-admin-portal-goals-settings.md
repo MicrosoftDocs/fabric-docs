@@ -13,6 +13,7 @@ ms.topic: how-to
 ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
+Metrics in Power BI let customers curate their metrics and track them against key business objectives, in a single pane. This feature enhances data culture by promoting accountability, alignment, and visibility for teams and initiatives within organizations.
 
 # Metrics tenant settings 
 
