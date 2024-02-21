@@ -80,15 +80,13 @@ User can export the report's data by selecting Export Data. Selecting Export Dat
 
 ## Considerations and limitations
 
-* The storage page only displays information for items in an F SKU capacity.
+The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
 
-* The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
-
-    | Experience          | Fabric item |
-    |---------------------|-------------|
-    | Data Activator      | Reflex      |
-    | Lakehouse           | Lakehouse   |
-    | Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+  | Experience          | Fabric item |
+  |---------------------|-------------|
+  | Data Activator      | Reflex      |
+  | Lakehouse           | Lakehouse   |
+  | Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
 
 ## Related content
 
