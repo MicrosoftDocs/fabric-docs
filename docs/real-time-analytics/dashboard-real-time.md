@@ -5,12 +5,14 @@ ms.reviewer: tzgitlin
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: how-to
-ms.date: 09/27/2023
+ms.date: 02/21/2024
 ms.search.form: product-kusto, Real-Time Dashboard
 ---
 # Visualize data with Real-Time Dashboards
 
 A dashboard is a collection of tiles, optionally organized in pages, where each tile has an underlying query and a visual representation. You can natively export Kusto Query Language (KQL) queries to a dashboard as visuals and later modify their underlying queries and visual formatting as needed. In addition to ease of data exploration, this fully integrated dashboard experience provides improved query and visualization performance.
+
+In this article, you learn how to create a new Real-Time Dashboard, add data sources, and add tiles to the dashboard. You will also learn how to enable auto refresh, use parameters, and export dashboards.
 
 > [!IMPORTANT]
 > Your data is secure. Dashboards and dashboard-related metadata about users are encrypted at rest using Microsoft-managed keys.
@@ -51,7 +53,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
 1. In the **Query** pane,
     1. Select the data source from the drop-down menu.
-    1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboards-parameters.md#use-parameters-in-your-query).
+    1. Type the query, and the select **Run**. For more information about generating queries that use parameters, see [Use parameters in your query](dashboard-parameters.md#use-parameters-in-your-query).
 
     1. Select **+ Add visual**.
 
@@ -96,7 +98,7 @@ However, database editors can limit the minimum refresh rate that any viewer can
 
 ## Use parameters
 
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboards-parameters.md).
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
 
 ### Share the dashboard
 

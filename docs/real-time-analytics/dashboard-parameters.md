@@ -22,7 +22,7 @@ The query examples used in this article are based on the **StormEvents** table i
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
+* Editor permissions on a [Real-Time Dashboard](dashboard-real-time.md)
 * A dashboard with visuals
 
 ## View parameters list
@@ -306,7 +306,7 @@ Free text parameters don't contain any values. They allow you to introduce your 
 
 ### Data source parameters
 
-Once you have [added data sources](real-time-dashboard.md#add-data-source) to your dashboard, you can create a parameter that selects one or more of the available data sources. This parameter can be used in tiles and other parameters.
+Once you have [added data sources](dashboard-real-time.md#add-data-source) to your dashboard, you can create a parameter that selects one or more of the available data sources. This parameter can be used in tiles and other parameters.
 
 #### Create a data source parameter
 
@@ -365,7 +365,7 @@ You can reset the cross-filter by selecting **Reset** at the top of the visual w
 
 ## Use drillthroughs as dashboard parameters
 
-Drillthroughs allow you to select a value in a visual and use it to filter the visuals in a target page within the same dashboard. When the target page opens, the value is preselected in the relevant filters. The visuals on the page, such as line or scatter charts, are filtered to only show related data. This feature is useful for creating dashboards with drillthroughs from a summary page to a details page. For information about creating pages, see [Add page](real-time-dashboard.md#add-page).
+Drillthroughs allow you to select a value in a visual and use it to filter the visuals in a target page within the same dashboard. When the target page opens, the value is preselected in the relevant filters. The visuals on the page, such as line or scatter charts, are filtered to only show related data. This feature is useful for creating dashboards with drillthroughs from a summary page to a details page. For information about creating pages, see [Add page](dashboard-real-time.md#add-page).
 
 ### Define a drillthrough
 
@@ -411,5 +411,5 @@ In single and multiple selection filters, type the value that you want. The filt
 
 ## Related content
 
-* [Visualize data with Real-Time Dashboards](real-time-dashboard.md)
-* [Customize Real-Time Dashboard visuals](customize-dashboard-visuals.md)
+* [Visualize data with Real-Time Dashboards](dashboard-real-time.md)
+* [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)

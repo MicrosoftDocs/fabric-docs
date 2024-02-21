@@ -17,7 +17,7 @@ For each visual, you have the flexibility to define one or more conditional form
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
+* Editor permissions on a [Real-Time Dashboard](dashboard-real-time.md)
 * A table, stat, or multi stat dashboard visual
 
 ## Add a conditional formatting rule
@@ -100,5 +100,5 @@ To color your results by value:
 
 ## Related content
 
-* [Visualize data with Real-Time Dashboards](real-time-dashboard.md)
-* [Customize Real-Time Dashboard visuals](customize-dashboard-visuals.md)
+* [Visualize data with Real-Time Dashboards](dashboard-real-time.md)
+* [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)
