@@ -94,7 +94,7 @@ You can view the audit events generated upon the creation and deletion of worksp
     * Deleted Fabric Identity for Workspace
     * Retrieved Fabric Identity Token for Workspace
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-purview-audit-log.png" alt-text="Screenshot showing the Purview Audit Log." lightbox="./media/workspace-identity/workspace-identitty-purview-audit-log.png":::
+:::image type="content" source="./media/workspace-identity/workspace-identity-purview-audit-log.png" alt-text="Screenshot showing the Purview Audit Log." lightbox="./media/workspace-identity/workspace-identity-purview-audit-log.png":::
 
 To prevent a workspace identity from being created for a workspace, limit the number of users who have the workspace admin role in the workspace and make sure they are aware of the implications of creating a workspace identity.
 
