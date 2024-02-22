@@ -65,7 +65,7 @@ UI changes to tenant settings apply only to the Power BI service. To enable user
 
 ### Certified Power BI visuals
 
-[Certified Power BI visuals](/power-bi/developer/visuals/power-bi-custom-visuals-certified) are visuals that meet the Microsoft Power BI team [code requirements](/power-bi/developer/visuals/power-bi-custom-visuals-certified#certification-requirements). They're tested to verify that they don't access external services or resources and that they follow secure coding patterns and guidelines.
+[Certified Power BI visuals](/power-bi/developer/visuals/power-bi-custom-visuals-certified) are visuals that meet the Microsoft Power BI team [code requirements](/power-bi/developer/visuals/power-bi-custom-visuals-certified#certification-requirements) and testing. The tests performed are designed to check that the visual doesn't access external services or resources. However, Microsoft isn't the author of third-party custom visuals, and we advise customers to contact the author directly to verify the functionality of these visuals.
 
 When this setting is enabled, only certified Power BI visuals render in your organization's reports and dashboards. Power BI visuals from AppSource or files that aren't certified return an error message. This setting is disabled by default and doesn't apply to visuals in your [organizational store](/power-bi/developer/visuals/power-bi-custom-visuals#organizational-store).
 
