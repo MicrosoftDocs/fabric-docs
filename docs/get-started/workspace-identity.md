@@ -112,9 +112,9 @@ To view the audit logs and sign-in logs for this identity:
 
 :::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications.png" alt-text="Screenshot showing the All Applications page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications.png":::
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-overview.png" alt-text="Screenshot showing the workspace identity overview page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-overview.png":::
+:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-overview.png" alt-text="Screenshot showing the workspace identity overview page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-overview.png":::
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-owners.png" alt-text="Screenshot showing the workspace identity owners page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-owners.png":::
+:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png" alt-text="Screenshot showing the workspace identity owners page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png":::
 
 [NEED DESCRIPTION OF WHAT IS BEING SHOWN - DO WE NEED MORE DESCRIPTION OF THE AUDIT LOG AND SIGN-IN LOG]
 
