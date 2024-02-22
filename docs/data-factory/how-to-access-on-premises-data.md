@@ -63,7 +63,23 @@ You have now created a Dataflow Gen2 to load data from an on-premises data sourc
 
 ## Using on-premises data in a pipeline
 
-Fabric pipelines can leverage on-premises data gateway for on-premises data access and data movement. Although Fabric pipeline currently does not offer support for on-premises data sources directly, you can implement a workaround by initially transferring the data to cloud storage using a Dataflow Gen2 as described in this article, and then accessing the cloud storage from the pipeline to work with the data.
+1. Go to your workspace and create a data pipeline.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/create-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
+
+1. From the Home tab of the pipeline editor, select **Copy data** and then **Use copy assistant**. Add a new source to the activity in the assistant's **Choose data source** page, then select the connection established in the previous step.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/choose-data-source.png" alt-text="Screenshot showing where to choose a new data source from the Copy data activity.":::
+
+1. Select a destination for your data from the on-premises data source.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/choose-destination.png" alt-text="Screenshot showing where to choose the data destination in the Copy activity.":::
+
+1. Run the pipeline.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
+
+   You have now created a pipeline to load data from an on-premises data source into a cloud destination.
 
 ## Related content
 
