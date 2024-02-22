@@ -142,7 +142,7 @@ When a workspace is renamed, the workspace identity is also renamed to match the
 
 ## Considerations and limitations
 
-* A workspace identity can only be created in workspaces associated with a Fabric F64+ capacity. [LINK TO BUYING AN F SKU IN AZURE].
+* A workspace identity can only be created in workspaces associated with a Fabric F64+ capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription).
 * If a workspace with a workspace identity is migrated to a non-Fabric or something lower than F64 capacity, the identity will not be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
 * A maximum of 1000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
 
