@@ -19,11 +19,24 @@ To limit and protect access to firewall-enabled storage accounts from certain Fa
 > [!NOTE]
 > Trusted workspace access is currently in Public preview. Fabric workspace identity can only be created in workspaces associated with a Fabric capacity (F64 or higher). For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription).
 
-## Configure Trusted workspace access in ADLS gen 2
+## Configure trusted workspace access in ADLS gen 2
 
 ### Resource Instance Rule
 
-You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. Go to Custom deployment -> Build your own template in the editor -> Review + Create. Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
+You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. To create a resource instance rule:
+
+1. Sign in to the Azure portal and go to **Custom deployment**.
+1. Choose **Build your own template in the editor**
+
+    :::image type="content" source="./media/security-trusted-workspace-access/create-resource-instance-build-own-template.png" alt-text="Screenshot of the Custom deployment Build your own template option.":::
+
+1. Create the resource instance rule in the editor. When done, choose **Review + Create**.
+1. On the Basics tab that appears, specify the required project and instance details. When done, choose **Review + Create**.
+1. On the Review + Create tab that appears, review the summary and then select **Create**.
+1. 
+
+>[!NOTE]
+>Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
 
 ![](media/security-trusted-workspace-access/image1.png)
 
@@ -36,7 +49,8 @@ Here is an example of a resource instance rule that can be created through ARM t
 
           "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/ b2788a72-eef5-4258-a609-9b1c3e454624”}]
 ```
-A complete ARM template has been provided at the end of this document.
+
+A complete ARM template is provided at the end of this document.
 
 ![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image2.png)
 
@@ -189,15 +203,6 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 * If a resource instance rule for a Fabric workspace is removed, trusted workspace access may stop working after an hour. In the case of SQL endpoints with managed shortcuts to storage accounts, the shortcuts might stop working after ninety minutes, or when the SQL endpoint cache is refreshed on demand.
 * Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the UI isn't supported.
 
-
-## References
-
-* Grant access from Azure resource instances
-https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-azure-resource-instances
-
-* Trusted access based on a managed identity
-https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?tabs=azure-portal#trusted-access-based-on-a-managed-identity
-
 ### ARM template sample
 
 ```
@@ -235,4 +240,3 @@ https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security?
 * [Workspace identity](../get-started/workspace-identity.md)
 * [Grant access from Azure resource instances](/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-azure-resource-instances)
 * [Trusted access based on a managed identity](/azure/storage/common/storage-network-security?tabs=azure-portal#trusted-access-based-on-a-managed-identity)
-
