@@ -32,13 +32,29 @@ The multi metric column ribbon displays the following four values. You'll see th
 
 ## Consumption analysis
 
-Use the consumption analysis visual to analyze your capacity's load. The visual displays [usage](#utilization), [throttling](#throttling) and [overages](#overages) for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
+Use the consumption analysis visual to analyze your capacity's load. The visual displays [utilization](#utilization), [throttling](#throttling) and [overages](#overages) for the selected capacity. Use the tabs at the top of the visual to toggle how the visual is displayed.
 
-You can’t compare the information in the interactive delay and interactive rejection visuals, with the information in the background rejection visual. 100% overload in the interactive delay and interactive rejection visuals, doesn’t necessarily equate to $1 \over 6$ of an hour in the throttling visuals.
+You can’t compare the information in the interactive delay and interactive rejection visuals, with the information in the background rejection visual because they're based on different time windows. The interactive delay and interactive rejection visuals are based on a 10 minute and 60 minute time window, while the background rejection visual is based on a 24 hour time window.
 
-* **Background rejection** - High percent throttling numbers indicate you’ve overused your daily capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection will stop once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you’ve used 2.5 the amount of your daily capacity resources. To reduce your future consumption to less than a day (under 100%), you’ll need to wait for 1.5 days or 36 hours.
+When a capacity is using more than 100% of its capacity, it's considered to be overloaded and will start to throttle. Throttling will continue until the capacity usage is lower than 100%. The time it takes for the capacity usage to get back to 100% depends on whether background rejection, interactive rejection or interactive delays are the cause of your capacity over use.
 
-* **Interactive delay and interactive rejection** - These visuals don’t include future capacity smoothing. When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. For example, a 250% interactive delay means that Fabric is attempting to fit 25 minutes of consumption into the next 10 minutes. However, you might have background smoothed consumption in future timepoints.
+* **Background rejection** - High percent throttling numbers indicate you’ve overused your daily (24 hour) capacity resources. When your background rejection is higher than 100%, all requests are rejected. Rejection will stop once your capacity usage is lower than 100%. For example, a background rejection of 250% means that you’ve used 2.5 the amount of your daily capacity resources for your SKU level.
+
+* **Interactive delay and interactive rejection** - When you look at these visuals, you only see what’s affecting your capacity at a specific timepoint. These visuals don’t include future capacity smoothing. However, background smoothed consumption could lower the amount of usage available for interactive requests in future timepoints.
+
+    * *Interactive delay example* - A 250% interactive delay means that Fabric is attempting to fit 25 minutes of consumption into the next 10 minutes.
+
+    * *Interactive rejection example* - A 250% interactive rejection means that Fabric is attempting to fit 2.5 hours of consumption into the next 60 minutes.
+
+When your usage is 250%, you’ll need to wait until the capacity lowers future usage to below 100%. The time this takes depends on whether background rejection, interactive rejection or interactive delays are the cause of your capacity over use.
+
+* **Background rejection** - All requests are rejected and it'll takes 1.5 days or 36 hours for the capacity usage to get to 100%.
+
+* **Interactive rejection** - At least 1.5 hours which is 1.5 x the 60 minute smoothing window, for the capacity usage to get to 100%.  
+
+* **Interactive delays** - At least 15 minutes, which is 1.5 x the 10 minute throttling window.  
+
+Interactive rejection and interactive delay could take longer than 1.5 times the window duration to stop getting throttled. New requests could be adding more carry forward usage to the capacity making the time it takes for the capacity usage to get to 100% longer than the 60 minute or 10 minute time windows.
 
 ### Utilization  
 
