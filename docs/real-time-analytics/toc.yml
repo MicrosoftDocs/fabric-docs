@@ -184,20 +184,20 @@ items:
       href: spark-connector.md
 - name: Visualize data
   items:
-  - name: Real-Time Dashboard
+  - name: Real-Time Dashboards
     items:
-  - name: Create a Real-Time Dashboard
-    href: dashboard-real-time-create.md
-  - name: Customize Real-Time Dashboard visuals
-    href: dashboard-visuals-customize.md
-  - name: Apply conditional formatting in Real-Time Dashboards
-    href: dashboard-conditional-formatting.md
-  - name: Use parameters in Real-Time Dashboards
-    href: dashboard-parameters.md
-  - name: View queries in Real-Time Dashboards
-    href: dashboard-view-query.md
-  - name: Real-Time Dashboard-specific visuals
-    href: dashboard-visuals.md
+    - name: Create a Real-Time Dashboard
+      href: dashboard-real-time-create.md
+    - name: Customize Real-Time Dashboard visuals
+      href: dashboard-visuals-customize.md
+    - name: Apply conditional formatting in Real-Time Dashboards
+      href: dashboard-conditional-formatting.md
+    - name: Use parameters in Real-Time Dashboards
+      href: dashboard-parameters.md
+    - name: View queries in Real-Time Dashboards
+      href: dashboard-view-query.md
+    - name: Real-Time Dashboard-specific visuals
+      href: dashboard-visuals.md
   - name: Power BI
     items:
     - name: Visualize data in a Power BI report
