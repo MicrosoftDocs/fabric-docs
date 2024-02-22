@@ -364,7 +364,7 @@ mssparkutils.credentials.getToken('audience Key')
 getSecret returns an Azure Key Vault secret for a given Azure Key Vault endpoint and secret name using user credentials.
 
 ```python
-mssparkutils.credentials.getSecret('https://your-key-vault-name.vault.azure.net/', 'secret name')
+mssparkutils.credentials.getSecret('https://<name>.vault.azure.net/', 'secret name')
 ```
 
 ## File mount and unmount
