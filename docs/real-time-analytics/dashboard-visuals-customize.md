@@ -25,15 +25,8 @@ To make changes in your dashboard:
 
 1. In the top menu, select **Viewing** and toggle to **Editing** mode.
 
-    :::image type="content" source="media/customize-dashboard-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/customize-dashboard-visuals/viewing-to-editing-mode.png":::
-
 1. On the tile that you'd like to customize, select the **Edit** icon. Edit the underlying query or the visualization properties.
-
-    :::image type="content" source="media/customize-dashboard-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/customize-dashboard-visuals/tile-edit-icon.png":::
-
 1. To save your changes and return to the dashboard, select **Apply changes**.
-
-    :::image type="content" source="media/customize-dashboard-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/customize-dashboard-visuals/apply-changes.png":::
 
 ## Customization properties
 
@@ -78,7 +71,7 @@ You can embed images in your dashboard tiles using Markdown text.
 For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
 1. Open a [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
-1. In the top menu, select **Add text** to open a text tile.
+1. In the top menu, select **New text tile** to open a text tile.
 
     :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
 
