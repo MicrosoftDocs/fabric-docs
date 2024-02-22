@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 02/08/2024
+ms.date: 02/22/2024
 ---
 
 # Security in Microsoft Fabric
@@ -56,6 +56,14 @@ To understand more about authentication in Fabric, see [Microsoft Fabric securit
 ### Outbound network security
 
 Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
+
+#### Data gateway
+
+To connect to on-premises data sources, that might be protected by a firewall or a virtual network, you can use one of these options:
+
+* [On-premises data gateway](/power-bi/connect-data/service-gateway-onprem) - The gateway acts as a bridge between your on-premises data sources and Fabric. The gateway is installed on a server within your network, and it allows Fabric to connect to your data sources without the need to open ports or make changes to your network.
+
+* [Virtual network (VNet) data gateway](/data-integration/vnet/overview) - The VNet gateway allows you to connect from Microsoft Cloud services to your Azure data services within a VNet, without the need of an on-premises data gateway.
 
 #### On-premises data gateway
 
