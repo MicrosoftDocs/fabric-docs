@@ -27,17 +27,16 @@ The query examples used in this article are based on the **StormEvents** table i
 
 ## View parameters list
 
-To view the list of all dashboard parameters, select the **Parameters** button at the top of the dashboard.
-
-:::image type="content" source="media/dashboard-parameters/parameters-widget.png" alt-text="Screenshot of the parameters button at the top of dashboard.":::
+To view the list of all dashboard parameters, select **Manage** > **Parameters**.
 
 ## Create a parameter
 
 To create a parameter:
 
-1. Select the **Parameters** button at the top of the dashboard.
-1. Select the **+ New parameter** button at the top of the right pane.
+1. Select the **New Parameters** button on the top menu. The **Parameters** pane opens.
+1. Select the **+ Add** button at the top of the right pane.
 1. Fill in the relevant [properties](#properties) for your parameter.
+1. Select **Done** to create the parameter.
 
 ### Properties
 
@@ -47,12 +46,13 @@ In the **Add parameter** pane, configure the following properties.
 |---------|---------|
 |**Label**|The name of the parameter shown on the dashboard or the edit card.|
 |**Parameter type**|One of the following parameters:<br />- **Single selection**: Only one value can be selected in the filter as input for the parameter.<br />- **Multiple selection**: One or more values can be selected in the filter as inputs for the parameter.<br />- **Time range**: Allows creating additional parameters to filter the queries and dashboards based on time. Every dashboard has a time range picker by default.<br />- **Free text**: Doesn't have any values populated in the filter. The user can type a value or copy/paste a value to the text field. The filter keeps the recent values used.|
+| **Description** | Optional description of the parameter. |
 |**Variable name**|The name of the parameter to be used in the query.|
 |**Data type**|The data type of the parameter values.|
 |**Show on pages**|Select the pages where this parameter is displayed. The **Select all** option shows the parameter on all pages.|
 |**Source**|The source of the parameter values:<br />- **Fixed values**: Manually introduced static filter values.<br />- **Query**: Dynamically introduced values using a KQL query.|
+|**Add "Select all" value**|Applicable only to single selection and multiple selection parameter types. Used to retrieve data for all the parameter values. This value should be built into the query to provide the functionality. See [Use the multiple-selection query-based parameter](#multiple-selection-query-based-parameters) for more examples on building such queries.|
 |**Default value**|The default value of the filter. The filter always starts with the default value upon initial rendering of the dashboard.|
-|**Add a "Select all" value**|Applicable only to single selection and multiple selection parameter types. Used to retrieve data for all the parameter values. This value should be built into the query to provide the functionality. See [Use the multiple-selection query-based parameter](#multiple-selection-query-based-parameters) for more examples on building such queries.|
 
 ## Manage parameters
 
@@ -316,7 +316,7 @@ Once you have [added data sources](dashboard-real-time-create.md#add-data-source
     * **Parameter type**: Data source
     * **Show on pages**: Select all
     * **Values**: Select all
-    * **Default value**: StormEventsSample
+    * **Default value**: StormEvents
 
     :::image type="content" source="media/dashboard-parameters/data-source-parameter.png" alt-text="Screenshot of data source parameters.":::
 
@@ -351,7 +351,6 @@ To create a cross-filter, you must turn on the option in the visual, and then sp
     > [!IMPORTANT]
     > The column and parameter must be of the same data type.
 
-:::image type="content" source="media/dashboard-parameters/cross-filter-query.png" alt-text="Screenshot of the edit visual page, showing the interactions tab.":::
 
 ## Interact with your data using cross-filter
 
@@ -371,10 +370,7 @@ Drillthroughs allow you to select a value in a visual and use it to filter the v
 
 To create a drillthrough, you must turn on the option in the visual, and then specify one or more drillthrough parameters that are used to filter the data.
 
-1. On your primary page, edit the dashboard.
-
-    :::image type="content" source="media/dashboard-parameters/drillthrough-edit.png" alt-text="Screenshot of the dashboard menu, showing the edit option.":::
-
+1. On your primary page, enter **Editing** mode.
 1. Edit the visual where you want to add a drillthrough. Make sure that the **Visual** tab is selected.
 
     :::image type="content" source="media/dashboard-parameters/drillthrough-visual-edit.png" alt-text="Screenshot of a dashboard visual, showing the edit option.":::
