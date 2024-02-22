@@ -45,7 +45,7 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
-  - name: Workspace itentity
+  - name: Workspace identity
     href: workspace-identity.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
