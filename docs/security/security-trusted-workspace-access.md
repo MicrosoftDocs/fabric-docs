@@ -31,9 +31,9 @@ You can configure specific Fabric workspaces to access your storage account base
     :::image type="content" source="./media/security-trusted-workspace-access/create-resource-instance-build-own-template.png" alt-text="Screenshot of the Custom deployment Build your own template option.":::
 
 1. Create the resource instance rule in the editor. When done, choose **Review + Create**.
-1. On the Basics tab that appears, specify the required project and instance details. When done, choose **Review + Create**.
-1. On the Review + Create tab that appears, review the summary and then select **Create**.
-1. 
+1. On the **Basics** tab that appears, specify the required project and instance details. When done, choose **Review + Create**.
+1. On the **Review + Create** tab that appears, review the summary and then select **Create**. The rule will be submitted for deployment.
+1. When deployment is complete, you'll be able to go to the resource. [QUESTION: WHAT ARE PEOPLE SUPPOSED TO DO AFTER THIS STEP]
 
 >[!NOTE]
 >Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
