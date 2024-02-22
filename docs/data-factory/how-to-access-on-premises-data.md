@@ -69,15 +69,15 @@ You have now created a Dataflow Gen2 to load data from an on-premises data sourc
 
 1. From the Home tab of the pipeline editor, select **Copy data** and then **Use copy assistant**. Add a new source to the activity in the assistant's **Choose data source** page, then select the connection established in the previous step.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/choose-data-source.png" alt-text="Screenshot showing where to choose a new data source from the Copy data activity.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/choose-data-source.png" lightbox="media/how-to-access-on-premises-data/choose-data-source.png" alt-text="Screenshot showing where to choose a new data source from the Copy data activity.":::
 
 1. Select a destination for your data from the on-premises data source.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/choose-destination.png" alt-text="Screenshot showing where to choose the data destination in the Copy activity.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/choose-destination.png" lightbox="media/how-to-access-on-premises-data/choose-destination.png" alt-text="Screenshot showing where to choose the data destination in the Copy activity.":::
 
 1. Run the pipeline.
 
-   :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
+   :::image type="content" source="media/how-to-access-on-premises-data/run-pipeline.png" lightbox="media/how-to-access-on-premises-data/run-pipeline.png" alt-text="Screenshot showing where to run the pipeline in the pipeline editor window.":::
 
    You have now created a pipeline to load data from an on-premises data source into a cloud destination.
 
