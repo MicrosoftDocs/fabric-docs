@@ -16,7 +16,7 @@ LocalizationGroup: Administration
 
 # Metrics tenant settings 
 
-These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
+Metrics in Power BI let customers curate their metrics and track them against key business objectives, in a single pane. This feature enhances data culture by promoting accountability, alignment, and visibility for teams and initiatives within organizations.
 
 ## Create and use Metrics
 
