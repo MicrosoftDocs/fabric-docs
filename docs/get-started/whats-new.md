@@ -28,6 +28,9 @@ This section includes articles and announcements for users new to Microsoft Fabr
 - [End-to-end tutorials in Microsoft Fabric](end-to-end-tutorials.md)
 - [Definitions of terms used in Microsoft Fabric](fabric-terminology.md)
 
+> [!TIP]
+> Join us in Las Vegas March 26-28, 2024 for the first annual Microsoft Fabric Community Conference. See firsthand how Microsoft Fabric and the rest of the data and AI products at Microsoft can help your organization prepare for the era of AI. [Register today](https://fabricconf.com/) using code `MSCUST` for an exclusive discount!
+
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
 |January 2024|**Microsoft Fabric Copilot for Data Science and Data Engineering**|[Copilot for Data Science and Data Engineering](copilot-notebooks-overview.md) is now available worldwide. [What can Copilot for Data Science and Data Engineering do for you?](https://blog.fabric.microsoft.com/blog/microsoft-fabric-copilot-a-game-changer-for-data-professionals?ft=All)|
@@ -425,7 +428,7 @@ News and feature announcements core to the Microsoft Fabric experience.
 |October 2023|**Keyword-Based Filtering of Tenant Settings**| Microsoft Fabric has recently introduced [keyword-based filtering for the tenant settings page in the admin portal](https://powerbi.microsoft.com/blog/enhancing-admin-portal-experience-with-keyword-based-filtering/).|
 |September 2023|**Monitoring hub – column options**|[Column options inside the monitoring hub give](https://blog.fabric.microsoft.com/blog/microsoft-fabric-september-2023-update?ft=09-2023:date#post-4105-_Toc146840874) users a better customization experience and more room to operate. |
 |September 2023|**OneLake File Explorer v1.0.10**|The [OneLake file explorer](https://go.microsoft.com/fwlink/?linkid=2235671) automatically syncs all Microsoft OneLake items that you have access to in Windows File Explorer. With the latest version, you can seamlessly transition between using the OneLake file explorer app and the Fabric web portal. You can also right-click on the OneLake icon in the Windows notification area, and select Diagnostic Operations to view client-site logs. Learn more about [easy access to open workspaces and items online](https://blog.fabric.microsoft.com/blog/onelake-file-explorer-easy-access-to-open-workspaces-and-items-online?ft=All).|
-|August 2023|**Multitasking navigation improvement**|Now, all Fabric items are opened in a single browser tab on the left navigation bar, even in the event of a page refresh. This ensures you can refresh the page without the concern of losing context.|
+|August 2023|**Multitasking navigation improvement**|Now, all Fabric items are opened in a single browser tab on the navigation pane, even in the event of a page refresh. This ensures you can refresh the page without the concern of losing context.|
 |August 2023|**Monitoring Hub support for personalized column options**|We have updated Monitoring Hub to allow users to personalize activity-specific columns. You now have the flexibility to display columns that are relevant to the activities you're focused on.|
 
 
