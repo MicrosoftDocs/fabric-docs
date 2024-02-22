@@ -11,7 +11,17 @@ items:
     href: ../governance/index.yml  
   - name: Admin documentation
     href: ../admin/index.yml          
-- name: Security features
+- name: Network security
+  items:
+  - name: Inbound
+    items:
+    - name: Service tags
+      href: security-service-tags.md
+  - name: Outbound
+    items:
+    - name: Trusted workspace access
+      href: security-trusted-workspace-access.md
+- name: Data security
   items:
   - name: Guest user sharing
     href: security-b2b.md
@@ -19,10 +29,6 @@ items:
     href: security-conditional-access.md
   - name: Customer Lockbox
     href: security-lockbox.md
-  - name: Service tags
-    href: security-service-tags.md
-  - name: Trusted workspace access
-    href: security-trusted-workspace-access.md
 - name: Reliability
   items:
   - name: Reliability in Microsoft Fabric
