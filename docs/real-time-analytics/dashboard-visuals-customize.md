@@ -17,7 +17,7 @@ All visualizations that can be created in the context of the [render operator](/
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](dashboard-real-time.md)
+* Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Customize a dashboard tile
 
@@ -77,7 +77,7 @@ You can embed images in your dashboard tiles using Markdown text.
 
 For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
-1. Open a [Real-Time Dashboard](dashboard-real-time.md#create-a-new-dashboard).
+1. Open a [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
 1. In the top menu, select **Add text** to open a text tile.
 
     :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::

@@ -13,6 +13,6 @@ All visualizations that are created in the context of the [render operator](/azu
 
 To learn how to customize any dashboard visuals, see [Customize Azure Data Explorer dashboard visuals](dashboard-visuals-customize.md)
 
-For general information on Real-Time Dashboards, see [Visualize data with Real-Time Dashboards](dashboard-real-time.md).
+For general information on Real-Time Dashboards, see [Visualize data with Real-Time Dashboards](dashboard-real-time-create.md).
 
 [!INCLUDE [dashboard visuals](~/../kusto-repo/data-explorer/includes/cross-repo/dashboard-visuals.md)]

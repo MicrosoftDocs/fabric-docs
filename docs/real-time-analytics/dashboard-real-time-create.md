@@ -32,6 +32,8 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 
 :::image type="content" source="media/real-time-dashboard/dashboard-new.png" alt-text="Screenshot of newly created Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
 
+    A new dashboard is created in your workspace.
+
 ## Add data source
 
 Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
@@ -45,7 +47,7 @@ Data sources are reusable references to a specific database in the same workspac
     1. Enter a **Data source name**.
     1. Select a **Database** from the drop-down list.
 1. Select **Create**.
-
+  
 ## Add tile
 
 Dashboard tiles use Kusto Query Language snippets to retrieve data and render visuals. Each tile/query can support a single visual.
@@ -60,7 +62,7 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 
     :::image type="content" source="media/real-time-dashboard/query.png" alt-text="Screenshot of dashboard query in Real-Time Dashboards in Real-Time Analytics in Microsoft Fabric.":::
 
-1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual.
+1. In the **Visual formatting** tab, select **Visual type** to choose the type of visual. For more information on how to customize the visual, see [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md).
 1. Select **Apply changes** to pin the visual to the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards.":::

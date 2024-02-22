@@ -187,7 +187,7 @@ items:
   - name: Real-Time Dashboard
     items:
   - name: Create a Real-Time Dashboard
-    href: dashboard-real-time.md
+    href: dashboard-real-time-create.md
   - name: Customize Real-Time Dashboard visuals
     href: dashboard-visuals-customize.md
   - name: Apply conditional formatting in Real-Time Dashboards

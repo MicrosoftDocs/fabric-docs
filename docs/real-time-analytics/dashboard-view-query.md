@@ -9,7 +9,7 @@ ms.date: 02/21/2023
 ---
 # View queries in Real-Time Dashboards
 
-[Real-Time Dashboards](dashboard-real-time.md) are a collection of tiles that feature a visual representation supported by an underlying [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric) query. This article explains how to view and edit the underlying query of a Real-Time Dashboard tile.
+[Real-Time Dashboards](dashboard-real-time-create.md) are a collection of tiles that feature a visual representation supported by an underlying [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric) query. This article explains how to view and edit the underlying query of a Real-Time Dashboard tile.
 
 The way you view or edit the query of a tile depends on the permissions you have and the mode you've entered on the dashboard. Choose the tab below that corresponds to viewing or editing the dashboard.
 
@@ -20,7 +20,7 @@ Toggle between modes using the **Viewing** and **Editing** buttons in the top me
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Viewer or editor permissions on a [Real-Time Dashboard](dashboard-real-time.md). To enter the editing mode, you must have editor permissions.
+* Viewer or editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md). To enter the editing mode, you must have editor permissions.
 
 ### [Viewing mode](#tab/viewing)
 
@@ -60,5 +60,5 @@ While in editing mode, you can view and make changes to the underlying query.
 
 ## Related content
 
-* [Visualize data with Real-Time Dashboards](dashboard-real-time.md)
+* [Visualize data with Real-Time Dashboards](dashboard-real-time-create.md)
 * [Kusto Query Language (KQL)](/azure/data-explorer/kusto/query/index?context=/fabric/context/context-rta&pivots=fabric)
