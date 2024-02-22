@@ -36,14 +36,15 @@ The Real-Time Dashboard exists within the context of a workspace. A new Real-Tim
 
 Data sources are reusable references to a specific database in the same workspace as the Real-Time Dashboard. Different tiles can be based on different data sources.
 
-1. Select the **Manage** tab > **Data sources**
-1. In the **Data sources** pane, select **+ New data source**.
+1. Select the **Home** tab > **New data source**.
+1. In the **Data sources** pane, select **+ Add**.
 
     :::image type="content" source="media/real-time-dashboard/new-data-source.png" alt-text="Screenshot of adding a new data source to a Real-Time Dashboard in Real-Time Analytics in Microsoft Fabric.":::
 
 1. In the **Create new data source** pane:
     1. Enter a **Data source name**.
     1. Select a **Database** from the drop-down list.
+1. Select **Create**.
 
 ## Add tile
 
@@ -63,9 +64,8 @@ Dashboard tiles use Kusto Query Language snippets to retrieve data and render vi
 1. Select **Apply changes** to pin the visual to the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/visual-formatting.png" alt-text="Screenshot of visual formatting pane in Real-Time Dashboards.":::
-1. You can resize the visual and then select the **Save** icon.
 
-    :::image type="content" source="media/real-time-dashboard/save-dashboard.png" alt-text="Screenshot of dashboard tile with save highlighted in a red box.":::
+1. Select the **Save** icon.
 
 ## Add page
 
@@ -172,3 +172,9 @@ You can update an existing dashboard, or restore a previous version, as follows:
 1. In the dashboard, select the **Manage** tab > **Replace with file**.
 1. Select the file to update the dashboard.
 1. Select **Save**.
+
+## Related content
+
+* [Use parameters in Real-Time Dashboards](dashboard-parameters.md)
+* [Real-Time Dashboard-specific visuals](dashboard-visuals.md)
+* [Apply conditional formatting in Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
