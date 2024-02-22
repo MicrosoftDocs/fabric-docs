@@ -12,7 +12,7 @@ ms.date: 02/22/2024
 
 ## What is a workspace identity
 
-A Fabric workspace identity is an automatically managed service principal that can be associated with Fabric workspaces. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through trusted workspace access LINK for OneLake shortcuts. In the future, Fabric items will be able to use the identity when connecting to resources that support Microsoft Entra authentication. Fabric will use workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
+A Fabric workspace identity is an automatically managed service principal that can be associated with Fabric workspaces. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. In the future, Fabric items will be able to use the identity when connecting to resources that support Microsoft Entra authentication. Fabric will use workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
 
 Workspace identities are created in the workspace settings of workspaces that are associated with a Fabric capacity. A workspace identity is automatically assigned the workspace contributor role and has access to workspace items.
 

@@ -21,6 +21,8 @@ items:
     href: security-lockbox.md
   - name: Service tags
     href: security-service-tags.md
+  - name: Trusted workspace access
+    href: security-trusted-workspace-access.md
 - name: Reliability
   items:
   - name: Reliability in Microsoft Fabric
