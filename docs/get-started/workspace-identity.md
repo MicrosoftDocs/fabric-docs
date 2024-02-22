@@ -19,11 +19,11 @@ Workspace identities are created in the workspace settings of workspaces that ar
 When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. The credentials associated with workspace identities are automatically managed by Fabric , thereby preventing credential leaks and downtime due to improper credential handling.
 
 > [!NOTE]
-> Fabric workspace identity is currently in public preview. You can only create a workspace identity in F64 or higher capacities.
+> Fabric workspace identity is currently in public preview. You can only create a workspace identity in F64 or higher capacities. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription).
 
 While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace may optionally have an identity. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it is associated with.
 
-Access control for the workspace identity with which it is associated with is also managed in Fabric.   The workspace identity can be authorized to access Azure resources by granting Azure role-based access control (RBAC) roles or permissions. 
+Access control for the workspace identity with which it is associated with is also managed in Fabric.   The workspace identity can be authorized to access Azure resources by granting Azure role-based access control (RBAC) roles or permissions.
 
 ## Create and manage a workspace identity
 
