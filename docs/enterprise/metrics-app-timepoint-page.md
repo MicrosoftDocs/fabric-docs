@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/13/2024
+ms.date: 02/15/2024
 ---
 
 # Understand the metrics app timepoint page

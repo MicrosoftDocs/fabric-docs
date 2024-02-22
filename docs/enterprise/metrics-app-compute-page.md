@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 02/13/2024
+ms.date: 02/15/2024
 ---
 
 # Understand the metrics app compute page
@@ -163,7 +163,11 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
-* **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
+* **Workspace** - The workspace the item belongs to.
+
+* **Item kind** - The item type.
+
+* **Item name** - The item name.
 
 * **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
 
