@@ -56,8 +56,8 @@ Under **Authentication kind**, select your authentication kind from the drop-dow
 
 #### Access key authentication
 
-- **Access Key Id**: The Identity and Access Management (IAM) user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
-- **Secret Access Key**: The Identity and Access Management (IAM) secret key.
+- **Access Key Id**: Specify the ID of the secret access key.
+- **Secret Access Key**: Specify the secret access key itself.
 
 :::image type="content" source="media/connector-amazon-s3/access-key-authentication.png" alt-text="Screenshot showing the access key authentication kind for Amazon S3.":::
 
@@ -89,8 +89,8 @@ The following table contains properties for the supported authentication type.
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---:|:---|:---:|
 |**Access key**||||✓|
-|- Access Key Id|The Identity and Access Management (IAM) user key. For more information, see [Manage access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).|Yes |||
-|- Secret Access Key|The Identity and Access Management (IAM) secret key.|Yes |||
+|- Access Key Id|Specify the ID of the secret access key.|Yes |||
+|- Secret Access Key|Specify the secret access key itself.|Yes |||
 
 ## Related content
 
