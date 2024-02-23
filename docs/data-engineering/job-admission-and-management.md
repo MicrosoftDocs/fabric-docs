@@ -25,7 +25,9 @@ In Microsoft Fabric, Starter Pools (which is the default compute option for any 
 ## How does this impact the Job Concurrency for Fabric Spark? 
 The minimum cores requirements for each job will determine whether the job can be accepted or not. If the capacity is fully utilized and there are no cores left that can meet the min core requirements of the job, the job will be rejected. Interactive notebook jobs or Lakehouse operations will be blocked with a *HTTP Response code 430: Unable to submit this request because all the available capacity is currently being used. Cancel a currently running job, increase your available capacity, or try again later* error. Batch jobs will be put in a queue and processed automatically when the cores are freed.
 
-Lets take the example scenario where a user is using Fabric F32 capacity SKU. Assuming all jobs submitted are using the default Starter Pool configuration, without Optimistic Job Admission, the capacity would allow a maximum concurrency of 3 jobs as it reserved all the max number of cores for each job based on the max nodes configuration. 
+Lets take the example scenario where a user is using Fabric F32 capacity SKU. Assuming all jobs submitted are using the default Starter Pool configuration, without Optimistic Job Admission, the capacity would allow a maximum concurrency of 3 jobs as it reserved all the max number of cores for each job based on the max nodes configuration.
+
+:::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
 
 With Optimistic job admission, with the same configuration, the capacity would allow 24 jobs to be admitted and start executing with their min node configuration during a max concurrency scenario as the jobs are admitted accounting for 8 SparkVCores (1 Minimum node configuration of size Medium)
 
