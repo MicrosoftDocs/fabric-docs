@@ -49,17 +49,21 @@ You can build reports from semantic models with **Power BI Desktop** using a Liv
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) to make a connection and build reports.
+If you’re browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) in OneLake, you can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) to make a connection and build reports:
+1.	Open Power BI Desktop and select **Warehouse** under the **Data hub** dropdown in the ribbon. 
+1.	Select the warehouse you would like to connect to. If you would like to create a live connection to the automatically defined data model, select **Connect**. If you would like to connect directly to the data source and define your own data model, click on the dropdown arrow for the Connect button and select Connect to SQL endpoint. 
+1.	For authentication, select **organizational account**. 
+1.	Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
+1.	If you selected **Connect to SQL Endpoint**, select the data items you want to include or not include in your semantic model.
 
-Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
-
-1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.
-1. Select the **Warehouse  connector** from the **Get data** or connect to the default semantic model from **Data hub**. 
-1. Paste the SQL connection string into the connector dialog. 
-1. For authentication, select *organizational account*.
-1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
-1. Select **Connect**.
-1. Select the data items you want to include or not include in your semantic model.
+Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) and would like more advanced options such as writing a SQL statement to filter out specific data, you can complete the following steps to connect to a warehouse in Power BI Desktop:
+ 
+1.	Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the Warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**.
+1.	Open Power BI Desktop and select **SQL Server** in the ribbon. 
+1.	Paste the SQL connection string under **Server**. 
+1.	In the Navigator dialog, select the database(s) and table(s) you would like to load. 
+1.	If prompted for authentication, select **organizational account**.
+1.	Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
 
 ## Related content
 
