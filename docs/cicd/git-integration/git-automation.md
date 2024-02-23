@@ -6,7 +6,7 @@ ms.author: monaberdugo
 ms.reviewer: Pierre, Nimrod
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/10/2024
+ms.date: 02/19/2024
 ---
 
 # Automate Git integration by using APIs and Azure DevOps
@@ -37,11 +37,11 @@ The [Git integration REST APIs](/rest/api/fabric/core/git) can help you achieve 
 
 * [**Update the workspace**](/rest/api/fabric/core/git/update-from-git) with commits pushed to the connected branch.
 
-## Before you begin
+## Prerequisites
 
-To work with Fabric APIs you need the following:
+To work with Fabric Git APIs you need the following:
 
-* A Fabric license. If you don't have a license, you can [sign up for a free trial](https://www.microsoft.com/microsoft-fabric).
+* The same [prerequisites you need to use Git integration in the UI](./git-get-started.md#prerequisites).
 
 * A Microsoft Entra token for Fabric service. Use that token in the authorization header of the API call. For information about how to get a token, see [Fabric API quickstart](/rest/api/fabric/articles/get-started/fabric-api-quickstart).
 
