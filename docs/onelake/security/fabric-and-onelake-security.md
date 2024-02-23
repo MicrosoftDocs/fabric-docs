@@ -31,7 +31,7 @@ Learn more about controlling data access using Fabric Workspace and Item permiss
 
 Many Fabric engines allow allow fine-grained access control such as table, column, and row-level security to be defined. Some compute engines in Fabric have their own security models. For example, Fabric Warehouse lets users define access using T-SQL statements. Compute-specific security is always enforced when you access data using that engine, but those conditions may not apply to users in certain Fabric roles when they access OneLake directly.
 
-Learn more about Security in Fabric Engines here:
+### Related Docs:
 
 - [Datawarehousing Security](../../data-warehouse/security.md) => TBD Add OneLake / SQL security aspect!
 - [PowerBI Security](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-power-bi-security) => TBD Add OneLake / SQL security aspect!
@@ -44,7 +44,10 @@ OneLake Folder security allows users to create custom roles within a lakehouse a
 
 :::image type="content" source=".\media\folder-level-security.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
 
-Learn more about [OneLake Data Access Control Model](./data-access-control-model.md).
+### Related Docs:
+
+- [OneLake Data Access Control Model](./data-access-control-model.md)
+- [Get Started with Data Access Roles](./get-started-data-access-roles.md)
 
 ## Shortcut security
 
