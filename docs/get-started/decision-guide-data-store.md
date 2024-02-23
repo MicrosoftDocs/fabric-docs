@@ -24,7 +24,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Primary developer persona** | Data warehouse developer, SQL engineer | Data engineer, data scientist | Citizen developer | Citizen Data scientist, Data engineer, Data scientist, SQL engineer |
 | **Primary developer skill set** | SQL | Spark(Scala, PySpark, Spark SQL, R) | No code, SQL | No code, KQL, SQL |
 | **Data organized by** | Databases, schemas, and tables | Folders and files, databases, and tables | Database, tables, queries | Databases, schemas, and tables |
-| **Read operations** | Spark,T-SQL | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
+| **Read operations** | T-SQL, Spark (supports reading from tables using shortcuts, doesn't yet support accessing views, stored procedures, fuctions etc.) | Spark,T-SQL | Spark,T-SQL,Power BI | KQL, T-SQL, Spark, Power BI |
 | **Write operations** | T-SQL | Spark(Scala, PySpark, Spark SQL, R) | Dataflows, T-SQL | KQL, Spark, connector ecosystem |
 | **Multi-table transactions** | Yes | No | No | Yes, for multi-table ingestion. See [update policy](/azure/data-explorer/kusto/management/updatepolicy?context=%2Ffabric%2Fcontext%2Fcontext-rta&pivots=fabric#the-update-policy-object).|
 | **Primary development interface** | SQL scripts | Spark notebooks,Spark job definitions | Power BI | KQL Queryset, KQL Database |
@@ -64,7 +64,7 @@ Daisy is business analyst experienced with using Power BI to analyze supply chai
 
 Daisy decides to use a **KQL Database** because of its scalability, quick response times, advanced analytics capabilities including time series analysis, geospatial functions, and fast direct query mode in Power BI. Queries can be executed using Power BI and KQL to compare between current and previous periods, quickly identify emerging problems, or provide geo-spatial analytics of land and maritime routes.
 
-## Next steps
+## Related content
 
 - [What is data warehousing in Microsoft Fabric?](../data-warehouse/data-warehousing.md)
 - [Create a warehouse in Microsoft Fabric](../data-warehouse/create-warehouse.md)

@@ -32,7 +32,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 * **Set up metadata scanning in the organization**: Before metadata scanning can be run, a Fabric admin needs to set it up in your organization. Fabric admins should see [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 
-* **Enable service principal authentication for admin read-only APIs**. Service principal is an authentication method that can be used to let an Azure Active Directory (Azure AD) application access Microsoft Fabric content and APIs. See [Enable service principal authentication for admin read-only APIs](../admin/metadata-scanning-enable-read-only-apis.md).
+* **Enable service principal authentication for admin read-only APIs**. Service principal is an authentication method that can be used to let a Microsoft Entra application access Microsoft Fabric content and APIs. See [Enable service principal authentication for admin read-only APIs](../admin/metadata-scanning-enable-read-only-apis.md).
 
 * **Run metadata scanning**: See [Run metadata scanning](./metadata-scanning-run.md) for a walkthrough that demonstrates a how to run a scan.
 
@@ -40,7 +40,7 @@ The following are the scanner APIs. They support both public and sovereign cloud
 
 Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
-## Next steps
+## Related content
 
 * [Set up metadata scanning](../admin/metadata-scanning-setup.md).
 * [Enable service principal authentication for read-only admin APIs](../admin/metadata-scanning-enable-read-only-apis.md).

@@ -4,7 +4,7 @@ description: A known issue is posted where OneLake compute transactions don't co
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting 
-ms.date: 12/08/2023
+ms.date: 02/02/2024
 ms.custom: known-issue-553
 ---
 
@@ -12,7 +12,7 @@ ms.custom: known-issue-553
 
 The Microsoft Fabric Capacity Metrics app doesn't show data for OneLake transaction usage reporting. OneLake compute doesn't appear in the Fabric Capacity Metrics app and doesn't count against capacity limits. OneLake storage reporting doesn't have any issues and is reported correctly.
 
-**Status:** Open
+**Status:** Fixed: January 19, 2024
 
 **Product Experience:** OneLake
 
@@ -22,8 +22,12 @@ You don't see OneLake compute usage in the Microsoft Fabric Capacity Metrics app
 
 ## Solutions and workarounds
 
-No workarounds at this time. This article will be updated when the fix is released.
+Beginning February 19, 2024, the issue is corrected. You can start monitoring your OneLake usage in the [Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) and compare it to your capacity limits. The Metrics app shows OneLake usage labeled as **background non-billable**. After February 19, OneLake usage will change to **background billable**, meaning it counts against your capacity limits.
 
-## Next steps
+OneLake storage reporting doesn't have any issues and is reported correctly.
+
+For updates and information about how to monitor your usage, check [OneLake consumption](/fabric/onelake/onelake-consumption).
+
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

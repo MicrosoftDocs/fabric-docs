@@ -154,8 +154,6 @@ Considerations:
 | Import/export | Yes | Yes |
 | API/SDK support | Yes | No |
 
-- **Inline**: The ```%%configure``` magic command is still [not fully supported on Fabric at this moment](library-management.md). Don't use it to bring .jar file to your notebook session.
-
 - **Other considerations**:
   - **Built-in libraries**: Fabric and Azure Synapse share a common core of Spark, but they can slightly differ in different support of their runtime libraries. Typically, using code is compatible with some exceptions. In that case, users might need compilation, the addition of custom libraries, and adjusting syntax. See built-in Fabric Spark runtime libraries [here](runtime.md).
 

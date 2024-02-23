@@ -6,14 +6,12 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
-ms.search.form:
+ms.date: 12/17/2023
 ---
 
-# Introduction to Git integration
+# Introduction to Git integration (preview)
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
@@ -55,7 +53,7 @@ The following items are currently supported:
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-git-integration)
 * [Paginated reports](/power-bi/paginated-reports/paginated-reports-report-builder-power-bi)
 * Reports (except reports connected to semantic models hosted in [Azure Analysis Services](/azure/analysis-services/analysis-services-overview), [SQL Server Analysis Services](/analysis-services/analysis-services-overview) or reports exported by Power BI Desktop that depend on semantic models hosted in [MyWorkspace](../../admin/portal-workspaces.md#govern-my-workspaces))
-* Semantic models (except push datasets, live connections, and model v1)
+* Semantic models (except push datasets, live connections, model v1, and semantic models [created from the Data warehouse/lakehouse](../../data-warehouse/semantic-models.md#create-a-new-power-bi-semantic-model).)
 
 If the workspace or Git directory has unsupported items, it can still be connected, but the unsupported items are ignored. They aren’t saved or synced, but they’re not deleted either. They appear in the source control pane but you can't commit or update them.
 

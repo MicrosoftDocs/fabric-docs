@@ -1,19 +1,19 @@
 ---
 title: Data warehouse tutorial - ingest data into a Warehouse in Microsoft Fabric
 description: In this third tutorial step, learn how to ingest data into the warehouse you created in the last step.
-ms.reviewer: wiassaf
-ms.author: scbradl
 author: bradleyschacht
+ms.author: scbradl
+ms.reviewer: wiassaf
+ms.date: 01/22/2024
 ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
 ---
 
 # Tutorial: Ingest data into a Warehouse in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
+**Applies to:** [!INCLUDE [fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)], you can ingest data into that warehouse.
 
@@ -27,7 +27,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. In the **Data Factory** section, select **Data pipeline**.
 
-   :::image type="content" source="media\tutorial-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline.":::
+   :::image type="content" source="media\tutorial-ingest-data\select-data-pipeline.png" alt-text="Screenshot of the data pipeline section, showing where to select Data pipeline." lightbox="media\tutorial-ingest-data\select-data-pipeline.png":::
 
 1. On the **New pipeline** dialog, enter `Load Customer Data` as the name.
 
@@ -75,7 +75,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. Select **Create**.
 
-1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_city/*.parquet`:
+1. Change the remaining settings on the **Source** page of the copy activity as follows, to reach the .parquet files in `https://azuresynapsestorage.blob.core.windows.net/sampledata/WideWorldImportersDW/parquet/full/dimension_customer/*.parquet`:
 
    1. In the **File path** text boxes, provide:
 
@@ -105,7 +105,7 @@ Now that you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!I
 
 1. In the second box next to the **Table** setting, enter `dimension_customer`.
 
-   :::image type="content" source="media\tutorial-ingest-data\destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps.":::
+   :::image type="content" source="media\tutorial-ingest-data\destination-tab.png" alt-text="Screenshot of the Destination tab, showing where to enter and select the details specified in the previous steps." lightbox="media\tutorial-ingest-data\destination-tab.png":::
 
 1. From the ribbon, select **Run**.
 

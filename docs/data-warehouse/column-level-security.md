@@ -29,14 +29,14 @@ Implement column-level security with the [GRANT](/sql/t-sql/statements/grant-tr
 
 Column-level security is applied to [shared warehouse or lakehouse](share-warehouse-manage-permissions.md), because the underlying data source hasn't changed.
 
-Only Microsoft Entra ID authentication is supported.
+Only Microsoft Entra authentication is supported.
 
 ## Example
 
 This example will create a table and will limit the columns that `charlie@contoso.com` can see in the `customers` table.
 
 ```sql
-CREATE TABLE dbo.customers
+CREATE TABLE dbo.Customers
   (CustomerID int,
    FirstName varchar(100) NULL,
    CreditCard char(16) NOT NULL,
@@ -55,7 +55,7 @@ GRANT SELECT ON Customers(CustomerID, FirstName, LastName, Phone, Email) TO [Cha
 Queries executed as `charlie@contoso.com` will fail if they include the `CreditCard` column:
 
 ```sql
-SELECT * FROM Membership;
+SELECT * FROM Customers;
 ```
 
 ```output

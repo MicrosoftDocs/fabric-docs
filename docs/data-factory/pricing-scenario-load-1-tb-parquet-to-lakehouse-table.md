@@ -40,7 +40,7 @@ The data movement operation utilized 291,960 CU seconds with a 810.16 second (13
 
 **Total run cost at $0.18/CU hour** = (81.1 CU-hours) * ($0.18/CU hour) ~= **$14.60**
 
-## Next steps
+## Related content
 
 - [Data pipelines pricing for Data Factory in Microsoft Fabric](pricing-pipelines.md)
 - [Dataflow Gen2 pricing for Data Factory in Microsoft Fabric](pricing-dataflows-gen2.md)

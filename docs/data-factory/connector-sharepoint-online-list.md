@@ -77,7 +77,7 @@ Select **Service Principal** under **Authentication method**, and fill in the re
 :::image type="content" source="media/connector-sharepoint-online-list/authentication-service-principal.png" alt-text="Screenshot showing that service principal authentication method.":::
 
 - **Tenant Id**: The tenant ID under which your application resides.
-- **Service principal ID**: The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
+- **Service principal ID**: The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details, including the permission settings.
 - **Service principal key**: The application's key.
 
 ### Step 3: Specify the privacy level that you want to apply
@@ -110,9 +110,9 @@ The following table contains the supported authentication type properties.
 |:---|:---|:---|:---|:---|
 |**Service Principal**||||✓|
 |- Tenant ID|The tenant ID under which your application resides.|Yes |||
-|- Service Principal ID|The Application (client) ID of the application registered in Azure Active Directory. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
+|- Service Principal ID|The Application (client) ID of the application registered in Microsoft Entra ID. Refer to [Prerequisites](connector-sharepoint-online-list-copy-activity.md#prerequisites) for more details including the permission settings.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure SharePoint Online List in a copy activity](connector-sharepoint-online-list-copy-activity.md)

@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.reviewer: yaronc
 ms.topic: conceptual
-ms.date: 12/12/2023
+ms.date: 01/25/2024
 ms.custom:
   - build-2023
   - ignite-2023-fabric
@@ -39,13 +39,14 @@ The data items list displays all the data items you have access to. To shorten t
 
 :::image type="content" source="./media/onelake-data-hub/onelake-data-hub-data-items-list.png" alt-text="Screenshot of the OneLake data hub data items list." lightbox="./media/onelake-data-hub/onelake-data-hub-data-items-list.png":::
 
-The list has three tabs to narrow down the list of data items.
+The list has four tabs to narrow down the list of data items.
 
 |Tab  |Description  |
 |:-------------------------|:----------------------------------------------------|
-| **All**                  | Data items that you're allowed to find.  |
+| **All data**                  | Data items that you're allowed to find.  |
 | **My data**              | Data items that you own.      |
 | **Endorsed in your org** | Endorsed data items in your organization that you're allowed to find. Certified data items are listed first, followed by promoted data items. For more information about endorsement, see the [Endorsement overview](../governance/endorsement-overview.md) |
+| **Favorites** | Data items that you've marked as favorites. |
 
 The columns of the list are described below.
 
@@ -90,6 +91,10 @@ To display the options menu, select **More options (...)** on one of the items s
 
 > [!NOTE]
 >The Explorer pane may list workspaces that you don't have access to if the workspace contains items that you do have access to (through explicitly granted permissions, for example). If you select such a workspace, only the items you have access to will be displayed in the data items list.
+
+## Considerations and limitations
+
+Streaming semantic models are not shown in the OneLake data hub.
 
 ## Related content
 

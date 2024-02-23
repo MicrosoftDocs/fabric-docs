@@ -67,6 +67,6 @@ To preview your eventstream data:
 
    :::image type="content" source="./media/preview-data/preview-data-refresh.png" alt-text="Screenshot showing where to select Refresh on the Data preview tab." lightbox="./media/preview-data/preview-data-refresh.png" :::
 
-## Next steps
+## Related content
 
 - [Monitor status and performance of an eventstream](monitor.md)

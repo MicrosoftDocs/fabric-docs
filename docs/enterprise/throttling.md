@@ -70,7 +70,6 @@ Throttling systems attempt to accurately categorize operations upon submission, 
 
 The [Microsoft Fabric Capacity Metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End users receive an error message when a request is rejected that asks them to try again later. 
 
+## Related content
 
-## Next steps
-
-[Install the Microsoft Fabric capacity metrics app](metrics-app-install.md) to monitor Fabric capacities. 
+- [Install the Microsoft Fabric capacity metrics app](metrics-app-install.md) to monitor Fabric capacities. 

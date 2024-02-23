@@ -10,7 +10,7 @@ ms.custom:
   - build-2023
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 09/27/2023
+ms.date: 12/22/2023
 ---
 
 # OneLake shortcuts
@@ -26,6 +26,8 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 ## Where can I create shortcuts?
 
 You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse.
+
+You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
 
 ### Lakehouse
 
@@ -80,9 +82,6 @@ external_table('MyShortcut')
 | take 100
 ```
 
-> [!NOTE]
-> KQL databases don't currently support data in the Delta format. Tables in a KQL database only export to OneLake as Parquet files. Shortcuts in KQL databases that contain Delta-formatted data in the target aren't recognized as tables.
-
 ### Analysis Services
 
 You can create semantic models for lakehouses containing shortcuts in the **Tables** section of the lakehouse. When the semantic model runs in Direct Lake mode, Analysis Services can read data directly from the shortcut.
@@ -118,7 +117,7 @@ ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
 > [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VNET.
+> Access to storage account endpoint can't be blocked by storage firewall or VNET because storage firewalls are currently not supported.
 
 #### Authorization
 
@@ -169,6 +168,16 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 
 > [!NOTE]
 > Service Principals are currently not supported for Dataverse shortcut authorization.
+
+## Caching
+Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
+> [!NOTE]
+> Shortcut caching is currently only supported for S3 shortcuts.
+
+To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
+
+:::image type="content" source="media\onelake-shortcuts\shortcut-cache-settings.png" alt-text="Screenshot of workspace settings panel with OneLake tab selected." lightbox="media\onelake-shortcuts\shortcut-cache-settings.png":::
+
 
 ## How shortcuts utilize cloud connections
 
@@ -246,3 +255,4 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

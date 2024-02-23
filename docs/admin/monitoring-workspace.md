@@ -7,7 +7,7 @@ ms.topic: overview
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 02/01/2024
 ---
 
 # What is the admin monitoring workspace?
@@ -64,7 +64,7 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
 
-* If the workspace creator uses [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
+* If the workspace creator uses [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
 ## Considerations and limitations
 
@@ -72,9 +72,12 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Sovereign clouds are not supported.
 
-* Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions."
+* Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions.
+
+* [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
 
 ## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
+
 * [Feature usage and adoption report](feature-usage-adoption.md)

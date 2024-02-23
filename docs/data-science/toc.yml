@@ -5,6 +5,8 @@ items:
   items:
   - name: What is Data Science?
     href: data-science-overview.md
+  - name: What is SynapseML?
+    href: synapse-overview.md
 - name: Get started
   items:
   - name: Data science tutorial introduction
@@ -41,6 +43,16 @@ items:
     href: ../data-engineering/notebook-source-control-deployment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
   - name: Use Notebook public APIs
     href: ../data-engineering/notebook-public-api.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+- name: Environments
+  items:
+  - name: Create, configure and use an environment
+    href: ../data-engineering/create-and-use-environment.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Manage Spark compute in environments
+    href: ../data-engineering/environment-manage-compute.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Manage libraries in environments
+    href: ../data-engineering/environment-manage-library.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
+  - name: Migrate the existing workspace libraries and Spark properties
+    href: ../data-engineering/environment-workspace-migration.md?toc=/fabric/data-science/toc.json&bc=/fabric/data-science/breadcrumb/toc.json
 - name: Tutorials
   items:
   - name: Python tutorials
@@ -221,8 +233,6 @@ items:
   items:
   - name: Python overview
     href: ./python-guide/python-overview.md
-  - name: Python library management
-    href: ./python-guide/python-library-management.md
   - name: Python visualizations
     href: ./python-guide/python-visualizations.md
 - name: Use R

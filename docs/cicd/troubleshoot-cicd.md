@@ -8,7 +8,7 @@ ms.topic: troubleshooting
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/16/2023
+ms.date: 12/17/2023
 ms.search.form: Deployment pipelines troubleshooting, View deployment pipeline, Deployment pipelines operations, Deployment rules
 ---
 
@@ -24,7 +24,7 @@ To understand the considerations and limitations of various lifecycle management
 | **Permissions needed** | [permissions](./git-integration/git-integration-process.md#permissions) | [permissions](deployment-pipelines/understand-the-deployment-process.md#permissions) |
 | **Workspace limitations** | [workspaces](./git-integration/git-integration-process.md#workspace-limitations) | [workspaces](deployment-pipelines/assign-pipeline.md#considerations-and-limitations) |
 | **Supported Fabric items** | [supported items](./git-integration/intro-to-git-integration.md#supported-items) | [supported items](deployment-pipelines/understand-the-deployment-process.md#supported-items) |
-| **Semantic model** |   | [Dataset limitations](deployment-pipelines/understand-the-deployment-process.md#dataset-limitations)
+| **Semantic model** |   | [Semantic model limitations](deployment-pipelines/understand-the-deployment-process.md#semantic-model-limitations)
 
 * [Git integration](#git-integration)  
 
@@ -54,7 +54,7 @@ To understand the considerations and limitations of various lifecycle management
 -->
 
 **Cause**: If the authentication method in Power BI is weaker than the authentication method in Azure DevOps, the functionalities between them doesn't work.  
-**Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure AD) are defined in [Manage authentication methods](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy).
+**Workaround**: The admin needs to align the authentication method in Power BI and Azure DevOps. The authentication policies for Microsoft Entra ID (formerly known as Azure Active Directory) are defined in [Manage authentication methods](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy).
 
 ### Connect issues
 
@@ -107,7 +107,7 @@ To understand the considerations and limitations of various lifecycle management
 #### The Commit button is disabled
 
 **Description of problem**: If there were updates made to the Git branch, commits are disabled until you update your workspace.  
-**Solution**: To enable commits, update your workspace .
+**Solution**: To enable commits, update your workspace.
 
 ### Update issues
 
@@ -318,8 +318,15 @@ To use this script, you need to provide a *workspace name* and a *user principal
 
 ### My semantic model deployment failed
 
-**Cause**: There could be a few possible reasons for your semantic model deployment to fail. One of the reasons may be due to a large semantic model that isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).  
-**Solution**: If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+**Cause**: There could be a few possible reasons for your semantic model deployment to fail. The following are possible reasons for failure:
+
+* A large semantic model isn't configured with the [large semantic model format](/power-bi/enterprise/service-premium-large-models).
+* The semantic model contains a circular or self dependency (for example, item A references item B and item B references item A). In this case you'll see the following error message: *One or more items failed to deploy because it will result in a two way dependency between items*.
+
+**Solution**:
+
+* If your semantic model is larger than 4 GB and isn't using the large semantic model format, it might fail to be deployed. Try setting your semantic model to use the large semantic model format, and redeploy.
+* If your semantic model contains a circular or self dependency, remove the dependency and redeploy.
 
 ### I have a semantic model with DirectQuery or Composite connectivity mode, that uses variation or auto date/time tables
 
@@ -368,6 +375,12 @@ When you deploy a paginated report that's connected to a Fabric semantic model, 
 #### Deployment problem: I can't deploy a datamart in the pipeline
 
 **Solution**: To deploy a datamart, you must be the owner of the datamart.
+
+#### Deployment problem: My datamart deployment failed because of a circular dependency
+
+:::image type="content" source="./media/troubleshoot-cicd/circular-dependency.png" alt-text="Screenshot of error message about circular or self dependencies.":::
+
+**Solution**: There is either an item that references itself, or more than one item involved in a circular chain of references (for example, item A references item B and item B references item A). To deploy the datamart, remove the circular dependency and redeploy.
 
 ### Permissions
 
@@ -441,7 +454,7 @@ If one of the rule options is greyed out, it could be because of the following r
 
 * Your semantic model contains a function connected to a data source. In such cases, data source rules aren't supported.
 
-* Your data source is using parameters. You can't create a data source rule for a dasemantic modeltaset that uses parameters. Create a parameter rule instead.
+* Your data source is using parameters. You can't create a data source rule for a semantic model that uses parameters. Create a parameter rule instead.
 
 #### I can't connect to a semantic model when creating a new semantic model rule
 

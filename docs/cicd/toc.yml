@@ -35,6 +35,8 @@ items:
     href: git-integration/git-integration-process.md
   - name: Manage Git branches
     href: git-integration/manage-branches.md
+  - name: Automate Git integration
+    href: git-integration/git-automation.md
   - name: Handle errors and conflicts
     items:
     - name: Resolve conflicts

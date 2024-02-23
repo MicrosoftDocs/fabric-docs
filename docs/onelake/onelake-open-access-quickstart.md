@@ -25,7 +25,7 @@ Before you start, you must have:
 
 - A workspace with a Lakehouse item.
 
-- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
+- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Entra credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
 
 - A sample dataset.
 

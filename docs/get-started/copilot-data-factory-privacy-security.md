@@ -8,16 +8,18 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 11/07/2023
+ms.date: 01/16/2024
 ---
 
 # Privacy, security, and responsible use of Copilot for Data Factory (preview)
 
 With Copilot for Data Factory in Microsoft Fabric and other generative AI features in preview, Microsoft Fabric brings a new way to transform and analyze data, generate insights, and create visualizations and reports in Data Science and the other workloads.
 
-Before your business starts using Copilot in Fabric, you may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
+Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Microsoft Fabric](copilot-fabric-overview.md#enable-copilot). You may have questions about how it works, how it keeps your business data secure and adheres to privacy requirements, and how to use generative AI responsibly.
 
 The article [Privacy, security, and responsible use for Copilot (preview)](copilot-privacy-security.md) provides an overview of Copilot in Fabric. Read on for details about Copilot for Data Factory.
+
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Capabilities and intended uses of Copilot for Data Factory
 
@@ -57,7 +59,7 @@ Here are the current limitations of Copilot for Data Factory:
 
 Additional information for future releases or feature updates will appear here.
 
-## Next steps
+## Related content
 
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)

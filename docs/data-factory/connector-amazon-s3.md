@@ -4,7 +4,7 @@ description: This article provides information about how to create an Amazon S3 
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 11/15/2023
+ms.date: 02/22/2024
 ms.custom:
   - template-how-to
   - build-2023
@@ -21,7 +21,7 @@ The Amazon S3 connector supports the following authentication types for copy and
 
 |Authentication type |Copy |Dataflow Gen2 |
 |:---|:---|:---|
-|Basic| √| n/a|
+|Access key| √| n/a|
 
 ## Set up your connection in Dataflow Gen2
 
@@ -48,18 +48,18 @@ In the **New connection** pane, specify the following field:
 
 ### Step 2:  Select and set your authentication
 
-Under **Authentication method**, select your authentication method from the drop-down list and complete the related configuration. The Amazon S3 connector supports the following authentication types:
+Under **Authentication kind**, select your authentication kind from the drop-down list and complete the related configuration. The Amazon S3 connector supports the following authentication types:
 
-- [Basic](#basic-authentication)
+- [Access key](#access-key-authentication)
 
-:::image type="content" source="media/connector-amazon-s3/authentication-method.png" alt-text="Screenshot showing the authentication method for Amazon S3.":::
+:::image type="content" source="media/connector-amazon-s3/authentication-kind.png" alt-text="Screenshot showing the authentication kind for Amazon S3.":::
 
-#### Basic authentication
+#### Access key authentication
 
-- **Username**: The user name to use to access the Amazon S3 endpoint.
-- **Password**: The password for the specified username.
+- **Access Key Id**: Specify the ID of the secret access key.
+- **Secret Access Key**: Specify the secret access key itself.
 
-:::image type="content" source="media/connector-amazon-s3/basic-authentication.png" alt-text="Screenshot showing the basic authentication method for Amazon S3.":::
+:::image type="content" source="media/connector-amazon-s3/access-key-authentication.png" alt-text="Screenshot showing the access key authentication kind for Amazon S3.":::
 
 ### Step 3: Specify the privacy level that you want to apply
 
@@ -88,10 +88,10 @@ The following table contains properties for the supported authentication type.
 
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---:|:---|:---:|
-|**Basic**||||✓|
-|- Username|The user name to use to access the Amazon S3 endpoint.|Yes |||
-|- Password|The password for specified username.|Yes |||
+|**Access key**||||✓|
+|- Access Key Id|Specify the ID of the secret access key.|Yes |||
+|- Secret Access Key|Specify the secret access key itself.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure in a data pipeline copy activity](connector-amazon-s3-copy-activity.md)

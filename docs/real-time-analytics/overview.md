@@ -11,7 +11,7 @@ ms.custom:
   - build-2023-fabric
   - ignite-2023
   - ignite-2023-fabric
-ms.date: 10/17/2023
+ms.date: 12/14/2023
 ms.search.form: Overview
 ---
 # What is Real-Time Analytics in Fabric?
@@ -83,7 +83,7 @@ See how these items work together in the end-to-end streaming data consumption a
   * Data from [OneLake can be loaded](get-data-onelake.md) into Real-Time Analytics.
   * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](one-logical-copy.md).
 * Data loaded into Real-Time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md).
-* Data loaded into Real-Time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or [Spark](spark-connector.md) Notebooks in Data Engineering.
+* Data loaded into Real-Time Analytics can be used for analysis in [Spark](spark-connector.md) Notebooks in Data Engineering.
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
 

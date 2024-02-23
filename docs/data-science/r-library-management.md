@@ -231,7 +231,7 @@ sdf_len(sc, 5) %>%
   spark_apply(apply_cases, packages=FALSE)
 ```
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 

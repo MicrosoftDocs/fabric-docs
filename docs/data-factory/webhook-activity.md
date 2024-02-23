@@ -61,6 +61,6 @@ Typically, you use the output of the WebHook activity with other activities, but
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

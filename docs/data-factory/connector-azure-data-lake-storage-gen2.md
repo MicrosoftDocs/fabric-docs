@@ -108,7 +108,7 @@ For more information about shared access signatures, go to [Shared access signat
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Register your application with a Microsoft Entra tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
    - Tenant ID
    - Application ID
    - Application key
@@ -161,6 +161,6 @@ The properties in the following table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)

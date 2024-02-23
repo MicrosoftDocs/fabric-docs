@@ -32,7 +32,7 @@ To learn more, see [Datasets - Execute Queries](/rest/api/power-bi/datasets/exec
 
 ## Use ArcGIS Maps for Power BI
 
-When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri. 
+When enabled, users in the organization can use the ArcGIS Maps for Power BI visualization provided by Esri.
 
 To learn more, see [Create ArcGIS maps in Power BI](/power-bi/visuals/power-bi-visualizations-arcgis).
 
@@ -63,57 +63,59 @@ When enabled, users in the organization can use map and filled map visualization
 
 Users in the organization can create Fabric reports directly from SharePoint and Microsoft Lists. Then they can build Fabric reports on the data in those lists and publish them back to the lists, to be visible to others who can access the list.
 
-This setting is enabled by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users can still see **Power BI** > **Visualize the list**, and any existing reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin has disabled the feature.
+This setting is enabled by default. Even if the feature is disabled, in SharePoint and Microsoft Lists users can still see **Power BI** > **Visualize the list**, and any existing reports, on the **Integrate** menu. If they select **Visualize the list**, they go to an error page explaining that their admin disabled the feature.
 
 Learn more about [creating reports from SharePoint and Microsoft Lists](/power-bi/create-reports/service-quick-create-sharepoint-list).
 
 ## Dremio SSO
 
-Enable SSO capability for Dremio. By enabling, user access token information, including name and email, will be sent to Dremio for authentication.
+Enable SSO capability for Dremio. By enabling, user access token information, including name and email, is sent to Dremio for authentication.
 
-To learn more, see [Azure AD-based Single Sign-On for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
+To learn more, see [Microsoft Entra ID-based Single Sign-On for Dremio Cloud and Power BI](https://powerquery.microsoft.com/blog/azure-ad-based-single-sign-on-for-dremio-cloud-and-power-bi).
 
 ## Snowflake SSO
 
-For semantic model owners to be able to enable single sign-on for DirectQuery connections to Snowflake in semantic model settings, a Fabric admin must enable the **Snowflake SSO** setting. This setting approves sending Azure AD credentials to Snowflake for authentication for the entire organization.
+For semantic model owners to be able to enable single sign-on for DirectQuery connections to Snowflake in semantic model settings, a Fabric admin must enable the **Snowflake SSO** setting. This setting approves sending Microsoft Entra credentials to Snowflake for authentication for the entire organization.
 
 To learn more, see [Connect to Snowflake in the Power BI Service](/power-bi/connect-data/service-connect-snowflake).
 
 ## Redshift SSO
 
-Enable SSO capability for Redshift. By enabling, user access token information, including name and email, will be sent to Redshift for authentication.
+Enable SSO capability for Redshift. By enabling, user access token information, including name and email, is sent to Redshift for authentication.
 
 To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
 
 ## Google BigQuery SSO
 
-Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.
+Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, is sent to Google BigQuery for authentication.
 
 To learn more, see [Google BigQuery (Azure AD)](/power-query/connectors/google-bigquery-aad).
 
 ## Oracle SSO
 
-Enable SSO capability for Oracle. By enabling, user access token information, including name and email, will be sent to Oracle for authentication.
+Enable SSO capability for Oracle. By enabling, user access token information, including name and email, is sent to Oracle for authentication.
 
 To learn more, see [Overview of single sign-on for on-premises data gateways in Power BI](/power-bi/connect-data/service-gateway-sso-overview).
 
-## Azure AD Single Sign-On (SSO) for Gateway
+<a name='azure-ad-single-sign-on-sso-for-gateway'></a>
 
-This setting enables Azure Active Directory (Azure AD) SSO through on-premises data gateways to cloud data sources that rely on Azure AD-based authentication. It gives seamless Azure AD SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
+## Microsoft Entra Single Sign-On (SSO) for Gateway
 
-This feature is important for users who work with reports that require SSO connectivity in DirectQuery mode to data sources deployed in an Azure virtual network (Azure VNet). When you configure SSO for an applicable data source, queries execute under the Azure AD identity of the user that interacts with the Power BI report.
+This setting enables Microsoft Entra SSO through on-premises data gateways to cloud data sources that rely on Microsoft Entra ID-based authentication. It gives seamless Microsoft Entra SSO connectivity to Azure-based data sources, such as Azure Synapse Analytics (SQL DW), Azure Data Explorer, Snowflake on Azure, and Azure Databricks through an on-premises data gateway.
 
-An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Azure AD SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft).
+This feature is important for users who work with reports that require SSO connectivity in DirectQuery mode to data sources deployed in an Azure virtual network (Azure VNet). When you configure SSO for an applicable data source, queries execute under the Microsoft Entra identity of the user that interacts with the Power BI report.
 
-Because of this possible threat, the Azure AD SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Azure AD Single Sign-On (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Azure AD SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
+An important security-related consideration is that gateway owners have full control over their on-premises data gateways. This means that it's theoretically possible for a malicious gateway owner to intercept Microsoft Entra SSO tokens as they flow through an on-premises data gateway (this isn't a concern for VNet data gateways because they're maintained by Microsoft).
 
-To learn more, see [Azure Active Directory SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
+Because of this possible threat, the Microsoft Entra SSO feature is disabled by default for on-premises data gateways. As a Fabric admin, you must enable the **Microsoft Entra Single Sign-On (SSO) for Gateway** tenant setting in the Fabric admin portal before data sources can be enabled for Microsoft Entra SSO on an on-premises data gateway. Before enabling the feature, make sure to restrict the ability to deploy on-premises data gateways in your organization to appropriate administrators.  
+
+To learn more, see [Microsoft Entra SSO](/power-bi/connect-data/service-gateway-azure-active-directory-sso).
 
 ## Power Platform Solutions Integration (Preview)
 
 This setting enables the Power BI/Power Platform Solutions integration from the Power BI side. Admin settings also have to be turned on in Power Platform.
 
-When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and semantic model that are being to create the component. 
+When the integration is enabled, when Power BI components are created in a Power Apps solution, a special Power BI workspace dedicated to the Power Apps environment is created in Power BI to store copies of the Power BI report and semantic model that are being to create the component.
 
 To learn more, see [Power BI content management in Power Apps solutions](/power-apps/maker/model-driven-apps/power-bi-content-management-power-apps-solutions) and [About Power BI in Power Apps Solutions](/power-bi/collaborate-share/service-power-bi-powerapps-integration-about).
 
@@ -131,10 +133,10 @@ Users can share links to Power BI Desktop files (.pbix) saved to OneDrive and Sh
 
 :::image type="content" source="media/service-admin-portal-integration/admin-integration-desktop-sharing.png" alt-text="Screenshot of admin setting called  Users can share links to Power BI files stored in OneDrive and SharePoint through Power BI Desktop.":::
 
-During public preview, if a user has enabled share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
+During public preview, if a user enables share through the Power BI Desktop menu, but the admin setting is disabled for the tenant, a **Share** button still appears in Power BI Desktop, but the user is notified that the capability is disabled when they attempt to share.
 
 Learn more about [sharing links through Power BI Desktop](/power-bi/create-reports/desktop-sharepoint-save-share).
 
 ## Related content
 
-* [About tenant settings](tenant-settings-index.md)
+* [About tenant settings](about-tenant-settings.md)

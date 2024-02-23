@@ -5,11 +5,10 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - intro-deployment
   - build-2023
   - ignite-2023
-ms.date: 12/05/2023
+ms.date: 01/21/2024
 ms.search.form: Introduction to Deployment pipelines, Manage access in Deployment pipelines, Deployment pipelines operations
 ---
 
@@ -136,20 +135,23 @@ Any [licensed user](../../enterprise/licenses.md#per-user-licenses) who's a memb
 
 When you deploy content from one pipeline stage to another, the copied content can contain the following items:
 
-* Dataflows
+* Dataflows Gen1
 * Datamarts
 * [Lakehouse](../../data-engineering/lakehouse-git-deployment-pipelines.md)
 * [Notebooks](../../data-engineering/notebook-source-control-deployment.md#notebook-in-deployment-pipelines)
 * Paginated reports
-* Reports
-* [Warehouse](../../data-warehouse/data-warehousing.md)
-* Semantic models
+* Reports (based on supported semantic models)
+* Semantic models (except for Direct Lake semantic models)
+* [Warehouses](../../data-warehouse/data-warehousing.md)
 
 ### Unsupported items
 
 Deployment pipelines doesn't support the following items:
 
+* Dataflows Gen2
+* Data pipelines
 * Datasets that don't originate from a *.pbix*
+* Direct Lake semantic model
 * PUSH datasets
 * Streaming dataflows
 * Reports based on unsupported semantic models
@@ -381,7 +383,9 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of unsupported items, see [unsupported items](#unsupported-items).
 
-### Dataset limitations
+* The deployment fails if any of the items have circular or self dependencies (for example, item A references item B and item B references item A).
+
+### Semantic model limitations
 
 * Datasets that use real-time data connectivity can't be deployed.
 
@@ -393,7 +397,7 @@ This section lists most of the limitations in deployment pipelines.
 
 * For a list of deployment rule limitations, see [deployment rules limitations](create-rules.md#considerations-and-limitations).
 
-* Semantic model deployment might fail if there are both native query and proxy models as data sources.
+* Deployment is **not** supported on a semantic model that uses Native query and DirectQuery together and auto binding is engaged on the DirectQuery data source.
 
 ### Dataflow limitations
 

@@ -64,7 +64,7 @@ Divide this list into chunks of up to 100 workspaces, and get the data for these
 
 Metadata scanning requires no special license. It works for all of your tenant's metadata, including that of items located in non-Premium workspaces.
 
-## Next steps
+## Related content
 
 * [Metadata scanning overview](./metadata-scanning-overview.md)
 * [Set up metadata scanning](../admin/metadata-scanning-setup.md).

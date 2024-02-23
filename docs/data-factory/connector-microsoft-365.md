@@ -66,7 +66,7 @@ Under **Authentication method**, select your authentication from the drop-down l
 
 :::image type="content" source="media/connector-microsoft-365/service-pricipal-authentication.png" alt-text="Screenshot showing that Service Principal authentication method of Microsoft 365":::
 
-- **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.
+- **Tenant Id**: Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.
 - **Service principal ID**: Specify the application's client ID.
 - **Service principal key**: Specify the application's key.
 
@@ -97,10 +97,10 @@ The following table contains the supported authentication type properties.
 |Name|Description|Required|Property|Copy|
 |:---|:---|:---|:---|:---|
 |**Service Principal**||||✓|
-|- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Azure AD web application resides.|Yes |||
+|- Tenant ID|Your service principal tenant ID. Specify the tenant information under which your Microsoft Entra web application resides.|Yes |||
 |- Service Principal ID|Specify the application's client ID.|Yes |||
 |- Service Principal key|Specify the application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [How to configure Microsoft 365 in a copy activity](connector-microsoft-365-copy-activity.md)

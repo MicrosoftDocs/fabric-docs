@@ -41,11 +41,11 @@ Once you have installed and launched the application, you can now see your OneLa
 
 - Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- Users can't update Office files (.xlsx, .pptx, .docx etc.).
-
 - If Windows search is disabled, OneLake file explorer fails to start.
 
-- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).  
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
+
+- If a file fails to sync due to a network issue, you will have to trigger the Sync to OneLake. You can do this by opening the file & saving it, prompting the sync process. Alternatively, you can trigger a modify event [using PowerShell](onelake-powershell.md) by executing this command: `(Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date`
 
 ## Scenarios
 
@@ -101,10 +101,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake.
-
-> [!NOTE]
-> OneLake file explorer does not currently support updating Office files (excel, ppt, etc.).
+You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the udpate in Excel and it will initiate the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -133,6 +130,10 @@ Starting in version 1.0.10, you can find your client-side logs by right-clicking
 Client-side logs are stored on your local machine under `%temp%\OneLake\Diagnostics\`.
 
 You can enable additional client-side logging by selecting **Diagnostic Operations** > **Enable tracing**.
+
+### Release Notes
+
+Starting in version 1.0.11, you can information find about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window. 
 
 ### Uninstall instructions
 

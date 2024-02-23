@@ -1,52 +1,52 @@
 ---
 title: 'Tutorial: Create, evaluate, and score a sales forecasting model'
-description: This article shows the data science workflow for building a model that predicts the sales for different categories of product.
+description: This tutorial shows the data science workflow for building a model that predicts the sales for various categories of products.
 ms.reviewer: larryfr
 reviewer: Blackmist
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.date: 11/14/2023
+ms.date: 01/22/2024
 #customer intent: As a data scientist, I want to build a forecasting model so I can predict the sales of products.
 ---
 
 # Develop, evaluate, and score a forecasting model for superstore sales
 
-In this tutorial, you walk through the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] workflow with an end-to-end example. This scenario is to build a forecasting model that uses historic sales data to predict the sales for different categories of products at a superstore.
+This tutorial presents an end-to-end example of a [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] workflow in [!INCLUDE [product-name](../includes/product-name.md)]. The scenario builds a forecasting model that uses historical sales data to predict product category sales at a superstore.
 
-Forecasting is a crucial asset in sales, harnessing historical data and predictive methods to provide insights into future trends. You can analyze past sales to identify patterns, and learn from consumer behavior, to optimize inventory, production, and marketing strategies. This proactive approach enhances adaptability, responsiveness, and overall performance of businesses in a dynamic marketplace.
+Forecasting is a crucial asset in sales. It combines historical data and predictive methods to provide insights into future trends. Forecasting can analyze past sales to identify patterns, and learn from consumer behavior to optimize inventory, production, and marketing strategies. This proactive approach enhances adaptability, responsiveness, and overall performance of businesses in a dynamic marketplace.
 
-The main steps in this tutorial are:
+This tutorial covers these steps:
 
 > [!div class="checklist"]
-> * Load the data.
-> * Understand and process the data using exploratory data analysis.
-> * Train a machine learning model using an open source software package called `SARIMAX` and track experiments using MLflow and Fabric Autologging feature.
-> * Save the final machine learning model and make predictions.
-> * Demonstrate the model performance via visualizations in Power BI.
+> * Load the data
+> * Use exploratory data analysis to understand and process the data
+> * Train a machine learning model with an open-source software package, and track experiments with MLflow and the Fabric autologging feature
+> * Save the final machine learning model, and make predictions
+> * Show the model performance with Power BI visualizations
 
 ## Prerequisites
 
 [!INCLUDE [prerequisites](./includes/prerequisites.md)]
 
-* If you don't have a Microsoft Fabric lakehouse, create one by following the steps in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
+* If necessary, create a Microsoft Fabric lakehouse as described in [Create a lakehouse in Microsoft Fabric](../data-engineering/create-lakehouse.md).
 
-## Follow along in the notebook
+## Follow along in a notebook
 
-You can follow along in a notebook one of two ways: 
+You can choose one of these options to follow along in a notebook:
 
-- Open and run the built-in notebook in the Data Science experience.
-- Upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience
+- Upload your notebook from GitHub to the Synapse Data Science experience
 
-#### Open built-in notebook
+### Open the built-in notebook
 
-**Sales forecasting** is the sample notebook that accompanies this tutorial.
+The sample **Sales forecasting** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import notebook from GitHub
+### Import the notebook from GitHub
 
-[AIsample - Superstore Forecast.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Superstore%20Forecast.ipynb) is the notebook that accompanies this tutorial.
+The [AIsample - Superstore Forecast.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Superstore%20Forecast.ipynb) notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along](./includes/follow-along-github-notebook.md)]
 
@@ -54,46 +54,40 @@ You can follow along in a notebook one of two ways:
 
 ## Step 1: Load the data
 
+The dataset contains 9,995 instances of sales of various products. It also includes 21 attributes. This table is from the *Superstore.xlsx* file used in this notebook:
 
-### Dataset
-
-The dataset contains 9995 instances of sales of different products, along with 21 attributes that include: `Row ID`, `Order ID`, `Order Date`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category`, `Product Name`, `Sales`, `Quantity`, `Discount`, and `Profit`.
-
-The following table is from the _Superstore.xlsx_ file used in this notebook.
-
-|"Row ID"|"Order ID"|"Order Date"|"Ship Date"|"Ship Mode"|"Customer ID"|"Customer Name"|"Segment"|"Country"|"City"|"State"|"Postal Code"|"Region"|"Product ID"|"Category"|"Sub-Category"|"Product Name"|"Sales"|"Quantity"|"Discount"|"Profit"|
+|Row ID|Order ID|Order Date|Ship Date|Ship Mode|Customer ID|Customer Name|Segment|Country|City|State|Postal Code|Region|Product ID|Category|Sub-Category|Product Name|Sales|Quantity|Discount|Profit|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |4|US-2015-108966|2015-10-11|2015-10-18|Standard Class|SO-20335|Sean O'Donnell|Consumer|United States|Fort Lauderdale|Florida|33311|South|FUR-TA-10000577|Furniture|Tables|Bretford CR4500 Series Slim Rectangular Table|957.5775|5|0.45|-383.0310|
 |11|CA-2014-115812|2014-06-09|2014-06-09|Standard Class|Standard Class|Brosina Hoffman|Consumer|United States|Los Angeles|California|90032|West|FUR-TA-10001539|Furniture|Tables|Chromcraft Rectangular Conference Tables|1706.184|9|0.2|85.3092|
 |31|US-2015-150630|2015-09-17|2015-09-21|Standard Class|TB-21520|Tracy Blumstein|Consumer|United States|Philadelphia|Pennsylvania|19140|East|OFF-EN-10001509|Office Supplies|Envelopes|Poly String Tie Envelopes|3.264|2|0.2|1.1016
 
-By defining the following parameters, you can apply this notebook on different datasets easily.
+Define these parameters, so that you can use this notebook with different datasets:
 
 ```python
-IS_CUSTOM_DATA = False  # if TRUE, dataset has to be uploaded manually
+IS_CUSTOM_DATA = False  # If TRUE, the dataset has to be uploaded manually
 
-IS_SAMPLE = False  # if TRUE, use only rows of data for training, otherwise use all data
-SAMPLE_ROWS = 5000  # if IS_SAMPLE is True, use only this number of rows for training
+IS_SAMPLE = False  # If TRUE, use only rows of data for training; otherwise, use all data
+SAMPLE_ROWS = 5000  # If IS_SAMPLE is True, use only this number of rows for training
 
 DATA_ROOT = "/lakehouse/default"
-DATA_FOLDER = "Files/salesforecast"  # folder with data files
-DATA_FILE = "Superstore.xlsx"  # data file name
+DATA_FOLDER = "Files/salesforecast"  # Folder with data files
+DATA_FILE = "Superstore.xlsx"  # Data file name
 
 EXPERIMENT_NAME = "aisample-superstore-forecast"  # MLflow experiment name
 ```
 
 ### Download the dataset and upload to the lakehouse
 
-The following code downloads a publicly available version of the dataset and then stores it in a Fabric lakehouse.
+This code downloads a publicly available version of the dataset, and then stores it in a Fabric lakehouse:
 
 > [!IMPORTANT]
-> Make sure you [add a lakehouse](https://aka.ms/fabric/addlakehouse) to the notebook before running it. Failure to do so will result in an error.
-
+> Be sure to [add a lakehouse](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks) to the notebook before you run it. Otherwise, you'll get an error.
 
 ```python
 import os, requests
 if not IS_CUSTOM_DATA:
-    # Download data files into lakehouse if not already there
+    # Download data files into the lakehouse if they're not already there
     remote_url = "https://synapseaisolutionsa.blob.core.windows.net/public/Forecast_Superstore_Sales"
     file_list = ["Superstore.xlsx"]
     download_path = "/lakehouse/default/Files/salesforecast/raw"
@@ -113,24 +107,21 @@ if not IS_CUSTOM_DATA:
 
 ### Set up MLflow experiment tracking
 
-Microsoft Fabric extends the MLflow autologging capabilities by automatically capturing the values of input parameters and output metrics of a machine learning model as it is being trained. This information is then logged to the workspace, where it can be accessed and visualized using the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
+Microsoft Fabric automatically captures the values of input parameters and output metrics of a machine learning model as you train it. This extends MLflow autologging capabilities. The information is then logged to the workspace, where you can access and visualize it with the MLflow APIs or the corresponding experiment in the workspace. To learn more about autologging, see [Autologging in Microsoft Fabric](https://aka.ms/fabric-autologging).
 
+To turn off Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`:
 
 ```python
 # Set up MLflow for experiment tracking
 import mlflow
 
 mlflow.set_experiment(EXPERIMENT_NAME)
-mlflow.autolog(disable=True)  # Disable MLflow autologging
+mlflow.autolog(disable=True)  # Turn off MLflow autologging
 ```
-
-> [!NOTE]
-> If you want to disable Microsoft Fabric autologging in a notebook session, call `mlflow.autolog()` and set `disable=True`.
 
 ### Read raw data from the lakehouse
 
-Read raw data from the **Files** section of the lakehouse. Add more columns for different date parts and the same information is used to create partitioned delta table. Since the raw date is stored as an Excel file, you need to use Pandas to read the raw data.
-
+Read raw data from the **Files** section of the lakehouse. Add more columns for different date parts. The same information is used to create a partitioned delta table. Because the raw data is stored as an Excel file, you must use pandas to read it:
 
 ```python
 import pandas as pd
@@ -141,8 +132,7 @@ df = pd.read_excel("/lakehouse/default/Files/salesforecast/raw/Superstore.xlsx")
 
 ### Import libraries
 
-Before any analysis, you need to import the required libraries.
-
+Before any analysis, import the required libraries:
 
 ```python
 # Importing required libraries
@@ -164,15 +154,13 @@ from sklearn.metrics import mean_squared_error,mean_absolute_percentage_error
 
 ### Display the raw data
 
-To review the dataset, it's recommended to manually go through a subset of the data to gain a better understanding. In this regard, you could use the `display` function to print the DataFrame. You can also show the `Chart` views to easily visualize subsets of the dataset.
-
+Manually review a subset of the data, to better understand the dataset itself, and use the `display` function to print the DataFrame. Additionally, the `Chart` views can easily visualize subsets of the dataset.
 
 ```python
 display(df)
 ```
 
-In this notebook, the primary focus is on forecasting the sales for the `Furniture` category. This choice is made to speed up the computation and facilitate the demonstration of the model's performance. However, it's important to realize that the techniques used in this notebook are adaptable and can be extended to predict the sales of various other product categories.
-
+This notebook primarily focuses on forecasting the `Furniture` category sales. This speeds up the computation, and helps show the performance of the model. However, this notebook uses adaptable techniques. You can extend those techniques to predict the sales of other product categories.
 
 ```python
 # Select "Furniture" as the product category
@@ -180,19 +168,15 @@ furniture = df.loc[df['Category'] == 'Furniture']
 print(furniture['Order Date'].min(), furniture['Order Date'].max())
 ```
 
-### Pre-process the data
+### Preprocess the data
 
-When forecasting the sales in real-world business scenarios, there's often a need to predict sales in three distinct categories:
+Real-world business scenarios often need to predict sales in three distinct categories:
 
-- Forecast sales for a specific category of customers
-- Forecast sales for a specific product category and customer combination
-- Forecast overall sales for a specific product category
+- A specific product category
+- A specific customer category
+- A specific combination of product category and customer category
 
-The focus here is to forecast overall sales for a specific product category. First, perform some pre-processing on the data by dropping unnecessary columns that include `Row ID`, `Order ID`, `Ship Date`, `Ship Mode`, `Customer ID`, `Customer Name`, `Segment`, `Country`, `City`, `State`, `Postal Code`, `Region`, `Product ID`, `Category`, `Sub-Category', 'Product Name', 'Quantity', 'Discount', 'Profit`. 
-
-Some of the columns such as `Row ID`, `Order ID`,`Customer ID`, `Customer Name` have no impact and you can drop them. Moreover, since the focus is to forecast the overall sales for the `Funiture` category across the state and region, you can also drop columns such as `State`, `Region`, `Country`, `City`, `Postal Code`. If you need to forecast sales for a specific location or category, you might need to adjust the pre-processing step accordingly.
-
-
+First, drop unnecessary columns to preprocess the data. Some of the columns (`Row ID`, `Order ID`,`Customer ID`, and `Customer Name`) are unnecessary because they have no impact. We want to forecast the overall sales, across the state and region, for a specific product category (`Furniture`), so we can drop the `State`, `Region`, `Country`, `City`, and `Postal Code` columns. To forecast sales for a specific location or category, you might need to adjust the preprocessing step accordingly.
 
 ```python
 # Data preprocessing
@@ -205,13 +189,12 @@ furniture = furniture.sort_values('Order Date')
 furniture.isnull().sum()
 ```
 
-The dataset is structured on a daily basis, and since the goal is to develop a model to forecast the sales on a monthly basis, you need to resample on the column `Order Date`.
+The dataset is structured on a daily basis. We must resample on the column `Order Date`, because we want to develop a model to forecast the sales on a monthly basis.
 
-First, group the `Furniture` category by `Order Date` and then calculate the sum of the `Sales` column for each group in order to determine the total sales for each unique `Order Date`. Then, resample the `Sales` column using the `MS` frequency to aggregate the data by month and then you calculate the mean sales value for each month.
-
+First, group the `Furniture` category by `Order Date`. Then, calculate the sum of the `Sales` column for each group, to determine the total sales for each unique `Order Date` value. Resample the `Sales` column with the `MS` frequency, to aggregate the data by month. Finally, calculate the mean sales value for each month.
 
 ```python
-# Data Preparation
+# Data preparation
 furniture = furniture.groupby('Order Date')['Sales'].sum().reset_index()
 furniture = furniture.set_index('Order Date')
 furniture.index
@@ -223,8 +206,7 @@ y = y.set_index(['Order Date'])
 maximim_date = y.reset_index()['Order Date'].max()
 ```
 
-Demonstrate the impact of `Order Date` on the `Sales` for the Furniture category.
-
+Demonstrate the impact of `Order Date` on `Sales` for the `Furniture` category:
 
 ```python
 # Impact of order date on the sales
@@ -232,31 +214,28 @@ y.plot(figsize=(12, 3))
 plt.show()
 ```
 
-Prior to any statistical analysis, you need to import `statsmodels`, which is a Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests and statistical data exploration.
-
+Before any statistical analysis, you must import the `statsmodels` Python module. It provides classes and functions for the estimation of many statistical models. It also provides classes and functions to conduct statistical tests and statistical data exploration.
 
 ```python
 import statsmodels.api as sm
 ```
 
-### Statistical analysis
+### Perform statistical analysis
 
-A time series tracks four data elements at set intervals in order to determine the variation of those four elements in the time series pattern. These elements include:
+A time series tracks these data elements at set intervals, to determine the variation of those elements in the time series pattern:
 
-- **Level:** Refers to the fundamental component that represents the average value for a specific time period.
+- **Level**: The fundamental component representing the average value for a specific time period
 
-- **Trend:** Describes whether the time series is decreasing, constant, or increasing over time.
+- **Trend**: Describes whether the time series decreases, stays constant, or increases over time
 
-- **Seasonality:** Describes the periodic signal in the time series and looks for cyclic occurrences that affect the time series' increasing or decreasing patterns.
+- **Seasonality**: Describes the periodic signal in the time series, and looks for cyclic occurrences that impact the increasing or decreasing time series patterns
 
-- **Noise/Residual:** Refers to the random fluctuations and variability in the time series data that can't be explained by the model.
+- **Noise/Residual**: Refers to the random fluctuations and variability in the time series data that the model can't explain.
 
-In the following, you observe these four components for your dataset after the pre-processing.
-
-
+In this code, you observe those elements for your dataset after the preprocessing:
 
 ```python
-# Decompose the time series into its components using statsmodels
+# Decompose the time series into its components by using statsmodels
 result = sm.tsa.seasonal_decompose(y, model='additive')
 
 # Labels and corresponding data for plotting
@@ -282,14 +261,13 @@ for ax, (label, data) in zip(axes, components):
 plt.show()
 ```
 
-The plots help you understand the seasonality, trend, and noise in the forecasting data. You can capture the underlying patterns and develop models that make more accurate predictions that are resilient to random fluctuations.
+The plots describe the seasonality, trends, and noise in the forecasting data. You can capture the underlying patterns, and develop models that make accurate predictions that are resilient to random fluctuations.
 
 ## Step 3: Train and track the model
 
-With your data in place, you can define the forecasting model. Apply the Seasonal AutoRegressive Integrated Moving Average with eXogenous regressors (SARIMAX) in this notebook. SARIMAX is a time series forecasting model that extends SARIMA to include exogenous variables. It combines autoregressive (AR) and moving average (MA) components, seasonal differencing, and external predictors to make accurate and flexible forecasts for time series data. It's a powerful tool for various forecasting tasks.
+Now that you have the data available, define the forecasting model. In this notebook, apply the forecasting model called *seasonal autoregressive integrated moving average with exogenous factors* (SARIMAX). SARIMAX combines autoregressive (AR) and moving average (MA) components, seasonal differencing, and external predictors to make accurate and flexible forecasts for time series data.
 
-You also use MLfLow and Fabric Autologging to track the experiments. Here you load the delta table from the lakehouse. You might use other delta tables considering the lakehouse as the source.
-
+You also use MLflow and Fabric autologging to track the experiments. Here, load the delta table from the lakehouse. You might use other delta tables that consider the lakehouse as the source.
 
 ```python
 # Import required libraries for model evaluation
@@ -298,23 +276,31 @@ from sklearn.metrics import mean_squared_error, mean_absolute_percentage_error
 
 ### Tune hyperparameters
 
-SARIMAX takes into account the parameters involved in regular ARIMA mode `(p,d,q)` and also adds the seasonality parameters `(P,D,Q,s)`. These arguments to SARIMAX model are called order `(p,d,q)` and seasonal order `(P,D,Q,s)`, respectively, and hence there are a total of 7 parameters to tune. Before model training, you need to set up these parameters, which are defined in the following sections.
+SARIMAX takes into account the parameters involved in regular autoregressive integrated moving average (ARIMA) mode (`p`, `d`, `q`), and adds the seasonality parameters (`P`, `D`, `Q`, `s`). These SARIMAX model arguments are called *order* (`p`, `d`, `q`) and *seasonal order* (`P`, `D`, `Q`, `s`), respectively. Therefore, to train the model, we must first tune seven parameters.
 
-#### Order parameters `(p, d, q)`
-- `p`: The order of the autoregressive (AR) component, indicating how many past observations are considered. Also known as the AR order.
-- `d`: The degree of differencing required to make the time series stationary. Also known as the differencing order.
-- `q`: The order of the moving average (MA) component, indicating how many past white noise error terms are considered. Also known as the MA order.
+The order parameters:
 
-#### Seasonal order parameters `(P, D, Q, s)`
+- `p`: The order of the AR component, representing the number of past observations in the time series used to predict the current value.
 
-- `P`: The seasonal order of the autoregressive (AR) component, similar to `p` but for the seasonal part.
-- `D`: The seasonal order of differencing, similar to `d` but for the seasonal part.
-- `Q`: The seasonal order of the moving average (MA) component, similar to `q` but for the seasonal part.
-- `s`: The number of time steps per seasonal cycle (for example, 12 for monthly data with a yearly seasonality).
+  Typically, this parameter should be a non-negative integer. Common values are in the range of `0` to `3`, although higher values are possible, depending on the specific data characteristics. A higher `p` value indicates a longer memory of past values in the model.
 
+- `d`: The differencing order, representing the number of times that the time series needs to be differenced, to achieve stationarity.
+
+  This parameter should be a non-negative integer. Common values are in the range of `0` to `2`. A `d` value of `0` means the time series is already stationary. Higher values indicate the number of differencing operations required to make it stationary.
+
+- `q`: The order of the MA component, representing the number of past white-noise error terms used to predict the current value.
+
+  This parameter should be a non-negative integer. Common values are in the range of `0` to `3`, but higher values might be necessary for certain time series. A higher `q` value indicates a stronger reliance on past error terms to make predictions.
+
+The seasonal order parameters:
+
+- `P`: The seasonal order of the AR component, similar to `p` but for the seasonal part
+- `D`: The seasonal order of differencing, similar to `d` but for the seasonal part
+- `Q`: The seasonal order of the MA component, similar to `q` but for the seasonal part
+- `s`: The number of time steps per seasonal cycle (for example, 12 for monthly data with a yearly seasonality)
 
 ```python
-# Hyperparameters tuning
+# Hyperparameter tuning
 p = d = q = range(0, 2)
 pdq = list(itertools.product(p, d, q))
 seasonal_pdq = [(x[0], x[1], x[2], 12) for x in list(itertools.product(p, d, q))]
@@ -325,17 +311,23 @@ print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[3]))
 print('SARIMAX: {} x {}'.format(pdq[2], seasonal_pdq[4]))
 ```
 
-- The autoregressive order `p` represents the number of past observations in the time series that are used to predict the current value. Typically, `p` should be a non-negative integer. Common values for `p` are usually in the range of 0 to 3, although higher values are possible depending on the specific characteristics of the data. A higher p indicates a longer memory of past values in the model.
+SARIMAX has other parameters:
 
-- The moving average order `q` represents the number of past white noise error terms that are used to predict the current value. Similar to `p`, `q` should also be a non-negative integer. Common values for `q` are typically in the range of 0 to 3, but higher values might be necessary for certain time series. A higher `q` indicates a stronger reliance on past error terms to make predictions.
+- `enforce_stationarity`: Whether or not the model should enforce stationarity on the time series data, before fitting the SARIMAX model.
 
-- The differencing order `d` represents the number of times the time series needs to be differenced to achieve stationarity. `d` should be a non-negative integer. Common values for `d` are usually in the range of 0 to 2. A `d` value of 0 means the time series is already stationary, while higher values indicate the number of differencing operations required to make it stationary.
+  If `enforce_stationarity` is set to `True` (the default), it indicates that the SARIMAX model should enforce stationarity on the time series data. The SARIMAX model then automatically applies differencing to the data, to make it stationary, as specified by the `d` and `D` orders, before fitting the model. This is a common practice because many time series models, including SARIMAX, assume that the data is stationary.
 
-- The `enforce_stationarity` parameter controls whether or not the model should enforce stationarity on the time series data before fitting the SARIMAX model. When `enforce_stationarity` is set to `True` (the default), it indicates that the SARIMAX model should enforce stationarity on the time series data. When `True`, the SARIMAX model automatically applies differencing to the data to make it stationary, as specified by the `d` and `D` orders, before fitting the model. This is a common practice because many time series models, including SARIMAX, assume that the data is stationary. If your time series is non-stationary (for example, it exhibits trends or seasonality), it's generally a good practice to set `enforce_stationarity` to `True` and let the SARIMAX model handle the differencing to achieve stationarity. If your time series is already stationary (for example, it has no trends or seasonality), you can set `enforce_stationarity` to `False` to avoid unnecessary differencing.
+  For a nonstationary time series (for example, it exhibits trends or seasonality), it's good practice to set `enforce_stationarity` to `True`, and let the SARIMAX model handle the differencing to achieve stationarity. For a stationary time series (for example, one with no trends or seasonality), set `enforce_stationarity` to `False` to avoid unnecessary differencing.
 
-- The `enforce_invertibility` parameter controls whether or not the model should enforce invertibility on the estimated parameters during the optimization process. When `enforce_invertibility` is set to `True` (the default), it indicates that the SARIMAX model should enforce invertibility on the estimated parameters. Invertibility ensures that the model is well-defined and that the estimated autoregressive (AR) and moving average (MA) coefficients are within the range of stationarity. Enforcing invertibility is typically recommended to ensure that the SARIMAX model adheres to the theoretical requirements for a stable time series model. It also helps prevent issues with model estimation and stability.
+- `enforce_invertibility`: Controls whether or not the model should enforce invertibility on the estimated parameters during the optimization process.
 
-- The default is an `AR(1)` model, which refers to `(1,0,0)`. However, keep in mind that the appropriate values for `p`, `q`, and `d` can vary from one time series to another, and determining the optimal values often involves analyzing the autocorrelation and partial autocorrelation functions (ACF and PACF) of the time series data and using model selection criteria like the Akaike Information Criterion (AIC) or Bayesian Information Criterion (BIC). It's common practice to try different combinations of p, q, and d and evaluate the model's performance for a given dataset. The parameters for the seasonal order `(P, D, Q, s)` are similar in concept to the non-seasonal order parameters `(p, q, d)`. 
+  If `enforce_invertibility` is set to `True` (the default), it indicates that the SARIMAX model should enforce invertibility on the estimated parameters. Invertibility ensures that the model is well defined, and that the estimated AR and MA coefficients land within the range of stationarity.
+  
+  Invertibility enforcement helps ensure that the SARIMAX model adheres to the theoretical requirements for a stable time series model. It also helps prevent issues with model estimation and stability.
+
+The default is an `AR(1)` model. This refers to `(1, 0, 0)`. However, it's common practice to try different combinations of the order parameters and seasonal order parameters, and evaluate the model performance for a dataset. The appropriate values can vary from one time series to another.
+
+Determination of the optimal values often involves analysis of the autocorrelation function (ACF) and partial autocorrelation function (PACF) of the time series data. It also often involves use of model selection criteria - for example, the Akaike information criterion (AIC) or the Bayesian information criterion (BIC).
 
 Tune the hyperparameters:
 
@@ -355,15 +347,12 @@ for param in pdq:
             continue
 ```
 
-Upon evaluation of the above results, you can determine the values for both the order parameters and then seasonal order parameters. The choice is `order=(0, 1, 1)` and `seasonal_order=(0, 1, 1, 12)`, which offers the lowest AIC (for example, 279.58) and hence are used to train the model in the following.
+After evaluation of the preceding results, you can determine the values for both the order parameters and the seasonal order parameters. The choice is `order=(0, 1, 1)` and `seasonal_order=(0, 1, 1, 12)`, which offer the lowest AIC (for example, 279.58). Use these values to train the model.
 
 ### Train the model
 
-
-
-
 ```python
-# Model Training 
+# Model training 
 mod = sm.tsa.statespace.SARIMAX(y,
                                 order=(0, 1, 1),
                                 seasonal_order=(0, 1, 1, 12),
@@ -373,8 +362,7 @@ results = mod.fit(disp=False)
 print(results.summary().tables[1])
 ```
 
-In the following, you visualize a time series forecast for furniture sales data, showing both the observed data and the one-step-ahead forecast with a confidence interval shaded region. 
-
+This code visualizes a time series forecast for furniture sales data. The plotted results show both the observed data and the one-step-ahead forecast, with a shaded region for confidence interval.
 
 ```python
 # Plot the forecasting results
@@ -391,7 +379,6 @@ plt.legend()
 plt.show()
 ```
 
-
 ```python
 # Validate the forecasted result
 predictions = results.get_prediction(start=maximim_date-pd.DateOffset(months=6-1), dynamic=False)
@@ -399,8 +386,7 @@ predictions = results.get_prediction(start=maximim_date-pd.DateOffset(months=6-1
 predictions_future = results.get_prediction(start=maximim_date+ pd.DateOffset(months=1),end=maximim_date+ pd.DateOffset(months=6),dynamic=False)
 ```
 
-The `predictions` is utilized to assess the model's performance by contrasting it with the actual values, whereas `predictions_future` is indicative of future forecasting.
-
+Use `predictions` to assess the model's performance, by contrasting it with the actual values. The `predictions_future` value indicates future forecasting.
 
 ```python
 # Log the model and parameters
@@ -414,7 +400,6 @@ with mlflow.start_run(run_name="Sarimax") as run:
 mlflow.end_run()
 ```
 
-
 ```python
 # Load the saved model
 loaded_model = mlflow.statsmodels.load_model(model_uri)
@@ -422,12 +407,10 @@ loaded_model = mlflow.statsmodels.load_model(model_uri)
 
 ## Step 4: Score the model and save predictions
 
-The actual values are integrated with the forecasted values, which are employed to create the Power BI report. These results are stored into a table within the lakehouse.
-
-
+Integrate the actual values with the forecasted values, to create a Power BI report. Store these results in a table within the lakehouse.
 
 ```python
-# Data Preparation for Power BI visualization
+# Data preparation for Power BI visualization
 Future = pd.DataFrame(predictions_future.predicted_mean).reset_index()
 Future.columns = ['Date','Forecasted_Sales']
 Future['Actual_Sales'] = np.NAN
@@ -436,12 +419,11 @@ Actual.columns = ['Date','Forecasted_Sales']
 y_truth = y['2023-02-01':]
 Actual['Actual_Sales'] = y_truth.values
 final_data = pd.concat([Actual,Future])
-# Calculate the Mean Absolute Percentage Error (MAPE) between the 'Actual_Sales' and 'Forecasted_Sales' 
+# Calculate the mean absolute percentage error (MAPE) between 'Actual_Sales' and 'Forecasted_Sales' 
 final_data['MAPE'] = mean_absolute_percentage_error(Actual['Actual_Sales'], Actual['Forecasted_Sales']) * 100
 final_data['Category'] = "Furniture"
 final_data[final_data['Actual_Sales'].isnull()]
 ```
-
 
 ```python
 input_df = y.reset_index()
@@ -451,28 +433,31 @@ input_df['MAPE'] = np.NAN
 input_df['Forecasted_Sales'] = np.NAN
 ```
 
-
 ```python
-# Write Back the results into the lakehouse
+# Write back the results into the lakehouse
 final_data_2 = pd.concat([input_df,final_data[final_data['Actual_Sales'].isnull()]])
 table_name = "Demand_Forecast_New_1"
 spark.createDataFrame(final_data_2).write.mode("overwrite").format("delta").save(f"Tables/{table_name}")
-print(f"Spark dataframe saved to delta table: {table_name}")
+print(f"Spark DataFrame saved to delta table: {table_name}")
 ```
 
 ## Step 5: Visualize in Power BI
 
-The Power BI report shows the mean absolute percentage error (MAPE) of 16.58. MAPE is a metric that defines the accuracy of a forecasting method and represents how accurate the forecasted quantities are in comparison with the actual quantities. MAPE is a straightforward metric. A 10% MAPE representing that the average deviation between the forecasted values and actual values was 10%, regardless of whether the deviation was positive or negative. What is considered to be a desirable MAPE value varies across different industries.
+The Power BI report shows a mean absolute percentage error (MAPE) of 16.58. The MAPE metric defines the accuracy of a forecasting method. It represents the accuracy of the forecasted quantities, in comparison with the actual quantities.
 
-The light blue line in the graph represents the actual sales values, while the dark blue line represents the forecasted sales values. An analysis of the comparison between the actual and forecasted sales reveals that the model effectively predicts sales for the Furniture category during the first six months of 2023.
+MAPE is a straightforward metric. A 10% MAPE represents that the average deviation between the forecasted values and actual values is 10%, regardless of whether the deviation was positive or negative. Standards of desirable MAPE values vary across industries.
 
-Based on this observation, it's justifiable to have confidence in the model's forecasting capabilities for the overall sales in the last six months of 2023 and extending into 2024. This confidence can inform strategic decisions regarding inventory management, raw material procurement, and other business-related considerations.
+The light blue line in this graph represents the actual sales values. The dark blue line represents the forecasted sales values. Comparison of actual and forecasted sales reveals that the model effectively predicts sales for the `Furniture` category during the first six months of 2023.
 
-:::image type="content" source="./media/sales-forecasting/power-bi-forecast.png" alt-text="Screenshot of the Power BI report.":::
+:::image type="content" source="./media/sales-forecasting/power-bi-forecast.png" alt-text="Screenshot of a Power BI report.":::
+
+Based on this observation, we can have confidence in the forecasting capabilities of the model, for the overall sales in the last six months of 2023, and extending into 2024. This confidence can inform strategic decisions about inventory management, procurement of raw materials, and other business-related considerations.
+
+<!-- nbend -->
 
 ## Related content
 
-* [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
-* [Machine learning model in Microsoft Fabric](machine-learning-model.md)
-* [Train machine learning models](model-training/model-training-overview.md)
-* [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)
+- [How to use Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md)
+- [Machine learning model in Microsoft Fabric](machine-learning-model.md)
+- [Train machine learning models](model-training/model-training-overview.md)
+- [Machine learning experiments in Microsoft Fabric](machine-learning-experiment.md)

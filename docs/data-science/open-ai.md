@@ -11,9 +11,10 @@ ms.date: 06/28/2023
 
 # Azure OpenAI for big data
 
-The Azure OpenAI service can be used to solve a large number of natural language tasks through prompting the completion API. To make it easier to scale your prompting workflows from a few examples to large datasets of examples, we have integrated the Azure OpenAI service with the distributed machine learning library [SynapseML](https://www.microsoft.com/en-us/research/blog/synapseml-a-simple-multilingual-and-massively-parallel-machine-learning-library/). This integration makes it easy to use the [Apache Spark](https://spark.apache.org/) distributed computing framework to process millions of prompts with the OpenAI service. This tutorial shows how to apply large language models at a distributed scale using Azure Open AI and Azure Synapse Analytics. 
+The Azure OpenAI service can be used to solve a large number of natural language tasks through prompting the completion API. To make it easier to scale your prompting workflows from a few examples to large datasets of examples, we integrated the Azure OpenAI service with the distributed machine learning library [SynapseML](https://www.microsoft.com/en-us/research/blog/synapseml-a-simple-multilingual-and-massively-parallel-machine-learning-library/). This integration makes it easy to use the [Apache Spark](https://spark.apache.org/) distributed computing framework to process millions of prompts with the OpenAI service. This tutorial shows how to apply large language models at a distributed scale using Azure Open AI and Azure Synapse Analytics. 
 
-## Step 1: Prerequisites
+## Prerequisites
+
 The key prerequisites for this quickstart include a working Azure OpenAI resource, and an Apache Spark cluster with SynapseML installed. 
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
@@ -22,18 +23,18 @@ The key prerequisites for this quickstart include a working Azure OpenAI resourc
 * An Azure OpenAI resource: [Request Access to Azure OpenAI Service](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu) before [creating a resource](/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal#create-a-resource)
 
 
-## Step 2: Import this guide as a notebook
+## Import this guide as a notebook
 
 The next step is to add this code into your Spark cluster. You can either create a notebook in your Spark platform and copy the code into this notebook to run the demo. Or download the notebook and import it into Synapse Analytics
 
 1. [Download this demo as a notebook](https://github.com/microsoft/SynapseML/blob/2abfbdaadded0eff17ee0e5ea1908758e6d7a222/docs/Explore%20Algorithms/OpenAI/OpenAI.ipynb) (select **Raw**, then save the file)
 1. Import the notebook [into the Synapse Workspace](/en-us/azure/synapse-analytics/spark/apache-spark-development-using-notebooks#create-a-notebook) or if using Fabric [import into the Fabric Workspace](/en-us/fabric/data-engineering/how-to-use-notebook)
-1. Install SynapseML on your cluster. Please see the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If using Fabric, please check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This requires pasting an extra cell at the top of the notebook you imported. 
+1. Install SynapseML on your cluster. See the installation instructions for Synapse at the bottom of [the SynapseML website](https://microsoft.github.io/SynapseML/). If you are using Fabric, check [Installation Guide](/en-us/fabric/data-science/install-synapseml). This requires pasting an extra cell at the top of the notebook you imported. 
 1. Connect your notebook to a cluster and follow along, editing and running the cells.
 
-## Step 3: Fill in your service information
+## Fill in service information
 
-Next, edit the cell in the notebook to point to your service. In particular set the `service_name`, `deployment_name`, `location`, and `key` variables to match those for your OpenAI service:
+Next, edit the cell in the notebook to point to your service. In particular set the `service_name`, `deployment_name`, `location`, and `key` variables to match them to your OpenAI service:
 
 
 ```python
@@ -60,7 +61,7 @@ key = find_secret(
 assert key is not None and service_name is not None
 ```
 
-## Step 4: Create a dataset of prompts
+## Create a dataset of prompts
 
 Next, create a dataframe consisting of a series of rows, with one prompt per row. 
 
@@ -77,7 +78,7 @@ df = spark.createDataFrame(
 ).toDF("prompt")
 ```
 
-## Step 5: Create the OpenAICompletion Apache Spark Client
+## Create the OpenAICompletion Apache Spark Client
 
 To apply the OpenAI Completion service to your dataframe you created, create an OpenAICompletion object, which serves as a distributed client. Parameters of the service can be set either with a single value, or by a column of the dataframe with the appropriate setters on the `OpenAICompletion` object. Here we're setting `maxTokens` to 200. A token is around four characters, and this limit applies to the sum of the prompt and the result. We're also setting the `promptCol` parameter with the name of the prompt column in the dataframe.
 
@@ -97,9 +98,9 @@ completion = (
 )
 ```
 
-## Step 6: Transform the dataframe with the OpenAICompletion Client
+## Transform the dataframe with the OpenAICompletion Client
 
-Now that you have the dataframe and the completion client, you can transform your input dataset and add a column called `completions` with all of the information the service adds. We'll select out just the text for simplicity.
+After completing dataframe and the completion client, you can transform your input dataset and add a column called `completions` with all of the information the service adds. Select just the text for simplicity.
 
 
 ```python
@@ -115,7 +116,7 @@ display(
 )
 ```
 
-Your output should look something like this. Please note completion text will be different
+Your output should look something like this. The completion text will be different from the sample. 
 
 | **prompt**                       | **error**     | **text**                                                                                                                                  |
 |:----------------------------:    |:----------:    |:-------------------------------------------------------------------------------------------------------------------------------------:    |
@@ -123,7 +124,7 @@ Your output should look something like this. Please note completion text will be
 | The best code is code thats     | null          | understandable This is a subjective statement,   and there is no definitive answer.                                                       |
 | SynapseML is                    | null          | A machine learning algorithm that is able to learn how to predict the future outcome of events.                                           |
 
-## Additional Usage Examples
+## More Usage Examples
 
 ### Generating Text Embeddings
 
@@ -203,7 +204,7 @@ display(
 The example makes several requests to the service, one for each prompt. To complete multiple prompts in a single request, use batch mode. First, in the OpenAICompletion object, instead of setting the Prompt column to "Prompt", specify "batchPrompt" for the BatchPrompt column.
 To do so, create a dataframe with a list of prompts per row.
 
-As of this writing there is currently a limit of 20 prompts in a single request, and a hard limit of 2048 "tokens", or approximately 1500 words.
+As of this writing there's currently a limit of 20 prompts in a single request, and a hard limit of 2048 "tokens", or approximately 1500 words.
 
 
 ```python
@@ -231,7 +232,7 @@ batch_completion = (
 )
 ```
 
-In the call to transform a request will then be made per row. Since there are multiple prompts in a single row, each is sent with all prompts in that row. The results contain a row for each row in the request.
+In the call to transform, a request will be made per row. Since there are multiple prompts in a single row, each request is sent with all prompts in that row. The results contain a row for each row in the request.
 
 
 ```python
@@ -263,7 +264,7 @@ display(completed_autobatch_df)
 
 ### Prompt engineering for translation
 
-The Azure OpenAI service can solve many different natural language tasks through [prompt engineering](/en-us/azure/ai-services/openai/how-to/completions). Here we show an example of prompting for language translation:
+The Azure OpenAI service can solve many different natural language tasks through [prompt engineering](/en-us/azure/ai-services/openai/how-to/completions). Here, we show an example of prompting for language translation:
 
 
 ```python
@@ -295,7 +296,7 @@ qa_df = spark.createDataFrame(
 
 display(completion.transform(qa_df))
 ```
-## Next steps
+## Related content
 
 - [How to Build a Search Engine with SynapseML](create-a-multilingual-search-engine-from-forms.md)
 - [How to use SynapseML and Azure AI services for multivariate anomaly detection - Analyze time series](multivariate-anomaly-detection.md)

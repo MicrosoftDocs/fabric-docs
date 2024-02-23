@@ -60,9 +60,11 @@ You'll access SMOTE using the `imblearn` library. Install it now using the in-li
 %pip install imblearn
 ```
 
-> [!TIP]
->
-> When you install a library in a notebook, it is only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again. If you have a library you often use, you could instead [install it in your workspace](python-guide/python-library-management.md) to make it available to all notebooks in your workspace without further installs.
+When you install a library in a notebook, it's only available for the duration of the notebook session and not in the workspace. If you restart the notebook, you'll need to install the library again.
+
+If you have a library you often use, and you want to make it available to all notebooks in your workspace, you can use a [Fabric environment](https://aka.ms/fabric/create-environment) for that purpose. You can create an environment, install the library in it, and then your __workspace admin__ can attach the environment to the workspace as its default environment. For more information on setting an environment as the workspace default, see [Admin sets default libraries for the workspace](../data-engineering/library-management.md#scenario-1-admin-sets-default-libraries-for-the-workspace). 
+
+For information on migrating existing workspace libraries and Spark properties to an environment, see [Migrate workspace libraries and Spark properties to a default environment](../data-engineering/environment-workspace-migration.md).
 
 ## Load the data
 
