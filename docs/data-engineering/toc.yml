@@ -73,6 +73,8 @@ items:
       href: spark-compute.md
     - name: Configure starter pools
       href: configure-starter-pools.md
+    - name: Create custom pools
+      href: create-custom-spark-pools.md
     - name: Billing and utilization
       href: billing-capacity-management-for-spark.md
     - name: Apache Spark Runtimes
@@ -83,14 +85,14 @@ items:
           href: runtime-1-2.md
         - name: Runtime 1.1 (Spark 3.3)
           href: runtime-1-1.md
-    - name: Create custom pools
-      href: create-custom-spark-pools.md
     - name: High Concurrency mode
       href: high-concurrency-overview.md
     - name: Autotune Spark configuration
       href: autotune.md
     - name: Spark concurrency limits and queueing
       href: spark-job-concurrency-and-queueing.md
+    - name: Job admission and management
+      href: job-admission-and-management.md
   - name: Spark job definition
     items:
     - name: What is a Spark job definition?
