@@ -27,9 +27,11 @@ The minimum cores requirements for each job will determine whether the job can b
 
 Lets take the example scenario where a user is using Fabric F32 capacity SKU. Assuming all jobs submitted are using the default Starter Pool configuration, without Optimistic Job Admission, the capacity would allow a maximum concurrency of 3 jobs as it reserved all the max number of cores for each job based on the max nodes configuration.
 
-:::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
+:::image type="content" source="media/job-admission-and-management/pessimistic-job-admission.png" alt-text="Image showing the job concurrency without optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/pessimistic-job-admission.png":::
 
 With Optimistic job admission, with the same configuration, the capacity would allow 24 jobs to be admitted and start executing with their min node configuration during a max concurrency scenario as the jobs are admitted accounting for 8 SparkVCores (1 Minimum node configuration of size Medium)
+
+:::image type="content" source="media/job-admission-and-management/optimistic-job-admission.png" alt-text="Image showing the job concurrency with optimistic job admission in Fabric Spark." lightbox="media/job-admission-and-management/optimistic-job-admission.png":::
 
 
 > [!NOTE]
