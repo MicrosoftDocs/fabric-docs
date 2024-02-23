@@ -51,6 +51,8 @@ items:
   items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -73,22 +75,8 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
-  - name: Copilot for Power BI
-    items:
-      - name: Intro to Copilot for Power BI
-        href: /power-bi/create-reports/copilot-introduction
-      - name: Update a data model to work with Copilot
-        href: /power-bi/create-reports/copilot-evaluate-data
-      - name: Create report pages with Copilot
-        href: /power-bi/create-reports/copilot-create-report
-      - name: Write prompts for Copilot report pages
-        href: /power-bi/create-reports/copilot-prompts-report-pages
-      - name: Create a narrative visual with Copilot
-        href: /power-bi/create-reports/copilot-create-narrative
-      - name: Write prompts for Copilot narratives
-        href: /power-bi/create-reports/copilot-prompts-narratives
-      - name: Enhance Q&A with Copilot
-        href: /power-bi/natural-language/q-and-a-copilot-enhancements
+  - name: Copilot in Fabric Consumption
+    href: copilot-fabric-consumption.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -135,6 +123,8 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Type mismatch when writing decimals and dates to lakehouse using a dataflow
+      href: known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
     - name: Tighter throttling limit for GetDatasourcesAsAdmin Admin API
       href: known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md
     - name: Using an inactive SQL analytics endpoint can show old data

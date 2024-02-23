@@ -29,9 +29,9 @@ highlightedContent:
       itemType: get-started
       url: get-started/fabric-trial.md
     # Card
-    - title: Enable Fabric for your organization
-      itemType: quickstart
-      url: admin/fabric-switch.md
+    - title: Security in Microsoft Fabric
+      itemType: overview
+      url: security/security-overview.md
     # Card
     - title: Join the Fabric Community Conference
       itemType: whats-new
