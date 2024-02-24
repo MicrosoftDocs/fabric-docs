@@ -6,7 +6,7 @@ ms.author: lle
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 02/23/2024
+ms.date: 11/15/2023
 ms.search.form: On-premises data sources gateway
 ---
 
@@ -61,7 +61,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 Now you've created a Dataflow Gen2 to load data from an on-premises data source into a cloud destination.
 
-## Using on-premises data in a pipeline (Preview)
+## Using on-premises data in a pipeline
 
 1. Go to your workspace and create a data pipeline.
 
