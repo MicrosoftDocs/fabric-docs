@@ -16,6 +16,14 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 ## Create an on-premises data gateway
 
+1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
+
+   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
+
+1. Sign-in using your user account to access the on-premises data gateway, after which it's prepared for utilization.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
+
 ## Create a connection for your on-premises data source
 
 1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
@@ -34,6 +42,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    > [!NOTE]
    > Please be aware that the Fabric pipeline currently does not offer support for on-premises data sources. However, you can implement a workaround by initially transferring the data to a cloud storage using a Dataflow Gen2.
+
 1. Add a new source to the dataflow and select the connection established in the previous step.
 
    :::image type="content" source="media/how-to-access-on-premises-data/connect-data-source.png" lightbox="media/how-to-access-on-premises-data/connect-data-source.png" alt-text="Screenshot showing the Connect to data source dialog in a Dataflow Gen2 with an on-premises source selected.":::
