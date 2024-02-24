@@ -20,7 +20,7 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
 
-1. Sign-in using your user account to access the on-premises data gateway, after which it's prepared for utilization.
+1. Sign-in using your user account to access the on-premises data gateway. After that it's prepared for utilization.
 
    :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
 
@@ -63,7 +63,7 @@ Now you've created a Dataflow Gen2 to load data from an on-premises data source 
 
 ## Using on-premises data in a pipeline
 
-Fabric pipelines can leverage on-premises data gateway for on-premises data access and data movement. Although Fabric pipeline currently does not offer support for on-premises data sources directly, you can implement a workaround by initially transferring the data to cloud storage using a Dataflow Gen2 as described in this article, and then accessing the cloud storage from the pipeline to work with the data.
+Fabric pipelines can use on-premises data gateway for on-premises data access and data movement. Although Fabric pipeline currently doesn't offer support for on-premises data sources directly, you can implement a workaround by initially transferring the data to cloud storage using a Dataflow Gen2 as described in this article, and then accessing the cloud storage from the pipeline to work with the data.
 
 ## Related content
 
