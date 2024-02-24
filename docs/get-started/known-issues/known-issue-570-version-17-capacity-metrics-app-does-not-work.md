@@ -6,7 +6,7 @@ ms.author: jessicamo
 ms.topic: troubleshooting
 ms.service: powerbi
 ms.subservice: pbi-troubleshooting
-ms.date: 11/30/2023
+ms.date: 02/16/2024
 ms.custom: known-issue-570
 ---
 
@@ -16,7 +16,7 @@ After installing or updating the Fabric Capacity Metrics app to version 17, you 
 
 **APPLIES TO:** ✔️ Power BI
 
-**Status:** Open
+**Status:** Fixed: February 16, 2024
 
 **Problem area:** Capacity Management
 
