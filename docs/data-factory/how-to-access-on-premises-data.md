@@ -16,15 +16,37 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
 
 ## Create an on-premises data gateway
 
-1. An on-premises data gateway is a software application designed to be installed within a local network environment. It provides a means to directly install the gateway onto your local machine. For detailed instructions on how to download and install the on-premises data gateway, refer to [Install an on-premises data gateway](/data-integration/gateway/service-gateway-install).
+## Create a connection for your on-premises data source
 
-   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup.png" alt-text="Screenshot showing the on-premises data gateway setup.":::
+1. Navigate to the [admin portal](https://app.powerbi.com) and select the settings button (an icon that looks like a gear) at the top right of the page. Then choose **Manage connections and gateways** from the dropdown menu that appears.
 
-1. Sign-in using your user account to access the on-premises data gateway, after which it's prepared for utilization.
+   :::image type="content" source="media/how-to-access-on-premises-data/manage-connections-gateways.png" alt-text="Screenshot showing the Settings menu with Manage connections and gateways highlighted.":::
 
-   :::image type="content" source="media/how-to-access-on-premises-data/gateway-setup-after-sign-in.png" alt-text="Screenshot showing the on-premises data gateway setup after the user signed in.":::
+1. On the **New connection** dialog that appears, select **On-premises** and then provide your gateway cluster, along with the associated resource type and relevant information.
 
-	@@ -59,27 +59,11 @@ Data Factory for Microsoft Fabric is a powerful cloud-based data integration ser
+   :::image type="content" source="media/how-to-access-on-premises-data/new-connection-details.png" alt-text="Screenshot showing the New connection dialog with On-premises selected.":::
+
+## Connect your on-premises data source to a Dataflow Gen2 in Data Factory for Microsoft Fabric
+
+1. Go to your workspace and create a Dataflow Gen2.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/create-new-dataflow.png" alt-text="Screenshot showing a demo workspace with the new Dataflow Gen2 option highlighted.":::
+
+   > [!NOTE]
+   > Please be aware that the Fabric pipeline currently does not offer support for on-premises data sources. However, you can implement a workaround by initially transferring the data to a cloud storage using a Dataflow Gen2.
+1. Add a new source to the dataflow and select the connection established in the previous step.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/connect-data-source.png" lightbox="media/how-to-access-on-premises-data/connect-data-source.png" alt-text="Screenshot showing the Connect to data source dialog in a Dataflow Gen2 with an on-premises source selected.":::
+
+1. You can use the Dataflow Gen2 to perform any necessary data transformations based on your requirements.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/transform-data-inline.png" lightbox="media/how-to-access-on-premises-data/transform-data.png" alt-text="Screenshot showing the Power Query editor with some transformations applied to the sample data source.":::
+
+1. Use the **Add data destination** button on the **Home** tab of the Power Query editor to add a destination for your data from the on-premises source.
+
+   :::image type="content" source="media/how-to-access-on-premises-data/add-destination-inline.png" lightbox="media/how-to-access-on-premises-data/add-destination.png" alt-text="Screenshot showing the Power Query editor with the Add data destination button selected, showing the available destination types.":::
+
+1. Publish the Dataflow Gen2.
 
    :::image type="content" source="media/how-to-access-on-premises-data/publish-dataflow-inline.png" lightbox="media/how-to-access-on-premises-data/publish-dataflow.png" alt-text="Screenshot showing the Power Query editor with the Publish button highlighted.":::
 
