@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 10/30/2023
+ms.date: 02/25/2024
 ---
 
 # Service tags
@@ -21,6 +21,7 @@ In Microsoft Fabric, you can use the service tags listed in the table below. The
 | Tag | Purpose | Can use inbound or outbound? | Can be regional? | Can use with Azure Firewall? |
 |--|--|--|--|--|
 | DataFactory | Azure Data Factory | Both | No | Yes |
+| DataFactoryManagement| On premises data pipeline activity | Outbound | No | Yes |
 | EventHub | Azure Event Hubs | Outbound | Yes | Yes |
 | Power BI | Power BI and Microsoft Fabric | Both | No | Yes |
 | PowerQueryOnline | Power Query Online | Both | No | Yes |
