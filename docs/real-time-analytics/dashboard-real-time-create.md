@@ -102,7 +102,7 @@ However, database editors can limit the minimum refresh rate that any viewer can
 
 Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
 
-### Share the dashboard
+## Share the dashboard
 
 To share the dashboard link:
     1. Select **Share** and then select **Copy link**
@@ -167,7 +167,7 @@ The file contains the dashboard data in JSON format, an outline of which is show
 }
 ```
 
-### Update or restore an existing dashboard from a file
+## Update or restore an existing dashboard from a file
 
 You can update an existing dashboard, or restore a previous version, as follows:
 
