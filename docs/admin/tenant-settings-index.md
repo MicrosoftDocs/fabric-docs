@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/18/2024
+ms.date: 02/25/2024
 ---
 
 # Tenant settings index
@@ -55,7 +55,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Automatically apply sensitivity labels to downstream content](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)|With this setting enabled, whenever a sensitivity label is changed or applied to Fabric content, the label will also be applied to its eligible downstream content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153971)|
 |[Allow workspace admins to override automatically applied sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement#relaxations-to-accommodate-automatic-labeling-scenarios)|With this setting enabled, workspace admins can change or remove sensitivity labels that were applied automatically by Fabric, for example, as a result of label inheritance.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2154646)|
 |[Restrict content with protected labels from being shared via link with everyone in your organization](service-admin-portal-information-protection.md#restrict-content-with-protected-labels-from-being-shared-via-link-with-everyone-in-your-organization)|This setting will prevent content with protection settings in the sensitivity label from being shared via link with everyone in your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2160554)|
-|[Users with co-author permissions can edit encrypted PBIX files (preview)](./service-admin-portal-information-protection.md#users-with-co-author-permissions-can-edit-encrypted-pbix-files-preview)|Users who are granted co-author permissions in the Microsoft Purview compliance portal can open and edit protected PBIX files from Power BI Desktop. Some limitations apply. [Learn More](https://go.microsoft.com/fwlink/?linkid=2247658)|
+|[Increase the number of users who can edit and republish encrypted PBIX files (preview)(./service-admin-portal-information-protection.md#users-with-co-author-permissions-can-edit-encrypted-pbix-files-preview))]|Turn on this setting to allow users who've been assigned restrictive sensitivity permissions in the Microsoft Purview compliance portal to open, edit, and publish encrypted PBIX files in Power BI Desktop. Some limitations apply. [Learn More](https://go.microsoft.com/fwlink/?linkid=2247658)|
 
 ## [Export and sharing settings](service-admin-portal-export-sharing.md)
 
@@ -90,6 +90,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Allow DirectQuery connections to Power BI semantic models](service-admin-portal-export-sharing.md#allow-directquery-connections-to-power-bi-semantic-models)|DirectQuery connections allow users to make changes to existing semantic models or use them to build new ones.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2179788)|
 |[Guest users can work with shared semantic models in their own tenants](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-guest-users-to-work-with-shared-datasets-in-their-own-tenants)|Authorized guest users can discover semantic models shared with them in the OneLake data hub (in Power BI Desktop), and then work with these semantic models in their own Power BI tenants.|
 |[Allow specific users to turn on external data sharing](/power-bi/collaborate-share/service-dataset-external-org-share-admin#allow-specific-users-to-turn-on-external-data-sharing)|Turn off this setting to prevent all users from turning on external data sharing. If this setting is on, all or specific users can turn on the external data sharing option, allowing them to share data with authorized guest users. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own Power BI tenants.|
+|Users can deliver reports to OneDrive and SharePoint in Power BI|Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint. [Learn More](./tenant-settings-index#export-and-sharing-settings)|
 
 ## [Discovery settings](service-admin-portal-discovery.md)
 
@@ -140,7 +141,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Add and use certified visuals only (block uncertified)](/power-bi/admin/organizational-visuals#certified-power-bi-visuals)|Users in the organization with permissions to add and use visuals can add and use certified visuals only. Visuals allowed in the "Organizational visuals" page are not affected by this setting, regardless of certification.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2036068)|
 |[Allow downloads from custom visuals](/power-bi/admin/organizational-visuals#export-data-to-file)|Enabling this setting will let custom visuals download any information available to the visual (such as summarized data and visual configuration) upon user consent. It is not affected by download restrictions applied in your organization's Export and sharing settings.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2185233&amp;clcid=0x409)|
 |[Custom visuals can get users' Microsoft Entra access tokens](./organizational-visuals.md#obtain-microsoft-entra-access-token)|Custom visuals can get the Microsoft Entra access tokens of signed-in users.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
-|Allow access to the browser's local storage|When this setting is on, custom visuals can store information on the user's browser's local storage.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2236555)|
+|[Allow access to the browser's local storage](./organizational-visuals#obtain-microsoft-entra-access-token)|When this setting is on, custom visuals can store information on the user's browser's local storage.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2195648)|
 
 ## [R and Python visuals settings](service-admin-portal-r-python-visuals.md)
 
@@ -210,7 +211,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore)  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
+|[Azure Private Link](/power-bi/enterprise/service-security-private-links)|Increase security by allowing people to use a Private Link to access your Power BI tenant. Someone will need to finish the set-up process in Azure. If that's not you, grant permission to the right person or group by entering their email.  [Learn More](https://aka.ms/PrivateLinksLearnMore)  [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)<br><br>Review the  [considerations and limitations](https://aka.ms/PrivateLinksConsiderationsAndLimitations) section before enabling private endpoints.|
 |[Block Public Internet Access](/power-bi/enterprise/service-security-private-links)|For extra security, block access to your Power BI tenant via the public internet. This means people who don't have access to the Private Link won't be able to get in. Keep in mind, turning this on could take 10 to 20 minutes to take effect. [Learn More](https://aka.ms/PrivateLinksLearnMore) [Set-up instructions](https://aka.ms/PrivateLinksSetupInstructions)|
 
 ## [Metrics settings](service-admin-portal-goals-settings.md)
@@ -283,7 +284,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 | Setting name | Description |
 |------|-------|
 |[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is on, users can access a preview and use preview features powered by Azure OpenAI, including Copilot.<br><br>Your data, such as prompts, augmented data included with prompts, and AI outputs, will be processed and temporarily stored by Microsoft and may be reviewed by Microsoft employees for abuse monitoring.  [Learn More](https://aka.ms/fabric/aoai)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
-|​​​[Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
+|[​​​Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
 
 ## Related content
 
