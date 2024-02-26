@@ -5,7 +5,7 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 09/21/2023
+ms.date: 02/21/2023
 ---
 
 # Use parameters in Real-Time Dashboards
@@ -22,22 +22,21 @@ The query examples used in this article are based on the **StormEvents** table i
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
+* Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 * A dashboard with visuals
 
 ## View parameters list
 
-To view the list of all dashboard parameters, select the **Parameters** button at the top of the dashboard.
-
-:::image type="content" source="media/dashboard-parameters/parameters-widget.png" alt-text="Screenshot of the parameters button at the top of dashboard.":::
+To view the list of all dashboard parameters, select **Manage** > **Parameters**.
 
 ## Create a parameter
 
 To create a parameter:
 
-1. Select the **Parameters** button at the top of the dashboard.
-1. Select the **+ New parameter** button at the top of the right pane.
+1. Select the **New Parameters** button on the top menu. The **Parameters** pane opens.
+1. Select the **+ Add** button at the top of the right pane.
 1. Fill in the relevant [properties](#properties) for your parameter.
+1. Select **Done** to create the parameter.
 
 ### Properties
 
@@ -47,12 +46,13 @@ In the **Add parameter** pane, configure the following properties.
 |---------|---------|
 |**Label**|The name of the parameter shown on the dashboard or the edit card.|
 |**Parameter type**|One of the following parameters:<br />- **Single selection**: Only one value can be selected in the filter as input for the parameter.<br />- **Multiple selection**: One or more values can be selected in the filter as inputs for the parameter.<br />- **Time range**: Allows creating additional parameters to filter the queries and dashboards based on time. Every dashboard has a time range picker by default.<br />- **Free text**: Doesn't have any values populated in the filter. The user can type a value or copy/paste a value to the text field. The filter keeps the recent values used.|
+| **Description** | Optional description of the parameter. |
 |**Variable name**|The name of the parameter to be used in the query.|
 |**Data type**|The data type of the parameter values.|
 |**Show on pages**|Select the pages where this parameter is displayed. The **Select all** option shows the parameter on all pages.|
 |**Source**|The source of the parameter values:<br />- **Fixed values**: Manually introduced static filter values.<br />- **Query**: Dynamically introduced values using a KQL query.|
+|**Add "Select all" value**|Applicable only to single selection and multiple selection parameter types. Used to retrieve data for all the parameter values. This value should be built into the query to provide the functionality. See [Use the multiple-selection query-based parameter](#multiple-selection-query-based-parameters) for more examples on building such queries.|
 |**Default value**|The default value of the filter. The filter always starts with the default value upon initial rendering of the dashboard.|
-|**Add a "Select all" value**|Applicable only to single selection and multiple selection parameter types. Used to retrieve data for all the parameter values. This value should be built into the query to provide the functionality. See [Use the multiple-selection query-based parameter](#multiple-selection-query-based-parameters) for more examples on building such queries.|
 
 ## Manage parameters
 
@@ -306,7 +306,7 @@ Free text parameters don't contain any values. They allow you to introduce your 
 
 ### Data source parameters
 
-Once you have [added data sources](real-time-dashboard.md#add-data-source) to your dashboard, you can create a parameter that selects one or more of the available data sources. This parameter can be used in tiles and other parameters.
+Once you have [added data sources](dashboard-real-time-create.md#add-data-source) to your dashboard, you can create a parameter that selects one or more of the available data sources. This parameter can be used in tiles and other parameters.
 
 #### Create a data source parameter
 
@@ -316,7 +316,7 @@ Once you have [added data sources](real-time-dashboard.md#add-data-source) to yo
     * **Parameter type**: Data source
     * **Show on pages**: Select all
     * **Values**: Select all
-    * **Default value**: StormEventsSample
+    * **Default value**: StormEvents
 
     :::image type="content" source="media/dashboard-parameters/data-source-parameter.png" alt-text="Screenshot of data source parameters.":::
 
@@ -351,13 +351,10 @@ To create a cross-filter, you must turn on the option in the visual, and then sp
     > [!IMPORTANT]
     > The column and parameter must be of the same data type.
 
-:::image type="content" source="media/dashboard-parameters/cross-filter-query.png" alt-text="Screenshot of the edit visual page, showing the interactions tab.":::
 
 ## Interact with your data using cross-filter
 
 Once the cross-filter is defined, you can use it to interact with your data. In visuals where you've defined cross-filters, you can select data points and use their values to filter the current dashboard page. For table visuals, select data points by right-clicking on the relevant cell and then in the context menu, select **Cross-filter**.
-
-:::image type="content" source="media/dashboard-parameters/cross-filter-query-table.png" alt-text="Screenshot of a table visual, showing the cross-filter context menu option.":::
 
 You can reset the cross-filter by selecting **Reset** at the top of the visual where it was selected.
 
@@ -365,16 +362,13 @@ You can reset the cross-filter by selecting **Reset** at the top of the visual w
 
 ## Use drillthroughs as dashboard parameters
 
-Drillthroughs allow you to select a value in a visual and use it to filter the visuals in a target page within the same dashboard. When the target page opens, the value is preselected in the relevant filters. The visuals on the page, such as line or scatter charts, are filtered to only show related data. This feature is useful for creating dashboards with drillthroughs from a summary page to a details page. For information about creating pages, see [Add page](real-time-dashboard.md#add-page).
+Drillthroughs allow you to select a value in a visual and use it to filter the visuals in a target page within the same dashboard. When the target page opens, the value is preselected in the relevant filters. The visuals on the page, such as line or scatter charts, are filtered to only show related data. This feature is useful for creating dashboards with drillthroughs from a summary page to a details page. For information about creating pages, see [Add page](dashboard-real-time-create.md#add-page).
 
 ### Define a drillthrough
 
 To create a drillthrough, you must turn on the option in the visual, and then specify one or more drillthrough parameters that are used to filter the data.
 
-1. On your primary page, edit the dashboard.
-
-    :::image type="content" source="media/dashboard-parameters/drillthrough-edit.png" alt-text="Screenshot of the dashboard menu, showing the edit option.":::
-
+1. On your primary page, enter **Editing** mode.
 1. Edit the visual where you want to add a drillthrough. Make sure that the **Visual** tab is selected.
 
     :::image type="content" source="media/dashboard-parameters/drillthrough-visual-edit.png" alt-text="Screenshot of a dashboard visual, showing the edit option.":::
@@ -411,5 +405,5 @@ In single and multiple selection filters, type the value that you want. The filt
 
 ## Related content
 
-* [Visualize data with Real-Time Dashboards](real-time-dashboard.md)
-* [Customize Real-Time Dashboard visuals](customize-dashboard-visuals.md)
+* [Visualize data with Real-Time Dashboards](dashboard-real-time-create.md)
+* [Customize Real-Time Dashboard visuals](dashboard-visuals-customize.md)

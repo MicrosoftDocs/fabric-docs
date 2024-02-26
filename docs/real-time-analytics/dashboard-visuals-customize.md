@@ -5,19 +5,19 @@ ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
 ms.topic: how-to
-ms.date: 02/01/2024
+ms.date: 02/21/2024
 ---
 
 # Customize Real-Time Dashboard visuals
 
 Real-Time Dashboards are a collection of tiles that feature a visual representation supported by an underlying Kusto Query Language (KQL) query. This article explains how to edit the visualizations and queries of a Real-Time Dashboard tile and provides an overview of customization properties specific to each visualization type.
 
-All visualizations that can be created in the context of the [render operator](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric#visualizations) along with the [dashboard-specific visuals](/azure/data-explorer/dashboard-visuals) are available in Real-Time Dashboards.
+All visualizations that can be created in the context of the [render operator](/azure/data-explorer/kusto/query/renderoperator?context=/fabric/context/context-rta&pivots=fabric#visualizations) along with the [dashboard-specific visuals](dashboard-visuals.md) are available in Real-Time Dashboards.
 
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* Editor permissions on a [Real-Time Dashboard](real-time-dashboard.md)
+* Editor permissions on a [Real-Time Dashboard](dashboard-real-time-create.md)
 
 ## Customize a dashboard tile
 
@@ -25,15 +25,8 @@ To make changes in your dashboard:
 
 1. In the top menu, select **Viewing** and toggle to **Editing** mode.
 
-    :::image type="content" source="media/customize-dashboard-visuals/viewing-to-editing-mode.png" alt-text="Screenshot of option to switch to editing mode." lightbox="media/customize-dashboard-visuals/viewing-to-editing-mode.png":::
-
 1. On the tile that you'd like to customize, select the **Edit** icon. Edit the underlying query or the visualization properties.
-
-    :::image type="content" source="media/customize-dashboard-visuals/tile-edit-icon.png" alt-text="Screenshot of the tile edit icon." lightbox="media/customize-dashboard-visuals/tile-edit-icon.png":::
-
 1. To save your changes and return to the dashboard, select **Apply changes**.
-
-    :::image type="content" source="media/customize-dashboard-visuals/apply-changes.png" alt-text="Screenshot of the apply changes button." lightbox="media/customize-dashboard-visuals/apply-changes.png":::
 
 ## Customization properties
 
@@ -42,7 +35,7 @@ The following table describes the available customization properties, categorize
 | Section | Property | Description | Visual types |
 |--|--|--|--|
 | **Colors** | **Color palette** | Determines the set of colors to use for the heatmap. | Heatmap |
-| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. For more information, see [Apply conditional formatting](dashboards-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Table, Time chart |
+| **Conditional formatting** | **Hide** or **Show** | A toggle option to turn off or turn on conditional formatting. For more information, see [Apply conditional formatting](dashboard-conditional-formatting.md). | Anomaly chart, Area chart, Bar chart, Column chart, Multi Stat, Scatter chart, Table, Time chart |
 | **Data** | **Y columns** | The columns that provide data for the vertical axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
 |  | **X column** | The column that provides data for the horizontal axis. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
 |  | **Series columns** | The columns used to categorize data into different series. | Anomaly chart, Area chart, Bar chart, Column chart, Line chart, Scatter chart, Time chart |
@@ -77,8 +70,8 @@ You can embed images in your dashboard tiles using Markdown text.
 
 For more information on GitHub Flavored Markdown, see [GitHub Flavored Markdown Spec](https://github.github.com/gfm/).
 
-1. Open a [Real-Time Dashboard](real-time-dashboard.md#create-a-new-dashboard).
-1. In the top menu, select **Add text** to open a text tile.
+1. Open a [Real-Time Dashboard](dashboard-real-time-create.md#create-a-new-dashboard).
+1. In the top menu, select **New text tile** to open a text tile.
 
     :::image type="content" source="media/customize-dashboard-visuals/add-tile.png" alt-text="Screenshot of the Home menu in a Real-Time Dashboard. The option titled Add text is highlighted.":::
 
@@ -98,4 +91,4 @@ For more information on image syntax in GitHub Flavored Markdown, see [Images](h
 
 ## Related content
 
-* [Apply conditional formatting to Real-Time Dashboard visuals](dashboards-conditional-formatting.md)
+* [Apply conditional formatting to Real-Time Dashboard visuals](dashboard-conditional-formatting.md)
