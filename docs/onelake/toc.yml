@@ -68,7 +68,7 @@ items:
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
 - name: Billing and consumption
-   items:
+  items:
   - name: OneLake compute and storage consumption
     href: onelake-consumption.md
   - name: OneLake capacity consumption example
