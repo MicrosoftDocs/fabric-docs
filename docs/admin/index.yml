@@ -11,7 +11,7 @@ metadata:
   ms.topic: landing-page
   author: KesemSharabi
   ms.author: kesharab
-  ms.date: 10/18/2023
+  ms.date: 02/08/2024
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
@@ -24,7 +24,7 @@ landingContent:
           - text: What is Microsoft Fabric admin?
             url: microsoft-fabric-admin.md       
           - text: What is the admin portal?
-            url: admin-center.md
+            url: admin-center.md                
       - linkListType: get-started
         links:
           - text: Enable Fabric for your organization
@@ -32,15 +32,17 @@ landingContent:
           - text: Region availability
             url: region-availability.md
           - text: Find your Fabric home region
-            url: find-fabric-home-region.md
-          - text: Governance in Fabric
-            url: ../governance/index.yml      
-          - text: Security in Fabric
-            url: ../security/security-overview.md              
+            url: find-fabric-home-region.md             
       - linkListType: how-to-guide
         links:            
           - text: Understand Fabric admin roles
             url: roles.md
+      - linkListType: reference
+        links:   
+          - text: Governance documentation
+            url: ../governance/index.yml      
+          - text: Security documentation
+            url: ../security/index.yml             
 
   - title: Tools and settings
     linkLists:
@@ -65,22 +67,28 @@ landingContent:
           - text: Configure Multi-Geo support
             url: service-admin-premium-multi-geo.md
 
-  - title: Workspace administration
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Manage workspaces
-            url: portal-workspaces.md
-          - text: Workspace tenant settings
-            url: portal-workspace.md
-
   - title: Monitoring and management
     linkLists:
       - linkListType: overview
         links:
           - text: What is the admin monitoring workspace?
             url: monitoring-workspace.md
+      - linkListType: concept
+        links:                
           - text: Feature usage and adoption report
             url: feature-usage-adoption.md
+      - linkListType: how-to-guide
+        links:            
           - text: Use the Monitoring hub
             url: monitoring-hub.md
+
+  - title: Workspace administration
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Manage workspaces
+            url: portal-workspaces.md
+      - linkListType: how-to-guide
+        links:            
+          - text: Workspace tenant settings
+            url: portal-workspace.md

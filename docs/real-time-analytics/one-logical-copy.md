@@ -57,7 +57,7 @@ You've turned on **OneLake availability** in your KQL database. You can now acce
 When you [turn on OneLake availability](#turn-on-onelake-availability) on a table, a delta log folder is created along with any corresponding JSON and parquet files. You can view the files that were made available in OneLake and their properties while remaining within Real-Time Analytics.
 
 > [!IMPORTANT]
-> It might take up to a few hours for the parquet and JSON files to appear after turning on **OneLake availability**.
+> It might take up to a few hours for the files to appear after turning on **OneLake availability**.
 
 * To view the files, hover over a table in the **Explorer** pane and then select the **More menu [...]** > **View files**.
 

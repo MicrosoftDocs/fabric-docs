@@ -29,9 +29,9 @@ highlightedContent:
       itemType: get-started
       url: get-started/fabric-trial.md
     # Card
-    - title: Enable Fabric for your organization
-      itemType: quickstart
-      url: admin/fabric-switch.md
+    - title: Security in Microsoft Fabric
+      itemType: overview
+      url: security/security-overview.md
     # Card
     - title: Join the Fabric Community Conference
       itemType: whats-new
@@ -140,15 +140,15 @@ conceptualContent:
         # Card
         - title: Troubleshooting 
           links:
-          - url: /power-bi/support/service-support-options
-            itemType: concept
-            text: Create a support ticket
-          - url: /power-bi/troubleshoot/known-issues/power-bi-known-issues
-            itemType: concept
+          - url: get-started/fabric-known-issues.md
+            itemType: how-to-guide
             text: Known issues
           - url: /power-bi/troubleshoot/
             itemType: concept
             text: Troubleshoot issues
+          - url: /power-bi/support/service-support-options
+            itemType: concept
+            text: Create a support ticket
           footerLink:
             url: get-started/index.yml
             text: See more
