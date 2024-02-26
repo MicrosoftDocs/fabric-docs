@@ -132,11 +132,15 @@ Now we’re ready to configure the Lakehouse linked service in ADF or Synapse.
 
 With the setup of the linked services completed, you can import the template and adjust it for your source object.
 
-1. From the pipeline menu, choose **Import from pipeline template** and select the [data flow template ZIP file]() from the file dialog.
+1. From the pipeline menu, choose **+** too add a new resource, then select **Pipeline** and **Template gallery**.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/import-pipeline-template.png" alt-text="Screenshot showing where to import a pipeline template in the ADF studio's Integrate page.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/select-pipeline-template.png" alt-text="Screenshot showing where to choose a template in the ADF studio's Template gallery.":::
 
-1. The configuration screen opens, in which you specify the linked services to be used to instantiate the template. Enter the linked services created in the prior sections. The first linked service is the one required for the staging folder in ADLS Gen2, the second one is connection to the SAP source and the third one connects to Microsoft Fabric Lakehouse:
+1. The **Template gallery** dialog appears. Find the **Copy change data from SAP to Fabric Lakehouse table** template, select it, and select **Continue**.
+
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/select-sap-to-fabric-template.png" alt-text="Screenshot showing the template selected in the Template gallery.":::
+
+1. The configuration screen opens, in which you specify the linked services to be used to instantiate the template. Enter the linked services created in the prior sections. The first linked service is the connection to an SAP source and the second one connects to a Microsoft Fabric Lakehouse:
 
    :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/configure-pipeline-template.png" alt-text="Screenshot showing how to configure the pipeline template.":::
 
