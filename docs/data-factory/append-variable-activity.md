@@ -28,7 +28,7 @@ To use an Append variable activity in a pipeline, complete the following steps:
 ### Creating the activity
 
 1. Create a new pipeline in your workspace.
-1. Before you use the Append variable activity, you'll need an array type variable in your pipeline. Select the **Variables** tab from the pipeline settings, and then select **+ New**, to add a variable of Array type.
+1. Before you use the Append variable activity, you'll need an array type variable in your pipeline. First select the pipeline canvas background, so the pipeline settings appear on the lower part of the screen. There, select the **Variables** tab, and then select **+ New**, to add a variable of Array type.
 
    :::image type="content" source="media/append-variable-activity/add-append-variable-activity.png" alt-text="Screenshot showing the creation of a new array type variable to a pipeline.":::
 
