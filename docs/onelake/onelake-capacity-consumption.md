@@ -4,7 +4,7 @@ description: Information on how OneLake uses Fabric capacity and how storage is 
 ms.author: nishas
 author: nishas
 ms.topic: how-to
-ms.date: 02/12/2024
+ms.date: 02/26/2024
 ---
 
 # Fabric Capacity and OneLake consumption
@@ -29,8 +29,6 @@ Now let’s read this data using a Fabric notebook. You consume 1.39 CU Seconds 
 Refer to the [OneLake consumption page](../onelake/onelake-consumption.md) to learn more about how each type of operation consumes capacity units.
  
  :::image type="content" source="media\onelake-capacity-consumption\onelake-compute.png" alt-text="Diagram showing how OneLake compute is viewed in Fabric Metrics app." lightbox="media\onelake-capacity-consumption\onelake-compute.png":::
-
-Notice in the screenshot that the "Billing Type" for OneLake transactions is marked as "non-billable." This classification is because OneLake transactions are currently not consuming Fabric CU seconds (see “[Known issues](../get-started/known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)"). Reporting as "non-billable" is a temporary situation. Check [OneLake consumption](../onelake/onelake-consumption.md) for updates on when OneLake transactions change to "billable" and count against your capacity limits.
 
 To understand more about the various terminologies on the metrics app, refer to [Understand the metrics app compute page - Microsoft Fabric](../enterprise/metrics-app-compute-page.md).
 
