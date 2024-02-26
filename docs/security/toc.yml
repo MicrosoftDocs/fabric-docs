@@ -17,24 +17,18 @@ items:
     href: network-security-overview.md
   - name: Inbound
     items:
-    - name: Overview of inbound network security
-      href: inbound-network-security-overview.md
     - name: Private links
       href: security-private-links.md
     - name: Service tags
       href: security-service-tags.md
   - name: Outbound
     items:
-    - name: Overview outbound network security
-      href: outbound-network-security-overview.md
     - name: Managed private endpoints
       href: security-managed-private-endpoints.md
     - name: Trusted workspace access (Storage firewall bypass)
       href: security-trusted-workspace-access.md
 - name: Data security
   items:
-  - name: Overview of data security
-    href: data-security-overview.md
   - name: Guest user sharing
     href: security-b2b.md
   - name: Conditional access
