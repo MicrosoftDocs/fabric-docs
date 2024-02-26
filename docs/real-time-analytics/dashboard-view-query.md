@@ -1,6 +1,6 @@
 ---
 title: View queries in Real-Time Dashboards
-description: Learn how to view queries in Real-Time Dashboards
+description: Learn how to view queries in Real-Time Dashboards.
 ms.author: yaschust
 author: YaelSchuster
 ms.reviewer: gabil
@@ -28,9 +28,9 @@ While viewing the dashboard, you can see the underlying query of any tile. This 
     A pane opens with the query and results table.
 
 1. Select **Edit query**.
-1. Choose either **Existing Queryset** or **New Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
+1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
 
-    :::image type="content" source="media/dashboard-view-query/view-query-viewing-mode.png" alt-text="Screenshot of the viewing mode of Real-Time Dashboards view query with options to futher edit in KQL Queryset in Real-Time Analytics in Microsoft Fabric.":::
+    :::image type="content" source="media/dashboard-view-query/view-query-viewing-mode.png" alt-text="Screenshot of the viewing mode of Real-Time Dashboards view query with options to further edit in KQL Queryset in Real-Time Analytics in Microsoft Fabric.":::
 
 > [!NOTE]
 > Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
