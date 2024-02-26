@@ -5,8 +5,77 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/26/2024
+ms.date: 02/20/2024
 ---
+
+# What are Managed Virtual Networks?
+
+Managed virtual networks are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
+
+Managed virtual networks also enable network security features such as managed private endpoints, and private link support for Data Engineering and Data Science items in Microsoft Fabric that use Apache Spark.
+
+The following image illustrates ......
+
+![A picture containing text, screenshot, diagram, design](media/security-managed-private-endpoints/image1.gif)
+
+Fabric workspaces that are provisioned with a dedicated virtual network provide value in four ways:
+
+* With a managed virtual network you get complete network isolation for the Spark clusters running your Spark jobs (which allow users to run arbitrary user code) while offloading the burden of managing the virtual network to Microsoft Fabric.
+
+* You don't need to create a subnet for the Spark clusters based on peak load, as this is managed for you by Microsoft Fabric.
+
+* A managed virtual network for your workspace, along with managed private endpoints, allows you to access data sources that are behind firewalls or otherwise blocked from public access.
+
+## How to enable managed virtual networks for a Fabric workspace
+
+Managed virtual networks are provisioned for a Fabric workspace when either of the following cases occurs. 
+
+* Managed private endpoints are added to a workspace. Workspace admins can create and delete managed private endpoint connections from the workspace settings of a Fabric Workspace. See [How to create a managed private endpoint in a Fabric workspace for instructions](#how-to-create-a-managed-private-endpoint-in-a-fabric-workspace).
+
+* Azure Private Link is enabled and a Spark job is run in a Fabric Workspace. Fabric admins can enable the **[Azure Private Link](../admin/service-admin-portal-advanced-networking.md)** tenant setting in the Admin portal of their Microsoft Fabric tenant. See [Set up and use secure private endpoints](./security-private-links-use.md).
+
+### How to create a managed private endpoint in a Fabric workspace
+
+1. Open the **Workspace settings**.
+1. Select the **Network Security tab**.
+1. Select the “**Create**” option in the Managed Private Endpoints section.
+1. Specify the **Private Endpoint Name**, Add the **Resource Identifier** for the Azure resource that you are trying to connect to.
+1. Select the **Target Sub Resource** from the list of options.
+1. Specify the business justification for the Data Source administrator who needs to approve to your private endpoint request as part of the **Request Message**.
+1. Select **Submit**.
+
+The following animation illustrates the process of enabling a managed virtual network for a Fabric workspace.
+
+:::image type="content" source="./media/security-managed-private-endpoints/image2.gif" alt-text="Animated illustration of how to created a managed private endpoint in a Fabric workspace.}":::
+
+
+
+    Once you have enabled the Private Link setting, running the first Spark job (Notebook or Spark job definition) or performing a Lakehouse operation (for example, Load to Table, or a table maintenance operation such as Optimize or Vacuum) will result in the creation of a managed virtual network for the workspace. 
+
+    > [!NOTE]
+    > The managed virtual network is provisioned automatically as part of the job submission step for the first Spark Job in the workspace. Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are pre-warmed clusters hosted in a shared virtual network. Spark jobs will run on custom pools created on-demand at the time of job submission within the dedicated managed virtual network of the workspace.
+
+### Known Limitations
+
+- Starter Pools are not supported in workspaces that are enabled with Managed Vnets (i.e workspaces which have managed private endpoints or workspaces which are in a Fabric tenant enabled with Private Link setting and have run a Spark job).
+
+- Managed Private Endpoints are only supported for Fabric Trial and Fabric Capacities F64 or higher.
+
+- Workspaces which have at least one Managed Private Endpoint can only be migrated to F64 or greater Fabric Capacity SKU.
+
+- Data Science items Models and Experiments are not supported for Tenants which are enabled with Private Links.
+
+- Lakehouse table maintenance operations are not supported for workspaces enabled with Managed VNets.
+
+These limitations may affect your use cases and workflows, so please consider them before enabling the Private Link setting for your tenant.
+
+Learn more about Managed Private Endpoints 
+
+Learn more about Private Links 
+
+Managed Private Endpoints for Microsoft Fabric
+
+A feature that allows secure and private access to data sources from Fabric Spark workloads
 
 # What are Managed Private Endpoints?
 
