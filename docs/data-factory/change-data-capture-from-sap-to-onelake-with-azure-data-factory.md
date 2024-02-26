@@ -76,35 +76,35 @@ Let’s start with Microsoft Entra ID.
 
 1. To create the service principal, select **App registrations** and **+ New registration**.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/create-new-service-principal.png" alt-text="Screenshot showing where to create a new service principal app registration.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/create-new-service-principal.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/create-new-service-principal.png" alt-text="Screenshot showing where to create a new service principal app registration.":::
 
 1. Enter a **Name** for the application. The name is the same as the service principal name, so copy it for later use.
 1. Select **Accounts in this organizational directory only**.
 1. Then select **Register**.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/register-application.png" alt-text="Screenshot showing where to provide the new app registration name and account type.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/register-application.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/register-application.png" alt-text="Screenshot showing where to provide the new app registration name and account type.":::
 
 1. Copy the **Application (client) ID**. This step is required in the linked service definition in ADF later. Then select **Add a certificate or secret**.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-certificate-or-secret.png" alt-text="Screenshot showing where to find the Application (client) ID and add a certificate or secret.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-certificate-or-secret.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-certificate-or-secret.png" alt-text="Screenshot showing where to find the Application (client) ID and add a certificate or secret.":::
 
 1. Select **+ New client secret**. Add a **Description** and **expiration policy**.
 
-   a:::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-new-client-secret.png" alt-text="Screenshot showing where to add a new client secret, description, and expiration policy.":::
+   a:::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-new-client-secret.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-new-client-secret.png" alt-text="Screenshot showing where to add a new client secret, description, and expiration policy.":::
 
 1. Copy the **Value** of the client secret. This step completes the service principal configuration in Microsoft Entra ID.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/client-secret-value.png" alt-text="Screenshot showing where to find the client secret value.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/client-secret-value.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/client-secret-value.png" alt-text="Screenshot showing where to find the client secret value.":::
 
 Next, we add the service principal as a **contributor** or **admin** to your Microsoft Fabric workspace.
 
 1. Navigate to your workspace and select **Manage access**.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/manage-access-to-fabric.png" alt-text="Screenshot showing where to manage access to a Fabric workspace.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/manage-access-to-fabric.png" lightbox="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/manage-access-to-fabric.png" alt-text="Screenshot showing where to manage access to a Fabric workspace.":::
 
 1. Enter the **name** of the service principal, select the **Contributor** or **Admin** role and select **Add**. The service principal can now be used to connect ADF to your workspace.
 
-   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-service-principal-to-workspace.png" alt-text="Screenshot showing where to add your service principal to your Fabric workspace and grant it Contributor or Admin access.":::
+   :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/add-service-principal-to-workspace.png"  alt-text="Screenshot showing where to add your service principal to your Fabric workspace and grant it Contributor or Admin access.":::
 
 ## Creating the Lakehouse linked service in ADF or Synapse
 
