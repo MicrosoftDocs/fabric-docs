@@ -37,7 +37,7 @@ You can use the monitoring hub display options to find the activities you're int
 
 ### Change the display order
 
-You can change the order of the table's display by selecting each column title. The table is sorted according to your selection and the arrow next to the coumn header indicates the sorting order.
+You can change the order of the table's display by selecting each column title. The table is sorted according to your selection and the arrow next to the column header indicates the sorting order.
 
 ### Configure table columns
 
@@ -74,13 +74,13 @@ Providing you have the right permissions for the Fabric item displayed in the mo
 
 You can view the history of a single Fabric item using the *Historical runs* option.
 
-Select *More options* (**...**) next to the activity name of the item you're interested in, and from the menu, select *Historical runs*. The tables displays up to 30 days of historical information for that item.
+Select *More options* (**...**) next to the activity name of the item you're interested in, and from the menu, select *Historical runs*. The table displays up to 30 days of historical information for that item.
 
 To return to the main display, select *Back to main view*.
 
 ### View details
 
-To view the details of an activity, hover over it's activity name and select the *View detail* symbol (**i**).
+To view the details of an activity, hover over its activity name and select the *View detail* symbol (**i**).
 
 ## Limitation
 
