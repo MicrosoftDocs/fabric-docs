@@ -4,7 +4,7 @@ description: Learn about reports in the warehouse experience.
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: WilliamDAssafMSFT
-ms.date: 11/15/2023
+ms.date: 02/24/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -15,7 +15,7 @@ ms.search.form: Reporting # This article's title should not change. If so, conta
 ---
 # Create reports on data warehousing in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 [!INCLUDE [product-name](../includes/product-name.md)] lets you create reusable and default Power BI semantic models to create reports in various ways in Power BI. This article describes the various ways you can use your [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)], and their default Power BI semantic models, to create reports.
 
@@ -35,7 +35,7 @@ Reports that use the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE 
 
 Within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
-:::image type="content" source="media\create-reports\new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\create-reports\new-report-ribbon.png":::
+:::image type="content" source="media/create-reports/new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media/create-reports/new-report-ribbon.png":::
 
 If no tables have been added to the default Power BI semantic model, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default semantic model first, ensuring there's always data first.
 
@@ -49,19 +49,26 @@ You can build reports from semantic models with **Power BI Desktop** using a Liv
 
 For a tutorial with Power BI Desktop, see [Get started with Power BI Desktop](/power-bi/fundamentals/desktop-getting-started). For advanced situations where you want to add more data or change the storage mode, see [use composite models in Power BI Desktop](/power-bi/transform-model/desktop-composite-models).
 
-You can use integrated Data hub experience in Power BI Desktop to select your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) to make a connection and build reports.
+If you're browsing for a specific [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) in OneLake, you can use integrated **OneLake data hub** experience in Power BI Desktop to make a connection and build reports:
 
-Alternatively, you can complete the following steps to connect to a warehouse in Power BI Desktop:
-
-1. Navigate to the warehouse settings in your workspace and copy the SQL connection string. Or, right-click on the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] in your workspace and select **Copy SQL connection string**.
-1. Select the **Warehouse  connector** from the **Get data** or connect to the default semantic model from **Data hub**. 
-1. Paste the SQL connection string into the connector dialog. 
-1. For authentication, select *organizational account*.
+1. Open Power BI Desktop and select **Warehouse** under the **OneLake data hub** dropdown list in the ribbon.
+1. Select the desired warehouse.
+    - If you would like to create a live connection to the automatically defined data model, select **Connect**.
+    - If you would like to connect directly to the data source and define your own data model, select the dropdown list arrow for the **Connect** button and select **Connect to SQL endpoint**.
+1. For authentication, select **Organizational account**.
 1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
-1. Select **Connect**.
-1. Select the data items you want to include or not include in your semantic model.
+1. If you selected **Connect to SQL endpoint**, select the data items you want to include or not include in your semantic model.
+
+Alternatively, if you have the SQL connection string of your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) and would like more advanced options, such as writing a SQL statement to filter out specific data, connect to a warehouse in Power BI Desktop:
+
+1. In the Fabric portal, right-click on the Warehouse or SQL analytics endpoint in your workspace and select **Copy SQL connection string**. Or, navigate to the Warehouse **Settings** in your workspace. Copy the SQL connection string.
+1. Open Power BI Desktop and select **SQL Server** in the ribbon.
+1. Paste the SQL connection string under **Server**.
+1. In the **Navigator** dialog, select the databases and tables you would like to load.
+1. If prompted for authentication, select **Organizational account**.
+1. Authenticate using Microsoft Entra ID (formerly Azure Active Directory) multifactor authentication (MFA).
 
 ## Related content
 
 - [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)
-- [Create reports in the Power BI service in Microsoft Fabric](reports-power-bi-service.md)
+- [Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop](reports-power-bi-service.md)
