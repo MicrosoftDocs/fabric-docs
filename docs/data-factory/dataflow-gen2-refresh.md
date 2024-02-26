@@ -54,10 +54,10 @@ Once a dataflow refresh is canceled, the dataflow's refresh history status is up
 
 ### Refresh cancelation implications to output data
 
-When a dataflow refresh is stopped, either by an explicit cancel request or due to a failure in one of the queries being processed, different outcomes can be observed depending on the type of destination and when refresh was canceled. Here are the possible outcomes, for the two types of data destination for a query:
+When a dataflow refresh is stopped, either by a customer initiated cancel refresh request or due to a failure in one of the queries being processed, different outcomes can be observed depending when refresh was canceled. Here are the possible outcomes, for the two types of storage configuration of a query:
 
-1. Staging storage: Data from the last successful refresh is available.
-2. Destination storage: Data written up to the point of cancelation is available.
+1. Staging storage: A failure loading to staging storage will stop the dataflow refrsh, and data from the last successful refresh will be available.
+2. Destination storage: A failure loading data to a destination will not stop the dataflow refresh, if there are other queries are being processed. Successful 'load to destination' operations will be comitted, and failed 'load to destinations' operations will not be committed, and the data will be revereted to their previous state before refresh began.
 
 Not all queries in a dataflow are processed at the same time, for example, if a dataflow contains many queries or some queries depend on others. If a refresh is canceled before evaluation of a query that loads data to a destination began, there's no change to data in that query's destination.
 
