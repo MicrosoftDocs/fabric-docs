@@ -1,5 +1,5 @@
 ---
-title: OneLake Capacity Consumption Example
+title: OneLake capacity consumption example
 description: Information on how OneLake uses Fabric capacity and how storage is billed.
 ms.author: nishas
 author: nishas
@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.date: 02/26/2024
 ---
 
-# Fabric Capacity and OneLake consumption
+# Fabric Capacity and OneLake Consumption
 
 You only need one capacity to drive all your Microsoft Fabric experiences, including Microsoft OneLake. Keep reading if you want a detailed example of how OneLake consumes storage and compute.
 
