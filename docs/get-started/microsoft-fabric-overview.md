@@ -31,13 +31,13 @@ Fabric brings together experiences like Data Engineering, Data Factory, Data Sci
 
 - Access to an extensive range of deeply integrated analytics in the industry.
 - Shared experiences across experiences that are familiar and easy to learn.
-- Easy access and reuse of assets.
+- Easy access to, and reuse of, assets.
 - Unified data storage that allows you to retain the data in one location while using your preferred analytics tools.
 - Centralized administration and governance across all experiences.
 
-All of your data and services are seamlessly integrated in Fabric. IT teams can centrally configure core enterprise capabilities, and permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels are inherited automatically across the items in the suite.
+Fabric seamlessly integrates all data and services. IT teams can centrally configure core enterprise capabilities, and permissions are automatically applied across all the underlying services. Additionally, data sensitivity labels inherit automatically across the items in the suite.
 
-Fabric allows creators to concentrate on producing their best work, freeing them from the need to integrate, manage, or understand the underlying infrastructure.
+Fabric allows creators to concentrate on producing their best work, freeing them from the need to integrate, manage, or even understand the underlying infrastructure.
 
 ## Components of Microsoft Fabric
 
@@ -55,7 +55,7 @@ Fabric offers a comprehensive set of analytics experiences designed to work toge
 
 - **Real-Time Analytics** - The Real-Time Analytics experience is a managed big data analytics platform optimized for streaming and time-series data. Real-Time Analytics is the best-in-class engine for observational data analytics, which is currently the fastest growing data category. Observational data is collected from various sources, is often semi-structured in formats like JSON or Text, and comes in at high volume with shifting schemas. These factors make it difficult for traditional data warehousing platforms to work with. For more information, see [What is Real-Time Analytics in Fabric?](../real-time-analytics/overview.md)
 
-- **Power BI** - Power BI is the world's leading Business Intelligence platform. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
+- **Power BI** - Power BI is the world's leading business intelligence platform. This integrated experience allows business owners to access all data in Fabric quickly and intuitively and to make better decisions with data. For more information, see [What is Power BI?](/power-bi/fundamentals/power-bi-overview)
 
 Fabric joins these experiences into a unified platform that offers the most comprehensive big data analytics platform in the industry.
 
