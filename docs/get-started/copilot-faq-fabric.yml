@@ -5,8 +5,6 @@ metadata:
   author: maggiesMSFT
   ms.author: maggies
   ms.reviewer: ''
-  ms.service: fabric
-  ms.subservice:
   ms.custom:
     - ignite-2023
     - ignite-2023-fabric
