@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/26/2024
+ms.date: 02/27/2024
 ---
 
 # What are Managed Private Endpoints?
