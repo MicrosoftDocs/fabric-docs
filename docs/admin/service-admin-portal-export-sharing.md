@@ -262,6 +262,10 @@ As a Fabric admin, you can specify which users or user groups in your organizati
 
 Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
 
+## Users can deliver reports to OneDrive and SharePoint in Power BI
+
+Users can deliver reports to OneDrive or SharePoint. If the **Users can set up subscriptions** setting is also turned on, users can use subscriptions to schedule delivery of these reports to OneDrive or SharePoint.
+
 ## Related content
 
 * [About tenant settings](tenant-settings-index.md)
