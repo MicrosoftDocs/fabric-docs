@@ -26,14 +26,16 @@ To limit and protect access to firewall-enabled storage accounts from certain Fa
 You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. To create a resource instance rule:
 
 1. Sign in to the Azure portal and go to **Custom deployment**.
+
 1. Choose **Build your own template in the editor**
 
-    :::image type="content" source="./media/security-trusted-workspace-access/create-resource-instance-build-own-template.png" alt-text="Screenshot of the Custom deployment Build your own template option.":::
-
 1. Create the resource instance rule in the editor. When done, choose **Review + Create**.
+
 1. On the **Basics** tab that appears, specify the required project and instance details. When done, choose **Review + Create**.
+
 1. On the **Review + Create** tab that appears, review the summary and then select **Create**. The rule will be submitted for deployment.
-1. When deployment is complete, you'll be able to go to the resource. [QUESTION: WHAT ARE PEOPLE SUPPOSED TO DO AFTER THIS STEP]
+
+1. When deployment is complete, you'll be able to go to the resource.
 
 >[!NOTE]
 >Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
