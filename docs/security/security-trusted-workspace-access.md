@@ -40,7 +40,7 @@ You can configure specific Fabric workspaces to access your storage account base
 >[!NOTE]
 >Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
 
-![](media/security-trusted-workspace-access/image1.png)
+:::image type="content" source="./media/security-trusted-workspace-access/resource-instance-rule.png" alt-text="Screenshot showing configured resource instance rule." lightbox="./media/security-trusted-workspace-access/resource-instance-rule.png":::
 
 Here is an example of a resource instance rule that can be created through ARM template:
 
