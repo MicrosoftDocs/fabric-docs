@@ -12,16 +12,16 @@ ms.date: 02/22/2024
 
 ## What is a workspace identity
 
-A Fabric workspace identity is an automatically managed service principal that can be associated with Fabric workspaces. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. In the future, Fabric items will be able to use the identity when connecting to resources that support Microsoft Entra authentication. Fabric will use workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
+A Fabric workspace identity is an automatically managed service principal that can be associated with a Fabric workspace. Fabric workspaces with a workspace identity can securely read or write to firewall-enabled Azure Data Lake Storage Gen2 accounts through [trusted workspace access](../security/security-trusted-workspace-access.md) for OneLake shortcuts. In the future, Fabric items will be able to use the identity when connecting to resources that support Microsoft Entra authentication. Fabric will use workspace identities to obtain Microsoft Entra tokens without the customer having to manage any credentials.
 
-Workspace identities are created in the workspace settings of workspaces that are associated with a Fabric capacity. A workspace identity is automatically assigned the workspace contributor role and has access to workspace items.
+Workspace identities can be created in the workspace settings of workspaces that are associated with a Fabric capacity. A workspace identity is automatically assigned the workspace contributor role and has access to workspace items.
 
-When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. The credentials associated with workspace identities are automatically managed by Fabric , thereby preventing credential leaks and downtime due to improper credential handling.
+When you create a workspace identity, Fabric creates a service principal in Microsoft Entra ID to represent the identity. An accompanying app registration is also created. The credentials associated with workspace identities are automatically managed by Fabric, thereby preventing credential leaks and downtime due to improper credential handling.
 
 > [!NOTE]
 > Fabric workspace identity is currently in public preview. You can only create a workspace identity in F64 or higher capacities. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription).
 
-While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace may optionally have an identity. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it is associated with.
+While Fabric workspace identities share some similarities with Azure managed identities, their lifecycle, administration, and governance are different. A workspace identity has an independent lifecycle that is managed entirely in Fabric. A Fabric workspace can optionally be associated with an identity.. When the workspace is deleted, the identity gets deleted. The name of the workspace identity is always the same as the name of the workspace it is associated with.
 
 Access control for the workspace identity with which it is associated with is also managed in Fabric.   The workspace identity can be authorized to access Azure resources by granting Azure role-based access control (RBAC) roles or permissions.
 
@@ -67,7 +67,7 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
 ## How to use workspace identity
 
-BRIEF EXCERPT AND LINK TO OTHER DOC links to doc #2 'Storage firewall bypass'
+ Shortcuts in a workspace that has a workspace identity can be used for trusted service access. See [Trusted workspace access](../security/security-trusted-workspace-access.md) for more information.
 
 ## Security, Administration and Governance of the workspace identity
 
@@ -130,21 +130,20 @@ To view the audit logs and sign-in logs for this identity:
 
 ### Deleting the identity
 
-Workspace identity can be deleted in workspace settings. When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. Deleted workspace identities cannot be restored. 
+The workspace identity can be deleted in the workspace settings. When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. Deleted workspace identities can't be restored.
 
-When a workspace is deleted, the workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity cannot be restored. You can create a new workspace identity upon workspace restoration.
+When a workspace is deleted, its workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity is not restored. If you want the restored workspace to have a workspace identity, you must create a new one.
 
 ### Renaming the workspace
 
-When a workspace is renamed, the workspace identity is also renamed to match the workspace name. However its  Entra application and service principal remain the same. Note that there can be multiple workspace identity objects with same name.
-
-[QUESTION - DOES ANYTHING GET BROKEN?]
+WWhen a workspace gets renamed, the workspace identity is also renamed to match the workspace name. However its Entra application and service principal remain the same. Note that there can be multiple application and app registration objects with same name in a tenant.
 
 ## Considerations and limitations
 
 * A workspace identity can only be created in workspaces associated with a Fabric F64+ capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription).
 * If a workspace with a workspace identity is migrated to a non-Fabric or something lower than F64 capacity, the identity will not be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
 * A maximum of 1000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
+* Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
 ## Related content
 
