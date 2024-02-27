@@ -75,9 +75,11 @@ When an identity is deleted, Fabric items relying on the workspace identity for 
 
 Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
 
-Currently, workspace identity is not supported for authentication to target resources in connections, this will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future. In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark Notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
+Currently, workspace identity is not supported for authentication to target resources in connections, this will be supported in the future. Admins, members, and contributors will be able to use workspace identity in authentication in connections in the future.
 
-[Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity. For more information, see [Administer the workspace identity in Azure](#administer-the-workspace-identity-in-azure).
+In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
+
+[Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity.
 
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working.
@@ -96,13 +98,11 @@ You can view the audit events generated upon the creation and deletion of worksp
 
 :::image type="content" source="./media/workspace-identity/workspace-identity-purview-audit-log.png" alt-text="Screenshot showing the Purview Audit Log." lightbox="./media/workspace-identity/workspace-identity-purview-audit-log.png":::
 
-To prevent a workspace identity from being created for a workspace, limit the number of users who have the workspace admin role in the workspace and make sure they are aware of the implications of creating a workspace identity.
-
 ### Administer the workspace identity in Azure
 
 #### Enterprise Applications
 
-The service principal of the workspace identity can be seen in **Enterprise Applications** in the Azure portal. The Fabric Identity Management app is its configuration owner. [QUESTION]
+The application of the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
 
 To view the audit logs and sign-in logs for this identity:
 
