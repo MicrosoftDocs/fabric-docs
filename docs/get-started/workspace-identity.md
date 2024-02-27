@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/22/2024
+ms.date: 02/27/2024
 ---
 
 # Workspace identity
@@ -46,11 +46,11 @@ The sections of the workspace identity configuration are described in the follow
 | **Name** | Workspace identity name. The workspace identity name is the same as the workspace name.|
 | **ID** | The workspace identity GUID. This is a unique identifier for the identity. |
 | **Role** | The workspace role assigned to the identity. Workspace identities are automatically assigned the contributor role upon creation. |
-| **State** | ? |
+| **State** | The state of the workspace. Possible values: *Active*, *Inactive*, *Deleting*, *Unusable*, *Failed*, *DeleteFailed* |
 
 ### Authorized users
 
-Authorized users are users who have a role in the workspace. The workspace identity appears in the list with the contributor role that it was assigned upon creation. [QUESTION]
+For information, see [Access control](#access-control).
 
 ### Enable workspace identity to be used with customer-provided endpoints and custom code
 
@@ -61,17 +61,17 @@ Workspace admins can enable the use of workspace identity in connections in cust
 When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. **Deleted workspace identities cannot be restored.**
 
 > [!NOTE]
-> When a workspace is deleted, the workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity cannot be restored. You can create a new workspace identity upon workspace restoration.
-
-[PUT NOTE ABOUT WORKSPACE IDENTITY IN DOCUMENTATION ABOUT DELETING WORKSPACES]
+> When a workspace is deleted, the workspace identity is deleted as well. its workspace identity is deleted as well. If the workspace is restored after deletion, the workspace identity is not restored. If you want the restored workspace to have a workspace identity, you must create a new one.
 
 ## How to use workspace identity
 
  Shortcuts in a workspace that has a workspace identity can be used for trusted service access. See [Trusted workspace access](../security/security-trusted-workspace-access.md) for more information.
 
-## Security, Administration and Governance of the workspace identity
+## Security, administration and governance of the workspace identity
 
-### Access Control
+The following sections describe who can use the workspace identity, and how you can monitor it in Microsoft Purview  and Azure.
+
+### Access control
 
 Workspace identity can be [created and deleted by workspace admins](#create-and-manage-a-workspace-identity). The workspace identity has the workspace contributor role on the workspace.
 
@@ -100,9 +100,16 @@ You can view the audit events generated upon the creation and deletion of worksp
 
 ### Administer the workspace identity in Azure
 
+The application associated with the workspace identity can be viewed under both **Enterprise applications and App registrations** in the Azure portal.
+
 #### Enterprise Applications
 
-The application of the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
+The application associated with the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
+
+:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png" alt-text="Screenshot showing the workspace identity owners page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png":::
+
+> [!WARNING]
+> Modifications to the application made here will cause the workspace identity to stop working.
 
 To view the audit logs and sign-in logs for this identity:
 
@@ -110,23 +117,13 @@ To view the audit logs and sign-in logs for this identity:
 1. Navgate to **Microsoft Entra ID > Enterprise Applications**.
 1. Select either **Audit logs** or **Sign in logs**, as desired.
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications.png" alt-text="Screenshot showing the All Applications page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications.png":::
-
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-overview.png" alt-text="Screenshot showing the workspace identity overview page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-overview.png":::
-
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png" alt-text="Screenshot showing the workspace identity owners page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png":::
-
-[NEED DESCRIPTION OF WHAT IS BEING SHOWN - DO WE NEED MORE DESCRIPTION OF THE AUDIT LOG AND SIGN-IN LOG]
-
 #### App registrations
 
-[TEXT TO BE ADDED] 
-
-:::image type="content" source="./media/workspace-identity/workspace-identity-app-registrations.png" alt-text="Screenshot showing the App registrations app search page." lightbox="./media/workspace-identity/workspace-identity-app-registrations.png":::
-
-:::image type="content" source="./media/workspace-identity/workspace-identity-app-registrations-overview.png" alt-text="Screenshot showing the workspace identity overview page in the App registrations app." lightbox="./media/workspace-identity/workspace-identity-app-registrations-overview.png":::
+The application associated with the workspace identity can be seen under **App registrations** in the Azure portal. No modifications should be made there, as this will cause the workspace identity to stop working.
  
 ## Advanced scenarios
+
+The following sections describe scenarios involving workspace identities that might occur.
 
 ### Deleting the identity
 
@@ -147,4 +144,4 @@ WWhen a workspace gets renamed, the workspace identity is also renamed to match 
 
 ## Related content
 
-* Trusted workspace access
+* [Trusted workspace access](../security/security-trusted-workspace-access.md)
