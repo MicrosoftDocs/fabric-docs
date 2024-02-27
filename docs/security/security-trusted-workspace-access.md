@@ -54,22 +54,6 @@ Here is an example of a resource instance rule that can be created through ARM t
 
 A complete ARM template is provided at the end of this document.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image2.png)
-
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image3.png)
-
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image4.png)
-
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image5.png)
-
-![A computer screen shot of a computer screen  Description automatically generated](media/security-trusted-workspace-access/image6.png)
-
-## 
-
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image7.png)
-
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image8.png)
-
 ### Trusted service exception
 
 If you select the trusted service exception for a Azure Data Lake Gen 2 account which has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity will be able to access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
