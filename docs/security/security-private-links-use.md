@@ -1,15 +1,15 @@
 ---
-title: Set up and use private endpoints for secure access to Fabric
-description: Learn how to set up and use private endpoints to provide secure access to Fabric.
+title: Set up and use private links for secure access to Fabric
+description: Learn how to set up and use private links to provide secure access to Fabric.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: danzhang
 ms.topic: how-to
 ms.custom: video--3yFtlZBpqs
-ms.date: 02/23/2024
+ms.date: 02/28/2024
 ---
 
-# Set up and use secure private endpoints
+# Set up and use private links
 
 In Fabric, you can configure and use an endpoint that allows your organization to access Fabric privately. To configure private endpoints, you must be a Fabric administrator and have permissions in Azure to create and configure resources such as virtual machines (VMs) and virtual networks (VNets).
 
