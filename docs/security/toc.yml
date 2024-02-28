@@ -15,8 +15,10 @@ items:
   items:
   - name: Overview of mananged VNets
     href: security-managed-vnets-fabric-overview.md
-  - name: Private links
+  - name: Overview of private links
     href: security-private-links-overview.md
+  - name: Set up and use secure private endpoints
+    href: security-private-links-use.md
   - name: Overview of managed private endpoints
     href: security-managed-private-endpoints-overview.md
   - name: Create managed private endpoints
