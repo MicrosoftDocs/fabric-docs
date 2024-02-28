@@ -311,17 +311,15 @@ plt.show()
 
 For example, in 2004, the revenue difference between the highest sales month and the lowest sales month is about
 
-<br>
 
-        $900,000,000 - $500,000,000 = $400,000,000
+ `$900,000,000 - $500,000,000 = $400,000,000`
 
-  and for 2011, that revenue difference calculation is about
+and for 2011, that revenue difference calculation is about
 
-<br>
 
-        $400,000,000 - $300,000,000 = $100,000,000
+`$400,000,000 - $300,000,000 = $100,000,000`
 
-  This becomes important later, when you must decide between **multiplicative** and **additive** seasonality effects.
+This becomes important later, when you must decide between **multiplicative** and **additive** seasonality effects.
 
 ## Step 4: Model training and tracking
 
