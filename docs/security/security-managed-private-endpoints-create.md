@@ -20,6 +20,8 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
 1. In a Fabric workspace, navigate to the workspace settings, select the **Network security** tab, and then select the **Create** option in the Managed Private Endpoint section.
 
+    :::image type="content" source="./media/security-managed-private-endpoints-create/network-security-tab.png" alt-text="Screenshot of the Networks security tab in workspace settings.":::
+
     The **Create Managed Private endpoint** dialog opens.
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/create-managed-private-endpoint-dialog.png" alt-text="Screenshot of the Network security tab in the workspace settings.":::
