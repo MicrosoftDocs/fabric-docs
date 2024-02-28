@@ -24,7 +24,7 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/create-managed-private-endpoint-dialog.png" alt-text="Screenshot of the Network security tab in the workspace settings.":::
 
-1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure Portal Page.
+1. Specify a name for the private endpoint and copy in the resource identifier for the Azure resource. The resource identifier can be found in the properties tab on the Azure portal page.
 
     When done, select **Create**.  
 
@@ -32,9 +32,9 @@ Users with admin permissions to a Microsoft Fabric workspace can create, view, a
 
     :::image type="content" source="./media/security-managed-private-endpoints-create/managed-private-endpoint-provisioning-success.png" alt-text="Screenshot of managed private endpoint provisioning success indication on the Networking tab.":::
 
-    In addition the request for the private endpoint access is sent to the data source. The data source admins are notified on the Azure portal resource pages for their data sources. There they will see a pending access request with the request message.
+    In addition the request for the private endpoint access is sent to the data source. The data source admins are notified on the Azure portal resource pages for their data sources. There they'll see a pending access request with the request message.
 
-Taking SQL server as an example, users can navigate to the Azure Portal and search for the "SQL Server" resource.
+Taking SQL server as an example, users can navigate to the Azure portal and search for the "SQL Server" resource.
 
 1. On the Resource page, select **Networking** from the navigation menu and then select the **Private Access** tab.
 
@@ -50,9 +50,9 @@ Taking SQL server as an example, users can navigate to the Azure Portal and sear
 
 1. Once the request has been approved or rejected by the data source admin, the status is updated in the Fabric workspace settings page upon refresh.
 
-    :::image type="content" source="./media/security-managed-private-endpoints-create/endpoint-request-approved-state.png" alt-text="Screenshot showing the manage private endpoint in the approved state.":::
+    :::image type="content" source="./media/security-managed-private-endpoints-create/endpoint-request-approved-state.png" alt-text="Screenshot showing the managed private endpoint in the approved state.":::
 
-1. When the status has changed to approved, the endpoint can be used in notebooks or Spark job definitions to access the data stored in the data source from Fabric workspace.
+1. When the status has changed to *approved*, the endpoint can be used in notebooks or Spark job definitions to access the data stored in the data source from Fabric workspace.
 
 ## Use managed private endpoints in Fabric
 
@@ -66,7 +66,7 @@ This guide provides code samples to help you get started in your own notebooks t
 
 1. Sign into Microsoft Fabric and the Azure portal.
 
-1. Navigate to the Azure SQL Server's resource page in the Azure Portal and select the **Properties** menu. Copy the Resource ID for the SQL Server that you would like to connect to from Microsoft Fabric.
+1. Navigate to the Azure SQL Server's resource page in the Azure portal and select the **Properties** menu. Copy the Resource ID for the SQL Server that you would like to connect to from Microsoft Fabric.
 
 1. Using the steps listed in [Create a managed private-endpoint](#create-a-managed-private-endpoint), create the managed private endpoint from the Fabric Network security settings page.
 
@@ -80,7 +80,7 @@ This guide provides code samples to help you get started in your own notebooks t
 
 1. Select **Create** and create a new notebook.
 
-1. Now, in the notebook, by specifying the name of the SQL database and its connection properties, you can connect through the managed private endpoint connection that's been setup to read the tables in the database and write them to your lakehouse in Microsoft Fabric.
+1. Now, in the notebook, by specifying the name of the SQL database and its connection properties, you can connect through the managed private endpoint connection that's been set up to read the tables in the database and write them to your lakehouse in Microsoft Fabric.
 
 1. The following PySpark code shows how to connect to an SQL database.
 
