@@ -38,7 +38,7 @@ Use this reference guide and the example scenarios to help you choose a data sto
 
 <a name=eventhouse></a>
 > [!NOTE]
-> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, while Eventhouse is in public preview. For more information, see [Eventhouse overview (preview)](../real-time-analytics/eventhouse.md).
+> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, whereas Eventhouse is in public preview. For more information, see [Eventhouse overview (preview)](../real-time-analytics/eventhouse.md).
 
 ## Scenarios
 
