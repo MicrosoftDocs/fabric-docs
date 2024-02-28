@@ -28,12 +28,18 @@ Fabric allows for granting users access to specific data experiences through the
 
 1. Spark/OneLake access: This path is used for querying data through notebooks, moving data via pipelines, or creating shortcuts to reference data from other lakehouses. To configure security for these users, share the lakehouse to those users. Then use OneLake data access roles (preview) to control the specific folders that the users should have read access to. If a user needs write access they will need to be added to a workspace role and cannot have read restrictions applied to them when accessing OneLake.
 
-2. SQL Endpoints: This approach is for reading data through SQL queries. Access to connect to the SQL Endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users will have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. This will give them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions. 
+2. SQL Endpoints: This approach is for reading data through SQL queries. Access to connect to the SQL Endpoint is given by sharing the lakehouse for those users. If the default permissions are given, users will have no access to any tables. Users can then be granted access to specific tables using SQL GRANT permissions. Alternatively, the users can be given the ReadData permission. This will give them full read access to all the tables in SQL, however that access can be restricted using SQL DENY permissions.
 
-3. Semantic Models: For users that need to connect via reports, security can be configured directly in the Semantic Model by defining security through DAX expressions. This further refines the security and then users need to be shared the reports. 
+3. Semantic Models: For users that need to connect via reports, security can be configured directly in the Semantic Model by defining security through DAX expressions. This further refines the security and then users need to be shared the reports.
 
 ## Common architecture examples
 
+The following best practices give examples of how to structure permissions in Fabric to build out some common data architectures.
+
 ### Data mesh
+
+1. Share
+
+Refer to how-to for more details on the shortcut delegated access
 
 ### Hub and spoke
