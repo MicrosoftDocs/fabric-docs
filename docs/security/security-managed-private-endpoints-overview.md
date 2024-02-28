@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/27/2024
+ms.date: 02/28/2024
 ---
 
 # Overview of managed private endpoints for Fabric
@@ -24,21 +24,21 @@ Mananged private endpoints are feature that allows secure and private access to 
 
 * Managed private endpoints support various data sources, such as Azure Storage, Azure SQL Database, Azure Synapse Analytics, Azure Cosmos DB, Application gateway, Azure Key Vault, and many more.
 
-:::image type="content" source="./media/security-managed-private-endpoints-overview/illustrating-mananaged-private-endpoint-creation.gif" alt-text="Animated illustration showing the process of creating a managed private endpoint in Microsoft Fabric.":::
+:::image type="content" source="./media/security-managed-private-endpoints-overview/managed_private_endpoint.gif" alt-text="Animated illustration showing the process of creating a managed private endpoint in Microsoft Fabric.":::
 
 For more information about supported data sources for managed private endpoints in Fabric, see [Supported data sources](./security-managed-private-endpoints-create.md#supported-data-sources).
 
 ### Limitations and considerations
 
-* Starter pools aren't supported in workspaces that are enabled with managed VNets (that is, workspaces that have managed private endpoints or workspaces that are in a Fabric tenant that has Azure Private Links enabled and that have run a Spark job).
+* Starter pools are not available for workspaces with managed VNets. This includes workspaces that use managed private endpoints or that belong to a Fabric tenant with Azure Private Links enabled and that have run a Spark job. These workspaces will use on-demand clusters, which can take 3 to 5 minutes to start a session.
 
 * Managed private endpoints are only supported for Fabric Trial capacity and Fabric capacities F64 or higher.
 
-* Workspaces that have at least one managed private endpoint can only be migrated to F64 or greater Fabric capacity SKUs.
+* To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
-* The Data Science items Models and Experiments aren't supported for tenants where Azure Private Link is enabled.
+* Managed private endpoints require the Fabric capacity and the data source to be in the same region. They do not work across different regions at this time.
 
-* Lakehouse table maintenance operations aren't supported for workspaces enabled with managed VNets.
+* Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
 * Workspace migration across capacities in different regions isn't supported.
 
