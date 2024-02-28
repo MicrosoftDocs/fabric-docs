@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/27/2024
+ms.date: 02/28/2024
 ---
 
 # Trusted workspace access
@@ -119,15 +119,15 @@ You can use the OneLake shortcut to storage accounts with trusted workspace acce
 > [!NOTE]
 > When OneLake shortcuts with trusted workspace access are referenced in Spark custom code, the trusted token of the storage account is not available to custom code.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image13.png)
+:::image type="content" source="./media/security-trusted-workspace-access/spark.png" alt-text="Sceenshot of Spark access through shortcut.":::
 
 #### SQL endpoint
 
  Shortcuts created in the "Tables" section of your lakehouse are also available in the SQL endpoint.  You can open the SQL endpoint and query your data just like any other table.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image14.png)
+:::image type="content" source="./media/security-trusted-workspace-access/sql-endpoint1.png" alt-text="Sceenshot of querying lakehouse data through an SQL endpoint.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image15.png)
+:::image type="content" source="./media/security-trusted-workspace-access/sql-endpoint2.png" alt-text="Sceenshot of a query in the lakehouse seen through an SQL endpoint.":::
 
 #### Pipelines
 
@@ -135,27 +135,37 @@ Data pipelines can access managed shortcuts to storage accounts with trusted wor
 
 In the following example, the pipeline reads data from a lakehouse containing a OneLake shortcut and writes it to another lakehouse in the same Fabric workspace.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image16.png)
+Choose Lakehouse as the data source.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image17.png)
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-choose-data-source.png" alt-text="Sceenshot of choosing a data source for copying into a lakehouse.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image18.png)
+Select the lakehouse to read from.
 
-#### 
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-data-read-from.png" alt-text="Sceenshot of choosing a lakehouse to read from.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image19.png)
+Select the table to read from.
 
-#### 
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-table-read-from.png" alt-text="Sceenshot of choosing the table to read from.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image20.png)
+Choose the lakehouse you want to copy to.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image21.png)
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-lakehouse-copy-to.png" alt-text="Sceenshot of selecting the lakehouse to copy to.":::
 
-#### 
+Select the destination table to copy to.
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image22.png)
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-table-copy-to.png" alt-text="Sceenshot of choosing the table to copy to.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image23.png)
+Check the summary of your intended action.
+
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-summary-intended-action.png" alt-text="Sceenshot showing a summary of the intended action.":::
+
+Data gets copied.
+
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-data-getting-copied.png" alt-text="Sceenshot of data getting copied.":::
+
+View the data that's been copied into the destination.
+
+:::image type="content" source="./media/security-trusted-workspace-access/pipelines-view-copied-data.png" alt-text="Sceenshot showing data copied into the destination table.":::
 
 #### Dataflows v2
 
@@ -169,17 +179,21 @@ You can also create new semantic models that reference table shortcuts to storag
 
 You can create reports on top of the default semantic models and custom semantic models.
 
-![](media/security-trusted-workspace-access/image24.png)
+Creating a new semantic model.
 
-#### 
+:::image type="content" source="./media/security-trusted-workspace-access/semantic-models-create-new.png" alt-text="Sceenshot showing creating a new semantic model.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image25.png)
+View the details of the new semantic model.
 
-#### 
+:::image type="content" source="./media/security-trusted-workspace-access/semantic-models-view-details.png" alt-text="Sceenshot showing the details page of the new semantic model.":::
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image26.png)
+Preview the tables
 
-![A screenshot of a computer  Description automatically generated](media/security-trusted-workspace-access/image27.png)
+:::image type="content" source="./media/security-trusted-workspace-access/semantic-models-preview-tables.png" alt-text="Sceenshot showing table preview in the new semantic model.":::
+
+Create a report built on the new semantic model.
+
+:::image type="content" source="./media/security-trusted-workspace-access/semantic-models-create-report.png" alt-text="Sceenshot showing a report created on top of the new semantic model.":::
 
 #### KQL Database
 
