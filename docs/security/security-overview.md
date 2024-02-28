@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 02/22/2024
+ms.date: 02/28/2024
 ---
 
 # Security in Microsoft Fabric
@@ -50,6 +50,8 @@ Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/con
 * Use Multifactor Authentication (MFA).
 
 * Restrict traffic based on parameters such as country of origin or device type.
+
+To configure conditional access, see [Conditional access in Fabric](security-conditional-access.md).
 
 To understand more about authentication in Fabric, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
