@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/16/2024
+ms.date: 02/27/2024
 ms.custom:
 ---
 
@@ -20,6 +20,8 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  643  | Data Engineering | [Tables not available to add in Power BI semantic model](known-issues/known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
+|  602  | Power BI | [Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB](known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
 |  624  | Administration & Management | [Tighter throttling limit for GetDatasourcesAsAdmin Admin API](known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md) | February 14, 2024 |
 |  618  | Data Warehouse | [Using an inactive SQL analytics endpoint can show old data](known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md) | February 14, 2024 |
@@ -27,7 +29,6 @@ Select the **Title** to view more information about that specific known issue.
 |  611  | OneLake | [OneLake storage isn't billed for paused capacities](known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md) | February 2, 2024 |
 |  597  | Data Factory   | [Dataflow Gen1 admin switch affects Dataflow Gen2](known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md) | November 6, 2023 |
 |  592  | Data Warehouse | [Relationships in the default semantic model get dropped](known-issues/known-issue-592-relationships-default-semantic-model-dropped.md)  | January 8, 2024 |
-|  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 |
 |  581  | Administration & Management | [Product switcher and creation process inadvertently show Fabric experiences](known-issues/known-issue-581-product-switcher-creation-process-inadvertently-show-experiences.md)  | December 15, 2023 |
 |  563  | Data Engineering | [Lakehouse doesn't recognize table names with special characters](known-issues/known-issue-563-lakehouse-does-not-recognize-table-names-special-characters.md)  | November 22, 2023 |
 |  552  | Power BI  |  [Autoscale not triggered by carry forward accumulated usage](known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md)   | November 22, 2023  |
@@ -49,6 +50,7 @@ Select the **Title** to view more information about that specific known issue. K
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date | Issue fixed date |
 |-----------|-------------------------|----------------------------------|----------------------|------------------|
+|  585  | Data Activator | [Reflex item creation fails due to a token creation failure](known-issues/known-issue-585-reflex-item-creation-fails-token-creation-failure.md)  | December 15, 2023 | Fixed: February 27, 2024 |
 |  570  | Power BI |  [Version 17 of the Fabric Capacity Metrics app doesn't work](known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md)    | November 30, 2023 | Fixed: February 16, 2024 |
 |  532  | Power BI | [Sign in fails for securely embedded reports using Chrome or Microsoft Edge browser](known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md)    | October 18, 2023 | Fixed: February 14, 2024 |
 |  482  | Power BI              | [Power BI Desktop sign-in prompt shows unsupported personal Microsoft accounts](known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md)    | August 10, 2023   | Fixed: February 14, 2024 |
@@ -56,9 +58,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  553  | OneLake, Administration & Management  | [OneLake compute transactions don't count against capacity limits](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023  | Fixed: January 19, 2024  |
 |  598  | Data Factory  | [Failed to publish Dataflow Gen2](known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md)  | November 11, 2023      | Fixed: January 12, 2024  |
 |  483  | Administration & Management | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md)  | August 24, 2023 | Fixed: January 12, 2024 |
-|  580  | Administration & Management | [**Git integration** tab disappears in **Workspace settings**](known-issues/known-issue-580-git-integration-tab-disappears-workspace-settings.md)  | December 15, 2023 | Fixed: January 11, 2024 |
-|  471  | Power BI  |  [Power BI Embedded setup tool isn't responsive](known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md)    | August 10, 2023  | Fixed: January 11, 2024 |
-|  571  | Power BI  |  [Contributor can't update organizational app](known-issues/known-issue-571-contributor-can-not-update-organizational-app.md)    | November 30, 2023  | Fixed: January 11, 2024 |
 
 ## Related content
 
