@@ -79,9 +79,7 @@ For more information, see [Managed VNet for Fabric](./security-managed-vnets-fab
 
 ### Dataflow Gen2
 
-You can use Dataflow gen2 to get data, transform data, and publish dataflow via private link. When your data source is behind the firewall, you can use the VNet data gateway to connect to your data sources. The VNet data gateway enables the injection of the gateway (compute) into your existing virtual network, thus providing a managed gateway experience. You can use VNet gateway connections to connect to a Lakehouse or Warehouse in the tenant that requires a private link or connect to other data sources with your virtual network.
-
-For more information, see [What is a virtual network (VNet) data gateway](/data-integration/vnet/overview).
+You can use Dataflow gen2 to get data, transform data, and publish dataflow via private link. When your data source is behind the firewall, you can use the [VNet data gateway](/data-integration/vnet/overview) to connect to your data sources. The VNet data gateway enables the injection of the gateway (compute) into your existing virtual network, thus providing a managed gateway experience. You can use VNet gateway connections to connect to a Lakehouse or Warehouse in the tenant that requires a private link or connect to other data sources with your virtual network.
 
 ### Pipeline
 
