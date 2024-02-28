@@ -80,7 +80,7 @@ When this process is finished, move on to the next step.
     >[!IMPORTANT]
     > Use `Microsoft.PowerBI/privateLinkServicesForPowerBI` as `type` value, even though the resource is being created for Fabric.
 
-1. Save the template. THen enter the following information.
+1. Save the template. Then enter the following information.
 
     |Setting|Value|
     |:---|:---|
@@ -115,7 +115,7 @@ The number of IP addresses your subnet will need is the number of capacities on 
     |Resource group | Select **test-PL**, the name we created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
     |**Instance details**|
     |Name	| Enter **vnet-1**. |
-    |Region | Select the region where you will initiate the connection to Fabric. |
+    |Region | Select the region where you'll initiate the connection to Fabric. |
 
     :::image type="content" source="media/security-private-links-use/create-virtual-network.png" alt-text="Screenshot of the Basics tab in Create a virtual network.":::
 
@@ -143,7 +143,7 @@ The next step is to create a virtual machine.
     |Subscription |	Select your Azure Subscription. |
     |Resource group |	Select the resource group you provided in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
     |**Instance details** ||
-    |Virtual machine name | Enter a name for the your new virtual machince. Select the info bubble next to the field name to see important information about virtual machine names. |
+    |Virtual machine name | Enter a name for the new virtual machine. Select the info bubble next to the field name to see important information about virtual machine names. |
     |Region | Select the region you selected in [Step 3](#step-3-create-a-virtual-network). |
     |Availability options| For testing, choose **No infrastructure redundancy required** |
     |Security Type | Leave the default. |
@@ -259,7 +259,7 @@ Connect to your VM using the following steps:
 
 The next step is to access Fabric privately, from the virtual machine you created in the previous step, using the following steps: 
 
-1. In the the virtual machine, open PowerShell.
+1. In the virtual machine, open PowerShell.
 
 1. Enter `nslookup <tenant-object-id-without-hyphens>-api.privatelink.analysis.windows.net`.
 
