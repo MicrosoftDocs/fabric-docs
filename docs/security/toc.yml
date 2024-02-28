@@ -13,14 +13,20 @@ items:
     href: ../admin/index.yml          
 - name: Network security
   items:
-  - name: Inbound
-    items:
-    - name: Service tags
-      href: security-service-tags.md
-  - name: Outbound
-    items:
-    - name: Trusted workspace access
-      href: security-trusted-workspace-access.md
+  - name: Overview of mananged VNets
+    href: security-managed-vnets-fabric-overview.md
+  - name: Overview of private links
+    href: security-private-links-overview.md
+  - name: Set up and use private links
+    href: security-private-links-use.md
+  - name: Overview of managed private endpoints
+    href: security-managed-private-endpoints-overview.md
+  - name: Create managed private endpoints
+    href: security-managed-private-endpoints-create.md
+  - name: Trusted workspace access
+    href: security-trusted-workspace-access.md
+  - name: Service tags
+    href: security-service-tags.md
 - name: Data security
   items:
   - name: Guest user sharing
