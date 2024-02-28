@@ -174,7 +174,7 @@ For the **Mapping** tab configuration, if you don't apply Azure Synapse Analytic
 
 If you apply Azure Synapse Analytics with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
-For example, the type for *id* column in source is int, and you can change it to float type when mapping to destination column.
+For example, the type for *id* column in source is int, and you can change it to float type when mapping to the destination column.
 
 :::image type="content" source="media/connector-azure-synapse-analytics/configure-mapping-destination-type.png" alt-text="Screenshot of mapping destination column type.":::
 
