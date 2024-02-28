@@ -444,7 +444,7 @@ for chpt_prior in changepoint_priors:
         mlflow.log_metrics(metrics)
 ```
 
-<img src="https://synapseaisolutionsa.blob.core.windows.net/public/NYC_Property_Sales_Dataset/Timeseries-experiment.png"  width="70%" height="30%">
+:::image type="content" source="media/time-series-forecasting/properties-panel.png" alt-text="Screenshot of the properties panel.":::
 
 ### Visualize a model with Prophet
 
