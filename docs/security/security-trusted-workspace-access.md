@@ -42,7 +42,7 @@ You can configure specific Fabric workspaces to access your storage account base
 
 :::image type="content" source="./media/security-trusted-workspace-access/resource-instance-rule.png" alt-text="Screenshot showing configured resource instance rule." lightbox="./media/security-trusted-workspace-access/resource-instance-rule.png":::
 
-Here is an example of a resource instance rule that can be created through ARM template:
+Here's an example of a resource instance rule that can be created through ARM template:
 
 ```
 "resourceAccessRules": [
@@ -58,11 +58,11 @@ A complete ARM template is provided at the end of this document.
 
 ### Trusted service exception
 
-If you select the trusted service exception for a Azure Data Lake Gen 2 account which has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity will be able to access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
+If you select the trusted service exception for an Azure Data Lake Gen 2 account that has public network access enabled from selected virtual networks and IP addresses, Fabric workspaces with a workspace identity will be able to access the storage account. When the trusted service exception checkbox is selected, any workspaces in your tenant's Fabric capacities that have a workspace identity can access data stored in the storage account.
 
-This configuration is not recommended, and support may be discontinued in the future. We recommend that you [use resource instance rules to grant access to specific resources](/azure/storage/common/storage-network-security?tabs=azure-portal).
+This configuration isn't recommended, and support might be discontinued in the future. We recommend that you [use resource instance rules to grant access to specific resources](/azure/storage/common/storage-network-security?tabs=azure-portal).
 
-### Who can configure Storage accounts for trusted service access.
+### Who can configure Storage accounts for trusted service access?
 
 A Contributor on the storage account (an Azure RBAC role) can configure resource instance rules or trusted service exception.
 
@@ -94,7 +94,7 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
     :::image type="content" source="./media/security-trusted-workspace-access/select-external-source-adls-gen2.png" alt-text="Screenshot showing choosing Azure Data Lake Storage Gen 2 as an external source.":::
 
-3. Provide the URL of the storage account that has been configured with trusted workspace access, and choose a name for the connection. For Authentication kine, choose *Organizational account*, or *Service Principal*.
+3. Provide the URL of the storage account that has been configured with trusted workspace access, and choose a name for the connection. For Authentication kind, choose *Organizational account*, or *Service Principal*.
 
     :::image type="content" source="./media/security-trusted-workspace-access/provide-url.png" alt-text="Screenshot showing URL specification in shortcut wizard.":::
 
@@ -147,16 +147,16 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 ### Restrictions and Considerations
 
 * Trusted workspace access is only supported for workspaces in Fabric capacities (F64 or higher).
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access might stop working after an hour. In the case of SQL endpoints with managed shortcuts to storage accounts, the shortcuts might stop working after ninety minutes, or when the SQL endpoint cache is refreshed on demand.
-* Preexisting shortcuts created before October 10<sup>th</sup>, 2023 don't support trusted workspace access.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity lower than F64, trusted workspace access might stop working after an hour. In the case of SQL endpoints with managed shortcuts to storage accounts, the shortcuts might stop working after 90 minutes, or when the SQL endpoint cache is refreshed on demand.
+* Pre-existing shortcuts created before October 10, 2023 don't support trusted workspace access.
 * Connections for trusted workspace access can't be created or modified in **Manage connections and gateways**.
 * If you reuse connections that support trusted workspace access in Fabric items other than shortcuts, or in other workspaces, they might not work.
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager | Microsoft Learn](/azure/azure-resource-manager/management/azure-subscription-service-limits).
-* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity less than F64, trusted workspace access will stop working within ninety minutes.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity less than F64, trusted workspace access will stop working within 90 minutes.
 * Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the UI isn't supported.
-* Preexisting shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
+* Pre-existing shortcuts in a workspace that meets the prerequisites will automatically start to support trusted service access.
 
 ### ARM template sample
 
