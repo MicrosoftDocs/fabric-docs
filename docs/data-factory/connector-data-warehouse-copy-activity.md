@@ -125,9 +125,9 @@ If your source data store and format isn't originally supported by a COPY comman
 
 ### Mapping
 
-For the **Mapping** tab configuration, if you don't apply Data Warehouse auto-creating table as your destination data store, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
+For the **Mapping** tab configuration, if you don't apply Data Warehouse with auto create table as your destination, go to [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab).
 
-If you apply Data Warehouse auto-creating table as your destination data store, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
+If you apply Data Warehouse with auto create table as your destination, except the configuration in [Mapping](copy-data-activity.md#configure-your-mappings-under-mapping-tab), you can edit the type for your destination columns. After selecting **Import schemas**, you can specify the column type in your destination.
 
 For example, the type for *id* column in source is int, and you can change it to float type when mapping to destination column.
 
