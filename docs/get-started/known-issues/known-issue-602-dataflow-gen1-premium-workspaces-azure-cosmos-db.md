@@ -24,8 +24,8 @@ On your Dataflow Gen1 dataflow connected to Azure Cosmos DB in Premium workspace
 
 There are two possible workarounds:
 
-1. Move your dataflow from Dataflow Gen1 to Dataflow Gen2
-1. Move your dataflow to a workspace assigned to a Pro capacity
+- Move your dataflow from Dataflow Gen1 to Dataflow Gen2
+- Move your dataflow to a workspace assigned to a Pro capacity
 
 ## Next steps
 
