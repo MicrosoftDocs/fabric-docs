@@ -14,9 +14,7 @@ Managed virtual networks are virtual networks that are created and managed by Mi
 
 Managed virtual networks also enable network security features such as managed private endpoints, and private link support for Data Engineering and Data Science items in Microsoft Fabric that use Apache Spark.
 
-The following image illustrates ......
-
-![A picture containing text, screenshot, diagram, design](./media/security-managed-vnets-fabric-overview/image1.gif)
+:::image type="content" source="./media/security-managed-vnets-fabric-overview/managed-vnets-overview.gif" alt-text="Animated illustration of how managed virtual networks work.":::
 
 Fabric workspaces that are provisioned with a dedicated virtual network provide you value in four ways:
 
