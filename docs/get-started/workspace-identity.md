@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/27/2024
+ms.date: 02/28/2024
 ---
 
 # Workspace identity
@@ -77,7 +77,7 @@ Currently, workspace identity isn't supported for authentication to target resou
 
 In the future, workspace admins will be able to enable the use of workspace identity in connections in custom code such as Spark notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
 
-[Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity.
+[Application Administrators](/entra/identity/role-based-access-control/permissions-reference#application-administrator) or users with higher roles can view, modify, and delete the service principal and app registration associated with the workspace identity in Azure.
 
 > [!WARNING]
 > Modifying or deleting the service principal or app registration in Azure is not recommended, as it will cause Fabric items relying on workspace identity to stop working.
@@ -94,8 +94,6 @@ You can view the audit events generated upon the creation and deletion of worksp
     * Deleted Fabric Identity for Workspace
     * Retrieved Fabric Identity Token for Workspace
 
-:::image type="content" source="./media/workspace-identity/workspace-identity-purview-audit-log.png" alt-text="Screenshot showing the Purview Audit Log." lightbox="./media/workspace-identity/workspace-identity-purview-audit-log.png":::
-
 ### Administer the workspace identity in Azure
 
 The application associated with the workspace identity can be viewed under both **Enterprise applications and App registrations** in the Azure portal.
@@ -103,8 +101,6 @@ The application associated with the workspace identity can be viewed under both 
 #### Enterprise Applications
 
 The application associated with the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
-
-:::image type="content" source="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png" alt-text="Screenshot showing the workspace identity owners page in the Enterprise Application management app." lightbox="./media/workspace-identity/workspace-identity-enterprise-applications-management-owners.png":::
 
 > [!WARNING]
 > Modifications to the application made here will cause the workspace identity to stop working.
@@ -136,7 +132,7 @@ WWhen a workspace gets renamed, the workspace identity is also renamed to match 
 ## Considerations and limitations
 
 * A workspace identity can only be created in workspaces associated with a Fabric F64+ capacity. For information about buying a Fabric subscription, see [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md).
-* If a workspace with a workspace identity is migrated to a non-Fabric or something lower than F64 capacity, the identity won't be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
+* If a workspace with a workspace identity is migrated to a non-Fabric or a capacity lower than F64, the identity won't be disabled or deleted, but Fabric items relying on the workspace identity will stop working.
 * A maximum of 1,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
