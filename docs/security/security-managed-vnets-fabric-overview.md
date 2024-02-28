@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/27/2024
 ---
 
-# What are Managed virtual networks?
+# What are managed virtual networks?
 
 Managed virtual networks are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
 
