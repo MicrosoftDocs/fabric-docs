@@ -15,9 +15,9 @@ ms.date: 09/18/2023
 
 Use this reference guide and the example scenarios to help you choose a data store for your Microsoft Fabric workloads.
 
-## Data warehouse and lakehouse properties
+## Data store properties
 
-| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** |
+| | **Data warehouse** | **Lakehouse** | **Power BI Datamart**  | **KQL Database** ([**Eventhouse**](#eventhouse)) |
 |---|:---:|:---:|:---:|:---:|
 | **Data volume** | Unlimited | Unlimited | Up to 100 GB | Unlimited |
 | **Type of data** | Structured | Unstructured,semi-structured,structured | Structured | Unstructured, semi-structured, structured |
@@ -35,6 +35,10 @@ Use this reference guide and the example scenarios to help you choose a data sto
 | **Advanced analytics** |  |  |  |Time Series native elements, Full geospatial storing and query capabilities |
 | **Advanced formatting support** |  |  |  | Full indexing for free text and semi-structured data like JSON |
 | **Ingestion latency**|  |  |  | Queued ingestion, Streaming ingestion has a couple of seconds latency |
+
+<a name=eventhouse></a>
+> [!NOTE]
+> Eventhouse is a workspace for multiple KQL databases. KQL Database is generally available, whereas Eventhouse is in preview. For more information, see [Eventhouse overview (preview)](../real-time-analytics/eventhouse.md).
 
 ## Scenarios
 

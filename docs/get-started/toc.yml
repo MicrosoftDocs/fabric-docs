@@ -125,6 +125,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Tables not available to add in Power BI semantic model
+      href: known-issues/known-issue-643-tables-not-available-semantic-model.md
+    - name: Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB
+      href: known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md
     - name: Type mismatch when writing decimals and dates to lakehouse using a dataflow
       href: known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
     - name: Tighter throttling limit for GetDatasourcesAsAdmin Admin API

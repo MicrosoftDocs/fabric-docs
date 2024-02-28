@@ -46,7 +46,7 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 > * Do I need high freshness from data ingestion to query?
 > * Do I want to transform streaming data?
 > * Do I have a service that needs to access data with low query latency (in a matter of seconds)?
-> * Does I need to search or access data in different formats, like structured data, semi-structured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
+> * Do I need to search or access data in different formats, like structured data, semi-structured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
 > * Do I want the ability to query large amounts of data?
 > * Does my data have a time component that can benefit from the time series-optimized database structure?
 > * Do I want the ability to create ad-hoc queries on any field or row without prior optimization?
