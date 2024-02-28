@@ -135,35 +135,35 @@ Data pipelines can access managed shortcuts to storage accounts with trusted wor
 
 In the following example, the pipeline reads data from a lakehouse containing a OneLake shortcut and writes it to another lakehouse in the same Fabric workspace.
 
-Choose Lakehouse as the data source.
+Choosing Lakehouse as the data source.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-choose-data-source.png" alt-text="Sceenshot of choosing a data source for copying into a lakehouse.":::
 
-Select the lakehouse to read from.
+Selecting the lakehouse to read from.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-data-read-from.png" alt-text="Sceenshot of choosing a lakehouse to read from.":::
 
-Select the table to read from.
+Selecting the table to read from.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-table-read-from.png" alt-text="Sceenshot of choosing the table to read from.":::
 
-Choose the lakehouse you want to copy to.
+Choosing the lakehouse you want to copy to.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-lakehouse-copy-to.png" alt-text="Sceenshot of selecting the lakehouse to copy to.":::
 
-Select the destination table to copy to.
+Selecting the destination table to copy to.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-select-table-copy-to.png" alt-text="Sceenshot of choosing the table to copy to.":::
 
-Check the summary of your intended action.
+Checking the summary of the intended action.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-summary-intended-action.png" alt-text="Sceenshot showing a summary of the intended action.":::
 
-Data gets copied.
+Data getting copied.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-data-getting-copied.png" alt-text="Sceenshot of data getting copied.":::
 
-View the data that's been copied into the destination.
+Viewing the data that's been copied into the destination.
 
 :::image type="content" source="./media/security-trusted-workspace-access/pipelines-view-copied-data.png" alt-text="Sceenshot showing data copied into the destination table.":::
 
@@ -183,15 +183,15 @@ Creating a new semantic model.
 
 :::image type="content" source="./media/security-trusted-workspace-access/semantic-models-create-new.png" alt-text="Sceenshot showing creating a new semantic model.":::
 
-View the details of the new semantic model.
+Viewing the details of the new semantic model.
 
 :::image type="content" source="./media/security-trusted-workspace-access/semantic-models-view-details.png" alt-text="Sceenshot showing the details page of the new semantic model.":::
 
-Preview the tables
+Previewing the tables
 
 :::image type="content" source="./media/security-trusted-workspace-access/semantic-models-preview-tables.png" alt-text="Sceenshot showing table preview in the new semantic model.":::
 
-Create a report built on the new semantic model.
+A report built on the new semantic model.
 
 :::image type="content" source="./media/security-trusted-workspace-access/semantic-models-create-report.png" alt-text="Sceenshot showing a report created on top of the new semantic model.":::
 
