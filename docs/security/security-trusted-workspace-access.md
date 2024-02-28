@@ -21,7 +21,7 @@ To limit and protect access to firewall-enabled storage accounts from certain Fa
 
 ## Configure trusted workspace access in ADLS Gen2
 
-### Resource Instance Rule
+### Resource instance rule
 
 You can configure specific Fabric workspaces to access your storage account based on their workspace identity. You can create a resource instance rule by deploying an ARM template with a resource instance rule. To create a resource instance rule:
 
@@ -107,6 +107,8 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
     When done, select **Create**.
 
 5. The lakehouse shortcut is created, and you should be able to preview storage data in the shortcut.
+
+    :::image type="content" source="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png" alt-text="Screenshot showing previewing storage data through lakehouse shortcut." lightbox="./media/security-trusted-workspace-access/preview-storage-data-lakehouse-shortcut.png":::
 
 ### Use the OneLake shortcut to a storage account with trusted workspace access in Fabric items
 
