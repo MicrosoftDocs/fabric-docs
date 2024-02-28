@@ -15,14 +15,14 @@ In Fabric, you can configure and use an endpoint that allows your organization t
 
 The steps that allow you to securely access Fabric from private endpoints are:
 
-1. [Set up private endpoints for Fabric](#set-up-private-endpoints-for-fabric).
-2. [Create a Fabric resource in the Azure portal](#create-a-fabric-resource-in-the-azure-portal).
-3. [Create a virtual network](#create-a-virtual-network).
-4. [Create a virtual machine (VM)](#create-a-virtual-machine-vm).
-5. [Create a private endpoint](#create-a-private-endpoint).
-6. [Connect to a VM using Remote Desktop (RDP)](#connect-to-a-vm-using-remote-desktop-rdp).
-7. [Access Fabric privately from the virtual machine](#access-fabric-privately-from-the-vm).
-8. [Disable public access for Fabric](#disable-public-access-for-fabric).
+1. [Set up private endpoints for Fabric](#step-1-set-up-private-endpoints-for-fabric).
+2. [Create a Fabric resource in the Azure portal](#step-2-create-a-fabric-resource-in-the-azure-portal).
+3. [Create a virtual network](#step-3-create-a-virtual-network).
+4. [Create a virtual machine (VM)](#step-4-create-a-virtual-machine).
+5. [Create a private endpoint](#step-5-create-a-private-endpoint).
+6. [Connect to a VM using Bastion](#step-6-connect-to-a-vm-using-bastion).
+7. [Access Fabric privately from the virtual machine](#step-7-access-fabric-privately-from-the-vm).
+8. [Disable public access for Fabric](#step-8-disable-public-access-for-fabric).
 
 The following sections provide additional information for each step.
 
@@ -213,7 +213,7 @@ The next step is to create a private endpoint for Fabric.
 
     The following image shows the **Create a private endpoint - Resource** window.
 
-    :::image type="content" source="media/security-private-links-use/create-private-endpoint-resource-window.png " alt-text="Screenshot of the create a private endpoint resource window.":::
+    :::image type="content" source="./media/security-private-links-use/create-private-endpoint-resource-window.png " alt-text="Screenshot of the create a private endpoint resource window.":::
 
 1. Select **Next: Virtual Network**. In **Virtual Network**, enter or select the following information.
 
