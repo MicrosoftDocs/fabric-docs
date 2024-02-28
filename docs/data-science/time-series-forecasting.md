@@ -11,29 +11,29 @@ ms.custom:
 ms.date: 02/28/2024
 ---
 
-# Training and evaluating a time series forecasting model in Microsoft Fabric
+# Train and evaluate a time series forecasting model
 
 In this notebook, we'll build a program to forecast time series data that has seasonal cycles. We'll use the [NYC Property Sales dataset](https://www1.nyc.gov/site/finance/about/open-portal.page) with dates ranging from 2003 to 2015 published by NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/).
 
 ## Prerequisites
 
-- A familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
-- A Lakehouse. The Lakehouse is used to store data for this example. For more information, visit [Add a Lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
+* Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
+* A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
-## Follow along in notebook
+## Follow along in a notebook
 
 You can follow along in a notebook one of two ways: 
 
-- Open and run the built-in notebook in the Data Science experience.
-- Upload your notebook from GitHub to the Data Science experience.
+- Open and run the built-in notebook in the Synapse Data Science experience.
+- Upload your notebook from GitHub to the Synapse Data Science experience.
 
-#### Open built-in notebook
+### Open the built-in notebook
 
-**Time series** is the sample notebook that accompanies this tutorial.
+The sample **Time series** notebook accompanies this tutorial.
 
 [!INCLUDE [follow-along-built-in-notebook](includes/follow-along-built-in-notebook.md)]
 
-#### Import notebook from GitHub
+### Import the notebook from GitHub
 
 [AIsample - Time Series Forecasting.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/ai-samples/python/AIsample%20-%20Time%20Series%20Forecasting.ipynb) is the notebook that accompanies this tutorial.
 
@@ -56,7 +56,7 @@ When you develop a machine learning model, or you handle ad-hoc data analysis, y
 %conda install <library name>
 ```
 
-2. Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
+2. Alternatively, you can create a Fabric environment, install libraries from public sources or upload custom libraries to it, and then your workspace admin can attach the environment as the default for the workspace. All the libraries in the environment will then become available for use in any notebooks and Spark job definitions in the workspace. For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](../data-engineering/create-and-use-environment.md).
 
 For this notebook, you'll use `%pip install` to install the `prophet` library. Note that the PySpark kernel will restart after `%pip install`. This means that you must install the library before you run any other cells.
 
@@ -68,7 +68,7 @@ For this notebook, you'll use `%pip install` to install the `prophet` library. N
 
 ## Step 2: Load the data
 
-#### Dataset
+### Dataset
 
 This notebook uses the NYC Property Sales data dataset. It covers data from 2003 to 2015, published by the NYC Department of Finance on the [NYC Open Data Portal](https://opendata.cityofnewyork.us/). 
 
@@ -90,7 +90,7 @@ This notebook aggregates the data on a monthly basis, so it ignores the holidays
 
 Read [the official paper](https://peerj.com/preprints/3190/) for more information about the Prophet modeling techniques.
 
-#### Download the dataset, and upload to a lakehouse
+### Download the dataset, and upload to a lakehouse
 
 The data source consists of fifteen `.csv` files. These files contain property sales records from five boroughs in New York, between 2003 and 2015. For convenience, the `nyc_property_sales.tar` file holds all of these `.csv` files, compressing them into one file. A publicly-available blob storage hosts this `.tar` file.
 
@@ -145,9 +145,9 @@ import time
 ts = time.time()
 ```
 
-#### Set up the MLflow experiment tracking
+### Set up the MLflow experiment tracking
 
-To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. This information is then logged to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. Visit [this resource](https://aka.ms/fabric-autologging) for more information about autologging.
+To extend the MLflow logging capabilities, autologging automatically captures the values of input parameters and output metrics of a machine learning model during its training. This information is then logged to the workspace, where the MLflow APIs or the corresponding experiment in the workspace can access and visualize it. Visit [this resource](./mlflow-autologging.md) for more information about autologging.
 
 
 ```python
@@ -183,15 +183,15 @@ display(df)
 
 A manual review of the dataset leads to some early observations:
 
-- Instances of $0.00 sales prices. According to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), this implies a transfer of ownership with no cash consideration. In other words, no cash flowed in the transaction. You should remove sales with $0.00 `sales_price` values from the dataset.
+* Instances of $0.00 sales prices. According to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), this implies a transfer of ownership with no cash consideration. In other words, no cash flowed in the transaction. You should remove sales with $0.00 `sales_price` values from the dataset.
 
-- The dataset covers different building classes. However, this notebook will only focus on residential buildings which, according to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), are marked as type "A". You should filter the dataset to include only residential buildings. To do this, include either the `building_class_at_time_of_sale` or the `building_class_at_present` columns. You must only include the `building_class_at_time_of_sale` data.
+* The dataset covers different building classes. However, this notebook will only focus on residential buildings which, according to the [Glossary of Terms](https://www.nyc.gov/assets/finance/downloads/pdf/07pdf/glossary_rsf071607.pdf), are marked as type "A". You should filter the dataset to include only residential buildings. To do this, include either the `building_class_at_time_of_sale` or the `building_class_at_present` columns. You must only include the `building_class_at_time_of_sale` data.
 
-- The dataset includes instances where `total_units` values equal 0, or `gross_square_feet` values equal 0. You should remove all the instances where `total_units` or `gross_square_units` values equal 0.
+* The dataset includes instances where `total_units` values equal 0, or `gross_square_feet` values equal 0. You should remove all the instances where `total_units` or `gross_square_units` values equal 0.
 
-- Some columns - for example, `apartment_number`, `tax_class`, `build_class_at_present`, etc. - have missing or NULL values. Assume that the missing data involves clerical errors, or non-existent data. The analysis does not depend on these missing values, so you can ignore them.
+* Some columns - for example, `apartment_number`, `tax_class`, `build_class_at_present`, etc. - have missing or NULL values. Assume that the missing data involves clerical errors, or non-existent data. The analysis does not depend on these missing values, so you can ignore them.
 
-- The `sale_price` column is stored as a string, with a prepended "$" character. To proceed with the analysis, represent this column as a number. You should cast the `sale_price` column as integer.
+* The `sale_price` column is stored as a string, with a prepended "$" character. To proceed with the analysis, represent this column as a number. You should cast the `sale_price` column as integer.
 
 #### Type conversion and filtering
 To resolve some of the identified issues, import the required libraries.
@@ -276,7 +276,7 @@ display(df_pandas)
 
 #### Visualization
 
-You can examine the property trade trend of New York City to better understand the data. This leads to insights into potential patterns and seasonality trends. Learn more about Microsoft Fabric data visualization at [this](https://aka.ms/fabric/visualization) resource.
+You can examine the property trade trend of New York City to better understand the data. This leads to insights into potential patterns and seasonality trends. Learn more about Microsoft Fabric data visualization at [this](../data-engineering/notebook-visualization.md) resource.
 
 
 ```python
@@ -305,9 +305,9 @@ plt.show()
 
 #### Summary of observations from the exploratory data analysis
 
-- The data shows a clear recurring pattern on a yearly cadence; this means the data has a **yearly seasonality**
-- The summer months seem to have higher sales volumes compared to winter months
-- In a comparison of years with high sales and years with low sales, the revenue difference between high sales months and low sales months in high sales years exceeds - in absolute terms - the revenue difference between high sales months and low sales months in low sale years. 
+* The data shows a clear recurring pattern on a yearly cadence; this means the data has a **yearly seasonality**
+* The summer months seem to have higher sales volumes compared to winter months
+* In a comparison of years with high sales and years with low sales, the revenue difference between high sales months and low sales months in high sales years exceeds - in absolute terms - the revenue difference between high sales months and low sales months in low sale years. 
 
 For example, in 2004, the revenue difference between the highest sales month and the lowest sales month is about
 
@@ -339,13 +339,13 @@ df_pandas["y"] = df_pandas["total_sales"]
 
 Prophet follows the [scikit-learn](https://scikit-learn.org/) convention. First, create a new instance of Prophet, set certain parameters (e.g.,`seasonality_mode`), and then fit that instance to the dataset.
 
-- Although a constant additive factor is the default seasonality effect for Prophet, you should use the **'multiplicative' seasonality** for the seasonality effect parameter. The analysis in the previous section showed that because of changes in seasonality amplitude, a simple additive seasonality won't fit the data well at all.
+* Although a constant additive factor is the default seasonality effect for Prophet, you should use the **'multiplicative' seasonality** for the seasonality effect parameter. The analysis in the previous section showed that because of changes in seasonality amplitude, a simple additive seasonality won't fit the data well at all.
 
-- Set the **weekly_seasonality** parameter to **off**, because the data was aggregated by month. As a result, weekly data is not available.
+* Set the **weekly_seasonality** parameter to **off**, because the data was aggregated by month. As a result, weekly data is not available.
 
-- Use **Markov Chain Monte Carlo (MCMC)** methods to capture the seasonality uncertainty estimates. By default, Prophet can provide uncertainty estimates on the trend and observation noise, but not for the seasonality. MCMC require more processing time, but they allow the algorithm to provide uncertainty estimates on the seasonality, as well as the trend and observation noise. Read the [Prophet Uncertainty Intervals documentation](https://facebook.github.io/prophet/docs/uncertainty_intervals.html) for more information.
+* Use **Markov Chain Monte Carlo (MCMC)** methods to capture the seasonality uncertainty estimates. By default, Prophet can provide uncertainty estimates on the trend and observation noise, but not for the seasonality. MCMC require more processing time, but they allow the algorithm to provide uncertainty estimates on the seasonality, as well as the trend and observation noise. Read the [Prophet Uncertainty Intervals documentation](https://facebook.github.io/prophet/docs/uncertainty_intervals.html) for more information.
 
-- Tune the automatic change point detection sensitivity through the **changepoint_prior_scale** parameter. The Prophet algorithm automatically tries to find instances in the data where the trajectories abruptly change. It can become difficult to find the correct value. To resolve this, you can try different values and then select the model with the best performance. Read the [Prophet Trend Changepoints documentation](https://facebook.github.io/prophet/docs/trend_changepoints.html) for more information.
+* Tune the automatic change point detection sensitivity through the **changepoint_prior_scale** parameter. The Prophet algorithm automatically tries to find instances in the data where the trajectories abruptly change. It can become difficult to find the correct value. To resolve this, you can try different values and then select the model with the best performance. Read the [Prophet Trend Changepoints documentation](https://facebook.github.io/prophet/docs/trend_changepoints.html) for more information.
 
 
 ```python
@@ -478,12 +478,12 @@ In these graphs, the light blue shading reflects the uncertainty. The top graph 
 
 Evaluate the performance of the models using various metrics, for example:
 
-- mean squared error (MSE)
-- root mean squared error (RMSE)
-- mean absolute error (MAE)
-- mean absolute percent error (MAPE)
-- median absolute percent error (MDAPE)
-- symmetric mean absolute percentage error (SMAPE)
+* mean squared error (MSE)
+* root mean squared error (RMSE)
+* mean absolute error (MAE)
+* mean absolute percent error (MAPE)
+* median absolute percent error (MDAPE)
+* symmetric mean absolute percentage error (SMAPE)
 
 Evaluate the coverage using the `yhat_lower` and `yhat_upper` estimates. Note the varying horizons where you predict one year in the future, twelve times.
 
