@@ -174,9 +174,9 @@ The next step is to create a virtual machine.
 
     :::image type="content" source="./media/security-private-links-use/create-vm-networking-tab.png" alt-text="Screenshot of create VM Networking tab." lightbox="./media/security-private-links-use/create-vm-networking-tab.png":::
 
-6. Select **Review + create**. You're taken to the **Review + create** page where Azure validates your configuration.
+1. Select **Review + create**. You're taken to the **Review + create** page where Azure validates your configuration.
 
-7. When you see the **Validation passed** message, select **Create**.
+1. When you see the **Validation passed** message, select **Create**.
 
 ### Step 5. Create a private endpoint
 
@@ -278,7 +278,11 @@ If you disable public access for Fabric, certain constraints on access to Fabric
 > [!IMPORTANT]
 > When you turn on *Block Internet Access*, trial capacity will no longer work, and some Fabric items will be disabled.
 
-To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting. It takes approximately 15 minutes for the system to disable your organization's access to Fabric from the public Internet.
+To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting.
+
+:::image type="content" source="./media/security-private-links-use/block-public-internet-access-tenant-setting.png" alt-text="Screenshot showing the Block Public Internet Access tenant setting enabled.":::
+
+It takes approximately 15 minutes for the system to disable your organization's access to Fabric from the public Internet.
 
 ## Completion of private endpoint configuration
 
