@@ -209,7 +209,7 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 * Only *organizational account* or *service principal* must be used for authentication to storage accounts for trusted workspace access.
 * Pipelines can't write to OneLake table shortcuts on storage accounts with trusted workspace access. This is a temporary limitation.
 * A maximum of 200 resource instance rules can be configured. For more information, see [Azure subscription limits and quotas - Azure Resource Manager | Microsoft Learn](/azure/azure-resource-manager/management/azure-subscription-service-limits).
-* If a resource instance rule for a Fabric workspace is removed, trusted workspace access may stop working after an hour. In the case of SQL endpoints with managed shortcuts to storage accounts, the shortcuts might stop working after ninety minutes, or when the SQL endpoint cache is refreshed on demand.
+* If a workspace with a workspace identity is migrated to a non-Fabric capacity or Fabric capacity less than F64, trusted workspace access will stop working within ninety minutes.
 * Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the UI isn't supported.
 
 ### ARM template sample
