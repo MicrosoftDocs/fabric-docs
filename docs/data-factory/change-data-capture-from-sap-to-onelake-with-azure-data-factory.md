@@ -28,12 +28,12 @@ To follow this article step-by-step in your own environment, you need the follow
 1. An SAP system that satisfies the requirements for ADF’s SAP CDC connector specified here. In our scenario, we use an SAP S/4HANA on-premises 2023 FPS00, but all up-to-date versions of SAP ECC, SAP BW, SAP BW/4HANA, etc. are supported as well.
 1. A self-hosted integration runtime (SHIR) with a current version of the SAP .NET Connector installed.
 
-In order to concentrate on the connectivity part, we've added a pipeline template to the template gallery that covers the most straightforward scenario of extracting change data using the SAP CDC connector and merging it with a Fabric Lakehouse table without any further transformations. If you’re familiar with ADF mapping dataflows and SAP CDC, you can setup a scenario from scratch by yourself and skip to the following configuration of the Lakehouse linked service.
+In order to concentrate on the connectivity part, here’s a pipeline template that covers the most straightforward scenario of extracting change data using the SAP CDC connector and merging it with a Fabric Lakehouse table without any further transformations: https://github.com/ukchrist/ADF-SAP-data-flows/blob/main/p_SAPtoFabric.zip. If you’re familiar with ADF mapping dataflows and SAP CDC, you can setup a scenario from scratch by yourself and skip to the following configuration of the Lakehouse linked service.
 
 To make use of the template, the following steps are required:
 
-1. Create two linked services to connect to the SAP source and the Fabric Lakehouse.
-1. Choose the template from the pipeline template gallery.
+1. Create three linked services to connect to the SAP source, the staging folder, and the Fabric Lakehouse.
+1. Import the template into your ADF or Synapse workspace.
 1. Configure the template with a source object from your SAP system and a sink table.
 
 ## Setting up connectivity to the SAP source system
@@ -140,7 +140,7 @@ With the setup of the linked services completed, you can import the template and
 
    :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/select-sap-to-fabric-template.png" alt-text="Screenshot showing the template selected in the Template gallery.":::
 
-1. The configuration screen opens, in which you specify the linked services to be used to instantiate the template. Enter the linked services created in the prior sections. The first linked service is the connection to an SAP source and the second one connects to a Microsoft Fabric Lakehouse:
+1. The configuration screen opens, in which you specify the linked services to be used to instantiate the template. Enter the linked services created in the prior sections. The first linked service is the one required for the staging folder in ADLS Gen2, the second one is connection to the SAP source and the third one connects to Microsoft Fabric Lakehouse:
 
    :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/configure-pipeline-template.png" alt-text="Screenshot showing how to configure the pipeline template.":::
 
