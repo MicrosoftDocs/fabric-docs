@@ -119,165 +119,166 @@ The number of IP addresses your subnet will need is the number of capacities on 
 
     :::image type="content" source="media/security-private-links-use/create-virtual-network.png" alt-text="Screenshot of the Basics tab in Create a virtual network.":::
 
-1. When done, select **Review + create**.
+1. Select **Next** to proceed to the **Security** tab. You can leave as default or change based on business need.  
 
-1. When validation has completed, select **Create**.
+1. Select **Next** to proceed to the **IP Addresses** tab. You can leave as default or change based on business need.
 
-After you complete these steps, you can create a VM, as described in the next section.
+    :::image type="content" source="./media/security-private-links-use/custom-deployment-ip-addresses-tab.png" alt-text="Screenshot of the IP Addresses tab in Create a virtual network." lightbox="./media/security-private-links-use/custom-deployment-ip-addresses-tab.png":::
 
-### Step 4. Create a virtual machine (VM)
+1. Select **Save**.
 
-The next step is to create a VM.
+1. Select **Review + create** at the bottom of the screen. When validation passes, select **Create**.
+
+### Step 4. Create a virtual machine
+
+The next step is to create a virtual machine.
 
 1. In the Azure portal, go to **Create a resource > Compute > Virtual machines**.
 
-2. On the **Basics** tab, enter or select the following information:
+1. On the **Basics** tab, enter or select the following information:
 
     |Settings |	Value |
-    |-------------------|---------|
+    |:-------------------|:---------|
     |**Project details**||
-    |Subscription |	Select your Azure Subscription |
-    |Resource group |	Select the resource group you provided in [Step 3](#step-3-create-a-virtual-network). |
+    |Subscription |	Select your Azure Subscription. |
+    |Resource group |	Select the resource group you provided in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
     |**Instance details** ||
     |Virtual machine name | Enter a name for the your new virtual machince. Select the info bubble next to the field name to see important information about virtual machine names. |
-    |Region | Select the region where you want the virtual machine to reside. |
-    |Availability options| Leave the default **No infrastructure redundancy required** |
-    |Image | Select **Windows 10 Pro** |
-    |Size | Leave the default **Standard DS1 v2** |
+    |Region | Select the region you selected in [Step 3](#step-3-create-a-virtual-network). |
+    |Availability options| For testing, choose **No infrastructure redundancy required** |
+    |Security Type | Leave the default. |
+    |Image | Select the image you want. For example, choose **Windows Server 2022**. |
+    | VM architecture | Leave the default of **x64**. |
+    |Size | Select a size. |
     |ADMINISTRATOR ACCOUNT ||
-    |Username | Enter a username of your choosing |
-    |Password | Enter a password of your choosing. The password must be at least 12 characters long and meet the [defined complexity requirements](/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm) |
-    |Confirm password | Reenter password |
+    |Username | Enter a username of your choosing. |
+    |Password | Enter a password of your choosing. The password must be at least 12 characters long and meet the [defined complexity requirements](/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm). |
+    |Confirm password | Reenter password. |
     |INBOUND PORT RULES ||
-    |Public inbound ports | Leave the default **None** |
-    |LICENSING ||
-    |I have an eligible Windows 10/11 license | Check the box |
+    |Public inbound ports | Choose **None**. |
 
-3. Select **Next: Disks**.
+    :::image type="content" source="./media/security-private-links-use/create-vm-basics-tab.png" alt-text="Screenshot of the create VM Basics tab." lightbox="./media/security-private-links-use/create-vm-basics-tab.png":::
 
-4. On the **Disks** tab, leave the defaults and select **Next: Networking**.
+1. Select **Next: Disks**.
 
-5. On the **Networking** tab, select the following information:
+1. On the **Disks** tab, leave the defaults and select **Next: Networking**.
+
+1. On the **Networking** tab, select the following information:
 
     |Settings |	Value |
-    |-------------------|---------|
-    |Virtual network|	Leave the default **MyVirtualNetwork**|
-    |Address space|	Leave the default **10.0.0.0/24**|
-    |Subnet	|Leave the default **mySubnet (10.0.0.0/24)**|
-    |Public IP|	Leave the default **(new) myVm-ip**|
-    |Public inbound ports|	Select **Allow selected**|
-    |Select inbound ports|	Select **RDP**|
+    |:-------------------|:---------|
+    |Virtual network| Select the virtual network you created in [Step 3](#step-3-create-a-virtual-network).|
+    |Subnet	| Select the default (10.0.0.0/24) you created in [Step 3](#step-3-create-a-virtual-network).|
+
+    For the rest of the fields, you leave the defaults.
+
+    :::image type="content" source="./media/security-private-links-use/create-vm-networking-tab.png" alt-text="Screenshot of create VM Networking tab." lightbox="./media/security-private-links-use/create-vm-networking-tab.png":::
 
 6. Select **Review + create**. You're taken to the **Review + create** page where Azure validates your configuration.
 
 7. When you see the **Validation passed** message, select **Create**.
 
-### Create a private endpoint
+### Step 5. Create a private endpoint
 
 The next step is to create a private endpoint for Fabric.
 
-1. On the upper-left side of the Azure portal screen **Create a resource > Networking > Private Link**.
+1.	In the search box at the top of the portal, enter **Private endpoint**. Select **Private endpoints**.
 
-2. In **Private Link Center - Overview**, under the option to **Build a private connection to a service**, select **Create private endpoint**.
+1.	Select **+ Create** in **Private endpoints**.
 
-3. In the **Create a private endpoint - Basics** tab, enter or select the following information:
+1.	On the **Basics** tab of **Create a private endpoint**, enter or select the following information:
 
     |Settings |	Value |
     |-------------------|---------|
     |**Project details** ||
-    |Subscription| Select your Azure Subscription|
-    |Resource group| Select **myResourceGroup**. You created this in the previous section|
+    |Subscription| Select your Azure Subscription. |
+    |Resource group| Select the resource group you created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal).|
     |**Instance details** ||
-    |Name| Enter *myPrivateEndpoint*. If this name is taken, create a unique name|
-    |Region| Select **West US**|
+    |Name| Enter *FabricPrivateEndpoint*. If this name is taken, create a unique name. |
+    |Region| Select the region you created for your virtual network in [Step 3](#step-3-create-a-virtual-network).|
 
     The following image shows the **Create a private endpoint - Basics** window.
 
-    :::image type="content" source="media/security-private-links-use/service-private-links-06.png" alt-text="Screenshot of the Basics tab in Create a private endpoint.":::
+    :::image type="content" source="media/security-private-links-use/create-endpoint-basics-tab.png" alt-text="Screenshot of the Basics tab in Create a private endpoint.":::
 
-4. Once that information is complete, select **Next: Resource** and in the **Create a private endpoint - Resource** page, enter or select the following information:
+1. Select **Next: Resource**. In the **Resource** pane, enter or select the following information:
 
     |Settings |	Value |
     |-------------------|---------|
-    |Connection method|	Select connect to an Azure resource in my directory|
-    |Subscription|	Select your subscription|
+    |Connection method|	Select connect to an Azure resource in my directory. |
+    |Subscription|	Select your subscription.|
     |Resource type|	Select **Microsoft.PowerBI/privateLinkServicesForPowerBI** |
-    |Resource|	myPowerBIResource|
-    |Target subresource|	Tenant|
+    |Resource| Choose the Fabric resource you created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
+    |Target subresource| Tenant |
 
     The following image shows the **Create a private endpoint - Resource** window.
 
-    :::image type="content" source="media/security-private-links-use/service-private-links-07.png" alt-text="Screenshot of the Resource tab in Create a private endpoint.":::
+    :::image type="content" source="media/security-private-links-use/create-private-endpoint-resource-window.png " alt-text="Screenshot of the create a private endpoint resource window.":::
 
-5. Once that information is properly input, select **Next: Configuration** and in the **Create a private endpoint - Configuration** and enter or select the following information:
+1. Select **Next: Virtual Network**. In **Virtual Network**, enter or select the following information.
 
     |Settings |	Value |
     |-------------------|---------|
     |**NETWORKING** ||
-    |Virtual network|	Select *myVirtualNetwork* |
-    |Subnet	|Select *mySubnet* |
+    |Virtual network| Select *vnet-1* which you created in [Step 3](#step-3-create-a-virtual-network). |
+    |Subnet	| Select *subnet-1* which you created in in [Step 3](#step-3-create-a-virtual-network). |
     |**PRIVATE DNS INTEGRATION** ||
-    |Integrate with private DNS zone|	Select **Yes** |
+    |Integrate with private DNS zone| Select **Yes**. |
     |Private DNS Zone	|Select <br> *(New)privatelink.analysis.windows.net* <br> *(New)privatelink.pbidedicated.windows.net* <br> *(New)privatelink.prod.powerquery.microsoft.com* |
 
-    The following image shows the **Create a private endpoint - Configuration** window.
+    :::image type="content" source="./media/security-private-links-use/create-private-endpoint-dns-window.png" alt-text="Screenshot of the create private endpoint DNS window.":::
 
-    :::image type="content" source="media/security-private-links-use/service-private-links-08.png" alt-text="Screenshot of the Configuration tab in Create a private endpoint.":::
+1. Select **Next: Tags**, then **Next: Review + create**.
 
-    Next select **Review + create**, which displays the **Review + create** page where Azure validates your configuration. When you see the **Validation passed** message, select **Create**.
+1. Select **Create**.
 
-    > [!NOTE]
-    > If you have an existing Power BI private endpoint, it may not work for Fabric items. Currently, you need to create a new private endpoint to get support for Fabric items.  
+> [!NOTE]
+> If you have an existing Power BI private endpoint, it may not work for Fabric items. Currently, you need to create a new private endpoint to get support for Fabric items.
 
-### Step 5. Connect to a VM using Remote Desktop (RDP)
+### Step 6. Connect to a VM using Bastion
 
-After you create your VM, called **myVM**, connect to it from the internet using the following steps:
+Azure Bastion protects your virtual machines by providing lightweight, browser-based connectivity without the need to expose them through public IP addresses. For more information, see [What is Azure Bastion?](/azure/bastion/bastion-overview).
 
-1. In the portal's search bar, enter *myVm*.
+Connect to your VM using the following steps:
 
-2. Select the **Connect** button, and choose **RDP** from the dropdown menu.
+1. Create a subnet called *AzureBastionSubnet* in the virtual network you created in [Step 3](#step-3-create-a-virtual-network).
 
-3. Enter an IP address, then select **Download RDP File**. Azure creates a Remote Desktop Protocol (.rdp) file and downloads it to your computer.
+    :::image type="content" source="./media/security-private-links-use/create-azurebastionsubnet.png" alt-text="Screenshot of the create AzureBastionSubnet." lightbox="./media/security-private-links-use/create-azurebastionsubnet.png":::
 
-4. Open the *.rdp* file to start Remote Desktop Connection, then select **Connect**.
+1. In the portal's search bar, enter *testVM* which we created in [Step 4](#step-4-create-a-virtual-machine).
 
-5. Enter the username and password you specified when creating the VM in the previous step.
+1. Select the **Connect** button, and choose **Connect via Bastion** from the dropdown menu.
 
-6. Select **OK**.
+    :::image type="content" source="./media/security-private-links-use/connect-via-bastion.png" alt-text="Screenshot of the Connect via Bastion option." lightbox="./media/security-private-links-use/connect-via-bastion.png":::
 
-7. You might receive a certificate warning during the sign-in process. If you receive a certificate warning, select **Yes** or **Continue**.
+1. Select **Deploy Bastion**.
 
-### Step 6. Access Fabric privately from the VM
+1.	On the **Bastion** page, enter the required authentication credentials, then click **Connect**.
+
+### Step 7. Access Fabric privately from the VM
 
 The next step is to access Fabric privately, from the virtual machine you created in the previous step, using the following steps: 
 
-1. In the Remote Desktop of myVM, open PowerShell.
+1. In the the virtual machine, open PowerShell.
 
-2. Enter `nslookup <tenant-object-id-without-hyphens>-api.privatelink.analysis.windows.net`.
+1. Enter `nslookup <tenant-object-id-without-hyphens>-api.privatelink.analysis.windows.net`.
 
-3. You receive a response similar to the following message:
+1. You receive a response similar to the following message and can see that the private IP address is returned. You can see that the Onelake endpoint and Warehouse endpoint also return private IPs.
 
-    ```
-    Server:  UnKnown
-    Address:  168.63.129.16
-    
-    Non-authoritative answer:
-    Name:    52d40f65ad6d48c3906f1ccf598612d4-api.privatelink.analysis.windows.net
-    Address:  10.5.0.4
-    ```
+    :::image type="content" source="./media/security-private-links-use/nslookup-powershell.png" alt-text="Screenshot showing IP addresses returned in PowerShell." lightbox="./media/security-private-links-use/nslookup-powershell.png":::
 
-4. Open the browser and go to *app.fabric.com* to access Fabric privately.
+1. Open the browser and go to *app.fabric.com* to access Fabric privately.
 
-### Step 7. Disable public access for Fabric
+### Step 8. Disable public access for Fabric
 
 Finally, you can optionally disable public access for Fabric.
 
-If you disable public access for Fabric, certain constraints on access to Fabric services are put into place, described in the next section.
+If you disable public access for Fabric, certain constraints on access to Fabric services are put into place, as described in the next section.
 
 > [!IMPORTANT]
 > When you turn on *Block Internet Access*, trial capacity will no longer work, and some Fabric items will be disabled.
 
-To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** section, as shown in the following image. It takes approximately 15 minutes for the system to disable your organization's access to Fabric from the public Internet.
+To disable public access for Fabric, sign in to [Fabric](https://app.fabric.microsoft.com/) as an administrator, and navigate to the **Admin portal**. Select **Tenant settings** and scroll to the **Advanced networking** section. Enable the toggle button in the **Block Public Internet Access** tenant setting. It takes approximately 15 minutes for the system to disable your organization's access to Fabric from the public Internet.
 
 ## Completion of private endpoint configuration
 
