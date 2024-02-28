@@ -470,7 +470,7 @@ BEST_MODEL_INDEX = 1  # Set the best model index according to the previous resul
 fig2 = models[BEST_MODEL_INDEX].plot_components(forecast)
 ```
 
-![image.png](temp_files/image.png)
+:::image type="content" source="media/time-series-forecasting/trends.png" alt-text="Screenshot of a graph of yearly trends in the pricing data.":::
 
 In these graphs, the light blue shading reflects the uncertainty. The top graph shows a strong, long-period oscillating trend. Over a few years, the sales volumes rise and fall. The lower graph shows that sales tend to peak in February and September, reaching their maximum values for the year in those momths. Shortly after those months, in March and October, they fall to the year's minimum values.
 
