@@ -10,7 +10,7 @@ ms.date: 02/28/2024
 
 # Overview of managed private endpoints for Fabric
 
-Mananged private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
+Managed private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
 
 ## What are Managed Private Endpoints?
 
@@ -30,19 +30,19 @@ For more information about supported data sources for managed private endpoints 
 
 ### Limitations and considerations
 
-* Starter pools are not available for workspaces with managed VNets. This includes workspaces that use managed private endpoints or that belong to a Fabric tenant with Azure Private Links enabled and that have run a Spark job. These workspaces will use on-demand clusters, which can take 3 to 5 minutes to start a session.
+* Starter pools aren't available for workspaces with managed VNets. This includes workspaces that use managed private endpoints or that belong to a Fabric tenant with Azure Private Links enabled and that have run a Spark job. These workspaces will use on-demand clusters, which can take 3 to 5 minutes to start a session.
 
 * Managed private endpoints are only supported for Fabric Trial capacity and Fabric capacities F64 or higher.
 
 * To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
-* Managed private endpoints require the Fabric capacity and the data source to be in the same region. They do not work across different regions at this time.
+* Managed private endpoints require the Fabric capacity and the data source to be in the same region. They don't work across different regions at this time.
 
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
 * Workspace migration across capacities in different regions isn't supported.
 
-These limitations and considerations might affect your use cases and workflows, so please take them into account before enabling the Azure Private Link tenant setting for your tenant.
+These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
 ## Related content
 

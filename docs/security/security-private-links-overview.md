@@ -57,7 +57,7 @@ If Azure Private Link is properly configured and **Block public Internet access*
 
 ### Onelake
 
-Onelake supports Private Link. You can explore Onelake in the Fabric portal or from any machine within your established VNet using  via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
+Onelake supports Private Link. You can explore Onelake in the Fabric portal or from any machine within your established VNet using via OneLake file explorer, Azure Storage Explorer, PowerShell, and more.
 
 Direct calls using OneLake regional endpoints don't work via private link to Fabric. For more information about connecting to OneLake and regional endpoints, see [How do I connect to OneLake?](../onelake/onelake-access-api.md).
 
@@ -71,17 +71,17 @@ Visual query in Warehouse doesn't work when the **Block Public Internet Access**
 
 Once you've enabled the **Azure Private Link** tenant setting, running the first Spark job (Notebook or Spark job definition) or performing a Lakehouse operation (Load to Table, table maintenance operations such as Optimize or Vacuum) will result in the creation of a managed virtual network for the workspace.
 
-Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Using table maintenance to manage delta tables in Lakehouse might fail. This is a temporary limitation. Workspace migration across capacities in different regions is not supported when a managed virtual network is allocated to your workspace.
+Once the managed virtual network has been provisioned, the starter pools (default Compute option) for Spark are disabled, as these are prewarmed clusters hosted in a shared virtual network. Spark jobs run on custom pools that are created on-demand at the time of job submission within the dedicated managed virtual network of the workspace. Using table maintenance to manage delta tables in Lakehouse might fail. This is a temporary limitation. Workspace migration across capacities in different regions isn't supported when a managed virtual network is allocated to your workspace.
 
-When private link settings is enabled, Spark jobs will not work for tenants whose home region does not support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
+When the private link setting is enabled, Spark jobs won't work for tenants whose home region doesn't support Fabric Data Engineering, even if they use Fabric capacities from other regions that do.
 
 For more information, see [Managed VNet for Fabric](./security-managed-vnets-fabric-overview.md).
 
 ### Dataflow Gen2
 
-You can use Dataflow gen2 to get data, transform data, and publish dataflow via private link. When your data source is behind the firewall, you can use the VNet data gateway to connect to your data sources. The VNet data gateway enables the injection of the gateway (compute) into your existing virtual network, thus providing a managed gateway experience. You can use Vnet gateway connections to connect to Lakehouse or Warehouse in the tenant which requires private link or connect to other data sources with your virtual network.
+You can use Dataflow gen2 to get data, transform data, and publish dataflow via private link. When your data source is behind the firewall, you can use the VNet data gateway to connect to your data sources. The VNet data gateway enables the injection of the gateway (compute) into your existing virtual network, thus providing a managed gateway experience. You can use VNet gateway connections to connect to a Lakehouse or Warehouse in the tenant that requires a private link or connect to other data sources with your virtual network.
 
-For more information, see [What is a virtual network (VNet) data gateway](/data-integration/vnet/overview)
+For more information, see [What is a virtual network (VNet) data gateway](/data-integration/vnet/overview).
 
 ### Pipeline
 
