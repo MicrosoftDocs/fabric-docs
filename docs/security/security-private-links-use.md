@@ -33,9 +33,11 @@ The following sections provide additional information for each step.
 1. Find and expand the setting **Azure Private Link**.
 1. Set the toggle to *Enabled*.
 
+    :::image type="content" source="./media/security-private-links-use/enable-azure-private-link.png" alt-text="Screenshot showing Azure Private Link tenant setting.":::
+
 It takes about 15 minutes to configure a private link for your tenant. This includes configuring a separate FQDN (fully qualified domain name) for the tenant in order to communicate privately with Fabric services.
 
-After this process is finished, move on to the next step.
+When this process is finished, move on to the next step.
 
 ### Step 2. Create a Fabric resource in the Azure portal
 
@@ -78,31 +80,42 @@ After this process is finished, move on to the next step.
     >[!IMPORTANT]
     > Use `Microsoft.PowerBI/privateLinkServicesForPowerBI` as `type` value, even though the resource is being created for Fabric.
 
+1. Save the template. THen enter the following information.
+
+    |Setting|Value|
+    |:---|:---|
+    |**Project details**||
+    |Subscription|Select your subscription.|
+    |Resource group|Select **Create new. Enter test-PL as the name. Select **OK**.|
+    |**Instance details**|Select the region.|
+    |Region||
+
+    :::image type="content" source="./media/security-private-links-use/custom-deployment-basics-tab.png" alt-text="Screenshot of the Custom deployment basics tab.":::
+
 4. On the review screen, select **Create** to accept the terms and conditions.
 
     :::image type="content" source="media/security-private-links-use/azure-create-template-3.png" alt-text="Screenshot of the Azure Marketplace Terms.":::
 
 ### Step 3. Create a virtual network
 
-The next step is to create a virtual network and subnet. The number of IP addresses your subnet will need is the number of capacities on your tenant plus three. For example, if you're creating a subnet for a tenant with seven capacities, you'll need ten IP addresses.
+The following procedure creates a virtual network with a resource subnet, an Azure Bastion subnet, and an Azure Bastion host.
 
-1. In the Azure portal, go to **Create a resource > Networking > Virtual network**.
+The number of IP addresses your subnet will need is the number of capacities on your tenant plus five. For example, if you're creating a subnet for a tenant with seven capacities, you'll need twelve IP addresses.
 
-1. On the **Create a virtual network** page, select the **Basics** tab and provide the required information in the form. The fields are described in the following table.
+1. In the Azure portal, search for and select **Virtual networks**.
+
+1.	On the **Virtual networks** page, select **+ Create**.
+
+1.	On the **Basics** tab of **Create virtual network**, enter or select the following information:
 
     |Setting |Value |
     |-------------------|---------|
     |**Project details**|
-    |Subscription |	Select your Azure Subscription. |
-    |Resource group | Either select an existing resource group, or choose **Create new**, enter an new resource group name, and then select **OK**. |
+    |Subscription |	Select your subscription. |
+    |Resource group | Select **test-PL**, the name we created in [Step 2](#step-2-create-a-fabric-resource-in-the-azure-portal). |
     |**Instance details**|
-    |Name	| Enter a name for your new virtual network. |
-    |Address space	| Enter the virtual network's address space, specified as one or more address prefixes in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) (for example, 10.0.0.0/16). |
-    |Subnet name | Enter a name for your subnet. |
-    |Subnet address range | Enter the subnet's address range in [CIDR notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing). It must be contained by the address space of the virtual network (for example, 10.0.0.0/24)|
-    |Region | Select the relevant region. |
-
-    The following image shows an example of a filled out **Basics** tab, with hypothetical values.
+    |Name	| Enter **vnet-1**. |
+    |Region | Select the region where you will initiate the connection to Fabric. |
 
     :::image type="content" source="media/security-private-links-use/create-virtual-network.png" alt-text="Screenshot of the Basics tab in Create a virtual network.":::
 
