@@ -29,7 +29,7 @@ The following sections provide additional information for each step.
 ### Step 1. Set up private endpoints for Fabric
 
 1. Sign in to [Fabric](https://app.fabric.microsoft.com) as an administrator.
-1. [Go to the tenant settings](../admin/about-tenant-settings#how-to-get-to-the-tenant-settings).
+1. [Go to the tenant settings](../admin/about-tenant-settings.md#how-to-get-to-the-tenant-settings).
 1. Find and expand the setting **Azure Private Link**.
 1. Set the toggle to *Enabled*.
 
