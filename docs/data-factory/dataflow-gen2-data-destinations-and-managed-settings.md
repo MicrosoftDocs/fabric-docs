@@ -58,7 +58,7 @@ By default, your table name has the same name as your query name. If you have an
 
 Next, you must select the destination container. If you chose any of the Fabric data destinations, you could use the navigator to select the Fabric artifact you want to load your data into. For Azure destinations, you can either specify the database during connection creation, or select the database from the navigator experience.
 
-### Use an existing table**
+### Use an existing table
 
 To choose an existing table, use the toggle at the top of the navigator. When choosing an existing table, you need to pick both the Fabric artifact/database and table using the navigator.
 
