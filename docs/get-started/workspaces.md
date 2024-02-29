@@ -103,6 +103,9 @@ In the Workspace settings pane, select **Other** > **Remove this workspace**.
 
 :::image type="content" source="media/workspaces/remove-workspace.png" alt-text="Screenshot showing deleting workspace." lightbox="media/workspaces/remove-workspace.png":::
 
+> [!WARNING]
+> If the workspace you're deleting has a workspace identity, that workspace identity will be irretrievably lost. In some scenarios this could cause Fabric items relying on the workspace identity for trusted workspace access or authentication to break. For more information, see [Delete a workspace identity](../security/workspace-identity.md#deleting-the-identity).
+
 ## Administering and auditing workspaces
 
 Administration for workspaces is in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal. [!INCLUDE [product-name](../includes/product-name.md)] admins decide who in an organization can create workspaces and distribute apps. Read about [managing users' ability to create workspaces](../admin/portal-workspace.md#create-workspaces-new-workspace-experience) in the "Workspace settings" article.

@@ -4,7 +4,7 @@ description: Learn more about table constraints support using Warehouse in Micro
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 12/13/2023
+ms.date: 02/29/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -34,8 +34,6 @@ For syntax, check [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?v
 - For more information on tables, see [Tables in data warehousing in Microsoft Fabric](tables.md).
 
 ## Remarks
-
-Having primary key, foreign key and/or unique key allows [!INCLUDE [fabricse](includes/fabric-se.md)] and [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] to generate an optimal execution plan for a query.  
 
 ALTER TABLE cannot be part of an explicit transaction.
 
