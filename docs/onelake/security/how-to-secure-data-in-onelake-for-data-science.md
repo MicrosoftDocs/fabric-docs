@@ -53,7 +53,8 @@ Shortcuts are a OneLake feature that allow for data to be referenced from one lo
 
 You can secure data for use with shortcuts just like any other folder in OneLake. After configuring the data access roles, users from other lakehouses will only be able to create shortcuts to folders they have access to. This can be used to give users in other workspaces access to only select data in a lakehouse.
 
-It's important to note that SQL Analytics Endpoint uses a fixed identity for accessing shortcuts. When a user queries a shortcut table through SQL Analytics Endpoint, the identity of the lakehouse owner is checked for access to the shortcut. This means that when creating shortcuts for use with SQL queries, the lakehouse creator also needs to be part of any OneLake data access roles that are restricting access to only selected folders.
+> [!IMPORTANT]
+> SQL Analytics Endpoint uses a fixed identity for accessing shortcuts. When a user queries a shortcut table through SQL Analytics Endpoint, the identity of the lakehouse owner is checked for access to the shortcut. This means that when creating shortcuts for use with SQL queries, the lakehouse creator also needs to be part of any OneLake data access roles that are restricting access to only selected folders.
 
 ## Related content
 
