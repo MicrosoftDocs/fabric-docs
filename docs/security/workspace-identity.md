@@ -134,6 +134,14 @@ WWhen a workspace gets renamed, the workspace identity is also renamed to match 
 * A maximum of 1,000 workspace identities can be created in a tenant. Once this limit is reached, workspace identities must be deleted to enable newer ones to be created.
 * Azure Data Lake Storage Gen2 shortcuts in a workspace that has a workspace identity will be capable of trusted service access.
 
+## Troubleshooting issues with creating a workspace identity
+
+* If you can't create a workspace identity because the creation button is disabled, make sure you have the workspace administrator role, and that the workspace is associated with a Fabric F64+ capacity.
+
+* If you run into issues the first time you create a workspace identity in your tenant, try the following steps:
+    1. If the workspace identity state is *failed*, wait for an hour and then delete the identity.
+    2. After the identity has been deleted, wait 5 minutes and then create the identity again.
+
 ## Related content
 
-* [Trusted workspace access](../security/security-trusted-workspace-access.md)
+* [Trusted workspace access](./security/security-trusted-workspace-access.md)
