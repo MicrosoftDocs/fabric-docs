@@ -616,7 +616,7 @@ The following operations are available in the audit logs.
 | Viewed Power BI tile | ViewTile |  |
 | Viewed Power BI usage metrics | ViewUsageMetrics |  |
 
-## Known issues and limitations
+## Limitations
 
 For some audit events, the capacity name and capacity ID aren't currently available in the logs.
 

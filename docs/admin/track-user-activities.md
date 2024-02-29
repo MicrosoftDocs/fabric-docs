@@ -38,7 +38,7 @@ You can search the audit logs using the filters in the following list. When you 
 
 You can also use PowerShell to view audit logs. TO use PowerShell, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell). You can also use the blog post [Using Power BI Audit Log and PowerShell to assign Power BI Pro licenses](https://powerbi.microsoft.com/blog/using-power-bi-audit-log-and-powershell-to-assign-power-bi-pro-licenses/) as a reference.
 
-## Known issues and limitations
+## Limitations
 
 For some audit events, the capacity name and capacity ID aren't currently available in the logs.
 
