@@ -144,4 +144,4 @@ WWhen a workspace gets renamed, the workspace identity is also renamed to match 
 
 ## Related content
 
-* [Trusted workspace access](../security/security-trusted-workspace-access.md)
+* [Trusted workspace access](security-trusted-workspace-access.md)
