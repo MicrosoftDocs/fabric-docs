@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
 ms.custom:
-ms.date: 12/20/2023
+ms.date: 02/29/2024
 ---
 
 # Operation list
@@ -19,7 +19,7 @@ The following operations are available in the audit logs.
 | Add Experiment Run | AddExperimentRun |  |
 | Add Model Version | AddModelVersion |  |
 | Add Tenant Key | AddTenantKey |  |
-| Add Tile | AddTile | Add Tile is dashboard activity which is generated on adding visuals as tiles to a Power BI Dashboard |
+| Add Tile | AddTile | Add Tile is dashboard activity, which is generated on adding visuals as tiles to a Power BI Dashboard |
 | Added data source to Power BI gateway | AddDatasourceToGateway |  |
 | Added external resource | AddExternalResource |  |
 | Added link to external resource | AddLinkToExternalResource |  |
@@ -62,22 +62,22 @@ The following operations are available in the audit logs.
 | Clone Tile | CloneTile |  |
 | Co Author Notebook | CoAuthorNotebook |  |
 | Commit Notebook | CommitNotebook |  |
-| Commit To Git | CommitToGit | Commit To Git is an artifact activity which is generated when users commit artifact to Git. |
+| Commit To Git | CommitToGit | Commit To Git is an artifact activity, which is generated when users commit artifact to Git. |
 | Completed an artifact access request action in Power BI | ArtifactAccessRequest |  |
-| Connect To Git | ConnectToGit | Connect To Git is a workspace activity which is generated when users connect the workspace to Git. |
+| Connect To Git | ConnectToGit | Connect To Git is a workspace activity, which is generated when users connect the workspace to Git. |
 | Connected to Power BI semantic model from external app | ConnectFromExternalApplication | Not currently used |
 | Convert Personal Workspace To Workspace | ConvertPersonalWorkspaceToWorkspace |  |
 | Copied Power BI dashboard | CopyDashboard |  |
 | Copied Power BI report | CopyReport |  |
 | Copy Scorecard | CopyScorecard |  |
 | Create Artifact | CreateArtifact |  |
-| Create Branch In Git | CreateBranchInGit | Create Branch In Git is a git provider activity which is generated when users create branch in Git. |
+| Create Branch In Git | CreateBranchInGit | Create Branch In Git is a git provider activity, which is generated when users create branch in Git. |
 | Create Cloud Datasource | CreateCloudDatasource |  |
 | Create Cloud Datasource From Kind Path | CreateCloudDatasourceFromKindPath |  |
 | Create Data Sharing | CreateDataSharing | Create a new external data share |
 | Create Datamart | CreateDatamart |  |
 | Create Dataset By Quick Share | CreateDatasetByQuickShare |  |
-| Create Directory In Git | CreateDirectoryInGit | Create Directory In Git is a git provider activity which is generated when users create directory in Git. |
+| Create Directory In Git | CreateDirectoryInGit | Create Directory In Git is a git provider activity, which is generated when users create directory in Git. |
 | Create gateway cluster data source from kind path JSON | CreateGatewayClusterDatasourceFromKindPath | Create gateway cluster data source from kind path JSON |
 | Create Gateway Cluster User | CreateGatewayClusterUser |  |
 | Create Gateway Tenant Key | CreateGatewayTenantKey |  |
@@ -96,7 +96,7 @@ The following operations are available in the audit logs.
 | Create Scorecard Hierarchy | CreateScorecardHierarchy |  |
 | Create Scorecard View | CreateScorecardView |  |
 | Create Service Principal Profile | CreateServicePrincipalProfile |  |
-| Create Template App Package | CreateTemplateAppPackage | Create Template App Package is an app activity which is generated on creation of a Template App Package |
+| Create Template App Package | CreateTemplateAppPackage | Create Template App Package is an app activity, which is generated on creation of a Template App Package |
 | Create Warehouse | CreateWarehouse |  |
 | Create Workspace | CreateWorkspace |  |
 | Created a Power BI metric value | CreateGoalValue |  |
@@ -157,8 +157,8 @@ The following operations are available in the audit logs.
 | Delete Service Principal Profile | DeleteServicePrincipalProfile |  |
 | Delete Service Principal Profile As Admin | DeleteServicePrincipalProfileAsAdmin |  |
 | Delete source in GraphQL artifact | DeleteSourceGraphQL | Delete source in graphql artifact |
-| Delete Template App Package | DeleteTemplateAppPackage | Delete Template App Package is an app activity which is generated on deletion of a Template App package |
-| Delete Tile | DeleteTile | Delete Tile is a dashboard activity which is generated on deletion of tiles from a Power BI Dashboard |
+| Delete Template App Package | DeleteTemplateAppPackage | Delete Template App Package is an app activity, which is generated on deletion of a Template App package |
+| Delete Tile | DeleteTile | Delete Tile is a dashboard activity, which is generated on deletion of tiles from a Power BI Dashboard |
 | Delete usage metrics v2 package via lockbox | DeleteUsageMetricsv2PackageViaLockbox |  |
 | Delete Warehouse | DeleteWarehouse |  |
 | Delete Workspace Via Admin Api | DeleteWorkspaceViaAdminApi |  |
@@ -194,7 +194,7 @@ The following operations are available in the audit logs.
 | Deployed to a pipeline stage | DeployAlmPipeline |  |
 | Detect Customizations For Solution | DetectCustomizationsForSolution |  |
 | Determine if the user can share a datasource | DeterminePrincipalCanShareDatasource | Get the policy decision for the user to share a datasource |
-| Disconnect From Git | DisconnectFromGit | Disconnect From Git is a workspace activity which is generated when users disconnect the workspace from Git. |
+| Disconnect From Git | DisconnectFromGit | Disconnect From Git is a workspace activity, which is generated when users disconnect the workspace from Git. |
 | Discovered Power BI semantic model data sources | GetDatasources |  |
 | Downgrade Workspace | DowngradeWorkspace |  |
 | Download Notebook Resource | DownloadNotebookResource | Delete resources in notebook. |
@@ -207,7 +207,7 @@ The following operations are available in the audit logs.
 | Edit mounted warehouse endorsements | EditMountedWarehouseEndorsement | Generated when mounted warehouse endorsements are edited |
 | Edit Report Description | EditReportDescription |  |
 | Edit Sql Analytics Endpoint Lakehouse Endorsement | EditSqlAnalyticsEndpointLakehouseEndorsement | Edited a lakehouse SQL analytics endpoint endorsement |
-| Edit Tile | EditTile | Edit Tile is a dashboard activity which is generated on changes or edits to settings for tiles in a Power BI Dashboard |
+| Edit Tile | EditTile | Edit Tile is a dashboard activity, which is generated on changes or edits to settings for tiles in a Power BI Dashboard |
 | Edit Warehouse Endorsement | EditWarehouseEndorsement |  |
 | Edit Widget Tile | EditWidgetTile |  |
 | Edited Power BI app endorsement | EditContentProviderProperties |  |
@@ -232,7 +232,7 @@ The following operations are available in the audit logs.
 | Exported Power BI item to another file format | ExportArtifact |  |
 | Exported Power BI report to another file format or exported report visual data | ExportReport |  |
 | Exported Power BI tile data | ExportTile |  |
-| Extract Template App Package | ExtractTemplateAppPackage | Extract Template App Package is an app activity which is generated when users extract an existing Template App into another Power BI Template App Workspace |
+| Extract Template App Package | ExtractTemplateAppPackage | Extract Template App Package is an app activity, which is generated when users extract an existing Template App into another Power BI Template App Workspace |
 | Follow Goal | FollowGoal |  |
 | Gateway Cluster S S O Test Connection | GatewayClusterSSOTestConnection |  |
 | Generate Custom Visual W A C Access Token | GenerateCustomVisualWACAccessToken |  |
@@ -255,7 +255,7 @@ The following operations are available in the audit logs.
 | Get Dataflow Users As Admin | GetDataflowUsersAsAdmin |  |
 | Get Dataflows In Group As Admin | GetDataflowsInGroupAsAdmin |  |
 | Get Dataset Info | GetDatasetInfo | Get the info of the dataset |
-| Get Dataset Query Scale-Out Sync Status | GetDatasetQueryScaleOutSyncStatus | Get Dataset Query Scale-Out Sync Status is a dataset activity which is generated when users request the sync status of a scale out-enabled Power BI dataset. |
+| Get Dataset Query Scale-Out Sync Status | GetDatasetQueryScaleOutSyncStatus | Get Dataset Query Scale-Out Sync Status is a dataset activity, which is generated when users request the sync status of a scale out-enabled Power BI dataset. |
 | Get Dataset Users As Admin | GetDatasetUsersAsAdmin |  |
 | Get Datasets In Group As Admin | GetDatasetsInGroupAsAdmin |  |
 | Get Datasource Details With Credentials Async | GetDatasourceDetailsWithCredentialsAsync |  |
@@ -273,7 +273,7 @@ The following operations are available in the audit logs.
 | Get Goal By Hierarchy Item Ids | GetGoalByHierarchyItemIds |  |
 | Get Goal Status Rules | GetGoalStatusRules |  |
 | Get Goal Value Categories | GetGoalValueCategories |  |
-| Get Groups As Admin | GetGroupsAsAdmin | Get Groups as Admin is a workspace activity which is generated on retrieving list of Power BI workspaces using an API call. |
+| Get Groups As Admin | GetGroupsAsAdmin | Get Groups as Admin is a workspace activity, which is generated on retrieving list of Power BI workspaces using an API call. |
 | Get Hierarchy Goal Values | GetHierarchyGoalValues |  |
 | Get Lakehouse Table Details | GetLakehouseTableDetails |  |
 | Get list of users part of the datasource share policy | GetDatasourceSharePrincipalsPolicy | Retrieve the datasource share principals that are part of policy set by the tenant |
@@ -286,7 +286,7 @@ The following operations are available in the audit logs.
 | Get refresh history via lockbox | GetRefreshHistoryViaLockbox |  |
 | Get Relevant Measures | GetRelevantMeasures |  |
 | Get Reports As Admin | GetReportsAsAdmin |  |
-| Get Reports In Group As Admin | GetReportsInGroupAsAdmin | Get Reports in Group as Admin is a workspace activity which is generated on retrieving the reports present inside a Power BI workspace using an API call. |
+| Get Reports In Group As Admin | GetReportsInGroupAsAdmin | Get Reports in Group as Admin is a workspace activity, which is generated on retrieving the reports present inside a Power BI workspace using an API call. |
 | Get Scorecard By Hierarchy Item Ids | GetScorecardByHierarchyItemIds |  |
 | Get Scorecard Hierarchies | GetScorecardHierarchies |  |
 | Get Scorecard Hierarchy | GetScorecardHierarchy |  |
@@ -335,7 +335,7 @@ The following operations are available in the audit logs.
 | Map Upn | MapUpn |  |
 | Migrated dataflow storage location | MigratedDataflowStorageLocation | Not currently used |
 | Migrated workspace to a capacity | MigrateWorkspaceIntoCapacity |  |
-| Modify Workspace Capacity | ModifyWorkspaceCapacity | Modify Workspace Capacity is a capacity activity which is generated on assigning a Power BI workspace to a capacity using an API call or the UI. |
+| Modify Workspace Capacity | ModifyWorkspaceCapacity | Modify Workspace Capacity is a capacity activity, which is generated on assigning a Power BI workspace to a capacity using an API call or the UI. |
 | Move Scorecard | MoveScorecard |  |
 | No Activity | NoActivity |  |
 | Opt In For P P U Trial | OptInForPPUTrial |  |
@@ -390,7 +390,7 @@ The following operations are available in the audit logs.
 | Rename Lakehouse File | RenameLakehouseFile |  |
 | Rename Lakehouse Folder | RenameLakehouseFolder |  |
 | Rename Lakehouse Table | RenameLakehouseTable |  |
-| Rename Report | RenameReport | Rename Report is a report activity which is generated on renaming the name of a Power BI Report through its settings |
+| Rename Report | RenameReport | Rename Report is a report activity, which is generated on renaming the name of a Power BI Report through its settings |
 | Rename Warehouse | RenameWarehouse |  |
 | Renamed Power BI dashboard | RenameDashboard |  |
 | Request Cognitive Service | RequestCognitiveService | Request Cognitive Service in ML workload. |
@@ -492,8 +492,8 @@ The following operations are available in the audit logs.
 | Started Power BI extended trial | OptInForExtendedProTrial | Not currently used |
 | Started Power BI trial | OptInForProTrial |  |
 | Stop Notebook Session | StopNotebookSession |  |
-| Switch Branch Git | SwitchBranchInGit | Switch Branch Git is a workspace activity which is generated when the user changes what git branch is connected to the workspace. |
-| Sync Dataset Query Scale-Out Replicas | SyncDatasetQueryScaleOutReplicas | Sync Dataset Query Scale-Out Replicas is a dataset activity which is generated when users request a synchronization of the read replicas of a scale out-enabled Power BI dataset with its read/write replica. |
+| Switch Branch Git | SwitchBranchInGit | Switch Branch Git is a workspace activity, which is generated when the user changes what git branch is connected to the workspace. |
+| Sync Dataset Query Scale-Out Replicas | SyncDatasetQueryScaleOutReplicas | Sync Dataset Query Scale-Out Replicas is a dataset activity, which is generated when users request a synchronization of the read replicas of a scale out-enabled Power BI dataset with its read/write replica. |
 | Take Over Email Subscription | TakeOverEmailSubscription |  |
 | Tested Power BI gateway datasource connection with single sign-on | GatewayClusterDatasourceSSOTestConnection |  |
 | Took over a Power BI datasource | TakeOverDatasource |  |
@@ -501,7 +501,7 @@ The following operations are available in the audit logs.
 | Took ownership of Power BI dataflow | TookOverDataflow |  |
 | Trial License Extension | TrialLicenseExtension | Extend user trials by user list or tenant |
 | Unassign Workspace From Alm Pipeline | UnassignWorkspaceFromAlmPipeline |  |
-| Undo Git | UndoGit | Undo Git is an artifact activity which is generated when users undo changes done to artifact. |
+| Undo Git | UndoGit | Undo Git is an artifact activity, which is generated when users undo changes done to artifact. |
 | Unfollow Goal | UnfollowGoal |  |
 | Unpublished Power BI app | UnpublishApp |  |
 | Update Alm Pipeline | UpdateAlmPipeline |  |
@@ -514,8 +514,8 @@ The following operations are available in the audit logs.
 | Update Datamart | UpdateDatamart |  |
 | Update Datamart Metadata | UpdateDatamartMetadata |  |
 | Update Datamart Settings | UpdateDatamartSettings |  |
-| Update Dataset | UpdateDataset | Update Dataset is a dataset activity which is generated when users updated the properties of a Power BI dataset. |
-| Update Dataset Parameters | UpdateDatasetParametersForSolution | Update Dataset Parameters is a dataset activity which is generated when updates are made to a Power BI Dataset parameters |
+| Update Dataset | UpdateDataset | Update Dataset is a dataset activity, which is generated when users updated the properties of a Power BI dataset. |
+| Update Dataset Parameters | UpdateDatasetParametersForSolution | Update Dataset Parameters is a dataset activity, which is generated when updates are made to a Power BI Dataset parameters |
 | Update datasource share policy | UpdateDatasourceShareTenantPolicy | Set the datasource share policy set by the tenant |
 | Update Default Domain | UpdateDefaultDataDomainAsAdmin | Update Default Domain |
 | Update Default Personal Workspace Capacity | UpdateDefaultPersonalWorkspaceCapacity |  |
@@ -527,7 +527,7 @@ The following operations are available in the audit logs.
 | Update Domain's Folders Relations | UpdateDataDomainFoldersRelationsAsAdmin | Update Domain's Folders Relations |
 | Update Domain's Folders Relations As Contributor | UpdateDataDomainFoldersRelationsAsContributor | Update Domain's Folders Relations As Contributor |
 | Update Experiment Run | UpdateExperimentRun |  |
-| Update From Git | UpdateFromGit | Update From Git is an artifact activity which is generated when users update artifact from Git. |
+| Update From Git | UpdateFromGit | Update From Git is an artifact activity, which is generated when users update artifact from Git. |
 | Update Gateway Cluster Member | UpdateGatewayClusterMember |  |
 | Update Gateway Installer Principals | UpdateGatewayInstallerPrincipals |  |
 | Update Gateway Tenant Policy | UpdateGatewayTenantPolicy |  |
@@ -615,6 +615,10 @@ The following operations are available in the audit logs.
 | Viewed Power BI report | ViewReport | A report is also generated per page when exporting a report. Some fields such as CapacityID and CapacityName, will return null if the report or dashboard is viewed from a Power BI app, rather than a Power BI workspace. |
 | Viewed Power BI tile | ViewTile |  |
 | Viewed Power BI usage metrics | ViewUsageMetrics |  |
+
+## Known issues and limitations
+
+For some audit events, the capacity name and capacity ID aren't currently available in the logs.
 
 ## Related content
 
