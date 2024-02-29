@@ -1,4 +1,4 @@
-	items:
+items:
 - name: Security documentation
   href: index.yml
 - name: Overview
@@ -10,7 +10,7 @@
   - name: Governance and compliance documentation
     href: ../governance/index.yml  
   - name: Admin documentation
-    href: ../admin/index.yml                     
+    href: ../admin/index.yml                               
 - name: Network security
   items:
   - name: Inbound
