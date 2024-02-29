@@ -86,7 +86,7 @@ You can view the audit events generated upon the creation and deletion of worksp
 
 1. Navigate to the [Microsoft Purview hub](../governance/use-microsoft-purview-hub.md).
 1. Select the **Audit** tile.
-1. In the audit search form that appears, use the **Activities - friendly names** field to search for *fabric identity* to find the activities related to workspace identities. Currently, the following activities related to workspace identities are
+1. In the audit search form that appears, use the **Activities - friendly names** field to search for *fabric identity* to find the activities related to workspace identities. Currently, the following activities related to workspace identities are:
     * Created Fabric Identity for Workspace
     * Retrieved Fabric Identity for Workspace
     * Deleted Fabric Identity for Workspace
@@ -96,7 +96,7 @@ You can view the audit events generated upon the creation and deletion of worksp
 
 The application associated with the workspace identity can be viewed under both **Enterprise applications and App registrations** in the Azure portal.
 
-#### Enterprise Applications
+#### Enterprise applications
 
 The application associated with the workspace identity can be seen in **Enterprise Applications** in the Azure portal. Fabric Identity Management app is its configuration owner.
 
