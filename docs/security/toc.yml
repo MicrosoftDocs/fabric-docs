@@ -22,7 +22,7 @@ items:
     - name: Set up and use private links
       href: security-private-links-use.md
     - name: Service tags
-      href: service-tags.md
+      href: security-service-tags.md
     - name: Conditional access
       href: security-conditional-access.md
   - name: Outbound
@@ -30,7 +30,7 @@ items:
     - name: Workspace identity
       href: workspace-identity.md
     - name: Trusted workspace access
-      href: trusted-workspace-access.md
+      href: security-trusted-workspace-access.md
     - name: About managed private endpoints
       href: security-managed-private-endpoints-overview.md
     - name: Create managed private endpoints
