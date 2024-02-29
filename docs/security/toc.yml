@@ -21,7 +21,7 @@ items:
       href: security-private-links-use.md
     - name: Service tags
       href: security-service-tags.md
-    - name: Conditional access
+    - name: Microsoft Entra Conditional Access
       href: security-conditional-access.md
   - name: Outbound
     items:
