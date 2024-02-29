@@ -13,10 +13,6 @@ items:
     href: ../admin/index.yml                               
 - name: Network security
   items:
-  - name: Workspace identity
-    href: workspace-identity.md
-  - name: Trusted workspace access
-    href: security-trusted-workspace-access.md
   - name: Inbound
     items:
     - name: About private links
@@ -35,6 +31,10 @@ items:
       href: security-managed-private-endpoints-overview.md
     - name: Create managed private endpoints
       href: security-managed-private-endpoints-create.md
+    - name: Workspace identity
+      href: workspace-identity.md
+    - name: Trusted workspace access
+      href: security-trusted-workspace-access.md
 - name: Data security
   items:
   - name: Guest user sharing
