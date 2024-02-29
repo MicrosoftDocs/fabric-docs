@@ -87,7 +87,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 ### Power BI
 
-* If internet access is disabled, and if the dataset or dataflow Gen1 connects to a Fabric semantic or dataflow Gen1 as a data source, the connection will fail.
+* If internet access is disabled, and if the Fabric semantic, Datamart, or Dataflow Gen1 connects to a Fabric semantic or Dataflow as a data source, the connection will fail.
 
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
