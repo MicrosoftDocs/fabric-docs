@@ -48,10 +48,6 @@ The sections of the workspace identity configuration are described in the follow
 
 For information, see [Access control](#access-control).
 
-### Enable workspace identity to be used with customer-provided endpoints and custom code
-
-Workspace admins can enable the use of workspace identity in connections in custom code such as Spark Notebooks and in data pipelines with customer-provided endpoints. Examples include data pipelines with web activity, and webhook activity.
-
 ### Delete a workspace identity
 
 When an identity is deleted, Fabric items relying on the workspace identity for trusted workspace access or authentication will break. **Deleted workspace identities cannot be restored.**
