@@ -74,7 +74,7 @@ A Contributor on the storage account (an Azure RBAC role) can configure resource
 
 #### Prerequisites
 
-* A Fabric workspace associated with a Fabric capacity. See [Workspace identity](../get-started/workspace-identity.md).
+* A Fabric workspace associated with a Fabric capacity. See [Workspace identity](./workspace-identity.md).
 * Create a workspace identity associated with the Fabric workspace.
 * The user account or service principal used for creating the shortcut should have Azure RBAC roles on the storage account. The principal must have a Storage Blob Data Contributor, Storage Blob Data owner, or Storage Blob Data Reader role at the storage account scope, or a Storage Blob Delegator role at the storage account scope in addition to a Storage Blob Data Reader role at the container scope.
 * Configure a [resource instance rule](#resource-instance-rule) for the storage account.
@@ -192,6 +192,6 @@ You can also create OneLake shortcuts to Azure Data Lake Storage Gen 2 in a KQL 
 
 ## Related content
 
-* [Workspace identity](../get-started/workspace-identity.md)
+* [Workspace identity](./workspace-identity.md)
 * [Grant access from Azure resource instances](/azure/storage/common/storage-network-security?tabs=azure-portal#grant-access-from-azure-resource-instances)
 * [Trusted access based on a managed identity](/azure/storage/common/storage-network-security?tabs=azure-portal#trusted-access-based-on-a-managed-identity)
