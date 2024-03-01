@@ -5,11 +5,9 @@ author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - build-2023
   - ignite-2023
 ms.date: 05/23/2023
-ms.search.form:
 ---
 
 # Deploy content using Deployment pipelines
@@ -85,7 +83,7 @@ When reviewing the test and production stage cards, you can see the last deploym
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Deployment history](deployment-history.md)

@@ -4,7 +4,7 @@ description: Learn how to share your warehouse in Microsoft Fabric and manage it
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 12/05/2023
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -49,7 +49,7 @@ Here's more detail about each of the permissions provided:
 
 - **"Read all data using Apache Spark" is selected ("ReadAll" permissions)**- The shared recipient has read access to the underlying parquet files in OneLake, which can be consumed using Spark. **ReadAll** should be provided only if the shared recipient wants complete access to your warehouse's files using the Spark engine.
 
-- **"Build reports on the default checkbox" is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
+- **"Build reports on the default dataset" checkbox is selected ("Build" permissions)**- The shared recipient can build reports on top of the default semantic model that is connected to your [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. **Build** should be provided if the shared recipient wants **Build** permissions on the default semantic model, to create Power BI reports on this data. The **Build** checkbox is selected by default, but can be unchecked.
 
 When the shared recipient receives the email, they can select **Open** and navigate to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] Data Hub page.
 
@@ -118,6 +118,7 @@ You can choose to add or remove permissions using the "Manage permissions" exper
   - If accessed through [Direct query mode](/power-bi/connect-data/service-dataset-modes-understand#directquery-mode) then **ReadData** permissions (or [granular SQL permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
   - If accessed through [Direct lake mode](/power-bi/enterprise/directlake-overview), then **ReadData** permissions (or [granular permissions](sql-granular-permissions.md) to specific tables/views) need to be provided to the [!INCLUDE [fabric-dw](includes/fabric-dw.md)]. Direct Lake mode is the default connection type for semantic models that use a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] or [!INCLUDE [fabric-se](includes/fabric-se.md)] as a data source. For more information, see [Direct Lake mode](semantic-models.md#direct-lake-mode). 
   - If accessed through [Import mode](/power-bi/connect-data/service-dataset-modes-understand#import-mode) then no additional permissions are needed.
+  - Currently, sharing a warehouse directly with a SPN is not supported. 
 
 ## Data protection features
 

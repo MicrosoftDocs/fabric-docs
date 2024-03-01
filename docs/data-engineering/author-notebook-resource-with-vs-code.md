@@ -53,7 +53,7 @@ The following screenshot shows the **util.py** file moved to the **_backup** sub
 
 :::image type="content" source="media\vscode\update-nb-resource-sample.png" alt-text="Screenshot showing a deleted file moved into a backup subfolder.":::
 
-## Next steps
+## Related content
 
 - [Microsoft Fabric notebook experience in VS Code](author-notebook-with-vs-code.md)
 - [Spark job definition experience in VS Code](author-sjd-with-vs-code.md)

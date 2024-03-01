@@ -29,7 +29,7 @@ The SharePoint list connector supports the following authentication types for co
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SharePoint list. The following links provide the specific Power Query connector information you need to connect to a SharePoint list in Dataflow Gen2:
 
-- To get started using the SharePoint list connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the SharePoint list connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - To determine the URL to use to access your SharePoint list, go to [Determine the site URL](/power-query/connectors/sharepoint-list#determine-the-site-url).
 - To connect to the SharePoint list connector from Power Query, go to [Connect to a SharePoint list from Power Query Online](/power-query/connectors/sharepoint-list#connect-to-a-sharepoint-list-from-power-query-online).
 

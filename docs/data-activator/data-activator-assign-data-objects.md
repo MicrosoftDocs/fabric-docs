@@ -6,10 +6,13 @@ ms.author: davidi
 ms.topic: concept
 ms.custom: 
 ms.search.form: Data Activator Data Mode
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Assign data to objects in Data Activator
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 Once you [get data](data-activator-get-data-power-bi.md) into Data Activator, the next step is to assign your events to objects. You assign events to objects in **Data Mode**, which you can access from the tab at the bottom of the screen. 
 
@@ -52,7 +55,7 @@ You can assign a single event source to multiple objects, which is useful if you
 
 To assign an event stream to multiple objects, you follow the procedures described in the previous two sections, for each object to which you want to assign the event stream.
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

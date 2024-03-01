@@ -28,7 +28,7 @@ The Folder connector supports the following authentication types for copy and Da
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a folder. The following links provide the specific Power Query connector information you need to connect to a folder in Dataflow Gen2:
 
-- To get started using the Folder connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Folder connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - To connect to a folder from Power Query, go to [Connect to a folder from Power Query Online](/power-query/connectors/folder#connect-to-a-folder-from-power-query-online).
 
 In some cases, the Power Query connector article might include advanced options, troubleshooting, known issues and limitations, and other information that could also prove useful.

@@ -23,13 +23,13 @@ Binary format is supported for the following activities and connectors as source
 |---|---|
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | Azure Data Lake Storage Gen1 |
+|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
 | **Supported activity** | [Copy activity](copy-data-activity.md) |
-|  | GetMetadata activity |
-|  | Delete activity |
+|  | [GetMetadata activity](get-metadata-activity.md) |
+|  | [Delete activity](delete-data-activity.md) |
 
 ## Binary format in copy activity
 
@@ -109,7 +109,7 @@ The following properties are supported in the copy activity **Destination** sect
 |**Compression type**|The compression codec used to write binary files.|Choose from:<br>**None**<br>**bzip2** <br>**gzip**<br>**deflate**<br>**ZipDeflate**<br>**TarGzip** <br>**tar**|No|type (*under `compression`*):  <br><br>bzip2<br>gzip<br>deflate<br>ZipDeflate<br>TarGzip <br>tar|
 |**Compression level** |The compression ratio. Allowed values are Optimal or Fastest.|**Optimal** or **Fastest**|No |level (*under `compression`*): <br>Fastest<br>Optimal |
 
-## Next steps
+## Related content
 
 - [Connectors overview](connector-overview.md)
 - [Connect to Binary format in dataflows](connector-binary-dataflows.md)

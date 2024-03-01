@@ -3,24 +3,30 @@ title: Copilot for Data Factory overview
 description: "Learn how Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions."
 author: maggiesMSFT
 ms.author: maggies
-ms.reviewer: abnarain
+ms.reviewer: alpowers
 ms.topic: conceptual
-ms.date: 11/10/2023
+ms.date: 01/16/2024
 ms.custom: 
 ---
 # Copilot for Data Factory overview
 
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
+
 Copilot in Fabric enhances productivity, unlocks profound insights, and facilitates the creation of custom AI experiences tailored to your data. As a component of the Copilot in Fabric experience, Copilot in Data Factory empowers customers to use natural language to articulate their requirements for creating data integration solutions using [Dataflow Gen2](../data-factory/data-factory-overview.md#dataflows).  Essentially, Copilot in Data Factory operates like a subject-matter expert (SME) collaborating with you to design your dataflows.
 
+Before your business can start using Copilot capabilities in Fabric, your administrator needs to [enable Copilot in Microsoft Fabric](copilot-fabric-overview.md#enable-copilot).
+
 Copilot for Data Factory is an AI-enhanced toolset that supports both citizen and professional data wranglers in streamlining their workflow. It provides intelligent [Mashup](/powerquery-m/m-spec-introduction) code generation to transform data using natural language input and generates code explanations to help you better understand earlier generated complex queries and tasks.
+
+[!INCLUDE [copilot-note-include](../includes/copilot-note-include.md)]
 
 ## Supported capabilities
 
 With Dataflow Gen2, you can:
 
-- Generate a new query that may include sample data or a connection to a data source that requires configuring authentication. 
-- Provide a summary of the query and the applied steps.
 - Generate new transformation steps for an existing query.
+- Provide a summary of the query and the applied steps.
+- Generate a new query that may include sample data or a reference to an existing query.
 
 ## Get started
 
@@ -58,9 +64,12 @@ With Dataflow Gen2, you can:
 1. Select the Employees query, and in the Copilot pane type this text: ```Count the total number of employees by City```, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card and an **Undo** button.
 1. Select the column header for the Total Employees column and choose the option **Sort descending**. The **Undo** button disappears because you modified the query.
 
+    :::image type="content" source="media/copilot-fabric-data-factory/copilot-group-by.png" alt-text="Screenshot showing the Copilot pane and Power Query Online user interface." lightbox="media/copilot-fabric-data-factory/copilot-group-by.png":::
  
 1. Select the Order_Details query, and in the Copilot pane type this text: ```Only keep orders whose quantities are above the median value```, then press <kbd>Enter</kbd> or select the **Send message** icon. Your input is now visible in the Copilot pane along with a returned response card. 
 1. Either select the **Undo** button or type the text ```Undo``` (any text case) and press **Enter** in the Copilot pane to remove the step.
+
+    :::image type="content" source="media/copilot-fabric-data-factory/copilot-undo-action.png" alt-text="Screenshot showing the undo button." lightbox="media/copilot-fabric-data-factory/copilot-undo-action.png":::
  
 1. To leverage the power of Azure Open AI when creating or transforming your data, ask Copilot to create sample data by typing this text:
 
@@ -68,6 +77,8 @@ With Dataflow Gen2, you can:
 
     Copilot adds a new query to the Queries pane list, containing the results of your input. At this point, you can either transform data in the user interface, continue to edit with Copilot text input, or delete the query with an input such as ```Delete my current query```.
 
-## Next steps
+    :::image type="content" source="media/copilot-fabric-data-factory/copilot-create-new-query.png" alt-text="Screenshot showing a new query being created." lightbox="media/copilot-fabric-data-factory/copilot-create-new-query.png":::
+
+## Related content
 
 

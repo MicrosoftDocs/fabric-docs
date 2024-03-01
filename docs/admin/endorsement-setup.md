@@ -42,7 +42,7 @@ Certification is part of Power BI's *endorsement* feature. For more information,
 
 1. Select **Apply**.
 
-## Next steps
+## Related content
 
 * [Read about endorsement in Fabric](../governance/endorsement-overview.md)
 * [Promote Fabric items](../get-started/endorsement-promote-certify.md#promote-items)

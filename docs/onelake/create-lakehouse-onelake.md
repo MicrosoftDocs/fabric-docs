@@ -57,6 +57,6 @@ At this point, you have a lakehouse running on top of OneLake. Next, add some da
 
 You've now created your first lakehouse with data stored in OneLake.
 
-## Next steps
+## Related content
 
 - [OneLake shortcuts](onelake-shortcuts.md)

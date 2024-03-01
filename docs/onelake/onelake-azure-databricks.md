@@ -21,18 +21,18 @@ This scenario shows how to connect to OneLake via Azure Databricks. After comple
 Before you connect, you must have:
 
 - A Fabric workspace and lakehouse.
-- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough, which you need for this scenario.
+- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Entra credential passthrough, which you need for this scenario.
 
 ## Set up your Databricks workspace
 
 1. Open your Azure Databricks workspace and select **Create** > **Cluster**.
 
-1. To authenticate to OneLake with your Azure AD identity, you must enable Azure Data Lake Storage (ADLS) credential passthrough on your cluster in the Advanced Options.
+1. To authenticate to OneLake with your Microsoft Entra identity, you must enable Azure Data Lake Storage (ADLS) credential passthrough on your cluster in the Advanced Options.
 
    :::image type="content" source="media\onelake-azure-databricks\advanced-options-create-cluster.png" alt-text="Screenshot showing where to select Create cluster in the Advanced options screen.":::
 
    > [!NOTE]
-   > You can also connect Databricks to OneLake using a service principal. For more information about authenticating Azure Databricks using a service principal, see [Service principals for Azure Databricks automation](/azure/databricks/dev-tools/service-principals).
+   > You can also connect Databricks to OneLake using a service principal. For more information about authenticating Azure Databricks using a service principal, see [Manage service principals](/azure/databricks/administration-guide/users-groups/service-principals).
 
 1. Create the cluster with your preferred parameters. For more information on creating a Databricks cluster, see [Configure clusters - Azure Databricks](/azure/databricks/clusters/configure).
 
@@ -79,6 +79,6 @@ Before you connect, you must have:
 
 Congratulations. You can now read and write data in Fabric using Azure Databricks.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure HDInsight](onelake-azure-hdinsight.md)

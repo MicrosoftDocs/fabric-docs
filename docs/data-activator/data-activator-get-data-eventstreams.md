@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Get data for Data Activator from Eventstreams
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 You can get data for use in Data Activator from many sources. This article describes how to get data from Eventstreams.
 
@@ -44,7 +47,7 @@ To connect your Eventstream item to data activator:
     :::image type="content" source="media/data-activator-get-data/data-activator-get-data-05.png" alt-text="Screenshot of trigger created.":::
 
 
-### Next steps
+## Related content
 
 Once you have connected your Eventstream item to data activator, the next step is to assign your data to some objects. To do this, follow the steps described in the [Assign data to objects in Data Activator](data-activator-assign-data-objects.md) article.
 

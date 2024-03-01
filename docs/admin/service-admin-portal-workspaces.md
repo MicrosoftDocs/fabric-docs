@@ -117,6 +117,6 @@ To restore a deleted My workspace as an app workspace:
 
 After the deleted workspace has been restored as an app workspace, it's just like any other app workspace. 
 
-## Next steps
+## Related content
 
 * [What is the admin portal?](admin-center.md)

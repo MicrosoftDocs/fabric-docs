@@ -31,6 +31,7 @@ Spark notebooks are an excellent tool for validating ideas and doing experiments
 Spark notebooks are excellent source to test the logic of your code and address all the business requirements. However to keep it running in a production scenario, Spark job definitions with Retry Policy enabled are the best solution.
 
 ## Retry policy for Spark Job Definitions
+
 In Microsoft Fabric, the user can set a retry policy for Spark Job Definition jobs. Though the script in the job might be infinite, the infrastructure running the script might incur an issue requiring stopping the job. Or the job could be eliminated due to underlying infrastructure patching needs. The retry policy allows the user to set rules for automatically restarting the job if it stops because of any underlying issues. The parameters specify how often the job should be restarted, up to infinite retries, and setting time between retries. That way, the users can ensure that their Spark Job Definition jobs continue running infinitely until the user decides to stop them.
 
 ## Streaming sources
@@ -120,9 +121,8 @@ rawData = df \
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
 ```
- 
 
-### Optimized Write 
+### Optimized Write
 
 Another option to optimize writes to Delta Lake is using Optimized Write. Optimized Write is an optional feature that improves the way data is written to Delta table. Spark merges or splits the partitions before writing the data, maximizing the throughput of data being written to the disk. However, it incurs full shuffle, so for some workloads it can cause a performance degradation. Jobs using *coalesce()* and/or *repartition()* to partition data on disk can be refactored to start using Optimized Write instead.  
 
@@ -142,7 +142,8 @@ rawData = df \
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
 ```
-### Batching events 
+
+### Batching events
 
 In order to minimize the number of operations to improve the time spent ingesting data into Delta lake, batching events is a practical alternative.  
 
@@ -165,7 +166,7 @@ rawData = df \
   .toTable("deltaeventstable") 
 ```
 
-The advantage of combining batching of events in Delta table writing operations is that it creates larger Delta files with more data in them, avoiding small files. You should analyze the amount of data being ingested and find the best processing time to optimize the size of the Parquet files created by Delta library. 
+The advantage of combining batching of events in Delta table writing operations is that it creates larger Delta files with more data in them, avoiding small files. You should analyze the amount of data being ingested and find the best processing time to optimize the size of the Parquet files created by Delta library.
 
 ## Monitoring
 
@@ -177,6 +178,6 @@ Spark 3.1 and higher versions have a built-in [structured streaming UI](https://
 * Batch Duration
 * Operation Duration
 
-## Next steps
+## Related content
 
 * [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

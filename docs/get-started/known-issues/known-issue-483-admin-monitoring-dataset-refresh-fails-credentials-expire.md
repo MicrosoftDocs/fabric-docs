@@ -4,7 +4,7 @@ description: A known issue is posted where the admin monitoring semantic model r
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting
-ms.date: 08/24/2023
+ms.date: 01/12/2024
 ms.custom:
   - known-issue-483
   - ignite-2023
@@ -14,7 +14,7 @@ ms.custom:
 
 In some workspaces, the credentials for the admin monitoring workspace semantic model expire, which shouldn't happen.  As a result, the semantic model refresh fails, and the **Feature Usage and Adoption** report doesn't work.
 
-**Status:** Open
+**Status:** Fixed: January 12, 2024
 
 **Product Experience:** Administration & Management
 
@@ -26,6 +26,6 @@ In the admin monitoring workspace, you receive refresh failures. Although the se
 
 To fix the semantic model refresh, reinitialize the admin monitoring workspace.
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

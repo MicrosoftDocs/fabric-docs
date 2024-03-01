@@ -17,7 +17,7 @@ Before you can begin creating the lakehouse, you need to create a workspace wher
 
 ## Prerequisites
 
-Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). For public preview, the Fabric (Preview) trial requires a Power BI license. If you don't have one, [sign up for a Power BI free license,](https://app.fabric.microsoft.com) and then you can start the Fabric (Preview) trial.
+Sign up for the free [Microsoft Fabric trial](../get-started/fabric-trial.md). The Fabric trial requires a Power BI license. If you don't have one, [sign up for a Power BI free license,](https://app.fabric.microsoft.com) and then you can start the Fabric trial.
 
 ## Create a workspace
 
@@ -37,14 +37,13 @@ In this step, you create a Fabric workspace. The workspace contains all the item
 
       :::image type="content" source="media\tutorial-lakehouse-get-started\create-workspace-details.png" alt-text="Screenshot of the Create a workspace dialog box.":::
 
-   * **Advanced**: Under **License mode**, select **Premium capacity** and then choose a premium capacity that you have access to.
+   * **Advanced**: Under **License mode**, select **Trial** capacity. You can also choose **Fabric capacity** with F64 SKU or a Power BI **Premium capacity** with P1 SKU if you have access to them. These SKUs provide you access to all the Fabric capabilities.
 
-      :::image type="content" source="media\tutorial-lakehouse-get-started\select-premium-capacity.png" alt-text="Screenshot of the Advanced options dialog box.":::
+      :::image type="content" source="media\tutorial-lakehouse-get-started\select-trial-capacity.png" alt-text="Screenshot of the Advanced options dialog box.":::
 
 1. Select **Apply** to create and open the workspace.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Create a lakehouse in Microsoft Fabric](tutorial-build-lakehouse.md)

@@ -18,21 +18,33 @@ Microsoft Fabric is an integrated analytics service that accelerates time to ins
 
 When you use Apache Spark in Fabric, there are various built-in options to help you visualize your data, including Fabric notebook chart options, and access to popular open-source libraries.
 
-## Notebook chart options
-
 When using a Fabric notebook, you can turn your tabular results view into a customized chart using chart options. Here, you can visualize your data without having to write any code.
 
-### display(df) function
+## Built-in visualization command -  display() function
 
-The _display_ function allows you to turn SQL query results and Apache Spark DataFrames into rich data visualizations. You can use the _display_ function on dataframes created in PySpark and Scala.
+The Fabric built-in visualization function allows you to turn Apache Spark DataFrames, Pandas DataFrames and SQL query results into rich format data visualizations.
 
-To access the chart options:
+You can use the _display_ function on dataframes that created in PySpark and Scala on Spark DataFrames or Resilient Distributed Datasets (RDD) functions to produce the rich dataframe table view and chart view.
 
-1. The output of _%%sql_ magic commands appears in the rendered table view by default. You can also call _display(df)_ on Spark DataFrames or Resilient Distributed Datasets (RDD) functions to produce the rendered table view.
+The output of SQL statement appears in the rendered table view by default.
+
+### Rich dataframe table view
+
+![Animated GIF of rich dataframe preview.](media\notebook-visualization\rich-dataframe-preview.gif)
+
+1. **Table** view is rendered by default when using _display()_ command.
+1. You can profile your dataframe by clicking on **Inspect** button. It provide the summarized data distribution and showing statistics of each column. 
+1. Each card in the "Inspect" side pane maps to a column of the dataframke, you can view more details by clicking on the card or selecting a column in the table.
+1. You can view the cell details by clicking on the cell of the table. This is useful when the dataframe contains long string type of contents.
+1. You can specify the row count of the table view, the default value is **1000**, Notebook support to view and profile **10000** rows of a dataframe at most.
+
+### Rich dataframe chart view
+
+![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
 
 1. Once you have a rendered table view, switch to the **Chart** view.
 
-    ![Animated GIF of chart view.](media\notebook-visualization\chart-view.gif)
+1. Fabric notebook will automatically recommend a "Key" "Value" pair based on the target dataframe, to make the default chart significative with data insights.
 
 1. You can now customize your visualization by specifying the following values:
 
@@ -43,19 +55,20 @@ To access the chart options:
    | Value | Specify the range of values for the y-axis values. |
    | Series group | Use this configuration to determine the groups for the aggregation. |
    | Aggregation | Use this method to aggregate data in your visualization. |
-
+  
+    the configurations will be auto-saved in the Notebook output content.
    > [!NOTE]
    > By default the _display(df)_ function will only take the first 1000 rows of the data to render the charts. Select **Aggregation over all results** and then select **Apply** to apply the chart generation from the whole semantic model. A Spark job will be triggered when the chart setting changes. Please note that it may take several minutes to complete the calculation and render the chart.
 
 1. When the job is complete, you can view and interact with your final visualization.
 
-### display(df) summary view
+## display(df) summary view
 
 Use _display(df, summary = true)_ to check the statistics summary of a given Apache Spark DataFrame. The summary includes the column name, column type, unique values, and missing values for each column. You can also select a specific column to see its minimum value, maximum value, mean value, and standard deviation.
 
 ![Animated GIF of summary view.](media\notebook-visualization\summary-view.gif)
 
-### displayHTML() option
+## displayHTML() option
 
 Fabric notebooks support HTML graphics using the _displayHTML_ function.
 
@@ -164,7 +177,7 @@ You can easily embed and interact with Power BI reports in your notebooks with j
 
 The following image is an example of rendering existing Power BI report.
 
-:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
+:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark quick visual." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
 
 Run the following code to render an existing Power BI report.
 
@@ -183,7 +196,7 @@ You can use a Spark DataFrame in your notebook to quickly generate insightful vi
 
 The following image is an example of a `QuickVisualize()` from a Spark DataFrame.
 
-:::image type="content" source="media\notebook-visualization\spark-quick-visual-report.png" alt-text="Screenshot of a spark quick visual." lightbox="media\notebook-visualization\spark-quick-visual-report.png":::
+:::image type="content" source="media\notebook-visualization\powerbi-report-example.png" alt-text="Screenshot of a Power BI report." lightbox="media\notebook-visualization\powerbi-report-example.png":::
 
 Run the following code to render a report from a Spark DataFrame.
 
@@ -357,6 +370,6 @@ df = pd.DataFrame([[38.0, 2.0, 18.0, 22.0, 21, np.nan],[19, 439, 6, 452, 226,232
 df
 ```
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)

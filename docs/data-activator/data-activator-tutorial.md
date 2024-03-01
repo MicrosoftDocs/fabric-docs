@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Data Activator tutorial using sample data
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 This step-by-step tutorial uses the sample *Packages* data that comes with reflex. By the end of this tutorial, you'll have accomplished the following:
 
@@ -106,7 +109,7 @@ Once you’ve finished with the triggers you created as part of the tutorial, be
 
 :::image type="content" source="media/data-activator-tutorial/data-activator-tutorial-06.png" alt-text="Screenshot that shows the trigger stop button for data activator tutorial.":::
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

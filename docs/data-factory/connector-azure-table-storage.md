@@ -28,7 +28,7 @@ The Azure Table Storage connector supports the following authentication types fo
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Table Storage. The following links provide the specific Power Query connector information you need to connect to Azure Table Storage in Dataflow Gen2:
 
-- To get started using the Azure Table Storage connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Azure Table Storage connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - To learn where to get a copy of your account key, go to [Copy your account key for Azure Table Storage](/power-query/connectors/azure-table-storage#copy-your-account-key-for-azure-table-storage).
 - To connect to the Azure Table Storage connector from Power Query, go to [Connect to Azure Table Storage from Power Query Online](/power-query/connectors/azure-table-storage#connect-to-azure-table-storage-from-power-query-online).
 

@@ -23,9 +23,6 @@ To run a Spark job definition, you must have at least one lakehouse associated w
 > [!TIP]
 > To run a Spark job definition item, you must have a main definition file and default lakehouse context. If you don't have a lakehouse, create one by following the steps in [Create a lakehouse](../data-engineering/create-lakehouse.md).
 
-> [!IMPORTANT]
-> The Spark job definition item is currently in PREVIEW.
-
-## Next steps
+## Related content
 
 - [How to create an Apache Spark job definition in Fabric](create-spark-job-definition.md)

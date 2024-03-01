@@ -16,66 +16,58 @@ ms.search.form: Get started
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md).
 
-One-time data loading is often needed for historical data, or for adding dimension tables. Recall that the dataset you've ingested with Eventstream doesn't contain latitude and longitude data. In this section, you're going to load additional information on the pick-up locations and drop-off from a blob storage container.
+One-time data loading is often needed for historical data, or for adding dimension tables. Recall that the dataset you ingested with Eventstream doesn't contain latitude and longitude data. In this section, you're going to load additional information on the pick-up and drop-off locations.
 
 ## Get dimension data from blob storage
 
+1. Open the Fabric samples repository on GitHub to download the [Locations data](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/real-time-analytics/ny-yellow-taxi-location-info.csv)
+
+    :::image type="content" source="media/realtime-analytics-tutorial/github-data.png" alt-text="Screenshot of the Fabric samples repository showing the dimensions data file.":::
+
+1. Save the file locally.
+
+    > [!NOTE]
+    > The data must be saved in the `.csv` file format.
+
 1. Browse to your KQL database named *NycTaxiDB*.
-1. Select **Get data** > **Blob container**.
+1. Select **Get data**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/get-data-blob-container.png" alt-text="Screenshot of get data from blob container.":::
+    In the **Get data** window, the **Source** tab is selected.
 
-    An **Ingest data** window opens with the **Destination** tab selected.
+    :::image type="content" source="media/realtime-analytics-tutorial/select-data-source.png" alt-text="Screenshot of the get data window showing the data sources available for ingestion.":::
+1. Select **Local file**.
 
-### Destination tab
+### Configure
 
-1. Under **Table**, make sure that **New table** is selected, and enter *Locations* as the table name.
-1. Select **Next: Source**.
+1. Select **+ New table**, and enter *Locations* as the table name.
+1. Either drag the *Locations data* file into the window, or select **Browse for files** and then select the file.
+1. Select **Next**.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/destination-tab.png" alt-text="Screenshot of destination tab showing the table name. The Next:Source button is highlighted.":::
+   :::image type="content" source="media/realtime-analytics-tutorial/configure-source.png" alt-text="Screenshot of the destination window showing the data source connection string." lightbox="media/realtime-analytics-tutorial/configure-source.png":::
 
-### Source tab
+### Inspect
 
-In the **Source** tab, **Source type** is auto populated with *Blob container*.
+The inspect tab opens with a preview of the data. The tool automatically infers the schema based on your data. No changes are necessary.
 
-:::image type="content" source="media/realtime-analytics-tutorial/source-tab-filled-out.png" alt-text="Screenshot of source tab with blob container filled out." lightbox="media/realtime-analytics-tutorial/source-tab-filled-out.png":::
+:::image type="content" source="media/realtime-analytics-tutorial/inspect-source.png" alt-text="Screenshot of the inspection window showing the Location data schema.":::
 
-1. Fill out the remaining fields according to the following table:
+Select **Finish** to complete the ingestion process.
 
-    |  **Setting**  | **Suggested value**  | **Field description**
-    |-------|---|------
-    | Ingestion  |   *One-time*         |The type of data ingestion type.
-    | Link to source |  *https://azuresynapsestorage.blob.core.windows.net/sampledata/NYCTaxiLocations/* | URI to the blob container where the files are located |
-    | Sample size |  *Blank*
-    | Folder path |  *Blank*
-    | Schema  defining file |  Choose the first file
+### Summary
 
-1. Select **Next: Schema**.
+In the **Data preparation** window, all three steps are marked with green check marks when the data ingestion finishes.
 
-### Schema tab
+:::image type="content" source="media/realtime-analytics-tutorial/summary.png" alt-text="Screenshot of summary page with data ingestion completed."  lightbox="media/realtime-analytics-tutorial/summary.png":::
 
-The tool automatically infers the schema based on your data. No changes are necessary.
-
-:::image type="content" source="media/realtime-analytics-tutorial/schema-tab.png" alt-text="Screenshot of schema tab." lightbox="media/realtime-analytics-tutorial/schema-tab.png":::
-
-Select **Next: Summary**.
-
-### Summary tab
-
-In the **Data ingestion completed** window, all steps are marked with green check marks when the data has been successfully
-loaded.
-
-:::image type="content" source="media/realtime-analytics-tutorial/data-ingestion-complete.png" alt-text="Screenshot of summary page with data ingestion completed." lightbox="media/realtime-analytics-tutorial/data-ingestion-complete.png":::
-
-Select **Close** to return to your database landing page.
+Select **Close** to return to the main page of your database.
 
 ## Related content
 
 For more information about tasks performed in this tutorial, see:
 
-* [Get data from Azure storage](get-data-azure-storage.md)
+* [Get data from file](get-data-local-file.md)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md)

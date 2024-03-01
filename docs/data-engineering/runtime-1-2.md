@@ -803,5 +803,6 @@ The following table lists all the default level packages for R and their respect
 | r-callr                   | 3.7.3        | r-plyr          | 1.8.9      | zlib             | 1.2.13     |
 |                           |              |                 |            | zstd             | 1.5.5      |
 
-## Next steps
+## Related content
+
 - Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)

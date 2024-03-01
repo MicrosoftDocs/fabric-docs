@@ -82,8 +82,7 @@ Follow these steps to enable Data Activator for a specific capacity.
 
 To disable Data Activator, you can turn off the *Data Activator (Preview)* admin switch. If you disable Data Activator for a specific capacity while it's available in your organization, your selection will only affect that capacity.
 
-## Next steps
+## Related content
 
 * [Enable Microsoft Fabric for your organization](fabric-switch.md)
-
 * [Admin overview](microsoft-fabric-admin.md)

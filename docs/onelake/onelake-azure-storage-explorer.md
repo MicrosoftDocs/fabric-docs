@@ -61,6 +61,6 @@ This article demonstrates OneLake integration with Azure Storage Explorer. Azure
 
 If a workspace name has capital letters, deletion of files or folders fails due to a restriction from the storage service. We recommend using your workspace name in lowercase letters.
 
-## Next steps
+## Related content
 
 - [Integrate OneLake with Azure Databricks](onelake-azure-databricks.md)

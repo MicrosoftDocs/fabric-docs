@@ -24,14 +24,14 @@ In this tutorial you learn to:
 
 ## Create a Lakehouse and get a CSV file ready
 
-1. In Microsoft Fabric, select **Synapse Data Engineering** experience
-1. Make sure you are in desired workspace or select/create one
-1. Select **Lakehouse** icon under New section in the main mage
+1. In Microsoft Fabric, select **Synapse Data Engineering**.
+1. Make sure that you're in your desired workspace, or select or create one.
+1. In the **Home** page, select **Lakehouse**.
 
-   :::image type="content" source="media\get-started-csv-upload\new-lakehouse.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-streaming\new-lakehouse.png":::
+   :::image type="content" source="media\get-started-csv-upload\new-lakehouse-inline.png" alt-text="Screenshot showing new lakehouse dialog." lightbox="media\get-started-csv-upload\new-lakehouse.png":::
 
-1. Enter name of your Lakehouse
-1. Select **Create**
+1. Enter name of your Lakehouse.
+1. Select **Create**.
 1. Download the "Taxi Zone Lookup Table" [CSV file](https://d37ci6vzurychx.cloudfront.net/misc/taxi+_zone_lookup.csv) from the [TLC Trip Record Data website](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page), and save to a location in your computer.
 
 ## Upload a CSV file to the Lakehouse
@@ -58,14 +58,14 @@ In this tutorial you learn to:
 ## Generate a semantic model and create a Power BI report
 
 1. Select **New Power BI semantic model** on the Lakehouse ribbon.
-1. Select the table to be added to the semantic model model, select the **Confirm** button.
+1. Select the table to be added to the semantic model, select the **Confirm** button.
 1. On the semantic model editing experience, you are able to define relationships between multiple tables, and also apply data types normalization and DAX transformations to the data if desired.
 1. Select **New report** on the ribbon.
 1. Use the report builder experience to design a Power BI report.
 
    :::image type="content" source="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif" alt-text="Animated image showing semantic model and power bi report generation" lightbox="media\get-started-csv-upload\generate-dataset-and-power-bi-report.gif":::
 
-## Next steps
+## Related content
 
 - [Load to Delta Lake tables](load-to-tables.md)
 - [What is Delta Lake?](/azure/synapse-analytics/spark/apache-spark-what-is-delta-lake)

@@ -22,9 +22,9 @@ To get started, you must complete the following prerequisites:
 - A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
-## Add a lookup activity to a pipeline with UI
+## Add a Get Metadata activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Get Metadata activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
@@ -59,6 +59,6 @@ After adding any other activities necessary to your pipeline, you can save and r
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

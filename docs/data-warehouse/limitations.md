@@ -4,7 +4,7 @@ description: This article contains a list of current limitations in Microsoft Fa
 author: joannapea
 ms.author: joanpo
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 02/08/2024
 ms.topic: conceptual
 ms.custom:
   - build-2023
@@ -24,6 +24,7 @@ Current general product limitations for Data Warehousing in Microsoft Fabric are
 
 - At this time, there's limited T-SQL functionality, and certain T-SQL commands can cause warehouse corruption. See [T-SQL surface area](tsql-surface-area.md) for a list of T-SQL command limitations.
 - Data warehousing is not supported for *multiple* geographies at this time.
+- Currently, parquet files that are no longer needed are not removed from storage by garbage collection.
 
 For more limitations in specific areas, see:
 
@@ -52,7 +53,7 @@ The following Azure regions are currently not supported for [!INCLUDE [fabric-dw
 
 The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)] automatic schema generation and metadata discovery.
 
-- Data should be in Delta Parquet format to be auto-discovered in the [!INCLUDE [fabricse](includes/fabric-se.md)]. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
+- Data should be in Delta Parquet format to be autodiscovered in the [!INCLUDE [fabricse](includes/fabric-se.md)]. [Delta Lake is an open-source storage framework](https://delta.io/) that enables building Lakehouse architecture.
 
 - Tables with renamed columns aren't supported in the [!INCLUDE [fabric-se](includes/fabric-se.md)]. 
 
@@ -68,7 +69,6 @@ The following limitations apply to [!INCLUDE [fabric-se](includes/fabric-se.md)]
 
 For known issues in [!INCLUDE [product-name](../includes/product-name.md)], visit [Microsoft Fabric Known Issues](https://support.fabric.microsoft.com/known-issues/).
 
-## Next step
+## Related content
 
-> [!div class="nextstepaction"]
-> [Get Started with Warehouse](create-warehouse.md)
+- [Get Started with Warehouse](create-warehouse.md)

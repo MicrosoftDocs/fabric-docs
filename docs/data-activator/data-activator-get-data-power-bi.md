@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Get data for Data Activator from Power BI
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 You can get data for use in Data Activator from many sources. This article describes how to get data from Power BI.
 
@@ -58,7 +61,7 @@ When your trigger is ready, Power BI notifies you and gives you the option to ed
 Editing your trigger in Data Activator can be useful if you want to define a more complex alert condition than is possible in Power BI, or if you want to trigger a Power Automate flow when your trigger fires. Refer to [Create triggers in design mode](data-activator-create-triggers-design-mode.md) for information on how to edit triggers in Data Activator.
 
 
-### Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

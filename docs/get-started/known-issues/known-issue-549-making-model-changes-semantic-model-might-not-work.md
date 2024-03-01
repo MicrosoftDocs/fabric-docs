@@ -30,6 +30,6 @@ If impacted, perform the following actions in the semantic model to work around 
 1. Readd objects to the semantic model
 1. Select the **Save** button
 
-## Next steps
+## Related content
 
 - [About known issues](https://support.fabric.microsoft.com/known-issues)

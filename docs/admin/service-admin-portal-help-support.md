@@ -80,6 +80,6 @@ As with other tenant settings, you can choose who the **custom message** applies
 - **Specific security groups**.
 - Or **Except specific security groups**.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

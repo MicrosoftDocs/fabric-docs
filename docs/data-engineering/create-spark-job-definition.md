@@ -33,17 +33,17 @@ The Spark job definition creation process is quick and simple; there are several
 
 There are a few ways you can get started with the creation process:
 
-- **Data engineering homepage**: You can easily create a Spark job definition through the **Spark job definition** card under the **New** section in the homepage.
+- **Data engineering homepage**: You can easily create a Spark job definition through the **Spark Job Definition** card under the **New** section in the homepage.
 
-:::image type="content" source="media\create-spark-job-definition\spark-job-definition-card.png" alt-text="Screenshot showing where to select the Spark job definition card." lightbox="media\create-spark-job-definition\spark-job-definition-card.png":::
+  :::image type="content" source="media\create-spark-job-definition\spark-job-definition-card.png" alt-text="Screenshot showing where to select the Spark job definition card.":::
 
-- **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are in the **Data Engineering** experience by using the **New** dropdown.
+- **Workspace view**: You can also create a Spark job definition through the **Workspace** view when you are in the **Data Engineering** experience by using the **New** dropdown menu.
 
-:::image type="content" source="media\create-spark-job-definition\data-engineering-new.png" alt-text="Screenshot showing where to select Spark job definition in the New menu." lightbox="media\create-spark-job-definition\data-engineering-new.png":::
+  :::image type="content" source="media\create-spark-job-definition\data-engineering-new.png" alt-text="Screenshot showing where to select Spark job definition in the New menu.":::
 
-- **Create Hub**: Another entry point to create a Spark job definition is the **Create Hub** page under **Data Engineering**.
+- **Create view**: Another entry point to create a Spark job definition is the **Create** page under **Data Engineering**.
 
-:::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub." lightbox="media\create-spark-job-definition\create-hub-data-engineering.png":::
+  :::image type="content" source="media\create-spark-job-definition\create-hub-data-engineering.png" alt-text="Screenshot showing where to select Spark job definition on the Create Hub.":::
 
 You need to give your Spark job definition a name when you create it. The name must be unique within the current workspace. The new Spark job definition is created in your current workspace.
 
@@ -75,7 +75,7 @@ To create a Spark job definition for PySpark:
 
    Multiple lakehouse references are supported. Find the non-default lakehouse name and full OneLake URL in the **Spark Settings** page.
 
-   :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen." lightbox="media\create-spark-job-definition\main-definition-file-example.png":::
+   :::image type="content" source="media\create-spark-job-definition\main-definition-file-example.png" alt-text="Screenshot showing an example of a populated main definition file screen.":::
 
 ### Create a Spark job definition for Scala/Java
 
@@ -118,13 +118,13 @@ There are a few options to further customize the execution of Spark job definiti
 
 - **Spark Compute**: Within the **Spark Compute** tab, you can see [the Runtime Version](./runtime.md) which is the version of Spark that will be used to run the job. You can also see the Spark configuration settings that will be used to run the job. You can customize the Spark configuration settings by clicking on the **Add** button.
 
-
-   :::image type="content" source="media\create-spark-job-definition\spark-compute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\spark-compute.png":::
+<!--
+   :::image type="content" source="media\create-spark-job-definition\spark-compute.png" alt-text="Screenshot showing where to edit Spark configuration." lightbox="media\create-spark-job-definition\spark-compute.png"::: -->
 
 - **Optimization**: On the **Optimization** tab, you can enable and set up the **Retry Policy** for the job. When enabled, the job is retried if it fails. You can also set the maximum number of retries and the interval between retries. For each retry attempt, the job is restarted. Make sure the job is **idempotent**.
 
-   :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to set up retry policy." lightbox="media\create-spark-job-definition\retry-policy.png":::
+   :::image type="content" source="media\create-spark-job-definition\retry-policy.png" alt-text="Screenshot showing where to set up retry policy.":::
 
-## Next steps
+## Related content
 
 - [Run an Apache Spark job definition](run-spark-job-definition.md)

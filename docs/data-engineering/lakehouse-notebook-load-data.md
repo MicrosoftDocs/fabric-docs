@@ -75,6 +75,6 @@ The quickest way to have the code to work with Spark API or Pandas API is to use
 
 :::image type="content" source="media\lakehouse-notebook-explore\load-data-menu.png" alt-text="Screenshot showing where to select load data option." lightbox="media\lakehouse-notebook-explore\load-data-menu.png":::
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)

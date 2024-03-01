@@ -177,7 +177,7 @@ This means the following:
 
 * **Moving a workspace from one capacity to another within the same region**
 
-    If the workspace has non Power BI Fabric items, you can only move it from one Premium capacity to another Premium capacity. If you want to move the workspace from Premium to shared capacity, you won’t be able to do so unless you delete all non-Power BI Fabric items first.
+    If the workspace has non Power BI Fabric items, you can only move it from one Premium capacity to another Premium capacity. If you want to move the workspace from Premium to shared capacity, you won't be able to do so unless you delete all non-Power BI Fabric items first.
 
     If the workspace has no non Power BI Fabric items (that is, it has only Power BI items) moving the workspace from Premium to shared is supported.  
 
@@ -187,6 +187,6 @@ This means the following:
 
     If the workspace has no non-Power BI Fabric items (that is, it has only Power BI items) moving the workspace to another capacity in a different region is supported.
 
-## Next steps
+## Related content
 
-[About the admin portal](admin-center.md)
+- [About the admin portal](admin-center.md)

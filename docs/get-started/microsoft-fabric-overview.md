@@ -31,7 +31,7 @@ Microsoft Fabric brings together new and existing components from Power BI, Azur
 
 Fabric brings together experiences such as Data Engineering, Data Factory, Data Science, Data Warehouse, Real-Time Analytics, and Power BI onto a shared SaaS foundation. This integration provides the following advantages:
 
-- An extensive range of deeply integrated analytics in the industry.
+- Access to an extensive range of deeply integrated analytics in the industry.
 - Shared experiences across experiences that are familiar and easy to learn.
 - Developers can easily access and reuse all assets.
 - A unified data lake that allows you to retain the data where it is while using your preferred analytics tools.
@@ -61,7 +61,7 @@ Microsoft Fabric offers the comprehensive set of analytics experiences designed 
 
 Fabric brings together all these experiences into a unified platform to offer the most comprehensive big data analytics platform in the industry.
 
-Microsoft Fabric enables organizations, and individuals, to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. To learn more about data mesh, visit the article that explains [data mesh architecture](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh). 
+Microsoft Fabric enables organizations, and individuals, to turn large and complex data repositories into actionable workloads and analytics, and is an implementation of data mesh architecture. To learn more about data mesh, visit the article that explains [data mesh architecture](/azure/cloud-adoption-framework/scenarios/cloud-scale-analytics/architectures/what-is-data-mesh).
 
 ## OneLake and lakehouse - the unification of lakehouses
 
@@ -105,7 +105,7 @@ If you're an ISV interested in integrating your solutions with Microsoft Fabric,
 
 For more information, see the [Fabric ISV partner ecosystem](../cicd/partners/partner-integration.md).
 
-## Next steps
+## Related content
 
 - [Microsoft Fabric terminology](fabric-terminology.md)
 - [Create a workspace](create-workspaces.md)

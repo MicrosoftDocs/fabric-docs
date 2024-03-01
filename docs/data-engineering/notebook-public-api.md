@@ -19,6 +19,9 @@ The Microsoft Fabric REST API provides a service endpoint for the create, read, 
 
 [!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
+> [!NOTE]
+> [Service principal authentication](/entra/identity-platform/app-objects-and-service-principals#service-principal-object)  is not supported for now.
+
 With the notebook APIs, data engineers and data scientists can automate their own pipelines and conveniently and efficiently establish CI/CD. These APIs also make it easy for users to manage and manipulate Fabric notebook items, and integrate notebooks with other tools and systems.
 
 These **Item management** actions are available for notebooks:
@@ -196,7 +199,7 @@ Retry-After: 60
 
 With `location`, you can use [Get Item Job Instance](/rest/api/fabric/) to view job status or use [Cancel Item Job Instance](/rest/api/fabric/) to cancel the current notebook run.
 
-## Next steps
+## Related content
 
 - [Develop, execute, and manage Microsoft Fabric notebooks](author-execute-notebook.md)
 - [Notebook source control and deployment](notebook-source-control-deployment.md)

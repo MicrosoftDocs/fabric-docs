@@ -24,7 +24,7 @@ To find your Fabric home region, follow these steps:
 
     :::image type="content" source="./media/find-fabric-home-region/find-fabric-home-region.png" alt-text="Screenshot showing the About Microsoft Fabric window with the data storage location highlighted.":::
 
-## Next steps
+## Related content
 
 * [Buy a Microsoft Fabric subscription](../enterprise/buy-subscription.md)
 * [Region availability](./region-availability.md)

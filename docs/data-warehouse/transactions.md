@@ -4,7 +4,7 @@ description: Learn how to use transactions and how to insert and modify data in 
 author: KevinConanMSFT
 ms.author: kecona
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 01/22/2024
 ms.topic: how-to
 ms.custom:
   - build-2023
@@ -13,7 +13,7 @@ ms.search.form: Warehouse design and development # This article's title should n
 ---
 # Transactions in Warehouse tables in Microsoft Fabric
 
-**Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Similar to their behavior in SQL Server, transactions allow you to control the commit or rollback of read and write queries. 
 
@@ -32,7 +32,7 @@ Transactions can also be used for sequential SELECT statements to ensure the tab
 
 ## Cross-database query transaction support
 
-[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one SQL analytics endpoint and each workspace can have more than one lakehouse.
+[!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)] supports transactions that span across databases that are within the same workspace including reading from the [SQL analytics endpoint of the Lakehouse](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse). Every [Lakehouse](../data-engineering/lakehouse-overview.md) has one read-only SQL analytics endpoint. Each workspace can have more than one lakehouse.
 
 ## DDL support within transactions
 
@@ -69,10 +69,11 @@ Transaction logging in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUD
 - Save points are not supported.
 - Named transactions are not supported.
 - Marked transactions are not supported.
+- ALTER TABLE is not supported within an explicit transaction.
 - At this time, there's limited T-SQL functionality in the warehouse. See [TSQL surface area](tsql-surface-area.md) for a list of T-SQL commands that are currently not available.
 - If a transaction has data insertion into an empty table and issues a SELECT before rolling back, the automatically generated statistics can still reflect the uncommitted data, causing inaccurate [statistics](statistics.md). Inaccurate statistics can lead to unoptimized query plans and execution times. If you roll back a transaction with SELECTs after a large INSERT, [update statistics](/sql/t-sql/statements/update-statistics-transact-sql?view=fabric&preserve-view=true) for the columns mentioned in your SELECT.
 
 ## Related content
 
-- [Query the Warehouse](query-warehouse.md)
+- [Query the SQL analytics endpoint or Warehouse in Microsoft Fabric](query-warehouse.md)
 - [Tables in [!INCLUDE[fabricdw](includes/fabric-dw.md)]](tables.md)

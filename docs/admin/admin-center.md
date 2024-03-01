@@ -49,16 +49,14 @@ The many controls in the admin portal are listed in the table below with links t
 
 To get to the admin portal, follow these steps:
 
-1. Sign in to Microsoft Fabric using your admin account credentials.
+1. Sign in to [Microsoft Fabric](https://app.fabric.microsoft.com) using your admin account credentials.
 
 2. Select **Fabric settings** and then from the menu select **Admin portal**.
 
     :::image type="content" source="./media/admin-center/admin-portal-option-settings-menu.png" alt-text="Screenshot showing Admin portal option on the Fabric settings menu.":::
 
-## Next steps
+## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
-
 * [Workspace tenant settings](portal-workspace.md)
-
 * [Manage workspaces](portal-workspaces.md)

@@ -33,7 +33,7 @@ Learn about the [Embed for your customers](/power-bi/developer/embedded/embedded
 
 ## Allow service principals to use Power BI APIs
 
-Web apps registered in Azure Active Directory (Azure AD) use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
+Web apps registered in Microsoft Entra ID use an assigned [service principal](/power-bi/developer/embedded/pbi-glossary#service-principal) to access Power BI APIs without a signed-in user. To allow an app to use service principal authentication, its service principal must be included in an allowed security group.
 
 You can control who can access service principals by creating dedicated security groups and using these groups in any Power BI tenant level-settings.
 
@@ -51,6 +51,6 @@ For extra security, you can block the use of resource key-based authentication. 
 
 This setting applies to the entire organization. You can't apply it only to a select security group.
 
-## Next steps
+## Related content
 
 - [About tenant settings](tenant-settings-index.md)

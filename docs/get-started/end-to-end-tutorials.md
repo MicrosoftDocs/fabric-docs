@@ -39,7 +39,7 @@ The following tutorials walk you through scenarios within specific Fabric experi
 | [Data Science - Price prediction with R](../data-science/r-avocado.md) | In this tutorial, you build a machine learning model to analyze and visualize the avocado prices in the US and predict future prices. |
 | [Application lifecycle management](../cicd/cicd-tutorial.md) | In this tutorial, you learn how to use deployment pipelines together with git integration to collaborate with others in the development, testing and publication of your data and reports. |
 
-## Next steps
+## Related content
 
 * [Create a workspace](create-workspaces.md)
 * Discover data items in the [OneLake data hub](onelake-data-hub.md)

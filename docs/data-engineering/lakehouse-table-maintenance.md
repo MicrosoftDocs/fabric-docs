@@ -43,7 +43,7 @@ How to use the feature:
 
 1. From your Microsoft Fabric account, navigate to the desired Lakehouse.
 1. From the Lakehouse explorer's **Tables** section, either right-click on the table or use the ellipsis to access the contextual menu.
-1. Select the**Optimize** menu entry.
+1. Select the **Maintenance** menu entry.
 1. Check the maintenance options in the dialog per your requirement. For more information, see the [Table maintenance operations](#table-maintenance-operations) section of this article.
 1. Select **Run now** to execute the table maintenance job.
 1. Track maintenance job execution by the notifications pane, or the Monitoring Hub experience.
@@ -60,7 +60,7 @@ After **Run now** is selected, a Spark maintenance job is submitted for executio
 1. Jobs on different tables can execute in parallel.
 1. Table maintenance jobs can be easily tracked in the Monitoring Hub. Look for "TableMaintenance" text within the activity name column in the monitoring hub main page.
 
-## Next steps
+## Related content
 
 - [Delta Lake table optimization and V-Order](delta-optimization-and-v-order.md)
 - [Manage the Lakehouse with Microsoft Fabric REST API](lakehouse-api.md)

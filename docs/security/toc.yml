@@ -5,23 +5,46 @@ items:
   items:
   - name: Security overview
     href: security-overview.md
-- name: Security features
+  - name: Security fundamentals
+    href: security-fundamentals.md   
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml  
+  - name: Admin documentation
+    href: ../admin/index.yml                               
+- name: Network security
+  items:
+  - name: Inbound
+    items:
+    - name: About private links
+      href: security-private-links-overview.md
+    - name: Set up and use private links
+      href: security-private-links-use.md
+    - name: Service tags
+      href: security-service-tags.md
+    - name: Microsoft Entra Conditional Access
+      href: security-conditional-access.md
+  - name: Outbound
+    items:
+    - name: Overview of mananged VNets
+      href: security-managed-vnets-fabric-overview.md
+    - name: About managed private endpoints
+      href: security-managed-private-endpoints-overview.md
+    - name: Create managed private endpoints
+      href: security-managed-private-endpoints-create.md
+    - name: Workspace identity
+      href: workspace-identity.md
+    - name: Trusted workspace access
+      href: security-trusted-workspace-access.md
+- name: Data security
   items:
   - name: Guest user sharing
     href: security-b2b.md
-  - name: Conditional access
-    href: security-conditional-access.md
   - name: Customer Lockbox
     href: security-lockbox.md
-  - name: Service tags
-    href: security-service-tags.md
-- name: Resiliency
+- name: Reliability
   items:
-  - name: Resiliency in Fabric
-    href: az-resiliency.md
-  - name: Disaster recovery
-    items:  
-    - name: Disaster recovery in Fabric
-      href: disaster-recovery-guide.md
-    - name: Recovery guides by experience
-      href: experience-specific-guidance.md
+  - name: Reliability in Microsoft Fabric
+    href: /azure/reliability/reliability-fabric?toc=/fabric/security/toc.json&bc=/fabric/breadcrumb/toc.json
+  - name: Disaster recovery guides by experience
+    href: experience-specific-guidance.md
+    

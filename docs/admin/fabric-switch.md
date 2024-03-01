@@ -71,7 +71,7 @@ Follow these steps to enable Microsoft Fabric for a specific capacity.
 
 2. Select the capacity you want to enable Microsoft Fabric for.
 
-3. Select the **Delegate tenant settings** tab, and under *Microsoft Fabric (Preview)*, expand the **Users can create Fabric items** setting.
+3. Select the **Delegate tenant settings** tab, and under **Microsoft Fabric**, expand the **Users can create Fabric items** setting.
 
 4. Check the **Override tenant admin selection** checkbox and verify that the **Users can create Fabric items** setting is enabled.
 
@@ -93,8 +93,7 @@ Users that don't have Microsoft Fabric enabled, can:
 
 * View Microsoft Fabric icons in capacities where other users have Microsoft Fabric enabled, as long as they have at least read-only access to that capacity.
 
-## Next steps
+## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
-
 * [Enable Data Activator](data-activator-switch.md)

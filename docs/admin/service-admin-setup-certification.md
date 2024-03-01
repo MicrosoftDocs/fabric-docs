@@ -41,8 +41,7 @@ Certification is part of Power BI's *endorsement* feature. See [Endorsement: Pro
     If a security group contains subsecurity groups that you don't want to give certification rights to, you can check the **Except specific security groups** box and enter the name(s) of those group(s) in a text box that appears.
 1. Select **Apply**.
 
-## Next steps
+## Related content
 
 - [Promote or certify content](/power-bi/collaborate-share/service-endorse-content)
-
 - [Read about endorsement in Power BI](/power-bi/collaborate-share/service-endorsement-overview)

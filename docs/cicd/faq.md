@@ -152,7 +152,7 @@ When you have a dataflow that contains semantic models that are configured with 
 
 Deployment pipelines don't display datasets that belong to datamarts in the pipeline stages. When you're deploying a datamart, its dataset is also deployed. You can view your datamart's dataset in the workspace of the stage it's in.
 
-## Next steps
+## Related content
 
 * [Get started with Git integration](git-integration/git-get-started.md)
 * [Get started with deployment pipelines](deployment-pipelines/get-started-with-deployment-pipelines.md)

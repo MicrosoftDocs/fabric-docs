@@ -8,7 +8,7 @@ ms.topic: tutorial
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 02/04/2024
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 1: Create resources
@@ -29,11 +29,11 @@ ms.search.form: Get started
 
     When provisioning is complete, the KQL database details page is shown.
 
-## Enable availability in OneLake
+## Turn on OneLake availability
 
 1. In the **Database details** card, select the **pencil** icon.
 
-    :::image type="content" source="media/realtime-analytics-tutorial/onelake-folder-active.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-folder-active.png":::
+    :::image type="content" source="media/realtime-analytics-tutorial/onelake-availability.png" alt-text="Screenshot of database details page with pencil icon highlighted." lightbox="media/realtime-analytics-tutorial/onelake-availability.png":::
 
 1. Toggle the button to **Active** and select **Done**.
 
@@ -44,9 +44,9 @@ ms.search.form: Get started
 For more information about tasks performed in this tutorial, see:
 
 * [Create a database](create-database.md)
-* [Enable availability in OneLake](onelake-mirroring.md#enable-availability-in-onelake)
+* [Turn on OneLake availability](one-logical-copy.md#turn-on-onelake-availability)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 2: Get data with Eventstream](tutorial-2-event-streams.md)

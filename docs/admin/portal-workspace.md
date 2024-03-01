@@ -23,7 +23,7 @@ Workspaces are places where users collaborate on dashboards, reports, and other 
 
 :::image type="content" source="media/portal-workspace/power-bi-admin-workspace-settings.png" alt-text="Screenshot showing Create a workspace.":::
 
-For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Azure Active Directory.
+For classic workspaces based on Microsoft 365 Groups, administration continues to occur in admin portal and Microsoft Entra ID.
 
 > [!NOTE]
 > The **Create workspaces (new workspace experience)** setting defaults to allowing only users who can create Microsoft 365 Groups to create the new [!INCLUDE [product-name](../includes/product-name.md)] workspaces. Be sure to set a value in the [!INCLUDE [product-name](../includes/product-name.md)] admin portal to ensure appropriate users can create them.
@@ -61,6 +61,6 @@ To turn on the setting:
 
 For more information, see [Prevent My workspace owners from reassigning their My workspaces to a different capacity](./portal-workspaces.md#prevent-my-workspace-owners-from-reassigning-their-my-workspaces-to-a-different-capacity).
 
-## Next steps
+## Related content
 
 [About tenant settings](tenant-settings-index.md)

@@ -83,6 +83,6 @@ In **Workspace settings**, review your existing configurations.
 
     :::image type="content" source="media\environment-migration\success.png" alt-text="Screenshot of migration succeeds.":::
 
-## Next steps
+## Related content
 
 - [Create, configure, and use an environment in Microsoft Fabric](create-and-use-environment.md).

@@ -3,10 +3,16 @@ items:
   href: index.yml
 - name: Overview
   items:
+  - name: Administration overview
+    href: admin-overview.md          
   - name: What is Microsoft Fabric admin?
     href: microsoft-fabric-admin.md
   - name: What is the admin portal?
     href: admin-center.md
+  - name: Governance and compliance documentation
+    href: ../governance/index.yml      
+  - name: Security documentation
+    href: ../security/index.yml    
 - name: Get started
   items:
   - name: Enable Fabric for your organization
@@ -68,8 +74,6 @@ items:
     href: portal-workspace.md
 - name: Feature set up
   items:
-  - name: Set up git integration
-    href: git-integration-admin-settings.md
   - name: Set up item certification
     href: endorsement-setup.md
   - name: Configure notifications
@@ -85,14 +89,18 @@ items:
 - name: Fabric tenant settings
   items:
   - name: About tenant settings
+    href: about-tenant-settings.md
+  - name: Tenant settings index
     href: tenant-settings-index.md
-  - name: Tenant settings list
+  - name: Tenant settings sections
     expanded: false
     items:
-    - name: Microsoft Fabric (Preview)
+    - name: Microsoft Fabric
       href: fabric-switch.md
     - name: Help and support settings
       href: service-admin-portal-help-support.md
+    - name: Domain management settings
+      href: service-admin-portal-domain-management-settings.md
     - name: Workspace settings
       href: portal-workspace.md
     - name: Information protection
@@ -115,6 +123,8 @@ items:
       href: service-admin-portal-audit-usage.md
     - name: Dashboard settings
       href: service-admin-portal-dashboard.md
+    - name: Git integration settings
+      href: git-integration-admin-settings.md
     - name: Developer settings
       href: service-admin-portal-developer.md
     - name: Admin API settings

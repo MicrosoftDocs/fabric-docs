@@ -24,8 +24,7 @@ You must have a Fabric administrator role to open and view the report. To view t
 
 See [Data protection metrics report](/power-bi/enterprise/service-security-data-protection-metrics-report) for details about the report.
 
-## Next steps
+## Related content
 
 - [Sensitivity labels in Power BI](/power-bi/enterprise/service-security-sensitivity-label-overview)
-
 - [What is the admin portal?](admin-center.md)

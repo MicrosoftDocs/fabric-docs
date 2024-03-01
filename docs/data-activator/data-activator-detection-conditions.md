@@ -5,13 +5,15 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Detection conditions in Data Activator
 
-This article describes the range of detection conditions available to you when you create a trigger.
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
+This article describes the range of detection conditions available to you when you create a trigger.
 
 ## Summaries over time
 
@@ -82,7 +84,7 @@ The condition timer indicates how long, or how many times, the condition must be
 
 
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

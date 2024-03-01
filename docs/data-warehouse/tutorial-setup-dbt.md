@@ -4,7 +4,7 @@ description: In this tutorial, learn how to use the dbt adapter for Fabric Data 
 author: MarkPryceMaherMSFT
 ms.author: maprycem
 ms.reviewer: wiassaf
-ms.date: 11/15/2023
+ms.date: 01/22/2024
 ms.topic: tutorial
 ms.custom:
   - ignite-2023
@@ -55,7 +55,7 @@ Follow this list to install and set up the dbt prerequisites:
 
 This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download), but you can use your preferred tool of your choice.
 
-1. Clone the demo dbt project from <https://github.com/dbt-labs/jaffle_shop> onto your machine.
+1. Clone the [jaffle_shop demo dbt project](https://github.com/dbt-labs/jaffle_shop) onto your machine.
 
     - You can [clone a repo with Visual Studio Code's built-in source control](/azure/developer/javascript/how-to/with-visual-studio-code/clone-github-repository). 
     - Or, for example, you can use the `git clone` command:
@@ -66,7 +66,7 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
 
 1. Open the `jaffle_shop` project folder in Visual Studio Code.
 
-    :::image type="content" source="media/tutorial-setup-dbt\jaffle-project-vscode.png" alt-text="A screenshot from the Visual Studio Code, showing the open project.":::
+    :::image type="content" source="media\tutorial-setup-dbt\jaffle-project-vscode.png" alt-text="Screenshot from the Visual Studio Code, showing the open project.":::
 
 1. You can skip the sign-up if you have created a [!INCLUDE [fabric-dw](includes/fabric-dw.md)] already.
 1. Create a `profiles.yml` file. Add the following configuration to `profiles.yml`. This file configures the connection to your warehouse in Microsoft Fabric using the dbt-fabric adapter.
@@ -95,19 +95,27 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     - Run `az login` in Visual Studio Code terminal if you're using Azure CLI authentication.
     - For Service Principal or other Microsoft Entra ID (formerly Azure Active Directory) authentication in Microsoft Fabric, refer to [dbt (Data Build Tool) setup](https://docs.getdbt.com/docs/core/connect-data-platform/fabric-setup) and [dbt Resource Configurations](https://docs.getdbt.com/reference/resource-configs/fabric-configs).
 
-1. Now you're ready to test the connectivity. Run `dbt debug` in the Visual Studio Code terminal to test the connectivity to your warehouse.
+1. Now you're ready to test the connectivity. To test the connectivity to your warehouse, run `dbt debug` in the Visual Studio Code terminal.
   
     ```powershell
     dbt debug
     ```
 
-    :::image type="content" source="media/tutorial-setup-dbt\dbt-debug.png" alt-text="A screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt\dbt-debug.png":::
+    :::image type="content" source="media\tutorial-setup-dbt\dbt-debug.png" alt-text="Screenshot from the Visual Studio Code, showing the dbt debug command." lightbox="media/tutorial-setup-dbt\dbt-debug.png":::
 
-    All checks are passed, which means you can connect your warehouse using dbt-fabric adapter from the jaffle_shop dbt project. 
+    All checks are passed, which means you can connect your warehouse using dbt-fabric adapter from the `jaffle_shop` dbt project.
 
 1. Now, it's time to test if the adapter is working or not. First run `dbt seed` to insert sample data into the warehouse.
 
-    :::image type="content" source="media/tutorial-setup-dbt\dbt-seed.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt\dbt-seed.png":::
+    :::image type="content" source="media\tutorial-setup-dbt\dbt-seed.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt seed command." lightbox="media/tutorial-setup-dbt\dbt-seed.png":::
+  
+1. Run `dbt run` to validate data against some tests.
+
+    ```powershell
+    dbt run
+    ```
+
+    :::image type="content" source="media\tutorial-setup-dbt\dbt-run.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
 
 1. Run `dbt test` to run the models defined in the demo dbt project.
    
@@ -115,17 +123,9 @@ This tutorial uses [Visual Studio Code](https://code.visualstudio.com/download),
     dbt test
     ```
      
-    :::image type="content" source="media/tutorial-setup-dbt\dbt-test.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt\dbt-test.png":::
-    
-1. Run `dbt run` to validate data against some tests.
+    :::image type="content" source="media\tutorial-setup-dbt\dbt-test.png" alt-text="Screenshot from the Visual Studio Code, showing a dbt test command." lightbox="media/tutorial-setup-dbt\dbt-test.png":::
 
-    ```powershell
-    dbt run
-    ```
-
-    :::image type="content" source="media/tutorial-setup-dbt\dbt-run.png" alt-text="A screenshot from the Visual Studio Code, showing a dbt run command." lightbox="media/tutorial-setup-dbt\dbt-run.png":::
-
-That's it! You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
+You have now deployed a dbt project to Synapse Data Warehouse in Fabric.
 
 ## Move between different warehouses
 
@@ -143,11 +143,11 @@ Important things to consider when using dbt-fabric adapter:
 
 - Review [the current limitations in Microsoft Fabric data warehousing](limitations.md).
 
-- Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
+- Fabric supports Microsoft Entra ID (formerly Azure Active Directory) authentication for user principals, user identities, and service principals. The recommended authentication mode to interactively work on warehouse is CLI (command-line interfaces) and use service principals for automation.
 
 - Review the [T-SQL (Transact-SQL) commands](tsql-surface-area.md#limitations) not supported in Synapse Data Warehouse in Microsoft Fabric.
 
-- Some T-SQL commands, such as `ALTER TABLE ADD/ALTER/DROP COLUMN`, `MERGE`, `TRUNCATE`, `sp_rename`, are supported by dbt-fabric adapter using `Create Table as Select` (CTAS), `DROP` and `CREATE` commands.
+- Some T-SQL commands are supported by dbt-fabric adapter using `Create Table as Select` (CTAS), `DROP`, and `CREATE` commands, such as `ALTER TABLE ADD/ALTER/DROP COLUMN`, `MERGE`, `TRUNCATE`, `sp_rename`.
 
 - Review [Unsupported data types](data-types.md#unsupported-data-types) to learn about the supported and unsupported data types.
 

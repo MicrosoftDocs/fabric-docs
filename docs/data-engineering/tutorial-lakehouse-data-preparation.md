@@ -25,7 +25,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Download the notebooks from the [Lakehouse Tutorial Source Code](https://github.com/microsoft/fabric-samples/tree/main/docs-samples/data-engineering/Lakehouse%20Tutorial%20Source%20Code) folder.
 
-1. From the experience switcher located at the bottom left of the screen, select **Data engineering**.
+1. From the experience switcher located at the bottom left of the screen, select **Data Engineering**.
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\workload-switcher-data-engineering.png" alt-text="Screenshot showing where to find the experience switcher and select Data Engineering.":::
 
@@ -35,9 +35,9 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. Select all the notebooks that were downloaded in the step 1 of this section.
 
-1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
-
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\select-notebooks-open.png" alt-text="Screenshot showing where to find the downloaded notebooks and the Open button.":::
+
+1. Select **Open**. A notification indicating the status of the import appears in the top right corner of the browser window.
 
 1. After the import is successful, you can go to items view of the workspace and see the newly imported notebooks. Select **wwilakehouse** lakehouse to open it.
 
@@ -49,15 +49,15 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
 1. From the list of existing notebooks, select the **01 - Create Delta Tables** notebook and select **Open**.
 
-1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
+1. In the open notebook in the lakehouse **Explorer**, you see the notebook is already linked to your opened lakehouse.
 
    > [!NOTE]
    > Fabric provides the [V-order](delta-optimization-and-v-order.md) capability to write optimized delta lake files. V-order often improves compression by three to four times and up to 10 times performance acceleration over the Delta Lake files that aren't optimized. Spark in Fabric dynamically optimizes partitions while generating files with a default 128 MB size. The target file size may be changed per workload requirements using configurations.
-   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimized-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
+   > With the [optimize write](delta-optimization-and-v-order.md#what-is-optimize-write) capability, the Apache Spark engine that reduces the number of files written and aims to increase individual file size of the written data.
 
 1. Before you write data as delta lake tables in the **Tables** section of the lakehouse, you use two Fabric features (**V-order** and **Optimize Write**) for optimized data writing and for improved reading performance. To enable these features in your session, set these configurations in the first cell of your notebook.
 
-   To start the notebook and execute all the cells in sequence, select **Run All** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
+   To start the notebook and execute all the cells in sequence, select **Run all** on the top ribbon (under **Home**). Or, to only execute code from a specific cell, select the **Run** icon that appears to the left of the cell upon hover, or press **SHIFT + ENTER** on your keyboard while control is in the cell.
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\spark-session-run-execution.png" alt-text="Screenshot of a Spark session configuration screen, including a code cell and Run icon.":::
 
@@ -110,7 +110,7 @@ From the previous tutorial steps, we have raw data ingested from the source to t
 
    :::image type="content" source="media\tutorial-lakehouse-data-preparation\existing-second-notebook.png" alt-text="Screenshot of the Open existing notebook menu, showing where to select your notebook.":::
 
-1. In the open notebook in **Lakehouse explorer**, you see the notebook is already linked to your opened lakehouse.
+1. In the open notebook in the lakehouse **Explorer**, you see the notebook is already linked to your opened lakehouse.
 
 1. An organization might have data engineers working with Scala/Python and other data engineers working with SQL (Spark SQL or T-SQL), all working on the same copy of the data. Fabric makes it possible for these different groups, with varied experience and preference, to work and collaborate. The two different approaches transform and generate business aggregates. You can pick the one suitable for you or mix and match these approaches based on your preference without compromising on the performance:
 
@@ -184,8 +184,7 @@ Both the approaches produce a similar outcome. You can choose based on your back
 
 Also you may notice that you're writing data as delta lake files. The automatic table discovery and registration feature of Fabric picks up and registers them in the metastore. You don't need to explicitly call `CREATE TABLE` statements to create tables to use with SQL.
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Build reports using Power BI](tutorial-lakehouse-build-report.md)

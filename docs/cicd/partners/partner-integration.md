@@ -47,7 +47,7 @@ Here are a few ways to get you started with this model:
 Shortcuts in Microsoft OneLake allow you to unify your data across domains, clouds, and accounts by creating a single virtual data lake for your entire enterprise. All Fabric experiences and analytical engines can directly point to your existing data sources such as OneLake in different tenant, [Azure Data Lake Storage (ADLS) Gen2](../../onelake/create-adls-shortcut.md), [Amazon S3 storage accounts](../../onelake/create-s3-shortcut.md), and [Dataverse](/power-apps/maker/data-platform/azure-synapse-link-view-in-fabric) through a unified namespace. OneLake presents ISVs with a transformative data access solution, seamlessly bridging integration across diverse domains and cloud platforms.
 
 - [Learn more about OneLake shortcuts](../../onelake/onelake-shortcuts.md)
-- [Learn more about OneLake, one copy](../../real-time-analytics/onelake-mirroring.md)
+- [Learn more about OneLake, one copy](../../real-time-analytics/one-logical-copy.md)
 
 :::image type="content" source="media/partner-integration/multicloud-shortcuts.png" alt-text="Diagram showing multicloud shortcuts in OneLake.":::
 
@@ -66,25 +66,25 @@ With the **Develop on Fabric model** ISVs can build their products and services 
 | Fabric Experience   | API                                                   | Description                                                                                                                 |
 |---------------------|-------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Data Warehouse      |                                                       |                                                                                                                             |
-|                     | Create Warehouse                                      | Creates a Data warehouse                                                                                                    |
-|                     | Get Warehouse                                         | Get Metadata about warehouse                                                                                                |
-|                     | Update Warehouse                                      | Update an existing warehouse                                                                                                |
-|                     | Delete Warehouse                                      | Delete an existing warehouse                                                                                                |
-|                     | List Warehouse                                        | List warehouses in your workspace                                                                                           |
+|                     | [Create Warehouse](/rest/api/fabric/core/items/create-item)                                      | Creates a Data warehouse.                                                                                                    |
+|                     | [Get Warehouse](/rest/api/fabric/core/items/get-item)                                         | Get Metadata about warehouse.                                                                                                |
+|                     | Update Warehouse                                      | Update an existing warehouse.                                                                                              |
+|                     | Delete Warehouse                                      | Delete an existing warehouse.                                                                                                |
+|                     | List Warehouse                                        | List warehouses in your workspace.                                                                                           |
 | [Data Engineering](../../data-engineering/lakehouse-api.md)    |            |                                                                                                                             |
-|                     | Create Lakehouse                                      | Creates Lakehouse along with SQL analytics Endpoint.                                                                        |
+|                     | Create Lakehouse                                      | Creates Lakehouse along with SQL analytics endpoint.                                                                        |
 |                     | Update Lakehouse                                      | Updates the name of a lakehouse and the SQL analytics endpoint.                                                             |
-|                     | Delete Lakehouse                                      | Deletes lakehouse and the associated SQL analytics endpoint.                                                                |
-|                     | Get Properties                                        |                                                                                                                             |
-|                     | List tables in Lakehouse                              |                                                                                                                             |
-|                     | Table Load                                            | Creates delta tables from CSV and parquet files and folders.                                                                |
+|                     | Delete Lakehouse                                      | Deletes lakehouse and the associated SQL analytics endpoint.                                                                     | 
+|                     | Get Properties                                        | Gets the properties of a lakehouse and the SQL analytics endpoint.                                                                                                                        |
+|                     | [List tables](/rest/api/fabric/lakehouse/tables/list-tables)                                          | List tables in the lakehouse.                                                                                                                             |
+|                     | [Table Load](/rest/api/fabric/lakehouse/tables/load-table)                                            | Creates delta tables from CSV and parquet files and folders.                                                                |
 | OneLake             |                                                       |                                                                                                                             |
 |                     | [Create Shortcut](/rest/api/fabric/)   | Creates a new shortcut.                                                                                                     |
 |                     | [Delete Shortcut](/rest/api/fabric/)   | Deletes the shortcut but doesn't delete destination storage folder.                                                        |
 |                     | [Get Shortcut](/rest/api/fabric/)                                          | Returns shortcut Properties.                                                                                                |
 |                     | [ADLS Gen2 APIs](/rest/api/storageservices/data-lake-storage-gen2)           | ADLS Gen2 APIs to create and manage file systems, directories, and path.                                                    |
 | Workspace           |                                                       |                                                                                                                             |
-|                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | create Workspace, get Workspace details, Delete Workspace, assign workspace to a capacity, add a workspace role assignment. |
+|                     | [CRUD APIs for Workspace and Workspace Role Management](/rest/api/fabric/core/workspaces) | Create Workspace, Get Workspace details, Delete Workspace, Assign workspace to a capacity, Add a workspace role assignment. |
 | Fabric Data Factory | Coming soon                                           |                                                                                                                             |
 | Real Time Analytics | Coming Soon                                           |                                                                                                                             |
 

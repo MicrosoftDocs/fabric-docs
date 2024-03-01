@@ -24,6 +24,6 @@ For semantic models that use the large semantic model storage format, Power BI P
 
 For more information, see [Power BI semantic model scale-out](/power-bi/enterprise/service-premium-scale-out).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

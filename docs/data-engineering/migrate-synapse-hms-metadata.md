@@ -139,13 +139,12 @@ Alternatively, all imported tables are visible within the Lakehouse explorer UI 
 
 :::image type="content" source="media\migrate-synapse\migrate-hms-metadata-import-lakehouse.png" alt-text="Screenshot showing HMS metadata imported in the lakehouse.":::
 
-
 ### Other considerations
 
 -	Scalability: The solution here's using internal Spark catalog API to do import/export, but it isn't connecting directly to HMS to get catalog objects, so the solution couldn't scale well if the catalog is large. You would need to change the export logic using HMS DB.
 -	Data accuracy: There's no isolation guarantee, which means that if the Spark compute engine is doing concurrent modifications to the metastore while the migration notebook is running, inconsistent data can be introduced in Fabric lakehouse.
 
-## Next steps
+## Related content
 
 - [Fabric vs. Azure Synapse Spark](comparison-between-fabric-and-azure-synapse-spark.md)
 - Learn more about migration options for [Spark pools](migrate-synapse-spark-pools.md), [configurations](migrate-synapse-spark-configurations.md), [libraries](migrate-synapse-spark-libraries.md), [notebooks](migrate-synapse-notebooks.md) and [Spark job definition](migrate-synapse-spark-job-definition.md)

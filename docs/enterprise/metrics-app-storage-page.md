@@ -7,18 +7,12 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 02/21/2024
 ---
 
 # Understand the metrics app storage page
 
-The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information. It is divided into the following sections:
-
-- Filters
-- Cards
-- Table visual 
-- Column charts
-- Export data
+The Microsoft Fabric Capacity Metrics app's storage page provides capacity storage information.
 
 ## Filters
 
@@ -28,7 +22,9 @@ There are two report filters located at the top of the page and one filter locat
 
 * **Date Range** - Select the date range. The app displays results for the selected date range.
 
-* **Experience** - Select the Microsoft Fabric experience you want the app to display results for.
+* **Experience** - Select the Fabric experience you want the app to display results for.
+
+* **Storage type** - Select the Fabric storage type you want the app to display results for.
 
 ## Cards
 
@@ -82,6 +78,16 @@ A column chart that shows cumulative billable storage by date and hour. Cumulati
 
 User can export the report's data by selecting Export Data. Selecting Export Data takes you to a page with a matrix visual that displays billable storage details for workspaces in the selected capacity. Hover over the matrix and select 'more options' to export the data.
 
-## Next steps
+## Considerations and limitations
 
-[Understand the metrics app compute page](metrics-app-compute-page.md)
+The storage page displays Fabric items that are in the selected capacity. The following items are only displayed in the storage page, if they're stored in OneLake:
+
+  | Experience          | Fabric item |
+  |---------------------|-------------|
+  | Data Activator      | Reflex      |
+  | Lakehouse           | Lakehouse   |
+  | Real-Time Analytics | <li>Eventstream</li><li>KQL database</li><li>KQL queryset</li> |
+
+## Related content
+
+- [Understand the metrics app compute page](metrics-app-compute-page.md)

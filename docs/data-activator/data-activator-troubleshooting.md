@@ -10,6 +10,9 @@ ms.date: 11/16/2023
 
 # Troubleshoot Data Activator Errors
 
+> [!IMPORTANT]
+> Data Activator is currently in preview.
+
 If a problem occurs with any of your Data Activator events, objects, or triggers after you have created them, then Data Activator will send you an email alert containing an error code. This article explains the meaning of the error codes that you can receive, and describes the steps you can take to fix the associated problems.
 
 ## Data ingestion error codes
@@ -91,10 +94,10 @@ This error code means that Data Activator couldn't send the alert on your trigge
 
 ### TeamsDisabled
 
-This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra ID tenant has blocked the Microsoft Teams service principal (SP). To resolve the problem, contact your Entra ID administrator and request that they unblock the Teams SP.
+This error code means that you have a trigger that sends a Teams alert, and that the administrator of your Microsoft Entra tenant has blocked the Microsoft Teams service principal (SP). To resolve the problem, contact your Microsoft Entra administrator and request that they unblock the Teams SP.
 
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)

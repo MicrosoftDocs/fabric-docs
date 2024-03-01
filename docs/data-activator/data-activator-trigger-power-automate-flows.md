@@ -5,10 +5,13 @@ author: davidiseminger
 ms.author: davidi
 ms.topic: concept
 ms.custom: 
-ms.date: 11/15/2023
+ms.date: 11/16/2023
 ---
 
 # Use Custom Actions to trigger Power Automate Flows
+
+> [!IMPORTANT]
+> Data Activator is currently in preview.
 
 Using Power Automate, you can generate actions in external systems when your Data Activator triggers activate. This can be useful for:
 
@@ -71,7 +74,7 @@ You'll then get a card for your custom action, containing the input fields for y
 
 When your trigger activates, it calls your flow, sending it the values of the input fields that you defined.
 
-## Next steps
+## Related content
 
 * [What is Data Activator?](data-activator-introduction.md)
 * [Get started with Data Activator](data-activator-get-started.md)
