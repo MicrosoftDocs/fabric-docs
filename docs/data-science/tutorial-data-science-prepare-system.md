@@ -58,6 +58,7 @@ To demonstrate Fabric lakehouse features, many of the tutorials require attachin
 
     :::image type="content" source="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png" alt-text="Diagram of the process steps to attach a lakehouse to a notebook." lightbox="media\tutorial-data-science-prepare-system\attach-lakehouse-process.png":::
 
+1. Create a new lakehouse or use an existing lakehouse.
     1. To create a new lakehouse, select **New**. Give the lakehouse a name and select **Create**.
     1. To use an existing lakehouse, select **Existing lakehouse** to open the **Data hub** dialog box. Select the lakehouse you want to use and then select **Add**.
 
