@@ -36,8 +36,6 @@ For more information about supported data sources for managed private endpoints 
 
 * To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
-* Managed private endpoints require the Fabric capacity and the data source to be in the same region. They don't work across different regions at this time.
-
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
 * Workspace migration across capacities in different regions isn't supported.
