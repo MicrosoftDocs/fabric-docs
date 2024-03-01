@@ -34,9 +34,9 @@ Many Fabric engines allow allow fine-grained access control such as table, colum
 ### Related Docs:
 
 - [Datawarehousing Security](../../data-warehouse/security.md) => TBD Add OneLake / SQL security aspect!
-- [PowerBI Security](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-power-bi-security) => TBD Add OneLake / SQL security aspect!
+- [PowerBI Security](/power-bi/enterprise/service-admin-power-bi-security) => TBD Add OneLake / SQL security aspect!
 - [Data Factory - Set up you Lakehouse Connection](../../data-factory/connector-lakehouse-overview.md) => TBD Add OneLake / SQL security aspect!
-- [Real-Time Analytics Row-Level Security](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/management/row-level-security-policy) => TBD Add OneLake security aspect!
+- [Real-Time Analytics Row-Level Security](/azure/data-explorer/kusto/management/row-level-security-policy) => TBD Add OneLake security aspect!
 
 ## OneLake Folder security
 

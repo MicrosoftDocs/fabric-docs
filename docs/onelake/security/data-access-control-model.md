@@ -7,10 +7,10 @@ author: yuturchi
 ms.topic: conceptual
 ms.custom:
   - onelake-data-access-public-preview-april-2024
-ms.date: 04/01/2024
+ms.date: 4/1/2024
 ---
 
-## Role-based access control (RBAC)
+# Role-based access control (RBAC)
 
 OneLake RBAC uses role assignments to apply permissions to its members. You can either assign roles to individuals or to security groups, Microsoft 365 groups, and distribution lists. Every member in the user group gets the assigned role.
 
@@ -20,14 +20,14 @@ OneLake RBAC enables users to define data access roles for **Lakehouse Items** o
 
 OneLake RBAC restricts data access for users with Workspace **Viewer** or read access to a lakehouse. It doesn't apply to Workspace Admins, Members, or Contributors. As a result, OneLake RBAC supports only Read level of permissions.
 
-### How to create RBAC roles
+## How to create RBAC roles
 
 You can define and manage OneLake RBAC roles using Lakehouse UX or REST APIs.
 
 Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md).
 
 
-### Default RBAC Role in lakehouse
+## Default RBAC Role in lakehouse
 
 When user creates a new lakehouse, OneLake generates a default RBAC Role named `Default Readers`. The role allows all users with lakehouse Read permission to read all folders in the Item.
 
@@ -40,7 +40,7 @@ Here's the default Role definition:
 > [!NOTE]
 > In order to restrict the access to specific users or specific folders, you must either modify the default role or remove it and create a new custom role.
 
-### Inheritance in OneLake RBAC
+## Inheritance in OneLake RBAC
 
 For any given folder, OneLake RBAC permissions always inherit to the entire hierarchy of the folder's files and subfolders.
 
@@ -112,11 +112,11 @@ Workspace and Item permissions let you grant "coarse-grain" access to data in On
 The Mermaid diagram generated from the following file code:
 .\media\mermaids\rbac-evaluation-with-fabric.mmd
 -->
-:::image type="content" source=".\media\mermaids\rbac-evaluation-with-fabric.svg" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
+:::image type="content" source=".\media\mermaids\rbac-evaluation-with-fabric.svg" alt-text="Diagram showing the order of permissions evaluations with workspace, item, and RBAC.":::
 
 ## OneLake RBAC and Workspace permissions
 
-The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../get-started/roles-workspaces.md)
+The workspace permissions are the first security boundary for data within OneLake. Each workspace represents a single domain or project area where teams can collaborate on data. You manage security in the workspace through Fabric workspace roles. Learn more about Fabric role-based access control (RBAC): [Workspace roles](../../get-started/roles-workspaces.md)
 
 Workspace roles in Fabric grant the following permissions in OneLake.
 
@@ -152,7 +152,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 | **Default Semantic Model Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in Semantic Model?** | **Can read data in Semantic Model?** |
 |----------|----------|----------|--------------|-------------|
-| Read  | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-rls)  |
+| Read  | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](/power-bi/enterprise/service-admin-rls)  |
 | Build | Yes by default. Use OneLake RBAC to restrict the access. | Yes | Yes | Yes |
 | Write | Yes | Yes | Yes | Yes |
 | Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |
@@ -163,7 +163,7 @@ When user shares a lakehouse, they grant other users or a group of users access 
 
 When someone shares a lakehouse, they can also grant access to the SQL endpoint and associated default semantic model.
 
-:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
+:::image type="content" source=".\media\lakehouse-sharing.png" alt-text="A snapshot showing the Lakehouse user experience of sharing data.":::
 
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|
@@ -209,10 +209,9 @@ Suppose, user1 creates an S3 shortcut in a lakehouse pointing to a folder in an 
 | Yes | No | No |
 | Yes | Yes | Yes |
 
-The RBAC permissions must be defined for the entire scope of the shortcut (entire target folder), but inherit recursively to all its sub-folders and files.
+The RBAC permissions must be defined for the entire scope of the shortcut (entire target folder), but inherit recursively to all its subfolders and files.
 
-Learn more about S3, ADLS and Dataverse shortcuts in [OneLake Shortcuts](../onelake-shortcuts.md).
-
+Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../onelake-shortcuts.md).
 
 ### Limits on OneLake RBAC
 
