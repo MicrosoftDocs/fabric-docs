@@ -4,7 +4,7 @@ description: Learn about table clones in Microsoft Fabric.
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 02/21/2024
+ms.date: 03/04/2024
 ms.topic: conceptual
 ms.custom:
   - ignite-2023
@@ -77,7 +77,7 @@ The objects described here are included in the table clone:
 
 - The clone table inherits object-level SQL security from the source table of the clone. As the [workspace roles](workspace-roles.md) provide read access by default, [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) permission can be set on the table clone if desired.
   
-- The clone table inherits the [row-level security (RLS)](row-level-security.md) and [dynamic data masking(DDM)](dynamic-data-masking.md) from source table of the clone table.
+- The clone table inherits the [row-level security (RLS)](row-level-security.md) and [dynamic data masking](dynamic-data-masking.md) from the source of the clone table.
 
 - The clone table inherits all attributes that exist at the source table, whether the clone was created within the same schema or across different schemas in a warehouse.
 
