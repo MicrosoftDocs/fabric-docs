@@ -16,7 +16,7 @@ Managed virtual networks also enable network security features such as managed p
 
 :::image type="content" source="./media/security-managed-vnets-fabric-overview/managed-vnets-overview.gif" alt-text="Animated illustration of how managed virtual networks work.":::
 
-Fabric workspaces that are provisioned with a dedicated virtual network provide you with value in four ways:
+Fabric workspaces that are provisioned with a dedicated virtual network provide you with value in three ways:
 
 * With a managed virtual network you get complete network isolation for the Spark clusters running your Spark jobs (which allow users to run arbitrary user code) while offloading the burden of managing the virtual network to Microsoft Fabric.
 
