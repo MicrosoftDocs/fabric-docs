@@ -81,9 +81,9 @@ To create a connection in a data pipeline:
 ### Considerations and limitations
 
 * Organizational Account and Service Principal are the only supported auth types.
-* Connections for trusted workspace access cannot be created from the **Manage Gateways and connections** experience.
+* Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
 * Connections for trusted workspace access only work in OneLake shortcuts.
-* Existing connections that work for trusted workspace access cannot be modified in the **Manage Gateways and connections** experience.
+* Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
 
 ## Set up your connection
 
