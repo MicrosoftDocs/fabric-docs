@@ -16,7 +16,14 @@ OneLake RBAC uses role assignments to apply permissions to its members. You can 
 
 OneLake RBAC enables users to define data access roles for **Lakehouse Items** only.
 
-OneLake RBAC restricts data access for users with Workspace **Viewer** permissions. It doesn't apply to Admins, Members or Contributors. As a result, only Read level of permissions is supported by OneLake RBAC.
+OneLake RBAC restricts data access for users with Workspace **Viewer** or read access to a lakehouse. It doesn't apply to Workspace Admins, Members or Contributors. As a result, only Read level of permissions is supported by OneLake RBAC.
+
+### How to create RBAC roles
+
+You can define and manage OneLake RBAC roles using Lakehouse UX or REST APIs.
+
+Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md)
+
 
 ### Default RBAC Role in lakehouse
 
@@ -43,19 +50,15 @@ Tables/
 Files/
 ────folder1
 │   │   file11.txt
-│   │   file12.txt
 │   │
 │   └───subfolder11
 │       │   file1111.txt
-│       │   file1112.txt
 |       │
 │       └───subfolder111
 |            │   file1111.txt
-│            │   file1112.txt
 │   
 └───folder2
     │   file21.txt
-    │   file22.txt
 ```
 
 For the given hierarchy, OneLake RBAC permissions for Role1 and Role2  will inherit as following:
@@ -75,15 +78,12 @@ For the given hierarchy, OneLake RBAC permissions for Role1 and Role2  will inhe
 
 ```bash
 │   │   file11.txt
-│   │   file12.txt
 │   │
 │   └───subfolder11
 │       │   file1111.txt
-│       │   file1112.txt
 |       │
 │       └───subfolder111
 |            │   file1111.txt
-│            │   file1112.txt
 ```
 
   </td>
@@ -95,7 +95,6 @@ For the given hierarchy, OneLake RBAC permissions for Role1 and Role2  will inhe
 
 ```bash
     │   file21.txt
-    │   file22.txt
 ```
 
 </td>
@@ -105,15 +104,13 @@ For the given hierarchy, OneLake RBAC permissions for Role1 and Role2  will inhe
 
 ## How OneLake RBAC permissions are evaluated with Fabric permissions
 
-Workspace and Item permissions lets you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
+Workspace and Item permissions let you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
 
-```mermaid
-flowchart LR;    
-    id1([Request from User1 \n to read OneLake folder1 \n in a lakehouse]) -->
-    id2([1 \n Evaluate \n Workspace permissions \n for course-grain Workspace access]) --> 
-    id3([2 \n Evaluate \n Lakehouse permissions \n for course-grain Item access]) --> 
-    id4([3 \n Evaluate \n OneLake RBAC permissions \n for fine-grain folder access]) ;
-```
+<!--
+The Mermaid diagram generated from the following file code:
+.\media\mermaids\rbac-evaluation-with-fabric.mmd
+-->
+:::image type="content" source=".\media\mermaids\rbac-evaluation-with-fabric.svg" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
 
 ## OneLake RBAC and Workspace permissions
 
