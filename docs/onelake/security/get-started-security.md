@@ -22,7 +22,7 @@ OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or
 
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. You can visualize this structure as follows:
 
-:::image type="content" source="media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
+:::image type="content" source=".\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
 
 ## Workspace permissions
 
@@ -62,15 +62,17 @@ Users accessing data through SQL may see different results than accessing data d
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
-:::image type="content" source="media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
+:::image type="content" source=".\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
 
 ## OneLake Data access roles (preview)
 
 OneLake data access roles is a new feature that enables you to apply role-based access control (RBAC) to your data stored in OneLake. You can define security roles that grant read access to specific folders within a Fabric item, and assign them to users or groups. The access permissions determine what folders users see when accessing the lake view of the data through the lakehouse UX, notebooks, or OneLake APIs.  
 
-Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse. You can get started with creating data access roles [here.](/security/get-started-data-access-roles.md)
+Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
 
-Learn more about the security model for access roles [here.](/security/data-access-control-model.md)
+Learn more about creating data access roles in [Get Started with Data Access Roles.](/security/get-started-data-access-roles.md)
+
+Learn more about the security model for access roles [Data Access Control Model.](/security/data-access-control-model.md)
 
 ## Shortcut security
 
@@ -79,6 +81,8 @@ Shortcuts in Microsoft Fabric allow for simplified data management, but have som
 For OneLake data access roles (preview), shortcuts receive special treatment depending on the shortcut type. The access to a OneLake shortcut is always controlled by the access roles on the target of the shortcut. This means that for a shortcut from LakehouseA to LakehouseB, the security of LakehouseB takes effect. Data access roles in LakehouseA cannot grant or edit the security of the shortcut to LakehouseB.
 
 For external shortcuts to Amazon S3 or ADLS Gen2, the security is configured through data access roles in the lakehouse itself. A shortcut from LakehouseA to an S3 bucket can have data access roles configured in LakehouseA. It is important to note that only the root level of the shortcut can have security applied. Assigning access to sub-folders of the shortcut will result in role creation errors.
+
+Learn more about the security model for shortcuts in [Data Access Control Model](/security/data-access-control-model.md)
 
 ## Related content
 
