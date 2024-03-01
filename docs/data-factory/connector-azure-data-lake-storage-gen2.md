@@ -197,3 +197,5 @@ The properties in the following table are the supported authentication types.
 ## Related content
 
 - [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
+- [Trusted workspace access](../security/security-trusted-workspace-access.md)
+- [Workspace identity](../security/workspace-identity.md)
