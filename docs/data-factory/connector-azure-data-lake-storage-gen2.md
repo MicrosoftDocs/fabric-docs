@@ -72,9 +72,9 @@ To create a connection in a data pipeline:
 
 1. Configure a workspace identity in the workspace where the connection will be used. For more information, see [Workspace identity](../security/workspace-identity.md).
 
-1. Grant the organizational account or service principal access to the storage account. For details, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
+1. Grant the organizational account or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
 
-1. Configure a resource instance rule. For details, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
+1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
 
 1. Follow steps from [Set up your connection](#set-up-your-connection) to create the connection.
 
