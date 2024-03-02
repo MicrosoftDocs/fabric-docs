@@ -1,5 +1,5 @@
 ---
-title: Trusted workspace access in Microsoft Fabric
+title: Trusted workspace access in Microsoft Fabric (preview)
 description: Learn how to configure and use trusted workspace access in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/29/2024
 ---
 
-# Trusted workspace access
+# Trusted workspace access (preview)
 
 Fabric allows you to access firewall-enabled Azure Data Lake Gen 2 accounts in a secure manner. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces.
 
