@@ -59,7 +59,7 @@ Sensitivity labels with protection settings include encryption or content markin
 
 :::image type="content" source="media/tenant-settings/admin-organization-doesnt-allow-option.png" alt-text="Screenshot of disabled sharing link to people in your organization.":::
 
-To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels). [](#increase-the-number-of-users-who-can-edit-and-republish-encrypted-pbix-files-preview)
+To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
 
 ## Increase the number of users who can edit and republish encrypted PBIX files (preview)
 
