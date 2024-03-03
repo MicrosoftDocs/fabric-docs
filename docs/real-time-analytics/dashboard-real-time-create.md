@@ -83,6 +83,26 @@ Pages are optional containers for tiles. You can use pages to organize tiles int
 
 1. [Add tiles](#add-tile) to the page.
 
+## Use parameters
+
+Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
+
+## View query
+
+You can view the query in either editing or viewing mode. Editing the underlying query of a tile is only possible in editing mode.
+
+1. On the tile you want to explore, select the **More menu [...]** > **View query**.
+    
+    A pane opens with the query and results table.
+
+1. Select **Edit query**.
+1. Choose either **Existing KQL Queryset** or **New KQL Queryset**. Proceed to edit the query in the [KQL Queryset](kusto-query-set.md).
+
+    :::image type="content" source="media/dashboard-view-query/view-query-viewing-mode.png" alt-text="Screenshot of the viewing mode of Real-Time Dashboards view query with options to further edit in KQL Queryset in Real-Time Analytics in Microsoft Fabric.":::
+
+> [!NOTE]
+> Any edits made to the query using this flow won't be reflected in the original Real-Time Dashboard.
+
 ## Enable auto refresh
 
 Auto refresh is a feature that allows you to automatically update the data on a dashboard without manually reloading the page or clicking a refresh button.
@@ -97,10 +117,6 @@ However, database editors can limit the minimum refresh rate that any viewer can
 1. Select **Apply** and then **Save** the dashboard.
 
     :::image type="content" source="media/real-time-dashboard/auto-refresh.png" alt-text="Screenshot of auto refresh pane in Real-Time Dashboards.":::
-
-## Use parameters
-
-Parameters significantly improve dashboard rendering performance, and enable you to use filter values as early as possible in the query. Filtering is enabled when the parameter is included in the query associated with your tiles.  For more information about how to set up and use different kinds of parameters, see [Use parameters in Real-Time Dashboards](dashboard-parameters.md).
 
 ## Share the dashboard
 
