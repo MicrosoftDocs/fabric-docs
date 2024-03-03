@@ -59,9 +59,9 @@ Sensitivity labels with protection settings include encryption or content markin
 
 :::image type="content" source="media/tenant-settings/admin-organization-doesnt-allow-option.png" alt-text="Screenshot of disabled sharing link to people in your organization.":::
 
-To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels).
+To learn more about protection settings for sensitivity labels, see [Restrict access to content by using sensitivity labels to apply encryption](/microsoft-365/compliance/encryption-sensitivity-labels). [](#increase-the-number-of-users-who-can-edit-and-republish-encrypted-pbix-files-preview)
 
-## Users with co-author permissions can edit encrypted PBIX files (preview)
+## Increase the number of users who can edit and republish encrypted PBIX files (preview)
 
 When enabled, users with [restrictive sensitivity permissions](#restrictive-sensitivity-permissions) on an encrypted sensitivity label can open, edit, publish, and republish PBIX files protected by that label, with [restrictions](#restrictions) (provided that the appropriate [preview feature switch](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions) in Power BI Desktop is on).
 
@@ -88,7 +88,7 @@ The following are the restrictions that apply to users with restrictive sensitiv
 
 These restrictions ensure that protection is preserved and control of protection settings remains with users that have higher permission levels.
 
-If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Users with co-author permissions can edit encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
+If a user tries to perform one of the restricted actions, they will see a warning informing them that they do not have the required permissions. If the **Increase the number of users who can edit and republish encrypted PBIX files (preview)** feature switch is enabled on the tenant, the user should check to see that the **[Less elevated user support](#desktop-preview-feature-switch-for-editing-by-users-with-restrictive-sensitivity-permissions)** preview feature switch in their Power BI Desktop app is on.
 
 For more information, see [Protected sensitivity labels in Fabric and Power BI](../governance/protected-sensitivity-labels.md).
 
