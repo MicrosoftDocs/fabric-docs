@@ -20,7 +20,7 @@ Once traffic enters Fabric, it gets authenticated by Entra ID which is the same 
 
 The Fabric backend platform is protected behind virtual networks and isn't directly accessible from the public internet other than through secure endpoints. To understand how traffic is protected in Fabric, review Fabric's [Architectural diagram](security-fundamentals.md#architectural-diagram).
 
-By default, Fabric communicates between [experiences](../../get-started/microsoft-fabric-overview#components-of-microsoft-fabric) using the internal Microsoft backbone network. When a Power BI report loads data from [OneLake](../onelake/onelake-overview.md) the data goes through the internal Microsoft network. This is different from having to configure different Platform as a Service (PaaS) services to connect to each other over a private network. Inbound communication between clients such as your browser or SQL Server Management Studio (SSMS) and Fabric, uses the TLS 1.2 protocol and negotiates to TLS 1.3 when possible.
+By default, Fabric communicates between [experiences](../get-started/microsoft-fabric-overview.md#components-of-microsoft-fabric) using the internal Microsoft backbone network. When a Power BI report loads data from [OneLake](../onelake/onelake-overview.md) the data goes through the internal Microsoft network. This is different from having to configure different Platform as a Service (PaaS) services to connect to each other over a private network. Inbound communication between clients such as your browser or SQL Server Management Studio (SSMS) and Fabric, uses the TLS 1.2 protocol and negotiates to TLS 1.3 when possible.
 
 Fabric's default security settings include:
 
