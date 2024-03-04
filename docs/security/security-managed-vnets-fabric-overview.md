@@ -1,5 +1,5 @@
 ---
-title: Overview of managed virtual networks in Microsoft Fabric
+title: Overview of managed virtual networks in Microsoft Fabric (preview)
 description: Learn about managed virtual networks in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/28/2024
 ---
 
-# What are managed virtual networks?
+# What are managed virtual networks? (preview)
 
 Managed virtual networks are virtual networks that are created and managed by Microsoft Fabric for each Fabric workspace. Managed virtual networks provide network isolation for Fabric Spark workloads, meaning that the compute clusters are deployed in a dedicated network and are no longer part of the shared virtual network.
 
@@ -23,6 +23,11 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 * You don't need to create a subnet for the Spark clusters based on peak load, as this is managed for you by Microsoft Fabric.
 
 * A managed virtual network for your workspace, along with managed private endpoints, allows you to access data sources that are behind firewalls or otherwise blocked from public access.
+
+> [!NOTE]
+> Managed virtual networks are currently not supported in the Switzerland West region.
+> Outbound : Managed Private Endpoints are not available in Fabric workspaces attached to capacities in Switzerland West.
+> Inbound : If workspaces are attached to Fabric capacities in this region within tenants where the Private Link setting is enabled, Data Engineering jobs originating from notebooks, Spark job definitions, and lakehouse operations will result in errors.
 
 ## How to enable managed virtual networks for a Fabric workspace
 

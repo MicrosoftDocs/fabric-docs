@@ -1,5 +1,5 @@
 ---
-title: Create and use managed private endpoints in Microsoft Fabric
+title: Create and use managed private endpoints in Microsoft Fabric (preview)
 description: Learn how to create and use managed private endpoints in Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/28/2024
 ---
 
-# Create and  use managed private endpoints
+# Create and  use managed private endpoints (preview)
 
 Users with admin permissions to a Microsoft Fabric workspace can create, view, and delete managed private endpoints from the Fabric portal through the workspace settings.
 
