@@ -1,5 +1,5 @@
 ---
-title: About private Links for secure access to Fabric
+title: About private Links for secure access to Fabric (preview)
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/28/2024
 ---
 
-# Private links for secure access to Fabric
+# Private links for secure access to Fabric (preview)
 
 You can use private links to provide secure access for data traffic in Fabric. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
@@ -87,7 +87,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 ### Power BI
 
-* If internet access is disabled, and if the dataset or dataflow Gen1 connects to a Fabric semantic model or dataflow Gen1 as a data source, the connection will fail.
+* If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
 
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
@@ -97,7 +97,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
-### Rest Fabric items
+### Other Fabric items
 
 Other Fabric items, such as Model, Experience, KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
@@ -107,7 +107,7 @@ Microsoft Purview Information Protection doesn't currently support Private Link.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
 
-## Other Considerations and limitations
+## Other considerations and limitations
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:
 

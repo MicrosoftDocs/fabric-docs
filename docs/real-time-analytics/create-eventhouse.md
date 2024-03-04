@@ -96,7 +96,7 @@ In this section, you add a new KQL database to an existing Eventhouse. This data
     | Medium      | 18         |
     | Large       | 26         |
     | Extra Large | 34         |
-    | 2X Large    | 56         |
+    | 2X Large    | 50         |
 
     :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Analytics Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
 
