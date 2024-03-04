@@ -26,8 +26,10 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 
 > [!NOTE]
 > Managed virtual networks are currently not supported in the Switzerland West and West Central US regions.
-> Outbound : Managed Private Endpoints are not available in Fabric workspaces attached to capacities in Switzerland West and West Central US regions.
-> Inbound : If workspaces are attached to Fabric capacities in this region within tenants where the Private Link setting is enabled, Data Engineering jobs originating from notebooks, Spark job definitions, and lakehouse operations will result in errors.
+>
+> Outbound: Managed Private Endpoints are not available in Fabric workspaces attached to capacities in Switzerland West and West Central US regions.
+>
+> Inbound: If workspaces are attached to Fabric capacities in this region within tenants where the Private Link setting is enabled, Data Engineering jobs originating from notebooks, Spark job definitions, and lakehouse operations will result in errors.
 
 ## How to enable managed virtual networks for a Fabric workspace
 
