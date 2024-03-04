@@ -97,7 +97,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 * If your organization is using Azure Private Link in Fabric, modern usage metrics reports will contain partial data (only Report Open events). A current limitation when transferring client information over private links prevents Fabric from capturing Report Page Views and performance data over private links. If your organization had enabled the **Azure Private Link** and **Block Public Internet Access** tenant settings in Fabric, the refresh for the dataset fails and the usage metrics report doesn't show any data.
 
-### Rest Fabric items
+### Other Fabric items
 
 Other Fabric items, such as Model, Experience, KQL Database, and EventStream, don’t currently support Private Link, and are automatically disabled when you turn on the **Block Public Internet Access** tenant setting in order to protect compliance status.
 
@@ -107,7 +107,7 @@ Microsoft Purview Information Protection doesn't currently support Private Link.
 
 To enable these capabilities in Desktop, admins can configure [service tags](/azure/virtual-network/service-tags-overview) for the underlying services that support Microsoft Purview Information Protection, Exchange Online Protection (EOP), and Azure Information Protection (AIP). Make sure you understand the implications of using service tags in a private links isolated network.
 
-## Other Considerations and limitations
+## Other considerations and limitations
 
 There are several considerations to keep in mind while working with private endpoints in Fabric:
 
