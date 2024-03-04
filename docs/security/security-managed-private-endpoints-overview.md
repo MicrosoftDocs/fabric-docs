@@ -34,6 +34,8 @@ For more information about supported data sources for managed private endpoints 
 
 * Managed private endpoints are only supported for Fabric Trial capacity and Fabric capacities F64 or higher.
 
+* Managed private endpoints are only supported in the regions where Fabric Data Engineering workloads are available. Attempting to create managed private endpoints in a capacity region where Data Engineering workloads are not supported would result in errors.
+
 * To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
