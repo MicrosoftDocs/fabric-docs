@@ -1,5 +1,5 @@
 ---
-title: About private Links for secure access to Fabric
+title: About private Links for secure access to Fabric (preview)
 description: Learn about the Azure private link feature to provide secure access to Fabric using Azure Networking private endpoints. Data is sent privately instead of over the internet.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 02/28/2024
 ---
 
-# Private links for secure access to Fabric
+# Private links for secure access to Fabric (preview)
 
 You can use private links to provide secure access for data traffic in Fabric. Azure Private Link and Azure Networking private endpoints are used to send data traffic privately using Microsoft's backbone network infrastructure instead of going across the internet.
 
@@ -87,7 +87,7 @@ When you connect to Pipeline via private link, you can use the data pipeline to 
 
 ### Power BI
 
-* If internet access is disabled, and if the dataset or dataflow Gen1 connects to a Fabric semantic model or dataflow Gen1 as a data source, the connection will fail.
+* If internet access is disabled, and if the Power BI semantic model, Datamart, or Dataflow Gen1 connects to a Power BI semantic model or Dataflow as a data source, the connection will fail.
 
 * Publish to Web isn't supported when the tenant setting **Azure Private Link** is enabled in Fabric.
 
