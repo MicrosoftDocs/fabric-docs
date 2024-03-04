@@ -24,6 +24,11 @@ Fabric workspaces that are provisioned with a dedicated virtual network provide 
 
 * A managed virtual network for your workspace, along with managed private endpoints, allows you to access data sources that are behind firewalls or otherwise blocked from public access.
 
+> [!NOTE]
+> Managed virtual networks are currently not supported in the Switzerland West region.
+> Outbound : Managed Private Endpoints are not available in Fabric workspaces attached to capacities in Switzerland West.
+> Inbound : If workspaces are attached to Fabric capacities in this region within tenants where the Private Link setting is enabled, Data Engineering jobs originating from notebooks, Spark job definitions, and lakehouse operations will result in errors.
+
 ## How to enable managed virtual networks for a Fabric workspace
 
 Managed virtual networks are provisioned for a Fabric workspace when
