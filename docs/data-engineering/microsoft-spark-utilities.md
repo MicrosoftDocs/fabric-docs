@@ -529,7 +529,7 @@ mssparkutils.fs.unmount("/test")
 
 `mssparkutils.lakehouse` provides utilities specifically tailored for managing Lakehouse artifacts. These utilities empower users to create, retrieve, update, and delete Lakehouse artifacts effortlessly.
 
-### Overview of Methods
+### Overview of methods
 
 Below is an overview of the available methods provided by `mssparkutils.lakehouse`:
 
@@ -550,11 +550,11 @@ delete(name: String, workspaceId: String = ""): Boolean
 list(workspaceId: String = ""): Array[Artifact]
 ```
 
-### Usage Examples
+### Usage examples
 
 To utilize these methods effectively, consider the following usage examples:
 
-#### Creating a Lakehouse Artifact
+#### Creating a Lakehouse artifact
 
 ```python
 artifact = mssparkutils.lakehouse.create("artifact_name", "Description of the artifact", "optional_workspace_id")
@@ -565,22 +565,22 @@ artifact = mssparkutils.lakehouse.create("artifact_name", "Description of the ar
 artifact = mssparkutils.lakehouse.get("artifact_name", "optional_workspace_id")
 ```
 
-#### Updating a Lakehouse Artifact
+#### Updating a Lakehouse artifact
 ```python
 updated_artifact = mssparkutils.lakehouse.update("old_name", "new_name", "Updated description", "optional_workspace_id")
 ```
 
-#### Deleting a Lakehouse Artifact
+#### Deleting a Lakehouse artifact
 ```python
 is_deleted = mssparkutils.lakehouse.delete("artifact_name", "optional_workspace_id")
 ```
 
-#### Listing Lakehouse Artifacts
+#### Listing Lakehouse artifacts
 ```python
 artifacts_list = mssparkutils.lakehouse.list("optional_workspace_id")
 ```
 
-### Additional Information
+### Additional information
 
 For more detailed information about each method and its parameters, utilize the `mssparkutils.lakehouse.help("methodName")` function.
 
