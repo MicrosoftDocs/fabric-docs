@@ -56,8 +56,8 @@ items:
   - name: Fabric and OneLake data security
     href: ./security/fabric-and-onelake-security.md
   - name: OneLake Data Access Control Model
-  - href: ./security/data-access-control-model.md
-  - name: Get started with securing your data in OneLake
+    href: ./security/data-access-control-model.md
+  - name: Get started with securing data in OneLake
     items:
     - name: Overview
       href: ./security/get-started-security.md
@@ -70,21 +70,21 @@ items:
   - name: How To Secure Data in OneLake
     items:
     - name: For Data Science
-    - href: ./security/how-to-secure-data-in-onelake-for-data-science.md
+      href: ./security/how-to-secure-data-in-onelake-for-data-science.md
     - name: For Data Warehousing
-    - href: ./security/how-to-secure-data-in-onelake-for-data-warehousing.md
+      href: ./security/how-to-secure-data-in-onelake-for-data-warehousing.md
     - name: For Semantic Modeling
-    - href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling.md
+      href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling.md
     - name: For Data Factory
-    - href: ./security/how-to-secure-data-in-onelake-for-data-factory.md
+      href: ./security/how-to-secure-data-in-onelake-for-data-factory.md
     - name: For Real-Time Analytics
-    - href: ./security/how-to-secure-data-in-onelake-for-real-time-analytics.md
+      href: ./security/how-to-secure-data-in-onelake-for-real-time-analytics.md
     - name: For data access via OneLake API
-    - href: ./security/how-to-secure-data-in-onelake-for-onelake-api.md
+      href: ./security/how-to-secure-data-in-onelake-for-onelake-api.md
     - name: For data access via Databricks
-    - href: ./security/how-to-secure-data-for-databricks.md
+      href: ./security/how-to-secure-data-for-databricks.md
     - name: For AI modeling
-    - href: ./security/how-to-secure-data-for-ai-modeling.md
+      href: ./security/how-to-secure-data-for-ai-modeling.md
   - name: Plan for disaster recovery
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
