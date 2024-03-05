@@ -74,7 +74,7 @@ The inventory page displays all the items in your tenant. You can filter the res
 
 Use the decomposition tree, to decompose the activities according to *workspace name*, *item name*, *activity status* and additional parameters.
 
-For example, you can decompose the items in the decomposition tree by *activity status*, then display all the inactive items according to *item name*. You can then decide whether some of these items are no longer needed and can be deleted.
+For example, you can decompose the items in the decomposition tree by *activity status*, then display all the inactive items according to *item name*. The results can help you decide whether some of these items are no longer needed and can be deleted.
 
 ### Activity Details page
 
