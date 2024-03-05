@@ -1,5 +1,5 @@
 ---
-title: Overview of managed private endpoints for Microsoft Fabric
+title: Overview of managed private endpoints for Microsoft Fabric (preview)
 description: Learn about managed private endpoints for Microsoft Fabric.
 author: paulinbar
 ms.author: painbar
@@ -8,7 +8,7 @@ ms.custom:
 ms.date: 02/28/2024
 ---
 
-# Overview of managed private endpoints for Fabric
+# Overview of managed private endpoints for Fabric (preview)
 
 Managed private endpoints are feature that allows secure and private access to data sources from Fabric Spark workloads.
 
@@ -34,9 +34,9 @@ For more information about supported data sources for managed private endpoints 
 
 * Managed private endpoints are only supported for Fabric Trial capacity and Fabric capacities F64 or higher.
 
-* To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
+* Managed private endpoints are only supported in the regions where Fabric Data Engineering workloads are available. Attempting to create managed private endpoints in a capacity region where Data Engineering workloads are not supported would result in errors.
 
-* Managed private endpoints require the Fabric capacity and the data source to be in the same region. They don't work across different regions at this time.
+* To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
