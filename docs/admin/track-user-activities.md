@@ -5,7 +5,7 @@ author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
 ms.custom:
-ms.date: 12/20/2023
+ms.date: 02/29/2024
 ---
 
 # Track user activities in Microsoft Fabric
@@ -20,13 +20,13 @@ Knowing who is taking what action on which item in Microsoft Fabric, can be crit
 
 ## Access
 
-To access the audit logs, in Fabric go to the [admin portal](../admin/admin-center.md), select **Audit logs** and then select **Go to Microsoft 365 Admin Center**.
+To access the audit logs, in Fabric go to the [admin portal](../admin/admin-center.md), select **Audit logs**, and then select **Go to Microsoft 365 Admin Center**.
 
 Audit logs are also available directly through [Microsoft Purview](https://compliance.microsoft.com/auditlogsearch).
 
 ### Search the audit logs
 
-You can search the audit logs using the filters listed below. When you combine filters, the search results show only items that match all of the filter criteria.
+You can search the audit logs using the filters in the following list. When you combine filters, the search results show only items that match all of the filter criteria.
 
 * **Activities** - Your search returns the selected activities.
 
@@ -37,6 +37,10 @@ You can search the audit logs using the filters listed below. When you combine f
 * **File, folder, or site** - Search by file name, folder name, or URL.
 
 You can also use PowerShell to view audit logs. TO use PowerShell, [Connect to Exchange Online PowerShell](/powershell/exchange/connect-to-exchange-online-powershell). You can also use the blog post [Using Power BI Audit Log and PowerShell to assign Power BI Pro licenses](https://powerbi.microsoft.com/blog/using-power-bi-audit-log-and-powershell-to-assign-power-bi-pro-licenses/) as a reference.
+
+## Considerations and limitations
+
+When capacity ID and capacity name aren't available in the audit logs, you can view them in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 ## Related content
 
