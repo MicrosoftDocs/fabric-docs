@@ -228,3 +228,8 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 | Maximum number of OneLake RBAC roles per Fabric Item | At most 250 roles for each lakehouse item. |
 | Maximum number of members per OneLake RBAC role | At most 500 users and user groups per role. |
 | Maximum number of permissions per OneLake RBAC role | At most 500 permissions per role |
+
+### SLAs on OneLake RBAC [NEED Aaron's / Para Confirmation!! ]
+
+- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 15 seconds.
+- If you change a user group in OneLake RBAC role, it can take up to 30 min for OneLake to apply the role's permissions on the updated user group.
