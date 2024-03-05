@@ -616,9 +616,9 @@ The following operations are available in the audit logs.
 | Viewed Power BI tile | ViewTile |  |
 | Viewed Power BI usage metrics | ViewUsageMetrics |  |
 
-## Limitations
+## Considerations and limitations
 
-For some audit events, the capacity name and capacity ID aren't currently available in the logs.
+When capacity ID and capacity name aren't available in the audit logs, you can view them in the [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md).
 
 ## Related content
 
