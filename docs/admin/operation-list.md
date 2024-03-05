@@ -622,4 +622,4 @@ When capacity ID and capacity name aren't available in the audit logs, you can v
 
 ## Related content
 
-[Track operations](track-user-activities.md)
+[Track user activities in Microsoft Fabric](track-user-activities.md)
