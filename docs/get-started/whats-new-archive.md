@@ -162,7 +162,6 @@ This section summarizes archived improvements and features for [Synapse Data War
 
 |**Month** | **Feature** |  **Learn more**|
 |:-- |:-- | :-- |
-
 |August 2023|**Efficient Data Partitioning with Microsoft Fabric: Best Practices and Implementation Guide**|A proposed [method for data partitioning using Fabric notebooks](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/efficient-data-partitioning-with-microsoft-fabric-best-practices/ba-p/3890097). Data partitioning is a data management technique used to divide a large dataset into smaller, more manageable subsets called partitions or shards. |
 |May 2023|**Microsoft Fabric - How can a SQL user or DBA connect**|This blog reviews how to [connect to a SQL analytics endpoint of the Lakehouse or the Warehouse through the Tabular Data Stream, or TDS endpoint](https://techcommunity.microsoft.com/t5/fasttrack-for-azure/microsoft-fabric-how-can-a-sql-user-or-dba-connect-part-2/ba-p/3836343), familiar to all modern web applications that interact with a SQL Server endpoint.|
 
