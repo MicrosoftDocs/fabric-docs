@@ -29,13 +29,13 @@ Learn more in [Get Started with Data Access Roles](../security/get-started-data-
 
 ## Default RBAC Role in lakehouse
 
-When user creates a new lakehouse, OneLake generates a default RBAC Role named `Default Readers`. The role allows all users with lakehouse Read permission to read all folders in the Item.
+When user creates a new lakehouse, OneLake generates a default RBAC Role named `Default Readers`. The role allows all users with ReadAll permission to read all folders in the Item.
 
 Here's the default Role definition:
 
 | Fabric Item | Role Name | Permission | Folders included | Assigned members |
 | ---- | --- | --- | ---- | ---- |
-| Lakehouse | `DefaultReaders` | Read | All folders under `Tables/` and `Files/` | All users with lakehouse Read permission |
+| Lakehouse | `DefaultReaders` | ReadAll | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
 
 > [!NOTE]
 > In order to restrict the access to specific users or specific folders, you must either modify the default role or remove it and create a new custom role.
@@ -122,8 +122,16 @@ Workspace roles in Fabric grant the following permissions in OneLake.
 
 | **Permission** | **Admin** | **Member** | **Contributor** | **Viewer** |
 |---|---|---|---|---|
-| View files in OneLake | Yes | Yes | Yes | No by default. Use OneLake RBAC to grant the access. |
-| Write files in OneLake | Yes | Yes | Yes | No |
+| View files in OneLake | Always* Yes | Always* Yes | Always* Yes | No by default. Use OneLake RBAC to grant the access. |
+| Write files in OneLake | Always* Yes | Always* Yes | Always* Yes | No |
+
+> [!NOTE]
+> *Since Workspace Admin, Member and Contributor Roles automatically grant Write permissions to OneLake, it overrides any OneLake RBAC Read permissions.
+>
+> | **Workspace Role** | **Does OneLake apply RBAC Read permissions?**|
+> |---|---|
+> | Admin, Contributor, Member | No, OneLake Security will ignore any OneLake RBC Read permissions |
+> | Viewer | Yes, if defined, OneLake RBAC Read permissions will be applied |
 
 ## OneLake RBAC and Lakehouse permissions
 
@@ -140,9 +148,9 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ### OneLake RBAC and Lakehouse SQL Analytics Endpoint permissions
 
-| **SQL Analytics Endpoint Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** |
+| **SQL Analytics Endpoint Permission** | **Users can view files via OneLake Endpoint?** | **Users can write files via OneLake Endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
-| Read  | Yes by default. Use OneLake RBAC to restrict the access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md) |
+| Read  | No by default, use OneLake RBAC to grant access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md) |
 | ReadData | Yes by default. Use OneLake RBAC to restrict the access. | No | Yes |
 | Write | Yes | Yes | Yes |
 
@@ -152,7 +160,7 @@ In Microsoft Fabric, when the user creates a lakehouse, the system also provisio
 
 | **Default Semantic Model Permission** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can see schema in Semantic Model?** | **Can read data in Semantic Model?** |
 |----------|----------|----------|--------------|-------------|
-| Read  | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](/power-bi/enterprise/service-admin-rls)  |
+| Read  | No by default, use OneLake RBAC to grant access. | No | No | Yes by default. Can be restricted with [Power BI Object-level Security](/power-bi/enterprise/service-admin-ols?tabs=table) and [Power BI Row-Level security](/power-bi/enterprise/service-admin-rls)  |
 | Build | Yes by default. Use OneLake RBAC to restrict the access. | Yes | Yes | Yes |
 | Write | Yes | Yes | Yes | Yes |
 | Reshare |  N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own | N/A - can't be granted on its own |
@@ -167,8 +175,8 @@ When someone shares a lakehouse, they can also grant access to the SQL endpoint 
 
 | **Sharing Option** | **Can view files in OneLake?** | **Can write files in OneLake?** | **Can read data through SQL analytics endpoint?** | **Can view and build Semantic Models?** |
 |----------|----------|----------|----------|-----|
-| *No additional permissions selected* | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
-| Read all A]ache Spark | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
+| *No additional permissions selected* | No by default, use OneLake RBAC to grant access. |  No | No | No |
+| Read all Apache Spark | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
 | Read all SQL endpoint data | Yes by default. Use OneLake RBAC to restrict the access. |  No | Yes | No |
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
