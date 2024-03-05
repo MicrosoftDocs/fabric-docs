@@ -73,8 +73,8 @@ items:
       href: ./security/how-to-secure-data-in-onelake-for-data-science.md
     - name: For Data Warehousing
       href: ./security/how-to-secure-data-in-onelake-for-data-warehousing.md
-    - name: For Semantic Modeling
-      href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling.md
+    - name: For Semantic Modeling and Reporting
+      href: ./security/how-to-secure-data-in-onelake-for-semantic-modeling-reporting.md
     - name: For Data Factory
       href: ./security/how-to-secure-data-in-onelake-for-data-factory.md
     - name: For Real-Time Analytics
