@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/02/2023
+ms.date: 03/05/2024
 ---
 
 # Feature usage and adoption report
@@ -22,11 +22,13 @@ The report is built to allow admins to analyze specific scenarios. Use the repor
 
 ## Report pages
 
-The *feature usage and adoption* report has three pages:
+The *feature usage and adoption* report has four pages:
 
 * **Activity Overview** - Provides a bird's eye view of activities and usage across the entire organization
 
 * **Analysis** - Visualizes data across multiple activity dimensions
+
+* **Inventory** - View all the items in your tenant
 
 * **Activity Details** - Displays detailed information on specific or multiple capacity or workspace activities
 
@@ -57,6 +59,22 @@ To view the details of a specific activity, drill through to the [Activity Detai
 3. Select *Activity Details*.
 
 Continuing the example from the [Activity Overview](#activity-overview-page) page, you turn to the Analysis page to understand why in December, the *sales and marketing* capacity has almost five times more activities than any other capacity. Using the *Date* fields, you filter the results for December. By reviewing the *Decomposition tree*, you see that almost all of the activities are for viewing a Power BI report. You decide to drill through to the [Activity details](#activity-details-page) page to understand which report is being extensively viewed.
+
+### Inventory page
+
+The inventory page displays all the items in your tenant. You can filter the results according to:
+
+* **Item type** - Sort the results to display only the Fabric items you want to see.
+
+* **Workspace name** - Sort the results according to workspaces.
+
+* **Activity status** - Sort results according to the status of the activity. Audit logs are used to determine the status of the activity.
+    * *Active* - At least one audit log activity was generated in the last 30 days.
+    * *Inactive* - No audit log activity was generated in the last 30 days.
+
+Use the decomposition tree, to decompose the activities according to *workspace name*, *item name*, *activity status* and additional parameters.
+
+For example, you can decompose the items in the decomposition tree by *activity status*, then display all the inactive items according to *item name*. You can then decide whether some of these items are no longer needed and can be deleted.
 
 ### Activity Details page
 
