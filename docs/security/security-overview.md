@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 02/28/2024
+ms.date: 03/06/2024
 ---
 
 # Security in Microsoft Fabric
@@ -17,33 +17,33 @@ As you bring your data to the cloud and use it with various analytic experiences
 
 Fabric security is:
 
-* Continuous - Fabric security is always on. Because it's embedded in the cloud, it doesn't rely on a team of experts to keep it running.
+* **Always on** - Every interaction with Fabric is encrypted by default and authenticated using Microsoft Entra ID. All communication between Fabric experiences travels through the Microsoft backbone internet. Data at rest is automatically stored encrypted.
 
-* Configurable - You can configure Fabric security in accordance with your organizational policies.
+    To regulate access to Fabric, you can add extra security features such as [Private Links](security-private-links-overview.md) or [Entra Conditional Access](security-conditional-access.md) . Fabric can also connect to data protected by a firewall or a private network using trusted access.
 
-* Automated - Many of the Fabric security features are automated. Once configured, these features continue to work in the background.
+* **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
-* Evolving - Microsoft is constantly improving Fabric security, by adding new features and controls.
+* **Governable** - Fabric comes with a set of governance tools such [data lineage](../governance/lineage.md), [information protection labels](../governance/information-protection.md), [data loss prevention](/purview/dlp-learn-about-dlp) and [purview integration](../governance/use-microsoft-purview-hub.md).  
+
+* **Configurable** - You can configure Fabric security in accordance with your organizational policies.
+
+* **Evolving** - Microsoft is constantly improving Fabric security, by adding new features and controls.
 
 ## Authenticate
 
-Microsoft Fabric is a SaaS platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity provider. Microsoft Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Microsoft Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
+Microsoft Fabric is a SaaS platform, like many other Microsoft services such as Azure, Microsoft Office, OneDrive, and Dynamics. All these Microsoft SaaS services including Fabric, use [Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) as their cloud-based identity provider. Microsoft Entra ID helps users connect to these services quickly and easily from any device and any network. Every request to connect to Fabric is authenticated with Microsoft Entra ID, allowing users to safely connect to Fabric from their corporate office, when working at home, or from a remote location.
 
-## Configure network security
+## Understand network security
 
 Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve connecting to data that's outside of the Fabric platform. For example, viewing a report from your own network or connecting to data that's in another service. Interactions within Fabric use the internal Microsoft network and traffic outside of the service is protected by default. For more information and a detailed description, see [Data in transit](security-fundamentals.md#data-in-transit).
 
 ### Inbound network security
 
-Your organization might want to restrict and secure the network traffic coming into Fabric based on your organization's requirements.
+Your organization might want to restrict and secure the network traffic coming into Fabric based on your company's requirements. With [Microsoft Entra ID Conditional Access](security-conditional-access.md) and [Private Links](security-private-links-overview.md), you can [select the right inbound solution](protect-inbound-traffic) for your organization.
 
-#### Microsoft Entra ID
+#### Microsoft Entra ID Conditional Access
 
-[Microsoft Entra ID](/entra/verified-id/decentralized-identifier-overview) provides Fabric with a robust network inbound security. Every interaction with Fabric, including logging in, using the Power BI mobile app, and running SQL queries through SQL Server Management Studio (SSMS), is authenticated using Microsoft Entra ID.
-
-With Microsoft Entra ID you can set up a [Zero Trust](/security/zero-trust/zero-trust-overview) security solution for Fabric. Zero Trust assumes that you're not safe within the compound of your organization's network security. The Zero trust approach believes that your organization is constantly under attack, and that you face a continuous security breach threat. To combat this on-going threat, Fabric enforces the use of Microsoft Entra ID authentication. With Microsoft Entra ID, identity is the security perimeter and users can't use other authentication means such as account keys, shared access signatures (SAS), SQL authentication (usernames and passwords).
-
-Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to your data. Here are a few examples of access restrictions you can enforce using Conditional Access.
+Microsoft Entra ID provides Fabric with [Conditional Access](/entra/identity/conditional-access/overview) which allows you to secure access to Fabric on every connection. Here are a few examples of access restrictions you can enforce using Conditional Access.
 
 * Define a list of IPs for inbound connectivity to Fabric.
 
@@ -55,23 +55,33 @@ To configure conditional access, see [Conditional access in Fabric](security-con
 
 To understand more about authentication in Fabric, see [Microsoft Fabric security fundamentals](security-fundamentals.md).
 
+#### Private Links
+
+Private links enable secure connectivity to Fabric by restricting access to your Fabric tenant from an Azure virtual network (VNet), and blocking all public access. This ensures that only network traffic from that VNet is allowed to access Fabric features such as [Notebooks](../data-engineering/how-to-use-notebook.md), [Lakehouses](../data-engineering/lakehouse-overview.md), and [data warehouses](../data-warehouse/data-warehousing.md), in your tenant.
+
+To configure Private Links in Fabric, see [Set up and use private links](../security/security-private-links-use.md).
+
 ### Outbound network security
 
 Fabric has a set of tools that allow you to connect to external data sources and bring that data into Fabric in a secure way. This section lists different ways to import and connect to data from a secure network into fabric.
 
+#### Trusted workspace access
+
+With Fabric you can access firewall enabled Azure Data Lake Gen 2 accounts securely. Fabric workspaces that have a workspace identity can securely access Azure Data Lake Gen 2 accounts with public network access enabled, from selected virtual networks and IP addresses. You can limit ADLS gen 2 access to specific Fabric workspaces. For more information, see [Trusted workspace access](../security/security-trusted-workspace-access.md).
+
+#### Managed Private Endpoints
+
+[Managed private endpoints](security-managed-private-endpoints-overview.md) allow secure connections to data sources such Azure SQL databases without exposing them to the public network or requiring complex network configurations.  
+
 #### Data gateway
 
-To connect to on-premises data sources, that might be protected by a firewall or a virtual network, you can use one of these options:
+To connect to on-premises data sources or a data source that might be protected by a firewall or a virtual network, you can use one of these options:
 
-* [On-premises data gateway](/power-bi/connect-data/service-gateway-onprem) - The gateway acts as a bridge between your on-premises data sources and Fabric. The gateway is installed on a server within your network, and it allows Fabric to connect to your data sources without the need to open ports or make changes to your network.
+* [On-premises data gateway](/power-bi/connect-data/service-gateway-onprem) - The gateway acts as a bridge between your on-premises data sources and Fabric. The gateway is installed on a server within your network, and it allows Fabric to connect to your data sources through a secure channel without the need to open ports or make changes to your network.
 
 * [Virtual network (VNet) data gateway](/data-integration/vnet/overview) - The VNet gateway allows you to connect from Microsoft Cloud services to your Azure data services within a VNet, without the need of an on-premises data gateway.
 
-#### On-premises data gateway
-
-With an on-premises data gateway you can use [Data Flows Gen 2](../data-factory/dataflows-gen2-overview.md) to connect to data sources that are behind firewalls and virtual networks.
-
-#### Connect to an existing service
+#### Connect to OneLake from an existing service
 
 You can connect to Fabric using your existing Azure Platform as a Service (PaaS) service. For Synapse and Azure Data Factory (ADF) you can use [Azure Integration Runtime (IR)](/azure/data-factory/concepts-integration-runtime) or [Azure Data Factory managed virtual network](/azure/data-factory/managed-virtual-network-private-endpoint). You can also connect to these services and other services such as Mapping data flows, Synapse Spark clusters, Databricks Spark clusters and Azure HDInsight using [OneLake APIs](../onelake/onelake-access-api.md).
 
@@ -109,7 +119,7 @@ Fabric controls data access using [workspaces](../get-started/workspaces.md). In
 
 ### Workspace roles
 
-Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md)
+Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
 
 | Role                           | Workspace access                       | OneLake access                                                        |
 |--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
@@ -130,19 +140,19 @@ To expose reports using a DirectLake dataset with RLS without a DirectQuery fall
 
 ## Protect data
 
-Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highly Confidential*, that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect sensitive information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, thus ensuring that your data remains protected. Only authorized users will be able to open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
+Fabric supports sensitivity labels from Microsoft Purview Information Protection. These are the labels, such as *General*, *Confidential*, and *Highly Confidential* that are widely used in Microsoft Office apps such as Word, PowerPoint, and Excel to protect sensitive information. In Fabric, you can classify items that contain sensitive data using these same sensitivity labels. The sensitivity labels then follow the data automatically from item to item as it flows through Fabric, all the way from data source to business user. The sensitivity label follows even when the data is exported to supported formats such as PBIX, Excel, PowerPoint, and PDF, ensuring that your data remains protected. Only authorized users can open the file. For more information, see [Governance and compliance in Microsoft Fabric](../governance/governance-compliance-overview.md).
 
 To help you govern, protect, and manage your data, you can use [Microsoft Purview](../governance/microsoft-purview-fabric.md). Microsoft Purview and Fabric work together letting you store, analyze, and govern your data from a single location, the [Microsoft Purview hub](../governance/use-microsoft-purview-hub.md).
 
 ## Recover data
 
-Fabric data resiliency ensures that your data is available in case of a disaster. Fabric also enables you to recover your data in case of a disaster, Disaster recovery. For more information see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
+Fabric data resiliency ensures that your data is available if there is a disaster. Fabric also enables you to recover your data in case of a disaster, Disaster recovery. For more information, see [Reliability in Microsoft Fabric](/azure/reliability/reliability-fabric).
 
 ## Administer Fabric
 
-As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
+As an [administrator in Fabric](../admin/admin-overview.md), you get to control capabilities for the entire organization. Fabric enables delegation of the admin role to capacities, workspaces, and domains. By delegating admin responsibilities to the right people, you can implement a model that lets several key admins control general Fabric settings across the organization, while other admins who are in charge of settings related to specific areas.
 
-Using a variety of tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption. You can also [view audit logs](../admin/track-user-activities.md) to monitor user activities and investigate unexpected incidents if needed.
+Using various tools, admins can also [monitor](../admin/admin-overview.md#monitor) key Fabric aspects such as capacity consumption. You can also [view audit logs](../admin/track-user-activities.md) to monitor user activities and investigate unexpected incidents if needed.
 
 ## Capabilities
 
