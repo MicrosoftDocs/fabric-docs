@@ -4,7 +4,7 @@ description: Identify issues that are affecting Microsoft Fabric.
 author: mihart
 ms.author: jessicamo
 ms.topic: troubleshooting    
-ms.date: 02/27/2024
+ms.date: 03/05/2024
 ms.custom:
 ---
 
@@ -20,6 +20,9 @@ Select the **Title** to view more information about that specific known issue.
 
 |  Issue ID |  Product experience     |  Title                           |  Issues publish date |  
 |-----------|-------------------------|----------------------------------|----------------------|
+|  642  | Data Engineering | [Load Table public API response returns error](known-issues/known-issue-642-load-table-public-api-response-returns-error.md) | March 5, 2024 |
+|  641  | Power BI | [Visuals using the Denodo connector might show connection errors](known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md) | March 5, 2024 |
+|  640  | Power BI | [Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop](known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md) | March 5, 2024 |
 |  643  | Data Engineering | [Tables not available to add in Power BI semantic model](known-issues/known-issue-643-tables-not-available-semantic-model.md) | February 27, 2024 |
 |  602  | Power BI | [Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB](known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md) | February 27, 2024 |
 |  591  | Data Factory | [Type mismatch when writing decimals and dates to lakehouse using a dataflow](known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md) | February 16, 2024 |
@@ -56,8 +59,6 @@ Select the **Title** to view more information about that specific known issue. K
 |  482  | Power BI              | [Power BI Desktop sign-in prompt shows unsupported personal Microsoft accounts](known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md)    | August 10, 2023   | Fixed: February 14, 2024 |
 |  577  | OneLake  | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-577-tables-not-visible-sql-endpoint-for-some-shortcuts.md)  | December 13, 2023  | Fixed: February 2, 2024  |
 |  553  | OneLake, Administration & Management  | [OneLake compute transactions don't count against capacity limits](known-issues/known-issue-553-onelake-compute-transactions-not-reported-metrics-app.md)  | November 15, 2023  | Fixed: January 19, 2024  |
-|  598  | Data Factory  | [Failed to publish Dataflow Gen2](known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md)  | November 11, 2023      | Fixed: January 12, 2024  |
-|  483  | Administration & Management | [Admin monitoring dataset refresh fails and credentials expire](known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md)  | August 24, 2023 | Fixed: January 12, 2024 |
 
 ## Related content
 
