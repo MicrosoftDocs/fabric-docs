@@ -58,25 +58,25 @@ Example calculation:
 > The jobs have a queue expiration period of 24 hours, after which they are cancelled, and users must resubmit them for job execution.
 
 Fabric Spark throttling doesn't have enforced arbitrary jobs-based limits, and the throttling is only based on the number of cores allowed for the purchased Fabric capacity SKU.
-
+The job admission by default will be an optimistic admission control, where the jobs are admitted based on their minimum cores requirement. Learn more about the optimitic job admission [Job Admission and Management](job-admission-and-management.md)
 If the default pool (Starter Pool) option is selected for the workspace, the following table lists the max concurrency job limits.
 
 Learn more about the default starter pool configurations based on the Fabric Capacity SKU [Configuring Starter Pools](configure-starter-pools.md)
 
-| SKU Name         | Capacity Units | Spark VCores | Cores per Job (Default Starter Pools Configuration)| Max Jobs |
+| SKU Name         | Capacity Units | Spark VCores | Total Cores per Job (Default Starter Pools Configuration)| Max Jobs |
 |------------------|----------------|--------------|---------------------------|----------|
 | F2               | 2              | 4            | 8                         | 2        |
 | F4               | 4              | 8            | 8                         | 3        |
-| F8               | 8              | 16           | 16                        | 3        |
-| F16              | 16             | 32           | 32                        | 3        |
-| F32              | 32             | 64           | 64                        | 3        |
-| F64              | 64             | 128          | 80                        | 4        |
-| Trial Capacity   | 64             | 128          | 80                        | 4        |
-| F128             | 128            | 256          | 80                        | 9        |
-| F256             | 256            | 512          | 80                        | 19       |
-| F512             | 512            | 1024         | 80                        | 38       |
-| F1024            | 1024           | 2048         | 80                        | 76       |
-| F2048            | 2048           | 4096         | 80                        | 153      |
+| F8               | 8              | 16           | 16                        | 6        |
+| F16              | 16             | 32           | 32                        | 12       |
+| F32              | 32             | 64           | 64                        | 24       |
+| F64              | 64             | 128          | 80                        | 48       |
+| Trial Capacity   | 64             | 128          | 80                        | 24       |
+| F128             | 128            | 256          | 80                        | 96       |
+| F256             | 256            | 512          | 80                        | 192      |
+| F512             | 512            | 1024         | 80                        | 384      |
+| F1024            | 1024           | 2048         | 80                        | 768      |
+| F2048            | 2048           | 4096         | 80                        | 1536     |
 
 ## Related content
 
