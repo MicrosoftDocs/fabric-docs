@@ -125,6 +125,12 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Load Table public API response returns error
+      href: known-issues/known-issue-642-load-table-public-api-response-returns-error.md
+    - name: Visuals using the Denodo connector might show connection errors
+      href: known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md
+    - name: Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop
+      href: known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md
     - name: Tables not available to add in Power BI semantic model
       href: known-issues/known-issue-643-tables-not-available-semantic-model.md
     - name: Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB
