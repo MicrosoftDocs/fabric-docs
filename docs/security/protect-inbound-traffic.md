@@ -16,7 +16,7 @@ Inbound traffic is traffic coming into Fabric from the internet. This article ex
 
 * **Private links** - Fabric uses a private IP address from your virtual network. The endpoint allows users in your network to communicate with Fabric over the private IP address using private links.
 
-Once traffic enters Fabric, it gets authenticated by Microsoft Entra ID, which is the same authentication method used by Microsoft 365, OneDrive, and Dynamics 365. Entra ID authentication allows users to securely connect to cloud applications from any device and any network, whether they’re at home, remote, or in their corporate office.
+Once traffic enters Fabric, it gets authenticated by Microsoft Entra ID, which is the same authentication method used by Microsoft 365, OneDrive, and Dynamics 365. Microsoft Entra ID authentication allows users to securely connect to cloud applications from any device and any network, whether they’re at home, remote, or in their corporate office.
 
 The Fabric backend platform is protected by a virtual network and isn't directly accessible from the public internet other than through secure endpoints. To understand how traffic is protected in Fabric, review Fabric's [Architectural diagram](security-fundamentals.md#architectural-diagram).
 
@@ -24,7 +24,7 @@ By default, Fabric communicates between [experiences](../get-started/microsoft-f
 
 Fabric's default security settings include:
 
-* [Entra ID](/entra/fundamentals/whatis) which is used to authenticate every request.
+* [Microsoft Entra ID](/entra/fundamentals/whatis) which is used to authenticate every request.
 
 * Upon successful authentication, requests are routed to the appropriate backend service through secure Microsoft managed endpoints.
 
@@ -34,7 +34,7 @@ Fabric's default security settings include:
 
 ## Entra Conditional Access
 
-Every interaction with Fabric is authenticated with Entra ID. Entra ID is based upon the [Zero Trust](/azure/security/fundamentals/zero-trust) security model, which assumes that you're not fully protected within your organization's network perimeter. Instead of looking at your network as a security boundary, Zero Trust looks at identity as the primary perimeter for security.
+Every interaction with Fabric is authenticated with Microsoft Entra ID. Microsoft Entra ID is based upon the [Zero Trust](/azure/security/fundamentals/zero-trust) security model, which assumes that you're not fully protected within your organization's network perimeter. Instead of looking at your network as a security boundary, Zero Trust looks at identity as the primary perimeter for security.
 
 To determine access at the time of authentication you can define and enforce [conditional access policies](/entra/identity/conditional-access/overview) based on your users' identity, device context, location, network, and application sensitivity. For example, you can require multifactor authentication, device compliance, or approved apps for accessing your data and resources in Fabric. You can also block or limit access from risky locations, devices, or networks.
 
@@ -61,7 +61,7 @@ Conditional access requires Microsoft Entra ID P1 licenses. Often these licenses
 
 ### Trusted access
 
-Fabric doesn't need to reside in your private network, even when you have your data stored inside one. With PaaS services, it's common to put the compute in the same private network as the storage account. However, with Fabric this isn't needed. To enable trusted access into Fabric, you can use features such as [on-premise Data gateways](/power-bi/connect-data/service-gateway-onprem), [Trusted workspace access](security-trusted-workspace-access.md) and [managed private endpoints](/azure/private-link/manage-private-endpoint). For more information, see [Security in Microsoft Fabric](security-overview.md).
+Fabric doesn't need to reside in your private network, even when you have your data stored inside one. With PaaS services, it's common to put the compute in the same private network as the storage account. However, with Fabric this isn't needed. To enable trusted access into Fabric, you can use features such as [on-premises Data gateways](/power-bi/connect-data/service-gateway-onprem), [Trusted workspace access](security-trusted-workspace-access.md) and [managed private endpoints](/azure/private-link/manage-private-endpoint). For more information, see [Security in Microsoft Fabric](security-overview.md).
 
 ## Private links
 
