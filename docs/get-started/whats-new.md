@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 03/05/2024
+ms.date: 03/06/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -84,6 +84,7 @@ The following table lists the features of Microsoft Fabric that have transitione
 
 This section summarizes new Microsoft Fabric community opportunities for prospective and current influencers and MVPs.
 
+- [Sign up for the Fabric Community Newsletter](https://community.fabric.microsoft.com/t5/Community-News/Fabric-Community-Newsletter-March-2024/td-p/3744214).
 - Join a local [Fabric User Group](https://community.fabric.microsoft.com/t5/Fabric-User-Groups/ct-p/fbc_usergroups) or [join a local event](https://community.fabric.microsoft.com/t5/custom/page/page-id/UnifiedSearchPage?tabName=events).
 - To learn about the Microsoft MVP Award and to find MVPs, see [mvp.microsoft.com](https://mvp.microsoft.com/).
 - Are you a student? Learn more about the [Microsoft Learn Student Ambassadors program](https://mvp.microsoft.com/studentambassadors).
@@ -444,9 +445,11 @@ This section summarizes recent announcements about governance and compliance cap
 |:-- |:-- | :-- | 
 |May 2023|**Administration, Security and Governance in Microsoft Fabric**|Microsoft Fabric provides [built-in enterprise grade governance and compliance capabilities](https://blog.fabric.microsoft.com/blog/administration-security-and-governance-in-microsoft-fabric), powered by [Microsoft Purview](../governance/use-microsoft-purview-hub.md). |
 
-## Related content
+## Archive
 
 For older updates, review [previous updates in Microsoft Fabric](whats-new-archive.md).
+
+## Related content
 
 - [Modernization Best Practices and Reusable Assets Blog](https://techcommunity.microsoft.com/t5/modernization-best-practices-and/bg-p/ModernizationBestPracticesBlog)
 - [Azure Data Explorer Blog](https://techcommunity.microsoft.com/t5/azure-data-explorer-blog/bg-p/AzureDataExplorer)
