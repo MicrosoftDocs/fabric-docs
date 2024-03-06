@@ -15,6 +15,8 @@ items:
   items:
   - name: Inbound
     items:
+    - name: Protect inbound traffic
+      href: protect-inbound-traffic.md
     - name: About private links
       href: security-private-links-overview.md
     - name: Set up and use private links
