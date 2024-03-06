@@ -20,7 +20,7 @@ Managed private endpoints are feature that allows secure and private access to d
 
 * The private endpoints provide a secure way to connect and access the data from these data sources using items such as notebooks and Spark job definitions. 
 
-* Managed private endpoints are created and managed by Microsoft Fabric, and the user only needs to specify the resource ID of the data source and the target subresource, and provide a justification of their access request for the data source admin who has to approve it.
+* Managed private endpoints are created and managed by Microsoft Fabric. By just specifying the resource ID of the data source and the target subresource, and a justification for private endpoint request for the data source admin, admins can setup the managed private endpoints from the workspace settings.
 
 * Managed private endpoints support various data sources, such as Azure Storage, Azure SQL Database, Azure Synapse Analytics, Azure Cosmos DB, Application gateway, Azure Key Vault, and many more.
 
