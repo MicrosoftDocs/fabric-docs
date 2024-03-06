@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/28/2024
+ms.date: 03/06/2024
 ---
 
 # Overview of managed private endpoints for Fabric (preview)
@@ -20,7 +20,7 @@ Managed private endpoints are feature that allows secure and private access to d
 
 * The private endpoints provide a secure way to connect and access the data from these data sources using items such as notebooks and Spark job definitions. 
 
-* Microsoft Fabric creates and manages managed private endpoints based on the inputs from the workspace admin. Admins can set up managed private endpoints from the workspace settings by specifying the resource ID of the data source, identifying the target subresource, and providing a justification for the private endpoint request.
+* Microsoft Fabric creates and manages managed private endpoints based on the inputs from the workspace admin. Workspace admins can set up managed private endpoints from the workspace settings by specifying the resource ID of the data source, identifying the target subresource, and providing a justification for the private endpoint request.
 
 * Managed private endpoints support various data sources, such as Azure Storage, Azure SQL Database and many more.
 
@@ -28,15 +28,21 @@ Managed private endpoints are feature that allows secure and private access to d
 
 For more information about supported data sources for managed private endpoints in Fabric, see [Supported data sources](./security-managed-private-endpoints-create.md#supported-data-sources).
 
-### Limitations and considerations
+## Limitations and considerations
 
-* **Starter Pools Limitation** : Workspaces with managed virtual network (VNets) cannot access Starter Pools. This category encompasses workspaces that utilize managed private endpoints or are associated with a Fabric tenant enabled with Azure Private Links and have executed Spark jobs. These workspaces rely on on-demand clusters, taking 3 to 5 minutes to start a session.
-* **Managed Private Endpoints**: Supported only for Fabric Trial capacity and Fabric capacities F64 or higher.
+* **Starter pool limitation**: Workspaces with managed virtual networks (VNets) can't access starter pools. This category encompasses workspaces that use managed private endpoints or are associated with a Fabric tenant enabled with Azure Private Links and have executed Spark jobs. Such workspaces rely on on-demand clusters, taking three to five minutes to start a session.
+
+* **Managed private endpoints**: Managed private endpoints are supported only for Fabric trial capacity and Fabric capacities F64 or higher.
+
 * **Regional Compatibility**: Managed private endpoints function only in regions where Fabric Data Engineering workloads are available. Creating them in unsupported capacity regions results in errors.
-* **Spark Job Resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
-* **Lakehouse Table Maintenance**: Not supported for workspaces with managed private endpoints.
-* **Managed VNET Association**: Deleting the last managed private endpoint does not allow managed virtual network (VNET) deletion. Workspace admins creating and then deleting a managed private endpoint keep the workspace associated with a managed virtual network (VNET), preventing Starter Pools activation.
-* **Workspace Migration**: Unsupported across capacities in different regions.
+
+* **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
+
+* **Lakehouse table maintenance**: Lakehouse table maintenance isn't supported for workspaces that have managed private endpoints.
+
+* **Managed VNet association**: Deleting the last managed private endpoint does not allow managed virtual network (VNet) deletion. Workspace admins creating and then deleting a managed private endpoint keep the workspace associated with a managed VNet, preventing the activation of starter pools.
+
+* **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
 
