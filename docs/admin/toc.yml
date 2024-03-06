@@ -38,6 +38,8 @@ items:
     href: monitoring-hub.md 
   - name: Track user activities
     href: track-user-activities.md
+  - name: Operation list
+    href: operation-list.md
   - name: Find users who have signed in
     href: service-admin-access-usage.md
   - name: Customize Fabric branding
