@@ -14,11 +14,11 @@ Managed private endpoints are feature that allows secure and private access to d
 
 ## What are Managed Private Endpoints?
 
-* Managed private endpoints are private endpoints that workspace admins can create to connect to data sources that are behind a firewall or that are blocked from accessing from the public internet.
+* Managed private endpoints are connections that workspace admins can create to access data sources that are behind a firewall or that are blocked from accessing from the public internet.
 
 * Managed private endpoints allow Fabric Spark workloads to securely access data sources without exposing them to the public network or requiring complex network configurations.
 
-* The private endpoints provide a secure way to connect and access the data from these data sources through Fabric Spark items such as notebooks and Spark job definitions. 
+* The private endpoints provide a secure way to connect and access the data from these data sources using items such as notebooks and Spark job definitions. 
 
 * Managed private endpoints are created and managed by Microsoft Fabric, and the user only needs to specify the resource ID of the data source and the target subresource, and provide a justification of their access request for the data source admin who has to approve it.
 
@@ -30,13 +30,13 @@ For more information about supported data sources for managed private endpoints 
 
 ### Limitations and considerations
 
-* Starter pools aren't available for workspaces with managed VNets. This includes workspaces that use managed private endpoints or that belong to a Fabric tenant with Azure Private Links enabled and that have run a Spark job. These workspaces will use on-demand clusters, which can take 3 to 5 minutes to start a session.
+* Starter pools aren't available for workspaces with managed VNets. This includes workspaces that use managed private endpoints or that belong to a Fabric tenant with Azure Private Links enabled and that have run a Spark job. These workspaces use on-demand clusters, which can take 3 to 5 minutes to start a session.
 
 * Managed private endpoints are only supported for Fabric Trial capacity and Fabric capacities F64 or higher.
 
 * Managed private endpoints are only supported in the regions where Fabric Data Engineering workloads are available. Attempting to create managed private endpoints in a capacity region where Data Engineering workloads are not supported would result in errors.
 
-* To prevent Spark jobs from failing or running into errors, please migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
+* To prevent Spark jobs from failing or running into errors, migrate workspaces with any managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
