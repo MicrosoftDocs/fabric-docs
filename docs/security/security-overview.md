@@ -39,7 +39,7 @@ Fabric is SaaS service that runs in the Microsoft cloud. Some scenarios involve 
 
 ### Inbound network security
 
-Your organization might want to restrict and secure the network traffic coming into Fabric based on your company's requirements. With [Microsoft Entra ID Conditional Access](security-conditional-access.md) and [Private Links](security-private-links-overview.md), you can [select the right inbound solution](protect-inbound-traffic) for your organization.
+Your organization might want to restrict and secure the network traffic coming into Fabric based on your company's requirements. With [Microsoft Entra ID Conditional Access](security-conditional-access.md) and [Private Links](security-private-links-overview.md), you can [select the right inbound solution](protect-inbound-traffic.md) for your organization.
 
 #### Microsoft Entra ID Conditional Access
 
