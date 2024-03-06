@@ -40,6 +40,8 @@ For more information about supported data sources for managed private endpoints 
 
 * Lakehouse table maintenance operations aren't supported for workspaces enabled with managed private endpoints.
 
+* Deleting the last managed private endpoint for a workspace does not support Managed VNET deletion. After creating and deleting a managed private endpoint, the workspace remains associated with a Managed VNET, preventing Starter Pools activation
+
 * Workspace migration across capacities in different regions isn't supported.
 
 These limitations and considerations might affect your use cases and workflows. Take them into account before enabling the Azure Private Link tenant setting for your tenant.
