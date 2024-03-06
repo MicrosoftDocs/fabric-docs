@@ -12,7 +12,7 @@ ms.date: 03/05/2024
 
 # Feature usage and adoption report
 
-The Feature Usage and Adoption Report is a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric admin you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
+The Feature Usage and Adoption report provides a comprehensive analysis of usage and adoption of different features in your Microsoft Fabric tenant. As a Fabric administrator, you can share this report with others in your organization. You can also share the report's semantic model, and use it to customize the report, or build a new report that relies on the same data.
 
 You can access the report from the [admin monitoring](monitoring-workspace.md) workspace. To see this workspace you need to be a [Fabric administrator](microsoft-fabric-admin.md#power-platform-and-fabric-admin-roles).
 
@@ -104,7 +104,7 @@ This section lists the report's considerations and limitations.
 
 ### Display
 
-* The single data point across the zoom slider, displays a misleading date range for the total activities and users.
+* Using a single data point with the zoom slider displays a misleading date range for the *Total activities and users* visual.
 
 * When drilling down to a workspace, the *Expand All* feature doesn't update the *Most Active Capacities* visual title.
 
@@ -125,4 +125,6 @@ This section lists the report's considerations and limitations.
 ## Related content
 
 * [What is the admin monitoring workspace?](monitoring-workspace.md)
+
 * [Admin overview](microsoft-fabric-admin.md)
+
