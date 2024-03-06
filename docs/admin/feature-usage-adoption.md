@@ -22,7 +22,7 @@ The report is built to allow admins to analyze specific scenarios. Use the repor
 
 ## Report pages
 
-The *feature usage and adoption* report has four pages:
+The Feature Usage and Adoption report has four pages:
 
 * **Activity Overview** - Provides a bird's eye view of activities and usage across the entire organization
 
@@ -62,7 +62,7 @@ Continuing the example from the [Activity Overview](#activity-overview-page) pag
 
 ### Inventory page
 
-The inventory page displays all the items in your tenant. You can filter the results according to:
+The Inventory page displays all the items in your tenant. You can filter the results according to:
 
 * **Item type** - Sort the results to display only the Fabric items you want to see.
 
