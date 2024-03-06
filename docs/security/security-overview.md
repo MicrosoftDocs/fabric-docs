@@ -17,9 +17,7 @@ As you bring your data to the cloud and use it with various analytic experiences
 
 Fabric security is:
 
-* **Always on** - Every interaction with Fabric is encrypted by default and authenticated using Microsoft Entra ID. All communication between Fabric experiences travels through the Microsoft backbone internet. Data at rest is automatically stored encrypted.
-
-    To regulate access to Fabric, you can add extra security features such as [Private Links](security-private-links-overview.md) or [Entra Conditional Access](security-conditional-access.md) . Fabric can also connect to data protected by a firewall or a private network using trusted access.
+* **Always on** - Every interaction with Fabric is encrypted by default and authenticated using Microsoft Entra ID. All communication between Fabric experiences travels through the Microsoft backbone internet. Data at rest is automatically stored encrypted. To regulate access to Fabric, you can add extra security features such as [Private Links](security-private-links-overview.md) or [Entra Conditional Access](security-conditional-access.md) . Fabric can also connect to data protected by a firewall or a private network using trusted access.
 
 * **Compliant** – Fabric has data sovereignty out of the box with multi geo capacities. Fabric also supports a wide range of compliance standards.
 
