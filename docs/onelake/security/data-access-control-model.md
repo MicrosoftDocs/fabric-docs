@@ -22,7 +22,7 @@ OneLake RBAC restricts data access for users with Workspace **Viewer** or read a
 
 ## How to create RBAC roles
 
-You can define and manage OneLake RBAC roles using Lakehouse UX or REST APIs.
+You can define and manage OneLake RBAC roles using Lakehouse experience.
 
 Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md).
 
