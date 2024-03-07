@@ -54,6 +54,17 @@ This section is divided into Fabric experience. Each experience had a table that
 >[!IMPORTANT]
 >Consumption rates are subject to change at any time. Microsoft will use reasonable efforts to provide notice via email or through in-product notification. Changes shall be effective on the date stated in Microsoft’s [Release Notes](/fabric/release-plan/) or [Microsoft Fabric blog](https://blog.fabric.microsoft.com/blog/). If any change to a Microsoft Fabric Workload Consumption Rate materially increases the Capacity Units (CU) required to use a particular workload, customers might use the cancellation options available for the chosen payment method.
 
+### Copilot in Fabric
+[Copilot and other generative AI features](../get-started/copilot-fabric-overview.md) bring new ways to transform and analyze data, generate insights, and create visualizations and reports in Microsoft Fabric and Power BI. 
+
+Here is the list of operations that consume capacity for Copilot. You can find the consumption rates for Copilot in [Copilot consumption](../get-started/copilot-fabric-consumption.md)
+
+| Operation                                        | Description                                                        | Item          | Azure billing meter         | Type       |
+| ------------------------------------------------ | ------------------------------------------------------------------ | ------------- | --------------------------- | ---------- |
+| Copilot in Fabric                            | Compute cost associated with input prompts and output completion      | Multiple | Copilot in Fabric CU | Background |
+
+
+
 ### Data Factory
 
 The Data Factory experience contains operations for [Dataflows Gen2](#dataflows-gen2) and [Pipelines](#pipelines).
