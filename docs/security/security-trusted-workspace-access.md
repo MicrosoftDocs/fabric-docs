@@ -39,6 +39,7 @@ You can configure specific Fabric workspaces to access your storage account base
 
 >[!NOTE]
 >Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
+>The subscriptionId "00000000-0000-0000-0000-000000000000" must be used for the Fabric workspace resourceId.
 
 :::image type="content" source="./media/security-trusted-workspace-access/resource-instance-rule.png" alt-text="Screenshot showing configured resource instance rule." lightbox="./media/security-trusted-workspace-access/resource-instance-rule.png":::
 
@@ -49,7 +50,7 @@ Here's an example of a resource instance rule that can be created through ARM te
 
        { "tenantId": " df96360b-9e69-4951-92da-f418a97a85eb",
 
-          "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/ b2788a72-eef5-4258-a609-9b1c3e454624”
+          "resourceId": "/subscriptions/00000000-0000-0000-0000-000000000000/resourcegroups/Fabric/providers/Microsoft.Fabric/workspaces/b2788a72-eef5-4258-a609-9b1c3e454624”
        }
 ]
 ```
