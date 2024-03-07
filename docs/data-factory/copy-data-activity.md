@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/04/2024
 ---
 
 # How to copy data using copy activity
@@ -184,6 +184,7 @@ See the following table for the setting details.
 |---------|---------|
 |**Allow data truncation** |Allow data truncation when converting source data to destination with different type during copy. For example, from decimal to integer, from DatetimeOffset to Datetime.  |
 |**Treat boolean as number** | Treat boolean as number. For example, treat true as 1. |
+|**Date format** |Format string when converting between dates and strings, e.g. "yyyy-MM-dd". For more information, see [Custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings).<br> The date column can be written to your destination in date type when you apply binary/delimited text/parquet format or tabular connectors (Lakehouse Table, Azure SQL Database, Azure Synapse Analytics, SQL server or Azure SQL Database Managed Instance) in your destination.|
 |**DateTime format** |Format string when converting between dates without time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff". |
 |**DateTimeOffset format** | Format string when converting between dates with time zone offset and strings. For example, "yyyy-MM-dd HH:mm:ss.fff zzz".|
 |**TimeSpan format**| Format string when converting between time periods and strings. For example, "dd\.hh\:mm\:ss".|
