@@ -15,7 +15,7 @@ Fabric offers a multi-layer security model that provides both simplicity and fle
 
 Granular engine permissions allow fine-grained access control such as table, column, and row-level security to be defined. These granular permissions apply to queries run against that engine. Different engines support different types of granular security, allowing each engine to be tailored specifically for its target users.
 
-:::image type="content" source=".\media\fabric-and-onelake-security.png" alt-text="Diagram showing the structure of a data lake connecting to separately secured containers.":::
+:::image type="content" source=".\media\fabric-and-onelake-security.png" alt-text="Diagram showing different layers of security in Fabric, Compute Engines and OneLake.":::
 
 ## Fabric data security
 
@@ -50,7 +50,7 @@ Learn more about [OneLake Data Access Control Model](./data-access-control-model
 Shortcuts in Microsoft Fabric allow for simplified data management.
 OneLake Folder security applies for OneLake shortcuts based on roles defined in the lakehouse where the data is stored.
 
-There are some additional security considerations to note. For information on managing shortcut security see this [document](onelake-shortcuts.md#types-of-shortcuts). => TBD add here how security travels.
+There are some additional security considerations to note. For information on managing shortcut security please see the [Shortcuts](../onelake-shortcuts.md#types-of-shortcuts). => TBD add here how security travels.
 
 ## Authentication
 
@@ -84,6 +84,6 @@ When you turn this switch ON, users can access data via all sources. When you tu
 
 - [OneLake Data Access Control Model (Preview)](./data-access-control-model.md)
 - [Get Started with OneLake Security (Preview)](./get-started-security.md)
-- [OneLake file explorer](onelake-file-explorer.md)
+- [OneLake file explorer](../onelake-file-explorer.md)
 - [Workspace roles](../get-started/roles-workspaces.md)
-- [Share items](../get-started/share-items.md)
+- [Share items](../../get-started/share-items.md)
