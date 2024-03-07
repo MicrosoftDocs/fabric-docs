@@ -1,5 +1,5 @@
 ---
-title: Faric and OneLake security
+title: Fabric and OneLake security
 description: OneLake uses a layered security model built around the organizational structure of experiences within Microsoft Fabric. Learn more about OneLake security.
 ms.reviewer: aamerril
 ms.author: yuturchi
@@ -19,7 +19,7 @@ Granular engine permissions allow fine-grained access control such as table, col
 
 ## Fabric data security
 
-Fabric controls data access using [workspaces](../../get-started/workspaces.md). In workspaces, data appears in the form of Fabric Items, and users can't view or use data in the Items unless you give them access to workspace.
+Fabric controls data access using [workspaces](../../get-started/workspaces.md) and [items](../../get-started/fabric-terminology.md#general-terms). In workspaces, data appears in the form of Fabric Items, and users can't view or use data in the Items unless you give them access to workspace.
 
 Workspace permissions grant access to all items within workspace. In contrast,
 Fabric Item permissions allow granting access to specific items, such as lakehouses, warehouses or reports. Admins can determine which Fabric Item the user can interact with. For example, limiting access to data via Analytics SQL Endpoint, while giving access to the same data via Lakehouse or via OneLake API directly.
