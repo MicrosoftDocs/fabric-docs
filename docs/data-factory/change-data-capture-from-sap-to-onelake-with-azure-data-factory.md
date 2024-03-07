@@ -28,7 +28,7 @@ To follow this article step-by-step in your own environment, you need the follow
 1. An SAP system that satisfies the requirements for ADF’s SAP CDC connector specified here. In our scenario, we use an SAP S/4HANA on-premises 2023 FPS00, but all up-to-date versions of SAP ECC, SAP BW, SAP BW/4HANA, etc. are supported as well.
 1. A self-hosted integration runtime (SHIR) with a current version of the SAP .NET Connector installed.
 
-In order to concentrate on the connectivity part, here’s a pipeline template that covers the most straightforward scenario of extracting change data using the SAP CDC connector and merging it with a Fabric Lakehouse table without any further transformations: https://github.com/ukchrist/ADF-SAP-data-flows/blob/main/p_SAPtoFabric.zip. If you’re familiar with ADF mapping dataflows and SAP CDC, you can setup a scenario from scratch by yourself and skip to the following configuration of the Lakehouse linked service.
+In order to concentrate on the connectivity part, here’s a pipeline template that covers the most straightforward scenario of extracting change data using the SAP CDC connector and merging it with a Fabric Lakehouse table without any further transformations: https://github.com/ukchrist/ADF-SAP-data-flows/blob/main/p_SAPtoFabric.zip. If you’re familiar with ADF mapping dataflows and SAP CDC, you can set up a scenario from scratch by yourself and skip to the following configuration of the Lakehouse linked service.
 
 To make use of the template, the following steps are required:
 
@@ -46,7 +46,7 @@ Creating an SAP CDC dataset as described in the document on linked service confi
 
 ## Setting up ADLS Gen2 connectivity for staging
 
-Before writing the change data from the SAP source system into the sink, it's staged into a folder in ADLS Gen2. From there, the mapping data flow runtime picks the data up and process it according to the steps defined in the data flow. The data flow provided as part of the template merges the changes with the existing data in the sink table and thus give you an up-to-date copy of the source.
+Before writing the change data from the SAP source system into the sink, it's staged into a folder in ADLS Gen2. From there, the mapping data flow runtime picks the data up and processes it according to the steps defined in the data flow. The data flow provided as part of the template merges the changes with the existing data in the sink table and thus give you an up-to-date copy of the source.
 
 Setup of an ADLS Gen2 linked service is described here: [Create an Azure Data Lake Storage Gen2 linked service using UI](/azure/data-factory/connector-azure-data-lake-storage?tabs=data-factory#create-an-azure-data-lake-storage-gen2-linked-service-using-ui).
 
@@ -132,7 +132,7 @@ Now we’re ready to configure the Lakehouse linked service in ADF or Synapse.
 
 With the setup of the linked services completed, you can import the template and adjust it for your source object.
 
-1. From the pipeline menu, choose **+** too add a new resource, then select **Pipeline** and **Template gallery**.
+1. From the pipeline menu, choose **+** to add a new resource, then select **Pipeline** and **Template gallery**.
 
    :::image type="content" source="media/change-data-capture-from-sap-to-onelake-with-azure-data-factory/select-pipeline-template.png" alt-text="Screenshot showing where to choose a template in the ADF studio's Template gallery.":::
 
