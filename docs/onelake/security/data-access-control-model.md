@@ -179,6 +179,10 @@ When someone shares a lakehouse, they can also grant access to the SQL endpoint 
 | Read all SQL endpoint data | No by default, use OneLake RBAC to grant access. |  No | Yes | No |
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
 
+Learn more about data sharing permissions model:
+- [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
+- [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
+
 ## Shortcuts
 
 ### OneLake RBAC in Internal Shortcuts
