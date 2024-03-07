@@ -214,7 +214,7 @@ productDirectory:
           text: What is Data Engineering?
         - url: data-engineering/create-lakehouse.md
           text: Create a Lakehouse
-        - url: data-engineering/create-spark-job-definition.md
+        - url: data-engineering/create-and-use-environment.md
           text: Configure and use an environment
         - url: data-engineering/migrate-synapse-overview.md
           text: Migrate data into lakehouse

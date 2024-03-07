@@ -209,7 +209,7 @@ Make sure that you set production deployment rules for data sources and paramete
 
 ### Update the production app
 
-Deployment in a pipeline updates the workspace content, but it can also update the associated app through the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. You need to update the app manually. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
+Deployment in a pipeline through the UI updates the workspace content. To update the associated app, use the [deployment pipelines API](./deployment-pipelines/pipeline-automation.md). It's not possible to update the app through the UI. If you use an app for content distribution, don’t forget to update the app after deploying to production so that end users are immediately able to use the latest version.
 
 ### Deploying into production using Git branches
 
