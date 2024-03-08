@@ -21,7 +21,7 @@ If you use the [Lakehouse Load Table public API](/rest/api/fabric/lakehouse/tabl
 If you have this issue, you could see one of two symptoms:
 
 - The response from the Load Table public API is a '404-NotFound' error.
-- The Load Table API is also used when [loading the data to delta lake tables](/fabric/data-engineering/load-to-tables). When you try loading a file, you see an error message with an error code "LakehouseOperationFailed." The table is created successfully though.
+- The Load Table API is also used when [loading the data to delta lake tables](../../data-engineering/load-to-tables.md). When you try loading a file, you see an error message with an error code "LakehouseOperationFailed." The table is created successfully though.
 
 ## Solutions and workarounds
 

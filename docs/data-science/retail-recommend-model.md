@@ -139,7 +139,7 @@ if not IS_CUSTOM_DATA:
 
 ### Set up the MLflow experiment tracking
 
-Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](/fabric/data-science/mlflow-autologging) article.
+Use this code to set up the MLflow experiment tracking. This example disables autologging. For more information, see the [Autologging in Microsoft Fabric](mlflow-autologging.md) article.
 
 ```python
 # Set up MLflow for experiment tracking
