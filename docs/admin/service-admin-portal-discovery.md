@@ -22,7 +22,7 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Make promoted content discoverable
 
-Allow users in this organization who can [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to make content they promote discoverable by users who don't have access to it. You can also specify users and/or groups to exclude from the permitted groups. 
+Allow users in this organization who can [promote content](/power-bi/collaborate-share/service-endorse-content#promote-content) to make content they promote discoverable by users who don't have access to it. You can also specify users and/or groups to exclude from the permitted groups.
 
 To learn more, see [Semantic model discoverability](/power-bi/collaborate-share/service-discovery).
 
@@ -34,7 +34,7 @@ Allow users in the organization who can [certify content](/power-bi/collaborate-
 
 Allow users to find and request access to content they don't have access to if it was made discoverable by its owners.
 
-To learn more, see [Find recommended items](/fabric/get-started/onelake-data-hub#find-recommended-items).
+To learn more, see [Find recommended items](../get-started/onelake-data-hub.md#find-recommended-items).
 
 ## Related content
 
