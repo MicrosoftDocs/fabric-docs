@@ -64,7 +64,8 @@ Copy the token and paste it for the ClientId variable.
 Take the properties object and surround them in braces - **{ }** - so the REST Item definition payload would be:
 
 ```json
-{"properties": { 
+{
+    "properties": { 
         "description": "this is the description", 
         "activities": [ 
             { 
