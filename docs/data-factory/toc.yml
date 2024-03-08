@@ -697,4 +697,7 @@
       href: data-factory-limitations.md
     - name: Data Factory known issues
       href: data-factory-known-issues.md
-
+  - name: Reference
+    items:
+    - name: Data pipelines REST API
+      href: pipeline-rest-api.md
