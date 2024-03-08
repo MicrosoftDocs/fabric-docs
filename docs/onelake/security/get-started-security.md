@@ -1,5 +1,5 @@
 ---
-title: Get started securing your data in OneLake
+title: OneLake security overview
 description: Get started with securing your data in OneLake with this overview of the concepts and capabilities.
 ms.reviewer: eloldag
 ms.author: aamerril
@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Get started securing your data in OneLake
+# OneLake security overview
 
 OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or the Windows file system. This structure allows you to set security at different levels in the hierarchy to govern access. Some levels in the hierarchy are given special treatment as they correlate with Fabric concepts.
 

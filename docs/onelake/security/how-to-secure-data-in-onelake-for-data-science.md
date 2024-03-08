@@ -45,7 +45,8 @@ In order to read data, a user first needs access to the lakehouse where that dat
 
 Next, navigate to the lakehouse and click the **Manage OneLake data access (preview)** button. Using this experience you can create roles that grant users access to see and read from specific folders in the lakehouse. Access to folders is disallowed by default. Users that are added to a role are granted access to the folders covered by that role. To learn more about configuring OneLake data access roles click [here.](../security/get-started-data-access-roles.md) Create roles as needed to grant users access to read the folders through pipelines, shortcuts, or Spark notebooks.
 
-!!Important!! All lakehouses using the OneLake data access roles preview have a DefaultReader role that grants access to the lakehouse data. If a user has the ReadAll permission, they will not be restricted by other data access roles. Make sure that any users that are included in a data access role are not also part of the DefaultReader role or remove the DefaultReader role.
+> [!IMPORTANT]
+> All lakehouses using the OneLake data access roles preview have a DefaultReader role that grants access to the lakehouse data. If a user has the ReadAll permission, they will not be restricted by other data access roles. Make sure that any users that are included in a data access role are not also part of the DefaultReader role or remove the DefaultReader role.
 
 ### Use with shortcuts
 

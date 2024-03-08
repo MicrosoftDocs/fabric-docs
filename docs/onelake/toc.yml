@@ -59,7 +59,7 @@ items:
     href: ./security/data-access-control-model.md
   - name: Get started with securing data in OneLake
     items:
-    - name: Overview
+    - name: OneLake security overview
       href: ./security/get-started-security.md
     - name: Get started with data access roles
       href: ./security/get-started-data-access-roles.md

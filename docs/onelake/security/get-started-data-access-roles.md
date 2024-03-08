@@ -30,7 +30,8 @@ The preview feature cannot be disabled once it has been configured. See the Crea
 
 To ensure a smooth opt-in experience, all users that had read permission to the lakehouse will continue to have read access. This is done through the creation of a default data access role called “DefaultReader”. Using virtualized role memberships (see here for more details) all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, ensure that the DefaultReader role is deleted or that the ReadAll permission is removed from the accessing users.  
 
-!!Important!! Make sure that any users that are included in a data access role are not also part of the DefaultReader role. Otherwise they will maintain full access to the data.
+> [!IMPORTANT]
+> Make sure that any users that are included in a data access role are not also part of the DefaultReader role. Otherwise they will maintain full access to the data.
 
 ## What types of data can be secured?
 
