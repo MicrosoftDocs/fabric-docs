@@ -27,7 +27,7 @@ You can configure specific Fabric workspaces to access your storage account base
 
 1. Sign in to the Azure portal and go to **Custom deployment**.
 
-1. Choose **Build your own template in the editor**
+1. Choose **Build your own template in the editor**. A sample ARM template that creates a resource instance rule is provided at the end of this document.
 
 1. Create the resource instance rule in the editor. When done, choose **Review + Create**.
 
@@ -38,8 +38,9 @@ You can configure specific Fabric workspaces to access your storage account base
 1. When deployment is complete, you'll be able to go to the resource.
 
 >[!NOTE]
->Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
->The subscriptionId "00000000-0000-0000-0000-000000000000" must be used for the Fabric workspace resourceId.
+>- Resource instance rules for Fabric workspaces can only be created through ARM templates. Creation through the Azure portal is not supported.
+>- The subscriptionId "00000000-0000-0000-0000-000000000000" must be used for the Fabric workspace resourceId.
+>- You can get the workspace id for a Fabric workspace through its address bar URL. 
 
 :::image type="content" source="./media/security-trusted-workspace-access/resource-instance-rule.png" alt-text="Screenshot showing configured resource instance rule." lightbox="./media/security-trusted-workspace-access/resource-instance-rule.png":::
 
@@ -55,7 +56,7 @@ Here's an example of a resource instance rule that can be created through ARM te
 ]
 ```
 
-A complete ARM template is provided at the end of this document.
+
 
 ### Trusted service exception
 
