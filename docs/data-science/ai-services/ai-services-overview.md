@@ -57,11 +57,6 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text.
 - Transliterate: Converts text in one language from one script to another script.
-- Detect: Identifies the language of a piece of text. 
-- BreakSentence: Identifies the positioning of sentence boundaries in a piece of text. 
-- Dictionary Lookup: Provides alternative translations for a word and a few idiomatic phrases.
-- Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. 
-
 
 ## Available regions
 
