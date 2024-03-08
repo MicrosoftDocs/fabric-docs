@@ -20,17 +20,21 @@ Microsoft Fabric uses a multi-layer security model with different controls avail
 The SQL Warehouse and SQL Endpoint also allow for the defining of native SQL security. SQL security uses the full library of T-SQL security constructs to allow for granular access control of tables, views, rows, and columns with an item. For more information on SQL security see here . 
 The SQL permissions that are configured in the SQL warehouse and endpoint only apply to queries that are executed against the SQL warehouse or endpoint. The underlying data lives in OneLake, but access to OneLake data is controlled separately through OneLake data access roles. To ensure users with SQL specific permissions do not see data they aren’t given access to in SQL, do not include those users in a OneLake data access role. 
  
-Secure by use case
+## Secure by use case
+
 Security in Microsoft Fabric is optimized around securing data for specific use cases. A use case is a set of users needing specific access and accessing data through a given engine. For SQL scenarios, some common use cases are:
 -	SQL writers: Users that need to create new tables, view, or write data to existing tables.
 -	SQL readers: Users that need to read data using SQL queries. They could be accessing the SQL connection directly or through another service like Power BI.
 We can then align each use case with the necessary permissions in Fabric. 
-SQL Write access
+
+### SQL Write access
+
 There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through Fabric workspace roles. (link) There are three workspace roles that grant write permissions, and each role automatically translates to a corresponding role in SQL that grants equivalent write access. The second way is by having only read access to the SQL engine but having custom SQL permissions that grant write access to some or all the data.
 If a user needs write access to all the SQL warehouses and SQL endpoints in a workspace, the workspace role is recommended. In general, unless a user needs to be able to assign other users to workspace roles the Contributor role should be used. 
 If a user only needs to write to specific SQL warehouses and endpoint, then granting them direct access through SQL permissions is recommended.
 
-Read access 
+### Read access
+
 For users that need to read data using pipelines or Spark notebooks, permissions are governed by the Fabric item permissions together with the OneLake data access roles. The Fabric item permissions what items a user can see and how they can access that item. The OneLake data access roles govern what data the user can access through experiences that leverage OneLake. 
  
 For the use cases we have defined (read lakehouse data through Spark and notebooks) we first need to grant the users read access to the lakehouse. This can be done by clicking the Share button on a lakehouse either from the workspace page or from within the lakehouse UI. Enter the email addresses or security group for those users and click share. (leave the Additional permissions boxes unchecked) 
