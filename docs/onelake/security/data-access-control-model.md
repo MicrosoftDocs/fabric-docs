@@ -2,7 +2,7 @@
 title: Data Access Control Model in OneLake (Public Preview)
 description: TBD
 ms.reviewer: eloldag
-ms.author: aamerril
+ms.author: yuturchi
 author: yuturchi
 ms.topic: conceptual
 ms.custom:
@@ -22,10 +22,9 @@ OneLake RBAC restricts data access for users with Workspace **Viewer** or read a
 
 ## How to create RBAC roles
 
-You can define and manage OneLake RBAC roles using Lakehouse UX or REST APIs.
+You can define and manage OneLake RBAC roles using Lakehouse experience.
 
 Learn more in [Get Started with Data Access Roles](../security/get-started-data-access-roles.md).
-
 
 ## Default RBAC Role in lakehouse
 
@@ -151,7 +150,7 @@ Within a workspace, Fabric items can have permissions configured separately from
 | **SQL Analytics Endpoint Permission** | **Users can view files via OneLake Endpoint?** | **Users can write files via OneLake Endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
 | Read  | No by default, use OneLake RBAC to grant access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md) |
-| ReadData | Yes by default. Use OneLake RBAC to restrict the access. | No | Yes |
+| ReadData | No by default. Use OneLake RBAC to grant access. | No | Yes |
 | Write | Yes | Yes | Yes |
 
 ### OneLake RBAC and Default Lakehouse Semantic Model permissions
@@ -177,8 +176,12 @@ When someone shares a lakehouse, they can also grant access to the SQL endpoint 
 |----------|----------|----------|----------|-----|
 | *No additional permissions selected* | No by default, use OneLake RBAC to grant access. |  No | No | No |
 | Read all Apache Spark | Yes by default. Use OneLake RBAC to restrict the access. |  No | No | No |
-| Read all SQL endpoint data | Yes by default. Use OneLake RBAC to restrict the access. |  No | Yes | No |
+| Read all SQL endpoint data | No by default, use OneLake RBAC to grant access. |  No | Yes | No |
 | Build  reports on the default dataset | Yes by default. Use OneLake RBAC to restrict the access. | No | No | Yes |
+
+Learn more about data sharing permissions model:
+- [How lakehouse sharing works](../../data-engineering/lakehouse-sharing.md)
+- [Share your warehouse and manage permissions](../../data-warehouse/share-warehouse-manage-permissions.md)
 
 ## Shortcuts
 

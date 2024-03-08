@@ -50,6 +50,18 @@ You can change the order in which the lists are displayed by selecting the list 
 
 :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\draggable-column-options.png" alt-text="Screenshot showing the draggable column options." lightbox="media\browse-spark-applications-in-monitoring-hub\draggable-column-options.png":::
 
+## Enable upstream view for related Pipelines
+
+ If you have scheduled notebook and spark job definitions to run in pipelines, you can view the spark activities from these notebooks and spark job definitions in the monitoring hub. Additionally, you can also see the corresponding parent pipeline and all its activities in the monitoring Hub.
+
+ 1. Select the **Upstream run** column option.
+
+  :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\upstream-run-column.png" alt-text="Screenshot showing the upstream run column options." lightbox="media\browse-spark-applications-in-monitoring-hub\upstream-run-column.png":::
+
+ 2. View the related parent pipeline run in the **Upstream run** column, and click the pipeline run to view all its activities.
+  
+  :::image type="content" source="media\browse-spark-applications-in-monitoring-hub\upstream-run-in-list.png" alt-text="Screenshot showing the upstream run button in list." lightbox="media\browse-spark-applications-in-monitoring-hub\upstream-run-in-list.png":::
+
 ## Manage an Apache Spark application
 
 When you hover over an Apache Spark application row, you can see various row-level actions that enable you to manage a particular Apache Spark application.

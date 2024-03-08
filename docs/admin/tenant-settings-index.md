@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 02/25/2024
+ms.date: 03/03/2024
 ---
 
 # Tenant settings index
@@ -21,6 +21,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 |Users can create Fabric environments to save and apply Spark settings (preview)|In Synapse Data Engineering and Data Science, users can select specific Spark runtimes, configure compute resources, and install libraries, and then save their choices as an environment. Environments can be attached to workspaces, notebooks, and Spark job definitions.|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
 |Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://aka.ms/Retail_data_solutions)|
+|[Create Eventhouse (preview)](../real-time-analytics/eventhouse.md)|Users in the organization can use Eventhouse|
+|[Users can create Real-Time Dashboards (preview](../real-time-analytics/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -55,7 +57,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Automatically apply sensitivity labels to downstream content](/power-bi/enterprise/service-security-sensitivity-label-downstream-inheritance)|With this setting enabled, whenever a sensitivity label is changed or applied to Fabric content, the label will also be applied to its eligible downstream content.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2153971)|
 |[Allow workspace admins to override automatically applied sensitivity labels](/power-bi/enterprise/service-security-sensitivity-label-change-enforcement#relaxations-to-accommodate-automatic-labeling-scenarios)|With this setting enabled, workspace admins can change or remove sensitivity labels that were applied automatically by Fabric, for example, as a result of label inheritance.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2154646)|
 |[Restrict content with protected labels from being shared via link with everyone in your organization](service-admin-portal-information-protection.md#restrict-content-with-protected-labels-from-being-shared-via-link-with-everyone-in-your-organization)|This setting will prevent content with protection settings in the sensitivity label from being shared via link with everyone in your organization.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2160554)|
-|[Increase the number of users who can edit and republish encrypted PBIX files (preview)(./service-admin-portal-information-protection.md#users-with-co-author-permissions-can-edit-encrypted-pbix-files-preview))]|Turn on this setting to allow users who've been assigned restrictive sensitivity permissions in the Microsoft Purview compliance portal to open, edit, and publish encrypted PBIX files in Power BI Desktop. Some limitations apply. [Learn More](https://go.microsoft.com/fwlink/?linkid=2247658)|
+|[Increase the number of users who can edit and republish encrypted PBIX files (preview)](./service-admin-portal-information-protection.md#increase-the-number-of-users-who-can-edit-and-republish-encrypted-pbix-files-preview)|Turn on this setting to allow users who've been assigned restrictive sensitivity permissions in the Microsoft Purview compliance portal to open, edit, and publish encrypted PBIX files in Power BI Desktop. Some limitations apply. [Learn More](https://go.microsoft.com/fwlink/?linkid=2247658)|
 
 ## [Export and sharing settings](service-admin-portal-export-sharing.md)
 
@@ -284,7 +286,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 | Setting name | Description |
 |------|-------|
 |[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is on, users can access a preview and use preview features powered by Azure OpenAI, including Copilot.<br><br>Your data, such as prompts, augmented data included with prompts, and AI outputs, will be processed and temporarily stored by Microsoft and may be reviewed by Microsoft employees for abuse monitoring.  [Learn More](https://aka.ms/fabric/aoai)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
-|[​​​Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
+|​​​[Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
 
 ## Related content
 
