@@ -14,7 +14,7 @@ ms.custom: known-issue-552
 
 This known issue relates to two main concepts on the premium capacity administration: Autoscale and carry forward usage.
 
-Autoscale allows capacity administrators to automatically trigger individual Power BI v-cores whenever the capacity usage reaches the purchased capacity limits. With the latest updates on the capacity usage rules, we now allow capacity usage to consume future CPU. We also carry forward the excess usage to be burned down in the future windows. Capacity throttling is only applied when we [can't clear the carry forward usage after an extended period](/fabric/enterprise/throttling#future-smoothed-consumption).
+Autoscale allows capacity administrators to automatically trigger individual Power BI v-cores whenever the capacity usage reaches the purchased capacity limits. With the latest updates on the capacity usage rules, we now allow capacity usage to consume future CPU. We also carry forward the excess usage to be burned down in the future windows. Capacity throttling is only applied when we [can't clear the carry forward usage after an extended period](../../enterprise/throttling.md#future-smoothed-consumption).
 
 In this known issue, if you set a maximum of Autoscale v-cores to be used, Autoscale v-cores are only activated based on the current usage. Autoscale doesn't get activated by the excess carry forward usage.
 If Autoscale v-cores are active due to current usage, they're used to burn down any carried forward usage.
@@ -38,5 +38,5 @@ If you plan to use Autoscale to avoid possible throttling, enable it before the 
 ## Related content
 
 - [Using Autoscale with Power BI Premium](/power-bi/enterprise/service-premium-auto-scale)
-- [Fabric capacity throttling logic](/fabric/enterprise/throttling)
+- [Fabric capacity throttling logic](../../enterprise/throttling.md)
 - [About known issues](/power-bi/troubleshoot/known-issues/power-bi-known-issues)
