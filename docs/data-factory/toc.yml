@@ -697,4 +697,7 @@
       href: data-factory-limitations.md
     - name: Data Factory known issues
       href: data-factory-known-issues.md
-
+  - name: Reference
+    items:
+    - name: CI/CD for data pipelines
+      href: git-integration-deployment-pipelines.md
