@@ -24,6 +24,12 @@ If a disaster makes the primary region unrecoverable, OneLake may initiate a reg
 
 For a comprehensive understanding of the end-to-end experience, see the Fabric BCDR documentation.
 
+# Soft delete for OneLake files
+
+OneLake soft delete protects individual files from accidental deletion by maintaining the deleted data in the system for a specified period of time. OneLake soft delete does not protect against the deletion of a Fabric item such as an entire lakehouse. OneLake retains files for a default retention period before it is permanetely deleted. Currently the default is 28 days but it is subject to change. You can request the retention period to be changed on a specific workspace by contacting [Fabric support](https://learn.microsoft.com/power-bi/support/service-support-options). An updated retention period applies only to data that was deleted after the retention period was changed. All soft-deleted data is billed at the same rate as active data. You won't be charged for data that is permanently deleted after the retention period elapses.
+
+In the event of an emergency, you can request soft-deleted data to be restored by contacting [Fabric support](https://learn.microsoft.com/power-bi/support/service-support-options). 
+
 ## Related content
 
 - [OneLake compute and storage consumption](onelake-consumption.md)
