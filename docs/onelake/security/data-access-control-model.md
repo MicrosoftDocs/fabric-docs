@@ -34,7 +34,7 @@ Here's the default Role definition:
 
 | Fabric Item | Role Name | Permission | Folders included | Assigned members |
 | ---- | --- | --- | ---- | ---- |
-| Lakehouse | `DefaultReaders` | ReadAll | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
+| Lakehouse | `DefaultReader` | ReadAll | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
 
 > [!NOTE]
 > In order to restrict the access to specific users or specific folders, you must either modify the default role or remove it and create a new custom role.
@@ -147,6 +147,8 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ### OneLake RBAC and Lakehouse SQL Analytics Endpoint permissions
 
+SQL analytics endpoint is a warehouse that is automatically generated from a Lakehouse in Microsoft Fabric. A customer can transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same Lakehouse. Learn more about SQL analytics endpoint in [Data Warehouse documentation: SQL analytics endpoint](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
+
 | **SQL Analytics Endpoint Permission** | **Users can view files via OneLake Endpoint?** | **Users can write files via OneLake Endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
 | Read  | No by default, use OneLake RBAC to grant access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md) |
@@ -232,7 +234,7 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 | Maximum number of members per OneLake RBAC role | At most 500 users and user groups per role. |
 | Maximum number of permissions per OneLake RBAC role | At most 500 permissions per role |
 
-### SLAs on OneLake RBAC [NEED Aaron's / Paras Confirmation!! ]
+### SLAs on OneLake RBAC
 
-- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 15 seconds.
-- If you change a user group in OneLake RBAC role, it can take up to 30 min for OneLake to apply the role's permissions on the updated user group.
+- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 5 minutes.
+- If you change a user group in OneLake RBAC role, it can take up to 1 hr for OneLake to apply the role's permissions on the updated user group.
