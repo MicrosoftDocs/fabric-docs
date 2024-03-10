@@ -50,6 +50,8 @@ items:
   href: impact-analysis.md
 - name: Domains
   href: domains.md
+- name: External data sharing
+  href: external-data-sharing.md
 - name: Metadata scanning
   items:
   - name: Metadata scanning overview
