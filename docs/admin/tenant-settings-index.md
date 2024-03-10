@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/03/2024
+ms.date: 03/10/2024
 ---
 
 # Tenant settings index
@@ -21,8 +21,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 |Users can create Fabric environments to save and apply Spark settings (preview)|In Synapse Data Engineering and Data Science, users can select specific Spark runtimes, configure compute resources, and install libraries, and then save their choices as an environment. Environments can be attached to workspaces, notebooks, and Spark job definitions.|
 |[Sustainability solutions (preview)](/industry/sustainability/sustainability-data-solutions-overview)|Turn on this setting to give your tenant users the permission to deploy the Sustainability solutions (preview) and its associated capabilities.  [Learn More](https://aka.ms/learn-about-sustainability-solutions)|
 |Retail data solutions (preview)|With Retail data solutions, manage retail data at scale to improve customer experience and drive operational efficiency across the organization. [Learn More](https://aka.ms/Retail_data_solutions)|
+|Healthcare data solutions (preview)|Use advanced AI analytics to help generate new insights, enhance patient care, and improve outcomes.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2248375)|
 |[Create Eventhouse (preview)](../real-time-analytics/eventhouse.md)|Users in the organization can use Eventhouse|
-|[Users can create Real-Time Dashboards (preview](../real-time-analytics/index.yml)|Users can create Real-Time Dashboards that are natively integrated with KQL databases using Kusto Query Language (KQL). This fully integrated dashboard experience provides improved query and visualization performance, and easier data exploration.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2258931)|
 
 ## [Help and support settings](service-admin-portal-help-support.md)
 
@@ -125,7 +125,6 @@ This article lists all Fabric tenant settings, along with a brief description of
 |[Snowflake SSO](/power-bi/connect-data/service-connect-snowflake)|Enable SSO capability for Snowflake. By enabling, user access token information, including name and email, will be sent to Snowflake for authentication.  [Learn More](https://aka.ms/snowflakesso)|
 |[Redshift SSO](/power-bi/connect-data/service-gateway-sso-overview)|Enable SSO capability for Redshift. By enabling, user access token information, including name and email, will be sent to Redshift for authentication.|
 |[Google BigQuery SSO](/power-query/connectors/google-bigquery-aad)|Enable SSO capability for Google BigQuery. By enabling, user access token information, including name and email, will be sent to Google BigQuery for authentication.|
-|[Oracle SSO](/power-bi/connect-data/service-gateway-sso-overview)|Enable SSO capability for Oracle. By enabling, user access token information, including name and email, will be sent to Oracle for authentication.|
 |[Microsoft Entra single sign-on for data gateway](service-admin-portal-integration.md#azure-ad-single-sign-on-sso-for-gateway)|Users can use Microsoft Entra single sign-on (SSO) to authenticate to on-premises data gateways and access data sources.<br><br>With this setting on, user access token information, including names and emails, is sent to data sources to authenticate to the  on-premises data gateway service.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2256374)|
 |[Power Platform Solutions Integration (preview)](service-admin-portal-integration.md#power-platform-solutions-integration-preview)|Allow integration with Power Platform solutions.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2194433)|
 |[Users can view Power BI files saved in OneDrive and SharePoint (preview)](/power-bi/collaborate-share/service-sharepoint-viewer)|Users in the organization can view Power BI files saved in OneDrive for Business or SharePoint document libraries. The permissions to save and share Power BI files in OneDrive and SharePoint document libraries are controlled by permissions managed in OneDrive and SharePoint. [Learn More](https://go.microsoft.com/fwlink/?linkid=2224280)|
@@ -286,7 +285,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 | Setting name | Description |
 |------|-------|
 |[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is on, users can access a preview and use preview features powered by Azure OpenAI, including Copilot.<br><br>Your data, such as prompts, augmented data included with prompts, and AI outputs, will be processed and temporarily stored by Microsoft and may be reviewed by Microsoft employees for abuse monitoring.  [Learn More](https://aka.ms/fabric/aoai)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
-|​​​[Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
+|[​​​Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
 
 ## Related content
 
