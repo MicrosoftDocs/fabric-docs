@@ -1,12 +1,14 @@
 ---
 title: Use sparklyr
-description: How to use sparklyr, an R interface to Apache Spark. 
+description: How to use sparklyr, an R interface to Apache Spark.
 ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 04/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: R Language
 ---
 
@@ -14,7 +16,7 @@ ms.search.form: R Language
 
 [sparklyr](https://spark.rstudio.com/) is an R interface to Apache Spark. It provides a mechanism to interact with Spark using familiar R interfaces. You can use sparklyr through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)]  notebooks.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 `sparklyr` is used along with other [tidyverse](https://www.tidyverse.org/) packages such as [dplyr](https://cran.rstudio.com/web/packages/dplyr/vignettes/dplyr.html). [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of sparklyr and tidyverse with every runtime release. You can import them and start using the API.
 
@@ -28,18 +30,18 @@ ms.search.form: R Language
 
 ## Connect sparklyr to Synapse Spark cluster
 
-Use the following connection method in `spark_connect()` to establish a `sparklyr` connection.
+Use the following connection method in `spark_connect()` to establish a `sparklyr` connection. We support a new connection method called `synapse`, which allows you to connect to an existing Spark session. It dramatically reduces the `sparklyr` session start time. Additionally, we contributed this connection method to the [open sourced sparklyr project](https://github.com/sparklyr/sparklyr/pull/3336). With `method = "synapse"`, you can use both `sparklyr` and `SparkR` in the same session and easily [share data between them](#share-data-between-sparklyr-and-sparkr). 
 
 ```R
 # connect sparklyr to your spark cluster
 spark_version <- sparkR.version()
 config <- spark_config()
-sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt/spark", config = config)
+sc <- spark_connect(master = "yarn", version = spark_version, spark_home = "/opt/spark", method = "synapse", config = config)
 ```
 
 ## Use sparklyr to read data
 
-A new Spark session contains no data. The first step is to either load data into your Spark session’s memory, or point Spark to the location of the data so it can access the data on-demand.
+A new Spark session contains no data. The first step is to either load data into your Spark session's memory, or point Spark to the location of the data so it can access the data on-demand.
 
 ```R
 # load the sparklyr package
@@ -100,7 +102,7 @@ dplyr::show_query(cargroup)
 
 ### Use SQL
 
-It’s also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
+It's also possible to execute SQL queries directly against tables within a Spark cluster. The `spark_connection() `object implements a [DBI](https://dbi.r-dbi.org/) interface for Spark, so you can use `dbGetQuery()` to execute SQL and return the result as an R data frame:
 
 ```R
 library(DBI)
@@ -124,13 +126,35 @@ mtcars_tbl %>%
   head(5)
 ```
 
+## Share data between `sparklyr` and `SparkR`
+
+When you [connect `sparklyr` to synapse spark cluster with `method = "synapse"`](#connect-sparklyr-to-synapse-spark-cluster), you can use both `sparklyr` and `SparkR` in the same session and easily share data between them. You can create a spark table in `sparklyr` and read it from `SparkR`.
+
+```R
+# load the sparklyr package
+library(sparklyr)
+
+# Create table in `sparklyr`
+mtcars_sparklyr <- copy_to(sc, df = mtcars, name = "mtcars_tbl", overwrite = TRUE, repartition = 3L)
+
+# Read table from `SparkR`
+mtcars_sparklr <- SparkR::sql("select cyl, count(*) as n
+from mtcars_tbl
+GROUP BY cyl
+ORDER BY n DESC")
+
+head(mtcars_sparklr)
+```
+
+
+
 ## Machine learning
 
-Here’s an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car’s fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
+Here's an example where we use `ml_linear_regression()` to fit a linear regression model. We use the built-in `mtcars` dataset, and see if we can predict a car's fuel consumption (`mpg`) based on its weight (`wt`), and the number of cylinders the engine contains (`cyl`). We assume in each case that the relationship between `mpg` and each of our features is linear.
 
 ### Generate testing and training data sets
 
-Use a simple split, 70% for training and 30% for testing the model. Playing with this ratio may result in different models.
+Use a split, 70% for training and 30% for testing the model. Playing with this ratio results in different models.
 
 ```R
 # split the dataframe into test and training dataframes
@@ -159,7 +183,7 @@ summary(fit)
 
 ### Use the model
 
-You can apply the model on the testing dataset by calling `ml_predict()`.
+You can apply the model on the test dataset by calling `ml_predict()`.
 
 ```R
 pred <- ml_predict(fit, partitions$test)
@@ -178,7 +202,7 @@ spark_disconnect(sc)
 ```
 
 
-## Next steps
+## Related content
 
 Learn more about the R functionalities:
 

@@ -1,31 +1,32 @@
 ---
-title: How to configure Microsoft 365 (Preview) in a copy activity
-description: This article explains how to copy data using Microsoft 365 (Preview).
+title: Configure Microsoft 365 in a copy activity
+description: This article explains how to copy data using Microsoft 365.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 11/06/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Microsoft 365 (Preview) in a copy activity
+# Configure Microsoft 365 in a copy activity
 
 Microsoft Fabric Data pipelines integrate with [Microsoft Graph data connect](/graph/data-connect-concept-overview), allowing you to bring the rich organizational data in your Microsoft 365 tenant into Fabric and Azure in a scalable way and build analytics applications and extract insights based on these valuable data assets. Integration with Privileged Access Management provides secured access control for the valuable curated data in Microsoft 365. Please refer to [this link](/graph/data-connect-concept-overview) for an overview of Microsoft Graph data connect.
 
-This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365 (Preview). For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+This article outlines how to use the copy activity in a data pipeline to copy data from Microsoft 365. For now, within a single copy activity, you can ingest data from Microsoft 365 into Microsoft Fabric Lakehouse Table, Azure Blob Storage, Azure Data Lake Storage Gen1, and Azure Data Lake Storage Gen2. The supported data format is Avro, Delimited text, JSON, ORC and Parquet format.
 
 ## Prerequisites
 
 To copy data from Microsoft 365, you need to complete the following prerequisite steps:
 
 - Your Microsoft 365 tenant admin must complete on-boarding actions as described [here](/events/build-may-2021/microsoft-365-teams/breakouts/od483/).
-- Create and configure an Azure AD web application in Azure Active Directory. For instructions, go to [Create an Azure AD application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal).
+- Create and configure a Microsoft Entra web application in Microsoft Entra ID. For instructions, go to [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-microsoft-entra-id-and-create-a-service-principal).
 - Make note of the following values, which you use to define the connection for Microsoft 365:
-Tenant ID. For instructions, go to [Get tenant ID](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
-- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/azure/active-directory/develop/howto-create-service-principal-portal#sign-in-to-the-application).
-Add the user identity who will be making the data access request as the owner of the Azure AD web application (from the Azure AD web application > **Settings** > **Owners** > **Add owner**).
+Tenant ID. For instructions, go to [Get tenant ID](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
+- Application ID and Application key. For instructions, go to [Get application ID and authentication key](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
+Add the user identity who will be making the data access request as the owner of the Microsoft Entra web application (from the Microsoft Entra web application > **Settings** > **Owners** > **Add owner**).
 - The user identity must be in the Microsoft 365 organization you're getting data from and must not be a Guest user.
 
 ## Approving new data access requests
@@ -105,6 +106,6 @@ The following tables contain more information about the copy activity in Microso
 |**Start time (UTC)**|Start DateTime value to filter on.|\<start time>|Yes if `dateFilterColumn` is specified|startTime|
 |**End time (UTC)**|End DateTime value to filter on.|\<end time>|Yes if `dateFilterColumn` is specified|endTime|
 
-## Next steps
+## Related content
 
 - [How to create a Microsoft 365 connection](connector-microsoft-365.md)

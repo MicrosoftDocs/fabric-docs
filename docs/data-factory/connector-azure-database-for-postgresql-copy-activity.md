@@ -1,18 +1,20 @@
 ---
-title: How to configure Azure Database for PostgreSQL in a copy activity
+title: Configure Azure Database for PostgreSQL in a copy activity
 description: This article explains how to copy data using Azure Database for PostgreSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/20/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Database for PostgreSQL in a copy activity
+# Configure Azure Database for PostgreSQL in a copy activity
 
 This article outlines how to use the copy activity in Data pipeline to copy data from and to Azure Database for PostgreSQL.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -166,6 +168,6 @@ The following table contains more information about the copy activity in Azure D
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| The number of rows loaded into Azure Database for PostgreSQL per batch.|integer<br>(the default is 1,000,000)|No|writeBatchSize|
 
-## Next steps
+## Related content
 
 - [Azure Database for PostgreSQL connector overview](connector-azure-database-for-postgresql-overview.md)

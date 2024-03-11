@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/05/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -78,6 +80,6 @@ As with other tenant settings, you can choose who the **custom message** applies
 - **Specific security groups**.
 - Or **Except specific security groups**.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

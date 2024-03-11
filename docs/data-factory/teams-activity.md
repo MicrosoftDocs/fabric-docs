@@ -5,7 +5,9 @@ ms.reviewer: xupxhou
 ms.author: jburchel
 author: jonburchel
 ms.topic: how-to
-ms.date: 10/17/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Teams activity to send a message in Teams
@@ -21,7 +23,7 @@ To get started, you must complete the following prerequisites:
 
 ## Add a Teams activity to a pipeline with UI
 
-To use a Lookup activity in a pipeline, complete the following steps:
+To use a Teams activity in a pipeline, complete the following steps:
 
 ### Creating the activity
 
@@ -40,7 +42,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
 1. Select the **Settings** tab, then select **Sign in** to sign in to your Teams account.
 
-   :::image type="content" source="media/teams-activity/sign-in-to-teams.png" alt-text="Screenshot showing the Teams activity Settings tab, highlighting the tab, and where to choose a new connection.":::
+   :::image type="content" source="media/teams-activity/sign-in-to-teams.png" alt-text="Screenshot showing the Teams activity Settings tab, highlighting the tab, and where to sign in.":::
 
 1. An authentication dialog appears for you to provide credentials for the account you want to use in Teams. After that, a confirmation appears for you to allow access to Teams from your pipeline. Select **Allow access** on the confirmation dialog to connect your Teams activity to your account.
 
@@ -48,7 +50,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/teams-activity/choose-where-to-post.png" alt-text="Screenshot showing the Teams activity Settings tab, after signing in, with the Post in options dropdown expanded to show its available options.":::
 
-1. The **Group chat** or **Team** and **Channel** dropdowns appear after you select where to post. Use them to select a group chat or team and channel where you want to post the message.
+1. The **Group chat** or **Team** and **Channel** dropdowns appear after you select where to post. Use them to select a group chat or team and channel where you want to post the message. If you select group chat, a new dropdown will appear allowing you to select from the group chats of which you are a member. If you select channel, you'll see two dropdown boxes. The first allows you to choose a team from among the teams to which you belong. After that, the second dropdown allows you to choose from among the channels availble for that team.
 
 1. Use the **Message** area to create a message. Dynamic expressions are supported allowing you to incorporate any system or user variables, expressions, or functions to customize the message however necessary. To use dynamic expressions, select the **View in expression builder** link below the message area.
 
@@ -64,6 +66,6 @@ The Teams activity is typically used with other activities, often as a status no
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

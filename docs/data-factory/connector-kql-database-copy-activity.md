@@ -1,18 +1,19 @@
 ---
-title: How to configure KQL Database in a copy activity
+title: Configure KQL Database in a copy activity
 description: This article explains how to copy data using KQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure KQL Database in a copy activity
+# Configure KQL Database in a copy activity
 
 This article outlines how to use the copy activity in a data pipeline to copy data from and to KQL Database.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -112,6 +113,6 @@ The following tables contain more information about a copy activity in a KQL Dat
 |**Ingestion mapping name** | The name of a mapping that was pre-created and assigned to KQL Database destination table in advance. |\<your ingestion mapping name>|Yes|ingestionMappingName|
 |**Additional properties** | A property bag that can be used for specifying any of the ingestion properties that aren't being set already by the KQL Database destination. Specifically, it can be useful for specifying ingestion tags. Learn more from [Azure Data Explorer data ingestion](/azure/data-explorer/ingestion-properties).|• Name<br> • Type<br> • Value|Yes|additionalProperties|
 
-## Next steps
+## Related content
 
 - [KQL Database connector overview](connector-kql-database-overview.md)

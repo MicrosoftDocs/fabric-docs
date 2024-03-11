@@ -4,9 +4,13 @@ description: Learn how to create a sample Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Create a warehouse
 ---
 # Create a sample Warehouse in Microsoft Fabric
@@ -14,8 +18,6 @@ ms.search.form: Create a warehouse
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article describes how to get started with sample [!INCLUDE [fabric-dw](includes/fabric-dw.md)] using the [!INCLUDE [product-name](../includes/product-name.md)] portal, including creation and consumption of the warehouse.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## How to create a warehouse sample
 

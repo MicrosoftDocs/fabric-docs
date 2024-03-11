@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/16/2023
 #CustomerIntent: As a data scientist, I want to create a Power BI report to visualize the predictions data.
 ---
@@ -14,13 +16,13 @@ ms.date: 10/16/2023
 
 In this tutorial, you'll create a Power BI report from the predictions data that was generated in [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 You'll learn how to:
 
 > [!div class="checklist"]
 >
-> * Create a dataset for Power BI from the predictions data.
+> * Create a semantic model from the predictions data.
 > * Add new measures to the data from Power BI.
 > * Create a Power BI report.
 > * Add visualizations to the report.
@@ -36,26 +38,26 @@ This is part 5 of 5 in the tutorial series. To complete this tutorial, first com
 * [Part 3: Train and register machine learning models](tutorial-data-science-train-models.md).
 * [Part 4: Perform batch scoring and save predictions to a lakehouse](tutorial-data-science-batch-scoring.md).
 
-## Create a Power BI dataset
+## Create a semantic model
 
-Create a new Power BI dataset linked to the predictions data you produced in part 4:
+Create a new semantic model linked to the predictions data you produced in part 4:
 
 1. On the left, select your workspace.
 1. On the top left, select **Lakehouse** as a filter.
 1. Select the lakehouse that you used in the previous parts of the tutorial series.
-1. Select **New Power BI dataset** on the top ribbon.
+1. Select **New semantic model** on the top ribbon.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New Power BI dataset option on the ribbon.":::
+   :::image type="content" source="media\tutorial-data-science-create-report\new-power-bi-dataset.png" alt-text="Screenshot of the lakehouse UI home, showing where to select the New semantic model option on the ribbon.":::
 
-1. Give the dataset a name, such as "bank churn predictions." Then select the **customer_churn_test_predictions** dataset.
+1. Give the semantic model a name, such as "bank churn predictions." Then select the **customer_churn_test_predictions** dataset.
 
-   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New Power BI dataset dialog box, showing where to select the correct data and select Continue.":::
+   :::image type="content" source="media\tutorial-data-science-create-report\select-predictions-data.png" alt-text="Screenshot of the New semantic model dialog box, showing where to select the correct data and select Continue.":::
 
 1. Select **Confirm**.  
 
 ## Add new measures
 
-Now add a few measures to the dataset:
+Now add a few measures to the semantic model:
 
 1. Add a new measure for the churn rate.
 
@@ -77,7 +79,7 @@ Now add a few measures to the dataset:
 
 1. Add a new measure that counts the total number of bank customers.  You'll need it for the rest of the new measures.
   
-    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
     1. Each prediction represents one customer. To determine the total number of customers, replace `Measure =` in the formula bar with:
 
         ```python
@@ -88,7 +90,7 @@ Now add a few measures to the dataset:
 
 1. Add the churn rate for Germany.
 
-    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the customer_churn_test_predictions dataset.  This action also opens a formula bar above the table.
+    1. Select **New measure** in the top ribbon to add a new item named **Measure** to the `customer_churn_test_predictions` dataset.  This action also opens a formula bar above the table.
     1. To determine the churn rate for Germany, replace `Measure =` in the formula bar with:
 
         ```python

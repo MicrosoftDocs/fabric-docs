@@ -5,14 +5,14 @@ ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
 ms.topic: conceptual
-ms.date: 09/27/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Get started securing your data in OneLake
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-With OneLake as the single data lake for your entire organization, it’s critical to implement a scalable and robust security model to keep sensitive data compartmentalized. Microsoft OneLake and Microsoft Fabric provide several out of the box capabilities to restrict data access to only those users that need it. This article provides an overview of how to best secure your data estate with the current capabilities in OneLake.
+With OneLake as the single data lake for your entire organization, it's critical to implement a scalable and robust security model to keep sensitive data compartmentalized. Microsoft OneLake and Microsoft Fabric provide several out of the box capabilities to restrict data access to only those users that need it. This article provides an overview of how to best secure your data estate with the current capabilities in OneLake.
 
 ## OneLake structure
 
@@ -49,7 +49,7 @@ Another way to configure permissions is via an item's **Manage permissions** pag
 
 In addition to workspace permissions, data access can be given through the SQL compute engine in Microsoft Fabric. The access granted through SQL only applies to users accessing data through SQL, but you can use this security to give more selective access to certain users. In its current state, SQL supports restricting access to specific tables and schemas. Row-level security is planned for a future release.
 
-In the following example, sharing provides a user with Viewer-only access to a lakehouse. We grant the user SELECT through the SQL endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don’t have sufficient permissions. The user can successfully read through SQL SELECT statements.
+In the following example, sharing provides a user with Viewer-only access to a lakehouse. We grant the user SELECT through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
 :::image type="content" source="media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
 
@@ -59,9 +59,9 @@ Now that we understand the permissions available in Microsoft Fabric, let us loo
 
 :::image type="content" source="media\get-started-security\medallion-architecture.png" alt-text="Diagram showing bronze and silver layers as one workspace each. The gold layer is composed of several different workspaces for each data domain." lightbox="media\get-started-security\medallion-architecture.png":::
 
-Add the people responsible for managing Bronze and Silver to Member or Contributor roles so that they can update and manage all the data in those environments. Since those users need write access, this method is currently the only way you can accomplish this. Users that need access to specific data items within the Bronze and Silver layer can have the Viewer role and access data through SQL endpoints. Data science teams that need OneLake access to the data in Bronze and Silver can either have those items shared directly or you can give them the Viewer role + ReadAll permission.
+Add the people responsible for managing Bronze and Silver to Member or Contributor roles so that they can update and manage all the data in those environments. Since those users need write access, this method is currently the only way you can accomplish this. Users that need access to specific data items within the Bronze and Silver layer can have the Viewer role and access data through SQL analytics endpoints. Data science teams that need OneLake access to the data in Bronze and Silver can either have those items shared directly or you can give them the Viewer role + ReadAll permission.
 
-For the Gold layer, you can divide access across a number of smaller workspaces. You can scope each workspace to a business domain or set of users that would need to access that data. Within each workspace, give end users the Viewer role. Data engineers that build and manage the Gold layer can use the Contributor or Member role, which gives them Write access. If a specific environment needs more stringent access controls, specific warehouses or lakehouses can define object level security through their SQL endpoints. This method allows for only some tables to be shared with users while others are hidden. Lastly, sharing and the Manage permissions options provide more granular controls over access to data in Spark and OneLake for more advanced users.
+For the Gold layer, you can divide access across a number of smaller workspaces. You can scope each workspace to a business domain or set of users that would need to access that data. Within each workspace, give end users the Viewer role. Data engineers that build and manage the Gold layer can use the Contributor or Member role, which gives them Write access. If a specific environment needs more stringent access controls, specific warehouses or lakehouses can define object level security through their SQL analytics endpoints. This method allows for only some tables to be shared with users while others are hidden. Lastly, sharing and the Manage permissions options provide more granular controls over access to data in Spark and OneLake for more advanced users.
 
 The previous example is only one of many ways that data can be structured in OneLake, however it provides recommendations for how to use the capabilities of Microsoft Fabric to secure data. In the next section, you can find some general guidance for applying security.
 
@@ -73,14 +73,14 @@ Use the following general rules as a guide when structuring data in OneLake to k
 
 - Lake access: To give users direct read access to data in OneLake, make them part of the Admin, Member, or Contributor workspace roles, or share the item with ReadAll access.
 
-- General data access: Any user with Viewer permissions can access data through the SQL endpoint for warehouses, lakehouses, and datasets.
+- General data access: Any user with Viewer permissions can access data through the warehouses, semantic models, or the SQL analytics endpoint for the Lakehouse.
 
-- Object level security: To protect sensitive data, give users access to a warehouse or lakehouse SQL endpoint through the Viewer role and use SQL DENY statements to restrict access to certain tables.
+- Object level security: To protect sensitive data, give users access to a warehouse or lakehouse SQL analytics endpoint through the Viewer role and use SQL DENY statements to restrict access to certain tables.
 
   > [!NOTE]
   > Viewers with ReadAll access can bypass any object-level security settings by accessing the data in OneLake directly. Ensure that you only grant ReadAll permissions to users who should see the data without any restrictions.
 
-## Next steps
+## Related content
 
 - [Workspace roles](../get-started/roles-workspaces.md)
 - [OneLake security](onelake-security.md)

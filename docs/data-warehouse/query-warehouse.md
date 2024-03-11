@@ -1,33 +1,35 @@
 ---
-title: Query the SQL Endpoint or Warehouse
-description: Learn more about options to write TSQL queries on the SQL Endpoint or Warehouse in Microsoft Fabric.
+title: Query the SQL analytics endpoint or Warehouse
+description: Learn more about options to write TSQL queries on the SQL analytics endpoint or Warehouse in Microsoft Fabric.
 author: prlangad
 ms.author: prlangad
 ms.reviewer: wiassaf, kecona
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Query editor # This article's title should not change. If so, contact engineering.
 ---
-# Query the SQL Endpoint or Warehouse in Microsoft Fabric
+# Query the SQL analytics endpoint or Warehouse in Microsoft Fabric
 
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 To get started with this tutorial, check the following prerequisites:
 
-- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
-- Choose your querying tool. 
+- You should have access to a [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) within a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace with contributor or higher permissions.
+- Choose your querying tool.
     - Use the [SQL query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](sql-query-editor.md).
     - Use the [Visual query editor in the [!INCLUDE [product-name](../includes/product-name.md)] portal](visual-query-editor.md).
 
-- Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) via T-SQL connection string. For more information, see [Connectivity](connectivity.md).
+- Alternatively, you can use any of these tools to connect to your [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) via a T-SQL connection string. For more information, see [Connectivity](connectivity.md).
     - [Download SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms).
     - [Download Azure Data Studio](https://aka.ms/azuredatastudio).
 
 > [!NOTE]
 > Review the [T-SQL surface area](tsql-surface-area.md) for [!INCLUDE [fabric-se](includes/fabric-se.md)] or [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Run a new query in SQL query editor
 
@@ -63,7 +65,7 @@ You can write cross database queries to databases in the current active workspac
 
 There are several ways you can write cross-database queries within the same [!INCLUDE [product-name](../includes/product-name.md)] workspace, in this section we explore examples. You can join tables or views to run cross-warehouse queries within current active workspace.  
 
-1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from your current active workspace to object **Explorer** using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from the dialog, it gets added into the object **Explorer** for referencing when writing a SQL query or creating Visual query.
+1. Add [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from your current active workspace to object **Explorer** using **+ Warehouses** action. When you select [[!INCLUDE [fabric-se](includes/fabric-se.md)]](data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse) or [[!INCLUDE [fabric-dw](includes/fabric-dw.md)]](data-warehousing.md#synapse-data-warehouse) from the dialog, it gets added into the object **Explorer** for referencing when writing a SQL query or creating Visual query.
 
    :::image type="content" source="media\query-warehouse\add-warehouses.png" alt-text="Screenshot showing how to use add warehouses in object explorer." lightbox="media\query-warehouse\add-warehouses.png":::
 

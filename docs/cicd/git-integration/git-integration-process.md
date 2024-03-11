@@ -4,16 +4,18 @@ description: Understand how Microsoft Fabric interacts with Git on Azure Repos.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual 
-ms.date: 08/23/2023
-ms.custom: build-2023
+ms.topic: conceptual
+ms.date: 11/15/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Basic concepts in Git integration
 
 This article explains basic Git concepts and the process of integrating Git with your Microsoft Fabric workspace.
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 ## Permissions
 
@@ -125,9 +127,10 @@ Read more about the update process and how to [resolve conflicts](./conflict-res
 ### General limitations
 
 - The Azure DevOps account must be registered to the same user that is using the Fabric workspace.
-- The [authentication method](/azure/active-directory/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multi-factor authentication, Power BI needs to require multi-factor authentication as well.
+- The [authentication method](/entra/identity/authentication/concept-authentication-methods-manage#authentication-methods-policy) in Power BI must be at least as strong as the authentication method for Azure DevOps. For example, if Azure DevOps requires multi-factor authentication, Power BI needs to require multi-factor authentication as well.
 - Direct Query and composite models on Power BI Datasets and Analysis Services aren't supported at this time.
-- Private custom visuals aren't supported.
+- DirectLake semantic models aren’t supported at this time.
+- Refreshing a semantic model using the [Enhanced refresh API](/power-bi/connect-data/asynchronous-refresh) causes a Git diff after each refresh.
 
 ## Workspace limitations
 
@@ -158,7 +161,7 @@ Once connected, anyone with [permission](#permissions) can work in the workspace
 - B2B isn’t supported.
 - [Conflict resolution](./conflict-resolution.md) is partially done in Git.
 
-## Next steps
+## Related content
 
 - [Manage branches](./manage-branches.md)
 - [Resolve errors and conflicts](./conflict-resolution.md)

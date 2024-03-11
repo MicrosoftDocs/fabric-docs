@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: prlangad
 author: prlangad
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Analyze data with a notebook
@@ -15,16 +17,14 @@ ms.date: 5/23/2023
 
 In this tutorial, learn about how you can save your data once and then use it with many other services.  Shortcuts can also be created to data stored in Azure Data Lake Storage and S3 to enable you to directly access delta tables from external systems.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Create a lakehouse
 
 First, we create a new lakehouse. To create a new lakehouse in your [!INCLUDE [product-name](../includes/product-name.md)] workspace:
 
 1. Select the `Data Warehouse Tutorial` workspace in the navigation menu.
-1. Select **+ New** > **Lakehouse (Preview)**.
+1. Select **+ New** > **Lakehouse **.
 
-    :::image type="content" source="media/tutorial-analyze-data-notebook/new-lakehouse-menu.png" alt-text="A screenshot from the Fabric portal showing the + New menu. Lakehouse (Preview) is boxed in red.":::
+    :::image type="content" source="media/tutorial-analyze-data-notebook/new-lakehouse-menu.png" alt-text="A screenshot from the Fabric portal showing the + New menu. Lakehouse  is boxed in red.":::
 
 1. In the **Name** field, enter `ShortcutExercise` and select **Create**.
 

@@ -5,8 +5,10 @@ ms.reviewer: sngun
 ms.author: qixwang
 author: qixwang
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 05/08/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 01/24/2024
 ms.search.form: VSCodeExtension
 ---
 
@@ -14,25 +16,23 @@ ms.search.form: VSCodeExtension
 
 The Synapse Visual Studio Code extension supports a pro-developer experience for exploring Microsoft Fabric lakehouses, and authoring Fabric notebooks and Spark job definitions. Learn more about the extension, including how to get started with the necessary prerequisites.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 Visual Studio (VS) Code is a one of the most popular lightweight source code editors; it runs on your desktop and is available for Windows, macOS, and Linux. By installing the Synapse VS Code extension, you can author, run, and debug your notebook and Spark job definition locally in VS Code. You can also post the code to the remote Spark compute in your Fabric workspace to run or debug. The extension also allows you to browse your lakehouse data, including tables and raw files, in VS Code.
 
 ## Prerequisites
 
 Prerequisites for the Synapse VS Code extension:
 
-- [OpenJDK8](https://adoptium.net/temurin/releases/?version=8)
-- [Conda](https://docs.conda.io/en/latest/miniconda.html)
-- [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
+- Install Java Runtime Environment from the [OpenJDK8](https://adoptium.net/temurin/releases/?version=8) website.
+- Install [Conda](https://docs.conda.io/en/latest/miniconda.html).
+- Install the [Jupyter extension for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter)
 
 After you have installed the required software, you must update the operating system properties.
 
 ### Windows
 
-1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed.
+1. Add **JAVA_HOME** to the environment variables and point it to the directory where java 1.8 is installed. For example, if you install JRE at this path `C:\Program Files\Eclipse Adoptium\jre-8.0.402.6-hotspot`, set the *JAVA_HOME* variable value to that path.
 
-2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory.
+2. Add both **%JAVA_HOME%/bin** and the **condabin** subfolder of the Conda installation to the system path directory. The *condabin* folder could be in the folder where you installed and in this format `\miniconda3\condsbin`. Open the environment variables and add **%JAVA_HOME%/bin** and **condabin** paths to the **Path** variable.
 
 ### macOS
 
@@ -48,7 +48,7 @@ Run the **conda.sh** in the terminal:
 
 ## Install the extension and prepare your environment
 
-1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension. (The extension is still under preview, so you need to select the prerelease version to install.)
+1. Search for **Synapse VS Code** in the VS Code extension marketplace and install the extension.
 
 1. After the extension installation is complete, restart VS Code. The icon for the extension is listed at the VS Code activity bar.
 
@@ -80,7 +80,12 @@ Once you have a workspace, choose it by selecting the **Select Workspace** optio
 
 :::image type="content" source="media\vscode\select-workspace.png" alt-text="Screenshot of VS Code Explorer, showing where to find the Select Workspace option.":::
 
-## Next steps
+### Current Limitations
+
+- The extension under the desktop mode doesn't support the [Microsoft Spark Utilities](/azure/synapse-analytics/spark/microsoft-spark-utilities?pivots=programming-language-python) yet
+- Shell command start with "!" is not supported.
+
+## Related content
 
 In this overview, you get a basic understanding of how to install and set up the Synapse VS Code extension. The next articles explain how to develop your notebooks and Spark job definitions locally in VS Code.
 

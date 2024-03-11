@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ---
 
@@ -14,8 +16,6 @@ ms.date: 10/20/2023
 Autotune automatically tunes Apache Spark configurations to minimize workload execution time and optimizes workloads. It empowers you to achieve more with less. This feature reduces execution time and surpasses the gains accomplished by manually tuned workloads by experts, which require considerable effort and experimentation.
 
 Autotune uses historical data execution from your workloads (Spark SQL queries) to iteratively learn the optimal configurations for a given workload and its execution time.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > The autotune preview is available in two production regions: West Central US and East US 2.
@@ -163,6 +163,6 @@ To ensure that autotune meets the desired performance standards and is fit for i
 
 We prioritize data privacy and security. Your data is only used to train the model that serves your specific workload. We take stringent measures to ensure that no sensitive information is used in our storage or training processes.
 
-## Next steps
+## Related content
 
 - [Concurrency limits and queueing in Microsoft Fabric Spark](spark-job-concurrency-and-queueing.md)

@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Transform data using a stored procedure
@@ -14,8 +16,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save a new stored procedure to transform data.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Transform data
 

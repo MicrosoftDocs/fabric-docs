@@ -1,18 +1,20 @@
 ---
-title: How to configure PostgreSQL in a copy activity
+title: Configure PostgreSQL in a copy activity
 description: This article explains how to copy data using PostgreSQL.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/20/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure PostgreSQL in a copy activity
+# Configure PostgreSQL in a copy activity
 
 This article outlines how to use the copy activity in data pipelines to copy data from PostgreSQL.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -78,6 +80,6 @@ The following table contains more information about the copy activity in Postgre
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using SQL queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
 |**Additional columns**|Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.|• Name<br>• Value|No|additionalColumns:<br>• name<br>• value|
 
-## Next steps
+## Related content
 
 - [PostgreSQL connector overview](connector-postgresql-overview.md)

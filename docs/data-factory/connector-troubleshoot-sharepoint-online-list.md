@@ -1,19 +1,19 @@
 ---
 title: Troubleshoot the SharePoint Online list connector
-description: Learn how to troubleshoot issues with the SharePoint Online list connector in Data Factory in Microsoft Fabric. 
+description: Learn how to troubleshoot issues with the SharePoint Online list connector in Data Factory in Microsoft Fabric.
 ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom: build-2023
-ms.date: 08/21/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Troubleshoot the SharePoint Online list connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the SharePoint Online list connector in Data Factory in Microsoft Fabric.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Error code: SharePointOnlineAuthFailed
 
@@ -56,11 +56,10 @@ You need to enable ACS to acquire the access token. Take the following steps:
 1. Use ACS to get the access token. 
 
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 
 - [Data Factory blog](https://blog.fabric.microsoft.com/en-us/blog/category/data-factory)
 - [Data Factory community](https://community.fabric.microsoft.com/t5/Data-Factory-preview-Community/ct-p/datafactory)
 - [Data Factory feature requests ideas](https://ideas.fabric.microsoft.com/)
-

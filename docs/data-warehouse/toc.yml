@@ -55,7 +55,7 @@ items:
 - name: Design and Develop
   items:
   - name: Better together - the lakehouse and warehouse
-    href: get-started-lakehouse-sql-endpoint.md
+    href: get-started-lakehouse-sql-analytics-endpoint.md
   - name: Create a sample warehouse 
     href: create-warehouse-sample.md
   - name: Performance guidelines
@@ -68,6 +68,8 @@ items:
     href: tsql-surface-area.md
   - name: Primary, foreign, and unique keys
     href: table-constraints.md
+  - name: Generate unique identifiers
+    href: generate-unique-identifiers.md
   - name: Transactions
     href: transactions.md 
   - name: Warehouse settings and context menus
@@ -86,10 +88,10 @@ items:
     href: tutorial-setup-dbt.md          
 - name: Create models and build Power BI reports
   items:
-  - name: Datasets
-    href: datasets.md
-  - name: Model data in the default Power BI dataset
-    href: model-default-power-bi-dataset.md          
+  - name: Semantic models
+    href: semantic-models.md
+  - name: Model data in the default Power BI semantic model
+    href: default-power-bi-semantic-model.md          
   - name: Define relationships in data models
     href: data-modeling-defining-relationships.md
   - name: Create reports in the Power BI service
@@ -132,6 +134,8 @@ items:
     href: query-delta-lake-logs.md
 - name: Data recovery
   items:
+  - name: Restore in-place
+    href: restore-in-place.md
   - name: Clone tables
     href: clone-table.md
   - name: Clone tables in the Fabric portal
@@ -167,6 +171,10 @@ items:
     displayName: Smoothing, throttling
   - name: Workload Management
     href: workload-management.md
+- name: Migrate
+  items:
+  - name: Migrate Azure Synapse Analytics dedicated SQL pools to Fabric Warehouse
+    href: migration-synapse-dedicated-sql-pool-warehouse.md
 - name: Troubleshoot
   items:
   - name: Troubleshooting your Warehouse

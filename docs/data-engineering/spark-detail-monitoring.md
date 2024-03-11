@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: jejiang
 author: jejiang
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 02/24/2023
 ms.search.form: Monitor Spark application details
 ---
 
 # Apache Spark application detail monitoring
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 With [!INCLUDE [product-name](../includes/product-name.md)], you can use Apache Spark to run notebooks, jobs, and other kinds of applications in your workspace. This article explains how to monitor your Apache Spark application, allowing you to keep an eye on the recent run status, issues, and progress of your jobs.
 
@@ -28,7 +28,7 @@ You can select the name of the application you want to view in the application l
 
 Open the **Recent runs** page of the notebook or Spark job definition, you can view the status of the Apache application.
 
-- Success 
+- Success
 
 :::image type="content" source="media\spark-detail-monitoring\job-succeeded.png" alt-text="Screenshot showing where Succeeded status appears." lightbox="media\spark-detail-monitoring\job-succeeded.png":::
 
@@ -59,6 +59,26 @@ In the Apache Spark application monitoring details page, the job runs list is di
 - Click on the job Code snippet, you can check and copy the code related to this job.
 
 :::image type="content" source="media\spark-detail-monitoring\jobs.png" alt-text="Screenshot showing the jobs." lightbox="media\spark-detail-monitoring\jobs.png":::
+
+## Resources (Preview)
+
+The executor usage graph visually displays the allocation of Spark job executors and resource usage. Currently, only the runtime information of **spark 3.4** and above will display this feature. Select **Resources (Preview)**, then four types curves about executor usage are drafted, including **Running**, **Idled**, **Allocated**, **Maximum instances**. 
+
+ :::image type="content" source="media\spark-detail-monitoring\monitoring-resource-usage.png" alt-text="Screenshot showing the monitoring resource usage." lightbox="media\spark-detail-monitoring\monitoring-resource-usage.png":::
+
+- For Allocated, refers to the core situation that is allocated during the running of Spark application.
+- For Maximum instances, refers to the maximum number of cores allocated to the Spark application.
+- For Running, refers to the actual number of cores used by the Spark application when it is running. Click at a point in time while the spark application is running. You can see the running executor core allocation details at the bottom of the graph.
+
+    :::image type="content" source="media\spark-detail-monitoring\running-executor-core-allocation-details.png" alt-text="Screenshot showing the running executor core allocation details." lightbox="media\spark-detail-monitoring\running-executor-core-allocation-details.png":::
+
+- For Idled, it is the number of unused cores while the Spark application is running.
+
+In some cases, at some time points the number of tasks might exceed the capacity of the executor cores (i.e., task numbers > total executor cores / spark.task.cpus). This is as expected, because there's time gap between a task marked as running and it is actually running on an executor core. So some tasks might be shown as running, but it does not run on any core.
+
+Select the color icon to select or unselect the corresponding content in all graph.
+
+ :::image type="content" source="media\spark-detail-monitoring\graph-select-chart.png" alt-text="Screenshot showing the graph select chart" lightbox="media\spark-detail-monitoring\graph-select-chart.png":::
 
 ## Summary panel
 
@@ -115,7 +135,7 @@ The diagnostic panel provides users with real-time recommendations and error ana
 
 :::image type="content" source="media\spark-detail-monitoring\diagnostics.png" alt-text="Screenshot showing the diagnostics for spark application." lightbox="media\spark-detail-monitoring\diagnostics.png":::
 
-## Next steps
+## Related content
 
 The next step after viewing the details of an Apache Spark application is to view **Spark job progress** below the Notebook cell. You can refer to:
 

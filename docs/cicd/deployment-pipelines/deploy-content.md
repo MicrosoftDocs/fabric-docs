@@ -4,16 +4,15 @@ description: Learn how to deploy content to an empty or to nonempty stage using 
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
-ms.search.form: 
 ---
 
 # Deploy content using Deployment pipelines
 
 Any [licensed user](../../enterprise/licenses.md) that's a member or admin in the source workspace, can deploy content to an empty stage (a stage that doesn't contain content). The workspace must reside on a capacity for the deployment to be completed.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines) to programmatically perform deployments. For more information, see [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
@@ -21,9 +20,9 @@ You can also use the [deployment pipelines REST APIs](/rest/api/power-bi/pipelin
 
 If you already have a workspace that you'd like to use with a specific stage, instead of deploying you can [assign](assign-pipeline.md) that workspace to the appropriate stage.
 
-When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a dataset in the source stage, is cloned alongside its dataset, and the clones are similarly bound in the target workspace.
+When you deploy content to an empty stage, the relationships between the items are kept. For example, a report that is bound to a semantic model in the source stage, is cloned alongside its semantic model, and the clones are similarly bound in the target workspace.
 
-Once the deployment is complete, refresh the dataset. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
+Once the deployment is complete, refresh the semantic model. For more information, see [deploying content to an empty stage](understand-the-deployment-process.md#deploy-content-to-an-empty-stage).
 
 ### Deploying options
 
@@ -47,14 +46,14 @@ Select the stage to deploy from and then select the deployment button. The deplo
 
 If you don't want to deploy everything from that stage, you can select specific items for deployment. Select the **Show more** link, and then select the items you wish to deploy. When you select the **Deploy** button, only the selected items are deployed to the next stage.
 
-Since dashboards, reports, datasets, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the dataset that the report is connected to, so that both will be deployed together and the report won't break.
+Since dashboards, reports, semantic models, and dataflows are related and have dependencies, you can use the select related button to see all items that those items are dependent on. For example, if you want to deploy a report to the next stage, select the **Select related** button to mark the semantic model that the report is connected to, so that both will be deployed together and the report won't break.
 
 :::image type="content" source="media/deploy-content/selective-deploy.png" alt-text="A screenshot showing the selective deploy option in deployment pipelines, available after selecting the show more option." lightbox="media/deploy-content/selective-deploy.png":::
 
 >[!NOTE]
 >
-> * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a dataset will fail, unless the dataset already exists in the target stage.
-> * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a dataset or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
+> * You can't deploy a Fabric item to the next stage if the items it's dependent on don't exist in the stage you are deploying to. For example, deploying a report without a semantic model will fail, unless the semantic model already exists in the target stage.
+> * You might get unexpected results if you choose to deploy an item without the item it's dependent on. This can happen when a semantic model or a dataflow in the target stage has changed and is no longer identical to the one in the stage you're deploying from.
 
 #### Backwards deployment
 
@@ -76,7 +75,7 @@ To leave a note, expand the **Add a note** option and write your note in the tex
 
 Once you have content in a pipeline stage, you can deploy it to the next stage. Deploying content to another stage is usually done after you've performed some actions in the pipeline. For example, made development changes to your content in the development stage, or tested your content in the test stage. Though you can have up to 10 different stages in the pipeline, a typical workflow for moving content is development to test stage, and then test to production. You can learn more about this process, in the [deploy content to an existing workspace](understand-the-deployment-process.md#deploy-content-to-an-existing-workspace) section.
 
-When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item is overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a dataset in the source stage, only the report is deployed. If you want to deploy everything connected to the report, use the **Select related** button.
+When you deploy content to a stage that already has other content in it, select the items you want to deploy. If there's already an item there with the same name, that item is overwritten. Relationships between the items aren't kept. Therefore, if you deploy a report that is bound to a semantic model in the source stage, only the report is deployed. If you want to deploy everything connected to the report, use the **Select related** button.
 
 To deploy content to the next stage in the deployment pipeline, select the deploy button at the bottom of the stage.
 
@@ -84,7 +83,7 @@ When reviewing the test and production stage cards, you can see the last deploym
 
 The deployment time is useful for establishing when a stage was last updated. It can also be helpful if you want to track time between test and production deployments.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Deployment history](deployment-history.md)

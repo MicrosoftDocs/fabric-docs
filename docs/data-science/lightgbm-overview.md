@@ -2,7 +2,9 @@
 title: What is LightGBM in SynapseML?
 description: Learn about LightGBM in SynapseML.
 ms.topic: overview
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.reviewer: mopeakande
 author: JessicaXYWang
 ms.author: jessiwang
@@ -40,9 +42,9 @@ many other machine learning tasks. LightGBM is part of Microsoft's
 - **LightGBMRanker**: used for building ranking models. For example, to predict the relevance of website search results, we could build a ranking model with `LightGBMRanker`.
 
 
-## Next steps
+## Related content
 
 - [How to use LightGBM models with SynapseML in Microsoft Fabric](how-to-use-lightgbm-with-synapseml.md)
-- [How to use Azure AI services with SynapseML](overview-azure-ai-services.md)
+- [How to use Azure AI services with SynapseML](./ai-services/ai-services-in-synapseml-bring-your-own-key.md)
 - [How to perform the same classification task with and without SynapseML](classification-before-and-after-synapseml.md)
 - [How to use KNN model with SynapseML](conditional-k-nearest-neighbors-exploring-art.md)

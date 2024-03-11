@@ -1,18 +1,18 @@
 ---
 title: Sample Gallery
-description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset. 
+description: Learn how to load sample data into Real-Time Analytics and explore it using sample queries in a KQL queryset.
 ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 08/13/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 12/11/2023
 ms.search.form: KQL Queryset
 ---
 
 # Sample Gallery
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Real-Time Analytics in Microsoft Fabric offers a sample data gallery containing data in various formats and sizes for you to practice loading data and writing queries. Each dataset in the **Real-Time Analytics Sample Gallery** is loaded into your workspace as a table in a new KQL database. Along with the database, an attached KQL queryset is created, containing sample queries unique to the dataset you selected.
 
@@ -25,16 +25,16 @@ In this article, you learn how to query data from the sample gallery in Real-Tim
 ## Get data
 
 1. On the bottom left experience switcher, select **Real-Time Analytics**.
-1. On the **Real-Time Analytics** homepage, select **Use a sample (Preview)**.
+1. On the **Real-Time Analytics** homepage, select **Use a sample**.
     :::image type="content" source="media/sample-gallery/use-sample.png" alt-text="Screenshot of the Real-Time Analytics homepage showing the different items that can be created in this experience. The item titled Use a sample is highlighted." lightbox="media/sample-gallery/use-sample.png":::
-1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the dataset is automatically generated.
+1. From the **Real-Time Analytics Sample Gallery** window, select a tile to load into your workspace. Once you select a tile, the data is loaded as a table in a new KQL database, and a KQL queryset with sample queries unique to the semantic model is automatically generated.
 
     :::image type="content" source="media/sample-gallery/sample-gallery-tiles.png" alt-text="Screenshot of the Real-Time Analytics sample gallery showing sample databases available for ingestion."  lightbox="media/sample-gallery/sample-gallery-tiles.png":::
 
 > [!NOTE]
-> You can also load data from the **Real-Time Analytics Sample Gallery** as a table in an existing KQL database. Doing so loads the sample dataset without creating a KQL queryset with sample queries.
+> You can also load data from the **Real-Time Analytics Sample Gallery** as a table in an existing KQL database. Doing so loads the sample semantic model without creating a KQL queryset with sample queries.
 >
-> To load sample datasets without the sample queries, open an existing KQL database and select **Get data** > **Sample**.
+> To load sample semantic models without the sample queries, open an existing KQL database and select **Get data** > **Sample**.
 
 ## Run queries
 
@@ -61,7 +61,7 @@ Clean up the items created by navigating to the workspace in which they were cre
 
 1. Select **Delete**. You can't recover deleted items.
 
-## Next steps
+## Related content
 
 * [Data management](data-management.md)
 * [Customize results in the KQL Queryset results grid](customize-results.md)

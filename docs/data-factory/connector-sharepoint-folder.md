@@ -4,15 +4,17 @@ description: This article provides information about how to create a SharePoint 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/25/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your SharePoint folder connection
 
 This article outlines the steps to create a SharePoint folder connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -27,7 +29,7 @@ The SharePoint folder connector supports the following authentication types for 
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to a SharePoint folder. The following links provide the specific Power Query connector information you need to connect to a SharePoint folder in Dataflow Gen2:
 
-- To get started using the SharePoint folder connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the SharePoint folder connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - To determine the URL to use to access your SharePoint folder, go to [Determine the site URL](/power-query/connectors/sharepoint-folder#determine-the-site-url).
 - To connect to the SharePoint folder connector from Power Query, go to [Connect to a SharePoint folder from Power Query Online](/power-query/connectors/sharepoint-folder#connect-to-a-sharepoint-folder-from-power-query-online).
 

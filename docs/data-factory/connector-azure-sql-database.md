@@ -4,15 +4,16 @@ description: This article provides information about how to set up an Azure SQL 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Azure SQL Database connection
 
 This article outlines how to set up a connection to [Azure SQL Database](/azure/azure-sql/database/sql-database-paas-overview).
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -28,7 +29,7 @@ The Azure SQL Database connector supports the following authentication types for
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an Azure SQL database. The following links provide the specific Power Query connector information you need to connect to an Azure SQL database in Dataflow Gen2:
 
-- To get started using the Azure SQL Database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Azure SQL Database connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Azure SQL Database prerequisites](/power-query/connectors/azure-sql-database#prerequisites) before connecting to the Azure SQL Database connector.
 - To connect to the Azure SQL Database connector from Power Query, go to [Connect to Azure SQL database from Power Query Online](/power-query/connectors/azure-sql-database#connect-to-azure-sql-database-from-power-query-online).
 
@@ -98,15 +99,15 @@ Open **Edit credentials**. You'll notice the sign in interface. Enter your accou
 
 To use service principal authentication, follow these steps:
 
-1. [Create an Azure Active Directory application](/azure/active-directory/develop/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the connection:
+1. [Create a Microsoft Entra application](/entra/identity-platform/howto-create-service-principal-portal#register-an-application-with-azure-ad-and-create-a-service-principal) from the Azure portal. Make note of the application name and the following values that define the connection:
 
     - Tenant ID
     - Application ID
     - Application key
 
-2. [Provision an Azure Active Directory administrator](/azure/azure-sql/database/authentication-aad-configure#provision-azure-ad-admin-sql-database) for your server on the Azure portal if you haven't already done so. The Azure AD administrator must be an Azure AD user or Azure AD group, but it can't be a service principal. This step is done so that, in the next step, you can use an Azure AD identity to create a contained database user for the service principal.
+2. [Provision a Microsoft Entra administrator](/azure/azure-sql/database/authentication-aad-configure#provision-azure-ad-admin-sql-database) for your server on the Azure portal if you haven't already done so. The Microsoft Entra administrator must be a Microsoft Entra user or Microsoft Entra group, but it can't be a service principal. This step is done so that, in the next step, you can use a Microsoft Entra identity to create a contained database user for the service principal.
 
-3. [Create contained database users](/azure/azure-sql/database/authentication-aad-configure#create-contained-users-mapped-to-azure-ad-identities) for the service principal. Connect to the database from or to which you want to copy data by using tools like SQL Server Management Studio, with an Azure AD identity that has at least ALTER ANY USER permission. Sign in to your Azure SQL Database through Active Directory authentication and run the following T-SQL:
+3. [Create contained database users](/azure/azure-sql/database/authentication-aad-configure#create-contained-users-mapped-to-azure-ad-identities) for the service principal. Connect to the database from or to which you want to copy data by using tools like SQL Server Management Studio, with a Microsoft Entra identity that has at least ALTER ANY USER permission. Sign in to your Azure SQL Database through Active Directory authentication and run the following T-SQL:
   
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
@@ -158,6 +159,6 @@ The following properties in the table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure SQL Database in a copy activity](connector-azure-sql-database-copy-activity.md)

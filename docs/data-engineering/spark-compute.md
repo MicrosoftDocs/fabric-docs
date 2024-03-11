@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ---
 # What is Spark compute in Microsoft Fabric?
@@ -15,8 +17,6 @@ ms.date: 10/20/2023
 Microsoft Fabric Data Engineering and Data Science experiences operate on a fully managed Spark compute platform. This platform is designed to deliver unparalleled speed and efficiency. With starter pools, you can expect rapid Spark session initialization, typically within 5 to 10 seconds, with no need for manual setup. You also get the flexibility to customize Spark pools according to your specific data engineering and data science requirements. The platform enables an optimized and tailored analytics experience.
 
 :::image type="content" source="media/spark-compute/spark-compute-overview.png" alt-text="Image of a Spark compute platform with starter pools and custom Spark pools." lightbox="media/spark-compute/spark-compute-overview.png":::
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Starter pools
 
@@ -89,7 +89,7 @@ Dynamic allocation allows the Spark application to request more executors if the
 
 When you enable the dynamic allocation option for every Spark application submitted, the system reserves executors during the job submission step based on the maximum nodes. You specify maximum nodes to support successful automatic scale scenarios.
 
-## Next steps
+## Related content
 
 * [Get Started with Data Engineering/Science Admin Settings for your Fabric Capacity](capacity-settings-overview.md)
 * [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md)

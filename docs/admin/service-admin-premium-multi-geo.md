@@ -1,19 +1,21 @@
 ---
-title: Multi-Geo support for Fabric Premium
+title: Multi-Geo support for Fabric
 description: Learn how you can deploy content to data centers in regions other than the home region of the Fabric tenant.
 author: KesemSharabi
 ms.author: kesharab
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-premium
+ms.custom:
+  - ignite-2023
 ms.topic: how-to
-ms.date: 09/14/2023
-LocalizationGroup: Premium 
+ms.date: 01/28/2024
+LocalizationGroup: Premium
 ---
 
-# Configure Multi-Geo support for Fabric Premium
+# Configure Multi-Geo support for Fabric
 
-Multi-Geo is a Fabric Premium feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric Premium customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
+Multi-Geo is a Fabric feature that helps multinational customers address regional, industry-specific, or organizational data residency requirements. As a Fabric customer, you can deploy content to data centers in regions other than the home region of the Fabric tenant. A geo (geography) can contain more than one region. For example, the United States is a geo, and West Central US and South Central US are regions in the United States. You might choose to deploy content to any of the following geographies (geos) defined in the [Azure geography map](https://azure.microsoft.com/global-infrastructure/geographies/).
 
 Sovereign clouds support Multi-Geo across regions within that cloud.
 
@@ -47,23 +49,23 @@ You see this message to confirm the change.
 
 ![Screenshot of a prompt confirming a change to the workspace region.](media/service-admin-premium-multi-geo/power-bi-multi-geo-change-assigned-workspace-capacity.png)
 
-During migration, certain operations might fail, such as publishing new datasets or scheduled data refresh.  
+During migration, certain operations might fail, such as publishing new semantic models or scheduled data refresh.  
 
 The following items are stored in the Premium region when Multi-Geo is enabled:
 
-- Models (*.ABF* files) for import and DirectQuery datasets
+- Models (*.ABF* files) for import and DirectQuery semantic models
 - Query cache
 - R images
 
 These items remain in the home region for the tenant:
 
 - Push datasets
-- Excel workbooks
 - Dashboard/report metadata: tile names, tile queries, and any other data
 - Service buses for gateway queries or scheduled refresh jobs
 - Permissions
-- Dataset credentials
+- Semantic model credentials
 - Power BI Embedded Analytics Playground saved state
+- Metadata linked to Purview Data Map
 
 ## View capacity regions
 
@@ -85,7 +87,7 @@ You can take workspaces out of Multi-Geo capacity in one of two ways:
 - Delete the current capacity where the workspace is located. This action moves the workspace back to shared capacity in the home region.
 - Migrate individual workspaces back to Premium capacity located in the home tenant.
 
-Large-storage format datasets shouldn't be moved from the region where they were created. Reports based on a large-format dataset won't be able to load the dataset and return a *Cannot load model* error. Move the large-storage format dataset back to its original region to make it available again.
+Large-storage format semantic models shouldn't be moved from the region where they were created. Reports based on a large-format semantic model won't be able to load the semantic model and return a *Cannot load model* error. Move the large-storage format semantic model back to its original region to make it available again.
 
 ## Considerations and limitations
 
@@ -94,13 +96,12 @@ Large-storage format datasets shouldn't be moved from the region where they were
 - The source data might remain in the region from which the data was moved for up to 30 days when moving data from one region to another in a Multi-Geo environment. During that time end users don't have access to it. It's removed from this region and destroyed during the 30-day period.
 - Query text and query result traffic for imported and DirectQuery data models doesn't transit through the home region. The report metadata does still come from the home region, and certain DNS routing states might take such traffic out of the region.
 - Certain features such as screenshots, data alerts and others will still process data in the home region.
-- The detailed dataset metadata that is cached as part of [enhanced metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning) is always stored in the home region, even if the scanned dataset is located in a remote region.
+- The detailed semantic model metadata that is cached as part of [enhanced metadata scanning](/power-bi/enterprise/service-admin-metadata-scanning) is always stored in the home region, even if the scanned semantic model is located in a remote region.
 - The [dataflows](/power-bi/transform-model/dataflows/dataflows-introduction-self-service) feature isn't supported on Multi-Geo at this time.
-- It's possible to create and maintain large-storage format datasets in remote regions to meet data residency requirements. However, you can't move storage format datasets to another region. Moving large-storage format datasets from the region where they were created results in reports failing to load the dataset. Move the large-storage dataset back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
-- Multi-Geo doesn't support Metrics.
+- It's possible to create and maintain large-storage format semantic models in remote regions to meet data residency requirements. However, you can't move storage format semantic models to another region. Moving large-storage format semantic models from the region where they were created results in reports failing to load the semantic model. Move the large-storage semantic model back to its original region to make it available. If you must move such a model, deploy it as if it was a new model, and then delete the old model from the undesired region.
+- Multi-Geo doesn't support [Metrics in Power BI](/power-bi/create-reports/service-goals-introduction).
 
-## Next steps
+## Related content
 
 - [What is Power BI Premium?](/power-bi/enterprise/service-premium-what-is)
-
 - [Multi-Geo support for Power BI Embedded](/power-bi/developer/embedded/embedded-multi-geo)

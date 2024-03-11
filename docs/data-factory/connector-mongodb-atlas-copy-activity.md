@@ -1,18 +1,20 @@
 ---
-title: How to configure MongoDB Atlas in a copy activity
+title: Configure MongoDB Atlas in a copy activity
 description: This article explains how to copy data using MongoDB Atlas.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/08/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure MongoDB Atlas in a copy activity
+# Configure MongoDB Atlas in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to MongoDB Atlas.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -116,6 +118,6 @@ The following table contains more information about the copy activity in MongoDB
 |**Write batch timeout**|The wait time for the batch insert operation to finish before it times out.|timespan<br>(the default is **00:30:00** - 30 minutes)|No|writeBatchTimeout|
 |**Write batch size**| Controls the size of documents to write in each batch. You can try increasing this value to improve performance and decreasing the value if your document size being large.|< your write batch size >|No|writeBatchSize|
 
-## Next steps
+## Related content
 
 - [MongoDB Atlas connector overview](connector-mongodb-atlas-overview.md)

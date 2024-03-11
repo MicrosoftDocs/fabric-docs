@@ -1,33 +1,35 @@
 ---
-title: Semantic link and Power BI connectivity
+title: Semantic link and Power BI connectivity (preview)
 description: Semantic link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: marcozo
 author: eisber
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.date: 06/14/2023
 ms.search.form: semantic link
 ---
 
-# Power BI connectivity with semantic link and Microsoft Fabric
+# Power BI connectivity with semantic link and Microsoft Fabric (preview)
 
-Power BI connectivity is at the core of semantic link.
-In this article, you'll learn about the ways that semantic link provides connectivity to Power BI datasets for users of the Python pandas ecosystem and the Apache Spark ecosystem.
+Power BI connectivity is at the core of semantic link (preview).
+In this article, you'll learn about the ways that semantic link provides connectivity to semantic models for users of the Python pandas ecosystem and the Apache Spark ecosystem.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-A Power BI dataset usually represents the gold standard of data and is the result of upstream data processing and refinement.
-Business analysts can create Power BI reports from Power BI datasets and use these reports to drive business decisions.
+A semantic model usually represents the gold standard of data and is the result of upstream data processing and refinement.
+Business analysts can create Power BI reports from semantic models and use these reports to drive business decisions.
 Furthermore, they can encode their domain knowledge and business logic into Power BI measures.
-On the other hand, data scientists can work with the same datasets, but typically in a different code environment or language.
+On the other hand, data scientists can work with the same semantic models, but typically in a different code environment or language.
 In such cases, it may become necessary for the data scientists to duplicate the business logic, which can lead to critical errors.
 
-Semantic link bridges this gap between the Power BI datasets and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
+Semantic link bridges this gap between the semantic models and the [!INCLUDE [fabric-ds-name](includes/fabric-ds-name.md)] in [!INCLUDE [product-name](../includes/product-name.md)] experience.
 Thereby, providing a way for business analysts and data scientists to collaborate seamlessly and reduce data mismatch. Semantic link offers connectivity to the:
 
 - Python [pandas](https://pandas.pydata.org/) ecosystem via the **SemPy Python library**, and
-- Power BI datasets through the **Spark native connector** that supports PySpark, Spark SQL, R, and Scala.
+- Semantic models through the **Spark native connector** that supports PySpark, Spark SQL, R, and Scala.
 
 ## Data connectivity through SemPy Python library for pandas users
 
@@ -57,7 +59,7 @@ Support for Spark (PySpark, Spark SQL, R and Scala)
 The semantic link Spark native connector enables Spark users to access Power BI tables and measures.
 The connector is language-agnostic and supports PySpark, Spark SQL, R, and Scala.
 
-To use the Spark native connector, Power BI datasets are represented as Spark namespaces and transparently expose Power BI tables as Spark tables.
+To use the Spark native connector, semantic models are represented as Spark namespaces and transparently expose Power BI tables as Spark tables.
 
 # [Spark SQL](#tab/sql)
 
@@ -72,14 +74,14 @@ spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.
 # spark.conf.set("spark.sql.catalog.pbi.workspace, "00000000-0000-0000-0000-000000000000")
 ```
 
-List all tables in the Power BI dataset `Sales Dataset`:
+List all tables in the semantic model `Sales Dataset`:
 
 ```sql
 %%sql
 SHOW TABLES FROM pbi.`Sales Dataset`
 ```
 
-Display data from the table `Customer` in the Power BI dataset `Sales Dataset`:
+Display data from the table `Customer` in the semantic model `Sales Dataset`:
 
 ```sql
 %%sql
@@ -94,7 +96,7 @@ Configure Spark to use the Power BI Spark native connector:
 spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
 ```
 
-List all tables in the Power BI dataset `Sales Dataset`:
+List all tables in the semantic model `Sales Dataset`:
 
 ```python
 df = spark.sql("SHOW TABLES FROM pbi.`Sales Dataset`")
@@ -102,7 +104,7 @@ df = spark.sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 display(df)
 ```
 
-Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the Spark DataFrame `df`:
+Load data from the table `Customer` in the semantic model `Sales Dataset` into the Spark DataFrame `df`:
 
 ```python
 df = spark.table("pbi.`Sales Dataset`.Customer")
@@ -118,7 +120,7 @@ Configure Spark to use the Power BI Spark native connector:
 spark.conf.set("spark.sql.catalog.pbi", "com.microsoft.azure.synapse.ml.powerbi.PowerBICatalog")
 ```
 
-List all tables in the Power BI dataset `Sales Dataset`:
+List all tables in the semantic model `Sales Dataset`:
 
 ```R
 %%sparkr
@@ -128,7 +130,7 @@ df = sql("SHOW TABLES FROM pbi.`Sales Dataset`")
 display(df)
 ```
 
-Load data from the table `Customer` in the Power BI dataset `Sales Dataset` into the dataframe `df`:
+Load data from the table `Customer` in the semantic model `Sales Dataset` into the dataframe `df`:
 
 ```R
 %%sparkr
@@ -141,7 +143,7 @@ display(df)
 ---
 
 Power BI measures are accessible through the virtual `_Metrics` table to bridge relational Spark SQL with multidimensional Power BI.
-In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` dataset, while the remaining columns are dimensions.
+In the following example, `Total Revenue` and `Revenue Budget` are measures defined in the `Sales Dataset` semantic model, while the remaining columns are dimensions.
 The aggregation function (for example, `AVG`) is ignored for measures and only serves for consistency with SQL.
 
 The connector supports predicate push down of computation from Spark expressions into the Power BI engine; for example, `Customer[State] in ('CA', 'WA')`, thereby enabling utilization of Power BI optimized engine.
@@ -163,13 +165,13 @@ GROUP BY
 
 ## Data augmentation with Power BI measures
 
-The `add_measure` operation is a powerful feature of semantic link that enables you to augment data with measures from Power BI datasets.
+The `add_measure` operation is a powerful feature of semantic link that enables you to augment data with measures from semantic models.
 The `add_measure` operation is only available in the SemPy Python library and not supported by the Spark native connector. For more information on the `add_measure` method, see [add_measure in the FabricDataFrame Class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
 
 To use the `SemPy` Python library, you first need to install it in your notebook kernel by executing this code in a notebook cell:
 
    > [!TIP]
-   > The code example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a Power BI dataset.
+   > The code example assumes that you've manually created a FabricDataFrame with data that you want to augment with measures from a semantic model.
 
 ```python
 # %pip and import only needs to be done once per notebook
@@ -188,14 +190,14 @@ joined_df = df.add_measure(["Total Revenue", "Total Budget"], dataset="Sales Dat
 
 The `add_measure` operation performs these steps:
 
-- **Resolves column names**: The column names in the FabricDataFrame are resolved to Power BI dimensions. Any column names that can't be resolved within the given dataset are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
+- **Resolves column names**: The column names in the FabricDataFrame are resolved to Power BI dimensions. Any column names that can't be resolved within the given semantic model are ignored (see the supported [DAX syntax](/dax/dax-syntax-reference)).
 - **Defines group by columns**, by using the resolved column names.
 - **Computes one or more measures** at the group by level.
 - **Filters** the result by the existing rows in the FabricDataFrame.
 
-## Next steps
+## Related content
 
 - [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
-- [How to validate data with semantic link](semantic-link-validate-data.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
+- [How to validate data with  (preview)](semantic-link-validate-data.md)
+- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)

@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 09/07/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 01/11/2024
 ms.search.form: product-kusto
 ---
 # Access an existing KQL database
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this article, you learn how to access an existing KQL database and optionally copy the **Query URI** and the **Ingestion URI** to run queries, store management commands, or to get data.
 
@@ -47,7 +47,7 @@ The following table lists the two types of URIs that you can copy from the **Dat
 |Ingestion URI |URI that can be used to get data.|
 
 1. Access an [existing KQL database](#access-an-existing-kql-database).
-1. Copy the desired URI type from the **database details card** in the database dashboard and paste it somewhere, like a notepad, to use in a later step.
+1. Copy the desired URI type from the **Database details** card in the database dashboard.
 
 ## Related content
 

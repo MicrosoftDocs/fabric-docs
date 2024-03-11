@@ -8,7 +8,37 @@
     - name: Data Factory training
       href: /training/paths/get-started-fabric
     - name: What's new in Data Factory
-      href: whats-new.md
+      href: ../get-started/whats-new.md?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric
+    - name: Pricing in Data Factory
+      items:
+      - name: Pricing overview
+        href: pricing-overview.md 
+      - name: Pricing data pipelines
+        href: pricing-pipelines.md
+      - name: Pricing Dataflow Gen2
+        href: pricing-dataflows-gen2.md
+      - name: Pricing examples
+        items:
+        - name: Data pipelines
+          items:
+          - name: Load 1 TB of Parquet data to a data Warehouse
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse.md
+          - name: Load 1 TB of Parquet data to a data warehouse with staging
+            href: pricing-scenario-load-1-tb-parquet-to-data-warehouse-stage.md
+          - name: Load 1 TB of CSV data to Lakehouse tables
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-table.md
+          - name: Load 1 TB of CSV data to Lakehouse files
+            href: pricing-scenario-load-1-tb-csv-to-lakehouse-files.md
+          - name: Load 1 TB of Parquet data to a Lakehouse table
+            href: pricing-scenario-load-1-tb-parquet-to-lakehouse-table.md
+        - name: Dataflow Gen2
+          items:
+          - name: Load 2 GB of on-premises CSV data to a Lakehouse table
+            href: pricing-scenario-dataflows-gen2-load-2-gb-csv-to-lakehouse-table.md
+          - name: Load 2 GB of Parquet data to a Lakehouse table
+            href: pricing-scenario-dataflows-gen2-load-2-gb-parquet-to-lakehouse-table.md
+    - name: Keyboard shortcuts
+      href: keyboard-shortcuts.md
   - name: Get started
     items:
     - name: Create a dataflow
@@ -23,6 +53,18 @@
       href: how-to-access-on-premises-data.md
     - name: Monitoring activity in Data Factory
       href: monitor-data-factory.md
+  - name: Migrate to Fabric
+    items:
+    - name: Activity Continuity between ADF and Data Factory in Fabric
+      href: activity-parity.md
+    - name: Connector Continuity between ADF and Data Factory in Fabric
+      href: connector-parity.md
+    - name: Migrate from ADF and Power BI
+      href: upgrade-paths.md
+    - name: Move queries from Dataflow Gen1 to Gen2
+      href: move-dataflow-gen1-to-dataflow-gen2.md      
+    - name: How to ingest data from ADF to Fabric
+      href: how-to-ingest-data-into-fabric-from-azure-data-factory.md
   - name: Tutorials
     items:
     - name: Introduction - Data Factory tutorial
@@ -32,7 +74,9 @@
     - name: Module 2 - Transform data with a dataflow
       href: tutorial-end-to-end-dataflow.md
     - name: Module 3 - Automate and send notification
-      href: tutorial-end-to-end-integration.md     
+      href: tutorial-end-to-end-integration.md
+    - name: SAP CDC to Fabric Onelake using ADF
+      href: change-data-capture-from-sap-to-onelake-with-azure-data-factory.md
   - name: Connectors
     items:
     - name: Connector overview
@@ -41,12 +85,20 @@
       href: dataflow-support.md
     - name: Data pipeline connectors
       href: pipeline-support.md
+    - name: Service principal support
+      href: service-principals.md
     - name: Access database
       items:
       - name: Overview
         href: connector-access-database-overview.md
       - name: Set up your connection
         href: connector-access-database.md    
+    - name: Amazon RDS for SQL Server
+      items:
+      - name: Overview
+        href: connector-amazon-rds-for-sql-server-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-amazon-rds-for-sql-server-copy-activity.md      
     - name: Amazon Redshift
       items:
       - name: Overview
@@ -67,7 +119,7 @@
       items:
       - name: Overview
         href: connector-amazon-s3-compatible-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-amazon-s3-compatible-copy-activity.md
     - name: Azure Analysis Services
       items:
@@ -95,15 +147,15 @@
       items:
       - name: Overview
         href: connector-azure-data-explorer-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-data-explorer.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-explorer-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-kusto-dataflows.md
     - name: Azure Data Lake Storage Gen1
       items:
       - name: Overview
         href: connector-azure-data-lake-storage-gen1-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-data-lake-storage-gen1-copy-activity.md
     - name: Azure Data Lake Storage Gen2
       items:
@@ -113,13 +165,11 @@
         href: connector-azure-data-lake-storage-gen2.md
       - name: Configure in data pipeline copy activity
         href: connector-azure-data-lake-storage-gen2-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-azure-data-lake-storage-gen2-dataflows.md
     - name: Azure Database for PostgreSQL
       items:
       - name: Overview
         href: connector-azure-database-for-postgresql-overview.md   
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-database-for-postgresql-copy-activity.md 
     - name: Azure Databricks
       items:
@@ -139,19 +189,29 @@
         href: connector-azure-sql-database-overview.md
       - name: Set up your connection
         href: connector-azure-sql-database.md
-      - name: Configure in data pipeline copy activity
+      - name: Configure in a data pipeline copy activity
         href: connector-azure-sql-database-copy-activity.md
+    - name: Azure SQL Database Managed Instance
+      items:
+      - name: Overview
+        href: connector-azure-sql-database-managed-instance-overview.md
+      - name: Configure in data pipeline Copy activity
+        href: connector-azure-sql-database-managed-instance-copy-activity.md    
     - name: Azure Synapse Analytics
       items:
       - name: Overview
         href: connector-azure-synapse-analytics-overview.md
-      - name: Configure in data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-synapse-analytics.md
+      - name: Configure in  data pipeline Copy activity
         href: connector-azure-synapse-analytics-copy-activity.md
     - name: Azure Table Storage
       items:
       - name: Overview
         href: connector-azure-table-storage-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-azure-table-storage.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-azure-table-storage-copy-activity.md
     - name: CloudBluePSA
       items:
@@ -180,15 +240,25 @@
     - name: Dataverse
       items:
       - name: Overview
-        href: connector-dataverse-overview.md   
-      - name: Configure in Data pipeline Copy activity
+        href: connector-dataverse-overview.md
+      - name: Set up your connection
+        href: connector-dataverse.md 
+      - name: Configure in a data pipeline Copy activity
         href: connector-dataverse-copy-activity.md 
     - name: Data Warehouse
       items:
       - name: Overview
         href: connector-data-warehouse-overview.md
-      - name: Configure in Data pipeline
+      - name: Set up your connection
+        href: connector-data-warehouse.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-data-warehouse-copy-activity.md 
+    - name: Dynamics CRM
+      items:
+      - name: Overview
+        href: connector-dynamics-crm-overview.md
+      - name: Configure in a data pipeline Copy activity
+        href: connector-dynamics-crm-copy-activity.md
     - name: FHIR
       items:
       - name: Overview
@@ -245,7 +315,7 @@
       items:
       - name: Overview
         href: connector-ftp-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-ftp-copy-activity.md
     - name: Google Analytics
       items:
@@ -263,12 +333,10 @@
       items: 
       - name: Overview
         href: connector-google-cloud-storage-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-google-cloud-storage.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-google-cloud-storage-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-google-cloud-storage-dataflow.md
     - name: Hive LLAP
       items:
       - name: Overview
@@ -279,12 +347,10 @@
       items:
       - name: Overview
         href: connector-http-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-http.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-http-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-http-dataflows.md
     - name: IBM DB2 database
       items:
       - name: Overview
@@ -301,23 +367,25 @@
       items:
       - name: Overview
         href: connector-kql-database-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-kql-database.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-kql-database-copy-activity.md
     - name: Lakehouse
       items:
       - name: Overview
         href: connector-lakehouse-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-lakehouse.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-lakehouse-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-lakehouse-dataflows.md
     - name: Microsoft 365
       items:
       - name: Overview
         href: connector-microsoft-365-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-microsoft-365.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-microsoft-365-copy-activity.md
     - name: Microsoft Exchange Online
       items:
@@ -329,13 +397,13 @@
       items:
       - name: Overview
         href: connector-mongodb-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-copy-activity.md
     - name: MongoDB Atlas
       items:
       - name: Overview
         href: connector-mongodb-atlas-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-mongodb-atlas-copy-activity.md
     - name: MongoDB Atlas SQL (Beta)
       items:
@@ -353,12 +421,10 @@
       items:
       - name: Overview
         href: connector-odata-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-odata.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-odata-copy-activity.md 
-      - name: Configure in Dataflow Gen2
-        href: connector-odata-dataflows.md
     - name: Odbc
       items:
       - name: Overview
@@ -377,18 +443,16 @@
         href: connector-postgresql-overview.md
       - name: Set up your connection
         href: connector-postgresql.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-postgresql-copy-activity.md  
     - name: REST
       items:
       - name: Overview
         href: connector-rest-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-rest.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-rest-copy-activity.md    
-      - name: Configure in Dataflow Gen2
-        href: connector-rest-dataflows.md 
     - name: Salesforce objects
       items:
       - name: Overview
@@ -423,7 +487,7 @@
       items:
       - name: Overview
         href: connector-sftp-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sftp-copy-activity.md
     - name: SharePoint folder
       items:
@@ -441,17 +505,17 @@
       items:
       - name: Overview
         href: connector-sharepoint-online-list-overview.md
-      - name: Manage connections and gateway
+      - name: Set up your connection
         href: connector-sharepoint-online-list.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sharepoint-online-list-copy-activity.md
-      - name: Configure in Dataflow Gen2
-        href: connector-sharepoint-online-list-dataflows.md
     - name: Snowflake
       items:
       - name: Overview
         href: connector-snowflake-overview.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Set up your connection
+        href: connector-snowflake.md
+      - name: Configure in a data pipeline Copy activity
         href: connector-snowflake-copy-activity.md
     - name: SQL Server database
       items:
@@ -459,7 +523,7 @@
         href: connector-sql-server-database-overview.md
       - name: Set up your connection
         href: connector-sql-server-database.md
-      - name: Configure in Data pipeline Copy activity
+      - name: Configure in a data pipeline Copy activity
         href: connector-sql-server-copy-activity.md  
     - name: Teradata database
       items:
@@ -489,10 +553,14 @@
         href: azure-machine-learning-activity.md
       - name: Copy activity
         href: copy-data-activity.md
+      - name: Dataflow activity
+        href: dataflow-activity.md
       - name: Deactivate an activity
         href: deactivate-activity.md        
       - name: Delete data activity
         href: delete-data-activity.md
+      - name: Fail Activity
+        href: fail-activity.md
       - name: For-each activity
         href: foreach-activity.md
       - name: Functions activity
@@ -509,6 +577,8 @@
         href: lookup-activity.md
       - name: Notebook activity
         href: notebook-activity.md
+      - name: Office 365 Outlook activity
+        href: outlook-activity.md
       - name: Script activity
         href: script-activity.md
       - name: Set Variable Activity
@@ -560,17 +630,23 @@
       - name: Execute Azure SQL DW stored procedure and copy data to Lakehouse
         href: tutorial-preprocess-data-with-stored-procedure-load-into-lakehouse.md
       - name: Move data from Azure SQL DB into Lakehouse via copy assistant
-        href: tutorial-move-data-lakehouse-copy-assistant.md        
+        href: tutorial-move-data-lakehouse-copy-assistant.md
+      - name: Move data from Azure SQL DB to Lakehouse via pipeline 
+        href: tutorial-move-data-lakehouse-pipeline.md         
       - name: Load sample data to Data Warehouse
         href: tutorial-load-sample-data-to-data-warehouse.md
       - name: Incrementally load data from Data Warehouse to Lakehouse
         href: tutorial-incremental-copy-data-warehouse-lakehouse.md        
+      - name: Load data to Lakehouse using partition
+        href: tutorial-lakehouse-partition.md  
   - name: Dataflows
     items:
     - name: Concepts
       items:
       - name: Data source management
         href: data-source-management.md
+      - name: Dataflow Gen2 destinations and managed settings
+        href: dataflow-gen2-data-destinations-and-managed-settings.md
       - name: Monitoring your Dataflows in Fabric
         href: dataflows-gen2-monitor.md
     - name: How-to
@@ -579,15 +655,13 @@
         href: dataflows-gen2-save-draft.md
       - name: How to obfuscate data
         href: data-obfuscation-with-delphix.md
-      - name: Move queries from Dataflow Gen1 to Dataflow Gen2
-        href: move-dataflow-gen1-to-dataflow-gen2.md
     - name: Tutorials
       items:  
       - name: Use a dataflow in a pipeline
         href: tutorial-dataflows-gen2-pipeline-activity.md
       - name: Pattern to incrementally amass data with Dataflow Gen2
         href: tutorial-setup-incremental-refresh-with-dataflows-gen2.md
-    - name: Guide to dataflow for mapping dataflow users
+    - name: Fabric Dataflows for ADF Mapping Data Flow users
       href: guide-to-dataflows-for-mapping-data-flow-users.md
   - name: FAQ and Troubleshooting
     items:
@@ -599,6 +673,8 @@
       href: compare-fabric-data-factory-and-azure-data-factory.md
     - name: Getting from Dataflow Gen1 to Gen2
       href: dataflows-gen2-overview.md
+    - name: Pipeline activities troubleshooting guide
+      href: pipeline-troubleshoot-guide.md
     - name: Connectors
       items:
       - name: Azure Data Explorer
@@ -617,26 +693,8 @@
         href: connector-troubleshoot-rest.md        
       - name: Sharepoint Online list
         href: connector-troubleshoot-sharepoint-online-list.md
-
     - name: Data Factory limitations
-      items:
-      - name: Data Factory limitations overview
-        href: data-factory-limitations.md
-      - name: Pipeline limitations
-        href: pipeline-limitations.md
-      - name: Pipeline resource limits
-        href: pipeline-resource-limits.md
-      - name: Dataflow Gen2 limitations
-        href: dataflow-gen2-limitations.md
+      href: data-factory-limitations.md
     - name: Data Factory known issues
-      items:
-      - name: Active known issues for Data Factory
-        href: data-factory-known-issues.md
-      - name: Lineage view edit button
-        href: known-issue-lineage-view-edit.md
-      - name: Staging items
-        href: known-issue-staging-item.md
-      - name: Gateway refreshes longer than an hour fail
-        href: known-issue-gateway-refreshes.md
-      - name: In progress tables refresh history
-        href: known-issue-inprogress-refresh-history.md
+      href: data-factory-known-issues.md
+

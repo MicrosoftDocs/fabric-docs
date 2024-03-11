@@ -5,7 +5,7 @@ author: peter-myers
 ms.author: v-myerspeter
 ms.reviewer: snehagunda
 ms.topic: how-to
-ms.custom: cat-fabric
+ms.custom: fabric-cat
 ms.date: 10/30/2023
 ---
 
@@ -38,9 +38,9 @@ There are two methods to set up a code formatter extension in a Fabric notebook.
 
 #### Workspace settings
 
-Use the workspace settings to set up the working environment for a Fabric workspace. Any library that you install in the workspace settings is available to all notebooks and Spark job definitions in the workspace. Therefore, when you install a code formatter extension in the workspace library, all notebooks within the workspace can benefit from it.
+Use the workspace settings to set up the working environment for a Fabric workspace. To make your libraries available for use in any notebooks and Spark job definitions in the workspace, you can create the environment, install the libraries in it, and then your workspace admin can attach the environment as the default for the workspace. Therefore, when a code formatter extension is installed in the workspace's default environment, all notebooks within the workspace can benefit from it.
 
-To learn how to install workspace libraries, see [Install workspace libraries](../data-science/python-guide/python-library-management.md#python-libraries-in-microsoft-fabric).
+For more information on environments, see [create, configure, and use an environment in Microsoft Fabric](https://aka.ms/fabric/create-environment).
 
 #### In-line installation
 
@@ -107,7 +107,7 @@ def unique(list_input):
         print(x)    
 ```
 
-## Next steps
+## Related content
 
 For more information about Fabric notebooks, see the following articles.
 

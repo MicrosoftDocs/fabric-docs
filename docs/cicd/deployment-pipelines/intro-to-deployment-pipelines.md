@@ -1,10 +1,12 @@
 ---
-title: Overview of Fabric deployment pipelines 
+title: Overview of Fabric deployment pipelines
 description: An introduction to deployment pipelines the Fabric Application lifecycle management (ALM) tool
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Create deployment pipeline, View deployment pipeline, Introduction to Deployment pipelines
 ---
@@ -14,9 +16,7 @@ ms.search.form: Create deployment pipeline, View deployment pipeline, Introducti
 > [!NOTE]
 > This articles in this section describe how to deploy content to your app. For version control, see the [Git integration](../git-integration/intro-to-git-integration.md) documentation.
 
-In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#deployed-items) that you can deploy.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+In today’s world, analytics is a vital part of decision making in almost every organization. Fabric's deployment pipelines tool provides content creators with a production environment where they can collaborate to manage the lifecycle of organizational content. Deployment pipelines enable creators to develop and test content in the service before it reaches the users. See the full list of [Supported item types](./understand-the-deployment-process.md#supported-items) that you can deploy.
 
 ## Learn to use deployment pipelines
 
@@ -56,13 +56,13 @@ When you deploy content from the source stage to a target stage, the source cont
 
 :::image type="content" source="media/intro-to-deployment-pipelines/replaced-content.png" alt-text="A screenshot of the replaced content warning displayed when a deployment is about to cause changes to items in the stage you're deploying to.":::
 
-You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#deployed-items), and [which items are not copied](understand-the-deployment-process.md#unsupported-items), in [Understand the deployment process](understand-the-deployment-process.md).
+You can learn more about [which items are copied to the next stage](understand-the-deployment-process.md#supported-items), and [which items are not copied](understand-the-deployment-process.md#unsupported-items), in [Understand the deployment process](understand-the-deployment-process.md).
 
 ## Automation
 
 You can also deploy content programmatically, using the [deployment pipelines REST APIs](/rest/api/power-bi/pipelines). Learn more about the automation process in [Automate your deployment pipeline using APIs and DevOps](pipeline-automation.md).
 
-## Next steps
+## Related content
 
 * [Understand the deployment pipelines process](understand-the-deployment-process.md)
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)

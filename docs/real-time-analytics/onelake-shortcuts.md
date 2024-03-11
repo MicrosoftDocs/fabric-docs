@@ -5,13 +5,13 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 08/15/2023
 ---
 
 # Create OneLake shortcuts
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 OneLake is a single, unified, logical data lake for [!INCLUDE [product-name](../includes/product-name.md)] to store lakehouses, warehouses, KQL databases, and other items. Shortcuts are embedded references within OneLake that point to other files' store locations without moving the original data. The embedded reference makes it appear as though the files and folders are stored locally but in reality; they exist in another storage location. Shortcuts can be updated or removed from your items, but these changes don't affect the original data and its source. For more information, see [OneLake shortcuts](../onelake/onelake-shortcuts.md).
 
@@ -56,9 +56,9 @@ In this article, you learn how to create a OneLake shortcut from internal and ex
 
 ---
 
-The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Data tree**.
+The database refreshes automatically. The shortcut appears under **Shortcuts** in the **Explorer** pane.
 
-:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the data tree showing the new shortcut.":::
+:::image type="content" source="media/onelake-shortcuts/adls-gen2-shortcut/data-tree.png" alt-text="Screenshot of the Explorer pane showing the new shortcut.":::
 
 The OneLake shortcut has been created. You can now query this data.
 

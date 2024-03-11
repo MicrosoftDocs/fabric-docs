@@ -2,10 +2,12 @@
 title: How to implement dynamic data masking in Synapse Data Warehouse
 description: Learn how to implement dynamic data masking in Synapse Data Warehouse in Microsoft Fabric.
 author:      SQLStijn-MSFT
-ms.author:   stwynant 
+ms.author:   stwynant
 ms.reviewer: wiassaf
 ms.topic:  how-to
-ms.date:  11/06/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # How to implement dynamic data masking in Synapse Data Warehouse
@@ -104,7 +106,7 @@ To manage or modify existing dynamic data masking rules, create a new SQL script
 
     ```sql
     ALTER TABLE dbo.EmployeeData
-    ALTER COLUMN [email] varchar(256) MASKED WITH (FUNCTION = 'email()');
+    ALTER COLUMN [email] ADD MASKED WITH (FUNCTION = 'email()');
     GO
     ```
 

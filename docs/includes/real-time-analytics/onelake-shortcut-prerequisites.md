@@ -4,16 +4,18 @@ description: Include file for the OneLake shortcut prerequisite in Real-Time Ana
 author: YaelSchuster
 ms.author: yaschust
 ms.topic: include
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 06/25/2023
 ---
 
 ## Prerequisites
 
 * A [workspace](../../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../../enterprise/licenses.md#capacity)
-* A [KQL database](../../real-time-analytics/create-database.md)
+* A [KQL database](../../real-time-analytics/create-database.md) with editing permissions
 * A [Lakehouse](../../data-engineering/create-lakehouse.md) with data
 
-To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../../real-time-analytics/onelake-mirroring.md).
+To access the data in your KQL database in other [!INCLUDE [product-name](../../includes/product-name.md)] experiences, see [One logical copy](../../real-time-analytics/one-logical-copy.md).
 
 ## Create shortcut

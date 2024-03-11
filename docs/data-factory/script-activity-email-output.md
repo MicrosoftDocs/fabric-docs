@@ -5,14 +5,14 @@ ms.reviewer: jburchel
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.date: 08/25/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Run a Script activity and send an output summary by email
 
 This example shows how to run a script on an Azure SQL instance and send an output summary by email.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Prerequisites
 
@@ -53,23 +53,23 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/script-activity-email-output/script-textbox.png" alt-text="Screenshot showing the Script activity settings page with the Script textbox highlighted, and the query specified inserted as its value." lightbox="media/script-activity-email-output/script-textbox.png":::
 
-### Create an Office 365 Outlook (Preview) activity
+### Create an Office 365 Outlook activity
 
-Search for the **Office 365 Outlook (Preview)** activity on the **Activities** toolbar. The text description may not be displayed if the window size isn't large enough, so you can look for the icon or expand the window if necessary.
+Search for the **Office 365 Outlook** activity on the **Activities** toolbar. The text description may not be displayed if the window size isn't large enough, so you can look for the icon or expand the window if necessary.
 
-:::image type="content" source="media/script-activity-email-output/office-365-activity.png" alt-text="Screenshot showing the Office 365 Outlook (Preview) activity button on the Activities toolbar." lightbox="media/script-activity-email-output/office-365-activity.png":::
+:::image type="content" source="media/script-activity-email-output/office-365-activity.png" alt-text="Screenshot showing the Office 365 Outlook activity button on the Activities toolbar." lightbox="media/script-activity-email-output/office-365-activity.png":::
 
 ### Link the activities
 
-Select the Script activity, and then drag it's **On success** output (a green checkmark on the right side of the activity in the editor pane) to the Office 365 Outlook (Preview) activity.
+Select the Script activity, and then drag it's **On success** output (a green checkmark on the right side of the activity in the editor pane) to the Office 365 Outlook activity.
 
-:::image type="content" source="media/script-activity-email-output/link-activities.png" alt-text="Screenshot showing the On success output of the Script activity with its arrow dragged onto the Office 365 Outlook (Preview) activity." lightbox="media/script-activity-email-output/link-activities.png":::
+:::image type="content" source="media/script-activity-email-output/link-activities.png" alt-text="Screenshot showing the On success output of the Script activity with its arrow dragged onto the Office 365 Outlook activity." lightbox="media/script-activity-email-output/link-activities.png":::
 
-### Configure the Office 365 Outlook (Preview) activity
+### Configure the Office 365 Outlook activity
 
-1. Select the Office 365 Outlook (Preview) activity in the pipeline editor, and then select its **Settings** tab, and **Sign in** to your Office 365 Outlook account that will send the email.
+1. Select the Office 365 Outlook activity in the pipeline editor, and then select its **Settings** tab, and **Sign in** to your Office 365 Outlook account that will send the email.
 
-   :::image type="content" source="media/script-activity-email-output/sign-in-to-outlook.png" alt-text="Screenshot showing the Office 365 Outlook (Preview) activity Settings tab with the Sign in to Outlook prompt."  lightbox="media/script-activity-email-output/sign-in-to-outlook.png":::
+   :::image type="content" source="media/script-activity-email-output/sign-in-to-outlook.png" alt-text="Screenshot showing the Office 365 Outlook activity Settings tab with the Sign in to Outlook prompt."  lightbox="media/script-activity-email-output/sign-in-to-outlook.png":::
 
 1. After you sign in, you see the outgoing email template. Provide a list of emails for the email to go to in the **To** text box, and a **Subject** in that text box. Note that all fields in the template support dynamic content. Select the **Body** text area and then select **Add dynamic content**, to customize what we will add. Select **Activity outputs** if it isn't already selected, and then select the output of the activity. Select OK to use this dynamic content as the **Body** of the email. You can use any combination of outputs to generate emails of any level of complexity you need. In this case we use the following expression to output the returned value from the SQL script:
 
@@ -79,7 +79,7 @@ Select the Script activity, and then drag it's **On success** output (a green ch
 
 1. You can also specify advanced settings for the email if you wish, including an alternate **From (Send as)** value, **CC**, **BCC**, **Sensitivity**, **Reply To**, or **Importance** fields:
 
-   :::image type="content" source="media/script-activity-email-output/outlook-activity-advanced-settings.png" alt-text="Screenshot showing the advanced settings for the Office 365 Outlook (Preview) activity." lightbox="media/script-activity-email-output/outlook-activity-advanced-settings.png":::
+   :::image type="content" source="media/script-activity-email-output/outlook-activity-advanced-settings.png" alt-text="Screenshot showing the advanced settings for the Office 365 Outlook activity." lightbox="media/script-activity-email-output/outlook-activity-advanced-settings.png":::
 
 ## Save and run or schedule the pipeline
 
@@ -89,12 +89,10 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 ## Confirm success
 
-After the pipeline runs successfully, check the account(s) you specified in the **To** box of the Office 365 Outlook (Preview) activity settings to validate the output.
+After the pipeline runs successfully, check the account(s) you specified in the **To** box of the Office 365 Outlook activity settings to validate the output.
 
 :::image type="content" source="media/script-activity-email-output/pipeline-succeeded.png" alt-text="Screenshot showing successful execution of the pipeline." lightbox="media/script-activity-email-output/pipeline-succeeded.png":::
 
+## Related content
 
-
-## Next steps
-
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

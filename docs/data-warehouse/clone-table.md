@@ -4,8 +4,10 @@ description: Learn about table clones in Microsoft Fabric.
 author: ajagadish-24
 ms.author: ajagadish
 ms.reviewer: wiassaf
-ms.date: 10/24/2023
+ms.date: 03/04/2024
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: Warehouse Clone table # This article's title should not change. If so, contact engineering.
 ---
 # Clone table in Microsoft Fabric
@@ -15,13 +17,11 @@ ms.search.form: Warehouse Clone table # This article's title should not change. 
 [!INCLUDE [product-name](../includes/product-name.md)] offers the capability to create near-instantaneous zero-copy clones with minimal storage costs.
 
 - Table clones facilitate development and testing processes by creating copies of tables in lower environments.
-- Table clones provide consistent reporting and zero-copy duplication of datasets for analytical workloads and machine learning modeling and testing.
+- Table clones provide consistent reporting and zero-copy duplication of data for analytical workloads and machine learning modeling and testing.
 - Table clones provide the capability of data recovery in the event of a failed release or data corruption by retaining the previous state of data.
 - Table clones help to create historical reports that reflect the state of data as it existed as of a specific point-in-time in the past.
 
 You can use the [CREATE TABLE AS CLONE OF](/sql/t-sql/statements/create-table-as-clone-of-transact-sql?view=fabric&preserve-view=true) T-SQL commands to create a table clone. For a tutorial, see [Tutorial: Clone table using T-SQL](tutorial-clone-table.md) or [Tutorial: Clone tables in the Fabric portal](tutorial-clone-table-portal.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## What is zero-copy clone?
 
@@ -68,7 +68,7 @@ The following permissions are required to create a table clone:
 
 Due to its autonomous existence, both the original source and the clones can be deleted without any constraints. Once a clone is created, it remains in existence until deleted by the user.
 
-- Users with Admin, Member, or Contributor [workspace roles] (workspace-roles.md) can delete the table clone within the workspace.
+- Users with Admin, Member, or Contributor [workspace roles](workspace-roles.md) can delete the table clone within the workspace.
 - Users who have [ALTER SCHEMA](/sql/t-sql/statements/alter-schema-transact-sql?view=fabric&preserve-view=true) permissions on the schema in which the table clone resides can delete the table clone.
 
 ### Table clone inheritance
@@ -76,6 +76,8 @@ Due to its autonomous existence, both the original source and the clones can be 
 The objects described here are included in the table clone:
 
 - The clone table inherits object-level SQL security from the source table of the clone. As the [workspace roles](workspace-roles.md) provide read access by default, [DENY](/sql/t-sql/statements/deny-transact-sql?view=fabric&preserve-view=true) permission can be set on the table clone if desired.
+  
+- The clone table inherits the [row-level security (RLS)](row-level-security.md) and [dynamic data masking](dynamic-data-masking.md) from the source of the clone table.
 
 - The clone table inherits all attributes that exist at the source table, whether the clone was created within the same schema or across different schemas in a warehouse.
 
@@ -110,7 +112,6 @@ For auditing or compliance purposes, zero copy clones can be easily used to crea
 - Clone table is not supported on the [!INCLUDE [fabric-se](includes/fabric-se.md)] of the Lakehouse.
 - Clone of a warehouse or schema is currently not supported.
 - Table clones submitted before the retention period of seven days cannot be created.
-- Cloned tables do not currently inherit [row-level security](row-level-security.md) or dynamic data masking.
 - Changes to the table schema prevent a clone from being created prior to the table schema change.
 
 ## Related content

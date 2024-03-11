@@ -6,8 +6,10 @@ ms.author: kesharab
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
+ms.custom:
+  - ignite-2023
 ms.topic: troubleshooting
-ms.date: 09/11/2023
+ms.date: 11/02/2023
 ---
 
 # Service interruption notifications
@@ -22,7 +24,7 @@ At this time, emails are sent for the following *reliability scenarios*:
 - Model refresh reliability
 - Query refresh reliability
 
-Notifications are sent when there's an *extended delay* in operations like opening reports, dataset refresh, or query executions. After an incident is resolved, you receive a follow-up email.
+Notifications are sent when there's an *extended delay* in operations like opening reports, semantic model refresh, or query executions. After an incident is resolved, you receive a follow-up email.
 
 > [!NOTE]
 > This feature is currently available only for capacities in Power BI Premium. It's not available for shared or embedded capacity.
@@ -44,7 +46,7 @@ A Fabric admin can enable notifications for service outages or incidents in the 
 
 This article describes how to receive service notifications through Power BI. You can also monitor Power BI service health through Microsoft 365. Opt in to receive email notifications about service health from Microsoft 365. Learn more in [How to check Microsoft 365 service health](/microsoft-365/enterprise/view-service-health).
 
-## Next steps
+## Related content
 
 >[!div class="nextstepaction"]
 >[Power BI Pro and Power BI Premium support options](/power-bi/support/service-support-options)

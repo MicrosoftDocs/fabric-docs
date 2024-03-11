@@ -1,18 +1,18 @@
 ---
 title: Find content from Microsoft Fabric Home
-description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content. 
+description: Open reports, apps, and workspaces from the Microsoft Fabric Home. Learn how to change your layout and feature your important content.
 author: mihart
 ms.author: mihart
-ms.topic: conceptual  
-ms.custom: build-2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/25/2023
 ---
 
 # Navigate to your items from [!INCLUDE [product-name](../includes/product-name.md)] Home
 
 This article gives a high level view of navigating to your items and actions from [!INCLUDE [product-name](../includes/product-name.md)] Home. Each product experience has its own Home, and there are similarities that they all share. Those similarities are described in this article. For detailed information about **Home** for a particular product experience, such as Data Factory Home, visit the relevant page for that product experience. 
-
-[!INCLUDE [trial note](../includes/preview-note.md)]
 
 ## Overview of Home 
 
@@ -139,6 +139,7 @@ When you create a new item, it's saved in your **My workspace** unless you've se
 
 The **Recommended** area might include getting started content as well as items and workspaces that you use frequently.
 
-## Next steps
+## Related content
+
 - [Power BI Home](/power-bi/consumer/end-user-home)
 - [Start a Fabric trial](fabric-trial.md)

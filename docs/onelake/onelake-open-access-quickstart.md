@@ -5,13 +5,13 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/27/2023
 ---
 
 # Ingest data into OneLake and analyze with Azure Databricks
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In this guide, you will:
 
@@ -25,7 +25,7 @@ Before you start, you must have:
 
 - A workspace with a Lakehouse item.
 
-- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Azure Active Directory credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
+- A premium Azure Databricks workspace. Only premium Azure Databricks workspaces support Microsoft Entra credential passthrough. When creating your cluster, enable Azure Data Lake Storage credential passthrough in the **Advanced Options**.
 
 - A sample dataset.
 
@@ -39,7 +39,7 @@ Before you start, you must have:
 
 1. For this exercise, select the **NYC Taxi - Green** sample data as the data source and then select **Next**.
 
-   :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample dataset.":::
+   :::image type="content" source="media\onelake-open-access-quickstart\onelake-nyc-taxi.png" alt-text="Screenshot showing how to select NYC sample semantic model.":::
 
 1. On the preview screen, select **Next**.
 
@@ -72,6 +72,6 @@ Before you start, you must have:
     update delta.`abfss://<replace with workspace name>@onelake.dfs.fabric.microsoft.com/<replace with item name>.Lakehouse/Tables/nycsample` set vendorID = 99999 where vendorID = 1;
     ```
 
-## Next steps
+## Related content
 
 - [Transform data with Spark and query with SQL](onelake-onecopy-quickstart.md)

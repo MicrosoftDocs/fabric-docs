@@ -6,7 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: how-to
 ms.date: 10/16/2023
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ---
 
 # Conflict resolution
@@ -15,7 +17,7 @@ A conflict occurs when changes are made *to the same item* in both the workspace
 
 :::image type="content" source="./media/conflict-resolution/conflict-status-workspace.png" alt-text="Screenshot of a report with a Git status that says conflict.":::
 
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
+[!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
 When you select **Update** when there are conflicts, a message notifies you that you need to resolve the conflicts before you can update.
 
@@ -68,7 +70,7 @@ If you're not sure what changes were made and which version to choose and don’
 1. In git, merge the new branch into the original branch
 1. In Fabric, [switch](./manage-branches.md#switch-branches) the workspace back to the original branch.
 
-## Next steps
+## Related content
 
 - [Manually update after a failed update](./partial-update.md)
 - [Lifecycle management Frequently asked questions](../faq.md)

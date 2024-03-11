@@ -1,18 +1,19 @@
 ---
-title: How to configure Snowflake in copy activity
+title: Configure Snowflake in a copy activity
 description: This article explains how to copy data using Snowflake.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 06/25/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Snowflake in copy activity
+# Configure Snowflake in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Snowflake.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -163,6 +164,6 @@ The following tables contain more information about the copy activity in Snowfla
 |**Additional Snowflake copy options** |Additional copy options, provided as a dictionary of key-value pairs. Examples: ON_ERROR, FORCE, LOAD_UNCERTAIN_FILES. For more information, see [Snowflake Copy Options](https://docs.snowflake.com/en/sql-reference/sql/copy-into-table#copy-options-copyoptions).|• Name<br>• Value|No |additionalCopyOptions|
 |**Additional Snowflake format options** |Additional file format options provided to the COPY command, provided as a dictionary of key-value pairs. Examples: DATE_FORMAT, TIME_FORMAT, TIMESTAMP_FORMAT. For more information, see [Snowflake Format Type Options](https://docs.snowflake.com/sql-reference/sql/copy-into-table#format-type-options-formattypeoptions).|• Name<br>• Value|No |additionalFormatOptions|
 
-## Next steps
+## Related content
 
 - [Snowflake connector overview](connector-snowflake-overview.md)

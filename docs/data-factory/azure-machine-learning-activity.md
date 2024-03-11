@@ -5,7 +5,9 @@ ms.reviewer: xupxhou
 ms.author: abnarain
 author: nabhishek
 ms.topic: how-to
-ms.date: 10/19/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Azure Machine Learning activity to run a job on an Azure Machine Learning instance
@@ -53,6 +55,6 @@ After you configure any other activities required for your pipeline, switch to t
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

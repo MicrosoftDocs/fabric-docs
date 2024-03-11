@@ -1,31 +1,32 @@
 ---
-title: How to configure FTP in a copy activity
+title: Configure FTP in a copy activity
 description: This article explains how to copy data using FTP.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/18/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure FTP in a copy activity
+# Configure FTP in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from FTP.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
 FTP supports the following file formats. Refer to each article for format-based settings.
 
-- Avro format
+- [Avro format](format-avro.md)
 - [Binary format](format-binary.md)
 - [Delimited text format](format-delimited-text.md)
 - [Excel format](format-excel.md)
-- JSON format
-- ORC format
+- [JSON format](format-json.md)
+- [ORC format](format-orc.md)
 - [Parquet format](format-parquet.md)
-- XML format
+- [XML format](format-xml.md)
 
 ## Supported configuration
 
@@ -134,6 +135,6 @@ The following table contains more information about the copy activity in FTP.
 | **Max concurrent connections** | The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections. | < upper limit of concurrent connections ><br>(integer) | No | maxConcurrentConnections | 
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. For more information, go to [Add additional columns during copy](/azure/data-factory/copy-activity-overview#add-additional-columns-during-copy) | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [FTP connector overview](connector-ftp-overview.md)

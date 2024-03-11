@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: R Language
 ---
@@ -14,7 +16,7 @@ ms.search.form: R Language
 
 [Tidyverse](https://www.tidyverse.org/packages/) is a collection of R packages that data scientists commonly use in everyday data analyses. It includes packages for data import (`readr`), data visualization (`ggplot2`), data manipulation (`dplyr`, `tidyr`), functional programming (`purrr`), and model building (`tidymodels`) etc. The packages in `tidyverse` are designed to work together seamlessly and follow a consistent set of design principles.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [!INCLUDE [product-name](../includes/product-name.md)] distributes the latest stable version of `tidyverse` with every runtime release. Import and start using your familiar R packages.
 
@@ -222,7 +224,7 @@ ggplot(lm_aug, aes(x = wt, y = mpg)) +
 ![Graph of model result.](./media/r-use-tidyverse/model-out.png)
 
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

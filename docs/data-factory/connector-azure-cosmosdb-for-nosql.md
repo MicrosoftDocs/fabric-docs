@@ -4,15 +4,16 @@ description: This article provides information about how to create an Azure Cosm
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 10/26/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Azure Cosmos DB for NoSQL connection
 
 This article outlines the steps to create an Azure Cosmos DB for NoSQL connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -24,7 +25,7 @@ The Azure Cosmos DB for NoSQL connector supports the following authentication ty
 
 ## Set up your connection in Dataflow Gen2
 
-The Amazon S3 connector isn't currently supported in Dataflow Gen2.
+The Azure Cosmos DB for NoSQL connector isn't currently supported in Dataflow Gen2.
 
 ## Set up your connection in a data pipeline
 
@@ -101,6 +102,6 @@ The properties in the following table are the supported authentication types.
 |**Key**||||✓|
 |- Account key|The  Azure Cosmos DB for NoSQL account key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure Cosmos DB for NoSQL in a copy activity](connector-azure-cosmosdb-for-nosql-copy-activity.md)

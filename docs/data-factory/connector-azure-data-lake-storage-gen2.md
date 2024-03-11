@@ -4,15 +4,16 @@ description: This article provides information about how to set up an Azure Data
 author: pennyzhou-msft
 ms.author: xupzhou
 ms.topic: how-to
-ms.date: 10/26/2023
-ms.custom: template-how-to, build-2023
+ms.date: 03/01/2024
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Azure Data Lake Storage Gen2 connection
 
 This article outlines the steps to create an Azure Date Lake Storage Gen2 connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -29,7 +30,7 @@ The Azure Date Lake Storage Gen2 connector supports the following authentication
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Data Lake Storage Gen2. The following links provide the specific Power Query connector information you need to connect to Azure Data Lake Storage Gen2 in Dataflow Gen2:
 
-- To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Azure Data Lake Storage Gen2 connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Azure Data Lake Storage Gen2 prerequisites](/power-query/connectors/data-lake-storage#prerequisites) before connecting to the Azure Data Lake Storage Gen2 connector.
 - To connect to the Azure Data Lake Storage Gen2 connector from Power Query, go to [Connect to Azure Data Lake Storage Gen2 from Power Query Online](/power-query/connectors/data-lake-storage#connect-to-azure-data-lake-storage-gen2-from-power-query-online).
 
@@ -50,6 +51,39 @@ To create a connection in a data pipeline:
     The **New connection** pane shows up on the left side of the page.
 
     :::image type="content" source="./media/connector-common/new-connection-pane.png" alt-text="Screenshot showing the New connection pane." lightbox="./media/connector-common/new-connection-pane.png":::
+
+## Set up your connection in any Fabric item
+
+1. In any Fabric item, select the **Azure Data Lake Storage Gen2** option in the **Get Data** selection, and then select **Connect**.
+
+    :::image type="content" source="./media/connector-common/new-connection-pane-any-fabric-item.png" alt-text="Screenshot showing the Connect to data source page of a Fabric item for Azure Data Lake Storage Gen2 of a Fabric item, with the URL entered.":::
+
+1. In **Connect to data source**, enter the URL to your Azure Data Lake Storage Gen2 account. Refer to [Limitations](/power-query/connectors/data-lake-storage#limitations) to determine the URL to use.
+
+1. Select whether you want to use the file system view or the Common Data Model folder view.
+
+1. If needed, select the on-premises data gateway in **Data gateway** (only supported in Dataflows, Dataflows Gen2, Datamarts, and Semantic Models). 
+
+1. Select **Sign in** to sign into the Azure Data Lake Storage Gen2 account. You'll be redirected to your organization's sign-in page. Follow the prompts to sign in to the account.
+
+1. After you've successfully signed in, select **Next**.
+
+## Set up connections for trusted workspace access
+
+1. Configure a workspace identity in the workspace where the connection will be used. For more information, see [Workspace identity](../security/workspace-identity.md).
+
+1. Grant the organizational account or service principal access to the storage account. For more information, see [Create a OneLake shortcut to storage account with trusted workspace access](../security/security-trusted-workspace-access.md#create-a-onelake-shortcut-to-storage-account-with-trusted-workspace-access)
+
+1. Configure a resource instance rule. For more information, see [Resource instance rule](../security/security-trusted-workspace-access.md#resource-instance-rule).
+
+1. Follow steps from [Set up your connection](#set-up-your-connection) to create the connection.
+
+### Considerations and limitations
+
+* Organizational Account and Service Principal are the only supported auth types.
+* Connections for trusted workspace access can't be created from the **Manage Gateways and connections** experience.
+* Connections for trusted workspace access only work in OneLake shortcuts.
+* Existing connections that work for trusted workspace access can't be modified in the **Manage Gateways and connections** experience.
 
 ## Set up your connection
 
@@ -107,7 +141,7 @@ For more information about shared access signatures, go to [Shared access signat
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Register your application with an Azure AD tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Register your application with a Microsoft Entra tenant](/azure/storage/common/storage-auth-aad-app?tabs=dotnet#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
    - Tenant ID
    - Application ID
    - Application key
@@ -160,6 +194,8 @@ The properties in the following table are the supported authentication types.
 |- Service Principal ID|The application's client ID.|Yes |||
 |- Service Principal key|The application's key.|Yes |||
 
-## Next steps
+## Related content
 
 - [Configure Azure Data Lake Storage Gen2 in a copy activity](connector-azure-data-lake-storage-gen2-copy-activity.md)
+- [Trusted workspace access](../security/security-trusted-workspace-access.md)
+- [Workspace identity](../security/workspace-identity.md)

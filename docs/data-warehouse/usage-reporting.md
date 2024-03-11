@@ -4,8 +4,10 @@ description: Learn more about utilization reporting for the data warehouse, incl
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/30/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ms.search.form: Warehouse billing and utilization
 ---
 
@@ -19,7 +21,7 @@ When you use a Fabric capacity, your usage charges appear in the Azure portal un
 
 ## Capacity
 
-In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](/fabric/enterprise/licenses).
+In Fabric, based on the Capacity SKU purchased, you're entitled to a set of Capacity Units (CUs) that are shared across all Fabric workloads. For more information on licenses supported, see [Microsoft Fabric licenses](../enterprise/licenses.md).
 
 Capacity is a dedicated set of resources that is available at a given time to be used. Capacity defines the ability of a resource to perform an activity or to produce output. Different resources consume CUs at different times.
 
@@ -33,7 +35,9 @@ In simple terms, 1 Fabric capacity unit = 0.5 [!INCLUDE [fabric-dw](includes/fab
 
 ## Compute usage reporting
 
-The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. It's mostly used by capacity administrators to monitor the performance of workloads and their usage, compared to purchased capacity.  
+The [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) provides visibility into capacity usage for all Fabric workloads in one place. Administrators can use the app to monitor capacity, the performance of workloads, and their usage compared to purchased capacity.  
+
+Initially, you must be a capacity admin to install the Microsoft Fabric Capacity Metrics app. Once installed, anyone in the organization can have permissions granted or shared to view the app. For more information, see [Install the Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md#install-the-app).
 
 Once you have installed the app, select the **Warehouse** from the **Select item kind:** dropdown list. The **Multi metric ribbon chart** chart and the **Items (14 days)** data table now show only **Warehouse** activity.
 
@@ -43,9 +47,9 @@ Once you have installed the app, select the **Warehouse** from the **Select item
 
 You can analyze universal compute capacity usage by workload category, across the tenant. Usage is tracked by total Capacity Unit Seconds (CU(s)). The table displayed shows aggregated usage across the last 14 days.
 
-Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] roll up under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
+Both the [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](includes/fabric-se.md)] rollup under **Warehouse** in the Metrics app, as they both use SQL compute. The operation categories seen in this view are:
 
-- **Warehouse Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
+- **Warehouse Query**: Compute charge for all user-generated and system-generated T-SQL statements within a [!INCLUDE [fabric-dw](includes/fabric-dw.md)].
 - **[!INCLUDE [fabric-se](includes/fabric-se.md)] Query**: Compute charge for all user generated and system generated T-SQL statements within a [!INCLUDE [fabric-se](includes/fabric-se.md)].
 - **OneLake Compute**: Compute charge for all reads and writes for data stored in OneLake.
 
@@ -67,7 +71,7 @@ In general, similar to Power BI, [operations are classified either as interactiv
 
 This table in the Microsoft Fabric Capacity Metrics app provides a detailed view of utilization at specific timepoints. The amount of capacity provided by the given SKU per 30-second period is shown along with the breakdown of interactive and background operations. The interactive operations table represents the list of operations that were executed at that timepoint.
 
-The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](/fabric/data-warehouse/compute-capacity-smoothing-throttling). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
+The **Background operations** table might appear to display operations that were executed much before the selected timepoint. This is due to background operations undergoing 24-hour [smoothing](../data-warehouse/compute-capacity-smoothing-throttling.md). For example, the table displays all operations that were executed and still being smoothed at a selected timepoint.
 
 Top use cases for this view include:
 

@@ -5,8 +5,10 @@ ms.reviewer: jianleishen
 ms.author: jianleishen
 author: jianleishen
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 11/07/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Copy activity performance and scalability guide

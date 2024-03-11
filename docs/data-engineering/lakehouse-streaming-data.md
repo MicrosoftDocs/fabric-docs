@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Spark Structured Streaming
 ---
@@ -15,8 +17,6 @@ ms.search.form: Lakehouse Spark Structured Streaming
 Structured Streaming is a scalable and fault-tolerant stream processing engine built on Spark. Spark takes care of running the streaming operation incrementally and continuously as data continues to arrive.
 
 Structured streaming became available in Spark 2.2. Since then, it has been the recommended approach for data streaming. The fundamental principle behind structured stream is to treat a live data stream as a table where new data is always continuously appended, like a new row in a table. There are a few defined built-in streaming file sources such as CSV, JSON, ORC, Parquet and built-in support for messaging services like Kafka and Event Hubs.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 This article provides insights into how to optimize the processing and ingestion of events through Spark structure streaming in production environments with high throughput. The suggested approaches include:
 
@@ -31,6 +31,7 @@ Spark notebooks are an excellent tool for validating ideas and doing experiments
 Spark notebooks are excellent source to test the logic of your code and address all the business requirements. However to keep it running in a production scenario, Spark job definitions with Retry Policy enabled are the best solution.
 
 ## Retry policy for Spark Job Definitions
+
 In Microsoft Fabric, the user can set a retry policy for Spark Job Definition jobs. Though the script in the job might be infinite, the infrastructure running the script might incur an issue requiring stopping the job. Or the job could be eliminated due to underlying infrastructure patching needs. The retry policy allows the user to set rules for automatically restarting the job if it stops because of any underlying issues. The parameters specify how often the job should be restarted, up to infinite retries, and setting time between retries. That way, the users can ensure that their Spark Job Definition jobs continue running infinitely until the user decides to stop them.
 
 ## Streaming sources
@@ -60,7 +61,6 @@ Delta is added as one of the possible outputs sinks formats used in writeStream.
 
 The following example demonstrates how it's possible to stream data into Delta Lake.  
 
- 
 ```PySpark 
 import pyspark.sql.functions as f 
 from pyspark.sql.types import * 
@@ -97,8 +97,8 @@ rawData = df \
 
 Data partitioning is a critical part in creating a robust streaming solution: partitioning improves the way data is organized, and it also improves the throughput. Files easily get fragmented after Delta operations, resulting in too many small files. And too large files are also a problem, due to the long time to write them on the disk. The challenge with data partitioning is finding the proper balance that results in optimal file sizes. Spark supports partitioning in memory and on disk. Properly partitioned data can provide the best performance when persisting data to Delta Lake and querying data from Delta Lake. 
 
-- When partitioning data on disk, you can choose how to partition the data based on columns by using *partitionBy()*. *partitionBy()* is a function used to partition large dataset into smaller files based on one or multiple columns provided while writing to disk. Partitioning is a way to improve the performance of query when working with a large dataset. Avoid choosing a column that generates too small or too large partitions. Define a partition based on a set of columns with a good cardinality and split the data into files of optimal size. 
-- Partitioning data in memory can be done using *repartition()* or *coalesce()* transformations, distributing data on multiple worker nodes and creating multiple tasks that can read and process data in parallel using the fundamentals of Resilient Distributed Dataset (RDD). It allows dividing dataset into logical partitions, which can be computed on different nodes of the cluster. 
+- When partitioning data on disk, you can choose how to partition the data based on columns by using *partitionBy()*. *partitionBy()* is a function used to partition large semantic model into smaller files based on one or multiple columns provided while writing to disk. Partitioning is a way to improve the performance of query when working with a large semantic model. Avoid choosing a column that generates too small or too large partitions. Define a partition based on a set of columns with a good cardinality and split the data into files of optimal size. 
+- Partitioning data in memory can be done using *repartition()* or *coalesce()* transformations, distributing data on multiple worker nodes and creating multiple tasks that can read and process data in parallel using the fundamentals of Resilient Distributed Dataset (RDD). It allows dividing semantic model into logical partitions, which can be computed on different nodes of the cluster. 
     - *repartition()* is used to increase or decrease the number of partitions in memory. Repartition reshuffles whole data over the network and balances it across all partitions.  
     - *coalesce()* is only used to decrease the number of partitions efficiently. That is an optimized version of *repartition()* where the movement of data across all partitions is lower using coalesce(). 
 
@@ -121,9 +121,8 @@ rawData = df \
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
 ```
- 
 
-### Optimized Write 
+### Optimized Write
 
 Another option to optimize writes to Delta Lake is using Optimized Write. Optimized Write is an optional feature that improves the way data is written to Delta table. Spark merges or splits the partitions before writing the data, maximizing the throughput of data being written to the disk. However, it incurs full shuffle, so for some workloads it can cause a performance degradation. Jobs using *coalesce()* and/or *repartition()* to partition data on disk can be refactored to start using Optimized Write instead.  
 
@@ -143,7 +142,8 @@ rawData = df \
   .partitionBy("<column_name_01>", "<column_name_02>") \ 
   .toTable("deltaeventstable") 
 ```
-### Batching events 
+
+### Batching events
 
 In order to minimize the number of operations to improve the time spent ingesting data into Delta lake, batching events is a practical alternative.  
 
@@ -166,7 +166,7 @@ rawData = df \
   .toTable("deltaeventstable") 
 ```
 
-The advantage of combining batching of events in Delta table writing operations is that it creates larger Delta files with more data in them, avoiding small files. You should analyze the amount of data being ingested and find the best processing time to optimize the size of the Parquet files created by Delta library. 
+The advantage of combining batching of events in Delta table writing operations is that it creates larger Delta files with more data in them, avoiding small files. You should analyze the amount of data being ingested and find the best processing time to optimize the size of the Parquet files created by Delta library.
 
 ## Monitoring
 
@@ -178,6 +178,6 @@ Spark 3.1 and higher versions have a built-in [structured streaming UI](https://
 * Batch Duration
 * Operation Duration
 
-## Next steps
+## Related content
 
-* [Get streaming data into lakehouse](get-started-streaming.md) and access with SQL endpoint.
+* [Get streaming data into lakehouse](get-started-streaming.md) and access with the SQL analytics endpoint.

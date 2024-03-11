@@ -4,15 +4,16 @@ description: This article provides information about how to create an Azure Blob
 author: lrtoyou1223
 ms.author: lle
 ms.topic: how-to
-ms.date: 09/28/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Azure Blob Storage connection
 
 [Azure Blob Storage](/azure/storage/blobs/storage-blobs-introduction) is Microsoft's object storage solution for the cloud. Blob storage is optimized for storing massive amounts of unstructured data. This article outlines the steps to create an Azure Blob Storage connection.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -30,7 +31,7 @@ The Azure Blob Storage connector supports the following authentication types for
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to Azure Blobs. The following links provide the specific Power Query connector information you need to connect to Azure Blobs in Dataflow Gen2:
 
-* To get started using the Azure Blobs connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+* To get started using the Azure Blobs connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric).
 * Be sure to install or set up any [Azure Blobs prerequisites](/power-query/connectors/azure-blob-storage#prerequisites) before connecting to the Azure Blobs connector.
 * To connect to the Azure Blobs connector from Power Query, go to [Connect to Azure Blob Storage from Power Query Online](/power-query/connectors/azure-analysis-services#connect-to-azure-analysis-services-database-from-power-query-online).
 
@@ -111,7 +112,7 @@ You need to specify the tenant ID, service principal client ID and service princ
 
 To use service principal authentication, follow these steps:
 
-1. Register an application entity in Azure Active Directory (Azure AD) by following [Authorize access to blobs using Azure Active Directory](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
+1. Register an application entity in Microsoft Entra ID by following [Authorize access to blobs using Microsoft Entra ID](/azure/storage/blobs/authorize-access-azure-active-directory#register-your-application-with-an-azure-ad-tenant). Make note of these values, which you use to define the connection:
 
    * Tenant ID
    * Application ID

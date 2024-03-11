@@ -1,10 +1,12 @@
 ---
-title: Fabric Application lifecycle management (ALM) deployment pipelines history 
+title: Fabric Application lifecycle management (ALM) deployment pipelines history
 description: Learn how the history feature works in the deployment pipelines, the Fabric Application lifecycle management (ALM) tool.
 author: mberdugo
 ms.author: monaberdugo
 ms.topic: conceptual
-ms.custom: contperf-fy21q1, build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Deployment history
 ---
@@ -12,8 +14,6 @@ ms.search.form: Deployment history
 # Deployment history
 
 Deployment history is a deployment pipelines feature that enables reviewing the past deployments in your pipeline. The feature is designed as a log that lists all the past deployments in the pipeline.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 You can use the deployment history log, to check the health of your pipeline, and to troubleshoot problems that occurred during previous deployments.
 
@@ -67,7 +67,7 @@ The following section lists the deployment history limitations.
 
 * Deployment history displays the name of the item during deployment. When you change an item's name, deployment history treats it as a new item. In such cases, the item with the changed name will appear in the log for the first time, after it's deployed.
 
-## Next steps
+## Related content
 
 * [Get started with deployment pipelines](get-started-with-deployment-pipelines.md)
 * [Create deployment rules](create-rules.md)

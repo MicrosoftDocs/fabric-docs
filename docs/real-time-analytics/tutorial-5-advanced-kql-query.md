@@ -5,20 +5,20 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: Get started
 ---
 # Real-Time Analytics tutorial part 5: Use advanced KQL queries
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 > [!NOTE]
 > This tutorial is part of a series. For the previous section, see: [Tutorial part 4: Explore your data with KQL and SQL](tutorial-4-explore.md).
 
 ## Create a KQL queryset
 
-In the following step, you use the advanced data analysis capabilities of Kusto Query Language to query the two tables you've ingested into the database.
+In the following step, you use the advanced data analysis capabilities of Kusto Query Language to query the two tables you ingested into the database.
 
 1. Browse to your KQL database named *NycTaxiDB*.
 1. Select **New related item** > **KQL Queryset**
@@ -32,7 +32,7 @@ In the following step, you use the advanced data analysis capabilities of Kusto 
 
 This section walks you through some of the query and visualization capabilities of the KQL queryset. Copy and paste the queries in your own query editor to run and visualize the results.
 
-1. The following query returns the top 10 pickup locations in New York City for Yellow Taxis.
+1. Run following query to return the top 10 pickup locations in New York City for Yellow Taxis.
 
     ```kusto
     nyctaxitrips
@@ -42,7 +42,7 @@ This section walks you through some of the query and visualization capabilities 
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-by-count.png" alt-text="Screenshot of query result in Real-Time Analytics in Microsoft Fabric.":::
 
-1. This query adds a step to the previous query by looking up the corresponding zones of the top 10 pickup locations using the *Locations* table. The [lookup operator](/azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context&pivots=fabric) extends the columns of a fact table with values looked-up in a dimension table.
+1. This query adds a step to the previous query. Run the query to look up the corresponding zones of the top 10 pickup locations using the *Locations* table. The [lookup operator](/azure/data-explorer/kusto/query/lookupoperator?context=/fabric/context/context&pivots=fabric) extends the columns of a fact table with values looked-up in a dimension table.
 
     ```kusto
     nyctaxitrips
@@ -54,7 +54,7 @@ This section walks you through some of the query and visualization capabilities 
 
     :::image type="content" source="media/realtime-analytics-tutorial/top-10-locations.png" alt-text="Screenshot of top 10 location results in Real-Time Analytics in Microsoft Fabric." lightbox="media/realtime-analytics-tutorial/top-10-locations.png":::
 
-1. KQL also provides machine learning functions to detect anomalies. Let's check anomalies in the tips given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
+1. KQL also provides machine learning functions to detect anomalies. Run the following query to check anomalies in the tips given by the customers in the Manhattan borough. This query uses the [series_decompose_anomalies function](/azure/data-explorer/kusto/query/series-decompose-anomaliesfunction?context=/fabric/context/context&pivots=fabric).
 
     ```kusto
     nyctaxitrips
@@ -69,7 +69,7 @@ This section walks you through some of the query and visualization capabilities 
 
     Hover over the red dots to see the values of the anomalies.
 
-1. You can also use the predictive power of the [series_decompose_forecast function](/azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/fabric/context/context&pivots=fabric) to ensure that the sufficient taxis are working in the Manhattan borough and forecast the number of taxis needed per hour.
+1. You can also use the predictive power of the [series_decompose_forecast function](/azure/data-explorer/kusto/query/series-decompose-forecastfunction?context=/fabric/context/context&pivots=fabric). Run the following query to ensure that the sufficient taxis are working in the Manhattan borough and forecast the number of taxis needed per hour.
 
     ```kusto
     nyctaxitrips
@@ -86,11 +86,11 @@ This section walks you through some of the query and visualization capabilities 
 
 For more information about tasks performed in this tutorial, see:
 
-* [Create a KQL queryset](kusto-query-set.md#create-a-kql-queryset)
+* [Create a KQL queryset](create-query-set.md)
 * [Write a query](kusto-query-set.md#write-a-query)
 * [render operator](/azure/data-explorer/kusto/query/renderoperator?pivots=azuredataexplorer?context=/fabric/context/context&pivots=fabric)
 
-## Next steps
+## Next step
 
 > [!div class="nextstepaction"]
 > [Tutorial part 6: Build a Power BI report](tutorial-6-build-report.md)

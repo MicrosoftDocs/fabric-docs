@@ -4,15 +4,16 @@ description: This article explains how to configure ORC format in the data pipel
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 09/15/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # ORC format in Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 This article outlines how to configure ORC format in the data pipeline of Data Factory in [!INCLUDE [product-name](../includes/product-name.md)].
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported capabilities
 
@@ -22,9 +23,9 @@ ORC format is supported for the following activities and connectors as a source 
 |---|---|
 | **Supported connector** | [Amazon S3](connector-amazon-s3-copy-activity.md) |
 |  | [Azure Blob Storage](connector-azure-blob-storage-copy-activity.md) |
-|  | Azure Data Lake Storage Gen1 |
+|  | [Azure Data Lake Storage Gen1](connector-azure-data-lake-storage-gen1-copy-activity.md) |
 |  | [Azure Data Lake Storage Gen2](connector-azure-data-lake-storage-gen2-copy-activity.md)|
-|  | FTP |
+|  | [FTP](connector-ftp-copy-activity.md) |
 |  | [Google Cloud Storage](connector-google-cloud-storage-copy-activity.md) |
 |  | [HTTP](connector-http-copy-activity.md)|
 |  | [SFTP](connector-sftp-copy-activity.md)|
@@ -82,6 +83,6 @@ The following properties are supported in the copy activity **Destination** sect
 |**Max rows per file**| When writing data into a folder, you can choose to write to multiple files and specify the maximum rows per file. Specify the maximum rows that you want to write per file.|\<your max rows per file> | No| maxRowsPerFile |
 |**File name prefix**| Applicable when **Max rows per file** is configured. Specify the file name prefix when writing data to multiple files, resulted in this pattern: `<fileNamePrefix>_00000.<fileExtension>`. If not specified, the file name prefix is auto generated. This property doesn't apply when the source is a file based store or a partition option enabled data store.|\<your file name prefix> |No| fileNamePrefix|
 
-## Next steps
+## Related content
 
 - [Connectors overview](connector-overview.md)

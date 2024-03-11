@@ -5,15 +5,15 @@ ms.reviewer: jburchel
 ms.author: xupzhou
 author: pennyzhou-msft
 ms.topic: troubleshooting
-ms.custom: build-2023
-ms.date: 08/21/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Troubleshoot the Azure Table Storage connector in Data Factory in Microsoft Fabric
 
 This article provides suggestions to troubleshoot common problems with the Azure Table Storage connector in Data Factory in Microsoft Fabric.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Error code: AzureTableDuplicateColumnsFromSource
 
@@ -25,7 +25,7 @@ This article provides suggestions to troubleshoot common problems with the Azure
 
 - **Recommendation**:  Double-check and fix the source columns, as necessary.
 
-## Next steps
+## Related content
 
 For more troubleshooting help, try these resources:
 

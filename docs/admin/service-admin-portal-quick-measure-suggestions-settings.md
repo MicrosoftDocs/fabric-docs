@@ -1,14 +1,16 @@
 ---
-title: Quick measure suggestions admin settings 
+title: Quick measure suggestions admin settings
 description: Learn how to configure Quick measure suggestions admin settings.
 author: paulinbar
 ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 03/17/2022
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -28,6 +30,6 @@ Quick measure suggestions are currently processed in the US. When this setting i
 
 To learn more, see [Limitations and considerations](/power-bi/transform-model/quick-measure-suggestions#limitations-and-considerations).
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

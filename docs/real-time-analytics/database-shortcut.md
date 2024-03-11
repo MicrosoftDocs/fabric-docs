@@ -5,12 +5,12 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
+ms.custom:
+  - ignite-2023
 ms.date: 09/28/2023
 ms.search.form: KQL Database
 ---
 # Create a database shortcut
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 A database shortcut in Real-Time Analytics is an embedded reference within a KQL database to a source database in Azure Data Explorer. The behavior exhibited by the database shortcut is similar to that of a [follower database](/azure/data-explorer/follower).
 
@@ -59,7 +59,7 @@ To create an invitation token, the data provider can use the following steps:
     :::image type="content" source="media/database-shortcut/create-token.png" alt-text="Screenshot of Azure portal select the open option to create a database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/create-token.png":::
 
     > [!NOTE]
-    > Optionally, you can choose to manually create the shortcut. To do so, select **Copy token**. Go to your workspace, select **+ New** > **KQL Database (Preview)**, and then select **Type** > **New shortcut database (Follower)**. Select **Method** > **Invitation token**, in **Invitation token** paste the token, and then select **Create**.
+    > Optionally, you can choose to manually create the shortcut. To do so, select **Copy token**. Go to your workspace, select **+ New** > **KQL Database**, and then select **Type** > **New shortcut database (Follower)**. Select **Method** > **Invitation token**, in **Invitation token** paste the token, and then select **Create**.
 
 ## Create database shortcut
 
@@ -89,7 +89,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
 
 1. Browse to your workspace in Microsoft Fabric.
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
-1. Select **+ New** > **KQL Database (Preview)**
+1. Select **+ New** > **KQL Database**.
 1. Enter a name for your database shortcut.
 1. Select **Type** > **New shortcut database (Follower)**
 

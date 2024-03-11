@@ -7,6 +7,7 @@ ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: conceptual
 ms.custom:
+  - ignite-2023
 ms.date: 09/12/2023
 LocalizationGroup: Data from files
 ---
@@ -24,9 +25,9 @@ To help ensure comprehensive protection and governance of sensitive data, you ca
 
 **In the Power BI service**:
 
-* Users must apply a sensitivity label before they can save new reports, dashboards, or datasets.
+* Users must apply a sensitivity label before they can save new reports, dashboards, or semantic models.
 * Users must apply a sensitivity label before they can save changes to the settings or content of existing, unlabeled reports and dashboards.
-* If users try to import data from an unlabeled *.pbix* file, a prompt requires them to select a label before the import can continue. The label they select is applied to the resulting dataset and report in the service. **It's not applied to the *.pbix* file itself**.
+* If users try to import data from an unlabeled *.pbix* file, a prompt requires them to select a label before the import can continue. The label they select is applied to the resulting semantic model and report in the service. **It's not applied to the *.pbix* file itself**.
 
 **In Power BI Desktop**:
 
@@ -64,6 +65,6 @@ Where:
 * Mandatory labeling in Power BI isn't supported for service principals and APIs. Service principals and APIs aren't subject to mandatory label policies.
 * Mandatory labeling in Power BI isn't supported for [external guest users (B2B users)](/power-bi/enterprise/service-admin-azure-ad-b2b). B2B users aren't subject to mandatory label policies.
 
-## Next steps
+## Related content
 
 * [Default label policy for Power BI](service-security-sensitivity-label-default-label-policy.md)

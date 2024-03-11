@@ -6,14 +6,15 @@ summary: OneLake is a single, unified, logical data lake for the whole organizat
 metadata:
   title: OneLake in Microsoft Fabric documentation
   description: OneLake is included with every Microsoft Fabric tenant and is designed to be the single place for all your analytics data. Find resources.
-  ms.service: fabric  #Required; use either service or product per approved list. 
+  ms.service: fabric  #Required; use either service or product per approved list.
   ms.subservice: onelake
+  ms.custom:
+    - ignite-2023
   ms.topic: landing-page
   ms.collection: collection # Optional; Remove if no collection is used.
   author: eloldag
   ms.author: eloldag
-  ms.date: 05/23/2023
-
+  ms.date: 11/06/2023
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | tutorial | overview | quickstart | reference | sample | tutorial | video | whats-new
 
 landingContent:
@@ -30,6 +31,10 @@ landingContent:
             url: onelake-security.md
           - text: OneLake access and APIs
             url: onelake-access-api.md
+      - linkListType: deploy
+        links:
+          - text: Implement medallion lakehouse architecture
+            url: onelake-medallion-lakehouse-architecture.md
       - linkListType: get-started
         links:
           - text: Create a lakehouse with OneLake

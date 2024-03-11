@@ -4,9 +4,11 @@ description: Overview of developing Spark applications using the R language.
 ms.reviewer: sgilley
 author: ruixinxu
 ms.author: ruxu
-ms.topic: overview 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: R Language
 ---
 
@@ -14,7 +16,7 @@ ms.search.form: R Language
 
 [!INCLUDE [product-name](../includes/product-name.md)] provides built-in R support for Apache Spark. This includes support for [SparkR](https://spark.apache.org/docs/latest/sparkr.html) and [sparklyr](https://spark.rstudio.com/), which allows users to interact with Spark using familiar Spark or R interfaces. You can analyze data using R through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 This document provides an overview of developing Spark applications in Synapse using the R language. 
 
@@ -69,9 +71,6 @@ You can learn more about how to use SparkR by visiting [How to use SparkR](./r-u
 
 To learn more about how to use sparklyr, visit [How to use sparklyr](./r-use-sparklyr.md).
 
-> [!NOTE] 
-> Using SparkR and sparklyr in the same notebook session isn't supported yet.
-
 
 ## Use Tidyverse
 
@@ -85,7 +84,7 @@ The R ecosystem offers multiple graphing libraries that come packed with many di
 
 Learn more about how to create R visualizations by visiting [R visualization](./r-visualization.md).
 
-## Next steps
+## Related content
 
 - [How to use SparkR](./r-use-sparkr.md)
 - [How to use sparklyr](./r-use-sparklyr.md)

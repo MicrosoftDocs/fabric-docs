@@ -5,7 +5,9 @@ ms.reviewer: sgilley
 ms.author: amjafari
 author: amhjf
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/16/2023
 ---
 
@@ -26,7 +28,7 @@ In this tutorial, you use the Apache Spark to:
 > * Read data from Azure Open Datasets containers.
 > * Write data into a Fabric lakehouse delta table.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 ## Prerequisites
 
@@ -38,7 +40,7 @@ In this tutorial, you use the Apache Spark to:
 
  [1-ingest-data.ipynb](https://github.com/microsoft/fabric-samples/blob/main/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb) is the notebook that accompanies this tutorial.
 
-[!INCLUDE [follow-along](./includes/follow-along.md)]
+[!INCLUDE [follow-along-github-notebook](./includes/follow-along-github-notebook.md)]
 
 <!-- nbstart https://raw.githubusercontent.com/sdgilley/fabric-samples/sdg-new-happy-path/docs-samples/data-science/data-science-tutorial/1-ingest-data.ipynb -->
 
@@ -115,7 +117,7 @@ if not IS_CUSTOM_DATA:
 <!-- nbend -->
 
 
-## Next steps
+## Related content
 
 You'll use the data you just ingested in:
  

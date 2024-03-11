@@ -5,14 +5,14 @@ ms.reviewer: snehagunda
 ms.author: saravi
 author: santhoshravindran7
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 10/20/2023
 ---
 # How to create custom Spark pools in Microsoft Fabric
 
 In this document, we explain how to create custom Apache Spark pools in Microsoft Fabric for your analytics workloads. Apache Spark pools enable users to create tailored compute environments based on their specific requirements, ensuring optimal performance and resource utilization.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 You specify the minimum and maximum nodes for autoscaling. Based on those values, the system dynamically acquires and retires nodes as the job's compute requirements change, which results in efficient scaling and improved performance. The dynamic allocation of executors in Spark pools also alleviates the need for manual executor configuration. Instead, the system adjusts the number of executors depending on the data volume and job-level compute needs. This process enables you to focus on your workloads without worrying about performance optimization and resource management.
 
@@ -45,7 +45,7 @@ To create or manage the Spark pool associated with your workspace:
 
 These custom pools have a default autopause duration of 2 minutes. Once the autopause duration is reached, the session expires and the clusters are unallocated. You're charged based on the number of nodes and the duration for which the custom Spark pools are used.
 
-## Next steps
+## Related content
 
 * Learn more from the Apache Spark [public documentation](https://spark.apache.org/docs/latest/configuration.html).
 * Get started with [Spark workspace administration settings in Microsoft Fabric](workspace-admin-settings.md).

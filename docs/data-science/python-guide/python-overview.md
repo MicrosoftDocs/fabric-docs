@@ -4,15 +4,15 @@ description: Overview of developing Spark applications using the Python language
 ms.reviewer: mopeakande
 author: midesa
 ms.author: midesa
-ms.topic: overview 
-ms.custom: build-2023
+ms.topic: overview
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 04/24/2023
 ms.search.form: Python Language
 ---
 
 # Use Python for Apache Spark
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 Microsoft Fabric provides built-in Python support for Apache Spark. This includes support for [PySpark](https://spark.apache.org/docs/latest/api/python/index.html), which allows users to interact with Spark using familiar Spark or Python interfaces. You can analyze data using Python through Spark batch job definitions or with interactive Fabric notebooks. This document provides an overview of developing Spark applications in Synapse using the Python language.
 
@@ -33,9 +33,9 @@ To learn more about notebooks within [!INCLUDE [product-name](../../includes/pro
 
 ## Install packages
 
-Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library onto one of your workspace or notebook session.
+Libraries provide reusable code that you might want to include in your programs or projects. To make third party or locally built code available to your applications, you can install a library in-line into your notebook session or your workspace admin can create an environment, install the library in it, and attach the environment as the workspace default in the workspace setting.
 
-To learn more about how to manage Python libraries, see [Python library management](./python-library-management.md).
+To learn more about library management in Microsoft Fabric, see [manage Apache Spark libraries](../../data-engineering/library-management.md).
 
 ## Notebook utilities
 
@@ -61,12 +61,12 @@ The [!INCLUDE [product-name](../../includes/product-name.md)] [Runtime](../../da
 
 ## Python visualization
 
-The Python ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions by using the [!INCLUDE [product-name](../../includes/product-name.md)] [library management capabilities](./python-library-management.md).
+The Python ecosystem offers multiple graphing libraries that come packed with many different features. By default, every Spark instance in [!INCLUDE [product-name](../../includes/product-name.md)] contains a set of curated and popular open-source libraries. You can also add or manage extra libraries or versions. For more information on library management, see [Summary of library management best practices](../../data-engineering/library-management.md#summary-of-library-management-best-practices).
 
 Learn more about how to create Python visualizations by visiting [Python visualization](../python-guide/python-visualizations.md).
 
-## Next steps
+## Related content
 
 - Learn how to use the Pandas API on Apache Spark: [Pandas API on Apache Spark](https://spark.apache.org/docs/3.3.0/api/python/getting_started/quickstart_ps.html)
-- Manage Python libraries: [Python library management](./python-library-management.md)
+- [Manage Apache Spark libraries in Microsoft Fabric](../../data-engineering/library-management.md)
 - Visualize data in Python: [Visualize data in Python](./python-visualizations.md)

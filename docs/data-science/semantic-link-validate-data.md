@@ -1,22 +1,24 @@
 ---
-title: Validate functional dependencies in data with semantic link
+title: Validate functional dependencies in data with semantic link (preview)
 description: Explore and validate functional dependencies in data with semantic link and Microsoft Fabric.
 ms.reviewer: mopeakande
 reviewer: msakande
 ms.author: romanbat
 author: RomanBat
 ms.topic: how-to
-ms.date: 06/06/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ms.search.form: semantic link
 ---
 
-# Detect, explore, and validate functional dependencies in your data
+# Detect, explore, and validate functional dependencies in your data, using semantic link (preview)
 
 Functional dependencies are relationships between columns in a table, where the values in one column are used to determine the values in another column.
 An understanding of these dependencies can help you uncover patterns and relationships in your data, which can be useful for feature engineering, data cleaning, and model building.
-Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that may be hard to detect otherwise.
+Functional dependencies act as an effective invariant that allows you to find and fix data quality issues that might be hard to detect otherwise.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 In this article, you'll use semantic link to:
 
@@ -45,7 +47,9 @@ The following Python code snippet demonstrates how to use `find_dependencies`.
 
 ```python
 from sempy.fabric import FabricDataFrame
-from sempy.dependencies import plot_dependencies
+from sempy.dependencies import plot_dependency_metadata
+import pandas as pd
+
 
 df = FabricDataFrame(pd.read_csv("your_data.csv"))
 
@@ -57,7 +61,7 @@ Columns that have a 1:1 mapping will be represented as a list.
 The function also tries to prune the potential dependencies by removing [transitive edges](https://en.wikipedia.org/wiki/Transitive_dependency).
 
 When you specify the `dropna=True` option, rows that have a NaN value in either column are eliminated from evaluation.
-This may result in dependencies being nontransitive, as in the following example:
+This can result in dependencies being nontransitive, as in the following example:
 
 | A | B   | C |
 |---|-----|---|
@@ -140,7 +144,7 @@ The `list_dependency_violations` function provides more options for handling mis
 
 The output of `list_dependency_violations` can help identify data quality issues in your dataset.
 However, it's essential to carefully examine the results and consider the context of your data to determine the most appropriate course of action for addressing the identified issues.
-This may involve further data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
+This course of action might involve further data cleaning, validation, or exploration to ensure the reliability and validity of your analysis or model.
 
 ## Visualize data quality issues
 
@@ -217,9 +221,9 @@ The `drop_dependency_violations` function provides the `verbose` option for cont
 By using the `drop_dependency_violations` function, you can enforce functional constraints between columns in your dataset, which can help improve data quality and lead to more accurate results in your analysis or model.
 However, it's essential to carefully consider the context of your data and the functional constraints you choose to enforce to ensure that you aren't inadvertently removing valuable information from your dataset.
 
-## Next steps
+## Related content
 
 - [See the SemPy reference documentation for the `FabricDataFrame` class](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe)
-- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
-- [Explore and validate relationships in Power BI datasets](semantic-link-validate-relationship.md)
-- [Accelerate data science using semantic functions](semantic-link-semantic-functions.md)
+- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
+- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [Accelerate data science using semantic functions (preview)](semantic-link-semantic-functions.md)

@@ -5,14 +5,14 @@ author: nabhishek
 ms.author: abnarain
 ms.reviewer: jburchel
 ms.topic: how-to
-ms.date: 09/22/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Web activity to call REST APIs in pipelines
 
 Web Activity can be used to call a custom REST endpoint from an Azure Data Factory or Synapse pipeline. You can pass datasets and linked services to be consumed and accessed by the activity.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 > [!NOTE]
 > The maximum supported output response payload size is 4 MB.
@@ -54,6 +54,9 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 
    :::image type="content" source="media/web-activity/create-new-connection.png" alt-text="Screenshot showing the new connection dialog for the Web activity.":::
 
+> [!NOTE]
+> The Connection name can be max 80 characters long.
+
 1. After choosing or creating your connection, complete the remaining required fields, add any required headers, or set any advanced settings. The Web activity supports GET, POST, PUT, DELETE, and PATCH methods.
 
 ## Save and run or schedule the pipeline
@@ -62,6 +65,6 @@ Typically, you use the output of the Web activity with other activities, but onc
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

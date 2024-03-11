@@ -4,8 +4,10 @@ description: Learn about smoothing and throttling principles applicable for data
 author: sowmi93
 ms.author: sosivara
 ms.reviewer: wiassaf
-ms.date: 10/25/2023
+ms.date: 11/21/2023
 ms.topic: conceptual
+ms.custom:
+  - ignite-2023
 ---
 
 # Smoothing and throttling in Fabric Data Warehousing
@@ -15,8 +17,6 @@ ms.topic: conceptual
 This article details the concepts of smoothing and throttling in workloads using [!INCLUDE [fabricdw](includes/fabric-dw.md)] and [!INCLUDE [fabricse](includes/fabric-se.md)] in Microsoft Fabric.
 
 This article is specific to data warehousing workloads in Microsoft Fabric. For all Fabric workloads, visit [Throttling in Microsoft Fabric](../enterprise/throttling.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Compute capacity
 
@@ -62,10 +62,10 @@ Most [!INCLUDE [fabric-dw](includes/fabric-dw.md)] and [!INCLUDE [fabric-se](inc
 ### Throttling considerations
 
 - Any inflight operations including long-running queries, stored procedures, batches won't get throttled mid-way. Throttling policies are applicable to the next operation after consumption is smoothed.
-- Warehouse operations are _background_ except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from default dataset, visualize results, etc.) or creating/updating Power BI datasets (including default dataset) or reports. These operations continue to follow "Interactive Rejection" policy.
-- Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](/fabric/enterprise/metrics-app) to understand the root cause.
-- If you attempt to issue a T-SQL query when the "Background Rejection" policy is enabled, you might see error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
-- If you attempt to connect to a warehouse via SQL connection string when the "Background Rejection" policy is enabled, you might see error message:  `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- Warehouse operations are _background_ except for scenarios that involves Modeling operations (such as creating a measure, adding or removing tables from a default semantic model, visualize results, etc.) or creating/updating Power BI semantic models (including a default semantic model) or reports. These operations continue to follow "Interactive Rejection" policy.
+- Just like most **Warehouse** operations, dynamic management views (DMVs) are also classified as *background* and covered by the "Background Rejection" policy. As a result, DMVs cannot be queried when capacity is throttled. Even though DMVs are not available, capacity admins can go to [Microsoft Fabric Capacity Metrics app](../enterprise/metrics-app.md) to understand the root cause.
+- When the "Background Rejection" policy is enabled, any activity on [the SQL Query Editor](sql-query-editor.md), [visual query editor](visual-query-editor.md), or modeling view, might see the error message: `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
+- When the "Background Rejection" policy is enabled, if you attempt to connect to a warehouse or run a new TSQL query in client applications like [SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) or [Azure Data Studio](/sql/azure-data-studio/download-azure-data-studio) via SQL connection string, you might see SQL error code 24801 and the error text `Unable to complete the action because your organization's Fabric compute capacity has exceeded its limits. Try again later`.
 
 ## Best practices to recover from overload situations
 

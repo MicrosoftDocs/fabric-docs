@@ -4,6 +4,26 @@
             "source_path_from_root": "/docs/data-factory/connector-troubleshoot-postgresql.md",
             "redirect_url": "/fabric/data-factory/connector-troubleshoot-azure-database-for-postgresql",
             "redirect_document_id": true
-          }
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/whats-new.md",
+            "redirect_url": "/fabric/get-started/whats-new?toc=/fabric/data-factory/toc.json#data-factory-in-microsoft-fabric",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/dataflow-gen2-limitations.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": true
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-limitations.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": false
+        },
+        {
+            "source_path_from_root": "/docs/data-factory/pipeline-resource-limits.md",
+            "redirect_url": "/fabric/data-factory/data-factory-limitations",
+            "redirect_document_id": false
+        }
     ]
 }

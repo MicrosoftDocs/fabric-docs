@@ -6,6 +6,11 @@
         "redirect_document_id": false
       },
       {
+       "source_path_from_root": "/docs/data-science/overview-azure-ai-services.md",
+       "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+       "redirect_document_id": false
+      },
+      {
       "source_path_from_root": "/docs/data-science/cognitive-services-multivariate-anomaly-detection.md",
       "redirect_url": "/fabric/data-science/multivariate-anomaly-detection",
       "redirect_document_id": true
@@ -17,12 +22,22 @@
       },
       {
         "source_path_from_root": "/docs/data-science/overview-cognitive-services.md",
-        "redirect_url": "/fabric/data-science/overview-azure-ai-services",
-        "redirect_document_id": true
+        "redirect_url": "/fabric/data-science/ai-services/ai-services-in-synapseml-bring-your-own-key",
+        "redirect_document_id": false
         },
         {
         "source_path_from_root": "/docs/data-science/how-to-use-cognitive-services-with-synapseml.md",
         "redirect_url": "/fabric/data-science/how-to-use-ai-services-with-synapseml",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/fabric-sparkml-tutorial.md",
+        "redirect_url": "/fabric/data-science/fabric-sparkml-tutorial",
+        "redirect_document_id": true
+        },
+        {
+        "source_path_from_root": "/docs/data-science/model-training/model-training-overview.md",
+        "redirect_url": "/fabric/data-science/model-training-overview",
         "redirect_document_id": true
         },
         {
@@ -46,6 +61,11 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/get-started/copilot-fabric-enable.md",
+          "redirect_url": "/fabric/get-started/copilot-fabric-overview",
+          "redirect_document_id": true
+        },
+        {
           "source_path_from_root": "/docs/get-started/known-issues/known-issue-446-oneLake-table-folder-not-removed.md",
           "redirect_url": "/fabric/get-started/known-issues/known-issue-446-onelake-table-folder-isnt-removed",
           "redirect_document_id": false
@@ -58,6 +78,11 @@
         {
           "source_path_from_root": "/docs/admin/admin-switch.md",
           "redirect_url": "/fabric/admin/fabric-switch",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/admin/service-admin-portal-content-pack-app.md",
+          "redirect_url": "/fabric/admin/service-admin-portal-app",
           "redirect_document_id": false
         },
         {
@@ -106,6 +131,16 @@
           "redirect_document_id": false
         },
         {
+          "source_path_from_root": "/docs/data-warehouse/datasets.md",
+          "redirect_url": "/fabric/data-warehouse/semantic-models",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/model-default-power-bi-dataset.md",
+          "redirect_url": "/fabric/data-warehouse/default-power-bi-semantic-model",
+          "redirect_document_id": false
+        },
+        {
           "source_path_from_root": "/docs/enterprise/metrics-app-onelake-page.md",
           "redirect_url": "/fabric/data-factory/metrics-app-storage-page.md",
           "redirect_document_id": false
@@ -128,6 +163,226 @@
         {
           "source_path_from_root": "/docs/data-factory/connector-azure-sql-database-dataflow.md",
           "redirect_url": "/fabric/data-factory/connector-azure-sql-database",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-engineering/lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-engineering/lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-warehouse/get-started-lakehouse-sql-endpoint.md",
+          "redirect_url": "/fabric/data-warehouse/get-started-lakehouse-sql-analytics-endpoint",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/data-retention-policy.md",
+          "redirect_url": "/fabric/real-time-analytics/data-policies",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-lakehouse-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-lakehouse",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-sharepoint-online-list-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-sharepoint-online-list",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-odata-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-odata",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-google-cloud-storage-dataflow.md",
+          "redirect_url": "/fabric/data-factory/connector-google-cloud-storage",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-http-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-http",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-kusto-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-azure-data-explorer",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/connector-rest-dataflows.md",
+          "redirect_url": "/fabric/data-factory/connector-rest",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-publish-dataflow.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-template.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/transform-taxi-data-and-route-to-kql.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/transform-sample-data-and-route-to-kql",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/onelake-mirroring.md",
+          "redirect_url": "/fabric/real-time-analytics/one-logical-copy",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/security/az-resiliency.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/security/disaster-recovery-guide.md",
+          "redirect_url": "/azure/reliability/reliability-fabric",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/jupyter-notebook.md",
+          "redirect_url": "/fabric/real-time-analytics/notebooks",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-inprogress-refresh-history.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gen1-admin-switch.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-failed-to-publish-dataflow-gen2.md",
+          "redirect_url": "/fabric/get-started/known-issues/known-issue-598-failed-to-publish-dataflow-gen2",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-gateway-refreshes.md",
+          "redirect_url": "/fabric/data-factory/gateway-considerations-output-destinations#evaluation-time-outs",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-lineage-view-edit.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/data-factory/known-issue-staging-item.md",
+          "redirect_url": "/fabric/data-factory/data-factory-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/real-time-analytics/event-streams/build-real-time-dashboard-from-iot-hub.md",
+          "redirect_url": "/fabric/real-time-analytics/event-streams/build-report-from-iot-hub",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/data-science/python-guide/python-library-management.md",
+          "redirect_url": "/fabric/data-engineering/library-management",
+          "redirect_document_id": true
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-462-fabric-user-git-column-synced-activity.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-535-new-card-visual-formatting-appears-disappears.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
+          "redirect_document_id": false
+        },
+        {
+          "source_path_from_root": "/docs/get-started/known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md",
+          "redirect_url": "/fabric/get-started/fabric-known-issues",
           "redirect_document_id": false
         }
     ]

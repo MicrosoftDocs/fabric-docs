@@ -5,16 +5,18 @@ ms.reviewer: spelluru
 ms.author: xujiang1
 author: xujxu
 ms.topic: how-to
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 05/23/2023
-ms.search.form: Event streams
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+ms.date: 11/15/2023
+ms.search.form: Event Streams Overview
 ---
 
 # Create and manage an eventstream in Microsoft Fabric
 
 The event streams feature in Microsoft Fabric gives you a centralized place in the Fabric platform to capture, transform, and route real-time events to various destinations with a no-code experience. It integrates your eventstreams seamlessly with Azure Event Hubs, KQL databases, and lakehouses.
-
-[!INCLUDE [preview-note](../../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -74,7 +76,7 @@ The following screenshot shows an eventstream with its source and destination co
 4. **Configuration and modification pane**: This pane allows you to configure or modify a specific source or destination.
 5. **Bottom pane for information, data preview, data insights, and runtime logs**: For each tile (node), the data preview shows you data inside the selected tile (node). This section also summarizes runtime logs where the runtime logs exist in certain sources or destinations. It also provides metrics for you to monitor the data insights for certain sources or destinations, such as input events, output events, incoming messages, outgoing messages, etc.
 
-## Next steps
+## Related content
 
 - [Add and manage eventstream sources](./add-manage-eventstream-sources.md)
 - [Add and manage eventstream destinations](./add-manage-eventstream-destinations.md)

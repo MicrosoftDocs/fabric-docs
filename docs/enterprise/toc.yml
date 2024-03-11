@@ -21,6 +21,8 @@ items:
     href: scale-capacity.md
   - name: Throttling
     href: throttling.md
+  - name: Fabric operations    
+    href: fabric-operations.md   
   - name: Metrics app
     items:
     - name: What is the Microsoft Fabric Capacity Metrics app?
@@ -32,4 +34,6 @@ items:
     - name: Understand the metrics app storage page
       href: metrics-app-storage-page.md
     - name: Understand the metrics app timepoint page
-      href: metrics-app-timepoint-page.md             
+      href: metrics-app-timepoint-page.md    
+    - name: Monitor a paused capacity
+      href: monitor-paused-capacity.md                 

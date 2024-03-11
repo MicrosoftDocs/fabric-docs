@@ -5,13 +5,16 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: conceptual
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
-ms.date: 10/17/2023
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
+  - ignite-2023-fabric
+ms.date: 12/14/2023
 ms.search.form: Overview
 ---
 # What is Real-Time Analytics in Fabric?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The last few decades have seen a paradigm shift in the way we access and consume information, as users have become used to data that is interactive, on demand, and accessible to all. This shift has been powered by big data, streaming data ingestion, and indexed, keyword-based search. All together they form a simplified user experience. With Real-Time Analytics in Microsoft Fabric, we enable organizations to focus and scale up their analytics solution while democratizing data for the needs of both the citizen data scientist all the way to the advanced data engineer. Real-time analytics have become essential in many scenarios in the enterprise world, such as cybersecurity, asset tracking and management, predictive maintenance, supply chain optimization, customer experience, energy management, inventory management, quality control, environmental monitoring, fleet management, and health and safety.
 
@@ -43,7 +46,7 @@ If any one of these questions describes your data needs, Real-Time Analytics is 
 > * Do I need high freshness from data ingestion to query?
 > * Do I want to transform streaming data?
 > * Do I have a service that needs to access data with low query latency (in a matter of seconds)?
-> * Does I need to search or access data in different formats, like structured data, semi-structured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
+> * Do I need to search or access data in different formats, like structured data, semi-structured data (including complicated data such as JSON or other arrays), or unstructured data (for example, free text)?
 > * Do I want the ability to query large amounts of data?
 > * Does my data have a time component that can benefit from the time series-optimized database structure?
 > * Do I want the ability to create ad-hoc queries on any field or row without prior optimization?
@@ -78,9 +81,9 @@ See how these items work together in the end-to-end streaming data consumption a
 * Data in OneLake is accessed by Real-Time Analytics in several ways:
   * Data from OneLake can be [queried from Real-Time Analytics as a shortcut](onelake-shortcuts.md?tab=onelake-shortcut).
   * Data from [OneLake can be loaded](get-data-onelake.md) into Real-Time Analytics.
-  * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](onelake-mirroring.md).
+  * Data loaded into Real-Time Analytics is reflected in OneLake as [one logical copy](one-logical-copy.md).
 * Data loaded into Real-Time Analytics can be used as the underlying data for [visualization in a Power BI report](create-powerbi-report.md).
-* Data loaded into Real-Time Analytics can be used for analysis in [Jupyter](jupyter-notebook.md) or [Spark](spark-connector.md) Notebooks in Data Engineering.
+* Data loaded into Real-Time Analytics can be used for analysis in [Spark](spark-connector.md) Notebooks in Data Engineering.
 * Trigger data loading events in Data Factory using [pipelines](../data-factory/connector-overview.md#supported-data-stores-in-data-pipeline).
 * Trigger data loading events using [Dataflows](../data-factory/connector-overview.md#supported-data-connectors-in-dataflows).
 

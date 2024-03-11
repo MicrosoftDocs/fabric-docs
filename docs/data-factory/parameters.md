@@ -4,16 +4,16 @@ description: Learn about parameters for Data Factory in Microsoft Fabric.
 ms.reviewer: xupzhou
 ms.author: jburchel
 author: jonburchel
-ms.topic: conceptual 
-ms.custom: build-2023
-ms.date: 05/23/2023
+ms.topic: conceptual
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Parameters for Data Factory in [!INCLUDE [product-name](../includes/product-name.md)]
 
 This document describes how to use parameters in your pipelines for Data Factory in Fabric.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## How to use parameters, expressions and functions in pipelines for Data Factory in Fabric
 
@@ -235,6 +235,6 @@ These functions are useful inside conditions, they can be used to evaluate any t
 | [ticks](expression-language.md#ticks) | Return the `ticks` property value for a specified timestamp. |
 | [utcNow](expression-language.md#utcNow) | Return the current timestamp as a string. |
 
-## Next steps
+## Related content
 
-[Expression language](expression-language.md)
+- [Expression language](expression-language.md)

@@ -1,18 +1,20 @@
 ---
-title: How to configure SQL server in copy activity
+title: Configure SQL server in a copy activity
 description: This article explains how to copy data using SQL server.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/25/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure SQL server in copy activity
+# Configure SQL server in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to SQL server.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -238,7 +240,6 @@ See the following table for the summary and more information for the SQL server 
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| < upper limit of concurrent connections ><br>(integer)|No |maxConcurrentConnections|
 
 
-## Next steps
+## Related content
 
 - [SQL server overview](connector-azure-sql-database-overview.md)
-

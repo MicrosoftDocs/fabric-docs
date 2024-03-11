@@ -4,7 +4,9 @@ description: Learn why and how capacities are throttled in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
-ms.date: 10/02/2023
+ms.custom:
+  - ignite-2023
+ms.date: 12/03/2023
 ---
 
 # The Fabric throttling policy
@@ -30,6 +32,9 @@ After smoothing, some accounts may still experience spikes in CU usage during pe
 The first phase of throttling begins when a capacity has consumed all its available CU resources for the next 10 minutes. For example, if you purchased 10 units of CU and then consumed 50 units per minute, you would create a carry forward of 40 units per minute. After two and a half minutes, you would have accumulated a carry forward of 100 units, borrowed from future windows. At this point where the capacity has already exhausted all capacity for the next 10 minutes, Fabric initiates its first level of throttling, and all new interactive operations are delayed by 20 seconds upon submission. If the carry forward reaches a full hour, interactive requests are rejected, but background scheduled operations continue to run. If the capacity accumulates a full 24 hours of carry forward, the entire capacity is frozen until the carry forward is paid off.
 
 ## Future smoothed consumption
+
+>[!NOTE]
+>Microsoft tries to improve customer's flexibility in using the service, while balancing the need to manage customer's capacity usage.  For this reason, Microsoft might change or update the Fabric throttling policy.
 
 | Usage  | Policy Limits	 | Platform Policy	Experience Impact | 
 | --- | --- | --- | 
@@ -65,7 +70,6 @@ Throttling systems attempt to accurately categorize operations upon submission, 
 
 The [Microsoft Fabric Capacity Metrics app](metrics-app.md) drilldown allows admins to see operations that were rejected during a throttling event. There's limited information about these operations as they were never allowed to start. The admin can see the product, user, operation ID, and time the request was submitted. End users receive an error message when a request is rejected that asks them to try again later. 
 
+## Related content
 
-## Next steps
-
-[Install the Microsoft Fabric capacity metrics app](metrics-app-install.md) to monitor Fabric capacities. 
+- [Install the Microsoft Fabric capacity metrics app](metrics-app-install.md) to monitor Fabric capacities. 

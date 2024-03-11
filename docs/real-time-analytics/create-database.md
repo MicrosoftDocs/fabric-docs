@@ -5,15 +5,15 @@ ms.reviewer: tzgitlin
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.custom: build-2023
-ms.date: 09/28/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 12/05/2023
 ms.search.form: KQL Database
 ---
 # Create a KQL database
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
-In Real-Time Analytics, you interact with your data in the context of databases. A single workspace can hold multiple databases, and each database can hold multiple tables.
+In Real-Time Analytics, you interact with your data in the context of [Eventhouses](eventhouse.md) (Preview), databases, and tables. A single workspace can hold multiple Eventhouses, an Eventhouse can hold multiple databases, and each database can hold multiple tables.
 
 In this article, you learn how to create a new KQL database. Once your KQL database has data, you can proceed to query your data using Kusto Query Language in a KQL queryset.
 
@@ -25,7 +25,7 @@ In this article, you learn how to create a new KQL database. Once your KQL datab
 
 1. Select **New** > **KQL Database**.
 
-    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-time Analytics workspace that shows the dropdown menu of the ribbon button titled New. Both the New tab and the entry titled KQL Database are highlighted.":::
+    :::image type="content" source="media/database-editor/create-database.png" alt-text="Screenshot of Real-time Analytics workspace that shows the dropdown menu of the ribbon button titled New. The entry titled KQL Database is highlighted.":::
 
 1. Enter your database name, then select **Create**.
 
@@ -40,7 +40,7 @@ The KQL database has now been created within the context of the selected workspa
 
 The main page of your KQL database shows an overview of the contents in your database. The following table lists the available information.
 
-:::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard.png":::
+:::image type="content" source="media/create-database/database-dashboard.png" alt-text="Screenshot of KQL database main page showing the database details cards."  lightbox="media/create-database/database-dashboard-extended.png":::
 
 |Card | Item| Description|
 |---|---|---|

@@ -4,13 +4,13 @@ description: Understand the Microsoft Fabric monitoring workspace and the report
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 10/31/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 02/01/2024
 ---
 
 # What is the admin monitoring workspace?
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 The *Admin monitoring* workspace is designed to provide admins with monitoring capabilities for their organization. Using the admin monitoring workspace resources, admins can perform security and governance tasks such as audits and usage checks.
 
@@ -42,9 +42,9 @@ The admin monitoring workspace is automatically installed during the first time 
 
 3. Select **Admin monitoring**. When you select this option for the first time, the required items are automatically installed.
 
-## Reports and datasets
+## Reports and semantic models
 
-In the monitoring workspace, you can use the [Feature Usage and Adoption](feature-usage-adoption.md) report as is. You can also connect to this report's dataset, and create a solution that's optimized for your organization.
+In the monitoring workspace, you can use the [Feature Usage and Adoption](feature-usage-adoption.md) report as is. You can also connect to this report's semantic model, and create a solution that's optimized for your organization.
 
 ### Manage access
 
@@ -54,7 +54,7 @@ There are several ways you can manage access to content of the admin monitoring 
 
 * **Report** - You can [share a report](/power-bi/connect-data/service-datasets-share) with other users.
 
-* **Dataset** - You can [share access to a dataset](/power-bi/connect-data/service-datasets-share) with other users. Once a dataset is shared, you can't unshare it.
+* **Semantic model** - You can [share access to a semantic model](/power-bi/connect-data/service-datasets-share) with other users. Once a semantic model is shared, you can't unshare it.
 
 ### Refreshes
 
@@ -64,17 +64,19 @@ For the refresh to work, the admin that accessed the workspace for the first tim
 
 * Keep his *Global administrator* or *Fabric administrator* role. If the role of the admin who first accessed the workspace changes, the admin monitoring workspace will not be refreshed.
 
-* If the workspace creator uses [Privileged Identity Management (PIM)](/azure/active-directory/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
+* If the workspace creator uses [Privileged Identity Management (PIM)](/entra/id-governance/privileged-identity-management/pim-configure), it has to be enabled during the scheduled refresh.
 
 ## Considerations and limitations
 
-* The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as datasets and reports in the workspace.
+* The admin monitoring workspace is a read-only workspace. [Workspace roles](/power-bi/collaborate-share/service-roles-new-workspaces#workspace-roles) don't have the same capabilities as they do in other workspaces. Users, including admins, are not able to edit or view properties of items such as semantic models and reports in the workspace.
 
 * Sovereign clouds are not supported.
 
-* Users granted *build* permissions to a dataset in the monitoring workspace, show as having *read* permissions."
+* Users granted *build* permissions to a semantic model in the monitoring workspace, show as having *read* permissions.
 
-## Next steps
+* [Granular delegated admin privileges (GDAP)](/partner-center/gdap-introduction) aren't supported.
+
+## Related content
 
 * [Admin overview](microsoft-fabric-admin.md)
 

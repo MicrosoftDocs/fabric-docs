@@ -4,9 +4,11 @@ description: Follow steps to create reports in the Power BI Desktop and Power BI
 author: salilkanade
 ms.author: salilkanade
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Reporting
 ---
 # Create reports in the Power BI service in Microsoft Fabric and Power BI Desktop
@@ -15,31 +17,29 @@ ms.search.form: Reporting
 
 This article describes three different scenarios you can follow to create reports in the Power BI service. 
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
-
 ## Create a report from the warehouse editor
 
-From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI dataset.
+From within the warehouse experience, using the ribbon and the main home tab, navigate to the **New report** button. This option provides a native, quick way to create report built on top of the default Power BI semantic model.
 
 :::image type="content" source="media\reports-power-bi-service\new-report-ribbon.png" alt-text="Screenshot of new report in the ribbon." lightbox="media\reports-power-bi-service\new-report-ribbon.png":::
 
-If no tables have been added to the default Power BI dataset, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default dataset first, ensuring there's always data first.
+If no tables have been added to the default Power BI semantic model, the dialog first automatically adds tables, prompting the user to confirm or manually select the tables included in the canonical default semantic model first, ensuring there's always data first.
 
-With a default dataset that has tables, the **New report** opens a browser tab to the report editing canvas to a new report that is built on the dataset. When you save your new report you're prompted to choose a workspace, provided you have write permissions for that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
+With a default semantic model that has tables, the **New report** opens a browser tab to the report editing canvas to a new report that is built on the semantic model. When you save your new report you're prompted to choose a workspace, provided you have write permissions for that workspace. If you don't have write permissions, or if you're a free user and the semantic model resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
-## Use default Power BI dataset within workspace
+## Use default Power BI semantic model within workspace
 
-Using the default dataset and action menu in the workspace: In the [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default Power BI dataset and select the **More** menu (**…**) to create a report in the Power BI service.
+Using the default semantic model and action menu in the workspace: In the [!INCLUDE [product-name](../includes/product-name.md)] workspace, navigate to the default Power BI semantic model and select the **More** menu (**…**) to create a report in the Power BI service.
 
 :::image type="content" source="media\reports-power-bi-service\create-report-ws.png" alt-text="Screenshot of new report in the workspace." lightbox="media\reports-power-bi-service\create-report-ws.png":::
 
-Select **Create report** to open the report editing canvas to a new report on the dataset. When you save your new report, it's saved in the workspace that contains the dataset as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the dataset resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
+Select **Create report** to open the report editing canvas to a new report on the semantic model. When you save your new report, it's saved in the workspace that contains the semantic model as long as you have write permissions on that workspace. If you don't have write permissions, or if you're a free user and the semantic model resides in a [Premium capacity](/power-bi/enterprise/service-premium-what-is) workspace, the new report is saved in your **My workspace**.
 
 ## Use Data hub
 
-Using the default Power BI dataset and dataset details page. In the workspace list, select the default dataset's name to get to the **Dataset** details page, where you can find details about the dataset and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
+Use the default Power BI semantic model and semantic model details page in the **Data hub**. In the workspace list, select the default semantic model's name to get to the **Semantic model** details page, where you can find details about the semantic model and see related reports. You can also create a report directly from this page. To learn more about creating a report in this fashion, see [Dataset details](/power-bi/connect-data/service-dataset-details-page).
 
-In the **Data hub**, you see warehouse and their associated default datasets. Select the warehouse to navigate to the warehouse details page. You can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default datasets derived from a warehouse behave the same as any dataset.
+In the **Data hub**, you see warehouse and their associated default semantic models. Select the warehouse to navigate to the warehouse details page. You can see the warehouse metadata, supported actions, lineage and impact analysis, along with related reports created from that warehouse. Default semantic models derived from a warehouse behave the same as any semantic model.
 
 To find the warehouse, you begin with the **Data hub**. The following image shows the **Data hub** in the Power BI service:
 
@@ -53,7 +53,7 @@ To find the warehouse, you begin with the **Data hub**. The following image show
 
 ## Create reports in the Power BI Desktop
 
-The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL endpoint of Lakehouse in easy steps.
+The Data hub integration in Power BI Desktop lets you connect to the Warehouse or SQL analytics endpoint of Lakehouse in easy steps.
 
 1. Use **Data hub** menu in the ribbon to get list of all items.
 1. Select the warehouse that you would like to connect

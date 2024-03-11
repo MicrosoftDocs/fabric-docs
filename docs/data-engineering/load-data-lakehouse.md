@@ -5,7 +5,9 @@ ms.reviewer: snehagunda
 ms.author: tvilutis
 author: tedvilutis
 ms.topic: conceptual
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: Lakehouse Get Data
 ---
@@ -19,8 +21,6 @@ The get data experience covers all user scenarios for bringing data into the lak
 - Copying and merging multiple tables from other lakehouses into a new Delta table.
 - Connecting to a streaming source to land data in a lakehouse.
 - Referencing data without copying it from other internal lakehouses or external sources.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Different ways to load data into a lakehouse
 
@@ -50,7 +50,7 @@ For users that are familiar with Power BI dataflows, the same tool is available 
 You can use available Spark libraries to connect to a data source directly, load data to a data frame, and then save it in a lakehouse. This method is the most open way to load data in the lakehouse that user code is fully managing.
 
 > [!NOTE]
-> External Delta tables created with Spark code won't be visible to SQL endpoint. Use shortcuts in Table space to make external Delta tables visible for SQL endpoint.
+> External Delta tables created with Spark code won't be visible to a SQL analytics endpoint. Use shortcuts in Table space to make external Delta tables visible for a SQL analytics endpoint.
 
 ## Considerations when choosing approach to load data
 
@@ -61,7 +61,7 @@ You can use available Spark libraries to connect to a data source directly, load
 | **Large data source** | Use Copy tool in pipelines |
 | **Complex data transformations** | Use Notebook code |
 
-## Next steps
+## Related content
 
 - [Explore the data in your lakehouse with a notebook](lakehouse-notebook-explore.md)
 - [Quickstart: Create your first pipeline to copy data](../data-factory/create-first-pipeline-with-sample-data.md)

@@ -10,7 +10,7 @@ ms.date: 10/19/2023
 
 # Data formats supported by Real-Time Analytics
 
-Data ingestion is the process by which data is added to a table and is made available for query in Azure Data Explorer. For all ingestion methods, other than ingest-from-query, the data must be in one of the supported formats. The following table lists and describes the formats that Real-Time Analytics supports for data ingestion.
+Data ingestion is the process by which data is added to a table and is made available for query in Real-Time Analytics. For all ingestion methods, other than ingest-from-query, the data must be in one of the supported formats. The following table lists and describes the formats that Real-Time Analytics supports for data ingestion.
 
 > [!NOTE]
 > Before you ingest data, make sure that your data is properly formatted and defines the expected fields. We recommend using your preferred validator to confirm the format is valid. For example, you may find the following validators useful to check CSV or JSON files:

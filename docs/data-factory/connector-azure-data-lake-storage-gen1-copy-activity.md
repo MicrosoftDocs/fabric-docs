@@ -1,18 +1,20 @@
 ---
-title: How to configure Azure Data Lake Storage Gen1 in copy activity
+title: Configure Azure Data Lake Storage Gen1 in copy activity
 description: This article explains how to copy data using Azure Data Lake Storage Gen1.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/30/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/30/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Azure Data Lake Storage Gen1 in copy activity
+# Configure Azure Data Lake Storage Gen1 in copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure Data Lake Storage Gen1.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported format
 
@@ -164,6 +166,7 @@ The following tables contain more information about the copy activity in Azure D
 |**Recursively** |Indicates whether the data is read recursively from the subfolders or only from the specified folder. Note that when **Recursively** is selected and the destination is a file-based store, an empty folder or subfolder isn't copied or created at the destination. This property doesn't apply when you configure **Path to file list**.|selected (default) or unselect|No |recursive|
 | **Filter by last modified** | The files with last modified time in the range [Start time, End time) will be filtered for further processing. The time will be applied to UTC time zone in the format of `yyyy-mm-ddThh:mm:ss.fffZ`. These properties can be skipped which means no file attribute filter will be applied. This property doesn't apply when you configure your file path type as List of files.| datetime | No | modifiedDatetimeStart<br>modifiedDatetimeEnd |
 | **Enable partition discovery** | Indicates whether to parse the partitions from the file path and add them as additional source columns. | selected or unselected (default) | No | enablePartitionDiscovery:<br>true or false (default) |
+| **Partition root path** | When partition discovery is enabled, specify the absolute root path in order to read partitioned folders as data columns. | < your partition root path > | No | partitionRootPath |
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<max concurrent connections\>|No |maxConcurrentConnections|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter. | • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
@@ -175,10 +178,10 @@ The following tables contain more information about the copy activity in Azure D
 |**Connection** |Your connection to the destination data store.|\<your Azure Data Lake Storage Gen1 connection>|Yes|connection|
 |**Connection type** | Your connection type. Select **Azure Data Lake Storage Gen1**.|**Azure Data Lake Storage Gen1**|Yes |/|
 |**File path**|The file path of your destination data.|< your file path > |Yes |folderPath, fileName|
-|**Copy behavior** |Defines the copy behavior when the destination is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
+|**Copy behavior** |Defines the copy behavior when the source is files from a file-based data store.|• Flatten hierarchy<br>• Merge files<br>• Preserve hierarchy<br>|No |copyBehavior:<br>• FlattenHierarchy<br>• MergeFiles<br>• PreserveHierarchy|
 |**Max concurrent connections** |The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.|\<max concurrent connections>|No |maxConcurrentConnections|
 |**Expiry datetime (UTC)** |The expiry time of the written files. The time is applied to the UTC time in the format of "2020-03-01T08:00:00Z". By default it's NULL, which means the written files are never expired.|< your expiry datetime >|No |expiryDatetime|
 
-## Next steps
+## Related content
 
 - [Azure Data Lake Storage Gen1 overview](connector-azure-data-lake-storage-gen1-overview.md)

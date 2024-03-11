@@ -112,6 +112,6 @@ After you configure any other activities required for your pipeline, switch to t
 
 :::image type="content" source="media/azure-databricks-activity/databricks-activity-save-and-run.png" alt-text="Screenshot showing how to save and run the pipeline.":::
 
-## Next steps
+## Related content
 
-- [How to monitor pipeline runs](monitor-pipeline-runs.md)
+[How to monitor pipeline runs](monitor-pipeline-runs.md)

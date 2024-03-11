@@ -6,9 +6,11 @@ ms.author: painbar
 ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
-ms.custom: tenant-setting
+ms.custom:
+  - tenant-setting
+  - ignite-2023
 ms.topic: how-to
-ms.date: 08/29/2023
+ms.date: 11/02/2023
 LocalizationGroup: Administration
 ---
 
@@ -18,13 +20,13 @@ These settings are configured in the tenant settings section of the Admin portal
 
 ## Web content on dashboard tiles
 
-Users in the organization can add and view web content tiles on Power BI dashboards. 
+If this setting is enabled, users in the organization can add and view web content tiles on Power BI dashboards. 
 
 To learn more, see [Add images, videos, and more to your dashboard](/power-bi/create-reports/service-dashboard-add-widget#add-web-content).
 
 > [!NOTE]
-> This could expose your organization to security risks via malicious web content.
+> Enabling this feature could expose your organization to security risks via malicious web content. Due to these security risks, the setting is disabled by default.
 
-## Next steps
+## Related content
 
 * [About tenant settings](tenant-settings-index.md)

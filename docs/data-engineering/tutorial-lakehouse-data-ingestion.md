@@ -5,15 +5,15 @@ ms.reviewer: sngun
 ms.author: arali
 author: ms-arali
 ms.topic: tutorial
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 5/23/2023
 ---
 
 # Lakehouse tutorial: Ingest data into the lakehouse
 
 In this tutorial, you ingest additional dimensional and fact tables from the Wide World Importers (WWI) into the lakehouse.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Prerequisites
 
@@ -25,9 +25,9 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Select **Workspaces** in the left navigation pane, and then select your new workspace from the **Workspaces** menu. The items view of your workspace appears.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\create-data-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
-
 1. From the **+New** button in the workspace page, select **Data pipeline**.
+
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\create-data-pipeline.png" alt-text="Screenshot showing how to create a new data pipeline.":::
 
 1. In the **New pipeline** dialog box, specify the name as **IngestDataFromSourceToLakehouse** and select **Create**. A new data factory pipeline is created and opened.
 
@@ -41,7 +41,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
 1. Under **Source** tab of the selected copy data activity, select **External** as **Data store type** and then select **+ New** to create a new connection to data source.
 
-   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="screenshot showing where to select External and + New on the Source tab." lightbox="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png":::
+   :::image type="content" source="media\tutorial-lakehouse-data-ingestion\data-store-source-external.png" alt-text="Screenshot showing where to select External and + New on the Source tab.":::
 
 1. For this tutorial, all the sample data is available in a public container of Azure blob storage. You connect to this container to copy data from it. On the **New connection** wizard, select **Azure Blob Storage** and then select **Continue**.
 
@@ -67,7 +67,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | File path type | File path |
    | File path | Container name (first text box): sampledata<br>Directory name (second text box): WideWorldImportersDW/parquet |
    | Recursively | Checked |
-   | File Format | Binary |
+   | File format | Binary |
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\source-tab-details.png" alt-text="Screenshot of the source tab showing where to enter the specific details.":::
 
@@ -78,9 +78,9 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
    | Data store type | Workspace |
    | Workspace data store type | Lakehouse |
    | Lakehouse | wwilakehouse |
-   | Root Folder | Files |
+   | Root folder | Files |
    | File path | Directory name (first text box): wwi-raw-data |
-   | File Format | Binary |
+   | File format | Binary |
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\destination-tab-details.png" alt-text="Screenshot of the Destination tab, showing where to enter specific details.":::
 
@@ -98,8 +98,7 @@ In this section, you use the **Copy data activity** of the Data Factory pipeline
 
    :::image type="content" source="media\tutorial-lakehouse-data-ingestion\validate-destination-table.png" alt-text="Screenshot showing the source data is copied into the Lakehouse explorer.":::
 
-## Next steps
+## Next step
 
-Advance to the next article to learn about
 > [!div class="nextstepaction"]
 > [Prepare and transform data](tutorial-lakehouse-data-preparation.md)

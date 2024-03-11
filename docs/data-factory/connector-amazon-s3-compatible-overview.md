@@ -4,15 +4,20 @@ description: This article provides an overview of the supported capabilities of 
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 10/31/2023
-ms.custom: template-how-to, build-2023
+ms.date: 01/23/2024
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Amazon S3 Compatible connector overview
 
 This Amazon S3 Compatible connector is supported in Data Factory for [!INCLUDE [product-name](../includes/product-name.md)] with the following capabilities.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
+## Support in Dataflow Gen2
+
+Data Factory in [!INCLUDE [product-name](../includes/product-name.md)] doesn't currently support Amazon S3 Compatible connectors in Dataflow Gen2.
 
 ## Support in Data pipeline
 
@@ -20,7 +25,7 @@ The Amazon S3 Compatible connector supports the following capabilities in Data p
 
 | Supported capabilities | Gateway | Authentication |
 | --- | --- | ---|
-| **Copy activity (source/-)** | None | Access Key |
+| **Copy activity (source/destination)** | None | Access Key |
 | **Lookup activity** | None | Access Key |
 | **GetMetadata activity** | None | Access Key |
 | **Delete activity** | None | Access Key |

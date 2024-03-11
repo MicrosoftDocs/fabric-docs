@@ -4,9 +4,13 @@ description: Troubleshoot common issues in using Warehouse in Microsoft Fabric.
 author: xiaoyuMSFT
 ms.author: XiaoyuL
 ms.reviewer: wiassaf
-ms.date: 05/23/2023
+ms.date: 11/15/2023
 ms.topic: conceptual
-ms.custom: build-2023, build-2023-dataai, build-2023-fabric
+ms.custom:
+  - build-2023
+  - build-2023-dataai
+  - build-2023-fabric
+  - ignite-2023
 ms.search.form: Monitoring # This article's title should not change. If so, contact engineering.
 ---
 # Troubleshoot the Warehouse
@@ -14,8 +18,6 @@ ms.search.form: Monitoring # This article's title should not change. If so, cont
 **Applies to:** [!INCLUDE[fabric-dw](includes/applies-to-version/fabric-dw.md)]
 
 This article provides guidance in troubleshooting common issues in [!INCLUDE [fabric-dw](includes/fabric-dw.md)] in [!INCLUDE [product-name](../includes/product-name.md)]. 
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Transient connection errors
 

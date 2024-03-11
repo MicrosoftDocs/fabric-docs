@@ -1,18 +1,20 @@
 ---
-title: How to configure Amazon Redshift in a copy activity
+title: Configure Amazon Redshift in a copy activity
 description: This article explains how to copy data using Amazon Redshift.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 08/18/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
-# How to configure Amazon Redshift in a copy activity
+# Configure Amazon Redshift in a copy activity
 
 This article outlines how to use the copy activity in data pipelines to copy data from Amazon Redshift.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -77,6 +79,6 @@ See the following table for the summary and more information of the Amazon Redsh
 |**Use query** |The way to read data. Apply **Table** to read data from the specified table or apply **Query** to read data using queries.|• **Table** <br>• **Query** |Yes |• typeProperties (under *`typeProperties`* -> *`source`*)<br>&nbsp; - schema<br>&nbsp; - table<br>• query|
 | **Additional columns** | Add additional data columns to store source files' relative path or static value. Expression is supported for the latter.| • Name<br>• Value | No | additionalColumns:<br>• name<br>• value |
 
-## Next steps
+## Related content
 
 - [Amazon Redshift connector overview](connector-amazon-redshift-overview.md)

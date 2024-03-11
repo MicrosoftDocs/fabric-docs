@@ -7,6 +7,7 @@ ms.service: powerbi
 ms.subservice: powerbi-eim
 ms.topic: how-to
 ms.custom:
+  - ignite-2023
 ms.date: 09/12/2023
 LocalizationGroup: Data from files
 ---
@@ -32,7 +33,7 @@ The APIs set or remove labels from artifacts by artifact ID.
 
 ## Sample
 
-The following sample demonstrates how to set and remove sensitivity labels on Power BI dashboards. Similar code can be used to set and remove labels on datasets, reports, and dataflows.
+The following sample demonstrates how to set and remove sensitivity labels on Power BI dashboards. Similar code can be used to set and remove labels on semantic models, reports, and dataflows.
 
 ```rest
             const string adminBearerToken = "<adminBearerToken>";
@@ -96,7 +97,7 @@ The following sample demonstrates how to set and remove sensitivity labels on Po
         }
 ```
 
-## Next steps
+## Related content
 
 * [setLabels API](/rest/api/power-bi/admin/information-protection-set-labels-as-admin)
 * [removeLabels API](/rest/api/power-bi/admin/information-protection-remove-labels-as-admin)

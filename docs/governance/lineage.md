@@ -4,13 +4,13 @@ description: Learn how to view the lineage of Fabric items.
 author: paulinbar
 ms.author: painbar
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 11/06/2023
 ---
 
 # Lineage in Fabric
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 In modern business intelligence (BI) projects, understanding the flow of data from the data source to its destination can be a challenge. The challenge is even bigger if you've built advanced analytical projects spanning multiple data sources, data items, and dependencies. Questions like "What happens if I change this data?" or "Why isn't this report up to date?" can be hard to answer. They might require a team of experts or deep investigation to understand. Fabric's lineage view helps you answer these questions.
 
@@ -62,7 +62,7 @@ Items are represented by cards that provide some information about the item.
 
 **Data sources**
 
-You see the data sources from which the datasets and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
+You see the data sources from which the semantic models and dataflows get their data. On the data source cards, you see information that can help identify the source. For example, for Azure SQL server, you also see the database name.
 
 :::image type="content" source="./media/lineage/lineage-data-source-card.png" alt-text="Screenshot of the lineage view data source with no gateway.":::
 
@@ -85,10 +85,9 @@ Lineage view is an interactive canvas. You can use the mouse and touchpad to nav
 
 ## Considerations and limitations
 
-* During Fabric public preview, some relationships between Fabric items might not be represented, or not represented correctly.
 * Lineage view isn't available in Internet Explorer. For more information, see [Supported browsers for Power BI](/power-bi/fundamentals/power-bi-browsers).
-* Correct display of dataset-dataflow lineage is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of dataset-dataflow lineage isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
+* Correct display of the lineage between semantic models and dataflows is guaranteed only if the **Get Data** UI is used to set up the connection to the dataflow, and the **Dataflows** connector is used. Correct display of the lineage between semantic models and dataflows isn't guaranteed if a manually created Mashup query is used to connect to the dataflow.
 
-## Next steps
+## Related content
 
 * [Impact analysis](./impact-analysis.md)

@@ -2,10 +2,12 @@
 title: Dynamic data masking in Synapse Data Warehouse
 description: Learn about the dynamic data masking data protection feature in Fabric data warehousing.
 author:  SQLStijn-MSFT
-ms.author:   stwynant 
+ms.author:   stwynant
 ms.reviewer: wiassaf
 ms.topic: conceptual
-ms.date:  10/31/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Dynamic data masking in Fabric data warehousing

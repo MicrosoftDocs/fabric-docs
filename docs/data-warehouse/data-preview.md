@@ -4,9 +4,11 @@ description: Learn about using the Data preview in Microsoft Fabric.
 author: jacindaeng
 ms.author: jacindaeng
 ms.reviewer: wiassaf
-ms.date: 06/06/2023
+ms.date: 11/15/2023
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.search.form: Data preview # This article's title should not change. If so, contact engineering.
 ---
 # View data in the Data preview in Microsoft Fabric
@@ -18,8 +20,6 @@ The **Data preview** is one of the three switcher modes along with the Query edi
 - You can also [query the data](query-warehouse.md) in your warehouse with multiple tools with a [SQL connection string](connectivity.md).
 - You can use the [SQL query editor](sql-query-editor.md) to write T-SQL queries from the [!INCLUDE [product-name](../includes/product-name.md)] portal.
 - You can build queries graphically with the [Visual query editor](visual-query-editor.md).
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Get started
 
@@ -45,4 +45,4 @@ After creating a warehouse and ingesting data, select the **Data** tab. Choose a
 ## Related content
 
  - [Define relationships in data models for data warehousing](data-modeling-defining-relationships.md)
- - [Data modeling in the default Power BI dataset](model-default-power-bi-dataset.md)
+ - [Model data in the default Power BI semantic model in Microsoft Fabric](default-power-bi-semantic-model.md)

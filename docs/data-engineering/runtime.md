@@ -5,15 +5,15 @@ ms.reviewer: snehagunda
 ms.author: eskot
 author: ekote
 ms.topic: overview
-ms.custom: build-2023
-ms.date: 10/24/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Apache Spark Runtimes in Fabric
 
 Microsoft Fabric Runtime is an Azure-integrated platform based on Apache Spark that enables the execution and management of data engineering and data science experiences. It combines key components from both internal and open-source sources, providing customers with a comprehensive solution. For simplicity, we refer to Microsoft Fabric Runtime powered by Apache Spark as Fabric Runtime.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 Major components of Fabric Runtime:
 
@@ -55,7 +55,7 @@ Within the Fabric Runtime for Apache Spark and Delta Lake, there are native writ
 ## Multiple runtimes support
 Fabric supports multiple runtimes, offering users the flexibility to seamlessly switch between them, minimizing the risk of incompatibilities or disruptions.
 
-**By default, all new workspaces use the latest stable runtime version, which is currently [Runtime 1.1](./runtime-1-1.md).** 
+**By default, all new workspaces use the latest runtime version, which is currently [Runtime 1.2](./runtime-1-2.md).** 
 
 To change the runtime version at the workspace level, go to Workspace Settings > Data Engineering/Science > Spark Compute > Workspace Level Default, and select your desired runtime from the available options.
 
@@ -74,7 +74,7 @@ In general, we aim to migrate all Spark settings. However, if we identify that t
 
 In general, our approach is to migrate all libraries from Runtime A to Runtime B, including both Public and Custom Runtimes. If the Python and R versions remain unchanged, the libraries should function properly. However, for Jars, there's a significant likelihood that they may not work due to alterations in dependencies, and other factors such as changes in Scala, Java, Spark, and the operating system.
 
-It is the user's responsibility to update or replace any libraries that are incompatible with Runtime B. In cases where there's a conflict, meaning that Runtime B contains a library that was originally defined in Runtime A, we should compare the versions of the library and prioritize (install) the higher version.
+The user is responsible for updating or replacing any libraries that don't work with Runtime B. If there's a conflict, which means that Runtime B includes a library originally defined in Runtime A, our library management system will try to create the necessary dependency for Runtime B based on the user's settings. However, the building process will fail if a conflict occurs. In the error log, users can see which libraries are causing conflicts and make adjustments to their versions or specifications.
 
 :::image type="content" source="media\mrs\lm-runtime-change.png" alt-text="Library Management Runtime Change.":::
 
@@ -101,7 +101,7 @@ Additionally, users should verify that all current and future production workloa
 
 ## Delta 2.2 vs Delta 2.4 changes
 
-In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuratios details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
+In the latest [Fabric Runtime, version 1.2](./runtime-1-2.md), the default table format (`spark.sql.sources.default`) is now `delta`. In previous versions of [Fabric Runtime, version 1.1](./runtime-1-1.md) and on all Synapse Runtime for Apache Spark containing Spark 3.3 or below, the default table format was defined as `parquet`. Check [the table with Apache Spark configuration details](./lakehouse-and-delta-tables.md) for  differences between Azure Synapse Analytics and Microsoft Fabric.
 
 All tables created using Spark SQL, PySpark, Scala Spark, and Spark R, whenever the table type is omitted, will create the table as `delta` by default. If scripts explicitly set the table format, that will be respected. The command `USING DELTA` in Spark create table commands becomes redundant. 
 
@@ -116,10 +116,11 @@ Scripts that expect or assume parquet table format should be revised. The follow
 *  `SHOW CREATE TABLE`
 *  `CREATE TABLE LIKE `
 
-## Versioning 
+## Versioning
 
-Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries. 
+Our runtime version numbering, while closely related to Semantic Versioning, follows a slightly different approach. The runtime major version corresponds to the Apache Spark major version. Therefore, Runtime 1 corresponds to Spark version 3. Similarly, the upcoming Runtime 2 will align with Spark 4.0. It's essential to note that between the current runtimes, Runtime 1.1 and Runtime 1.2, changes may occur, including the addition or removal of different libraries. Additionally, our platform offers [a library management feature](./library-management.md) that empowers users to install any desired libraries.
 
-## Next steps
+## Related content
+
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
 - [Runtime 1.1 (Spark 3.3, Java 8, Python 3.10, Delta Lake 2.2)](./runtime-1-1.md)

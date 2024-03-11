@@ -4,15 +4,16 @@ description: This article explains how to copy data using Azure SQL Database.
 author: jianleishen
 ms.author: jianleishen
 ms.topic: how-to
-ms.date: 05/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Configure Azure SQL Database in a copy activity
 
 This article outlines how to use the copy activity in data pipeline to copy data from and to Azure SQL Database.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported configuration
 
@@ -181,6 +182,6 @@ The following tables contain more information about the copy activity in Azure S
 |**Max concurrent connections**|The upper limit of concurrent connections established to the data store during the activity run. Specify a value only when you want to limit concurrent connections.| \<upper limit of concurrent connections><br>(integer)|No |maxConcurrentConnections|
 |**Disable performance metrics analytics**|This setting is used to collect metrics, such as DTU, DWU, RU, and so on, for copy performance optimization and recommendations. If you're concerned with this behavior, select this checkbox.| select or unselect |No |disableMetricsCollection：<br> true or false|
 
-## Next steps
+## Related content
 
 - [Set up your Azure SQL Database connection](connector-azure-sql-database.md)

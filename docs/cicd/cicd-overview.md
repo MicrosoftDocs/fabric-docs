@@ -1,17 +1,19 @@
 ---
-title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric 
+title: Introduction to the CI/CD process as part of the ALM cycle in Microsoft Fabric
 description: An overview of the CI/CD continuous integration, continuous deployment as part of the ALM cycle process in Microsoft Fabric.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.topic: conceptual
 ms.date: 08/10/2023
 ---
 
 # What is lifecycle management in Microsoft Fabric?
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [preview-note](../includes/feature-preview-note.md)]
 
 Microsoft Fabric's lifecycle management tools provide a standardized system for communication and collaboration between all members of the development team throughout the life of the product. Lifecycle management facilitates an effective process for releasing products quickly by continuously delivering updated content into production and ensuring an ongoing flow of new features and bug fixes using the most efficient delivery method. There are two main components of lifecycle management in Fabric:
 
@@ -29,7 +31,7 @@ Fabric's [deployment pipelines](./deployment-pipelines/intro-to-deployment-pipel
 
 For the most efficient lifecycle management experience in Fabric, connect your developer workspace to Git, and deploy from there using deployment pipelines.
 
-## Next steps
+## Related content
 
 * [End to end lifecycle management tutorial](./cicd-tutorial.md)
 * [Deployment pipelines](./deployment-pipelines/intro-to-deployment-pipelines.md)

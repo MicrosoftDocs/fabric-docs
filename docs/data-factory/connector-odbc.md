@@ -4,15 +4,17 @@ description: This article provides information about how to create an Odbc data 
 author: DougKlopfenstein
 ms.author: dougklo
 ms.topic: how-to
-ms.date: 10/23/2023
-ms.custom: template-how-to, build-2023
+ms.date: 11/15/2023
+ms.custom:
+  - template-how-to
+  - build-2023
+  - ignite-2023
 ---
 
 # Set up your Odbc connection
 
 This article outlines the steps to create an Odbc connection.
 
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 ## Supported authentication types
 
@@ -28,7 +30,7 @@ The Odbc connector supports the following authentication types for copy and Data
 
 Data Factory in Microsoft Fabric uses Power Query connectors to connect Dataflow Gen2 to an Odbc data source. The following links provide the specific Power Query connector information you need to connect to an Odbc data source in Dataflow Gen2:
 
-- To get started using the Odbc connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric (Preview)](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
+- To get started using the Odbc connector in Dataflow Gen2, go to [Get data from Data Factory in Microsoft Fabric](/power-query/where-to-get-data#get-data-from-data-factory-in-microsoft-fabric-preview).
 - Be sure to install or set up any [Odbc prerequisites](/power-query/connectors/odbc#prerequisites) before connecting to the Odbc connector.
 - To connect to the Odbc data source from Power Query, go to [Connect to an ODBC data source from Power Query Online](/power-query/connectors/odbc#connect-to-an-odbc-data-source-from-power-query-online).
 

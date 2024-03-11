@@ -5,7 +5,9 @@ ms.reviewer: eloldag
 ms.author: eloldag
 author: eloldag
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 09/27/2023
 ---
 
@@ -15,7 +17,7 @@ The OneLake file explorer application seamlessly integrates OneLake with Windows
 
 :::image type="content" source="media\onelake-file-explorer\onelake-file-explorer-screen-v-2.png" alt-text="Screenshot of OneLake files integrated in the Windows File Explorer screen." lightbox="media\onelake-file-explorer\onelake-file-explorer-screen-v-2.png":::
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
 
 When you create, update, or delete a file via Windows File Explorer, it automatically syncs the changes to OneLake service. Updates to your item made outside of your File Explorer aren't automatically synced. To pull these updates, you need to right-click on the item or subfolder in Windows File Explorer and select **Sync from** **OneLake**.
 
@@ -39,11 +41,11 @@ Once you have installed and launched the application, you can now see your OneLa
 
 - Files or folders containing Windows reserved characters ([learn more](/windows/win32/fileio/naming-a-file)) fail to sync.
 
-- Users can't update Office files (.xlsx, .pptx, .docx etc.).
-
 - If Windows search is disabled, OneLake file explorer fails to start.
 
-- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).  
+- Windows File Explorer is case insensitive, while OneLake is case sensitive. You can create files with the same name but different cases in the OneLake service using other tools, but Windows File Explorer only shows one of the files (the oldest one).
+
+- If a file fails to sync due to a network issue, you will have to trigger the Sync to OneLake. You can do this by opening the file & saving it, prompting the sync process. Alternatively, you can trigger a modify event [using PowerShell](onelake-powershell.md) by executing this command: `(Get-Item -Path "<file_path>").LastWriteTimeUtc = Get-Date`
 
 ## Scenarios
 
@@ -99,10 +101,7 @@ The OneLake file explorer only syncs updates when you're online and the applicat
 
 ### Edit files
 
-You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake.
-
-> [!NOTE]
-> OneLake file explorer does not currently support updating Office files (excel, ppt, etc.).
+You can open files using your favorite apps and make edits. Selecting **Save** syncs the file to OneLake. Starting in version 1.0.11, you can also make updates with Excel to your files. **Close** the file after the udpate in Excel and it will initiate the sync to OneLake.
 
 If you edit a file locally and select **Save**, the OneLake file explorer app detects if that file was updated elsewhere (by someone else) since you last selected **Sync from OneLake**. A **Confirm the action** dialog box appears:
 
@@ -132,6 +131,10 @@ Client-side logs are stored on your local machine under `%temp%\OneLake\Diagnost
 
 You can enable additional client-side logging by selecting **Diagnostic Operations** > **Enable tracing**.
 
+### Release Notes
+
+Starting in version 1.0.11, you can information find about each release of the OneLake file explorer by right-clicking on the OneLake icon in the Windows notification area, located at the far right of the taskbar.  Select **About** > **Release Notes**. This opens the OneLake file explorer release notes page in your browser window. 
+
 ### Uninstall instructions
 
 To uninstall the app, search for OneLake in Windows. Select **Uninstall** in the list of options under **OneLake**.
@@ -150,6 +153,7 @@ These OneLake file explorer icons appear in Windows File Explorer to indicate th
 | :::image type="icon" source="media\onelake-file-explorer\green-checkmark.png"::: | Green tick | The file is downloaded to your local computer. |
 | :::image type="icon" source="media\onelake-file-explorer\sync-pending.png"::: | Sync pending arrows | Sync is in progress. This icon may appear when you're uploading files. If the sync pending arrows are persistent, then your file or folder may have an error syncing. You can find more information in the client-side logs on your local machine under `%temp%\OneLake\Diagnostics\`.|
 
-## Next steps
+## Related content
 
 - Learn more about [OneLake security](onelake-security.md).
+- [What's new in the latest OneLake file explorer?](onelake-file-explorer-release-notes.md)

@@ -5,14 +5,14 @@ ms.reviewer: jburchel
 ms.author: chez
 author: chez-charlie
 ms.topic: how-to
-ms.date: 08/23/2023
+ms.custom:
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Use the Invoke pipeline activity to run another pipeline
 
 The Fabric Invoke pipeline activity can execute another [!INCLUDE [product-name](../includes/product-name.md)] pipeline. You can use it to orchestrate the execution of one or multiple pipelines from within a single pipeline.
-
-[!INCLUDE [df-preview-warning](includes/data-factory-preview-warning.md)]
 
 
 ## Prerequisites
@@ -56,6 +56,6 @@ Switch to the **Home** tab at the top of the pipeline editor, and select the sav
 
 :::image type="content" source="media/lookup-activity/pipeline-home-tab.png" alt-text="Screenshot showing the Home tab in the pipeline editor with the tab name, Save, Run, and Schedule buttons highlighted.":::
 
-## Next steps
+## Related content
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)

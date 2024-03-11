@@ -5,18 +5,20 @@ ms.reviewer: sgilley
 ms.author: ruxu
 author: ruixinxu
 ms.topic: how-to
-ms.custom: build-2023
+ms.custom:
+  - build-2023
+  - ignite-2023
 ms.date: 05/23/2023
 ms.search.form: R Language
 ---
 
 # Use SparkR
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 [SparkR](https://spark.apache.org/docs/latest/sparkr.html) is an R package that provides a light-weight frontend to use Apache Spark from R. SparkR provides a distributed data frame implementation that supports operations like selection, filtering, aggregation etc. SparkR also supports distributed machine learning using MLlib.
 
-[!INCLUDE [preview-note](../includes/preview-note.md)]
+
 
 Use SparkR through Spark batch job definitions or with interactive [!INCLUDE [product-name](../includes/product-name.md)] notebooks.
 
@@ -141,7 +143,7 @@ channel <-odbcDriverConnect(ConnectionString)
 Rdf <- sqlQuery(channel, "select * from <table>")
 class(Rdf)
 
-# use SparkR::as.DataFrame to convert R date.frame to SparkR DataFrame.
+# use SparkR::as.DataFrame to convert R data.frame to SparkR DataFrame.
 spark_df <- as.DataFrame(Rdf)
 class(spark_df)
 head(spark_df)
@@ -324,7 +326,7 @@ model <- spark.glm(carsDF, mpg ~ wt + cyl, family = "gaussian")
 summary(model)
 ```
 
-## Next steps
+## Related content
 
 - [How to use sparklyr](./r-use-sparklyr.md)
 - [How to use Tidyverse](./r-use-tidyverse.md)

@@ -5,8 +5,10 @@ ms.reviewer: wiassaf
 ms.author: scbradl
 author: bradleyschacht
 ms.topic: tutorial
-ms.custom: build-2023
-ms.date: 5/23/2023
+ms.custom:
+  - build-2023
+  - ignite-2023
+ms.date: 11/15/2023
 ---
 
 # Tutorial: Create Power BI reports
@@ -14,8 +16,6 @@ ms.date: 5/23/2023
 **Applies to:** [!INCLUDE[fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
 
 Learn how to create and save several types of Power BI reports.
-
-[!INCLUDE [preview-note](../includes/preview-note.md)]
 
 ## Create reports
 
@@ -54,7 +54,7 @@ Learn how to create and save several types of Power BI reports.
 
 1. Build a **Maps** visual:
 
-   1. On the **Visualizations** pane, select the **ArcGIS Maps for Power BI** visual.
+   1. On the **Visualizations** pane, select the **Azure Map** visual.
 
       :::image type="content" source="media\tutorial-power-bi-report\visualizations-pane-arcgis-maps.png" alt-text="Screenshot of the Visualizations pane showing where to select the ArcGIS Maps for Power BI option.":::
 
