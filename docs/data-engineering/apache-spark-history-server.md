@@ -166,15 +166,10 @@ The **Time Skew** tab displays skewed tasks based on task execution time.
 
 ### Executor Usage Analysis
 
-The Executor Usage Graph visualizes the Spark job executor's allocation and running status.
+This feature has been deprecated in Fabric now. If you still want to use this as a workaround, please access the page by explicitly adding "/executorusage" behind path "/diagnostic" in the URL, like this:
 
-1. Select **Executor Usage Analysis**, then four types curves about executor usage are drafted, including **Allocated Executors**, **Running Executors**, **Idle Executors**, and **Max Executor Instances**. For allocated executors, each "Executor added" or "Executor removed" event increases or decreases the allocated executors. You can check **Event Timeline** in the **Jobs** tab for more comparison.
-
-   :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-executors.png" alt-text="Screenshot showing spark ui diagnosis executors tab." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-executors.png":::
-
-1. Select the color icon to select or deselect the corresponding content in all drafts.
-
-   :::image type="content" source="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png" alt-text="Screenshot showing spark ui diagnoses select chart." lightbox="media\apache-spark-history-server\spark-ui-diagnosis-select-chart.png":::
+   :::image type="content" source="media\apache-spark-history-server\modify-path.png" alt-text="Screenshot showing modify the url." lightbox="media\apache-spark-history-server\modify-path.png":::
+   
 
 ## Related content
 
