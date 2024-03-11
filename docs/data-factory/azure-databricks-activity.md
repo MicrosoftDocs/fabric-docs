@@ -114,4 +114,4 @@ After you configure any other activities required for your pipeline, switch to t
 
 ## Next steps
 
-[How to monitor pipeline runs](monitor-pipeline-runs.md)
+- [How to monitor pipeline runs](monitor-pipeline-runs.md)
