@@ -49,7 +49,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [warehouse](../data-warehouse/share-warehouse-manage-permissions.md)
 
-* [Data Factory](../data-factory/concepts-roles-permissions.md)
+* [Data Factory](/azure/data-factory/concepts-roles-permissions)
 
 * [lakehouse](../data-engineering/lakehouse-sharing.md)
 
