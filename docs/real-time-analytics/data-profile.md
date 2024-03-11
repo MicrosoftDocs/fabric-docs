@@ -28,7 +28,7 @@ The data profile for the selected table view opens in a side window.
 > [!NOTE]
 > The data profile is based on data from the [hot cache](/azure/data-explorer/kusto/management/cache-policy?context=/fabric/context/context-rta&pivots=fabric).
 
-[!INCLUDE [data-profile](~/../kusto-repo/data-explorer/includes/data-profile.md)]
+[!INCLUDE [data-profile](~/../kusto-repo/data-explorer/includes/cross-repo/data-profile.md)]
 
 ## Related content
 
