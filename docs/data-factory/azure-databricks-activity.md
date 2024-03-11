@@ -59,8 +59,8 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-cluster.png" alt-text="Screenshot showing the Cluster settings tab of the Azure Databricks activity.":::
 
 1. The Azure Databricks Activity now also supports **Cluster Policy and Unity Catalog support**.
-    1. Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
-    1. Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security.
+    - Under advanced settings, you have the option to choose the **Cluster Policy** so you can specify which cluster configurations are permitted.
+    - Also, under advanced settings, you have the option to configure the **Unity Catalog Access Mode** for added security.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-policy-uc-support.png" alt-text="Screenshot showing the policy ID and Unity Catalog support under Cluster settings tab of the Azure Databricks activity.":::
 
