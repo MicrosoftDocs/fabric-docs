@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Disaster recovery guidance for OneLake
+# Disaster recovery and data protection for OneLake
 
 All data in OneLake is accessed through data items. These data items can reside in different regions depending on their workspace, as a workspace is created under a capacity tied to a specific region. 
 
@@ -24,11 +24,11 @@ If a disaster makes the primary region unrecoverable, OneLake may initiate a reg
 
 For a comprehensive understanding of the end-to-end experience, see the Fabric BCDR documentation.
 
-# Soft delete for OneLake files
+## Soft delete for OneLake files
 
-OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Currently the default is 28 days, but it's subject to change. You can request the retention period to be changed on a specific workspace by contacting [Fabric support](https://learn.microsoft.com/power-bi/support/service-support-options.   All soft-deleted data is billed at the same rate as active data. You won't be charged for data that is permanently deleted after the retention period elapses.
+OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Currently the default is 28 days, but it's subject to change. You can request the retention period to be changed on a specific workspace by contacting [Fabric support](/powerbi-docs/support/service-support-options). All soft-deleted data is billed at the same rate as active data. You won't be charged for data that is permanently deleted after the retention period elapses.
 
-In the event of an emergency, OneLake makes a best-effort attempt to restore soft-deleted data.  You can request this by contacting Fabric support [Fabric support](https://learn.microsoft.com/power-bi/support/service-support-options). 
+In the event of an emergency, OneLake makes a best-effort attempt to restore soft-deleted data. You can request this by contacting Fabric support [Fabric support](/powerbi-docs/support/service-support-options). 
 
 ## Related content
 
