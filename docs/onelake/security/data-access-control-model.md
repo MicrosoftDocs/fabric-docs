@@ -204,8 +204,8 @@ The next table specifies whether the corresponding shortcut scenario is supporte
 | ---- | ---- | --- |
 | 1. Shortcut in a lakehouse1 pointing to folder2 located in the **same lakehouse**. | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2. |
 | 2. Shortcut in a lakehouse1 pointing to folder2 located in **another lakehouse2** | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2 in lakehouse2. |
-| 3. Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. |
-| 4. Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. |
+| 3. Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. Access is determined based on the ReadAll permission instead.|
+| 4. Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
 
 ### OneLake RBAC in External Shortcuts (ADLS, S3, Dataverse)
 
