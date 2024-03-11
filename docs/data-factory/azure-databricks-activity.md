@@ -54,7 +54,7 @@ Refer to the [**General** settings](activity-overview.md#general-settings) guida
 1. You can also specify additional cluster settings, such as **Cluster policy**, **Spark configuration**, **Spark environment variables**, and **custom tags**, as required for the cluster you are connecting to. **Databricks init scripts** and **Cluster Log destination path** can also be added under the additional cluster settings.
 
     > [!NOTE]
-    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI, they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
+    > All advanced cluster properties and dynamic expressions supported in the Azure Data Factory Azure Databricks linked service are now also supported in the Azure Databricks activity in Microsoft Fabric under the ‘Additional cluster configuration’ section in the UI. As these properties are now included within the activity UI; they can be easily used with an expression (dynamic content) without the need for the Advanced JSON specification in the Azure Data Factory Azure Databricks linked service.
 
     :::image type="content" source="media/azure-databricks-activity/databricks-activity-cluster.png" alt-text="Screenshot showing the Cluster settings tab of the Azure Databricks activity.":::
 
