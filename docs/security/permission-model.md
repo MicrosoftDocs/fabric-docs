@@ -4,7 +4,7 @@ description: Learn how permissions work in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/11/2024
+ms.date: 03/12/2024
 ---
 
 # Permission model
@@ -29,13 +29,14 @@ There are four Workspace roles and they apply to all items within the workspace.
 
 This table shows a small set of the capabilities each role has. For a full and more detailed list, see [Microsoft Fabric workspace roles](../get-started/roles-workspaces.md#roles-in-workspaces-in-microsoft-fabric).
 
-| Capability   | Admin   | Member   | Contributor | Viewer   |
-|--------------|---------|----------|-------------|----------|
-| Add admins   | &#9989; | &#10060; | &#10060;    | &#10060; |
-| Add members  | &#9989; | &#9989;  | &#10060;    | &#10060; |
-| Write data   | &#9989; | &#9989;  | &#9989;     | &#10060; |
-| Create items | &#9989; | &#9989;  | &#9989;     | &#10060; |
-| Read data    | &#9989; | &#9989;  | &#9989;     | &#9989;  |
+| Capability           | Admin   | Member   | Contributor | Viewer   |
+|----------------------|---------|----------|-------------|----------|
+| Delete the workspace | &#9989; | &#10060; | &#10060;    | &#10060; |
+| Add admins           | &#9989; | &#10060; | &#10060;    | &#10060; |
+| Add members          | &#9989; | &#9989;  | &#10060;    | &#10060; |
+| Write data           | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Create items         | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Read data            | &#9989; | &#9989;  | &#9989;     | &#9989;  |
 
 ## Item permissions
 

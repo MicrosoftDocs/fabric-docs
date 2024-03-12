@@ -415,7 +415,7 @@ You can personalize your Spark session with the magic command **%%configure**. F
     }
     "defaultLakehouse": {  // This overwrites the default lakehouse for current session
         "name": "<lakehouse-name>",
-        "id": "<(optional) lakehouse-id>",
+        "id": "<lakehouse-id>",
         "workspaceId": "<(optional) workspace-id-that-contains-the-lakehouse>" // Add workspace ID if it's from another workspace
     },
     "mountPoints": [
