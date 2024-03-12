@@ -209,18 +209,16 @@ The next table specifies whether the corresponding shortcut scenario is supporte
 
 ### OneLake RBAC in External Shortcuts (ADLS, S3, Dataverse)
 
-OneLake supports defining RBAC permissions for [ADLS, S3 and Dataverse shortcuts](../onelake-shortcuts.md). In this case, RBAC model is applied **on top** of the delegated authorization model enabled for this type of shortcut.
+OneLake supports defining RBAC permissions for shortcuts such as [ADLS, S3 and Dataverse shortcuts](../onelake-shortcuts.md). In this case, RBAC model is applied **on top** of the delegated authorization model enabled for this type of shortcut.
 
 Suppose, user1 creates an S3 shortcut in a lakehouse pointing to a folder in an AWS S3 bucket. Then user2 is attempting to access data in this shortcut.
 
 | 1. Does S3 Connection authorize access for the delegated user1? | 2. Does OneLake RBAC authorize access for the requesting user2? | 1+2 Result: Can user2 access data in S3 Shortcut?  |
 | ---- | --- | --- |
-| No | No OneLake RBAC permissions defined for shortcut1. | No |
+| Yes | Yes | Yes |
 | No | No | No |
 | No | Yes | No |
-| Yes | No OneLake RBAC permissions defined for shortcut1. | Yes |
 | Yes | No | No |
-| Yes | Yes | Yes |
 
 The RBAC permissions must be defined for the entire scope of the shortcut (entire target folder), but inherit recursively to all its subfolders and files.
 
