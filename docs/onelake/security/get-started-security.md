@@ -22,7 +22,7 @@ OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or
 
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. You can visualize this structure as follows:
 
-:::image type="content" source=".\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
+:::image type="content" source="\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
 
 ## Workspace permissions
 
@@ -62,7 +62,7 @@ Users accessing data through SQL may see different results than accessing data d
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
-:::image type="content" source=".\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
+:::image type="content" source="\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
 
 ## OneLake Data access roles (preview)
 
