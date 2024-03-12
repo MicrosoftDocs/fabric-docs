@@ -34,7 +34,7 @@ Here's the default Role definition:
 
 | Fabric Item | Role Name | Permission | Folders included | Assigned members |
 | ---- | --- | --- | ---- | ---- |
-| Lakehouse | `DefaultReaders` | ReadAll | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
+| Lakehouse | `DefaultReader` | ReadAll | All folders under `Tables/` and `Files/` | All users with ReadAll permission |
 
 > [!NOTE]
 > In order to restrict the access to specific users or specific folders, you must either modify the default role or remove it and create a new custom role.
@@ -147,6 +147,8 @@ Within a workspace, Fabric items can have permissions configured separately from
 
 ### OneLake RBAC and Lakehouse SQL Analytics Endpoint permissions
 
+SQL analytics endpoint is a warehouse that is automatically generated from a Lakehouse in Microsoft Fabric. A customer can transition from the "Lake" view of the Lakehouse (which supports data engineering and Apache Spark) to the "SQL" view of the same Lakehouse. Learn more about SQL analytics endpoint in [Data Warehouse documentation: SQL analytics endpoint](../../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
+
 | **SQL Analytics Endpoint Permission** | **Users can view files via OneLake Endpoint?** | **Users can write files via OneLake Endpoint?** | **Users can read data via SQL analytics endpoint?** |
 |----------|----------|----------|--------------|
 | Read  | No by default, use OneLake RBAC to grant access. | No | No by default, but can be configured with [SQL granular permissions](../../data-warehouse/sql-granular-permissions.md) |
@@ -202,23 +204,21 @@ The next table specifies whether the corresponding shortcut scenario is supporte
 | ---- | ---- | --- |
 | 1. Shortcut in a lakehouse1 pointing to folder2 located in the **same lakehouse**. | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2. |
 | 2. Shortcut in a lakehouse1 pointing to folder2 located in **another lakehouse2** | Supported. | To restrict the access to data in shortcut, define OneLake RBAC for folder2 in lakehouse2. |
-| 3. Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. |
-| 4. Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. |
+| 3. Shortcut in a lakehouse pointing to a Table located in a **datawarehouse** | Not supported. | OneLake doesn't support defining RBAC permissions in datawarehouses. Access is determined based on the ReadAll permission instead.|
+| 4. Shortcut in a lakehouse pointing to a Table located in a **KQL database** | Not supported. | OneLake doesn't support defining RBAC permissions in KQL databases. Access is determined based on the ReadAll permission instead.|
 
 ### OneLake RBAC in External Shortcuts (ADLS, S3, Dataverse)
 
-OneLake supports defining RBAC permissions for [ADLS, S3 and Dataverse shortcuts](../onelake-shortcuts.md). In this case, RBAC model is applied **on top** of the delegated authorization model enabled for this type of shortcut.
+OneLake supports defining RBAC permissions for shortcuts such as [ADLS, S3 and Dataverse shortcuts](../onelake-shortcuts.md). In this case, RBAC model is applied **on top** of the delegated authorization model enabled for this type of shortcut.
 
 Suppose, user1 creates an S3 shortcut in a lakehouse pointing to a folder in an AWS S3 bucket. Then user2 is attempting to access data in this shortcut.
 
 | 1. Does S3 Connection authorize access for the delegated user1? | 2. Does OneLake RBAC authorize access for the requesting user2? | 1+2 Result: Can user2 access data in S3 Shortcut?  |
 | ---- | --- | --- |
-| No | No OneLake RBAC permissions defined for shortcut1. | No |
+| Yes | Yes | Yes |
 | No | No | No |
 | No | Yes | No |
-| Yes | No OneLake RBAC permissions defined for shortcut1. | Yes |
 | Yes | No | No |
-| Yes | Yes | Yes |
 
 The RBAC permissions must be defined for the entire scope of the shortcut (entire target folder), but inherit recursively to all its subfolders and files.
 
@@ -232,7 +232,7 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 | Maximum number of members per OneLake RBAC role | At most 500 users and user groups per role. |
 | Maximum number of permissions per OneLake RBAC role | At most 500 permissions per role |
 
-### SLAs on OneLake RBAC [NEED Aaron's / Paras Confirmation!! ]
+### SLAs on OneLake RBAC
 
-- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 15 seconds.
-- If you change a user group in OneLake RBAC role, it can take up to 30 min for OneLake to apply the role's permissions on the updated user group.
+- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 5 minutes.
+- If you change a user group in OneLake RBAC role, it can take up to 1 hr for OneLake to apply the role's permissions on the updated user group.

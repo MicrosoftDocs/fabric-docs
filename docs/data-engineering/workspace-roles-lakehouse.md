@@ -31,3 +31,5 @@ In a lakehouse the users with Admin, Member, and Contributor roles can perform a
 ## Related content
 
 - [Roles in workspaces](../get-started/roles-workspaces.md)
+- [OneLake data access permissions](./onelake-data-access-permissions.md)
+- [Fabric and OneLake Security](../onelake/security/fabric-and-onelake-security.md)
