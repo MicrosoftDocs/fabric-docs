@@ -28,7 +28,7 @@ To enable the preview, you must be an Admin, Member, or Contributor in the works
 
 The preview feature can't be turned off once enabled.
 
-To ensure a smooth opt-in experience, all users with read permission to data in the lakehouse continue to have read access. Migrating access is done through the creation of a default data access role called "DefaultReader." Using [virtualized role memberships](get-started-data-access-roles.md/#assign-virtual-members) all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, ensure that the DefaultReader role is deleted or that the ReadAll permission is removed from the accessing users.  
+To ensure a smooth opt-in experience, all users with read permission to data in the lakehouse continue to have read access. Migrating access is done through the creation of a default data access role called "DefaultReader." Using [virtualized role memberships](#assign-virtual-members) all users that had the necessary permissions to view data in the lakehouse (the ReadAll permission) are included as members of this default role. To start restricting access to those users, ensure that the DefaultReader role is deleted or that the ReadAll permission is removed from the accessing users.  
 
 > [!IMPORTANT]
 > Make sure that any users that are included in a data access role are not also part of the DefaultReader role. Otherwise they will maintain full access to the data.
@@ -59,7 +59,7 @@ OneLake data access roles are only supported for lakehouse items.
     1. Roles grant access to folders. To allow a user to access a folder, check the box next to it. If a user shouldn’t see a folder, don't check the box.
     1. In the bottom left, select **Save** to create your role.
 6. In the top left, select **Assign role** to open the role membership pane.
-7. Add people, groups, or email addresses to the **Add people or groups** control. For more information, see [Assign a member or group.](./get-started-data-access-roles.md/#assign-a-member-or-group)
+7. Add people, groups, or email addresses to the **Add people or groups** control. For more information, see [Assign a member or group.](#assign-a-member-or-group)
 8. Select **Add** to move your selection to **Assigned people and groups** list. Selecting **Add** doesn't save your selection yet.
 9. Select **Save** and wait for the notification that the roles are successfully published.
 10. Select the **X** in the top right to exit the pane.
@@ -70,7 +70,7 @@ OneLake data access roles are only supported for lakehouse items.
 2. In the right side of the lakehouse ribbon, select on **Manage OneLake data access (preview)**.
 3. On the **Manage OneLake data access** pane, hover over the role you want to edit and select it.
 4. You can change which folders are being granted access to by selecting or deselecting the checkboxes next to each folder.
-5. To change the people, select **Assign role**. For more information, see [Assign a member or group.](./get-started-data-access-roles.md/#assign-a-member-or-group)
+5. To change the people, select **Assign role**. For more information, see [Assign a member or group.](#assign-a-member-or-group)
 6. To add more people, type names in the **Add people or groups** box and select **Add**.  
 7. To remove people, select their name under **Assigned people and groups** and select **Remove**.
 8. Select **Save** and wait for the notification that the roles are successfully published.

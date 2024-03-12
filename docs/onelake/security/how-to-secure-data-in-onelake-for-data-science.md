@@ -1,6 +1,6 @@
 ---
 title: How to secure data in OneLake for data science
-description: Get started with securing your data in OneLake with this overview of the concepts and capabilities.
+description: How to secure OneLake data for use with Spark and data science tools in Microsoft Fabric
 ms.reviewer: eloldag
 ms.author: aamerril
 author: aamerril
@@ -33,9 +33,9 @@ We can then align each use case with the necessary permissions in Fabric.
 
 ### Write access
 
-For users that need to write data in Fabric, access is controlled via the [Fabric workspace roles.](../security/get-started-security.md/#workspace-permissions) There are three workspace roles that grant write permissions: Admin, Member, and Contributor. Choose the required role and grant users access to it.
+For users that need to write data in Fabric, access is controlled via the [Fabric workspace roles.](/get-started-security.md/#workspace-permissions) There are three workspace roles that grant write permissions: Admin, Member, and Contributor. Choose the required role and grant users access to it.
 
-Users with write access aren't restricted by [OneLake data access roles (preview).](../security/get-started-security.md) Write users can have their access restricted to data through the SQL Analytics endpoint data, but retain full access to the data in OneLake. To restrict access to data for write users, a separate workspace needs to be created for that data.
+Users with write access aren't restricted by [OneLake data access roles (preview).](/get-started-security.md) Write users can have their access restricted to data through the SQL Analytics endpoint data, but retain full access to the data in OneLake. To restrict access to data for write users, a separate workspace needs to be created for that data.
 
 ### Read access
 
@@ -59,8 +59,7 @@ You can secure data for use with shortcuts just like any other folder in OneLake
 
 ## Related content
 
-- [OneLake data access roles (preview)](/security/get-started-data-access-roles.md)
+- [OneLake data access roles (preview)](/get-started-data-access-roles.md)
 - [OneLake data access control model](../security/data-access-control-model.md)
-- [Workspace roles](../get-started/roles-workspaces.md)
-- [OneLake security](onelake-security.md)
-- [Share items](../get-started/share-items.md)
+- [Workspace roles](/get-started/roles-workspaces.md)
+- [Share items](../../get-started/share-items.md)

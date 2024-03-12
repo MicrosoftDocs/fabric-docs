@@ -22,7 +22,7 @@ OneLake is a hierarchical data lake, like Azure Data Lake Storage (ADLS) Gen2 or
 
 Items always live within workspaces and workspaces always live directly under the OneLake namespace. You can visualize this structure as follows:
 
-:::image type="content" source="\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox="media\get-started-security\structure.png":::
+:::image type="content" source=".\media\get-started-security\structure.png" alt-text="Diagram showing the hierarchical nature of OneLake as a folder structure. OneLake/Workspace/Item as an example." lightbox=".\media\get-started-security\structure.png":::
 
 ## Workspace permissions
 
@@ -42,7 +42,7 @@ You can simplify the management of Fabric workspace roles by assigning them to s
 
 ## Item permissions
 
-With the [sharing](../get-started/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
+With the [sharing](../../get-started/share-items.md) feature, you can give a user direct access to an item. The user can only see that item in the workspace and isn't a member of any workspace roles. Item permissions grant access to connect to that item and which item endpoints the user is able to access.
 
 |     Permission |   See the item metadata? |     See data in SQL? |     See data in OneLake? |
 |----------------|--------------------------|----------------------|--------------------------|
@@ -62,7 +62,7 @@ Users accessing data through SQL may see different results than accessing data d
 
 In the following example, a user is given read-only access to a lakehouse through item sharing. The user is granted SELECT permission on a table through the SQL analytics endpoint. When that user tries to read data through the OneLake APIs, they're denied access because they don't have sufficient permissions. The user can successfully read through SQL SELECT statements.
 
-:::image type="content" source="\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
+:::image type="content" source=".\media\get-started-security\sql.png" alt-text="Diagram showing a user accessing data through SQL but denied access when querying OneLake directly.":::
 
 ## OneLake Data access roles (preview)
 
@@ -70,24 +70,24 @@ OneLake data access roles is a new feature that enables you to apply role-based 
 
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
 
-Learn more about creating data access roles in [Get Started with Data Access Roles.](/security/get-started-data-access-roles.md)
+Learn more about creating data access roles in [Get Started with Data Access Roles.](/get-started-data-access-roles.md)
 
-Learn more about the security model for access roles [Data Access Control Model.](/security/data-access-control-model.md)
+Learn more about the security model for access roles [Data Access Control Model.](/data-access-control-model.md)
 
 ## Shortcut security
 
-Shortcuts in Microsoft Fabric allow for simplified data management, but have some security considerations to note. For information on managing shortcut security see this [document](onelake-shortcuts.md#types-of-shortcuts).
+Shortcuts in Microsoft Fabric allow for simplified data management, but have some security considerations to note. For information on managing shortcut security see this [document](../onelake-shortcuts.md#types-of-shortcuts).
 
 For OneLake data access roles (preview), shortcuts receive special treatment depending on the shortcut type. The access to a OneLake shortcut is always controlled by the access roles on the target of the shortcut. This means that for a shortcut from LakehouseA to LakehouseB, the security of LakehouseB takes effect. Data access roles in LakehouseA cannot grant or edit the security of the shortcut to LakehouseB.
 
 For external shortcuts to Amazon S3 or ADLS Gen2, the security is configured through data access roles in the lakehouse itself. A shortcut from LakehouseA to an S3 bucket can have data access roles configured in LakehouseA. It is important to note that only the root level of the shortcut can have security applied. Assigning access to sub-folders of the shortcut will result in role creation errors.
 
-Learn more about the security model for shortcuts in [Data Access Control Model](/security/data-access-control-model.md)
+Learn more about the security model for shortcuts in [Data Access Control Model](/data-access-control-model.md)
 
 ## Related content
 
-- [OneLake data access roles (preview)](/security/get-started-data-access-roles.md)
-- [Workspace roles](../get-started/roles-workspaces.md)
-- [OneLake security](onelake-security.md)
-- [OneLake file explorer](onelake-file-explorer.md)
-- [Share items](../get-started/share-items.md)
+- [OneLake data access roles (preview)](/get-started-data-access-roles.md)
+- [Workspace roles](../../get-started/roles-workspaces.md)
+- [OneLake security](../onelake-security.md)
+- [OneLake file explorer](../onelake-file-explorer.md)
+- [Share items](../../get-started/share-items.md)
