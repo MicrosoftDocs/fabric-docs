@@ -38,7 +38,7 @@ For more information about supported data sources for managed private endpoints 
 
 * **Spark job resilience**: To prevent Spark job failures or errors, migrate workspaces with managed private endpoints to Fabric capacity SKUs of F64 or higher.
 
-* **Managed VNet association**: Deleting the last managed private endpoint does not result in deletion of managed virtual network (VNet) associated with the workspace and prevents the activation of starter pools.
+* **Managed VNet association**: Deleting the last managed private endpoint does not result in the deletion of the managed virtual network (VNet) associated with the workspace, and prevents the activation of starter pools.
 
 * **Workspace migration**: Workspace migration across capacities in different regions is unsupported.
 
