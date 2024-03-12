@@ -16,7 +16,7 @@ Fabric external data sharing is a feature that enables Fabric users to share dat
 
 ## How does external data sharing work
 
-First Fabric admins need to turn on external data sharing on both the privider and consumer tenants. For more information, see XXX.
+First Fabric admins need to turn on external data sharing on both the pr0vider and consumer tenants. For more information, see XXX.
 
 In the provider tenant, a user who wants to share data with a user in another Fabric tenant creates an external data share and sends a link to it to the user in the consuming tenant. The user in the consuming tenant then selects this link to accept the sharing invitation and chooses where to put the shared data. Remember, the data isn't copied to the new location - rather, it is there via a OneLake shortcut.
 
