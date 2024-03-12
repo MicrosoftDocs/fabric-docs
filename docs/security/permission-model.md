@@ -52,7 +52,7 @@ Different Fabric items have different permissions. To learn more about the permi
 
 * [Data Factory](/azure/data-factory/concepts-roles-permissions)
 
-* [lakehouse](../data-engineering/lakehouse-sharing.md)
+* [Lakehouse](../data-engineering/lakehouse-sharing.md)
 
 * [Data science](../data-science/models-experiments-rbac.md)
 
