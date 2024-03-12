@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 03/11/2024
+ms.date: 03/12/2024
 ---
 
 # What is the Microsoft Fabric Capacity Metrics app?
@@ -43,7 +43,7 @@ When using the Microsoft Fabric Capacity Metrics app, consider the following lim
 
 * Editing the semantic model of the Microsoft Fabric Capacity Metrics app using external model authoring tools, isn't supported.
 
-* The cumulative consumption of CU seconds for a specific item over the past 14 days, is displayed in the *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table. This value is calculated based on the workspace that the item belongs to. If the item was moved from another workspace to the current workspace in the last 14 days, the cumulative consumption of CU seconds for the item in the previous workspace isn't included in the *CU (s)* column.
+* The cumulative consumption of CU seconds for a specific item over the past 14 days, is displayed in the *CU (s)* column of the [matrix by item and operation](metrics-app-compute-page.md#matrix-by-item-and-operation) table. If the item was moved from another workspace to the current workspace in the last 14 days, the cumulative consumption of CU seconds for the item in the previous workspace is included in the *CU (s)* column.
 
 ## Related content
 
