@@ -4,7 +4,7 @@ description: Learn how Microsoft Fabric security works, and what features are av
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/06/2024
+ms.date: 03/12/2024
 ---
 
 # Security in Microsoft Fabric
@@ -113,7 +113,7 @@ Fabric ensures that your data is secure across regions when you're working with 
 
 ## Access data
 
-Fabric controls data access using [workspaces](../get-started/workspaces.md). In workspaces, data appears in the form of Fabric items, and users can't view or use items (data) unless you give them access to the workspace.
+Fabric controls data access using [workspaces](../get-started/workspaces.md). In workspaces, data appears in the form of Fabric items, and users can't view or use items (data) unless you give them access to the workspace. You can find more information about workspace and item permissions, in [Permission model](permission-model.md).
 
 ### Workspace roles
 
