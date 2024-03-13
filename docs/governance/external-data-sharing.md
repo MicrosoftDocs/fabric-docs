@@ -27,9 +27,9 @@ Shares may be deleted by the consumer or revoked by the provider at any time.
 
 ## Share data with a user in another Fabric tenant
 
-1.	In a workspace or in the OneLake data hub, find the supported Fabric item that contains the data that you want to share.
+1. In a workspace or in the OneLake data hub, find the supported Fabric item that contains the data that you want to share.
 
-1.	Open the context menu of the selected item and choose **External data share (preview)**.
+1. Open the context menu of the selected item and choose **External data share (preview)**.
 
     :::image type="content" source="./media/external-data-sharing/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
@@ -39,7 +39,7 @@ Shares may be deleted by the consumer or revoked by the provider at any time.
  
 1. Enter the email address of the user you want to share the data with and select Send. An email will be sent to the user inviting them to accept the invitation to share. Alternatively, you can select Copy link and then paste it into an email that you yourself compose.
 
-    :::image type="content" source="./media/external-data-sharing/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
  
 The consumer will now be able to accept the share and access the data within their tenant.
 
