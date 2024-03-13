@@ -23,6 +23,31 @@ Users who are allowed to create external data shares can share data residing in 
 > [!NOTE]
 > Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
+## Security Considerations
+
+Sharing data with users outside of your home tenant has some inherent security and data privacy implications that should be taken into consideration.
+
+It is important to understand the underlying flows of data sharing to better evaluate the security considerations. Data is shared across tenants using Fabric internal security mechanisms. The share security mechanism grants read-only access to **any user** within the home tenant of the user that was invited to accept the share. Data is shared “in-place”. No data is copied or even accessed until the consumer executes as Fabric workload over the shared data. Fabric evaluates and enforces local Entra ID based roles and permissions within the tenant they are defined in. Access control policies defined in the providers' tenant, such as semantic model row-level security (RLS), Microsoft Purview Information Protection policies, and Purview Data Loss Prevention policies are not enforced on data that crosses organization boundaries. Policies defined in the consumer's tenant are enforced on the incoming share the same way they are enforced over any data within that tenant.
+
+With this understanding in mind, be aware of the following:
+
+* The provider cannot enforce who has access to the data in the consumer's tenant.
+* The consumer may grant access to this data to anyone, even with guest users from outside the consumer's organization.
+* Data may be transferred across geographic boundaries when it is accessed within the consumer's tenant.
+
+## Known Issues
+
+* **Shortcuts:** Shortcuts contained within folders that are shared via external data sharing will not be resolved in the consumer tenant. 
+* **Billing:** The cost of read operations will be billed to the data provider. The expectation is to bill the provider for storage related costs and bill the consumer for read related costs.
+* **[Security]** **Invitations:** Invitations may be forwarded to other users within the same tenant and may be accepted more than once. In the future, invitations will be usable only once and scoped to a specific user. Only that user will be able to accept the invitation. Any user with permission to access the lakehouse in which the share was accepted will be able to read the data.
+* **[Security]** **Admin control:** The tenant admin switch that specifies which users may accept shares is enforced via the user interface. The validation will be added to all layers of the system before this feature is released publicly.
+
+We are working to resolve these issues as soon as possible.
+
+## Appendix A – Power BI B2B sharing
+
+Power BI supports the [sharing of semantic models](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-dataset-external-org-share-admin) (FKA datasets) with Entra B2B guest users. This feature has been in preview for some time and has not yet been made generally available. Currently, the new Fabric OneLake external sharing feature and the existing external semantic model feature are not related. In time, we will work to unify these solutions.
+
 Shares may be deleted by the consumer or revoked by the provider at any time.
 
 ## Share data with a user in another Fabric tenant
