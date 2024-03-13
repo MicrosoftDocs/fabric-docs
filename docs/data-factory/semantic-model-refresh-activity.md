@@ -18,7 +18,7 @@ This guide shows you how to use the Semantic model refresh activity to create co
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](/get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](../get-started/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Semantic model refresh activity to a pipeline with UI
