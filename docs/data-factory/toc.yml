@@ -701,5 +701,7 @@
       href: data-factory-known-issues.md
   - name: Reference
     items:
+    - name: CI/CD for data pipelines
+      href: git-integration-deployment-pipelines.md
     - name: Data pipelines REST API
       href: pipeline-rest-api.md
