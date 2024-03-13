@@ -4,7 +4,7 @@ description: This article describes how to use the Semantic model refresh activi
 author: n0elleli
 ms.author: noelleli
 ms.topic: how-to
-ms.date: 03/26/2024
+ms.date: 03/13/2024
 ---
 
 # Use the Semantic model refresh activity to refresh a PowerBI Dataset (Preview)
@@ -18,7 +18,7 @@ This guide shows you how to use the Semantic model refresh activity to create co
 
 To get started, you must complete the following prerequisites:
 
-- A tenant account with an active subscription. [Create an account for free](/fabric/get-started/fabric-trial.md).
+- A tenant account with an active subscription. [Create an account for free](/get-started/fabric-trial.md).
 - A workspace is created.
 
 ## Add a Semantic model refresh activity to a pipeline with UI
@@ -49,7 +49,7 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
 1. Select the **Settings** tab in the activity properties pane, then use the **Connection** dropdown to select an existing connection, or use the **+ New** button to create and configure a new connection to PowerBI.
 
-   :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-settings.png" alt-text="":::
+   :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-settings.png" alt-text="Screenshot showing the Semantic model refresh activity's main settings page.":::
 
 1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the **Connection name** and credentials for the **Authorization kind** that you choose.
 
