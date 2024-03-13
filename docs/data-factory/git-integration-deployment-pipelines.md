@@ -32,7 +32,30 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
    :::image type="content" source="media/git-integration-deployment-pipelines/git-integration-new-branch.png" alt-text="Screenshot showing where to select the Git integration tab and + New Branch button on the Workspace settings dialog.":::
 
-1. From your workspace view, you will see the status of the pipeline artifact as “synced” or “uncommitted”
-1. When there is uncommitted work from your workspace, a Source Control indicator at the top of the view will indicate that there is work that is not yet committed.
-1. Click that button to pick which artifacts to sync to your repo or from your repo to your workspace
+1. From your workspace view, you will see the status of the pipeline artifact as _synced_ or _uncommitted_.
+1. When there is uncommitted work from your workspace, a Source Control indicator at the top of the view will indicate that there is work that is not yet committed. Select that button to choose which artifacts to sync to your repo or from your repo to your workspace.
 
+## Steps for testing deployment pipelines
+
+1. As opposed to Git Integration, there is no manual set-up required from the user, you can start using deployment pipelines directly from your existing workspace
+1. Select the **Deployment pipelines** icon on the app navigator on the left of the screen.
+
+   :::image type="content" source="media/git-integration-deployment-pipelines/deployment-pipelines.png" alt-text="Screenshot showing where to select the Deployment pipelines button on the left-hand app navigator for Fabric.":::
+
+1. This navigates to the deployment pipelines home page where you can start a new pipeline or manage existing pipelines.
+1. From there, you can map your workspaces to your dev, test, and prod workspace environments.
+
+   :::image type="content" source="media/git-integration-deployment-pipelines/assign-workspaces.png" alt-text="Screenshot showing where to assign workspaces for dev, test, and prod environments.":::
+
+1. Refer to general documentation on [Fabric deployment pipelines](/cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
+
+## Current limitations
+
+- Currently, pipelines with activities that reference Fabric artifacts (for example, Notebook or Invoke pipeline activities) require the dependent item to already have been imported and present in the target workspace. For now, you must sequence your deployments in a way that those items have been loaded first.
+- Deployment rules in Deployment Pipelines (built-in Fabric CICD) are not yet supported.
+
+## Next steps
+
+- [Introduction to deployment pipelines](/cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
+- [Understand the deployment process](/cicd/deployment-pipelines/understand-the-deployment-process.md)
+- [Automate deployment pipelines](/cicd/deployment-pipelines/pipeline-automation.md)
