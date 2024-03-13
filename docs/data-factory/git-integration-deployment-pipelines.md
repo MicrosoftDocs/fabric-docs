@@ -24,8 +24,14 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 ## Steps for testing Git integration
 
-1. Hook-up your workspace to your Git repository by selecting  **Workspace settings**.
-1. Select **Git integration**.
+1. Select your workspace from the left navigation bar and connect your workspace to your Git repository by selecting **Workspace settings**.
+
+   :::image type="content" source="media/git-integration-deployment-pipelines/workspace-settings.png" alt-text="Screenshot showing where to select the Workspace settings button for a workspace.":::
+
+1. Select **Git integration**, then provide your organization, project, and Git repository. Under the **Branch** dropdown, select **+ New Branch**.
+
+   :::image type="content" source="media/git-integration-deployment-pipelines/git-integration-new-branch.png" alt-text="Screenshot showing where to select the Git integration tab and + New Branch button on the Workspace settings dialog.":::
+
 1. From your workspace view, you will see the status of the pipeline artifact as “synced” or “uncommitted”
 1. When there is uncommitted work from your workspace, a Source Control indicator at the top of the view will indicate that there is work that is not yet committed.
 1. Click that button to pick which artifacts to sync to your repo or from your repo to your workspace
