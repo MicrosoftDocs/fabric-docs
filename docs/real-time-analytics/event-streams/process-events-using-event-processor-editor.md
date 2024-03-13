@@ -140,7 +140,7 @@ The event processor provides six operators, which you can use to transform your 
 
 ### Aggregate
 
-Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows you to filter or slice the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
+Use the **Aggregate** transformation to calculate an aggregation (**Sum**, **Minimum**, **Maximum**, or **Average**) every time a new event occurs over a period of time. This operation also allows for the renaming of these calculated columns, as well as filtering or slicing the aggregation based on other dimensions in your data. You can have one or more aggregations in the same transformation.
 
 ### Expand
 
@@ -148,11 +148,11 @@ Use the **Expand** array transformation to create a new row for each value withi
 
 ### Filter
 
-Use the **Filter** transformation to filter events based on the value of a field in the input. Depending on the data type (number or text), the transformation keeps the values that match the selected condition.
+Use the **Filter** transformation to filter events based on the value of a field in the input. Depending on the data type (number or text), the transformation keeps the values that match the selected condition, such as **is null** or **is not null**.
 
 ### Group by
 
-Use the **Group by** transformation to calculate aggregations across all events within a certain time window. You can group by the values in one or more fields. It's like the **Aggregate** transformation but provides more options for aggregation and includes more complex options for time windows. Like **Aggregate**, you can add more than one aggregation per transformation.
+Use the **Group by** transformation to calculate aggregations across all events within a certain time window. You can group by the values in one or more fields. It's like the **Aggregate** transformation allows for the renaming of columns, but provides more options for aggregation and includes more complex options for time windows. Like **Aggregate**, you can add more than one aggregation per transformation.
 
 The aggregations available in the transformation are:
 
@@ -171,11 +171,13 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 ### Manage fields
 
-The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.  
-
-You can also add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
+The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. You can also edit operator name and add all columns form a nested JSON object within **Managed fields**. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.  
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
+
+Furthermore, you can add a new field with the built-in functions to aggregate the data from upstream. (Currently, the built-in functions we support are some functions in **String Functions**, **Date and Time Functions**, and **Mathematical Functions**. To find them, search on "built-in.")
+
+:::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field-build-in-functions.png" alt-text="Screenshot showing the Manage field build-in functions." :::
 
 The following table shows the results of changing the data type using manage fields. The columns represents the original data type, and the rows represents the target data type.
 
