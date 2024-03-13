@@ -34,7 +34,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 1. From your workspace view, you see the status of the pipeline artifact as _synced_ or _uncommitted_. If there is _uncommitted_ work, select the **Source control** indicator button at the top of the view. Then you can choose which artifacts to sync, and whether to sync from your workspace to your repo or from your repo to your workspace.
 
-   g:::image type="content" source="media/git-integration-deployment-pipelines/git-status.png" alt-text="Screenshot showing where the Git status for a pipeline is displayed in the workspace details.":::
+   g:::image type="content" source="media/git-integration-deployment-pipelines/git-status.png" lightbox="media/git-integration-deployment-pipelines/git-status.png" alt-text="Screenshot showing where the Git status for a pipeline is displayed in the workspace details.":::
 
 ## Steps for testing deployment pipelines
 
@@ -46,7 +46,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 1. After selecting **Deployment pipelines**, you see the deployment pipelines home page where you can start a new pipeline or manage existing pipelines.
 1. From there, you can map your workspaces to your dev, test, and prod workspace environments.
 
-   :::image type="content" source="media/git-integration-deployment-pipelines/assign-workspaces.png" alt-text="Screenshot showing where to assign workspaces for dev, test, and prod environments.":::
+   :::image type="content" source="media/git-integration-deployment-pipelines/assign-workspaces.png" lightbox="media/git-integration-deployment-pipelines/assign-workspaces.png" alt-text="Screenshot showing where to assign workspaces for dev, test, and prod environments.":::
 
 1. Refer to general documentation on [Fabric deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
