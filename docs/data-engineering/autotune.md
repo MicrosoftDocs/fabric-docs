@@ -146,6 +146,8 @@ library(SparkR)
 sparkR.conf("spark.ms.autotune.enabled", "false")
 ```
 
+---
+
 ## Case study
 
 When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Cnsider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
