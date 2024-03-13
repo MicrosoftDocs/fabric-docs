@@ -171,9 +171,7 @@ Despite modifications, Autotune recognizes the core structure of the new query, 
 
 For each of your queries, Autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by Autotune are located in the driver logs, specifically those entries starting with [Autotune].
 
-:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Autotune logs inside Monitoring Hub."
-lightbox="media\autotune\autotune-logs.jpg"
-:::
+:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Autotune logs inside Monitoring Hub." lightbox="media\autotune\autotune-logs.jpg":::
 
 In your logs, you can find various types of entries. Here, we include the most important ones:
 
