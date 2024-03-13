@@ -581,6 +581,8 @@
         href: outlook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Semantic model refresh activity
+        href: semantic-model-refresh-activity.md
       - name: Set Variable Activity
         href: set-variable-activity.md
       - name: Stored Procedure activity
