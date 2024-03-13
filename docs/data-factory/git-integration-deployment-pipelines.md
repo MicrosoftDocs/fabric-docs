@@ -52,7 +52,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 ## Current limitations
 
-- Currently, pipelines with activities that reference Fabric artifacts (for example, Notebook or Invoke pipeline activities) require that those dependent items already be imported and present in the target workspace. For now, you must sequence your deployments in a way that those items are loaded first.
+- Currently, pipelines with activities that reference Fabric artifacts (for example, Notebook or Invoke pipeline activities) require that those dependent items already be imported and present in the target workspace. For now, you must sequence your deployments so those items are loaded first.
 - Deployment rules in Deployment Pipelines (built-in Fabric CI/CD) aren't yet supported.
 
 ## Next steps
