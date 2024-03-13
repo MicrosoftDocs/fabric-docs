@@ -31,6 +31,7 @@ Autotune configures three Spark settings for each of your queries separately:
 > - Repetitive queries
 > - Long-running queries (those with more than 15 seconds of execution)
 > - Spark SQL queries (excluding those written in the RDD API, which are very rare)
+>
 > This feature is compatible with Notebooks, Spark Job Definitions, and Pipelines!
 
 :::image type="content" source="media\autotune\execution-over-time.png" alt-text="Execution time with Autotune Enabled."::: 
@@ -150,7 +151,7 @@ sparkR.conf("spark.ms.autotune.enabled", "false")
 
 ## Case study
 
-When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Cnsider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
+When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
 
 ```python
 %%pyspark
@@ -170,19 +171,19 @@ Despite modifications, Autotune recognizes the core structure of the new query, 
 
 For each of your queries, Autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by Autotune are located in the driver logs, specifically those entries starting with [Autotune].
 
-:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Autotune logs inside Monitoring Hub.":::
+:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Autotune logs inside Monitoring Hub."
+lightbox="media\autotune\autotune-logs.jpg"
+:::
 
 In your logs, you can find various types of entries. Here, we include the most important ones:
-```
-| Status                 | Description                                                                                      |
-|------------------------|--------------------------------------------------------------------------------------------------|
-| AUTOTUNE_DISABLED      | Skipped. Autotune is disabled, preventing telemetry data pull and subsequent query optimization features. Enable Autotune to fully leverage its capabilities while respecting customer privacy. |
-| QUERY_TUNING_DISABLED  | Skipped. Autotune Query Tuning is disabled. Enable to fine-tune your Spark Settings for your Spark SQL queries. |
-| QUERY_PATTERN_NOT_MATCH| Skipped. Query pattern did not match. Autotune Query Tuning is effective for read-only queries.  |
-| QUERY_DURATION_TOO_SHORT| Skipped. Your query duration too short to optimize. Autotune Query Tuning requires longer (>15 seconds) queries for effective tuning. |
-| QUERY_TUNING_SUCCEED   | Success. Query tuning completed. Optimal Spark Settings applied.                                  |
-```
 
+| Status                   | Description                                                                                                                                                                                     |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AUTOTUNE_DISABLED        | Skipped. Autotune is disabled, preventing telemetry data pull and subsequent query optimization features. Enable Autotune to fully leverage its capabilities while respecting customer privacy. |
+| QUERY_TUNING_DISABLED    | Skipped. Autotune Query Tuning is disabled. Enable to fine-tune your Spark Settings for your Spark SQL queries.                                                                                 |
+| QUERY_PATTERN_NOT_MATCH  | Skipped. Query pattern did not match. Autotune Query Tuning is effective for read-only queries.                                                                                                 |
+| QUERY_DURATION_TOO_SHORT | Skipped. Your query duration too short to optimize. Autotune Query Tuning requires longer (>15 seconds) queries for effective tuning.                                                           |
+| QUERY_TUNING_SUCCEED     | Success. Query tuning completed. Optimal Spark Settings applied.                                                                                                                                |
 
 ## Transparency note
 In adherence to the Responsible AI Standard, this section aims to clarify the uses and validation of the Autotune feature, promoting transparency and enabling informed decision-making.
