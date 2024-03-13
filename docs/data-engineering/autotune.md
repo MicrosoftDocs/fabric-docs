@@ -50,7 +50,7 @@ From a responsible AI perspective, the Autotune feature includes transparency me
 Autotune is available in all regions but is disabled by default, allowing each user to enable it as needed. You control it through Apache Spark configuration settings. You can easily enable Autotune within a session by executing the following code in your notebook or by incorporating it into your Spark Notebook or SJD (Spark Job Definition) code as listed below. Furthermore, Autotune has built-in mechanisms for self-performance awareness to detect performance regressions. For example, if your query suddenly behaves anomalously and processes significantly more data than usual, Autotune will automatically turn off. Therefore, using it's safe. Note that Autotune requires several iterations to learn and identify the best configurations over time. Typically, the convergence point, where optimal settings are determined, is reached after about 20-25 iterations.
 
 > [!NOTE]
-> The Autotune is compatible with Fabric Runtime 1.1 and Runtime 1.2. Autotune does not function when the HC mode or MPE is enabled. However, Autotune is agnostic to autoscaling, so it will work in conjunction with it.
+> The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune does not function when [the HC mode](./high-concurrency-overview.md) or [MPE](./../security/security-managed-private-endpoints-overview.md) is enabled. However, Autotune is agnostic to [autoscaling](./spark-compute.md#autoscale), so it will work in conjunction with it.
 
 # [Spark SQL](#tab/sparksql)
 
