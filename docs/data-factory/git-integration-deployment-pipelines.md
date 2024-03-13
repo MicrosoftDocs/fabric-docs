@@ -4,7 +4,7 @@ description: This article describes how to use continuous integration and deploy
 author: kromerm
 ms.author: makromer
 ms.topic: conceptual
-ms.date: 03/26/2024
+ms.date: 03/13/2024
 ---
 
 # Git integration and deployment for data pipelines in Data Factory for Microsoft Fabric
@@ -48,7 +48,7 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
    :::image type="content" source="media/git-integration-deployment-pipelines/assign-workspaces.png" alt-text="Screenshot showing where to assign workspaces for dev, test, and prod environments.":::
 
-1. Refer to general documentation on [Fabric deployment pipelines](/cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
+1. Refer to general documentation on [Fabric deployment pipelines](../cicd/deployment-pipelines/get-started-with-deployment-pipelines.md).
 
 ## Current limitations
 
@@ -57,6 +57,6 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
 ## Next steps
 
-- [Introduction to deployment pipelines](/cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
-- [Understand the deployment process](/cicd/deployment-pipelines/understand-the-deployment-process.md)
-- [Automate deployment pipelines](/cicd/deployment-pipelines/pipeline-automation.md)
+- [Introduction to deployment pipelines](../cicd/deployment-pipelines/intro-to-deployment-pipelines.md)
+- [Understand the deployment process](../cicd/deployment-pipelines/understand-the-deployment-process.md)
+- [Automate deployment pipelines](../cicd/deployment-pipelines/pipeline-automation.md)
