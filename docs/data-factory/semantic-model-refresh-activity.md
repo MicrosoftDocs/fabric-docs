@@ -33,7 +33,7 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
    Creating the activity from the home screen card:
    
-   :::image type="content" source="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity.png" alt-text="Screenshot showing how to add a new Semantic model refresh activity to a pipeline from the home screen card.":::
+   :::image type="content" source="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity.png" lightbox="media/semantic-model-refresh-activity/create-semantic-model-refresh-activity.png" alt-text="Screenshot showing how to add a new Semantic model refresh activity to a pipeline from the home screen card.":::
 
    Creating the activity from the **Activities** bar:
 
@@ -41,7 +41,7 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
 1. Select the new Semantic model refresh activity on the pipeline editor canvas if it isn't already selected.
 
-   :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-general-settings.png" alt-text="Screenshot showing the General settings for the Semantic model refresh activity.":::
+   :::image type="content" source="media/semantic-model-refresh-activity/semantic-model-refresh-activity-general-settings.png" lightbox="media/semantic-model-refresh-activity/semantic-model-refresh-activity-general-settings.png" alt-text="Screenshot showing the General settings for the Semantic model refresh activity.":::
 
    Refer to the [General settings guidance](activity-overview.md#general-settings) to configure the options found on this tab.
 
@@ -53,7 +53,7 @@ To use a Semantic model refresh activity in a pipeline, complete the following s
 
 1. When you choose **+ New** to create a new connection, you see the connection creation dialog where you can provide the **Connection name** and credentials for the **Authorization kind** that you choose.
 
-   :::image type="content" source="media/semantic-model-refresh-activity/create-new-connection-dialog.png" alt-text="Screenshot showing the dialog to create a new connection to Power BI.":::
+   :::image type="content" source="media/semantic-model-refresh-activity/create-new-connection-dialog.png" lightbox="media/semantic-model-refresh-activity/create-new-connection-dialog.png" alt-text="Screenshot showing the dialog to create a new connection to Power BI.":::
 
 1. After you create a connection, you can find it in the dropdown menu. If you don't see it, select **Refresh**. Then select your connection.
 
