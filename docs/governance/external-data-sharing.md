@@ -16,29 +16,32 @@ Fabric external data sharing is a feature that enables Fabric users to share dat
 
 ## How does external data sharing work
 
-First Fabric admins need to turn on external data sharing on both the provider and consuming tenants. This involves specifying who can create and accept external data shares. For more information, see XXX.
+As a prerequisite to external data sharing Fabric admins need to turn on external data sharing both in the provider tenant and in the consumer tenants. Enabling external data sharing includes specifying who can create and accept external data shares. For more information, see XXX.
 
-In the provider tenant, users who have been authorized to create external data shares can share data residing in tables or files within supported Fabric items (currently, lakehouses and KQL databases), and also have the standard Fabric read and reshare permissions for an item will be allowed to share data residing in tables or files within Lakehouses or KQL Databases.a user who wants to share data with a user in another Fabric tenant creates an external data share and sends a link to it to the user in the other tenant. The user in the consuming tenant then selects this link to accept the sharing invitation and chooses where to create the shortcut for the shared data.
+Users who are allowed to create external data shares can share data residing in tables or files within supported Fabric items (currently, [lakehouses](../data-engineering/lakehouse-overview.md) and [KQL databases](../real-time-analytics/create-database.md)), as long as they have the standard Fabric read and reshare permissions for an item. The user creating the share invites a user from another tenant to accept the external data share. This user receives a link that can be used to accept the share. Upon accepting the share, the recipient chooses a lakehouse in which a shortcut to the provider’s data will be created.
 
-Once the data has been shared to the consuming tenant, access to it is governed by the permissions in the consuming tenant. For example, if the data is saved to a lakehouse in the consuming tenant, a user's access to the data will depend upon the user's permissions on that lakehouse in the consumer tenant, not from the item in the provider tenant from which the it was shared.
-
-Users in the provider tenant can revoke external data shares at any time.
-
-Users in the consuming tenant can remove external data shares by deleting the associated OneLake shortcut.
-
-Fabric tenant admins control which users within their organizations may create or accept shares. Users that have been granted share creation permission, and also have the standard Fabric read and reshare permissions for an item will be allowed to share data residing in tables or files within Lakehouses or KQL Databases. The user creating the share (the provider) will invite a user from another tenant (the consumer). This consumer will receive a link that can be used to accept the share. Upon accepting the share, the consumer will choose a Lakehouse in which a shortcut to the provider’s data will be created. Cross tenant data access is enabled via a dedicated Fabric to Fabric authentication mechanism and does not require Entra B2B guest user access.  
-
-Shares may be deleted by the consumer or revoked by the provider at any time. 
-
-Who can create external data shares
-
-
-
-# 
-
-[Fabric tenant admins](../admin/admin-center.md) control which users within their organizations may create or accept shares. Users that have been granted share creation permission, and also have the standard Fabric read and reshare permissions for an item will be allowed to share data residing in tables or files within [Lakehouses](../data-engineering/lakehouse-overview.md) or [KQL Databases](../real-time-analytics/create-database.md). The user creating the share (the provider) will invite a user from another tenant (the consumer). This consumer will receive a link that can be used to accept the share. Upon accepting the share, the consumer will choose a Lakehouse in which a shortcut to the provider’s data will be created. Cross tenant data access is enabled via a dedicated Fabric to Fabric authentication mechanism and does not require [Entra B2B guest user access](https://learn.microsoft.com/en-us/power-bi/enterprise/service-admin-azure-ad-b2b). 
+> [!NOTE]
+> Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
 Shares may be deleted by the consumer or revoked by the provider at any time.
+
+## Share data with a user in another Fabric tenant
+
+1.	In a workspace or in the OneLake data hub, find the supported Fabric item that contains the data that you want to share.
+
+1.	Open the context menu of the selected item and choose **External data share (preview)**.
+
+    :::image type="content" source="./media/external-data-sharing/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+
+1. In the **New external data share** dialog that opens, choose the folder or table to be shared and select **Save and continue**.
+
+    :::image type="content" source="./media/external-data-sharing/image5.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+ 
+1. Enter the email address of the user you want to share the data with and select Send. An email will be sent to the user inviting them to accept the invitation to share. Alternatively, you can select Copy link and then paste it into an email that you yourself compose.
+
+    :::image type="content" source="./media/external-data-sharing/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+ 
+The consumer will now be able to accept the share and access the data within their tenant.
 
 ## Prerequisites
 
