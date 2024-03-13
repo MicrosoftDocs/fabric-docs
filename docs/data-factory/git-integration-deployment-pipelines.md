@@ -1,5 +1,5 @@
 ---
-title: Git integration and deployment for data pipelines in Data Factory for Microsoft Fabric
+title: Git integration and deployment for data pipelines
 description: This article describes how to use continuous integration and deployment (CI/CD) with Git integration for data pipelines in Microsoft Fabric.
 author: kromerm
 ms.author: makromer
@@ -7,7 +7,7 @@ ms.topic: conceptual
 ms.date: 03/13/2024
 ---
 
-# Git integration and deployment for data pipelines in Data Factory for Microsoft Fabric
+# Git integration and deployment for data pipelines (Preview)
 
 > [!IMPORTANT]
 > Git integration and deployment for data pipelines in Data Factory for Microsoft Fabric are currently in preview. This information relates to a prerelease product that may be substantially modified before it's released. Microsoft makes no warranties, expressed or implied, with respect to the information provided here.
