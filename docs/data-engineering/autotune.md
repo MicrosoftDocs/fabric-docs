@@ -33,7 +33,7 @@ Autotune configures three Spark settings for each of your queries separately:
 > - Spark SQL queries (excluding those written in the RDD API, which are very rare)
 > This feature is compatible with Notebooks, Spark Job Definitions, and Pipelines!
 
-:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Execution time with Autotune Enabled ."::: 
+:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Execution time with Autotune Enabled."::: 
 
 ## AI-based intuition behind the Autotune
 
@@ -46,7 +46,7 @@ From a responsible AI perspective, the Autotune feature includes transparency me
 
 ## Enable autotune
 
-Autotune is available in all regions but is disabled by default, allowing each user to enable it as needed. You control it through Apache Spark configuration settings. You can easily enable Autotune within a session by executing the following code in your notebook or by incorporating it into your Spark Notebook or SJD (Spark Job Definition) code as listed below. Furthermore, Autotune has built-in mechanisms for self-performance awareness to detect performance regressions. For example, if your query suddenly behaves anomalously and processes significantly more data than usual, Autotune will automatically turn off. Therefore, using it is safe. Please note that Autotune requires several iterations to learn and identify the best configurations over time. Typically, the convergence point, where optimal settings are determined, is reached after about 20-25 iterations.
+Autotune is available in all regions but is disabled by default, allowing each user to enable it as needed. You control it through Apache Spark configuration settings. You can easily enable Autotune within a session by executing the following code in your notebook or by incorporating it into your Spark Notebook or SJD (Spark Job Definition) code as listed below. Furthermore, Autotune has built-in mechanisms for self-performance awareness to detect performance regressions. For example, if your query suddenly behaves anomalously and processes significantly more data than usual, Autotune will automatically turn off. Therefore, using it's safe. Note that Autotune requires several iterations to learn and identify the best configurations over time. Typically, the convergence point, where optimal settings are determined, is reached after about 20-25 iterations.
 
 > [!NOTE]
 > The Autotune is compatible with Fabric Runtime 1.1 and Runtime 1.2. Autotune does not function when the HC mode or MPE is enabled. However, Autotune is agnostic to autoscaling, so it will work in conjunction with it.
@@ -146,10 +146,9 @@ library(SparkR)
 sparkR.conf("spark.ms.autotune.enabled", "false")
 ```
 
----
-
 ## Case study
-When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
+
+When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Cnsider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
 
 # [PySpark](#tab/pyspark)
 
