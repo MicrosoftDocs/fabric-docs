@@ -643,3 +643,4 @@ Migrating your workloads to Fabric Runtime 1.1 (Apache Spark 3.3) from an older 
 
 - Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
 - [Runtime 1.2 (Spark 3.4, Java 11, Python 3.10, Delta Lake 2.4)](./runtime-1-2.md)
+- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.10, Delta Lake 3.0)](./runtime-1-3.md)

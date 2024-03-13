@@ -806,3 +806,4 @@ The following table lists all the default level packages for R and their respect
 ## Related content
 
 - Read about [Apache Spark Runtimes in Fabric - Overview, Versioning, Multiple Runtimes Support and Upgrading Delta Lake Protocol](./runtime.md)
+- [Runtime 1.3 (Spark 3.5, Java 11, Python 3.10, Delta Lake 3.0)](./runtime-1-3.md)

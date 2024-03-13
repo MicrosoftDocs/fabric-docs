@@ -23,16 +23,16 @@ Fabric Runtime 1.3, incorporates a variety of components and updates designed to
 - Delta Lake: 3.0.0 (OSS version)
 
 > [!NOTE]
-> Fabric Runtime 1.3 is currently in an experimental public preview phase. Review all associated limitations and notes.
+> Fabric Runtime 1.3 is currently in an experimental public preview phase. [Review all associated limitations and notes](./runtime-1-3.md#limitations).
 
 To integrate Runtime 1.3 into your workspace and leverage its new features, follow the instructions below:
-1. Navigate to the Workspace settings tab within your Fabric workspace.
-2. Go to Data Engineering/Science and select Spark Settings.
-3. Click on the Environment Tab. 
-4. In the Runtime Versions dropdown, see available runtimes.
-5. Select 1.3 Experimental and save your changes. This action will set Runtime 1.3 as the default runtime for your workspace.
+1. Navigate to the `Workspace settings` tab within your Fabric workspace.
+2. Go to `Data Engineering/Science` and select `Spark Settings`.
+3. Click on the `Environment` tab. 
+4. In the `Runtime Versions` dropdown, see available runtimes.
+5. Select `1.3 Experimental (Spark 3.5, Delta 3.0 (OSS)` and save your changes. This action will set Runtime 1.3 as the default runtime for your workspace.
 
-:::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version.":::
+:::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
 By following these straightforward steps, you can efficiently adopt and start experimenting with the newest improvements and functionalities introduced in Fabric Runtime 1.3 (Spark 3.5 and Delta Lake 3.0).
 
