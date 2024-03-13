@@ -32,8 +32,9 @@ Use this methodology to collaborate as a team on your data factory. Export the c
 
    :::image type="content" source="media/git-integration-deployment-pipelines/git-integration-new-branch.png" alt-text="Screenshot showing where to select the Git integration tab and + New Branch button on the Workspace settings dialog.":::
 
-1. From your workspace view, you see the status of the pipeline artifact as _synced_ or _uncommitted_.
-1. When there's uncommitted work from your workspace, a Source Control indicator at the top of the view indicates work that isn't yet committed. Select that button to choose which artifacts to sync to your repo or from your repo to your workspace.
+1. From your workspace view, you see the status of the pipeline artifact as _synced_ or _uncommitted_. If there is _uncommitted_ work, select the **Source control** indicator button at the top of the view. Then you can choose which artifacts to sync, and whether to sync from your workspace to your repo or from your repo to your workspace.
+
+   g:::image type="content" source="media/git-integration-deployment-pipelines/git-status.png" alt-text="Screenshot showing where the Git status for a pipeline is displayed in the workspace details.":::
 
 ## Steps for testing deployment pipelines
 
