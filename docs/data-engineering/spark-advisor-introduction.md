@@ -81,6 +81,14 @@ The Apache Spark advisor displays the advice, including info, warnings, and erro
 - Error
     :::image type="content" source="media\spark-advisor-introduction\errors.png" alt-text="Screenshot showing the errors.":::
 
+## Spark Advisor Setting
+
+The Spark advisor setting allows you to choose whether to show or hide specific types of Spark advice according to your needs. Additionally, you have the flexibility to enable or disable the Spark Advisor for your Notebooks within a workspace, based on your preferences.
+
+You can access the Spark Advisor settings at the Fabric Notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
+
+:::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting.png.":::
+
 ## Related content
 
 - [Monitor Apache Spark jobs within notebooks](spark-monitor-debug.md)
