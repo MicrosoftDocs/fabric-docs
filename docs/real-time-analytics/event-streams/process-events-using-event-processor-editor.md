@@ -171,7 +171,7 @@ In time-streaming scenarios, performing operations on the data contained in temp
 
 ### Manage fields
 
-The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. You can also edit operator name and add all columns form a nested JSON object within **Managed fields**. The side pane settings give you the option of adding a new field by selecting **Add field** or adding all fields at once.  
+The **Manage fields** transformation allows you to add, remove, change data type or rename fields coming in from an input or another transformation. The side pane settings give you the option of adding a new field by selecting **Add field**, adding multiple fields, or adding all fields at once. 
 
 :::image type="content" source="./media/event-processor-editor/event-processor-editor-manage-field.png" alt-text="Screenshot showing the Manage field operator available in the event processor editor." :::
 
