@@ -5,7 +5,7 @@ ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
-ms.date: 02/08/2024
+ms.date: 03/14/2024
 ms.search.form: Eventhouse
 ---
 # Create and manage an Eventhouse (preview)
@@ -89,14 +89,7 @@ In this section, you add a new KQL database to an existing Eventhouse. This data
 
     The following table maps the size to the minimum [capacity units](../admin/service-admin-portal-capacity-settings.md) allotted to the Eventhouse:
     
-    | Name        | Minimum CUs|
-    |-------------|------------|
-    | Extra Small | 8.5        |
-    | Small       | 13         |
-    | Medium      | 18         |
-    | Large       | 26         |
-    | Extra Large | 34         |
-    | 2X Large    | 50         |
+    [!INCLUDE [capacity-eventhouse](includes/capacity-eventhouse.md)]
 
     :::image type="content" source="media/eventhouse/guaranteed-availability.png" alt-text="Screenshot showing how to select the correct minimum consumption in Real-Time Analytics Eventhouse."  lightbox="media/eventhouse/guaranteed-availability.png":::
 
