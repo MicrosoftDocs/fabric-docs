@@ -40,6 +40,7 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-openai-via-rest-api.md), [Python SDK](how-to-use-openai-sdk-synapse.md). [SynapseML](how-to-use-openai-sdk-synapse.md)
 
 - GPT-35-turbo: GPT-3.5 models can understand and generate natural language or code. The most capable and cost effective model in the GPT-3.5 family is GPT-3.5 Turbo, which has been optimized for chat and works well for traditional completions tasks as well. The `gpt-35-turbo` model supports 4096 max input tokens and the `gpt-35-turbo-16k` model supports up to 16,384 tokens.
+- gpt-4 family: `gpt-4` is supported.
 - text-embedding-ada-002 (version 2), embedding model that can be used with embedding API requests. The maximum accepted request token is 8,191, and the returned vector has dimensions of 1,536.
 - text-davinci-003, a legacy model that can do any language task with better quality, longer output, and consistent instruction.
 - code-cushman-002, a legacy model that is optimized for code-completion tasks.
@@ -57,11 +58,6 @@ Fabric provides two options for utilizing Azure AI services:
 [REST API](how-to-use-text-translator.md), [SynapseML](how-to-use-text-translator.md)
 - Translate: Translates text.
 - Transliterate: Converts text in one language from one script to another script.
-- Detect: Identifies the language of a piece of text. 
-- BreakSentence: Identifies the positioning of sentence boundaries in a piece of text. 
-- Dictionary Lookup: Provides alternative translations for a word and a few idiomatic phrases.
-- Dictionary Examples: Provides examples that show how terms in the dictionary are used in context. 
-
 
 ## Available regions
 

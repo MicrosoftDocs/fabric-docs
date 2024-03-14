@@ -29,6 +29,8 @@ items:
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-S3-shortcut.md
+  - name: Use shortcuts REST API
+    href: onelake-shortcuts-rest-api.md
 - name: Open access
   items:
   - name: How do I connect to OneLake?
@@ -55,7 +57,7 @@ items:
     href: onelake-security.md
   - name: Get started with securing data in OneLake
     href: get-started-security.md
-  - name: Plan for disaster recovery
+  - name: Disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
@@ -65,5 +67,13 @@ items:
     href: onelake-file-explorer-release-notes.md
 - name: Discover data in the OneLake data hub
   href: ../get-started/onelake-data-hub.md?toc=/fabric/onelake/TOC.json&bc=/fabric/onelake/breadcrumb/toc.json
-- name: OneLake compute and storage consumption
-  href: onelake-consumption.md
+- name: Billing and consumption
+  items:
+  - name: OneLake compute and storage consumption
+    href: onelake-consumption.md
+  - name: OneLake capacity consumption example
+    href: OneLake-capacity-consumption.md
+- name: Reference
+  items: 
+  - name: OneLake shortcuts REST API
+    href: /rest/api/fabric/core/onelake-shortcuts

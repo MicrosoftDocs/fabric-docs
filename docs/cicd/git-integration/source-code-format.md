@@ -1,12 +1,13 @@
 ---
 title: Git source code format
-description: Understand how the items in Microsoft Fabric's Git integration tool are structured.
+description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they are structured in the folder.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
-ms.topic: conceptual 
-ms.date: 06/20/2023
+ms.topic: concept-article
+ms.date: 03/14/2024
 ms.custom: build-2023
+#customer intent: As a developer, I want to understand how the items in Microsoft Fabric's Git integration tool are structured so that I can use it effectively.
 ---
 
 # Git integration source code format
@@ -21,7 +22,7 @@ Inside each item directory are the [item definition files](#item-definition-file
 
 ## Item definition files
 
-Each item's directory has specific [mandatory files that define that item](/power-bi/developer/projects/projects-overview).
+Each item's directory has specific mandatory files that define that item.
 
 The following items are currently supported in Microsoft Fabric:
 
@@ -61,9 +62,7 @@ For more information about report folders and a complete list of their contents,
 Semantic model folders contain the following files:
 
 - definition.pbidataset
-- model.bim
-
-:::image type="content" source="./media/source-code-format/dataset-directory.png" alt-text="Screenshot of directory tree showing files in the dataset directory.":::
+- model.bim file (TMSL format) OR \definition folder (TMDL format)
 
 For more information about semantic model folders and a complete list of their contents, see [Power BI Desktop project semantic model folder](/power-bi/developer/projects/projects-dataset).
 
@@ -72,10 +71,10 @@ For more information about semantic model folders and a complete list of their c
 In addition to the item definition files, each item directory contains one or two automatically generated system files, depending on which version you're using:
 
 - A version 1 directory contains [item.metadata.json](#metadata-file) and [item.config.json](#config-file). When using V1, both files must be in the directory.
-- A version 2 directory contains [PlatformProperties.json](#platformproperties-file). This file includes the content of both metadata.json and item.config.json files. If you have this file, you can't have the other two files.
+- A version 2 directory contains [.platform](#platform-file). This file includes the content of both metadata.json and item.config.json files. If you have this file, you can't have the other two files.
 
 >[!NOTE]
->Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `PlatformProperties.json` file. You can’t have all three files.
+>Your directory must contain either the `item.metadata.json` and `item.config.json` files *or* the `.platform` file. You can’t have all three files.
 
 ### [Version 1](#tab/v1)
 
@@ -115,9 +114,9 @@ The logicalId connects an item in a workspace with its corresponding item in a G
 
 ### [Version 2](#tab/v2)
 
-## PlatformProperties file
+## Platform file
 
-In version 2, instead of having two source files in each item directory, the *PlatformProperties.json* file combines all the information into one file along with a *$schema* property. If you have this file, you can't have the other two files.
+In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file along with a *$schema* property. If you have this file, you can't have the other two files.
 
 ```json
 {
@@ -134,7 +133,7 @@ In version 2, instead of having two source files in each item directory, the *Pl
 }
 ```
 
-The PlatformProperties.json file contains the following attributes:
+The `.platform` file contains the following attributes:
 
 - `version`: Version number of the system files. This number is used to enable backwards compatibility. Version number of the item might be different.
 - `logicalId`: An automatically generated cross-workspace identifier representing an item and its source control representation.
