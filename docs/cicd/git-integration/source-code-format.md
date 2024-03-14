@@ -78,7 +78,7 @@ In addition to the item definition files, each item directory contains one or tw
 
 ### [Version 2](#tab/v2)
 
-## Platform file
+### Platform file
 
 In version 2, instead of having two source files in each item directory, the *.platform* file combines all the information into one file along with a *$schema* property. If you have this file, you can't have the other two files.
 
