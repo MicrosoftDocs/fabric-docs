@@ -57,7 +57,7 @@ items:
     href: onelake-security.md
   - name: Get started with securing data in OneLake
     href: get-started-security.md
-  - name: Plan for disaster recovery
+  - name: Disaster recovery and data protection
     href: onelake-disaster-recovery.md
 - name: OneLake file explorer for Windows
   items:
