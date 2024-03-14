@@ -10,7 +10,7 @@ ms.custom: known-issue-647
 
 # Known issue - Library management updates with public python libraries time-out
 
-If you update your environment with python libraries from the conda channel or provide an env.yml file with libraries from conda channel, the environment publish hangs and eventually time-out.
+If you update your environment with python libraries from the conda channel or provide an env.yml file with libraries from conda channel, the environment publish hangs and eventually times out.
 
 **Status:** Open
 
@@ -18,7 +18,7 @@ If you update your environment with python libraries from the conda channel or p
 
 ## Symptoms
 
-You see the environment publish hang and time-out if you have one of the following scenarios:
+You see the environment publish hang and time out if you have one of the following scenarios:
 
 - public python libraries specified with feed/source selected as conda
 - libraries specified under 'dependencies' in an env.yml file
