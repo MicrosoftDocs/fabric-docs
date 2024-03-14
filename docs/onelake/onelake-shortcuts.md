@@ -155,10 +155,7 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
-### GCS Shortcuts
-
-> [!IMPORTANT]
-> The GCS shortcuts feature is in [preview](../get-started/preview.md).
+### Google Cloud Storage shortcuts (Preview)
 
 Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
 
