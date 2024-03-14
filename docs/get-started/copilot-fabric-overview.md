@@ -8,7 +8,7 @@ ms.custom:
   - ignite-2023
   - ignite-2023-fabric
 ms.topic: conceptual
-ms.date: 01/16/2024
+ms.date: 02/07/2024
 ---
 
 # Overview of Copilot in Fabric and Power BI (preview)
@@ -23,7 +23,7 @@ Before your business can start using Copilot capabilities in Microsoft Fabric:
 
 - Your administrator needs to enable the tenant switch before you can start using Copilot. Administrators can read the article [Copilot tenant settings (preview)](../admin/service-admin-portal-copilot.md) for details. 
 - Your F64 or P1 capacity needs to be in one of the regions listed in this article, [Fabric region availability](../admin/region-availability.md).
-- If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](/fabric/admin/service-admin-portal-copilot) tenant setting in the Fabric Admin portal.
+- If your tenant or capacity is outside the US or France, Copilot is disabled by default unless your Fabric tenant admin enables the [Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../admin/service-admin-portal-copilot.md) tenant setting in the Fabric Admin portal.
 - Copilot in Microsoft Fabric isn't supported on trial SKUs. Only paid SKUs (F64 or higher, or P1 or higher) are supported.
 
 The preview of Copilot in Microsoft Fabric is rolling out in stages with the goal that all customers with a paid Fabric capacity (F64 or higher) or Power BI Premium capacity (P1 or higher) have access to the Copilot preview. It becomes available to you automatically as a new setting in the Fabric admin portal when it's rolled out to your tenant. When charging begins for the Copilot in Fabric experiences, you can count Copilot usage against your existing Fabric or Power BI Premium capacity.
@@ -65,3 +65,4 @@ For the list of Azure regions where prebuilt AI services in Fabric are now avail
 - [What is Microsoft Fabric?](microsoft-fabric-overview.md)
 - [Copilot in Fabric: FAQ](copilot-faq-fabric.yml)
 - [AI services in Fabric (preview)](../data-science/ai-services/ai-services-overview.md)
+- [Copilot tenant settings](../admin/service-admin-portal-copilot.md)

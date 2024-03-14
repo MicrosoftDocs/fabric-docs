@@ -7,7 +7,7 @@ ms.topic: how to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/29/2024
+ms.date: 02/21/2024
 ---
 
 # Understand the metrics app compute page
@@ -141,7 +141,7 @@ To access the [Timepoint](metrics-app-timepoint-page.md) page from this visual, 
 
 ## System Events
 
-Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md).
+Displays pause and resume capacity events. For more information see [Monitor a paused capacity](monitor-paused-capacity.md). When the state of the capacity has remained unchanged for last 14 days, the table doesn't display any information.
 
 The system events table displays the following elements:
 
@@ -157,40 +157,57 @@ A matrix table that displays metrics for each item on the capacity. To gain a be
 
 You can hover over any value in the visual to see operation level data. You can also filter the visual with the item kind slicer and add or remove columns using the optional columns slicer.
 
-* **Items** - A list of items active during the selected period of time. The item name is a string with the syntax: `workspace name \ item type \ item name`. You can expand each entry to show the various operations (such as queries and refreshes) the item performed.
+The colors in the matrix represent your *performance delta*:
+* *No color* - A value higher than -10.
+* *Orange* - A value between -10 and -25.
+* *Red* - A value lower than -25.
 
-* **CU (s)** - Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks.
+To create the *performance delta*, Microsoft Fabric calculates an hourly average for all the fast operations that take under 200 milliseconds to complete. The hourly value is used as a slow moving average over the last seven days (168 hours). The slow moving average is then compared to the average between the most recent data point, and a data point from seven days ago. The *performance delta* indicates the difference between these two averages.
 
-* **Duration (s)** - Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks.
+You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
 
-* **Users** - The number of users that used the item.
+Sorting the matrix by the *performance delta* column helps identify semantic models that have the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity might not reflect a true picture, as they can easily show large positive or negative values.
 
-* **Item Size** - The amount of memory an item needs. Sort to view the items that have the largest memory footprint.
+### Default fields
 
-* **Overloaded minutes** - Displays a sum of 30 seconds increments where overloading occurred at least once. Sort to view the items that were affected the most due to overload penalty.
+The table in this section lists the default fields that are displayed in the matrix by item and operation visual. You can't remove default fields from the table. 
 
-* **Performance delta** - Displays the performance effect on the items. The number represents the percent of change from seven days ago. For example, 20 suggests that there's a 20% improvement today, compared with the same metric taken a week ago.
+|Name      |Description  |
+|----------|--------------|
+|Workspace |The workspace the item belongs to |
+|Item kind |The item type |
+|Item name |The item name |
+|CU (s)    |Capacity Units (CU) processing time in seconds. Sort to view the top CUs that processed items over the past two weeks   |
+|Duration (s) |Processing time in seconds. Sort to view the items that needed the longest processing time during the past two weeks |
+|Users     |The number of users that used the item                                 |
+|<sup>*</sup>Billing type |Displays information if the item is billable or not     |
 
-    The colors in the matrix represent your *performance delta*:
-    * *No color* - A value higher than -10.
-    * *Orange* - A value between -10 and -25.
-    * *Red* - A value lower than -25.
+<sup>*</sup> The billing type column displays the following values:
 
-    To create the *performance delta*, Microsoft Fabric calculates an hourly average for all the fast operations that take under 200 milliseconds to complete. The hourly value is used as a slow moving average over the last seven days (168 hours). The slow moving average is then compared to the average between the most recent data point, and a data point from seven days ago. The *performance delta* indicates the difference between these two averages.
+* *Billable* - Indicates that operations for this item are billable.
 
-    You can use the *performance delta* value to assess whether the average performance of your items improved or worsened over the past week. The higher the value is, the better the performance is likely to be. A value close to zero indicates that not much has changed, and a negative value suggests that the average performance of your items got worse over the past week.
+* *Non-Billable*  - Indicates that operations for this item are non-billable.
 
-    Sorting the matrix by the *performance delta* column helps identify semantic models that have the biggest change in their performance. During your investigation, don't forget to consider the *CU (s)* and number of *Users*. The *performance delta* value is a good indicator when it comes to Microsoft Fabric items that have a high CU utilization because they're heavily used or run many operations. However, small semantic models with little CU activity might not reflect a true picture, as they can easily show large positive or negative values.
-
-* **Billing type** - Displays information if the item is billable or not.
-
-    * **Billable** - Indicates that operations for this item are billable.
-
-    * **Non-Billable**  - Indicates that operations for this item are non-billable.
-
-    * **Both** - There are two scenarios when an item can have both as billable type:
+* *Both* - There are two scenarios when an item can have both as billable type:
         - If the item has both billable and non-billable operations.
         - If the item has operations that are in transition period from non-billable to billable.
+
+### Optional fields
+
+The table in this section lists the optional fields that you can add to the matrix by item and operation visual. You can add or remove optional fields from the table using the *Select optional column(s)* dropdown menu.
+
+|**Name**  |**Description**  |
+|----------|-----------------|
+|Rejected count   |The total number of rejected operations for an item             |
+|Failed count     |The total number of failed operations for an item               |
+|Invalid count    |The total number of invalid operations for an item              |
+|InProgress count |The total number of operations that are in progress for an item |
+|Successful count |The total number of successful operations for an item           |
+|Virtualized item      |Displays one of the following values:<li>*True* - Virtual items that consume CUs, for example virtual items used by Copilot</li><li>*False* - Items that aren't virtual</li> |
+|Virtualized workspace |Displays one of the following values:<li>*True* - Virtual workspaces that consume CUs, for example a virtual workspace used by a virtual network</li><li>*False* - Workspaces that aren't virtual</li> |
+|Item Size (GB) |The amount of memory an item needs measured in gigabytes (GB) |
+|Overloaded minutes |Displays a sum of 30 seconds increments where overloading occurred at least once. Sort to view the items that were affected the most due to overload penalty |
+|Performance delta |Displays the performance effect on the items. The number represents the percent of change from seven days ago. For example, 20 suggests that there's a 20% improvement today, compared with the same metric taken a week ago |
 
 ## Related content
 

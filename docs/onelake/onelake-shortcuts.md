@@ -27,6 +27,8 @@ Shortcuts are objects in OneLake that point to other storage locations. The loca
 
 You can create shortcuts in lakehouses and Kusto Query Language (KQL) databases. Furthermore, the shortcuts you create within these items can point to other OneLake locations, Azure Data Lake Storage (ADLS) Gen2, Amazon S3 storage accounts, or Dataverse.
 
+You can use the Fabric UI to create shortcuts interactively, and you can use the [REST API](onelake-shortcuts-rest-api.md) to create shortcuts programmatically.
+
 ### Lakehouse
 
 When creating shortcuts in a lakehouse, you must understand the folder structure of the item. Lakehouses are composed of two top level folders: the **Tables** folder and the **Files** folder. The **Tables** folder represents the managed portion of the lakehouse, while the **Files** folder is the unmanaged portion of the lakehouse.
@@ -238,11 +240,11 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 
 ## Limitations and considerations
 
-- The maximum number of shortcuts per Fabric item is 10,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
+- The maximum number of shortcuts per Fabric item is 100,000. In this context, the term item refers to: apps, lakehouses, warehouses, reports, and more.
 - The maximum number of shortcuts in a single OneLake path is 10.
 - The maximum number of direct shortcuts to shortcut links is 5.
-- ADLS and S3 shortcut target paths can't contain any reserved characters from RCF 3986 section 2.2.
-- OneLake shortcut target paths can't contain "%" characters.
+- ADLS and S3 shortcut target paths can't contain any reserved characters from [RFC 3986 section 2.2](https://www.rfc-editor.org/rfc/rfc3986#section-2.2).
+- OneLake shortcut names, parent paths, and target paths can't contain "%" or "+" characters.
 - Shortcuts don't support non-Latin characters.
 - Copy Blob API not supported for ADLS or S3 shortcuts.
 - Copy function doesn't work on shortcuts that directly point to ADLS containers. It's recommended to create ADLS shortcuts to a directory that is at least one level below a container.
@@ -253,3 +255,4 @@ When creating shortcuts between multiple Fabric items within a workspace, you ca
 ## Related content
 
 - [Create a OneLake shortcut](create-onelake-shortcut.md)
+- [Use OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md)

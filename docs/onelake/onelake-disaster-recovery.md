@@ -10,7 +10,7 @@ ms.custom:
 ms.date: 11/15/2023
 ---
 
-# Disaster recovery guidance for OneLake
+# Disaster recovery and data protection for OneLake
 
 All data in OneLake is accessed through data items. These data items can reside in different regions depending on their workspace, as a workspace is created under a capacity tied to a specific region. 
 
@@ -20,9 +20,13 @@ OneLake utilizes zone-redundant storage (ZRS) where available (see [Azure region
 
 You can enable or disable BCDR (Business Continuity and Disaster Recovery) for a specific capacity through the Capacity Admin Portal. If your capacity has BCDR activated, your data is duplicated and stored in two different geographic regions, making it geo-redundant. The choice of the secondary region is determined by Azure's standard region pairings and can't be modified.
 
-If a disaster makes the primary region unrecoverable, OneLake may initiate a regional failover.  Once the failover has completed, you can use OneLake's APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster will be lost. After a failover, the new primary data center will have local redundancy only.
+If a disaster makes the primary region unrecoverable, OneLake may initiate a regional failover. Once the failover completes, you can use OneLake's APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary data center will have local redundancy only.
 
 For a comprehensive understanding of the end-to-end experience, see the Fabric BCDR documentation.
+
+## Soft delete for OneLake files
+
+OneLake soft delete protects individual files from accidental deletion by retaining files for a default retention period before it's permanently deleted. Currently the default is 28 days, but it's subject to change. All soft-deleted data is billed at the same rate as active data.
 
 ## Related content
 
