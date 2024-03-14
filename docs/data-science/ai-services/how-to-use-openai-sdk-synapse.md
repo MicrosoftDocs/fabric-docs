@@ -104,8 +104,6 @@ ChatGPT and GPT-4 models are language models that are optimized for conversation
 -   `gpt-35-turbo`
 -   `gpt-35-turbo-16k`
 -   `gpt-4`
--   `gpt-4-32k`
--   `gpt-4-turbo`
 
 ``` python
 from pyspark.sql import Row
