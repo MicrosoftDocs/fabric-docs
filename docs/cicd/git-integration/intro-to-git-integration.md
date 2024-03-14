@@ -6,11 +6,9 @@ ms.author: monaberdugo
 ms.reviewer: NimrodShalit
 ms.topic: conceptual
 ms.custom:
-  - contperf-fy21q1
   - build-2023
   - ignite-2023
 ms.date: 12/17/2023
-ms.search.form:
 ---
 
 # Introduction to Git integration (preview)
@@ -61,7 +59,7 @@ If the workspace or Git directory has unsupported items, it can still be connect
 
 ## Considerations and limitations
 
-* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) is supported.  
+* Currently, only [Git in Azure Repos](/en-us/azure/devops/user-guide/code-with-git) with the *same tenant* as the Fabric tenant is supported.  
 * If the workspace and Git repo are in two different geographical regions, the tenant admin must enable [cross-geo exports](../../admin/git-integration-admin-settings.md#users-can-export-items-to-git-repositories-in-other-geographical-locations-preview).  
 * Azure DevOps **on-prem** isn't supported.
 * Sovereign clouds aren't supported.

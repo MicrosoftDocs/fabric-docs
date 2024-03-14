@@ -45,12 +45,16 @@ items:
     href: give-access-workspaces.md
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
+  - name: Workspace identity
+    href: ../security/workspace-identity.md
 - name: Discover data in the OneLake data hub
   href: onelake-data-hub.md
 - name: Copilot in Fabric
   items:
   - name: Copilot in Fabric overview
     href: copilot-fabric-overview.md
+  - name: Enable Copilot in Fabric
+    href: copilot-fabric-enable.md
   - name: Copilot in Fabric FAQ
     href: copilot-faq-fabric.yml
   - name: Privacy, security, and responsible use for Copilot in Fabric
@@ -73,22 +77,8 @@ items:
       href: copilot-notebooks-chat-magics.md
     - name: Use the Copilot chat panel
       href: copilot-notebooks-chat-pane.md
-  - name: Copilot for Power BI
-    items:
-      - name: Intro to Copilot for Power BI
-        href: /power-bi/create-reports/copilot-introduction
-      - name: Update a data model to work with Copilot
-        href: /power-bi/create-reports/copilot-evaluate-data
-      - name: Create report pages with Copilot
-        href: /power-bi/create-reports/copilot-create-report
-      - name: Write prompts for Copilot report pages
-        href: /power-bi/create-reports/copilot-prompts-report-pages
-      - name: Create a narrative visual with Copilot
-        href: /power-bi/create-reports/copilot-create-narrative
-      - name: Write prompts for Copilot narratives
-        href: /power-bi/create-reports/copilot-prompts-narratives
-      - name: Enhance Q&A with Copilot
-        href: /power-bi/natural-language/q-and-a-copilot-enhancements
+  - name: Copilot in Fabric Consumption
+    href: copilot-fabric-consumption.md
 - name: Promote or certify items
   href: endorsement-promote-certify.md
 - name: Share items
@@ -131,10 +121,30 @@ items:
     href: /power-bi/guidance/fabric-adoption-roadmap-conclusion?context=/fabric/context/context
 - name: Known issues
   items:
-    - name: Active known issues for Fabric - chart
+    - name: Active known issues for Fabric + Power BI - chart
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: Load Table public API response returns error
+      href: known-issues/known-issue-642-load-table-public-api-response-returns-error.md
+    - name: Visuals using the Denodo connector might show connection errors
+      href: known-issues/known-issue-641-visuals-using-denodo-connector-might-show-connection-errors.md
+    - name: Microsoft Defender detects OpenSSL vulnerabilities in Power BI Desktop
+      href: known-issues/known-issue-640-microsoft-defender-detects-openssl-vulnerabilities-desktop.md
+    - name: Tables not available to add in Power BI semantic model
+      href: known-issues/known-issue-643-tables-not-available-semantic-model.md
+    - name: Dataflow Gen1 refresh fails in premium workspaces connecting to Azure Cosmos DB
+      href: known-issues/known-issue-602-dataflow-gen1-premium-workspaces-azure-cosmos-db.md
+    - name: Type mismatch when writing decimals and dates to lakehouse using a dataflow
+      href: known-issues/known-issue-591-type-mismatch-lakehouse-using-dataflow.md
+    - name: Tighter throttling limit for GetDatasourcesAsAdmin Admin API
+      href: known-issues/known-issue-624-tighter-throttling-limit-getdatasourcesasadmin-admin-api.md
+    - name: Using an inactive SQL analytics endpoint can show old data
+      href: known-issues/known-issue-618-using-inactive-sql-analytics-endpoint-old-data.md
+    - name: Under-billing of OneLake storage for January 26 2024
+      href: known-issues/known-issue-616-under-billing-onelake-storage.md
+    - name: OneLake storage isn't billed for paused capacities
+      href: known-issues/known-issue-611-onelake-storage-not-billed-paused-capacities.md
     - name: Relationships in the default semantic model get dropped
       href: known-issues/known-issue-592-relationships-default-semantic-model-dropped.md
     - name: Reflex item creation fails due to a token creation failure
@@ -153,58 +163,46 @@ items:
       href: known-issues/known-issue-549-making-model-changes-semantic-model-might-not-work.md
     - name: Failed to publish Dataflow Gen2
       href: known-issues/known-issue-598-failed-to-publish-dataflow-gen2.md
-    - name: Feature Usage and Adoption report activity missing
-      href: known-issues/known-issue-536-feature-usage-adoption-report-activity-missing.md
     - name: Dataflow Gen1 admin switch affects Dataflow Gen2
       href: known-issues/known-issue-597-dataflow-gen1-admin-switch-affects-dataflow-gen2.md
     - name: Creating or updating Fabric items is blocked
       href: known-issues/known-issue-530-creating-updating-fabric-items-blocked.md
     - name: Data warehouse with more than 20,000 tables fails to load
       href: known-issues/known-issue-529-data-warehouse-more-than-20000-tables-fails-to-load.md
-    - name: Capacity Metrics app shows variance between workload summary and operations
-      href: known-issues/known-issue-519-capacity-metrics-app-shows-variance-workload-summary.md
-    - name: New throttling logic delayed for Power BI and eventstream
-      href: known-issues/known-issue-521-throttling-logic-delayed-power-bi-eventstream.md
     - name: User column incorrectly shows as System in Fabric capacity metrics app
       href: known-issues/known-issue-508-user-column-incorrectly-shows-system-metrics-app.md
     - name: InProgress status shows in Fabric capacity metrics app for completed queries
       href: known-issues/known-issue-506-inprogress-status-shows-fabric-capacity-metrics-app-completed-queries.md
-    - name: Unable to start new Spark session after deleting all libraries
-      href: known-issues/known-issue-514-unable-to-start-new-spark-session-after-delete-libraries.md
-    - name: Selecting view account link in account manager shows wrong page
-      href: known-issues/known-issue-507-select-view-account-link-account-manager-shows-wrong-page.md
     - name: Refresh history reports in progress for some tables that failed
       href: known-issues/known-issue-596-refresh-history-reports-in-progress-for-failed-tables.md  
     - name: Admin monitoring semantic model refresh fails and credentials expire
       href: known-issues/known-issue-483-admin-monitoring-dataset-refresh-fails-credentials-expire.md
-    - name: Fabric items can't be created in a workspace moved to a capacity in a different region
-      href: known-issues/known-issue-473-fabric-items-cant-be-created-capacity-different-region.md
-    - name: Notebook fails to load after workspace migration
-      href: known-issues/known-issue-467-notebook-fails-load-after-workspace-migration.md
-    - name: Failure occurs when accessing a renamed Lakehouse or Warehouse
-      href: known-issues/known-issue-463-failure-occurs-accessing-renamed-lakehouse-warehouse.md
-    - name: Fabric user sees workspace git status column display synced for unsupported items
-      href: known-issues/known-issue-462-fabric-user-git-column-synced-activity.md 
-    - name: Not able to add lookup activity output to body of Office 365 activity
-      href: known-issues/known-issue-458-unable-add-lookup-activity-office-activity.md 
-    - name: OneLake file explorer does not contain items under my workspace
-      href: known-issues/known-issue-456-onelake-file-not-available-under-my-workspace.md  
     - name: Warehouse's object explorer doesn't support case-sensitive object names
       href: known-issues/known-issue-454-data-warehouse-object-explorer-unsupport-case-sensitive-names.md
-    - name: Data Warehouse only publishes Delta Lake Logs for Inserts
-      href: known-issues/known-issue-453-data-warehouse-publishes-delta-lake-logs-inserts.md
-    - name: Pipeline isn't loading if user deployed with update app via public API
-      href: known-issues/known-issue-449-pipeline-not-loading-user-deployed-via-api.md  
     - name: Temp tables in Warehouse and SQL analytics endpoint
       href: known-issues/known-issue-447-temp-tables-data-warehouse-sql-endpoint.md  
-    - name: OneLake table folder not removed when table dropped in data warehouse
-      href: known-issues/known-issue-446-onelake-table-folder-isnt-removed.md  
-    - name: Affected rows number displayed doesn't match the real row number
-      href: known-issues/known-issue-439-affected-rows-number-displayed-doesnt-match.md
-    - name: Moving files from outside of OneLake to OneLake with file explorer doesn't sync files
-      href: known-issues/known-issue-420-moving-files-to-onelake-file-explorer-doesnt-sync.md
-    - name: Get Tenant Settings API returns default values instead of user configured values
-      href: known-issues/known-issue-421-get-tenant-settings-api-returns-default-values.md
+    - name: Contributor can't update organizational app
+      href: known-issues/known-issue-571-contributor-can-not-update-organizational-app.md
+    - name: Version 17 of the Fabric Capacity Metrics app doesn't work
+      href: known-issues/known-issue-570-version-17-capacity-metrics-app-does-not-work.md
+    - name: Autoscale not triggered by carry forward accumulated usage
+      href: known-issues/known-issue-552-autoscale-not-triggered-carry-forward-accumulated-usage.md
+    - name: Closing a Dataflow Gen1 takes you to the wrong workspace
+      href: known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md
+    - name: New card visual formatting appears or disappears in Service
+      href: known-issues/known-issue-535-new-card-visual-formatting-appears-disappears.md
+    - name: Sign in fails for securely embedded reports using Chrome or Microsoft Edge browser
+      href: known-issues/known-issue-532-sign-in-fails-securely-embedded-reports-using-chrome-browser.md
+    - name: Dataflow REST API returns more data sources and gateways than expected
+      href: known-issues/known-issue-526-dataflow-rest-api-returns-more-data-sources-gateways.md
+    - name: Desktop sign-in prompt shows unsupported personal Microsoft accounts
+      href: known-issues/known-issue-482-desktop-sign-in-prompt-shows-unsupported-personal-microsoft-accounts.md
+    - name: Power BI Embedded setup tool isn't responsive
+      href: known-issues/known-issue-471-embedded-setup-tool-isnt-responsive.md
+    - name: A scheduled refresh of a semantic model intermittently hangs when connected to a dataflow
+      href: known-issues/known-issue-461-scheduled-refresh-dataset-hangs.md   
+    - name: Search strings with Japanese symbols don't return content in search results
+      href: known-issues/known-issue-222-search-strings-japanese-symbols-dont-work.md      
 - name: Resources
   items:
     - name: Icons

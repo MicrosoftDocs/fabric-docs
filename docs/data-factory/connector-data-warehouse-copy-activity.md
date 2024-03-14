@@ -133,7 +133,7 @@ For the **Settings** tab configuration, go to [Settings](copy-data-activity.md#c
 
 ## Table summary
 
-To following tables contain more information about a copy activity in Data Warehouse.
+The following tables contain more information about a copy activity in Data Warehouse.
 
 ### Source information
 

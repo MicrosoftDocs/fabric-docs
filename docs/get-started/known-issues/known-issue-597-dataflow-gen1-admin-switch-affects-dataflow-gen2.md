@@ -4,7 +4,7 @@ description: A known issue is posted where a customer has disabled Dataflow Gen1
 author: luitwieler
 ms.author: jeluitwi
 ms.topic: troubleshooting
-ms.date: 1/16/2024
+ms.date: 02/02/2024
 ms.custom: known-issue-597
 ---
 
@@ -14,7 +14,7 @@ Users aren't able to use Dataflow Gen2 when Dataflow Gen1 admin switch is disabl
 
 **APPLIES TO:** ✔️ Dataflow Gen2 in Microsoft Fabric.
 
-**Status:** Active
+**Status:** Open
 
 **Product experience:** Data Factory
 
@@ -24,7 +24,7 @@ When the Dataflow Gen1 admin switch is disabled, users aren't able to use Datafl
 
 ## Solutions and workarounds
 
-Enable the Dataflow Gen1 admin switch to use Dataflow Gen2. For more information, see [Dataflow Gen1 admin switch](/fabric/admin/service-admin-portal-dataflow)
+Enable the Dataflow Gen1 admin switch to use Dataflow Gen2. For more information, see [Dataflow Gen1 admin switch](../../admin/service-admin-portal-dataflow.md)
 
 ## Next steps
 

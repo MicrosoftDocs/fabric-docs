@@ -60,7 +60,7 @@ Learn the definitions of terms used in Microsoft Fabric, including terms specifi
 
 - **Run:** A run corresponds to a single execution of model code. In [MLflow](https://mlflow.org/), tracking is based on experiments and runs.
 
-## Synapse data warehousing
+## Synapse data warehouse
 
 - **SQL analytics endpoint:** Each Lakehouse has a SQL analytics endpoint that allows a user to query delta table data with TSQL over TDS. For more information, see [SQL analytics endpoint](../data-warehouse/data-warehousing.md#sql-analytics-endpoint-of-the-lakehouse).
 
