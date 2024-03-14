@@ -1,6 +1,6 @@
 ---
 title: Git source code format
-description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they are structured in the folder.
+description: This article describes the format of items in Microsoft Fabric's Git integration tool and how they're structured in the folder.
 author: mberdugo
 ms.author: monaberdugo
 ms.reviewer: NimrodShalit
@@ -18,7 +18,7 @@ Items in Microsoft Fabric are stored in a folder. The folder containing the item
 
 [!INCLUDE [preview-note](../../includes/feature-preview-note.md)]
 
-Inside each item directory are the [item definition files](#item-definition-files) and either one or two [automatically generated system files](#automatically-generated-system-files) in each directory.
+Each item directory contains the [item definition files](#item-definition-files) and either one or two [automatically generated system files](#automatically-generated-system-files).
 
 ## Item definition files
 
