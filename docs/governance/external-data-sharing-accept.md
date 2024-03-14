@@ -12,7 +12,7 @@ ms.date: 03/19/2024
 
 Fabric external data sharing is a feature that enables Fabric users to share data from their tenant (hearafter referred to as the provider tenant) with users in another Fabric tenant (hereafter referred to as the consuming tenant). The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the provider tenant, meaning that no data is actually copied to the consuming tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the consuming tenant that points back to the original data. Data that is shared across tenant boundaries is exposed to users in the consuming tenant as read-only, and may be consumed by any OneLake compatible Fabric workload in that tenant.
 
-:::image type="content" source="./media/external-data-sharing/image1.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image1.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 ## How does external data sharing work
 
@@ -56,15 +56,15 @@ Shares may be deleted by the consumer or revoked by the provider at any time.
 
 1. Open the context menu of the selected item and choose **External data share (preview)**.
 
-    :::image type="content" source="./media/external-data-sharing/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+    :::image type="content" source="./media/external-data-sharing-accept/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 1. In the **New external data share** dialog that opens, choose the folder or table to be shared and select **Save and continue**.
 
-    :::image type="content" source="./media/external-data-sharing/image5.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+    :::image type="content" source="./media/external-data-sharing-accept/image5.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
  
 1. Enter the email address of the user you want to share the data with and select Send. An email will be sent to the user inviting them to accept the invitation to share. Alternatively, you can select Copy link and then paste it into an email that you yourself compose.
 
-:::image type="content" source="./media/external-data-sharing/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
  
 The consumer will now be able to accept the share and access the data within their tenant.
 
@@ -84,25 +84,25 @@ Once the tenant has been added to the private preview, the tenant admin must ena
 
 Navigate to the Fabric admin portal by clicking on the settings icon on the top right of the screen, then click on the “Admin portal” link on the bottom of the settings blade.  Scroll down within the “Tenant settings” blade to the “Export and sharing settings”. To allow users to share data within a tenant, enable the “External data sharing (preview)” setting.
 
-:::image type="content" source="./media/external-data-sharing/image2.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image2.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 To allow users to accept shares into an organization enable the “Allow users to accept external data shares (preview)” setting.
 
-:::image type="content" source="./media/external-data-sharing/image3.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image3.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 ## Share data
 
 In the provider’s tenant, navigate to a workspace or the OneLake Data Hub and select an existing Lakehouse or KQL Database that contains data that you would like to share. Click on the context menu of the selected item and click “External data share (preview)”.
 
-:::image type="content" source="./media/external-data-sharing/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image4.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 This will open a dialog with the OneLake explorer. Select the folder or table to be shared and click “Save and continue”.
 
-:::image type="content" source="./media/external-data-sharing/image5.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image5.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 Enter the email address of the user you want to invite and click Copy link. (The ability to send an email directly from this dialog will be available within the next few weeks.) Copy the link and send it to the consumer.
 
-:::image type="content" source="./media/external-data-sharing/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image6.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 The consumer will now be able to accept the share and access the data within their tenant.
 
@@ -110,11 +110,11 @@ The consumer will now be able to accept the share and access the data within the
 
 To accept a share, click the share link or paste the URL in a browser. This will navigate to a dialog that displays the name of the share and the data provider’s tenant details.
 
-:::image type="content" source="./media/external-data-sharing/image7.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image7.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 Click “Accept and select a location”. This will navigate to the OneLake data hub. Select a Lakehouse, click “Next”, select the table or folder location in which to create the incoming share shortcut, and then click “Apply”.
 
-:::image type="content" source="./media/external-data-sharing/image8.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image8.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 The share has now been created in the consumer’s OneLake location. The data within this share location can be consumed using any Fabric workload.
 
@@ -122,11 +122,11 @@ The share has now been created in the consumer’s OneLake location. The data wi
 
 To view existing shares, navigate to the shared Lakehouse or KQL Database within the workspace view or the OneLake data hub, click on the context menu, and then click “Manage permissions”
 
-:::image type="content" source="./media/external-data-sharing/image9.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image9.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 Navigate to the “External data shares” tab to view a list of external shares for this item. Hover over the share id, to view the revoke icon. Shares may be revoked at any time.
 
-:::image type="content" source="./media/external-data-sharing/image10.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-accept/image10.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
 
 ## Security Considerations
 
