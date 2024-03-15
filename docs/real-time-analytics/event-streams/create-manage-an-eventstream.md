@@ -41,7 +41,7 @@ You can create an eventstream on the **Workspace** page, the **Real-Time Analyti
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-naming.png" alt-text="Screenshot showing where to enter the eventstream name on the New Eventstream screen." :::
 
-1. Creation of the new eventstream in your workspace may take a few seconds. Once it’s done, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
+1. Creation of the new eventstream in your workspace may take a few seconds. After the eventstream is created, you're directed to the main editor where you can add sources and destinations to your eventstream. See the [Main editor](#main-editor-for-eventstreams) section for details.
 
    :::image type="content" source="./media/create-manage-an-eventstream/eventstream-creation-completed.png" alt-text="Screenshot showing the eventstream creation completed." lightbox="./media/create-manage-an-eventstream/eventstream-creation-completed.png" :::
 
@@ -58,7 +58,7 @@ After you create an eventstream, you can edit and manage the eventstream in your
     :::image type="content" source="./media/create-manage-an-eventstream/eventstream-management.png" alt-text="Screenshot showing the eventstream management." lightbox="./media/create-manage-an-eventstream/eventstream-management.png" :::
 
 ### Retention setting
-For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period has been reached. If you specified retention period of one day (24 hours), the event becomes unavailable exactly 24 hours after it has been accepted. You can't explicitly delete events. To learn more about usage billing and reporting, see [Monitor capacity consumption for event streams](monitor-capacity-consumption.md).
+For the **retention** setting, you can specify the duration for which the incoming data needs to be retained. The default retention period is one day. Events are automatically removed when the retention period expires. If you set the retention period to one day (24 hours), the event becomes unavailable exactly 24 hours after it's accepted. You can't explicitly delete events. To learn more about usage billing and reporting, see [Monitor capacity consumption for event streams](monitor-capacity-consumption.md).
 
 :::image type="content" source="./media/create-manage-an-eventstream/retention-setting.png" alt-text="Screenshot that shows the retention setting for an event stream.":::
 
@@ -69,6 +69,14 @@ For the **event throughput** setting, you can select the throughput rate for inc
 
 > [!NOTE]
 > Pause the node before you update the throughput setting and reactivate the node. 
+
+### Endorsement setting
+On the **Endorsement** tab of the **Settings** page, you can promote or endorse or recommended the eventstream for others to use. For more information on endorsement, see [Endorsement](/fabric/governance/endorsement-overview).
+
+:::image type="content" source="./media/create-manage-an-eventstream/endorsement-setting.png" alt-text="Screenshot that shows the endorsement setting for an event stream.":::
+
+### Sensitivity label setting
+On the **Sensitivity label** tab of the **Settings** page, you can specify the sensitivity level of the eventstream. 
 
 ## Main editor for eventstreams
 
