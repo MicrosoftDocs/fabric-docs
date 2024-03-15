@@ -139,8 +139,6 @@ items:
     href: machine-learning-model.md
   - name: Fabric autologging
     href: mlflow-autologging.md
-  - name: Train models with PyTorch
-    href: train-models-pytorch.md
 - name: Model scoring
   items:   
     - name: Direct lake mode and PBI reporting
