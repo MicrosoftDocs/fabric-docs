@@ -155,6 +155,32 @@ The IAM user must have the following permissions on the bucket that the shortcut
 > [!NOTE]
 > S3 shortcuts are read-only. They don't support write operations regardless of the permissions for the IAM user.
 
+### Google Cloud Storage shortcuts (Preview)
+
+Shortcuts can be created to Google Cloud Storage(GCS) using the XML API for GCS.  When you create shortcuts to Google Cloud Storage, the target path must contain a bucket name at a minimum.  You can also restrict the scope of the shortcut by further specifying the prefix/folder you want to point to within the storage hierarchy. 
+
+#### Access
+
+When configuring the connection for a GCS shortcut you can either specify the global endpoint for the storage service or use a bucket specific endpoint.
+
+- Global Endpoint example: `https://storage.googleapis.com`
+- Bucket Specific Endpoint example: ` https://<BucketName>.storage.googleapis.com`
+
+#### Authorization
+
+GCS shortcuts use a delegated authorization model. In this model, the shortcut creator specifies a credential for the GCS shortcut and all access to that shortcut is authorized using that credential. The supported delegated credential is an HMAC key and secret for a Service account or User account.
+
+The account must have permission to access the data within the GCS bucket. If the bucket specific endpoint was used in the connection for the shortcut, the account must have the following permissions:
+
+- `storage.objects.get`
+- `stoage.objects.list`
+
+If the global endpoint was used in the connection for the shortcut, the account must also have the following permission:
+- `storage.buckets.list`
+
+> [!NOTE]
+> GCS shortcuts are read-only. They don't support write operations regardless of the permissions for the account used.
+
 ### Dataverse shortcuts
 
 Dataverse direct integration with Microsoft Fabric enables organizations to extend their Dynamics 365 enterprise applications and business processes into Fabric. The **View in Microsoft Fabric** feature, which is built into the PowerApps maker portal, makes all your Dynamics 365 data available for analysis in Microsoft Fabric. For more information, see [Dataverse direct integration with Microsoft Fabric](https://go.microsoft.com/fwlink/?linkid=2245037).
@@ -172,7 +198,7 @@ Dataverse shortcuts use a delegated authorization model. In this model, the shor
 ## Caching (Preview)
 Shortcut caching can be used to reduce egress costs associated with cross-cloud data access. As files are read through an external shortcut, the files are stored in a cache for the Fabric workspace.  Subsequent read requests are served from cache rather than the remote storage provider.  Cached files have a retention period of 24 hours.  Each time the file is accessed the retention period is reset.  If the file in remote storage provider is more recent than the file in the cache, the request is served from remote storage provider and the updated file will be stored in cache.  If a file hasn’t been accessed for more than 24hrs it is purged from the cache. Individual files greater than 1GB in size are not cached.
 > [!NOTE]
-> Shortcut caching is currently only supported for S3 shortcuts.
+> Shortcut caching is currently only supported for GCS, S3 and S3 compatible shortcuts.
 
 To enable caching for shortcuts, open the **Workspace settings** panel. Choose the **OneLake** tab. Toggle the cache setting to **On** and click **Save**.
 

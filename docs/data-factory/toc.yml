@@ -581,6 +581,8 @@
         href: outlook-activity.md
       - name: Script activity
         href: script-activity.md
+      - name: Semantic model refresh activity
+        href: semantic-model-refresh-activity.md
       - name: Set Variable Activity
         href: set-variable-activity.md
       - name: Stored Procedure activity
@@ -697,4 +699,9 @@
       href: data-factory-limitations.md
     - name: Data Factory known issues
       href: data-factory-known-issues.md
-
+  - name: Reference
+    items:
+    - name: CI/CD for data pipelines
+      href: git-integration-deployment-pipelines.md
+    - name: Data pipelines REST API
+      href: pipeline-rest-api.md
