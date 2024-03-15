@@ -155,13 +155,13 @@ When executing a Spark query, autotune creates a customized ML model dedicated t
 
 ```python
 %%pyspark
-df.filter(df.country == "USA")
+df.filter(df.country == "country-A")
 ```
 Autotune learns from this query, optimizing subsequent executions. When the query changes, for instance, by altering the filter value or applying a different data transformation, the structural essence of the query often remains consistent:
 
 ```python
 %%pyspark
-df.filter(df.country == "Poland")
+df.filter(df.country == "country-B")
 ```
 
 Despite alterations, autotune identifies the fundamental structure of the new query, implementing previously learned optimizations. This capability ensures sustained high efficiency without the need for manual reconfiguration for each new query iteration.
@@ -169,7 +169,7 @@ Despite alterations, autotune identifies the fundamental structure of the new qu
 
 ## Logs
 
-For each of your queries, autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by autotune are located in the driver logs, specifically those entries starting with *Autotune*.
+For each of your queries, autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by autotune are located in the driver logs, specifically those entries starting with *[Autotune]*.
 
 :::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Screenshot of autotune logs inside Monitoring Hub." lightbox="media\autotune\autotune-logs.jpg":::
 
