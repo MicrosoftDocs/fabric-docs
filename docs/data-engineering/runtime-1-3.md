@@ -54,7 +54,7 @@ Fabric Runtime 1.3 is currently in an experimental public preview stage, designe
 
 * You can read and write to the Lakehouse with Delta 3.0 OSS, but some advanced features like V-order, native Parquet writing, autocompaction, optimize write, low-shuffle merge, merge, schema evolution, and time travel are not included in this early release.
 
-* The Spark Advisor is currently unavailable. However, monitoring tools such as Spark UI and logs are supported in this early release..
+* The Spark Advisor is currently unavailable. However, monitoring tools such as Spark UI and logs are supported in this early release.
 
 * Features such as Data Science integrations including Copilot and connectors including Kusto, SQL Analytics, Cosmos DB, and MySQL Java Connector are currently not supported in this early release. Data Science libraries aren't supported in PySpark environments. PySpark only works with a basic Conda setup, which includes PySpark alone without extra libraries.
 
