@@ -29,7 +29,7 @@ items:
       href: security-conditional-access.md
   - name: Outbound
     items:
-    - name: Overview of mananged VNets
+    - name: Overview of managed VNets
       href: security-managed-vnets-fabric-overview.md
     - name: About managed private endpoints
       href: security-managed-private-endpoints-overview.md
