@@ -17,8 +17,6 @@ ms.search.form: Read write powerbi
 In this article, you'll learn how to read data and metadata and evaluate measures in semantic models using the SemPy python library in Microsoft Fabric.
 You'll also learn how to write data that semantic models can consume.
 
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
-
 ## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]

@@ -1,5 +1,5 @@
 ---
-title: Semantic functions in Microsoft Fabric (preview)
+title: Semantic functions in Microsoft Fabric
 description: Learn about semantic functions that you can apply to FabricDataFrames and FabricSeries.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,11 +12,9 @@ ms.date: 06/23/2023
 ms.search.form: semantic link
 ---
 
-# Semantic functions (preview)
+# Semantic functions
 
 This article covers semantic functions and how they can help data scientists and data engineers discover functions that are relevant to the FabricDataFrame or FabricSeries on which they're working.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 To use semantic functions, install the `SemPy` Python library in your notebook kernel by executing this code in a notebook cell:
 
@@ -118,6 +116,6 @@ The following points provide a breakdown of the code snippet:
 ## Related content
 
 - [See `sempy.functions` to learn about usage of semantic functions](/python/api/semantic-link-sempy/sempy.functions)
-- [Tutorial: Clean data with functional dependencies (preview)](tutorial-data-cleaning-functional-dependencies.md)
-- [Power BI connectivity with semantic link and Microsoft Fabric (preview)](semantic-link-power-bi.md)
-- [Semantic data propagation from semantic models (preview)](semantic-link-semantic-propagation.md)
+- [Tutorial: Clean data with functional dependencies](tutorial-data-cleaning-functional-dependencies.md)
+- [Power BI connectivity with semantic link and Microsoft Fabric](semantic-link-power-bi.md)
+- [Semantic data propagation from semantic models](semantic-link-semantic-propagation.md)

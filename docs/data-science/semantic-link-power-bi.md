@@ -1,5 +1,5 @@
 ---
-title: Semantic link and Power BI connectivity (preview)
+title: Semantic link and Power BI connectivity
 description: Semantic link and Microsoft Fabric provide Power BI data connectivity for pandas and Spark ecosystems.
 ms.reviewer: mopeakande
 reviewer: msakande
@@ -12,12 +12,10 @@ ms.date: 06/14/2023
 ms.search.form: semantic link
 ---
 
-# Power BI connectivity with semantic link and Microsoft Fabric (preview)
+# Power BI connectivity with semantic link and Microsoft Fabric
 
-Power BI connectivity is at the core of semantic link (preview).
+Power BI connectivity is at the core of semantic link.
 In this article, you'll learn about the ways that semantic link provides connectivity to semantic models for users of the Python pandas ecosystem and the Apache Spark ecosystem.
-
-[!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
 A semantic model usually represents the gold standard of data and is the result of upstream data processing and refinement.
 Business analysts can create Power BI reports from semantic models and use these reports to drive business decisions.
@@ -198,6 +196,6 @@ The `add_measure` operation performs these steps:
 ## Related content
 
 - [See the SemPy reference documentation for the `add_measure` method](/python/api/semantic-link-sempy/sempy.fabric.fabricdataframe#sempy-fabric-fabricdataframe-add-measure)
-- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook (preview)](tutorial-power-bi-measures.md)
-- [How to validate data with  (preview)](semantic-link-validate-data.md)
-- [Explore and validate relationships in semantic models (preview)](semantic-link-validate-relationship.md)
+- [Tutorial: Extract and calculate Power BI measures from a Jupyter notebook](tutorial-power-bi-measures.md)
+- [How to validate data with ](semantic-link-validate-data.md)
+- [Explore and validate relationships in semantic models](semantic-link-validate-relationship.md)
