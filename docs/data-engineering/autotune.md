@@ -21,36 +21,36 @@ Autotune automatically adjusts Apache Spark configuration to speed up workload e
 ## Query tuning
 
 Autotune configures three Spark settings for each of your queries separately:
-- `spark.sql.shuffle.partitions` - configures the number of partitions to use when shuffling data for joins or aggregations. Default is 200.
-- `spark.sql.autoBroadcastJoinThreshold` - Configures the maximum size in bytes for a table that is broadcast to all worker nodes when performing a join. Default is 10 MB.
+- `spark.sql.shuffle.partitions` - Sets the partition count for data shuffling during joins or aggregations. The default value is 200.
+- `spark.sql.autoBroadcastJoinThreshold` - Sets the maximum table size in bytes that is broadcasted to all worker nodes when join operation is executed. The default value is 10 MB.
 - `spark.sql.files.maxPartitionBytes` - Defines the maximum number of bytes to pack into a single partition when reading files. Works for Parquet, JSON, and ORC file-based sources. Default is 128 MB.
 
 
 > [!TIP]
-> Autotune Query Tuning analyzes each of your queries separately, building one ML model per query. It specifically targets:
+> Autotune query tuning examines individual queries and builds a distinct ML model for each query. It specifically targets:
 > - Repetitive queries
 > - Long-running queries (those with more than 15 seconds of execution)
 > - Spark SQL queries (excluding those written in the RDD API, which are very rare)
 >
-> This feature is compatible with Notebooks, Spark Job Definitions, and Pipelines!
+> This feature is compatible with notebooks, Spark Job Definitions, and pipelines.
 
 :::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled."::: 
 
 ## AI-based intuition behind the Autotune
 
-The Autotune feature operates based on a well-defined, iterative process aimed at optimizing query performance. Initially, the algorithm begins with a set of good default configurations, honed by experts over time. It then employs a machine learning model to evaluate these settings, identifying which configurations are effective or less so. When a user submits a query, the system retrieves and employs these machine learning models, which have been stored based on previous interactions and outcomes. It generates potential configuration candidates around a default setting, termed the 'centroid.' The best candidate, as predicted by the machine learning model, is then selected and applied to the user's query. After the query executes, the performance data is fed back into the system, contributing to the ongoing learning and adjustment of the machine learning model.
+The autotune feature utilizes an iterative process to optimize query performance. It begins with a default configuration and employs a machine learning model to evaluate effectiveness. When a user submits a query, the system retrieves the stored models based on the previous interactions. It generates potential configurations around a default setting named *centroid*. The best candidate predicted by the model, is applied. After query execution, the performance data is sent back to the system to refine the model.
 
-This feedback loop enables the centroid to shift gradually toward more optimal settings, thus refining the performance baseline over time. The approach ensures that adjustments are made conservatively, reducing the risk of significant performance regression. Additionally, the system updates continuously, learning from each new query, which allows it to adapt and refine the performance benchmarks specifically tailored to the user's patterns. Moreover, the process involves updating the 'centroid' of configurations to ensure the model moves towards more efficient settings incrementally. This is achieved by evaluating past performances and using them to guide future adjustments, effectively leveraging all data points to mitigate the impact of anomalies or outliers.
+The feedback loop gradually shifts the centroid towards optimal settings. It refines performance over time while minimizing the risk of regression. Continuous updates based on user queries enable refinement of performance benchmarks. Moreover, the process updates the *centroid* configurations to ensure the model moves towards more efficient settings incrementally. This is achieved by evaluating past performances and using them to guide future adjustments. It uses all the data points to mitigate the impact of anomalies.
 
-From a responsible AI perspective, the Autotune feature includes transparency mechanisms designed to keep users well-informed about how their data is used and the benefits they might receive. Security and privacy have been thoroughly vetted to align with Microsoft’s high compliance standards. Following the launch, continuous monitoring and adjustments have been implemented to ensure optimal performance and system integrity.
+From a responsible AI perspective, the Autotune feature includes transparency mechanisms designed to keep you informed about your data usage and benefits. The security and privacy align with Microsoft's standards. Ongoing monitoring maintains performance and system integrity post-launch.
 
 
 ## Enable autotune
 
-Autotune is available in all regions but is disabled by default, allowing each user to enable it as needed. You control it through Apache Spark configuration settings. You can easily enable Autotune within a session by executing the following code in your notebook or by incorporating it into your Spark Notebook or SJD (Spark Job Definition) code as listed below. Furthermore, Autotune has built-in mechanisms for self-performance awareness to detect performance regressions. For example, if your query suddenly behaves anomalously and processes significantly more data than usual, Autotune will automatically turn off. Therefore, using it's safe. Note that Autotune requires several iterations to learn and identify the best configurations over time. Typically, the convergence point, where optimal settings are determined, is reached after about 20-25 iterations.
+Autotune is available in all regions but it's disabled by default.  You can enable it as needed through the Apache Spark configuration settings. You can enable autotune within a session by executing the following code in your notebook or by including it into your Spark notebook or Spark Job Definition code. Furthermore, Autotune has built-in mechanism for performance monitoring and to detect performance regressions. For example, if your query suddenly behaves anomalously and processes more data than usual, autotune automatically turns off. Autotune requires several iterations to learn and identify the optimal configuration. Typically the optimal configuration is determined after 20 to 25 iterations.
 
 > [!NOTE]
-> The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune does not function when [the HC mode](./high-concurrency-overview.md) or [MPE](./../security/security-managed-private-endpoints-overview.md) is enabled. However, Autotune is agnostic to [autoscaling](./spark-compute.md#autoscale), so it will work in conjunction with it.
+> The Autotune is compatible with [Fabric Runtime 1.1](./runtime-1-1.md) and [Runtime 1.2](./runtime-1-2.md). Autotune doesn't function when [the high concurrency mode](./high-concurrency-overview.md) or when the [private endpoint](./../security/security-managed-private-endpoints-overview.md) is enabled. However, autotune seamlessly integrates with autoscaling, regardless of its configuration.
 
 # [Spark SQL](#tab/sparksql)
 
@@ -151,7 +151,7 @@ sparkR.conf("spark.ms.autotune.enabled", "false")
 
 ## Case study
 
-When a Spark query is executed, Autotune generates a tailored ML model for that specific query. This model is designed to understand and optimize the query's execution by analyzing its patterns and resource requirements. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
+When executing a Spark query, autotune creates a customized ML model dedicated to optimizing the query's execution. It analyzes query patterns and resource needs. Consider an initial query filtering a dataset based on a specific attribute, such as a country. While this example uses geographic filtering, the principle applies universally to any attribute or operation within the query:
 
 ```python
 %%pyspark
@@ -164,24 +164,24 @@ Autotune learns from this query, optimizing subsequent executions. When the quer
 df.filter(df.country == "Poland")
 ```
 
-Despite modifications, Autotune recognizes the core structure of the new query, applying the same optimizations learned from the original. This capability ensures that the system maintains high efficiency without manual reconfiguration for each new iteration or variation of the query.
+Despite alterations, autotune identifies the fundamental structure of the new query, implementing previously learned optimizations. This capability ensures sustained high efficiency without the need for manual reconfiguration for each new query iteration.
 
 
 ## Logs
 
-For each of your queries, Autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by Autotune are located in the driver logs, specifically those entries starting with [Autotune].
+For each of your queries, autotune determines the most optimal settings for three Spark configurations. You can view the suggested settings by navigating to the logs. The configurations recommended by autotune are located in the driver logs, specifically those entries starting with *Autotune*.
 
-:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Autotune logs inside Monitoring Hub." lightbox="media\autotune\autotune-logs.jpg":::
+:::image type="content" source="media\autotune\autotune-logs.jpg" alt-text="Screenshot of autotune logs inside Monitoring Hub." lightbox="media\autotune\autotune-logs.jpg":::
 
-In your logs, you can find various types of entries. Here, we include the most important ones:
+You can find various types of entries in your logs. The following include the key ones:
 
 | Status                   | Description                                                                                                                                                                                     |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AUTOTUNE_DISABLED        | Skipped. Autotune is disabled, preventing telemetry data pull and subsequent query optimization features. Enable Autotune to fully leverage its capabilities while respecting customer privacy. |
-| QUERY_TUNING_DISABLED    | Skipped. Autotune Query Tuning is disabled. Enable to fine-tune your Spark Settings for your Spark SQL queries.                                                                                 |
-| QUERY_PATTERN_NOT_MATCH  | Skipped. Query pattern did not match. Autotune Query Tuning is effective for read-only queries.                                                                                                 |
-| QUERY_DURATION_TOO_SHORT | Skipped. Your query duration too short to optimize. Autotune Query Tuning requires longer (>15 seconds) queries for effective tuning.                                                           |
-| QUERY_TUNING_SUCCEED     | Success. Query tuning completed. Optimal Spark Settings applied.                                                                                                                                |
+| AUTOTUNE_DISABLED        | Skipped. Autotune is disabled; preventing telemetry data retrieval and query optimization. Enable Autotune to fully use its capabilities while respecting customer privacy.". |
+| QUERY_TUNING_DISABLED    | Skipped. Autotune query tuning is disabled. Enable it to fine-tune settings for your Spark SQL queries.                                                                                 |
+| QUERY_PATTERN_NOT_MATCH  | Skipped. Query pattern did not match. Autotune is effective for read-only queries.                                                                                                 |
+| QUERY_DURATION_TOO_SHORT | Skipped. Your query duration too short to optimize. Autotune requires longer queries for effective tuning.  Queries should run for at least 15 seconds.                                                      |
+| QUERY_TUNING_SUCCEED     | Success. Query tuning completed. Optimal spark settings applied.                                                                                                                                |
 
 ## Transparency note
 In adherence to the Responsible AI Standard, this section aims to clarify the uses and validation of the Autotune feature, promoting transparency and enabling informed decision-making.
