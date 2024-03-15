@@ -87,7 +87,7 @@ The Spark advisor setting allows you to choose whether to show or hide specific 
 
 You can access the Spark Advisor settings at the Fabric Notebook level to enjoy its benefits and ensure a productive notebook authoring experience.
 
-:::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting.png.":::
+:::image type="content" source="media\spark-advisor-introduction\spark-advisor-setting.png" alt-text="Screenshot showing the spark advisor setting.":::
 
 ## Related content
 
