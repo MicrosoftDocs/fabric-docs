@@ -43,7 +43,7 @@ To verify that the installation was successful, run the following code in a cell
 
 ```python
 import synapse.ml.core
-print(f"SynapseML version: {synapse.ml.lightgbm.__version__}")
+print(f"SynapseML version: {synapse.ml.core.__version__}")
 ```
 
 ## Related content
