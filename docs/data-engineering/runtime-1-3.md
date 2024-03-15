@@ -44,6 +44,9 @@ You can now start experimenting with the newest improvements and functionalities
 
 The Fabric runtime 1.3 experimental stage gives you early access to new features and Apache Spark APIs. This includes Spark 3.5, which is a Long-Term Support (LTS) version, offering stability before the major updates in Spark 4.0 arrive. The preview lets you use the latest Spark-based enhancements right away, ensuring a smooth transition and readiness for future changes like the Scala 2.13 upgrade. It also improves your data projects with advanced, reliable solutions in the Azure ecosystem.
 
+> [!TIP]
+> For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
+
 ### Limitations
 
 Fabric Runtime 1.3 is currently in an experimental public preview stage, designed for users to explore and experiment with the latest features and APIs from Spark and Delta Lake. While this version offers access to core functionalities, there are certain limitations:
@@ -63,11 +66,6 @@ Fabric Runtime 1.3 is currently in an experimental public preview stage, designe
 
 > [!NOTE]
 > Share your feedback on Fabric Runtime in the [Ideas platform](https://ideas.fabric.microsoft.com/). Be sure to mention the version and release stage you're referring to. We value community feedback and prioritize improvements based on votes, making sure we meet user needs.
-
-## Release notes
-
-For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
-
 
 ## Key Spark 3.5 highlights
 
