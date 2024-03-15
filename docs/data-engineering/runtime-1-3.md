@@ -66,8 +66,7 @@ Fabric Runtime 1.3 is currently in an experimental public preview stage, designe
 
 ## Release notes
 
-Go to - list components, ongoing changes. 
-https://github.com/microsoft/synapse-spark-runtime 
+For up-to-date information, a detailed list of changes, and specific release notes for Fabric runtimes, check and subscribe [Spark Runtimes Releases and Updates](https://github.com/microsoft/synapse-spark-runtime).
 
 
 ## Key Spark 3.5 highlights
