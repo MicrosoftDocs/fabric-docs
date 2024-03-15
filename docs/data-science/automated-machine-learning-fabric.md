@@ -14,7 +14,7 @@ AutoML (Automated Machine Learning) is a collection of methods and tools that au
 
 In Fabric, data scientists can use ```flaml.AutoML``` to automate their machine learning tasks.
 
-Automated ML can help ML professionals and developers from different sectors to:
+AutoML can help ML professionals and developers from different sectors to:
 
 - Build ML solutions with minimal coding
 - Reduce time and cost
