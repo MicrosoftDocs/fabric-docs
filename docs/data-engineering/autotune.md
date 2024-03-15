@@ -34,7 +34,7 @@ Autotune configures three Spark settings for each of your queries separately:
 >
 > This feature is compatible with Notebooks, Spark Job Definitions, and Pipelines!
 
-:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Execution time with Autotune Enabled."::: 
+:::image type="content" source="media\autotune\execution-over-time.png" alt-text="Screenshot of execution time with autotune Enabled."::: 
 
 ## AI-based intuition behind the Autotune
 
