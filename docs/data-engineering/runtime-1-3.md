@@ -20,7 +20,7 @@ Fabric Runtime 1.3, incorporates a variety of components and updates designed to
 - Java: 11
 - Scala: 2.12.17
 - Python: 3.10
-- Delta Lake: 3.0.0 (OSS version)
+- Delta Lake: 3.0.0
 
 > [!NOTE]
 > Fabric Runtime 1.3 is currently in an experimental public preview phase. [Review all associated limitations and notes](./runtime-1-3.md#limitations).
@@ -30,7 +30,7 @@ To integrate Runtime 1.3 into your workspace and leverage its new features, foll
 2. Go to `Data Engineering/Science` and select `Spark Settings`.
 3. Click on the `Environment` tab. 
 4. In the `Runtime Versions` dropdown, see available runtimes.
-5. Select `1.3 Experimental (Spark 3.5, Delta 3.0 (OSS)` and save your changes. This action will set Runtime 1.3 as the default runtime for your workspace.
+5. Select `1.3 Experimental (Spark 3.5, Delta 3 OSS)` and save your changes. This action will set Runtime 1.3 as the default runtime for your workspace.
 
 :::image type="content" source="media\mrs\runtime13.png" alt-text="Screenshot showing where to select runtime version." lightbox="media\mrs\runtime13.png":::
 
@@ -46,12 +46,11 @@ The experimental stage for Fabric Runtime 1.3 is designed to provide customers w
 ### Limitations
 Fabric Runtime 1.3 is currently in an experimental public preview stage, designed for users to explore and experiment with the latest features and APIs from Spark and Delta Lake. While this version offers access to core functionalities, there are certain limitations to note:
 * Users can engage with Spark 3.5 sessions, author code directly in notebooks, schedule Spark job definitions, and work with PySpark, Scala, and Spark SQL. R is not available in this version.
-* You can install libraries directly within your code and set Spark settings via the %%configure options in notebooks and Spark Job Definitions (SJDs).
 * Reading and writing to the Lakehouse with Delta 3.0 OSS is supported, except some advanced functionalities like V-order, native Parquet writing, auto-compaction, optimize write, and low-shuffle merge, merge, schema evolution, or time travel which are not available in this early release. 
-* While there is a temporary limitation with using relative paths for accessing data from the Lakehouse, absolute paths can be used as a reliable alternative.
 * Note that the Spark Advisor is currently unavailable; however, monitoring tools such as Spark UI and logs remain operational.
 * Features such as Data Science integrations and connectors (including Kusto, SQL Analytics, CosmosDB, and MySQL Java Connector) are expected to be fully integrated in the upcoming full scope of the Public Preview. 
-* Users interested in testing Runtime 1.3 can do so at the workspace level. Integration with Environment artifact will be fully added in the upcoming Public Preview release. 
+* Users interested in testing Runtime 1.3 can do so at the workspace level. Integration with Environment artifact will be fully added in the upcoming Public Preview release.
+* You can install libraries directly within your code (pip/conda install) and set Spark settings via the %%configure options in notebooks and Spark Job Definitions (SJDs).
 * Data Science libraries are not supported in PySpark environments. Users can only employ PySpark with a basic Conda setup, which includes PySpark without additional libraries. CoPilot features are not operational in the experimental stage.
 
 
