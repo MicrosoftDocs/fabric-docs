@@ -43,6 +43,7 @@ To verify that the installation was successful, run the following code in a cell
 ```python
 import synapse.ml.cognitive
 print(f"SynapseML cognitive version: {synapse.ml.cognitive.__version__}")
+```
 
 
 ```python
