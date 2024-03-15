@@ -44,6 +44,7 @@ By following these straightforward steps, you can efficiently adopt and start ex
 The experimental stage for Fabric Runtime 1.3 is designed to provide customers with early access to the newest features and APIs for Apache Spark, particularly with the introduction of Spark 3.5 as a Long-Term Support (LTS) version ahead of the major updates expected in Spark 4.0. This approach ensures that users can immediately leverage the latest Spark-based runtime enhancements as they are released, facilitating a seamless transition and preparation for future technological shifts, such as the upgrade to Scala 2.13. Our aim with this experimental phase is to align closely with our users' evolving needs and development timelines, enhancing their data engineering and science projects with cutting-edge, stable, and integrated solutions directly within the Azure ecosystem.
 
 ### Limitations
+
 Fabric Runtime 1.3 is currently in an experimental public preview stage, designed for users to explore and experiment with the latest features and APIs from Spark and Delta Lake. While this version offers access to core functionalities, there are certain limitations to note:
 * Users can engage with Spark 3.5 sessions, author code directly in notebooks, schedule Spark job definitions, and work with PySpark, Scala, and Spark SQL. R is not available in this version.
 * Reading and writing to the Lakehouse with Delta 3.0 OSS is supported, except some advanced functionalities like V-order, native Parquet writing, auto-compaction, optimize write, and low-shuffle merge, merge, schema evolution, or time travel which are not available in this early release. 
@@ -52,7 +53,7 @@ Fabric Runtime 1.3 is currently in an experimental public preview stage, designe
 * Users interested in testing Runtime 1.3 can do so at the workspace level. Integration with Environment artifact will be fully added in the upcoming Public Preview release.
 * You can install libraries directly within your code (pip/conda install) and set Spark settings via the %%configure options in notebooks and Spark Job Definitions (SJDs).
 * Data Science libraries are not supported in PySpark environments. Users can only employ PySpark with a basic Conda setup, which includes PySpark without additional libraries. CoPilot features are not operational in the experimental stage.
-
+* VSCode support will be added.
 
 > [!TIP]
 > We welcome your feedback on Fabric Runtime via our platform at [https://ideas.fabric.microsoft.com/](https://ideas.fabric.microsoft.com/). Please include details about the specific runtime version and release stage. We prioritize enhancements based on community votes, ensuring that changes reflect user needs and preferences. Your input is essential in shaping the future of Fabric Runtime.
