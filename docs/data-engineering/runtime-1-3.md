@@ -58,6 +58,11 @@ Fabric Runtime 1.3 is currently in an experimental public preview stage, designe
 > [!TIP]
 > We welcome your feedback on Fabric Runtime via our platform at [https://ideas.fabric.microsoft.com/](https://ideas.fabric.microsoft.com/). Please include details about the specific runtime version and release stage. We prioritize enhancements based on community votes, ensuring that changes reflect user needs and preferences. Your input is essential in shaping the future of Fabric Runtime.
 
+## Release notes
+
+Go to - list components, ongoing changes. 
+https://github.com/microsoft/synapse-spark-runtime 
+
 ## Key Spark 3.5 highlights
 [Apache Spark 3.5.0](https://spark.apache.org/releases/spark-release-3-5-0.html) marks the sixth version in the 3.x series. This version is a product of extensive collaboration within the open-source community, addressing more than 1,300 issues as recorded in Jira.
 
