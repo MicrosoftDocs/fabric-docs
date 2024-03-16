@@ -17,7 +17,7 @@ In this article, we will delve into the process of generating AutoML trials dire
 
 [!INCLUDE [feature-preview](../includes/feature-preview-note.md)]
 
-## Pre-requisites
+## Prerequisites
 
 [!INCLUDE [prerequisites](includes/prerequisites.md)]
 

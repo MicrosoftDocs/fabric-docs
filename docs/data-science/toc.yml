@@ -110,7 +110,7 @@ items:
   - name: Hyperparameter tuning
     href: hyperparameter-tuning-fabric.md
   - name: Automated ML 
-    href: automl-fabric.md
+    href: automated-machine-learning-fabric.md
   - name: How-to guides
     items:
     - name: Train with Spark MLlib
@@ -126,11 +126,11 @@ items:
     - name: Train interpretable models for regression
       href: explainable-boosting-machines-regression.md
     - name: Use AutoML and tune visualizations
-      href: tuning-automl-visualizations.md
+      href: tuning-automated-machine-learning-visualizations.md
     - name: Run hyperparameter tuning trials 
       href: how-to-tune-lightgbm-flaml.md
     - name: Run AutoML trials
-      href: how-to-use-automl-fabric.md
+      href: how-to-use-automated-machine-learning-fabric.md
 - name: Track models and experiments
   items:
   - name: Machine learning experiment
