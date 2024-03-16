@@ -17,7 +17,7 @@ In this notebook, we build a program to forecast time series data that has seaso
 
 ## Prerequisites
 
-* Familiarity with [Microsoft Fabric notebooks](/fabric/data-engineering/how-to-use-notebook).
+* Familiarity with [Microsoft Fabric notebooks](../data-engineering/how-to-use-notebook.md).
 * A lakehouse to store data for this example. For more information, see [Add a lakehouse to your notebook](../data-engineering/how-to-use-notebook.md#connect-lakehouses-and-notebooks).
 
 ## Follow along in a notebook
