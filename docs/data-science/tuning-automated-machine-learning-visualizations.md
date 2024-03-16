@@ -80,7 +80,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of optimization history plot.](./media/model-training/optimization-history.png#light-box)
+[![Graph of optimization history plot.](./media/model-training/optimization-history.png)](./media/model-training/optimization-history.png#light-box)
 
 ### Feature importance
 
@@ -94,7 +94,7 @@ fig.show()
 ```
 Here is the resulting plot:
 
-![Picture of feature importance plot.](./media/model-training/feature-importance.png#light-box)
+[![Picture of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#light-box)
 
 ### Parallel coordinate plot
 
@@ -115,7 +115,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of parallel coordinate plot.](./media/model-training/parallel-coordinate-plot.png#light-box)
+[![Graph of parallel coordinate plot.](./media/model-training/parallel-coordinate-plot.png)](./media/model-training/parallel-coordinate-plot.png#light-box)
 
 ### Contour plot
 
@@ -139,7 +139,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of contour plot.](./media/model-training/contour-plot.png#light-box)
+[![Graph of contour plot.](./media/model-training/contour-plot.png)](./media/model-training/contour-plot.png#light-box)
 
 ### Empirical  distribution function
 
@@ -161,7 +161,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of EDF plot.](./media/model-training/edf-plot.png#light-box)
+[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/edf-plot.png#light-box)
 
 ### Timeline plot
 
@@ -176,7 +176,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of timeline plot.](./media/model-training/timeline-plot.png#light-box)
+[![Graph of timeline plot.](./media/model-training/timeline-plot.png)](./media/model-training/timeline-plot.png#light-box)
 
 ### Slice plot
 
@@ -197,7 +197,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of slice plot.](./media/model-training/slice-plot.png#light-box)
+[![Graph of slice plot.](./media/model-training/slice-plot.png)](./media/model-training/slice-plot.png#light-box)
 
 ### Hyperparameter importance
 
@@ -218,7 +218,7 @@ fig.show()
 
 Here is the resulting plot:
 
-![Picture of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png#light-box)
+[![Graph of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png)](./media/model-training/hyperparameter-importance-plot.png#light-box)
 
 ## Next steps
 
