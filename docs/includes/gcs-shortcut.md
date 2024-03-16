@@ -1,10 +1,10 @@
 ---
 title: Include file for Google Cloud Storage shortcut in Microsoft Fabric
 description: Include file for Google Cloud Storage shortcut in Microsoft Fabric.
-author: YaelSchuster
-ms.author: yaschust
+ms.author: trolson
+author: TrevorLOlson
 ms.topic: include
-ms.date: 07/16/2023
+ms.date: 03/15/2024
 ---
 ## Select a source
 
@@ -37,7 +37,7 @@ ms.date: 07/16/2023
     In this view, you can select one or more shortcut target locations.  Choose target locations by clicking the checkbox next a folder in the left navigation view.
 1. Select **Next**
 
-    :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-review.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-review.png":::
+    :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-review.png" alt-text="Screenshot of shortcut review page with options to rename and delete shortcuts." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-review.png":::
 
     The review page allows you to verify all of your selections. Here you can see each shortcut that will be created.  In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
 

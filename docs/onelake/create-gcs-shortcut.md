@@ -16,6 +16,8 @@ In this article, you learn how to create a Google Cloud Storage(GCS) shortcut in
 
 For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To create shortcuts programmatically, see [OneLake shortcuts REST APIs](onelake-shortcuts-rest-api.md).
 
+[!INCLUDE [feature-preview-note](../includes/feature-preview-note.md)]
+
 ## Prerequisites
 
 - If you don't have a lakehouse, create one by following these steps: [Creating a lakehouse with OneLake](create-lakehouse-onelake.md).
