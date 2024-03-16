@@ -12,7 +12,7 @@ ms.date: 03/19/2024
 
 Fabric external data sharing is a feature that enables Fabric users to share data from their tenant with users in another Fabric tenant. The data is shared *in-place* from [OneLake](../onelake/onelake-overview.md) storage locations in the sharer's tenant, meaning that no data is actually copied to the other tenant. Rather, this cross-tenant sharing creates a [OneLake shortcut](../onelake/onelake-shortcuts.md) in the other tenant that points back to the original data in the sharer's tenant. Data that is shared across tenant boundaries is exposed to users in the other tenant as read-only, and may be consumed by any OneLake compatible Fabric workload in that tenant.
 
-:::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share.":::
+:::image type="content" source="./media/external-data-sharing-overview/external-data-share-illustration.png" alt-text="Illustration of a cross-tenant OneLake data share." border="false":::
 
 This external data sharing feature for Fabric OneLake data is not related to the mechanism that exists for sharing Power BI semantic models with Entra B2B guest users.
 
@@ -25,6 +25,14 @@ Users who are allowed to create external data shares can share data residing in 
 > [!NOTE]
 > Cross-tenant data access is enabled via a dedicated Fabric-to-Fabric authentication mechanism and does not require [Entra B2B guest user access](/power-bi/enterprise/service-admin-azure-ad-b2b).
 
+## Supported Fabric item types
+
+External data sharing is currently supported for data residing in tables or files within:
+
+* [Lakehouses](../data-engineering/lakehouse-overview.md)
+
+* [KQL databases](../real-time-analytics/create-database.md)
+
 ## Security Considerations
 
 Sharing data with users outside your home tenant has implications for data security and privacy that you should consider. It is important to understand the underlying flows of data sharing to better evaluate these implications.
@@ -34,22 +42,19 @@ Data is shared across tenants using Fabric-internal security mechanisms. The sha
 With this understanding in mind, be aware of the following:
 
 * The sharer cannot control who has access to the data in the consumer's tenant.
+
 * The consumer can grant access to the data to anyone, even guest users from outside the consumer's organization.
+
 * Data might be transferred across geographic boundaries when it is accessed within the consumer's tenant.
-
-## Supported Fabric item types
-
-External data sharing is currently supported for data residing in tables or files within:
-
-* [Lakehouses](../data-engineering/lakehouse-overview.md)
-
-* [KQL databases](../real-time-analytics/create-database.md)
 
 ## Known Issues
 
 * **Shortcuts:** Shortcuts contained in folders that are shared via external data sharing won't resolve in the consumer tenant.
+
 * **Billing:** The cost of read operations is billed to the data provider. The expected behavior is to bill the provider for storage-related costs, and the consumer for read-related costs.
+
 * **[Security]** **Invitations:** External data share invitation can be forwarded to other users within the same tenant and may be accepted more than once. In the future, invitations will be usable only once and scoped to a specific user. Only that user will be able to accept the invitation. Any user with permission to access the lakehouse in which the share was accepted will be able to read the data.
+
 * **[Security]** **Admin control:** The tenant admin switch that specifies which users can accept external data shares is enforced via the user interface. Validation will be added to all layers of the system before this the external data sharing feature is released publicly.
 
 ## Related content
