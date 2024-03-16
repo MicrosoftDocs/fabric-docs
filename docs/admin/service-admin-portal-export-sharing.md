@@ -48,6 +48,9 @@ To allow users to accept external data shares:
 
 1. Specify which users you want to be able to accept external data shares.
 
+> [!NOTE]
+> This setting is unrelated to the setting **Allow specific users to turn on external data sharing**, which refers to sharing Power BI semantic models via Entra B2B.
+
 ## Guest users can access Microsoft Fabric
 
 When you turn on this setting, Microsoft Entra Business-to-Business (Microsoft Entra B2B) guest users can access Fabric. If you turn off this setting, B2B guest users receive an error when trying to access Fabric and any Fabric items they have permissions to. Disabling this setting for the entire organization also prevents users from inviting guests to your organization. Use the specific security groups option to control which B2B guest users can access Fabric.
@@ -283,6 +286,9 @@ This setting is off by default for customers. If this setting is disabled, a gue
 As a Fabric admin, you can specify which users or user groups in your organization can share semantic models externally with guests from a different tenant through the in-place mechanism. Authorized guest users can then discover, connect to, and work with these shared semantic models in their own tenants.
 
 Disabling this setting prevents any user from sharing semantic models externally by blocking the ability of users to turn on external sharing for semantic models they own or manage.
+
+> [!NOTE]
+> This setting relates to sharing Power BI semantic models via Entra B2B capabilities. It is unrelated to the **External data sharing (preview)** and **Users can accept external data shares (preview)** tenant settings, which control the [external data sharing feature](../governance/external-data-sharing-overview.md). The external data sharigin feature enables sharing data from an organization's OneLake storage locations to external Fabric tenants, and uses secure Fabric-to-Fabric communication channels rather than Entra B2B.
 
 ## Users can deliver reports to OneDrive and SharePoint in Power BI
 

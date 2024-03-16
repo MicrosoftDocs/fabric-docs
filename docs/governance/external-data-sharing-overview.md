@@ -16,7 +16,7 @@ Fabric external data sharing is a feature that enables Fabric users to share dat
 
 ## How does external data sharing work
 
-As a prerequisite to external data sharing, Fabric admins need to turn on external data sharing both in the provider tenant and in the consumer tenant. Enabling external data sharing includes specifying who can create and accept external data shares. For more information, see XXX.
+As a prerequisite to external data sharing, Fabric admins need to turn on external data sharing both in the provider tenant and in the consumer tenant. Enabling external data sharing includes specifying who can create and accept external data shares. For more information, see [External data sharing (preview)](../admin/service-admin-portal-export-sharing.md#external-data-sharing-preview) and [Users can accept external data shares (preview)](../admin/service-admin-portal-export-sharing.md#users-can-accept-external-data-shares-preview)].
 
 Users who are allowed to create external data shares can share data residing in tables or files within supported Fabric items (currently, [lakehouses](../data-engineering/lakehouse-overview.md) and [KQL databases](../real-time-analytics/create-database.md)), as long as they have the standard Fabric read and reshare permissions for an item. The user creating the share invites a user from another tenant to accept the external data share. This user receives a link that can be used to accept the share. Upon accepting the share, the recipient chooses a lakehouse in which a shortcut to the provider’s data will be created.
 
