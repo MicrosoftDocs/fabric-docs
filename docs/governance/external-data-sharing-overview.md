@@ -44,6 +44,8 @@ With this understanding in mind, be aware of the following:
 
 We are working to resolve these issues as soon as possible.
 
+## Supported Fabric item types
+
 ## Appendix A – Power BI B2B sharing
 
 Power BI supports the [sharing of semantic models](https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-dataset-external-org-share-admin) (FKA datasets) with Entra B2B guest users. This feature has been in preview for some time and has not yet been made generally available. Currently, the new Fabric OneLake external sharing feature and the existing external semantic model feature are not related. In time, we will work to unify these solutions.
@@ -66,4 +68,4 @@ Once you have these things setup, please send your tenant id to your Microsoft a
 
 * [Create and manage external data shares](./external-data-sharing-create.md)
 * [Accept an external data share](./external-data-sharing-accept.md)
-* [Fabric admins: Set up external data sharing on your tenant](../get-started/roles-workspaces.md)
+* [Fabric admins: Set up external data sharing on your tenant](./external-data-sharing-enable.md)
