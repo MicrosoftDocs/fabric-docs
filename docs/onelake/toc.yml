@@ -28,7 +28,9 @@ items:
   - name: Create an ADLS Gen2 shortcut
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
-    href: create-S3-shortcut.md
+    href: create-s3-shortcut.md
+  - name: Create an Amazon S3 compatible shortcut
+    href: create-s3compatible-shortcut.md
   - name: Use shortcuts REST API
     href: onelake-shortcuts-rest-api.md
 - name: Open access
