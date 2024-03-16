@@ -28,9 +28,9 @@ ms.date: 03/15/2024
 1. Select **Next**.
 1. Browse to the target location for the shortcut.
 
-    :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/new-shortcut.png":::
+    :::image type="content" source="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-browse.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/gcs-shortcut/shortcut-browse.png":::
 
-    If you used the global endpoint in the connection URL, all of your available buckets appear in the left navigation view. If you used a bucket specific endpoint in the connection URL only the specified bucket and its contents appear in the navigation view.
+    If you used the global endpoint in the connection URL, all of your available buckets appear in the left navigation view. If you used a bucket specific endpoint in the connection URL, only the specified bucket and its contents appear in the navigation view.
 
     Navigate the storage account by selecting a folder or clicking on the expansion carrot next to a folder.
 

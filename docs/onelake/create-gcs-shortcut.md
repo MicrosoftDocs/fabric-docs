@@ -32,13 +32,13 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
+   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view." lightbox="media\create-onelake-shortcut\new-shortcut-lake-view.png":::
 
 [!INCLUDE [gcs-shortcut](../includes/gcs-shortcut.md)]
 
 The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
-   :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
+   :::image type="content" source="media\create-gcs-shortcut\table-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of tables that display the shortcut symbol." lightbox="media\create-gcs-shortcut\table-shortcut-symbol.png":::
 
 ## Related content
 
