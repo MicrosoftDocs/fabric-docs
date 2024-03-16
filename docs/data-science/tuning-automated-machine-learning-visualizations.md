@@ -2,8 +2,7 @@
 title: Visualize tuning and AutoML trials
 description: Use visualizations in Fabric AutoML and tune (preview)
 ms.topic: overview
-ms.reviewer: mopeakande
-reviewer: msakande
+ms.reviewer: ssalgado
 author: midesa
 ms.author: midesa
 ms.date: 12/19/2023

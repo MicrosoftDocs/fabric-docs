@@ -194,4 +194,4 @@ You can use the following functions within your notebook:
 ## Next steps
 
 - [Tune a SynapseML Spark LightGBM model](./how-to-tune-lightgbm-flaml.md)
-- [Visualize AutoML results](./tuning-automl-visualizations.md)
+- [Visualize AutoML results](./tuning-automated-machine-learning-visualizations.md)

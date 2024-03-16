@@ -2,8 +2,7 @@
 title: Create AutoML trials in Fabric
 description: Learn how to use AutoML to easily fit models to  your data (preview)
 ms.topic: how-to
-ms.reviewer: mopeakande
-reviewer: msakande
+reviewer: ssalgado
 author: midesa
 ms.author: midesa
 ms.date: 12/19/2023
@@ -385,5 +384,5 @@ print('Training duration of best run: {0:.4g} s'.format(automl.best_config_train
 
 ## Next steps
 
-* [Learn about AutoML in Fabric](../data-science/automl-fabric.md)
-* [Visualize the results of your AutoML trial](../data-science/tuning-automl-visualizations.md)
+* [Learn about AutoML in Fabric](../data-science/automated-machine-learning-fabric.md)
+* [Visualize the results of your AutoML trial](../data-science/tuning-automated-machine-learning-visualizations.md)

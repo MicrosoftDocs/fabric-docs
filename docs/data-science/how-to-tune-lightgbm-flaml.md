@@ -2,7 +2,6 @@
 title: Perform hyperparameter tuning in Fabric
 description: Identify the best combination of hyperparameters for your chosen model with FLAML (preview).
 ms.topic: how-to
-ms.reviewer: mopeakande
 reviewer: ssalgado
 author: midesa
 ms.author: midesa
@@ -273,5 +272,5 @@ print(f"Model '{registered_model.name}' version {registered_model.version} regis
 
 ## Next steps
 
-- [Visualize results](./tuning-automl-visualizations.md)
+- [Visualize results](./tuning-automated-machine-learning-visualizations.md)
 - [Hyperparameter tuning in Fabric](./hyperparameter-tuning-fabric.md)
