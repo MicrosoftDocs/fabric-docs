@@ -22,7 +22,7 @@ To use external data sharing, you need:
 
 ## Create an external data share
 
-1. In a workspace or in the OneLake data hub, find the [supported Fabric item](./external-data-sharing-overview.md#supported-fabric-item-types) that contains the data you want to share.
+1. In a workspace or in the OneLake data hub, find the Fabric item that contains the data you want to share. See the list of [supported Fabric item types](./external-data-sharing-overview.md#supported-fabric-item-types).
 
 1. Open the context menu of the selected item and choose **External data share (preview)**.
 
