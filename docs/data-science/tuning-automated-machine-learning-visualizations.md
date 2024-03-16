@@ -94,7 +94,7 @@ fig.show()
 ```
 Here is the resulting plot:
 
-[![Picture of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#light-box)
+[![Graph of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#light-box)
 
 ### Parallel coordinate plot
 
