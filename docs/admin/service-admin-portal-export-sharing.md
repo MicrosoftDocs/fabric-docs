@@ -7,10 +7,8 @@ ms.reviewer: ''
 ms.service: powerbi
 ms.subservice: powerbi-admin
 ms.custom:
-  - tenant-setting
-  - ignite-2023
 ms.topic: how-to
-ms.date: 02/07/2024
+ms.date: 03/16/2024
 LocalizationGroup: Administration
 ---
 
@@ -20,7 +18,35 @@ The export and sharing settings allow the Fabric administrator the flexibility t
 
 Sharing settings are also managed through these settings. You can determine how and who can share Power BI content in your organization, as well as determine settings for sharing content with users outside your organization. These settings are configured in the tenant settings section of the Admin portal. For information about how to get to and use tenant settings, see [About tenant settings](tenant-settings-index.md).
 
-<a name='allow-microsoft-entra-guest-users-to-access-microsoft-fabric'></a>
+## External data sharing (preview)
+
+When you turn on this setting, the users you specify will be able to share read-only links to data stored in your organization's OneLake storage with collaborators both outside and inside your organization. Collaborators who receive the link will be able to view, build on, and share the data both within and beyond their own Fabric tenants, using their organization's licenses and capacities.
+
+External data sharing has important [security considerations](../governance/external-data-sharing-overview.md#security-considerations). For more information about external data sharing, see [External data sharing](../governance/external-data-sharing-overview.md).
+
+To turn on external data sharing:
+
+1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+
+1. Under the **Export and sharing settings** section, find and expand the **External data sharing (preview)** setting.
+
+1. Set the toggle to **Enabled**.
+
+1. Specify which users you want to be able to create external data shares.
+
+## Users can accept external data shares (preview)
+
+When you turn on this setting, the users you specify will be able to accept read-only links to data from another organization’s Fabric tenant. Users who accept an external share link can view, build on, and share this data, both inside and outside of your organization. For more information about external data sharing and its security conderations, see [External data sharing](../governance/external-data-sharing-overview.md).
+
+To allow users to accept external data shares:
+
+1. Go to the [admin portal](./admin-center.md#how-to-get-to-the-admin-portal) and open the **Tenant settings** tab.
+
+1. Under the **Export and sharing settings** section, find and expand the **Users can accept external data shares (preview)** setting.
+
+1. Set the toggle to **Enabled**.
+
+1. Specify which users you want to be able to accept external data shares.
 
 ## Guest users can access Microsoft Fabric
 
@@ -39,8 +65,6 @@ To learn more, see [Invite guest users](/power-bi/enterprise/service-admin-azure
 > [!IMPORTANT]
 > This setting was previously called **Share content with external users**.
 
-<a name='allow-microsoft-entra-guest-users-to-edit-and-manage-content-in-the-organization'></a>
-
 ## Guest users can browse and access Fabric content
 
 This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
@@ -52,8 +76,6 @@ To learn more about sending Fabric content to Microsoft Entra B2B guest users, r
 This setting allows Microsoft Entra B2B guest users to have full access to the browsing experience using the left-hand navigation pane in the organization. Guest users who have been assigned workspace roles or specific item permissions continue to have those roles and/or permissions, even if this setting is disabled.
 
 To learn more about sending Fabric content to Microsoft Entra B2B guest users, read [Distribute Power BI content to external guest users with Microsoft Entra B2B](/power-bi/enterprise/service-admin-azure-ad-b2b).
-
-<a name='show-microsoft-entra-guests-in-lists-of-suggested-people'></a>
 
 ## Show Microsoft Entra guests in lists of suggested people
 
