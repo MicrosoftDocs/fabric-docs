@@ -1,6 +1,6 @@
 ---
 title: Stock Keeping Unit (SKU) considerations
-description: Learn about the considerations and limitaions that each Fabric SKU has.
+description: Learn about the considerations and limitations that each Fabric SKU has.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: conceptual
