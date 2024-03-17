@@ -24,6 +24,8 @@ items:
   - name: Find your Fabric home region
     href: find-fabric-home-region.md
   - name: Understand Fabric admin roles
+    href: service-interruption-notifications.md   
+  - name: Service interruption notifications 
     href: roles.md
 - name: Monitor and manage Fabric
   expanded: false
