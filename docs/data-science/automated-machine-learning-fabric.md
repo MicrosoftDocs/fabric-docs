@@ -165,4 +165,4 @@ You can use the following functions within your notebook:
 
 ## Next steps
 
-- [Visualize AutoML results](./tuning-automl-visualizations.md)
+- [Visualize AutoML results](./tuning-automated-machine-learning-visualizations.md)

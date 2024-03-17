@@ -160,7 +160,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/edf-plot.png#light-box)
+[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/empirical-distribution-function-plot.png#light-box)
 
 ### Timeline plot
 
