@@ -404,6 +404,8 @@ This section lists most of the limitations in deployment pipelines.
 
 ### Dataflow limitations
 
+* Incremental refresh settings aren't copied in Gen 1.
+
 * When you're deploying a dataflow to an empty stage, deployment pipelines creates a new workspace and sets the dataflow storage to a Fabric blob storage. Blob storage is used even if the source workspace is configured to use Azure data lake storage Gen2 (ADLS Gen2).
 
 * Service principal isn't supported for dataflows.
