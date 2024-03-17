@@ -125,6 +125,10 @@ items:
       href: fabric-known-issues.md
     - name: Active known issues for Fabric and Power BI - interactive report
       href: https://support.fabric.microsoft.com/known-issues
+    - name: ParquetSharpNative error in dataflow refresh using a gateway
+      href: known-issues/known-issue-650-parquetsharpnative-error-dataflow-refresh-using-gateway.md
+    - name: Library management updates with public python libraries time-out
+      href: known-issues/known-issue-647-library-management-updates-public-python-libraries-time-out.md
     - name: Load Table public API response returns error
       href: known-issues/known-issue-642-load-table-public-api-response-returns-error.md
     - name: Visuals using the Denodo connector might show connection errors
