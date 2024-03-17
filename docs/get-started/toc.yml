@@ -43,6 +43,8 @@ items:
     href: roles-workspaces.md
   - name: Give users access to workspaces
     href: give-access-workspaces.md
+  - name: folder-in-workspace.md
+    href: Folder in workspace
   - name: Manage a workspace with Git
     href: ../cicd/git-integration/git-get-started.md
   - name: Workspace identity
