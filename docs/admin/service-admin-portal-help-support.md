@@ -34,7 +34,7 @@ Admins can specify internal URLs to override the destination of links on the Pow
 
 ## Receive email notifications for service outages or incidents
 
-Mail-enabled security groups receive email notifications if this tenant is impacted by a service outage or incident. Learn more about [Service interruption notifications](../enterprise/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents).
+Mail-enabled security groups receive email notifications if this tenant is impacted by a service outage or incident. Learn more about [Service interruption notifications](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents).
 
 ## Users can try Microsoft Fabric paid features
 
