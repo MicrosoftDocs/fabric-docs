@@ -9,8 +9,8 @@ items:
   items:
   - name: Buy a Microsoft Fabric subscription
     href: buy-subscription.md
-  - name: Service interruption notifications
-    href: service-interruption-notifications.md
+  - name: SKU considerations
+    href: sku-considerations.md
 - name: Capacity operations
   items:
   - name: Understand your Azure bill
