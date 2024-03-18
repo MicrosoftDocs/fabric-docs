@@ -11,7 +11,7 @@ ms.search.form: Model view # This article's title should not change. If so, cont
 ---
 # Model data in the default Power BI semantic model in Microsoft Fabric
 
-**Applies to:** [!INCLUDE [fabric-se-and-dw](includes/applies-to-version/fabric-se-and-dw.md)]
+**Applies to:** [!INCLUDE [fabric-se-and-dw-and-mirrored-db](includes/applies-to-version/fabric-se-and-dw-and-mirrored-db.md)]
 
 The default Power BI semantic model inherits all relationships between entities defined in the model view and infers them as Power BI semantic model relationships, when objects are enabled for BI (Power BI Reports). Inheriting the warehouse's business logic allows a warehouse developer or BI analyst to decrease the time to value towards building a useful semantic model and metrics layer for analytical business intelligence (BI) reports in Power BI, Excel, or external tools like Tableau that read the XMLA format.
 
