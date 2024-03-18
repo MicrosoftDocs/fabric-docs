@@ -61,8 +61,6 @@ fab_consider_dbx_uc_table_changes = True
 
 3. **Run all cells** of the notebook to start synchronizing Unity Catalog Delta tables to OneLake using shortcuts. Once notebook is completed, shortcuts to Unity Catalog Delta tables are available in the lakehouse, SQL endpoint, and semantic model.
 
-:::image type="content" source="media\onelake-unity-catalog\notebook-output.png" alt-text="Screenshot showing notebook output.":::
-
 ### Schedule the notebook
 
 If you want to execute the notebook at regular intervals to integrate Unity Catalog Delta tables into OneLake without manual resync / rerun, you can either [schedule the notebook](../data-engineering/how-to-use-notebook.md) or utilize a [notebook activity](../data-factory/notebook-activity.md) in a data pipeline within Fabric Data Factory.
