@@ -79,7 +79,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of optimization history plot.](./media/model-training/optimization-history.png)](./media/model-training/optimization-history.png#light-box)
+[![Graph of optimization history plot.](./media/model-training/optimization-history.png)](./media/model-training/optimization-history.png#lightbox)
 
 ### Feature importance
 
@@ -93,7 +93,7 @@ fig.show()
 ```
 Here is the resulting plot:
 
-[![Graph of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#light-box)
+[![Graph of feature importance plot.](./media/model-training/feature-importance.png)](./media/model-training/feature-importance.png#lightbox)
 
 ### Parallel coordinate plot
 
@@ -114,7 +114,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of parallel coordinate plot.](./media/model-training/parallel-coordinate-plot.png)](./media/model-training/parallel-coordinate-plot.png#light-box)
+[![Graph of parallel coordinate plot.](./media/model-training/parallel-coordinate-plot.png)](./media/model-training/parallel-coordinate-plot.png#lightbox)
 
 ### Contour plot
 
@@ -138,7 +138,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of contour plot.](./media/model-training/contour-plot.png)](./media/model-training/contour-plot.png#light-box)
+[![Graph of contour plot.](./media/model-training/contour-plot.png)](./media/model-training/contour-plot.png#lightbox)
 
 ### Empirical  distribution function
 
@@ -160,7 +160,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/empirical-distribution-function-plot.png#light-box)
+[![Graph of the empirical distribution function plot.](./media/model-training/empirical-distribution-function-plot.png)](./media/model-training/empirical-distribution-function-plot.png#lightbox)
 
 ### Timeline plot
 
@@ -175,7 +175,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of timeline plot.](./media/model-training/timeline-plot.png)](./media/model-training/timeline-plot.png#light-box)
+[![Graph of timeline plot.](./media/model-training/timeline-plot.png)](./media/model-training/timeline-plot.png#lightbox)
 
 ### Slice plot
 
@@ -196,7 +196,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of slice plot.](./media/model-training/slice-plot.png)](./media/model-training/slice-plot.png#light-box)
+[![Graph of slice plot.](./media/model-training/slice-plot.png)](./media/model-training/slice-plot.png#lightbox)
 
 ### Hyperparameter importance
 
@@ -217,7 +217,7 @@ fig.show()
 
 Here is the resulting plot:
 
-[![Graph of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png)](./media/model-training/hyperparameter-importance-plot.png#light-box)
+[![Graph of hyperparameter importance plot.](./media/model-training/hyperparameter-importance-plot.png)](./media/model-training/hyperparameter-importance-plot.png#lightbox)
 
 ## Next steps
 
