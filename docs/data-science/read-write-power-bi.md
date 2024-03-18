@@ -32,7 +32,7 @@ You'll also learn how to write data that semantic models can consume.
 
 In this article, we use the _Customer Profitability Sample.pbix_ semantic model. This semantic model references a company manufacturing marketing materials and contains data about products, customers, and corresponding revenue for various business units.
 
-1. Open your [workspace](/fabric/get-started/workspaces) in Fabric Data Science.
+1. Open your [workspace](../get-started/workspaces.md) in Fabric Data Science.
 1. Select **Upload > Browse** and select the _Customer Profitability Sample.pbix_ semantic model.
 
 :::image type="content" source="media/read-write-power-bi/upload-power-bi-data-to workspace.png" alt-text="Screenshot showing the interface for uploading a semantic model into the workspace." lightbox="media/read-write-power-bi/upload-power-bi-data-to workspace.png":::
@@ -98,7 +98,7 @@ To read data from semantic models:
 
     > [!NOTE]
     > Data is retrieved using XMLA and therefore requires at least [XMLA read-only](/power-bi/enterprise/service-premium-connect-tools) to be enabled.
-    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](../data-engineering/spark-compute.md#node-sizes)) that's running the notebook.
     > All requests use low priority to minimize the impact on Microsoft Azure Analysis Services performance and are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 2. Evaluate the _Total Revenue_ measure per customer's state and date.
@@ -118,7 +118,7 @@ To read data from semantic models:
     > [!NOTE]
     > By default, data is **not** retrieved using XMLA and therefore doesn't require XMLA read-only to be enabled.
     >Furthermore, the data is **not** subject to [Power BI backend limitations](/rest/api/power-bi/datasets/execute-queries#limitations).
-    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](/fabric/data-engineering/spark-compute#node-sizes)) that's running the notebook.
+    > The amount of data that's retrievable is limited by the [maximum memory per query](/power-bi/enterprise/service-premium-what-is#capacities-and-skus) of the capacity SKU hosting the semantic model and by the Spark driver node (see [node sizes](../data-engineering/spark-compute.md#node-sizes)) that's running the notebook.
     > All requests are billed as [interactive requests](/power-bi/enterprise/service-premium-interactive-background-operations).
 
 3. You can add filters to the measure calculation by specifying a list of values that can be in a particular column.
@@ -208,7 +208,7 @@ To read data from semantic models:
 
 As with the SemPy python API, by default, the workspace used to access semantic models is:
 
-- the workspace of the attached [Lakehouse](/fabric/data-engineering/lakehouse-overview) or
+- the workspace of the attached [Lakehouse](../data-engineering/lakehouse-overview.md) or
 - the workspace of the notebook, if no Lakehouse is attached.
 
 Microsoft Fabric exposes all tables from all semantic models in the workspace as Spark tables.
@@ -306,7 +306,7 @@ The read access APIs have the following limitations:
 
 ## Write data consumable by semantic models
 
-Spark tables added to a Lakehouse are automatically added to the corresponding [default semantic model](/fabric/data-warehouse/datasets).
+Spark tables added to a Lakehouse are automatically added to the corresponding [default semantic model](../data-warehouse/semantic-models.md).
 This example demonstrates how to write data to the attached Lakehouse. The FabricDataFrame accepts the same input data as Pandas dataframes.
 
 ```python

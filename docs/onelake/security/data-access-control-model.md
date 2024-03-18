@@ -232,7 +232,7 @@ Learn more about S3, ADLS, and Dataverse shortcuts in [OneLake Shortcuts](../one
 | Maximum number of members per OneLake RBAC role | At most 500 users and user groups per role. |
 | Maximum number of permissions per OneLake RBAC role | At most 500 permissions per role |
 
-### SLAs on OneLake RBAC
+### Latencies in OneLake RBAC
 
-- If you change a OneLake RBAC Role definition, OneLake will appply the updated definition within 5 minutes.
-- If you change a user group in OneLake RBAC role, it can take up to 1 hr for OneLake to apply the role's permissions on the updated user group.
+- If you change a OneLake RBAC Role definition, it takes about 5 minutes for OneLake to apply the updated definitions.
+- If you change a user group in OneLake RBAC role, it takes about an hour for OneLake to apply the role's permissions on the updated user group.

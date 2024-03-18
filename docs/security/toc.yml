@@ -6,7 +6,9 @@ items:
   - name: Security overview
     href: security-overview.md
   - name: Security fundamentals
-    href: security-fundamentals.md   
+    href: security-fundamentals.md 
+  - name: Permission model
+    href: permission-model.md       
   - name: Governance and compliance documentation
     href: ../governance/index.yml  
   - name: Admin documentation
@@ -27,7 +29,7 @@ items:
       href: security-conditional-access.md
   - name: Outbound
     items:
-    - name: Overview of mananged VNets
+    - name: Overview of managed VNets
       href: security-managed-vnets-fabric-overview.md
     - name: About managed private endpoints
       href: security-managed-private-endpoints-overview.md
