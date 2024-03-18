@@ -116,6 +116,7 @@ with mlflow.start_run(run_name=f"automl_spark_trials"):
 
 ```
 
+
 ### Supported models
 
 AutoML in Fabric supports the following models:
