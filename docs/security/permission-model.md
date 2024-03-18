@@ -4,7 +4,7 @@ description: Learn how permissions work in Microsoft Fabric.
 author: KesemSharabi
 ms.author: kesharab
 ms.topic: overview
-ms.date: 03/12/2024
+ms.date: 03/18/2024
 ---
 
 # Permission model
@@ -74,7 +74,11 @@ You can find more information in these articles:
 
 * [Object level security (OLS)](/power-bi/enterprise/service-admin-ols)
 
-## Example
+## Examples
+
+This sections provides two examples of how permissions can be set up in Fabric.
+
+### Example 1: Setting up team permissions
 
 Wingtip Toys is set up with one tenant for the entire organization, and three capacities. Each capacity represents a different region. Wingtip Toys operates in the United States, Europe, and Asia. Each capacity has a workspace for each department in the organization, including the sales department.
 
@@ -90,6 +94,18 @@ The following table shows the requirements for each role in the sales department
 | Analyst     | View all content in the sales department in the entire organization       | A *viewer* role for all the sale workspaces in the organization |
 
 Wingtip also has a quarterly report that lists its sales income per sales member. This report is stored in a finance workspace. Using row-level security, the report is set up so that each sales member can only see their own sale figures. Team leads can see the sales figures of all the sale members in their region, and the sales manager can see sale figures of all the sale members in the organization.
+
+### Example 2: Workspace and item permissions
+
+When you share an item, or change its permissions, workspace roles don't change. The example in this section shows how workspace and item permissions interact.
+
+Veronica and Marta work together. Veronica is the owner of a report she want's to share with Marta. If Veronica shares the report with Marta, Marta will be able to access it regardless of the workspace role she has.
+
+Let's say that Marta has a viewer role in the workspace where the report is stored. If Veronica decides remove Marta's item permissions from the report, Marta will still be able to view the report in the workspace. Marta will also be able to open the report from the workspace and view its content. This is because Marta has view permissions to the workspace.
+
+If Veronica doesn't want Marta to view the report, removing Marta's item permissions from the report isn't enough. Veronica also needs to remove Marta's viewer permissions from the workspace. Without the workspace viewer permissions, Marta won't be able to see that the report exists because she won't be able to access the workspace. Marta will also not be able to use the link to the report, because she doesn't have access to the report.
+
+Now that Marta doesn't have a workspace viewer role, if Veronica decides to share the report with her again, Marta will be able to view it using the link Veronica shares with her, without having access to the workspace.
 
 ## Related content
 
