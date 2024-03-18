@@ -1,5 +1,5 @@
 ---
-title: Set up and use private links for secure access to Fabric
+title: Set up and use private links for secure access to Fabric (Preview)
 description: Learn how to set up and use private links to provide secure access to Fabric.
 author: paulinbar
 ms.author: painbar
