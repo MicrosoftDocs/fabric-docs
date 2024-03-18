@@ -5,7 +5,7 @@ ms.topic: overview
 ms.reviewer: ssalgado
 author: midesa
 ms.author: midesa
-ms.date: 12/18/2023
+ms.date: 03/18/2024
 ---
 
 # AutoML in Fabric (preview)
