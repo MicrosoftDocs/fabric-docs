@@ -35,6 +35,7 @@ We provide rich operations to develop notebooks:
 - [Delete a cell](#delete-a-cell)
 - [Collapse a cell input](#collapse-a-cell-input)
 - [Collapse a cell output](#collapse-a-cell-output)
+- [Cell output security](#cell-output-security)
 - [Lock or freeze a cell](#lock-or-freeze-a-cell)
 - [Notebook contents](#notebook-contents)
 - [Markdown folding](#markdown-folding)
@@ -159,6 +160,13 @@ Select the **More commands** ellipses (...) on the cell toolbar and **Hide input
 ### Collapse a cell output
 
 Select the **More commands** ellipses (...) on the cell toolbar and **Hide output** to collapse the current cell's output. To expand it again, select **Show output** when the cell output is collapsed.
+
+### Cell output security
+
+Using [OneLake data access roles (preview)](../onelake/security/get-started-data-access-roles.md), users can configure access to only specific folders in a lakehouse during notebook queries. Users without access to a folder or table will see an unauthorized error during query execution.
+
+> [!IMPORTANT]
+> Security only applies during query execution and any notebook cells containing query results can be viewed by users that are not authorized to run queries against the data directly.
 
 ### Lock or freeze a cell
 
