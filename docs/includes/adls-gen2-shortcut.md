@@ -28,15 +28,15 @@ ms.date: 07/16/2023
 
     :::image type="content" source="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-browse.png" alt-text="Screenshot of the storage browse window with multiple folders selected." lightbox="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-browse.png":::
 
-    If you just used the storage in the connection URL, all of your available containers appear in the left navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
+    If you just used the storage account in the connection URL, all of your available containers appear in the left navigation view. If you specified a container in connection URL, only the specified container and its contents appear in the navigation view.
 
     Navigate the storage account by selecting a folder or clicking on the expansion carrot next to a folder.
 
-    In this view, you can select one or more shortcut target locations.  Choose target locations by clicking the checkbox next a folder in the left navigation view.
+    In this view, you can select one or more shortcut target locations. Choose target locations by clicking the checkbox next a folder in the left navigation view.
 1. Select **Next**
 
     :::image type="content" source="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-review.png" alt-text="Screenshot of shortcut review page with options to rename and delete shortcuts." lightbox="../includes/media/onelake-shortcuts/adls-gen2-shortcut/shortcut-review.png":::
 
-    The review page allows you to verify all of your selections. Here you can see each shortcut that will be created.  In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
+    The review page allows you to verify all of your selections. Here you can see each shortcut that will be created. In the action column, you can click the pencil icon to edit the shortcut name. You can click the trash can icon to delete shortcut.
 1. Select **Create**.
 

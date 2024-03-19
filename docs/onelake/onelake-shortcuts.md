@@ -116,8 +116,7 @@ Shortcuts can also be created to ADLS Gen2 storage accounts. When you create sho
 ADLS shortcuts must point to the DFS endpoint for the storage account.
 Example: `https://accountname.dfs.core.windows.net/`
 
-> [!NOTE]
-> Access to storage account endpoint can't be blocked by storage firewall or VNET because storage firewalls are currently not supported.
+If your storage account is protected by a storage firewall, you can configure trusted service access.  See [Trusted Workspace Access](..\security\security-trusted-workspace-access.md)
 
 #### Authorization
 
