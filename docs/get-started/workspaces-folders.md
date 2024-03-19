@@ -30,10 +30,10 @@ Folders are organizational units inside a workspace that enables users to effici
 
     :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully" lightbox="media/workspaces-folders/newly-created-folder-workspace.png":::
 
-1 You can create nested subfolders in a folder by using the same way. Maximum 10 level nested subfolders can be created. 
+1. You can create nested subfolders in a folder by using the same way. Maximum 10 level nested subfolders can be created. 
 
-    > [!NOTE]
-    > Up to 10 folders can be nested within the root folder.
+   > [!NOTE]
+   > You can nest up to 10 folders within the root folder.
 
 ### Folder name requirements
 
@@ -52,15 +52,15 @@ Folder names must follow certain naming conventions:
 
 1. Select the context menu (**...**) of the item you want to move, then select **Move**.
 
-    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-to-in-contextual-menu.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-contextual-menu.png":::
 
 1. Select the destination folder WHERE you want to move this item, then select **Move here**.
 
     :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
 
-    :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot showing move here button in the desination folder." lightbox="media/workspaces-folders/select-move-here.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot showing move here button in the destination folder." lightbox="media/workspaces-folders/select-move-here.png":::
 
-1. By selectin the link in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
+1. By selecting the link in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
 
     :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully." lightbox="media/workspaces-folders/notification-moved-successfully.png":::
 
@@ -78,7 +78,7 @@ Folder names must follow certain naming conventions:
 
 1. Go to a folder, select **New**, then select the item you want to create. The item is created in this folder.
 
-    :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/workspaces-folders/create-items-in-folder.png":::
+    :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/workspaces-folders/create-items-folder.png":::
 
     > [!NOTE]
     > - Currently, you can't create certain items in a folder: 
@@ -87,7 +87,7 @@ Folder names must follow certain naming conventions:
     >   - streaming semantic model
     >   - streaming dataflow
     >
-    > - If you are creating items from the home page or the create hub, items are created in root level of workspace.
+    > - If you are creating items from the home page or the **Create** hub, items are created in root level of workspace.
 
 ## Rename a folder
 
