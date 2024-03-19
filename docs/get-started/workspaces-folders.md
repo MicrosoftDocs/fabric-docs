@@ -20,63 +20,65 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. In a workspace, select **New** > **Folder**.
 
-    :::image type="content" source="media/folder-in-workspace/create-folder-in-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu." lightbox="media/folder-in-workspace/create-folder-in-new-menu.png":::
+    :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu." lightbox="media/workspaces-folders/create-folder-new-menu.png":::
 
 1. Enter a name for the folder in the **New folder** dialog box.
 
-    :::image type="content" source="media/folder-in-workspace/input-name-in-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog." lightbox="media/folder-in-workspace/input-name-in-new-folder-dialog.png":::
-
-> [!NOTE]
-> Folder names must follow certain naming conventions:
-> - Can't include C0 and C1 control codes.
-> - Can't contain leading and trailing spaces.
-> - Can't contain these characters: ~"#.&*:<>?/\{|}. 
-> - Can't contain system-reserved names, including: $recycle.bin, recycled, recycler.
-> - The name length can't exceed 255 characters.
-> - Can't have more than one folder name with the same name in a folder or at the root level of the workspace.
+    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog." lightbox="media/workspaces-folders/input-name-new-folder-dialog.png":::
 
 1. The folder is created successfully.
 
-    :::image type="content" source="media/folder-in-workspace/newly-created-folder-in-workspace.png" alt-text="Screenshot showing a folder is created successfully" lightbox="media/folder-in-workspace/newly-created-folder-in-workspace.png":::
+    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully" lightbox="media/workspaces-folders/newly-created-folder-workspace.png":::
 
 1 You can create nested subfolders in a folder by using the same way. Maximum 10 level nested subfolders can be created. 
 
     > [!NOTE]
     > Up to 10 folders can be nested within the root folder.
 
+### Folder name requirements
+
+Folder names must follow certain naming conventions:
+
+- The name can't include C0 and C1 control codes.
+- The name can't contain leading and trailing spaces.
+- The name can't contain these characters: ~"#.&*:<>?/\{|}. 
+- The name can't contain system-reserved names, including: $recycle.bin, recycled, recycler.
+- The name length can't exceed 255 characters.
+- The name can't have more than one folder name with the same name in a folder or at the root level of the workspace.
+
 ## Move items into a folder
 
-### move a single item
+### Move a single item
 
 1. Select the context menu (**...**) of the item you want to move, then select **Move**.
 
-    :::image type="content" source="media/folder-in-workspace/select-move-to-in-contextual-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/folder-in-workspace/select-move-to-in-contextual-menu.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-to-in-contextual-menu.png":::
 
 1. Select the destination folder WHERE you want to move this item, then select **Move here**.
 
-    :::image type="content" source="media/folder-in-workspace/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/folder-in-workspace/select-destination-folder.png":::
+    :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
 
-    :::image type="content" source="media/folder-in-workspace/select-move-here.png" alt-text="Screenshot showing move here button in the desination folder." lightbox="media/folder-in-workspace/select-move-here.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot showing move here button in the desination folder." lightbox="media/workspaces-folders/select-move-here.png":::
 
 1. By selectin the link in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
 
-    :::image type="content" source="media/folder-in-workspace/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully." lightbox="media/folder-in-workspace/notification-moved-successfully.png":::
+    :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully." lightbox="media/workspaces-folders/notification-moved-successfully.png":::
 
 ### Move multiple items
 
 1. Select multiple items, then select **Move** from the command bar.
 
-    :::image type="content" source="media/folder-in-workspace/multi-select-items-and-move.png" alt-text="Screenshot showing multi-selected items and move button. " lightbox="media/folder-in-workspace/multi-select-items-and-move.png":::
+    :::image type="content" source="media/workspaces-folders/multi-select-items-move.png" alt-text="Screenshot showing multi-selected items and move button. " lightbox="media/workspaces-folders/multi-select-items-move.png":::
 
 1. Select a destination where you want to move these items. You can also create a new folder if you need it. 
 
-    :::image type="content" source="media/folder-in-workspace/create-new-folder-while-moving.png" alt-text="Screenshot showing new folder button in destination selector dialog." lightbox="media/folder-in-workspace/create-new-folder-while-moving.png":::
+    :::image type="content" source="media/workspaces-folders/create-new-folder-while-moving.png" alt-text="Screenshot showing new folder button in destination selector dialog." lightbox="media/workspaces-folders/create-new-folder-while-moving.png":::
 
 ## Create an item in a folder
 
 1. Go to a folder, select **New**, then select the item you want to create. The item is created in this folder.
 
-    :::image type="content" source="media/folder-in-workspace/create-items-in-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/folder-in-workspace/create-items-in-folder.png":::
+    :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/workspaces-folders/create-items-in-folder.png":::
 
     > [!NOTE]
     > - Currently, you can't create certain items in a folder: 
@@ -91,11 +93,11 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. Select the context (**...**) menu, then select **Rename**.
 
-    :::image type="content" source="media/folder-in-workspace/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu." lightbox="media/folder-in-workspace/rename-folder.png":::
+    :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu." lightbox="media/workspaces-folders/rename-folder.png":::
 
 1. Give the folder a new name and select the **Rename** button.
 
-    :::image type="content" source="media/folder-in-workspace/input-name-in-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog." lightbox="media/folder-in-workspace/input-name-in-rename-dialog.png":::
+    :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog." lightbox="media/workspaces-folders/input-name-rename-dialog.png":::
 
 > [!NOTE]
 > When renaming a folder, follow the same naming convention as for creating a folder. 
@@ -105,10 +107,10 @@ Folders are organizational units inside a workspace that enables users to effici
 1. Make sure the folder is empty.
 1. Select the context menu (**...**) and select **Delete**.
 
-    :::image type="content" source="media/folder-in-workspace/delete-folder.png" alt-text="Screenshot showing delete folder entry point in contextual menu." lightbox="media/folder-in-workspace/delete-folder.png":::
+    :::image type="content" source="media/workspaces-folders/delete-folder.png" alt-text="Screenshot showing delete folder entry point in contextual menu." lightbox="media/workspaces-folders/delete-folder.png":::
 
-> [!NOTE]
-> Currently you can only delete empty folders.
+    > [!NOTE]
+    > Currently you can only delete empty folders.
 
 ## Permission model
 
@@ -126,5 +128,5 @@ Currently folders inherit the permissions of the workspace they are in.
 
 ## Related content
 
-* [Create workspaces](create-workspaces.md)
-* [Give users access to workspaces](give-access-workspaces.md)
+- [Create workspaces](create-workspaces.md)
+- [Give users access to workspaces](give-access-workspaces.md)
