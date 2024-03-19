@@ -43,7 +43,7 @@ If a user only needs to write to specific SQL warehouses and endpoints, grant th
 
 ### Read access
 
-There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through the ReadData permission granted as part of the [Fabric workspace roles.](./get-started-security.md/#workspace-permissions). All four workspace roles grant the ReadData permission. The second way is through read access to the SQL engine but having custom SQL permissions that grant read access to some or all the data.
+There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through the ReadData permission granted as part of the [Fabric workspace roles.](./get-started-security.md#workspace-permissions). All four workspace roles grant the ReadData permission. The second way is through read access to the SQL engine but having custom SQL permissions that grant read access to some or all the data.
 
 If a user is a member of a Fabric workspace role, they're given the ReadData permission. The ReadData permission maps the user to a SQL role that gives SELECT permissions on all tables in the warehouse or lakehouse. This permission is helpful if a user needs to see all or most of the data in the lakehouse or warehouse. Any SQL deny permissions set on a particular lakehouse or warehouse still apply and limit access to tables. Additionally, row and column level security can be set on tables to restrict access at a granular level.
 
