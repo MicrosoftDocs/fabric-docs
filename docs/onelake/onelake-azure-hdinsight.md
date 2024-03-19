@@ -61,4 +61,4 @@ You can now read and write data in OneLake using your Jupyter notebook in an HDI
 
 ## Related content
 
-- [OneLake security](onelake-security.md)
+- [OneLake security](./security/fabric-and-onelake-security.md)

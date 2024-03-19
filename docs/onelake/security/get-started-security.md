@@ -70,9 +70,9 @@ OneLake data access roles is a new feature that enables you to apply role-based 
 
 Fabric users in the Admin, Member, or Contributor roles can get started by creating OneLake data access roles to grant access to only specific folders in a lakehouse. To grant access to data in a lakehouse, add users to a data access role. Users that are not part of a data access role will see no data in that lakehouse.
 
-Learn more about creating data access roles in [Get Started with Data Access Roles.](/get-started-data-access-roles.md)
+Learn more about creating data access roles in [Get Started with Data Access Roles.](./get-started-data-access-roles.md)
 
-Learn more about the security model for access roles [Data Access Control Model.](/data-access-control-model.md)
+Learn more about the security model for access roles [Data Access Control Model.](./data-access-control-model.md)
 
 ## Shortcut security
 
@@ -82,12 +82,12 @@ For OneLake data access roles (preview), shortcuts receive special treatment dep
 
 For external shortcuts to Amazon S3 or ADLS Gen2, the security is configured through data access roles in the lakehouse itself. A shortcut from LakehouseA to an S3 bucket can have data access roles configured in LakehouseA. It is important to note that only the root level of the shortcut can have security applied. Assigning access to sub-folders of the shortcut will result in role creation errors.
 
-Learn more about the security model for shortcuts in [Data Access Control Model](/data-access-control-model.md)
+Learn more about the security model for shortcuts in [Data Access Control Model](./data-access-control-model.md)
 
 ## Related content
 
 - [Fabric and OneLake security overview](./fabric-and-onelake-security.md)
-- [OneLake data access roles (preview)](/get-started-data-access-roles.md)
+- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
 - [Workspace roles](../../get-started/roles-workspaces.md)
 - [OneLake file explorer](../onelake-file-explorer.md)
 - [Share items](../../get-started/share-items.md)

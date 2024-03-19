@@ -18,7 +18,7 @@ In this article, we provide an overview of how to configure security for a lakeh
 
 ## Security features
 
-Microsoft Fabric uses a multi-layer security model with different controls available at different levels in order to provide only the minimum needed permissions. For more information on the different security features available in Fabric, see this [document.](/data-access-control-model.md)
+Microsoft Fabric uses a multi-layer security model with different controls available at different levels in order to provide only the minimum needed permissions. For more information on the different security features available in Fabric, see this [document.](./data-access-control-model.md)
 
 The SQL Warehouse and SQL Endpoint also allow for the defining of native SQL security. SQL security uses the full library of T-SQL security constructs to allow for granular access control of tables, views, rows, and columns within an item. For more information on SQL security, see [here.](../../data-warehouse/sql-granular-permissions.md)
 
@@ -35,7 +35,7 @@ We can then align each use case with the necessary permissions in Fabric.
 
 ### SQL Write access
 
-There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through [Fabric workspace roles.](/get-started-security.md/#workspace-permissions) There are three workspace roles that grant write permissions, and each role automatically translates to a corresponding role in SQL that grants equivalent write access. The second way is through read access to the SQL engine but having custom SQL permissions that grant write access to some or all the data.
+There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through [Fabric workspace roles.](./get-started-security.md#workspace-permissions) There are three workspace roles that grant write permissions, and each role automatically translates to a corresponding role in SQL that grants equivalent write access. The second way is through read access to the SQL engine but having custom SQL permissions that grant write access to some or all the data.
 
 If a user needs write access to all the SQL warehouses and SQL endpoints in a workspace, assign them to a workspace role. Unless a user needs to assign other users to workspace roles, the Contributor role should be used.
 
@@ -43,7 +43,7 @@ If a user only needs to write to specific SQL warehouses and endpoints, grant th
 
 ### Read access
 
-There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through the ReadData permission granted as part of the [Fabric workspace roles.](/get-started-security.md/#workspace-permissions). All four workspace roles grant the ReadData permission. The second way is through read access to the SQL engine but having custom SQL permissions that grant read access to some or all the data.
+There are two ways for a user to have write access to a SQL warehouse or SQL endpoint. The first is through the ReadData permission granted as part of the [Fabric workspace roles.](./get-started-security.md/#workspace-permissions). All four workspace roles grant the ReadData permission. The second way is through read access to the SQL engine but having custom SQL permissions that grant read access to some or all the data.
 
 If a user is a member of a Fabric workspace role, they're given the ReadData permission. The ReadData permission maps the user to a SQL role that gives SELECT permissions on all tables in the warehouse or lakehouse. This permission is helpful if a user needs to see all or most of the data in the lakehouse or warehouse. Any SQL deny permissions set on a particular lakehouse or warehouse still apply and limit access to tables. Additionally, row and column level security can be set on tables to restrict access at a granular level.
 
@@ -66,8 +66,8 @@ For lakehouses that are not yet using the [OneLake data access roles](./get-star
 
 ## Related content
 
-- [OneLake data access roles (preview)](/get-started-data-access-roles.md)
-- [OneLake data access control model](/data-access-control-model.md)
+- [OneLake data access roles (preview)](./get-started-data-access-roles.md)
+- [OneLake data access control model](./data-access-control-model.md)
 - [Workspace roles](../../get-started/roles-workspaces.md)
-- [How to secure data in OneLake for data science](/how-to-secure-data-in-onelake-for-data-science.md)
+- [How to secure data in OneLake for data science](./how-to-secure-data-in-onelake-for-data-science.md)
 - [Share items](../../get-started/share-items.md)
