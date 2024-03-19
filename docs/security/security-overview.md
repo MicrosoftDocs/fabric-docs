@@ -117,7 +117,7 @@ Fabric controls data access using [workspaces](../get-started/workspaces.md). In
 
 ### Workspace roles
 
-Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [OneLake security](../onelake/onelake-security.md#workspace-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
+Workspace access is listed in the table below. It includes [workspace roles](../get-started/roles-workspaces.md) and [Fabric and OneLake security](../onelake/security/fabric-and-onelake-security.md#fabric-data-security). Users with a viewer role can run SQL, Data Analysis Expressions (DAX) or Multidimensional Expressions (MDX) queries, but they can't access Fabric items or run a [notebook](../data-engineering/how-to-use-notebook.md).
 
 | Role                           | Workspace access                       | OneLake access                                                        |
 |--------------------------------|----------------------------------------|-----------------------------------------------------------------------|
@@ -160,7 +160,7 @@ Review this section for a list of some of the security features available in Mic
 |------------|------------|
 | [Conditional access](security-conditional-access.md)  | Secure your apps by using Microsoft Entra ID |
 | [Lockbox](security-lockbox.md)  | Control how Microsoft engineers access your data                   |
-| [OneLake security](../onelake/onelake-security.md) | Learn how to secure your data in OneLake. |
+| [Fabric and OneLake security](../onelake/security/fabric-and-onelake-security.md) | Learn how to secure your data in Fabric and OneLake. |
 | [Resiliency](az-resiliency.md) | Reliability and regional resiliency with Azure availability zones   |
 | [Service tags](security-service-tags.md) | Enable an Azure SQL Managed Instance (MI) to allow incoming connections from Microsoft Fabric |
 
