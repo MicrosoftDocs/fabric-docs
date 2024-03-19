@@ -20,7 +20,7 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. In a workspace, select **New** > **Folder**.
 
-    :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu." lightbox="media/workspaces-folders/create-folder-new-menu.png":::
+    :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu.":::
 
 1. Enter a name for the folder in the **New folder** dialog box.
 
@@ -28,7 +28,7 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. The folder is created successfully.
 
-    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully" lightbox="media/workspaces-folders/newly-created-folder-workspace.png":::
+    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully":::
 
 1. You can create nested subfolders in a folder by using the same way. Maximum 10 level nested subfolders can be created. 
 
@@ -52,7 +52,7 @@ Folder names must follow certain naming conventions:
 
 1. Select the context menu (**...**) of the item you want to move, then select **Move**.
 
-    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-contextual-menu.png":::
+    :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-context-menu.png":::
 
 1. Select the destination folder WHERE you want to move this item, then select **Move here**.
 
@@ -62,7 +62,7 @@ Folder names must follow certain naming conventions:
 
 1. By selecting the link in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
 
-    :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully." lightbox="media/workspaces-folders/notification-moved-successfully.png":::
+    :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully.":::
 
 ### Move multiple items
 
@@ -93,11 +93,11 @@ Folder names must follow certain naming conventions:
 
 1. Select the context (**...**) menu, then select **Rename**.
 
-    :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu." lightbox="media/workspaces-folders/rename-folder.png":::
+    :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu.":::
 
 1. Give the folder a new name and select the **Rename** button.
 
-    :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog." lightbox="media/workspaces-folders/input-name-rename-dialog.png":::
+    :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog.":::
 
 > [!NOTE]
 > When renaming a folder, follow the same naming convention as for creating a folder. 
@@ -107,7 +107,7 @@ Folder names must follow certain naming conventions:
 1. Make sure the folder is empty.
 1. Select the context menu (**...**) and select **Delete**.
 
-    :::image type="content" source="media/workspaces-folders/delete-folder.png" alt-text="Screenshot showing delete folder entry point in contextual menu." lightbox="media/workspaces-folders/delete-folder.png":::
+    :::image type="content" source="media/workspaces-folders/delete-folder.png" alt-text="Screenshot showing delete folder entry point in contextual menu.":::
 
     > [!NOTE]
     > Currently you can only delete empty folders.
