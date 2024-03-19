@@ -118,12 +118,12 @@ Workspace admins, members, and contributors can create, modify, and delete folde
 
 Currently folders inherit the permissions of the workspace where they're located. 
 
-| Capability                   | Admin   | Member   | Contributor | Viewer   |
-|------------------------------|---------|----------|-------------|----------|
-| Create folder                | &#9989; | &#9989;  | &#9989;     | &#10060; |
-| Delete folder                | &#9989; | &#9989;  | &#9989;     | &#10060; |
-| Rename folder                | &#9989; | &#9989;  | &#9989;     | &#10060; |
-| Move folder and items        | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Capability  | Admin   | Member   | Contributor | Viewer   |
+|-------|---------|----------|-------------|----------|
+| Create folder  | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Delete folder  | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Rename folder   | &#9989; | &#9989;  | &#9989;     | &#10060; |
+| Move folder and items  | &#9989; | &#9989;  | &#9989;     | &#10060; |
 | View folder in workspace list| &#9989; | &#9989;  | &#9989;     | &#9989;  |
 
 ## Related content
