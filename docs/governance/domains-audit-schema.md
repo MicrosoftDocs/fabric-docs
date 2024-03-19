@@ -10,9 +10,11 @@ ms.date: 03/14/2024
 
 # Audit schema for domains in Fabric
 
-Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities in the unified audit log or in the Fabric activity log. For more information, see [Track user activities in Fabric](../admin/track-user-activities.md).
+Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities using [Microsoft Purview Audit](XXX).
 
-This article documents the information in the Fabric auditing schema that's specific to domains.
+On the Audit search page, search for activites by their friendly names or operation names. Select one of the search results. A side pane will display the record details. For domains, the domain-specific details are found in json format under **OperationProperties**.
+
+This article explains the information in the Fabric auditing schema that's specific to domains. This information is recorded in the OperationProperties section of the details side pane that opens when you select a domain-related activity on the Audit search page.
 
 | Field | Type | Must appear in the schema | Value |
 |---|---|---|---|
