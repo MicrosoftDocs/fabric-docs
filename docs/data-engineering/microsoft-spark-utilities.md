@@ -229,32 +229,32 @@ The following is an example of running notebooks with topological structure usin
 
 ```python
 # run multiple notebooks with parameters
-pipeline = {
+DAG = {
     "activities": [
         {
-            "name": "Child1", # activity name, must be unique
+            "name": "NotebookSimple", # activity name, must be unique
             "path": "NotebookSimple", # notebook path
             "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
-            "args": {"p1": "changed value 1", "p2": 1}, # notebook parameters
+            "args": {"p1": "changed value", "p2": 100}, # notebook parameters
         },
         {
-            "name": "Child2",
+            "name": "NotebookSimple2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 2", "p2": 2}
+            "args": {"p1": "changed value 2", "p2": 200}
         },
         {
-            "name": "Child3",
+            "name": "NotebookSimple2.2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 3", "p2": 3},
+            "args": {"p1": "changed value 3", "p2": 300},
             "retry": 1,
             "retryIntervalInSeconds": 10,
-            "dependencies": ["Child1"] # list of activity names that this activity depends on
+            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
         }
     ]
 }
-mssparkutils.notebook.runMultiple(pipeline, {"displayDAGViaGraphviz": True})
+mssparkutils.notebook.runMultiple(DAG, {"displayDAGViaGraphviz": False})
 ```
 
 The execution result from the root notebook is as follows:
