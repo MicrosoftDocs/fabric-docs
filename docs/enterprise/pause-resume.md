@@ -58,9 +58,12 @@ Restart usage by resuming your capacity. Resuming your capacity also resumes bil
 ## Schedule your Pause, Resume or Scale Operation via Azure Runbook
 
 You can schedule scaling of your Pay as You Go Capacities via Azure Runbook.
-You can find a description on how to use Runbooks in Automation Accounts from the Runbook gallery here: https://learn.microsoft.com/en-gb/azure/automation/automation-runbook-gallery#import-a-module-from-the-modules-gallery-in-the-azure-portal
-In the gallery your can search for "Fabric" and choose the Notebook you want to schedule:
+Find a description on how to use Runbooks in Automation Accounts from the Runbook gallery: https://learn.microsoft.com/en-gb/azure/automation/automation-runbook-gallery#import-a-module-from-the-modules-gallery-in-the-azure-portal.
+
+In the Runbook gallery you can search for "Fabric" and choose the Notebook you want to schedule:
 ![Fabric-in-Runbook-Gallery](media/pause-resume/Fabric-in-Runbook-Gallery.png)
+
+The parameters needed for scheduling are described in the description of the Runbook.
 
 ## Related content
 
