@@ -29,17 +29,17 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md).
 
 1. Select **New shortcut**.
 
-   :::image type="content" source="media\create-onelake-shortcut\new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
+   :::image type="content" source="media/create-onelake-shortcut/new-shortcut-lake-view.png" alt-text="Screenshot of right click context menu showing where to select New shortcut from the Lake view.":::
 
 ## Select a source
 
 1. Under **External sources**, select **Amazon S3 compatible**.
     
-    :::image type="content" source="../media/create-s3compatible-shortcut/s3compatible-shortcut-card.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 Compatible is highlighted." lightbox="../media/create-s3compatible-shortcut/s3compatible-shortcut-card.png":::
+    :::image type="content" source="media/create-s3compatible-shortcut/s3compatible-shortcut-card.png" alt-text="Screenshot of the New shortcut window showing the two methods for creating a shortcut. The option titled Amazon S3 Compatible is highlighted." lightbox="media/create-s3compatible-shortcut/s3compatible-shortcut-card.png":::
 
 1. Enter the **Connection settings** according to the following table:
 
-    :::image type="content" source="../media/create-s3compatible-shortcut/s3compatible-shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials." lightbox="../media/create-s3compatible-shortcut/s3compatible-shortcut-details.png":::
+    :::image type="content" source="media/create-s3compatible-shortcut/s3compatible-shortcut-details.png" alt-text="Screenshot of the New shortcut window showing the Connection settings and Connection credentials." lightbox="media/create-s3compatible-shortcut/s3compatible-shortcut-details.png":::
 
       |Field | Description| Value|
       |-----|-----| -----|
