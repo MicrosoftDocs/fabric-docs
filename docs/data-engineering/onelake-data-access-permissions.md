@@ -2,8 +2,8 @@
 title: OneLake Data Access Permissions (Preview)
 description: Apache Spark in Fabric provides various built-in options for visualizing your data, including notebook charts and access to popular open-source libraries.
 ms.reviewer: tvilutis, aamerril
-ms.author: turchiny
-author: turchiny
+ms.author: yuturchi
+author: yuturchi
 ms.topic: how-to
 ms.custom:
 ms.search.form: OneLake Access Control
