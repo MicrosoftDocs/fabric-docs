@@ -27,12 +27,12 @@ items:
     href: create-adls-shortcut.md
   - name: Create an Amazon S3 shortcut
     href: create-s3-shortcut.md
-  - name: Access OneLake shortcuts in a Spark notebook
-    href: access-onelake-shortcuts.md
+  - name: Create an Amazon S3 compatible shortcut
+    href: create-s3-compatible-shortcut.md
   - name: Create a Google Cloud Storage shortcut
     href: create-gcs-shortcut.md  
-  - name: Create an Amazon S3 compatible shortcut
-    href: create-s3compatible-shortcut.md
+  - name: Access OneLake shortcuts in a Spark notebook
+    href: access-onelake-shortcuts.md
   - name: Use shortcuts REST API
     href: onelake-shortcuts-rest-api.md
 - name: Open access
