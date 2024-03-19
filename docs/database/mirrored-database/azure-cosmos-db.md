@@ -40,6 +40,8 @@ OneLake data is stored in the open-source Delta Lake format, allowing you to use
 
 Mirrored databases are an item in the **Fabric Synapse Data Warehousing** experience distinct from the **Warehouse** and **SQL analytics endpoint** items.
 
+:::image type="content" source="media/azure-cosmos-db/fabric-mirroring-cosmos-db.svg" alt-text="Diagram of Fabric Mirroring for Azure Cosmos DB.":::
+
 Every Mirrored Azure Cosmos DB database has three items you can interact with in your Fabric workspace:  
 
 - The mirrored database item. Mirroring manages the replication of data into [OneLake](../../onelake/onelake-overview.md) and conversion to Parquet, in an analytics-ready format. This enables downstream scenarios like data engineering, data science, and more.
