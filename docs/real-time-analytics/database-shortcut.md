@@ -1,18 +1,24 @@
 ---
 title: Create a database shortcut
-description: Learn how to create a database shortcut in Real-Time Analytics.
+description: Learn how to create a database shortcut to data in another KQL Database or in Azure Data Explorer in Real-Time Analytics.
 ms.reviewer: sharmaanshul
 ms.author: yaschust
 author: YaelSchuster
 ms.topic: how-to
 ms.custom:
   - ignite-2023
-ms.date: 09/28/2023
+ms.date: 03/19/2024
 ms.search.form: KQL Database
+#Customer intent: To create a database shortcut in Real-Time Analytics.
 ---
 # Create a database shortcut
 
-A database shortcut in Real-Time Analytics is an embedded reference within a KQL database to a source database in Azure Data Explorer. The behavior exhibited by the database shortcut is similar to that of a [follower database](/azure/data-explorer/follower).
+A database shortcut in Real-Time Analytics is an embedded reference within a KQL database to a source database. The source database can be one of the following:
+
+* A KQL Database in Real-Time Analytics
+* An Azure Data Explorer database
+
+The behavior exhibited by the database shortcut is similar to that of a [follower database](/azure/data-explorer/follower).
 
 **When is a database shortcut useful?**
 
@@ -20,7 +26,7 @@ If you have data in an Azure Data Explorer database and want to use this data in
 
 **How does a database shortcut work?**
 
-The owner of the source database in Azure Data Explorer, the data provider, shares the database with the creator of the shortcut in Real-Time Analytics, the data consumer. The owner and the creator can be the same person.
+The owner of the source database, the data provider, shares the database with the creator of the shortcut in Real-Time Analytics, the data consumer. The owner and the creator can be the same person.
 
 The database shortcut is attached in read-only mode, making it possible to view and run queries on the data that was ingested into the source Azure Data Explorer database. The database shortcut synchronizes changes in the source database. Because of the synchronization, there's a data lag of a few seconds to a few minutes in data availability. The length of the time lag depends on the overall size of the source database metadata.
 
@@ -29,11 +35,10 @@ The source and database shortcuts use the same storage account to fetch the data
 ## Prerequisites
 
 * A [workspace](../get-started/create-workspaces.md) with a Microsoft Fabric-enabled [capacity](../enterprise/licenses.md#capacity)
-* An Azure subscription. Create a [free Azure account](https://azure.microsoft.com/free/).
-* An Azure Data Explorer cluster and database. [Create a cluster and database](/azure/data-explorer/create-cluster-and-database).
+* A source database. This can be an [Azure Data Explorer database](/azure/data-explorer/create-cluster-and-database) or a [KQL Database](create-database.md).
 
 > [!IMPORTANT]
-> Both the source Azure Data Explorer database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
+> Both the source database and the database shortcut in Real-Time Analytics must be in the same region, but can be in different tenants.
 
 ## Create an invitation token
 
@@ -68,9 +73,12 @@ A data consumer can create a database shortcut in Real-Time Analytics from any s
 * **Cost**: The cost of cold cache can be dramatically lower than of hot cache.
 * **Performance**: Data in hot cache is queried faster, particularly for range queries that scan large amounts of data.
 
-Select the desired tab that corresponds with the way you'd like to create a shortcut.
+Select the desired tab that corresponds with the way you'd like to create a shortcut. 
 
-### [Using an invitation link](#tab/link)
+### [Use an invitation link](#tab/link)
+
+> [!IMPORTANT]
+> This method only works when the source database is in Azure Data Explorer.
 
 To create a shortcut using an invitation link, you must first [create the link](#create-an-invitation-token). Once created, use the link to open Real-Time Analytics showing the **New database shortcut** dialog box, and then follow these steps:
 
@@ -83,9 +91,12 @@ To create a shortcut using an invitation link, you must first [create the link](
 
 1. Select **Create**.
 
-### [Using a cluster URI](#tab/workspace)
+### [Use a cluster URI](#tab/workspace)
 
-To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the Azure Data Explorer source cluster, and then follow these steps:
+> [!IMPORTANT]
+> This method works with sources both in Azure Data Explorer and in Real-Time Analytics.
+
+To create a shortcut using a cluster URI and database name, make sure you have at least contributor permissions on the source data, and then follow these steps:
 
 1. Browse to your workspace in Microsoft Fabric.
 1. Open the experience switcher on the bottom of the navigation pane and select **Real-Time Analytics**.
@@ -96,7 +107,7 @@ To create a shortcut using a cluster URI and database name, make sure you have a
     :::image type="content" source="media/database-shortcut/new-database.png" alt-text="Screenshot of new database dialog for creating database shortcut in Real-Time Analytics." lightbox="media/database-shortcut/new-database.png":::
 
 1. Select **Method** > **Cluster URI**.
-1. Enter the URI of the source cluster.
+1. Enter the URI of the source cluster. To find the URI of a KQL Database, see [Copy URI](access-database-copy-uri.md#copy-uri).
 1. Specify the source **Database**.
 1. Optionally, modify the default cache policy.
 
