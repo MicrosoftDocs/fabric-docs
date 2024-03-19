@@ -5,7 +5,7 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos, imotiwala, sbahadur
 ms.service: fabric
-ms.date: 03/15/2024
+ms.date: 03/19/2024
 ms.topic: conceptual
 ms.custom: references_regions
 ---
@@ -21,7 +21,7 @@ Current limitations in the Microsoft Fabric mirrored databases from Azure SQL Da
 - Each user workload varies. During initial snapshot, there might be more resource usage on the source database, for both CPU and IOPS (input/output operations per second, to read the pages). Table updates/delete operations can lead to increased log generation. Learn more on how to [monitor resources for your Azure SQL Database](/azure/azure-sql/database/monitor-tune-overview?view=azuresql-db&preserve-view=true#azure-sql-database-and-azure-sql-managed-instance-resource-monitoring).
 - The replicator engine monitors each table for changes independently. If there are no updates in a source table, the replicator engine starts to back off with an exponentially increasing duration for that table, up to an hour. The same can occur if there is a transient error, preventing data refresh. The replicator engine will automatically resume regular polling after updated data is detected.
 - The maximum number of tables that can be mirrored into Fabric is 500 tables. Any tables above the 500 limit currently cannot be replicated.
-  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The latter set of tables that are at the bottom of the alphabetical list will be mirrored over.
+  - If you select **Mirror all data** when configuring Mirroring, the tables to be mirrored over will be determined by taking the first 500 tables when all tables are sorted alphabetically based on the schema name and then the table name. The remaining set of tables at the bottom of the alphabetical list will not be mirrored over.
   - If you unselect **Mirror all data** and select individual tables, you are prevented from selecting more than 500 tables.
 
 ## Permissions in the source database
