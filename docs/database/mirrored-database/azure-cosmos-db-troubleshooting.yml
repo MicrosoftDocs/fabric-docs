@@ -1,0 +1,99 @@
+### YamlMime:FAQ
+metadata:
+  title: Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+  description: Learn how to troubleshoot prompts related to mirroring for Azure Cosmos DB databases in Microsoft Fabric.
+  author: seesharprun
+  ms.author: sidandrews
+  ms.reviewer: anithaa
+  ms.service: fabric
+  ms.topic: faq
+  ms.date: 03/17/2024
+title: |
+  Troubleshoot Microsoft Fabric mirrored databases from Azure Cosmos DB (Preview)
+summary: |
+  Mirroring in Microsoft Fabric provides a seamless no-ETL experience to integrate your existing Azure Cosmos DB data with the rest of your data in Fabric. Use the tips in this article to help troubleshoot problems that you might experience when you create a mirrored database for Azure Cosmos DB in Fabric.
+  > [!IMPORTANT]
+  > Mirroring for Azure Cosmos DB is currently in [preview](../../get-started/preview.md). Production workloads aren't supported during preview. Currently, only Azure Cosmos DB for NoSQL accounts are supported.
+
+  Here's a list of common issues and relevant troubleshooting steps to follow if mirroring an Azure Cosmos DB database to Microsoft Fabric isn't working as expected.
+sections:
+  - name: General questions
+    questions:
+      - question: |
+          I can't see the option for mirroring in the Fabric portal's "Create" or "Data Warehouse" page. How do I enable mirroring?
+        answer: |
+          Your organization admin must enable the mirroring feature to see the mirroring option in your Fabric workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md).
+      - question: |
+          Mirroring is failing when loading the databases with an "SQLAPIendpoint" error. How do I resolve this error?
+        answer: |
+          This error typically indicates that your Azure Cosmos DB account key is no longer valid for the connection you selected. Once the connection credentials are updated with a valid account key, set up mirroring again.
+      - question: |
+          Fabric is unable to configure mirroring with an error indicating that my Azure Cosmos DB account doesn't have continuous backup. How do I fix this error?
+        answer: |
+          Enable continuous backup for your Azure Cosmos DB account. For more information, see [create an Azure Cosmos DB account with continuous backup](/azure/cosmos-db/provision-account-continuous-backup) or [migrate an existing Azure Cosmos DB account to continuous backup](/azure/cosmos-db/migrate-continuous-backup).
+
+          Once the continuous backup feature is enabled, return to the Fabric mirroring setup and continue with the remaining steps.
+      - question: |
+          How do I know if my Azure Cosmos DB account has continuous backup enabled?
+        answer: |
+          Using the Azure portal, you can check if the continuous backup feature is enabled by locating the **Point in Time Restore** option in the resource menu for the Azure Cosmos DB account. If this option isn't available, either the account doesn't have continuous backup enabled, or the account is migrating to continuous backup.
+      - question: |
+          Enabling continuous backup in my Azure Cosmos DB account is causing various errors. Can I still set up Fabric mirroring?
+        answer: |
+          No, Continuous backup must be enabled for Azure Cosmos DB accounts that are intended to be a mirroring source.
+
+          If there's an error message when enabling continuous backup for an Azure Cosmos DB account, the account might have limitations blocking the feature. For example, if you previously deleted analytical store for the account, the account can't support continuous backup. In this scenario, the only remaining option is to use a new Azure Cosmos DB account for mirroring.
+      - question: |
+          Why am I getting "trial capacity" errors when I select "Create a mirrored Azure Cosmos DB database"?
+        answer: |
+          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
+      - question: |
+          Why am I getting "internal server error" when I select "Create a mirrored Azure Cosmos DB database"?
+        answer: |
+          You must enable mirroring for your workspace or tenant. For more information, see [enable mirroring](enable-mirroring.md). If you observe persistent errors, [open a support ticket](/power-bi/support/service-support-options).
+      - question: |
+          Why is replication not working and I'm getting "internal server error" when I select "monitor replication"?
+        answer: |
+          Replication could be working and you're observing a transient error if Azure Cosmos DB is throttling requests from Fabric. Additionally, there might be a limitation of mirroring with Azure Cosmos DB causing this issue. For more information, see [Azure Cosmos DB mirroring limitations](azure-cosmos-db-limitations.md).
+          
+          Refresh the experience and determine if the problem is automatically resolved. Also, you can stop and start replication. If none of these options work, [open a support ticket](/power-bi/support/service-support-options).
+      - question: |
+          How can I be sure Fabric is replicating data from Azure Cosmos DB?
+        answer: |
+          First, follow general troubleshooting steps for Fabric mirrored databases. For more information, see [troubleshooting](troubleshooting.md).
+
+          In most cases, the **Monitor replication** option can provide further detail indicating whether data is replicating to Fabric successfully. A common troubleshooting step is to check if the **last refreshed time** is recent. If the time isn't recent, stop and then restart replication as the next step.
+      - question: |
+          The "monitor replication" pane includes tables with no rows replicated after a significant amount of time. Is replication stuck?
+        answer: |
+          Replication is likely stuck. Stop and restart replication as a first step. If this step doesn't work, [open a support ticket](/power-bi/support/service-support-options).
+      - question: |
+          Why can't I find any tables in the SQL analytics endpoint?
+        answer: |
+          First, refresh the **Schemas** and **dbo** node to determine if the tables are ready. Tables are automatically loaded after they're ready. If no tables are ready after a significant amount of time, use the **Monitor replication** pane to determine if any replication errors occurred.
+      - question: |
+          Why does my target warehouse tables only include the `_rid` column after replicating?
+        answer: |
+          First, refresh the **Schemas** and **dbo** node to determine if the tables are ready. Tables are automatically loaded after they're ready. If more columns aren't ready after a significant amount of time, use the **Monitor replication** pane to determine if any replication errors occurred.          
+      - question: |
+          I added new items to a container in my Azure Cosmos DB database. These items aren't included in the results of my SQL analytics endpoint queries. How do I know if replication is working?
+        answer: |
+          The **Monitor replication** option can provide further detail indicating whether data is replicating to Fabric successfully. A common troubleshooting step is to check if the **last refreshed time** is recent. If the time isn't recent, stop and then restart replication as the next step. If the time is recent, attempt your query again. Sometimes, there can be a delay between data being inserted into Azure Cosmos DB and it being replicated and available in Fabric.
+
+          If the data is still not available, use Lakehouse to create a shortcut and run a Spark query from a notebook. Spark always shows the latest data. If the data is available in Spark but not SQL analytics, [open a support ticket](/power-bi/support/service-support-options).
+
+          If the data is also not available in Spark, there might be an unintended issue with replication latency. Wait for some time and retry replication. If problems persist, [open a support ticket](/power-bi/support/service-support-options).
+      - question: |
+          Why am I getting a "JSON text isn't properly formatted. Unexpected character '"' is found at position" error message when running T-SQL queries against my SQL analytics endpoint?
+        answer: |
+          Data warehouse can't handle JSON string columns greater than 8 KB in size. Nested data represented as a JSON string in SQL endpoint warehouse tables can commonly cause the column to increase to more than 8 KB in size. Monitoring levels of nesting and the amount of data if you receive this error message. For more information, see [data warehouse limitations](azure-cosmos-db-limitations.md#data-warehouse-limitations).
+      - question: |
+          Why am I getting an "Invalid column name" error in the "monitor replication" pane?
+        answer: |
+          Mirroring doesn't support containers that contain items with property names containing either whitespaces or wild-card characters. This limitation causes mirroring for the specific container to fail. Other containers within the same databases can still successfully mirror. For more information, see [replication limitations](azure-cosmos-db-limitations.md#replication-limitations).
+additionalContent: |
+  ## Related content
+
+  - [Overview of Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db.md)
+  - [FAQ: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-faq.yml)
+  - [Limitations: Microsoft Fabric mirrored databases from Azure Cosmos DB](azure-cosmos-db-limitations.md)
