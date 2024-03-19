@@ -24,7 +24,7 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. Enter a name for the folder in the **New folder** dialog box.
 
-    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog." lightbox="media/workspaces-folders/input-name-new-folder-dialog.png":::
+    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog.":::
 
 1. The folder is created successfully.
 
@@ -87,7 +87,7 @@ Folder names must follow certain naming conventions:
     >   - streaming semantic model
     >   - streaming dataflow
     >
-    > - If you are creating items from the home page or the **Create** hub, items are created in root level of workspace.
+    > - If you are creating items from the home page or the **Create** hub, items are created in the root level of the workspace.
 
 ## Rename a folder
 
@@ -100,7 +100,7 @@ Folder names must follow certain naming conventions:
     :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog.":::
 
 > [!NOTE]
-> When renaming a folder, follow the same naming convention as for creating a folder. 
+> When renaming a folder, follow the same naming convention as when you're creating a folder. 
 
 ## Delete a folder
 
@@ -116,7 +116,7 @@ Folder names must follow certain naming conventions:
 
 Workspace admins, members, and contributors can create, modify, and delete folders in the workspace. Viewers can only view folder hierarchy and navigate in the workspace.
 
-Currently folders inherit the permissions of the workspace they are in. 
+Currently folders inherit the permissions of the workspace where they're located. 
 
 | Capability                   | Admin   | Member   | Contributor | Viewer   |
 |------------------------------|---------|----------|-------------|----------|
