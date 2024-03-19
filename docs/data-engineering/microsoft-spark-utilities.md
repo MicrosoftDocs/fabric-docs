@@ -229,34 +229,37 @@ The following is an example of running notebooks with topological structure usin
 
 ```python
 # run multiple notebooks with parameters
-DAG = {
+pipeline = {
     "activities": [
         {
-            "name": "NotebookSimple", # activity name, must be unique
+            "name": "Child1", # activity name, must be unique
             "path": "NotebookSimple", # notebook path
             "timeoutPerCellInSeconds": 90, # max timeout for each cell, default to 90 seconds
-            "args": {"p1": "changed value", "p2": 100}, # notebook parameters
+            "args": {"p1": "changed value 1", "p2": 1}, # notebook parameters
         },
         {
-            "name": "NotebookSimple2",
+            "name": "Child2",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 2", "p2": 200}
+            "args": {"p1": "changed value 2", "p2": 2}
         },
         {
-            "name": "NotebookSimple2.2",
+            "name": "Child3",
             "path": "NotebookSimple2",
             "timeoutPerCellInSeconds": 120,
-            "args": {"p1": "changed value 3", "p2": 300},
+            "args": {"p1": "changed value 3", "p2": 3},
             "retry": 1,
             "retryIntervalInSeconds": 10,
-            "dependencies": ["NotebookSimple"] # list of activity names that this activity depends on
+            "dependencies": ["Child1"] # list of activity names that this activity depends on
         }
     ]
 }
-mssparkutils.notebook.runMultiple(DAG)
-
+mssparkutils.notebook.runMultiple(pipeline, {"displayDAGViaGraphviz": True})
 ```
+
+The execution result from the root notebook is as follows:
+
+:::image type="content" source="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png" alt-text="Screenshot of reference a list of notebooks with parameters." lightbox="media\microsoft-spark-utilities\reference-notebook-list-with-parameters.png":::
 
 > [!NOTE]
 > The parallelism degree of the multiple notebook run is restricted to the total available compute resource of a Spark session.
@@ -423,22 +426,22 @@ mssparkutils.fs.mount(
 > ```python
 > from notebookutils import mssparkutils
 > ```
->
-> Mount parameters:
->
-> - fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
-> - timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
->
-> You can use these parameters like this:
->
-> ```python
-> mssparkutils.fs.mount(
->    "abfss://mycontainer@<accountname>.dfs.core.windows.net",
->    "/test",
->    {"fileCacheTimeout": 120, "timeout": 120}
-> )
-> ```
->
+
+Mount parameters:
+- fileCacheTimeout: Blobs will be cached in the local temp folder for 120 seconds by default. During this time, blobfuse will not check whether the file is up to date or not. The parameter could be set to change the default timeout time. When multiple clients modify files at the same time, in order to avoid inconsistencies between local and remote files, we recommend shortening the cache time, or even changing it to 0, and always getting the latest files from the server.
+- timeout: The mount operation timeout is 120 seconds by default. The parameter could be set to change the default timeout time. When there are too many executors or when mount times out, we recommend increasing the value.
+
+You can use these parameters like this:
+
+```python
+mssparkutils.fs.mount(
+   "abfss://mycontainer@<accountname>.dfs.core.windows.net",
+   "/test",
+   {"fileCacheTimeout": 120, "timeout": 120}
+)
+```
+
+> [!NOTE]
 > For security reasons, we recommended you don't store credentials in code. To further protect your credentials, we will redact your secret in notebook output. For more information, see [Secret redaction](author-execute-notebook.md#secret-redaction).
 
 ### How to mount a lakehouse
@@ -528,6 +531,9 @@ mssparkutils.fs.unmount("/test")
 ## Lakehouse utilities
 
 `mssparkutils.lakehouse` provides utilities specifically tailored for managing Lakehouse artifacts. These utilities empower users to create, retrieve, update, and delete Lakehouse artifacts effortlessly.
+
+> [!NOTE]
+> Lakehouse APIs are only supported on Runtime version 1.2+.
 
 ### Overview of methods
 
