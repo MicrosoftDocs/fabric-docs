@@ -22,7 +22,7 @@ Folders are organizational units inside a workspace that enables users to effici
 
     :::image type="content" source="media/workspaces-folders/create-folder-new-menu.png" alt-text="Screenshot showing entry point of folder creation in new menu.":::
 
-1. Enter a name for the folder in the **New folder** dialog box.
+1. Enter a name for the folder in the **New folder** dialog box. See [Folder name requirements](#folder-name-requirements) for naming restrictions.
 
     :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog.":::
 
@@ -54,7 +54,7 @@ Folder names must follow certain naming conventions:
 
     :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-context-menu.png":::
 
-1. Select the destination folder WHERE you want to move this item, then select **Move here**.
+1. Select the destination folder where you want to move this item, then select **Move here**.
 
     :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
 
@@ -95,7 +95,7 @@ Folder names must follow certain naming conventions:
 
     :::image type="content" source="media/workspaces-folders/rename-folder.png" alt-text="Screenshot showing rename folder entry point in context menu.":::
 
-1. Give the folder a new name and select the **Rename** button.
+1. Give the folder a new name and select the **Rename** button. See [Folder name requirements](#folder-name-requirements) for naming restrictions.
 
     :::image type="content" source="media/workspaces-folders/input-name-rename-dialog.png" alt-text="Screenshot showing inputting name in rename dialog.":::
 
