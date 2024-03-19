@@ -5,7 +5,7 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/10/2024
+ms.date: 03/17/2024
 ---
 
 # Tenant settings index
@@ -29,7 +29,7 @@ This article lists all Fabric tenant settings, along with a brief description of
 | Setting name | Description |
 |------|-------|
 |[Publish "Get Help" information](service-admin-portal-help-support.md#publish-get-help-information)|Users in the organization can go to internal help and support resources from the Power BI help menu.|
-|[Receive email notifications for service outages or incidents](../enterprise/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents)|Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident.|
+|[Receive email notifications for service outages or incidents](../admin/service-interruption-notifications.md#enable-notifications-for-service-outages-or-incidents)|Mail-enabled security groups will receive email notifications if this tenant is impacted by a service outage or incident.|
 |[Users can try Microsoft Fabric paid features](service-admin-portal-help-support.md#users-can-try-microsoft-fabric-paid-features)|When users sign up for a Microsoft Fabric trial, they can try Fabric paid features for free for 60 days from the day they signed up.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2227896)|
 |[Show a custom message before publishing reports](service-admin-portal-help-support.md#show-a-custom-message-before-publishing-reports)|When people attempt to publish a report, they'll see a custom message before it gets published.|
 
@@ -284,8 +284,8 @@ This article lists all Fabric tenant settings, along with a brief description of
 
 | Setting name | Description |
 |------|-------|
-|[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is on, users can access a preview and use preview features powered by Azure OpenAI, including Copilot.<br><br>Your data, such as prompts, augmented data included with prompts, and AI outputs, will be processed and temporarily stored by Microsoft and may be reviewed by Microsoft employees for abuse monitoring.  [Learn More](https://aka.ms/fabric/aoai)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
-|[​​​Data sent to Azure OpenAI can be processed outside your tenant's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|Azure OpenAI is currently available in a limited number of regions and geographies. When this setting is on, data sent to Azure OpenAI can be processed in a region where the service is available, which might be outside your tenant's geographic region, compliance boundary, or national cloud instance.  [Learn More](https://aka.ms/fabric/aoai/region)<br><br>By turning this setting on, you agree to the  [Preview Terms](https://azure.microsoft.com/support/legal/preview-supplemental-terms/#AzureOpenAI-PoweredPreviews).|
+|[Users can use a preview of Copilot and other features powered by Azure OpenAI](../get-started/copilot-fabric-overview.md#enable-copilot)|When this setting is enabled, users can access a preview and use preview features powered by Azure OpenAI, including Copilot.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262239)<br><br>Your data such as prompts, grounding data included in prompts, and AI output will be processed and temporarily stored by Microsoft and may be reviewed by Microsoft employees for abuse monitoring.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262347)<br><br>For customers in the EU Data Boundary, this setting adheres to Microsoft Fabric's EU Data Boundary commitments.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262243)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
+|[Data sent to Azure OpenAI can be processed outside your capacity's geographic region, compliance boundary, or national cloud instance](../get-started/copilot-fabric-overview.md#enable-copilot)|This setting is only applicable for customers who want to use Copilot and AI features in Fabric powered by Azure OpenAI, and whose capacity's geographic region is outside of EU Data Boundary and US.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262085)<br><br>When this setting is enabled, data sent to Azure OpenAI can be processed outside your capacity's geographic boundary or national cloud boundary.  [Learn More](https://go.microsoft.com/fwlink/?linkid=2262242)<br><br>By enabling this setting, you agree to the  [Preview Terms](https://go.microsoft.com/fwlink/?linkid=2262241).|
 
 ## Related content
 
