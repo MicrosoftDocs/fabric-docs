@@ -22,7 +22,7 @@ You can enable or disable BCDR (Business Continuity and Disaster Recovery) for a
 
 If a disaster makes the primary region unrecoverable, OneLake may initiate a regional failover. Once the failover completes, you can use OneLake's APIs through the [global endpoint](onelake-access-api.md) to access your data in the secondary region. Data replication to the secondary region is asynchronous, so any data not copied during the disaster is lost. After a failover, the new primary data center will have local redundancy only.
 
-For a comprehensive understanding of the end-to-end experience, see the Fabric BCDR documentation.
+For a comprehensive understanding of the end-to-end experience, see [Fabric BCDR](/azure/reliability/reliability-fabric).
 
 ## Soft delete for OneLake files
 
