@@ -93,6 +93,16 @@ landingContent:
             url: ingest-data-tsql.md
           - text: Ingest data using Copy
             url: ingest-data-copy.md
+      - linkListType: concept
+        links:            
+          - text: Database Mirroring in Fabric 
+            url: ../database/mirrored-database/overview.md
+          - text: Mirroring Azure SQL Database
+            url: ../database/mirrored-database/azure-sql-database.md
+          - text: Mirroring Azure Cosmos DB
+            url: ../database/mirrored-database/azure-cosmos-db.md
+          - text: Mirroring Snowflake
+            url: ../database/mirrored-database/snowflake.md
   # Card 
   - title: Design and Develop
     linkLists:

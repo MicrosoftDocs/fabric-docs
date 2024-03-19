@@ -384,6 +384,11 @@
           "source_path_from_root": "/docs/get-started/known-issues/known-issue-546-closing-dataflow-gen1-takes-wrong-workspace.md",
           "redirect_url": "/fabric/get-started/fabric-known-issues",
           "redirect_document_id": false
-        }
+        },
+        {
+          "source_path_from_root": "/docs/enterprise/service-interruption-notifications.md",
+          "redirect_url": "/fabric/admin/service-interruption-notifications",
+          "redirect_document_id": false
+        }        
     ]
 }
