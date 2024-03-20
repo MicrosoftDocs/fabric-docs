@@ -5,9 +5,9 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, roblescarlos, maprycem, cynotebo
 ms.service: fabric
-ms.date: 03/17/2024
+ms.date: 03/20/2024
 ms.topic: troubleshooting
-ms.search.form: Troubleshoot mirrored databases
+ms.search.form: Fabric Mirroring
 ---
 
 # Troubleshoot Fabric mirrored databases
