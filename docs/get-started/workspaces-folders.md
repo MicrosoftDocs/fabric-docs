@@ -11,11 +11,9 @@ ms.date: 03/19/2024
 #customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
-# Create folders in workspaces in Power BI
+# Create folders in workspaces in Fabric and Power BI
 
-This article explains what folders in workspaces are and how to use them in *workspace* [!INCLUDE [product-name](../includes/product-name.md)] in Fabric. For more information about workspaces, see the [Workspaces](workspaces.md) article.
-
-Folders are organizational units inside a workspace that enables users to efficiently organize and manage artifacts in the workspace. 
+This article explains what folders in workspaces are and how to use them in workspaces in [!INCLUDE [product-name](../includes/product-name.md)]. Folders are organizational units inside a workspace that enable users to efficiently organize and manage artifacts in the workspace. For more information about workspaces, see the [Workspaces](workspaces.md) article.
 
 ## Create a folder in a workspace
 
@@ -25,13 +23,13 @@ Folders are organizational units inside a workspace that enables users to effici
 
 1. Enter a name for the folder in the **New folder** dialog box. See [Folder name requirements](#folder-name-requirements) for naming restrictions.
 
-    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing new folder dialog.":::
+    :::image type="content" source="media/workspaces-folders/input-name-new-folder-dialog.png" alt-text="Screenshot showing New Folder dialog with a sample folder name.":::
 
 1. The folder is created successfully.
 
-    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully":::
+    :::image type="content" source="media/workspaces-folders/newly-created-folder-workspace.png" alt-text="Screenshot showing a folder is created successfully.":::
 
-1. You can create nested subfolders in a folder by using the same way. Maximum 10 level nested subfolders can be created. 
+1. You can create nested subfolders in a folder in the same way. Maximum 10 level nested subfolders can be created. 
 
    > [!NOTE]
    > You can nest up to 10 folders within the root folder.
@@ -41,27 +39,29 @@ Folders are organizational units inside a workspace that enables users to effici
 Folder names must follow certain naming conventions:
 
 - The name can't include C0 and C1 control codes.
-- The name can't contain leading and trailing spaces.
+- The name can't contain leading or trailing spaces.
 - The name can't contain these characters: ~"#.&*:<>?/\{|}. 
 - The name can't contain system-reserved names, including: $recycle.bin, recycled, recycler.
 - The name length can't exceed 255 characters.
-- The name can't have more than one folder name with the same name in a folder or at the root level of the workspace.
+- You can't have more than one folder with the same name in a folder or at the root level of the workspace.
 
 ## Move items into a folder
 
 ### Move a single item
 
-1. Select the context menu (**...**) of the item you want to move, then select **Move**.
+1. Select the context menu (**...**) of the item you want to move, then select **Move to**.
 
     :::image type="content" source="media/workspaces-folders/select-move-context-menu.png" alt-text="Screenshot showing the entrypoint of move to button in context menu of an item." lightbox="media/workspaces-folders/select-move-context-menu.png":::
 
-1. Select the destination folder where you want to move this item, then select **Move here**.
+1. Select the destination folder where you want to move this item.
 
     :::image type="content" source="media/workspaces-folders/select-destination-folder.png" alt-text="Screenshot showing the dialog for selecting destination folder." lightbox="media/workspaces-folders/select-destination-folder.png":::
 
+1. Select **Move here**.
+
     :::image type="content" source="media/workspaces-folders/select-move-here.png" alt-text="Screenshot showing move here button in the destination folder." lightbox="media/workspaces-folders/select-move-here.png":::
 
-1. By selecting the link in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
+1. By selecting **Open folder** in the notification or navigating to the folder directly, you can go to the destination folder to check if the item moved successfully.
 
     :::image type="content" source="media/workspaces-folders/notification-moved-successfully.png" alt-text="Screenshot showing the notification for moving successfully.":::
 
@@ -82,13 +82,13 @@ Folder names must follow certain naming conventions:
     :::image type="content" source="media/workspaces-folders/create-items-folder.png" alt-text="Screenshot showing create item from new menu inside a folder." lightbox="media/workspaces-folders/create-items-folder.png":::
 
     > [!NOTE]
-    > - Currently, you can't create certain items in a folder: 
+    > Currently, you can't create certain items in a folder: 
     >
-    >   - dataflow gen2
-    >   - streaming semantic model
-    >   - streaming dataflow
+    > - dataflow gen2
+    > - streaming semantic model
+    > - streaming dataflow
     >
-    > - If you are creating items from the home page or the **Create** hub, items are created in the root level of the workspace.
+    > If you create items from the home page or the **Create** hub, items are created in the root level of the workspace.
 
 ## Rename a folder
 
