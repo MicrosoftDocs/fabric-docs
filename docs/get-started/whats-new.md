@@ -4,7 +4,7 @@ description: Learn about the new features and documentation improvements for Mic
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: rymajidi, sngun
-ms.date: 03/18/2024
+ms.date: 03/20/2024
 ms.topic: whats-new
 ms.custom:
   - ignite-2023
@@ -95,10 +95,11 @@ This section summarizes new Microsoft Fabric community opportunities for prospec
 - Ask and answer questions in the [Microsoft Fabric community](https://community.fabric.microsoft.com/).
 
 > [!TIP]
-> Join us in Las Vegas March 26-28, 2024 for the first annual Microsoft Fabric Community Conference. See firsthand how Microsoft Fabric and the rest of the data and AI products at Microsoft can help your organization prepare for the era of AI. [Register today](https://fabricconf.com/) using code `MSCUST` for an exclusive discount!
+> Join us April 9 for a Microsoft Fabric AMA for a live, expert-led Q&A session on all things Microsoft Fabric! Register at [https://aka.ms/FabricAMA-Apr24](https://aka.ms/FabricAMA-Apr24).
 
 |**Month** | **Feature** | **Learn more** |
 |:-- |:-- | :-- |
+|March 2024|**Microsoft Fabric Community Conference**| Join us in Las Vegas March 26-28, 2024 for the first annual Microsoft Fabric Community Conference. See firsthand how Microsoft Fabric and the rest of the data and AI products at Microsoft can help your organization prepare for the era of AI. [Register today](https://fabricconf.com/) using code `MSCUST` for an exclusive discount!|
 |March 2024|**Announcing the winners of "HackTogether: The Microsoft Fabric Global AI Hack"**|We received 50 Hackathon project submissions from over 100 registrants, participating from every corner of the world. Our judges were blown away by the breadth, depth, and overall quality of submissions. [Meet the winners of the Fabric Global AI Hack!](https://blog.fabric.microsoft.com/blog/announcing-the-winners-of-hacktogether-the-microsoft-fabric-global-ai-hack?ft=All) |
 |January 2024|**Announcing Fabric Career Hub**|The new [Fabric Career Hub](https://community.fabric.microsoft.com/t5/custom/page/page-id/CareerHubPage?ocid=fabric24_careerhub_fabric_careerhubblog_clp) is your one-stop-shop for professional growth! We've created a comprehensive learning journey with the best free on-demand and live training, plus exam discounts.|
 |January 2024|**Hack Together: The Microsoft Fabric Global AI Hack**|[Hack Together is a global online hackathon](https://aka.ms/hacktogether/fabric-ai/register) that runs from February 15 to March 4, 2024. Join us for Hack Together: The Microsoft Fabric Global AI Hack, a virtual event where you can learn, experiment, and hack together with the new [Copilot](copilot-fabric-overview.md) and [AI features](../data-science/use-ai-samples.md) in Microsoft Fabric! For more information, see [Microsoft Fabric Global AI Hack](https://blog.fabric.microsoft.com/blog/hack-together-the-microsoft-fabric-global-ai-hack?ft=All).|

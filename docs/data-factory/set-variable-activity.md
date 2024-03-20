@@ -12,7 +12,9 @@ ms.date: 11/15/2023
 
 # Use the Set Variable activity in Fabric
 
-Use the Set Variable activity to set the value of an existing variable of type String, Bool, or Array defined in a pipeline in Data Factory for Microsoft Fabric or use the Set Variable activity to set a pipeline return value. Pipeline variables can be used to keep track of any result or data you encounter and need to use again later during the execution of your pipeline, or to return as its result.
+Use the Set Variable activity to set the value of an existing variable of type String, Bool, or Array defined in a pipeline in Data Factory for Microsoft Fabric or use the Set Variable activity to set a pipeline return value. Pipeline variables can be used to keep track of any result or data you encounter and need to use again later during the execution of your pipeline, or to return as its result. 
+
+The usage scenarios for the Set Variable activity can vary widely depending on your requirements. For example, you might wish to take a particular path if the number of rows or aggregate value from a field in previously returned data are greater or less than a particular amount, but might need to choose the alternate path later in your pipeline after multiple other steps that are always necessary are completed. By using a pipeline variable, you can store the result in a variable and then use it later to choose the alternate path depending on the variable's value. You can also use the Set Variable activity to set a pipeline return value consisting of one or more constituent variables. This can be used in subsequent pipelines that use the output of your pipeline.
 
 ## Prerequisites
 
