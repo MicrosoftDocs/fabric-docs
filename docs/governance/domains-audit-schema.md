@@ -5,14 +5,14 @@ author: paulinbar
 ms.author: painbar
 ms.topic: conceptual
 ms.custom:
-ms.date: 03/14/2024
+ms.date: 03/20/2024
 ---
 
 # Audit schema for domains in Fabric
 
 Whenever a domain is created, edited or deleted, that activity is recorded in the audit log for Fabric. You can track these activities using [Microsoft Purview Audit](XXX).
 
-On the Audit search page, search for activites by their friendly names or operation names. Select one of the search results. A side pane will display the record details. For domains, the domain-specific details are found in json format under **OperationProperties**.
+On the Audit search page, search for activites by their friendly names or operation names. Select one of the search results. A side pane will display the record details. For domains, the domain-specific details are found in under the **OperationProperties** section, in json format.
 
 This article explains the information in the Fabric auditing schema that's specific to domains. This information is recorded in the OperationProperties section of the details side pane that opens when you select a domain-related activity on the Audit search page.
 
@@ -23,8 +23,8 @@ This article explains the information in the Fabric auditing schema that's speci
 
 | Activity flow | Activity name | Properties |
 |---|---|---|
-| Create domain/sub-domain | InsertDataDomainAsAdmin | operationName: "InsertDataDomainAsAdmin",<br>operationProperties: {<br>DataDomainObjectId: \<Guid\>,<br>DataDomainDisplayName: \<String\><br>ParentObjectId?: \<Guid\><br>}|
-| Delete domain/sub-domain | DeleteDataDomainAsAdmin | operationName: "DeleteDataDomainAsAdmin",<br>operationProperties: {<br>DataDomainObjectId: \<Guid\>,<br>DataDomainDisplayName: \<String\><br>ParentObjectId?: \<Guid\><br>} |
+| Create domain/sub-domain | InsertDataDomainAsAdmin | operationName: InsertDataDomainAsAdmin,<br>operationProperties:<br>DataDomainObjectId: \<Guid\><br>DataDomainDisplayName: \<String\><br>ParentObjectId?: \<Guid\><br>|
+| Delete domain/sub-domain | DeleteDataDomainAsAdmin | operationName: "DeleteDataDomainAsAdmin",<br>operationProperties: {<br>- DataDomainObjectId: \<Guid\>,<br>- DataDomainDisplayName: \<String\><br>- ParentObjectId?: \<Guid\><br>} |
 | Update domain/sub-domain | UpdateDataDomainAsAdmin | operationName: "UpdateDefaultDataDomainAsAdmin",<br>operationProperties: {<br>DataDomainObjectId: \<Guid\>,<br>DataDomainDisplayName: \< String \><br>ParentObjectId?: \<Guid\><br>UsersToSetCounter?: \<Long\>,<br>UsersToUnsetCounter?: \<Long\>,<br>GroupsToSetCounter?: \<Long\>,<br>GroupsToUnsetCounter?:  \<Long\><br>} |
 | Assign/Unassign WS to the domain | UpdateDataDomainFoldersRelationsAsAdmin | operationName: "UpdateDataDomainFoldersRelationsAsAdmin",<br>operationProperties: {<br>DataDomainObjectId: \<Guid\>,<br>DataDomainDisplayName: \<String\><br>ParentObjectId?: \<Guid\><br>FoldersToSetCounter?: \<Long\><br>FoldersToUnsetCount?: \<Long\><br>} |
 | Unassign all WS to the domain | DeleteAllDataDomainFoldersRelationsAsAdmin | operationName: "DeleteAllDataDomainFoldersRelationsAsAdmin",<br>operationProperties: {<br>DataDomainObjectId: \<Guid\>,<br>DataDomainDisplayName: \<String\><br>ParentObjectId?: \<Guid\><br>} |
