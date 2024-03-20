@@ -103,6 +103,132 @@ For the given hierarchy, OneLake RBAC permissions for `Role1` and `Role2` inheri
 
 </table>
 
+## Traversal and listing in OneLake RBAC
+
+OneLake RBAC provides automatic traversal of parent items to ensure that data is easy to discover. Granting a user Read to subfolder11 grants the user the ability to list and traverse the parent directory folder1. This functionality is similar to Windows folder permissions where giving access to a subfolder provides discovery and traversal for the parent directories. The list and traversal granted to the parent does not extend to other items outside of the direct parents, ensuring other folders are kept secure.
+
+For example, given the following hierarchy of a lakehouse in OneLake.
+
+```bash
+Tables/
+──── (empty folder)
+Files/
+────folder1
+│   │   file11.txt
+│   │
+│   └───subfolder11
+│       │   file111.txt
+|       │
+│       └───subfolder111
+|            │   file1111.txt
+│   
+└───folder2
+    │   file21.txt
+```
+
+For the given hierarchy, OneLake RBAC permissions for 'Role1' provides the following access. Note that access to file11.txt is not visible as it is not a parent of subfolder11. Likewise for Role2, file111.txt is not visible either.
+
+<table>
+  <tr>
+    <td> <b> Role </b> </td>
+    <td> <b> Permission </b></td>
+    <td> <b> Folder defined in the Permission </b></td>
+    <td> <b> Folders and files inheriting the Permission </b></td>
+  </tr>
+  <tr>
+    <td> <b> Role1</b> </td>
+    <td> <b> Read </b> </td>
+    <td> <b>subfolder11 </b></td>
+    <td>
+
+```bash
+Files/
+────folder1
+│   │
+│   └───subfolder11
+│       │   file111.txt
+|       │
+│       └───subfolder111
+|            │   file1111.txt
+```
+
+  </td>
+<tr>
+   <td> <b> Role2 </b> </td>
+   <td> <b> Read </b> </td>
+   <td> <b> subfolder111 </b> </td>
+   <td>
+
+```bash
+Files/
+────folder1
+│   │
+│   └───subfolder11
+|       │
+│       └───subfolder111
+|            │   file1111.txt
+```
+
+</td>
+</tr>
+
+</table>
+
+For shortcuts, the listing behavior is slightly different. Shortcuts to external data sources behave the same as folders do, however shortcuts to other OneLake locations have specialized behavior. Access to a OneLake shortcut is determined by the target permissions of the shortcut. When listing shortcuts, no call is made to check the target access. As a result, when listing a directory all internal shortcuts will be returned regardless of a user's access to the target. When a user tries to open the shortcut the access check will evaluate and a user will only see data they have the required permissions to see. For more information on shortcuts, see the [shortcuts security section.](#shortcuts)
+
+The examples below use the following folder hierarchy.
+
+```bash
+Files/
+────folder1
+│   
+└───shortcut2
+|
+└───shortcut3
+```
+
+<table>
+  <tr>
+    <td> <b> Role </b> </td>
+    <td> <b> Permission </b></td>
+    <td> <b> Folder defined in the Permission </b></td>
+    <td> <b> Result of listing Files </b></td>
+  </tr>
+  <tr>
+    <td> <b> Role1</b> </td>
+    <td> <b> Read </b> </td>
+    <td> <b>folder1 </b></td>
+    <td>
+
+```bash
+Files/
+────folder1
+│   
+└───shortcut2
+|
+└───shortcut3
+```
+
+  </td>
+<tr>
+   <td> <b> Role2 </b> </td>
+   <td> <b> N/A </b> </td>
+   <td> <b> N/A </b> </td>
+   <td>
+
+```bash
+Files/
+│   
+└───shortcut2
+|
+└───shortcut3
+```
+
+</td>
+</tr>
+
+</table>
+
 ## How OneLake RBAC permissions are evaluated with Fabric permissions
 
 Workspace and Item permissions let you grant "coarse-grain" access to data in OneLake for the given Item. OneLake RBAC permissions enable you to restrict the data access in OneLake only to specific folders.
