@@ -27,8 +27,8 @@ For domains, the domain-specific details are found under the **OperationProperti
 | OperationName | Edm.Enum | Yes | Activity name as described in the following table. |
 | OperationProperties | Edm.Enum | Yes | Per the properties described in the table below. |
 
-| Activity flow | Activity friendly name | Activity operation name | Properties |
-|:---|:---|:---|:---|
+| Activity flow | Activity operation name | Properties |
+|:---|:---|:---|
 | Create domain/sub-domain | InsertDataDomainAsAdmin | **operationName**:<br>- InsertDataDomainAsAdmin <br>**operationProperties**:<br>- DataDomainObjectId: \<guid\><br>- DataDomainDisplayName: \<string\><br>- ParentObjectId?: \<guid\>|
 | Delete domain/sub-domain | DeleteDataDomainAsAdmin | **operationName**:<br>- DeleteDataDomainAsAdmin<br>**operationProperties**:<br>- DataDomainObjectId: \<guid\><br>- DataDomainDisplayName: \<string\><br>- ParentObjectId?: \<guid\>|
 | Update domain/sub-domain | UpdateDataDomainAsAdmin | **operationName**:<br>- UpdateDataDomainAsAdmin<br>**operationProperties**:<br>- DataDomainObjectId: \<guid\><br>- DataDomainDisplayName: <DataDomainObjectId><br>- ParentObjectId?: \<guid\>|
