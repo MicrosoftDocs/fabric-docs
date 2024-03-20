@@ -3,9 +3,9 @@ title: Roles in workspaces in Microsoft Fabric
 description: Learn about the different roles you can assign to workspace users to grant access to read, write, edit, and more.
 author: maggiesMSFT
 ms.author: maggies
-ms.reviewer: yicw, mesrivas
+ms.reviewer: yicw, mesrivas, stwynant
 ms.topic: conceptual
-ms.date: 05/24/2023
+ms.date: 03/20/2024
 ms.custom:
   - build-2023
   - ignite-2023
@@ -35,21 +35,21 @@ Users in workspace roles have the following [!INCLUDE [product-name](../includes
 |View and read content of KQL databases, KQL query-sets, and real-time dashboards.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |Connect to SQL analytics endpoint of Lakehouse or the Warehouse | :::image type="icon" source="../media/yes-icon.svg" border="false":::|   :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> with T-SQL through TDS endpoint. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-|Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | - |
-|Read Lakehouse data through Lakehouse explorer.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -  |
-|Write or delete data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -  |
-|Write or delete KQL query-sets, real-time dashboards, and schema and data of KQL databases, Lakehouses, data warehouses, and shortcuts.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -  |
-|Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | -  |
+|Read Lakehouse and Data warehouse data and shortcuts<sup>2</sup> through OneLake APIs and Spark. | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | |
+|Read Lakehouse data through Lakehouse explorer.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
+|Write or delete data pipelines, notebooks, Spark job definitions, ML models and experiments, and Event streams.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   |
+|Write or delete KQL query-sets, real-time dashboards, and schema and data of KQL databases, Lakehouses, data warehouses, and shortcuts.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |   |
+|Execute or cancel execution of notebooks, Spark job definitions, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
 |Execute or cancel execution of data pipelines.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
 |View execution output of data pipelines, notebooks, ML models and experiments.  | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |
-| Schedule data refreshes via the on-premises gateway.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
-| Modify gateway connection settings.<sup>4</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
+| Schedule data refreshes via the on-premises gateway.<sup>3</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
+| Modify gateway connection settings.<sup>3</sup> | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: | :::image type="icon" source="../media/yes-icon.svg" border="false"::: |  |
 
 <sup>1</sup> Contributors and Viewers can also share items in a workspace, if they have Reshare permissions.
 
 <sup>2</sup> Additional permissions are needed to read data from shortcut destination. Learn more about [shortcut security model.](../onelake/onelake-shortcuts.md?#types-of-shortcuts)
 
-<sup>4</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
+<sup>3</sup> Keep in mind that you also need permissions on the gateway. Those permissions are managed elsewhere, independent of workspace roles and permissions.
 
 ## Related content
 
