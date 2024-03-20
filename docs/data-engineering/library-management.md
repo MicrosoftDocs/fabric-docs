@@ -8,7 +8,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 11/15/2023
+ms.date: 03/20/2023
 ---
 
 # Manage Apache Spark libraries in Microsoft Fabric
@@ -59,8 +59,9 @@ Users, who have the permission to run the notebook, can install extra libraries 
 > [!IMPORTANT]
 > We currently have limitations on the *.jar* library.
 >
-> - If you upload a *.jar* file with a different version of a built-in library, it will not be effective. Only the new *.jar* will be effective for your Spark sessions.
-> - *%% configure* magic commands are currently not fully supported on Fabric. Don't use them to bring *.jar* files to your notebook session.
+> - For Scala users, the *.jar* file, which overrides the built-in library with a different, can install successfully in environment but not effective for your Spark/Scala sessions. The new *.jar* works fine in the sessions.
+> - For Python users, all *.jar* files are currently not supported in environment, they can install successfully in environment but doesn't effective in the PySpark sessions.
+> - The *.jar* files can install at notebook [session level](library-management.md#manage-jar-libraries-through-in-line-installation) instead.
 
 ## In-line installation
 
@@ -97,7 +98,7 @@ You can use in-line commands to enable *altair* on your notebook session without
 
    The output of the cell output indicates the result of installation.
 
-1. Import the package and semantic model by running the following codes in another notebook cell:
+2. Import the package and semantic model by running the following codes in another notebook cell:
 
    ```python
    import altair as alt
@@ -134,7 +135,7 @@ Fabric supports *install.packages()*, *remove.packages()* and *devtools::* comma
 > [!TIP]
 > Find all available R in-line commands and clarifications in [install.packages command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/install.packages.html) and [remove.package command](https://stat.ethz.ch/R-manual/R-devel/library/utils/html/remove.packages.html).
 
-### Manage R public libraries through in-line installation
+#### Manage R public libraries through in-line installation
 
 Follow this example to walk through the steps of installing an R public library:
 
@@ -160,6 +161,20 @@ To install an R feed library:
    }
    spark.lapply(c("hello world", "good morning", "good evening"), hello)
    ```
+
+### Manage Jar libraries through in-line installation
+
+The *.jar* files are support at notebook sessions with following command.
+
+```Scala
+// Using notebook built-in folder as an example
+%%configure -f: 
+{
+    "conf": {
+        "spark.jars": "{mssparkutils.nbResPath}/builtin/jar_file_name.jar"
+    }
+}       
+```
 
 ## Related content
 
