@@ -7,7 +7,7 @@ ms.topic: how-to
 ms.custom:
   - build-2023
   - ignite-2023
-ms.date: 01/22/2024
+ms.date: 03/20/2024
 ---
 
 # Pause and resume your capacity
@@ -54,6 +54,16 @@ Restart usage by resuming your capacity. Resuming your capacity also resumes bil
 4. Select **Resume**.
 
 5. Select **Yes** to confirm you want to resume the capacity.
+
+## Schedule your operation
+
+With [Azure runbook](/azure/automation/automation-runbook-types) you can schedule your pause and resume operations.
+
+1. [Import a module from the module gallery](/azure/automation/automation-runbook-gallery#import-a-module-from-the-modules-gallery-in-the-azure-portal).
+
+2. In the runbook gallery, search for *Fabric*.
+
+3. Select the notebook you want to schedule. The scheduling parameters are described in the description of the runbook.
 
 ## Related content
 
