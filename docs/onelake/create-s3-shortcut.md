@@ -36,7 +36,7 @@ For an overview of shortcuts, see [OneLake shortcuts](onelake-shortcuts.md). To 
 
 [!INCLUDE [amazon-s3-shortcut](../includes/amazon-s3-shortcut.md)]
 
-The lakehouse automatically refreshes. The shortcut appears under **Files** in the **Explorer** pane.
+The lakehouse automatically refreshes. The shortcut appears in the left **Explorer** pane.
 
    :::image type="content" source="media\create-onelake-shortcut\folder-shortcut-symbol.png" alt-text="Screenshot showing a Lake view list of folders that display the shortcut symbol.":::
 
