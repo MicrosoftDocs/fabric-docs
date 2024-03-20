@@ -5,9 +5,9 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: roblescarlos
 ms.service: fabric
-ms.date: 03/08/2024
+ms.date: 03/20/2024
 ms.topic: conceptual
-ms.search.form: Mirrored Azure SQL Database overview
+ms.search.form: Fabric Mirroring
 ---
 
 # Mirroring Azure SQL Database (Preview)

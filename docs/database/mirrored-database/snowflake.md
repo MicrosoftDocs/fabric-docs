@@ -5,9 +5,9 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: imotiwala, maprycem
 ms.service: fabric
-ms.date: 03/15/2024
+ms.date: 03/20/2024
 ms.topic: conceptual
-ms.search.form: Mirrored Snowflake overview
+ms.search.form: Fabric Mirroring
 ---
 
 # Mirroring Snowflake (Preview)
