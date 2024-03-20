@@ -7,7 +7,8 @@ ms.reviewer: yicw, mesrivas,liud
 ms.topic: how-to
 ms.custom: fabric
 ms.search.form: product-trident, Manage your workspace
-ms.date: 03/18/2024
+ms.date: 03/19/2024
+#customer intent: As a user, I want to learn how to create folders in workspaces so that I can efficiently organize and manage items in the workspace.
 ---
 
 # Create folders in workspaces in Power BI
