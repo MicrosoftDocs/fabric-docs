@@ -39,7 +39,7 @@ items:
     href: workspaces.md
   - name: Create a workspace
     href: create-workspaces.md
-  - name: Create folders in workspaces
+  - name: Create folders for workspaces
     href: workspaces-folders.md
   - name: Roles in workspaces
     href: roles-workspaces.md
